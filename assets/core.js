@@ -1,5 +1,5 @@
 /*──────── CONFIG ────────*/
-const SCRIPT_URL = "https://script.google.com/macros/s/AKfycbwdFJtfFwWuMEwJMTt8cIDy0zK-6nt4NlKByYn2gryGpoWDd7ECyjDH9Le5az-ByDbRNQ/exec";
+const SCRIPT_URL = "https://script.google.com/macros/s/AKfycbyYyM3YkVGGd80Y40At2xx5VGeATVp8_glas3qO9GBcXZnzqxgaw17fFN75q-q5TW02CA/exec";
 const COOLDOWN_MS = 120_000;
 /*────────────────────────*/
 
