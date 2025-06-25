@@ -1,7 +1,7 @@
 /*──────────────────────────────────────────────
   core.js – shared engine for EVERY homework
 ──────────────────────────────────────────────*/
-const SCRIPT_URL  = "https://script.google.com/macros/s/REPLACE_WITH_/exec"; // <- YOUR /exec URL
+const SCRIPT_URL  = "https://script.google.com/macros/s/AKfycbwknU1boP4shJWKJETLmi7d_080IHy-OUhHvzM7nm7S5W8wjb30vdPT7Ca0OLfYm2R4dw/exec"; // <- YOUR /exec URL
 const COOLDOWN_MS = 120_000;   // 2 minutes
 
 document.addEventListener("DOMContentLoaded",()=>{
