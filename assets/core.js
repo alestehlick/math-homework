@@ -1,7 +1,7 @@
 /*──────────────────────────────────────────────
   core.js – universal engine (letter grading)
 ──────────────────────────────────────────────*/
-const SCRIPT_URL  = "https://script.google.com/macros/s/AKfycbwknU1boP4shJWKJETLmi7d_080IHy-OUhHvzM7nm7S5W8wjb30vdPT7Ca0OLfYm2R4dw/exec"; // <-- your /exec
+const SCRIPT_URL  = "https://script.google.com/macros/s/AKfycbyaaAxENgRy5ADwVs75bRwJjIIiUSNEqUG7YXEQ8R_3j4AUcJKNIWT2u4Qovnvd0ODHaQ/exec"; // <-- your /exec
 const COOLDOWN_MS = 120_000;                                                 // 2-minute lockout
 
 document.addEventListener("DOMContentLoaded", () => {
