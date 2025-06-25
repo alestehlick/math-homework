@@ -1,16 +1,37 @@
 /*──────────────────────────────────────────────
-  core.js – shared front-end for EVERY homework
-  multiple classes · A–F choices · 2-min cooldown
+  core.js – front-end for EVERY homework page
+  • classId   (course)  ➜ decides spreadsheet tab
+  • 6-option MC, graded by letter (A–F)
+  • 2-minute local cool-down
+  • sends: classId, homeworkId, answers[], answerKey[]
 ──────────────────────────────────────────────*/
-const SCRIPT_URL  = "https://script.google.com/macros/s/AKfycbwXDrAd-3OeZV5_zKF-_ltrm-cUlZigX6M2mgixjXkGCRGkr41qBefxZ1q5sOKpdSwSuQ/exec";
-const COOLDOWN_MS = 120_000;                             // 2 min
 
+/* 1️⃣  PASTE your Google-Apps-Script Web-App URL (must end “/exec”) */
+const SCRIPT_URL =
+  "https://script.google.com/macros/s/AKfycbzTgSlwi9IlCXS9n-jRyRaGWJjp6Eh8vTQq0ygTqkVlMLjaT5D4Kuj6XC7eH_-5wnsyiA/exec";
+
+/* 2️⃣  Cool-down between submissions (milliseconds) */
+const COOLDOWN_MS = 120_000;          // 2 minutes
+
+/* ─────────────────────────────────────────── */
+/*  wait until homeworkData is defined         */
 document.addEventListener("DOMContentLoaded", () => {
-  if (!window.homeworkData) { alert("homeworkData missing"); return; }
+  if (!window.homeworkData) {
+    alert("Error: homeworkData object not found.");
+    return;
+  }
   buildForm(window.homeworkData);
 });
 
-function buildForm(d){
+/* ─────────────────────────────────────────── */
+function buildForm(d) {
+  /* d = {
+         classId , id , title ,
+         questions : [ { latex , choices[] } ] ,
+         answerKey : ["A","C",…]
+       } */
+
+  /*  form skeleton  */
   const root = document.getElementById("hw-root");
   root.innerHTML = `
     <h1>${d.title}</h1>
@@ -22,66 +43,95 @@ function buildForm(d){
       <div id="qbox"></div>
       <button class="submit-btn" type="submit">Submit</button>
     </form>`;
-  const qbox = document.getElementById("qbox");
 
-  d.questions.forEach((q,i)=>{
-    const opts = q.choices.map((txt,j)=>{
-      const letter = String.fromCharCode(65+j);          // A–F
-      return `<label><input type="radio" name="q${i+1}" value="${letter}" required> ${txt}</label>`;
+  /*  build each question – value = letter  */
+  const qbox = document.getElementById("qbox");
+  d.questions.forEach((q, idx) => {
+    const radios = q.choices.map((txt, j) => {
+      const letter = String.fromCharCode(65 + j);          // 65 → 'A'
+      return `<label><input type="radio" name="q${idx + 1}"
+                             value="${letter}" required> ${txt}</label>`;
     }).join("");
-    qbox.insertAdjacentHTML("beforeend",`
+    qbox.insertAdjacentHTML("beforeend", `
       <div class="question">
-        <p><strong>Question ${i+1}:</strong> ${q.latex}</p>${opts}
+        <p><strong>Question ${idx + 1}:</strong> ${q.latex}</p>
+        ${radios}
       </div>`);
   });
+
+  /*  render LaTeX  */
   MathJax.typeset();
-  document.getElementById("hwForm").addEventListener("submit",ev=>submit(ev,d));
+
+  document.getElementById("hwForm")
+          .addEventListener("submit", ev => handleSubmit(ev, d));
 }
 
-async function submit(ev,d){
+/* ─────────────────────────────────────────── */
+async function handleSubmit(ev, d) {
   ev.preventDefault();
-  const f = ev.target;
-  const first = f.firstName.value.trim(), last = f.lastName.value.trim();
-  const lockKey = `last_${d.classId}_${d.id}_${first}_${last}`.toLowerCase();
-  const lastT = +localStorage.getItem(lockKey)||0, now=Date.now();
-  if (now-lastT < COOLDOWN_MS){
-    const s=Math.ceil((COOLDOWN_MS-(now-lastT))/1000);
-    alert(`Please wait ${s}s before retrying.`); return;
+  const f       = ev.target;
+  const first   = f.firstName.value.trim();
+  const last    = f.lastName.value.trim();
+  const hwId    = d.id;
+  const classId = d.classId;
+
+  /* ── 2-minute lockout key */
+  const lockKey = `last_${classId}_${hwId}_${first}_${last}`.toLowerCase();
+  const lastT   = Number(localStorage.getItem(lockKey) || 0);
+  const now     = Date.now();
+  if (now - lastT < COOLDOWN_MS) {
+    const secs = Math.ceil((COOLDOWN_MS - (now - lastT)) / 1000);
+    alert(`Please wait ${secs}s before retrying.`);
+    return;
   }
 
-  const answers=[];
-  for(let i=1;i<=d.questions.length;i++) answers.push(f[`q${i}`].value);
+  /* ── collect answers (letters) */
+  const answers = [];
+  for (let i = 1; i <= d.questions.length; i++) {
+    answers.push(f[`q${i}`].value);
+  }
 
-  const fd=new FormData();
-  fd.append("classId",d.classId);
-  fd.append("homeworkId",d.id);
-  fd.append("firstName",first);
-  fd.append("lastName",last);
-  fd.append("answers",JSON.stringify(answers));
-  fd.append("answerKey",JSON.stringify(d.answerKey));
+  /* ── build payload */
+  const fd = new FormData();
+  fd.append("classId",    classId);
+  fd.append("homeworkId", hwId);
+  fd.append("firstName",  first);
+  fd.append("lastName",   last);
+  fd.append("answers",    JSON.stringify(answers));
+  fd.append("answerKey",  JSON.stringify(d.answerKey));
 
-  try{
-    const r=await fetch(SCRIPT_URL,{method:"POST",body:fd});
-    const t=await r.text();
-    handleReply(t,d.questions.length);
-    if(!t.startsWith("ERR|") && !t.startsWith("<")) localStorage.setItem(lockKey,String(now));
-  }catch(e){ alert("Network/script error: "+e); }
+  /* ── send to Apps Script */
+  try {
+    const res  = await fetch(SCRIPT_URL, { method: "POST", body: fd });
+    const text = await res.text();
+    handleReply(text, d.questions.length);
+
+    /* record timestamp for cooldown if accepted */
+    if (!text.startsWith("ERR|") && !text.startsWith("<"))
+      localStorage.setItem(lockKey, String(now));
+  } catch (err) {
+    alert("Network / script error:\n" + err);
+  }
 }
 
-function handleReply(msg,total){
-  if(msg.startsWith("SUBMITTED|")){
-    alert(`First submission ✔\nScore: ${msg.split("|")[1]}/${total}\nYou may retry once (85 % cap).`);
-  }else if(msg.startsWith("SUBMITTED_LATE|")){
-    alert(`Late submission (85 % cap).\nScore: ${msg.split("|")[1]}/${total}`);
-  }else if(msg.startsWith("RETRY|")){
-    alert(`Retry recorded ✔\nScore (cap): ${msg.split("|")[1]}/${total}`);
-  }else if(msg==="ERR|INVALID_NAME"){
-    alert("Name not in roster.");
-  }else if(msg==="ERR|LIMIT_EXCEEDED"){
-    alert("You already submitted twice.");
-  }else if(msg.startsWith("ERR|")){
-    alert("Submission error: "+msg);
-  }else{
-    alert("Unexpected reply:\n"+msg);
+/* ─────────────────────────────────────────── */
+function handleReply(msg, total) {
+  if (msg.startsWith("SUBMITTED|")) {
+    const [, s] = msg.split("|");
+    alert(`First submission ✔\nScore: ${s}/${total}\nYou may retry once (85 % cap).`);
+  } else if (msg.startsWith("SUBMITTED_LATE|")) {
+    const [, s] = msg.split("|");
+    alert(`Late submission (85 % cap).\nScore: ${s}/${total}\nOne retry left.`);
+  } else if (msg.startsWith("RETRY|")) {
+    const [, s] = msg.split("|");
+    alert(`Retry recorded ✔\nScore (cap): ${s}/${total}\nNo more attempts.`);
+  } else if (msg === "ERR|INVALID_NAME") {
+    alert("Name not in roster – submission rejected.");
+  } else if (msg === "ERR|LIMIT_EXCEEDED") {
+    alert("You have already submitted twice.");
+  } else if (msg.startsWith("ERR|")) {
+    alert("Submission error: " + msg);
+  } else {
+    alert("Unexpected reply:\n" + msg);
   }
 }
