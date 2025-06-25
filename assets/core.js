@@ -1,7 +1,7 @@
 /*──────────────────────────────────────────────
   core.js – universal engine (letter grading)
 ──────────────────────────────────────────────*/
-const SCRIPT_URL  = "https://script.google.com/macros/s/REPLACE_WITH_/exec"; // <-- your /exec
+const SCRIPT_URL  = "https://script.google.com/macros/s/AKfycbxRgH1sy5k_qgRzeHv48N2y2GG6Kpn4Qel1d6ASofzmPzCtV-04UupmIVlAc6WlfLrHcw/exec"; // <-- your /exec
 const COOLDOWN_MS = 120_000;                                                 // 2-minute lockout
 
 document.addEventListener("DOMContentLoaded", () => {
