@@ -1,5 +1,5 @@
 /*──────── CONFIG ────────*/
-const SCRIPT_URL = "https://script.google.com/macros/s/AKfycbwOv_kfoxPx9i6MnADYSKaPi56ycO6GXwdYhoe4HMrgHaaX8lenoGPNtAN2mBPsDOx2cw/exec";
+const SCRIPT_URL = "https://script.google.com/macros/s/AKfycbwdFJtfFwWuMEwJMTt8cIDy0zK-6nt4NlKByYn2gryGpoWDd7ECyjDH9Le5az-ByDbRNQ/exec";
 const COOLDOWN_MS = 120_000;
 /*────────────────────────*/
 
@@ -33,13 +33,17 @@ function build(d){
 
 async function submit(ev,d){
   ev.preventDefault();
-  const f=ev.target, first=f.firstName.value.trim(), last=f.lastName.value.trim();
-  const lock=`last_${d.classId}_${d.id}_${first}_${last}`.toLowerCase();
-  const now=Date.now(), lastT=Number(localStorage.getItem(lock)||0);
+  const f=ev.target,
+        first=f.firstName.value.trim(),
+        last =f.lastName.value.trim(),
+        lock=`last_${d.classId}_${d.id}_${first}_${last}`.toLowerCase(),
+        now=Date.now(),
+        lastT=Number(localStorage.getItem(lock)||0);
   if(now-lastT<COOLDOWN_MS){
     const sec=Math.ceil((COOLDOWN_MS-(now-lastT))/1000);
     alert(`Please wait ${sec}s before retrying.`); return;
   }
+
   const ans=[]; for(let i=1;i<=d.questions.length;i++) ans.push(f[`q${i}`].value);
 
   const body=new URLSearchParams({
@@ -52,32 +56,30 @@ async function submit(ev,d){
   try{
     const res=await fetch(SCRIPT_URL,{method:"POST",body});
     const txt=await res.text();
+    localStorage.setItem(lock,String(now));
     handle(txt,d.questions.length);
-    if(!txt.startsWith("ERR|")) localStorage.setItem(lock,String(now));
   }catch(e){alert("Network error: "+e);}
 }
 
-function handle(msg,total){
-  if(msg.startsWith("FIRST|")){
-    const [,raw] = msg.split("|");
-    alert(`First submission ✔\nScore ${raw}/${total}`);
-    return;
+function handle(m,t){
+  if(m.startsWith("SUBMITTED|")){
+    alert(`First submission ✔\nScore ${Number(m.split("|")[1])}/${t}`); return;
   }
-  if(msg.startsWith("RETRY_HIGH|")){
-    const [,raw,capped,official]=msg.split("|").map(Number);
-    if(capped<raw)
-      alert(`Retry ✔\nRaw ${raw}/${total}\nCapped 85 % → ${capped}/${total}`);
+  if(m.startsWith("RETRY_HIGH|")){
+    const [,raw,cap]=m.split("|").map(Number);
+    if(cap<raw)
+      alert(`Retry ✔\nRaw ${raw}/${t}\nCapped 85 % → ${cap}/${t}`);
     else
-      alert(`Retry ✔\nScore ${capped}/${total}\n(85 % cap not triggered)`);
+      alert(`Retry ✔\nScore ${cap}/${t}\n(85 % cap not triggered)`);
     return;
   }
-  if(msg.startsWith("RETRY_LOW|")){
-    const [,capped,prev]=msg.split("|").map(Number);
-    alert(`Retry recorded ✔\nYour retry score ${capped}/${total} is lower than your previous ${prev}/${total}.\nPrevious score kept.`);
+  if(m.startsWith("RETRY_LOW|")){
+    const [,cap,prev]=m.split("|").map(Number);
+    alert(`Retry recorded ✔\nYour retry score ${cap}/${t} is lower than your previous ${prev}/${t}.\nPrevious score kept.`);
     return;
   }
-  if(msg==="ERR|INVALID_NAME")    alert("Name not in roster.");
-  else if(msg==="ERR|LIMIT_EXCEEDED") alert("Max 2 attempts reached.");
-  else if(msg.startsWith("ERR|"))  alert("Server error:\n"+msg.slice(4));
-  else alert("Unexpected reply:\n"+msg);
+  if(m==="ERR|INVALID_NAME")      alert("Name not in roster.");
+  else if(m==="ERR|LIMIT_EXCEEDED") alert("Max 2 attempts reached.");
+  else if(m.startsWith("ERR|"))     alert("Server error:\n"+m.slice(4));
+  else alert("Unexpected reply:\n"+m);
 }
