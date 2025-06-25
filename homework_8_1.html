@@ -7,101 +7,112 @@
 <script id="MathJax-script" async
         src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
 <style>
- body {font-family:Arial, sans-serif; max-width:800px; margin:auto; padding:24px;}
- .question {margin:24px 0;}
- label {display:block; margin-top:6px;}
- .submit-btn {padding:8px 16px; font-size:1rem; margin-top:20px;}
+ body{font-family:Arial,sans-serif;max-width:800px;margin:auto;padding:24px}
+ .question{margin:24px 0}
+ label{display:block;margin-top:6px}
+ .submit-btn{padding:8px 16px;font-size:1rem;margin-top:20px}
 </style>
 </head>
 <body>
 <h1>Homework 8-1</h1>
 
 <form id="hwForm">
-  <input type="hidden"  name="homeworkId" value="Homework 8-1">
-  <label>First Name <input type="text"  name="firstName" required></label>
-  <label>Last Name  <input type="text"  name="lastName"  required></label>
+  <input type="hidden" name="homeworkId" value="Homework 8-1">
+  <label>First Name <input type="text" name="firstName" required></label>
+  <label>Last Name  <input type="text" name="lastName"  required></label>
 
-<!-- ── 15 placeholder questions (replace text & LaTeX as desired) ── -->
-<script>
-/* build questions dynamically for brevity */
-const totalQ = 15;                     // must match ANSWER_KEYS length
-const container = document.currentScript.parentElement;
-
-for (let i = 1; i <= totalQ; i++) {
-  const div = document.createElement("div");
-  div.className = "question";
-  div.innerHTML =
-    `<p><strong>Question ${i}:</strong> (write your LaTeX here)</p>` +
-    ["A","B","C","D","E","F"].map(l =>
-      `<label><input type="radio" name="q${i}" value="${l}"> ${l}</label>`
-    ).join("");
-  container.insertBefore(div, document.getElementById("hwForm").querySelector(".submit-btn"));
-}
-</script>
+  <!-- 15 placeholder questions -->
+  <script>
+    const totalQ = 15;
+    const container = document.currentScript.parentElement;
+    for (let i = 1; i <= totalQ; i++){
+      const div=document.createElement("div");
+      div.className="question";
+      div.innerHTML=
+        `<p><strong>Question ${i}:</strong> (replace with LaTeX)</p>`+
+        ["A","B","C","D","E","F"].map(l=>
+          `<label><input type="radio" name="q${i}" value="${l}"> ${l}</label>`
+        ).join("");
+      container.insertBefore(div,
+         document.getElementById("hwForm").querySelector(".submit-btn"));
+    }
+  </script>
 
   <button class="submit-btn" type="submit">Submit</button>
 </form>
 
 <script>
-const scriptURL = "https://script.google.com/macros/s/AKfycbxRgH1sy5k_qgRzeHv48N2y2GG6Kpn4Qel1d6ASofzmPzCtV-04UupmIVlAc6WlfLrHcw/exec";   //  <<<  replace with your Web-App URL
+const scriptURL = "SCRIPT_URL_HERE";               //  <— replace once
+const COOLDOWN   = 120_000;                        // 2 minutes in ms
 
-document.getElementById("hwForm").addEventListener("submit", async e => {
+document.getElementById("hwForm").addEventListener("submit", async e=>{
   e.preventDefault();
-  const f = e.target;
-  const data = new FormData();
+  const f=e.target;
 
-  /* collect name + HW ID */
-  ["firstName","lastName","homeworkId"].forEach(k => data.append(k, f[k].value.trim()));
+  /* cooldown key = HWID + name combo */
+  const hwId   = f.homeworkId.value.trim();
+  const first  = f.firstName.value.trim();
+  const last   = f.lastName.value.trim();
+  const key    = `lastSubmit_${hwId}_${first}_${last}`.toLowerCase();
+
+  /* check localStorage for last submission time */
+  const lastSubmit = Number(localStorage.getItem(key) || 0);
+  const now        = Date.now();
+  if (now - lastSubmit < COOLDOWN) {
+    const secsLeft = Math.ceil((COOLDOWN - (now - lastSubmit))/1000);
+    alert(`Please wait ${secsLeft} more second(s) before retrying.`);
+    return;
+  }
 
   /* collect answers */
-  const answers = [];
-  for (let i = 1; ; i++) {
-    const radios = f[`q${i}`];
-    if (!radios) break;                         // reached end
-    const sel = [...radios].find(r => r.checked);
-    if (!sel) return alert(`Please answer Q${i}.`);
+  const answers=[];
+  for(let i=1;;i++){
+    const radios=f[`q${i}`];
+    if(!radios) break;
+    const sel=[...radios].find(r=>r.checked);
+    if(!sel) {alert(`Please answer Q${i}.`); return;}
     answers.push(sel.value);
   }
-  data.append("answers", JSON.stringify(answers));
 
-  /* send to Apps Script */
-  try {
-    const res  = await fetch(scriptURL, {method:"POST", body:data});
+  /* build payload */
+  const data=new FormData();
+  data.append("homeworkId",hwId);
+  data.append("firstName",first);
+  data.append("lastName", last);
+  data.append("answers",JSON.stringify(answers));
+
+  try{
+    const res  = await fetch(scriptURL,{method:"POST",body:data});
     const text = await res.text();
     handleReply(text);
-  } catch (err) {
-    alert("Network / script error: " + err);
+    /* only count as a submission if Script accepted it */
+    if(!text.startsWith("ERR|") && !text.startsWith("<")) {
+      localStorage.setItem(key, Date.now().toString());
+    }
+  }catch(err){
+    alert("Network / script error: "+err);
   }
 });
 
-/* ----------  interpret reply ---------- */
-function handleReply(msg) {
-  // formats:
-  //  SUBMITTED|score|total
-  //  SUBMITTED_LATE|score|total
-  //  RETRY|score|total
-  //  ERR|REASON
-
-  if (msg.startsWith("SUBMITTED|")) {
-    const [,score,total] = msg.split("|");
+/* interpret replies exactly as before */
+function handleReply(msg){
+  if(msg.startsWith("SUBMITTED|")){
+    const [,score,total]=msg.split("|");
     alert(`First submission recorded!\nScore: ${score}/${total}\nYou may retry once (max 85 %).`);
-  }
-  else if (msg.startsWith("SUBMITTED_LATE|")) {
-    const [,score,total] = msg.split("|");
-    alert(`Submitted after the due date – capped at 85 %.\nScore: ${score}/${total}\nOne retry (also 85 %) allowed.`);
-  }
-  else if (msg.startsWith("RETRY|")) {
-    const [,score,total] = msg.split("|");
+  }else if(msg.startsWith("SUBMITTED_LATE|")){
+    const [,score,total]=msg.split("|");
+    alert(`Submitted after the due date – capped at 85 %.\nScore: ${score}/${total}\nYou may retry once (also 85 %).`);
+  }else if(msg.startsWith("RETRY|")){
+    const [,score,total]=msg.split("|");
     alert(`Retry recorded.\nScore (85 % cap): ${score}/${total}\nNo further attempts allowed.`);
-  }
-  else if (msg.startsWith("ERR|INVALID_NAME")) {
+  }else if(msg.startsWith("ERR|INVALID_NAME")){
     alert("Name not found in roster – submission rejected.");
-  }
-  else if (msg.startsWith("ERR|LIMIT_EXCEEDED")) {
+  }else if(msg.startsWith("ERR|LIMIT_EXCEEDED")){
     alert("You have already submitted twice.");
-  }
-  else {
-    alert("Unexpected reply: " + msg);
+  }else if(msg.startsWith("ERR|")){
+    alert("Submission error: "+msg);
+  }else{
+    alert("Unexpected reply:\n"+msg);
   }
 }
 </script>
