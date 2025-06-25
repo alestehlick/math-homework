@@ -8,7 +8,7 @@
 
 /* 1️⃣  PASTE your Google-Apps-Script Web-App URL (must end “/exec”) */
 const SCRIPT_URL =
-  "https://script.google.com/macros/s/AKfycbwv-WoPU049MK9SNr6J-nmeM8_UqTEO54JzrH4AtqBkYPoWOEofi3LWHm8i0IS7aqW-gA/exec";
+  "https://script.google.com/macros/s/AKfycbyn_WiUujveJo9KvvVXqLVdnXtVEFR78A0APSu3lHxMJHyr9JGlNI1_Dnt97W9ljpMT9A/exec";
 
 /* 2️⃣  Cool-down between submissions (milliseconds) */
 const COOLDOWN_MS = 120_000;          // 2 minutes
