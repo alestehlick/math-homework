@@ -2,7 +2,7 @@
   core.js – shared front-end for EVERY homework
   multiple classes · A–F choices · 2-min cooldown
 ──────────────────────────────────────────────*/
-const SCRIPT_URL  = "https://script.google.com/macros/s/AKfycbxEZcOVfSqT38z3iRpagIdToqlh0C9ik1wAtQKTxBlznA_YC_zJQJCcgbGb-yV9_SlbUA/exec";
+const SCRIPT_URL  = "https://script.google.com/macros/s/AKfycbwXDrAd-3OeZV5_zKF-_ltrm-cUlZigX6M2mgixjXkGCRGkr41qBefxZ1q5sOKpdSwSuQ/exec";
 const COOLDOWN_MS = 120_000;                             // 2 min
 
 document.addEventListener("DOMContentLoaded", () => {
