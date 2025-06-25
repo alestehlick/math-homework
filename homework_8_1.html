@@ -1,222 +1,109 @@
-
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <title>Homework 8-1</title>
-  <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
-  <script id="MathJax-script" async
-    src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js">
-  </script>
-  <style>
-    body { font-family: Arial, sans-serif; max-width: 800px; margin: auto; padding: 20px; }
-    .question { margin-bottom: 25px; }
-    label { display: block; margin-top: 10px; }
-    input[type="text"] { padding: 5px; font-size: 1em; width: 100%; max-width: 300px; }
-    .submit-btn { padding: 10px 15px; font-size: 1em; margin-top: 20px; }
-  </style>
+<meta charset="UTF-8">
+<title>Homework 8-1</title>
+<script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+<script id="MathJax-script" async
+        src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+<style>
+ body {font-family:Arial, sans-serif; max-width:800px; margin:auto; padding:24px;}
+ .question {margin:24px 0;}
+ label {display:block; margin-top:6px;}
+ .submit-btn {padding:8px 16px; font-size:1rem; margin-top:20px;}
+</style>
 </head>
 <body>
-  <h1>Homework 8-1</h1>
-  <form id="quizForm">
-    <input type="hidden" name="homeworkId" value="Homework 8-1">
-    <label>First Name: <input type="text" name="firstName" required></label>
-    <label>Last Name: <input type="text" name="lastName" required></label>
+<h1>Homework 8-1</h1>
 
-    <div class="question">
-      <p><strong>Question 1:</strong> Answer below.</p>
-      <label><input type="radio" name="q1" value="A"> A</label>
-      <label><input type="radio" name="q1" value="B"> B</label>
-      <label><input type="radio" name="q1" value="C"> C</label>
-      <label><input type="radio" name="q1" value="D"> D</label>
-      <label><input type="radio" name="q1" value="E"> E</label>
-      <label><input type="radio" name="q1" value="F"> F</label>
-    </div>
-    
-    <div class="question">
-      <p><strong>Question 2:</strong> Answer below.</p>
-      <label><input type="radio" name="q2" value="A"> A</label>
-      <label><input type="radio" name="q2" value="B"> B</label>
-      <label><input type="radio" name="q2" value="C"> C</label>
-      <label><input type="radio" name="q2" value="D"> D</label>
-      <label><input type="radio" name="q2" value="E"> E</label>
-      <label><input type="radio" name="q2" value="F"> F</label>
-    </div>
-    
-    <div class="question">
-      <p><strong>Question 3:</strong> Answer below.</p>
-      <label><input type="radio" name="q3" value="A"> A</label>
-      <label><input type="radio" name="q3" value="B"> B</label>
-      <label><input type="radio" name="q3" value="C"> C</label>
-      <label><input type="radio" name="q3" value="D"> D</label>
-      <label><input type="radio" name="q3" value="E"> E</label>
-      <label><input type="radio" name="q3" value="F"> F</label>
-    </div>
-    
-    <div class="question">
-      <p><strong>Question 4:</strong> Answer below.</p>
-      <label><input type="radio" name="q4" value="A"> A</label>
-      <label><input type="radio" name="q4" value="B"> B</label>
-      <label><input type="radio" name="q4" value="C"> C</label>
-      <label><input type="radio" name="q4" value="D"> D</label>
-      <label><input type="radio" name="q4" value="E"> E</label>
-      <label><input type="radio" name="q4" value="F"> F</label>
-    </div>
-    
-    <div class="question">
-      <p><strong>Question 5:</strong> Answer below.</p>
-      <label><input type="radio" name="q5" value="A"> A</label>
-      <label><input type="radio" name="q5" value="B"> B</label>
-      <label><input type="radio" name="q5" value="C"> C</label>
-      <label><input type="radio" name="q5" value="D"> D</label>
-      <label><input type="radio" name="q5" value="E"> E</label>
-      <label><input type="radio" name="q5" value="F"> F</label>
-    </div>
-    
-    <div class="question">
-      <p><strong>Question 6:</strong> Answer below.</p>
-      <label><input type="radio" name="q6" value="A"> A</label>
-      <label><input type="radio" name="q6" value="B"> B</label>
-      <label><input type="radio" name="q6" value="C"> C</label>
-      <label><input type="radio" name="q6" value="D"> D</label>
-      <label><input type="radio" name="q6" value="E"> E</label>
-      <label><input type="radio" name="q6" value="F"> F</label>
-    </div>
-    
-    <div class="question">
-      <p><strong>Question 7:</strong> Answer below.</p>
-      <label><input type="radio" name="q7" value="A"> A</label>
-      <label><input type="radio" name="q7" value="B"> B</label>
-      <label><input type="radio" name="q7" value="C"> C</label>
-      <label><input type="radio" name="q7" value="D"> D</label>
-      <label><input type="radio" name="q7" value="E"> E</label>
-      <label><input type="radio" name="q7" value="F"> F</label>
-    </div>
-    
-    <div class="question">
-      <p><strong>Question 8:</strong> Answer below.</p>
-      <label><input type="radio" name="q8" value="A"> A</label>
-      <label><input type="radio" name="q8" value="B"> B</label>
-      <label><input type="radio" name="q8" value="C"> C</label>
-      <label><input type="radio" name="q8" value="D"> D</label>
-      <label><input type="radio" name="q8" value="E"> E</label>
-      <label><input type="radio" name="q8" value="F"> F</label>
-    </div>
-    
-    <div class="question">
-      <p><strong>Question 9:</strong> Answer below.</p>
-      <label><input type="radio" name="q9" value="A"> A</label>
-      <label><input type="radio" name="q9" value="B"> B</label>
-      <label><input type="radio" name="q9" value="C"> C</label>
-      <label><input type="radio" name="q9" value="D"> D</label>
-      <label><input type="radio" name="q9" value="E"> E</label>
-      <label><input type="radio" name="q9" value="F"> F</label>
-    </div>
-    
-    <div class="question">
-      <p><strong>Question 10:</strong> Answer below.</p>
-      <label><input type="radio" name="q10" value="A"> A</label>
-      <label><input type="radio" name="q10" value="B"> B</label>
-      <label><input type="radio" name="q10" value="C"> C</label>
-      <label><input type="radio" name="q10" value="D"> D</label>
-      <label><input type="radio" name="q10" value="E"> E</label>
-      <label><input type="radio" name="q10" value="F"> F</label>
-    </div>
-    
-    <div class="question">
-      <p><strong>Question 11:</strong> Answer below.</p>
-      <label><input type="radio" name="q11" value="A"> A</label>
-      <label><input type="radio" name="q11" value="B"> B</label>
-      <label><input type="radio" name="q11" value="C"> C</label>
-      <label><input type="radio" name="q11" value="D"> D</label>
-      <label><input type="radio" name="q11" value="E"> E</label>
-      <label><input type="radio" name="q11" value="F"> F</label>
-    </div>
-    
-    <div class="question">
-      <p><strong>Question 12:</strong> Answer below.</p>
-      <label><input type="radio" name="q12" value="A"> A</label>
-      <label><input type="radio" name="q12" value="B"> B</label>
-      <label><input type="radio" name="q12" value="C"> C</label>
-      <label><input type="radio" name="q12" value="D"> D</label>
-      <label><input type="radio" name="q12" value="E"> E</label>
-      <label><input type="radio" name="q12" value="F"> F</label>
-    </div>
-    
-    <div class="question">
-      <p><strong>Question 13:</strong> Answer below.</p>
-      <label><input type="radio" name="q13" value="A"> A</label>
-      <label><input type="radio" name="q13" value="B"> B</label>
-      <label><input type="radio" name="q13" value="C"> C</label>
-      <label><input type="radio" name="q13" value="D"> D</label>
-      <label><input type="radio" name="q13" value="E"> E</label>
-      <label><input type="radio" name="q13" value="F"> F</label>
-    </div>
-    
-    <div class="question">
-      <p><strong>Question 14:</strong> Answer below.</p>
-      <label><input type="radio" name="q14" value="A"> A</label>
-      <label><input type="radio" name="q14" value="B"> B</label>
-      <label><input type="radio" name="q14" value="C"> C</label>
-      <label><input type="radio" name="q14" value="D"> D</label>
-      <label><input type="radio" name="q14" value="E"> E</label>
-      <label><input type="radio" name="q14" value="F"> F</label>
-    </div>
-    
-    <div class="question">
-      <p><strong>Question 15:</strong> Answer below.</p>
-      <label><input type="radio" name="q15" value="A"> A</label>
-      <label><input type="radio" name="q15" value="B"> B</label>
-      <label><input type="radio" name="q15" value="C"> C</label>
-      <label><input type="radio" name="q15" value="D"> D</label>
-      <label><input type="radio" name="q15" value="E"> E</label>
-      <label><input type="radio" name="q15" value="F"> F</label>
-    </div>
-    
-    <button class="submit-btn" type="submit">Submit</button>
-  </form>
-  <script>
-    document.getElementById("quizForm").addEventListener("submit", async function(e) {
-      e.preventDefault();
-      const form = e.target;
-      const firstName = form.firstName.value.trim();
-      const lastName = form.lastName.value.trim();
-      const homeworkId = form.homeworkId.value;
-      const answers = [];
+<form id="hwForm">
+  <input type="hidden"  name="homeworkId" value="Homework 8-1">
+  <label>First Name <input type="text"  name="firstName" required></label>
+  <label>Last Name  <input type="text"  name="lastName"  required></label>
 
-      for (let i = 1; i <= 15; i++) {
-        const selected = document.querySelector('input[name="q' + i + '"]:checked');
-        if (!selected) {
-          alert("Please answer all questions.");
-          return;
-        }
-        answers.push(selected.value);
-      }
+<!-- ── 15 placeholder questions (replace text & LaTeX as desired) ── -->
+<script>
+/* build questions dynamically for brevity */
+const totalQ = 15;                     // must match ANSWER_KEYS length
+const container = document.currentScript.parentElement;
 
-      const formData = new FormData();
-      formData.append("firstName", firstName);
-      formData.append("lastName", lastName);
-      formData.append("homeworkId", homeworkId);
-      formData.append("answers", JSON.stringify(answers));
+for (let i = 1; i <= totalQ; i++) {
+  const div = document.createElement("div");
+  div.className = "question";
+  div.innerHTML =
+    `<p><strong>Question ${i}:</strong> (write your LaTeX here)</p>` +
+    ["A","B","C","D","E","F"].map(l =>
+      `<label><input type="radio" name="q${i}" value="${l}"> ${l}</label>`
+    ).join("");
+  container.insertBefore(div, document.getElementById("hwForm").querySelector(".submit-btn"));
+}
+</script>
 
-      const response = await fetch("https://script.google.com/a/macros/kyotoiu.ac.jp/s/AKfycbyPLT2YCQ41klAKOL2UH6IjkyfCxxTBGjo7WCd2u8kq0wDwJf6JGg91o18ibNZtBq5V/exec", {
-        method: "POST",
-        body: formData
-      });
+  <button class="submit-btn" type="submit">Submit</button>
+</form>
 
-      const text = await response.text();
-      if (text === "INVALID_NAME") {
-        alert("Your name is not on the class list. Submission rejected.");
-      } else if (text === "SUBMITTED") {
-        alert("Submission successful. Your score has been recorded.");
-      } else if (text === "RETRY_SUBMITTED") {
-        alert("Retry submitted. Your new score has been recorded.");
-      } else if (text === "LIMIT_EXCEEDED") {
-        alert("You have already submitted twice. No more attempts allowed.");
-      } else {
-        alert("Unexpected response: " + text);
-      }
-    });
-  </script>
+<script>
+const scriptURL = "SCRIPT_URL_HERE";   //  <<<  replace with your Web-App URL
+
+document.getElementById("hwForm").addEventListener("submit", async e => {
+  e.preventDefault();
+  const f = e.target;
+  const data = new FormData();
+
+  /* collect name + HW ID */
+  ["firstName","lastName","homeworkId"].forEach(k => data.append(k, f[k].value.trim()));
+
+  /* collect answers */
+  const answers = [];
+  for (let i = 1; ; i++) {
+    const radios = f[`q${i}`];
+    if (!radios) break;                         // reached end
+    const sel = [...radios].find(r => r.checked);
+    if (!sel) return alert(`Please answer Q${i}.`);
+    answers.push(sel.value);
+  }
+  data.append("answers", JSON.stringify(answers));
+
+  /* send to Apps Script */
+  try {
+    const res  = await fetch(scriptURL, {method:"POST", body:data});
+    const text = await res.text();
+    handleReply(text);
+  } catch (err) {
+    alert("Network / script error: " + err);
+  }
+});
+
+/* ----------  interpret reply ---------- */
+function handleReply(msg) {
+  // formats:
+  //  SUBMITTED|score|total
+  //  SUBMITTED_LATE|score|total
+  //  RETRY|score|total
+  //  ERR|REASON
+
+  if (msg.startsWith("SUBMITTED|")) {
+    const [,score,total] = msg.split("|");
+    alert(`First submission recorded!\nScore: ${score}/${total}\nYou may retry once (max 85 %).`);
+  }
+  else if (msg.startsWith("SUBMITTED_LATE|")) {
+    const [,score,total] = msg.split("|");
+    alert(`Submitted after the due date – capped at 85 %.\nScore: ${score}/${total}\nOne retry (also 85 %) allowed.`);
+  }
+  else if (msg.startsWith("RETRY|")) {
+    const [,score,total] = msg.split("|");
+    alert(`Retry recorded.\nScore (85 % cap): ${score}/${total}\nNo further attempts allowed.`);
+  }
+  else if (msg.startsWith("ERR|INVALID_NAME")) {
+    alert("Name not found in roster – submission rejected.");
+  }
+  else if (msg.startsWith("ERR|LIMIT_EXCEEDED")) {
+    alert("You have already submitted twice.");
+  }
+  else {
+    alert("Unexpected reply: " + msg);
+  }
+}
+</script>
 </body>
 </html>
