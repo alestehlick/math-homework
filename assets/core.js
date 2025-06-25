@@ -7,7 +7,7 @@
 ──────────────────────────────────────────────*/
 
 /* 1️⃣  PASTE your Google-Apps-Script Web-App URL here (must end '/exec') */
-const SCRIPT_URL = "https://script.google.com/macros/s/REPLACE_WITH_/exec";
+const SCRIPT_URL = "https://script.google.com/macros/s/AKfycbwYZ0AB1vEn1CL8ygqxPksw9Iy6Sj-4SjDaZ7iKI3HK8hLarOW1x1Vl6lxVlW17CRn6pg/exec";
 
 /* 2️⃣  Cool-down between submissions (ms) */
 const COOLDOWN_MS = 120_000;     // 2 minutes
