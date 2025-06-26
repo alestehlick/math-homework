@@ -1,5 +1,5 @@
 /*──────── CONFIG ────────*/
-const SCRIPT_URL = "https://script.google.com/macros/s/AKfycbyp0fze94hYgGoJ6b6qwrBjefMZH1vZFCXe8uRnWyuGNrdmDFmNTIZo6ZQjLfyVlUmoog/exec";
+const SCRIPT_URL = "https://script.google.com/macros/s/AKfycbwkLwPoES1_hxHn6pdu2qdGCE3bosqwcZg6z23B6w72iQLDAIMzZZf4ZAFC44aKWTIcNg/exec";
 const COOLDOWN_MS = 120_000;
 /*────────────────────────*/
 
@@ -63,19 +63,23 @@ async function submit(ev,d){
 
 function handle(m,t){
   if(m.startsWith("SUBMITTED|")){
-    alert(`First submission ✔\nScore ${Number(m.split("|")[1])}/${t}`); return;
+    const [,raw,late] = m.split("|");
+    alert(late==="LATE"
+      ? `Submitted after due date (85 % cap)\nScore ${Math.ceil(raw*0.85)}/${t}`
+      : `First submission ✔\nScore ${raw}/${t}`);
+    return;
   }
   if(m.startsWith("RETRY_HIGH|")){
-    const [,raw,cap]=m.split("|").map(Number);
-    if(cap<raw)
-      alert(`Retry ✔\nRaw ${raw}/${t}\nCapped 85 % → ${cap}/${t}`);
+    const [,raw,disp,cap] = m.split("|");
+    if(cap==="CAP")
+      alert(`Retry ✔\nRaw ${raw}/${t}\nCapped 85 % → ${disp}/${t}`);
     else
-      alert(`Retry ✔\nScore ${cap}/${t}\n(85 % cap not triggered)`);
+      alert(`Retry ✔\nScore ${disp}/${t}`);
     return;
   }
   if(m.startsWith("RETRY_LOW|")){
-    const [,cap,prev]=m.split("|").map(Number);
-    alert(`Retry recorded ✔\nYour retry score ${cap}/${t} is lower than your previous ${prev}/${t}.\nPrevious score kept.`);
+    const [,disp,prev]=m.split("|");
+    alert(`Retry recorded ✔\nRetry ${disp}/${t} < Previous ${prev}/${t}\nHigher score kept.`);
     return;
   }
   if(m==="ERR|INVALID_NAME")      alert("Name not in roster.");
