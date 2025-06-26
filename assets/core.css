@@ -58,3 +58,18 @@ button {
 button:hover {
   background: #3e654d;
 }
+
+/* place near the bottom of core.css */
+.student-info {
+  display: flex;
+  gap: 1.5rem;
+  margin-bottom: 1.8rem;
+  flex-wrap: wrap;
+}
+.student-info input {
+  margin-left: .4rem;
+  padding: .2rem .4rem;
+  font-family: inherit;
+  font-size: 1rem;
+}
+
