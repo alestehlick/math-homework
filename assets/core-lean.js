@@ -65,7 +65,7 @@
 
     /* POST to Apps Script */
     try {
-      await fetch('YOUR_SCRIPT_WEB_APP_URL', {
+      await fetch('https://script.google.com/macros/s/AKfycbwkLwPoES1_hxHn6pdu2qdGCE3bosqwcZg6z23B6w72iQLDAIMzZZf4ZAFC44aKWTIcNg/exec', {
         method : 'POST',
         headers: { 'Content-Type':'application/json' },
         body   : JSON.stringify({
