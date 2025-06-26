@@ -1,19 +1,27 @@
 /*──────── CONFIG ────────*/
-const SCRIPT_URL = "https://script.google.com/macros/s/AKfycbwkLwPoES1_hxHn6pdu2qdGCE3bosqwcZg6z23B6w72iQLDAIMzZZf4ZAFC44aKWTIcNg/exec"; // ← paste NEW /exec link
-const COOLDOWN_MS = 120_000;                                                // 2 minutes
+const SCRIPT_URL = "https://script.google.com/macros/s/AKfycbwkLwPoES1_hxHn6pdu2qdGCE3bosqwcZg6z23B6w72iQLDAIMzZZf4ZAFC44aKWTIcNg/exec"; // ⚠️ paste fresh /exec
+const COOLDOWN_MS = 120_000;
 /*────────────────────────*/
 
-document.addEventListener("DOMContentLoaded",()=>{
-  if(!window.homeworkData){alert("homeworkData missing");return;}
-  build(window.homeworkData);
-});
+/* safety: warn if core.js missing or double-loaded */
+if (window.__coreLoaded__) {
+  console.warn("Duplicate core.js detected");
+} else {
+  window.__coreLoaded__ = true;
+  document.addEventListener("DOMContentLoaded", ()=>{
+    if (!window.homeworkData){
+      alert("Error: homeworkData not found."); return;
+    }
+    build(window.homeworkData);
+  });
+}
 
-/* Build static form */
+/* build static form */
 function build(d){
   const root=document.getElementById("hw-root");
   root.innerHTML=`
     <h1>${d.title}</h1>
-    <form id="f">
+    <form id="hwForm">
       <input type="hidden" name="classId" value="${d.classId}">
       <input type="hidden" name="homeworkId" value="${d.id}">
       <label>First <input name="firstName" required></label>
@@ -22,38 +30,40 @@ function build(d){
       <button type="submit">Submit</button>
     </form>`;
 
-  const box=document.getElementById("qbox");
+  const qbox=document.getElementById("qbox");
   d.questions.forEach((q,i)=>{
     const opts=q.choices.map((t,j)=>{
       const l=String.fromCharCode(65+j);
       return `<li><label><input type="radio" name="q${i+1}" value="${l}" required> ${t}</label></li>`;
     }).join("");
-    box.insertAdjacentHTML("beforeend",
-      `<div class="question">
-         <p><strong>Q${i+1}.</strong> ${q.latex}</p>
-         <ul class="choices">${opts}</ul>
-       </div>`);
+    qbox.insertAdjacentHTML("beforeend",`
+      <div class="question">
+        <p><strong>Q${i+1}.</strong> ${q.latex}</p>
+        <ul class="choices">${opts}</ul>
+      </div>`);
   });
+
   MathJax.typeset();
-  document.getElementById("f").addEventListener("submit",ev=>submit(ev,d));
+  document.getElementById("hwForm").addEventListener("submit",ev=>handleSubmit(ev,d));
 }
 
-/* Submit handler */
-async function submit(ev,d){
+/* submit */
+async function handleSubmit(ev,d){
   ev.preventDefault();
   const f=ev.target,
         first=f.firstName.value.trim(),
         last =f.lastName.value.trim(),
         lock=`last_${d.classId}_${d.id}_${first}_${last}`.toLowerCase(),
-        now=Date.now(),
-        lastT=Number(localStorage.getItem(lock)||0);
+        now = Date.now(),
+        ago = now - (Number(localStorage.getItem(lock))||0);
 
-  if(now-lastT<COOLDOWN_MS){
-    alert(`Please wait ${Math.ceil((COOLDOWN_MS-(now-lastT))/1000)} s before retrying.`);
+  if (ago < COOLDOWN_MS){
+    alert(`Please wait ${Math.ceil((COOLDOWN_MS-ago)/1000)} s before retrying.`);
     return;
   }
 
-  const ans=[]; for(let i=1;i<=d.questions.length;i++) ans.push(f[`q${i}`].value);
+  const ans=[];
+  for(let i=1;i<=d.questions.length;i++) ans.push(f[`q${i}`].value);
 
   const body=new URLSearchParams({
     classId:d.classId, homeworkId:d.id,
@@ -63,15 +73,17 @@ async function submit(ev,d){
   });
 
   try{
-    const r=await fetch(SCRIPT_URL,{method:"POST",body});
-    const txt=await r.text();
+    const res = await fetch(SCRIPT_URL,{method:"POST",body});
+    const txt = await res.text();
     localStorage.setItem(lock,String(now));
-    handle(txt,d.questions.length);
-  }catch(e){alert("Network error: "+e);}
+    handleReply(txt,d.questions.length);
+  }catch(e){
+    alert("Network / script error: "+e);
+  }
 }
 
-/* Display messages based on server reply */
-function handle(m,t){
+/* interpret server reply */
+function handleReply(m,t){
   if(m.startsWith("SUBMITTED|")){
     const [,raw,flag]=m.split("|");
     if(flag==="LATE")
@@ -80,7 +92,6 @@ function handle(m,t){
       alert(`First submission ✔\nScore ${raw}/${t}`);
     return;
   }
-
   if(m.startsWith("RETRY_HIGH|")){
     const [,raw,disp,cap]=m.split("|");
     if(cap==="CAP")
@@ -89,13 +100,11 @@ function handle(m,t){
       alert(`Retry ✔\nScore ${disp}/${t}`);
     return;
   }
-
   if(m.startsWith("RETRY_LOW|")){
     const [,disp,prev]=m.split("|");
     alert(`Retry recorded ✔\nRetry ${disp}/${t} < Previous ${prev}/${t}\nHigher score kept.`);
     return;
   }
-
   if(m==="ERR|INVALID_NAME")        alert("Name not in roster.");
   else if(m==="ERR|LIMIT_EXCEEDED") alert("Max 2 attempts reached.");
   else if(m.startsWith("ERR|"))     alert("Server error:\n"+m.slice(4));
