@@ -1,91 +1,141 @@
-/*  core-lean.js  ────────────────────────────────────────────────────────
- *  v3.0  (adds First/Last name fields + full payload to Apps Script)
- *
- *  • Builds the quiz form from window.homeworkData
- *  • Student must enter First Name & Last Name (required)
- *  • Collects answers, wrong‐question list, timestamp
- *  • Sends everything to your Google Apps Script
- *  • Shows an alert with the raw score
- *  • Leaves all late-cap / email / resubmission logic
- *    to the server (already implemented on your side)
- *──────────────────────────────────────────────────────────────────────*/
-(function () {
-  const root = document.getElementById('hw-root');
-  const hw   = window.homeworkData;
-  if (!root || !hw) return;
+/*═══════════════════════════════════════════════════════════════════════
+  core-lean.js   v4.0
+  ───────────────────────────────────────────────────────────────────────
+  • Builds form from window.homeworkData  (raw LaTeX → wraps in \( … \) )
+  • First / Last name inputs (required)
+  • Cool-down between attempts (localStorage, 120 s default)
+  • POSTs URL-encoded  data to Google Apps Script  (same params as old core.js)
+  • Parses server reply (SUBMITTED, RETRY_HIGH, etc.)  → alerts user
+═══════════════════════════════════════════════════════════════════════*/
 
-  /* helpers */
-  const $ = (tag, html='') => { const e = document.createElement(tag); e.innerHTML = html; return e; };
-  const wrap = tex => `\\(${tex}\\)`;   // add inline-math delimiters
+/*── CONFIG ───────────────────────────────────────────────────────────*/
+const SCRIPT_URL  = "https://script.google.com/macros/s/AKfycbwkLwPoES1_hxHn6pdu2qdGCE3bosqwcZg6z23B6w72iQLDAIMzZZf4ZAFC44aKWTIcNg/exec";
+const COOLDOWN_MS = 120_000;
+/*──────────────────────────────────────────────────────────────────────*/
 
-  /* build form */
-  const form = $('form');
-  form.appendChild($('h1', hw.title));
+if (window.__coreLeanLoaded__) {
+  console.warn("Duplicate core-lean.js detected");
+} else {
+  window.__coreLeanLoaded__ = true;
+  document.addEventListener("DOMContentLoaded", () => {
+    if (!window.homeworkData) { alert("Error: homeworkData not found"); return; }
+    buildForm(window.homeworkData);
+  });
+}
 
-  /* 1 ─ Student info (names) */
-  form.appendChild($('div', `
-    <label>First Name: <input type="text" name="firstName" required></label>
-    <label>Last Name:&nbsp; <input type="text" name="lastName"  required></label>
-  `)).classList.add('student-info');
+/*──────────────────────────────────────────────────────────────────────*/
+/*  Build static DOM  */
+function buildForm(d) {
+  const root = document.getElementById("hw-root");
+  const wrap = t => `\\(${t}\\)`;
 
-  /* 2 ─ Questions */
-  hw.questions.forEach((q, qi) => {
-    const box = $('div'); box.className = 'question';
-    box.appendChild($('p', `<strong>Q${qi+1}.</strong> ${wrap(q.latex)}`));
+  /* skeleton */
+  root.innerHTML = `
+    <h1>${d.title}</h1>
+    <form id="hwForm">
+      <input type="hidden" name="classId"  value="${d.classId}">
+      <input type="hidden" name="homeworkId" value="${d.id}">
+      <div class="student-info">
+        <label>First&nbsp;Name: <input name="firstName" required></label>
+        <label>Last&nbsp;Name:&nbsp; <input name="lastName"  required></label>
+      </div>
+      <div id="qbox"></div>
+      <button type="submit">Submit</button>
+    </form>`;
 
-    const ul = $('ul'); ul.className = 'choices';
-    q.choices.forEach((c, ci) => {
-      ul.appendChild($('li', `
-        <label>
-          <input type="radio" name="q${qi}" value="${String.fromCharCode(65+ci)}">
-          ${wrap(c)}
-        </label>
-      `));
-    });
-    box.appendChild(ul);
-    form.appendChild(box);
+  /* questions */
+  const qbox = document.getElementById("qbox");
+  d.questions.forEach((q, i) => {
+    const opts = q.choices.map((txt, j) => {
+      const letter = String.fromCharCode(65 + j);      // A-F
+      return `<li>
+                <label>
+                  <input type="radio" name="q${i + 1}" value="${letter}" required>
+                  ${wrap(txt)}
+                </label>
+              </li>`;
+    }).join("");
+    qbox.insertAdjacentHTML("beforeend", `
+      <div class="question">
+        <p><strong>Q${i + 1}.</strong> ${wrap(q.latex)}</p>
+        <ul class="choices">${opts}</ul>
+      </div>`);
   });
 
-  /* 3 ─ Submit */
-  const btn = $('button', 'Submit'); btn.type = 'button';
-  btn.onclick = async () => {
-    /* validate names */
-    const fn = form.firstName.value.trim(),
-          ln = form.lastName.value.trim();
-    if (!fn || !ln) { alert('Please enter first and last names.'); return; }
-
-    /* score & collect answers */
-    let correct = 0, answers = [], wrong = [];
-    hw.questions.forEach((_, i) => {
-      const sel = form.querySelector(`input[name="q${i}"]:checked`);
-      answers[i] = sel ? sel.value : '';
-      if (answers[i] === hw.answerKey[i]) correct++;
-      else wrong.push(i + 1);                         // 1-based
-    });
-
-    /* POST to Apps Script */
-    try {
-      await fetch('https://script.google.com/macros/s/AKfycbwkLwPoES1_hxHn6pdu2qdGCE3bosqwcZg6z23B6w72iQLDAIMzZZf4ZAFC44aKWTIcNg/exec', {
-        method : 'POST',
-        headers: { 'Content-Type':'application/json' },
-        body   : JSON.stringify({
-          hwId        : hw.id,
-          classId     : hw.classId,
-          firstName   : fn,
-          lastName    : ln,
-          answers,                      // ["C","A",…]
-          score       : correct,
-          wrong,                        // [3,7,11]  (empty if 100 %)
-          submittedAt : Date.now()      // ms UTC
-        })
-      });
-    } catch (err) { console.error(err); }
-
-    alert(`${fn}, you scored ${correct} / ${hw.questions.length}.`);
-  };
-  form.appendChild(btn);
-
-  /* insert form & typeset math */
-  root.replaceChildren(form);
+  /* typeset math once */
   window.MathJax?.typeset();
-})();
+
+  /* hook submit */
+  document.getElementById("hwForm")
+          .addEventListener("submit", ev => handleSubmit(ev, d));
+}
+
+/*──────────────────────────────────────────────────────────────────────*/
+/*  Submit handler (same protocol as original core.js)  */
+async function handleSubmit(ev, d) {
+  ev.preventDefault();
+  const f   = ev.target;
+  const fn  = f.firstName.value.trim();
+  const ln  = f.lastName.value.trim();
+  if (!fn || !ln) { alert("Please enter both first and last names."); return; }
+
+  /* cool-down */
+  const key  = `last_${d.classId}_${d.id}_${fn}_${ln}`.toLowerCase();
+  const now  = Date.now();
+  const last = Number(localStorage.getItem(key)) || 0;
+  if (now - last < COOLDOWN_MS) {
+    alert(`Please wait ${Math.ceil((COOLDOWN_MS - (now - last)) / 1000)} s before retrying.`);
+    return;
+  }
+
+  /* collect answers */
+  const answers = [];
+  for (let i = 1; i <= d.questions.length; i++)
+    answers.push(f[`q${i}`].value);
+
+  /* build POST body (URL-encoded, same field names as old core.js) */
+  const body = new URLSearchParams({
+    classId   : d.classId,
+    homeworkId: d.id,
+    firstName : fn,
+    lastName  : ln,
+    answers   : JSON.stringify(answers),
+    answerKey : JSON.stringify(d.answerKey)
+  });
+
+  try {
+    const r   = await fetch(SCRIPT_URL, { method: "POST", body });
+    const txt = await r.text();
+    localStorage.setItem(key, String(now));
+    handleReply(txt, d.questions.length);
+  } catch (e) {
+    alert("Network / script error: " + e);
+  }
+}
+
+/*──────────────────────────────────────────────────────────────────────*/
+/*  Interpret server reply (logic identical to the working core.js)  */
+function handleReply(msg, total) {
+  if (msg.startsWith("SUBMITTED|")) {
+    const [, raw, flag] = msg.split("|");
+    const scored = flag === "LATE" ? Math.ceil(raw * 0.85) : raw;
+    alert(`${flag === "LATE" ? "Late submission (85 % cap)\n" : ""}Score ${scored}/${total}`);
+    return;
+  }
+  if (msg.startsWith("RETRY_HIGH|")) {
+    const [, raw, disp, cap] = msg.split("|");
+    alert(cap === "CAP"
+      ? `Retry accepted.\nRaw ${raw}/${total} → Capped 85 % → ${disp}/${total}`
+      : `Retry accepted.\nScore ${disp}/${total}`);
+    return;
+  }
+  if (msg.startsWith("RETRY_LOW|")) {
+    const [, disp, prev] = msg.split("|");
+    alert(`Retry recorded.\nRetry ${disp}/${total} < Previous ${prev}/${total}\nHigher score kept.`);
+    return;
+  }
+  if (msg === "ERR|INVALID_NAME")        alert("Name not in roster.");
+  else if (msg === "ERR|LIMIT_EXCEEDED") alert("Max 2 attempts reached.");
+  else if (msg.startsWith("ERR|"))       alert("Server error:\n" + msg.slice(4));
+  else                                   alert("Unexpected reply:\n" + msg);
+}
