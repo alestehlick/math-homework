@@ -1,20 +1,102 @@
-<!DOCTYPE html><html lang="en"><head>
-<meta charset="utf-8"><title>Homework 8-1 (Algebra 1)</title>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <title>Homework 8-1 (Algebra 1)</title>
 
-<script>
-window.homeworkData = {
-  classId : "Algebra1",
-  id      : "Homework 8-1",
-  title   : "Homework 8-1 — Polynomials",
-  answerKey : ["C","E"],    // letters only
-  questions : [
-    { latex:"Classify \\(2x^2+5x-3\\).",         choices:["monomial","binomial","trinomial","polynomial","—","—"] },
-    { latex:"Degree of \\(7x^3y^2\\)?",          choices:["3","4","2","6","5","7"] }
-  ]
-};
-</script>
+  <!-- Aesthetic Font -->
+  <link href="https://fonts.googleapis.com/css2?family=EB+Garamond&display=swap" rel="stylesheet">
 
-<link rel="stylesheet" href="/math-homework/assets/core.css">
-<script defer src="/math-homework/assets/core.js"></script>
-<script defer src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
-</head><body><div id="hw-root">Loading…</div></body></html>
+  <!-- MathJax for LaTeX rendering -->
+  <script defer src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+
+  <!-- Homework Data -->
+  <script>
+    window.homeworkData = {
+      classId : "Algebra1",
+      id      : "Homework 8-1",
+      title   : "Homework 8-1 — Polynomials",
+      answerKey : ["C","E"],
+      questions : [
+        { latex:"Classify \\(2x^2+5x-3\\).", choices:["monomial","binomial","trinomial","polynomial","—","—"] },
+        { latex:"Degree of \\(7x^3y^2\\)?",  choices:["3","4","2","6","5","7"] }
+      ]
+    };
+  </script>
+
+  <!-- Custom Styles -->
+  <style>
+    body {
+      margin: 0;
+      font-family: 'EB Garamond', serif;
+      background-color: #f6f4ef;
+      color: #222;
+      font-size: 18px;
+      line-height: 1.6;
+    }
+
+    #hw-root {
+      max-width: 700px;
+      margin: 3em auto;
+      padding: 2em;
+      background-color: #ffffff;
+      border-radius: 12px;
+      box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+    }
+
+    h1 {
+      text-align: center;
+      font-weight: normal;
+      margin-bottom: 1em;
+      font-size: 1.8em;
+    }
+
+    .question {
+      margin-bottom: 2em;
+    }
+
+    .choices {
+      list-style: none;
+      padding: 0;
+      margin: 0.5em 0;
+    }
+
+    .choices li {
+      margin: 0.3em 0;
+    }
+
+    .choices input[type="radio"] {
+      margin-right: 0.5em;
+    }
+
+    button {
+      font-family: 'EB Garamond', serif;
+      font-size: 1em;
+      background-color: #4b7a5d;
+      color: white;
+      padding: 0.6em 1.2em;
+      border: none;
+      border-radius: 6px;
+      cursor: pointer;
+      margin-top: 1em;
+    }
+
+    button:hover {
+      background-color: #3b634b;
+    }
+
+    footer {
+      text-align: center;
+      margin-top: 4em;
+      font-size: 0.9em;
+      color: #666;
+    }
+  </style>
+
+  <!-- Homework Logic -->
+  <script defer src="/math-homework/assets/core.js"></script>
+</head>
+<body>
+  <div id="hw-root">Loading…</div>
+</body>
+</html>
