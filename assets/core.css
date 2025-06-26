@@ -1,13 +1,62 @@
-/* /math-homework/assets/core.css — append to end */
-.student-info{
-  display:flex;
-  gap:1.5rem;
-  flex-wrap:wrap;
-  margin-bottom:1.8rem;
+/* Google font */
+@import url("https://fonts.googleapis.com/css2?family=EB+Garamond&display=swap");
+
+/* theme vars */
+:root{
+  --bg:#f6f4ef;
+  --card:#fff;
+  --text:#222;
+  --accent:#4b7a5d;
+  --accent-dark:#3b634b;
+  --shadow:0 4px 15px rgba(0,0,0,.10);
 }
-.student-info input{
-  margin-left:.4rem;
-  padding:.2rem .4rem;
-  font-size:1rem;
-  font-family:inherit;
+*{box-sizing:border-box;margin:0;padding:0;}
+
+body{
+  font:18px/1.6 "EB Garamond",serif;
+  background:var(--bg);
+  color:var(--text);
+}
+
+#hw-root{
+  max-width:700px;
+  margin:3em auto;
+  padding:2em;
+  background:var(--card);
+  border-radius:12px;
+  box-shadow:var(--shadow);
+}
+
+h1{
+  font-size:1.8em;
+  font-weight:400;
+  text-align:center;
+  margin-bottom:1em;
+}
+
+.question{margin-bottom:2em;}
+
+.choices{list-style:none;margin:.5em 0;padding:0;}
+.choices li{margin:.3em 0;}
+.choices input{margin-right:.5em;}
+
+button{
+  font-family:"EB Garamond",serif;
+  font-size:1em;
+  background:var(--accent);
+  color:#fff;
+  padding:.6em 1.2em;
+  border:0;
+  border-radius:6px;
+  cursor:pointer;
+  margin-top:1em;
+}
+button:hover{background:var(--accent-dark);}
+
+/* small-screen tweaks */
+@media (max-width:480px){
+  body     {font-size:16px;}
+  #hw-root {margin:1.5em 1em;padding:1.5em;}
+  h1       {font-size:1.5em;}
+  button   {width:100%;}
 }
