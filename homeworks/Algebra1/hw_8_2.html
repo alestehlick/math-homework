@@ -6,9 +6,8 @@
 
   <title>Homework 8-2 (Algebra 1)</title>
 
-  <!-- ❶  HOMEWORK DATA  ──────────────────────────────────────────────── -->
+  <!-- ❶  HOMEWORK DATA  – raw LaTeX, no delimiters, no double back-slashes -->
   <script>
-    /*  Write LaTeX inside String.raw``  →  single back-slashes, no delimiters  */
     window.homeworkData = {
       classId : "Algebra1",
       id      : "Homework 8-2",
@@ -18,8 +17,9 @@
       answerKey : ["C","F","A","D","C","A","A","A","A","A","B","B"],
 
       questions : [
+        /* 1 */
         {
-          latex : String.raw`(3m+4)+(7m+2)+(9m-12)`,           /* Q1 */
+          latex   : String.raw`(3m+4)+(7m+2)+(9m-12)`,
           choices : [
             String.raw`13m-6`,
             String.raw`18m+2`,
@@ -30,8 +30,9 @@
           ]
         },
 
+        /* 2 */
         {
-          latex : String.raw`(x^{4}-3x^{3})+(-4x^{3}+x^{2})+(5x^{3}+\tfrac{x}{3}-3)`,  /* Q2 */
+          latex   : String.raw`(x^{4}-3x^{3})+(-4x^{3}+x^{2})+(5x^{3}+\tfrac{x}{3}-3)`,
           choices : [
             String.raw`2x^{4}-2x^{3}+x^{2}-3`,
             String.raw`x^{4}-x^{3}+x^{2}+x-3`,
@@ -42,20 +43,147 @@
           ]
         },
 
-        /* … (continue the other 10 exactly the same way) … */
+        /* 3 */
+        {
+          latex   : String.raw`(4m^{2}+2m)+(3m^{2}+8m-9)`,
+          choices : [
+            String.raw`7m^{2}+10m-9`,
+            String.raw`8m^{2}+6m`,
+            String.raw`4m^{2}+11m-9`,
+            String.raw`8m^{2}+10m-9`,
+            String.raw`6m^{2}+10m`,
+            String.raw`7m^{2}+10m-4`
+          ]
+        },
+
+        /* 4 */
+        {
+          latex   : String.raw`(5k^{2}-3k+2)+(8k^{2}-9k-8)`,
+          choices : [
+            String.raw`13k^{2}+6k-6`,
+            String.raw`12k^{2}-12k-6`,
+            String.raw`15k^{2}+2k-6`,
+            String.raw`13k^{2}-12k-6`,
+            String.raw`13k^{2}-2k-6`,
+            String.raw`14k^{2}-6k+10`
+          ]
+        },
+
+        /* 5 */
+        {
+          latex   : String.raw`(m-n+p)+(-m+n+p)`,
+          choices : [
+            String.raw`2m+2p`,
+            String.raw`2n+p`,
+            String.raw`2p`,
+            String.raw`n+p`,
+            String.raw`-2n+2p`,
+            String.raw`m+p`
+          ]
+        },
+
+        /* 6 */
+        {
+          latex   : String.raw`(2x^{3}-5x+7)+(x^{3}+4x-3)+(-3x^{3}+2x+6)`,
+          choices : [
+            String.raw`x+10`,
+            String.raw`x+11`,
+            String.raw`2x+10`,
+            String.raw`-x+10`,
+            String.raw`x+7`,
+            String.raw`10x+1`
+          ]
+        },
+
+        /* 7 */
+        {
+          latex   : String.raw`(5x^{2}+3x+8)+(3x^{2}+7)+(x^{2}-2x+9)`,
+          choices : [
+            String.raw`9x^{2}+x+24`,
+            String.raw`8x^{2}+2x+16`,
+            String.raw`10x^{2}+x+24`,
+            String.raw`9x^{2}+x+18`,
+            String.raw`8x^{2}+4x+26`,
+            String.raw`11x^{2}-2x+30`
+          ]
+        },
+
+        /* 8 */
+        {
+          latex   : String.raw`(-14x^{3}+3x-4)+(7x^{2}-6x+5)+(2x^{3}-5x+10x^{2})`,
+          choices : [
+            String.raw`-12x^{3}+17x^{2}-8x+1`,
+            String.raw`-12x^{3}+10x^{2}-11x+1`,
+            String.raw`-12x^{3}+17x^{2}-9x-1`,
+            String.raw`-14x^{3}+17x^{2}-8x+1`,
+            String.raw`-12x^{3}+17x^{2}-8x-1`,
+            String.raw`-12x^{3}+17x^{2}-5x+1`
+          ]
+        },
+
+        /* 9 */
+        {
+          latex   : String.raw`{\text{Perimeter of a pentagon with sides }2x,\ 3x+4,\ x+2,\ 2x+1,\ 5}`,
+          choices : [
+            String.raw`8x+12`,
+            String.raw`7x+13`,
+            String.raw`8x+10`,
+            String.raw`6x+12`,
+            String.raw`10x+12`,
+            String.raw`8x+14`
+          ]
+        },
+
+        /* 10 */
+        {
+          latex   : String.raw`\bigl(\tfrac12 x^{2}+\tfrac13 xy+\tfrac14 y^{2}\bigr)+\bigl(\tfrac16 x^{2}+\tfrac18 y^{2}\bigr)`,
+          choices : [
+            String.raw`\tfrac23 x^{2}+\tfrac13 xy+\tfrac38 y^{2}`,
+            String.raw`\tfrac12 x^{2}+\tfrac13 xy+\tfrac12 y^{2}`,
+            String.raw`\tfrac23 x^{2}+\tfrac13 xy+\tfrac12 y^{2}`,
+            String.raw`\tfrac12 x^{2}+\tfrac13 xy+\tfrac18 y^{2}`,
+            String.raw`\tfrac23 x^{2}+\tfrac13 xy+\tfrac58 y^{2}`,
+            String.raw`\tfrac23 x^{2}+\tfrac13 xy+\tfrac78 y^{2}`
+          ]
+        },
+
+        /* 11 */
+        {
+          latex   : String.raw`{\text{Bill }=x,\ \text{Sue }=x+5,\ \text{Jane }=x-3.\ \text{Combined age?}}`,
+          choices : [
+            String.raw`x+2`,
+            String.raw`3x+2`,
+            String.raw`x+8`,
+            String.raw`3x-2`,
+            String.raw`x+5+3`,
+            String.raw`x+5-3`
+          ]
+        },
+
+        /* 12 */
+        {
+          latex   : String.raw`{\text{Length }=5n+3,\ \text{width }=2n-6.\ \text{Perimeter?}}`,
+          choices : [
+            String.raw`10n-6`,
+            String.raw`14n-6`,
+            String.raw`12n-3`,
+            String.raw`14n+6`,
+            String.raw`7n-3`,
+            String.raw`15n-6`
+          ]
+        }
       ]
     };
   </script>
 
-  <!-- ❷  SHARED ASSETS  ──────────────────────────────────────────────── -->
+  <!-- ❷  SHARED ASSETS -->
   <link rel="stylesheet" href="/math-homework/assets/core.css" />
   <script defer src="/math-homework/assets/core-lean.js"></script>
 
-  <!-- MathJax with a couple of extra autoloaded packages for uncommon symbols -->
-  <script defer src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"
-          id="MathJax-script">
-  </script>
+  <!-- MathJax for TeX rendering -->
+  <script defer src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
 </head>
+
 <body>
   <div id="hw-root">Loading…</div>
 </body>
