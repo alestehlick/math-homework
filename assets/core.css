@@ -1,14 +1,14 @@
-/* Global font (EB Garamond) */
-@import url('https://fonts.googleapis.com/css2?family=EB+Garamond&display=swap');
+/* Google font */
+@import url("https://fonts.googleapis.com/css2?family=EB+Garamond&display=swap");
 
-/* CSS variables for easy theming */
+/* ── colour & spacing vars ── */
 :root{
   --bg:#f6f4ef;
   --card:#ffffff;
   --text:#222;
   --accent:#4b7a5d;
   --accent-dark:#3b634b;
-  --shadow:0 4px 15px rgba(0,0,0,.1);
+  --shadow:0 4px 15px rgba(0,0,0,.10);
 }
 *{box-sizing:border-box;}
 
@@ -53,3 +53,11 @@ button{
   margin-top:1em;
 }
 button:hover{background:var(--accent-dark);}
+
+/* ── phone tweaks ── */
+@media (max-width:480px){
+  body     { font-size:16px; }                 /* slightly smaller base */
+  #hw-root { margin:1.5em 1em; padding:1.5em; }/* thinner gutters      */
+  h1       { font-size:1.5em; }
+  button   { width:100%; }                     /* thumb-friendly submit */
+}
