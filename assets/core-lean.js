@@ -1,54 +1,65 @@
-/* ----------------------------------------------------------------------
- *  core-lean.js  –  super-light renderer for the new raw-LaTeX format
- * -------------------------------------------------------------------- */
+/*  core-lean.js  ─────────────────────────────────────────────────────────
+ *  Lightweight renderer for Algebra 1 homework forms.
+ *  Expects window.homeworkData with shape:
+ *    { title, questions: [ { latex, choices[6] }, … ], answerKey[] }
+ *  • Adds \(...\) delimiters around every TeX string.
+ *  • Renders a form, checks answers on submit, and shows the score.
+ *  • Triggers MathJax after inserting HTML.
+ *  (© 2025 – feel free to adapt.)
+ *────────────────────────────────────────────────────────────────────────*/
+
 (function () {
-  const root   = document.getElementById('hw-root');
-  const data   = window.homeworkData;
+  const root = document.getElementById('hw-root');
+  const hw   = window.homeworkData;
+  if (!root || !hw) return;
 
-  if (!root || !data) return;
-
-  /* —————  helpers ————— */
-  const wrap = tex => `\\(${tex}\\)`;          // add inline TeX delimiters
-  const el   = (tag, html) => {
-    const e = document.createElement(tag);
-    if (html) e.innerHTML = html;
-    return e;
+  /* — helpers — */
+  const $ = (tag, html = '') => {
+    const el = document.createElement(tag);
+    el.innerHTML = html;
+    return el;
   };
+  const wrap = tex => `\\(${tex}\\)`;   // inline-math delimiters
 
-  /* —————  build the form ————— */
-  const form  = el('form');
-  form.appendChild(el('h1', data.title));
+  /* — build form — */
+  const form = $('form');
+  form.appendChild($('h1', hw.title));
 
-  data.questions.forEach((q, qi) => {
-    const qBox = el('div');  qBox.className = 'question';
+  hw.questions.forEach((q, qi) => {
+    const qDiv = $('div');                qDiv.className = 'question';
+    qDiv.appendChild($('p', `<strong>Q${qi + 1}.</strong> ${wrap(q.latex)}`));
 
-    /* Question text */
-    qBox.appendChild(el('p', `<strong>Q${qi+1}.</strong> ${wrap(q.latex)}`));
-
-    /* Choices */
-    const ul = el('ul');  ul.className = 'choices';
-
+    const ul = $('ul');                   ul.className = 'choices';
     q.choices.forEach((c, ci) => {
-      const li   = el('li');
-      const id   = `q${qi}-c${ci}`;
-
+      const id   = `q${qi}-${ci}`;
+      const li   = $('li');
       li.innerHTML = `
         <label>
-          <input type="radio" name="q${qi}" value="${String.fromCharCode(65+ci)}" id="${id}">
+          <input type="radio" name="q${qi}" id="${id}"
+                 value="${String.fromCharCode(65 + ci)}">
           ${wrap(c)}
         </label>`;
       ul.appendChild(li);
     });
 
-    qBox.appendChild(ul);
-    form.appendChild(qBox);
+    qDiv.appendChild(ul);
+    form.appendChild(qDiv);
   });
 
-  /* Submit */
-  form.appendChild(el('button', 'Submit'));
-  root.innerHTML = '';        // clear "Loading…"
-  root.appendChild(form);
+  /* submit + feedback */
+  const btn = $('button', 'Submit');
+  btn.type  = 'button';
+  btn.onclick = () => {
+    let correct = 0;
+    hw.questions.forEach((_, i) => {
+      const chosen = form.querySelector(`input[name="q${i}"]:checked`);
+      if (chosen && chosen.value === hw.answerKey[i]) correct++;
+    });
+    alert(`Score: ${correct} / ${hw.questions.length}`);
+  };
+  form.appendChild(btn);
 
-  /* Trigger MathJax after DOM insertion */
+  /* inject & typeset */
+  root.replaceChildren(form);
   if (window.MathJax?.typeset) window.MathJax.typeset();
 })();
