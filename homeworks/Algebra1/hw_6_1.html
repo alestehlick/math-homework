@@ -1,29 +1,187 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="utf-8">
-<meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Homework 6-1 (Algebra 1)</title>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
 
-<!-- HW-specific data -->
-<script>
-window.homeworkData = {
-  classId : "Algebra1",
-  id      : "Homework 6-1",
-  title   : "Homework 6-1 — Coordinate-Plane Basics",
-  answerKey : ["B","B","F","A","C","A","A","A","A","B","B","A"],
-  questions : [
-    { latex:`\\text{What are the coordinates of the origin?}`,
-      choices:["(1,0)","(0,0)","(0,1)","(-1,0)","(1,1)","(0,-1)"]},
-    /* … remaining questions … */
-  ]
-};
-</script>
+  <title>Homework 6-1 (Algebra 1)</title>
 
-<link rel="stylesheet" href="/math-homework/assets/core.css">
-<script defer src="/math-homework/assets/core.js"></script>
-<script defer src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+  <!-- ■ HOMEWORK DATA -->
+  <script>
+    window.homeworkData = {
+      classId : "Algebra1",
+      id      : "Homework 6-1",
+      title   : "Homework 6-1 — Coordinate-Plane Basics",
+
+      /*            A  B  C  D  E  F  */
+      answerKey : ["B","B","F","A","C","A","A","A","A","B","B","A"],
+
+      questions : [
+        /* 1 ──────────────────────────────────────────────── */
+        {
+          latex   : String.raw`\text{What are the coordinates of the origin?}`,
+          choices : [
+            String.raw`(1,0)`,
+            String.raw`(0,0)`,
+            String.raw`(0,1)`,
+            String.raw`(-1,0)`,
+            String.raw`(1,1)`,
+            String.raw`(0,-1)`
+          ]
+        },
+
+        /* 2 */
+        {
+          latex   : String.raw`\text{In which quadrant is the point }(-3,5)\text{ located?}`,
+          choices : [
+            String.raw`\text{I}`,
+            String.raw`\text{II}`,
+            String.raw`\text{III}`,
+            String.raw`\text{IV}`,
+            String.raw`\text{x-axis}`,
+            String.raw`\text{y-axis}`
+          ]
+        },
+
+        /* 3 */
+        {
+          latex   : String.raw`\text{The point }(0,-7)\text{ lies on the …}`,
+          choices : [
+            String.raw`\text{Quadrant I}`,
+            String.raw`\text{Quadrant II}`,
+            String.raw`\text{Quadrant III}`,
+            String.raw`\text{Quadrant IV}`,
+            String.raw`\text{x-axis}`,
+            String.raw`\text{y-axis}`
+          ]
+        },
+
+        /* 4 */
+        {
+          latex   : String.raw`\text{All points with }x>0\text{ and }y>0\text{ lie in …}`,
+          choices : [
+            String.raw`\text{Quadrant I}`,
+            String.raw`\text{Quadrant II}`,
+            String.raw`\text{Quadrant III}`,
+            String.raw`\text{Quadrant IV}`,
+            String.raw`\text{x-axis}`,
+            String.raw`\text{y-axis}`
+          ]
+        },
+
+        /* 5 */
+        {
+          latex   : String.raw`\text{Which quadrant contains the point }(2,-7)\text{?}`,
+          choices : [
+            String.raw`\text{Quadrant II}`,
+            String.raw`\text{Quadrant III}`,
+            String.raw`\text{Quadrant IV}`,
+            String.raw`\text{Quadrant I}`,
+            String.raw`\text{x-axis}`,
+            String.raw`\text{y-axis}`
+          ]
+        },
+
+        /* 6 */
+        {
+          latex   : String.raw`\text{The point }(2,0)\text{ lies on the …}`,
+          choices : [
+            String.raw`\text{x-axis}`,
+            String.raw`\text{y-axis}`,
+            String.raw`\text{Quadrant I}`,
+            String.raw`\text{Quadrant IV}`,
+            String.raw`\text{Origin}`,
+            String.raw`\text{None of these}`
+          ]
+        },
+
+        /* 7 */
+        {
+          latex   : String.raw`\text{What is the abscissa of the point }(-4,1)\text{?}`,
+          choices : [
+            String.raw`-4`,
+            String.raw`4`,
+            String.raw`1`,
+            String.raw`-1`,
+            String.raw`0`,
+            String.raw`5`
+          ]
+        },
+
+        /* 8 */
+        {
+          latex   : String.raw`\text{Which of these points lies in Quadrant IV?}`,
+          choices : [
+            String.raw`(4,-2)`,
+            String.raw`(-4,-2)`,
+            String.raw`(-2,5)`,
+            String.raw`(0,4)`,
+            String.raw`(2,0)`,
+            String.raw`(-1,0)`
+          ]
+        },
+
+        /* 9 */
+        {
+          latex   : String.raw`\text{What is true about all points whose ordinate is }5\text{?}`,
+          choices : [
+            String.raw`\text{They lie on a horizontal line.}`,
+            String.raw`\text{They lie on a vertical line.}`,
+            String.raw`\text{They lie on the }x\text{-axis.}`,
+            String.raw`\text{They are in Quadrant II.}`,
+            String.raw`\text{Their abscissa is }5.`,
+            String.raw`\text{They are at the origin.}`
+          ]
+        },
+
+        /*10 */
+        {
+          latex   : String.raw`\text{The point }(0,7)\text{ lies on the …}`,
+          choices : [
+            String.raw`\text{Quadrant I}`,
+            String.raw`\text{y-axis}`,
+            String.raw`\text{Quadrant II}`,
+            String.raw`\text{x-axis}`,
+            String.raw`\text{Quadrant III}`,
+            String.raw`\text{Quadrant IV}`
+          ]
+        },
+
+        /*11 */
+        {
+          latex   : String.raw`\text{If }A=\{a,b\}\text{ and }B=\{0,1\},\text{ which pair is in }A\times B\text{?}`,
+          choices : [
+            String.raw`(0,a)`,
+            String.raw`(a,0)`,
+            String.raw`(b,a)`,
+            String.raw`(1,b)`,
+            String.raw`(b,1)`,
+            String.raw`(1,0)`
+          ]
+        },
+
+        /*12 */
+        {
+          latex   : String.raw`\text{Is }A\times B = B\times A\text{ for all sets }A,B\text{?}`,
+          choices : [
+            String.raw`\text{No, order matters}`,
+            String.raw`\text{Yes, always}`,
+            String.raw`\text{Only if }A=B`,
+            String.raw`\text{Only for finite sets}`,
+            String.raw`\text{Only when }A\subseteq B`,
+            String.raw`\text{Cannot be determined}`
+          ]
+        }
+      ]
+    };
+  </script>
+
+  <!-- ■ SHARED ASSETS -->
+  <link rel="stylesheet" href="/math-homework/assets/core.css" />
+  <script defer src="/math-homework/assets/core-lean.js"></script>
+  <script defer src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
 </head>
+
 <body>
   <div id="hw-root">Loading…</div>
 </body>
