@@ -1,71 +1,54 @@
-/* /math-homework/assets/core-lean.js  —  v2.1 */
+/* ----------------------------------------------------------------------
+ *  core-lean.js  –  super-light renderer for the new raw-LaTeX format
+ * -------------------------------------------------------------------- */
 (function () {
-  const root = document.getElementById('hw-root');
-  const hw   = window.homeworkData;
-  if (!root || !hw) return;
+  const root   = document.getElementById('hw-root');
+  const data   = window.homeworkData;
 
-  const $ = (tag, html = '') => { const e = document.createElement(tag); e.innerHTML = html; return e; };
-  const wrap = t => `\\(${t}\\)`;
+  if (!root || !data) return;
 
-  /* build form */
-  const form = $('form');
-  form.appendChild($('h1', hw.title));
+  /* —————  helpers ————— */
+  const wrap = tex => `\\(${tex}\\)`;          // add inline TeX delimiters
+  const el   = (tag, html) => {
+    const e = document.createElement(tag);
+    if (html) e.innerHTML = html;
+    return e;
+  };
 
-  /* name fields */
-  form.appendChild($('div', `
-    <label>First&nbsp;Name: <input type="text" name="firstName" required></label>
-    <label>Last&nbsp;Name:&nbsp; <input type="text" name="lastName"  required></label>
-  `).classList.add('student-info') || form.lastChild);
+  /* —————  build the form ————— */
+  const form  = el('form');
+  form.appendChild(el('h1', data.title));
 
-  /* questions */
-  hw.questions.forEach((q, qi) => {
-    const box = $('div'); box.className = 'question';
-    box.appendChild($('p', `<strong>Q${qi+1}.</strong> ${wrap(q.latex)}`));
+  data.questions.forEach((q, qi) => {
+    const qBox = el('div');  qBox.className = 'question';
 
-    const ul = $('ul'); ul.className = 'choices';
+    /* Question text */
+    qBox.appendChild(el('p', `<strong>Q${qi+1}.</strong> ${wrap(q.latex)}`));
+
+    /* Choices */
+    const ul = el('ul');  ul.className = 'choices';
+
     q.choices.forEach((c, ci) => {
-      ul.appendChild($('li', `
-        <label><input type="radio" name="q${qi}" value="${String.fromCharCode(65+ci)}"> ${wrap(c)}</label>
-      `));
+      const li   = el('li');
+      const id   = `q${qi}-c${ci}`;
+
+      li.innerHTML = `
+        <label>
+          <input type="radio" name="q${qi}" value="${String.fromCharCode(65+ci)}" id="${id}">
+          ${wrap(c)}
+        </label>`;
+      ul.appendChild(li);
     });
-    box.appendChild(ul); form.appendChild(box);
+
+    qBox.appendChild(ul);
+    form.appendChild(qBox);
   });
 
-  /* submit */
-  const btn = $('button', 'Submit'); btn.type = 'button';
-  btn.onclick = async () => {
-    const fn = form.firstName.value.trim(), ln = form.lastName.value.trim();
-    if (!fn || !ln) return alert('Enter first and last names.');
+  /* Submit */
+  form.appendChild(el('button', 'Submit'));
+  root.innerHTML = '';        // clear "Loading…"
+  root.appendChild(form);
 
-    let correct = 0, answers = [], wrong = [];
-    hw.questions.forEach((_, i) => {
-      const sel = form.querySelector(`input[name="q${i}"]:checked`);
-      answers[i] = sel ? sel.value : '';
-      if (answers[i] === hw.answerKey[i]) correct++; else wrong.push(i+1);
-    });
-
-    /* send to backend */
-    const scriptURL = 'YOUR_SCRIPT_WEB_APP_URL';
-    try {
-      await fetch(scriptURL, {
-        method : 'POST',
-        headers: { 'Content-Type':'application/json' },
-        body   : JSON.stringify({
-          hwId       : hw.id,
-          firstName  : fn,
-          lastName   : ln,
-          answers,
-          score      : correct,
-          wrong,
-          submittedAt: Date.now()
-        })
-      });
-    } catch(e){ console.error(e); }
-
-    alert(`${fn}, you scored ${correct}/${hw.questions.length}.`);
-  };
-  form.appendChild(btn);
-
-  root.replaceChildren(form);
-  window.MathJax?.typeset();
+  /* Trigger MathJax after DOM insertion */
+  if (window.MathJax?.typeset) window.MathJax.typeset();
 })();
