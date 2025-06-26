@@ -1,5 +1,5 @@
 /*──────── CONFIG ────────*/
-const SCRIPT_URL = "https://script.google.com/macros/s/AKfycbNEW_ID/exec"; // ← paste NEW /exec link
+const SCRIPT_URL = "https://script.google.com/macros/s/AKfycbwkLwPoES1_hxHn6pdu2qdGCE3bosqwcZg6z23B6w72iQLDAIMzZZf4ZAFC44aKWTIcNg/exec"; // ← paste NEW /exec link
 const COOLDOWN_MS = 120_000;                                                // 2 minutes
 /*────────────────────────*/
 
