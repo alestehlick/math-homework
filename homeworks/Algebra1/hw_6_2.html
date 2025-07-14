@@ -1,0 +1,200 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Homework 6-2 (Algebra 1)</title>
+
+  <!--  1 ·  DATA  -->
+  <script>
+    window.homeworkData = {
+      classId : "Algebra1",
+      id      : "Homework 6-2",
+      title   : "Homework 6-2 — Relations & Functions",
+
+      /* 12 capital letters A-F  */
+      answerKey : ["B","A","C","B","B","A","A","A","A","B","B","C"],
+
+      /*  graphics slot not needed for this set */
+      /*  graphics : "" , */
+
+      /*  EXACTLY 12 questions, SIX choices each  */
+      questions : [
+        /*  Q1 ---------------------------------------------------------------- */
+        {
+          latex : String.raw`\text{For the set }R_1=\{\,(2,4),(5,9),(8,2)\,\}\text{, what is its domain?}`,
+          choices : [
+            String.raw`\{4,9,2\}`,
+            String.raw`\{2,5,8\}`,              /* correct */
+            String.raw`\{2,4,8\}`,
+            String.raw`\{5,4,9\}`,
+            String.raw`\{2,8,4,9\}`,
+            String.raw`\{2,5,9\}`
+          ]
+        },
+
+        /*  Q2 ---------------------------------------------------------------- */
+        {
+          latex : String.raw`\text{Which statement best describes }R_1\text{?}`,
+          choices : [
+            String.raw`\text{Both a relation and a function}`,     /* correct */
+            String.raw`\text{A relation that is not a function}`,
+            String.raw`\text{Neither a relation nor a function}`,
+            String.raw`\text{Domain has repeated values}`,
+            String.raw`\text{Each input has two outputs}`,
+            String.raw`\text{Range contains no duplicates}`
+          ]
+        },
+
+        /*  Q3 ---------------------------------------------------------------- */
+        {
+          latex : String.raw`\text{Consider the set }R_2=\{3,4,7,9\}\text{.  Which option is correct?}`,
+          choices : [
+            String.raw`\text{Both a relation and a function}`,
+            String.raw`\text{A relation that is not a function}`,
+            String.raw`\text{Neither a relation nor a function}`,  /* correct */
+            String.raw`\text{A function with domain }\{3,4,7,9\}`,
+            String.raw`\text{Range equals domain}`,
+            String.raw`\text{Ordered pairs with repeating }x`
+          ]
+        },
+
+        /*  Q4 ---------------------------------------------------------------- */
+        {
+          latex : String.raw`\text{Classify }R_3=\{\,(1,3),(1,6),(4,9),(6,1)\,\}\text{.}`,
+          choices : [
+            String.raw`\text{Both a relation and a function}`,
+            String.raw`\text{A relation that is not a function}`,  /* correct */
+            String.raw`\text{Neither a relation nor a function}`,
+            String.raw`\text{Every }x\text{ is paired with itself}`,
+            String.raw`\text{Domain is }\{3,6,9,1\}`,
+            String.raw`\text{Range is }\{1,4,6\}`
+          ]
+        },
+
+        /*  Q5 ---------------------------------------------------------------- */
+        {
+          latex : String.raw`\text{Classify }R_4=\{\,(-3,2),(-3,4),(6,8),(7,1)\,\}\text{.}`,
+          choices : [
+            String.raw`\text{Both a relation and a function}`,
+            String.raw`\text{A relation that is not a function}`,  /* correct */
+            String.raw`\text{Neither a relation nor a function}`,
+            String.raw`\text{Function with constant output }2`,
+            String.raw`\text{Domain has four distinct values}`,
+            String.raw`\text{Range has duplicate }1`
+          ]
+        },
+
+        /*  Q6 ---------------------------------------------------------------- */
+        {
+          latex : String.raw`\text{Classify }R_5=\{\,(-4,7),(-2,5),(3,7)\,\}\text{.}`,
+          choices : [
+            String.raw`\text{Both a relation and a function}`,     /* correct */
+            String.raw`\text{A relation that is not a function}`,
+            String.raw`\text{Neither a relation nor a function}`,
+            String.raw`\text{Repeated }x\text{ values}`,
+            String.raw`\text{Domain is }\{-4,-2,5\}`,
+            String.raw`\text{Range is }\{5,7\}`
+          ]
+        },
+
+        /*  Q7 ---------------------------------------------------------------- */
+        {
+          latex : String.raw`\text{Classify }R_7=\{\,(1,3),(2,3),(4,7),(8,1)\,\}\text{.}`,
+          choices : [
+            String.raw`\text{Both a relation and a function}`,     /* correct */
+            String.raw`\text{A relation that is not a function}`,
+            String.raw`\text{Neither a relation nor a function}`,
+            String.raw`\text{Function with constant output }3`,
+            String.raw`\text{Domain has duplicate }4`,
+            String.raw`\text{Range equals domain}`
+          ]
+        },
+
+        /*  Q8 ---------------------------------------------------------------- */
+        {
+          latex : String.raw`\text{Classify the set }\{(2,3),(4,3)\}\text{.}`,
+          choices : [
+            String.raw`\text{Both a relation and a function}`,     /* correct */
+            String.raw`\text{A relation that is not a function}`,
+            String.raw`\text{Neither a relation nor a function}`,
+            String.raw`\text{Not a set of ordered pairs}`,
+            String.raw`\text{Domain }\{3,4\}`,
+            String.raw`\text{Range }\{2\}`
+          ]
+        },
+
+        /*  Q9 ---------------------------------------------------------------- */
+        {
+          latex : String.raw`\text{Classify the set }\{(2,3),(3,4)\}\text{.}`,
+          choices : [
+            String.raw`\text{Both a relation and a function}`,     /* correct */
+            String.raw`\text{A relation that is not a function}`,
+            String.raw`\text{Neither a relation nor a function}`,
+            String.raw`\text{Repeated }x\text{ values}`,
+            String.raw`\text{Range is }\{2,3,4\}`,
+            String.raw`\text{Domain equals range}`
+          ]
+        },
+
+        /*  Q10 --------------------------------------------------------------- */
+        {
+          latex : String.raw`\text{Classify the set }\{(2,3),(2,4)\}\text{.}`,
+          choices : [
+            String.raw`\text{Both a relation and a function}`,
+            String.raw`\text{A relation that is not a function}`,  /* correct */
+            String.raw`\text{Neither a relation nor a function}`,
+            String.raw`\text{Domain }\{3,4\}`,
+            String.raw`\text{Function with constant output }2`,
+            String.raw`\text{Range is }\{2,3,4\}`
+          ]
+        },
+
+        /*  Q11 --------------------------------------------------------------- */
+        {
+          latex : String.raw`\text{Using the table, decide whether the relation is a function: }\\
+\begin{array}{c|c}
+x & y\\\hline
+-2 & 0\\
+-1 & 4\\
+0 & 3\\
+1 & -1\\
+1 & 4
+\end{array}`,
+          choices : [
+            String.raw`\text{Yes, it is a function}`,
+            String.raw`\text{No, it is a relation but not a function}`, /* correct */
+            String.raw`\text{No, it is not a relation}`,
+            String.raw`\text{Domain is }\{-2,-1,0,1,4\}`,
+            String.raw`\text{Range has exactly two values}`,
+            String.raw`\text{Every }y\text{ is paired with two }x`
+          ]
+        },
+
+        /*  Q12 --------------------------------------------------------------- */
+        {
+          latex : String.raw`\text{What is the domain of the relation given in the table above?}`,
+          choices : [
+            String.raw`\{0,3,4,-1\}`,
+            String.raw`\{0,1,3,4\}`,
+            String.raw`\{-2,-1,0,1\}`,           /* correct */
+            String.raw`\{0,-1,4\}`,
+            String.raw`\{-2,-1,1,4\}`,
+            String.raw`\{0,3,4\}`
+          ]
+        }
+      ]
+    };
+  </script>
+
+  <!--  2 ·  LIBRARIES  -->
+  <link rel="stylesheet" href="/math-homework/assets/core.css" />
+  <link rel="stylesheet" href="https://tikzjax.com/v1/fonts.css" />
+  <script defer src="/math-homework/assets/core.js"></script>
+  <script defer src="https://tikzjax.com/v1/tikzjax.js"></script>
+  <script defer src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+</head>
+<body>
+  <div id="hw-root">Loading…</div>
+</body>
+</html>
