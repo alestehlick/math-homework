@@ -3,149 +3,147 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-
   <title>Homework 6-1 (Algebra 1)</title>
 
   <script>
     window.homeworkData = {
       classId : "Algebra1",
       id      : "Homework 6-1",
-      title   : "Homework 6-1 — Coordinate-Plane Basics",
+      title   : "Homework 6-1 — Coordinate Graphing",
 
-      /*            A  B  C  D  E  F  */
-      answerKey : ["B","B","F","A","C","A","A","A","A","B","B","A"],
+      answerKey : ["C","A","C","D","A","B","A","D","E","C","B","A"],
 
       questions : [
         {
-          latex   : String.raw`\text{What are the coordinates of the origin?}`,
+          latex   : String.raw`\text{Refer to the graph. What are the coordinates of point }A\text{?}`,
           choices : [
-            String.raw`(1,0)`,
-            String.raw`(0,0)`,
-            String.raw`(0,1)`,
-            String.raw`(-1,0)`,
-            String.raw`(1,1)`,
-            String.raw`(0,-1)`
+            String.raw`(-1,-2)`,
+            String.raw`(-3,-1)`,
+            String.raw`(-2,-1)`,
+            String.raw`(-2,1)`,
+            String.raw`(-1,-1)`,
+            String.raw`(-3,-2)`
           ]
         },
         {
-          latex   : String.raw`\text{In which quadrant is the point }(-3,\,5)\text{ located?}`,
+          latex   : String.raw`\text{Refer to the graph. What are the coordinates of point }B\text{?}`,
           choices : [
+            String.raw`(5,-4)`,
+            String.raw`(4,-5)`,
+            String.raw`(5,-3)`,
+            String.raw`(4,-4)`,
+            String.raw`(6,-4)`,
+            String.raw`(5,-5)`
+          ]
+        },
+        {
+          latex   : String.raw`\text{Refer to the graph. What are the coordinates of point }C\text{?}`,
+          choices : [
+            String.raw`(2,5)`,
+            String.raw`(3,4)`,
+            String.raw`(3,5)`,
+            String.raw`(4,5)`,
+            String.raw`(2,4)`,
+            String.raw`(4,4)`
+          ]
+        },
+        {
+          latex   : String.raw`\text{Refer to the graph. What are the coordinates of point }D\text{?}`,
+          choices : [
+            String.raw`(2,-3)`,
+            String.raw`(3,-2)`,
+            String.raw`(1,-2)`,
+            String.raw`(2,-2)`,
+            String.raw`(3,-3)`,
+            String.raw`(2,-1)`
+          ]
+        },
+        {
+          latex   : String.raw`\text{Refer to the graph. What are the coordinates of point }E\text{?}`,
+          choices : [
+            String.raw`(-4,1)`,
+            String.raw`(-3,1)`,
+            String.raw`(-4,2)`,
+            String.raw`(-3,2)`,
+            String.raw`(-5,1)`,
+            String.raw`(-4,0)`
+          ]
+        },
+        {
+          latex   : String.raw`\text{Refer to the graph. What are the coordinates of point }F\text{?}`,
+          choices : [
+            String.raw`(1,3)`,
+            String.raw`(0,3)`,
+            String.raw`(0,2)`,
+            String.raw`(1,2)`,
+            String.raw`(-1,3)`,
+            String.raw`(0,4)`
+          ]
+        },
+        {
+          latex   : String.raw`\text{Refer to the graph. On which quadrant or axis does point }C\text{ lie?}`,
+          choices : [
+            String.raw`\text{Quadrant I}`,
+            String.raw`\text{Quadrant II}`,
+            String.raw`\text{Quadrant III}`,
+            String.raw`\text{Quadrant IV}`,
+            String.raw`\text{$x$-axis}`,
+            String.raw`\text{$y$-axis}`
+          ]
+        },
+        {
+          latex   : String.raw`\text{Refer to the graph. On which quadrant or axis does point }B\text{ lie?}`,
+          choices : [
+            String.raw`\text{Quadrant I}`,
+            String.raw`\text{Quadrant II}`,
+            String.raw`\text{Quadrant III}`,
+            String.raw`\text{Quadrant IV}`,
+            String.raw`\text{$x$-axis}`,
+            String.raw`\text{$y$-axis}`
+          ]
+        },
+        {
+          latex   : String.raw`\text{Refer to the graph. On which quadrant or axis does point }H\text{ lie?}`,
+          choices : [
+            String.raw`\text{Quadrant I}`,
+            String.raw`\text{Quadrant II}`,
+            String.raw`\text{Quadrant III}`,
+            String.raw`\text{Quadrant IV}`,
+            String.raw`\text{$x$-axis}`,
+            String.raw`\text{$y$-axis}`
+          ]
+        },
+        {
+          latex   : String.raw`\text{Which point on the graph has coordinates }(-4,-4)\text{?}`,
+          choices : [
+            String.raw`\text{A}`,
+            String.raw`\text{B}`,
+            String.raw`\text{G}`,
+            String.raw`\text{D}`,
+            String.raw`\text{F}`,
+            String.raw`\text{J}`
+          ]
+        },
+        {
+          latex   : String.raw`\text{Which point on the graph has coordinates }(4,1)\text{?}`,
+          choices : [
+            String.raw`\text{A}`,
+            String.raw`\text{J}`,
+            String.raw`\text{C}`,
             String.raw`\text{I}`,
-            String.raw`\text{II}`,
-            String.raw`\text{III}`,
-            String.raw`\text{IV}`,
-            String.raw`\text{x-axis}`,
-            String.raw`\text{y-axis}`
+            String.raw`\text{H}`,
+            String.raw`\text{E}`
           ]
         },
         {
-          latex   : String.raw`\text{The point }(0,\,-7)\text{ lies on the …}`,
+          latex   : String.raw`\text{Which point lies on the }y\text{-axis?}`,
           choices : [
-            String.raw`\text{Quadrant I}`,
-            String.raw`\text{Quadrant II}`,
-            String.raw`\text{Quadrant III}`,
-            String.raw`\text{Quadrant IV}`,
-            String.raw`\text{x-axis}`,
-            String.raw`\text{y-axis}`
-          ]
-        },
-        {
-          latex   : String.raw`\text{All points with }x>0\text{ and }y>0\text{ lie in …}`,
-          choices : [
-            String.raw`\text{Quadrant I}`,
-            String.raw`\text{Quadrant II}`,
-            String.raw`\text{Quadrant III}`,
-            String.raw`\text{Quadrant IV}`,
-            String.raw`\text{x-axis}`,
-            String.raw`\text{y-axis}`
-          ]
-        },
-        {
-          latex   : String.raw`\text{Which quadrant contains the point }(2,\,-7)\text{?}`,
-          choices : [
-            String.raw`\text{Quadrant II}`,
-            String.raw`\text{Quadrant III}`,
-            String.raw`\text{Quadrant IV}`,
-            String.raw`\text{Quadrant I}`,
-            String.raw`\text{x-axis}`,
-            String.raw`\text{y-axis}`
-          ]
-        },
-        {
-          latex   : String.raw`\text{The point }(2,\,0)\text{ lies on the …}`,
-          choices : [
-            String.raw`\text{x-axis}`,
-            String.raw`\text{y-axis}`,
-            String.raw`\text{Quadrant I}`,
-            String.raw`\text{Quadrant IV}`,
-            String.raw`\text{Origin}`,
-            String.raw`\text{None of these}`
-          ]
-        },
-        {
-          latex   : String.raw`\text{What is the abscissa of the point }(-4,\,1)\text{?}`,
-          choices : [
-            String.raw`-4`,
-            String.raw`4`,
-            String.raw`1`,
-            String.raw`-1`,
-            String.raw`0`,
-            String.raw`5`
-          ]
-        },
-        {
-          latex   : String.raw`\text{Which of these points lies in Quadrant IV?}`,
-          choices : [
-            String.raw`(4,-2)`,
-            String.raw`(-4,-2)`,
-            String.raw`(-2,5)`,
-            String.raw`(0,4)`,
-            String.raw`(2,0)`,
-            String.raw`(-1,0)`
-          ]
-        },
-        {
-          latex   : String.raw`\text{What is true about all points whose ordinate is }5\text{?}`,
-          choices : [
-            String.raw`\text{They lie on a horizontal line.}`,
-            String.raw`\text{They lie on a vertical line.}`,
-            String.raw`\text{They lie on the }x\text{-axis.}`,
-            String.raw`\text{They are in Quadrant II.}`,
-            String.raw`\text{Their abscissa is }5.`,
-            String.raw`\text{They are at the origin.}`
-          ]
-        },
-        {
-          latex   : String.raw`\text{The point }(0,\,7)\text{ lies on the …}`,
-          choices : [
-            String.raw`\text{Quadrant I}`,
-            String.raw`\text{y-axis}`,
-            String.raw`\text{Quadrant II}`,
-            String.raw`\text{x-axis}`,
-            String.raw`\text{Quadrant III}`,
-            String.raw`\text{Quadrant IV}`
-          ]
-        },
-        {
-          latex   : String.raw`\text{If }A=\{a,b\}\text{ and }B=\{0,1\},\text{ which pair is in }A\times B\text{?}`,
-          choices : [
-            String.raw`(0,a)`,
-            String.raw`(a,0)`,
-            String.raw`(b,a)`,
-            String.raw`(1,b)`,
-            String.raw`(b,1)`,
-            String.raw`(1,0)`
-          ]
-        },
-        {
-          latex   : String.raw`\text{Is }A\times B = B\times A\text{ for all sets }A,B\text{?}`,
-          choices : [
-            String.raw`\text{No, order matters}`,
-            String.raw`\text{Yes, always}`,
-            String.raw`\text{Only if }A=B`,
-            String.raw`\text{Only for finite sets}`,
-            String.raw`\text{Only when }A\subseteq B`,
-            String.raw`\text{Cannot be determined}`
+            String.raw`\text{F}`,
+            String.raw`\text{A}`,
+            String.raw`\text{C}`,
+            String.raw`\text{B}`,
+            String.raw`\text{H}`,
+            String.raw`\text{G}`
           ]
         }
       ]
@@ -156,8 +154,34 @@
   <script defer src="/math-homework/assets/core-lean.js"></script>
   <script defer src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
 </head>
-
 <body>
   <div id="hw-root">Loading…</div>
+
+  <!-- TikZ-like rendering using MathJax -->
+  <script type="text/tikz" id="tikz-graph">
+    \begin{tikzpicture}[scale=0.6]
+      \draw[very thin,color=gray!30] (-6.5,-5.5) grid (6.5,5.5);
+      \draw[->] (-6.5,0) -- (6.5,0) node[right] {\(x\)};
+      \draw[->] (0,-5.5) -- (0,5.5) node[above] {\(y\)};
+
+      % Axes labels
+      \foreach \x in {-6,-5,...,6}
+        \draw (\x,0.1) -- (\x,-0.1) node[below] {\scriptsize \x};
+      \foreach \y in {-5,-4,...,5}
+        \draw (0.1,\y) -- (-0.1,\y) node[left] {\scriptsize \y};
+
+      % Points
+      \filldraw[blue] (-2,-1) circle (2pt) node[below left] {A};
+      \filldraw[blue] (5,-4) circle (2pt) node[below right] {B};
+      \filldraw[blue] (3,5) circle (2pt) node[above right] {C};
+      \filldraw[blue] (2,-2) circle (2pt) node[below right] {D};
+      \filldraw[blue] (-4,2) circle (2pt) node[above left] {E};
+      \filldraw[blue] (0,3) circle (2pt) node[above right] {F};
+      \filldraw[blue] (-4,-4) circle (2pt) node[below left] {G};
+      \filldraw[blue] (6,0) circle (2pt) node[below right] {H};
+      \filldraw[blue] (4,1) circle (2pt) node[above right] {I};
+      \filldraw[blue] (2,2) circle (2pt) node[above right] {J};
+    \end{tikzpicture}
+  </script>
 </body>
 </html>
