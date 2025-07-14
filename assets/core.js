@@ -1,32 +1,30 @@
 /*──────── CONFIG ────────*/
-const SCRIPT_URL  = "https://script.google.com/macros/s/AKfycbwkLwPoES1_hxHn6pdu2qdGCE3bosqwcZg6z23B6w72iQLDAIMzZZf4ZAFC44aKWTIcNg/exec"; // ⚠️ paste fresh /exec
+const SCRIPT_URL  = "https://script.google.com/macros/s/AKfycbwkLwPoES1_hxHn6pdu2qdGCE3bosqwcZg6z23B6w72iQLDAIMzZZf4ZAFC44aKWTIcNg/exec";
 const COOLDOWN_MS = 120_000;
 /*────────────────────────*/
 
-/* safety: warn if core.js missing or double-loaded */
 if (window.__coreLoaded__) {
-  console.warn("Duplicate core.js detected");
+  console.warn("Duplicate core-lean.js detected");
 } else {
   window.__coreLoaded__ = true;
   document.addEventListener("DOMContentLoaded", () => {
-    if (!window.homeworkData) {
-      alert("Error: homeworkData not found.");
-      return;
+    if (!window.homeworkData){
+      alert("Error: homeworkData not found."); return;
     }
     build(window.homeworkData);
   });
 }
 
-/*──────── BUILD STATIC FORM ────────*/
-function build(d) {
-
-  /* 1 · skeleton markup (graphics slot + qbox) */
+/*──────── BUILD ────────*/
+function build(d){
   const root = document.getElementById("hw-root");
   root.innerHTML = `
     <style>
       #media      { text-align:center; margin: 1rem 0; }
-      #media script[type="text/tikz"] { display:inline-block; }
-      form#hwForm { max-width: 680px; margin:auto; }
+      #media script[type="text/tikz"]{ display:inline-block; }
+      form#hwForm { max-width:680px; margin:auto; }
+      ul.choices  { list-style:none; padding-left:0; }
+      .question   { margin:1.2rem 0; }
     </style>
 
     <h1>${d.title}</h1>
@@ -38,65 +36,65 @@ function build(d) {
       <label>First <input name="firstName" required></label>
       <label>Last  <input name="lastName"  required></label>
 
-      <div id="media"></div>         <!-- graphics go here -->
-      <div id="qbox"></div>          <!-- questions -->
+      <div id="media"></div>
+      <div id="qbox"></div>
+
       <button type="submit">Submit</button>
     </form>`;
 
-  /* 2 · inject graphics if provided ------------------------------------ */
-  if (d.graphics) {
+  /* graphics slot ------------------------------------------------------ */
+  if (d.graphics){
     const media = document.getElementById("media");
-    /*  If the author passes pure TikZ code, wrap it automatically        */
-    if (/\\begin\{tikzpicture\}/.test(d.graphics)) {
-      media.innerHTML =
-        `<script type="text/tikz">\n${d.graphics}\n</script>`;
+    if (/\\begin\{tikzpicture\}/.test(d.graphics)){
+      media.innerHTML = `<script type="text/tikz">\n${d.graphics}\n</script>`;
     } else {
-      /*  treat as raw HTML (e.g. <img>, <svg>, <canvas> …)               */
-      media.innerHTML = d.graphics;
+      media.innerHTML = d.graphics;          /* raw HTML / <img> / <svg> */
     }
   }
 
-  /* 3 · build questions ------------------------------------------------- */
+  /* questions ---------------------------------------------------------- */
   const qbox = document.getElementById("qbox");
-  d.questions.forEach((q, i) => {
-    const opts = q.choices.map((t, j) => {
-      const l = String.fromCharCode(65 + j);   // A … F
-      return `<li><label><input type="radio" name="q${i + 1}"
-                   value="${l}" required> ${t}</label></li>`;
+  d.questions.forEach( (q,i) => {
+    const opts = q.choices.map( (t,j) => {
+      const l = String.fromCharCode(65+j);                /* A … F */
+      const body = `\\(${t}\\)`;                          /* wrap choice */
+      return `<li><label><input type="radio" name="q${i+1}" value="${l}" required> ${body}</label></li>`;
     }).join("");
-    qbox.insertAdjacentHTML("beforeend", `
+
+    const prompt = `\\(${q.latex}\\)`;                    /* wrap prompt */
+
+    qbox.insertAdjacentHTML("beforeend",`
       <div class="question">
-        <p><strong>Q${i + 1}.</strong> ${q.latex}</p>
+        <p><strong>Q${i+1}.</strong> ${prompt}</p>
         <ul class="choices">${opts}</ul>
       </div>`);
   });
 
-  /* 4 · typeset math & tikz -------------------------------------------- */
+  /* render ------------------------------------------------------------- */
   if (window.MathJax?.typeset) MathJax.typeset();
   if (window.tikzjax)          tikzjax.process();
 
-  /* 5 · handle submit --------------------------------------------------- */
   document.getElementById("hwForm")
-          .addEventListener("submit", ev => handleSubmit(ev, d));
+          .addEventListener("submit", ev => handleSubmit(ev,d));
 }
 
-/*──────── SUBMIT LOGIC (unchanged) ────────*/
-async function handleSubmit(ev, d) {
+/*──────── SUBMIT (unchanged) ────────*/
+async function handleSubmit(ev,d){
   ev.preventDefault();
   const f     = ev.target,
         first = f.firstName.value.trim(),
         last  = f.lastName.value.trim(),
         lock  = `last_${d.classId}_${d.id}_${first}_${last}`.toLowerCase(),
         now   = Date.now(),
-        ago   = now - (Number(localStorage.getItem(lock)) || 0);
+        ago   = now - (Number(localStorage.getItem(lock))||0);
 
-  if (ago < COOLDOWN_MS) {
-    alert(`Please wait ${Math.ceil((COOLDOWN_MS - ago) / 1000)} s before retrying.`);
+  if (ago < COOLDOWN_MS){
+    alert(`Please wait ${Math.ceil((COOLDOWN_MS-ago)/1000)} s before retrying.`);
     return;
   }
 
-  const ans = [];
-  for (let i = 1; i <= d.questions.length; i++) ans.push(f[`q${i}`].value);
+  const ans=[];
+  for (let i=1;i<=d.questions.length;i++) ans.push(f[`q${i}`].value);
 
   const body = new URLSearchParams({
     classId   : d.classId,
@@ -107,41 +105,41 @@ async function handleSubmit(ev, d) {
     answerKey : JSON.stringify(d.answerKey)
   });
 
-  try {
-    const res = await fetch(SCRIPT_URL, { method: "POST", body });
+  try{
+    const res = await fetch(SCRIPT_URL,{method:"POST",body});
     const txt = await res.text();
-    localStorage.setItem(lock, String(now));
-    handleReply(txt, d.questions.length);
-  } catch (e) {
-    alert("Network / script error: " + e);
+    localStorage.setItem(lock,String(now));
+    handleReply(txt,d.questions.length);
+  }catch(e){
+    alert("Network / script error: "+e);
   }
 }
 
-/*──────── PARSE SERVER REPLY (unchanged) ────────*/
-function handleReply(m, t) {
-  if (m.startsWith("SUBMITTED|")) {
-    const [, raw, flag] = m.split("|");
-    if (flag === "LATE")
-      alert(`Submitted after due date (85 % cap)\nScore ${Math.ceil(raw * 0.85)}/${t}`);
+/*──────── HANDLE SERVER REPLY (unchanged) ────────*/
+function handleReply(m,t){
+  if(m.startsWith("SUBMITTED|")){
+    const [,raw,flag]=m.split("|");
+    if(flag==="LATE")
+      alert(`Submitted after due date (85 % cap)\nScore ${Math.ceil(raw*0.85)}/${t}`);
     else
       alert(`First submission ✔\nScore ${raw}/${t}`);
     return;
   }
-  if (m.startsWith("RETRY_HIGH|")) {
-    const [, raw, disp, cap] = m.split("|");
-    if (cap === "CAP")
+  if(m.startsWith("RETRY_HIGH|")){
+    const [,raw,disp,cap]=m.split("|");
+    if(cap==="CAP")
       alert(`Retry ✔\nRaw ${raw}/${t}\nCapped 85 % → ${disp}/${t}`);
     else
       alert(`Retry ✔\nScore ${disp}/${t}`);
     return;
   }
-  if (m.startsWith("RETRY_LOW|")) {
-    const [, disp, prev] = m.split("|");
+  if(m.startsWith("RETRY_LOW|")){
+    const [,disp,prev]=m.split("|");
     alert(`Retry recorded ✔\nRetry ${disp}/${t} < Previous ${prev}/${t}\nHigher score kept.`);
     return;
   }
-  if (m === "ERR|INVALID_NAME")        alert("Name not in roster.");
-  else if (m === "ERR|LIMIT_EXCEEDED") alert("Max 2 attempts reached.");
-  else if (m.startsWith("ERR|"))       alert("Server error:\n" + m.slice(4));
-  else                                 alert("Unexpected reply:\n" + m);
+  if(m==="ERR|INVALID_NAME")        alert("Name not in roster.");
+  else if(m==="ERR|LIMIT_EXCEEDED") alert("Max 2 attempts reached.");
+  else if(m.startsWith("ERR|"))     alert("Server error:\n"+m.slice(4));
+  else                              alert("Unexpected reply:\n"+m);
 }
