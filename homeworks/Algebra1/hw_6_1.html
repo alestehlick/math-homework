@@ -5,15 +5,41 @@
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Homework 6-1 (Algebra 1)</title>
 
-  <!--  1 ·  DATA OBJECT  -->
+  <!--  1 ·  DATA  -->
   <script>
     window.homeworkData = {
       classId : "Algebra1",
       id      : "Homework 6-1",
       title   : "Homework 6-1 — Coordinate Graphing",
 
-      /*  Answer key: A-F  */
+      /*  Answer key  */
       answerKey : ["C","A","C","D","C","B","A","D","E","C","D","A"],
+
+      /*  Graphics slot – TikZ code wrapped as a raw string  */
+      graphics : String.raw`
+\begin{tikzpicture}[scale=0.6]
+  % Grid
+  \draw[very thin,color=gray!30] (-6.5,-5.5) grid (6.5,5.5);
+  % Axes
+  \draw[->,thick] (-6.5,0) -- (6.5,0) node[right] {\(x\)};
+  \draw[->,thick] (0,-5.5) -- (0,5.5) node[above] {\(y\)};
+  % Tick marks & labels
+  \foreach \x in {-6,-5,...,6}
+    \draw (\x,0.15) -- (\x,-0.15) node[below] {\scriptsize \x};
+  \foreach \y in {-5,-4,...,5}
+    \draw (0.15,\y) -- (-0.15,\y) node[left] {\scriptsize \y};
+  % Points
+  \filldraw[blue] (-2,-1) circle (2pt) node[below left] {A};
+  \filldraw[blue] (5,-4)  circle (2pt) node[below right] {B};
+  \filldraw[blue] (3,5)   circle (2pt) node[above right] {C};
+  \filldraw[blue] (2,-2)  circle (2pt) node[below right] {D};
+  \filldraw[blue] (-4,2)  circle (2pt) node[above left] {E};
+  \filldraw[blue] (0,3)   circle (2pt) node[above right] {F};
+  \filldraw[blue] (-4,-4) circle (2pt) node[below left] {G};
+  \filldraw[blue] (6,0)   circle (2pt) node[below right] {H};
+  \filldraw[blue] (4,1)   circle (2pt) node[above right] {I};
+  \filldraw[blue] (2,2)   circle (2pt) node[above right] {J};
+\end{tikzpicture}`,
 
       /*  EXACTLY 12 questions, SIX choices each  */
       questions : [
@@ -153,44 +179,14 @@
     };
   </script>
 
-  <!--  2 ·  STYLES & LIBRARIES  -->
+  <!--  2 ·  LIBRARIES & STYLES  -->
   <link rel="stylesheet" href="/math-homework/assets/core.css" />
   <link rel="stylesheet" href="https://tikzjax.com/v1/fonts.css" />
-  <script defer src="/math-homework/assets/core-lean.js"></script>
+  <script defer src="/math-homework/assets/core.js"></script>
   <script defer src="https://tikzjax.com/v1/tikzjax.js"></script>
   <script defer src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
 </head>
 <body>
-  <!--  GRAPH  (placed BEFORE questions so it appears inside the white homework frame) -->
-  <div style="text-align:center;">
-    <script type="text/tikz">
-      \begin{tikzpicture}[scale=0.6]
-        % Grid
-        \draw[very thin,color=gray!30] (-6.5,-5.5) grid (6.5,5.5);
-        % Axes
-        \draw[->,thick] (-6.5,0) -- (6.5,0) node[right] {\(x\)};
-        \draw[->,thick] (0,-5.5) -- (0,5.5) node[above] {\(y\)};
-        % Tick marks & labels
-        \foreach \x in {-6,-5,...,6}
-          \draw (\x,0.15) -- (\x,-0.15) node[below] {\scriptsize \x};
-        \foreach \y in {-5,-4,...,5}
-          \draw (0.15,\y) -- (-0.15,\y) node[left] {\scriptsize \y};
-        % Points
-        \filldraw[blue] (-2,-1) circle (2pt) node[below left] {A};
-        \filldraw[blue] (5,-4)  circle (2pt) node[below right] {B};
-        \filldraw[blue] (3,5)   circle (2pt) node[above right] {C};
-        \filldraw[blue] (2,-2)  circle (2pt) node[below right] {D};
-        \filldraw[blue] (-4,2)  circle (2pt) node[above left] {E};
-        \filldraw[blue] (0,3)   circle (2pt) node[above right] {F};
-        \filldraw[blue] (-4,-4) circle (2pt) node[below left] {G};
-        \filldraw[blue] (6,0)   circle (2pt) node[below right] {H};
-        \filldraw[blue] (4,1)   circle (2pt) node[above right] {I};
-        \filldraw[blue] (2,2)   circle (2pt) node[above right] {J};
-      \end{tikzpicture}
-    </script>
-  </div>
-
-  <!--  QUESTIONS WILL BE INJECTED HERE BY core-lean.js  -->
   <div id="hw-root">Loading…</div>
 </body>
 </html>
