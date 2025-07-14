@@ -11,8 +11,10 @@
       id      : "Homework 6-1",
       title   : "Homework 6-1 — Coordinate Graphing",
 
-      answerKey : ["C","A","C","D","A","B","A","D","E","C","B","A"],
+      /* Answer key */
+      answerKey : ["C","A","C","D","C","B","A","D","E","C","D","A"],
 
+      /* 12 questions, 6 choices each */
       questions : [
         {
           latex   : String.raw`\text{Refer to the graph. What are the coordinates of point }A\text{?}`,
@@ -151,36 +153,40 @@
   </script>
 
   <link rel="stylesheet" href="/math-homework/assets/core.css" />
+  <!-- TikZJax for rendering the TikZ picture -->
+  <link rel="stylesheet" type="text/css" href="https://tikzjax.com/v1/fonts.css" />
+  <script defer src="https://tikzjax.com/v1/tikzjax.js"></script>
+
   <script defer src="/math-homework/assets/core-lean.js"></script>
   <script defer src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
 </head>
 <body>
   <div id="hw-root">Loading…</div>
 
-  <!-- TikZ-like rendering using MathJax -->
-  <script type="text/tikz" id="tikz-graph">
+  <!-- TikZ picture of the coordinate system and points -->
+  <script type="text/tikz">
     \begin{tikzpicture}[scale=0.6]
+      % Grid
       \draw[very thin,color=gray!30] (-6.5,-5.5) grid (6.5,5.5);
-      \draw[->] (-6.5,0) -- (6.5,0) node[right] {\(x\)};
-      \draw[->] (0,-5.5) -- (0,5.5) node[above] {\(y\)};
-
-      % Axes labels
+      % Axes
+      \draw[->,thick] (-6.5,0) -- (6.5,0) node[right] {\(x\)};
+      \draw[->,thick] (0,-5.5) -- (0,5.5) node[above] {\(y\)};
+      % Tick marks and labels
       \foreach \x in {-6,-5,...,6}
-        \draw (\x,0.1) -- (\x,-0.1) node[below] {\scriptsize \x};
+        \draw (\x,0.15) -- (\x,-0.15) node[below] {\scriptsize \x};
       \foreach \y in {-5,-4,...,5}
-        \draw (0.1,\y) -- (-0.1,\y) node[left] {\scriptsize \y};
-
+        \draw (0.15,\y) -- (-0.15,\y) node[left] {\scriptsize \y};
       % Points
       \filldraw[blue] (-2,-1) circle (2pt) node[below left] {A};
       \filldraw[blue] (5,-4) circle (2pt) node[below right] {B};
-      \filldraw[blue] (3,5) circle (2pt) node[above right] {C};
+      \filldraw[blue] (3,5)  circle (2pt) node[above right] {C};
       \filldraw[blue] (2,-2) circle (2pt) node[below right] {D};
       \filldraw[blue] (-4,2) circle (2pt) node[above left] {E};
-      \filldraw[blue] (0,3) circle (2pt) node[above right] {F};
+      \filldraw[blue] (0,3)  circle (2pt) node[above right] {F};
       \filldraw[blue] (-4,-4) circle (2pt) node[below left] {G};
-      \filldraw[blue] (6,0) circle (2pt) node[below right] {H};
-      \filldraw[blue] (4,1) circle (2pt) node[above right] {I};
-      \filldraw[blue] (2,2) circle (2pt) node[above right] {J};
+      \filldraw[blue] (6,0)  circle (2pt) node[below right] {H};
+      \filldraw[blue] (4,1)  circle (2pt) node[above right] {I};
+      \filldraw[blue] (2,2)  circle (2pt) node[above right] {J};
     \end{tikzpicture}
   </script>
 </body>
