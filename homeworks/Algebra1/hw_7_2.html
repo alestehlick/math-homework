@@ -1,1 +1,322 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Homework 7-2 (Algebra 1)</title>
+
+  <script>
+  window.homeworkData = {
+    classId : "Algebra1",
+    id      : "Homework 7-2",
+    title   : "Homework 7-2 — Linear Systems: Consistent, Inconsistent, Dependent, Independent",
+
+    graphics : String.raw`
+\begin{tikzpicture}[scale=0.62]
+  \tikzset{axis/.style={->,thick}, grid/.style={very thin,color=gray!35}}
+
+  % === PANEL A (independent) ===
+  \begin{scope}[xshift=-8.3cm,yshift=5.6cm]
+    \draw[grid] (-5,-5) grid (5,5);
+    \draw[axis] (-5,0)--(5,0);
+    \draw[axis] (0,-5)--(0,5);
+    % y = -x + 4 and y = (1/2)x + 1
+    \draw[thick,blue] (-5,9) -- (5,-1);
+    \draw[thick,red]  (-5,-1.5) -- (5,3.5);
+    \node[anchor=south west,font=\bfseries\small] at (-4.8,4.3) {Independent};
+  \end{scope}
+
+  % === PANEL B (inconsistent) ===
+  \begin{scope}[xshift=0cm,yshift=5.6cm]
+    \draw[grid] (-5,-5) grid (5,5);
+    \draw[axis] (-5,0)--(5,0);
+    \draw[axis] (0,-5)--(0,5);
+    % y = (2/3)x + 1 and y = (2/3)x - 3
+    \draw[thick,blue] (-5,-\frac{7}{3}) -- (5,\frac{13}{3});
+    \draw[thick,red]  (-5,-\frac{19}{3}) -- (5,\frac{1}{3});
+    \node[anchor=south west,font=\bfseries\small] at (-4.8,4.3) {Inconsistent};
+  \end{scope}
+
+  % === PANEL C (dependent) ===
+  \begin{scope}[xshift=8.3cm,yshift=5.6cm]
+    \draw[grid] (-5,-5) grid (5,5);
+    \draw[axis] (-5,0)--(5,0);
+    \draw[axis] (0,-5)--(0,5);
+    % y = -2x + 4 and 2y = -4x + 8 (same line)
+    \draw[thick,blue] (-5,14) -- (5,-6);
+    \draw[thick,red,dashed]  (-5,14) -- (5,-6);
+    \node[anchor=south west,font=\bfseries\small] at (-4.8,4.3) {Dependent};
+  \end{scope}
+\end{tikzpicture}`,
+
+    answerKey : ["C","B","A","A","C","A","B","C","B","A","B","C","A","C","B","A","B","A","B","C","B","C","A"],
+
+    questions : [
+      {
+        latex : String.raw`Solve by graphing: \;x+y=4,\;5x+y=8.\;\;\text{Classify the system.}`,
+        choices : [
+          String.raw`\text{Consistent, independent}`,
+          String.raw`\text{Consistent, dependent}`,
+          String.raw`\text{Inconsistent}`,
+          String.raw`\text{No solution}`,
+          String.raw`\text{Exactly one solution}`,
+          String.raw`\text{Infinite solutions}`
+        ]
+      },
+      {
+        latex : String.raw`Graph: \;x-y=3,\;4x-y=15.\;\;\text{Is the system consistent or inconsistent?}`,
+        choices : [
+          String.raw`\text{Consistent, independent}`,
+          String.raw`\text{Inconsistent}`,
+          String.raw`\text{Consistent, dependent}`,
+          String.raw`\text{Parallel with no solution}`,
+          String.raw`\text{One intersection point}`,
+          String.raw`\text{Infinite intersections}`
+        ]
+      },
+      {
+        latex : String.raw`Graph: \;2x+y=8,\;4x+2y=16.\;\;\text{Classify the system.}`,
+        choices : [
+          String.raw`\text{Consistent, independent}`,
+          String.raw`\text{Consistent, dependent}`,
+          String.raw`\text{Inconsistent}`,
+          String.raw`\text{No solution}`,
+          String.raw`\text{Exactly one solution}`,
+          String.raw`\text{Parallel lines}`
+        ]
+      },
+      {
+        latex : String.raw`Graph: \;3x+y=5,\;4x+3y=15.\;\;\text{What type of system?}`,
+        choices : [
+          String.raw`\text{Consistent, independent}`,
+          String.raw`\text{Consistent, dependent}`,
+          String.raw`\text{Inconsistent}`,
+          String.raw`\text{No solution}`,
+          String.raw`\text{One solution}`,
+          String.raw`\text{Infinite solutions}`
+        ]
+      },
+      {
+        latex : String.raw`Graph: \;x+2y-10=0,\;3x+2y=14.\;\;\text{Classify the system.}`,
+        choices : [
+          String.raw`\text{Consistent, independent}`,
+          String.raw`\text{Consistent, dependent}`,
+          String.raw`\text{Inconsistent}`,
+          String.raw`\text{Parallel lines}`,
+          String.raw`\text{Exactly one solution}`,
+          String.raw`\text{Infinite solutions}`
+        ]
+      },
+      {
+        latex : String.raw`Graph: \;8x-2y=6,\;y=4x+3.\;\;\text{Consistent or inconsistent?}`,
+        choices : [
+          String.raw`\text{Consistent, independent}`,
+          String.raw`\text{Consistent, dependent}`,
+          String.raw`\text{Inconsistent}`,
+          String.raw`\text{Parallel}`,
+          String.raw`\text{No solution}`,
+          String.raw`\text{Infinite solutions}`
+        ]
+      },
+      {
+        latex : String.raw`Graph: \;x-2y=4,\;3x+2y=-12.\;\;\text{Classify the system.}`,
+        choices : [
+          String.raw`\text{Consistent, independent}`,
+          String.raw`\text{Consistent, dependent}`,
+          String.raw`\text{Inconsistent}`,
+          String.raw`\text{No solution}`,
+          String.raw`\text{Parallel lines}`,
+          String.raw`\text{Infinite solutions}`
+        ]
+      },
+      {
+        latex : String.raw`Graph: \;x+2y=8,\;y=-\tfrac{x}{2}+4.\;\;\text{Type of system?}`,
+        choices : [
+          String.raw`\text{Consistent, independent}`,
+          String.raw`\text{Consistent, dependent}`,
+          String.raw`\text{Inconsistent}`,
+          String.raw`\text{Exactly one solution}`,
+          String.raw`\text{No solution}`,
+          String.raw`\text{Infinite solutions}`
+        ]
+      },
+      {
+        latex : String.raw`Solve: \;x=-3,\;x=4.\;\;\text{What type of system is this?}`,
+        choices : [
+          String.raw`\text{Consistent}`,
+          String.raw`\text{Inconsistent}`,
+          String.raw`\text{Dependent}`,
+          String.raw`\text{Parallel}`,
+          String.raw`\text{Independent}`,
+          String.raw`\text{One solution}`
+        ]
+      },
+      {
+        latex : String.raw`Solve: \;x-y=6,\;5x-5y=30.\;\;\text{Classify the system.}`,
+        choices : [
+          String.raw`\text{Consistent, dependent}`,
+          String.raw`\text{Consistent, independent}`,
+          String.raw`\text{Inconsistent}`,
+          String.raw`\text{No solution}`,
+          String.raw`\text{Parallel}`,
+          String.raw`\text{Infinite solutions}`
+        ]
+      },
+      {
+        latex : String.raw`Solve: \;5x-3y=-12,\;2x+3y=-9.\;\;\text{Consistent or inconsistent?}`,
+        choices : [
+          String.raw`\text{Consistent, independent}`,
+          String.raw`\text{Consistent, dependent}`,
+          String.raw`\text{Inconsistent}`,
+          String.raw`\text{No solution}`,
+          String.raw`\text{Parallel}`,
+          String.raw`\text{Infinite solutions}`
+        ]
+      },
+      {
+        latex : String.raw`Solve: \;2x-7y=21,\;3x+7y=14.\;\;\text{Classify.}`,
+        choices : [
+          String.raw`\text{Consistent, independent}`,
+          String.raw`\text{Consistent, dependent}`,
+          String.raw`\text{Inconsistent}`,
+          String.raw`\text{No solution}`,
+          String.raw`\text{One solution}`,
+          String.raw`\text{Parallel}`
+        ]
+      },
+      {
+        latex : String.raw`Solve: \;3x+4y=20,\;x+2y=8.\;\;\text{Type of system?}`,
+        choices : [
+          String.raw`\text{Consistent, independent}`,
+          String.raw`\text{Consistent, dependent}`,
+          String.raw`\text{Inconsistent}`,
+          String.raw`\text{No solution}`,
+          String.raw`\text{Parallel}`,
+          String.raw`\text{Infinite solutions}`
+        ]
+      },
+      {
+        latex : String.raw`Solve: \;x-y=-4,\;x+3y=24.\;\;\text{Type of system?}`,
+        choices : [
+          String.raw`\text{Consistent, dependent}`,
+          String.raw`\text{Consistent, independent}`,
+          String.raw`\text{Inconsistent}`,
+          String.raw`\text{No solution}`,
+          String.raw`\text{Infinite solutions}`,
+          String.raw`\text{Parallel lines}`
+        ]
+      },
+      {
+        latex : String.raw`Solve: \;3x+4y=4,\;x-2y=8.\;\;\text{Classify the system.}`,
+        choices : [
+          String.raw`\text{Consistent, dependent}`,
+          String.raw`\text{Consistent, independent}`,
+          String.raw`\text{Inconsistent}`,
+          String.raw`\text{No solution}`,
+          String.raw`\text{Parallel}`,
+          String.raw`\text{One solution}`
+        ]
+      },
+      {
+        latex : String.raw`Solve: \;3x+y=5,\;y=3x-4.\;\;\text{Type of system?}`,
+        choices : [
+          String.raw`\text{Consistent, independent}`,
+          String.raw`\text{Consistent, dependent}`,
+          String.raw`\text{Inconsistent}`,
+          String.raw`\text{No solution}`,
+          String.raw`\text{One solution}`,
+          String.raw`\text{Parallel lines}`
+        ]
+      },
+      {
+        latex : String.raw`Solve: \;3x-5y=-15,\;3x+5y=45.\;\;\text{Consistent or not?}`,
+        choices : [
+          String.raw`\text{Consistent, dependent}`,
+          String.raw`\text{Consistent, independent}`,
+          String.raw`\text{Inconsistent}`,
+          String.raw`\text{No solution}`,
+          String.raw`\text{Parallel}`,
+          String.raw`\text{One solution}`
+        ]
+      },
+      {
+        latex : String.raw`Solve: \;x+y=-4,\;y=-7.\;\;\text{Classify.}`,
+        choices : [
+          String.raw`\text{Consistent, independent}`,
+          String.raw`\text{Consistent, dependent}`,
+          String.raw`\text{Inconsistent}`,
+          String.raw`\text{No solution}`,
+          String.raw`\text{One solution}`,
+          String.raw`\text{Parallel}`
+        ]
+      },
+      {
+        latex : String.raw`Solve: \;x-3y=-15,\;y=4.\;\;\text{System type?}`,
+        choices : [
+          String.raw`\text{Consistent, independent}`,
+          String.raw`\text{Consistent, dependent}`,
+          String.raw`\text{Inconsistent}`,
+          String.raw`\text{Parallel}`,
+          String.raw`\text{One solution}`,
+          String.raw`\text{No solution}`
+        ]
+      },
+      {
+        latex : String.raw`Solve: \;12x+4y=8,\;3y=15-9x.\;\;\text{Classify.}`,
+        choices : [
+          String.raw`\text{Consistent, dependent}`,
+          String.raw`\text{Consistent, independent}`,
+          String.raw`\text{Inconsistent}`,
+          String.raw`\text{No solution}`,
+          String.raw`\text{Infinite solutions}`,
+          String.raw`\text{Parallel}`
+        ]
+      },
+      {
+        latex : String.raw`Inconsistent systems have what relationship between slopes and intercepts?`,
+        choices : [
+          String.raw`\text{Same slope, different y-intercepts}`,
+          String.raw`\text{Different slopes}`,
+          String.raw`\text{Same line}`,
+          String.raw`\text{Intersecting at exactly one point}`,
+          String.raw`\text{Infinite intersections}`,
+          String.raw`\text{Undefined slopes}`
+        ]
+      },
+      {
+        latex : String.raw`Dependent systems have what relationship between slopes and intercepts?`,
+        choices : [
+          String.raw`\text{Same slope, different y-intercepts}`,
+          String.raw`\text{Same slope, same y-intercept}`,
+          String.raw`\text{Different slopes}`,
+          String.raw`\text{Intersecting at one point}`,
+          String.raw`\text{No solutions}`,
+          String.raw`\text{Parallel lines}`
+        ]
+      },
+      {
+        latex : String.raw`Independent systems have what relationship between slopes?`,
+        choices : [
+          String.raw`\text{Different slopes}`,
+          String.raw`\text{Same slope, same intercept}`,
+          String.raw`\text{Same slope, different intercepts}`,
+          String.raw`\text{Exactly one solution}`,
+          String.raw`\text{No solution}`,
+          String.raw`\text{Infinite solutions}`
+        ]
+      }
+    ]
+  };
+  </script>
+
+  <link rel="stylesheet" href="/math-homework/assets/core.css" />
+  <link rel="stylesheet" href="https://tikzjax.com/v1/fonts.css" />
+  <script defer src="/math-homework/assets/core.js"></script>
+  <script defer src="https://tikzjax.com/v1/tikzjax.js"></script>
+  <script defer src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+</head>
+<body>
+  <div id="hw-root">Loading…</div>
+</body>
+</html>
 
