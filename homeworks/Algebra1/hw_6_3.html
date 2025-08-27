@@ -1,0 +1,261 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Homework 6-3 (Algebra 1)</title>
+
+  <script>
+    /* ───── homework data object ───── */
+    window.homeworkData = {
+      classId : "Algebra1",
+      id      : "Homework 6-3",
+      title   : "Homework 6-3 — Vertical Line Test",
+
+      /* ── all 10 mini-graphs in one TikZ bundle ── */
+      graphics : String.raw`
+\begin{tikzpicture}[scale=0.5]
+  % === GRAPH 1 ===
+  \begin{scope}[yshift=9cm,xshift=-6cm]
+    \draw[very thin,color=gray!30] (-4.5,-4.5) grid (5.5,4.5);
+    \draw[->,thick] (-4.5,0) -- (5.5,0);
+    \draw[->,thick] (0,-4.5) -- (0,4.5);
+    \foreach \p in {(-3,-1),(-2,0),(0,2),(1,1),(2,3)} \fill[blue] \p circle (2pt);
+    \node[anchor=south west,font=\small] at (-4.3,4) {G1};
+  \end{scope}
+
+  % === GRAPH 2 ===
+  \begin{scope}[yshift=9cm,xshift=2cm]
+    \draw[very thin,color=gray!30] (-4.5,-4.5) grid (5.5,4.5);
+    \draw[->,thick] (-4.5,0) -- (5.5,0);
+    \draw[->,thick] (0,-4.5) -- (0,4.5);
+    \foreach \p in {(0,1),(0,3),(1,1),(2,2),(-1,2)} \fill[blue] \p circle (2pt);
+    \node[anchor=south west,font=\small] at (-4.3,4) {G2};
+  \end{scope}
+
+  % === GRAPH 3 ===
+  \begin{scope}[yshift=9cm,xshift=10cm]
+    \draw[very thin,color=gray!30] (-4.5,-4.5) grid (5.5,4.5);
+    \draw[->,thick] (-4.5,0) -- (5.5,0);
+    \draw[->,thick] (0,-4.5) -- (0,4.5);
+    \foreach \p in {(-2,2),(-1,1),(0,0),(1,1),(2,2)} \fill[blue] \p circle (2pt);
+    \node[anchor=south west,font=\small] at (-4.3,4) {G3};
+  \end{scope}
+
+  % === GRAPH 4 ===
+  \begin{scope}[yshift=0cm,xshift=-6cm]
+    \draw[very thin,color=gray!30] (-4.5,-4.5) grid (5.5,4.5);
+    \draw[->,thick] (-4.5,0) -- (5.5,0);
+    \draw[->,thick] (0,-4.5) -- (0,4.5);
+    \draw[blue,thick] (-1,-4) -- (-1,4);
+    \node[anchor=south west,font=\small] at (-4.3,4) {G4};
+  \end{scope}
+
+  % === GRAPH 5 ===
+  \begin{scope}[yshift=0cm,xshift=2cm]
+    \draw[very thin,color=gray!30] (-4.5,-4.5) grid (5.5,4.5);
+    \draw[->,thick] (-4.5,0) -- (5.5,0);
+    \draw[->,thick] (0,-4.5) -- (0,4.5);
+    \draw[blue,thick] (-4,0) -- (4,0);
+    \fill[blue] (5,-3) circle (2pt);
+    \node[anchor=south west,font=\small] at (-4.3,4) {G5};
+  \end{scope}
+
+  % === GRAPH 6 ===
+  \begin{scope}[yshift=0cm,xshift=10cm]
+    \draw[very thin,color=gray!30] (-4.5,-4.5) grid (5.5,4.5);
+    \draw[->,thick] (-4.5,0) -- (5.5,0);
+    \draw[->,thick] (0,-4.5) -- (0,4.5);
+    \foreach \p in {(3,3),(3,2),(2,2),(-1,0),(4,1)} \fill[blue] \p circle (2pt);
+    \node[anchor=south west,font=\small] at (-4.3,4) {G6};
+  \end{scope}
+
+  % === GRAPH 7 ===
+  \begin{scope}[yshift=-9cm,xshift=-6cm]
+    \draw[very thin,color=gray!30] (-4.5,-4.5) grid (5.5,4.5);
+    \draw[->,thick] (-4.5,0) -- (5.5,0);
+    \draw[->,thick] (0,-4.5) -- (0,4.5);
+    \draw[blue,thick] (-4,-1) -- (4,3);
+    \node[anchor=south west,font=\small] at (-4.3,4) {G7};
+  \end{scope}
+
+  % === GRAPH 8 ===
+  \begin{scope}[yshift=-9cm,xshift=2cm]
+    \draw[very thin,color=gray!30] (-4.5,-4.5) grid (5.5,4.5);
+    \draw[->,thick] (-4.5,0) -- (5.5,0);
+    \draw[->,thick] (0,-4.5) -- (0,4.5);
+    \draw[blue,thick] (-3,2) -- (3,2);
+    \node[anchor=south west,font=\small] at (-4.3,4) {G8};
+  \end{scope}
+
+  % === GRAPH 9 ===
+  \begin{scope}[yshift=-9cm,xshift=10cm]
+    \draw[very thin,color=gray!30] (-4.5,-4.5) grid (5.5,4.5);
+    \draw[->,thick] (-4.5,0) -- (5.5,0);
+    \draw[->,thick] (0,-4.5) -- (0,4.5);
+    \draw[blue,thick] (0,-4) -- (0,2);
+    \draw[blue,thick] (0,2) -- (4,2);
+    \node[anchor=south west,font=\small] at (-4.3,4) {G9};
+  \end{scope}
+
+  % === GRAPH 10 ===
+  \begin{scope}[yshift=-18cm,xshift=-2cm]
+    \draw[very thin,color=gray!30] (-4.5,-4.5) grid (5.5,4.5);
+    \draw[->,thick] (-4.5,0) -- (5.5,0);
+    \draw[->,thick] (0,-4.5) -- (0,4.5);
+    \draw[blue,thick,domain=-3:3,samples=80] plot (\x*\x/3,\x);
+    \node[anchor=south west,font=\small] at (-4.3,4) {G10};
+  \end{scope}
+\end{tikzpicture}`,
+
+      /* ── answer key (A-F) ── */
+      answerKey : ["A","B","A","B","A","B","A","A","A","B","A","B"],
+
+      /* ── 12 questions, 6 choices each ── */
+      questions : [
+        {
+          latex : String.raw`\text{Refer to Graph 1. Is the relation a function?}`,
+          choices : [
+            String.raw`\text{Yes, it is a function}`,
+            String.raw`\text{No, it is not a function}`,
+            String.raw`\text{Graph shows a vertical line}`,
+            String.raw`\text{Graph shows a horizontal line}`,
+            String.raw`\text{Cannot be determined}`,
+            String.raw`\text{Both A and D}`
+          ]
+        },
+        {
+          latex : String.raw`\text{Refer to Graph 2. Is the relation a function?}`,
+          choices : [
+            String.raw`\text{Yes, it is a function}`,
+            String.raw`\text{No, it is not a function}`,
+            String.raw`\text{Graph shows a vertical line}`,
+            String.raw`\text{Graph shows a horizontal line}`,
+            String.raw`\text{Cannot be determined}`,
+            String.raw`\text{Both A and D}`
+          ]
+        },
+        {
+          latex : String.raw`\text{Refer to Graph 3. Is the relation a function?}`,
+          choices : [
+            String.raw`\text{Yes, it is a function}`,
+            String.raw`\text{No, it is not a function}`,
+            String.raw`\text{Graph shows a vertical line}`,
+            String.raw`\text{Graph shows a horizontal line}`,
+            String.raw`\text{Cannot be determined}`,
+            String.raw`\text{Both A and D}`
+          ]
+        },
+        {
+          latex : String.raw`\text{Refer to Graph 4. Is the relation a function?}`,
+          choices : [
+            String.raw`\text{Yes, it is a function}`,
+            String.raw`\text{No, it is not a function}`,
+            String.raw`\text{Graph shows a vertical line}`,
+            String.raw`\text{Graph shows a horizontal line}`,
+            String.raw`\text{Cannot be determined}`,
+            String.raw`\text{Both A and D}`
+          ]
+        },
+        {
+          latex : String.raw`\text{Refer to Graph 5. Is the relation a function?}`,
+          choices : [
+            String.raw`\text{Yes, it is a function}`,
+            String.raw`\text{No, it is not a function}`,
+            String.raw`\text{Graph shows a vertical line}`,
+            String.raw`\text{Graph shows a horizontal line}`,
+            String.raw`\text{Cannot be determined}`,
+            String.raw`\text{Both A and D}`
+          ]
+        },
+        {
+          latex : String.raw`\text{Refer to Graph 6. Is the relation a function?}`,
+          choices : [
+            String.raw`\text{Yes, it is a function}`,
+            String.raw`\text{No, it is not a function}`,
+            String.raw`\text{Graph shows a vertical line}`,
+            String.raw`\text{Graph shows a horizontal line}`,
+            String.raw`\text{Cannot be determined}`,
+            String.raw`\text{Both A and D}`
+          ]
+        },
+        {
+          latex : String.raw`\text{Refer to Graph 7. Is the relation a function?}`,
+          choices : [
+            String.raw`\text{Yes, it is a function}`,
+            String.raw`\text{No, it is not a function}`,
+            String.raw`\text{Graph shows a vertical line}`,
+            String.raw`\text{Graph shows a horizontal line}`,
+            String.raw`\text{Cannot be determined}`,
+            String.raw`\text{Both A and D}`
+          ]
+        },
+        {
+          latex : String.raw`\text{Refer to Graph 8. Is the relation a function?}`,
+          choices : [
+            String.raw`\text{Yes, it is a function}`,
+            String.raw`\text{No, it is not a function}`,
+            String.raw`\text{Graph shows a vertical line}`,
+            String.raw`\text{Graph shows a horizontal line}`,
+            String.raw`\text{Cannot be determined}`,
+            String.raw`\text{Both A and D}`
+          ]
+        },
+        {
+          latex : String.raw`\text{Refer to Graph 9. Is the relation a function?}`,
+          choices : [
+            String.raw`\text{Yes, it is a function}`,
+            String.raw`\text{No, it is not a function}`,
+            String.raw`\text{Graph shows a vertical line}`,
+            String.raw`\text{Graph shows a horizontal line}`,
+            String.raw`\text{Cannot be determined}`,
+            String.raw`\text{Both A and D}`
+          ]
+        },
+        {
+          latex : String.raw`\text{Refer to Graph 10. Is the relation a function?}`,
+          choices : [
+            String.raw`\text{Yes, it is a function}`,
+            String.raw`\text{No, it is not a function}`,
+            String.raw`\text{Graph shows a vertical line}`,
+            String.raw`\text{Graph shows a horizontal line}`,
+            String.raw`\text{Cannot be determined}`,
+            String.raw`\text{Both A and D}`
+          ]
+        },
+        {
+          latex : String.raw`\text{Which test can you apply to a graph to decide whether it represents a function?}`,
+          choices : [
+            String.raw`\text{Vertical line test}`,
+            String.raw`\text{Horizontal line test}`,
+            String.raw`\text{Pythagorean test}`,
+            String.raw`\text{Slope test}`,
+            String.raw`\text{Intercept test}`,
+            String.raw`\text{None of the above}`
+          ]
+        },
+        {
+          latex : String.raw`\text{Given the relation }R=\{(1,4),(1,-2)\}\text{, is }R\text{ a function?}`,
+          choices : [
+            String.raw`\text{Yes, it is a function}`,
+            String.raw`\text{No, it is not a function}`,
+            String.raw`\text{Each input maps to one output}`,
+            String.raw`\text{Domain has no duplicates}`,
+            String.raw`\text{Range has duplicates}`,
+            String.raw`\text{Cannot be determined}`
+          ]
+        }
+      ]
+    };
+  </script>
+
+  <link rel="stylesheet" href="/math-homework/assets/core.css" />
+  <link rel="stylesheet" href="https://tikzjax.com/v1/fonts.css" />
+  <script defer src="/math-homework/assets/core.js"></script>
+  <script defer src="https://tikzjax.com/v1/tikzjax.js"></script>
+  <script defer src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+</head>
+<body>
+  <div id="hw-root">Loading…</div>
+</body>
+</html>
