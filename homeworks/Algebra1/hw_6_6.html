@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Homework 6-6 (Algebra 1)</title>
+
+  <script>
+    /* =========================
+       Homework 6-6 — Slope-Intercept Form
+       ========================= */
+    window.homeworkData = {
+      classId : "Algebra1",
+      id      : "Homework 6-6",
+      title   : "Homework 6-6 — Slope-Intercept Form",
+
+      /* Optional graphic area (TikZ or <img>). Not needed for this set. */
+      graphics : "",
+
+      /* ===== Answer key (A–F) for the 12 questions ===== */
+      answerKey : ["A","C","B","A","E","B","D","F","B","C","B","A"],
+
+      /* ===== 12 QUESTIONS (each with six choices) ===== */
+      questions : [
+        {
+          latex   : String.raw`\text{Identify }m\text{ and }b\text{ for }y=3x+4\text{.}`,
+          choices : [
+            String.raw`m=3,\ b=4`,
+            String.raw`m=4,\ b=3`,
+            String.raw`m=-3,\ b=4`,
+            String.raw`m=3,\ b=-4`,
+            String.raw`m=\tfrac{1}{3},\ b=4`,
+            String.raw`m=3,\ b=0`
+          ]
+        },
+        {
+          latex   : String.raw`\text{Identify }m\text{ and }b\text{ for }y=-\tfrac{1}{3}x-2\text{.}`,
+          choices : [
+            String.raw`m=-3,\ b=-2`,
+            String.raw`m=\tfrac{1}{3},\ b=-2`,
+            String.raw`m=-\tfrac{1}{3},\ b=-2`,
+            String.raw`m=-\tfrac{1}{3},\ b=2`,
+            String.raw`m=0,\ b=-2`,
+            String.raw`m=-2,\ b=-\tfrac{1}{3}`
+          ]
+        },
+        {
+          latex   : String.raw`\text{Identify }m\text{ and }b\text{ for }y=-x+1\text{.}`,
+          choices : [
+            String.raw`m=1,\ b=1`,
+            String.raw`m=-1,\ b=1`,
+            String.raw`m=1,\ b=-1`,
+            String.raw`m=-1,\ b=-1`,
+            String.raw`m=0,\ b=1`,
+            String.raw`m=-1,\ b=0`
+          ]
+        },
+        {
+          latex   : String.raw`\text{Identify }m\text{ and }b\text{ for }y=4x-7\text{.}`,
+          choices : [
+            String.raw`m=4,\ b=-7`,
+            String.raw`m=-4,\ b=7`,
+            String.raw`m=7,\ b=4`,
+            String.raw`m=-7,\ b=4`,
+            String.raw`m=\tfrac{1}{4},\ b=-7`,
+            String.raw`m=4,\ b=7`
+          ]
+        },
+        {
+          latex   : String.raw`\text{Identify }m\text{ and }b\text{ for }y=-\tfrac{1}{4}x+5\text{.}`,
+          choices : [
+            String.raw`m=-4,\ b=5`,
+            String.raw`m=\tfrac{1}{4},\ b=5`,
+            String.raw`m=-\tfrac{1}{4},\ b=-5`,
+            String.raw`m=-1,\ b=5`,
+            String.raw`m=-\tfrac{1}{4},\ b=5`,
+            String.raw`m=0,\ b=5`
+          ]
+        },
+        {
+          latex   : String.raw`\text{Identify }m\text{ and }b\text{ for }y=-2x+4\text{.}`,
+          choices : [
+            String.raw`m=2,\ b=4`,
+            String.raw`m=-2,\ b=4`,
+            String.raw`m=-2,\ b=-4`,
+            String.raw`m=4,\ b=-2`,
+            String.raw`m=0,\ b=4`,
+            String.raw`m=-4,\ b=2`
+          ]
+        },
+        {
+          latex   : String.raw`\text{Identify }m\text{ and }b\text{ for }y=6\text{.}`,
+          choices : [
+            String.raw`m=6,\ b=0`,
+            String.raw`m=1,\ b=6`,
+            String.raw`m=\text{undefined},\ b=0`,
+            String.raw`m=0,\ b=6`,
+            String.raw`m=6,\ b=6`,
+            String.raw`m=0,\ b=0`
+          ]
+        },
+        {
+          latex   : String.raw`\text{Identify }m\text{ and }b\text{ for }y=-2\text{.}`,
+          choices : [
+            String.raw`m=-2,\ b=0`,
+            String.raw`m=0,\ b=2`,
+            String.raw`m=1,\ b=-2`,
+            String.raw`m=\text{undefined},\ b=-2`,
+            String.raw`m=-1,\ b=2`,
+            String.raw`m=0,\ b=-2`
+          ]
+        },
+        {
+          latex   : String.raw`\text{Write in slope-intercept form: }3x+y=5\text{. Which is equivalent?}`,
+          choices : [
+            String.raw`y=3x+5`,
+            String.raw`y=-3x+5`,
+            String.raw`y=3x-5`,
+            String.raw`y=-\tfrac{1}{3}x+5`,
+            String.raw`y=-3x-5`,
+            String.raw`y=5x-3`
+          ]
+        },
+        {
+          latex   : String.raw`\text{Write in slope-intercept form: }x-y=-6\text{. Which is equivalent?}`,
+          choices : [
+            String.raw`y=-x+6`,
+            String.raw`y=x-6`,
+            String.raw`y=x+6`,
+            String.raw`y=-x-6`,
+            String.raw`y=\tfrac{1}{x}+6`,
+            String.raw`y=6x+1`
+          ]
+        },
+        {
+          latex   : String.raw`\text{Write in slope-intercept form: }x+7y=14\text{. Which is equivalent?}`,
+          choices : [
+            String.raw`y=\tfrac{1}{7}x+2`,
+            String.raw`y=-\tfrac{1}{7}x+2`,
+            String.raw`y=-7x+14`,
+            String.raw`y=-\tfrac{1}{7}x-2`,
+            String.raw`y=7x-14`,
+            String.raw`y=2x-\tfrac{1}{7}`
+          ]
+        },
+        {
+          latex   : String.raw`\text{Write in slope-intercept form: }3x+7y=21\text{. Which is equivalent?}`,
+          choices : [
+            String.raw`y=-\tfrac{3}{7}x+3`,
+            String.raw`y=\tfrac{3}{7}x+3`,
+            String.raw`y=-\tfrac{7}{3}x+3`,
+            String.raw`y=-\tfrac{3}{7}x-3`,
+            String.raw`y=3x+7`,
+            String.raw`y=-\tfrac{3}{7}x+\tfrac{21}{7}`
+          ]
+        }
+      ]
+    };
+  </script>
+
+  <link rel="stylesheet" href="/math-homework/assets/core.css" />
+  <link rel="stylesheet" href="https://tikzjax.com/v1/fonts.css" />
+  <script defer src="/math-homework/assets/core.js"></script>
+  <script defer src="https://tikzjax.com/v1/tikzjax.js"></script>
+  <script defer src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+</head>
+<body>
+  <div id="hw-root">Loading…</div>
+</body>
+</html>
