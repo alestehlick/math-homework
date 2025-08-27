@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Homework 6-9 (Algebra 1)</title>
+
+  <script>
+    /* =========================
+       Homework 6-9 — Direct Variation
+       ========================= */
+    window.homeworkData = {
+      classId : "Algebra1",
+      id      : "Homework 6-9",
+      title   : "Homework 6-9 — Direct Variation (y = kx)",
+
+      graphics : "",
+
+      /* Answer letters (A–F), one per question (12 total) */
+      answerKey : ["A","A","A","A","A","B","A","C","B","B","A","A"],
+
+      questions : [
+        /* Tables → find the equation (k) */
+        {
+          latex   : String.raw`\text{From the table }(0,0),(1,6),(2,12),(3,18)\text{, write the direct-variation equation.}`,
+          choices : [
+            String.raw`y=6x`,
+            String.raw`y=\tfrac{1}{6}x`,
+            String.raw`y=\tfrac{6}{x}`,
+            String.raw`y=6x+1`,
+            String.raw`y=-6x`,
+            String.raw`y=x+6`
+          ]
+        },
+        {
+          latex   : String.raw`\text{From the table }(0,0),(1,10),(2,20),(3,30)\text{, write the direct-variation equation.}`,
+          choices : [
+            String.raw`y=10x`,
+            String.raw`y=\tfrac{1}{10}x`,
+            String.raw`y=10x+3`,
+            String.raw`y=\tfrac{10}{x}`,
+            String.raw`y=-10x`,
+            String.raw`y=x+10`
+          ]
+        },
+        {
+          latex   : String.raw`\text{From the table }(0,0),(1,2),(2,4),(3,6)\text{, write the direct-variation equation.}`,
+          choices : [
+            String.raw`y=2x`,
+            String.raw`y=\tfrac{1}{2}x`,
+            String.raw`y=2x+1`,
+            String.raw`y=\tfrac{2}{x}`,
+            String.raw`y=-2x`,
+            String.raw`y=x+2`
+          ]
+        },
+        {
+          latex   : String.raw`\text{From the table }(0,0),(1,0.5),(2,1),(3,1.5)\text{, write the direct-variation equation.}`,
+          choices : [
+            String.raw`y=\tfrac{1}{2}x`,
+            String.raw`y=2x`,
+            String.raw`y=\tfrac{1}{2}x+1`,
+            String.raw`y=\tfrac{x}{2}+0.5`,
+            String.raw`y=\tfrac{1}{x}`,
+            String.raw`y=-\tfrac{1}{2}x`
+          ]
+        },
+
+        /* Constants of variation & modeling */
+        {
+          latex   : String.raw`\text{Underwater pressure: }p=0.433h\text{ (}p\text{ in psi, }h\text{ in ft). Is this a direct variation, and what is }k\text{?}`,
+          choices : [
+            String.raw`\text{Yes; }k=0.433`,
+            String.raw`\text{No; not direct}`,
+            String.raw`\text{Yes; }k=433`,
+            String.raw`\text{Yes; }k=\tfrac{1}{0.433}`,
+            String.raw`\text{No; }k=0`,
+            String.raw`\text{Yes; }k=\tfrac{h}{p}`
+          ]
+        },
+        {
+          latex   : String.raw`\text{Circumference }C=\pi d\text{ varies directly with diameter }d\text{. What is the constant of variation }k\text{?}`,
+          choices : [
+            String.raw`2\pi`,
+            String.raw`\pi`,
+            String.raw`\tfrac{1}{\pi}`,
+            String.raw`\pi r^2`,
+            String.raw`d`,
+            String.raw`1`
+          ]
+        },
+
+        /* Find k and the equation from one (x,y) value */
+        {
+          latex   : String.raw`\text{If }y\text{ varies directly with }x\text{ and }(x,y)=(9,18)\text{, choose the correct }k\text{ and equation.}`,
+          choices : [
+            String.raw`k=2,\ y=2x`,
+            String.raw`k=\tfrac{1}{2},\ y=\tfrac{1}{2}x`,
+            String.raw`k=-2,\ y=-2x`,
+            String.raw`k=2,\ y=2x+9`,
+            String.raw`k=9,\ y=9x`,
+            String.raw`k=2,\ y=x+2`
+          ]
+        },
+        {
+          latex   : String.raw`\text{If }y\text{ varies directly with }x\text{ and }(x,y)=(5,-\tfrac{1}{2})\text{, choose the correct }k\text{ and equation.}`,
+          choices : [
+            String.raw`k=-\tfrac{1}{2},\ y=-\tfrac{1}{2}x`,
+            String.raw`k=-5,\ y=-5x`,
+            String.raw`k=-\tfrac{1}{10},\ y=-\tfrac{1}{10}x`,
+            String.raw`k=\tfrac{1}{10},\ y=\tfrac{1}{10}x`,
+            String.raw`k=-\tfrac{1}{10},\ y=-\tfrac{1}{10}x-\tfrac{1}{2}`,
+            String.raw`k=\tfrac{1}{2},\ y=\tfrac{1}{2}x-5`
+          ]
+        },
+        {
+          latex   : String.raw`\text{If }y\text{ varies directly with }x\text{ and }(x,y)=(7,4)\text{, choose the correct }k\text{ and equation.}`,
+          choices : [
+            String.raw`k=\tfrac{7}{4},\ y=\tfrac{7}{4}x`,
+            String.raw`k=\tfrac{4}{7},\ y=\tfrac{4}{7}x`,
+            String.raw`k=-\tfrac{4}{7},\ y=-\tfrac{4}{7}x`,
+            String.raw`k=\tfrac{4}{7},\ y=\tfrac{4}{7}x+4`,
+            String.raw`k=4,\ y=4x`,
+            String.raw`k=\tfrac{1}{7},\ y=\tfrac{1}{7}x`
+          ]
+        },
+        {
+          latex   : String.raw`\text{If }y\text{ varies directly with }x\text{ and }(x,y)=(12,2)\text{, choose the correct }k\text{ and equation.}`,
+          choices : [
+            String.raw`k=\tfrac{1}{12},\ y=\tfrac{1}{12}x`,
+            String.raw`k=\tfrac{1}{6},\ y=\tfrac{1}{6}x`,
+            String.raw`k=6,\ y=6x`,
+            String.raw`k=\tfrac{1}{6},\ y=\tfrac{1}{6}x+2`,
+            String.raw`k=-\tfrac{1}{6},\ y=-\tfrac{1}{6}x`,
+            String.raw`k=2,\ y=2x`
+          ]
+        },
+
+        /* Applications / classification */
+        {
+          latex   : String.raw`\text{A falling object’s speed varies directly with the square of the time: }v=kt^{2}.\ \text{If }v=256\text{ ft/s when }t=4\text{ s, what is }v\text{ when }t=3\text{ s?}`,
+          choices : [
+            String.raw`144\ \text{ft/s}`,
+            String.raw`192\ \text{ft/s}`,
+            String.raw`64\ \text{ft/s}`,
+            String.raw`128\ \text{ft/s}`,
+            String.raw`90\ \text{ft/s}`,
+            String.raw`256\ \text{ft/s}`
+          ]
+        },
+        {
+          latex   : String.raw`\text{Which equation represents a direct variation?}`,
+          choices : [
+            String.raw`y=-3x`,
+            String.raw`y=3x+2`,
+            String.raw`y=\dfrac{2}{x}`,
+            String.raw`y=3x^{2}`,
+            String.raw`x=2`,
+            String.raw`y=7`
+          ]
+        }
+      ]
+    };
+  </script>
+
+  <link rel="stylesheet" href="/math-homework/assets/core.css" />
+  <link rel="stylesheet" href="https://tikzjax.com/v1/fonts.css" />
+  <script defer src="/math-homework/assets/core.js"></script>
+  <script defer src="https://tikzjax.com/v1/tikzjax.js"></script>
+  <script defer src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+</head>
+<body>
+  <div id="hw-root">Loading…</div>
+</body>
+</html>
