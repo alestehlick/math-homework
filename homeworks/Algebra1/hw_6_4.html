@@ -114,4 +114,57 @@
           latex : String.raw`\text{Find the }x\text{-intercept of }4x+y=1\text{.}`,
           choices : [
             String.raw`\left(0,\tfrac{1}{4}\right)`,
-            String.raw`\left(\tfrac{1}{4},0\right)`,        /* correct *
+            String.raw`\left(\tfrac{1}{4},0\right)`,        /* correct */
+            String.raw`(1,0)`,
+            String.raw`(0,1)`,
+            String.raw`\left(-\tfrac{1}{4},0\right)`,
+            String.raw`\left(\tfrac{1}{2},0\right)`
+          ]
+        },
+        {
+          latex : String.raw`\text{Find the }y\text{-intercept of }5x+2y=10\text{.}`,
+          choices : [
+            String.raw`(0,5)`,                              /* correct */
+            String.raw`(5,0)`,
+            String.raw`(0,2)`,
+            String.raw`(0,-5)`,
+            String.raw`(10,0)`,
+            String.raw`(0,10)`
+          ]
+        },
+        {
+          latex : String.raw`\text{On which line are all }y\text{-intercepts located?}`,
+          choices : [
+            String.raw`\text{Line }y=x`,
+            String.raw`\text{$y$-axis (the line }x=0\text{)}`,  /* correct */
+            String.raw`\text{$x$-axis (the line }y=0\text{)}`,
+            String.raw`\text{Line }y=1`,
+            String.raw`\text{Line }x=1`,
+            String.raw`\text{Line }y=x+1`
+          ]
+        },
+        {
+          latex : String.raw`\text{On which line are all }x\text{-intercepts located?}`,
+          choices : [
+            String.raw`\text{$x$-axis (the line }y=0\text{)}`,  /* correct */
+            String.raw`\text{$y$-axis (the line }x=0\text{)}`,
+            String.raw`\text{Line }y=1`,
+            String.raw`\text{Line }x=1`,
+            String.raw`\text{Line }y=x`,
+            String.raw`\text{Line }y=-x`
+          ]
+        }
+      ]
+    };
+  </script>
+
+  <link rel="stylesheet" href="/math-homework/assets/core.css" />
+  <link rel="stylesheet" href="https://tikzjax.com/v1/fonts.css" />
+  <script defer src="/math-homework/assets/core.js"></script>
+  <script defer src="https://tikzjax.com/v1/tikzjax.js"></script>
+  <script defer src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+</head>
+<body>
+  <div id="hw-root">Loading…</div>
+</body>
+</html>
