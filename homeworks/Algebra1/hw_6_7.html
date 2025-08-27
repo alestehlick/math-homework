@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Homework 6-7 (Algebra 1)</title>
+
+  <script>
+    /* =========================
+       Homework 6-7 — Writing Linear Equations
+       (Balanced: 6 from slope & intercept, 6 from slope & a point)
+       ========================= */
+    window.homeworkData = {
+      classId : "Algebra1",
+      id      : "Homework 6-7",
+      title   : "Homework 6-7 — Write the Equation of a Line",
+
+      graphics : "",
+
+      /* A–F letters only, length 12 */
+      answerKey : ["A","C","A","A","B","A","A","B","A","A","B","A"],
+
+      questions : [
+        /* ——— Slope & y-intercept given ——— */
+        {
+          latex   : String.raw`\text{Write the equation of the line with }m=3\text{ and }b=\tfrac{1}{4}\text{.}`,
+          choices : [
+            String.raw`y=3x+\tfrac{1}{4}`,
+            String.raw`y=\tfrac{1}{4}x+3`,
+            String.raw`y=3x-\tfrac{1}{4}`,
+            String.raw`y=-3x+\tfrac{1}{4}`,
+            String.raw`y=\tfrac{1}{3}x+4`,
+            String.raw`y=3x+4`
+          ]
+        },
+        {
+          latex   : String.raw`\text{Write the equation of the line with }m=-\tfrac{1}{3}\text{ and }b=3\text{.}`,
+          choices : [
+            String.raw`y=\tfrac{1}{3}x+3`,
+            String.raw`y=-\tfrac{1}{3}x-3`,
+            String.raw`y=-\tfrac{1}{3}x+3`,
+            String.raw`y=3x-\tfrac{1}{3}`,
+            String.raw`y=3x+3`,
+            String.raw`y=-3x+3`
+          ]
+        },
+        {
+          latex   : String.raw`\text{Write the equation of the line with }m=-5\text{ and }b=10\text{.}`,
+          choices : [
+            String.raw`y=-5x+10`,
+            String.raw`y=5x+10`,
+            String.raw`y=-5x-10`,
+            String.raw`y=10x-5`,
+            String.raw`y=5x-10`,
+            String.raw`y=-10x+5`
+          ]
+        },
+        {
+          latex   : String.raw`\text{Write the equation of the line with }m=6\text{ and }b=-\tfrac{1}{2}\text{.}`,
+          choices : [
+            String.raw`y=6x-\tfrac{1}{2}`,
+            String.raw`y=6x+\tfrac{1}{2}`,
+            String.raw`y=\tfrac{1}{6}x-\tfrac{1}{2}`,
+            String.raw`y=-6x-\tfrac{1}{2}`,
+            String.raw`y=-6x+\tfrac{1}{2}`,
+            String.raw`y=\tfrac{1}{2}x-6`
+          ]
+        },
+        {
+          latex   : String.raw`\text{Write the equation of the line with }m=0\text{ and }b=7\text{.}`,
+          choices : [
+            String.raw`y=x+7`,
+            String.raw`y=7`,
+            String.raw`y=7x`,
+            String.raw`x=7`,
+            String.raw`y=-7`,
+            String.raw`y=\tfrac{1}{7}x`
+          ]
+        },
+        {
+          latex   : String.raw`\text{Write the equation of the line with }m=3\text{ and }b=2\text{.}`,
+          choices : [
+            String.raw`y=3x+2`,
+            String.raw`y=-3x+2`,
+            String.raw`y=3x-2`,
+            String.raw`y=2x+3`,
+            String.raw`y=\tfrac{1}{3}x+2`,
+            String.raw`y=3x+\tfrac{1}{2}`
+          ]
+        },
+
+        /* ——— Slope & one point given ——— */
+        {
+          latex   : String.raw`\text{Write the equation of the line with slope }\tfrac{1}{4}\text{ through }(3,7)\text{.}`,
+          choices : [
+            String.raw`y=\tfrac{1}{4}x+\tfrac{25}{4}`,
+            String.raw`y=\tfrac{1}{4}x+\tfrac{7}{3}`,
+            String.raw`y=4x+7`,
+            String.raw`y=\tfrac{1}{4}x-\tfrac{25}{4}`,
+            String.raw`y=-\tfrac{1}{4}x+\tfrac{25}{4}`,
+            String.raw`y=\tfrac{1}{4}x+7`
+          ]
+        },
+        {
+          latex   : String.raw`\text{Write the equation of the line with slope }-4\text{ through }(-4,1)\text{.}`,
+          choices : [
+            String.raw`y=-4x+15`,
+            String.raw`y=-4x-15`,
+            String.raw`y=4x-15`,
+            String.raw`y=4x+15`,
+            String.raw`y=-\tfrac{1}{4}x-15`,
+            String.raw`y=-4x+1`
+          ]
+        },
+        {
+          latex   : String.raw`\text{Write the equation of the line with slope }\tfrac{5}{3}\text{ through }(-3,-1)\text{.}`,
+          choices : [
+            String.raw`y=\tfrac{5}{3}x+4`,
+            String.raw`y=\tfrac{5}{3}x-4`,
+            String.raw`y=-\tfrac{5}{3}x+4`,
+            String.raw`y=\tfrac{3}{5}x+4`,
+            String.raw`y=\tfrac{5}{3}x+\tfrac{4}{3}`,
+            String.raw`y=5x+4`
+          ]
+        },
+        {
+          latex   : String.raw`\text{Write the equation of the line with slope }\tfrac{4}{5}\text{ through }(-5,2)\text{.}`,
+          choices : [
+            String.raw`y=\tfrac{4}{5}x+6`,
+            String.raw`y=\tfrac{5}{4}x+6`,
+            String.raw`y=\tfrac{4}{5}x-6`,
+            String.raw`y=-\tfrac{4}{5}x+6`,
+            String.raw`y=\tfrac{4}{5}x+\tfrac{6}{5}`,
+            String.raw`y=4x+6`
+          ]
+        },
+        {
+          latex   : String.raw`\text{Write the equation of the line with slope }\tfrac{9}{4}\text{ through }(3,0)\text{.}`,
+          choices : [
+            String.raw`y=\tfrac{9}{4}x+\tfrac{27}{4}`,
+            String.raw`y=\tfrac{9}{4}x-\tfrac{27}{4}`,
+            String.raw`y=\tfrac{4}{9}x-\tfrac{27}{4}`,
+            String.raw`y=\tfrac{9}{4}x-27`,
+            String.raw`y=-\tfrac{9}{4}x-\tfrac{27}{4}`,
+            String.raw`y=\tfrac{9}{4}x-\tfrac{3}{4}`
+          ]
+        },
+        {
+          latex   : String.raw`\text{Write the equation of the line with slope }0.25\text{ through }(4.1,3.7)\text{.}`,
+          choices : [
+            String.raw`y=0.25x+2.675`,
+            String.raw`y=0.25x-0.4`,
+            String.raw`y=4x+2.675`,
+            String.raw`y=-0.25x+2.675`,
+            String.raw`y=0.25x+3.7`,
+            String.raw`y=0.25x-2.675`
+          ]
+        }
+      ]
+    };
+  </script>
+
+  <link rel="stylesheet" href="/math-homework/assets/core.css" />
+  <link rel="stylesheet" href="https://tikzjax.com/v1/fonts.css" />
+  <script defer src="/math-homework/assets/core.js"></script>
+  <script defer src="https://tikzjax.com/v1/tikzjax.js"></script>
+  <script defer src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+</head>
+<body>
+  <div id="hw-root">Loading…</div>
+</body>
+</html>
