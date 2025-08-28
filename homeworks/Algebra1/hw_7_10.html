@@ -3,248 +3,179 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Homework 7-10 (Algebra 1)</title>
+  <title>Homework 7-10 (Algebra 1) — 6Q version</title>
 
   <script>
     /* =========================
-       Homework 7-10 — Graphing Systems of Inequalities
+       Homework 7-10 — Graphing Systems of Inequalities (6 questions)
+       Intersection-only shading, mixed dashed/solid, includes vertical/horizontal
        ========================= */
     window.homeworkData = {
       classId : "Algebra1",
-      id      : "Homework 7-10",
-      title   : "Homework 7-10 — Graphing Systems of Inequalities",
+      id      : "Homework 7-10 (6Q)",
+      title   : "Homework 7-10 — Graphing Systems of Inequalities (6Q)",
 
       graphics : String.raw`
-\begin{tikzpicture}[scale=0.55]
+\begin{tikzpicture}[scale=0.65]
   \tikzset{grid/.style={very thin,color=gray!30}}
   \tikzset{axes/.style={->,thick}}
   \colorlet{sol}{blue!50!red!35}
 
-% ---------- G1 ----------
-  \begin{scope}[xshift=-12cm,yshift=12cm]
+  % ---------- G1: y >= -x+2 (solid) AND y > x-4 (dashed)
+  \begin{scope}[xshift=-8cm,yshift=8cm]
     \clip (-4.2,-4.2) rectangle (4.2,4.2);
     \draw[grid] (-4,-4) grid (4,4);
     \draw[axes] (-4,0)--(4,0); \draw[axes] (0,-4)--(0,4);
     \begin{scope}
-      \clip (-4,6) -- (4,-2) -- (4,4) -- (-4,4) -- cycle;   % y >= -x+2
-      \path[fill=sol,opacity=.35] (-4,-8) -- (4,0) -- (4,4) -- (-4,4) -- cycle; % y > x-4
+      % y >= -x+2 (above)
+      \clip (-4, {-(-4)+2}) -- (4, {-(4)+2}) -- (4,4) -- (-4,4) -- cycle;
+      % y > x-4 (above)
+      \path[fill=sol,opacity=.35] (-4, {-4-4}) -- (4, {4-4}) -- (4,4) -- (-4,4) -- cycle;
     \end{scope}
-    \draw[blue,thick,domain=-4:4]       plot(\x,{-\x+2});
-    \draw[red,thick,dashed,domain=-4:4] plot(\x,{\x-4});
+    \draw[blue,thick,domain=-4:4]       plot(\x,{-1*\x+2});  % solid
+    \draw[red,thick,dashed,domain=-4:4] plot(\x,{\x-4});     % dashed
     \node[anchor=south east,font=\small] at (3.7,3.7) {G1};
   \end{scope}
 
-  % ---------- G2 ----------
-  \begin{scope}[xshift=0cm,yshift=12cm]
+  % ---------- G2: x > -1 (dashed vertical) AND y <= 2 (solid horizontal)
+  \begin{scope}[xshift=0cm,yshift=8cm]
     \clip (-4.2,-4.2) rectangle (4.2,4.2);
     \draw[grid] (-4,-4) grid (4,4);
     \draw[axes] (-4,0)--(4,0); \draw[axes] (0,-4)--(0,4);
     \begin{scope}
-      \clip (-4,22) -- (4,-18) -- (4,4) -- (-4,4) -- cycle;    % y > -5x+2
-      \path[fill=sol,opacity=.35] (-4,9) -- (4,-7) -- (4,-4) -- (-4,-4) -- cycle; % y <= -2x+1
+      % x > -1 (right of)
+      \clip (-1,-4) -- (4,-4) -- (4,4) -- (-1,4) -- cycle;
+      % y <= 2 (below)
+      \path[fill=sol,opacity=.35] (-4,-4) -- (4,-4) -- (4,2) -- (-4,2) -- cycle;
     \end{scope}
-    \draw[blue,thick,dashed,domain=-4:4] plot(\x,{-5*\x+2});
-    \draw[red,thick,domain=-4:4]        plot(\x,{-2*\x+1});
+    \draw[red,thick,dashed] (-1,-4)--(-1,4);  % dashed vertical
+    \draw[blue,thick]       (-4,2)--(4,2);    % solid horizontal
     \node[anchor=south east,font=\small] at (3.7,3.7) {G2};
   \end{scope}
 
-  % ---------- G3 ----------
-  \begin{scope}[xshift=12cm,yshift=12cm]
+  % ---------- G3: y >= 0 (solid horizontal) AND x+4y <= 8 (solid sloped)
+  \begin{scope}[xshift=8cm,yshift=8cm]
     \clip (-4.2,-4.2) rectangle (4.2,4.2);
     \draw[grid] (-4,-4) grid (4,4);
     \draw[axes] (-4,0)--(4,0); \draw[axes] (0,-4)--(0,4);
     \begin{scope}
-      \clip (-4,-9) -- (4,3) -- (4,-4) -- (-4,-4) -- cycle; % y <= 1.5x-3
-      \path[fill=sol,opacity=.35] (-4,7) -- (4,-1) -- (4,-4) -- (-4,-4) -- cycle; % y <= -x+3
+      % y >= 0 (above)
+      \clip (-4,0) -- (4,0) -- (4,4) -- (-4,4) -- cycle;
+      % x+4y <= 8  → y <= -0.25x + 2 (below)
+      \path[fill=sol,opacity=.35] (-4, {-0.25*(-4)+2}) -- (4, {-0.25*(4)+2}) -- (4,-4) -- (-4,-4) -- cycle;
     \end{scope}
-    \draw[blue,thick,domain=-4:4] plot(\x,{1.5*\x-3});
-    \draw[red,thick,domain=-4:4]  plot(\x,{-\x+3});
+    \draw[blue,thick]  (-4,0)--(4,0);                % y=0 solid
+    \draw[red,thick,domain=-4:4] plot(\x,{-0.25*\x+2}); % line solid (≤)
     \node[anchor=south east,font=\small] at (3.7,3.7) {G3};
   \end{scope}
 
-  % ---------- G4 ----------
-  \begin{scope}[xshift=-12cm,yshift=0cm]
+  % ---------- G4: x >= 0 (solid vertical) AND 3x+y < 6 (dashed sloped)
+  \begin{scope}[xshift=-8cm,yshift=-2cm]
     \clip (-4.2,-4.2) rectangle (4.2,4.2);
     \draw[grid] (-4,-4) grid (4,4);
     \draw[axes] (-4,0)--(4,0); \draw[axes] (0,-4)--(0,4);
     \begin{scope}
-      \clip (-4,-13) -- (4,3) -- (4,4) -- (-4,4) -- cycle;    % y > 2x-5
-      \path[fill=sol,opacity=.35] (-4,16) -- (4,-8) -- (4,4) -- (-4,4) -- cycle; % y >= -3x+4
+      % x >= 0 (right of y-axis)
+      \clip (0,-4) -- (4,-4) -- (4,4) -- (0,4) -- cycle;
+      % 3x+y < 6 → y < -3x + 6 (below)
+      \path[fill=sol,opacity=.35] (-4, {-3*(-4)+6}) -- (4, {-3*(4)+6}) -- (4,-4) -- (-4,-4) -- cycle;
     \end{scope}
-    \draw[blue,thick,dashed,domain=-4:4] plot(\x,{2*\x-5});
-    \draw[red,thick,domain=-4:4]         plot(\x,{-3*\x+4});
+    \draw[blue,thick]          (0,-4)--(0,4);        % solid vertical
+    \draw[red,thick,dashed,domain=-4:4] plot(\x,{-3*\x+6}); % dashed (strict)
     \node[anchor=south east,font=\small] at (3.7,3.7) {G4};
   \end{scope}
 
-  % ---------- G5 ----------
-  \begin{scope}[xshift=-2cm,yshift=0cm]
+  % ---------- G5: band — x+2y >= -4 (solid) AND x+2y < 6 (dashed)
+  \begin{scope}[xshift=0cm,yshift=-2cm]
     \clip (-4.2,-4.2) rectangle (4.2,4.2);
     \draw[grid] (-4,-4) grid (4,4);
     \draw[axes] (-4,0)--(4,0); \draw[axes] (0,-4)--(0,4);
     \begin{scope}
-      \clip (-4,3.8) -- (4,2.2) -- (4,-4) -- (-4,-4) -- cycle;  % y < -0.2x+3
-      \path[fill=sol,opacity=.35] (-4,10) -- (4,-2) -- (4,-4) -- (-4,-4) -- cycle; % y <= -1.5x+4
+      % y >= -0.5x - 2  (above)
+      \clip (-4, {-0.5*(-4)-2}) -- (4, {-0.5*(4)-2}) -- (4,4) -- (-4,4) -- cycle;
+      % y <  -0.5x + 3  (below)
+      \path[fill=sol,opacity=.35] (-4, {-0.5*(-4)+3}) -- (4, {-0.5*(4)+3}) -- (4,-4) -- (-4,-4) -- cycle;
     \end{scope}
-    \draw[blue,thick,dashed,domain=-4:4] plot(\x,{-0.2*\x+3});
-    \draw[red,thick,domain=-4:4]         plot(\x,{-1.5*\x+4});
+    \draw[blue,thick,domain=-4:4]       plot(\x,{-0.5*\x-2}); % solid
+    \draw[red,thick,dashed,domain=-4:4] plot(\x,{-0.5*\x+3}); % dashed
     \node[anchor=south east,font=\small] at (3.7,3.7) {G5};
   \end{scope}
 
-  % ---------- G6 ----------
-  \begin{scope}[xshift=8cm,yshift=0cm]
+  % ---------- G6: y > -x+1 (dashed) AND y <= 2 (solid horizontal)
+  \begin{scope}[xshift=8cm,yshift=-2cm]
     \clip (-4.2,-4.2) rectangle (4.2,4.2);
     \draw[grid] (-4,-4) grid (4,4);
     \draw[axes] (-4,0)--(4,0); \draw[axes] (0,-4)--(0,4);
     \begin{scope}
-      \clip (-4,21) -- (4,-3) -- (4,4) -- (-4,4) -- cycle;    % y > -3x+9
-      \path[fill=sol,opacity=.35] (-4,14) -- (4,-2) -- (4,4) -- (-4,4) -- cycle; % y >= -2x+6
+      % y > -x + 1 (above)
+      \clip (-4, {-(-4)+1}) -- (4, {-(4)+1}) -- (4,4) -- (-4,4) -- cycle;
+      % y <= 2 (below)
+      \path[fill=sol,opacity=.35] (-4,-4) -- (4,-4) -- (4,2) -- (-4,2) -- cycle;
     \end{scope}
-    \draw[blue,thick,dashed,domain=-4:4] plot(\x,{-3*\x+9});
-    \draw[red,thick,domain=-4:4]         plot(\x,{-2*\x+6});
+    \draw[red,thick,dashed,domain=-4:4] plot(\x,{-1*\x+1}); % dashed (strict)
+    \draw[blue,thick]                   (-4,2)--(4,2);      % solid horizontal
     \node[anchor=south east,font=\small] at (3.7,3.7) {G6};
   \end{scope}
-
-  % ---------- G7 ----------
-  \begin{scope}[xshift=12cm,yshift=0cm]
-    \clip (-4.2,-4.2) rectangle (4.2,4.2);
-    \draw[grid] (-4,-4) grid (4,4);
-    \draw[axes] (-4,0)--(4,0); \draw[axes] (0,-4)--(0,4);
-    \begin{scope}
-      \clip (-4,0) -- (4,-2) -- (4,4) -- (-4,4) -- cycle;    % y >= -0.5x-2
-      \path[fill=sol,opacity=.35] (-4,5) -- (4,1) -- (4,-4) -- (-4,-4) -- cycle; % y < -0.5x+3
-    \end{scope}
-    \draw[blue,thick,domain=-4:4]       plot(\x,{-0.5*\x-2});
-    \draw[red,thick,dashed,domain=-4:4] plot(\x,{-0.5*\x+3});
-    \node[anchor=south east,font=\small] at (3.7,3.7) {G7};
-  \end{scope}
-
-  % ---------- G8 ----------
-  \begin{scope}[xshift=-12cm,yshift=-12cm]
-    \clip (-4.2,-4.2) rectangle (4.2,4.2);
-    \draw[grid] (-4,-4) grid (4,4);
-    \draw[axes] (-4,0)--(4,0); \draw[axes] (0,-4)--(0,4);
-    \begin{scope}
-      \clip (0,-4) -- (4,-4) -- (4,4) -- (0,4) -- cycle;     % x >= 0
-      \clip (-4,0) -- (4,0) -- (4,4) -- (-4,4) -- cycle;     % y >= 0
-      \path[fill=sol,opacity=.35] (-4,8) -- (4,-\x) -- cycle; % (simplified polygon)
-    \end{scope}
-    \draw[blue,thick] (0,-4)--(0,4);
-    \draw[red,thick]  (-4,0)--(4,0);
-    \draw[blue!40!red,thick,domain=-4:4] plot(\x,{-5/6*\x+5});
-    \node[anchor=south east,font=\small] at (3.7,3.7) {G8};
-  \end{scope}
-
-  % ---------- G9 ----------
-  \begin{scope}[xshift=-2cm,yshift=-12cm]
-    \clip (-4.2,-4.2) rectangle (4.2,4.2);
-    \draw[grid] (-4,-4) grid (4,4);
-    \draw[axes] (-4,0)--(4,0); \draw[axes] (0,-4)--(0,4);
-    \begin{scope}
-      \clip (0,-4) -- (4,-4) -- (4,4) -- (0,4) -- cycle;  % x >= 0
-      \clip (-4,0) -- (4,0) -- (4,4) -- (-4,4) -- cycle;  % y >= 0
-      \path[fill=sol,opacity=.35] (-4,8) -- (4,0) -- (4,-4) -- (-4,-4) -- cycle;
-    \end{scope}
-    \draw[blue,thick] (0,-4)--(0,4);
-    \draw[red,thick]  (-4,0)--(4,0);
-    \draw[blue!40!red,thick,domain=-4:4] plot(\x,{-0.25*\x+2});
-    \node[anchor=south east,font=\small] at (3.7,3.7) {G9};
-  \end{scope}
-
 \end{tikzpicture}
 `,
 
-      answerKey : ["A","B","C","B","E","F","C","A","A","D","F","C"],
+      /* Answers A–F for 6 questions (match choices below) */
+      answerKey : ["A","A","A","D","C","F"],
 
       questions : [
         { latex: String.raw`\text{Refer to G1. Which system is graphed?}`,
           choices: [
-            String.raw`\begin{cases}x+y\ge 2\\ x-y<4\end{cases}`,
+            String.raw`\begin{cases}x+y\ge 2\\ x-y<4\end{cases}`,      // A ✓
             String.raw`\begin{cases}x+y>2\\ x-y\le 4\end{cases}`,
             String.raw`\begin{cases}x+y\le 2\\ x-y>4\end{cases}`,
-            String.raw`\begin{cases}y\ge -x+2\\ y\le -x+4\end{cases}`
+            String.raw`\begin{cases}y\le -x+2\\ y> x-4\end{cases}`,
+            String.raw`\begin{cases}y\ge -x+2\\ y< x-4\end{cases}`,
+            String.raw`\begin{cases}x+y>2\\ x-y>4\end{cases}`
           ]},
         { latex: String.raw`\text{Refer to G2. Which system is graphed?}`,
           choices: [
-            String.raw`\begin{cases}5x+y>2\\ 2x+y\le 1\end{cases}`,
-            String.raw`\begin{cases}5x+y\le 2\\ 2x+y>1\end{cases}`,
-            String.raw`\begin{cases}y\ge -5x+2\\ y<-2x+1\end{cases}`,
-            String.raw`\begin{cases}y<-5x+2\\ y>-2x+1\end{cases}`
+            String.raw`\begin{cases}x>-1\\ y\le 2\end{cases}`,          // A ✓
+            String.raw`\begin{cases}x\ge -1\\ y>2\end{cases}`,
+            String.raw`\begin{cases}x<-1\\ y\le 2\end{cases}`,
+            String.raw`\begin{cases}x>-1\\ y>2\end{cases}`,
+            String.raw`\begin{cases}x\le -1\\ y<2\end{cases}`,
+            String.raw`\begin{cases}x\ge -1\\ y\ge 2\end{cases}`
           ]},
         { latex: String.raw`\text{Refer to G3. Which system is graphed?}`,
           choices: [
-            String.raw`\begin{cases}3x-2y<6\\ x+y>3\end{cases}`,
-            String.raw`\begin{cases}3x-2y>6\\ x+y<3\end{cases}`,
-            String.raw`\begin{cases}3x-2y\ge 6\\ x+y\le 3\end{cases}`,
-            String.raw`\begin{cases}y>1.5x-3\\ y>-x+3\end{cases}`
+            String.raw`\begin{cases}y\ge 0\\ x+4y\le 8\end{cases}`,     // A ✓
+            String.raw`\begin{cases}y>0\\ x+4y<8\end{cases}`,
+            String.raw`\begin{cases}y\le 0\\ x+4y\le 8\end{cases}`,
+            String.raw`\begin{cases}y\ge 0\\ x+4y\ge 8\end{cases}`,
+            String.raw`\begin{cases}x\ge 0\\ y\ge 0\end{cases}`,
+            String.raw`\begin{cases}x+4y\ge 8\\ y\le 0\end{cases}`
           ]},
         { latex: String.raw`\text{Refer to G4. Which system is graphed?}`,
           choices: [
-            String.raw`\begin{cases}2x-y>5\\ 3x+y<4\end{cases}`,
-            String.raw`\begin{cases}2x-y<5\\ 3x+y\ge 4\end{cases}`,
-            String.raw`\begin{cases}2x-y\le 5\\ 3x+y\ge 4\end{cases}`,
-            String.raw`\begin{cases}y<2x-5\\ y<-3x+4\end{cases}`
+            String.raw`\begin{cases}x\ge 0\\ 3x+y\le 6\end{cases}`,
+            String.raw`\begin{cases}x>0\\ 3x+y<6\end{cases}`,
+            String.raw`\begin{cases}x\le 0\\ 3x+y\ge 6\end{cases}`,
+            String.raw`\begin{cases}x\ge 0\\ 3x+y<6\end{cases}`,        // D ✓
+            String.raw`\begin{cases}x\ge 0\\ 3x+y>6\end{cases}`,
+            String.raw`\begin{cases}x<0\\ 3x+y<6\end{cases}`
           ]},
-        { latex: String.raw`\text{Refer to G5. Which system is graphed?}`,
+        { latex: String.raw`\text{Refer to G5 (band). Which system is graphed?}`,
           choices: [
-            String.raw`\begin{cases}x+5y>15\\ 3x+2y>8\end{cases}`,
-            String.raw`\begin{cases}x+5y<15\\ 3x+2y>8\end{cases}`,
-            String.raw`\begin{cases}x+5y\ge 15\\ 3x+2y\le 8\end{cases}`,
-            String.raw`\begin{cases}y\ge -0.2x+3\\ y>-1.5x+4\end{cases}`,
-            String.raw`\begin{cases}x+5y<15\\ 3x+2y\le 8\end{cases}`,
-            String.raw`\begin{cases}y<-0.2x+3\\ y<-1.5x+4\end{cases}`
+            String.raw`\begin{cases}x+2y<-4\\ x+2y\le 6\end{cases}`,
+            String.raw`\begin{cases}x+2y>-4\\ x+2y\ge 6\end{cases}`,
+            String.raw`\begin{cases}x+2y\ge -4\\ x+2y<6\end{cases}`,    // C ✓
+            String.raw`\begin{cases}y\le -0.5x-2\\ y\ge -0.5x+3\end{cases}`,
+            String.raw`\begin{cases}y> -0.5x-2\\ y< -0.5x+3\end{cases}`,
+            String.raw`\begin{cases}x+2y\le -4\\ x+2y>6\end{cases}`
           ]},
         { latex: String.raw`\text{Refer to G6. Which system is graphed?}`,
           choices: [
-            String.raw`\begin{cases}3x+y<9\\ 2x+y<6\end{cases}`,
-            String.raw`\begin{cases}3x+y\le 9\\ 2x+y\le 6\end{cases}`,
-            String.raw`\begin{cases}3x+y>9\\ 2x+y\ge 6\end{cases}`,
-            String.raw`\begin{cases}y<-3x+9\\ y<-2x+6\end{cases}`,
-            String.raw`\begin{cases}y>-3x+9\\ y>-2x+6\end{cases}`,
-            String.raw`\begin{cases}y\ge -3x+9\\ y\ge -2x+6\end{cases}`
-          ]},
-        { latex: String.raw`\text{Refer to G7. Which system is graphed?}`,
-          choices: [
-            String.raw`\begin{cases}x+2y>-4\\ x+2y\ge 6\end{cases}`,
-            String.raw`\begin{cases}x+2y\le -4\\ x+2y<6\end{cases}`,
-            String.raw`\begin{cases}x+2y\ge -4\\ x+2y<6\end{cases}`,
-            String.raw`\begin{cases}y\ge -0.5x-2\\ y<-0.5x+3\end{cases}`
-          ]},
-        { latex: String.raw`\text{Refer to G8. Which system is graphed?}`,
-          choices: [
-            String.raw`\begin{cases}x\ge 0\\ y\ge 0\\ 5x+6y\le 30\end{cases}`,
-            String.raw`\begin{cases}x<0\\ y<0\\ 5x+6y\ge 30\end{cases}`,
-            String.raw`\begin{cases}y>0\\ x<0\\ 5x+6y>30\end{cases}`,
-            String.raw`\begin{cases}x\ge 0\\ y\ge 0\\ 5x+6y>30\end{cases}`
-          ]},
-        { latex: String.raw`\text{Refer to G9. Which system is graphed?}`,
-          choices: [
-            String.raw`\begin{cases}x\ge 0\\ y\ge 0\\ x+4y\le 8\end{cases}`,
-            String.raw`\begin{cases}x<0\\ y<0\\ x+4y\ge 8\end{cases}`,
-            String.raw`\begin{cases}x\le 0\\ y\le 0\\ x+4y<8\end{cases}`,
-            String.raw`\begin{cases}x>0\\ y>0\\ x+4y>8\end{cases}`
-          ]},
-        { latex: String.raw`\text{Refer to G10. Which system is graphed?}`,
-          choices: [
-            String.raw`\begin{cases}x\ge 0\\ y\ge 0\\ 3x+y\le 8\\ x+2y\le 6\end{cases}`,
-            String.raw`\begin{cases}x\ge 0\\ y\ge 0\\ 3x+y\ge 8\\ x+2y\ge 6\end{cases}`,
-            String.raw`\begin{cases}x\le 0\\ y\le 0\\ 3x+y\le 8\\ x+2y\le 6\end{cases}`,
-            String.raw`\begin{cases}x\ge 0\\ y\ge 0\\ 3x+y<8\\ x+2y<6\end{cases}`
-          ]},
-        { latex: String.raw`\text{Refer to G11. Which system is graphed?}`,
-          choices: [
-            String.raw`\begin{cases}x\ge 0\\ y\le 2\\ x+y>1\end{cases}`,
-            String.raw`\begin{cases}x\le 0\\ y\ge 2\\ x+y<1\end{cases}`,
-            String.raw`\begin{cases}x>0\\ y>2\\ x+y\ge 1\end{cases}`,
-            String.raw`\begin{cases}x<0\\ y<2\\ x+y\le 1\end{cases}`,
-            String.raw`\begin{cases}x\ge 0\\ y\le 2\\ x+y<1\end{cases}`,
-            String.raw`\begin{cases}x\le 0\\ y\ge 2\\ x+y>1\end{cases}`
-          ]},
-        { latex: String.raw`\text{Refer to G12. Which system is graphed?}`,
-          choices: [
-            String.raw`\begin{cases}y\ge 0\\ x>-1\\ 2x+3y<9\end{cases}`,
-            String.raw`\begin{cases}y<0\\ x\le -1\\ 2x+3y\ge 9\end{cases}`,
-            String.raw`\begin{cases}y>0\\ x<-1\\ 2x+3y>9\end{cases}`,
-            String.raw`\begin{cases}y\ge 0\\ x>-1\\ 2x+3y\ge 9\end{cases}`
+            String.raw`\begin{cases}y\ge -x+1\\ y<2\end{cases}`,
+            String.raw`\begin{cases}y>-x+1\\ y<2\end{cases}`,
+            String.raw`\begin{cases}y\le -x+1\\ y\le 2\end{cases}`,
+            String.raw`\begin{cases}x\ge -1\\ y\le 2\end{cases}`,
+            String.raw`\begin{cases}y>-x+1\\ y<1\end{cases}`,
+            String.raw`\begin{cases}y>-x+1\\ y\le 2\end{cases}`         // F ✓
           ]}
       ]
     };
