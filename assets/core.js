@@ -15,11 +15,40 @@ if (window.__coreLoaded__) {
   });
 }
 
+/*──── TikZ helpers (added) ────*/
+function sanitizeTikz(src){
+  if (!src) return src;
+  return src
+    .replaceAll("\\begin{scope]", "\\begin{scope}")
+    .replaceAll("\\end{scope]", "\\end{scope}")
+    .replace(/<\s*begin\{scope\}\s*>/g, "\\begin{scope}")
+    .replace(/<\s*\/\s*end\{scope\}\s*>/g, "\\end{scope}");
+}
+function looksLikeTikz(src){
+  return typeof src === "string" && /\\begin\{tikzpicture\}/.test(src);
+}
+function mountTikzInto(el, src){
+  if (/<script[^>]+type=["']text\/tikz["']/.test(src) || /<(svg|img)\b/i.test(src)) {
+    el.innerHTML = src;
+  } else {
+    const fixed = sanitizeTikz(src);
+    el.innerHTML = `<script type="text/tikz">\n${fixed}\n</script>`;
+  }
+  if (window.tikzjax?.process) {
+    try { window.tikzjax.process(); } catch {}
+  } else {
+    window.addEventListener("load", () => {
+      try { window.tikzjax?.process?.(); } catch {}
+    }, { once:true });
+  }
+}
+
 /*──────── BUILD ────────*/
 function build(d){
   const root = document.getElementById("hw-root");
   root.innerHTML = `
     <style>
+      /* Only affects the TikZ block's layout; rest untouched */
       #media      { text-align:center; margin: 1rem 0; }
       #media script[type="text/tikz"]{ display:inline-block; }
       form#hwForm { max-width:680px; margin:auto; }
@@ -42,11 +71,11 @@ function build(d){
       <button type="submit">Submit</button>
     </form>`;
 
-  /* graphics slot ------------------------------------------------------ */
+  /* graphics ------------------------------------------------------ */
   if (d.graphics){
     const media = document.getElementById("media");
-    if (/\\begin\{tikzpicture\}/.test(d.graphics)){
-      media.innerHTML = `<script type="text/tikz">\n${d.graphics}\n</script>`;
+    if (looksLikeTikz(d.graphics)){
+      mountTikzInto(media, d.graphics);
     } else {
       media.innerHTML = d.graphics;          /* raw HTML / <img> / <svg> */
     }
@@ -72,7 +101,8 @@ function build(d){
 
   /* render ------------------------------------------------------------- */
   if (window.MathJax?.typeset) MathJax.typeset();
-  if (window.tikzjax)          tikzjax.process();
+  if (window.tikzjax?.process)  { try { tikzjax.process(); } catch {} }
+  else window.addEventListener("load", () => { try { window.tikzjax?.process?.(); } catch {} }, { once:true });
 
   document.getElementById("hwForm")
           .addEventListener("submit", ev => handleSubmit(ev,d));
