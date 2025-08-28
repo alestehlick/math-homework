@@ -3,12 +3,9 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Homework 7-10 (Algebra 1) — Test</title>
+  <title>Homework 7-10 (Algebra 1)</title>
 
   <script>
-    /* =========================
-       Homework 7-10 — Graphing Systems of Inequalities (TEST: G1 only)
-       ========================= */
     window.homeworkData = {
       classId : "Algebra1",
       id      : "Homework 7-10",
@@ -18,51 +15,32 @@
 \begin{tikzpicture}[scale=0.8]
   \tikzset{grid/.style={very thin,color=gray!30}}
   \tikzset{axes/.style={->,thick}}
-
-  % ---------- G1: x+y >= 2  and  x-y < 4
   \clip (-4.2,-4.2) rectangle (4.2,4.2);
   \draw[grid] (-4,-4) grid (4,4);
   \draw[axes] (-4,0)--(4,0); \draw[axes] (0,-4)--(0,4);
-
-  % blue: x+y >= 2  -> y >= -x+2  (shade above)
-  % (FIXED: removed the old placeholder with "?")
+  % G1: x+y >= 2 (solid) and x-y < 4 (dashed)
   \path[fill=blue!25,opacity=.35] (-4, {-(-4)+2}) -- (4, {-(4)+2}) -- (4,4) -- (-4,4) -- cycle;
-
-  % red:  x-y < 4    -> y > x-4    (shade above)
-  \path[fill=red!25,opacity=.35] (-4, {-4-4}) -- (4, {4-4}) -- (4,4) -- (-4,4) -- cycle;
-
-  \draw[blue,thick,domain=-4:4] plot(\x,{-1*\x+2});       % solid: ≥
-  \draw[red,thick,dashed,domain=-4:4] plot(\x,{\x-4});    % dashed: <
+  \path[fill=red!25,opacity=.35]  (-4, {-4-4}) -- (4, {4-4}) -- (4,4) -- (-4,4) -- cycle;
+  \draw[blue,thick,domain=-4:4] plot(\x,{-1*\x+2});
+  \draw[red,thick,dashed,domain=-4:4] plot(\x,{\x-4});
   \node[anchor=south east,font=\small] at (3.7,3.7) {G1};
 \end{tikzpicture}
-`,
-
-      answerKey : ["A"],
-      questions : [
-        { latex: String.raw`\text{Refer to G1. Which system is graphed?}`,
-          choices: [
-            String.raw`\begin{cases}x+y\ge 2\\ x-y<4\end{cases}`,
-            String.raw`\begin{cases}x+y>2\\ x-y\le 4\end{cases}`,
-            String.raw`\begin{cases}x+y\le 2\\ x-y>4\end{cases}`,
-            String.raw`\begin{cases}y\ge -x+2\\ y\le -x+4\end{cases}`
-          ]}
-      ]
+`
     };
   </script>
 
   <link rel="stylesheet" href="/math-homework/assets/core.css" />
   <link rel="stylesheet" href="https://tikzjax.com/v1/fonts.css" />
-  <script defer src="/math-homework/assets/core.js"></script>
-  <script defer src="https://tikzjax.com/v1/tikzjax.js"></script>
-  <script defer src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+  <script src="/math-homework/assets/core.js" defer></script>
+  <script src="https://tikzjax.com/v1/tikzjax.js" defer></script>
+  <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js" defer></script>
 
-  <!-- Fallback: if core.js didn’t wrap the TikZ yet, do it here -->
+  <!-- Fallback: insert TikZ manually if core.js didn’t -->
   <script>
-    document.addEventListener('DOMContentLoaded', () => {
-      const already = document.querySelector('script[type="text/tikz"]');
-      if (!already && window.homeworkData && window.homeworkData.graphics) {
-        const s = document.createElement('script');
-        s.type = 'text/tikz';
+    document.addEventListener("DOMContentLoaded", () => {
+      if (!document.querySelector('script[type="text/tikz"]') && window.homeworkData?.graphics) {
+        const s = document.createElement("script");
+        s.type = "text/tikz";
         s.textContent = window.homeworkData.graphics;
         document.body.appendChild(s);
       }
