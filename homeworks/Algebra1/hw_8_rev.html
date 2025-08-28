@@ -16,7 +16,8 @@
 
       graphics : String.raw` `,
 
-      answerKey : ["A","C","E","F","B","D","A","F","C","E","B","D"],
+      /* Correct choices (A–F) for Q1–Q12 */
+      answerKey : ["A","C","A","E","E","E","A","B","A","A","C","A"],
 
       questions : [
         { latex: String.raw`\text{Classify } x-5.`,
@@ -39,59 +40,40 @@
             String.raw`\text{Binomial, degree 4}`
           ]},
 
-        { latex: String.raw`\text{Give the degree of }9. `,
-          choices: [
-            String.raw`0`,
-            String.raw`1`,
-            String.raw`2`,
-            String.raw`3`,
-            String.raw`4`,
-            String.raw`5`
-          ]},
+        { latex: String.raw`\text{Give the degree of the constant }9.`,
+          choices: ["0","1","2","3","4","5"]
+        },
 
-        { latex: String.raw`\text{Evaluate }4x^3+2x-5z \text{ if }x=2,z=0.`,
-          choices: [
-            "28","30","32","34","36","38"
-          ]},
+        { latex: String.raw`\text{Evaluate }4x^3+2x-5z\ \text{ if }x=2,\ z=0.`,
+          choices: ["28","30","32","34","36","38"]
+        },
 
-        { latex: String.raw`\text{Evaluate }8y^4+7y^2+3y+9 \text{ if }y=-1.`,
-          choices: [
-            "-3","-2","-1","0","1","2"
-          ]},
+        { latex: String.raw`\text{Evaluate }8y^4+7y^2+3y+9\ \text{ if }y=-1.`,
+          choices: ["-3","5","12","18","21","24"]
+        },
 
-        { latex: String.raw`\text{Evaluate }3x^2-5xz \text{ if }x=2,z=0.`,
-          choices: [
-            "4","6","8","10","12","14"
-          ]},
-
-        { latex: String.raw`\text{Find the degree of }x^3+3x^2+5x-4.`,
-          choices: [
-            "3","2","1","0","4","5"
-          ]},
-
-        { latex: String.raw`\text{Find the degree of }4x^3y^2-3xy^2.`,
-          choices: [
-            "2","3","4","5","6","7"
-          ]},
+        { latex: String.raw`\text{Evaluate }3x^2-5xz\ \text{ if }x=2,\ z=0.`,
+          choices: ["4","6","8","10","12","14"]
+        },
 
         { latex: String.raw`\text{Simplify: }(2x^2+3x-5)+(7x^2-9).`,
           choices: [
             String.raw`9x^2+3x-14`,
             String.raw`9x^2-3x-14`,
-            String.raw`9x^2+3x-14`,
-            String.raw`5x^2+3x-14`,
             String.raw`9x^2+5x-14`,
-            String.raw`7x^2+3x-9`
+            String.raw`7x^2+3x-9`,
+            String.raw`5x^2+3x-14`,
+            String.raw`9x^2+3x-9`
           ]},
 
         { latex: String.raw`\text{Simplify: }(5x^2+3b)(2x^2-7b).`,
           choices: [
-            String.raw`10x^4-35bx^2+6b^2`,
-            String.raw`10x^4-35x^2b-21b^2`,
-            String.raw`10x^4+15x^2b-21b^2`,
-            String.raw`10x^4-35x^2b+15b^2`,
             String.raw`10x^4-35x^2b+6b^2`,
-            String.raw`10x^2-35b+6`
+            String.raw`10x^4-29x^2b-21b^2`,
+            String.raw`10x^4+29x^2b-21b^2`,
+            String.raw`10x^4-29xb^2-21b^2`,
+            String.raw`10x^4-35x^2b-21b^2`,
+            String.raw`10x^4-29x^2b+21b^2`
           ]},
 
         { latex: String.raw`\text{Divide: }\dfrac{7x^3y+21x^2y^4}{7xy}.`,
@@ -104,17 +86,27 @@
             String.raw`x^2+3y^3`
           ]},
 
-        { latex: String.raw`\text{Use }3x-5+x^2.\ \text{ Give the coefficient of the first term.}`,
+        { latex: String.raw`\text{Divide and state the quotient and remainder: }(5x^2-2x+9)\div(x+1).`,
           choices: [
-            String.raw`1`,
-            String.raw`3`,
-            String.raw`-5`,
-            String.raw`0`,
-            String.raw`2`,
-            String.raw`-1`
+            String.raw`\text{Quotient }5x-7,\ \text{Remainder }16`,
+            String.raw`\text{Quotient }5x+7,\ \text{Remainder }-16`,
+            String.raw`\text{Quotient }5x-2,\ \text{Remainder }9`,
+            String.raw`\text{Quotient }5x-7,\ \text{Remainder }-16`,
+            String.raw`\text{Quotient }5x+3,\ \text{Remainder }6`,
+            String.raw`\text{Quotient }5x-5,\ \text{Remainder }4`
           ]},
 
-        { latex: String.raw`\text{Use }3x-5+x^2.\ \text{ Write in descending order.}`,
+        { latex: String.raw`\text{Divide and state the quotient and remainder: }(x^5-2x^2+6)\div(x^2+4).`,
+          choices: [
+            String.raw`\text{Quotient }x^3-4x+2,\ \text{Remainder }14-16x`,
+            String.raw`\text{Quotient }x^3-4x-2,\ \text{Remainder }14-16x`,
+            String.raw`\text{Quotient }x^3-4x-2,\ \text{Remainder }16x+14`,
+            String.raw`\text{Quotient }x^3-2x-4,\ \text{Remainder }16x+14`,
+            String.raw`\text{Quotient }x^2-4x-2,\ \text{Remainder }16x+14`,
+            String.raw`\text{Quotient }x^3-4x-2,\ \text{Remainder }-16x-14`
+          ]},
+
+        { latex: String.raw`\text{Write in descending order: }3x-5+x^2.`,
           choices: [
             String.raw`x^2+3x-5`,
             String.raw`3x-5+x^2`,
