@@ -7,7 +7,9 @@
 
   <script>
     /* =========================
-       Homework 9-3 — Perfect Square Trinomials ONLY
+       Homework 9-3 — Perfect Square Trinomials (Comprehensive Mix)
+       From the source set: identify PSTs (with some non-PST traps),
+       factor PSTs (monic/non-monic, multi-variable), GCF→PST, higher powers.
        ========================= */
     window.homeworkData = {
       classId : "Algebra1",
@@ -17,127 +19,127 @@
       graphics : String.raw``,
 
       /* Correct choices for Q1–Q12 (hidden) */
-      answerKey : ["A","C","B","E","A","D","F","B","C","A","E","F"],
+      answerKey : ["A","C","B","F","A","D","E","A","B","C","E","F"],
 
       questions : [
-        { latex: String.raw`\text{Factor the perfect square trinomial: } x^2+6x+9`,
+        { latex: String.raw`\text{Identify/Factor: } x^2+6x+9`,
           choices: [
-            String.raw`(x+3)^2`,
+            String.raw`(x+3)^2\ \ (\text{PST})`,
             String.raw`(x+6)(x+1.5)`,
             String.raw`(x+9)(x-3)`,
-            String.raw`x(x+6)+9`,
+            String.raw`x(x+6)+9\ \ (\text{not a factorization})`,
             String.raw`(x-3)^2`,
-            String.raw`(x+2)(x+4)`
+            String.raw`\text{Not a perfect square}`
           ]},
 
-        { latex: String.raw`\text{Factor the perfect square trinomial: } x^2y-8xy+16y^2`,
+        { latex: String.raw`\text{Identify/Factor: } x^2y-8xy+16y^2`,
           choices: [
-            String.raw`x(x-8y)+16y^2`,
-            String.raw`(xy-8y)(x+2y)`,
-            String.raw`(x-4y)^2`,
             String.raw`(x-8y)^2`,
+            String.raw`x(x-8y)+16y^2`,
+            String.raw`(x-4y)^2\ \ (\text{PST})`,
             String.raw`(x-2y)(x-6y)`,
-            String.raw`(x+4y)^2`
+            String.raw`(x+4y)^2`,
+            String.raw`\text{Not a perfect square}`
           ]},
 
-        { latex: String.raw`\text{Factor the perfect square trinomial: } x^2+14x+49`,
+        { latex: String.raw`\text{Identify/Factor: } a^2b^2-12ab\,c+36c^2`,
           choices: [
-            String.raw`(x+7)(x+7)`,
-            String.raw`(x+7)^2`,
-            String.raw`(x+14)(x+1)`,
-            String.raw`x(x+14)+49`,
-            String.raw`(x-7)^2`,
-            String.raw`(x+5)(x+9)`
-          ]},
-
-        { latex: String.raw`\text{Factor the perfect square trinomial: } a^2b^2-12ab\,c+36c^2`,
-          choices: [
-            String.raw`(a^2b^2-6c)(ab-6c)`,
-            String.raw`(a^2b^2-12c)(ab+c)`,
+            String.raw`(a^2b^2-6c)^2`,
+            String.raw`(ab-6c)^2\ \ (\text{PST})`,
+            String.raw`(ab-12c)(ab+c)`,
             String.raw`(ab-6c)(ab+6c)`,
-            String.raw`(a b - 12c)^2`,
-            String.raw`(ab-6c)^2`,
-            String.raw`(ab+6c)^2`
+            String.raw`(ab+6c)^2`,
+            String.raw`\text{Not a perfect square}`
           ]},
 
-        { latex: String.raw`\text{Factor the perfect square trinomial: } m^2+24m+144`,
+        { latex: String.raw`\text{Identify/Factor: } 4x^2-10x+25`,
+          choices: [
+            String.raw`(2x-5)^2`,
+            String.raw`(2x-5)(2x-5/2)`,
+            String.raw`(x-5)^2`,
+            String.raw`2(2x^2-5x)+25`,
+            String.raw`(4x-5)(x-5)`,
+            String.raw`\text{Not a perfect square (middle term should be }-20x\text{)}`
+          ]},
+
+        { latex: String.raw`\text{Identify/Factor: } 16x^2+16xy+4y^2`,
+          choices: [
+            String.raw`(4x+2y)^2\ \ (\text{PST})`,
+            String.raw`(4x+y)^2`,
+            String.raw`(4x+4y)^2`,
+            String.raw`4(4x^2+4xy+y^2)`,
+            String.raw`(2x+y)^2`,
+            String.raw`\text{Not a perfect square}`
+          ]},
+
+        { latex: String.raw`\text{Identify/Factor: } 81x^2y^2+9xyz+z^2`,
+          choices: [
+            String.raw`9xy(9xy+z)+z^2`,
+            String.raw`(9xy- z)^2`,
+            String.raw`(9x^2y^2+z)^2`,
+            String.raw`(9xy+z)^2\ \ (\text{PST})`,
+            String.raw`(3xy+z)^2`,
+            String.raw`\text{Not a perfect square}`
+          ]},
+
+        { latex: String.raw`\text{Factor: } x^2-16x+64`,
+          choices: [
+            String.raw`(x-4)(x-12)`,
+            String.raw`(x-16)(x+4)`,
+            String.raw`x(x-16)+64`,
+            String.raw`(x+8)^2`,
+            String.raw`(x-8)^2`,
+            String.raw`(x-32)(x+2)`
+          ]},
+
+        { latex: String.raw`\text{Factor: } m^2+24m+144`,
           choices: [
             String.raw`(m+12)^2`,
             String.raw`(m+24)(m+6)`,
             String.raw`(m+18)(m+8)`,
+            String.raw`(m+12)(m-12)`,
             String.raw`m(m+24)+144`,
-            String.raw`(m-12)^2`,
-            String.raw`(m+10)(m+14)`
+            String.raw`(m-12)^2`
           ]},
 
-        { latex: String.raw`\text{Factor the perfect square trinomial: } a^2-10ab+25b^2`,
+        { latex: String.raw`\text{Factor: } a^2-10ab+25b^2`,
           choices: [
             String.raw`(a-10b)(a+b)`,
-            String.raw`(a-25b)(a+b)`,
-            String.raw`(a-5b)(a+5b)`,
             String.raw`(a-5b)^2`,
             String.raw`(a+5b)^2`,
-            String.raw`a(a-10b)+25b^2`
+            String.raw`a(a-10b)+25b^2`,
+            String.raw`(a-25b)(a+b)`,
+            String.raw`(a-5b)(a+5b)`
           ]},
 
-        { latex: String.raw`\text{Factor the perfect square trinomial: } a^2-14a+49`,
+        { latex: String.raw`\text{Factor: } x^8+26x^4+169`,
           choices: [
-            String.raw`(a-14)(a+1)`,
-            String.raw`(a-7)(a+7)`,
-            String.raw`(a-7)(a-7)`,
-            String.raw`a(a-14)+49`,
-            String.raw`(a+7)^2`,
-            String.raw`(a-7)^2`
-          ]},
-
-        { latex: String.raw`\text{Factor the perfect square trinomial: } 9x^2+12x+4`,
-          choices: [
-            String.raw`(9x+4)(x+1)`,
-            String.raw`(3x+2)^2`,
-            String.raw`(3x+4)(3x+1)`,
-            String.raw`9(x^2+\tfrac{4}{3}x)+4`,
-            String.raw`(3x-2)^2`,
-            String.raw`(x+2)^2`
-          ]},
-
-        { latex: String.raw`\text{Factor the perfect square trinomial: } 36x^2+12x+1`,
-          choices: [
-            String.raw`(6x+1)(6x+1)`,
-            String.raw`(6x+2)^2`,
-            String.raw`(3x+1)^2`,
-            String.raw`36\!\left(x+\tfrac{1}{6}\right)^2`,
-            String.raw`(6x+1)^2`,
-            String.raw`(6x-1)^2`
-          ]},
-
-        { latex: String.raw`\text{Factor the perfect square trinomial: } 9x^2+30x+25`,
-          choices: [
-            String.raw`(3x+5)^2`,
-            String.raw`(9x+25)(x+1)`,
-            String.raw`(3x+10)(x+2.5)`,
-            String.raw`x(9x+30)+25`,
-            String.raw`(3x-5)^2`,
-            String.raw`(x+5)^2`
-          ]},
-
-        { latex: String.raw`\text{Factor the perfect square trinomial: } x^8+26x^4+169`,
-          choices: [
-            String.raw`(x^4+26)(x^4+1)`,
-            String.raw`(x^4+13)(x^4+13)`,
+            String.raw`(x^4-13)(x^4+13)`,
             String.raw`x^4(x^4+26)+169`,
-            String.raw`(x^4-13)^2`,
             String.raw`(x^4+13)^2`,
-            String.raw`(x^2+13)^2`
+            String.raw`(x^2+13)^2`,
+            String.raw`(x^4-13)^2`,
+            String.raw`(x^4+13)^2\ \ (\text{PST})`
           ]},
 
-        { latex: String.raw`\text{Factor the perfect square trinomial: } x^4-20x^2+100`,
+        { latex: String.raw`\text{Factor completely (GCF then PST): } 18x^3+48x^2+32x`,
           choices: [
-            String.raw`(x^2-10)(x^2+10)`,
-            String.raw`x^2(x^2-20)+100`,
-            String.raw`(x^2-5)^2`,
-            String.raw`(x-10)^2`,
-            String.raw`(x^2+10)^2`,
-            String.raw`(x^2-10)^2`
+            String.raw`2x(9x^2+24x+16)`,
+            String.raw`x(18x^2+48x+32)`,
+            String.raw`2x(3x+4)(3x+4x)`,
+            String.raw`(3x+4)^2`,
+            String.raw`2x(3x+4)^2\ \ (\text{correct})`,
+            String.raw`6x(3x^2+8x+16/3)`
+          ]},
+
+        { latex: String.raw`\text{Identify: } 16y^2-2y+16`,
+          choices: [
+            String.raw`(4y-1)^2`,
+            String.raw`(4y-\tfrac{1}{4})^2`,
+            String.raw`(4y+1)^2`,
+            String.raw`(y-1/4)^2`,
+            String.raw`4(4y^2-\tfrac{1}{2}y+4)`,
+            String.raw`\text{Not a perfect square (}b^2\neq 4ac\text{)}`
           ]}
       ]
     };
