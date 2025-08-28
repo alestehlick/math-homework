@@ -32,7 +32,7 @@
     \begin{scope}
       \clip (\winmin,\winmin) rectangle (\winmax,\winmax);
       \draw[blue,thick,domain=\winmin:\winmax] plot(\x,{-1*\x+4});
-      \draw[red, thick,domain=\winmin:\winmax] plot(\x,{2*\x-1});
+      \draw[red, thick,domain=\winmin:\winmax]  plot(\x,{2*\x-1});
       \fill (5/3,7/3) circle (2pt);
     \end{scope}
     \node[font=\small,anchor=south west] at (-3.3,3) {G1};
@@ -44,7 +44,7 @@
     \begin{scope}
       \clip (\winmin,\winmin) rectangle (\winmax,\winmax);
       \draw[blue,thick,domain=\winmin:\winmax] plot(\x,{2*\x+1});
-      \draw[red, thick,domain=\winmin:\winmax] plot(\x,{2*\x-3});
+      \draw[red, thick,domain=\winmin:\winmax]  plot(\x,{2*\x-3});
     \end{scope}
     \node[font=\small,anchor=south west] at (-3.3,3) {G2};
   \end{scope}
@@ -78,7 +78,7 @@
     \begin{scope}
       \clip (\winmin,\winmin) rectangle (\winmax,\winmax);
       \draw[blue,thick,domain=\winmin:\winmax] plot(\x,{0.5*\x+1});
-      \draw[red, thick,domain=\winmin:\winmax] plot(\x,{-0.5*\x+3});
+      \draw[red, thick,domain=\winmin:\winmax]  plot(\x,{-0.5*\x+3});
       \fill (2,2) circle (2pt);
     \end{scope}
     \node[font=\small,anchor=south west] at (-3.3,3) {G5};
@@ -126,7 +126,7 @@
     \begin{scope}
       \clip (\winmin,\winmin) rectangle (\winmax,\winmax);
       \draw[blue,thick,domain=\winmin:\winmax] plot(\x,{1.5*\x-2});
-      \draw[red, thick,domain=\winmin:\winmax] plot(\x,{-0.5*\x+1});
+      \draw[red, thick,domain=\winmin:\winmax]  plot(\x,{-0.5*\x+1});
       \fill (1.5,0.25) circle (2pt);
     \end{scope}
     \node[font=\small,anchor=south west] at (-3.3,3) {G9};
@@ -141,7 +141,7 @@
       \draw[red, very thick] (\winmin,2)--(\winmax,2);
     \end{scope}
     \node[font=\small,anchor=south west] at (-3.3,3) {G10};
-  \end{scope}
+  </begin{scope}
 
   % ---------- G11 (parallel verticals; inconsistent) ----------
   \begin{scope}[xshift=6.5cm,yshift=-29cm]
@@ -149,10 +149,10 @@
     \begin{scope}
       \clip (\winmin,\winmin) rectangle (\winmax,\winmax);
       \draw[blue,thick] (-3,\winmin)--(-3,\winmax);
-      \draw[red, thick] (-1,\winmin)--(-1,\winmax);
-    \end{scope}
+      \draw[red, thick]  (-1,\winmin)--(-1,\winmax);
+    </end{scope}
     \node[font=\small,anchor=south west] at (-3.3,3) {G11};
-  \end{scope}
+  </begin{scope}
 
   % ---------- G12 ( (2/3)x+1/2 and -x+5 → (2.7,2.3) ) ----------
   \begin{scope}[xshift=19.5cm,yshift=-29cm]
@@ -160,7 +160,7 @@
     \begin{scope}
       \clip (\winmin,\winmin) rectangle (\winmax,\winmax);
       \draw[blue,thick,domain=\winmin:\winmax] plot(\x,{(2/3)*\x+0.5});
-      \draw[red, thick,domain=\winmin:\winmax] plot(\x,{-1*\x+5});
+      \draw[red, thick,domain=\winmin:\winmax]  plot(\x,{-1*\x+5});
       \fill (2.7,2.3) circle (2pt);
     \end{scope}
     \node[font=\small,anchor=south west] at (-3.3,3) {G12};
@@ -169,7 +169,7 @@
 `,
 
       /* ===== Hidden answer key (A–F) ===== */
-      answerKey : ["A","D","C","B","A","E","C","F","B","C","A","D"],
+      answerKey : ["A","D","C","B","A","E","C","F","B","C","A","A"],
 
       /* ===== 12 questions, 6 choices each ===== */
       questions : [
@@ -311,7 +311,6 @@
 
   <link rel="stylesheet" href="/math-homework/assets/core.css" />
   <link rel="stylesheet" href="https://tikzjax.com/v1/fonts.css" />
-  <!-- Use whichever you include: core-lean.js or core.js; both updated to handle TikZ -->
   <script defer src="/math-homework/assets/core.js"></script>
   <script defer src="https://tikzjax.com/v1/tikzjax.js"></script>
   <script defer src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
