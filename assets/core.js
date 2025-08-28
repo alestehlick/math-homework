@@ -1,17 +1,12 @@
-/*═══════════════════════════════════════════════════════════════════════
-  core.js   v4.1  (TikZ-safe, drop-in for v4.0)
-  ───────────────────────────────────────────────────────────────────────
-  • Same API as before; adds robust TikZ handling:
-      - Optional #media slot if d.graphics is present
-      - Auto-wrap raw TikZ into <script type="text/tikz">
-      - Sanitizer for common scope-bracket typos
-      - Tries processing via TikZJax whether it loads early or late
-═══════════════════════════════════════════════════════════════════════*/
+/*══════════════════════════════════════════════════════════════════════
+  core.js   v4.1  (TikZ-safe, drop-in)
+  - Auto-wraps raw TikZ (String.raw) into <script type="text/tikz">
+  - Sanitizes common scope typos
+  - Re-tries tikzjax.process() whether it loads early or late
+══════════════════════════════════════════════════════════════════════*/
 
-/*── CONFIG ───────────────────────────────────────────────────────────*/
 const SCRIPT_URL  = "https://script.google.com/macros/s/AKfycbwkLwPoES1_hxHn6pdu2qdGCE3bosqwcZg6z23B6w72iQLDAIMzZZf4ZAFC44aKWTIcNg/exec";
 const COOLDOWN_MS = 120_000;
-/*─────────────────────────────────────────────────────────────────────*/
 
 if (window.__coreLoaded__) {
   console.warn("Duplicate core.js detected");
@@ -23,12 +18,10 @@ if (window.__coreLoaded__) {
   });
 }
 
-/*─────────────────────────────────────────────────────────────────────*/
 /* TikZ helpers */
 function sanitizeTikz(src){
   if (!src) return src;
   return src
-    // common bracket/angle-bracket variants
     .replaceAll("\\begin{scope]", "\\begin{scope}")
     .replaceAll("\\end{scope]", "\\end{scope}")
     .replace(/<\s*begin\{scope\}\s*>?/gi, "\\begin{scope}")
@@ -39,14 +32,14 @@ function looksLikeTikz(src){
   return typeof src === "string" && /\\begin\{tikzpicture\}/.test(src);
 }
 function mountTikzInto(el, src){
-  // If it already contains a TikZJax script or an <svg>/<img>, just insert it.
+  // If already a TikZJax block or an image/SVG, just insert it
   if (/<script[^>]+type=["']text\/tikz["']/.test(src) || /<(svg|img)\b/i.test(src)) {
     el.innerHTML = src;
   } else {
     const fixed = sanitizeTikz(src);
     el.innerHTML = `<script type="text/tikz">\n${fixed}\n</script>`;
   }
-  // Try processing now; if tikzjax loads later, try again on window load.
+  // Run TikZJax now or when it finishes loading
   if (window.tikzjax?.process) {
     try { window.tikzjax.process(); } catch {}
   } else {
@@ -56,8 +49,7 @@ function mountTikzInto(el, src){
   }
 }
 
-/*─────────────────────────────────────────────────────────────────────*/
-/* Build DOM (keeps previous structure/field names) */
+/* Build UI */
 function buildForm(d){
   const root = document.getElementById("hw-root");
   const wrap = t => `\\(${t}\\)`;
@@ -76,17 +68,17 @@ function buildForm(d){
       <button type="submit">Submit</button>
     </form>`;
 
-  /* graphics (optional) */
+  // optional graphics
   if (d.graphics){
     const media = document.getElementById("media");
     if (looksLikeTikz(d.graphics)){
       mountTikzInto(media, d.graphics);
     } else {
-      media.innerHTML = d.graphics; // <img>/<svg>/custom HTML
+      media.innerHTML = d.graphics;
     }
   }
 
-  /* questions */
+  // questions
   const qbox = document.getElementById("qbox");
   (d.questions || []).forEach((q,i) => {
     const opts = (q.choices || []).map((txt,j) => {
@@ -105,16 +97,15 @@ function buildForm(d){
       </div>`);
   });
 
-  /* typeset math (once) */
+  // typeset math
   if (window.MathJax?.typeset) { try { MathJax.typeset(); } catch {} }
 
-  /* submit handler */
+  // submit
   document.getElementById("hwForm")
           .addEventListener("submit", ev => handleSubmit(ev, d));
 }
 
-/*─────────────────────────────────────────────────────────────────────*/
-/* Submit & server reply (unchanged logic) */
+/* Submit + server reply */
 async function handleSubmit(ev, d){
   ev.preventDefault();
   const f   = ev.target;
@@ -122,7 +113,6 @@ async function handleSubmit(ev, d){
   const ln  = f.lastName.value.trim();
   if (!fn || !ln) { alert("Please enter both first and last names."); return; }
 
-  // cooldown
   const key  = `last_${d.classId}_${d.id}_${fn}_${ln}`.toLowerCase();
   const now  = Date.now();
   const last = Number(localStorage.getItem(key)) || 0;
@@ -131,11 +121,9 @@ async function handleSubmit(ev, d){
     return;
   }
 
-  // collect answers
   const answers = [];
   for (let i = 1; i <= d.questions.length; i++) answers.push(f[`q${i}`].value);
 
-  // build POST body
   const body = new URLSearchParams({
     classId   : d.classId,
     homeworkId: d.id,
