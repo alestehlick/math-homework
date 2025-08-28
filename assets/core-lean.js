@@ -1,11 +1,11 @@
 /*═══════════════════════════════════════════════════════════════════════
-  core-lean.js   v4.0
+  core-lean.js   v4.1  (TikZ-safe)
   ───────────────────────────────────────────────────────────────────────
-  • Builds form from window.homeworkData  (raw LaTeX → wraps in \( … \) )
-  • First / Last name inputs (required)
-  • Cool-down between attempts (localStorage, 120 s default)
-  • POSTs URL-encoded  data to Google Apps Script  (same params as old core.js)
-  • Parses server reply (SUBMITTED, RETRY_HIGH, etc.)  → alerts user
+  • Same as v4.0 + robust TikZ handling:
+      - Optional #media slot if d.graphics is present
+      - Auto-wrap raw TikZ into <script type="text/tikz">
+      - Tiny sanitizer for common scope-bracket typos
+      - Processes via TikZJax whether it loads early or late
 ═══════════════════════════════════════════════════════════════════════*/
 
 /*── CONFIG ───────────────────────────────────────────────────────────*/
@@ -24,12 +24,44 @@ if (window.__coreLeanLoaded__) {
 }
 
 /*──────────────────────────────────────────────────────────────────────*/
+/*  TikZ helpers (added)  */
+function sanitizeTikz(src) {
+  if (!src) return src;
+  return src
+    .replaceAll("\\begin{scope]", "\\begin{scope}")
+    .replaceAll("\\end{scope]", "\\end{scope}")
+    .replace(/<\s*begin\{scope\}\s*>/g, "\\begin{scope}")
+    .replace(/<\s*\/\s*end\{scope\}\s*>/g, "\\end{scope}");
+}
+function looksLikeTikz(src) {
+  return typeof src === "string" && /\\begin\{tikzpicture\}/.test(src);
+}
+function mountTikzInto(el, src) {
+  // If it already contains <script type="text/tikz"> or <img>/<svg>, just dump it.
+  if (/<script[^>]+type=["']text\/tikz["']/.test(src) || /<(svg|img)\b/i.test(src)) {
+    el.innerHTML = src;
+  } else {
+    // Wrap raw TikZ
+    const fixed = sanitizeTikz(src);
+    el.innerHTML = `<script type="text/tikz">\n${fixed}\n</script>`;
+  }
+  // Try processing now; try again on window load as a safety net.
+  if (window.tikzjax?.process) {
+    try { window.tikzjax.process(); } catch {}
+  } else {
+    window.addEventListener("load", () => {
+      try { window.tikzjax?.process?.(); } catch {}
+    }, { once:true });
+  }
+}
+
+/*──────────────────────────────────────────────────────────────────────*/
 /*  Build static DOM  */
 function buildForm(d) {
   const root = document.getElementById("hw-root");
   const wrap = t => `\\(${t}\\)`;
 
-  /* skeleton */
+  /* skeleton (adds #media only if graphics present) */
   root.innerHTML = `
     <h1>${d.title}</h1>
     <form id="hwForm">
@@ -39,9 +71,20 @@ function buildForm(d) {
         <label>First&nbsp;Name: <input name="firstName" required></label>
         <label>Last&nbsp;Name:&nbsp; <input name="lastName"  required></label>
       </div>
+      ${d.graphics ? `<div id="media" style="text-align:center;margin:1rem 0;"></div>` : ``}
       <div id="qbox"></div>
       <button type="submit">Submit</button>
     </form>`;
+
+  /* graphics (optional) */
+  if (d.graphics) {
+    const media = document.getElementById("media");
+    if (looksLikeTikz(d.graphics)) {
+      mountTikzInto(media, d.graphics);
+    } else {
+      media.innerHTML = d.graphics; // already <img> / <svg> / custom HTML
+    }
+  }
 
   /* questions */
   const qbox = document.getElementById("qbox");
@@ -71,7 +114,7 @@ function buildForm(d) {
 }
 
 /*──────────────────────────────────────────────────────────────────────*/
-/*  Submit handler (same protocol as original core.js)  */
+/*  Submit handler (unchanged)  */
 async function handleSubmit(ev, d) {
   ev.preventDefault();
   const f   = ev.target;
@@ -93,7 +136,7 @@ async function handleSubmit(ev, d) {
   for (let i = 1; i <= d.questions.length; i++)
     answers.push(f[`q${i}`].value);
 
-  /* build POST body (URL-encoded, same field names as old core.js) */
+  /* build POST body */
   const body = new URLSearchParams({
     classId   : d.classId,
     homeworkId: d.id,
@@ -114,7 +157,7 @@ async function handleSubmit(ev, d) {
 }
 
 /*──────────────────────────────────────────────────────────────────────*/
-/*  Interpret server reply (logic identical to the working core.js)  */
+/*  Interpret server reply (unchanged)  */
 function handleReply(msg, total) {
   if (msg.startsWith("SUBMITTED|")) {
     const [, raw, flag] = msg.split("|");
