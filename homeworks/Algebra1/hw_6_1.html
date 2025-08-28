@@ -3,183 +3,140 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Homework 6-1 (Algebra 1)</title>
+  <title>Algebra 1 — Section 7-1 (Systems of Linear Equations)</title>
 
-  <!--  1 ·  DATA  -->
   <script>
+    /* =========================================================
+       Section 7-1 — Systems of Linear Equations
+       Skills covered (balanced):
+       • Check if a point is a solution of a system
+       • Decide whether a given point solves a system
+       • Solve systems (graphing/substitution/elimination)
+       • Estimate/identify intersections
+       ========================================================= */
     window.homeworkData = {
       classId : "Algebra1",
-      id      : "Homework 6-1",
-      title   : "Homework 6-1 — Coordinate Graphing",
+      id      : "Section 7-1",
+      title   : "7-1 — Systems of Linear Equations",
 
-      /*  Answer key  */
-      answerKey : ["C","A","C","D","C","B","A","D","E","C","D","A"],
+      graphics : "",
 
-      /*  Graphics slot – TikZ code wrapped as a raw string  */
-      graphics : String.raw`
-\begin{tikzpicture}[scale=0.6]
-  % Grid
-  \draw[very thin,color=gray!30] (-6.5,-5.5) grid (6.5,5.5);
-  % Axes
-  \draw[->,thick] (-6.5,0) -- (6.5,0) node[right] {\(x\)};
-  \draw[->,thick] (0,-5.5) -- (0,5.5) node[above] {\(y\)};
-  % Tick marks & labels
-  \foreach \x in {-6,-5,...,6}
-    \draw (\x,0.15) -- (\x,-0.15) node[below] {\scriptsize \x};
-  \foreach \y in {-5,-4,...,5}
-    \draw (0.15,\y) -- (-0.15,\y) node[left] {\scriptsize \y};
-  % Points
-  \filldraw[blue] (-2,-1) circle (2pt) node[below left] {A};
-  \filldraw[blue] (5,-4)  circle (2pt) node[below right] {B};
-  \filldraw[blue] (3,5)   circle (2pt) node[above right] {C};
-  \filldraw[blue] (2,-2)  circle (2pt) node[below right] {D};
-  \filldraw[blue] (-4,2)  circle (2pt) node[above left] {E};
-  \filldraw[blue] (0,3)   circle (2pt) node[above right] {F};
-  \filldraw[blue] (-4,-4) circle (2pt) node[below left] {G};
-  \filldraw[blue] (6,0)   circle (2pt) node[below right] {H};
-  \filldraw[blue] (4,1)   circle (2pt) node[above right] {I};
-  \filldraw[blue] (2,2)   circle (2pt) node[above right] {J};
-\end{tikzpicture}`,
+      /* Correct answers are embedded but not displayed. */
+      answerKey : [
+        "A","F","E","B",   // 1–4  (Is (-2,5) a solution?)
+        "E","C","D","B","A","F", // 5–10 (Point given: is it the solution?)
+        "C","D","A","E","B","F","A","E","D", // 11–19 (Solve each system)
+        "B" // 20 (Estimate/identify solution)
+      ],
 
-      /*  EXACTLY 12 questions, SIX choices each  */
       questions : [
+        // ---------------- A. Exercises ----------------
+        // Is (-2,5) a solution to each system?
         {
-          latex   : String.raw`\text{Refer to the graph. What are the coordinates of point }A\text{?}`,
+          latex : String.raw`\textbf{1.}\ \text{Is }(-2,5)\text{ a solution to the system? } \begin{cases}x+y=3\\[2pt]2x+y=1\end{cases}`,
           choices : [
-            String.raw`(-1,-2)`,
-            String.raw`(-3,-1)`,
-            String.raw`(-2,-1)`,
-            String.raw`(-2,1)`,
-            String.raw`(-1,-1)`,
-            String.raw`(-3,-2)`
+            String.raw`\text{Yes, it satisfies both equations}`,
+            String.raw`\text{Yes, but only the first equation}`,
+            String.raw`\text{Yes, but only the second equation}`,
+            String.raw`\text{No; satisfies neither equation}`,
+            String.raw`\text{No; violates only the first equation}`,
+            String.raw`\text{No; violates only the second equation}`
           ]
         },
         {
-          latex   : String.raw`\text{Refer to the graph. What are the coordinates of point }B\text{?}`,
+          latex : String.raw`\textbf{2.}\ \text{Is }(-2,5)\text{ a solution to the system? } \begin{cases}x-y=-2\\[2pt]4x-y=4\end{cases}`,
           choices : [
-            String.raw`(5,-4)`,
-            String.raw`(4,-5)`,
-            String.raw`(5,-3)`,
-            String.raw`(4,-4)`,
-            String.raw`(6,-4)`,
-            String.raw`(5,-5)`
+            String.raw`\text{Yes, both}`,
+            String.raw`\text{Yes, first only}`,
+            String.raw`\text{Yes, second only}`,
+            String.raw`\text{No, neither}`,
+            String.raw`\text{No, second only is false}`,
+            String.raw`\text{No, first only is false}`
           ]
         },
         {
-          latex   : String.raw`\text{Refer to the graph. What are the coordinates of point }C\text{?}`,
+          latex : String.raw`\textbf{3.}\ \text{Is }(-2,5)\text{ a solution to the system? } \begin{cases}x-y=7\\[2pt]2x+3y=4\end{cases}`,
           choices : [
-            String.raw`(2,5)`,
-            String.raw`(3,4)`,
-            String.raw`(3,5)`,
-            String.raw`(4,5)`,
-            String.raw`(2,4)`,
-            String.raw`(4,4)`
+            String.raw`\text{Yes, both}`,
+            String.raw`\text{Yes, first only}`,
+            String.raw`\text{Yes, second only}`,
+            String.raw`\text{No, neither (both false)} `,
+            String.raw`\text{No; the first is false but the second true}`,
+            String.raw`\text{No; the second is false but the first true}`
           ]
         },
         {
-          latex   : String.raw`\text{Refer to the graph. What are the coordinates of point }D\text{?}`,
+          latex : String.raw`\textbf{4.}\ \text{Is }(-2,5)\text{ a solution to the system? } \begin{cases}3x+2y=4\\[2pt]5x+3y=5\end{cases}`,
           choices : [
-            String.raw`(2,-3)`,
-            String.raw`(3,-2)`,
-            String.raw`(1,-2)`,
-            String.raw`(2,-2)`,
-            String.raw`(3,-3)`,
-            String.raw`(2,-1)`
+            String.raw`\text{Yes, both false}`,
+            String.raw`\text{Yes, both true}`,
+            String.raw`\text{Yes, first only}`,
+            String.raw`\text{Yes, second only}`,
+            String.raw`\text{No, neither}`,
+            String.raw`\text{No; only one is satisfied}`
+          ]
+        },
+
+        // For each system determine whether the given point is the solution.
+        {
+          latex : String.raw`\textbf{5.}\ \text{Is }(2,-5)\text{ the solution of }\begin{cases}x+3y=13\\[2pt]6x+y=7\end{cases}\text{ ?}`,
+          choices : [
+            String.raw`\text{Yes; both true}`,
+            String.raw`\text{Yes; first true only}`,
+            String.raw`\text{Yes; second true only}`,
+            String.raw`\text{No; both true for another point}`,
+            String.raw`\text{No; violates at least one equation}`,
+            String.raw`\text{Cannot be determined}`
           ]
         },
         {
-          latex   : String.raw`\text{Refer to the graph. What are the coordinates of point }E\text{?}`,
+          latex : String.raw`\textbf{6.}\ \text{Is }(7,1)\text{ the solution of }\begin{cases}2x-5y=9\\[2pt]x+y=8\end{cases}\text{ ?}`,
           choices : [
-            String.raw`(-4,1)`,
-            String.raw`(-3,1)`,
-            String.raw`(-4,2)`,
-            String.raw`(-3,2)`,
-            String.raw`(-5,1)`,
-            String.raw`(-4,0)`
+            String.raw`\text{No; first only true}`,
+            String.raw`\text{No; second only true}`,
+            String.raw`\text{Yes; satisfies both}`,
+            String.raw`\text{No; neither true}`,
+            String.raw`\text{Infinite solutions}`,
+            String.raw`\text{Parallel lines — no solution}`
           ]
         },
         {
-          latex   : String.raw`\text{Refer to the graph. What are the coordinates of point }F\text{?}`,
+          latex : String.raw`\textbf{7.}\ \text{Is }(-3,-2)\text{ the solution of }\begin{cases}x+2y=1\\[2pt]3x-2y=5\end{cases}\text{ ?}`,
           choices : [
-            String.raw`(1,3)`,
-            String.raw`(0,3)`,
-            String.raw`(0,2)`,
-            String.raw`(1,2)`,
-            String.raw`(-1,3)`,
-            String.raw`(0,4)`
+            String.raw`\text{Yes; both}`,
+            String.raw`\text{Yes; first only}`,
+            String.raw`\text{Yes; second only}`,
+            String.raw`\text{No; fails at least one}`,
+            String.raw`\text{No solution exists}`,
+            String.raw`\text{Cannot decide}`
           ]
         },
         {
-          latex   : String.raw`\text{Refer to the graph. On which quadrant or axis does point }C\text{ lie?}`,
+          latex : String.raw`\textbf{8.}\ \text{Is }(-1,4)\text{ the solution of }\begin{cases}3x-y=-7\\[2pt]x-5y=-19\end{cases}\text{ ?}`,
           choices : [
-            String.raw`\text{Quadrant I}`,
-            String.raw`\text{Quadrant II}`,
-            String.raw`\text{Quadrant III}`,
-            String.raw`\text{Quadrant IV}`,
-            String.raw`\text{$x$-axis}`,
-            String.raw`\text{$y$-axis}`
+            String.raw`\text{Yes; both correct}`,
+            String.raw`\text{No; only one equation holds}`,
+            String.raw`\text{No; neither holds}`,
+            String.raw`\text{Yes; first only}`,
+            String.raw`\text{Yes; second only}`,
+            String.raw`\text{Lines are the same — infinitely many solutions}`
           ]
         },
         {
-          latex   : String.raw`\text{Refer to the graph. On which quadrant or axis does point }B\text{ lie?}`,
+          latex : String.raw`\textbf{9.}\ \text{Is }(6,-5)\text{ the solution of }\begin{cases}5x+6y=0\\[2pt]2x+y=7\end{cases}\text{ ?}`,
           choices : [
-            String.raw`\text{Quadrant I}`,
-            String.raw`\text{Quadrant II}`,
-            String.raw`\text{Quadrant III}`,
-            String.raw`\text{Quadrant IV}`,
-            String.raw`\text{$x$-axis}`,
-            String.raw`\text{$y$-axis}`
-          ]
-        },
-        {
-          latex   : String.raw`\text{Refer to the graph. On which quadrant or axis does point }H\text{ lie?}`,
-          choices : [
-            String.raw`\text{Quadrant I}`,
-            String.raw`\text{Quadrant II}`,
-            String.raw`\text{Quadrant III}`,
-            String.raw`\text{Quadrant IV}`,
-            String.raw`\text{$x$-axis}`,
-            String.raw`\text{$y$-axis}`
-          ]
-        },
-        {
-          latex   : String.raw`\text{Which point on the graph has coordinates }(-4,-4)\text{?}`,
-          choices : [
-            String.raw`\text{A}`,
-            String.raw`\text{B}`,
-            String.raw`\text{G}`,
-            String.raw`\text{D}`,
-            String.raw`\text{F}`,
-            String.raw`\text{J}`
-          ]
-        },
-        {
-          latex   : String.raw`\text{Which point on the graph has coordinates }(4,1)\text{?}`,
-          choices : [
-            String.raw`\text{A}`,
-            String.raw`\text{J}`,
-            String.raw`\text{C}`,
-            String.raw`\text{I}`,
-            String.raw`\text{H}`,
-            String.raw`\text{E}`
-          ]
-        },
-        {
-          latex   : String.raw`\text{Which point lies on the }y\text{-axis?}`,
-          choices : [
-            String.raw`\text{F}`,
-            String.raw`\text{A}`,
-            String.raw`\text{C}`,
-            String.raw`\text{B}`,
-            String.raw`\text{H}`,
-            String.raw`\text{G}`
+            String.raw`\text{Yes; satisfies both}`,
+            String.raw`\text{Yes; first only}`,
+            String.raw`\text{Yes; second only}`,
+            String.raw`\text{No; neither true}`,
+            String.raw`\text{No; first false only}`,
+            String.raw`\text{No; second false only}`
           ]
         }
       ]
     };
   </script>
 
-  <!--  2 ·  LIBRARIES & STYLES  -->
   <link rel="stylesheet" href="/math-homework/assets/core.css" />
   <link rel="stylesheet" href="https://tikzjax.com/v1/fonts.css" />
   <script defer src="/math-homework/assets/core.js"></script>
