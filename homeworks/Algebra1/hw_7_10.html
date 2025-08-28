@@ -3,312 +3,71 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Homework 7-10 (Algebra 1)</title>
+  <title>HW 7-10 — TikZJax Test (Single Question)</title>
 
-  <script>
-    /* =========================
-       Homework 7-10 — Graphing Systems of Inequalities
-       ========================= */
-    window.homeworkData = {
-      classId : "Algebra1",
-      id      : "Homework 7-10",
-      title   : "Homework 7-10 — Graphing Systems of Inequalities",
-
-      /* Answers A–F for 12 questions */
-      answerKey : ["A","D","C","B","E","F","C","A","A","D","F","C"],
-
-      questions : [
-        { latex: String.raw`\text{Refer to G1. Which system is graphed?}`,
-          choices: [
-            String.raw`\begin{cases}x+y\ge 2\\ x-y<4\end{cases}`,
-            String.raw`\begin{cases}x+y>2\\ x-y\le 4\end{cases}`,
-            String.raw`\begin{cases}x+y\le 2\\ x-y>4\end{cases}`,
-            String.raw`\begin{cases}y\ge -x+2\\ y\le -x+4\end{cases}`,
-            String.raw`\begin{cases}y>-x+2\\ y> x+4\end{cases}`,
-            String.raw`\begin{cases}x+y\ge 2\\ x+y<4\end{cases}`
-          ]},
-        { latex: String.raw`\text{Refer to G2. Which system is graphed?}`,
-          choices: [
-            String.raw`\begin{cases}5x+y\le 2\\ 2x+y>1\end{cases}`,
-            String.raw`\begin{cases}5x+y>2\\ 2x+y\le 1\end{cases}`,
-            String.raw`\begin{cases}5x+y<2\\ 2x+y>1\end{cases}`,
-            String.raw`\begin{cases}5x+y>2\\ 2x+y>1\end{cases}`,
-            String.raw`\begin{cases}5x+y\ge 2\\ 2x+y\le 1\end{cases}`,
-            String.raw`\begin{cases}y>-5x+2\\ y\le -2x+1\end{cases}`
-          ]},
-        { latex: String.raw`\text{Refer to G3. Which system is graphed?}`,
-          choices: [
-            String.raw`\begin{cases}3x-2y\le 6\\ x+y\ge 3\end{cases}`,
-            String.raw`\begin{cases}3x-2y<6\\ x+y>3\end{cases}`,
-            String.raw`\begin{cases}3x-2y\ge 6\\ x+y\le 3\end{cases}`,
-            String.raw`\begin{cases}y\ge \tfrac32x-3\\ y\ge -x+3\end{cases}`,
-            String.raw`\begin{cases}y<\tfrac32x-3\\ y<-x+3\end{cases}`,
-            String.raw`\begin{cases}3x-2y\ge 6\\ x+y<3\end{cases}`
-          ]},
-        { latex: String.raw`\text{Refer to G4. Which system is graphed?}`,
-          choices: [
-            String.raw`\begin{cases}2x-y\le 5\\ 3x+y>4\end{cases}`,
-            String.raw`\begin{cases}2x-y<5\\ 3x+y\ge 4\end{cases}`,
-            String.raw`\begin{cases}2x-y>5\\ 3x+y\le 4\end{cases}`,
-            String.raw`\begin{cases}y\le 2x-5\\ y\ge -3x+4\end{cases}`,
-            String.raw`\begin{cases}y>2x-5\\ y\ge -3x+4\end{cases}`,
-            String.raw`\begin{cases}y\ge 2x-5\\ y\le -3x+4\end{cases}`
-          ]},
-        { latex: String.raw`\text{Refer to G5. Which system is graphed?}`,
-          choices: [
-            String.raw`\begin{cases}x+5y\le 15\\ 3x+2y\le 8\end{cases}`,
-            String.raw`\begin{cases}x+5y\ge 15\\ 3x+2y\ge 8\end{cases}`,
-            String.raw`\begin{cases}x+5y>15\\ 3x+2y<8\end{cases}`,
-            String.raw`\begin{cases}y\ge -\tfrac15x+3\\ y\le -\tfrac32x+4\end{cases}`,
-            String.raw`\begin{cases}x+5y<15\\ 3x+2y\le 8\end{cases}`,
-            String.raw`\begin{cases}y< -\tfrac15x+3\\ y> -\tfrac32x+4\end{cases}`
-          ]},
-        { latex: String.raw`\text{Refer to G6. Which system is graphed?}`,
-          choices: [
-            String.raw`\begin{cases}3x+y\le 9\\ 2x+y<6\end{cases}`,
-            String.raw`\begin{cases}3x+y\ge 9\\ 2x+y\le 6\end{cases}`,
-            String.raw`\begin{cases}3x+y<9\\ 2x+y>6\end{cases}`,
-            String.raw`\begin{cases}y\le -3x+9\\ y\le -2x+6\end{cases}`,
-            String.raw`\begin{cases}y> -3x+9\\ y> -2x+6\end{cases}`,
-            String.raw`\begin{cases}3x+y>9\\ 2x+y\ge 6\end{cases}`
-          ]},
-        { latex: String.raw`\text{Refer to G7. Which system is graphed?}`,
-          choices: [
-            String.raw`\begin{cases}x+2y\le -4\\ x+2y<6\end{cases}`,
-            String.raw`\begin{cases}x+2y\ge -4\\ x+2y\ge 6\end{cases}`,
-            String.raw`\begin{cases}x+2y\ge -4\\ x+2y<6\end{cases}`,
-            String.raw`\begin{cases}y\le -\tfrac12x-2\\ y< -\tfrac12x+3\end{cases}`,
-            String.raw`\begin{cases}y\ge -\tfrac12x-2\\ y> -\tfrac12x+3\end{cases}`,
-            String.raw`\begin{cases}x+2y>-4\\ x+2y\le 6\end{cases}`
-          ]},
-        { latex: String.raw`\text{Refer to G8. Which system is graphed?}`,
-          choices: [
-            String.raw`\begin{cases}x\ge 0\\ y\ge 0\\ 5x+6y\le 30\end{cases}`,
-            String.raw`\begin{cases}x\le 0\\ y\ge 0\\ 5x+6y\le 30\end{cases}`,
-            String.raw`\begin{cases}x\ge 0\\ y\le 0\\ 5x+6y\ge 30\end{cases}`,
-            String.raw`\begin{cases}x>0\\ y>0\\ 5x+6y<30\end{cases}`,
-            String.raw`\begin{cases}x\ge 0\\ y\ge 0\\ 5x+6y\ge 30\end{cases}`,
-            String.raw`\begin{cases}x\le 0\\ y\le 0\\ 5x+6y\le 30\end{cases}`
-          ]},
-        { latex: String.raw`\text{Refer to G9. Which system is graphed?}`,
-          choices: [
-            String.raw`\begin{cases}x\ge 0\\ y\ge 0\\ x+4y\le 8\end{cases}`,
-            String.raw`\begin{cases}x>0\\ y>0\\ x+4y<8\end{cases}`,
-            String.raw`\begin{cases}x\le 0\\ y\ge 0\\ x+4y\le 8\end{cases}`,
-            String.raw`\begin{cases}x\ge 0\\ y\le 0\\ x+4y\ge 8\end{cases}`,
-            String.raw`\begin{cases}x\ge 0\\ y\ge 0\\ x+4y\ge 8\end{cases}`,
-            String.raw`\begin{cases}x\le 0\\ y\le 0\\ x+4y\le 8\end{cases}`
-          ]},
-        { latex: String.raw`\text{Refer to G10. Which system is graphed?}`,
-          choices: [
-            String.raw`\begin{cases}x\ge 0\\ y\ge 0\\ 3x+y\ge 8\\ x+2y\ge 6\end{cases}`,
-            String.raw`\begin{cases}x>0\\ y>0\\ 3x+y<8\\ x+2y<6\end{cases}`,
-            String.raw`\begin{cases}x\le 0\\ y\le 0\\ 3x+y\le 8\\ x+2y\le 6\end{cases}`,
-            String.raw`\begin{cases}x\ge 0\\ y\ge 0\\ 3x+y\le 8\\ x+2y\le 6\end{cases}`,
-            String.raw`\begin{cases}x\ge 0\\ y\ge 0\\ 3x+y=8\\ x+2y=6\end{cases}`,
-            String.raw`\begin{cases}x\ge 0\\ y\ge 0\\ 3x+y\ge 8\\ x+2y\le 6\end{cases}`
-          ]},
-        { latex: String.raw`\text{Refer to G11. Which system is graphed?}`,
-          choices: [
-            String.raw`\begin{cases}x\ge 0\\ y\le 2\\ x+y\le 1\end{cases}`,
-            String.raw`\begin{cases}x\ge 0\\ y\ge 2\\ x+y>1\end{cases}`,
-            String.raw`\begin{cases}x\le 0\\ y\le 2\\ x+y>1\end{cases}`,
-            String.raw`\begin{cases}x\ge 0\\ y\le 2\\ x+y<1\end{cases}`,
-            String.raw`\begin{cases}x\ge 0\\ y\le 2\\ x+y\ge 1\end{cases}`,
-            String.raw`\begin{cases}x\ge 0\\ y\le 2\\ x+y>1\end{cases}`
-          ]},
-        { latex: String.raw`\text{Refer to G12. Which system is graphed?}`,
-          choices: [
-            String.raw`\begin{cases}y\ge 0\\ x\ge -1\\ 2x+3y\le 9\end{cases}`,
-            String.raw`\begin{cases}y\le 0\\ x>-1\\ 2x+3y<9\end{cases}`,
-            String.raw`\begin{cases}y\ge 0\\ x>-1\\ 2x+3y<9\end{cases}`,
-            String.raw`\begin{cases}y\ge 0\\ x>-1\\ 2x+3y\le 9\end{cases}`,
-            String.raw`\begin{cases}y\ge 0\\ x>-1\\ 2x+3y<9\end{cases}`,
-            String.raw`\begin{cases}y\ge 0\\ x>-1\\ 2x+3y<9\end{cases}`
-          ]}
-      ]
-    };
-  </script>
-
-  <link rel="stylesheet" href="/math-homework/assets/core.css" />
+  <!-- TikZJax dependencies -->
   <link rel="stylesheet" href="https://tikzjax.com/v1/fonts.css" />
-  <script defer src="/math-homework/assets/core.js"></script>
   <script defer src="https://tikzjax.com/v1/tikzjax.js"></script>
-  <script defer src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+
+  <!-- MathJax for LaTeX in the question/choices -->
+  <script defer src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js"
+          id="MathJax-script"></script>
+
+  <style>
+    body { font-family: system-ui, Segoe UI, Helvetica, Arial, sans-serif; margin: 24px; }
+    .card { max-width: 900px; margin: 0 auto; padding: 16px 20px; border: 1px solid #ddd; border-radius: 12px; }
+    .q { font-weight: 600; margin-bottom: 12px; }
+    ul { list-style: none; padding-left: 0; }
+    li { margin: 8px 0; }
+    .graph { margin: 18px 0 8px; }
+    small { color: #666; }
+  </style>
 </head>
 <body>
-  <!-- Where your form/MCQ UI goes -->
-  <div id="hw-root">Loading…</div>
+  <div class="card">
+    <div class="q">Refer to <b>G1</b>. Which system is graphed?</div>
 
-  <!-- TikZJax will render everything inside this tag -->
-  <script type="text/tikz">
-\begin{tikzpicture}[scale=0.55]
+    <!-- The TikZ graph (G1). TikZJax renders everything inside this tag. -->
+    <div class="graph">
+      <script type="text/tikz">
+\begin{tikzpicture}[scale=0.8]
   \tikzset{grid/.style={very thin,color=gray!30}}
   \tikzset{axes/.style={->,thick}}
 
-  % ---------- G1: x+y >= 2  and  x-y < 4
-  \begin{scope}[xshift=-12cm,yshift=12cm]
-    \clip (-4.2,-4.2) rectangle (4.2,4.2);
-    \draw[grid] (-4,-4) grid (4,4);
-    \draw[axes] (-4,0)--(4,0); \draw[axes] (0,-4)--(0,4);
-    % blue: x+y >= 2  -> y >= -x+2  (shade above)
-    \path[fill=blue!25,opacity=.35] (-4, {-(-4)+2}) -- (4, {-(4)+2}) -- (4,4) -- (-4,4) -- cycle;
-    % red:  x-y < 4    -> y > x-4    (shade above)
-    \path[fill=red!25,opacity=.35] (-4, {-4-4}) -- (4, {4-4}) -- (4,4) -- (-4,4) -- cycle;
-    \draw[blue,thick,domain=-4:4] plot(\x,{-1*\x+2});
-    \draw[red,thick,dashed,domain=-4:4] plot(\x,{\x-4});
-    \node[anchor=south east,font=\small] at (3.7,3.7) {G1};
-  \end{scope}
+  \clip (-4.2,-4.2) rectangle (4.2,4.2);
+  \draw[grid] (-4,-4) grid (4,4);
+  \draw[axes] (-4,0)--(4,0); \draw[axes] (0,-4)--(0,4);
 
-  % ---------- G2: 5x+y > 2  and  2x+y <= 1
-  \begin{scope}[xshift=0cm,yshift=12cm]
-    \clip (-4.2,-4.2) rectangle (4.2,4.2);
-    \draw[grid] (-4,-4) grid (4,4);
-    \draw[axes] (-4,0)--(4,0); \draw[axes] (0,-4)--(0,4);
-    % blue: y > -5x+2 (shade above)
-    \path[fill=blue!25,opacity=.35] (-4, {20+2}) -- (4, {-20+2}) -- (4,4) -- (-4,4) -- cycle;
-    % red:  y <= -2x+1 (shade below)
-    \path[fill=red!25,opacity=.35] (-4, {8+1}) -- (4, {-8+1}) -- (4,-4) -- (-4,-4) -- cycle;
-    \draw[blue,thick,dashed,domain=-4:4] plot(\x,{-5*\x+2});
-    \draw[red,thick,domain=-4:4] plot(\x,{-2*\x+1});
-    \node[anchor=south east,font=\small] at (3.7,3.7) {G2};
-  \end{scope}
+  % G1: x+y >= 2  and  x-y < 4
+  % blue region: y >= -x + 2  (shade above the line)
+  \path[fill=blue!25,opacity=.35] (-4, {-(-4)+2}) -- (4, {-(4)+2}) -- (4,4) -- (-4,4) -- cycle;
+  % red region: y > x - 4     (shade above the line; dashed boundary)
+  \path[fill=red!25,opacity=.35] (-4, {-4-4}) -- (4, {4-4}) -- (4,4) -- (-4,4) -- cycle;
 
-  % ---------- G3: 3x-2y >= 6  (y <= 1.5x-3)  and  x+y <= 3 (y <= -x+3)
-  \begin{scope}[xshift=12cm,yshift=12cm]
-    \clip (-4.2,-4.2) rectangle (4.2,4.2);
-    \draw[grid] (-4,-4) grid (4,4);
-    \draw[axes] (-4,0)--(4,0); \draw[axes] (0,-4)--(0,4);
-    \path[fill=blue!25,opacity=.35] (-4, {1.5*(-4)-3}) -- (4, {1.5*(4)-3}) -- (4,-4) -- (-4,-4) -- cycle;
-    \path[fill=red!25,opacity=.35]  (-4, {-(-4)+3})  -- (4, {-(4)+3})   -- (4,-4) -- (-4,-4) -- cycle;
-    \draw[blue,thick,domain=-4:4] plot(\x,{1.5*\x-3});
-    \draw[red,thick,domain=-4:4]  plot(\x,{-1*\x+3});
-    \node[anchor=south east,font=\small] at (3.7,3.7) {G3};
-  \end{scope}
-
-  % ---------- G4: 2x-y < 5  (y > 2x-5) and  3x+y >= 4 (y >= -3x+4)
-  \begin{scope}[xshift=-12cm,yshift=0cm]
-    \clip (-4.2,-4.2) rectangle (4.2,4.2);
-    \draw[grid] (-4,-4) grid (4,4);
-    \draw[axes] (-4,0)--(4,0); \draw[axes] (0,-4)--(0,4);
-    \path[fill=blue!25,opacity=.35] (-4, {2*(-4)-5}) -- (4, {2*(4)-5}) -- (4,4) -- (-4,4) -- cycle;
-    \path[fill=red!25,opacity=.35]  (-4, {-3*(-4)+4}) -- (4, {-3*(4)+4}) -- (4,4) -- (-4,4) -- cycle;
-    \draw[blue,thick,dashed,domain=-4:4] plot(\x,{2*\x-5});
-    \draw[red,thick,domain=-4:4]        plot(\x,{-3*\x+4});
-    \node[anchor=south east,font=\small] at (3.7,3.7) {G4};
-  </end{scope} % <-- NOTE: keep as \end{scope} in your actual file
-  % (If you copy/paste, make sure it's \end{scope}, not </end...)
-
-  % ---------- G5: x+5y < 15 (y < -1/5 x + 3)  and  3x+2y <= 8 (y <= -1.5x + 4)
-  \begin{scope}[xshift=-2cm,yshift=0cm]
-    \clip (-4.2,-4.2) rectangle (4.2,4.2);
-    \draw[grid] (-4,-4) grid (4,4);
-    \draw[axes] (-4,0)--(4,0); \draw[axes] (0,-4)--(0,4);
-    \path[fill=blue!25,opacity=.35] (-4, {-0.2*(-4)+3}) -- (4, {-0.2*(4)+3}) -- (4,-4) -- (-4,-4) -- cycle;
-    \path[fill=red!25,opacity=.35]  (-4, {-1.5*(-4)+4}) -- (4, {-1.5*(4)+4}) -- (4,-4) -- (-4,-4) -- cycle;
-    \draw[blue,thick,dashed,domain=-4:4] plot(\x,{-0.2*\x+3});
-    \draw[red,thick,domain=-4:4]        plot(\x,{-1.5*\x+4});
-    \node[anchor=south east,font=\small] at (3.7,3.7) {G5};
-  \end{scope}
-
-  % ---------- G6: 3x+y > 9 (y > -3x+9) and 2x+y >= 6 (y >= -2x+6)
-  \begin{scope}[xshift=8cm,yshift=0cm]
-    \clip (-4.2,-4.2) rectangle (4.2,4.2);
-    \draw[grid] (-4,-4) grid (4,4);
-    \draw[axes] (-4,0)--(4,0); \draw[axes] (0,-4)--(0,4);
-    \path[fill=blue!25,opacity=.35] (-4, {-3*(-4)+9}) -- (4, {-3*(4)+9}) -- (4,4) -- (-4,4) -- cycle;
-    \path[fill=red!25,opacity=.35]  (-4, {-2*(-4)+6}) -- (4, {-2*(4)+6}) -- (4,4) -- (-4,4) -- cycle;
-    \draw[blue,thick,dashed,domain=-4:4] plot(\x,{-3*\x+9});
-    \draw[red,thick,domain=-4:4]        plot(\x,{-2*\x+6});
-    \node[anchor=south east,font=\small] at (3.7,3.7) {G6};
-  \end{scope}
-
-  % ---------- G7: x+2y >= -4  and  x+2y < 6  (same slope, two bands)
-  \begin{scope}[xshift=12cm,yshift=0cm]
-    \clip (-4.2,-4.2) rectangle (4.2,4.2);
-    \draw[grid] (-4,-4) grid (4,4);
-    \draw[axes] (-4,0)--(4,0); \draw[axes] (0,-4)--(0,4);
-    % y >= -1/2 x - 2
-    \path[fill=blue!25,opacity=.35] (-4, {0.5*4-2}) -- (4, {-0.5*4-2}) -- (4,4) -- (-4,4) -- cycle;
-    % y <  -1/2 x + 3
-    \path[fill=red!25,opacity=.35]  (-4, {0.5*4+3}) -- (4, {-0.5*4+3}) -- (4,-4) -- (-4,-4) -- cycle;
-    \draw[blue,thick,domain=-4:4]       plot(\x,{-0.5*\x-2});
-    \draw[red,thick,dashed,domain=-4:4] plot(\x,{-0.5*\x+3});
-    \node[anchor=south east,font=\small] at (3.7,3.7) {G7};
-  \end{scope}
-
-  % ---------- G8: x >= 0,  y >= 0, 5x+6y <= 30
-    \begin{scope}[xshift=-12cm,yshift=-12cm]
-    \clip (-4.2,-4.2) rectangle (4.2,4.2);
-    \draw[grid] (-4,-4) grid (4,4);
-    \draw[axes] (-4,0)--(4,0); \draw[axes] (0,-4)--(0,4);
-    \path[fill=blue!25,opacity=.35] (0,-4) -- (0,4) -- (4,4) -- (4,-4) -- cycle;  % x>=0
-    \path[fill=red!25,opacity=.35]  (-4,0) -- (4,0) -- (4,4) -- (-4,4) -- cycle; % y>=0
-    \path[fill=blue!40!red!40,opacity=.25] (-4,-4) -- (4,-4) -- (4, {-5/6*4+5}) -- (-4, {-5/6*(-4)+5}) -- cycle; % 5x+6y<=30
-    \draw[blue,thick] (0,-4)--(0,4);
-    \draw[red,thick]  (-4,0)--(4,0);
-    \draw[blue!40!red,thick,domain=-4:4] plot(\x,{-5/6*\x+5});
-    \node[anchor=south east,font=\small] at (3.7,3.7) {G8};
-  \end{scope}
-
-  % ---------- G9: x >= 0,  y >= 0,  x+4y <= 8
-  \begin{scope}[xshift=-2cm,yshift=-12cm]
-    \clip (-4.2,-4.2) rectangle (4.2,4.2);
-    \draw[grid] (-4,-4) grid (4,4);
-    \draw[axes] (-4,0)--(4,0); \draw[axes] (0,-4)--(0,4);
-    \path[fill=blue!25,opacity=.35] (0,-4) -- (0,4) -- (4,4) -- (4,-4) -- cycle;
-    \path[fill=red!25,opacity=.35]  (-4,0) -- (4,0) -- (4,4) -- (-4,4) -- cycle;
-    \path[fill=blue!40!red!40,opacity=.25] (-4,-4) -- (4,-4) -- (4, {-0.25*4+2}) -- (-4, {-0.25*(-4)+2}) -- cycle;
-    \draw[blue,thick] (0,-4)--(0,4);
-    \draw[red,thick]  (-4,0)--(4,0);
-    \draw[blue!40!red,thick,domain=-4:4] plot(\x,{-0.25*\x+2});
-    \node[anchor=south east,font=\small] at (3.7,3.7) {G9};
-  \end{scope}
-
-  % ---------- G10: x >= 0, y >= 0, 3x+y <= 8 and x+2y <= 6
-  \begin{scope}[xshift=8cm,yshift=-12cm]
-    \clip (-4.2,-4.2) rectangle (4.2,4.2);
-    \draw[grid] (-4,-4) grid (4,4);
-    \draw[axes] (-4,0)--(4,0); \draw[axes] (0,-4)--(0,4);
-    \path[fill=blue!25,opacity=.35] (0,-4) -- (0,4) -- (4,4) -- (4,-4) -- cycle;
-    \path[fill=red!25,opacity=.35]  (-4,0) -- (4,0) -- (4,4) -- (-4,4) -- cycle;
-    \path[fill=blue!40!red!40,opacity=.25] (-4,-4) -- (4,-4) -- (4, {-3*4+8}) -- (-4, {-3*(-4)+8}) -- cycle;
-    \path[fill=blue!40!red!40,opacity=.25] (-4,-4) -- (4,-4) -- (4, {-0.5*4+3}) -- (-4, {-0.5*(-4)+3}) -- cycle;
-    \draw[blue,thick] (0,-4)--(0,4);
-    \draw[red,thick]  (-4,0)--(4,0);
-    \draw[blue!40!red,thick,domain=-4:4] plot(\x,{-3*\x+8});
-    \draw[blue!40!red,thick,domain=-4:4] plot(\x,{-0.5*\x+3});
-    \node[anchor=south east,font=\small] at (3.7,3.7) {G10};
-  \end{scope}
-
-  % ---------- G11: x >= 0,  y <= 2,  x+y > 1
-  \begin{scope}[xshift=12cm,yshift=-12cm]
-    \clip (-4.2,-4.2) rectangle (4.2,4.2);
-    \draw[grid] (-4,-4) grid (4,4);
-    \draw[axes] (-4,0)--(4,0); \draw[axes] (0,-4)--(0,4);
-    \path[fill=blue!25,opacity=.35] (0,-4) -- (0,4) -- (4,4) -- (4,-4) -- cycle; % x>=0
-    \path[fill=red!25,opacity=.35]  (-4,-4) -- (4,-4) -- (4,2) -- (-4,2) -- cycle; % y<=2
-    \path[fill=blue!40!red!40,opacity=.25] (-4, {-(-4)+1}) -- (4, {-(4)+1}) -- (4,4) -- (-4,4) -- cycle; % x+y>1
-    \draw[blue,thick] (0,-4)--(0,4);
-    \draw[red,thick]  (-4,2)--(4,2);
-    \draw[blue!40!red,thick,dashed,domain=-4:4] plot(\x,{-1*\x+1});
-    \node[anchor=south east,font=\small] at (3.7,3.7) {G11};
-  \end{scope}
-
-  % ---------- G12: y >= 0,  x > -1,  2x+3y < 9
-  \begin{scope}[xshift=0cm,yshift=-24cm]
-    \clip (-4.2,-4.2) rectangle (4.2,4.2);
-    \draw[grid] (-4,-4) grid (4,4);
-    \draw[axes] (-4,0)--(4,0); \draw[axes] (0,-4)--(0,4);
-    \path[fill=blue!25,opacity=.35] (-4,0) -- (4,0) -- (4,4) -- (-4,4) -- cycle;  % y>=0
-    \path[fill=red!25,opacity=.35]  (-1,-4) -- (4,-4) -- (4,4) -- (-1,4) -- cycle;  % x>-1
-    \path[fill=blue!40!red!40,opacity=.25] (-4,-4) -- (4,-4) -- (4, {-2/3*4+3}) -- (-4, {-2/3*(-4)+3}) -- cycle; % 2x+3y<9
-    \draw[blue,thick] (-4,0)--(4,0);
-    \draw[red,thick,dashed] (-1,-4)--(-1,4);
-    \draw[blue!40!red,thick,dashed,domain=-4:4] plot(\x,{-2/3*\x+3});
-    \node[anchor=south east,font=\small] at (3.7,3.7) {G12};
-  \end{scope}
+  \draw[blue,thick,domain=-4:4] plot(\x,{-1*\x+2});           % solid: ≥
+  \draw[red,thick,dashed,domain=-4:4] plot(\x,{\x-4});        % dashed: <
+  \node[anchor=south east,font=\small] at (3.7,3.7) {G1};
 \end{tikzpicture}
-  </script>
+      </script>
+    </div>
+
+    <!-- One MCQ rendered by MathJax -->
+    <form>
+      <ul>
+        <li><label><input type="radio" name="q1">
+          <span>\(\begin{cases}x+y\ge 2\\ x-y<4\end{cases}\)</span></label></li>
+        <li><label><input type="radio" name="q1">
+          <span>\(\begin{cases}x+y>2\\ x-y\le 4\end{cases}\)</span></label></li>
+        <li><label><input type="radio" name="q1">
+          <span>\(\begin{cases}x+y\le 2\\ x-y>4\end{cases}\)</span></label></li>
+        <li><label><input type="radio" name="q1">
+          <span>\(\begin{cases}y\ge -x+2\\ y\le -x+4\end{cases}\)</span></label></li>
+      </ul>
+    </form>
+
+    <small>Tip: If you still see raw TikZ, make sure the network can load
+      <code>tikzjax.js</code> and this block remains inside
+      <code>&lt;script type="text/tikz"&gt;</code>.</small>
+  </div>
 </body>
 </html>
