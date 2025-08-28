@@ -6,307 +6,232 @@
   <title>Homework 7-2 (Algebra 1)</title>
 
   <script>
-  window.homeworkData = {
-    classId : "Algebra1",
-    id      : "Homework 7-2",
-    title   : "Homework 7-2 — Linear Systems: Consistent, Inconsistent, Dependent, Independent",
+    /* =========================================
+       Homework 7-2 — Systems of Linear Equations
+       Focus: Solve by graphing, classify (consistent,
+       inconsistent, dependent, independent), and cumulative review.
+       ========================================= */
+    window.homeworkData = {
+      classId : "Algebra1",
+      id      : "Homework 7-2",
+      title   : "Homework 7-2 — Consistent, Inconsistent, Dependent Systems",
 
-    graphics : String.raw`
-\begin{tikzpicture}[scale=0.62]
-  \tikzset{axis/.style={->,thick}, grid/.style={very thin,color=gray!35}}
+      graphics : "",
 
-  % === PANEL A (independent) ===
-  \begin{scope}[xshift=-8.3cm,yshift=5.6cm]
-    \draw[grid] (-5,-5) grid (5,5);
-    \draw[axis] (-5,0)--(5,0);
-    \draw[axis] (0,-5)--(0,5);
-    % y = -x + 4 and y = (1/2)x + 1
-    \draw[thick,blue] (-5,9) -- (5,-1);
-    \draw[thick,red]  (-5,-1.5) -- (5,3.5);
-    \node[anchor=south west,font=\bfseries\small] at (-4.8,4.3) {Independent};
-  \end{scope}
+      answerKey : [
+        "D","C","B","A","E","F","B","D",   // 1–8
+        "A","C","F","D","B","E","C","A",   // 9–16
+        "F","E","B","D","A","C","B","D",   // 17–24
+        "E","F","C","B","A"                // 25–29
+      ],
 
-  % === PANEL B (inconsistent) ===
-  \begin{scope}[xshift=0cm,yshift=5.6cm]
-    \draw[grid] (-5,-5) grid (5,5);
-    \draw[axis] (-5,0)--(5,0);
-    \draw[axis] (0,-5)--(0,5);
-    % y = (2/3)x + 1 and y = (2/3)x - 3
-    \draw[thick,blue] (-5,-\frac{7}{3}) -- (5,\frac{13}{3});
-    \draw[thick,red]  (-5,-\frac{19}{3}) -- (5,\frac{1}{3});
-    \node[anchor=south west,font=\bfseries\small] at (-4.8,4.3) {Inconsistent};
-  \end{scope}
+      questions : [
+        {
+          latex   : String.raw`\text{Solve by graphing: } \begin{cases}x+y=4\\5x+y=8\end{cases}\ \text{Classify the system.}`,
+          choices : [
+            String.raw`(4,0),\ \text{consistent indep.}`,
+            String.raw`(0,4),\ \text{consistent dep.}`,
+            String.raw`(2,2),\ \text{inconsistent}`,
+            String.raw`(1,3),\ \text{consistent indep.}`,
+            String.raw`\text{Parallel lines; inconsistent}`,
+            String.raw`\text{Coincident lines; dependent}`
+          ]
+        },
+        {
+          latex   : String.raw`\text{Solve by graphing: } \begin{cases}x-y=3\\4x-y=15\end{cases}`,
+          choices : [
+            String.raw`(3,0),\ \text{indep.}`,
+            String.raw`(4,1),\ \text{indep.}`,
+            String.raw`(6,3),\ \text{indep.}`,
+            String.raw`\text{No solution; inconsistent}`,
+            String.raw`\text{Infinite solutions; dependent}`,
+            String.raw`(2,5),\ \text{indep.}`
+          ]
+        },
+        {
+          latex   : String.raw`\text{Solve: } \begin{cases}2x+y=8\\4x+2y=16\end{cases}`,
+          choices : [
+            String.raw`\text{No solution}`,
+            String.raw`\text{Infinitely many; dependent}`,
+            String.raw`(0,8),\ \text{indep.}`,
+            String.raw`(4,0),\ \text{indep.}`,
+            String.raw`(2,4),\ \text{indep.}`,
+            String.raw`(-2,12),\ \text{indep.}`
+          ]
+        },
+        {
+          latex   : String.raw`\text{Solve: } \begin{cases}3x+y=5\\4x+3y=15\end{cases}`,
+          choices : [
+            String.raw`(0,5),\ \text{indep.}`,
+            String.raw`(5,0),\ \text{indep.}`,
+            String.raw`\text{No solution; inconsistent}`,
+            String.raw`\text{Dependent system}`,
+            String.raw`(3, -4),\ \text{indep.}`,
+            String.raw`(2, -1),\ \text{indep.}`
+          ]
+        },
+        {
+          latex   : String.raw`\text{Solve: } \begin{cases}x+2y-10=0\\3x+2y=14\end{cases}`,
+          choices : [
+            String.raw`(0,5),\ \text{indep.}`,
+            String.raw`(2,4),\ \text{indep.}`,
+            String.raw`(6,2),\ \text{indep.}`,
+            String.raw`\text{Dependent}`,
+            String.raw`\text{No solution}`,
+            String.raw`(4,3),\ \text{indep.}`
+          ]
+        },
+        {
+          latex   : String.raw`\text{Solve: } \begin{cases}8x-2y=6\\y=4x+3\end{cases}`,
+          choices : [
+            String.raw`(0,3),\ \text{indep.}`,
+            String.raw`(1,7),\ \text{indep.}`,
+            String.raw`(2,11),\ \text{indep.}`,
+            String.raw`(-1,-1),\ \text{indep.}`,
+            String.raw`\text{No solution}`,
+            String.raw`\text{Dependent}`
+          ]
+        },
+        {
+          latex   : String.raw`\text{Solve: } \begin{cases}x-2y=4\\3x+2y=-12\end{cases}`,
+          choices : [
+            String.raw`(0,-2),\ \text{indep.}`,
+            String.raw`(-2,-3),\ \text{indep.}`,
+            String.raw`(2,-1),\ \text{indep.}`,
+            String.raw`(4,0),\ \text{indep.}`,
+            String.raw`\text{No solution}`,
+            String.raw`\text{Dependent}`
+          ]
+        },
+        {
+          latex   : String.raw`\text{Solve: } \begin{cases}x+2y=8\\y=-\tfrac{x}{2}+4\end{cases}`,
+          choices : [
+            String.raw`(0,4),\ \text{indep.}`,
+            String.raw`(8,0),\ \text{indep.}`,
+            String.raw`(4,2),\ \text{indep.}`,
+            String.raw`\text{Dependent}`,
+            String.raw`(2,3),\ \text{indep.}`,
+            String.raw`\text{No solution}`
+          ]
+        },
 
-  % === PANEL C (dependent) ===
-  \begin{scope}[xshift=8.3cm,yshift=5.6cm]
-    \draw[grid] (-5,-5) grid (5,5);
-    \draw[axis] (-5,0)--(5,0);
-    \draw[axis] (0,-5)--(0,5);
-    % y = -2x + 4 and 2y = -4x + 8 (same line)
-    \draw[thick,blue] (-5,14) -- (5,-6);
-    \draw[thick,red,dashed]  (-5,14) -- (5,-6);
-    \node[anchor=south west,font=\bfseries\small] at (-4.8,4.3) {Dependent};
-  \end{scope}
-\end{tikzpicture}`,
+        /* B. Exercises – vertical & horizontal lines included */
+        {
+          latex   : String.raw`\text{Solve: } \begin{cases}x=-3\\x=4\end{cases}`,
+          choices : [
+            String.raw`\text{No solution; inconsistent}`,
+            String.raw`\text{Dependent}`,
+            String.raw`(-3,0),\ \text{indep.}`,
+            String.raw`(4,0),\ \text{indep.}`,
+            String.raw`\text{All real x}`,
+            String.raw`\text{Infinite solutions}`
+          ]
+        },
+        {
+          latex   : String.raw`\text{Solve: } \begin{cases}x-y=6\\5x-5y=30\end{cases}`,
+          choices : [
+            String.raw`\text{No solution}`,
+            String.raw`\text{Dependent}`,
+            String.raw`(6,0),\ \text{indep.}`,
+            String.raw`(0,-6),\ \text{indep.}`,
+            String.raw`(3, -3),\ \text{indep.}`,
+            String.raw`(5, -1),\ \text{indep.}`
+          ]
+        },
 
-    answerKey : ["C","B","A","A","C","A","B","C","B","A","B","C","A","C","B","A","B","A","B","C","B","C","A"],
+        /* C. Conceptual classification */
+        {
+          latex   : String.raw`\text{Inconsistent systems: what about slopes and y-intercepts?}`,
+          choices : [
+            String.raw`\text{Same slope, same intercept}`,
+            String.raw`\text{Different slopes}`,
+            String.raw`\text{Same slope, different intercepts}`,
+            String.raw`\text{One vertical, one horizontal}`,
+            String.raw`\text{All slopes equal}`,
+            String.raw`\text{Cannot determine}`
+          ]
+        },
+        {
+          latex   : String.raw`\text{Dependent systems: what about slopes and y-intercepts?}`,
+          choices : [
+            String.raw`\text{Same slope, different intercepts}`,
+            String.raw`\text{Different slopes}`,
+            String.raw`\text{Same slope, same intercept}`,
+            String.raw`\text{Vertical + horizontal}`,
+            String.raw`\text{No relation}`,
+            String.raw`\text{Intersect once only}`
+          ]
+        },
+        {
+          latex   : String.raw`\text{Independent systems: what about slopes?}`,
+          choices : [
+            String.raw`\text{Same slope, different intercepts}`,
+            String.raw`\text{Same slope, same intercept}`,
+            String.raw`\text{Different slopes}`,
+            String.raw`\text{Parallel lines}`,
+            String.raw`\text{Coincident lines}`,
+            String.raw`\text{No slope relation}`
+          ]
+        },
 
-    questions : [
-      {
-        latex : String.raw`Solve by graphing: \;x+y=4,\;5x+y=8.\;\;\text{Classify the system.}`,
-        choices : [
-          String.raw`\text{Consistent, independent}`,
-          String.raw`\text{Consistent, dependent}`,
-          String.raw`\text{Inconsistent}`,
-          String.raw`\text{No solution}`,
-          String.raw`\text{Exactly one solution}`,
-          String.raw`\text{Infinite solutions}`
-        ]
-      },
-      {
-        latex : String.raw`Graph: \;x-y=3,\;4x-y=15.\;\;\text{Is the system consistent or inconsistent?}`,
-        choices : [
-          String.raw`\text{Consistent, independent}`,
-          String.raw`\text{Inconsistent}`,
-          String.raw`\text{Consistent, dependent}`,
-          String.raw`\text{Parallel with no solution}`,
-          String.raw`\text{One intersection point}`,
-          String.raw`\text{Infinite intersections}`
-        ]
-      },
-      {
-        latex : String.raw`Graph: \;2x+y=8,\;4x+2y=16.\;\;\text{Classify the system.}`,
-        choices : [
-          String.raw`\text{Consistent, independent}`,
-          String.raw`\text{Consistent, dependent}`,
-          String.raw`\text{Inconsistent}`,
-          String.raw`\text{No solution}`,
-          String.raw`\text{Exactly one solution}`,
-          String.raw`\text{Parallel lines}`
-        ]
-      },
-      {
-        latex : String.raw`Graph: \;3x+y=5,\;4x+3y=15.\;\;\text{What type of system?}`,
-        choices : [
-          String.raw`\text{Consistent, independent}`,
-          String.raw`\text{Consistent, dependent}`,
-          String.raw`\text{Inconsistent}`,
-          String.raw`\text{No solution}`,
-          String.raw`\text{One solution}`,
-          String.raw`\text{Infinite solutions}`
-        ]
-      },
-      {
-        latex : String.raw`Graph: \;x+2y-10=0,\;3x+2y=14.\;\;\text{Classify the system.}`,
-        choices : [
-          String.raw`\text{Consistent, independent}`,
-          String.raw`\text{Consistent, dependent}`,
-          String.raw`\text{Inconsistent}`,
-          String.raw`\text{Parallel lines}`,
-          String.raw`\text{Exactly one solution}`,
-          String.raw`\text{Infinite solutions}`
-        ]
-      },
-      {
-        latex : String.raw`Graph: \;8x-2y=6,\;y=4x+3.\;\;\text{Consistent or inconsistent?}`,
-        choices : [
-          String.raw`\text{Consistent, independent}`,
-          String.raw`\text{Consistent, dependent}`,
-          String.raw`\text{Inconsistent}`,
-          String.raw`\text{Parallel}`,
-          String.raw`\text{No solution}`,
-          String.raw`\text{Infinite solutions}`
-        ]
-      },
-      {
-        latex : String.raw`Graph: \;x-2y=4,\;3x+2y=-12.\;\;\text{Classify the system.}`,
-        choices : [
-          String.raw`\text{Consistent, independent}`,
-          String.raw`\text{Consistent, dependent}`,
-          String.raw`\text{Inconsistent}`,
-          String.raw`\text{No solution}`,
-          String.raw`\text{Parallel lines}`,
-          String.raw`\text{Infinite solutions}`
-        ]
-      },
-      {
-        latex : String.raw`Graph: \;x+2y=8,\;y=-\tfrac{x}{2}+4.\;\;\text{Type of system?}`,
-        choices : [
-          String.raw`\text{Consistent, independent}`,
-          String.raw`\text{Consistent, dependent}`,
-          String.raw`\text{Inconsistent}`,
-          String.raw`\text{Exactly one solution}`,
-          String.raw`\text{No solution}`,
-          String.raw`\text{Infinite solutions}`
-        ]
-      },
-      {
-        latex : String.raw`Solve: \;x=-3,\;x=4.\;\;\text{What type of system is this?}`,
-        choices : [
-          String.raw`\text{Consistent}`,
-          String.raw`\text{Inconsistent}`,
-          String.raw`\text{Dependent}`,
-          String.raw`\text{Parallel}`,
-          String.raw`\text{Independent}`,
-          String.raw`\text{One solution}`
-        ]
-      },
-      {
-        latex : String.raw`Solve: \;x-y=6,\;5x-5y=30.\;\;\text{Classify the system.}`,
-        choices : [
-          String.raw`\text{Consistent, dependent}`,
-          String.raw`\text{Consistent, independent}`,
-          String.raw`\text{Inconsistent}`,
-          String.raw`\text{No solution}`,
-          String.raw`\text{Parallel}`,
-          String.raw`\text{Infinite solutions}`
-        ]
-      },
-      {
-        latex : String.raw`Solve: \;5x-3y=-12,\;2x+3y=-9.\;\;\text{Consistent or inconsistent?}`,
-        choices : [
-          String.raw`\text{Consistent, independent}`,
-          String.raw`\text{Consistent, dependent}`,
-          String.raw`\text{Inconsistent}`,
-          String.raw`\text{No solution}`,
-          String.raw`\text{Parallel}`,
-          String.raw`\text{Infinite solutions}`
-        ]
-      },
-      {
-        latex : String.raw`Solve: \;2x-7y=21,\;3x+7y=14.\;\;\text{Classify.}`,
-        choices : [
-          String.raw`\text{Consistent, independent}`,
-          String.raw`\text{Consistent, dependent}`,
-          String.raw`\text{Inconsistent}`,
-          String.raw`\text{No solution}`,
-          String.raw`\text{One solution}`,
-          String.raw`\text{Parallel}`
-        ]
-      },
-      {
-        latex : String.raw`Solve: \;3x+4y=20,\;x+2y=8.\;\;\text{Type of system?}`,
-        choices : [
-          String.raw`\text{Consistent, independent}`,
-          String.raw`\text{Consistent, dependent}`,
-          String.raw`\text{Inconsistent}`,
-          String.raw`\text{No solution}`,
-          String.raw`\text{Parallel}`,
-          String.raw`\text{Infinite solutions}`
-        ]
-      },
-      {
-        latex : String.raw`Solve: \;x-y=-4,\;x+3y=24.\;\;\text{Type of system?}`,
-        choices : [
-          String.raw`\text{Consistent, dependent}`,
-          String.raw`\text{Consistent, independent}`,
-          String.raw`\text{Inconsistent}`,
-          String.raw`\text{No solution}`,
-          String.raw`\text{Infinite solutions}`,
-          String.raw`\text{Parallel lines}`
-        ]
-      },
-      {
-        latex : String.raw`Solve: \;3x+4y=4,\;x-2y=8.\;\;\text{Classify the system.}`,
-        choices : [
-          String.raw`\text{Consistent, dependent}`,
-          String.raw`\text{Consistent, independent}`,
-          String.raw`\text{Inconsistent}`,
-          String.raw`\text{No solution}`,
-          String.raw`\text{Parallel}`,
-          String.raw`\text{One solution}`
-        ]
-      },
-      {
-        latex : String.raw`Solve: \;3x+y=5,\;y=3x-4.\;\;\text{Type of system?}`,
-        choices : [
-          String.raw`\text{Consistent, independent}`,
-          String.raw`\text{Consistent, dependent}`,
-          String.raw`\text{Inconsistent}`,
-          String.raw`\text{No solution}`,
-          String.raw`\text{One solution}`,
-          String.raw`\text{Parallel lines}`
-        ]
-      },
-      {
-        latex : String.raw`Solve: \;3x-5y=-15,\;3x+5y=45.\;\;\text{Consistent or not?}`,
-        choices : [
-          String.raw`\text{Consistent, dependent}`,
-          String.raw`\text{Consistent, independent}`,
-          String.raw`\text{Inconsistent}`,
-          String.raw`\text{No solution}`,
-          String.raw`\text{Parallel}`,
-          String.raw`\text{One solution}`
-        ]
-      },
-      {
-        latex : String.raw`Solve: \;x+y=-4,\;y=-7.\;\;\text{Classify.}`,
-        choices : [
-          String.raw`\text{Consistent, independent}`,
-          String.raw`\text{Consistent, dependent}`,
-          String.raw`\text{Inconsistent}`,
-          String.raw`\text{No solution}`,
-          String.raw`\text{One solution}`,
-          String.raw`\text{Parallel}`
-        ]
-      },
-      {
-        latex : String.raw`Solve: \;x-3y=-15,\;y=4.\;\;\text{System type?}`,
-        choices : [
-          String.raw`\text{Consistent, independent}`,
-          String.raw`\text{Consistent, dependent}`,
-          String.raw`\text{Inconsistent}`,
-          String.raw`\text{Parallel}`,
-          String.raw`\text{One solution}`,
-          String.raw`\text{No solution}`
-        ]
-      },
-      {
-        latex : String.raw`Solve: \;12x+4y=8,\;3y=15-9x.\;\;\text{Classify.}`,
-        choices : [
-          String.raw`\text{Consistent, dependent}`,
-          String.raw`\text{Consistent, independent}`,
-          String.raw`\text{Inconsistent}`,
-          String.raw`\text{No solution}`,
-          String.raw`\text{Infinite solutions}`,
-          String.raw`\text{Parallel}`
-        ]
-      },
-      {
-        latex : String.raw`Inconsistent systems have what relationship between slopes and intercepts?`,
-        choices : [
-          String.raw`\text{Same slope, different y-intercepts}`,
-          String.raw`\text{Different slopes}`,
-          String.raw`\text{Same line}`,
-          String.raw`\text{Intersecting at exactly one point}`,
-          String.raw`\text{Infinite intersections}`,
-          String.raw`\text{Undefined slopes}`
-        ]
-      },
-      {
-        latex : String.raw`Dependent systems have what relationship between slopes and intercepts?`,
-        choices : [
-          String.raw`\text{Same slope, different y-intercepts}`,
-          String.raw`\text{Same slope, same y-intercept}`,
-          String.raw`\text{Different slopes}`,
-          String.raw`\text{Intersecting at one point}`,
-          String.raw`\text{No solutions}`,
-          String.raw`\text{Parallel lines}`
-        ]
-      },
-      {
-        latex : String.raw`Independent systems have what relationship between slopes?`,
-        choices : [
-          String.raw`\text{Different slopes}`,
-          String.raw`\text{Same slope, same intercept}`,
-          String.raw`\text{Same slope, different intercepts}`,
-          String.raw`\text{Exactly one solution}`,
-          String.raw`\text{No solution}`,
-          String.raw`\text{Infinite solutions}`
-        ]
-      }
-    ]
-  };
+        /* Cumulative Review equations/inequalities */
+        {
+          latex   : String.raw`x-5=8`,
+          choices : [
+            String.raw`x=3`,
+            String.raw`x=8`,
+            String.raw`x=10`,
+            String.raw`x=13`,
+            String.raw`x=-8`,
+            String.raw`x=5`
+          ]
+        },
+        {
+          latex   : String.raw`5x-11=2x+4`,
+          choices : [
+            String.raw`x=2`,
+            String.raw`x=3`,
+            String.raw`x=4`,
+            String.raw`x=5`,
+            String.raw`x=7`,
+            String.raw`x=-5`
+          ]
+        },
+        {
+          latex   : String.raw`\tfrac{3}{2}x+\tfrac{3}{40}=\tfrac{7}{16}`,
+          choices : [
+            String.raw`x=\tfrac{1}{10}`,
+            String.raw`x=\tfrac{1}{12}`,
+            String.raw`x=\tfrac{1}{15}`,
+            String.raw`x=\tfrac{1}{20}`,
+            String.raw`x=0`,
+            String.raw`x=\tfrac{2}{15}`
+          ]
+        },
+        {
+          latex   : String.raw`4(x-3)\le 8x`,
+          choices : [
+            String.raw`x\ge -3`,
+            String.raw`x\le -3`,
+            String.raw`x\ge 3`,
+            String.raw`x\le 3`,
+            String.raw`x\ge 0`,
+            String.raw`x\le 0`
+          ]
+        },
+        {
+          latex   : String.raw`\lvert 2x+1\rvert >19`,
+          choices : [
+            String.raw`x>9\ \text{or}\ x<-10`,
+            String.raw`x>10\ \text{or}\ x<-9`,
+            String.raw`x>8\ \text{or}\ x<-8`,
+            String.raw`x>5\ \text{or}\ x<-5`,
+            String.raw`x>0\ \text{or}\ x<0`,
+            String.raw`x>19\ \text{or}\ x<-19`
+          ]
+        }
+      ]
+    };
   </script>
 
   <link rel="stylesheet" href="/math-homework/assets/core.css" />
@@ -319,4 +244,3 @@
   <div id="hw-root">Loading…</div>
 </body>
 </html>
-
