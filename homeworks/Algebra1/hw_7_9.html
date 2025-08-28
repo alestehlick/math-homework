@@ -1,1 +1,182 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Homework 7-9 (Algebra 1)</title>
+
+  <script>
+    /* =========================
+       Homework 7-9 — Mixtures & Percents (Systems)
+       Use systems to model and/or solve each situation.
+       ========================= */
+    window.homeworkData = {
+      classId : "Algebra1",
+      id      : "Homework 7-9",
+      title   : "Homework 7-9 — Mixture & Percent Word Problems",
+
+      graphics : String.raw``,  // no graphics for this section
+
+      /* ===== Hidden answer key (A–F) for the 12 questions ===== */
+      answerKey : ["A","C","A","C","B","B","C","D","E","C","F","D"],
+
+      /* ===== 12 Multiple-Choice Questions (6 choices each) ===== */
+      questions : [
+        {
+          latex : String.raw`\textbf{1. } \text{Nuts cost }20\text{¢/oz and raisins cost }12\text{¢/oz. Find ounces of each to make }48\text{ oz at }15\text{¢/oz.}`,
+          choices : [
+            String.raw`\text{18 oz nuts,\ 30 oz raisins}`,
+            String.raw`\text{24 oz nuts,\ 24 oz raisins}`,
+            String.raw`\text{30 oz nuts,\ 18 oz raisins}`,
+            String.raw`\text{16 oz nuts,\ 32 oz raisins}`,
+            String.raw`\text{20 oz nuts,\ 28 oz raisins}`,
+            String.raw`\text{12 oz nuts,\ 36 oz raisins}`
+          ]
+        },
+
+        {
+          latex : String.raw`\textbf{2. } \text{Oranges } \$0.75/\text{lb},\ \text{bananas } \$0.60/\text{lb}.\ \text{Make }10\text{ lb costing } \$6.90.\ \text{How much of each?}`,
+          choices : [
+            String.raw`\text{5 lb oranges,\ 5 lb bananas}`,
+            String.raw`\text{4 lb oranges,\ 6 lb bananas}`,
+            String.raw`\text{6 lb oranges,\ 4 lb bananas}`,
+            String.raw`\text{7 lb oranges,\ 3 lb bananas}`,
+            String.raw`\text{8 lb oranges,\ 2 lb bananas}`,
+            String.raw`\text{3 lb oranges,\ 7 lb bananas}`
+          ]
+        },
+
+        {
+          latex : String.raw`\textbf{3. } \text{Caramels } \$1.90/\text{lb},\ \text{butterscotch } \$1.40/\text{lb}. \text{Make }5\text{ lb sold for } \$7.50.\ \text{How many pounds of each?}`,
+          choices : [
+            String.raw`\text{1 lb caramels,\ 4 lb butterscotch}`,
+            String.raw`\text{2 lb caramels,\ 3 lb butterscotch}`,
+            String.raw`\text{3 lb caramels,\ 2 lb butterscotch}`,
+            String.raw`\text{4 lb caramels,\ 1 lb butterscotch}`,
+            String.raw`\text{0.5 lb caramels,\ 4.5 lb butterscotch}`,
+            String.raw`\text{1.5 lb caramels,\ 3.5 lb butterscotch}`
+          ]
+        },
+
+        {
+          latex : String.raw`\textbf{4. } \text{Make }40\text{ gal of }9\%\text{ salt using }30\%\text{ salt solution and pure water. How many gallons of each?}`,
+          choices : [
+            String.raw`\text{10 gal 30\%, 30 gal water}`,
+            String.raw`\text{14 gal 30\%, 26 gal water}`,
+            String.raw`\text{12 gal 30\%, 28 gal water}`,
+            String.raw`\text{16 gal 30\%, 24 gal water}`,
+            String.raw`\text{18 gal 30\%, 22 gal water}`,
+            String.raw`\text{20 gal 30\%, 20 gal water}`
+          ]
+        },
+
+        {
+          latex : String.raw`\textbf{5. } \text{Roses cost } \$2.00 \text{ each and carnations } \$0.75 \text{ each. A }14\text{-flower bouquet costs } \$20.50.\ \text{How many of each?}`,
+          choices : [
+            String.raw`\text{6 roses,\ 8 carnations}`,
+            String.raw`\text{8 roses,\ 6 carnations}`,
+            String.raw`\text{7 roses,\ 7 carnations}`,
+            String.raw`\text{9 roses,\ 5 carnations}`,
+            String.raw`\text{5 roses,\ 9 carnations}`,
+            String.raw`\text{10 roses,\ 4 carnations}`
+          ]
+        },
+
+        {
+          latex : String.raw`\textbf{6. } \text{Mix }10\%\text{ iodine with }5\%\text{ iodine to make }50\text{ mL of }6\%\text{ iodine. How many mL of each?}`,
+          choices : [
+            String.raw`\text{5 mL of 10\% and 45 mL of 5\%}`,
+            String.raw`\text{10 mL of 10\% and 40 mL of 5\%}`,
+            String.raw`\text{12 mL of 10\% and 38 mL of 5\%}`,
+            String.raw`\text{15 mL of 10\% and 35 mL of 5\%}`,
+            String.raw`\text{20 mL of 10\% and 30 mL of 5\%}`,
+            String.raw`\text{25 mL of 10\% and 25 mL of 5\%}`
+          ]
+        },
+
+        {
+          latex : String.raw`\textbf{7. } \text{Cereal is }10\%\text{ protein; grain is }40\%\text{ protein. Make }12\text{ g of }20\%\text{ protein. How many grams of each?}`,
+          choices : [
+            String.raw`\text{6 g cereal,\ 6 g grain}`,
+            String.raw`\text{10 g cereal,\ 2 g grain}`,
+            String.raw`\text{8 g cereal,\ 4 g grain}`,
+            String.raw`\text{9 g cereal,\ 3 g grain}`,
+            String.raw`\text{7 g cereal,\ 5 g grain}`,
+            String.raw`\text{4 g cereal,\ 8 g grain}`
+          ]
+        },
+
+        {
+          latex : String.raw`\textbf{8. } \text{A concrete mix is }60\%\text{ aggregate. How much of this mix and how much pure aggregate }(100\%)\text{ should be combined to make }48\text{ kg of }75\%\text{ aggregate?}`,
+          choices : [
+            String.raw`\text{24 kg of 60\%, 24 kg of 100\%}`,
+            String.raw`\text{20 kg of 60\%, 28 kg of 100\%}`,
+            String.raw`\text{34 kg of 60\%, 14 kg of 100\%}`,
+            String.raw`\text{30 kg of 60\%, 18 kg of 100\%}`,
+            String.raw`\text{28 kg of 60\%, 20 kg of 100\%}`,
+            String.raw`\text{18 kg of 60\%, 30 kg of 100\%}`
+          ]
+        },
+
+        {
+          latex : String.raw`\textbf{9. } \text{Solution I is }20\text{ percentage points less acidic than Solution II. Mixing }40\text{ mL of I with }60\text{ mL of II gives a }27\%\text{ solution. What are the concentrations of I and II?}`,
+          choices : [
+            String.raw`\text{10\% and 30\%}`,
+            String.raw`\text{12\% and 32\%}`,
+            String.raw`\text{14\% and 34\%}`,
+            String.raw`\text{16\% and 36\%}`,
+            String.raw`\text{15\% and 35\%}`,
+            String.raw`\text{17\% and 37\%}`
+          ]
+        },
+
+        {
+          latex : String.raw`\textbf{10. } \text{Make }128\text{ mL of }12.5\%\text{ alcohol using }40\%\text{ alcohol and water }(0\%).\ \text{How many mL of each?}`,
+          choices : [
+            String.raw`\text{32 mL 40\%, 96 mL water}`,
+            String.raw`\text{36 mL 40\%, 92 mL water}`,
+            String.raw`\text{40 mL 40\%, 88 mL water}`,
+            String.raw`\text{44 mL 40\%, 84 mL water}`,
+            String.raw`\text{48 mL 40\%, 80 mL water}`,
+            String.raw`\text{52 mL 40\%, 76 mL water}`
+          ]
+        },
+
+        {
+          latex : String.raw`\textbf{11. } \text{Antifreeze A is }40\%\text{ glycol and B is }52\%\text{. How many gallons of each to make }20\text{ gal of }45\%\text{? (nearest tenth)}`,
+          choices : [
+            String.raw`\text{12.0 gal A,\ 8.0 gal B}`,
+            String.raw`\text{10.0 gal A,\ 10.0 gal B}`,
+            String.raw`\text{9.0 gal A,\ 11.0 gal B}`,
+            String.raw`\text{12.5 gal A,\ 7.5 gal B}`,
+            String.raw`\text{14.0 gal A,\ 6.0 gal B}`,
+            String.raw`\text{11.7 gal A,\ 8.3 gal B}`
+          ]
+        },
+
+        {
+          latex : String.raw`\textbf{12. } \text{Blend coffee at } \$2.99/\text{lb and } \$7.99/\text{lb to make }90\text{ lb at } \$5.00/\text{lb. (nearest tenth)}\ \text{How many pounds of each?}`,
+          choices : [
+            String.raw`\text{60.0 lb at \$2.99,\ 30.0 lb at \$7.99}`,
+            String.raw`\text{48.0 lb at \$2.99,\ 42.0 lb at \$7.99}`,
+            String.raw`\text{40.0 lb at \$2.99,\ 50.0 lb at \$7.99}`,
+            String.raw`\text{53.8 lb at \$2.99,\ 36.2 lb at \$7.99}`,
+            String.raw`\text{36.2 lb at \$2.99,\ 53.8 lb at \$7.99}`,
+            String.raw`\text{45.0 lb at \$2.99,\ 45.0 lb at \$7.99}`
+          ]
+        }
+      ]
+    };
+  </script>
+
+  <link rel="stylesheet" href="/math-homework/assets/core.css" />
+  <link rel="stylesheet" href="https://tikzjax.com/v1/fonts.css" />
+  <script defer src="/math-homework/assets/core.js"></script>
+  <script defer src="https://tikzjax.com/v1/tikzjax.js"></script>
+  <script defer src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+</head>
+<body>
+  <div id="hw-root">Loading…</div>
+</body>
+</html>
 
