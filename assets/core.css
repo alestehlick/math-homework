@@ -1,11 +1,10 @@
-/*  core.css  – layout; minimal, safe updates  */
+/* core.css */
 body{
   margin:0;
   font-family:"EB Garamond",serif;
   background:#f6f4ef;
   color:#222;
 }
-
 #hw-root{
   max-width:720px;
   margin:3rem auto;
@@ -14,14 +13,12 @@ body{
   border-radius:12px;
   box-shadow:0 4px 18px rgba(0,0,0,.1);
 }
-
 h1{
   text-align:center;
   font-weight:normal;
   font-size:1.9rem;
   margin:0 0 1.6rem;
 }
-
 .student-info{
   display:flex;
   flex-wrap:wrap;
@@ -34,20 +31,12 @@ h1{
   font-size:1rem;
   font-family:inherit;
 }
-
 .question{ margin-bottom:1.7rem; }
-
-.choices{
-  list-style:none;
-  padding:0;
-  margin:.6rem 0 0;
-}
+.choices{ list-style:none; padding:0; margin:.6rem 0 0; }
 .choices li{ margin:.35rem 0; }
-.choices input[type="radio"]{
-  margin-right:.55rem;
-  transform:scale(1.15);
-}
+.choices input[type="radio"]{ margin-right:.55rem; transform:scale(1.15); }
 
+/* button */
 button{
   display:block;
   margin:2rem auto 0;
@@ -62,6 +51,6 @@ button{
 }
 button:hover{ background:#3e654d; }
 
-/* TikZ container: only layout; no visual changes elsewhere */
+/* TikZ container */
 #media { text-align:center; margin:1rem 0; }
 #media script[type="text/tikz"]{ display:inline-block; }
