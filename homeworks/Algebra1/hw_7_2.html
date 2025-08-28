@@ -7,227 +7,294 @@
 
   <script>
     /* =========================================
-       Homework 7-2 — Systems of Linear Equations
-       Focus: Solve by graphing, classify (consistent,
-       inconsistent, dependent, independent), and cumulative review.
+       Homework 7-2 — Solve Systems BY GRAPHING
+       Every question shows a TikZ graph of a system.
+       Students choose the solution (if any) AND a classification:
+       - consistent independent (one point)
+       - consistent dependent (infinitely many)
+       - inconsistent (no solution)
        ========================================= */
     window.homeworkData = {
       classId : "Algebra1",
       id      : "Homework 7-2",
-      title   : "Homework 7-2 — Consistent, Inconsistent, Dependent Systems",
+      title   : "Homework 7-2 — Graphing Systems (TikZ)",
 
       graphics : "",
 
-      answerKey : [
-        "D","C","B","A","E","F","B","D",   // 1–8
-        "A","C","F","D","B","E","C","A",   // 9–16
-        "F","E","B","D","A","C","B","D",   // 17–24
-        "E","F","C","B","A"                // 25–29
-      ],
+      /* Hidden answers (A–F) */
+      answerKey : ["A","A","C","D","B","E","C","F","B","E","A","D"],
 
       questions : [
         {
-          latex   : String.raw`\text{Solve by graphing: } \begin{cases}x+y=4\\5x+y=8\end{cases}\ \text{Classify the system.}`,
+          latex : String.raw`\textbf{1.}\ \text{From the graph, choose the solution and classification.}
+\[
+\begin{tikzpicture}[scale=0.7]
+  \draw[step=1cm,very thin,gray!40] (-5,-1) grid (6,6);
+  \draw[->] (-5,0)--(6,0);\draw[->](0,-1)--(0,6);
+  % y = -x + 4
+  \draw[thick,blue,domain=-5:6] plot(\x,-\x+4) node[right] {$y=-x+4$};
+  % y = 2x - 1
+  \draw[thick,red,domain=-5:6] plot(\x,2*\x-1) node[right] {$y=2x-1$};
+  \fill[black] (5/3,7/3) circle (2.2pt);
+\end{tikzpicture}
+\]
+`,
           choices : [
-            String.raw`(4,0),\ \text{consistent indep.}`,
-            String.raw`(0,4),\ \text{consistent dep.}`,
-            String.raw`(2,2),\ \text{inconsistent}`,
-            String.raw`(1,3),\ \text{consistent indep.}`,
-            String.raw`\text{Parallel lines; inconsistent}`,
-            String.raw`\text{Coincident lines; dependent}`
-          ]
-        },
-        {
-          latex   : String.raw`\text{Solve by graphing: } \begin{cases}x-y=3\\4x-y=15\end{cases}`,
-          choices : [
-            String.raw`(3,0),\ \text{indep.}`,
-            String.raw`(4,1),\ \text{indep.}`,
-            String.raw`(6,3),\ \text{indep.}`,
-            String.raw`\text{No solution; inconsistent}`,
-            String.raw`\text{Infinite solutions; dependent}`,
-            String.raw`(2,5),\ \text{indep.}`
-          ]
-        },
-        {
-          latex   : String.raw`\text{Solve: } \begin{cases}2x+y=8\\4x+2y=16\end{cases}`,
-          choices : [
-            String.raw`\text{No solution}`,
-            String.raw`\text{Infinitely many; dependent}`,
-            String.raw`(0,8),\ \text{indep.}`,
-            String.raw`(4,0),\ \text{indep.}`,
-            String.raw`(2,4),\ \text{indep.}`,
-            String.raw`(-2,12),\ \text{indep.}`
-          ]
-        },
-        {
-          latex   : String.raw`\text{Solve: } \begin{cases}3x+y=5\\4x+3y=15\end{cases}`,
-          choices : [
-            String.raw`(0,5),\ \text{indep.}`,
-            String.raw`(5,0),\ \text{indep.}`,
-            String.raw`\text{No solution; inconsistent}`,
-            String.raw`\text{Dependent system}`,
-            String.raw`(3, -4),\ \text{indep.}`,
-            String.raw`(2, -1),\ \text{indep.}`
-          ]
-        },
-        {
-          latex   : String.raw`\text{Solve: } \begin{cases}x+2y-10=0\\3x+2y=14\end{cases}`,
-          choices : [
-            String.raw`(0,5),\ \text{indep.}`,
-            String.raw`(2,4),\ \text{indep.}`,
-            String.raw`(6,2),\ \text{indep.}`,
-            String.raw`\text{Dependent}`,
-            String.raw`\text{No solution}`,
-            String.raw`(4,3),\ \text{indep.}`
-          ]
-        },
-        {
-          latex   : String.raw`\text{Solve: } \begin{cases}8x-2y=6\\y=4x+3\end{cases}`,
-          choices : [
-            String.raw`(0,3),\ \text{indep.}`,
-            String.raw`(1,7),\ \text{indep.}`,
-            String.raw`(2,11),\ \text{indep.}`,
-            String.raw`(-1,-1),\ \text{indep.}`,
-            String.raw`\text{No solution}`,
-            String.raw`\text{Dependent}`
-          ]
-        },
-        {
-          latex   : String.raw`\text{Solve: } \begin{cases}x-2y=4\\3x+2y=-12\end{cases}`,
-          choices : [
-            String.raw`(0,-2),\ \text{indep.}`,
-            String.raw`(-2,-3),\ \text{indep.}`,
-            String.raw`(2,-1),\ \text{indep.}`,
-            String.raw`(4,0),\ \text{indep.}`,
-            String.raw`\text{No solution}`,
-            String.raw`\text{Dependent}`
-          ]
-        },
-        {
-          latex   : String.raw`\text{Solve: } \begin{cases}x+2y=8\\y=-\tfrac{x}{2}+4\end{cases}`,
-          choices : [
-            String.raw`(0,4),\ \text{indep.}`,
-            String.raw`(8,0),\ \text{indep.}`,
-            String.raw`(4,2),\ \text{indep.}`,
-            String.raw`\text{Dependent}`,
-            String.raw`(2,3),\ \text{indep.}`,
-            String.raw`\text{No solution}`
+            String.raw`\left(\tfrac{5}{3},\tfrac{7}{3}\right);\ \text{consistent independent}`,
+            String.raw`(2,3);\ \text{consistent independent}`,
+            String.raw`(1,3);\ \text{consistent independent}`,
+            String.raw`\text{no solution; inconsistent}`,
+            String.raw`\text{infinitely many; dependent}`,
+            String.raw`(0,4);\ \text{consistent independent}`
           ]
         },
 
-        /* B. Exercises – vertical & horizontal lines included */
         {
-          latex   : String.raw`\text{Solve: } \begin{cases}x=-3\\x=4\end{cases}`,
+          latex : String.raw`\textbf{2.}\ \text{From the graph, choose the classification.}
+\[
+\begin{tikzpicture}[scale=0.7]
+  \draw[step=1cm,very thin,gray!40] (-5,-4) grid (6,6);
+  \draw[->] (-5,0)--(6,0);\draw[->](0,-4)--(0,6);
+  % parallel lines: y=2x+1 and y=2x-3
+  \draw[thick,blue,domain=-5:6] plot(\x,2*\x+1) node[right] {$y=2x+1$};
+  \draw[thick,red,domain=-5:6]  plot(\x,2*\x-3) node[right] {$y=2x-3$};
+\end{tikzpicture}
+\]
+`,
           choices : [
-            String.raw`\text{No solution; inconsistent}`,
-            String.raw`\text{Dependent}`,
-            String.raw`(-3,0),\ \text{indep.}`,
-            String.raw`(4,0),\ \text{indep.}`,
-            String.raw`\text{All real x}`,
-            String.raw`\text{Infinite solutions}`
-          ]
-        },
-        {
-          latex   : String.raw`\text{Solve: } \begin{cases}x-y=6\\5x-5y=30\end{cases}`,
-          choices : [
-            String.raw`\text{No solution}`,
-            String.raw`\text{Dependent}`,
-            String.raw`(6,0),\ \text{indep.}`,
-            String.raw`(0,-6),\ \text{indep.}`,
-            String.raw`(3, -3),\ \text{indep.}`,
-            String.raw`(5, -1),\ \text{indep.}`
-          ]
-        },
-
-        /* C. Conceptual classification */
-        {
-          latex   : String.raw`\text{Inconsistent systems: what about slopes and y-intercepts?}`,
-          choices : [
-            String.raw`\text{Same slope, same intercept}`,
-            String.raw`\text{Different slopes}`,
-            String.raw`\text{Same slope, different intercepts}`,
-            String.raw`\text{One vertical, one horizontal}`,
-            String.raw`\text{All slopes equal}`,
-            String.raw`\text{Cannot determine}`
-          ]
-        },
-        {
-          latex   : String.raw`\text{Dependent systems: what about slopes and y-intercepts?}`,
-          choices : [
-            String.raw`\text{Same slope, different intercepts}`,
-            String.raw`\text{Different slopes}`,
-            String.raw`\text{Same slope, same intercept}`,
-            String.raw`\text{Vertical + horizontal}`,
-            String.raw`\text{No relation}`,
-            String.raw`\text{Intersect once only}`
-          ]
-        },
-        {
-          latex   : String.raw`\text{Independent systems: what about slopes?}`,
-          choices : [
-            String.raw`\text{Same slope, different intercepts}`,
-            String.raw`\text{Same slope, same intercept}`,
-            String.raw`\text{Different slopes}`,
-            String.raw`\text{Parallel lines}`,
-            String.raw`\text{Coincident lines}`,
-            String.raw`\text{No slope relation}`
+            String.raw`\text{no solution; inconsistent}`,
+            String.raw`(2,-3);\ \text{consistent independent}`,
+            String.raw`\text{infinitely many; dependent}`,
+            String.raw`(0,1);\ \text{consistent independent}`,
+            String.raw`(-1,3);\ \text{consistent independent}`,
+            String.raw`(3,3);\ \text{consistent independent}`
           ]
         },
 
-        /* Cumulative Review equations/inequalities */
         {
-          latex   : String.raw`x-5=8`,
+          latex : String.raw`\textbf{3.}\ \text{From the graph, choose the classification.}
+\[
+\begin{tikzpicture}[scale=0.7]
+  \draw[step=1cm,very thin,gray!40] (-5,-2) grid (6,6);
+  \draw[->] (-5,0)--(6,0);\draw[->](0,-2)--(0,6);
+  % same line: 3x+2y=6 and 6x+4y=12  -> y=-1.5x+3
+  \draw[thick,blue,domain=-5:6] plot(\x,-1.5*\x+3);
+  \draw[very thick,red,domain=-5:6] plot(\x,-1.5*\x+3);
+\end{tikzpicture}
+\]
+`,
           choices : [
-            String.raw`x=3`,
-            String.raw`x=8`,
-            String.raw`x=10`,
-            String.raw`x=13`,
-            String.raw`x=-8`,
-            String.raw`x=5`
+            String.raw`(2,0);\ \text{consistent independent}`,
+            String.raw`(0,3);\ \text{consistent independent}`,
+            String.raw`\text{infinitely many; dependent}`,
+            String.raw`\text{no solution; inconsistent}`,
+            String.raw`(3,-1.5);\ \text{consistent independent}`,
+            String.raw`(1,1.5);\ \text{consistent independent}`
           ]
         },
+
         {
-          latex   : String.raw`5x-11=2x+4`,
+          latex : String.raw`\textbf{4.}\ \text{From the graph, choose the ordered pair and classification.}
+\[
+\begin{tikzpicture}[scale=0.7]
+  \draw[step=1cm,very thin,gray!40] (-1,-4) grid (6,2);
+  \draw[->] (-1,0)--(6,0);\draw[->](0,-4)--(0,2);
+  % x=2 and y=-1
+  \draw[thick,blue] (2,-4) -- (2,2) node[above right] {$x=2$};
+  \draw[thick,red] (-1,-1) -- (6,-1) node[right] {$y=-1$};
+  \fill (2,-1) circle (2.2pt);
+\end{tikzpicture}
+\]
+`,
           choices : [
-            String.raw`x=2`,
-            String.raw`x=3`,
-            String.raw`x=4`,
-            String.raw`x=5`,
-            String.raw`x=7`,
-            String.raw`x=-5`
+            String.raw`(0,-1);\ \text{consistent independent}`,
+            String.raw`(2,0);\ \text{consistent independent}`,
+            String.raw`(0,0);\ \text{consistent independent}`,
+            String.raw`(2,-1);\ \text{consistent independent}`,
+            String.raw`\text{no solution; inconsistent}`,
+            String.raw`\text{infinitely many; dependent}`
           ]
         },
+
         {
-          latex   : String.raw`\tfrac{3}{2}x+\tfrac{3}{40}=\tfrac{7}{16}`,
+          latex : String.raw`\textbf{5.}\ \text{From the graph, choose the solution and classification.}
+\[
+\begin{tikzpicture}[scale=0.7]
+  \draw[step=1cm,very thin,gray!40] (-2,-1) grid (6,6);
+  \draw[->] (-2,0)--(6,0);\draw[->](0,-1)--(0,6);
+  % y = 1/2 x + 1  and  y = -1/2 x + 3
+  \draw[thick,blue,domain=-2:6] plot(\x,0.5*\x+1) node[right] {$y=\tfrac12 x+1$};
+  \draw[thick,red,domain=-2:6]  plot(\x,-0.5*\x+3) node[right] {$y=-\tfrac12 x+3$};
+  \fill (2,2) circle (2.2pt);
+\end{tikzpicture}
+\]
+`,
           choices : [
-            String.raw`x=\tfrac{1}{10}`,
-            String.raw`x=\tfrac{1}{12}`,
-            String.raw`x=\tfrac{1}{15}`,
-            String.raw`x=\tfrac{1}{20}`,
-            String.raw`x=0`,
-            String.raw`x=\tfrac{2}{15}`
+            String.raw`(1,2.5);\ \text{consistent independent}`,
+            String.raw`(2,2);\ \text{consistent independent}`,
+            String.raw`(3,2);\ \text{consistent independent}`,
+            String.raw`(2,1);\ \text{consistent independent}`,
+            String.raw`\text{no solution; inconsistent}`,
+            String.raw`\text{infinitely many; dependent}`
           ]
         },
+
         {
-          latex   : String.raw`4(x-3)\le 8x`,
+          latex : String.raw`\textbf{6.}\ \text{From the graph, choose the solution and classification.}
+\[
+\begin{tikzpicture}[scale=0.7]
+  \draw[step=1cm,very thin,gray!40] (-1,-1) grid (6,6);
+  \draw[->] (-1,0)--(6,0);\draw[->](0,-1)--(0,6);
+  % y = -2x + 5 and y=1
+  \draw[thick,blue,domain=-1:6] plot(\x,-2*\x+5) node[right] {$y=-2x+5$};
+  \draw[thick,red] (-1,1) -- (6,1) node[right] {$y=1$};
+  \fill (2,1) circle (2.2pt);
+\end{tikzpicture}
+\]
+`,
           choices : [
-            String.raw`x\ge -3`,
-            String.raw`x\le -3`,
-            String.raw`x\ge 3`,
-            String.raw`x\le 3`,
-            String.raw`x\ge 0`,
-            String.raw`x\le 0`
+            String.raw`(1,2);\ \text{consistent independent}`,
+            String.raw`(0,1);\ \text{consistent independent}`,
+            String.raw`\text{no solution; inconsistent}`,
+            String.raw`\text{infinitely many; dependent}`,
+            String.raw`(2,1);\ \text{consistent independent}`,
+            String.raw`(3,1);\ \text{consistent independent}`
           ]
         },
+
         {
-          latex   : String.raw`\lvert 2x+1\rvert >19`,
+          latex : String.raw`\textbf{7.}\ \text{From the graph, choose the solution and classification.}
+\[
+\begin{tikzpicture}[scale=0.7]
+  \draw[step=1cm,very thin,gray!40] (-5,-5) grid (3,2);
+  \draw[->] (-5,0)--(3,0);\draw[->](0,-5)--(0,2);
+  % y = x - 1 and y = -3
+  \draw[thick,blue,domain=-5:3] plot(\x,\x-1) node[right] {$y=x-1$};
+  \draw[thick,red] (-5,-3) -- (3,-3) node[right] {$y=-3$};
+  \fill (-2,-3) circle (2.2pt);
+\end{tikzpicture}
+\]
+`,
           choices : [
-            String.raw`x>9\ \text{or}\ x<-10`,
-            String.raw`x>10\ \text{or}\ x<-9`,
-            String.raw`x>8\ \text{or}\ x<-8`,
-            String.raw`x>5\ \text{or}\ x<-5`,
-            String.raw`x>0\ \text{or}\ x<0`,
-            String.raw`x>19\ \text{or}\ x<-19`
+            String.raw`(-3,-2);\ \text{consistent independent}`,
+            String.raw`(-1,-2);\ \text{consistent independent}`,
+            String.raw`(-2,-3);\ \text{consistent independent}`,
+            String.raw`\text{no solution; inconsistent}`,
+            String.raw`\text{infinitely many; dependent}`,
+            String.raw`(2,-3);\ \text{consistent independent}`
+          ]
+        },
+
+        {
+          latex : String.raw`\textbf{8.}\ \text{From the graph, choose the solution and classification.}
+\[
+\begin{tikzpicture}[scale=0.7]
+  \draw[step=1cm,very thin,gray!40] (-5,-1) grid (2,6);
+  \draw[->] (-5,0)--(2,0);\draw[->](0,-1)--(0,6);
+  % x = -1 and y = -2x + 1
+  \draw[thick,blue] (-1,-1)--(-1,6) node[above] {$x=-1$};
+  \draw[thick,red,domain=-5:2] plot(\x,-2*\x+1) node[right] {$y=-2x+1$};
+  \fill (-1,3) circle (2.2pt);
+\end{tikzpicture}
+\]
+`,
+          choices : [
+            String.raw`(-1,1);\ \text{consistent independent}`,
+            String.raw`(1,-1);\ \text{consistent independent}`,
+            String.raw`(-3,7);\ \text{consistent independent}`,
+            String.raw`\text{no solution; inconsistent}`,
+            String.raw`\text{infinitely many; dependent}`,
+            String.raw`(-1,3);\ \text{consistent independent}`
+          ]
+        },
+
+        {
+          latex : String.raw`\textbf{9.}\ \text{From the graph, choose the solution and classification.}
+\[
+\begin{tikzpicture}[scale=0.72]
+  \draw[step=1cm,very thin,gray!40] (-1,-1) grid (5,4);
+  \draw[->] (-1,0)--(5,0);\draw[->](0,-1)--(0,4);
+  % y = (3/2)x - 2   and  y = -(1/2)x + 1
+  \draw[thick,blue,domain=-1:5] plot(\x,1.5*\x-2) node[right] {$y=\tfrac{3}{2}x-2$};
+  \draw[thick,red,domain=-1:5]  plot(\x,-0.5*\x+1) node[right] {$y=-\tfrac12 x+1$};
+  \fill (1.5,0.25) circle (2.2pt);
+\end{tikzpicture}
+\]
+`,
+          choices : [
+            String.raw`(1,0);\ \text{consistent independent}`,
+            String.raw`\left(\tfrac{3}{2},\tfrac{1}{4}\right);\ \text{consistent independent}`,
+            String.raw`(2,1);\ \text{consistent independent}`,
+            String.raw`\text{no solution; inconsistent}`,
+            String.raw`\text{infinitely many; dependent}`,
+            String.raw`(1.5,1.25);\ \text{consistent independent}`
+          ]
+        },
+
+        {
+          latex : String.raw`\textbf{10.}\ \text{From the graph, choose the classification.}
+\[
+\begin{tikzpicture}[scale=0.72]
+  \draw[step=1cm,very thin,gray!40] (-4,0) grid (5,4);
+  \draw[->] (-4,0)--(5,0);\draw[->](0,0)--(0,4);
+  % same horizontal line y=2
+  \draw[thick,blue] (-4,2)--(5,2);
+  \draw[very thick,red] (-4,2)--(5,2);
+\end{tikzpicture}
+\]
+`,
+          choices : [
+            String.raw`\text{no solution; inconsistent}`,
+            String.raw`(0,2);\ \text{consistent independent}`,
+            String.raw`(2,2);\ \text{consistent independent}`,
+            String.raw`(5,2);\ \text{consistent independent}`,
+            String.raw`\text{infinitely many; dependent}`,
+            String.raw`(0,0);\ \text{consistent independent}`
+          ]
+        },
+
+        {
+          latex : String.raw`\textbf{11.}\ \text{From the graph, choose the classification.}
+\[
+\begin{tikzpicture}[scale=0.72]
+  \draw[step=1cm,very thin,gray!40] (-5,-2) grid (2,4);
+  \draw[->] (-5,0)--(2,0);\draw[->](0,-2)--(0,4);
+  % two parallel verticals x=-3 and x=-1
+  \draw[thick,blue] (-3,-2)--(-3,4) node[above] {$x=-3$};
+  \draw[thick,red]  (-1,-2)--(-1,4) node[above] {$x=-1$};
+\end{tikzpicture}
+\]
+`,
+          choices : [
+            String.raw`\text{no solution; inconsistent}`,
+            String.raw`\text{infinitely many; dependent}`,
+            String.raw`(-3,-1);\ \text{consistent independent}`,
+            String.raw`(-1,0);\ \text{consistent independent}`,
+            String.raw`(-2,1);\ \text{consistent independent}`,
+            String.raw`(0,0);\ \text{consistent independent}`
+          ]
+        },
+
+        {
+          latex : String.raw`\textbf{12.}\ \text{Estimate the intersection from the graph.}
+\[
+\begin{tikzpicture}[scale=0.72]
+  \draw[step=1cm,very thin,gray!40] (-1,0) grid (6,5);
+  \draw[->] (-1,0)--(6,0);\draw[->](0,0)--(0,5);
+  % y=(2/3)x+0.5  and  y=-x+5
+  \draw[thick,blue,domain=-1:6] plot(\x,0.6666667*\x+0.5) node[right] {$y=\tfrac{2}{3}x+\tfrac12$};
+  \draw[thick,red,domain=-1:6]  plot(\x,-1*\x+5) node[right] {$y=-x+5$};
+  \fill (2.7,2.3) circle (2.2pt);
+\end{tikzpicture}
+\]
+`,
+          choices : [
+            String.raw`(2,3);\ \text{consistent independent}`,
+            String.raw`(3,2);\ \text{consistent independent}`,
+            String.raw`(2.3,2.7);\ \text{consistent independent}`,
+            String.raw`(2.7,2.3);\ \text{consistent independent}`,
+            String.raw`\text{no solution; inconsistent}`,
+            String.raw`\text{infinitely many; dependent}`
           ]
         }
       ]
