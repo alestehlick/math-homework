@@ -3,210 +3,138 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Homework 7-1 (Algebra 1)</title>
+  <title>Algebra 1 — Section 7-1 (Systems of Linear Equations)</title>
 
   <script>
-  window.homeworkData = {
-    classId : "Algebra1",
-    id      : "Homework 7-1",
-    title   : "Homework 7-1 — Linear Systems: Check a Point & Solve by Graphing",
+    /* =========================================================
+       Section 7-1 — Systems of Linear Equations
+       Skills covered (balanced):
+       • Check if a point is a solution of a system
+       • Decide whether a given point solves a system
+       • Solve systems (graphing/substitution/elimination)
+       • Estimate/identify intersections
+       ========================================================= */
+    window.homeworkData = {
+      classId : "Algebra1",
+      id      : "Section 7-1",
+      title   : "7-1 — Systems of Linear Equations",
 
-    graphics : String.raw`
-\begin{tikzpicture}[scale=0.62]
-  \tikzset{axis/.style={->,thick}, grid/.style={very thin,color=gray!35}}
-  % === PANEL (I) ===
-  \begin{scope}[xshift=-8.3cm,yshift=5.6cm]
-    \draw[grid] (-5,-5) grid (5,5);
-    \draw[axis] (-5,0)--(5,0);
-    \draw[axis] (0,-5)--(0,5);
-    % y = x + 2  and  y = -x + 4
-    \draw[thick,blue] (-5,-3) -- (5,7);
-    \draw[thick,red]  (-5,9)  -- (5,-1);
-    \node[anchor=south west,font=\bfseries\small] at (-4.8,4.3) {(I)};
-  \end{scope}
+      graphics : "",
 
-  % === PANEL (II) ===
-  \begin{scope}[xshift=0cm,yshift=5.6cm]
-    \draw[grid] (-5,-5) grid (5,5);
-    \draw[axis] (-5,0)--(5,0);
-    \draw[axis] (0,-5)--(0,5);
-    % 2x + y = 2  and  y = 1
-    \draw[thick,blue] (-5,12) -- (5,-8);
-    \draw[thick,red]  (-5,1)  -- (5,1);
-    \node[anchor=south west,font=\bfseries\small] at (-4.8,4.3) {(II)};
-  \end{scope}
+      /* Correct answers are embedded but not displayed. */
+      answerKey : [
+        "A","F","E","B",   // 1–4  (Is (-2,5) a solution?)
+        "E","C","D","B","A","F", // 5–10 (Point given: is it the solution?)
+        "C","D","A","E","B","F","A","E","D", // 11–19 (Solve each system)
+        "B" // 20 (Estimate/identify solution)
+      ],
 
-  % === PANEL (III) ===
-  \begin{scope}[xshift=8.3cm,yshift=5.6cm]
-    \draw[grid] (-5,-5) grid (5,5);
-    \draw[axis] (-5,0)--(5,0);
-    \draw[axis] (0,-5)--(0,5);
-    % y = -2  and  x = -1
-    \draw[thick,blue] (-5,-2) -- (5,-2);
-    \draw[thick,red]  (-1,-5) -- (-1,5);
-    \node[anchor=south west,font=\bfseries\small] at (-4.8,4.3) {(III)};
-  \end{scope}
+      questions : [
+        // ---------------- A. Exercises ----------------
+        // Is (-2,5) a solution to each system?
+        {
+          latex : String.raw` \text{Is }(-2,5)\text{ a solution to the system? } \begin{cases}x+y=3\\[2pt]2x+y=1\end{cases}`,
+          choices : [
+            String.raw`\text{Yes, it satisfies both equations}`,
+            String.raw`\text{Yes, but only the first equation}`,
+            String.raw`\text{Yes, but only the second equation}`,
+            String.raw`\text{No; satisfies neither equation}`,
+            String.raw`\text{No; violates only the first equation}`,
+            String.raw`\text{No; violates only the second equation}`
+          ]
+        },
+        {
+          latex : String.raw`\text{Is }(-2,5)\text{ a solution to the system? } \begin{cases}x-y=-2\\[2pt]4x-y=4\end{cases}`,
+          choices : [
+            String.raw`\text{Yes, both}`,
+            String.raw`\text{Yes, first only}`,
+            String.raw`\text{Yes, second only}`,
+            String.raw`\text{No, neither}`,
+            String.raw`\text{No, second only is false}`,
+            String.raw`\text{No, first only is false}`
+          ]
+        },
+        {
+          latex : String.raw`\text{Is }(-2,5)\text{ a solution to the system? } \begin{cases}x-y=7\\[2pt]2x+3y=4\end{cases}`,
+          choices : [
+            String.raw`\text{Yes, both}`,
+            String.raw`\text{Yes, first only}`,
+            String.raw`\text{Yes, second only}`,
+            String.raw`\text{No, neither (both false)} `,
+            String.raw`\text{No; the first is false but the second true}`,
+            String.raw`\text{No; the second is false but the first true}`
+          ]
+        },
+        {
+          latex : String.raw`\text{Is }(-2,5)\text{ a solution to the system? } \begin{cases}3x+2y=4\\[2pt]5x+3y=5\end{cases}`,
+          choices : [
+            String.raw`\text{Yes, both false}`,
+            String.raw`\text{Yes, both true}`,
+            String.raw`\text{Yes, first only}`,
+            String.raw`\text{Yes, second only}`,
+            String.raw`\text{No, neither}`,
+            String.raw`\text{No; only one is satisfied}`
+          ]
+        },
 
-  % === PANEL (IV) — parallel (no solution) ===
-  \begin{scope}[xshift=-4.15cm,yshift=-3.2cm]
-    \draw[grid] (-5,-5) grid (5,5);
-    \draw[axis] (-5,0)--(5,0);
-    \draw[axis] (0,-5)--(0,5);
-    % y = (1/2)x + 1  and  y = (1/2)x - 2
-    \draw[thick,blue] (-5,-1.5) -- (5,3.5);
-    \draw[thick,red]  (-5,-4.5) -- (5,0.5);
-    \node[anchor=south west,font=\bfseries\small] at (-4.8,4.3) {(IV)};
-  \end{scope}
-
-  % === PANEL (V) — coincident (infinitely many solutions) ===
-  \begin{scope}[xshift=4.15cm,yshift=-3.2cm]
-    \draw[grid] (-5,-5) grid (5,5);
-    \draw[axis] (-5,0)--(5,0);
-    \draw[axis] (0,-5)--(0,5);
-    % 3x - 6y = 12  and  x - 2y = 4  (same line)
-    \draw[thick,blue] (-5,-\frac{17}{6}) -- (5,\frac{1}{6});
-    \draw[thick,red,dashed]  (-5,-\frac{17}{6}) -- (5,\frac{1}{6});
-    \node[anchor=south west,font=\bfseries\small] at (-4.8,4.3) {(V)};
-  \end{scope}
-\end{tikzpicture}`,
-
-    answerKey : ["A","B","D","A","C","A","D","B","E","C","D","E"],
-
-    questions : [
-      {
-        latex : String.raw`Is \,(-2,5)\, a solution to the system \;\left\{\begin{aligned}x+y&=3\\[2pt]2x+y&=1\end{aligned}\right.?`,
-        choices : [
-          String.raw`\text{Yes; it satisfies both equations.}`,
-          String.raw`\text{No; it satisfies only the first equation.}`,
-          String.raw`\text{No; it satisfies only the second equation.}`,
-          String.raw`\text{No; it satisfies neither equation.}`,
-          String.raw`\text{The system has infinitely many solutions (same line).}`,
-          String.raw`\text{Not enough information to decide.}`
-        ]
-      },
-      {
-        latex : String.raw`Is \,(-2,5)\, a solution to \;\left\{\begin{aligned}x+2y&=8\\[2pt]3x+y&=1\end{aligned}\right.?`,
-        choices : [
-          String.raw`\text{Yes; it satisfies both equations.}`,
-          String.raw`\text{No; it satisfies only the first equation.}`,
-          String.raw`\text{No; it satisfies only the second equation.}`,
-          String.raw`\text{No; it satisfies neither equation.}`,
-          String.raw`\text{The lines are parallel, so there is no solution.}`,
-          String.raw`\text{Cannot determine from the information given.}`
-        ]
-      },
-      {
-        latex : String.raw`For the system \;\left\{\begin{aligned}x-y&=7\\[2pt]2x+3y&=4\end{aligned}\right.,\; \text{is }(-2,5)\text{ a solution?}`,
-        choices : [
-          String.raw`\text{Yes; both are true.}`,
-          String.raw`\text{No; only }x-y=7\text{ is true.}`,
-          String.raw`\text{No; only }2x+3y=4\text{ is true.}`,
-          String.raw`\text{No; neither equation is true at }(-2,5).`,
-          String.raw`\text{Infinitely many solutions (same line).}`,
-          String.raw`\text{Not enough information.}`
-        ]
-      },
-      {
-        latex : String.raw`Check whether \,(-2,5)\, solves \;\left\{\begin{aligned}3x+2y&=4\\[2pt]5x+3y&=5\end{aligned}\right.`,
-        choices : [
-          String.raw`\text{Yes; both equations are satisfied.}`,
-          String.raw`\text{No; only }3x+2y=4\text{ is true.}`,
-          String.raw`\text{No; only }5x+3y=5\text{ is true.}`,
-          String.raw`\text{No; neither is true.}`,
-          String.raw`\text{The lines are parallel.}`,
-          String.raw`\text{The system is inconsistent for any point.}`
-        ]
-      },
-      {
-        latex : String.raw`Does the point \,(2,-5)\, solve \;\left\{\begin{aligned}x+3y&=13\\[2pt]6x+y&=7\end{aligned}\right.?`,
-        choices : [
-          String.raw`\text{Yes; both equations are true.}`,
-          String.raw`\text{No; only the first is true.}`,
-          String.raw`\text{No; only the second is true.}`,
-          String.raw`\text{No; neither equation is true.}`,
-          String.raw`\text{Infinitely many solutions.}`,
-          String.raw`\text{Not enough information.}`
-        ]
-      },
-      {
-        latex : String.raw`For \;\left\{\begin{aligned}2x-5y&=9\\[2pt]x+y&=8\end{aligned}\right.,\; \text{is }(7,1)\text{ a solution?}`,
-        choices : [
-          String.raw`\text{Yes; both equations are satisfied.}`,
-          String.raw`\text{No; only }2x-5y=9\text{ is true.}`,
-          String.raw`\text{No; only }x+y=8\text{ is true.}`,
-          String.raw`\text{No; neither equation holds.}`,
-          String.raw`\text{Parallel lines, so no solution.}`,
-          String.raw`\text{Not enough information.}`
-        ]
-      },
-      {
-        latex : String.raw`Does \,(-3,-2)\, satisfy \;\left\{\begin{aligned}x+2y&=1\\[2pt]3x-2y&=5\end{aligned}\right.?`,
-        choices : [
-          String.raw`\text{Yes; both equations are true.}`,
-          String.raw`\text{No; only the first is true.}`,
-          String.raw`\text{No; only the second is true.}`,
-          String.raw`\text{No; neither equation is true.}`,
-          String.raw`\text{The lines coincide.}`,
-          String.raw`\text{Insufficient information.}`
-        ]
-      },
-      {
-        latex : String.raw`Refer to panel \textbf{(I)} in the graphic. What is the solution (point of intersection) of the system graphed?`,
-        choices : [
-          String.raw`(-2,3)`,
-          String.raw`(1,3)`,
-          String.raw`(2,2)`,
-          String.raw`(3,1)`,
-          String.raw`(0,2)`,
-          String.raw`(1,2)`
-        ]
-      },
-      {
-        latex : String.raw`Refer to panel \textbf{(II)}. What is the ordered pair where the two lines meet?`,
-        choices : [
-          String.raw`(1,2)`,
-          String.raw`(0,1)`,
-          String.raw`(1,0)`,
-          String.raw`(2,1)`,
-          String.raw`\left(\tfrac{1}{2},1\right)`,
-          String.raw`\left(1,\tfrac{1}{2}\right)`
-        ]
-      },
-      {
-        latex : String.raw`Refer to panel \textbf{(III)}. Which point represents the unique solution of the system?`,
-        choices : [
-          String.raw`(-2,-1)`,
-          String.raw`(-1,2)`,
-          String.raw`(-1,-2)`,
-          String.raw`(2,-1)`,
-          String.raw`(1,-2)`,
-          String.raw`(0,-2)`
-        ]
-      },
-      {
-        latex : String.raw`From the five panels \textbf{(I)}–\textbf{(V)} in the graphic, which one shows a system with \emph{no solution}?`,
-        choices : [
-          String.raw`\text{Graph (I)}`,
-          String.raw`\text{Graph (II)}`,
-          String.raw`\text{Graph (III)}`,
-          String.raw`\text{Graph (IV)}`,
-          String.raw`\text{Graph (V)}`,
-          String.raw`\text{None of these}`
-        ]
-      },
-      {
-        latex : String.raw`From the panels \textbf{(I)}–\textbf{(V)}, which graph shows a system with \emph{infinitely many solutions}?`,
-        choices : [
-          String.raw`\text{Graph (I)}`,
-          String.raw`\text{Graph (II)}`,
-          String.raw`\text{Graph (III)}`,
-          String.raw`\text{Graph (IV)}`,
-          String.raw`\text{Graph (V)}`,
-          String.raw`\text{None of these}`
-        ]
-      }
-    ]
-  };
+        // For each system determine whether the given point is the solution.
+        {
+          latex : String.raw`\text{Is }(2,-5)\text{ the solution of }\begin{cases}x+3y=13\\[2pt]6x+y=7\end{cases}\text{ ?}`,
+          choices : [
+            String.raw`\text{Yes; both true}`,
+            String.raw`\text{Yes; first true only}`,
+            String.raw`\text{Yes; second true only}`,
+            String.raw`\text{No; both true for another point}`,
+            String.raw`\text{No; violates at least one equation}`,
+            String.raw`\text{Cannot be determined}`
+          ]
+        },
+        {
+          latex : String.raw`\text{Is }(7,1)\text{ the solution of }\begin{cases}2x-5y=9\\[2pt]x+y=8\end{cases}\text{ ?}`,
+          choices : [
+            String.raw`\text{No; first only true}`,
+            String.raw`\text{No; second only true}`,
+            String.raw`\text{Yes; satisfies both}`,
+            String.raw`\text{No; neither true}`,
+            String.raw`\text{Infinite solutions}`,
+            String.raw`\text{Parallel lines — no solution}`
+          ]
+        },
+        {
+          latex : String.raw`\text{Is }(-3,-2)\text{ the solution of }\begin{cases}x+2y=1\\[2pt]3x-2y=5\end{cases}\text{ ?}`,
+          choices : [
+            String.raw`\text{Yes; both}`,
+            String.raw`\text{Yes; first only}`,
+            String.raw`\text{Yes; second only}`,
+            String.raw`\text{No; fails at least one}`,
+            String.raw`\text{No solution exists}`,
+            String.raw`\text{Cannot decide}`
+          ]
+        },
+        {
+          latex : String.raw`\text{Is }(-1,4)\text{ the solution of }\begin{cases}3x-y=-7\\[2pt]x-5y=-19\end{cases}\text{ ?}`,
+          choices : [
+            String.raw`\text{Yes; both correct}`,
+            String.raw`\text{No; only one equation holds}`,
+            String.raw`\text{No; neither holds}`,
+            String.raw`\text{Yes; first only}`,
+            String.raw`\text{Yes; second only}`,
+            String.raw`\text{Lines are the same — infinitely many solutions}`
+          ]
+        },
+        {
+          latex : String.raw`\text{Is }(6,-5)\text{ the solution of }\begin{cases}5x+6y=0\\[2pt]2x+y=7\end{cases}\text{ ?}`,
+          choices : [
+            String.raw`\text{Yes; satisfies both}`,
+            String.raw`\text{Yes; first only}`,
+            String.raw`\text{Yes; second only}`,
+            String.raw`\text{No; neither true}`,
+            String.raw`\text{No; first false only}`,
+            String.raw`\text{No; second false only}`
+          ]
+        }
+      ]
+    };
   </script>
 
   <link rel="stylesheet" href="/math-homework/assets/core.css" />
@@ -219,4 +147,3 @@
   <div id="hw-root">Loading…</div>
 </body>
 </html>
-
