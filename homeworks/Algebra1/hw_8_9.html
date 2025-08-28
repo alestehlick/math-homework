@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Homework 8-9 (Algebra 1)</title>
+
+  <script>
+    /* =========================
+       Homework 8-9 — Polynomial Division (Quotient & Remainder)
+       ========================= */
+    window.homeworkData = {
+      classId : "Algebra1",
+      id      : "Homework 8-9",
+      title   : "Homework 8-9 — Polynomial Division (Quotient & Remainder)",
+
+      graphics : String.raw` `,  // no figures needed
+
+      /* A–F for each question below */
+      answerKey : ["C","E","A","F","B","D","A","E","F","B","C","D"],
+
+      questions : [
+        { latex: String.raw`\text{Divide and state the quotient and remainder: }(a^2+4a+12)\div(a-6).`,
+          choices: [
+            String.raw`\text{Quotient } a+6,\ \text{Remainder } 48`,
+            String.raw`\text{Quotient } a+4,\ \text{Remainder } 36`,
+            String.raw`\text{Quotient } a+10,\ \text{Remainder } 72`,
+            String.raw`\text{Quotient } a-10,\ \text{Remainder } -72`,
+            String.raw`\text{Quotient } a+6,\ \text{Remainder } 12`,
+            String.raw`\text{Quotient } a+10,\ \text{Remainder } 12`
+          ]},
+
+        { latex: String.raw`\text{Divide and state the quotient and remainder: }(x^2+8x+15)\div(x+2).`,
+          choices: [
+            String.raw`\text{Quotient } x+8,\ \text{Remainder } -1`,
+            String.raw`\text{Quotient } x+5,\ \text{Remainder } 5`,
+            String.raw`\text{Quotient } x+6,\ \text{Remainder } -3`,
+            String.raw`\text{Quotient } x+4,\ \text{Remainder } 7`,
+            String.raw`\text{Quotient } x+6,\ \text{Remainder } 3`,
+            String.raw`\text{Quotient } x+7,\ \text{Remainder } 1`
+          ]},
+
+        { latex: String.raw`\text{Divide and state the quotient and remainder: }(5x^2-2x+9)\div(x+1).`,
+          choices: [
+            String.raw`\text{Quotient } 5x-7,\ \text{Remainder } 16`,
+            String.raw`\text{Quotient } 5x+7,\ \text{Remainder } -16`,
+            String.raw`\text{Quotient } 5x-2,\ \text{Remainder } 9`,
+            String.raw`\text{Quotient } 5x-7,\ \text{Remainder } -16`,
+            String.raw`\text{Quotient } 5x+3,\ \text{Remainder } 6`,
+            String.raw`\text{Quotient } 5x-5,\ \text{Remainder } 4`
+          ]},
+
+        { latex: String.raw`\text{Divide and state the quotient and remainder: }(3x^2+11x-15)\div(3x-4).`,
+          choices: [
+            String.raw`\text{Quotient } x+4,\ \text{Remainder } -1`,
+            String.raw`\text{Quotient } x+5,\ \text{Remainder } -4`,
+            String.raw`\text{Quotient } x+3,\ \text{Remainder } 9`,
+            String.raw`\text{Quotient } x-5,\ \text{Remainder } 5`,
+            String.raw`\text{Quotient } \tfrac{x}{3}+ \tfrac{11}{9},\ \text{Remainder } 0`,
+            String.raw`\text{Quotient } x+5,\ \text{Remainder } 5`
+          ]},
+
+        { latex: String.raw`\text{Divide and state the quotient and remainder: }(x^2+4x-3)\div(x-1).`,
+          choices: [
+            String.raw`\text{Quotient } x+4,\ \text{Remainder } 1`,
+            String.raw`\text{Quotient } x+5,\ \text{Remainder } 2`,
+            String.raw`\text{Quotient } x+3,\ \text{Remainder } 0`,
+            String.raw`\text{Quotient } x-5,\ \text{Remainder } -2`,
+            String.raw`\text{Quotient } x+5,\ \text{Remainder } -2`,
+            String.raw`\text{Quotient } x+4,\ \text{Remainder } -1`
+          ]},
+
+        { latex: String.raw`\text{Divide and state the quotient and remainder: }(24x^2+13x-9)\div(x+3).`,
+          choices: [
+            String.raw`\text{Quotient } 24x-59,\ \text{Remainder } -168`,
+            String.raw`\text{Quotient } 24x+59,\ \text{Remainder } 168`,
+            String.raw`\text{Quotient } 24x-13,\ \text{Remainder } -9`,
+            String.raw`\text{Quotient } 24x-59,\ \text{Remainder } 168`,
+            String.raw`\text{Quotient } 24x+59,\ \text{Remainder } -168`,
+            String.raw`\text{Quotient } 24x-53,\ \text{Remainder } 150`
+          ]},
+
+        { latex: String.raw`\text{Divide and state the quotient and remainder: }(x^2-x+2)\div(x+3).`,
+          choices: [
+            String.raw`\text{Quotient } x-4,\ \text{Remainder } 14`,
+            String.raw`\text{Quotient } x+4,\ \text{Remainder } -14`,
+            String.raw`\text{Quotient } x+3,\ \text{Remainder } 2`,
+            String.raw`\text{Quotient } x-3,\ \text{Remainder } 2`,
+            String.raw`\text{Quotient } x-4,\ \text{Remainder } -14`,
+            String.raw`\text{Quotient } x-2,\ \text{Remainder } -4`
+          ]},
+
+        { latex: String.raw`\text{Divide and state the quotient and remainder: }(7x^3-3x+8)\div(x+4).`,
+          choices: [
+            String.raw`\text{Quotient } 7x^2+28x-109,\ \text{Remainder } 428`,
+            String.raw`\text{Quotient } 7x^2-28x-109,\ \text{Remainder } 428`,
+            String.raw`\text{Quotient } 7x^2-28x+109,\ \text{Remainder } 428`,
+            String.raw`\text{Quotient } 7x^2+28x+109,\ \text{Remainder } -428`,
+            String.raw`\text{Quotient } 7x^2-28x+109,\ \text{Remainder } -428`,
+            String.raw`\text{Quotient } 7x^2-28x-109,\ \text{Remainder } -428`
+          ]},
+
+        { latex: String.raw`\text{Divide and state the quotient and remainder: }(x^3-2x^2+3x)\div(x-4).`,
+          choices: [
+            String.raw`\text{Quotient } x^2+2x+3,\ \text{Remainder } 12`,
+            String.raw`\text{Quotient } x^2+2x+7,\ \text{Remainder } 28`,
+            String.raw`\text{Quotient } x^2+3x+2,\ \text{Remainder } 6`,
+            String.raw`\text{Quotient } x^2-2x+3,\ \text{Remainder } 12`,
+            String.raw`\text{Quotient } x^2+2x+11,\ \text{Remainder } -44`,
+            String.raw`\text{Quotient } x^2+2x+11,\ \text{Remainder } 44`
+          ]},
+
+        { latex: String.raw`\text{Divide and state the quotient and remainder: }(4x^2-16)\div(x-2).`,
+          choices: [
+            String.raw`\text{Quotient } 4x-8,\ \text{Remainder } 0`,
+            String.raw`\text{Quotient } 4x+8,\ \text{Remainder } 0`,
+            String.raw`\text{Quotient } 4x+8,\ \text{Remainder } -16`,
+            String.raw`\text{Quotient } 4x-8,\ \text{Remainder } -16`,
+            String.raw`\text{Quotient } 4x^2-16,\ \text{Remainder } 0`,
+            String.raw`\text{Quotient } 2x+4,\ \text{Remainder } 0`
+          ]},
+
+        { latex: String.raw`\text{Divide and state the quotient and remainder: }(x^3-27x+9)\div(x-3).`,
+          choices: [
+            String.raw`\text{Quotient } x^2-3x-9,\ \text{Remainder } 36`,
+            String.raw`\text{Quotient } x^2+6x+9,\ \text{Remainder } 0`,
+            String.raw`\text{Quotient } x^2+3x-18,\ \text{Remainder } -45`,
+            String.raw`\text{Quotient } x^2-3x+18,\ \text{Remainder } -45`,
+            String.raw`\text{Quotient } x^2+3x+9,\ \text{Remainder } 27`,
+            String.raw`\text{Quotient } x^2+3x+18,\ \text{Remainder } -27`
+          ]},
+
+        { latex: String.raw`\text{Divide and state the quotient and remainder: }(x^5-2x^2+6)\div(x^2+4).`,
+          choices: [
+            String.raw`\text{Quotient } x^3-4x+2,\ \text{Remainder } 14-16x`,
+            String.raw`\text{Quotient } x^3-4x-2,\ \text{Remainder } 14-16x`,
+            String.raw`\text{Quotient } x^3-2x-4,\ \text{Remainder } 16x+14`,
+            String.raw`\text{Quotient } x^3-4x-2,\ \text{Remainder } 16x+14`,
+            String.raw`\text{Quotient } x^2-4x-2,\ \text{Remainder } 16x+14`,
+            String.raw`\text{Quotient } x^3-4x-2,\ \text{Remainder } -16x-14`
+          ]}
+      ]
+    };
+  </script>
+
+  <link rel="stylesheet" href="/math-homework/assets/core.css" />
+  <script defer src="/math-homework/assets/core.js"></script>
+  <script defer src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+</head>
+<body>
+  <div id="hw-root">Loading…</div>
+</body>
+</html>
