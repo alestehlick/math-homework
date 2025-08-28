@@ -3,55 +3,193 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Homework 7-10 (Algebra 1) — Test</title>
+  <title>Homework 7-10 (Algebra 1)</title>
 
   <script>
     /* =========================
-       Homework 7-10 — Graphing Systems of Inequalities (TEST: G1 only)
+       Homework 7-10 — Graphing Systems of Inequalities
        ========================= */
     window.homeworkData = {
       classId : "Algebra1",
       id      : "Homework 7-10",
       title   : "Homework 7-10 — Graphing Systems of Inequalities",
+
       graphics : String.raw`
-\begin{tikzpicture}[scale=0.8]
+\begin{tikzpicture}[scale=0.55]
   \tikzset{grid/.style={very thin,color=gray!30}}
   \tikzset{axes/.style={->,thick}}
-  \clip (-4.2,-4.2) rectangle (4.2,4.2);
-  \draw[grid] (-4,-4) grid (4,4);
-  \draw[axes] (-4,0)--(4,0); \draw[axes] (0,-4)--(0,4);
 
-  % G1: x+y >= 2 (solid) and x-y < 4 (dashed)
-  \path[fill=blue!25,opacity=.35] (-4, {-(-4)+2}) -- (4, {-(4)+2}) -- (4,4) -- (-4,4) -- cycle;
-  \path[fill=red!25,opacity=.35]  (-4, {-4-4}) -- (4, {4-4}) -- (4,4) -- (-4,4) -- cycle;
+  % ---------- G1: x+y >= 2 and x-y < 4
+  \begin{scope}[xshift=-12cm,yshift=12cm]
+    \clip (-4.2,-4.2) rectangle (4.2,4.2);
+    \draw[grid] (-4,-4) grid (4,4);
+    \draw[axes] (-4,0)--(4,0); \draw[axes] (0,-4)--(0,4);
+    \path[fill=blue!25,opacity=.35] (-4, {-(-4)+2}) -- (4, {-(4)+2}) -- (4,4) -- (-4,4) -- cycle;
+    \path[fill=red!25,opacity=.35]  (-4, {-4-4})    -- (4, {4-4})    -- (4,4) -- (-4,4) -- cycle;
+    \draw[blue,thick,domain=-4:4] plot(\x,{-\x+2});
+    \draw[red,thick,dashed,domain=-4:4] plot(\x,{\x-4});
+    \node[anchor=south east,font=\small] at (3.7,3.7) {G1};
+  \end{scope}
 
-  \draw[blue,thick,domain=-4:4] plot(\x,{-1*\x+2});
-  \draw[red,thick,dashed,domain=-4:4] plot(\x,{\x-4});
-  \node[anchor=south east,font=\small] at (3.7,3.7) {G1};
+  % ---------- G2: 5x+y > 2 and 2x+y <= 1
+  \begin{scope}[xshift=0cm,yshift=12cm]
+    \clip (-4.2,-4.2) rectangle (4.2,4.2);
+    \draw[grid] (-4,-4) grid (4,4);
+    \draw[axes] (-4,0)--(4,0); \draw[axes] (0,-4)--(0,4);
+    \path[fill=blue!25,opacity=.35] (-4, {20+2}) -- (4, {-20+2}) -- (4,4) -- (-4,4) -- cycle;
+    \path[fill=red!25,opacity=.35]  (-4, {8+1})  -- (4, {-8+1})  -- (4,-4) -- (-4,-4) -- cycle;
+    \draw[blue,thick,dashed,domain=-4:4] plot(\x,{-5*\x+2});
+    \draw[red,thick,domain=-4:4]        plot(\x,{-2*\x+1});
+    \node[anchor=south east,font=\small] at (3.7,3.7) {G2};
+  \end{scope}
+
+  % ---------- G3: 3x-2y >= 6 and x+y <= 3
+  \begin{scope}[xshift=12cm,yshift=12cm]
+    \clip (-4.2,-4.2) rectangle (4.2,4.2);
+    \draw[grid] (-4,-4) grid (4,4);
+    \draw[axes] (-4,0)--(4,0); \draw[axes] (0,-4)--(0,4);
+    \path[fill=blue!25,opacity=.35] (-4, {1.5*(-4)-3}) -- (4, {1.5*(4)-3}) -- (4,-4) -- (-4,-4) -- cycle;
+    \path[fill=red!25,opacity=.35]  (-4, {-(-4)+3})  -- (4, {-(4)+3})   -- (4,-4) -- (-4,-4) -- cycle;
+    \draw[blue,thick,domain=-4:4] plot(\x,{1.5*\x-3});
+    \draw[red,thick,domain=-4:4]  plot(\x,{-\x+3});
+    \node[anchor=south east,font=\small] at (3.7,3.7) {G3};
+  \end{scope}
+
+  % ---------- G4: 2x-y < 5 and 3x+y >= 4
+  \begin{scope}[xshift=-12cm,yshift=0cm]
+    \clip (-4.2,-4.2) rectangle (4.2,4.2);
+    \draw[grid] (-4,-4) grid (4,4);
+    \draw[axes] (-4,0)--(4,0); \draw[axes] (0,-4)--(0,4);
+    \path[fill=blue!25,opacity=.35] (-4, {2*(-4)-5}) -- (4, {2*(4)-5}) -- (4,4) -- (-4,4) -- cycle;
+    \path[fill=red!25,opacity=.35]  (-4, {-3*(-4)+4}) -- (4, {-3*(4)+4}) -- (4,4) -- (-4,4) -- cycle;
+    \draw[blue,thick,dashed,domain=-4:4] plot(\x,{2*\x-5});
+    \draw[red,thick,domain=-4:4]        plot(\x,{-3*\x+4});
+    \node[anchor=south east,font=\small] at (3.7,3.7) {G4};
+  \end{scope}
+
+  % ---------- G5: x+5y < 15 and 3x+2y <= 8
+  \begin{scope}[xshift=-2cm,yshift=0cm]
+    \clip (-4.2,-4.2) rectangle (4.2,4.2);
+    \draw[grid] (-4,-4) grid (4,4);
+    \draw[axes] (-4,0)--(4,0); \draw[axes] (0,-4)--(0,4);
+    \path[fill=blue!25,opacity=.35] (-4, {-0.2*(-4)+3}) -- (4, {-0.2*(4)+3}) -- (4,-4) -- (-4,-4) -- cycle;
+    \path[fill=red!25,opacity=.35]  (-4, {-1.5*(-4)+4}) -- (4, {-1.5*(4)+4}) -- (4,-4) -- (-4,-4) -- cycle;
+    \draw[blue,thick,dashed,domain=-4:4] plot(\x,{-0.2*\x+3});
+    \draw[red,thick,domain=-4:4]        plot(\x,{-1.5*\x+4});
+    \node[anchor=south east,font=\small] at (3.7,3.7) {G5};
+  \end{scope}
+
+  % ---------- G6: 3x+y > 9 and 2x+y >= 6
+  \begin{scope}[xshift=8cm,yshift=0cm]
+    \clip (-4.2,-4.2) rectangle (4.2,4.2);
+    \draw[grid] (-4,-4) grid (4,4);
+    \draw[axes] (-4,0)--(4,0); \draw[axes] (0,-4)--(0,4);
+    \path[fill=blue!25,opacity=.35] (-4, {-3*(-4)+9}) -- (4, {-3*(4)+9}) -- (4,4) -- (-4,4) -- cycle;
+    \path[fill=red!25,opacity=.35]  (-4, {-2*(-4)+6}) -- (4, {-2*(4)+6}) -- (4,4) -- (-4,4) -- cycle;
+    \draw[blue,thick,dashed,domain=-4:4] plot(\x,{-3*\x+9});
+    \draw[red,thick,domain=-4:4]        plot(\x,{-2*\x+6});
+    \node[anchor=south east,font=\small] at (3.7,3.7) {G6};
+  \end{scope}
+
+  % ---------- G7: x+2y >= -4 and x+2y < 6
+  \begin{scope}[xshift=12cm,yshift=0cm]
+    \clip (-4.2,-4.2) rectangle (4.2,4.2);
+    \draw[grid] (-4,-4) grid (4,4);
+    \draw[axes] (-4,0)--(4,0); \draw[axes] (0,-4)--(0,4);
+    \path[fill=blue!25,opacity=.35] (-4, {-0.5*(-4)-2}) -- (4, {-0.5*(4)-2}) -- (4,4) -- (-4,4) -- cycle;
+    \path[fill=red!25,opacity=.35]  (-4, {-0.5*(-4)+3}) -- (4, {-0.5*(4)+3}) -- (4,-4) -- (-4,-4) -- cycle;
+    \draw[blue,thick,domain=-4:4]       plot(\x,{-0.5*\x-2});
+    \draw[red,thick,dashed,domain=-4:4] plot(\x,{-0.5*\x+3});
+    \node[anchor=south east,font=\small] at (3.7,3.7) {G7};
+  \end{scope}
+
+  % ---------- G8: x >= 0, y >= 0, 5x+6y <= 30
+  \begin{scope}[xshift=-12cm,yshift=-12cm]
+    \clip (-4.2,-4.2) rectangle (4.2,4.2);
+    \draw[grid] (-4,-4) grid (4,4);
+    \draw[axes] (-4,0)--(4,0); \draw[axes] (0,-4)--(0,4);
+    \path[fill=blue!25,opacity=.35] (0,-4) -- (0,4) -- (4,4) -- (4,-4) -- cycle;
+    \path[fill=red!25,opacity=.35]  (-4,0) -- (4,0) -- (4,4) -- (-4,4) -- cycle;
+    \path[fill=blue!40!red!40,opacity=.25] (-4,-4) -- (4,-4) -- (4, {-5/6*4+5}) -- (-4, {-5/6*(-4)+5}) -- cycle;
+    \draw[blue,thick] (0,-4)--(0,4);
+    \draw[red,thick]  (-4,0)--(4,0);
+    \draw[blue!40!red,thick,domain=-4:4] plot(\x,{-5/6*\x+5});
+    \node[anchor=south east,font=\small] at (3.7,3.7) {G8};
+  \end{scope}
+
+  % ---------- G9: x >= 0, y >= 0, x+4y <= 8
+  \begin{scope}[xshift=-2cm,yshift=-12cm]
+    \clip (-4.2,-4.2) rectangle (4.2,4.2);
+    \draw[grid] (-4,-4) grid (4,4);
+    \draw[axes] (-4,0)--(4,0); \draw[axes] (0,-4)--(0,4);
+    \path[fill=blue!25,opacity=.35] (0,-4) -- (0,4) -- (4,4) -- (4,-4) -- cycle;
+    \path[fill=red!25,opacity=.35]  (-4,0) -- (4,0) -- (4,4) -- (-4,4) -- cycle;
+    \path[fill=blue!40!red!40,opacity=.25] (-4,-4) -- (4,-4) -- (4, {-0.25*4+2}) -- (-4, {-0.25*(-4)+2}) -- cycle;
+    \draw[blue,thick] (0,-4)--(0,4);
+    \draw[red,thick]  (-4,0)--(4,0);
+    \draw[blue!40!red,thick,domain=-4:4] plot(\x,{-0.25*\x+2});
+    \node[anchor=south east,font=\small] at (3.7,3.7) {G9};
+  \end{scope}
+
+  % ---------- G10: x >= 0, y >= 0, 3x+y <= 8 and x+2y <= 6
+  \begin{scope}[xshift=8cm,yshift=-12cm]
+    \clip (-4.2,-4.2) rectangle (4.2,4.2);
+    \draw[grid] (-4,-4) grid (4,4);
+    \draw[axes] (-4,0)--(4,0); \draw[axes] (0,-4)--(0,4);
+    \path[fill=blue!25,opacity=.35] (0,-4) -- (0,4) -- (4,4) -- (4,-4) -- cycle;
+    \path[fill=red!25,opacity=.35]  (-4,0) -- (4,0) -- (4,4) -- (-4,4) -- cycle;
+    \path[fill=blue!40!red!40,opacity=.25] (-4,-4) -- (4,-4) -- (4, {-3*4+8}) -- (-4, {-3*(-4)+8}) -- cycle;
+    \path[fill=blue!40!red!40,opacity=.25] (-4,-4) -- (4,-4) -- (4, {-0.5*4+3}) -- (-4, {-0.5*(-4)+3}) -- cycle;
+    \draw[blue,thick] (0,-4)--(0,4);
+    \draw[red,thick]  (-4,0)--(4,0);
+    \draw[blue!40!red,thick,domain=-4:4] plot(\x,{-3*\x+8});
+    \draw[blue!40!red,thick,domain=-4:4] plot(\x,{-0.5*\x+3});
+    \node[anchor=south east,font=\small] at (3.7,3.7) {G10};
+  \end{scope}
+
+  % ---------- G11: x >= 0, y <= 2, x+y > 1
+  \begin{scope}[xshift=12cm,yshift=-12cm]
+    \clip (-4.2,-4.2) rectangle (4.2,4.2);
+    \draw[grid] (-4,-4) grid (4,4);
+    \draw[axes] (-4,0)--(4,0); \draw[axes] (0,-4)--(0,4);
+    \path[fill=blue!25,opacity=.35] (0,-4) -- (0,4) -- (4,4) -- (4,-4) -- cycle;
+    \path[fill=red!25,opacity=.35]  (-4,-4) -- (4,-4) -- (4,2) -- (-4,2) -- cycle;
+    \path[fill=blue!40!red!40,opacity=.25] (-4, {-(-4)+1}) -- (4, {-(4)+1}) -- (4,4) -- (-4,4) -- cycle;
+    \draw[blue,thick] (0,-4)--(0,4);
+    \draw[red,thick]  (-4,2)--(4,2);
+    \draw[blue!40!red,thick,dashed,domain=-4:4] plot(\x,{-\x+1});
+    \node[anchor=south east,font=\small] at (3.7,3.7) {G11};
+  \end{scope}
+
+  % ---------- G12: y >= 0, x > -1, 2x+3y < 9
+  \begin{scope}[xshift=0cm,yshift=-24cm]
+    \clip (-4.2,-4.2) rectangle (4.2,4.2);
+    \draw[grid] (-4,-4) grid (4,4);
+    \draw[axes] (-4,0)--(4,0); \draw[axes] (0,-4)--(0,4);
+    \path[fill=blue!25,opacity=.35] (-4,0) -- (4,0) -- (4,4) -- (-4,4) -- cycle;
+    \path[fill=red!25,opacity=.35]  (-1,-4) -- (4,-4) -- (4,4) -- (-1,4) -- cycle;
+    \path[fill=blue!40!red!40,opacity=.25] (-4,-4) -- (4,-4) -- (4, {-2/3*4+3}) -- (-4, {-2/3*(-4)+3}) -- cycle;
+    \draw[blue,thick] (-4,0)--(4,0);
+    \draw[red,thick,dashed] (-1,-4)--(-1,4);
+    \draw[blue!40!red,thick,dashed,domain=-4:4] plot(\x,{-2/3*\x+3});
+    \node[anchor=south east,font=\small] at (3.7,3.7) {G12};
+  \end{scope}
 \end{tikzpicture}
-`    };
+`,
 
-    /* --- Ensure the TikZ script tag exists BEFORE TikZJax runs --- */
-    (function ensureTikZBeforeTikZJax() {
-      // When DOM is parsed (interactive), inject the <script type="text/tikz">
-      function inject() {
-        if (!document.querySelector('script[type="text/tikz"]') &&
-            window.homeworkData && window.homeworkData.graphics) {
-          const s = document.createElement('script');
-          s.type = 'text/tikz';
-          s.textContent = window.homeworkData.graphics;
-          document.body.appendChild(s);
-        }
-      }
-      if (document.readyState === 'loading') {
-        document.addEventListener('readystatechange', () => {
-          if (document.readyState === 'interactive') inject();
-        });
-      } else {
-        // already parsed enough
-        inject();
-      }
-    })();
+      /* Example answerKey + questions (keep yours) */
+      answerKey : ["A","D","C","B","E","F","C","A","A","D","F","C"],
+      questions : [
+        { latex: String.raw`\text{Refer to G1. Which system is graphed?}`,
+          choices: [
+            String.raw`\begin{cases}x+y\ge 2\\ x-y<4\end{cases}`,
+            String.raw`\begin{cases}x+y>2\\ x-y\le 4\end{cases}`,
+            String.raw`\begin{cases}x+y\le 2\\ x-y>4\end{cases}`,
+            String.raw`\begin{cases}y\ge -x+2\\ y\le -x+4\end{cases}`
+          ]}
+        // ... continue other questions as in your file ...
+      ]
+    };
   </script>
 
   <link rel="stylesheet" href="/math-homework/assets/core.css" />
@@ -59,21 +197,6 @@
   <script defer src="/math-homework/assets/core.js"></script>
   <script defer src="https://tikzjax.com/v1/tikzjax.js"></script>
   <script defer src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
-
-  <style>
-    /* Optional: if an older core printed raw TikZ text somewhere, hide it */
-    .raw-tikz-dump { display:none !important; }
-  </style>
-
-  <script>
-    /* Optional cleanup: if core.js dumped the TikZ as text, hide that node */
-    document.addEventListener('DOMContentLoaded', () => {
-      const raw = Array.from(document.querySelectorAll('pre,code,div'))
-        .find(el => typeof el.textContent === 'string' &&
-                    el.textContent.includes('\\begin{tikzpicture}'));
-      if (raw) raw.classList.add('raw-tikz-dump');
-    });
-  </script>
 </head>
 <body>
   <div id="hw-root">Loading…</div>
