@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Homework 9-6 (Algebra 1)</title>
+
+  <script>
+    /* =========================
+       Homework 9-6 — Mixed Factoring with Two Variables
+       Representative of the full pool (A–C): monic/non-monic trinomials,
+       difference of squares, xy cross terms, GCF→trinomial, and multi-variable.
+       ========================= */
+    window.homeworkData = {
+      classId : "Algebra1",
+      id      : "Homework 9-6",
+      title   : "Homework 9-6 — Factoring with Two Variables",
+
+      graphics : String.raw``,
+
+      /* Correct options for Q1–Q12 (hidden) */
+      answerKey : ["B","F","A","C","E","D","A","C","B","F","E","D"],
+
+      questions : [
+        { latex: String.raw`\text{Factor: } x^2+4xy-60y^2`,
+          choices: [
+            String.raw`(x-10y)(x+6y)`,
+            String.raw`(x+10y)(x-6y)`,
+            String.raw`(x+12y)(x-5y)`,
+            String.raw`x(x+4y)-60y^2`,
+            String.raw`(x-10y)(x-6y)`,
+            String.raw`(x+6y)(x+10y)`
+          ]},
+
+        { latex: String.raw`\text{Factor: } a^2+4ab-12b^2`,
+          choices: [
+            String.raw`(a-6b)(a+2b)`,
+            String.raw`(a-2b)(a-6b)`,
+            String.raw`(a+12b)(a-1b)`,
+            String.raw`a(a+4b)-12b^2`,
+            String.raw`(a+2b)(a+6b)`,
+            String.raw`(a+6b)(a-2b)`
+          ]},
+
+        { latex: String.raw`\text{Factor: } y^2-6yz+9z^2`,
+          choices: [
+            String.raw`(y-3z)^2`,
+            String.raw`(y-6z)(y+z)`,
+            String.raw`(y-9z)(y+z)`,
+            String.raw`y(y-6z)+9z^2`,
+            String.raw`(y+3z)^2`,
+            String.raw`(y-2z)(y-4z)`
+          ]},
+
+        { latex: String.raw`\text{Factor: } a^2-b^2`,
+          choices: [
+            String.raw`(a-b)^2`,
+            String.raw`a(a-b^2)`,
+            String.raw`(a-b)(a+b)`,
+            String.raw`(a+b)^2`,
+            String.raw`(a-2b)(a+2b)`,
+            String.raw`(a-b)(a-b)`
+          ]},
+
+        { latex: String.raw`\text{Factor: } 6x^2+xy-5y^2`,
+          choices: [
+            String.raw`(3x+y)(2x-5y)`,
+            String.raw`(2x+y)(3x-5y)`,
+            String.raw`(6x-y)(x+y)`,
+            String.raw`x(6x+y)-5y^2`,
+            String.raw`(6x-5y)(x+y)`,
+            String.raw`(3x-5y)(2x+y)`
+          ]},
+
+        { latex: String.raw`\text{Factor: } 2y^2-3yz+z^2`,
+          choices: [
+            String.raw`(2y+z)(y- z)`,
+            String.raw`(2y-z)(y+ z)`,
+            String.raw`(y-2z)(2y- z)`,
+            String.raw`(2y-z)(y-z)`,
+            String.raw`(y-z)^2`,
+            String.raw`2(y-z)^2`
+          ]},
+
+        { latex: String.raw`\text{Factor: } m^2-mn-20n^2`,
+          choices: [
+            String.raw`(m+4n)(m-5n)`,
+            String.raw`(m-4n)(m-5n)`,
+            String.raw`(m+5n)(m-4n)`,
+            String.raw`m(m-n)-20n^2`,
+            String.raw`(m+5n)(m+4n)`,
+            String.raw`(m-5n)(m-4n)`
+          ]},
+
+        { latex: String.raw`\text{Factor: } a^2-4ab-32b^2`,
+          choices: [
+            String.raw`(a-2b)(a-16b)`,
+            String.raw`(a+8b)(a-4b)`,
+            String.raw`(a-8b)(a+4b)`,
+            String.raw`(a-8b)(a-4b)`,
+            String.raw`a(a-4b)-32b^2`,
+            String.raw`(a+4b)(a+8b)`
+          ]},
+
+        { latex: String.raw`\text{Factor: } a^2+3ab-28b^2`,
+          choices: [
+            String.raw`(a-7b)(a-4b)`,
+            String.raw`(a+7b)(a-4b)`,
+            String.raw`(a+4b)(a-7b)`,
+            String.raw`(a+7b)(a+4b)`,
+            String.raw`a(a+3b)-28b^2`,
+            String.raw`(a-7b)(a+4b)`
+          ]},
+
+        { latex: String.raw`\text{Factor: } x^2-xy-56y^2`,
+          choices: [
+            String.raw`(x-7y)(x+8y)`,
+            String.raw`(x-8y)(x-7y)`,
+            String.raw`(x+7y)(x+8y)`,
+            String.raw`x(x-y)-56y^2`,
+            String.raw`(x-8y)(x+7y)`,
+            String.raw`(x+8y)(x-7y)`
+          ]},
+
+        { latex: String.raw`\text{Factor: } 6x^2-17xy+12y^2`,
+          choices: [
+            String.raw`(3x-2y)(2x-6y)`,
+            String.raw`(2x-3y)(3x-2y)`,
+            String.raw`(2x-3y)(3x-4y)`,
+            String.raw`(3x-2y)(2x-3y)`,
+            String.raw`(2x-3y)(3x-4y)`,
+            String.raw`x(6x-17y)+12y^2`
+          ]},
+
+        { latex: String.raw`\text{Factor: } 21a^2+5af-6f^2`,
+          choices: [
+            String.raw`(7a+3f)(3a-2f)`,
+            String.raw`(7a-3f)(3a+2f)`,
+            String.raw`(3a+7f)(7a-2f)`,
+            String.raw`(3a+2f)(7a-3f)`,
+            String.raw`(3a-2f)(7a+3f)`,
+            String.raw`a(21a+5f)-6f^2`
+          ]}
+      ]
+    };
+  </script>
+
+  <link rel="stylesheet" href="/math-homework/assets/core.css" />
+  <link rel="stylesheet" href="https://tikzjax.com/v1/fonts.css" />
+  <script defer src="/math-homework/assets/core.js"></script>
+  <script defer src="https://tikzjax.com/v1/tikzjax.js"></script>
+  <script defer src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+</head>
+<body>
+  <div id="hw-root">Loading…</div>
+</body>
+</html>
