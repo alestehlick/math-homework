@@ -1,1 +1,182 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Homework 7-7 (Algebra 1)</title>
+
+  <script>
+    /* =========================
+       Homework 7-7 — Motion/Rate Problems (Systems)
+       - Q1–Q5: write correct rate expressions (no solving).
+       - Q6–Q12: set up & solve systems from word problems.
+       ========================= */
+    window.homeworkData = {
+      classId : "Algebra1",
+      id      : "Homework 7-7",
+      title   : "Homework 7-7 — Motion Problems & Systems",
+
+      graphics : String.raw``,  // none needed
+
+      /* Hidden answer key (A–F) for the 12 questions */
+      answerKey : ["A","B","C","E","A","D","B","C","A","E","D","C"],
+
+      questions : [
+        /* 1 */{
+          latex : String.raw`\text{A bicyclist rides against a wind of }x\text{ mph; his calm-day speed is }12\text{ mph. What is the ground speed? (expression only)}`,
+          choices : [
+            String.raw`12-x`,
+            String.raw`12+x`,
+            String.raw`x-12`,
+            String.raw`12x`,
+            String.raw`\dfrac{12}{x}`,
+            String.raw`x`
+          ]
+        },
+
+        /* 2 */{
+          latex : String.raw`\text{A blimp's still-air speed is }y\text{ mph. With a }10\text{ mph tailwind, its ground speed is }`,
+          choices : [
+            String.raw`y-10`,
+            String.raw`y+10`,
+            String.raw`10-y`,
+            String.raw`10y`,
+            String.raw`\dfrac{y}{10}`,
+            String.raw`y`
+          ]
+        },
+
+        /* 3 */{
+          latex : String.raw`\text{A canoe goes downstream in a current of }c\text{ mph; its lake speed is }4\text{ mph. Downstream speed is }`,
+          choices : [
+            String.raw`4-c`,
+            String.raw`c-4`,
+            String.raw`4+c`,
+            String.raw`4c`,
+            String.raw`\dfrac{4}{c}`,
+            String.raw`c`
+          ]
+        },
+
+        /* 4 */{
+          latex : String.raw`\text{A boat travels upstream on Pine Creek (current }2\text{ mph). Its still-water speed is }z\text{ mph. Upstream speed is }`,
+          choices : [
+            String.raw`z+2`,
+            String.raw`2-z`,
+            String.raw`2z`,
+            String.raw`z\cdot 2`,
+            String.raw`z-2`,
+            String.raw`\dfrac{z}{2}`
+          ]
+        },
+
+        /* 5 */{
+          latex : String.raw`\text{A plane flies in still air at }500\text{ mph into a headwind of }w\text{ mph. Ground speed is }`,
+          choices : [
+            String.raw`500-w`,
+            String.raw`500+w`,
+            String.raw`w-500`,
+            String.raw`500w`,
+            String.raw`\dfrac{500}{w}`,
+            String.raw`w`
+          ]
+        },
+
+        /* 6 */{
+          latex : String.raw`\text{(Hiking club) Morning }3\text{ mph for }t\text{ hours; afternoon }2\text{ mph for }t+1\text{ hours. Total }22\text{ miles. How many hours in the morning?}`,
+          choices : [
+            String.raw`2`,
+            String.raw`3`,
+            String.raw`5`,
+            String.raw`4`,
+            String.raw`6`,
+            String.raw`7`
+          ]
+        },
+
+        /* 7 */{
+          latex : String.raw`\text{Two cars leave together same direction. Faster is twice the slower. After }4\text{ h the faster is }80\text{ mi ahead. Find the speeds (faster, slower).}`,
+          choices : [
+            String.raw`(30,15)\ \text{mph}`,
+            String.raw`(40,20)\ \text{mph}`,
+            String.raw`(50,25)\ \text{mph}`,
+            String.raw`(60,30)\ \text{mph}`,
+            String.raw`(32,16)\ \text{mph}`,
+            String.raw`(36,18)\ \text{mph}`
+          ]
+        },
+
+        /* 8 */{
+          latex : String.raw`\text{Bob leaves Centerville at }11{:}00\ \text{A.M. west at }45\text{ mph. Lane leaves at }1{:}00\ \text{P.M. east at }50\text{ mph. When are they }375\text{ miles apart?}`,
+          choices : [
+            String.raw`3{:}00\ \text{P.M.}`,
+            String.raw`3{:}30\ \text{P.M.}`,
+            String.raw`4{:}00\ \text{P.M.}`,
+            String.raw`4{:}30\ \text{P.M.}`,
+            String.raw`5{:}00\ \text{P.M.}`,
+            String.raw`6{:}00\ \text{P.M.}`
+          ]
+        },
+
+        /* 9 */{
+          latex : String.raw`\text{A plane flies }1200\text{ nmi with wind in }4\text{ h and }500\text{ nmi against wind in }2\text{ h. Find (still-air speed, wind speed).}`,
+          choices : [
+            String.raw`(275,25)\ \text{mph}`,
+            String.raw`(300,50)\ \text{mph}`,
+            String.raw`(280,20)\ \text{mph}`,
+            String.raw`(260,40)\ \text{mph}`,
+            String.raw`(250,30)\ \text{mph}`,
+            String.raw`(290,15)\ \text{mph}`
+          ]
+        },
+
+        /* 10 */{
+          latex : String.raw`\text{Grandma and John live }184\text{ mi apart and start toward each other at the same time. They meet in }2\text{ h. John is }12\text{ mph faster. Find their speeds (Grandma, John).}`,
+          choices : [
+            String.raw`(36,48)\ \text{mph}`,
+            String.raw`(38,50)\ \text{mph}`,
+            String.raw`(42,54)\ \text{mph}`,
+            String.raw`(44,56)\ \text{mph}`,
+            String.raw`(40,52)\ \text{mph}`,
+            String.raw`(35,47)\ \text{mph}`
+          ]
+        },
+
+        /* 11 */{
+          latex : String.raw`\text{Southbound train travels }2\text{ h; northbound has been traveling }4\text{ h when they meet. Cities are }350\text{ mi apart. Northbound is }10\text{ mph slower. Find speeds (southbound, northbound).}`,
+          choices : [
+            String.raw`(60,50)\ \text{mph}`,
+            String.raw`(70,60)\ \text{mph}`,
+            String.raw`(75,65)\ \text{mph}`,
+            String.raw`(65,55)\ \text{mph}`,
+            String.raw`(68,58)\ \text{mph}`,
+            String.raw`(62,52)\ \text{mph}`
+          ]
+        },
+
+        /* 12 */{
+          latex : String.raw`\text{On a calm day Paul bikes to Janesville in }3\text{ h. Yesterday, with a }12\text{ mph tailwind, he made it in }2\text{ h. Calm-day biking speed is }`,
+          choices : [
+            String.raw`18\ \text{mph}`,
+            String.raw`21\ \text{mph}`,
+            String.raw`24\ \text{mph}`,
+            String.raw`27\ \text{mph}`,
+            String.raw`30\ \text{mph}`,
+            String.raw`36\ \text{mph}`
+          ]
+        }
+      ]
+    };
+  </script>
+
+  <link rel="stylesheet" href="/math-homework/assets/core.css" />
+  <link rel="stylesheet" href="https://tikzjax.com/v1/fonts.css" />
+  <script defer src="/math-homework/assets/core.js"></script>
+  <script defer src="https://tikzjax.com/v1/tikzjax.js"></script>
+  <script defer src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+</head>
+<body>
+  <div id="hw-root">Loading…</div>
+</body>
+</html>
 
