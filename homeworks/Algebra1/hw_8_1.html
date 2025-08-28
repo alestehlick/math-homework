@@ -19,124 +19,89 @@
       answerKey : ["C","B","E","F","D","A","E","B","C","F","A","D"],
 
       questions : [
-        { latex: String.raw`Classify \(2x^2 + 3x + 5\).`,
+        { latex: String.raw`\text{Classify } 2x^2 + 3x + 5.`,
           choices: [
-            "Monomial, degree 2",
-            "Binomial, degree 1",
-            "Trinomial, degree 2",
-            "Polynomial (4 terms), degree 2",
-            "Monomial, degree 3",
-            "Trinomial, degree 3"
+            String.raw`\text{Monomial, degree 2}`,
+            String.raw`\text{Binomial, degree 1}`,
+            String.raw`\text{Trinomial, degree 2}`,
+            String.raw`\text{Polynomial (4 terms), degree 2}`,
+            String.raw`\text{Monomial, degree 3}`,
+            String.raw`\text{Trinomial, degree 3}`
           ]},
 
-        { latex: String.raw`Classify \(-4x^2y + 5xy + y - 8\).`,
+        { latex: String.raw`\text{Classify } -4x^2y + 5xy + y - 8.`,
           choices: [
-            "Trinomial, degree 2",
-            "Polynomial (4 terms), degree 3",
-            "Binomial, degree 3",
-            "Polynomial (5 terms), degree 3",
-            "Trinomial, degree 4",
-            "Binomial, degree 2"
+            String.raw`\text{Trinomial, degree 2}`,
+            String.raw`\text{Polynomial (4 terms), degree 3}`,
+            String.raw`\text{Binomial, degree 3}`,
+            String.raw`\text{Polynomial (5 terms), degree 3}`,
+            String.raw`\text{Trinomial, degree 4}`,
+            String.raw`\text{Binomial, degree 2}`
           ]},
 
-        { latex: String.raw`Classify \(3x^4\).`,
+        { latex: String.raw`\text{Classify } 3x^4.`,
           choices: [
-            "Binomial, degree 2",
-            "Polynomial (4 terms), degree 3",
-            "Trinomial, degree 4",
-            "Binomial, degree 4",
-            "Monomial, degree 4",
-            "Monomial, degree 3"
+            String.raw`\text{Binomial, degree 2}`,
+            String.raw`\text{Polynomial (4 terms), degree 3}`,
+            String.raw`\text{Trinomial, degree 4}`,
+            String.raw`\text{Binomial, degree 4}`,
+            String.raw`\text{Monomial, degree 4}`,
+            String.raw`\text{Monomial, degree 3}`
           ]},
 
-        { latex: String.raw`Classify \(5x^3y + k\).`,
+        { latex: String.raw`\text{Classify } 5x^3y + k.`,
           choices: [
-            "Monomial, degree 3",
-            "Binomial, degree 2",
-            "Polynomial (3 terms), degree 4",
-            "Binomial, degree 4",
-            "Monomial, degree 4",
-            "Binomial, degree 3"
+            String.raw`\text{Monomial, degree 3}`,
+            String.raw`\text{Binomial, degree 2}`,
+            String.raw`\text{Polynomial (3 terms), degree 4}`,
+            String.raw`\text{Binomial, degree 4}`,
+            String.raw`\text{Monomial, degree 4}`,
+            String.raw`\text{Binomial, degree 3}`
           ]},
 
-        { latex: String.raw`Classify \(2x^4 + 3x^3y - 5\).`,
+        { latex: String.raw`\text{Classify } 2x^4 + 3x^3y - 5.`,
           choices: [
-            "Monomial, degree 4",
-            "Binomial, degree 4",
-            "Polynomial (4 terms), degree 3",
-            "Trinomial, degree 4",
-            "Polynomial (5 terms), degree 4",
-            "Trinomial, degree 3"
+            String.raw`\text{Monomial, degree 4}`,
+            String.raw`\text{Binomial, degree 4}`,
+            String.raw`\text{Polynomial (4 terms), degree 3}`,
+            String.raw`\text{Trinomial, degree 4}`,
+            String.raw`\text{Polynomial (5 terms), degree 4}`,
+            String.raw`\text{Trinomial, degree 3}`
           ]},
 
-        { latex: String.raw`Evaluate \(3x^2 + 4z - 8\) if \(x=3, z=2\).`,
+        { latex: String.raw`\text{Evaluate } 3x^2 + 4z - 8 \text{ if } x=3, z=2.`,
           choices: [
-            "19",
-            "22",
-            "25",
-            "27",
-            "30",
-            "32"
+            "19","22","25","27","30","32"
           ]},
 
-        { latex: String.raw`Evaluate \(5x^2 - 3y^2 - 4z\) if \(x=3, y=-4, z=2\).`,
+        { latex: String.raw`\text{Evaluate } 5x^2 - 3y^2 - 4z \text{ if } x=3, y=-4, z=2.`,
           choices: [
-            "40",
-            "24",
-            "72",
-            "64",
-            "68",
-            "36"
+            "40","24","72","64","68","36"
           ]},
 
-        { latex: String.raw`Evaluate \(x^2 + x + 1\) if \(x=11\).`,
+        { latex: String.raw`\text{Evaluate } x^2 + x + 1 \text{ if } x=11.`,
           choices: [
-            "110",
-            "133",
-            "120",
-            "111",
-            "122",
-            "135"
+            "110","133","120","111","122","135"
           ]},
 
-        { latex: String.raw`Evaluate \(52z + 2z^5\) if \(z=2\).`,
+        { latex: String.raw`\text{Evaluate } 52z + 2z^5 \text{ if } z=2.`,
           choices: [
-            "104",
-            "128",
-            "168",
-            "172",
-            "184",
-            "200"
+            "104","128","168","172","184","200"
           ]},
 
-        { latex: String.raw`Evaluate \(5m - 3\) if \(m=0\).`,
+        { latex: String.raw`\text{Evaluate } 5m - 3 \text{ if } m=0.`,
           choices: [
-            "5",
-            "2",
-            "3",
-            "-5",
-            "-3",
-            "-2"
+            "5","2","3","-5","-3","-2"
           ]},
 
-        { latex: String.raw`Evaluate \(y^5 - 2y^3 - 7\) if \(y=-2\).`,
+        { latex: String.raw`\text{Evaluate } y^5 - 2y^3 - 7 \text{ if } y=-2.`,
           choices: [
-            "-55",
-            "-37",
-            "-25",
-            "-11",
-            "-7",
-            "0"
+            "-55","-37","-25","-11","-7","0"
           ]},
 
-        { latex: String.raw`Evaluate \(-2x^4 - x^3 + x^2 - x + 1\) if \(x=-4\).`,
+        { latex: String.raw`\text{Evaluate } -2x^4 - x^3 + x^2 - x + 1 \text{ if } x=-4.`,
           choices: [
-            "-567",
-            "-527",
-            "-487",
-            "-447",
-            "-407",
-            "-367"
+            "-567","-527","-487","-447","-407","-367"
           ]}
       ]
     };
@@ -150,4 +115,3 @@
   <div id="hw-root">Loading…</div>
 </body>
 </html>
-
