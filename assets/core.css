@@ -1,5 +1,4 @@
-/*  core.css  –  include this (or merge with your existing styles)  */
-
+/*  core.css  – layout; minimal, safe updates  */
 body{
   margin:0;
   font-family:"EB Garamond",serif;
@@ -62,3 +61,7 @@ button{
   cursor:pointer;
 }
 button:hover{ background:#3e654d; }
+
+/* TikZ container: only layout; no visual changes elsewhere */
+#media { text-align:center; margin:1rem 0; }
+#media script[type="text/tikz"]{ display:inline-block; }
