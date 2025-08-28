@@ -1,8 +1,8 @@
 /*══════════════════════════════════════════════════════════════════════
-  core.js   v4.1  (TikZ-safe, drop-in)
+  core.js   v4.2  (TikZ-safe, drop-in)
   - Auto-wraps raw TikZ (String.raw) into <script type="text/tikz">
-  - Sanitizes common scope typos
-  - Re-tries tikzjax.process() whether it loads early or late
+  - Sanitizes common typos and removes placeholder lines with '?'
+  - Calls tikzjax.process() when/if it becomes available
 ══════════════════════════════════════════════════════════════════════*/
 
 const SCRIPT_URL  = "https://script.google.com/macros/s/AKfycbwkLwPoES1_hxHn6pdu2qdGCE3bosqwcZg6z23B6w72iQLDAIMzZZf4ZAFC44aKWTIcNg/exec";
@@ -18,38 +18,62 @@ if (window.__coreLoaded__) {
   });
 }
 
-/* TikZ helpers */
+/* ---------------------- TikZ helpers ---------------------- */
 function sanitizeTikz(src){
   if (!src) return src;
-  return src
+  let s = String(src);
+
+  // Common scope copy/paste typos
+  s = s
     .replaceAll("\\begin{scope]", "\\begin{scope}")
     .replaceAll("\\end{scope]", "\\end{scope}")
     .replace(/<\s*begin\{scope\}\s*>?/gi, "\\begin{scope}")
     .replace(/<\s*\/\s*end\{scope\}\s*>?/gi, "\\end{scope}")
     .replace(/<\s*\/\s*begin\{scope\}\s*>?/gi, "\\end{scope}");
-}
-function looksLikeTikz(src){
-  return typeof src === "string" && /\\begin\{tikzpicture\}/.test(src);
-}
-function mountTikzInto(el, src){
-  // If already a TikZJax block or an image/SVG, just insert it
-  if (/<script[^>]+type=["']text\/tikz["']/.test(src) || /<(svg|img)\b/i.test(src)) {
-    el.innerHTML = src;
-  } else {
-    const fixed = sanitizeTikz(src);
-    el.innerHTML = `<script type="text/tikz">\n${fixed}\n</script>`;
-  }
-  // Run TikZJax now or when it finishes loading
-  if (window.tikzjax?.process) {
-    try { window.tikzjax.process(); } catch {}
-  } else {
-    window.addEventListener("load", () => {
-      try { window.tikzjax?.process?.(); } catch {}
-    }, { once:true });
-  }
+
+  // Mis-closed tikzpicture (e.g. \end{tikzpicture> )
+  s = s.replace(/\\end\{tikzpicture\}>/g, "\\end{tikzpicture}");
+
+  // Strip obviously broken placeholder lines (contain a bare '?')
+  s = s.replace(/^.*\?.*$/gm, "");
+
+  return s.trim();
 }
 
-/* Build UI */
+function looksLikeTikz(src){
+  return typeof src === "string" && /\\begin\{tikzpicture\}[\s\S]*\\end\{tikzpicture\}/.test(src);
+}
+
+function whenTikzjaxReady(cb){
+  if (window.tikzjax?.process) { try { cb(); } catch {} return; }
+  const t0 = Date.now();
+  const id = setInterval(() => {
+    if (window.tikzjax?.process) {
+      clearInterval(id);
+      try { cb(); } catch {}
+    } else if (Date.now() - t0 > 8000) {
+      clearInterval(id);
+      // Give up quietly; user will just see raw MathJax but no TikZ
+    }
+  }, 120);
+  // Also try once at load, in case tikzjax is deferred
+  window.addEventListener("load", () => {
+    if (window.tikzjax?.process) { try { cb(); } catch {} }
+  }, { once:true });
+}
+
+function mountTikzInto(el, src){
+  const fixed = sanitizeTikz(src);
+  // If author already provided a <script type="text/tikz"> or an SVG/IMG, use as-is
+  if (/<script[^>]+type=["']text\/tikz["']/.test(fixed) || /<(svg|img)\b/i.test(fixed)) {
+    el.innerHTML = fixed;
+  } else {
+    el.innerHTML = `<script type="text/tikz" data-origin="core">\n${fixed}\n</script>`;
+  }
+  whenTikzjaxReady(() => { try { window.tikzjax.process(); } catch {} });
+}
+
+/* ------------------------- Build UI ------------------------- */
 function buildForm(d){
   const root = document.getElementById("hw-root");
   const wrap = t => `\\(${t}\\)`;
@@ -71,10 +95,13 @@ function buildForm(d){
   // optional graphics
   if (d.graphics){
     const media = document.getElementById("media");
-    if (looksLikeTikz(d.graphics)){
-      mountTikzInto(media, d.graphics);
+    const g = String(d.graphics);
+    if (looksLikeTikz(g)){
+      mountTikzInto(media, g);
     } else {
-      media.innerHTML = d.graphics;
+      media.innerHTML = g;
+      // If someone dumped raw TikZ into the DOM elsewhere, hide it to avoid confusion
+      hideAccidentalRawTikz();
     }
   }
 
@@ -105,7 +132,14 @@ function buildForm(d){
           .addEventListener("submit", ev => handleSubmit(ev, d));
 }
 
-/* Submit + server reply */
+function hideAccidentalRawTikz(){
+  const node = Array.from(document.querySelectorAll("pre,code,div"))
+    .find(el => typeof el.textContent === "string" &&
+                el.textContent.includes("\\begin{tikzpicture}"));
+  if (node) node.style.display = "none";
+}
+
+/* ------------------- Submit + server reply ------------------- */
 async function handleSubmit(ev, d){
   ev.preventDefault();
   const f   = ev.target;
