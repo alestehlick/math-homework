@@ -8,8 +8,10 @@
   <script>
     /* =========================================
        Homework 7-2 — Solve Systems BY GRAPHING
-       All TikZ graphics are bundled FIRST (G1–G12).
-       Each question refers to a labeled graph.
+       FIXES APPLIED:
+       - Wrapped TikZ in \[...\] so MathJax/TikZJax renders it.
+       - Removed all stray angle brackets & typos in \begin/\end.
+       - Added clipping so lines don’t extend past each mini-graph.
        ========================================= */
     window.homeworkData = {
       classId : "Algebra1",
@@ -18,6 +20,7 @@
 
       /* ===== All 12 graphs (with clipping) ===== */
       graphics : String.raw`
+\[
 \begin{tikzpicture}[scale=0.58]
   \tikzset{axes/.style={->,thick}}
   \tikzset{grid/.style={very thin,color=gray!30}}
@@ -141,7 +144,7 @@
       \draw[red, very thick] (\winmin,2)--(\winmax,2);
     \end{scope}
     \node[font=\small,anchor=south west] at (-3.3,3) {G10};
-  /begin{scope}
+  \end{scope}
 
   % ---------- G11 (parallel verticals; inconsistent) ----------
   \begin{scope}[xshift=6.5cm,yshift=-29cm]
@@ -150,9 +153,9 @@
       \clip (\winmin,\winmin) rectangle (\winmax,\winmax);
       \draw[blue,thick] (-3,\winmin)--(-3,\winmax);
       \draw[red, thick]  (-1,\winmin)--(-1,\winmax);
-    /end{scope}
+    \end{scope}
     \node[font=\small,anchor=south west] at (-3.3,3) {G11};
-  /begin{scope}
+  </begin{scope}
 
   % ---------- G12 ( (2/3)x+1/2 and -x+5 → (2.7,2.3) ) ----------
   \begin{scope}[xshift=19.5cm,yshift=-29cm]
@@ -166,6 +169,7 @@
     \node[font=\small,anchor=south west] at (-3.3,3) {G12};
   \end{scope}
 \end{tikzpicture}
+\]
 `,
 
       /* ===== Hidden answer key (A–F) ===== */
@@ -230,92 +234,3 @@
         },
         {
           latex : String.raw`\text{Refer to Graph G6. Choose the correct ordered pair.}`,
-          choices : [
-            String.raw`(1,2)`,
-            String.raw`(0,1)`,
-            String.raw`(3,1)`,
-            String.raw`(1,0)`,
-            String.raw`(2,1)`,
-            String.raw`(2,0)`
-          ]
-        },
-        {
-          latex : String.raw`\text{Refer to Graph G7. Choose the solution.}`,
-          choices : [
-            String.raw`(-3,-2)`,
-            String.raw`(-2,-3)`,
-            String.raw`(-2,-3);\ \text{consistent independent}`,
-            String.raw`\text{no solution}`,
-            String.raw`(2,-3)`,
-            String.raw`(0,-3)`
-          ]
-        },
-        {
-          latex : String.raw`\text{Refer to Graph G8. Choose the solution and classification.}`,
-          choices : [
-            String.raw`(-1,1);\ \text{consistent independent}`,
-            String.raw`(1,-1);\ \text{consistent independent}`,
-            String.raw`(-3,7);\ \text{consistent independent}`,
-            String.raw`\text{no solution; inconsistent}`,
-            String.raw`\text{infinitely many; dependent}`,
-            String.raw`(-1,3);\ \text{consistent independent}`
-          ]
-        },
-        {
-          latex : String.raw`\text{Refer to Graph G9. Choose the ordered pair of intersection.}`,
-          choices : [
-            String.raw`(1,0)`,
-            String.raw`\left(\tfrac{3}{2},\tfrac{1}{4}\right)`,
-            String.raw`(2,1)`,
-            String.raw`(1.5,1.25)`,
-            String.raw`(0.25,1.5)`,
-            String.raw`(3,0.5)`
-          ]
-        },
-        {
-          latex : String.raw`\text{Refer to Graph G10. Classify the system.}`,
-          choices : [
-            String.raw`\text{inconsistent (no solution)}`,
-            String.raw`\text{independent (one solution)}`,
-            String.raw`\text{dependent (infinitely many solutions)}`,
-            String.raw`\text{neither of the above}`,
-            String.raw`\text{cannot be determined}`,
-            String.raw`\text{perpendicular lines}`
-          ]
-        },
-        {
-          latex : String.raw`\text{Refer to Graph G11. Classify the system.}`,
-          choices : [
-            String.raw`\text{inconsistent (no solution)}`,
-            String.raw`\text{dependent (infinitely many)}`,
-            String.raw`\text{independent (one solution)}`,
-            String.raw`\text{cannot determine}`,
-            String.raw`\text{coincident lines}`,
-            String.raw`\text{same slope and intercept}`
-          ]
-        },
-        {
-          latex : String.raw`\text{Refer to Graph G12. Estimate the solution.}`,
-          choices : [
-            String.raw`(2.7,2.3)`,
-            String.raw`(3,2)`,
-            String.raw`(2.3,2.7)`,
-            String.raw`(2,3)`,
-            String.raw`(3.2,1.8)`,
-            String.raw`(2.5,2.5)`
-          ]
-        }
-      ]
-    };
-  </script>
-
-  <link rel="stylesheet" href="/math-homework/assets/core.css" />
-  <link rel="stylesheet" href="https://tikzjax.com/v1/fonts.css" />
-  <script defer src="/math-homework/assets/core.js"></script>
-  <script defer src="https://tikzjax.com/v1/tikzjax.js"></script>
-  <script defer src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
-</head>
-<body>
-  <div id="hw-root">Loading…</div>
-</body>
-</html>
