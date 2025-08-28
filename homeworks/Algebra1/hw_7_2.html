@@ -6,15 +6,20 @@
   <title>Homework 7-2 (Algebra 1)</title>
 
   <script>
-    /* Homework 7-2 — Graphing Systems (TikZ)
-       All graphs first; questions refer to G1…G12. */
+    /* =========================================
+       Homework 7-2 — Solve Systems BY GRAPHING
+       All TikZ graphics are bundled FIRST (G1–G12).
+       Each question refers to a labeled graph.
+       IMPORTANT: graphics are wrapped in \[ ... \] so TikZJax renders them.
+       ========================================= */
     window.homeworkData = {
       classId : "Algebra1",
       id      : "Homework 7-2",
       title   : "Homework 7-2 — Graphing Systems (TikZ)",
 
-      /* ===== All 12 graphs with CLIPPING to the grid window ===== */
+      /* ===== All 12 graphs (with clipping) ===== */
       graphics : String.raw`
+\[
 \begin{tikzpicture}[scale=0.58]
   \tikzset{axes/.style={->,thick}}
   \tikzset{grid/.style={very thin,color=gray!30}}
@@ -35,7 +40,7 @@
     \node[font=\small,anchor=south west] at (-3.3,3) {G1};
   \end{scope}
 
-  % ---------- G2 ----------
+  % ---------- G2 (parallel; inconsistent) ----------
   \begin{scope}[xshift=6.5cm,yshift=5.8cm]
     \axesbox
     \begin{scope}
@@ -46,7 +51,7 @@
     \node[font=\small,anchor=south west] at (-3.3,3) {G2};
   \end{scope}
 
-  % ---------- G3 (dependent: same line) ----------
+  % ---------- G3 (same line; dependent) ----------
   \begin{scope}[xshift=19.5cm,yshift=5.8cm]
     \axesbox
     \begin{scope}
@@ -57,7 +62,7 @@
     \node[font=\small,anchor=south west] at (-3.3,3) {G3};
   \end{scope}
 
-  % ---------- G4 (x=2, y=-1) ----------
+  % ---------- G4 (x=2, y=-1 → (2,-1)) ----------
   \begin{scope}[xshift=-6.5cm,yshift=-5.8cm]
     \axesbox
     \begin{scope}
@@ -69,7 +74,7 @@
     \node[font=\small,anchor=south west] at (-3.3,3) {G4};
   \end{scope}
 
-  % ---------- G5 ( (1/2)x+1 and -(1/2)x+3 ) ----------
+  % ---------- G5 ( (1/2)x+1 and -(1/2)x+3 → (2,2) ) ----------
   \begin{scope}[xshift=6.5cm,yshift=-5.8cm]
     \axesbox
     \begin{scope}
@@ -81,7 +86,7 @@
     \node[font=\small,anchor=south west] at (-3.3,3) {G5};
   \end{scope}
 
-  % ---------- G6 ( -2x+5 and y=1 ) ----------
+  % ---------- G6 ( -2x+5 and y=1 → (2,1) ) ----------
   \begin{scope}[xshift=19.5cm,yshift=-5.8cm]
     \axesbox
     \begin{scope}
@@ -89,11 +94,11 @@
       \draw[blue,thick,domain=\winmin:\winmax] plot(\x,{-2*\x+5});
       \draw[red, thick] (\winmin,1) -- (\winmax,1);
       \fill (2,1) circle (2pt);
-    </begin{scope}
+    \end{scope}
     \node[font=\small,anchor=south west] at (-3.3,3) {G6};
   \end{scope}
 
-  % ---------- G7 ( x-1 and y=-3 ) ----------
+  % ---------- G7 ( x-1 and y=-3 → (-2,-3) ) ----------
   \begin{scope}[xshift=-6.5cm,yshift=-17.4cm]
     \axesbox
     \begin{scope}
@@ -105,7 +110,7 @@
     \node[font=\small,anchor=south west] at (-3.3,3) {G7};
   \end{scope}
 
-  % ---------- G8 ( x=-1 and -2x+1 ) ----------
+  % ---------- G8 ( x=-1 and -2x+1 → (-1,3) ) ----------
   \begin{scope}[xshift=6.5cm,yshift=-17.4cm]
     \axesbox
     \begin{scope}
@@ -117,7 +122,7 @@
     \node[font=\small,anchor=south west] at (-3.3,3) {G8};
   \end{scope}
 
-  % ---------- G9 ( 1.5x-2 and -0.5x+1 ) ----------
+  % ---------- G9 ( 1.5x-2 and -0.5x+1 → (1.5,0.25) ) ----------
   \begin{scope}[xshift=19.5cm,yshift=-17.4cm]
     \axesbox
     \begin{scope}
@@ -125,11 +130,11 @@
       \draw[blue,thick,domain=\winmin:\winmax] plot(\x,{1.5*\x-2});
       \draw[red, thick,domain=\winmin:\winmax] plot(\x,{-0.5*\x+1});
       \fill (1.5,0.25) circle (2pt);
-    \end{scope}
+    </begin{scope}
     \node[font=\small,anchor=south west] at (-3.3,3) {G9};
   \end{scope}
 
-  % ---------- G10 (coincident horizontals) ----------
+  % ---------- G10 (coincident horizontals; dependent) ----------
   \begin{scope}[xshift=-6.5cm,yshift=-29cm]
     \axesbox
     \begin{scope}
@@ -140,7 +145,7 @@
     \node[font=\small,anchor=south west] at (-3.3,3) {G10};
   \end{scope}
 
-  % ---------- G11 (parallel verticals) ----------
+  % ---------- G11 (parallel verticals; inconsistent) ----------
   \begin{scope}[xshift=6.5cm,yshift=-29cm]
     \axesbox
     \begin{scope}
@@ -151,7 +156,7 @@
     \node[font=\small,anchor=south west] at (-3.3,3) {G11};
   \end{scope}
 
-  % ---------- G12 ( (2/3)x+1/2 and -x+5 ) ----------
+  % ---------- G12 ( (2/3)x+1/2 and -x+5 → (2.7,2.3) ) ----------
   \begin{scope}[xshift=19.5cm,yshift=-29cm]
     \axesbox
     \begin{scope}
@@ -163,13 +168,16 @@
     \node[font=\small,anchor=south west] at (-3.3,3) {G12};
   \end{scope}
 \end{tikzpicture}
+\]
 `,
 
-      /* (unchanged) hidden answer key and questions */
+      /* ===== Hidden answer key (A–F) ===== */
       answerKey : ["A","D","C","B","A","E","C","F","B","C","A","D"],
 
+      /* ===== 12 questions, 6 choices each ===== */
       questions : [
-        { latex : String.raw`\text{Refer to Graph G1. What is the solution and classification?}`,
+        {
+          latex : String.raw`\text{Refer to Graph G1. What is the solution and classification?}`,
           choices : [
             String.raw`\left(\tfrac{5}{3},\tfrac{7}{3}\right);\ \text{consistent independent}`,
             String.raw`(2,3);\ \text{consistent independent}`,
@@ -177,8 +185,10 @@
             String.raw`\text{no solution; inconsistent}`,
             String.raw`\text{infinitely many; dependent}`,
             String.raw`(0,4);\ \text{consistent independent}`
-          ]},
-        { latex : String.raw`\text{Refer to Graph G2. Choose the correct statement.}`,
+          ]
+        },
+        {
+          latex : String.raw`\text{Refer to Graph G2. Choose the correct statement.}`,
           choices : [
             String.raw`(2,-3);\ \text{consistent independent}`,
             String.raw`(0,1);\ \text{consistent independent}`,
@@ -186,8 +196,10 @@
             String.raw`\text{no solution; inconsistent}`,
             String.raw`(3,3);\ \text{consistent independent}`,
             String.raw`(-1,3);\ \text{consistent independent}`
-          ]},
-        { latex : String.raw`\text{Refer to Graph G3. Choose the correct statement.}`,
+          ]
+        },
+        {
+          latex : String.raw`\text{Refer to Graph G3. Choose the correct statement.}`,
           choices : [
             String.raw`(2,0);\ \text{consistent independent}`,
             String.raw`(0,3);\ \text{consistent independent}`,
@@ -195,13 +207,21 @@
             String.raw`\text{no solution; inconsistent}`,
             String.raw`(3,-1.5);\ \text{consistent independent}`,
             String.raw`(1,1.5);\ \text{consistent independent}`
-          ]},
-        { latex : String.raw`\text{Refer to Graph G4. What ordered pair solves the system?}`,
+          ]
+        },
+        {
+          latex : String.raw`\text{Refer to Graph G4. What ordered pair solves the system?}`,
           choices : [
-            String.raw`(0,-1)`, String.raw`(2,-1)`, String.raw`(2,0)`,
-            String.raw`(-2,-1)`, String.raw`(-1,2)`, String.raw`(1,-2)`
-          ]},
-        { latex : String.raw`\text{Refer to Graph G5. Choose the solution and classification.}`,
+            String.raw`(0,-1)`,
+            String.raw`(2,-1)`,
+            String.raw`(2,0)`,
+            String.raw`(-2,-1)`,
+            String.raw`(-1,2)`,
+            String.raw`(1,-2)`
+          ]
+        },
+        {
+          latex : String.raw`\text{Refer to Graph G5. Choose the solution and classification.}`,
           choices : [
             String.raw`(2,2);\ \text{consistent independent}`,
             String.raw`(1,2.5);\ \text{consistent independent}`,
@@ -209,19 +229,32 @@
             String.raw`(2,1);\ \text{consistent independent}`,
             String.raw`\text{no solution; inconsistent}`,
             String.raw`\text{infinitely many; dependent}`
-          ]},
-        { latex : String.raw`\text{Refer to Graph G6. Choose the correct ordered pair.}`,
+          ]
+        },
+        {
+          latex : String.raw`\text{Refer to Graph G6. Choose the correct ordered pair.}`,
           choices : [
-            String.raw`(1,2)`, String.raw`(0,1)`, String.raw`(3,1)`,
-            String.raw`(1,0)`, String.raw`(2,1)`, String.raw`(2,0)`
-          ]},
-        { latex : String.raw`\text{Refer to Graph G7. Choose the solution.}`,
+            String.raw`(1,2)`,
+            String.raw`(0,1)`,
+            String.raw`(3,1)`,
+            String.raw`(1,0)`,
+            String.raw`(2,1)`,
+            String.raw`(2,0)`
+          ]
+        },
+        {
+          latex : String.raw`\text{Refer to Graph G7. Choose the solution.}`,
           choices : [
-            String.raw`(-3,-2)`, String.raw`(-2,-3)`,
+            String.raw`(-3,-2)`,
+            String.raw`(-2,-3)`,
             String.raw`(-2,-3);\ \text{consistent independent}`,
-            String.raw`\text{no solution}`, String.raw`(2,-3)`, String.raw`(0,-3)`
-          ]},
-        { latex : String.raw`\text{Refer to Graph G8. Choose the solution and classification.}`,
+            String.raw`\text{no solution}`,
+            String.raw`(2,-3)`,
+            String.raw`(0,-3)`
+          ]
+        },
+        {
+          latex : String.raw`\text{Refer to Graph G8. Choose the solution and classification.}`,
           choices : [
             String.raw`(-1,1);\ \text{consistent independent}`,
             String.raw`(1,-1);\ \text{consistent independent}`,
@@ -229,8 +262,10 @@
             String.raw`\text{no solution; inconsistent}`,
             String.raw`\text{infinitely many; dependent}`,
             String.raw`(-1,3);\ \text{consistent independent}`
-          ]},
-        { latex : String.raw`\text{Refer to Graph G9. Choose the ordered pair of intersection.}`,
+          ]
+        },
+        {
+          latex : String.raw`\text{Refer to Graph G9. Choose the ordered pair of intersection.}`,
           choices : [
             String.raw`(1,0)`,
             String.raw`\left(\tfrac{3}{2},\tfrac{1}{4}\right)`,
@@ -238,8 +273,10 @@
             String.raw`(1.5,1.25)`,
             String.raw`(0.25,1.5)`,
             String.raw`(3,0.5)`
-          ]},
-        { latex : String.raw`\text{Refer to Graph G10. Classify the system.}`,
+          ]
+        },
+        {
+          latex : String.raw`\text{Refer to Graph G10. Classify the system.}`,
           choices : [
             String.raw`\text{inconsistent (no solution)}`,
             String.raw`\text{independent (one solution)}`,
@@ -247,8 +284,10 @@
             String.raw`\text{neither of the above}`,
             String.raw`\text{cannot be determined}`,
             String.raw`\text{perpendicular lines}`
-          ]},
-        { latex : String.raw`\text{Refer to Graph G11. Classify the system.}`,
+          ]
+        },
+        {
+          latex : String.raw`\text{Refer to Graph G11. Classify the system.}`,
           choices : [
             String.raw`\text{inconsistent (no solution)}`,
             String.raw`\text{dependent (infinitely many)}`,
@@ -256,13 +295,19 @@
             String.raw`\text{cannot determine}`,
             String.raw`\text{coincident lines}`,
             String.raw`\text{same slope and intercept}`
-          ]},
-        { latex : String.raw`\text{Refer to Graph G12. Estimate the solution.}`,
+          ]
+        },
+        {
+          latex : String.raw`\text{Refer to Graph G12. Estimate the solution.}`,
           choices : [
-            String.raw`(2.7,2.3)`, String.raw`(3,2)`,
-            String.raw`(2.3,2.7)`, String.raw`(2,3)`,
-            String.raw`(3.2,1.8)`, String.raw`(2.5,2.5)`
-          ]}
+            String.raw`(2.7,2.3)`,
+            String.raw`(3,2)`,
+            String.raw`(2.3,2.7)`,
+            String.raw`(2,3)`,
+            String.raw`(3.2,1.8)`,
+            String.raw`(2.5,2.5)`
+          ]
+        }
       ]
     };
   </script>
