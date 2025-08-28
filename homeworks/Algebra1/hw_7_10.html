@@ -3,32 +3,44 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>HW 7-10 — TikZJax Test (Single Question)</title>
+  <title>HW 7-10 — TikZJax Single Test</title>
 
-  <!-- TikZJax dependencies -->
+  <!-- TikZJax: load early; some browsers/extensions block 3rd-party JS -->
   <link rel="stylesheet" href="https://tikzjax.com/v1/fonts.css" />
-  <script defer src="https://tikzjax.com/v1/tikzjax.js"></script>
+  <script src="https://tikzjax.com/v1/tikzjax.js" crossorigin="anonymous"></script>
 
-  <!-- MathJax for LaTeX in the question/choices -->
-  <script defer src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js"
-          id="MathJax-script"></script>
+  <!-- (Optional) MathJax just for LaTeX in choices -->
+  <script id="MathJax-script"
+          src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js"
+          async></script>
 
   <style>
     body { font-family: system-ui, Segoe UI, Helvetica, Arial, sans-serif; margin: 24px; }
     .card { max-width: 900px; margin: 0 auto; padding: 16px 20px; border: 1px solid #ddd; border-radius: 12px; }
-    .q { font-weight: 600; margin-bottom: 12px; }
+    .q { font-weight: 700; margin-bottom: 12px; }
     ul { list-style: none; padding-left: 0; }
     li { margin: 8px 0; }
-    .graph { margin: 18px 0 8px; }
-    small { color: #666; }
+    #tzx-warning { display:none; margin:12px 0 0; padding:10px 12px; border-radius:8px; background:#ffe7e7; color:#7a0000; }
   </style>
+
+  <script>
+    // If TikZJax didn't load, warn visibly (common when shields/adblockers are on).
+    window.addEventListener('DOMContentLoaded', () => {
+      setTimeout(() => {
+        const ok = !!(window.tikzjax || window.TikzJax || document.querySelector('canvas.tikzjax, svg.tikzjax'));
+        if (!ok) document.getElementById('tzx-warning').style.display = 'block';
+      }, 2000);
+    });
+  </script>
 </head>
 <body>
   <div class="card">
     <div class="q">Refer to <b>G1</b>. Which system is graphed?</div>
 
-    <!-- The TikZ graph (G1). TikZJax renders everything inside this tag. -->
+    <!-- Graph area -->
     <div class="graph">
+      <!-- This block is invisible HTML until TikZJax runs. If it stays invisible,
+           your browser or an extension blocked https://tikzjax.com. -->
       <script type="text/tikz">
 \begin{tikzpicture}[scale=0.8]
   \tikzset{grid/.style={very thin,color=gray!30}}
@@ -39,19 +51,18 @@
   \draw[axes] (-4,0)--(4,0); \draw[axes] (0,-4)--(0,4);
 
   % G1: x+y >= 2  and  x-y < 4
-  % blue region: y >= -x + 2  (shade above the line)
+  % blue: y >= -x + 2  (shade above the line; solid)
   \path[fill=blue!25,opacity=.35] (-4, {-(-4)+2}) -- (4, {-(4)+2}) -- (4,4) -- (-4,4) -- cycle;
-  % red region: y > x - 4     (shade above the line; dashed boundary)
+  % red:  y > x - 4    (shade above the line; dashed)
   \path[fill=red!25,opacity=.35] (-4, {-4-4}) -- (4, {4-4}) -- (4,4) -- (-4,4) -- cycle;
 
-  \draw[blue,thick,domain=-4:4] plot(\x,{-1*\x+2});           % solid: ≥
-  \draw[red,thick,dashed,domain=-4:4] plot(\x,{\x-4});        % dashed: <
+  \draw[blue,thick,domain=-4:4] plot(\x,{-1*\x+2});       % solid: ≥
+  \draw[red,thick,dashed,domain=-4:4] plot(\x,{\x-4});    % dashed: <
   \node[anchor=south east,font=\small] at (3.7,3.7) {G1};
 \end{tikzpicture}
       </script>
     </div>
 
-    <!-- One MCQ rendered by MathJax -->
     <form>
       <ul>
         <li><label><input type="radio" name="q1">
@@ -65,9 +76,10 @@
       </ul>
     </form>
 
-    <small>Tip: If you still see raw TikZ, make sure the network can load
-      <code>tikzjax.js</code> and this block remains inside
-      <code>&lt;script type="text/tikz"&gt;</code>.</small>
+    <div id="tzx-warning">
+      TikZ graph not showing. Your browser likely blocked <code>https://tikzjax.com/v1/tikzjax.js</code>.
+      Try: disable shields/ad-blockers for this page, or self-host TikZJax (recommended for GitHub Pages).
+    </div>
   </div>
 </body>
 </html>
