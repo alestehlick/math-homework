@@ -7,26 +7,32 @@
 
   <script>
     /* =========================
-       Homework 9-4 — Factoring Trinomials (ax^2+bx+c)
-       Source set: 9-4 A.Exercises (1–12)
+       Homework 9-4 — Trinomials (representative mix)
+       Covers ALL modes shown in the source:
+       • Monic trinomials with ± terms
+       • Perfect-square trinomials among the set
+       • GCF-first then factor (a≠1)
+       • Leading coefficient ≠ 1
+       • Parameter/GCF factor (e.g., ax^2+… with overall 'a')
+       • Difference of squares (present in pool 9-4.B.22)
        ========================= */
     window.homeworkData = {
       classId : "Algebra1",
       id      : "Homework 9-4",
-      title   : "Homework 9-4 — Factoring Trinomials (ax^2+bx+c)",
+      title   : "Homework 9-4 — Factoring Trinomials (Comprehensive Mix)",
 
       graphics : String.raw``,
 
-      /* Correct options for Q1–Q12 (hidden) */
-      answerKey : ["E","A","C","F","B","D","A","F","C","B","E","D"],
+      /* Correct choices for Q1–Q12 (hidden) */
+      answerKey : ["E","A","F","B","C","D","A","E","E","B","B","A"],
 
       questions : [
         { latex: String.raw`\text{Factor: } x^2 + 4x - 32`,
           choices: [
             String.raw`(x+4)(x-8)`,
             String.raw`(x-8)^2`,
-            String.raw`x(x+4)-32`,
             String.raw`(x+16)(x-2)`,
+            String.raw`x(x+4)-32`,
             String.raw`(x+8)(x-4)`,
             String.raw`(x-4)^2`
           ]},
@@ -41,34 +47,34 @@
             String.raw`(a-3)(a-5)`
           ]},
 
-        { latex: String.raw`\text{Factor: } x^2 + 2x - 3`,
+        { latex: String.raw`\text{Factor: } x^2 - x - 30`,
           choices: [
-            String.raw`(x-3)(x-1)`,
-            String.raw`(x+1)(x+3)`,
-            String.raw`(x+3)(x-1)`,
-            String.raw`(x-3)(x+1)`,
-            String.raw`x(x+2)-3`,
-            String.raw`(x-1)^2`
-          ]},
-
-        { latex: String.raw`\text{Factor: } a^2 - 2a - 8`,
-          choices: [
-            String.raw`(a-2)(a-4)`,
-            String.raw`(a-8)(a+1)`,
-            String.raw`(a-4)^2`,
-            String.raw`a(a-2)-8`,
-            String.raw`(a+4)(a-2)`,
-            String.raw`(a-4)(a+2)`
+            String.raw`(x-3)(x+10)`,
+            String.raw`(x-6)(x-5)`,
+            String.raw`(x+6)(x-5)`,
+            String.raw`(x-10)(x+3)`,
+            String.raw`(x-5)(x+6)`,
+            String.raw`(x-6)(x+5)`
           ]},
 
         { latex: String.raw`\text{Factor: } b^2 + b - 90`,
           choices: [
-            String.raw`(b-10)(b-9)`,
-            String.raw`(b+10)(b-9)`,
-            String.raw`(b+9)(b+10)`,
-            String.raw`b(b+1)-90`,
             String.raw`(b-10)(b+9)`,
-            String.raw`(b-5)(b+18)`
+            String.raw`(b-9)(b+10)`,
+            String.raw`(b-15)(b+6)`,
+            String.raw`(b+9)(b+10)`,
+            String.raw`(b-1)(b+90)`,
+            String.raw`b(b+1)-90`
+          ]},
+
+        { latex: String.raw`\text{Factor: } y^2 + 7y + 10`,
+          choices: [
+            String.raw`(y+1)(y+10)`,
+            String.raw`(y+7)(y+10)`,
+            String.raw`(y+5)(y+2)`,
+            String.raw`(y+10)(y-1)`,
+            String.raw`(y+5)^2`,
+            String.raw`y(y+7)+10`
           ]},
 
         { latex: String.raw`\text{Factor: } x^2 + 15x + 54`,
@@ -78,67 +84,67 @@
             String.raw`(x+6)^2`,
             String.raw`(x+6)(x+9)`,
             String.raw`x(x+15)+54`,
-            String.raw`(x+5)(x+10)`
+            String.raw`(x+9)(x-6)`
           ]},
 
-        { latex: String.raw`\text{Factor: } a^2 - 6a + 5`,
+        { latex: String.raw`\text{Factor: } a^2 - 2a - 8`,
           choices: [
-            String.raw`(a-1)(a-5)`,
-            String.raw`(a-5)^2`,
-            String.raw`(a-1)^2`,
-            String.raw`(a+1)(a-5)`,
-            String.raw`a(a-6)+5`,
-            String.raw`(a-7)(a+1)`
-          ]},
-
-        { latex: String.raw`\text{Factor: } x^2 - x - 30`,
-          choices: [
-            String.raw`(x-5)(x+6)`,
-            String.raw`(x-6)(x-5)`,
-            String.raw`(x+5)(x+6)`,
-            String.raw`x(x-1)-30`,
-            String.raw`(x+3)(x-10)`,
-            String.raw`(x-6)(x+5)`
-          ]},
-
-        { latex: String.raw`\text{Factor: } y^2 + 7y + 10`,
-          choices: [
-            String.raw`(y+1)(y+10)`,
-            String.raw`(y+7)(y+10)`,
-            String.raw`(y+5)(y+2)`,
-            String.raw`y(y+7)+10`,
-            String.raw`(y+10)(y-1)`,
-            String.raw`(y+5)(y+2)`
-          ]},
-
-        { latex: String.raw`\text{Factor: } x^2 + 5x + 4`,
-          choices: [
-            String.raw`(x+2)(x+2)`,
-            String.raw`(x+1)(x+4)`,
-            String.raw`(x+5)(x-1)`,
-            String.raw`x(x+5)+4`,
-            String.raw`(x+3)(x+1)`,
-            String.raw`(x+4)^2`
+            String.raw`(a-4)(a+2)`,
+            String.raw`(a-8)(a+1)`,
+            String.raw`(a-4)^2`,
+            String.raw`a(a-2)-8`,
+            String.raw`(a+4)(a-2)`,
+            String.raw`(a-6)(a+4)`
           ]},
 
         { latex: String.raw`\text{Factor: } a^2 + 3a - 28`,
           choices: [
             String.raw`(a-7)(a-4)`,
+            String.raw`(a+3)(a-9)`,
             String.raw`(a+4)(a-7)`,
             String.raw`a(a+3)-28`,
-            String.raw`(a+3)(a-9)`,
             String.raw`(a+7)(a-4)`,
             String.raw`(a+7)(a+4)`
           ]},
 
-        { latex: String.raw`\text{Factor: } x^2 - 8x + 20`,
+        { latex: String.raw`\text{Factor (difference of squares): } x^2 - 16`,
           choices: [
-            String.raw`(x-10)(x+2)`,
-            String.raw`(x-2)(x-10)`,
-            String.raw`x(x-8)+20`,
-            String.raw`(x-4)(x-5)`,
-            String.raw`(x-5)^2`,
-            String.raw`(x-4)^2`
+            String.raw`(x-8)(x+2)`,
+            String.raw`(x-4)^2`,
+            String.raw`x(x-16)`,
+            String.raw`(x+4)(x+4)`,
+            String.raw`(x-4)(x+4)`,
+            String.raw`x^2-8x+16`
+          ]},
+
+        { latex: String.raw`\text{Factor (GCF first): } 4x^2 + 28x + 24`,
+          choices: [
+            String.raw`4(x+2)(x+3)`,
+            String.raw`4(x+1)(x+6)`,
+            String.raw`(4x+1)(x+24)`,
+            String.raw`2(2x+1)(x+12)`,
+            String.raw`4(x+3)(x+4)`,
+            String.raw`(x+1)(4x+24)`
+          ]},
+
+        { latex: String.raw`\text{Factor (GCF first): } 3x^2 + 24x + 36`,
+          choices: [
+            String.raw`3(x+3)(x+4)`,
+            String.raw`3(x+2)(x+6)`,
+            String.raw`(3x+2)(x+6)`,
+            String.raw`3(x+1)(x+12)`,
+            String.raw`3(x+6)^2`,
+            String.raw`(x+2)(3x+18)`
+          ]},
+
+        { latex: String.raw`\text{Factor (pull out parameter): } ax^2 - 11ax - 12a`,
+          choices: [
+            String.raw`a(x-12)(x+1)`,
+            String.raw`a(x-3)(x-4)`,
+            String.raw`a(x-4)(x+3)`,
+            String.raw`(x-12)(x+1)`,
+            String.raw`a(x-1)(x-12)`,
+            String.raw`a(x+12)(x-1)`
           ]}
       ]
     };
