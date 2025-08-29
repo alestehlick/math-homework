@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Homework 6-6 — Graphing Systems of Inequalities</title>
+
+  <script>
+    /* =========================
+       Homework 6-6 — Graphing Systems of Inequalities
+       4 graphs (G1–G4) in one TikZ straw; 4 MC questions (6 options each).
+       ========================= */
+    window.homeworkData = {
+      classId : "Algebra2",
+      id      : "Homework 6-6",
+      title   : "Homework 6-6 — Graphing Systems of Inequalities",
+
+      graphics : String.raw`
+\begin{tikzpicture}[scale=0.55]
+  \tikzset{grid/.style={very thin,color=gray!30}}
+  \tikzset{axes/.style={->,thick}}
+  \tikzset{L1/.style={blue,thick}}
+  \tikzset{L2/.style={red,thick,dashed}}
+  \colorlet{sol}{blue!50!red!35}
+
+  % ---------- G1: y >= 3x-2  and  y > 1-2x
+  \begin{scope}[xshift=-12cm,yshift=8cm]
+    \clip (-4.2,-4.2) rectangle (4.2,4.2);
+    \draw[grid] (-4,-4) grid (4,4);
+    \draw[axes] (-4,0)--(4,0); \draw[axes] (0,-4)--(0,4);
+    \begin{scope}
+      % First half-plane: y >= 3x-2  (keep the part ABOVE the line)
+      \clip (-4,{3*(-4)-2}) -- (4,{3*(4)-2}) -- (4,4) -- (-4,4) -- cycle;
+      % Second: y > 1-2x  (fill the part ABOVE that dashed line)
+      \path[fill=sol,opacity=.35] (-4,{1-2*(-4)}) -- (4,{1-2*(4)}) -- (4,4) -- (-4,4) -- cycle;
+    \end{scope}
+    \draw[L1,domain=-4:4]       plot(\x,{3*\x-2});       % solid
+    \draw[L2,domain=-4:4]       plot(\x,{1-2*\x});       % dashed
+    \node[anchor=south east,font=\small] at (3.7,3.7) {G1};
+  \end{scope}
+
+  % ---------- G2: y <= x^2+1  and  y >= -x^2-2  (between two parabolas)
+  \begin{scope}[xshift=0cm,yshift=8cm]
+    \clip (-4.2,-4.2) rectangle (4.2,4.2);
+    \draw[grid] (-4,-4) grid (4,4);
+    \draw[axes] (-4,0)--(4,0); \draw[axes] (0,-4)--(0,4);
+    \begin{scope}
+      % Clip to y <= x^2+1 (region below the upper parabola)
+      \clip plot[domain=-4:4] (\x,{\x*\x+1}) -- (4,-4) -- (-4,-4) -- cycle;
+      % Fill region above y = -x^2 - 2
+      \path[fill=sol,opacity=.35] plot[domain=-4:4] (\x,{-\x*\x-2}) -- (4,4) -- (-4,4) -- cycle;
+    \end{scope}
+    \draw[L1,domain=-4:4]       plot(\x,{\x*\x+1});      % solid for <=
+    \draw[L1,domain=-4:4]       plot(\x,{-\x*\x-2});     % solid for >=
+    \node[anchor=south east,font=\small] at (3.7,3.7) {G2};
+  \end{scope}
+
+  % ---------- G3: x >= 0  and  y <= 0  (quadrants)
+  \begin{scope}[xshift=-12cm,yshift=-8cm]
+    \clip (-4.2,-4.2) rectangle (4.2,4.2);
+    \draw[grid] (-4,-4) grid (4,4);
+    \draw[axes] (-4,0)--(4,0); \draw[axes] (0,-4)--(0,4);
+    \begin{scope}
+      \clip (0,-4) -- (4,-4) -- (4,4) -- (0,4) -- cycle; % x >= 0
+      \path[fill=sol,opacity=.35] (-4,-4) -- (4,-4) -- (4,0) -- (-4,0) -- cycle; % y <= 0
+    \end{scope}
+    \draw[L1] (0,-4) -- (0,4);
+    \draw[L1] (-4,0) -- (4,0);
+    \node[anchor=south east,font=\small] at (3.7,3.7) {G3};
+  \end{scope}
+
+  % ---------- G4: y >= (x-2)^2  and  y < (x+2)^2
+  \begin{scope}[xshift=0cm,yshift=-8cm]
+    \clip (-4.2,-4.2) rectangle (4.2,4.2);
+    \draw[grid] (-4,-4) grid (4,4);
+    \draw[axes] (-4,0)--(4,0); \draw[axes] (0,-4)--(0,4);
+    \begin{scope}
+      % Clip to y < (x+2)^2   (below right-shifted parabola)
+      \clip plot[domain=-4:4] (\x,{(\x+2)*(\x+2)}) -- (4,-4) -- (-4,-4) -- cycle;
+      % Fill region above y >= (x-2)^2
+      \path[fill=sol,opacity=.35] plot[domain=-4:4] (\x,{(\x-2)*(\x-2)}) -- (4,4) -- (-4,4) -- cycle;
+    \end{scope]
+    \draw[L1,domain=-4:4]       plot(\x,{(\x-2)*(\x-2)});      % solid
+    \draw[L2,domain=-4:4]       plot(\x,{(\x+2)*(\x+2)});      % dashed (strict)
+    \node[anchor=south east,font=\small] at (3.7,3.7) {G4};
+  \end{scope}
+\end{tikzpicture}
+`,
+
+      answerKey : ["E","C","B","D"],
+
+      questions : [
+        { latex: String.raw`\text{Refer to G1. Which system is graphed?}`,
+          choices: [
+            String.raw`\begin{cases}y\le 3x-2\\ y\ge 1-2x\end{cases}`,
+            String.raw`\begin{cases}y\ge 3x-2\\ y\le 1-2x\end{cases}`,
+            String.raw`\begin{cases}y< 3x-2\\ y< 1-2x\end{cases}`,
+            String.raw`\begin{cases}y> 3x-2\\ y< 1-2x\end{cases}`,
+            String.raw`\begin{cases}y\ge 3x-2\\ y> 1-2x\end{cases}`,
+            String.raw`\begin{cases}y\le -3x+2\\ y\ge -1+2x\end{cases}`
+          ]},
+
+        { latex: String.raw`\text{Refer to G2. Which system of inequalities is graphed?}`,
+          choices: [
+            String.raw`\begin{cases}y\ge x^2+1\\ y\le -x^2-2\end{cases}`,
+            String.raw`\begin{cases}y< x^2+1\\ y> -x^2-2\end{cases}`,
+            String.raw`\begin{cases}y\le x^2+1\\ y\ge -x^2-2\end{cases}`,
+            String.raw`\begin{cases}y\ge x^2+1\\ y\ge -x^2-2\end{cases}`,
+            String.raw`\begin{cases}y\le x^2-1\\ y\ge -x^2+2\end{cases}`,
+            String.raw`\begin{cases}y> x^2+1\\ y< -x^2-2\end{cases}`
+          ]},
+
+        { latex: String.raw`\text{Refer to G3. Which pair of inequalities matches the shaded region?}`,
+          choices: [
+            String.raw`\begin{cases}x\le 0\\ y\ge 0\end{cases}`,
+            String.raw`\begin{cases}x\ge 0\\ y\le 0\end{cases}`,
+            String.raw`\begin{cases}x> 0\\ y> 0\end{cases}`,
+            String.raw`\begin{cases}x< 0\\ y< 0\end{cases}`,
+            String.raw`\begin{cases}x\ge 0\\ y\ge 0\end{cases}`,
+            String.raw`\begin{cases}x\le 0\\ y\le 0\end{cases}`
+          ]},
+
+        { latex: String.raw`\text{Refer to G4. Which system is graphed (note solid vs.\ dashed)?}`,
+          choices: [
+            String.raw`\begin{cases}y\le (x-2)^2\\ y> (x+2)^2\end{cases}`,
+            String.raw`\begin{cases}y> (x-2)^2\\ y\le (x+2)^2\end{cases}`,
+            String.raw`\begin{cases}y< (x-2)^2\\ y\ge (x+2)^2\end{cases}`,
+            String.raw`\begin{cases}y\ge (x-2)^2\\ y< (x+2)^2\end{cases}`,
+            String.raw`\begin{cases}y> (x-2)^2\\ y< (x+2)^2\end{cases}`,
+            String.raw`\begin{cases}y\le (x-2)^2\\ y\ge (x+2)^2\end{cases}`
+          ]}
+      ]
+    };
+  </script>
+
+  <link rel="stylesheet" href="/math-homework/assets/core.css" />
+  <link rel="stylesheet" href="https://tikzjax.com/v1/fonts.css" />
+  <script defer src="/math-homework/assets/core.js"></script>
+  <script defer src="https://tikzjax.com/v1/tikzjax.js"></script>
+  <script defer src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+</head>
+<body>
+  <div id="hw-root">Loading…</div>
+</body>
+</html>
