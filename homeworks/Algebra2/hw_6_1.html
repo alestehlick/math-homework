@@ -26,44 +26,48 @@
   \begin{scope}[xshift=-13.5cm,yshift=0cm]
     \clip (-6.2,-6.2) rectangle (6.2,6.2);
     \draw[grid] (-6,-6) grid (6,6);
-    \draw[axes] (-6,0)--(6,0); \draw[axes] (0,-6)--(0,6);
+    \draw[axes] (-6,0)--(6,0);
+    \draw[axes] (0,-6)--(0,6);
     \draw[L1,domain=-6:6] plot(\x,{-1*\x+4});
     \draw[L2,domain=-6:6] plot(\x,{\x+2});
     \fill (1,3) circle (2pt);
-    \node[anchor=south east,font=\small] at (5.5,5.5) {G1};
+    \node[anchor=south east,font=\small] at (5.3,5.3) {G1};
   \end{scope}
 
   % ---------- G2: 2x+y=2 and 3x-y=-2  → (0,2)
   \begin{scope}[xshift=-4.5cm,yshift=0cm]
     \clip (-6.2,-6.2) rectangle (6.2,6.2);
     \draw[grid] (-6,-6) grid (6,6);
-    \draw[axes] (-6,0)--(6,0); \draw[axes] (0,-6)--(0,6);
+    \draw[axes] (-6,0)--(6,0);
+    \draw[axes] (0,-6)--(0,6);
     \draw[L1,domain=-6:6] plot(\x,{-2*\x+2});
     \draw[L2,domain=-6:6] plot(\x,{3*\x+2});
     \fill (0,2) circle (2pt);
-    \node[anchor=south east,font=\small] at (5.5,5.5) {G2};
+    \node[anchor=south east,font=\small] at (5.3,5.3) {G2};
   \end{scope}
 
   % ---------- G3: vertical + slanted : x=2 and y=-x+4  → (2,2)
   \begin{scope}[xshift=4.5cm,yshift=0cm]
     \clip (-6.2,-6.2) rectangle (6.2,6.2);
     \draw[grid] (-6,-6) grid (6,6);
-    \draw[axes] (-6,0)--(6,0); \draw[axes] (0,-6)--(0,6);
-    \draw[L1] (2,-6) -- (2,6);                 % x = 2 (vertical)
-    \draw[L2,domain=-6:6] plot(\x,{-1*\x+4});  % y = -x + 4
+    \draw[axes] (-6,0)--(6,0);
+    \draw[axes] (0,-6)--(0,6);
+    \draw[L1] (2,-6) -- (2,6);                 % x = 2
+    \draw[L2,domain=-6:6] plot(\x,{-1*\x+4});  % y = -x+4
     \fill (2,2) circle (2pt);
-    \node[anchor=south east,font=\small] at (5.5,5.5) {G3};
+    \node[anchor=south east,font=\small] at (5.3,5.3) {G3};
   \end{scope}
 
   % ---------- G4: horizontal + slanted : y=-2 and 3x+y=1  → (1,-2)
   \begin{scope}[xshift=13.5cm,yshift=0cm]
     \clip (-6.2,-6.2) rectangle (6.2,6.2);
     \draw[grid] (-6,-6) grid (6,6);
-    \draw[axes] (-6,0)--(6,0); \draw[axes] (0,-6)--(0,6);
-    \draw[L1] (-6,-2) -- (6,-2);               % y = -2 (horizontal)
-    \draw[L2,domain=-6:6] plot(\x,{-3*\x+1});  % 3x + y = 1
+    \draw[axes] (-6,0)--(6,0);
+    \draw[axes] (0,-6)--(0,6);
+    \draw[L1] (-6,-2) -- (6,-2);               % y = -2
+    \draw[L2,domain=-6:6] plot(\x,{-3*\x+1});  % 3x+y=1
     \fill (1,-2) circle (2pt);
-    \node[anchor=south east,font=\small] at (5.5,5.5) {G4};
+    \node[anchor=south east,font=\small] at (5.3,5.3) {G4};
   \end{scope}
 \end{tikzpicture}
 `,
