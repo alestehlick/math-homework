@@ -78,7 +78,7 @@
     \draw[L1,domain=-1:10] plot(\x,{\x});
     \draw[L1,domain=-1:10] plot(\x,{\x+2});
     \node[anchor=south east,font=\small] at (9.6,9.6) {G5};
-  \end{scope}
+  </begin{scope}
 
   % G6: intersect once (independent/consistent)
   \begin{scope}[xshift=12.5cm,yshift=0cm]
@@ -89,7 +89,6 @@
   \end{scope}
 
   % ---------- Row 3: center G7, keep spacing with empty frames ----------
-  % left empty frame (keeps tidy 3-per-row layout)
   \begin{scope}[xshift=-12.5cm,yshift=-10cm]
     \frameA
   \end{scope}
@@ -102,7 +101,6 @@
     \node[anchor=south east,font=\small] at (9.6,9.6) {G7};
   \end{scope}
 
-  % right empty frame (keeps tidy 3-per-row layout)
   \begin{scope}[xshift=12.5cm,yshift=-10cm]
     \frameA
   \end{scope}
@@ -112,28 +110,30 @@
       /* ---------- Answer key (letters A–F) ---------- */
       answerKey : ["A","A","C","D","B","E","C","B","A","D","C","F"],
 
-      /* ---------- 12 questions (unchanged) ---------- */
+      /* ---------- 12 questions ---------- */
       questions : [
-        { latex: String.raw`\text{Refer to G1. Solve the system } \begin{cases}2x+y=14\\ x-y=-5\end{cases}\text{.}`,
+        /* Q1–Q2 rewritten: choose SYSTEM + SOLUTION that matches the graph */
+        { latex: String.raw`\text{Refer to G1. Mark the system and its solution that matches the graph.}`,
           choices: [
-            String.raw`\text{ }(3,\,8)`,
-            String.raw`\text{ }(8,\,3)`,
-            String.raw`\text{ }(2,\,7)`,
-            String.raw`\text{ }(-3,\,8)`,
-            String.raw`\text{ }(0,\,14)`,
-            String.raw`\text{No solution}`
+            String.raw`\begin{cases}2x+y=14\\ x-y=-5\end{cases}\ \text{; solution }(3,\,8)`,  /* correct */
+            String.raw`\begin{cases}2x+y=14\\ x+y=-5\end{cases}\ \text{; solution }(3,\,8)`,
+            String.raw`\begin{cases}2x-y=14\\ x-y=-5\end{cases}\ \text{; solution }(8,\,3)`,
+            String.raw`\begin{cases}2x+y=14\\ y-x=-5\end{cases}\ \text{; solution }(8,\,3)`,
+            String.raw`\begin{cases}x+y=14\\ x-y=-5\end{cases}\ \text{; solution }(3,\,11)`,
+            String.raw`\begin{cases}2x+y=14\\ x-y=-5\end{cases}\ \text{; solution }(0,\,14)`
           ]},
 
-        { latex: String.raw`\text{Refer to G2. Solve } \begin{cases}x-y=-8\\ 3x+y=0\end{cases}\text{.}`,
+        { latex: String.raw`\text{Refer to G2. Mark the system and its solution that matches the graph.}`,
           choices: [
-            String.raw`\text{ }(-2,\,6)`,
-            String.raw`\text{ }(2,\,-6)`,
-            String.raw`\text{ }(6,\,-2)`,
-            String.raw`\text{ }(-6,\,2)`,
-            String.raw`\text{ }(0,\,0)`,
-            String.raw`\text{No solution}`
+            String.raw`\begin{cases}x-y=-8\\ 3x+y=0\end{cases}\ \text{; solution }(-2,\,6)`,  /* correct */
+            String.raw`\begin{cases}x+y=-8\\ 3x+y=0\end{cases}\ \text{; solution }(2,\,-6)`,
+            String.raw`\begin{cases}x-y=8\\ 3x-y=0\end{cases}\ \text{; solution }(-2,\,6)`,
+            String.raw`\begin{cases}x-y=-8\\ 3x-y=0\end{cases}\ \text{; solution }(2,\,-6)`,
+            String.raw`\begin{cases}y-x=-8\\ 3x+y=0\end{cases}\ \text{; solution }(-6,\,2)`,
+            String.raw`\begin{cases}x-y=-8\\ 3x+y=0\end{cases}\ \text{; solution }(0,\,0)`
           ]},
 
+        /* Algebraic (unchanged) */
         { latex: String.raw`\text{Solve algebraically and classify. } \begin{cases}y=3x+9\\ 2x+5y=28\end{cases}`,
           choices: [
             String.raw`\text{Dependent (same line)}`,
@@ -174,26 +174,29 @@
             String.raw`\text{Money: 11\%, Certificate: 13.5\%}`
           ]},
 
-        { latex: String.raw`\text{Refer to G3. Which ordered pair lies in the solution set?}`,
+        /* Q7 rewritten: choose INEQUALITY SYSTEM + A POINT in the region */
+        { latex: String.raw`\text{Refer to G3. Mark the system and a point that lies in the shaded solution region.}`,
           choices: [
-            String.raw`\text{ }(0,\,1)`,
-            String.raw`\text{ }(-3,\,2)`,
-            String.raw`\text{ }(-1,\,4)`,
-            String.raw`\text{ }(2,\,-1)`,
-            String.raw`\text{ }(3,\,0)`,
-            String.raw`\text{ }(-4,\,-4)`
+            String.raw`\begin{cases}x-2y\ge -6\\ 4x+y<-2\end{cases}\ \text{; point }(0,\,1)`,
+            String.raw`\begin{cases}x-2y\le -6\\ 4x+y>-2\end{cases}\ \text{; point }(-3,\,2)`,
+            String.raw`\begin{cases}x-2y\le -6\\ 4x+y>-2\end{cases}\ \text{; point }(-1,\,4)`,  /* correct */
+            String.raw`\begin{cases}x-2y\ge -6\\ 4x+y>-2\end{cases}\ \text{; point }(2,\,-1)`,
+            String.raw`\begin{cases}x-2y\le -6\\ 4x+y\le -2\end{cases}\ \text{; point }(3,\,0)`,
+            String.raw`\begin{cases}x-2y\ge -6\\ 4x+y\le -2\end{cases}\ \text{; point }(-4,\,-4)`
           ]},
 
-        { latex: String.raw`\text{Refer to G4. For }z=3x+5y\text{ on the feasible region, what is the maximum and where does it occur?}`,
+        /* Q8 rewritten: choose CONSTRAINTS + OPTIMUM (value & point) */
+        { latex: String.raw`\text{Refer to G4. For }z=3x+5y\text{, mark the constraint set and the correct maximum (value and point).}`,
           choices: [
-            String.raw`\text{ }z_{\max}=20\text{ at }(0,\,4)`,
-            String.raw`\text{ }z_{\max}=22\text{ at }(4,\,2)`,
-            String.raw`\text{ }z_{\max}=14\text{ at }(\tfrac{14}{3},\,0)`,
-            String.raw`\text{ }z_{\max}=18\text{ at }(2,\,3)`,
-            String.raw`\text{ }z_{\max}=16\text{ at }(0,\,0)`,
-            String.raw`\text{ }z_{\max}=24\text{ at }(8,\,0)`
+            String.raw`\text{Constraints: }x\ge0,\ y\ge0,\ y\le -3x+14,\ y\ge -\tfrac12x+4;\ \ z_{\max}=20\text{ at }(0,\,4)`,
+            String.raw`\text{Constraints: }x\ge0,\ y\ge0,\ y\le -3x+14,\ y\le -\tfrac12x+4;\ \ z_{\max}=22\text{ at }(4,\,2)`, /* correct */
+            String.raw`\text{Constraints: }x\ge0,\ y\ge0,\ y\ge -3x+14,\ y\le -\tfrac12x+4;\ \ z_{\max}=14\text{ at }(\tfrac{14}{3},\,0)`,
+            String.raw`\text{Constraints: }x\ge0\text{ only};\ \ z_{\max}=18\text{ at }(2,\,3)`,
+            String.raw`\text{Constraints: }y\ge0\text{ only};\ \ z_{\max}=16\text{ at }(0,\,0)`,
+            String.raw`\text{Constraints: }x\ge0,\ y\ge0,\ y\le -3x+14,\ y\le -\tfrac12x+4;\ \ z_{\max}=24\text{ at }(8,\,0)`
           ]},
 
+        /* 9–12 unchanged (algebraic/mix) */
         { latex: String.raw`\text{Solve } \begin{cases}xy=-12\\ x+y=1\end{cases}\text{. (Give the full solution set.)}`,
           choices: [
             String.raw`\text{ }\{(4,\,-3),\,(-3,\,4)\}`,
@@ -224,7 +227,7 @@
             String.raw`\text{ }(-8,\,-3,\,7)`
           ]},
 
-        { latex: String.raw`\text{Using G5–G7, choose the correct classification triple (G5, G6, G7). } \text{Options: Inconsistent; Independent \& consistent; Dependent}`,
+        { latex: String.raw`\text{Using G5–G7, choose the correct classification triple (G5, G6, G7). Options: Inconsistent; Independent \& consistent; Dependent}`,
           choices: [
             String.raw`\text{Independent \& consistent; Inconsistent; Dependent}`,
             String.raw`\text{Dependent; Independent \& consistent; Inconsistent}`,
