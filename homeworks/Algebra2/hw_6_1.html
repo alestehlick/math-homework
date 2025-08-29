@@ -12,17 +12,18 @@
     window.homeworkData = {
       classId : "Algebra2",
       id      : "Homework A2-6-1",
-      title   : "Homework A2-6-1 — \text{Solving Systems by Graphing}",
+      title   : "Homework A2-6-1 — \\text{Solving Systems by Graphing}",
 
-      /* ---------- All figures first (G1…G8) ---------- */
-      graphics : String.raw`
+      /* --- Split into small TikZ chunks to avoid TikZJax limits --- */
+      graphics : [
+String.raw`
 \begin{tikzpicture}[scale=0.60]
   \tikzset{grid/.style={very thin,color=gray!25}}
   \tikzset{axes/.style={->,thick}}
   \tikzset{L1/.style={blue,thick}}
   \tikzset{L2/.style={red,thick,dashed}}
 
-  % ===== G1: x+y=4  &  x-y=-2  -> (1,3)
+  % ===== G1
   \begin{scope}[xshift=-12cm,yshift=9cm]
     \clip (-6.2,-6.2) rectangle (6.2,6.2);
     \draw[grid] (-6,-6) grid (6,6);
@@ -33,7 +34,7 @@
     \node[anchor=south east,font=\small] at (5.6,5.6) {G1};
   \end{scope}
 
-  % ===== G2: 2x+y=2  &  3x-y=-2  -> (0,2)
+  % ===== G2
   \begin{scope}[xshift=0cm,yshift=9cm]
     \clip (-6.2,-6.2) rectangle (6.2,6.2);
     \draw[grid] (-6,-6) grid (6,6);
@@ -43,60 +44,105 @@
     \fill (0,2) circle (2pt);
     \node[anchor=south east,font=\small] at (5.6,5.6) {G2};
   \end{scope}
-
-  % ===== G3: 4x+y=6  &  2x-y=0 (y=2x) -> (1,2)
-  \begin{scope}[xshift=12cm,yshift=9cm]
-    \clip (-6.2,-6.2) rectangle (6.2,6.2);
-    \draw[grid] (-6,-6) grid (6,6);
-    \draw[axes] (-6,0)--(6,0); \draw[axes] (0,-6)--(0,6);
-    \draw[L1,domain=-6:6] plot(\x,{-4*\x+6});
-    \draw[L2,domain=-6:6] plot(\x,{2*\x});
-    \fill (1,2) circle (2pt);
-    \node[anchor=south east,font=\small] at (5.6,5.6) {G3};
-  \end{scope}
-
-   % ===== G3: 4x+y=6  &  2x-y=0 (y=2x) -> (1,2)
-  \begin{scope}[xshift=12cm,yshift=9cm]
-    \clip (-6.2,-6.2) rectangle (6.2,6.2);
-    \draw[grid] (-6,-6) grid (6,6);
-    \draw[axes] (-6,0)--(6,0); \draw[axes] (0,-6)--(0,6);
-    \draw[L1,domain=-6:6] plot(\x,{-4*\x+6});
-    \draw[L2,domain=-6:6] plot(\x,{2*\x});
-    \fill (1,2) circle (2pt);
-    \node[anchor=south east,font=\small] at (5.6,5.6) {G3};
-  \end{scope}
-
-    % ===== G3: 4x+y=6  &  2x-y=0 (y=2x) -> (1,2)
-  \begin{scope}[xshift=12cm,yshift=90cm]
-    \clip (-6.2,-6.2) rectangle (6.2,6.2);
-    \draw[grid] (-6,-6) grid (6,6);
-    \draw[axes] (-6,0)--(6,0); \draw[axes] (0,-6)--(0,6);
-    \draw[L1,domain=-6:6] plot(\x,{-4*\x+6});
-    \draw[L2,domain=-6:6] plot(\x,{2*\x});
-    \fill (1,2) circle (2pt);
-    \node[anchor=south east,font=\small] at (5.6,5.6) {G3};
-  \end{scope}
-
-    % ===== G3: 4x+y=6  &  2x-y=0 (y=2x) -> (1,2)
-  \begin{scope}[xshift=12cm,yshift=-9cm]
-    \clip (-6.2,-6.2) rectangle (6.2,6.2);
-    \draw[grid] (-6,-6) grid (6,6);
-    \draw[axes] (-6,0)--(6,0); \draw[axes] (0,-6)--(0,6);
-    \draw[L1,domain=-6:6] plot(\x,{-4*\x+6});
-    \draw[L2,domain=-6:6] plot(\x,{2*\x});
-    \fill (1,2) circle (2pt);
-    \node[anchor=south east,font=\small] at (5.6,5.6) {G3};
-  \end{scope}
-
 \end{tikzpicture}
 `,
+String.raw`
+\begin{tikzpicture}[scale=0.60]
+  \tikzset{grid/.style={very thin,color=gray!25}}
+  \tikzset{axes/.style={->,thick}}
+  \tikzset{L1/.style={blue,thick}}
+  \tikzset{L2/.style={red,thick,dashed}}
+
+  % ===== G3
+  \begin{scope}[xshift=-12cm,yshift=9cm]
+    \clip (-6.2,-6.2) rectangle (6.2,6.2);
+    \draw[grid] (-6,-6) grid (6,6);
+    \draw[axes] (-6,0)--(6,0); \draw[axes] (0,-6)--(0,6);
+    \draw[L1,domain=-6:6] plot(\x,{-4*\x+6});
+    \draw[L2,domain=-6:6] plot(\x,{2*\x});
+    \fill (1,2) circle (2pt);
+    \node[anchor=south east,font=\small] at (5.6,5.6) {G3};
+  \end{scope}
+
+  % ===== G4
+  \begin{scope}[xshift=0cm,yshift=9cm]
+    \clip (-6.2,-6.2) rectangle (6.2,6.2);
+    \draw[grid] (-6,-6) grid (6,6);
+    \draw[axes] (-6,0)--(6,0); \draw[axes] (0,-6)--(0,6);
+    \draw[L1,domain=-6:6] plot(\x,{2*\x-10});
+    \draw[L2,domain=-6:6] plot(\x,{-3*\x});
+    \fill (2,-6) circle (2pt);
+    \node[anchor=south east,font=\small] at (5.6,5.6) {G4};
+  \end{scope}
+\end{tikzpicture}
+`,
+String.raw`
+\begin{tikzpicture}[scale=0.60]
+  \tikzset{grid/.style={very thin,color=gray!25}}
+  \tikzset{axes/.style={->,thick}}
+  \tikzset{L1/.style={blue,thick}}
+  \tikzset{L2/.style={red,thick,dashed}}
+
+  % ===== G5
+  \begin{scope}[xshift=-12cm,yshift=9cm]
+    \clip (-6.2,-6.2) rectangle (6.2,6.2);
+    \draw[grid] (-6,-6) grid (6,6);
+    \draw[axes] (-6,0)--(6,0); \draw[axes] (0,-6)--(0,6);
+    \draw[L1,domain=-6:6] plot(\x,{3*\x+7});
+    \draw[L2,domain=-6:6] plot(\x,{-4*\x-14});
+    \fill (-3,-2) circle (2pt);
+    \node[anchor=south east,font=\small] at (5.6,5.6) {G5};
+  </begin{scope}
+
+  % ===== G6
+  \begin{scope}[xshift=0cm,yshift=9cm]
+    \clip (-6.2,-6.2) rectangle (6.2,6.2);
+    \draw[grid] (-6,-6) grid (6,6);
+    \draw[axes] (-6,0)--(6,0); \draw[axes] (0,-6)--(0,6);
+    % x-2y=-16 => y=(x+16)/2
+    \draw[L1,domain=-6:6] plot(\x,{0.5*\x+8});
+    \draw[L2,domain=-6:6] plot(\x,{-2*\x-7});
+    \fill (-6,5) circle (2pt);
+    \node[anchor=south east,font=\small] at (5.6,5.6) {G6};
+  \end{scope}
+\end{tikzpicture}
+`,
+String.raw`
+\begin{tikzpicture}[scale=0.60]
+  \tikzset{grid/.style={very thin,color=gray!25}}
+  \tikzset{axes/.style={->,thick}}
+  \tikzset{L1/.style={blue,thick}}
+  \tikzset{L2/.style={red,thick,dashed}}
+
+  % ===== G7 (parallel)
+  \begin{scope}[xshift=-12cm,yshift=9cm]
+    \clip (-6.2,-6.2) rectangle (6.2,6.2);
+    \draw[grid] (-6,-6) grid (6,6);
+    \draw[axes] (-6,0)--(6,0); \draw[axes] (0,-6)--(0,6);
+    \draw[L1,domain=-6:6] plot(\x,{0.5*\x-2});
+    \draw[L2,domain=-6:6] plot(\x,{0.5*\x+2});
+    \node[anchor=south east,font=\small] at (5.6,5.6) {G7};
+  \end{scope}
+
+  % ===== G8 (coincident)
+  \begin{scope}[xshift=0cm,yshift=9cm]
+    \clip (-6.2,-6.2) rectangle (6.2,6.2);
+    \draw[grid] (-6,-6) grid (6,6);
+    \draw[axes] (-6,0)--(6,0); \draw[axes] (0,-6)--(0,6);
+    \draw[L1,domain=-6:6] plot(\x,{-2.5*\x+3});
+    \draw[L2,domain=-6:6] plot(\x,{-2.5*\x+3});
+    \node[anchor=south east,font=\small] at (5.6,5.6) {G8};
+  \end{scope}
+\end{tikzpicture}
+`
+      ],
 
       /* ---------- Answer key (letters A–F) ---------- */
-      answerKey : ["C","A","E","B","F","D","B","C","E","A","D","B"],
+      answerKey : ["C","A","E","B","F","D","B","C","E","B","A","D"],
 
-      /* ---------- 12 questions ---------- */
+      /* ---------- 12 questions (unchanged in spirit) ---------- */
       questions : [
-        { latex: String.raw`\text{Refer to G1. Solve the system by reading the intersection. } \begin{cases}x+y=4\\ x-y=-2\end{cases}`,
+        { latex: String.raw`\text{Refer to G1. Solve the system } \begin{cases}x+y=4\\ x-y=-2\end{cases}`,
           choices: [
             String.raw`\text{ }(-2,\,6)`,
             String.raw`\text{ }(2,\,1)`,
@@ -106,7 +152,7 @@
             String.raw`\text{ }(4,\,0)`
           ]},
 
-        { latex: String.raw`\text{Refer to G2. What is the solution of } \begin{cases}2x+y=2\\ 3x-y=-2\end{cases}\text{ ?}`,
+        { latex: String.raw`\text{Refer to G2. The solution of } \begin{cases}2x+y=2\\ 3x-y=-2\end{cases} \text{ is}`,
           choices: [
             String.raw`\text{ }(0,\,2)`,
             String.raw`\text{ }(1,\,0)`,
@@ -116,7 +162,7 @@
             String.raw`\text{ }(1,\,2)`
           ]},
 
-        { latex: String.raw`\text{Refer to G3. Solve } \begin{cases}4x+y=6\\ 2x-y=0\end{cases}\text{.}`,
+        { latex: String.raw`\text{Refer to G3. Solve } \begin{cases}4x+y=6\\ 2x-y=0\end{cases}`,
           choices: [
             String.raw`\text{ }(0,\,6)`,
             String.raw`\text{ }(2,\,1)`,
@@ -126,7 +172,7 @@
             String.raw`\text{ }(3,\,0)`
           ]},
 
-        { latex: String.raw`\text{Refer to G4. The intersection of } \begin{cases}2x-y=10\\ 3x+y=0\end{cases}\text{ is }`,
+        { latex: String.raw`\text{Refer to G4. The intersection of } \begin{cases}2x-y=10\\ 3x+y=0\end{cases} \text{ is }`,
           choices: [
             String.raw`\text{ }(5,\,0)`,
             String.raw`\text{ }(2,\,-6)`,
@@ -136,7 +182,7 @@
             String.raw`\text{ }(-3,\,4)`
           ]},
 
-        { latex: String.raw`\text{Refer to G5. What ordered pair solves } \begin{cases}3x-y=-7\\ 4x+y=-14\end{cases}\text{ ?}`,
+        { latex: String.raw`\text{Refer to G5. Solve } \begin{cases}3x-y=-7\\ 4x+y=-14\end{cases}`,
           choices: [
             String.raw`\text{ }(-2,\,-3)`,
             String.raw`\text{ }(2,\,-3)`,
@@ -146,7 +192,7 @@
             String.raw`\text{ }(-3,\,-2)`
           ]},
 
-        { latex: String.raw`\text{Refer to G6. Solve } \begin{cases}x-2y=-16\\ 2x+y=-7\end{cases}\text{.}`,
+        { latex: String.raw`\text{Refer to G6. Solve } \begin{cases}x-2y=-16\\ 2x+y=-7\end{cases}`,
           choices: [
             String.raw`\text{ }(-5,\,\; \frac{9}{2})`,
             String.raw`\text{ }(-8,\,4)`,
@@ -156,7 +202,7 @@
             String.raw`\text{ }(-7,\,\; \frac{7}{2})`
           ]},
 
-        { latex: String.raw`\text{Refer to G7. How many solutions does the system } \begin{cases}x-2y=4\\ 3x-6y=-12\end{cases}\text{ have?}`,
+        { latex: String.raw`\text{Refer to G7. How many solutions does } \begin{cases}x-2y=4\\ 3x-6y=-12\end{cases} \text{ have?}`,
           choices: [
             String.raw`\text{Exactly one}`,
             String.raw`\text{None (parallel lines)}`,
@@ -166,7 +212,7 @@
             String.raw`\text{Exactly three}`
           ]},
 
-        { latex: String.raw`\text{Refer to G8. Which statement is true about } \begin{cases}5x+2y=6\\ 10x+4y=12\end{cases}\text{ ?}`,
+        { latex: String.raw`\text{Refer to G8. Which statement is true? } \begin{cases}5x+2y=6\\ 10x+4y=12\end{cases}`,
           choices: [
             String.raw`\text{One solution at }(1,\,2)`,
             String.raw`\text{No solution; the lines are parallel}`,
@@ -176,7 +222,7 @@
             String.raw`\text{Exactly two intersection points}`
           ]},
 
-        { latex: String.raw`\text{Without graphing, classify } \begin{cases}2x+2y=6\\ x+y=3\end{cases}\text{.}`,
+        { latex: String.raw`\text{Classify without graphing: } \begin{cases}2x+2y=6\\ x+y=3\end{cases}`,
           choices: [
             String.raw`\text{One solution at }(3,0)`,
             String.raw`\text{No solution (parallel)} `,
@@ -186,7 +232,7 @@
             String.raw`\text{Exactly two solutions}`
           ]},
 
-        { latex: String.raw`\text{Without graphing, classify } \begin{cases}x-2y=4\\ 3x-6y=-12\end{cases}\text{.}`,
+        { latex: String.raw`\text{Classify without graphing: } \begin{cases}x-2y=4\\ 3x-6y=-12\end{cases}`,
           choices: [
             String.raw`\text{No solution (parallel)}`,
             String.raw`\text{Infinitely many solutions}`,
@@ -196,7 +242,7 @@
             String.raw`\text{Exactly three solutions}`
           ]},
 
-        { latex: String.raw`\text{Cost and revenue: } C(x)=119x+750,\ R(x)=169x.\ \text{What is the break-even quantity?}`,
+        { latex: String.raw`\text{Cost & revenue: } C(x)=119x+750,\ R(x)=169x.\ \text{Break-even quantity?}`,
           choices: [
             String.raw`\text{10}`,
             String.raw`\text{12}`,
@@ -209,10 +255,10 @@
         { latex: String.raw`\text{Using } C(x)=119x+750,\ R(x)=169x.\ \text{Which is true?}`,
           choices: [
             String.raw`\text{At }x=500,\ \text{profit }=\$24{,}250`,
-            String.raw`\text{Selling }200\text{ at full price and }300\text{ at half price yields a profit of }\$1{,}100`,
+            String.raw`\text{Selling }200\text{ at full and }300\text{ at half price gives a loss of }\$1{,}100`,
             String.raw`\text{Break-even revenue is }\$2{,}250`,
             String.raw`\text{At }x=500,\ \text{loss }=\$1{,}100`,
-            String.raw`\text{Selling }200\text{ at full and }300\text{ at half price gives a loss of }\$1{,}100`,
+            String.raw`\text{Selling }200\text{ at full and }300\text{ at half price gives a profit of }\$1{,}100`,
             String.raw`\text{Break-even quantity is }12`
           ]}
       ]
