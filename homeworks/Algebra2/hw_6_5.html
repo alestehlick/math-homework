@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Homework 6-5 — Solving Nonlinear Systems</title>
+
+  <script>
+    /* ============================================
+       Algebra 2 — Section 6-5
+       Solving Systems of Nonlinear Equations
+       12 multiple-choice questions; 6 options each.
+       All prose is wrapped in \text{…}; % is escaped as \%.
+       Dollar signs are literal inside \text{…}.
+       ============================================ */
+    window.homeworkData = {
+      classId : "Algebra2",
+      id      : "Homework 6-5",
+      title   : "Homework 6-5 — Solving Nonlinear Systems",
+
+      graphics : "",
+
+      /* A=first choice, B=second, ... */
+      answerKey : [
+        "C","D","A","E","B","F","D","C","A","C","B","E"
+      ],
+
+      questions : [
+        /* 1) xy=14 , x+y=9  → {(7,2),(2,7)} */
+        { latex: String.raw`\text{Solve the system } \begin{cases}xy=14\\ x+y=9\end{cases}.`,
+          choices: [
+            String.raw`\text{ }(7,\,2) \text{ only}`,
+            String.raw`\text{ }(2,\,7) \text{ only}`,
+            String.raw`\text{Two solutions: } \{(7,\,2),(2,\,7)\}`,  /* correct */
+            String.raw`\text{ }(9,\,0)`,
+            String.raw`\text{ }(14,\,-5)`,
+            String.raw`\text{No real solution}`
+          ]},
+
+        /* 2) y=5x , xy=25  → {(√5,5√5),(-√5,-5√5)} */
+        { latex: String.raw`\text{Solve } \begin{cases}y=5x\\ xy=25\end{cases}.`,
+          choices: [
+            String.raw`\text{ }(5,\,5)`,
+            String.raw`\text{ }( \sqrt{25},\,25)`,
+            String.raw`\text{Two solutions: } \{(5,\,5),( -5,\,-25)\}`,
+            String.raw`\text{Two solutions: } \{(\sqrt{5},\,5\sqrt{5}),\ (-\sqrt{5},\,-5\sqrt{5})\}`, /* correct */
+            String.raw`\text{ }(\sqrt{25},\,5\sqrt{25})`,
+            String.raw`\text{Infinitely many solutions}`
+          ]},
+
+        /* 3) x^2+y^2=20 , x+y=6 → xy=8 → {(2,4),(4,2)} */
+        { latex: String.raw`\text{Solve } \begin{cases}x^2+y^2=20\\ x+y=6\end{cases}.`,
+          choices: [
+            String.raw`\text{Two solutions: } \{(2,\,4),(4,\,2)\}`, /* correct */
+            String.raw`\text{ }(3,\,3) \text{ only}`,
+            String.raw`\text{ }(0,\,6) \text{ only}`,
+            String.raw`\text{ }(6,\,0) \text{ only}`,
+            String.raw`\text{ }(8,\,-2)`,
+            String.raw`\text{No real solution}`
+          ]},
+
+        /* 4) x^2+y^2=8 , 2x^2+y^2=12 → x=±2, y=±2 (all combos) */
+        { latex: String.raw`\text{Solve } \begin{cases}x^2+y^2=8\\ 2x^2+y^2=12\end{cases}.`,
+          choices: [
+            String.raw`\text{ }(2,\,2)\text{ only}`,
+            String.raw`\text{ }(-2,\,-2)\text{ only}`,
+            String.raw`\text{ }(2,\,-2)\text{ only}`,
+            String.raw`\text{ }(-2,\,2)\text{ only}`,
+            String.raw`\text{Four solutions: } \{(\pm 2,\,\pm 2)\}`,  /* correct */
+            String.raw`\text{No real solution}`
+          ]},
+
+        /* 5) y=x^2 , 1+y=2x → x=1,y=1 */
+        { latex: String.raw`\text{Solve } \begin{cases}y=x^2\\ 1+y=2x\end{cases}.`,
+          choices: [
+            String.raw`\text{ }(0,\,0)`,
+            String.raw`\text{ }(1,\,1)`, /* correct */
+            String.raw`\text{ }(2,\,2)`,
+            String.raw`\text{Two solutions: } \{(0,\,1),(1,\,0)\}`,
+            String.raw`\text{ }(-1,\,1)`,
+            String.raw`\text{No real solution}`
+          ]},
+
+        /* 6) x−y=4 , y=x^2−34 → x=6 or −5 ; y=2 or −9 */
+        { latex: String.raw`\text{Solve } \begin{cases}x-y=4\\ y=x^2-34\end{cases}.`,
+          choices: [
+            String.raw`\text{ }(6,\,-9)\text{ and }(-5,\,2)`,
+            String.raw`\text{ }(6,\,2)\text{ only}`,
+            String.raw`\text{ }(-5,\,-9)\text{ only}`,
+            String.raw`\text{ }(5,\,1)\text{ only}`,
+            String.raw`\text{ }(6,\,-2)\text{ and }(-5,\,9)`,
+            String.raw`\text{Two solutions: } \{(6,\,2),\ (-5,\,-9)\}`, /* correct */
+          ]},
+
+        /* 7) x^2+y^2=16 , x+y=4 → xy=0 → {(0,4),(4,0)} */
+        { latex: String.raw`\text{Solve } \begin{cases}x^2+y^2=16\\ x+y=4\end{cases}.`,
+          choices: [
+            String.raw`\text{ }(2,\,2)\text{ only}`,
+            String.raw`\text{ }(0,\,4)\text{ only}`,
+            String.raw`\text{ }(4,\,0)\text{ only}`,
+            String.raw`\text{Two solutions: } \{(0,\,4),(4,\,0)\}`, /* correct */
+            String.raw`\text{Four solutions: } \{(\pm 4,\,0),(0,\,\pm 4)\}`,
+            String.raw`\text{No real solution}`
+          ]},
+
+        /* 8) y=3x^2−x−1 , 2x+y=5 → x = (-1 ± √73)/6 ; y = (16 ∓ √73)/3 */
+        { latex: String.raw`\text{Solve } \begin{cases}y=3x^2-x-1\\ 2x+y=5\end{cases}\text{ (exact values)}.`,
+          choices: [
+            String.raw`\text{ }x=\dfrac{-1\pm\sqrt{65}}{6},\ y=\dfrac{16\mp\sqrt{65}}{3}`,
+            String.raw`\text{ }x=\dfrac{-1\pm\sqrt{73}}{3},\ y=\dfrac{16\mp\sqrt{73}}{6}`,
+            String.raw`\text{ }x=\dfrac{-1\pm\sqrt{73}}{6},\ y=\dfrac{16\mp\sqrt{73}}{3}`, /* correct */
+            String.raw`\text{ }x=\dfrac{1\pm\sqrt{73}}{6},\ y=\dfrac{16\pm\sqrt{73}}{3}`,
+            String.raw`\text{ }x=\dfrac{-1\pm\sqrt{73}}{6},\ y=5-2x\text{ (unsimplified)} `,
+            String.raw`\text{No real solution}`
+          ]},
+
+        /* 9) x+y=-4 , y=x^2−3 → x^2+x+1=0 → no real solution */
+        { latex: String.raw`\text{Solve } \begin{cases}x+y=-4\\ y=x^2-3\end{cases} \text{ over the real numbers.}`,
+          choices: [
+            String.raw`\text{No real solution}`, /* correct */
+            String.raw`\text{One solution at }(-1,\,-3)`,
+            String.raw`\text{One solution at }(1,\,-5)`,
+            String.raw`\text{Two solutions: } \{(-2,\,-2),(2,\,-6)\}`,
+            String.raw`\text{Infinitely many solutions}`,
+            String.raw`\text{Cannot be determined}`
+          ]},
+
+        /* 10) y=x^2 , x^2+y^2-4y=0 → x=0 or ±√3 ; y=0 or 3 */
+        { latex: String.raw`\text{Solve } \begin{cases}y=x^2\\ x^2+y^2-4y=0\end{cases}.`,
+          choices: [
+            String.raw`\text{ }(0,\,0)\text{ only}`,
+            String.raw`\text{ }(\pm\sqrt{3},\,3)\text{ only}`,
+            String.raw`\text{Three solutions: } \{(0,\,0),(\sqrt{3},\,3),(-\sqrt{3},\,3)\}`, /* correct */
+            String.raw`\text{Two solutions: } \{(0,\,0),(0,\,3)\}`,
+            String.raw`\text{Four solutions: } \{(\pm\sqrt{3},\,\pm 3)\}`,
+            String.raw`\text{No real solution}`
+          ]},
+
+        /* 11) y=2x^2−3x+5 , y=5x−3 → (x-2)^2=0 → (2,7) */
+        { latex: String.raw`\text{Solve } \begin{cases}y=2x^2-3x+5\\ y=5x-3\end{cases}.`,
+          choices: [
+            String.raw`\text{ }(2,\,5)`,
+            String.raw`\text{ }(2,\,7)`, /* correct */
+            String.raw`\text{ }(1,\,2)`,
+            String.raw`\text{Two solutions: } \{(1,\,2),(2,\,7)\}`,
+            String.raw`\text{ }(-2,\,7)`,
+            String.raw`\text{No real solution}`
+          ]},
+
+        /* 12) x^2+y^2=9 , 2x^2−y^2=18 → x=±3 , y=0 */
+        { latex: String.raw`\text{Solve } \begin{cases}x^2+y^2=9\\ 2x^2-y^2=18\end{cases}.`,
+          choices: [
+            String.raw`\text{ }(0,\,\pm 3)`,
+            String.raw`\text{ }(\pm 3,\,\pm 3)`,
+            String.raw`\text{ }(3,\,0)\text{ only}`,
+            String.raw`\text{ }(-3,\,0)\text{ only}`,
+            String.raw`\text{Two solutions: } \{(3,\,0),(-3,\,0)\}`, /* correct */
+            String.raw`\text{No real solution}`
+          ]}
+      ]
+    };
+  </script>
+
+  <link rel="stylesheet" href="/math-homework/assets/core.css" />
+  <script defer src="/math-homework/assets/core.js"></script>
+
+  <link rel="stylesheet" href="https://tikzjax.com/v1/fonts.css" />
+  <script defer src="https://tikzjax.com/v1/tikzjax.js"></script>
+  <script defer src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+</head>
+<body>
+  <div id="hw-root">Loading…</div>
+</body>
+</html>
