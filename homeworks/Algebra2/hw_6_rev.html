@@ -180,15 +180,15 @@
             String.raw`\begin{cases}x-2y\ge -6\\ 4x+y\le -2\end{cases}\ \text{; point }(-4,\,-4)`
           ]},
 
-        /* Q8 rewritten: choose CONSTRAINTS + OPTIMUM (value & point) */
-        { latex: String.raw`\text{Refer to G4. For }z=3x+5y\text{, mark the constraint set and the correct maximum (value and point).}`,
+        /* Q8: NEW — system of inequalities for G4 (no linear programming) */
+        { latex: String.raw`\text{Refer to G4. Which system of inequalities matches the shaded region?}`,
           choices: [
-            String.raw`\text{Constraints: }x\ge0,\ y\ge0,\ y\le -3x+14,\ y\ge -\tfrac12x+4;\ \ z_{\max}=20\text{ at }(0,\,4)`,
-            String.raw`\text{Constraints: }x\ge0,\ y\ge0,\ y\le -3x+14,\ y\le -\tfrac12x+4;\ \ z_{\max}=22\text{ at }(4,\,2)`, /* correct */
-            String.raw`\text{Constraints: }x\ge0,\ y\ge0,\ y\ge -3x+14,\ y\le -\tfrac12x+4;\ \ z_{\max}=14\text{ at }(\tfrac{14}{3},\,0)`,
-            String.raw`\text{Constraints: }x\ge0\text{ only};\ \ z_{\max}=18\text{ at }(2,\,3)`,
-            String.raw`\text{Constraints: }y\ge0\text{ only};\ \ z_{\max}=16\text{ at }(0,\,0)`,
-            String.raw`\text{Constraints: }x\ge0,\ y\ge0,\ y\le -3x+14,\ y\le -\tfrac12x+4;\ \ z_{\max}=24\text{ at }(8,\,0)`
+            String.raw`\begin{cases}x\ge 0\\ y\ge 0\\ y\ge -3x+14\\ y\le -\tfrac12 x+4\end{cases}`,
+            String.raw`\begin{cases}x\ge 0\\ y\ge 0\\ y\le -3x+14\\ y\le -\tfrac12 x+4\end{cases}`, /* correct */
+            String.raw`\begin{cases}x\le 0\\ y\ge 0\\ y\le -3x+14\\ y\le -\tfrac12 x+4\end{cases}`,
+            String.raw`\begin{cases}x\ge 0\\ y\ge 0\\ y\ge -3x+14\\ y\ge -\tfrac12 x+4\end{cases}`,
+            String.raw`\begin{cases}x\ge 0\\ y\ge 0\\ y\le 3x-14\\ y\le -\tfrac12 x+4\end{cases}`,
+            String.raw`\begin{cases}x\ge 0\\ y\ge 0\\ y\ge 3x-14\\ y\le \tfrac12 x+4\end{cases}`
           ]},
 
         /* 9–12 unchanged (algebraic/mix) */
