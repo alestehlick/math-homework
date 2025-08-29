@@ -54,7 +54,7 @@
   \begin{scope}[xshift=12.5cm,yshift=10cm]
     \frameA
     \begin{scope}
-     \clip (-1,{(-1+6)/2}) -- (10,{(10+6)/2}) -- (10,10) -- (-1,10) -- cycle; % y >= (x+6)/2
+     \clip (-1,{(-1+6)/2}) -- (7,{(10+6)/2}) -- (7,7) -- (-1.25,7) -- cycle; % y >= (x+6)/2
       \path[fill=sol,opacity=.35] (-1,{-4*(-1)-2}) -- (10,{-4*(10)-2}) -- (7,7) -- (-4,7) -- cycle;
     \end{scope}
     \draw[L1,domain=-4:7] plot(\x,{(\x+6)/2});  % solid
