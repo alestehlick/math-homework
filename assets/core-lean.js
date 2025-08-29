@@ -9,7 +9,7 @@
 ═══════════════════════════════════════════════════════════════════════*/
 
 /*── CONFIG ───────────────────────────────────────────────────────────*/
-const SCRIPT_URL  = "https://script.google.com/macros/s/AKfycbxdQDBkxlNLvGqY4Ic4Due-DZhX3UPhFkOTpq0YBbf-a7wwKQFq9edJnEFdfSVw25UOeg/exec";
+const SCRIPT_URL  = "https://script.google.com/macros/s/AKfycbyofeFRszJvwAO9mAEWJVvbd66K4b9aQb6zYKkJPzLcCiDjukOaiNM3PsmuHmeXwNOAJQ/exec";
 const COOLDOWN_MS = 120_000;
 /*──────────────────────────────────────────────────────────────────────*/
 
