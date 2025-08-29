@@ -78,7 +78,7 @@
       % Clip to y < (x+2)^2   (below right-shifted parabola)
       \clip plot[domain=-4:4] (\x,{(\x+2)*(\x+2)}) -- (4,-4) -- (-4,-4) -- cycle;
       % Fill region above y >= (x-2)^2
-      \path[fill=sol,opacity=.35] plot[domain=-4:4] (\x,{(\x-2)*(\x-2)}) -- (4,4) -- (-4,4) -- cycle;
+      \path[fill=sol,opacity=.35] plot[domain=-4:4] (\x,{(\x-2)*(\x-2)}) -- (4,6) -- (-4,6) -- cycle;
     \end{scope]
     \draw[L1,domain=-4:4]       plot(\x,{(\x-2)*(\x-2)});      % solid
     \draw[L2,domain=-4:4]       plot(\x,{(\x+2)*(\x+2)});      % dashed (strict)
