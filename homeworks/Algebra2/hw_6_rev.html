@@ -8,100 +8,103 @@
   <script>
     /* =========================
        Chapter 6 — Review (12 Qs)
+       7 graphs laid out neatly: 3 per row (two full rows + one centered).
+       All panels share the same size and window [-1,10]×[-1,10].
        ========================= */
     window.homeworkData = {
       classId : "Algebra2",
       id      : "Chapter 6 Review",
       title   : "Chapter 6 Review",
 
-      /* -------- ONE straw with 7 small graphs (G1–G7) -------- */
       graphics : String.raw`
-\begin{tikzpicture}[scale=0.4]
+\begin{tikzpicture}[scale=0.52]
   \tikzset{grid/.style={very thin,color=gray!28}}
   \tikzset{axes/.style={->,thick}}
   \tikzset{L1/.style={blue,thick}}
   \tikzset{L2/.style={red,thick,dashed}}
   \colorlet{sol}{blue!50!red!35}
-
-  % ======= G1: Solve graphically  (2x+y=14  and  x-y=-5)
-  \begin{scope}[xshift=-14cm,yshift=14cm]
-    \clip (-2,-2) rectangle (10,10);
+  % Uniform frame macro (same box everywhere)
+  \def\frameA{
+    \clip (-1.2,-1.2) rectangle (10.2,10.2);
     \draw[grid] (-1,-1) grid (10,10);
-    \draw[axes] (-1,0)--(10,0); \draw[axes] (0,-1)--(0,10);
-    \draw[L1,domain=-1:10] plot(\x,{-2*\x+14});        % 2x + y = 14
-    \draw[L1,domain=-1:10] plot(\x,{\x+5});            % x - y = -5  -> y = x+5
+    \draw[axes] (-1,0)--(10,0);
+    \draw[axes] (0,-1)--(0,10);
+  }
+
+  % ---------- Row 1: G1, G2, G3 ----------
+  % G1: 2x+y=14 and x-y=-5
+  \begin{scope}[xshift=-12.5cm,yshift=10cm]
+    \frameA
+    \draw[L1,domain=-1:10] plot(\x,{-2*\x+14});
+    \draw[L1,domain=-1:10] plot(\x,{\x+5});
     \fill (3,8) circle (2pt);
     \node[anchor=south east,font=\small] at (9.6,9.6) {G1};
   \end{scope}
 
-  % ======= G2: Solve graphically  (x-y=-8  and  3x+y=0)
-  \begin{scope}[xshift=0cm,yshift=14cm]
-    \clip (-2,-2) rectangle (10,10);
-    \draw[grid] (-4,-4) grid (10,10);
-    \draw[axes] (-4,0)--(10,0); \draw[axes] (0,-4)--(0,10);
-    \draw[L1,domain=-4:10] plot(\x,{\x+8});            % y = x + 8
-    \draw[L1,domain=-4:10] plot(\x,{-3*\x});           % y = -3x
+  % G2: x-y=-8 and 3x+y=0
+  \begin{scope}[xshift=0cm,yshift=10cm]
+    \frameA
+    \draw[L1,domain=-1:10] plot(\x,{\x+8});     % y = x+8
+    \draw[L1,domain=-1:10] plot(\x,{-3*\x});    % y = -3x
     \fill (-2,6) circle (2pt);
     \node[anchor=south east,font=\small] at (9.6,9.6) {G2};
   \end{scope}
 
-  % ======= G3: Inequalities  x-2y <= -6  and  4x+y > -2
-  \begin{scope}[xshift=14cm,yshift=14cm]
-    \clip (-5,-5) rectangle (5,5);
-    \draw[grid] (-6,-6) grid (6,6);
-    \draw[axes] (-6,0)--(6,0); \draw[axes] (0,-6)--(0,6);
-    % Region: y >= (x+6)/2  and  y > -4x-2  (above both)
+  % G3: inequalities x-2y<=-6 (=> y>= (x+6)/2) and 4x+y>-2 (=> y>-4x-2)
+  \begin{scope}[xshift=12.5cm,yshift=10cm]
+    \frameA
     \begin{scope}
-      \clip (-6,{(-6+6)/2}) -- (6,{(6+6)/2}) -- (6,6) -- (-6,6) -- cycle; % y >= (x+6)/2
-      \path[fill=sol,opacity=.35] (-6,{-4*(-6)-2}) -- (6,{-4*(6)-2}) -- (6,6) -- (-6,6) -- cycle; % above y>-4x-2
+      \clip (-1,{(-1+6)/2}) -- (10,{(10+6)/2}) -- (10,10) -- (-1,10) -- cycle; % y >= (x+6)/2
+      \path[fill=sol,opacity=.35] (-1,{-4*(-1)-2}) -- (10,{-4*(10)-2}) -- (10,10) -- (-1,10) -- cycle;
     \end{scope}
-    \draw[L1,domain=-6:6]       plot(\x,{(\x+6)/2});   % solid
-    \draw[L2,domain=-6:6]       plot(\x,{-4*\x-2});    % dashed (strict)
-    \node[anchor=south east,font=\small] at (5.7,5.7) {G3};
+    \draw[L1,domain=-1:10] plot(\x,{(\x+6)/2});  % solid
+    \draw[L2,domain=-1:10] plot(\x,{-4*\x-2});   % dashed
+    \node[anchor=south east,font=\small] at (9.6,9.6) {G3};
   \end{scope}
 
-  % ======= G4: Linear programming feasible region
-  %  y <= -3x+14 , y <= -1/2 x + 4 , x>=0 , y>=0
-  \begin{scope}[xshift=-14cm,yshift=-3cm]
-    \clip (-1.2,-1.2) rectangle (10.2,10.2);
-    \draw[grid] (-1,-1) grid (10,10);
-    \draw[axes] (-1,0)--(10,0); \draw[axes] (0,-1)--(0,10);
-    % feasible polygon:
+  % ---------- Row 2: G4, G5, G6 ----------
+  % G4: LP feasible region y<=-3x+14, y<=-1/2 x+4, x>=0, y>=0
+  \begin{scope}[xshift=-12.5cm,yshift=0cm]
+    \frameA
     \path[fill=sol,opacity=.35] (0,0) -- (0,4) -- (4,2) -- ({14/3},0) -- cycle;
-    % boundaries:
     \draw[L1,domain=0:10] plot(\x,{-3*\x+14});
     \draw[L1,domain=0:10] plot(\x,{-0.5*\x+4});
     \node[anchor=south east,font=\small] at (9.6,9.6) {G4};
   \end{scope}
 
-  % ======= G5: Parallel lines (inconsistent)
-  \begin{scope}[xshift=0cm,yshift=-3cm]
-    \clip (-6.2,-6.2) rectangle (6.2,6.2);
-    \draw[grid] (-6,-6) grid (6,6);
-    \draw[axes] (-6,0)--(6,0); \draw[axes] (0,-6)--(0,6);
-    \draw[L1,domain=-6:6] plot(\x,{\x});              % y = x
-    \draw[L1,domain=-6:6] plot(\x,{\x+2});            % y = x+2 (parallel)
-    \node[anchor=south east,font=\small] at (5.7,5.7) {G5};
+  % G5: parallel (inconsistent)
+  \begin{scope}[xshift=0cm,yshift=0cm]
+    \frameA
+    \draw[L1,domain=-1:10] plot(\x,{\x});
+    \draw[L1,domain=-1:10] plot(\x,{\x+2});
+    \node[anchor=south east,font=\small] at (9.6,9.6) {G5};
   \end{scope}
 
-  % ======= G6: Intersect once (independent/consistent)
-  \begin{scope}[xshift=14cm,yshift=-3cm]
-    \clip (-6.2,-6.2) rectangle (6.2,6.2);
-    \draw[grid] (-6,-6) grid (6,6);
-    \draw[axes] (-6,0)--(6,0); \draw[axes] (0,-6)--(0,6);
-    \draw[L1,domain=-6:6] plot(\x,{0.5*\x+1});        % y = 0.5x + 1
-    \draw[L1,domain=-6:6] plot(\x,{-1*\x+3});         % y = -x + 3
-    \node[anchor=south east,font=\small] at (5.7,5.7) {G6};
+  % G6: intersect once (independent/consistent)
+  \begin{scope}[xshift=12.5cm,yshift=0cm]
+    \frameA
+    \draw[L1,domain=-1:10] plot(\x,{0.5*\x+1});
+    \draw[L1,domain=-1:10] plot(\x,{-1*\x+3});
+    \node[anchor=south east,font=\small] at (9.6,9.6) {G6};
   \end{scope}
 
-  % ======= G7: Same line (dependent)
-  \begin{scope}[xshift=-14cm,yshift=-14cm]
-    \clip (-6.2,-6.2) rectangle (6.2,6.2);
-    \draw[grid] (-6,-6) grid (6,6);
-    \draw[axes] (-6,0)--(6,0); \draw[axes] (0,-6)--(0,6);
-    \draw[L1,domain=-6:6]       plot(\x,{2*\x-1});
-    \draw[L2,domain=-6:6]       plot(\x,{2*\x-1});
-    \node[anchor=south east,font=\small] at (5.7,5.7) {G7};
+  % ---------- Row 3: center G7, keep spacing with empty frames ----------
+  % left empty frame (keeps tidy 3-per-row layout)
+  \begin{scope}[xshift=-12.5cm,yshift=-10cm]
+    \frameA
+  \end{scope}
+
+  % G7: same line (dependent)
+  \begin{scope}[xshift=0cm,yshift=-10cm]
+    \frameA
+    \draw[L1,domain=-1:10] plot(\x,{2*\x-1});
+    \draw[L2,domain=-1:10] plot(\x,{2*\x-1});
+    \node[anchor=south east,font=\small] at (9.6,9.6) {G7};
+  \end{scope}
+
+  % right empty frame (keeps tidy 3-per-row layout)
+  \begin{scope}[xshift=12.5cm,yshift=-10cm]
+    \frameA
   \end{scope}
 \end{tikzpicture}
 `,
@@ -109,7 +112,7 @@
       /* ---------- Answer key (letters A–F) ---------- */
       answerKey : ["A","A","C","D","B","E","C","B","A","D","C","F"],
 
-      /* ---------- 12 questions ---------- */
+      /* ---------- 12 questions (unchanged) ---------- */
       questions : [
         { latex: String.raw`\text{Refer to G1. Solve the system } \begin{cases}2x+y=14\\ x-y=-5\end{cases}\text{.}`,
           choices: [
