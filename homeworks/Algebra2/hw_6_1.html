@@ -55,58 +55,6 @@
     \node[anchor=south east,font=\small] at (5.6,5.6) {G3};
   \end{scope}
 
-  % ===== G4: 2x-y=10  &  3x+y=0  -> (2,-6)
-  \begin{scope}[xshift=-12cm,yshift=-3cm]
-    \clip (-6.2,-6.2) rectangle (6.2,6.2);
-    \draw[grid] (-6,-6) grid (6,6);
-    \draw[axes] (-6,0)--(6,0); \draw[axes] (0,-6)--(0,6);
-    \draw[L1,domain=-6:6] plot(\x,{2*\x-10});
-    \draw[L2,domain=-6:6] plot(\x,{-3*\x});
-    \fill (2,-6) circle (2pt);
-    \node[anchor=south east,font=\small] at (5.6,5.6) {G4};
-  \end{scope}
-
-  % ===== G5: 3x-y=-7  &  4x+y=-14  -> (-3,-2)
-  \begin{scope}[xshift=0cm,yshift=-3cm]
-    \clip (-6.2,-6.2) rectangle (6.2,6.2);
-    \draw[grid] (-6,-6) grid (6,6);
-    \draw[axes] (-6,0)--(6,0); \draw[axes] (0,-6)--(0,6);
-    \draw[L1,domain=-6:6] plot(\x,{3*\x+7});
-    \draw[L2,domain=-6:6] plot(\x,{-4*\x-14});
-    \fill (-3,-2) circle (2pt);
-    \node[anchor=south east,font=\small] at (5.6,5.6) {G5};
-  \end{scope}
-
-  % ===== G6: x-2y=-16  &  2x+y=-7  -> (-6,5)
-  \begin{scope}[xshift=12cm,yshift=-3cm]
-    \clip (-6.2,-6.2) rectangle (6.2,6.2);
-    \draw[grid] (-6,-6) grid (6,6);
-    \draw[axes] (-6,0)--(6,0); \draw[axes] (0,-6)--(0,6);
-    \draw[L1,domain=-6:6] plot(\x,{0.5*\x+8}); % y = x/2 + 8  (rearranged incorrectly?)  Wait: x-2y=-16 => y=(x+16)/2 = 0.5x+8
-    \draw[L2,domain=-6:6] plot(\x,{-2*\x-7});
-    \fill (-6,5) circle (2pt);
-    \node[anchor=south east,font=\small] at (5.6,5.6) {G6};
-  \end{scope}
-
-  % ===== G7: x-2y=4  &  3x-6y=-12  -> parallel (0 solutions)
-  \begin{scope}[xshift=-12cm,yshift=-15cm]
-    \clip (-6.2,-6.2) rectangle (6.2,6.2);
-    \draw[grid] (-6,-6) grid (6,6);
-    \draw[axes] (-6,0)--(6,0); \draw[axes] (0,-6)--(0,6);
-    \draw[L1,domain=-6:6] plot(\x,{0.5*\x-2});
-    \draw[L2,domain=-6:6] plot(\x,{0.5*\x+2});
-    \node[anchor=south east,font=\small] at (5.6,5.6) {G7};
-  \end{scope}
-
-  % ===== G8: 5x+2y=6  &  10x+4y=12  -> same line (∞ solutions)
-  \begin{scope}[xshift=0cm,yshift=-15cm]
-    \clip (-6.2,-6.2) rectangle (6.2,6.2);
-    \draw[grid] (-6,-6) grid (6,6);
-    \draw[axes] (-6,0)--(6,0); \draw[axes] (0,-6)--(0,6);
-    \draw[L1,domain=-6:6] plot(\x,{-2.5*\x+3});
-    \draw[L2,domain=-6:6] plot(\x,{-2.5*\x+3}); % coincident (dashed sits on top)
-    \node[anchor=south east,font=\small] at (5.6,5.6) {G8};
-  \end{scope}
 \end{tikzpicture}
 `,
 
