@@ -38,7 +38,8 @@
   \begin{scope}[xshift=-4.5cm,yshift=0cm]
     \clip (-6.2,-6.2) rectangle (6.2,6.2);
     \draw[grid] (-6,-6) grid (6,6);
-    \draw[axes] (-6,0)--(6,0); \draw[axes] (0,-6)--(0,6);
+    \draw[axes] (-6,0)--(6,0); 
+    \draw[axes] (0,-6)--(0,6);
     \draw[L1,domain=-6:6] plot(\x,{-2*\x+2});
     \draw[L2,domain=-6:6] plot(\x,{3*\x+2});
     \fill (0,2) circle (2pt);
