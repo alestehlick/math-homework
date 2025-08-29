@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Homework 6-8 — Solving Systems of Three Variables</title>
+
+  <script>
+    /* ============================================
+       Algebra 2 — Section 6-8
+       Solving Systems of Three (or more) Variables
+       5 multiple-choice questions, 6 options each.
+       ============================================ */
+    window.homeworkData = {
+      classId : "Algebra2",
+      id      : "Homework 6-8",
+      title   : "Homework 6-8 — Solving Systems of Three Variables",
+
+      graphics : "",
+
+      answerKey : ["C","B","D","F","A"],
+
+      questions : [
+        {
+          latex: String.raw`\text{Solve the system } \begin{cases}x+y-z=-4\\ 2x+5y+z=25\\ x-2y-z=-16\end{cases}`,
+          choices: [
+            String.raw`\text{ }(0,\,0,\,0)`,
+            String.raw`\text{ }(1,\,2,\,3)`,
+            String.raw`\text{ }(2,\,3,\,-1)`, /* correct */
+            String.raw`\text{ }(-1,\,5,\,2)`,
+            String.raw`\text{ }(4,\,-2,\,1)`,
+            String.raw`\text{No solution}`
+          ]
+        },
+
+        {
+          latex: String.raw`\text{Solve } \begin{cases}x-y-z=-3\\ 2x+y-6z=20\\ x-2y+z=-13\end{cases}`,
+          choices: [
+            String.raw`\text{ }(1,\,1,\,1)`,
+            String.raw`\text{ }(2,\,-1,\,3)`, /* correct */
+            String.raw`\text{ }(-2,\,4,\,0)`,
+            String.raw`\text{ }(3,\,0,\,-2)`,
+            String.raw`\text{ }(0,\,5,\,2)`,
+            String.raw`\text{Infinitely many solutions}`
+          ]
+        },
+
+        {
+          latex: String.raw`\text{Solve } \begin{cases}5x+3y=17\\ 2x-4z=2\\ 3x+y-5z=7\end{cases}`,
+          choices: [
+            String.raw`\text{ }(1,\,2,\,3)`,
+            String.raw`\text{ }(2,\,3,\,1)`,
+            String.raw`\text{ }(3,\,2,\,1)`,
+            String.raw`\text{ }(1,\,4,\,2)`, /* correct */
+            String.raw`\text{ }(0,\,0,\,0)`,
+            String.raw`\text{No solution}`
+          ]
+        },
+
+        {
+          latex: String.raw`\text{Solve } \begin{cases}2x+3y-z=21\\ x-y+z=1\\ x-2y+z=5\end{cases}`,
+          choices: [
+            String.raw`\text{ }(1,\,2,\,3)`,
+            String.raw`\text{ }(0,\,1,\,2)`,
+            String.raw`\text{ }(2,\,1,\,-1)`,
+            String.raw`\text{ }(3,\,2,\,5)`,
+            String.raw`\text{ }(-1,\,0,\,1)`,
+            String.raw`\text{ }(4,\,3,\,-2)` /* correct */
+          ]
+        },
+
+        {
+          latex: String.raw`\text{Solve the 4-variable system } \begin{cases}2x+5y-7z+w=-28\\ x+y+2z+3w=7\\ 2x+3y-z-w=4\\ 3x-2y-z+5w=-11\end{cases}`,
+          choices: [
+            String.raw`\text{ }(1,\,-1,\,2,\,3)`, /* correct */
+            String.raw`\text{ }(0,\,0,\,0,\,0)`,
+            String.raw`\text{ }(2,\,3,\,1,\,0)`,
+            String.raw`\text{ }(3,\,1,\,2,\,-1)`,
+            String.raw`\text{ }(-1,\,2,\,3,\,1)`,
+            String.raw`\text{No solution}`
+          ]
+        }
+      ]
+    };
+  </script>
+
+  <link rel="stylesheet" href="/math-homework/assets/core.css" />
+  <script defer src="/math-homework/assets/core.js"></script>
+
+  <link rel="stylesheet" href="https://tikzjax.com/v1/fonts.css" />
+  <script defer src="https://tikzjax.com/v1/tikzjax.js"></script>
+  <script defer src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+</head>
+<body>
+  <div id="hw-root">Loading…</div>
+</body>
+</html>
