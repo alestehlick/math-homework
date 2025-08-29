@@ -17,7 +17,7 @@
       title   : "Chapter 6 Review",
 
       graphics : String.raw`
-\begin{tikzpicture}[scale=0.52]
+\begin{tikzpicture}[scale=0.4]
   \tikzset{grid/.style={very thin,color=gray!28}}
   \tikzset{axes/.style={->,thick}}
   \tikzset{L1/.style={blue,thick}}
@@ -44,8 +44,8 @@
   % G2: x-y=-8 and 3x+y=0
   \begin{scope}[xshift=0cm,yshift=10cm]
     \frameA
-    \draw[L1,domain=-1:10] plot(\x,{\x+8});     % y = x+8
-    \draw[L1,domain=-1:10] plot(\x,{-3*\x});    % y = -3x
+    \draw[L1,domain=-5:6] plot(\x,{\x+8});     % y = x+8
+    \draw[L1,domain=-5:6] plot(\x,{-3*\x});    % y = -3x
     \fill (-2,6) circle (2pt);
     \node[anchor=south east,font=\small] at (9.6,9.6) {G2};
   \end{scope}
