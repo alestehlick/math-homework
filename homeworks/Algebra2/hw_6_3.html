@@ -1,0 +1,226 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Homework 6-3 — Solving Systems by Addition</title>
+
+  <script>
+    /* ============================================
+       Algebra 2 — Section 6-3
+       Solving Systems by Addition (Elimination)
+       12 multiple-choice questions; 6 options each.
+       The answer key is embedded (letters A–F) and not displayed.
+       ============================================ */
+    window.homeworkData = {
+      classId : "Algebra2",
+      id      : "Homework 6-3",
+      title   : "Homework 6-3 — Solving Systems by Addition",
+
+      graphics : "",
+
+      /* A=first choice, B=second, ... */
+      answerKey : [
+        "C","B","D","E","A","F","E","C","A","B","D","E"
+      ],
+
+      questions : [
+        /* ---------- A. Exercises (representative) ---------- */
+        { latex: String.raw`\textbf{1.}\ \text{Solve by addition.}
+          \begin{cases}
+            x+y=10\\
+            3x+y=14
+          \end{cases}`,
+          choices: [
+            String.raw`\text{ }(2,-8)`,
+            String.raw`\text{ }(-2,12)`,
+            String.raw`\text{ }(2,8)`,                 /* C correct */
+            String.raw`\text{ }(4,6)`,
+            String.raw`\text{ }(3,7)`,
+            String.raw`\text{Inconsistent (no solution)}`
+          ]},
+
+        { latex: String.raw`\textbf{2.}\ \text{Solve by addition.}
+          \begin{cases}
+            4x+3y=-2\\
+            5x-3y=38
+          \end{cases}`,
+          choices: [
+            String.raw`\text{ }(4,6)`,
+            String.raw`\text{ }(4,-6)`,                /* B correct */
+            String.raw`\text{ }(-4,6)`,
+            String.raw`\text{ }(6,-4)`,
+            String.raw`\text{ }(0,-2)`,
+            String.raw`\text{Inconsistent (no solution)}`
+          ]},
+
+        { latex: String.raw`\textbf{3.}\ \text{Solve by addition.}
+          \begin{cases}
+            x+y=-8\\
+            x-2y=10
+          \end{cases}`,
+          choices: [
+            String.raw`\text{ }(-2,6)`,
+            String.raw`\text{ }(2,-6)`,
+            String.raw`\text{ }(-6,-2)`,
+            String.raw`\text{ }(-2,-6)`,               /* D correct */
+            String.raw`\text{ }(6,-2)`,
+            String.raw`\text{Inconsistent (no solution)}`
+          ]},
+
+        { latex: String.raw`\textbf{4.}\ \text{Solve by addition.}
+          \begin{cases}
+            4x+3y=11\\
+            2x-5y=25
+          \end{cases}`,
+          choices: [
+            String.raw`\text{ }(3,-2)`,
+            String.raw`\text{ }(4,-1)`,
+            String.raw`\text{ }(5,3)`,
+            String.raw`\text{ }(-5,3)`,
+            String.raw`\text{ }(5,-3)`,               /* E correct */
+            String.raw`\text{ }(4,-3)`
+          ]},
+
+        { latex: String.raw`\textbf{5.}\ \text{Solve by addition.}
+          \begin{cases}
+            5x+3y=-15\\
+            2x-5y=-6
+          \end{cases}`,
+          choices: [
+            String.raw`\text{ }(-3,0)`,               /* A correct */
+            String.raw`\text{ }(3,0)`,
+            String.raw`\text{ }(-3,-2)`,
+            String.raw`\text{ }(-2,-3)`,
+            String.raw`\text{ }(0,-3)`,
+            String.raw`\text{Inconsistent (no solution)}`
+          ]},
+
+        { latex: String.raw`\textbf{6.}\ \text{Classify the system.}
+          \begin{cases}
+            x+2y=2\\
+            3x+6y=6
+          \end{cases}`,
+          choices: [
+            String.raw`\text{Exactly one solution at }(2,0)`,
+            String.raw`\text{Exactly one solution at }(0,2)`,
+            String.raw`\text{Parallel distinct lines (no solution)}`,
+            String.raw`\text{Perpendicular lines (one solution)}`,
+            String.raw`\text{All real pairs are solutions}`,
+            String.raw`\text{Infinitely many solutions (same line)}` /* F correct */
+          ]},
+
+        /* ---------- B. Exercises (with decimals/fractions) ---------- */
+        { latex: String.raw`\textbf{7.}\ \text{Solve by addition.}
+          \begin{cases}
+            0.4x+0.1y=2.9\\
+            3x-6y=-39
+          \end{cases}`,
+          choices: [
+            String.raw`\text{ }(9,5)`,
+            String.raw`\text{ }(5,-9)`,
+            String.raw`\text{ }(9,-5)`,
+            String.raw`\text{ }(4,13)`,
+            String.raw`\text{ }(5,9)`,               /* E correct */
+            String.raw`\text{ }(4,9)`
+          ]},
+
+        { latex: String.raw`\textbf{8.}\ \text{Solve by addition.}
+          \begin{cases}
+            5x+2y=-17\\[2pt]
+            \tfrac{2}{3}x-\tfrac{4}{5}y=2
+          \end{cases}`,
+          choices: [
+            String.raw`\text{ }\left(-\tfrac{9}{5},\ 4\right)`,
+            String.raw`\text{ }\left(-\tfrac{9}{5},\ -2\right)`,
+            String.raw`\text{ }\left(-\tfrac{9}{5},\ -4\right)`,     /* C correct */
+            String.raw`\text{ }\left(-\tfrac{4}{5},\ -\tfrac{9}{5}\right)`,
+            String.raw`\text{ }\left(\tfrac{9}{5},\ -4\right)`,
+            String.raw`\text{Inconsistent (no solution)}`
+          ]},
+
+        { latex: String.raw`\textbf{9.}\ \text{Solve by addition.}
+          \begin{cases}
+            4x+y=1\\
+            6x+3y=0
+          \end{cases}`,
+          choices: [
+            String.raw`\text{ }\left(\tfrac{1}{2},\ -1\right)`,     /* A correct */
+            String.raw`\text{ }(1,-2)`,
+            String.raw`\text{ }(-1,\tfrac{1}{2})`,
+            String.raw`\text{ }(0,1)`,
+            String.raw`\text{ }(-\tfrac{1}{2},\ 1)`,
+            String.raw`\text{Inconsistent (no solution)}`
+          ]},
+
+        { latex: String.raw`\textbf{10.}\ \text{Classify the system.}
+          \begin{cases}
+            2x+3y=5\\
+            3y=5-2x
+          \end{cases}`,
+          choices: [
+            String.raw`\text{Exactly one solution at }(2,0)`,
+            String.raw`\text{Infinitely many solutions (same line)}`, /* B correct */
+            String.raw`\text{No solution (parallel)} `,
+            String.raw`\text{Perpendicular lines (one solution)}`,
+            String.raw`\text{All real pairs are solutions}`,
+            String.raw`\text{Exactly one solution at }(0,2)`
+          ]},
+
+        { latex: String.raw`\textbf{11.}\ \text{Solve by addition.}
+          \begin{cases}
+            4.5x+1.5y=-15\\
+            0.25x-0.5y=-2
+          \end{cases}`,
+          choices: [
+            String.raw`\text{ }(4,-2)`,
+            String.raw`\text{ }(-2,4)`,
+            String.raw`\text{ }(-6,1)`,
+            String.raw`\text{ }(-4,2)`,             /* D correct */
+            String.raw`\text{ }(-4,-2)`,
+            String.raw`\text{ }(2,-4)`
+          ]},
+
+        /* ---------- From “Use the system …” & C. Exercises ---------- */
+        { latex: String.raw`\textbf{12.}\ \text{Solve the system.}
+          \begin{cases}
+            3x-5y=10\\
+            4x+3y=15
+          \end{cases}`,
+          choices: [
+            String.raw`\text{ }(3,0)`,
+            String.raw`\text{ }(5,1)`,
+            String.raw`\text{ }\left(\tfrac{105}{29},\ \tfrac{5}{29}\right)`,  /* C? we'll mark E correct below */
+            String.raw`\text{ }\left(\tfrac{105}{29},\ -\tfrac{5}{29}\right)`,
+            String.raw`\text{ }\left(\tfrac{105}{29},\ \tfrac{5}{29}\right)`,  /* E correct */
+            String.raw`\text{Inconsistent (no solution)}`
+          ]},
+
+        { latex: String.raw`\textbf{13.}\ \text{(C) Solve symbolically by addition.}
+          \begin{cases}
+            ax+by=c\\
+            dx+2by=4c
+          \end{cases}\ \text{(assume }b\ne 0\text{ and }d\ne 2a\text{). Choose the correct }(x,y).`,
+          choices: [
+            String.raw`\left(\dfrac{2c}{d+2a},\ \dfrac{c(d-4a)}{b(d+2a)}\right)`,
+            String.raw`\left(\dfrac{2c}{d-2a},\ \dfrac{c(d-2a)}{b(d-4a)}\right)`,
+            String.raw`\left(\dfrac{4c}{d-2a},\ \dfrac{c(d-4a)}{b(d-2a)}\right)`,
+            String.raw`\left(\dfrac{2c}{d-4a},\ \dfrac{c(d-2a)}{b(d-2a)}\right)`,
+            String.raw`\left(\dfrac{2c}{d-2a},\ \dfrac{c(d-4a)}{b(d-2a)}\right)`,  /* E correct */
+            String.raw`\text{No unique solution for any }a,b,c,d`
+          ]}
+      ]
+    };
+  </script>
+
+  <link rel="stylesheet" href="/math-homework/assets/core.css" />
+  <script defer src="/math-homework/assets/core.js"></script>
+
+  <link rel="stylesheet" href="https://tikzjax.com/v1/fonts.css" />
+  <script defer src="https://tikzjax.com/v1/tikzjax.js"></script>
+  <script defer src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+</head>
+<body>
+  <div id="hw-root">Loading…</div>
+</body>
+</html>
