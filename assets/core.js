@@ -5,7 +5,7 @@
   - Calls tikzjax.process() when/if it becomes available
 ══════════════════════════════════════════════════════════════════════*/
 
-const SCRIPT_URL  = "https://script.google.com/macros/s/AKfycbyofeFRszJvwAO9mAEWJVvbd66K4b9aQb6zYKkJPzLcCiDjukOaiNM3PsmuHmeXwNOAJQ/exec";
+const SCRIPT_URL  = "https://script.google.com/macros/s/AKfycbxfEV_BmPd_E7xhK-ZXjN35UZvaEmnk3nxQEQonTwvGF948171LXF_s3u9prF9iQeLN-w/exec";
 const COOLDOWN_MS = 120_000;
 
 if (window.__coreLoaded__) {
