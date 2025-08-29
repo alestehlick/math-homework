@@ -16,7 +16,7 @@
 
       /* -------- ONE straw with 7 small graphs (G1–G7) -------- */
       graphics : String.raw`
-\begin{tikzpicture}[scale=0.52]
+\begin{tikzpicture}[scale=0.4]
   \tikzset{grid/.style={very thin,color=gray!28}}
   \tikzset{axes/.style={->,thick}}
   \tikzset{L1/.style={blue,thick}}
@@ -24,7 +24,7 @@
   \colorlet{sol}{blue!50!red!35}
 
   % ======= G1: Solve graphically  (2x+y=14  and  x-y=-5)
-  \begin{scope}[xshift=-12.5cm,yshift=11cm]
+  \begin{scope}[xshift=-14cm,yshift=14cm]
     \clip (-1.2,-1.2) rectangle (10.2,10.2);
     \draw[grid] (-1,-1) grid (10,10);
     \draw[axes] (-1,0)--(10,0); \draw[axes] (0,-1)--(0,10);
@@ -35,7 +35,7 @@
   \end{scope}
 
   % ======= G2: Solve graphically  (x-y=-8  and  3x+y=0)
-  \begin{scope}[xshift=0cm,yshift=11cm]
+  \begin{scope}[xshift=0cm,yshift=14cm]
     \clip (-4.2,-4.2) rectangle (10.2,10.2);
     \draw[grid] (-4,-4) grid (10,10);
     \draw[axes] (-4,0)--(10,0); \draw[axes] (0,-4)--(0,10);
@@ -46,7 +46,7 @@
   \end{scope}
 
   % ======= G3: Inequalities  x-2y <= -6  and  4x+y > -2
-  \begin{scope}[xshift=12.5cm,yshift=11cm]
+  \begin{scope}[xshift=14cm,yshift=14cm]
     \clip (-6.2,-6.2) rectangle (6.2,6.2);
     \draw[grid] (-6,-6) grid (6,6);
     \draw[axes] (-6,0)--(6,0); \draw[axes] (0,-6)--(0,6);
@@ -62,7 +62,7 @@
 
   % ======= G4: Linear programming feasible region
   %  y <= -3x+14 , y <= -1/2 x + 4 , x>=0 , y>=0
-  \begin{scope}[xshift=-12.5cm,yshift=-3cm]
+  \begin{scope}[xshift=-14cm,yshift=-3cm]
     \clip (-1.2,-1.2) rectangle (10.2,10.2);
     \draw[grid] (-1,-1) grid (10,10);
     \draw[axes] (-1,0)--(10,0); \draw[axes] (0,-1)--(0,10);
@@ -85,7 +85,7 @@
   \end{scope}
 
   % ======= G6: Intersect once (independent/consistent)
-  \begin{scope}[xshift=12.5cm,yshift=-3cm]
+  \begin{scope}[xshift=14cm,yshift=-3cm]
     \clip (-6.2,-6.2) rectangle (6.2,6.2);
     \draw[grid] (-6,-6) grid (6,6);
     \draw[axes] (-6,0)--(6,0); \draw[axes] (0,-6)--(0,6);
@@ -95,7 +95,7 @@
   \end{scope}
 
   % ======= G7: Same line (dependent)
-  \begin{scope}[xshift=0cm,yshift=-14cm]
+  \begin{scope}[xshift=-14cm,yshift=-14cm]
     \clip (-6.2,-6.2) rectangle (6.2,6.2);
     \draw[grid] (-6,-6) grid (6,6);
     \draw[axes] (-6,0)--(6,0); \draw[axes] (0,-6)--(0,6);
