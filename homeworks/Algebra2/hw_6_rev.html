@@ -35,8 +35,8 @@
   % G1: 2x+y=14 and x-y=-5
   \begin{scope}[xshift=-12.5cm,yshift=10cm]
     \frameA
-    \draw[L1,domain=-1:10] plot(\x,{-2*\x+14});
-    \draw[L1,domain=-1:10] plot(\x,{\x+5});
+    \draw[L1,domain=-4:7] plot(\x,{-2*\x+14});
+    \draw[L1,domain=-4:7] plot(\x,{\x+5});
     \fill (3,8) circle (2pt);
     \node[anchor=south east,font=\small] at (9.6,9.6) {G1};
   \end{scope}
@@ -44,8 +44,8 @@
   % G2: x-y=-8 and 3x+y=0
   \begin{scope}[xshift=0cm,yshift=10cm]
     \frameA
-    \draw[L1,domain=-5:6] plot(\x,{\x+8});     % y = x+8
-    \draw[L1,domain=-5:6] plot(\x,{-3*\x});    % y = -3x
+    \draw[L1,domain=-4:7] plot(\x,{\x+8});     % y = x+8
+    \draw[L1,domain=-4:7] plot(\x,{-3*\x});    % y = -3x
     \fill (-2,6) circle (2pt);
     \node[anchor=south east,font=\small] at (9.6,9.6) {G2};
   \end{scope}
@@ -54,11 +54,11 @@
   \begin{scope}[xshift=12.5cm,yshift=10cm]
     \frameA
     \begin{scope}
-      \clip (-1,{(-1+6)/2}) -- (10,{(10+6)/2}) -- (10,10) -- (-1,10) -- cycle; % y >= (x+6)/2
-      \path[fill=sol,opacity=.35] (-1,{-4*(-1)-2}) -- (10,{-4*(10)-2}) -- (10,10) -- (-1,10) -- cycle;
+      \clip (-4,{(-1+6)/2}) -- (7,{(7+6)/2}) -- (7,7) -- (-4,7) -- cycle; % y >= (x+6)/2
+      \path[fill=sol,opacity=.35] (-1,{-4*(-1)-2}) -- (10,{-4*(10)-2}) -- (7,7) -- (-4,7) -- cycle;
     \end{scope}
-    \draw[L1,domain=-1:10] plot(\x,{(\x+6)/2});  % solid
-    \draw[L2,domain=-1:10] plot(\x,{-4*\x-2});   % dashed
+    \draw[L1,domain=-4:7] plot(\x,{(\x+6)/2});  % solid
+    \draw[L2,domain=-14:7] plot(\x,{-4*\x-2});   % dashed
     \node[anchor=south east,font=\small] at (9.6,9.6) {G3};
   \end{scope}
 
@@ -89,9 +89,6 @@
   \end{scope}
 
   % ---------- Row 3: center G7, keep spacing with empty frames ----------
-  \begin{scope}[xshift=-12.5cm,yshift=-10cm]
-    \frameA
-  \end{scope}
 
   % G7: same line (dependent)
   \begin{scope}[xshift=0cm,yshift=-10cm]
@@ -101,9 +98,7 @@
     \node[anchor=south east,font=\small] at (9.6,9.6) {G7};
   \end{scope}
 
-  \begin{scope}[xshift=12.5cm,yshift=-10cm]
-    \frameA
-  \end{scope}
+
 \end{tikzpicture}
 `,
 
