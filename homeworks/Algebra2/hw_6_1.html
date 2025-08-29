@@ -11,13 +11,13 @@
        ============================================ */
     window.homeworkData = {
       classId : "Algebra2",
-      id      : "Homework A2-6-1",
-      title   : "Homework A2-6-1 — \\text{Solving Systems by Graphing}",
+      id      : "Homework 6-1",
+      title   : "Homework 6-1 — \text{Solving Systems by Graphing}",
 
       /* --- Split into small TikZ chunks to avoid TikZJax limits --- */
       graphics : [
 String.raw`
-\begin{tikzpicture}[scale=0.60]
+\begin{tikzpicture}[scale=0.40]
   \tikzset{grid/.style={very thin,color=gray!25}}
   \tikzset{axes/.style={->,thick}}
   \tikzset{L1/.style={blue,thick}}
@@ -47,14 +47,14 @@ String.raw`
 \end{tikzpicture}
 `,
 String.raw`
-\begin{tikzpicture}[scale=0.60]
+\begin{tikzpicture}[scale=0.40]
   \tikzset{grid/.style={very thin,color=gray!25}}
   \tikzset{axes/.style={->,thick}}
   \tikzset{L1/.style={blue,thick}}
   \tikzset{L2/.style={red,thick,dashed}}
 
   % ===== G3
-  \begin{scope}[xshift=-12cm,yshift=9cm]
+  \begin{scope}[xshift=12cm,yshift=9cm]
     \clip (-6.2,-6.2) rectangle (6.2,6.2);
     \draw[grid] (-6,-6) grid (6,6);
     \draw[axes] (-6,0)--(6,0); \draw[axes] (0,-6)--(0,6);
@@ -65,7 +65,7 @@ String.raw`
   \end{scope}
 
   % ===== G4
-  \begin{scope}[xshift=0cm,yshift=9cm]
+  \begin{scope}[xshift=-12cm,yshift=0cm]
     \clip (-6.2,-6.2) rectangle (6.2,6.2);
     \draw[grid] (-6,-6) grid (6,6);
     \draw[axes] (-6,0)--(6,0); \draw[axes] (0,-6)--(0,6);
@@ -77,7 +77,7 @@ String.raw`
 \end{tikzpicture}
 `,
 String.raw`
-\begin{tikzpicture}[scale=0.60]
+\begin{tikzpicture}[scale=0.40]
   \tikzset{grid/.style={very thin,color=gray!25}}
   \tikzset{axes/.style={->,thick}}
   \tikzset{L1/.style={blue,thick}}
@@ -108,7 +108,7 @@ String.raw`
 \end{tikzpicture}
 `,
 String.raw`
-\begin{tikzpicture}[scale=0.60]
+\begin{tikzpicture}[scale=0.40]
   \tikzset{grid/.style={very thin,color=gray!25}}
   \tikzset{axes/.style={->,thick}}
   \tikzset{L1/.style={blue,thick}}
