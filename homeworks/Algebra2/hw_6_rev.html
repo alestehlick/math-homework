@@ -25,7 +25,7 @@
 
   % ======= G1: Solve graphically  (2x+y=14  and  x-y=-5)
   \begin{scope}[xshift=-14cm,yshift=14cm]
-    \clip (-1.2,-1.2) rectangle (10.2,10.2);
+    \clip (-2,-2) rectangle (10,10);
     \draw[grid] (-1,-1) grid (10,10);
     \draw[axes] (-1,0)--(10,0); \draw[axes] (0,-1)--(0,10);
     \draw[L1,domain=-1:10] plot(\x,{-2*\x+14});        % 2x + y = 14
@@ -36,7 +36,7 @@
 
   % ======= G2: Solve graphically  (x-y=-8  and  3x+y=0)
   \begin{scope}[xshift=0cm,yshift=14cm]
-    \clip (-4.2,-4.2) rectangle (10.2,10.2);
+    \clip (-2,-2) rectangle (10,10);
     \draw[grid] (-4,-4) grid (10,10);
     \draw[axes] (-4,0)--(10,0); \draw[axes] (0,-4)--(0,10);
     \draw[L1,domain=-4:10] plot(\x,{\x+8});            % y = x + 8
@@ -47,7 +47,7 @@
 
   % ======= G3: Inequalities  x-2y <= -6  and  4x+y > -2
   \begin{scope}[xshift=14cm,yshift=14cm]
-    \clip (-6.2,-6.2) rectangle (6.2,6.2);
+    \clip (-5,-5) rectangle (5,5);
     \draw[grid] (-6,-6) grid (6,6);
     \draw[axes] (-6,0)--(6,0); \draw[axes] (0,-6)--(0,6);
     % Region: y >= (x+6)/2  and  y > -4x-2  (above both)
