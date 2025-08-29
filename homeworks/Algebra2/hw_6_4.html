@@ -10,6 +10,8 @@
        Algebra 2 — Section 6-4
        Problem Solving Using Systems (no graphs)
        12 multiple-choice questions; 6 options each.
+       Text is wrapped in \text{...}; % is escaped as \%.
+       Dollar signs are literal inside \text{...}.
        ============================================ */
     window.homeworkData = {
       classId : "Algebra2",
@@ -18,38 +20,39 @@
 
       graphics : "",
 
+      /* A=first choice, B=second, ... */
       answerKey : [
-        "E","C","B","F","A","D","C","B","A","F","D","E"
+        "E","C","B","F","A","C","C","B","A","C","B","D"
       ],
 
       questions : [
-        { latex: String.raw`\text{Greg invests $5000 in two accounts: one at 6% and one at 9%. His total annual interest is $375. How much is in each account?}`,
+        { latex: String.raw`\text{Greg invests $5000 in two accounts: one at 6\% and one at 9\%. His total annual interest is $375. How much is in each account?}`,
           choices: [
-            String.raw`\text{\$1500 at 6\%, \$3500 at 9\%}`,
-            String.raw`\text{\$2000 at 6\%, \$3000 at 9\%}`,
-            String.raw`\text{\$3000 at 6\%, \$2000 at 9\%}`,
-            String.raw`\text{\$3500 at 6\%, \$1500 at 9\%}`,
-            String.raw`\text{\$2500 at 6\%, \$2500 at 9\%}`,
+            String.raw`\text{$1500 at 6\%, $3500 at 9\%}`,
+            String.raw`\text{$2000 at 6\%, $3000 at 9\%}`,
+            String.raw`\text{$3000 at 6\%, $2000 at 9\%}`,
+            String.raw`\text{$3500 at 6\%, $1500 at 9\%}`,
+            String.raw`\text{$2500 at 6\%, $2500 at 9\%}`,
             String.raw`\text{Impossible; the info is inconsistent}`
           ]},
 
         { latex: String.raw`\text{Two cars start 100 miles apart and head toward each other. They meet in 1 hour, and one is 4 mph faster than the other. What are their speeds?}`,
           choices: [
-            String.raw`\text{(45 mph,\ 55 mph)}`,
-            String.raw`\text{(46 mph,\ 50 mph)}`,
-            String.raw`\text{(48 mph,\ 52 mph)}`,
-            String.raw`\text{(40 mph,\ 60 mph)}`,
-            String.raw`\text{(42 mph,\ 58 mph)}`,
+            String.raw`\text{(45 mph, 55 mph)}`,
+            String.raw`\text{(46 mph, 50 mph)}`,
+            String.raw`\text{(48 mph, 52 mph)}`,
+            String.raw`\text{(40 mph, 60 mph)}`,
+            String.raw`\text{(42 mph, 58 mph)}`,
             String.raw`\text{Not enough information}`
           ]},
 
-        { latex: String.raw`\text{John invests \$10,000 in two stocks: one pays 10\%, the other 5\%. If total annual interest is \$650, how much is in each?}`,
+        { latex: String.raw`\text{John invests $10,000 in two stocks: one pays 10\%, the other 5\%. If total annual interest is $650, how much is in each?}`,
           choices: [
-            String.raw`\text{\$4000 @ 10\%, \$6000 @ 5\%}`,
-            String.raw`\text{\$3000 @ 10\%, \$7000 @ 5\%}`,
-            String.raw`\text{\$5000 @ 10\%, \$5000 @ 5\%}`,
-            String.raw`\text{\$7000 @ 10\%, \$3000 @ 5\%}`,
-            String.raw`\text{\$2000 @ 10\%, \$8000 @ 5\%}`,
+            String.raw`\text{$4000 at 10\%, $6000 at 5\%}`,
+            String.raw`\text{$3000 at 10\%, $7000 at 5\%}`,
+            String.raw`\text{$5000 at 10\%, $5000 at 5\%}`,
+            String.raw`\text{$7000 at 10\%, $3000 at 5\%}`,
+            String.raw`\text{$2000 at 10\%, $8000 at 5\%}`,
             String.raw`\text{No solution}`
           ]},
 
@@ -67,21 +70,21 @@
 
         { latex: String.raw`\text{Two motorboats leave at the same time in opposite directions. One goes 9 mph faster than the other. After 2 hours they are 170 miles apart. How fast is each boat?}`,
           choices: [
-            String.raw`\text{(30 mph,\ 39 mph)}`,
-            String.raw`\text{(35 mph,\ 44 mph)}`,
-            String.raw`\text{(38 mph,\ 47 mph)}`,
-            String.raw`\text{(41 mph,\ 50 mph)}`,
-            String.raw`\text{(45 mph,\ 54 mph)}`,
-            String.raw`\text{(32 mph,\ 41 mph)}`
+            String.raw`\text{(30 mph, 39 mph)}`,
+            String.raw`\text{(35 mph, 44 mph)}`,
+            String.raw`\text{(38 mph, 47 mph)}`,
+            String.raw`\text{(41 mph, 50 mph)}`,
+            String.raw`\text{(45 mph, 54 mph)}`,
+            String.raw`\text{(32 mph, 41 mph)}`
           ]},
 
-        { latex: String.raw`\text{John invests one amount at 10\% and \$100 less at 12\%. Total interest is \$605.10. How much is invested at each rate?}`,
+        { latex: String.raw`\text{John invests one amount at 10\% and $100 less at 12\%. Total interest is $605.10. How much is invested at each rate?}`,
           choices: [
-            String.raw`\text{\$2700 @ 10\%, \$2600 @ 12\%}`,
-            String.raw`\text{\$2605 @ 10\%, \$2505 @ 12\%}`,
-            String.raw`\text{\$2805 @ 10\%, \$2705 @ 12\%}`,
-            String.raw`\text{\$3000 @ 10\%, \$2900 @ 12\%}`,
-            String.raw`\text{\$2505 @ 10\%, \$2405 @ 12\%}`,
+            String.raw`\text{$2700 at 10\%, $2600 at 12\%}`,
+            String.raw`\text{$2605 at 10\%, $2505 at 12\%}`,
+            String.raw`\text{$2805 at 10\%, $2705 at 12\%}`,
+            String.raw`\text{$3000 at 10\%, $2900 at 12\%}`,
+            String.raw`\text{$2505 at 10\%, $2405 at 12\%}`,
             String.raw`\text{No solution}`
           ]},
 
@@ -93,15 +96,15 @@
 
         { latex: String.raw`\text{Two cars leave Rochester at noon driving in opposite directions. The northbound averages 38 mph. The southbound averages 43 mph and drives 4 hours longer. Their destinations are 334 miles apart. How long did each car travel?}`,
           choices: [
-            String.raw`\text{North: 2 h,\ South: 6 h}`,
-            String.raw`\text{North: 3 h,\ South: 7 h}`,
-            String.raw`\text{North: 4 h,\ South: 8 h}`,
-            String.raw`\text{North: 1 h,\ South: 5 h}`,
-            String.raw`\text{North: 2.5 h,\ South: 6.5 h}`,
-            String.raw`\text{North: 3.5 h,\ South: 7.5 h}`
+            String.raw`\text{North: 2 h, South: 6 h}`,
+            String.raw`\text{North: 3 h, South: 7 h}`,
+            String.raw`\text{North: 4 h, South: 8 h}`,
+            String.raw`\text{North: 1 h, South: 5 h}`,
+            String.raw`\text{North: 2.5 h, South: 6.5 h}`,
+            String.raw`\text{North: 3.5 h, South: 7.5 h}`
           ]},
 
-        { latex: String.raw`\text{A man has \$37,000 in a passbook at rate r and \$43,000 in a money-market at rate r+10\%. If his total annual interest is \$8500, what are the rates?}`,
+        { latex: String.raw`\text{A man has $37,000 in a passbook at rate r and $43,000 in a money-market at rate r+10\%. If his total annual interest is $8500, what are the rates?}`,
           choices: [
             String.raw`\text{Passbook 8\%, Money 18\%}`,
             String.raw`\text{Passbook 6\%, Money 16\%}`,
@@ -111,7 +114,7 @@
             String.raw`\text{Information insufficient}`
           ]},
 
-        { latex: String.raw`\text{A two-digit number has digits t,u. The sum t+u plus the reversed number equals 34. The difference (original − reversed) is 36. What is the original number?}`,
+        { latex: String.raw`\text{A two-digit number has digits t and u. The sum t+u plus the reversed number equals 34. The difference (original − reversed) is 36. What is the original number?}`,
           choices: [
             String.raw`\text{26}`, String.raw`\text{62}`, String.raw`\text{35}`,
             String.raw`\text{53}`, String.raw`\text{44}`, String.raw`\text{68}`
@@ -120,182 +123,4 @@
         { latex: String.raw`\text{A two-digit number is 72 less than the number obtained by reversing its digits. Find the original number.}`,
           choices: [
             String.raw`\text{97}`, String.raw`\text{79}`, String.raw`\text{28}`,
-            String.raw`\text{19}`, String.raw`\text{64}`, String.raw`\text{46}`
-          ]}
-      ]
-    };
-  </script>
-
-  <link rel="stylesheet" href="/math-homework/assets/core.css" />
-  <script defer src="/math-homework/assets/core.js"></script>
-
-  <link rel="stylesheet" href="https://tikzjax.com/v1/fonts.css" />
-  <script defer src="https://tikzjax.com/v1/tikzjax.js"></script>
-  <script defer src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
-</head>
-<body>
-  <div id="hw-root">Loading…</div>
-</body>
-</html>
-<!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Homework 6-4 — Problem Solving Using Systems</title>
-
-  <script>
-    /* ============================================
-       Algebra 2 — Section 6-4
-       Problem Solving Using Systems (no graphs)
-       12 multiple-choice questions; 6 options each.
-       The answer key is embedded (letters A–F) and not displayed.
-       ============================================ */
-    window.homeworkData = {
-      classId : "Algebra2",
-      id      : "Homework 6-4",
-      title   : "Homework 6-4 — Problem Solving Using Systems",
-
-      graphics : "",
-
-      /* A=first choice, B=second, ... */
-      answerKey : [
-        "E","C","B","F","A","D","C","B","A","F","D","E"
-      ],
-
-      questions : [
-        { latex: String.raw`Greg invests \$5000 in two accounts: one at \(6\%\) and one at \(9\%\).
-          His total annual interest is \$375. How much is in each account?`,
-          choices: [
-            String.raw`\$1500\text{ at }6\%,\ \$3500\text{ at }9\%`,
-            String.raw`\$2000\text{ at }6\%,\ \$3000\text{ at }9\%`,
-            String.raw`\$3000\text{ at }6\%,\ \$2000\text{ at }9\%`,
-            String.raw`\$3500\text{ at }6\%,\ \$1500\text{ at }9\%`,
-            String.raw`\$2500\text{ at }6\%,\ \$2500\text{ at }9\%`,
-            String.raw`\text{Impossible; the info is inconsistent}`
-          ]},
-
-        { latex: String.raw`Two cars start \(100\) miles apart and head toward each other.
-          They meet in \(1\) hour, and one is \(4\text{ mph}\) faster than the other.
-          What are their speeds?`,
-          choices: [
-            String.raw`(45\text{ mph},\ 55\text{ mph})`,
-            String.raw`(46\text{ mph},\ 50\text{ mph})`,
-            String.raw`(48\text{ mph},\ 52\text{ mph})`,
-            String.raw`(40\text{ mph},\ 60\text{ mph})`,
-            String.raw`(42\text{ mph},\ 58\text{ mph})`,
-            String.raw`\text{Not enough information}`
-          ]},
-
-        { latex: String.raw`John invests \$10{,}000 in two stocks: one pays \(10\%\), the other \(5\%\).
-          If total annual interest is \$650, how much is in each?`,
-          choices: [
-            String.raw`\$4000\text{ @ }10\%,\ \$6000\text{ @ }5\%`,
-            String.raw`\$3000\text{ @ }10\%,\ \$7000\text{ @ }5\%`,
-            String.raw`\$5000\text{ @ }10\%,\ \$5000\text{ @ }5\%`,
-            String.raw`\$7000\text{ @ }10\%,\ \$3000\text{ @ }5\%`,
-            String.raw`\$2000\text{ @ }10\%,\ \$8000\text{ @ }5\%`,
-            String.raw`\text{No solution}`
-          ]},
-
-        { latex: String.raw`The sum of the digits of a two-digit number is \(15\).
-          When the digits are reversed, the new number is \(9\) less than the original.
-          What is the original number?`,
-          choices: [
-            String.raw`57`, String.raw`75`, String.raw`69`,
-            String.raw`96`, String.raw`78`, String.raw`87`
-          ]},
-
-        { latex: String.raw`A two-digit number has units digit eight times the tens digit.
-          The original number minus the reversed number is \(-63\). What is the number?`,
-          choices: [
-            String.raw`18`, String.raw`81`, String.raw`28`,
-            String.raw`82`, String.raw`26`, String.raw`62`
-          ]},
-
-        { latex: String.raw`Two motorboats leave at the same time in opposite directions.
-          One goes \(9\text{ mph}\) faster than the other. After \(2\) hours they are \(170\) miles apart.
-          How fast is each boat?`,
-          choices: [
-            String.raw`(30\text{ mph},\ 39\text{ mph})`,
-            String.raw`(35\text{ mph},\ 44\text{ mph})`,
-            String.raw`(38\text{ mph},\ 47\text{ mph})`,
-            String.raw`(41\text{ mph},\ 50\text{ mph})`,
-            String.raw`(45\text{ mph},\ 54\text{ mph})`,
-            String.raw`(32\text{ mph},\ 41\text{ mph})`
-          ]},
-
-        { latex: String.raw`John invests one amount at \(10\%\) and \$\(100\) less at \(12\%\).
-          Total interest is \$605.10. How much is invested at each rate?`,
-          choices: [
-            String.raw`\$2700\text{ @ }10\%,\ \$2600\text{ @ }12\%`,
-            String.raw`\$2605\text{ @ }10\%,\ \$2505\text{ @ }12\%`,
-            String.raw`\$2805\text{ @ }10\%,\ \$2705\text{ @ }12\%`,
-            String.raw`\$3000\text{ @ }10\%,\ \$2900\text{ @ }12\%`,
-            String.raw`\$2505\text{ @ }10\%,\ \$2405\text{ @ }12\%`,
-            String.raw`\text{No solution}`
-          ]},
-
-        { latex: String.raw`In a two-digit number, the tens digit is six less than the units digit.
-          The sum of the original and the reversed numbers is \(132\).
-          What is the original number?`,
-          choices: [
-            String.raw`93`, String.raw`39`, String.raw`84`,
-            String.raw`48`, String.raw`57`, String.raw`75`
-          ]},
-
-        { latex: String.raw`Two cars leave Rochester at noon driving in opposite directions.
-          The northbound car averages \(38\text{ mph}\). The southbound averages \(43\text{ mph}\)
-          and drives \(4\) hours longer. Their destinations are \(334\) miles apart.
-          How long did each car travel?`,
-          choices: [
-            String.raw`North: \(2\) h,\ South: \(6\) h`,
-            String.raw`North: \(3\) h,\ South: \(7\) h`,
-            String.raw`North: \(4\) h,\ South: \(8\) h`,
-            String.raw`North: \(1\) h,\ South: \(5\) h`,
-            String.raw`North: \(2.5\) h,\ South: \(6.5\) h`,
-            String.raw`North: \(3.5\) h,\ South: \(7.5\) h`
-          ]},
-
-        { latex: String.raw`A man has \$37{,}000 in a passbook account at rate \(r\) and
-          \$43{,}000 in a money-market account that pays \(r+10\%\).
-          If his total annual interest is \$8500, what are the rates?`,
-          choices: [
-            String.raw`\text{Passbook }8\%,\ \text{Money-market }18\%`,
-            String.raw`\text{Passbook }6\%,\ \text{Money-market }16\%`,
-            String.raw`\text{Passbook }5.25\%,\ \text{Money-market }15.25\%`,
-            String.raw`\text{Passbook }9\%,\ \text{Money-market }19\%`,
-            String.raw`\text{Passbook }7\%,\ \text{Money-market }17\%`,
-            String.raw`\text{Information insufficient}`
-          ]},
-
-        { latex: String.raw`A two-digit number has digits \(t,u\).
-          The sum \(t+u\) plus the reversed number equals \(34\).
-          The difference (original − reversed) is \(36\).
-          What is the original number?`,
-          choices: [
-            String.raw`26`, String.raw`62`, String.raw`35`,
-            String.raw`53`, String.raw`44`, String.raw`68`
-          ]},
-
-        { latex: String.raw`A two-digit number is \(72\) less than the number obtained by
-          reversing its digits. Find the original number.`,
-          choices: [
-            String.raw`97`, String.raw`79`, String.raw`28`,
-            String.raw`19`, String.raw`64`, String.raw`46`
-          ]}
-      ]
-    };
-  </script>
-
-  <link rel="stylesheet" href="/math-homework/assets/core.css" />
-  <script defer src="/math-homework/assets/core.js"></script>
-
-  <link rel="stylesheet" href="https://tikzjax.com/v1/fonts.css" />
-  <script defer src="https://tikzjax.com/v1/tikzjax.js"></script>
-  <script defer src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
-</head>
-<body>
-  <div id="hw-root">Loading…</div>
-</body>
-</html>
+            String.raw`\text{19}`, String.raw`\text{64
