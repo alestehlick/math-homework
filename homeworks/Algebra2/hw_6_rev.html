@@ -1,0 +1,246 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Chapter 6 Review</title>
+
+  <script>
+    /* =========================
+       Chapter 6 — Review (12 Qs)
+       ========================= */
+    window.homeworkData = {
+      classId : "Algebra2",
+      id      : "Chapter 6 Review",
+      title   : "Chapter 6 Review",
+
+      /* -------- ONE straw with 7 small graphs (G1–G7) -------- */
+      graphics : String.raw`
+\begin{tikzpicture}[scale=0.52]
+  \tikzset{grid/.style={very thin,color=gray!28}}
+  \tikzset{axes/.style={->,thick}}
+  \tikzset{L1/.style={blue,thick}}
+  \tikzset{L2/.style={red,thick,dashed}}
+  \colorlet{sol}{blue!50!red!35}
+
+  % ======= G1: Solve graphically  (2x+y=14  and  x-y=-5)
+  \begin{scope}[xshift=-12.5cm,yshift=11cm]
+    \clip (-1.2,-1.2) rectangle (10.2,10.2);
+    \draw[grid] (-1,-1) grid (10,10);
+    \draw[axes] (-1,0)--(10,0); \draw[axes] (0,-1)--(0,10);
+    \draw[L1,domain=-1:10] plot(\x,{-2*\x+14});        % 2x + y = 14
+    \draw[L1,domain=-1:10] plot(\x,{\x+5});            % x - y = -5  -> y = x+5
+    \fill (3,8) circle (2pt);
+    \node[anchor=south east,font=\small] at (9.6,9.6) {G1};
+  \end{scope}
+
+  % ======= G2: Solve graphically  (x-y=-8  and  3x+y=0)
+  \begin{scope}[xshift=0cm,yshift=11cm]
+    \clip (-4.2,-4.2) rectangle (10.2,10.2);
+    \draw[grid] (-4,-4) grid (10,10);
+    \draw[axes] (-4,0)--(10,0); \draw[axes] (0,-4)--(0,10);
+    \draw[L1,domain=-4:10] plot(\x,{\x+8});            % y = x + 8
+    \draw[L1,domain=-4:10] plot(\x,{-3*\x});           % y = -3x
+    \fill (-2,6) circle (2pt);
+    \node[anchor=south east,font=\small] at (9.6,9.6) {G2};
+  \end{scope}
+
+  % ======= G3: Inequalities  x-2y <= -6  and  4x+y > -2
+  \begin{scope}[xshift=12.5cm,yshift=11cm]
+    \clip (-6.2,-6.2) rectangle (6.2,6.2);
+    \draw[grid] (-6,-6) grid (6,6);
+    \draw[axes] (-6,0)--(6,0); \draw[axes] (0,-6)--(0,6);
+    % Region: y >= (x+6)/2  and  y > -4x-2  (above both)
+    \begin{scope}
+      \clip (-6,{(-6+6)/2}) -- (6,{(6+6)/2}) -- (6,6) -- (-6,6) -- cycle; % y >= (x+6)/2
+      \path[fill=sol,opacity=.35] (-6,{-4*(-6)-2}) -- (6,{-4*(6)-2}) -- (6,6) -- (-6,6) -- cycle; % above y>-4x-2
+    \end{scope}
+    \draw[L1,domain=-6:6]       plot(\x,{(\x+6)/2});   % solid
+    \draw[L2,domain=-6:6]       plot(\x,{-4*\x-2});    % dashed (strict)
+    \node[anchor=south east,font=\small] at (5.7,5.7) {G3};
+  \end{scope}
+
+  % ======= G4: Linear programming feasible region
+  %  y <= -3x+14 , y <= -1/2 x + 4 , x>=0 , y>=0
+  \begin{scope}[xshift=-12.5cm,yshift=-3cm]
+    \clip (-1.2,-1.2) rectangle (10.2,10.2);
+    \draw[grid] (-1,-1) grid (10,10);
+    \draw[axes] (-1,0)--(10,0); \draw[axes] (0,-1)--(0,10);
+    % feasible polygon:
+    \path[fill=sol,opacity=.35] (0,0) -- (0,4) -- (4,2) -- ({14/3},0) -- cycle;
+    % boundaries:
+    \draw[L1,domain=0:10] plot(\x,{-3*\x+14});
+    \draw[L1,domain=0:10] plot(\x,{-0.5*\x+4});
+    \node[anchor=south east,font=\small] at (9.6,9.6) {G4};
+  \end{scope}
+
+  % ======= G5: Parallel lines (inconsistent)
+  \begin{scope}[xshift=0cm,yshift=-3cm]
+    \clip (-6.2,-6.2) rectangle (6.2,6.2);
+    \draw[grid] (-6,-6) grid (6,6);
+    \draw[axes] (-6,0)--(6,0); \draw[axes] (0,-6)--(0,6);
+    \draw[L1,domain=-6:6] plot(\x,{\x});              % y = x
+    \draw[L1,domain=-6:6] plot(\x,{\x+2});            % y = x+2 (parallel)
+    \node[anchor=south east,font=\small] at (5.7,5.7) {G5};
+  \end{scope}
+
+  % ======= G6: Intersect once (independent/consistent)
+  \begin{scope}[xshift=12.5cm,yshift=-3cm]
+    \clip (-6.2,-6.2) rectangle (6.2,6.2);
+    \draw[grid] (-6,-6) grid (6,6);
+    \draw[axes] (-6,0)--(6,0); \draw[axes] (0,-6)--(0,6);
+    \draw[L1,domain=-6:6] plot(\x,{0.5*\x+1});        % y = 0.5x + 1
+    \draw[L1,domain=-6:6] plot(\x,{-1*\x+3});         % y = -x + 3
+    \node[anchor=south east,font=\small] at (5.7,5.7) {G6};
+  \end{scope}
+
+  % ======= G7: Same line (dependent)
+  \begin{scope}[xshift=0cm,yshift=-14cm]
+    \clip (-6.2,-6.2) rectangle (6.2,6.2);
+    \draw[grid] (-6,-6) grid (6,6);
+    \draw[axes] (-6,0)--(6,0); \draw[axes] (0,-6)--(0,6);
+    \draw[L1,domain=-6:6]       plot(\x,{2*\x-1});
+    \draw[L2,domain=-6:6]       plot(\x,{2*\x-1});
+    \node[anchor=south east,font=\small] at (5.7,5.7) {G7};
+  \end{scope}
+\end{tikzpicture}
+`,
+
+      /* ---------- Answer key (letters A–F) ---------- */
+      answerKey : ["A","A","C","D","B","E","C","B","A","D","C","F"],
+
+      /* ---------- 12 questions ---------- */
+      questions : [
+        { latex: String.raw`\text{Refer to G1. Solve the system } \begin{cases}2x+y=14\\ x-y=-5\end{cases}\text{.}`,
+          choices: [
+            String.raw`\text{ }(3,\,8)`,
+            String.raw`\text{ }(8,\,3)`,
+            String.raw`\text{ }(2,\,7)`,
+            String.raw`\text{ }(-3,\,8)`,
+            String.raw`\text{ }(0,\,14)`,
+            String.raw`\text{No solution}`
+          ]},
+
+        { latex: String.raw`\text{Refer to G2. Solve } \begin{cases}x-y=-8\\ 3x+y=0\end{cases}\text{.}`,
+          choices: [
+            String.raw`\text{ }(-2,\,6)`,
+            String.raw`\text{ }(2,\,-6)`,
+            String.raw`\text{ }(6,\,-2)`,
+            String.raw`\text{ }(-6,\,2)`,
+            String.raw`\text{ }(0,\,0)`,
+            String.raw`\text{No solution}`
+          ]},
+
+        { latex: String.raw`\text{Solve algebraically and classify. } \begin{cases}y=3x+9\\ 2x+5y=28\end{cases}`,
+          choices: [
+            String.raw`\text{Dependent (same line)}`,
+            String.raw`\text{Inconsistent (parallel)} `,
+            String.raw`\text{Consistent independent; solution }(-1,\,6)`,
+            String.raw`\text{Consistent independent; solution }(1,\,-6)`,
+            String.raw`\text{Inconsistent; solution }(-1,\,6)`,
+            String.raw`\text{Dependent; solution set is all real pairs}`
+          ]},
+
+        { latex: String.raw`\text{Solve algebraically and classify. } \begin{cases}y=2x+8\\ 2x-y=3\end{cases}`,
+          choices: [
+            String.raw`\text{Consistent independent; solution }(0,\,3)`,
+            String.raw`\text{Dependent (infinitely many solutions)}`,
+            String.raw`\text{Consistent independent; solution }(1,\,10)`,
+            String.raw`\text{Inconsistent (parallel lines); no solution}`,
+            String.raw`\text{Consistent independent; solution }(-1,\,6)`,
+            String.raw`\text{Cannot be determined}`
+          ]},
+
+        { latex: String.raw`\text{A two-digit number has digit sum 11. Adding 45 yields the number with its digits reversed. What is the original number?}`,
+          choices: [
+            String.raw`\text{83}`,
+            String.raw`\text{38}`,
+            String.raw`\text{29}`,
+            String.raw`\text{74}`,
+            String.raw`\text{47}`,
+            String.raw`\text{56}`
+          ]},
+
+        { latex: String.raw`\text{Evelyn invests $8400 in a certificate and $9600 in a money market. The certificate rate is 2.5\% more than the money market rate. If the total yearly interest is $1830, what are the rates?}`,
+          choices: [
+            String.raw`\text{Money: 7\%, Certificate: 9.5\%}`,
+            String.raw`\text{Money: 8\%, Certificate: 10.5\%}`,
+            String.raw`\text{Money: 8.5\%, Certificate: 11\%}`,
+            String.raw`\text{Money: 10\%, Certificate: 12.5\%}`,
+            String.raw`\text{Money: 9\%, Certificate: 11.5\%}`,
+            String.raw`\text{Money: 11\%, Certificate: 13.5\%}`
+          ]},
+
+        { latex: String.raw`\text{Refer to G3. Which ordered pair lies in the solution set?}`,
+          choices: [
+            String.raw`\text{ }(0,\,1)`,
+            String.raw`\text{ }(-3,\,2)`,
+            String.raw`\text{ }(-1,\,4)`,
+            String.raw`\text{ }(2,\,-1)`,
+            String.raw`\text{ }(3,\,0)`,
+            String.raw`\text{ }(-4,\,-4)`
+          ]},
+
+        { latex: String.raw`\text{Refer to G4. For }z=3x+5y\text{ on the feasible region, what is the maximum and where does it occur?}`,
+          choices: [
+            String.raw`\text{ }z_{\max}=20\text{ at }(0,\,4)`,
+            String.raw`\text{ }z_{\max}=22\text{ at }(4,\,2)`,
+            String.raw`\text{ }z_{\max}=14\text{ at }(\tfrac{14}{3},\,0)`,
+            String.raw`\text{ }z_{\max}=18\text{ at }(2,\,3)`,
+            String.raw`\text{ }z_{\max}=16\text{ at }(0,\,0)`,
+            String.raw`\text{ }z_{\max}=24\text{ at }(8,\,0)`
+          ]},
+
+        { latex: String.raw`\text{Solve } \begin{cases}xy=-12\\ x+y=1\end{cases}\text{. (Give the full solution set.)}`,
+          choices: [
+            String.raw`\text{ }\{(4,\,-3),\,(-3,\,4)\}`,
+            String.raw`\text{ }\{(3,\,-4),\,(-4,\,3)\}`,
+            String.raw`\text{ }\{(1,\,-12),\,(-1,\,12)\}`,
+            String.raw`\text{ }(1,\,-12)\text{ only}`,
+            String.raw`\text{ }(0,\,1)\text{ only}`,
+            String.raw`\text{No real solution}`
+          ]},
+
+        { latex: String.raw`\text{Solve } \begin{cases}x^2+y=34\\ x^2+y^2=106\end{cases}\text{. (Choose the complete set of real solutions.)}`,
+          choices: [
+            String.raw`\text{ }\{(5,\,9),\,(-5,\,9)\}`,
+            String.raw`\text{ }\{(\sqrt{42},\,-8),\,(-\sqrt{42},\,-8)\}`,
+            String.raw`\text{ }\{(5,\,9),\,(\sqrt{42},\,-8)\}`,
+            String.raw`\text{ }\{(5,\,9),\,(-5,\,9),\,(\sqrt{42},\,-8),\,(-\sqrt{42},\,-8)\}`,
+            String.raw`\text{ }\{(5,\,-9),\,(-5,\,-9),\,(\sqrt{42},\,8),\,(-\sqrt{42},\,8)\}`,
+            String.raw`\text{No real solution}`
+          ]},
+
+        { latex: String.raw`\text{Solve the 3-variable system } \begin{cases}x+2y+z=7\\ 2x-y+z=6\\ 3x+2y-4z=58\end{cases}`,
+          choices: [
+            String.raw`\text{ }(7,\,2,\,-5)`,
+            String.raw`\text{ }(6,\,1,\,-4)`,
+            String.raw`\text{ }(8,\,3,\,-7)`,
+            String.raw`\text{ }(8,\,3,\,7)`,
+            String.raw`\text{ }(3,\,8,\,-7)`,
+            String.raw`\text{ }(-8,\,-3,\,7)`
+          ]},
+
+        { latex: String.raw`\text{Using G5–G7, choose the correct classification triple (G5, G6, G7). } \text{Options: Inconsistent; Independent \& consistent; Dependent}`,
+          choices: [
+            String.raw`\text{Independent \& consistent; Inconsistent; Dependent}`,
+            String.raw`\text{Dependent; Independent \& consistent; Inconsistent}`,
+            String.raw`\text{Independent \& consistent; Dependent; Inconsistent}`,
+            String.raw`\text{Inconsistent; Dependent; Independent \& consistent}`,
+            String.raw`\text{Dependent; Inconsistent; Independent \& consistent}`,
+            String.raw`\text{Inconsistent; Independent \& consistent; Dependent}`
+          ]}
+      ]
+    };
+  </script>
+
+  <link rel="stylesheet" href="/math-homework/assets/core.css" />
+  <link rel="stylesheet" href="https://tikzjax.com/v1/fonts.css" />
+  <script defer src="/math-homework/assets/core.js"></script>
+  <script defer src="https://tikzjax.com/v1/tikzjax.js"></script>
+  <script defer src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+</head>
+<body>
+  <div id="hw-root">Loading…</div>
+</body>
+</html>
