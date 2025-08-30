@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Homework 9-7 (Algebra 2)</title>
+
+  <script>
+    /* =========================================
+       Homework 9-7 — Variation (direct, inverse, joint)
+       Built from the provided source set.
+       Counts: 4 of type A, 6 of type B, 2 of type C.
+       ========================================= */
+    window.homeworkData = {
+      classId : "Algebra2",
+      id      : "Homework 9-7",
+      title   : "Homework 9-7 — Variation",
+
+      graphics : String.raw``,
+
+      /* Hidden answer key for 12 questions (choices A–F) */
+      answerKey : ["A","C","B","E","D","C","B","A","A","C","D","B"],
+
+      questions : [
+        /* ===== Type A (4) — basic direct/inverse/joint formulas ===== */
+        { latex: String.raw`\text{Solve and check. } y \text{ varies directly as } x \text{ and } y=30 \text{ when } x=5. \text{ Find } y \text{ when } x=8.`,
+          choices: [
+            String.raw`48`,   // correct
+            String.raw`36`,
+            String.raw`40`,
+            String.raw`45`,
+            String.raw`54`,
+            String.raw`30`
+          ]},
+
+        { latex: String.raw`\text{Solve and check. } y \text{ varies inversely as } x \text{ and } y=16 \text{ when } x=2. \text{ Find } y \text{ when } x=8.`,
+          choices: [
+            String.raw`8`,
+            String.raw`2`,
+            String.raw`4`,     // correct
+            String.raw`1`,
+            String.raw`6`,
+            String.raw`16`
+          ]},
+
+        { latex: String.raw`\text{Solve and check. } y \text{ varies directly as the cube of } x \text{ and } y=108 \text{ when } x=3. \text{ Find } y \text{ when } x=1.`,
+          choices: [
+            String.raw`12`,
+            String.raw`4`,     // correct
+            String.raw`3`,
+            String.raw`9`,
+            String.raw`27`,
+            String.raw`36`
+          ]},
+
+        { latex: String.raw`\text{Solve and check. } y \text{ varies jointly as } x \text{ and } z \text{ and } y=40 \text{ when } x=1, z=5. \text{ Find } y \text{ when } x=4, z=2.`,
+          choices: [
+            String.raw`32`,
+            String.raw`40`,
+            String.raw`48`,
+            String.raw`56`,
+            String.raw`64`,    // correct
+            String.raw`80`
+          ]},
+
+        /* ===== Type B (6) — multi-step & applications ===== */
+        { latex: String.raw`\text{The speeds of two meshed gears vary inversely as the number of teeth. One gear has }48\text{ teeth and }810\text{ rpm. The other has }45\text{ teeth. Find its rpm for proper meshing.}`,
+          choices: [
+            String.raw`720`,
+            String.raw`810`,
+            String.raw`832`,
+            String.raw`864`,   // correct
+            String.raw`900`,
+            String.raw`960`
+          ]},
+
+        { latex: String.raw`\text{Kinetic energy varies jointly as mass and the square of velocity. A body of mass }3\text{ g has }6\text{ J at }2\text{ m/s. If the energy becomes }24\text{ J (same mass), find the new velocity.}`,
+          choices: [
+            String.raw`2\ \text{m/s}`,
+            String.raw`3\ \text{m/s}`,
+            String.raw`4\ \text{m/s}`,  // correct
+            String.raw`6\ \text{m/s}`,
+            String.raw`8\ \text{m/s}`,
+            String.raw`\sqrt{12}\ \text{m/s}`
+          ]},
+
+        { latex: String.raw`\text{The weight of an object varies inversely as the square of its distance from Earth's center. If Earth’s radius is }6370\text{ km and a person weighs }55\text{ kg at the surface, estimate the weight at }630\text{ km above the surface.}`,
+          choices: [
+            String.raw`40.0\ \text{kg}`,
+            String.raw`45.5\ \text{kg}`,   // correct  (approx)
+            String.raw`50.0\ \text{kg}`,
+            String.raw`55.0\ \text{kg}`,
+            String.raw`60.0\ \text{kg}`,
+            String.raw`47.0\ \text{kg}`
+          ]},
+
+        { latex: String.raw`\text{The resistance }R\text{ of a wire varies directly as its length }L\text{ and inversely as the square of the diameter }d.\ \ R=\dfrac{kL}{d^{2}}.\ \text{ If }R=10\Omega\text{ for }L=55\text{ m}, d=1.5\text{ mm},\ \text{find }R\text{ for }L=27.5\text{ m}, d=5\text{ mm (same type of wire).}`,
+          choices: [
+            String.raw`0.45\ \Omega`,   // correct
+            String.raw`0.90\ \Omega`,
+            String.raw`1.80\ \Omega`,
+            String.raw`4.50\ \Omega`,
+            String.raw`0.40\ \Omega`,
+            String.raw`0.36\ \Omega`
+          ]},
+
+        { latex: String.raw`\text{From geometry, the area of a regular polygon varies jointly with the apothem }a\text{ and the perimeter }p.\ \text{Which equation fits this variation and identifies }k\text{ correctly?}`,
+          choices: [
+            String.raw`A=\tfrac12 ap\ \ (k=\tfrac12)`,  // correct
+            String.raw`A=ap\ \ (k=1)`,
+            String.raw`A=2ap\ \ (k=2)`,
+            String.raw`A=\tfrac13 ap\ \ (k=\tfrac13)`,
+            String.raw`A\text{ varies inversely as }ap`,
+            String.raw`A=\tfrac12 a+p`
+          ]},
+
+        { latex: String.raw`\text{Write the area formula for an equilateral triangle of side }s.\ \text{Give the type of variation and identify }k.`,
+          choices: [
+            String.raw`A=\tfrac12 s^{2}\ (\text{direct as }s^{2},\ k=\tfrac12)`,
+            String.raw`A=\sqrt{3}\,s\ (\text{direct as }s,\ k=\sqrt{3})`,
+            String.raw`A=\tfrac{\sqrt{3}}{4}s^{2}\ (\text{direct as }s^{2},\ k=\tfrac{\sqrt{3}}{4})`,  // correct
+            String.raw`A=\tfrac{3}{4}s\ (\text{direct as }s,\ k=\tfrac34)`,
+            String.raw`A=\tfrac{4}{\sqrt{3}}s^{2}\ (\text{direct as }s^{2})`,
+            String.raw`A=\tfrac{\sqrt{3}}{4}s\ (\text{direct as }s)`
+          ]},
+
+        /* ===== Type C (2) — reasoning / identification ===== */
+        { latex: String.raw`\text{A cube has volume }V=e^{3}\text{ and surface area }S=6e^{2}.\ \text{Which statement correctly shows }V\text{ is \emph{not} directly proportional to }S\text{?}`,
+          choices: [
+            String.raw`\dfrac{V}{S}=\dfrac{1}{6}\text{ for }e=1\ \text{and}\ \dfrac{V}{S}=\dfrac{1}{6}\text{ for }e=2\Rightarrow \text{proportional}`,
+            String.raw`V=kS\ \text{with }k=6\Rightarrow \text{proportional}`,
+            String.raw`S=kV\ \text{with }k=e\Rightarrow \text{proportional}`,
+            String.raw`\dfrac{V}{S}=\dfrac{1}{6}\text{ when }e=1,\ \ \dfrac{V}{S}=\dfrac{2}{6}\text{ when }e=2\Rightarrow \text{ratio changes, not proportional}`,  // correct
+            String.raw`V\text{ and }S\text{ are both powers of }e\Rightarrow \text{proportional}`,
+            String.raw`S\text{ does not depend on }e\Rightarrow \text{not proportional}`
+          ]},
+
+        { latex: String.raw`\text{Identify the type of variation represented by }xy=4\text{ (first quadrant).}`,
+          choices: [
+            String.raw`\text{Direct variation }y=kx`,
+            String.raw`\text{Inverse variation }y=\dfrac{4}{x}`,   // correct
+            String.raw`\text{Joint variation }y=kxz`,
+            String.raw`\text{Quadratic direct variation }y=kx^{2}`,
+            String.raw`\text{Exponential variation }y=k^{x}`,
+            String.raw`\text{Constant function }y=4`
+          ]}
+      ]
+    };
+  </script>
+
+  <link rel="stylesheet" href="/math-homework/assets/core.css" />
+  <script defer src="/math-homework/assets/core.js"></script>
+
+  <!-- MathJax (LaTeX) -->
+  <script defer src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+
+  <!-- TikZJax kept for consistency (no figures used here) -->
+  <link rel="stylesheet" href="https://tikzjax.com/v1/fonts.css" />
+  <script defer src="https://tikzjax.com/v1/tikzjax.js"></script>
+</head>
+<body>
+  <div id="hw-root">Loading…</div>
+</body>
+</html>
