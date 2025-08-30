@@ -7,109 +7,163 @@
 
   <script>
     /* =========================================
-       Homework 9-6 — Rational Equations
-       Types mirror the source set (A–C):
-       • Single-step rational equations (linear binomials)
-       • Proportions with variables in denominators
-       • Multi-term equations that lead to quadratics
-       NOTE: Excluded values are implicit from denominators.
+       Homework 9-6 — Solving Rational Equations
+       Types per source set:
+       • A: basic proportions / single-step rational equations (4)
+       • B: multi-term rational equations (6)
+       • C: equations with quadratic denominators / parameters (2)
        ========================================= */
     window.homeworkData = {
       classId : "Algebra2",
       id      : "Homework 9-6",
-      title   : "Homework 9-6 — Solve and Check (Rational Equations)",
+      title   : "Homework 9-6 — Solving Rational Equations",
 
-      graphics : String.raw``,  // no graphics for this section
+      /* No diagrams needed for this section */
+      graphics : String.raw``,
 
-      /* ===== Hidden answer key (A–F) for the 12 questions ===== */
-      answerKey : ["A","B","A","A","D","C","B","B","D","B","A","A"],
+      /* Hidden answer key (A–F) for the 12 questions below */
+      answerKey : ["A","B","A","B","B","C","C","A","C","C","A","C"],
 
       /* ===== 12 Multiple-Choice Questions (6 choices each) ===== */
       questions : [
-        /* ---------- A. Exercises (quick one-step) ---------- */
-        { latex: String.raw`\text{Solve and check: }\dfrac{9}{a}=3.\ \ \ (a\ne 0)`,
+        /* ---- Type A (4) ---- */
+        { latex: String.raw`\text{(A) Solve and check.}\quad \frac{9}{a}=3`,
           choices: [
-            String.raw`3`, String.raw`-3`, String.raw`6`,
-            String.raw`\dfrac13`, String.raw`12`, String.raw`\text{No solution}`
-          ]},
+            String.raw`a=3`,
+            String.raw`a=-3`,
+            String.raw`a=6`,
+            String.raw`a=9`,
+            String.raw`a=\tfrac13`,
+            String.raw`\text{no solution}`
+          ]
+        },
+        { latex: String.raw`\text{(A) Solve and check.}\quad \frac{16}{x+2}=4`,
+          choices: [
+            String.raw`x=-2`,
+            String.raw`x=2`,
+            String.raw`x=4`,
+            String.raw`x=6`,
+            String.raw`x=0`,
+            String.raw`\text{no real solution}`
+          ]
+        },
+        { latex: String.raw`\text{(A) Solve and check.}\quad \frac{x+7}{9}=\frac12`,
+          choices: [
+            String.raw`x=-\tfrac52`,
+            String.raw`x=\tfrac52`,
+            String.raw`x=-\tfrac{11}{2}`,
+            String.raw`x=-2`,
+            String.raw`x=\tfrac72`,
+            String.raw`\text{no solution}`
+          ]
+        },
+        { latex: String.raw`\text{(A) Solve and check.}\quad \frac{a+8}{5}=\frac{3a}{7}`,
+          choices: [
+            String.raw`a=5`,
+            String.raw`a=7`,
+            String.raw`a=-7`,
+            String.raw`a=8`,
+            String.raw`a=0`,
+            String.raw`\text{no solution}`
+          ]
+        },
 
-        { latex: String.raw`\text{Solve and check: }\dfrac{16}{x+2}=4.\ \ \ (x\ne -2)`,
+        /* ---- Type B (6) ---- */
+        { latex: String.raw`\text{(B) Solve and check.}\quad \frac{x+6}{x+16}=\frac35`,
           choices: [
-            String.raw`-6`, String.raw`2`, String.raw`4`,
-            String.raw`-2`, String.raw`6`, String.raw`\text{No solution}`
-          ]},
+            String.raw`x=-16`,
+            String.raw`x=9`,
+            String.raw`x=-9`,
+            String.raw`x=6`,
+            String.raw`x=15`,
+            String.raw`\text{no real solution}`
+          ]
+        },
+        { latex: String.raw`\text{(B) Solve and check.}\quad \frac{a-4}{8}+\frac{a}{16}=\frac{11}{a+3}`,
+          choices: [
+            String.raw`a=8\ \text{only}`,
+            String.raw`a=-\tfrac{25}{3}\ \text{only}`,
+            String.raw`a=8\ \text{or}\ a=-\tfrac{25}{3}`,
+            String.raw`a=-3`,
+            String.raw`a=8\ \text{or}\ a=-3`,
+            String.raw`\text{no solution}`
+          ]
+        },
+        { latex: String.raw`\text{(B) Solve and check.}\quad \frac{c+9}{c-9}-\frac{24}{c}=5`,
+          choices: [
+            String.raw`c=12\ \text{only}`,
+            String.raw`c=-\tfrac92\ \text{only}`,
+            String.raw`c=12\ \text{or}\ c=-\tfrac92`,
+            String.raw`c=9`,
+            String.raw`c=0`,
+            String.raw`\text{no solution}`
+          ]
+        },
+        { latex: String.raw`\text{(B) Solve and check.}\quad \frac{x+6}{x-8}=\frac{x+3}{x+10}`,
+          choices: [
+            String.raw`x=-4`,
+            String.raw`x=4`,
+            String.raw`x=8`,
+            String.raw`x=-10`,
+            String.raw`x=0`,
+            String.raw`\text{no solution}`
+          ]
+        },
+        { latex: String.raw`\text{(B) Solve and check.}\quad \frac{8}{y(y-2)}=\frac{y}{3y}`,
+          choices: [
+            String.raw`y=6\ \text{only}`,
+            String.raw`y=-4\ \text{only}`,
+            String.raw`y=6\ \text{or}\ y=-4`,
+            String.raw`y=0`,
+            String.raw`y=2`,
+            String.raw`\text{no real solution}`
+          ]
+        },
+        { latex: String.raw`\text{(B) Solve and check.}\quad \frac{3}{x-1}+\frac{5}{x+1}=2`,
+          choices: [
+            String.raw`x=0\ \text{only}`,
+            String.raw`x=4\ \text{only}`,
+            String.raw`x=0\ \text{or}\ x=4`,
+            String.raw`x=1\ \text{or}\ x=-1`,
+            String.raw`x=-4\ \text{or}\ x=0`,
+            String.raw`\text{no solution}`
+          ]
+        },
 
-        { latex: String.raw`\text{Solve and check: }\dfrac{25}{a+4}=5.\ \ \ (a\ne -4)`,
+        /* ---- Type C (2) ---- */
+        { latex: String.raw`\text{(C) Solve and check.}\quad \frac{1}{x-2}+\frac{2}{x+3}=\frac{3}{x^{2}+x-6}`,
           choices: [
-            String.raw`1`, String.raw`-1`, String.raw`5`,
-            String.raw`-5`, String.raw`21`, String.raw`\text{No solution}`
-          ]},
-
-        { latex: String.raw`\text{Solve and check: }\dfrac{7}{x+9}=\dfrac12.\ \ \ (x\ne -9)`,
+            String.raw`x=\tfrac{4}{3}`,
+            String.raw`x=-\tfrac{4}{3}`,
+            String.raw`x=2`,
+            String.raw`x=-3`,
+            String.raw`x=1`,
+            String.raw`\text{no solution}`
+          ]
+        },
+        { latex: String.raw`\text{(C) Solve and check for }x\text{ in terms of }a,b.\quad \frac{1}{x-a}+\frac{2}{x+b}=\frac{3}{x^{2}+(b-a)x-ab}`,
           choices: [
-            String.raw`5`, String.raw`-5`, String.raw`-14`,
-            String.raw`7`, String.raw`16`, String.raw`\text{No solution}`
-          ]},
-
-        /* ---------- Mix of proportions; solution sets ---------- */
-        { latex: String.raw`\text{Solve and check: }\dfrac{x+24}{x}=\dfrac{x}{4}.\ \ \ (x\ne 0)\ \ \text{Give the solution set.}`,
-          choices: [
-            String.raw`\{12\}`, String.raw`\{-8\}`, String.raw`\{0,12\}`,
-            String.raw`\{12,-8\}`, String.raw`\{-12,8\}`, String.raw`\text{No real solution}`
-          ]},
-
-        { latex: String.raw`\text{Solve and check: }\dfrac{1}{x+6}=\dfrac{2}{x+9}.\ \ \ (x\ne -6,-9)`,
-          choices: [
-            String.raw`-6`, String.raw`0`, String.raw`-3`,
-            String.raw`3`, String.raw`-9`, String.raw`\text{No solution}`
-          ]},
-
-        { latex: String.raw`\text{Solve and check: }\dfrac{a+8}{5}=\dfrac{3a}{7}.`,
-          choices: [
-            String.raw`5`, String.raw`7`, String.raw`14`,
-            String.raw`-7`, String.raw`0`, String.raw`\text{No solution}`
-          ]},
-
-        { latex: String.raw`\text{Solve and check: }\dfrac{x+6}{x+16}=\dfrac{3}{5}.\ \ \ (x\ne -16)`,
-          choices: [
-            String.raw`-9`, String.raw`9`, String.raw`-6`,
-            String.raw`6`, String.raw`3`, String.raw`\text{No solution}`
-          ]},
-
-        /* ---------- B/C-style multi-term → quadratic ---------- */
-        { latex: String.raw`\text{Solve and check: }\dfrac{a-4}{8}+\dfrac{a}{16}=\dfrac{11}{a+3}.\ \ \ (a\ne -3)\ \ \text{Give the solution set.}`,
-          choices: [
-            String.raw`\{8\}`, String.raw`\{-\tfrac{25}{3}\}`,
-            String.raw`\{-3,8\}`, String.raw`\{8,-\tfrac{25}{3}\}`,
-            String.raw`\{\}`, String.raw`\text{No real solution}`
-          ]},
-
-        { latex: String.raw`\text{Solve and check: }\dfrac{c+9}{c-3}=5.\ \ \ (c\ne 3)`,
-          choices: [
-            String.raw`3`, String.raw`6`, String.raw`9`,
-            String.raw`-6`, String.raw`0`, String.raw`\text{No solution}`
-          ]},
-
-        { latex: String.raw`\text{Solve and check: }\dfrac{x+6}{x-8}=\dfrac{x+3}{x+10}.\ \ \ (x\ne 8,-10)`,
-          choices: [
-            String.raw`-4`, String.raw`4`, String.raw`7`,
-            String.raw`-7`, String.raw`0`, String.raw`\text{No solution}`
-          ]},
-
-        { latex: String.raw`\text{Solve and check: }\dfrac{8}{y(y-2)}=\dfrac{1}{3}.\ \ \ (y\ne 0,2)\ \ \text{Give the solution set.}`,
-          choices: [
-            String.raw`\{-4,6\}`, String.raw`\{6\}`, String.raw`\{-4\}`,
-            String.raw`\{0,6\}`, String.raw`\{-4,6,0\}`, String.raw`\text{No real solution}`
-          ]}
+            String.raw`x=\frac{2a-b}{3}`,
+            String.raw`x=\frac{3+b-2a}{3}`,
+            String.raw`x=\frac{3-b+2a}{3}`,
+            String.raw`x=\frac{b-2a-3}{3}`,
+            String.raw`x=\frac{2a+b-3}{3}`,
+            String.raw`\text{no solution}`
+          ]
+        }
       ]
     };
   </script>
 
   <link rel="stylesheet" href="/math-homework/assets/core.css" />
   <script defer src="/math-homework/assets/core.js"></script>
-  <script defer src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+
+  <!-- TikZJax (kept for project consistency, though not used here) -->
   <link rel="stylesheet" href="https://tikzjax.com/v1/fonts.css" />
   <script defer src="https://tikzjax.com/v1/tikzjax.js"></script>
+
+  <!-- MathJax for LaTeX rendering -->
+  <script defer src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
 </head>
 <body>
   <div id="hw-root">Loading…</div>
