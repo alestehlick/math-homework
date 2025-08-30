@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Homework 7-2 (Algebra 2)</title>
+
+  <script>
+    /* =========================================
+       Algebra 2 — Section 7-2
+       Radicals, Simplifying & Absolute Value
+       ========================================= */
+    window.homeworkData = {
+      classId : "Algebra2",
+      id      : "Homework 7-2",
+      title   : "Homework 7-2 — Radicals & Absolute Value",
+
+      graphics : String.raw``,  // no diagrams needed
+
+      /* ===== Hidden answer key (A–F) for the 12 questions ===== */
+      answerKey : ["B","C","D","A","E","F","C","B","E","A","D","F"],
+
+      /* ===== 12 Multiple-Choice Questions (6 choices each) ===== */
+      questions : [
+        /* — A. Simplify (assume all variables are positive real numbers) — */
+        {
+          latex: String.raw`\text{1) Simplify: }\sqrt{144\,a^{4}b^{6}}`,
+          choices: [
+            String.raw`12ab^{3}`,
+            String.raw`12a^{2}b^{3}`,
+            String.raw`6a^{2}b^{3}\sqrt{4}`,
+            String.raw`12a^{2}b^{2}\sqrt{b^{2}}`,
+            String.raw`12|a|^{2}|b|^{3}`,
+            String.raw`144a^{2}b^{3}$
+          ]
+        },
+        {
+          latex: String.raw`\text{2) Simplify: }\sqrt[3]{54\,x^{5}y^{2}}`,
+          choices: [
+            String.raw`3\sqrt[3]{2x^{5}y^{2}}`,
+            String.raw`3x^{2}\sqrt[3]{2xy^{2}}`,
+            String.raw`3x\sqrt[3]{2x^{2}y^{2}}`,
+            String.raw`x\sqrt[3]{54x^{2}y^{2}}`,
+            String.raw`6x\sqrt[3]{xy^{2}}`,
+            String.raw`3\sqrt[3]{27x^{2}y^{2}}`
+          ]
+        },
+        {
+          latex: String.raw`\text{3) Simplify: }\sqrt[4]{256\,a^{6}b^{2}}`,
+          choices: [
+            String.raw`2a\sqrt[4]{4a^{2}b^{2}}`,
+            String.raw`4\sqrt[4]{a^{6}b^{2}}`,
+            String.raw`8a^{2}\sqrt[4]{b^{2}}`,
+            String.raw`4a\sqrt[4]{a^{2}b^{2}}`,
+            String.raw`16a\sqrt[4]{a^{2}b^{2}}`,
+            String.raw`4a^{3/2}b^{1/2}`
+          ]
+        },
+        {
+          latex: String.raw`\text{4) Simplify: }\sqrt{125\,x^{9}y^{4}}`,
+          choices: [
+            String.raw`5x^{4}y^{2}\sqrt{5x}`,
+            String.raw`5x^{4}y\sqrt{5xy^{2}}`,
+            String.raw`25x^{4}y^{2}\sqrt{5x}`,
+            String.raw`5x^{4}\sqrt{5xy^{4}}`,
+            String.raw`5x^{3}y^{2}\sqrt{5x^{3}}`,
+            String.raw`5x^{4}y^{2}\sqrt{xy}`
+          ]
+        },
+        {
+          latex: String.raw`\text{5) Simplify: }\sqrt[6]{64\,a^{8}b^{3}}`,
+          choices: [
+            String.raw`2\sqrt[6]{a^{8}b^{3}}`,
+            String.raw`2a^{4/3}\sqrt[6]{b^{3}}`,
+            String.raw`2a^{8/6}b^{3/6}`,
+            String.raw`2a^{2}\sqrt[6]{ab^{3}}`,
+            String.raw`2a\sqrt[6]{a^{2}b^{3}}`,
+            String.raw`2ab\sqrt[6]{a^{2}}`
+          ]
+        },
+        {
+          latex: String.raw`\text{6) Simplify: }\sqrt{27\,x^{5}y}`,
+          choices: [
+            String.raw`3xy\sqrt{3x^{3}}`,
+            String.raw`3x^{2}\sqrt{3y}`,
+            String.raw`3x^{2}\sqrt{3xy^{2}}`,
+            String.raw`3x\sqrt{3x^{3}y}`,
+            String.raw`9x^{2}\sqrt{xy}`,
+            String.raw`3x^{2}\sqrt{3xy}`
+          ]
+        },
+
+        /* — B. Simplify (variables may be positive or negative) — */
+        {
+          latex: String.raw`\text{7) Simplify: }\sqrt{x^{2}y^{4}z^{5}}\ \ \text{(principal square root)}`,
+          choices: [
+            String.raw`xy^{2}z^{2}\sqrt{z}`,
+            String.raw`|xy^{2}z^{2}|\sqrt{z}`,
+            String.raw`|x|\,y^{2}z^{2}\sqrt{z}`,
+            String.raw`x\,|y|^{2}z^{2}\sqrt{z}`,
+            String.raw`|x|\,|y|^{2}\,|z|^{2}\sqrt{z}`,
+            String.raw`x y^{2}|z|^{2}\sqrt{z}`
+          ]
+        },
+        {
+          latex: String.raw`\text{8) Simplify: }\sqrt[3]{-8x^{3}y^{6}}`,
+          choices: [
+            String.raw`2xy^{2}`,
+            String.raw`-2xy^{2}`,
+            String.raw`-2|x|y^{2}`,
+            String.raw`-2x|y|^{2}`,
+            String.raw`2|x|\,|y|^{2}`,
+            String.raw`-2x^{3}y^{6}$
+          ]
+        },
+        {
+          latex: String.raw`\text{9) Simplify: }\sqrt{9z^{2}}\ \ \text{(principal root)}`,
+          choices: [
+            String.raw`3z`,
+            String.raw`|3z|`,
+            String.raw`3\sqrt{z^{2}}`,
+            String.raw`3z^{2}`,
+            String.raw`3|z|`,
+            String.raw`\pm 3z`
+          ]
+        },
+        {
+          latex: String.raw`\text{10) Simplify: }\sqrt[4]{x^{2}z^{12}}`,
+          choices: [
+            String.raw`|z|^{3}\sqrt[4]{x^{2}}`,
+            String.raw`z^{3}\sqrt[4]{x^{2}}`,
+            String.raw`|z^{3}|\sqrt[4]{x^{2}}=z^{3}\sqrt[4]{x^{2}}`,
+            String.raw`z^{3}\sqrt{x^{2}}`,
+            String.raw`\sqrt[4]{x^{2}}\sqrt[4]{z^{12}}=z^{2}\sqrt[4]{xz^{4}}`,
+            String.raw`|x|^{1/2}|z|^{3}`
+          ]
+        },
+
+        /* — C. Concept & perfect-square structure — */
+        {
+          latex: String.raw`\text{11) Why does }\sqrt[3]{x^{5}}=x\sqrt[3]{x^{2}}\ \text{not use absolute values, but }\sqrt{x^{5}}=|x|\sqrt{x}\ \text{does?}`,
+          choices: [
+            String.raw`\text{Because }\sqrt[3]{\,}\text{ always returns a nonnegative value.}`,
+            String.raw`\text{Because }x^{5}\text{ is always positive.}`,
+            String.raw`\text{Because odd powers require }|x|\text{ while even powers do not.}`,
+            String.raw`\text{Because an odd-index root preserves the sign of }x,\ \text{while an even-index root is defined as a nonnegative principal root, so pulled factors appear as }|x|.`,
+            String.raw`\text{Because }\sqrt{x^{5}}=x\sqrt{x}\ \text{only when }x\ge 0.`,
+            String.raw`\text{None of the above.}`
+          ]
+        },
+        {
+          latex: String.raw`\text{12) Simplify (variables may be any real numbers): }\sqrt{9a^{2}-6ab+b^{2}}`,
+          choices: [
+            String.raw`3a-b`,
+            String.raw`|a-b|`,
+            String.raw`3|a|-|b|`,
+            String.raw`|3a+b|`,
+            String.raw`\sqrt{(3a-b)^{2}}=3a-b\ \text{ for all }a,b`,
+            String.raw`|3a-b|`
+          ]
+        }
+      ]
+    };
+  </script>
+
+  <link rel="stylesheet" href="/math-homework/assets/core.css" />
+  <script defer src="/math-homework/assets/core.js"></script>
+  <script defer src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+</head>
+<body>
+  <div id="hw-root">Loading…</div>
+</body>
+</html>
