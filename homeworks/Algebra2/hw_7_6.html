@@ -14,11 +14,11 @@
     window.homeworkData = {
       classId : "Algebra2",
       id      : "Homework 7 — Graphs",
-      title   : "Graphs — √x-shifts and a^x",
+      title   : "Graphs — Rational and Exponential Functions",
 
       /* --------- TikZJax graphics (G1–G6) laid out 3 per row --------- */
       graphics : String.raw`
-\begin{tikzpicture}[scale=0.7]
+\begin{tikzpicture}[scale=0.4]
   \tikzset{grid/.style={very thin,color=gray!35}}
   \tikzset{axes/.style={->,thick}}
   \colorlet{exp}{blue!55!black}
@@ -118,7 +118,7 @@
         { latex: String.raw`\text{Refer to G3. What is the domain?}`,
           choices: [
             String.raw`\{x \mid x \ge 0\}`,                  // correct
-            String.raw`\{x \mid x \in \mathbb{R}\}`,
+            String.raw`\mathbb{R}`,
             String.raw`\{x \mid x > 3\}`,
             String.raw`\{x \mid x \ge 3\}`,
             String.raw`\{x \mid x > -3\}`,
@@ -127,7 +127,7 @@
 
         { latex: String.raw`\text{Refer to G3. What is the range?}`,
           choices: [
-            String.raw`\{y \mid y \in \mathbb{R}\}`,
+            String.raw`\mathbb{R}`,
             String.raw`\{y \mid y \ge 0\}`,
             String.raw`\{y \mid y \ge 3\}`,                 // correct
             String.raw`\{y \mid y \le 3\}`,
