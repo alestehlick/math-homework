@@ -15,29 +15,22 @@
       id      : "Chapter 8 Review",
       title   : "Chapter 8 — Review",
 
-      /* One consolidated diagram: origin-based vectors + two “sum” vectors */
       graphics : String.raw`
 \begin{tikzpicture}[scale=0.58]
   \tikzset{axes/.style={->,thick}}
   \tikzset{grid/.style={very thin,color=gray!30}}
   \tikzset{vec/.style={->,very thick}}
   \clip (-8.3,-8.3) rectangle (8.3,8.3);
-
-  % Grid and axes
   \draw[grid] (-8,-8) grid (8,8);
   \draw[axes] (-8,0)--(8,0) node[right]{\(\mathbb{R}\)};
   \draw[axes] (0,-8)--(0,8) node[above]{\(i\)};
-
-  % Labeled vectors (all from origin)
-  \draw[vec,red]            (0,0)--(0,5)   node[midway,left]{\(\small P\)};     % 5i
-  \draw[vec,blue]           (0,0)--(3,-7)  node[midway,right]{\(\small Q\)};    % 3-7i
-  \draw[vec,teal]           (0,0)--(-6,5)  node[midway,above]{\(\small R\)};    % -6+5i
-  \draw[vec,purple]         (0,0)--(4,2)   node[midway,above]{\(\small U\)};    % 4+2i
-  \draw[vec,brown]          (0,0)--(-3,1)  node[midway,left]{\(\small V\)};     % -3+i
-
-  % Two explicit “sum” results (also from origin)
-  \draw[vec,green!60!black] (0,0)--(2,3)   node[midway,above left]{\(\small S_1\)}; % (-1+i)+(3+2i)
-  \draw[vec,orange]         (0,0)--(6,5)   node[midway,above right]{\(\small S_2\)}; % (5+2i)+(1+3i)
+  \draw[vec,red]            (0,0)--(0,5)   node[midway,left]{\(\small P\)};
+  \draw[vec,blue]           (0,0)--(3,-7)  node[midway,right]{\(\small Q\)};
+  \draw[vec,teal]           (0,0)--(-6,5)  node[midway,above]{\(\small R\)};
+  \draw[vec,purple]         (0,0)--(4,2)   node[midway,above]{\(\small U\)};
+  \draw[vec,brown]          (0,0)--(-3,1)  node[midway,left]{\(\small V\)};
+  \draw[vec,green!60!black] (0,0)--(2,3)   node[midway,above left]{\(\small S_1\)};
+  \draw[vec,orange]         (0,0)--(6,5)   node[midway,above right]{\(\small S_2\)};
 \end{tikzpicture}
 `,
 
