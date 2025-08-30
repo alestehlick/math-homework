@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Chapter 8 Review (Algebra 2)</title>
+
+  <script>
+    /* =========================================
+       Chapter 8 — Review (12 Qs)
+       Skills: radicals, complex ops, |z|, vectors (translated & sums), quadratics
+       ========================================= */
+    window.homeworkData = {
+      classId : "Algebra2",
+      id      : "Chapter 8 Review",
+      title   : "Chapter 8 — Review",
+
+      /* One consolidated diagram: origin-based vectors + two “sum” vectors */
+      graphics : String.raw`
+\begin{tikzpicture}[scale=0.58]
+  \tikzset{axes/.style={->,thick}}
+  \tikzset{grid/.style={very thin,color=gray!30}}
+  \tikzset{vec/.style={->,very thick}}
+  \clip (-8.3,-8.3) rectangle (8.3,8.3);
+
+  % Grid & axes
+  \draw[grid] (-8,-8) grid (8,8);
+  \draw[axes] (-8,0)--(8,0) node[right]{\(\mathbb{R}\)};
+  \draw[axes] (0,-8)--(0,8) node[above]{\(i\)};
+
+  % Labeled vectors (all from origin)
+  \draw[vec,red]            (0,0)--(0,5)   node[midway,left]{\(\small P\)};     % 5i
+  \draw[vec,blue]           (0,0)--(3,-7)  node[midway,right]{\(\small Q\)};    % 3-7i
+  \draw[vec,teal]           (0,0)--(-6,5)  node[midway,above]{\(\small R\)};    % -6+5i
+  \draw[vec,purple]         (0,0)--(4,2)   node[midway,above]{\(\small U\)};    % 4+2i
+  \draw[vec,brown]          (0,0)--(-3,1)  node[midway,left]{\(\small V\)};     % -3+i
+
+  % Two explicit “sum” results (also from origin)
+  \draw[vec,green!60!black] (0,0)--(2,3)   node[midway,above left]{\(\small S_1\)}; % (-1+i)+(3+2i)
+  \draw[vec,orange]         (0,0)--(6,5)   node[midway,above right]{\(\small S_2\)};% (5+2i)+(1+3i)
+\end{tikzpicture}
+`,
+
+      /* ===== Hidden Answer Key (A–F) ===== */
+      answerKey : ["A","A","D","A","A","A","A","A","A","A","E","A"],
+
+      /* ===== 12 Multiple-Choice Questions (6 choices each) ===== */
+      questions : [
+        { latex: String.raw`\text{Simplify: } \sqrt[3]{-32}`,
+          choices: [
+            String.raw`-2`,
+            String.raw`2`,
+            String.raw`-4`,
+            String.raw`4`,
+            String.raw`\sqrt[3]{-32}`,
+            String.raw`-\sqrt[3]{32}`
+          ]},
+
+        { latex: String.raw`\text{Solve } x^2+3x-2=0.`,
+          choices: [
+            String.raw`x=\dfrac{-3\pm\sqrt{17}}{2}`,
+            String.raw`x=\dfrac{3\pm\sqrt{17}}{2}`,
+            String.raw`x=\dfrac{-3\pm\sqrt{13}}{2}`,
+            String.raw`x=\dfrac{3\pm\sqrt{5}}{2}`,
+            String.raw`x=-3\pm\sqrt{17}`,
+            String.raw`x=\dfrac{3\pm 3}{2}`
+          ]},
+
+        { latex: String.raw`\text{Solve } 2x^2-4x+1=0.`,
+          choices: [
+            String.raw`x=1\pm\sqrt{2}`,
+            String.raw`x=1\pm\dfrac{\sqrt{2}}{4}`,
+            String.raw`x=\dfrac{4\pm\sqrt{8}}{2}`,
+            String.raw`x=1\pm\dfrac{\sqrt{2}}{2}`,
+            String.raw`x=2\pm\sqrt{2}`,
+            String.raw`x=\dfrac{4\pm 2\sqrt{2}}{2}`
+          ]},
+
+        { latex: String.raw`\text{Simplify (}a,b>0\text{): } \sqrt{-a^{5}b^{8}}`,
+          choices: [
+            String.raw`i\,a^{2}b^{4}\sqrt{a}`,
+            String.raw`a^{2}b^{4}\sqrt{-a}`,
+            String.raw`-i\,a^{2}b^{4}\sqrt{a}`,
+            String.raw`i\,a^{3}b^{4}\sqrt{a}`,
+            String.raw`a^{2}b^{4}\sqrt{a}`,
+            String.raw`i\,a^{2}b^{3}\sqrt{a}`
+          ]},
+
+        { latex: String.raw`\text{Compute: }(1+7i)+(-5+i)`,
+          choices: [
+            String.raw`-4+8i`,
+            String.raw`-4-8i`,
+            String.raw`4+8i`,
+            String.raw`-6+8i`,
+            String.raw`-4+6i`,
+            String.raw`-8+4i`
+          ]},
+
+        { latex: String.raw`\text{Compute: }(-4+2i)-(-2-6i)`,
+          choices: [
+            String.raw`-2+8i`,
+            String.raw`-6+8i`,
+            String.raw`-2-8i`,
+            String.raw`2+8i`,
+            String.raw`-2+4i`,
+            String.raw`8-2i`
+          ]},
+
+        { latex: String.raw`\text{Compute: }(2+i)(3-4i)`,
+          choices: [
+            String.raw`10-5i`,
+            String.raw`10+5i`,
+            String.raw`-10-5i`,
+            String.raw`6-11i`,
+            String.raw`12-2i`,
+            String.raw`8-5i`
+          ]},
+
+        { latex: String.raw`\text{Compute: }(9-2i)(1-i)`,
+          choices: [
+            String.raw`7-11i`,
+            String.raw`11-7i`,
+            String.raw`7+11i`,
+            String.raw`-7-11i`,
+            String.raw`11+7i`,
+            String.raw`7-9i`
+          ]},
+
+        { latex: String.raw`\text{Simplify: }\dfrac{4+2i}{1-4i}\ \text{ (write in }a+bi\text{).}`,
+          choices: [
+            String.raw`-\dfrac{4}{17}+\dfrac{18}{17}i`,
+            String.raw`\dfrac{4}{17}+\dfrac{18}{17}i`,
+            String.raw`-\dfrac{4}{17}-\dfrac{18}{17}i`,
+            String.raw`\dfrac{4+18i}{17}`,
+            String.raw`\dfrac{18}{17}-\dfrac{4}{17}i`,
+            String.raw`-\dfrac{18}{17}+\dfrac{4}{17}i`
+          ]},
+
+        { latex: String.raw`\text{Find }|{-6+5i}|.`,
+          choices: [
+            String.raw`\sqrt{61}`,
+            String.raw`11`,
+            String.raw`\sqrt{11}`,
+            String.raw`\sqrt{61}\,i`,
+            String.raw`-\sqrt{61}`,
+            String.raw`\dfrac{\sqrt{61}}{2}`
+          ]},
+
+        { latex: String.raw`\text{Refer to the diagram. Which labeled vector equals }(-1+i)+(3+2i)\text{?}`,
+          choices: [String.raw`P`, String.raw`Q`, String.raw`R`, String.raw`U`, String.raw`S_1`, String.raw`S_2`]},
+
+        { latex: String.raw`\text{Refer to the diagram. Which labeled vector represents }5i\text{?}`,
+          choices: [String.raw`P`, String.raw`Q`, String.raw`R`, String.raw`U`, String.raw`S_1`, String.raw`S_2`]}
+      ]
+    };
+  </script>
+
+  <link rel="stylesheet" href="/math-homework/assets/core.css" />
+  <script defer src="/math-homework/assets/core.js"></script>
+  <script defer src="https://tikzjax.com/v1/tikzjax.js"></script>
+  <script defer src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+</head>
+<body>
+  <div id="hw-root">Loading…</div>
+</body>
+</html>
