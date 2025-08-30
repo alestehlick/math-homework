@@ -15,16 +15,15 @@
       id      : "Homework 7-2",
       title   : "Homework 7-2 — Radicals & Absolute Value",
 
-      graphics : String.raw``,  // no diagrams needed
+      graphics : String.raw``,
 
       /* ===== Hidden answer key (A–F) for the 12 questions ===== */
       answerKey : ["B","C","D","A","E","F","C","B","E","A","D","F"],
 
-      /* ===== 12 Multiple-Choice Questions (6 choices each) ===== */
       questions : [
-        /* A. Simplify (variables positive) */
+        /* A. Variables assumed positive real numbers */
         {
-          latex: String.raw`\text{Simplify: }\sqrt{144\,a^{4}b^{6}}`,
+          latex: String.raw`\text{Simplify (assume all variables are positive real numbers): }\sqrt{144\,a^{4}b^{6}}`,
           choices: [
             String.raw`12ab^{3}`,
             String.raw`12a^{2}b^{3}`,
@@ -35,7 +34,7 @@
           ]
         },
         {
-          latex: String.raw`\text{Simplify: }\sqrt[3]{54\,x^{5}y^{2}}`,
+          latex: String.raw`\text{Simplify (assume positive real variables): }\sqrt[3]{54\,x^{5}y^{2}}`,
           choices: [
             String.raw`3\sqrt[3]{2x^{5}y^{2}}`,
             String.raw`3x^{2}\sqrt[3]{2xy^{2}}`,
@@ -46,7 +45,7 @@
           ]
         },
         {
-          latex: String.raw`\text{Simplify: }\sqrt[4]{256\,a^{6}b^{2}}`,
+          latex: String.raw`\text{Simplify (assume positive real variables): }\sqrt[4]{256\,a^{6}b^{2}}`,
           choices: [
             String.raw`2a\sqrt[4]{4a^{2}b^{2}}`,
             String.raw`4\sqrt[4]{a^{6}b^{2}}`,
@@ -57,7 +56,7 @@
           ]
         },
         {
-          latex: String.raw`\text{Simplify: }\sqrt{125\,x^{9}y^{4}}`,
+          latex: String.raw`\text{Simplify (assume positive real variables): }\sqrt{125\,x^{9}y^{4}}`,
           choices: [
             String.raw`5x^{4}y^{2}\sqrt{5x}`,
             String.raw`5x^{4}y\sqrt{5xy^{2}}`,
@@ -68,7 +67,7 @@
           ]
         },
         {
-          latex: String.raw`\text{Simplify: }\sqrt[6]{64\,a^{8}b^{3}}`,
+          latex: String.raw`\text{Simplify (assume positive real variables): }\sqrt[6]{64\,a^{8}b^{3}}`,
           choices: [
             String.raw`2\sqrt[6]{a^{8}b^{3}}`,
             String.raw`2a^{4/3}\sqrt[6]{b^{3}}`,
@@ -79,7 +78,7 @@
           ]
         },
         {
-          latex: String.raw`\text{Simplify: }\sqrt{27\,x^{5}y}`,
+          latex: String.raw`\text{Simplify (assume positive real variables): }\sqrt{27\,x^{5}y}`,
           choices: [
             String.raw`3xy\sqrt{3x^{3}}`,
             String.raw`3x^{2}\sqrt{3y}`,
@@ -90,9 +89,9 @@
           ]
         },
 
-        /* B. Variables may be positive or negative (principal roots) */
+        /* B. Variables may be any real numbers */
         {
-          latex: String.raw`\text{Simplify: }\sqrt{x^{2}y^{4}z^{5}}\ \ (\text{principal square root})`,
+          latex: String.raw`\text{Simplify (variables may be any real numbers): }\sqrt{x^{2}y^{4}z^{5}}\ \ (\text{principal square root})`,
           choices: [
             String.raw`xy^{2}z^{2}\sqrt{z}`,
             String.raw`|xy^{2}z^{2}|\sqrt{z}`,
@@ -103,7 +102,7 @@
           ]
         },
         {
-          latex: String.raw`\text{Simplify: }\sqrt[3]{-8x^{3}y^{6}}`,
+          latex: String.raw`\text{Simplify (variables may be any real numbers): }\sqrt[3]{-8x^{3}y^{6}}`,
           choices: [
             String.raw`2xy^{2}`,
             String.raw`-2xy^{2}`,
@@ -114,7 +113,7 @@
           ]
         },
         {
-          latex: String.raw`\text{Simplify: }\sqrt{9z^{2}}\ \ (\text{principal root})`,
+          latex: String.raw`\text{Simplify (variables may be any real numbers): }\sqrt{9z^{2}}\ \ (\text{principal root})`,
           choices: [
             String.raw`3z`,
             String.raw`|3z|`,
@@ -125,7 +124,7 @@
           ]
         },
         {
-          latex: String.raw`\text{Simplify: }\sqrt[4]{x^{2}z^{12}}`,
+          latex: String.raw`\text{Simplify (variables may be any real numbers): }\sqrt[4]{x^{2}z^{12}}`,
           choices: [
             String.raw`|z|^{3}\sqrt[4]{x^{2}}`,
             String.raw`z^{3}\sqrt[4]{x^{2}}`,
@@ -138,7 +137,7 @@
 
         /* C. Concept + perfect-square expression */
         {
-          latex: String.raw`\text{Why does }\sqrt[3]{x^{5}}=x\sqrt[3]{x^{2}}\ \text{not use }|\,|\text{, but }\sqrt{x^{5}}=|x|\sqrt{x}\ \text{does?}`,
+          latex: String.raw`\text{Explain: Why does }\sqrt[3]{x^{5}}=x\sqrt[3]{x^{2}}\ \text{not use }|\,|\text{, but }\sqrt{x^{5}}=|x|\sqrt{x}\ \text{does? (variables may be any real numbers)}`,
           choices: [
             String.raw`\text{Because }\sqrt[3]{\,}\text{ always returns a nonnegative value.}`,
             String.raw`\text{Because }x^{5}\text{ is always positive.}`,
@@ -149,7 +148,7 @@
           ]
         },
         {
-          latex: String.raw`\text{Simplify (any real }a,b\text{): }\sqrt{9a^{2}-6ab+b^{2}}`,
+          latex: String.raw`\text{Simplify (variables may be any real numbers): }\sqrt{9a^{2}-6ab+b^{2}}`,
           choices: [
             String.raw`3a-b`,
             String.raw`|a-b|`,
