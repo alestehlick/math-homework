@@ -7,141 +7,82 @@
 
   <script>
     /* =========================================
-       Homework 8-7 — Complex Vectors (revised)
+       Homework 8-7 — Complex Vectors (all-in-one diagram)
        ========================================= */
     window.homeworkData = {
       classId : "Algebra2",
       id      : "Homework 8-7",
       title   : "Homework 8-7 — Complex Vectors",
 
-      /* ===== Clean diagrams (no value labels), roomy windows ===== */
       graphics : String.raw`
-\begin{tikzpicture}[scale=0.60]
+\begin{tikzpicture}[scale=0.55]
   \tikzset{axes/.style={->,thick}}
   \tikzset{grid/.style={very thin,color=gray!30}}
   \tikzset{vec/.style={->,very thick}}
-  \tikzset{pt/.style={fill=black,circle,inner sep=1.6pt}}
+  \tikzset{pt/.style={circle,fill=black,inner sep=1.5pt}}
 
-  % --------- G1: vector from 0 to (2,3) ----------------------------
-  \begin{scope}[xshift=-8cm,yshift=6.5cm]
-    \clip (-6.2,-6.2) rectangle (6.2,6.2);
-    \draw[grid] (-6,-6) grid (6,6);
-    \draw[axes] (-6,0)--(6,0) node[anchor=west]{\(\mathbb{R}\)};
-    \draw[axes] (0,-6)--(0,6) node[anchor=south]{\(i\)};
-    \draw[vec,blue] (0,0)--(2,3);
-    \node[pt] at (2,3){};
-    \node[anchor=south west,font=\small] at (-5.8,5.6) {G1};
-  \end{scope}
+  % Grid and axes
+  \clip (-8.2,-8.2) rectangle (8.2,8.2);
+  \draw[grid] (-8,-8) grid (8,8);
+  \draw[axes] (-8,0)--(8,0) node[right]{\(\mathbb{R}\)};
+  \draw[axes] (0,-8)--(0,8) node[above]{\(i\)};
 
-  % --------- G2: vector from 0 to (-4,-2) --------------------------
-  \begin{scope}[xshift=8cm,yshift=6.5cm]
-    \clip (-6.2,-6.2) rectangle (6.2,6.2);
-    \draw[grid] (-6,-6) grid (6,6);
-    \draw[axes] (-6,0)--(6,0) node[anchor=west]{\(\mathbb{R}\)};
-    \draw[axes] (0,-6)--(0,6) node[anchor=south]{\(i\)};
-    \draw[vec,blue] (0,0)--(-4,-2);
-    \node[pt] at (-4,-2){};
-    \node[anchor=south west,font=\small] at (-5.8,5.6) {G2};
-  \end{scope}
-
-  % --------- G3: (2+i)+(5+3i) with tip-to-tail ---------------------
-  \begin{scope}[xshift=-8cm,yshift=-6.5cm]
-    % roomy window to fit (7,4)
-    \clip (-2.2,-2.2) rectangle (8.2,6.2);
-    \draw[grid] (-2,-2) grid (8,6);
-    \draw[axes] (-2,0)--(8,0) node[anchor=west]{\(\mathbb{R}\)};
-    \draw[axes] (0,-2)--(0,6) node[anchor=south]{\(i\)};
-    % addend 1 (red): 0 -> (2,1)
-    \draw[vec,red] (0,0)--(2,1);
-    \node[pt] at (2,1){};
-    % addend 2 (green) placed tip-to-tail: (2,1) -> (7,4)
-    \draw[vec,green!60!black] (2,1)--(7,4);
-    \node[pt] at (7,4){};
-    % resultant (blue): 0 -> (7,4)
-    \draw[vec,blue] (0,0)--(7,4);
-    \node[anchor=south west,font=\small] at (-1.8,5.6) {G3};
-  \end{scope}
-
-  % --------- G4: (5-3i) - (2+i) shown as 0->(5,-3) then to (3,-4) --
-  \begin{scope}[xshift=8cm,yshift=-6.5cm]
-    % roomy window to fit (5,-3) and (3,-4)
-    \clip (-1.2,-5.2) rectangle (6.2,2.2);
-    \draw[grid] (-1,-5) grid (6,2);
-    \draw[axes] (-1,0)--(6,0) node[anchor=west]{\(\mathbb{R}\)};
-    \draw[axes] (0,-5)--(0,2) node[anchor=south]{\(i\)};
-    % minuend (red): 0 -> (5,-3)
-    \draw[vec,red] (0,0)--(5,-3);
-    \node[pt] at (5,-3){};
-    % subtract vector (green) placed from tip: (5,-3) -> (3,-4)
-    \draw[vec,green!60!black] (5,-3)--(3,-4);
-    \node[pt] at (3,-4){};
-    % result (blue): 0 -> (3,-4)
-    \draw[vec,blue] (0,0)--(3,-4);
-    \node[anchor=south west,font=\small] at (-0.8,1.6) {G4};
-  \end{scope}
+  % Vectors
+  \draw[vec,red] (0,0)--(2,3) node[midway,above left]{\(v_1\)};
+  \draw[vec,blue] (0,0)--(-4,-2) node[midway,below]{\(v_2\)};
+  \draw[vec,green!60!black] (0,0)--(5,-3) node[midway,below]{\(v_3\)};
+  \draw[vec,orange] (0,0)--(7,4) node[midway,above right]{\(v_4\)};
+  \draw[vec,purple] (0,0)--(-6,5) node[midway,above left]{\(v_5\)};
+  \draw[vec,cyan] (0,0)--(3,-4) node[midway,right]{\(v_6\)};
 \end{tikzpicture}
 `,
 
-      /* ===== Hidden Answer Key (A–F) ===== */
-      answerKey : ["A","C","B","D","E","F","C","B","A","D","F","E"],
+      /* ===== Hidden Answer Key ===== */
+      answerKey : ["A","C","B","D","E","B","F","A","D","E","A","C"],
 
-      /* ===== 12 Questions ===== */
+      /* ===== 12 Good Questions ===== */
       questions : [
-        { latex: String.raw`\text{Refer to G1. What complex number is represented by the vector?}`,
-          choices: ["2+3i","3+2i","-2+3i","2-3i","-2-3i","3-3i"]},
+        { latex: String.raw`\text{Which vector is }2+3i?`,
+          choices: ["\(v_1\)","\(v_2\)","\(v_3\)","\(v_4\)","\(v_5\)","\(v_6\)"]},
 
-        { latex: String.raw`\text{Refer to G2. What is the length (magnitude) of the vector?}`,
-          choices: [
-            String.raw`\sqrt{20}`,
-            String.raw`2\sqrt{5}`,
-            String.raw`\sqrt{(-4)^2+(-2)^2}`,
-            String.raw`5`,
-            String.raw`\sqrt{8}`,
-            String.raw`4\sqrt{2}`
-          ]},
+        { latex: String.raw`\text{Which vector is }-4-2i?`,
+          choices: ["\(v_1\)","\(v_2\)","\(v_3\)","\(v_4\)","\(v_5\)","\(v_6\)"]},
 
-        { latex: String.raw`\text{Which complex number has length 5 and lies on the positive imaginary axis?}`,
-          choices: ["5i","-5i","5","-5","4+3i","3+4i"]},
+        { latex: String.raw`\text{Which vector is }5-3i?`,
+          choices: ["\(v_1\)","\(v_2\)","\(v_3\)","\(v_4\)","\(v_5\)","\(v_6\)"]},
 
-        { latex: String.raw`\text{Vector from initial }(4,7)\text{ to terminal }(-3,1)\text{ equals…}`,
-          choices: [
-            String.raw`-7-6i`,
-            String.raw`7+6i`,
-            String.raw`-7+6i`,
-            String.raw`7-6i`,
-            String.raw`-3+7i`,
-            String.raw`3-7i`
-          ]},
+        { latex: String.raw`\text{Which vector is }7+4i?`,
+          choices: ["\(v_1\)","\(v_2\)","\(v_3\)","\(v_4\)","\(v_5\)","\(v_6\)"]},
 
-        { latex: String.raw`\text{Refer to G3. What is }(2-i)+(5+3i)\text{?}`,
-          choices: ["7+4i","2+i","5+3i","3-4i","-7-4i","4+7i"]},
+        { latex: String.raw`\text{Which vector is }-6+5i?`,
+          choices: ["\(v_1\)","\(v_2\)","\(v_3\)","\(v_4\)","\(v_5\)","\(v_6\)"]},
 
-        { latex: String.raw`\text{Refer to G3. Which vector is drawn in red?}`,
-          choices: ["2+i","7+4i","3-4i","5+3i","-2-i","4+7i"]},
+        { latex: String.raw`\text{Which vector is }3-4i?`,
+          choices: ["\(v_1\)","\(v_2\)","\(v_3\)","\(v_4\)","\(v_5\)","\(v_6\)"]},
 
-        { latex: String.raw`\text{Refer to G4. What is }(5-3i)-(2+i)\text{?}`,
-          choices: ["3-4i","7+4i","2+i","-3+4i","5-2i","3+4i"]},
+        { latex: String.raw`\text{What is the magnitude of }v_1=2+3i?`,
+          choices: ["\(\sqrt{13}\)","\(\sqrt{5}\)","5","\(\sqrt{29}\)","3","\(\sqrt{7}\)"]},
 
-        { latex: String.raw`\text{Find the length of }3-4i.`,
-          choices: ["5","7","\u221A7","4","\u221A25","2"]},
+        { latex: String.raw`\text{What is the magnitude of }v_6=3-4i?`,
+          choices: ["3","4","5","\(\sqrt{7}\)","\(\sqrt{29}\)","\(\sqrt{25}\)"]},
 
-        { latex: String.raw`\text{Which complex number is a vector of length }6\text{ pointing left on the real axis?}`,
-          choices: ["-6","6","-6i","6i","3-3i","-3+3i"]},
+        { latex: String.raw`\text{Compute }v_1+v_3=(2+3i)+(5-3i).`,
+          choices: ["7","7+0i","7+3i","7i","2i","-7+3i"]},
 
-        { latex: String.raw`\text{Compute }(2-i)+(5+3i).`,
-          choices: ["7+2i","7+4i","3+2i","5+3i","2-i","7-4i"]},
+        { latex: String.raw`\text{Compute }v_2+v_5=(-4-2i)+(-6+5i).`,
+          choices: ["-10+3i","-10-7i","2+3i","-2+7i","-6+3i","-12+3i"]},
 
-        { latex: String.raw`\text{Compute }(6+4i)+(-6+i).`,
-          choices: ["0+5i","12+5i","0-5i","12-5i","-6+5i","6-5i"]},
+        { latex: String.raw`\text{Compute }v_4-v_6=(7+4i)-(3-4i).`,
+          choices: ["4+8i","10i","4-8i","-4+8i","7+0i","3+4i"]},
 
         { latex: String.raw`\text{Is vector addition commutative?}`,
           choices: [
-            String.raw`\text{Yes, because }z+w=w+z.`,
-            String.raw`\text{Yes, but only if }z,w\in\mathbb{R}.`,
-            String.raw`\text{No, order matters.}`,
-            String.raw`\text{No, only subtraction is commutative.}`,
-            String.raw`\text{Yes, but only if magnitudes are equal.}`,
-            String.raw`\text{No, unless both are purely imaginary.}`
+            "Yes, always: \(z+w=w+z\).",
+            "No, order matters.",
+            "Yes, but only for real numbers.",
+            "Yes, but only for equal magnitudes.",
+            "No, only subtraction is commutative.",
+            "Yes, but only for vertical vectors."
           ]}
       ]
     };
