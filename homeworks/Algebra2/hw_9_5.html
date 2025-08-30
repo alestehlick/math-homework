@@ -8,7 +8,7 @@
   <script>
     /* =========================================
        Homework 9-5 — Graphs of Rational Functions
-       Fixed spacing & set-builder notation for domains
+       Update: adds “identify the function from the graph” items.
        ========================================= */
     window.homeworkData = {
       classId : "Algebra2",
@@ -84,36 +84,37 @@
 \end{tikzpicture}
 `,
 
-      answerKey : ["B","E","A","D","C","F","A","C","B","F","D","E"],
+      /* ===== Updated hidden answer key (A–F) ===== */
+      answerKey : ["B","D","A","D","C","C","A","B","C","B","C","B"],
 
       questions : [
         { latex: String.raw`\text{Refer to G1. What are the vertical and horizontal asymptotes?}`,
           choices: [
-            String.raw`x=0, y=1`,
-            String.raw`x=0, y=0`,   // correct
-            String.raw`x=1, y=0`,
-            String.raw`x=0, y=2`,
-            String.raw`x=1, y=1`,
-            String.raw`x=-1, y=0`
+            String.raw`x=0,\ y=1`,
+            String.raw`x=0,\ y=0`,   // ✔
+            String.raw`x=1,\ y=0`,
+            String.raw`x=0,\ y=2`,
+            String.raw`x=1,\ y=1`,
+            String.raw`x=-1,\ y=0`
           ]},
 
         { latex: String.raw`\text{Refer to G2. What are the vertical asymptotes?}`,
           choices: [
-            String.raw`x=0 \text{ only}`,
-            String.raw`x=2 \text{ only}`,
-            String.raw`x=-2, x=2`,
-            String.raw`x=0, x=2`,  // correct
-            String.raw`x=±1`,
+            String.raw`x=0\ \text{ only}`,
+            String.raw`x=2\ \text{ only}`,
+            String.raw`x=-2,\ x=2`,
+            String.raw`x=0,\ x=2`,  // ✔
+            String.raw`x=\pm 1`,
             String.raw`x=3`
           ]},
 
         { latex: String.raw`\text{Refer to G3. Which statement is true?}`,
           choices: [
-            String.raw`\text{The graph is symmetric about the origin}`, // correct
+            String.raw`\text{The graph is symmetric about the origin}`, // ✔
             String.raw`\text{The graph is symmetric about the y-axis}`,
-            String.raw`\text{The graph has vertical asymptote y=0}`,
-            String.raw`\text{The graph passes through (0,0)}`,
-            String.raw`\text{The graph is symmetric about x-axis}`,
+            String.raw`\text{The graph has vertical asymptote }y=0`,
+            String.raw`\text{The graph passes through }(0,0)`,
+            String.raw`\text{The graph is symmetric about the x-axis}`,
             String.raw`\text{The graph has no symmetry}`
           ]},
 
@@ -122,76 +123,78 @@
             String.raw`x=0`,
             String.raw`x=2`,
             String.raw`x=-1`,
-            String.raw`x=1`, // correct
+            String.raw`x=1`, // ✔
             String.raw`y=1`,
             String.raw`y=0`
           ]},
 
         { latex: String.raw`\text{Refer to G5. What is the domain?}`,
           choices: [
-            String.raw`\{x \in \mathbb{R} \mid x \neq 0\}`,
-            String.raw`\{x \in \mathbb{R} \mid x \neq 5\}`,
-            String.raw`\{x \in \mathbb{R} \mid x \neq 0, x \neq 5\}`, // correct
-            String.raw`\{x \in \mathbb{R} \mid x \neq -1, x \neq 1\}`,
-            String.raw`\{x \in \mathbb{R} \mid x \neq 2, x \neq 3\}`,
-            String.raw`\{x \in \mathbb{R} \mid x \neq 0, y \neq 5\}`
+            String.raw`\{x\in\mathbb{R}\mid x\ne 0\}`,
+            String.raw`\{x\in\mathbb{R}\mid x\ne 5\}`,
+            String.raw`\{x\in\mathbb{R}\mid x\ne 0,\ x\ne 5\}`, // ✔
+            String.raw`\{x\in\mathbb{R}\mid x\ne -1,\ x\ne 1\}`,
+            String.raw`\{x\in\mathbb{R}\mid x\ne 2,\ x\ne 3\}`,
+            String.raw`\{x\in\mathbb{R}\mid x\ne 0,\ y\ne 5\}`
           ]},
 
         { latex: String.raw`\text{Refer to G6. What is the horizontal asymptote?}`,
           choices: [
             String.raw`y=1`,
             String.raw`y=3`,
-            String.raw`y=0`, // correct
+            String.raw`y=0`, // ✔
             String.raw`x=1`,
             String.raw`x=-1`,
             String.raw`y=-3`
           ]},
 
-        { latex: String.raw`\text{Refer to G1. Which point lies on the graph?}`,
+        /* ==== New “identify the function from the graph” items ==== */
+        { latex: String.raw`\text{Identify the function whose graph is G1.}`,
           choices: [
-            String.raw`(1,1)`, // correct
-            String.raw`(0,0)`,
-            String.raw`(2,2)`,
-            String.raw`(3,3)`,
-            String.raw`(-1,-1)`,
-            String.raw`(2,1)`
+            String.raw`y=\tfrac{1}{x}`,                 // ✔
+            String.raw`y=\tfrac{1}{x-1}`,
+            String.raw`y=-\tfrac{2}{x}`,
+            String.raw`y=\tfrac{3}{x+1}`,
+            String.raw`y=\tfrac{x}{x-5}`,
+            String.raw`y=\tfrac{1}{x^{2}-2x}`
           ]},
 
-        { latex: String.raw`\text{Refer to G2. What is the y-intercept?}`,
+        { latex: String.raw`\text{Identify the function whose graph is G3.}`,
           choices: [
-            String.raw`0`,
-            String.raw`1`,
-            String.raw`-1`, // correct
-            String.raw`2`,
-            String.raw`-2`,
-            String.raw`3`
+            String.raw`y=\tfrac{1}{x}`,
+            String.raw`y=-\tfrac{2}{x}`,                // ✔
+            String.raw`y=\tfrac{2}{x}`,
+            String.raw`y=\tfrac{1}{x+1}`,
+            String.raw`y=\tfrac{1}{x-2}`,
+            String.raw`y=-\tfrac{1}{x}`
           ]},
 
-        { latex: String.raw`\text{Refer to G3. What is the horizontal asymptote?}`,
+        { latex: String.raw`\text{Identify the function whose graph is G4.}`,
           choices: [
-            String.raw`y=2`,
-            String.raw`y=-2`,
-            String.raw`y=0`, // correct
-            String.raw`x=0`,
-            String.raw`x=-2`,
-            String.raw`x=2`
+            String.raw`y=\tfrac{1}{x}`,
+            String.raw`y=\tfrac{1}{x+1}`,
+            String.raw`y=\tfrac{1}{x-1}`,               // ✔
+            String.raw`y=-\tfrac{1}{x-1}`,
+            String.raw`y=\tfrac{3}{x+1}`,
+            String.raw`y=\tfrac{x^{2}}{x^{2}-5x}`
           ]},
 
-        { latex: String.raw`\text{Refer to G4. What is the value of }f(2)?`,
+        { latex: String.raw`\text{Identify the function whose graph is G5.}`,
           choices: [
-            String.raw`1`, // correct
-            String.raw`2`,
-            String.raw`-1`,
-            String.raw`0`,
-            String.raw`3`,
-            String.raw`-2`
+            String.raw`y=\tfrac{x}{x-5}`,
+            String.raw`y=\tfrac{x^{2}}{x^{2}-5x}`,      // ✔
+            String.raw`y=\tfrac{1}{x^{2}-5x}`,
+            String.raw`y=\tfrac{x-5}{x}`,
+            String.raw`y=\tfrac{1}{x-5}`,
+            String.raw`y=\tfrac{3}{x+1}`
           ]},
 
-        { latex: String.raw`\text{Refer to G5. Which asymptote is correct?}`,
+        /* ==== Keep two conceptual checks ==== */
+        { latex: String.raw`\text{Refer to G5. Which vertical asymptotes are correct?}`,
           choices: [
-            String.raw`x=5 \text{ only}`,
-            String.raw`x=0 \text{ only}`,
-            String.raw`x=5 \text{ and } x=0`, // correct
+            String.raw`x=5\ \text{ only}`,
+            String.raw`x=0\ \text{ only}`,
+            String.raw`x=5\ \text{ and }x=0`, // ✔
             String.raw`y=5`,
             String.raw`y=1`,
             String.raw`x=1`
@@ -199,12 +202,12 @@
 
         { latex: String.raw`\text{Refer to G6. Which statement is true?}`,
           choices: [
-            String.raw`\text{Domain is all reals}`,
-            String.raw`\text{Vertical asymptote at }x=-1`, // correct
+            String.raw`\text{Domain is all real numbers}`,
+            String.raw`\text{Vertical asymptote at }x=-1`, // ✔
             String.raw`\text{Horizontal asymptote }y=3`,
-            String.raw`\text{Graph passes (0,3)}`,
+            String.raw`\text{Graph passes through }(0,3)`,
             String.raw`\text{Vertical asymptote at }y=-1`,
-            String.raw`\text{Intercept at (-1,0)}`
+            String.raw`\text{Intercept at }(-1,0)`
           ]}
       ]
     };
