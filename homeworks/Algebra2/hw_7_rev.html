@@ -17,7 +17,7 @@
 
       /* ---------- TikZJax graphics for graphs ---------- */
       graphics : String.raw`
-\begin{tikzpicture}[scale=0.65]
+\begin{tikzpicture}[scale=0.5]
   \tikzset{grid/.style={very thin,color=gray!35}}
   \tikzset{axes/.style={->,thick}}
   \colorlet{fun}{blue!60!black}
@@ -29,7 +29,7 @@
     \draw[axes] (-5,0)--(6,0);
     \draw[axes] (0,-1)--(0,6);
     \draw[fun,thick,domain=-4:6,samples=200] plot(\x,{sqrt(\x+4)});
-    \node[anchor=north east,font=\small] at (5.5,-1) {G1};
+    \node[anchor=north east,font=\small] at (4,0) {G1};
   \end{scope}
 
   % G2: f(x)=sqrt(x-1)
@@ -39,7 +39,7 @@
     \draw[axes] (-5,0)--(6,0);
     \draw[axes] (0,-1)--(0,6);
     \draw[fun,thick,domain=1:6,samples=200] plot(\x,{sqrt(\x-1)});
-    \node[anchor=north east,font=\small] at (5.5,-1) {G2};
+    \node[anchor=north east,font=\small] at (4,0) {G2};
   \end{scope}
 
   % G3: g(x)=2^x-7
@@ -49,7 +49,7 @@
     \draw[axes] (-5,0)--(6,0);
     \draw[axes] (0,-8)--(0,6);
     \draw[fun,thick,domain=-5:3,samples=200] plot(\x,{pow(2,\x)-7});
-    \node[anchor=north east,font=\small] at (5.5,-8) {G3};
+    \node[anchor=north east,font=\small] at (4,0) {G3};
   \end{scope}
 
   % G4: g(x)=3^x
@@ -59,7 +59,7 @@
     \draw[axes] (-5,0)--(6,0);
     \draw[axes] (0,-1)--(0,6);
     \draw[fun,thick,domain=-5:2,samples=200] plot(\x,{pow(3,\x)});
-    \node[anchor=north east,font=\small] at (5.5,-1) {G4};
+    \node[anchor=north east,font=\small] at (4,0) {G4};
   \end{scope}
 \end{tikzpicture}
 `,
