@@ -6,74 +6,44 @@
   <title>Homework 7 — Graphs of √x and a^x</title>
 
   <script>
-    /* =========================================
-       Algebra 2 — Graphs of Radical & Exponential Functions
-       ========================================= */
     window.homeworkData = {
       classId : "Algebra2",
       id      : "Homework 7 — Graphs",
       title   : "Graphs — √x-shifts and a^x",
 
-      /* --------- TikZJax graphics (G1–G6) --------- */
       graphics : String.raw`
-\begin{tikzpicture}[scale=0.62]
+\begin{tikzpicture}[scale=0.6]
   \tikzset{grid/.style={very thin,color=gray!35}}
   \tikzset{axes/.style={->,thick}}
   \colorlet{exp}{blue!55!black}
   \colorlet{rad}{teal!60!black}
 
-  \newcommand{\panel}[3]{
+  % Define panel macro
+  \newcommand{\panel}[4]{
     \begin{scope}[xshift=#1,yshift=#2]
-      \clip (-4.2,-1.2) rectangle (4.2,6.2);
-      \draw[grid] (-4,-1) grid (4,6);
+      \clip (-4.2,-2.2) rectangle (4.2,6.2);
+      \draw[grid] (-4,-2) grid (4,6);
       \draw[axes] (-4,0)--(4,0);
-      \draw[axes] (0,-1)--(0,6);
+      \draw[axes] (0,-2)--(0,6);
       #3
+      \node[anchor=north east,font=\small] at (3.8,-2) {#4};
     \end{scope}
   }
 
-  % G1: y = 4^x
-  \panel{-8}{6}{
-    \draw[exp,thick,domain=-2:1.5,samples=200] plot(\x,{pow(4,\x)});
-    \node[anchor=south east,font=\small] at (3.8,5.8) {G1};
-  }
+  % Top row
+  \panel{-10}{6}{\draw[exp,thick,domain=-2:1.5,samples=200] plot(\x,{pow(4,\x)});}{G1: $y=4^x$}
+  \panel{0}{6}{\draw[exp,thick,domain=-2:2,samples=200] plot(\x,{pow(0.25,\x)});}{G2: $y=(\tfrac14)^x$}
+  \panel{10}{6}{\draw[rad,thick,domain=0:9,samples=200] plot(\x,{sqrt(\x)+3});}{G3: $y=\sqrt{x}+3$}
 
-  % G2: y = (1/4)^x
-  \panel{0}{6}{
-    \draw[exp,thick,domain=-2:2,samples=200] plot(\x,{pow(0.25,\x)});
-    \node[anchor=south east,font=\small] at (3.8,5.8) {G2};
-  }
-
-  % G3: y = sqrt(x) + 3
-  \panel{8}{6}{
-    \draw[rad,thick,domain=0:9,samples=200] plot(\x,{sqrt(\x)+3});
-    \node[anchor=south east,font=\small] at (3.8,5.8) {G3};
-  }
-
-  % G4: y = sqrt(x) + 1
-  \panel{-8}{-2}{
-    \draw[rad,thick,domain=0:16,samples=200] plot(\x,{sqrt(\x)+1});
-    \node[anchor=south east,font=\small] at (3.8,5.8) {G4};
-  }
-
-  % G5: y = 2^{x-2}
-  \panel{0}{-2}{
-    \draw[exp,thick,domain=-2:6,samples=200] plot(\x,{pow(2,\x-2)});
-    \node[anchor=south east,font=\small] at (3.8,5.8) {G5};
-  }
-
-  % G6: y = -2\sqrt{x}
-  \panel{8}{-2}{
-    \draw[rad,thick,domain=0:9,samples=200] plot(\x,{-2*sqrt(\x)});
-    \node[anchor=south east,font=\small] at (3.8,5.8) {G6};
-  }
+  % Bottom row
+  \panel{-10}{-2}{\draw[rad,thick,domain=0:16,samples=200] plot(\x,{sqrt(\x)+1});}{G4: $y=\sqrt{x}+1$}
+  \panel{0}{-2}{\draw[exp,thick,domain=-2:6,samples=200] plot(\x,{pow(2,\x-2)});}{G5: $y=2^{x-2}$}
+  \panel{10}{-2}{\draw[rad,thick,domain=0:9,samples=200] plot(\x,{-2*sqrt(\x)});}{G6: $y=-2\sqrt{x}$}
 \end{tikzpicture}
 `,
 
-      /* ===== Hidden answer key (A–F) for the 12 questions ===== */
       answerKey : ["A","B","A","C","C","A","B","B","B","A","C","C"],
 
-      /* ===== 12 Multiple-Choice Questions (6 choices each) ===== */
       questions : [
         { latex: String.raw`\text{Refer to G1. Which function is graphed?}`,
           choices: [
@@ -84,7 +54,6 @@
             String.raw`y=-3^{x}`,
             String.raw`y=4^{-x}`
           ]},
-
         { latex: String.raw`\text{Refer to G2. Which function is graphed?}`,
           choices: [
             String.raw`y=4^{x}`,
@@ -94,7 +63,6 @@
             String.raw`y=\sqrt{x}+3`,
             String.raw`y=10^{x}`
           ]},
-
         { latex: String.raw`\text{Refer to G3. What is the domain?}`,
           choices: [
             String.raw`[0,\infty)`,
@@ -104,7 +72,6 @@
             String.raw`(-3,\infty)`,
             String.raw`(-\infty,0]`
           ]},
-
         { latex: String.raw`\text{Refer to G3. What is the range?}`,
           choices: [
             String.raw`(-\infty,\infty)`,
@@ -114,7 +81,6 @@
             String.raw`(0,\infty)`,
             String.raw`(-\infty,0]`
           ]},
-
         { latex: String.raw`\text{Refer to G5. What is the }y\text{-intercept?}`,
           choices: [
             String.raw`0`,
@@ -124,7 +90,6 @@
             String.raw`2`,
             String.raw`4`
           ]},
-
         { latex: String.raw`\text{Which formula matches G6?}`,
           choices: [
             String.raw`y=-2\sqrt{x}`,
@@ -134,7 +99,6 @@
             String.raw`y=2^{x-2}`,
             String.raw`y=\left(\tfrac14\right)^{x}`
           ]},
-
         { latex: String.raw`\text{Refer to G4. Compute }f(9).`,
           choices: [
             String.raw`3`,
@@ -144,7 +108,6 @@
             String.raw`0`,
             String.raw`1`
           ]},
-
         { latex: String.raw`\text{Which graph shows a decreasing exponential with }y>0\text{ for all }x\text{?}`,
           choices: [
             String.raw`\text{G1}`,
@@ -154,7 +117,6 @@
             String.raw`\text{G5}`,
             String.raw`\text{G6}`
           ]},
-
         { latex: String.raw`\text{For G1, find }f(-2).`,
           choices: [
             String.raw`16`,
@@ -164,7 +126,6 @@
             String.raw`0`,
             String.raw`-\tfrac{1}{16}`
           ]},
-
         { latex: String.raw`\text{Which description fits G5 compared to }y=2^{x}\text{?}`,
           choices: [
             String.raw`\text{Shift right }2`,
@@ -174,7 +135,6 @@
             String.raw`\text{Vertical stretch by }2`,
             String.raw`\text{Reflect across the }x\text{-axis}`
           ]},
-
         { latex: String.raw`\text{Choose the domain and range for G6.}`,
           choices: [
             String.raw`(-\infty,\infty),\ (-\infty,\infty)`,
@@ -184,7 +144,6 @@
             String.raw`(-\infty,0],\ (-\infty,\infty)`,
             String.raw`[0,\infty),\ [0,2]`
           ]},
-
         { latex: String.raw`\text{Which graph passes through }(0,3)\text{?}`,
           choices: [
             String.raw`\text{G1}`,
