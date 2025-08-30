@@ -11,34 +11,77 @@
       id      : "Homework 7 — Graphs",
       title   : "Graphs — √x-shifts and a^x",
 
-      graphics : String.raw`
-\begin{tikzpicture}[scale=0.6]
+graphics : String.raw`
+\begin{tikzpicture}[scale=0.7]
   \tikzset{grid/.style={very thin,color=gray!35}}
   \tikzset{axes/.style={->,thick}}
   \colorlet{exp}{blue!55!black}
   \colorlet{rad}{teal!60!black}
 
-  % Define panel macro
-  \newcommand{\panel}[4]{
-    \begin{scope}[xshift=#1,yshift=#2]
-      \clip (-4.2,-2.2) rectangle (4.2,6.2);
-      \draw[grid] (-4,-2) grid (4,6);
-      \draw[axes] (-4,0)--(4,0);
-      \draw[axes] (0,-2)--(0,6);
-      #3
-      \node[anchor=north east,font=\small] at (3.8,-2) {#4};
-    \end{scope}
-  }
+  % --- Panel template (explicit cm units) ---
+  % Top row: x = -12cm, 0cm, +12cm at y = +8cm
+  % Bottom row: same x at y = -2cm
+  % Each viewport: [-4,6]x[-2,6]
 
-  % Top row
-  \panel{-10}{6}{\draw[exp,thick,domain=-2:1.5,samples=200] plot(\x,{pow(4,\x)});}{G1: $y=4^x$}
-  \panel{0}{6}{\draw[exp,thick,domain=-2:2,samples=200] plot(\x,{pow(0.25,\x)});}{G2: $y=(\tfrac14)^x$}
-  \panel{10}{6}{\draw[rad,thick,domain=0:9,samples=200] plot(\x,{sqrt(\x)+3});}{G3: $y=\sqrt{x}+3$}
+  % G1: y = 4^x
+  \begin{scope}[xshift=-12cm,yshift=8cm]
+    \clip (-4.2,-2.2) rectangle (4.2,6.2);
+    \draw[grid] (-4,-2) grid (4,6);
+    \draw[axes] (-4,0)--(4,0);
+    \draw[axes] (0,-2)--(0,6);
+    \draw[exp,thick,domain=-2:1.5,samples=200] plot(\x,{pow(4,\x)});
+    \node[anchor=north east,font=\small] at (3.8,-2) {G1};
+  \end{scope}
 
-  % Bottom row
-  \panel{-10}{-2}{\draw[rad,thick,domain=0:16,samples=200] plot(\x,{sqrt(\x)+1});}{G4: $y=\sqrt{x}+1$}
-  \panel{0}{-2}{\draw[exp,thick,domain=-2:6,samples=200] plot(\x,{pow(2,\x-2)});}{G5: $y=2^{x-2}$}
-  \panel{10}{-2}{\draw[rad,thick,domain=0:9,samples=200] plot(\x,{-2*sqrt(\x)});}{G6: $y=-2\sqrt{x}$}
+  % G2: y = (1/4)^x
+  \begin{scope}[xshift=0cm,yshift=8cm]
+    \clip (-4.2,-2.2) rectangle (4.2,6.2);
+    \draw[grid] (-4,-2) grid (4,6);
+    \draw[axes] (-4,0)--(4,0);
+    \draw[axes] (0,-2)--(0,6);
+    \draw[exp,thick,domain=-2:2,samples=200] plot(\x,{pow(0.25,\x)});
+    \node[anchor=north east,font=\small] at (3.8,-2) {G2};
+  \end{scope}
+
+  % G3: y = sqrt(x) + 3
+  \begin{scope}[xshift=12cm,yshift=8cm]
+    \clip (-4.2,-2.2) rectangle (4.2,6.2);
+    \draw[grid] (-4,-2) grid (4,6);
+    \draw[axes] (-4,0)--(4,0);
+    \draw[axes] (0,-2)--(0,6);
+    \draw[rad,thick,domain=0:9,samples=200] plot(\x,{sqrt(\x)+3});
+    \node[anchor=north east,font=\small] at (3.8,-2) {G3};
+  \end{scope}
+
+  % G4: y = sqrt(x) + 1
+  \begin{scope}[xshift=-12cm,yshift=-2cm]
+    \clip (-4.2,-2.2) rectangle (4.2,6.2);
+    \draw[grid] (-4,-2) grid (4,6);
+    \draw[axes] (-4,0)--(4,0);
+    \draw[axes] (0,-2)--(0,6);
+    \draw[rad,thick,domain=0:16,samples=200] plot(\x,{sqrt(\x)+1});
+    \node[anchor=north east,font=\small] at (3.8,-2) {G4};
+  \end{scope}
+
+  % G5: y = 2^{x-2}
+  \begin{scope}[xshift=0cm,yshift=-2cm]
+    \clip (-4.2,-2.2) rectangle (4.2,6.2);
+    \draw[grid] (-4,-2) grid (4,6);
+    \draw[axes] (-4,0)--(4,0);
+    \draw[axes] (0,-2)--(0,6);
+    \draw[exp,thick,domain=-2:6,samples=200] plot(\x,{pow(2,\x-2)});
+    \node[anchor=north east,font=\small] at (3.8,-2) {G5};
+  \end{scope}
+
+  % G6: y = -2\sqrt{x}
+  \begin{scope}[xshift=12cm,yshift=-2cm]
+    \clip (-4.2,-2.2) rectangle (4.2,6.2);
+    \draw[grid] (-4,-2) grid (4,6);
+    \draw[axes] (-4,0)--(4,0);
+    \draw[axes] (0,-2)--(0,6);
+    \draw[rad,thick,domain=0:9,samples=200] plot(\x,{-2*sqrt(\x)});
+    \node[anchor=north east,font=\small] at (3.8,-2) {G6};
+  \end{scope}
 \end{tikzpicture}
 `,
 
