@@ -15,17 +15,16 @@
       id      : "Homework 7-1",
       title   : "Homework 7-1 — Rational Exponents & Radicals",
 
-      /* No TikZ graphics for this section */
-      graphics : String.raw``, 
+      graphics : String.raw``,  // no graphics for this section
 
       /* ===== Hidden answer key (A–F) for the 12 questions ===== */
-      answerKey : ["C","E","B","A","F","D","E","A","B","C","F","D"],
+      answerKey : ["C","E","B","A","F","D","E","A","B","C","F","F"],
 
       /* ===== 12 Multiple-Choice Questions (6 choices each) ===== */
       questions : [
-        /* — A. Write each expression in rational exponent form — */
+        /* A. Write each expression in rational exponent form (positive vars) */
         {
-          latex: String.raw`\text{1) Write in rational exponent form: }\sqrt[3]{32a^{10}}`,
+          latex: String.raw`\text{Write in rational exponent form (assume positive real variables): }\sqrt[3]{32a^{10}}`,
           choices: [
             String.raw`32^{3}a^{10/3}`,
             String.raw`32^{10/3}a^{1/3}`,
@@ -36,7 +35,7 @@
           ]
         },
         {
-          latex: String.raw`\text{2) Write in rational exponent form: }\sqrt[5]{16a^{4}b^{3}}`,
+          latex: String.raw`\text{Write in rational exponent form (assume positive real variables): }\sqrt[5]{16a^{4}b^{3}}`,
           choices: [
             String.raw`16^{4/5}a^{1/5}b^{3/5}`,
             String.raw`(16ab)^{4/5}`,
@@ -47,22 +46,22 @@
           ]
         },
 
-        /* — B. Write each expression in radical form — */
+        /* B. Write each expression in radical form (positive vars) */
         {
-          latex: String.raw`\text{3) Write in radical form: }x^{\tfrac{3}{2}}y^{\tfrac{1}{4}}`,
+          latex: String.raw`\text{Write in radical form (assume positive real variables): }x^{\tfrac{3}{2}}y^{\tfrac{1}{4}}`,
           choices: [
             String.raw`\sqrt[3]{x^{2}}\sqrt[4]{y^{3}}`,
             String.raw`\sqrt{x^{3}}\;\sqrt[4]{y}`,
-            String.raw`\sqrt[2]{x}\;\sqrt[4]{y^{3}}`,
+            String.raw`\sqrt{x}\;\sqrt[4]{y^{3}}`,
             String.raw`\sqrt[4]{xy^{3}}`,
             String.raw`\sqrt[8]{x^{12}y^{2}}`,
             String.raw`\sqrt{x}\;y^{4}`
           ]
         },
 
-        /* — C. Use exponent properties to simplify (positive reals) — */
+        /* C. Use exponent properties to simplify (positive vars) */
         {
-          latex: String.raw`\text{4) Simplify: }(3x^{2}y^{1/3})^{\tfrac{3}{2}}\;\text{(leave radicals if needed)}`,
+          latex: String.raw`\text{Simplify (assume positive real variables): }(3x^{2}y^{1/3})^{\tfrac{3}{2}}\ \text{(leave radicals if needed)}`,
           choices: [
             String.raw`3^{3/2}x^{3}y^{1/2}`,
             String.raw`9x^{3}y`,
@@ -73,7 +72,7 @@
           ]
         },
         {
-          latex: String.raw`\text{5) Simplify and write with positive exponents only: }\dfrac{a^{-1/2}b^{3/4}}{a^{1/4}b^{-1/8}}`,
+          latex: String.raw`\text{Simplify and write with positive exponents only (assume positive real variables): }\dfrac{a^{-1/2}b^{3/4}}{a^{1/4}b^{-1/8}}`,
           choices: [
             String.raw`a^{-3/4}b^{1/2}`,
             String.raw`a^{3/4}b^{-1/2}`,
@@ -84,20 +83,20 @@
           ]
         },
 
-        /* — D. Evaluate / simplify numerically — */
+        /* D. Evaluate / simplify numerically */
         {
-          latex: String.raw`\text{6) Evaluate: }\left(\dfrac{343}{8}\right)^{\tfrac{1}{3}}`,
+          latex: String.raw`\text{Evaluate: }\left(\dfrac{343}{8}\right)^{\tfrac{1}{3}}`,
           choices: [
             String.raw`\dfrac{9}{2}`,
             String.raw`\dfrac{3}{2}`,
             String.raw`\dfrac{7}{3}`,
             String.raw`\dfrac{7}{2}`,
-            String.raw` \dfrac{7}{2}`,
-            String.raw` \dfrac{14}{3}`
+            String.raw`\dfrac{14}{3}`,
+            String.raw`\dfrac{5}{2}`
           ]
         },
         {
-          latex: String.raw`\text{7) Simplify: }\sqrt[4]{512}\ \text{(principal root)} `,
+          latex: String.raw`\text{Simplify: }\sqrt[4]{512}\ \text{(principal root)}`,
           choices: [
             String.raw`2\sqrt[4]{8}`,
             String.raw`8\sqrt[4]{2}`,
@@ -108,9 +107,9 @@
           ]
         },
 
-        /* — E. Laws (0, negative, fractional) — */
+        /* E. Laws (0, negative, fractional) */
         {
-          latex: String.raw`\text{8) Simplify: }\bigl(2^{4/3}\cdot 8^{-1/3}\bigr)^{0}`,
+          latex: String.raw`\text{Simplify: }\bigl(2^{4/3}\cdot 8^{-1/3}\bigr)^{0}`,
           choices: [
             String.raw`1`,
             String.raw`0`,
@@ -121,36 +120,36 @@
           ]
         },
         {
-          latex: String.raw`\text{9) Simplify: }(7^{3}a^{2}b^{3})^{\tfrac{1}{3}}`,
+          latex: String.raw`\text{Simplify (assume positive real variables): }(7^{3}a^{2}b^{3})^{\tfrac{1}{3}}`,
           choices: [
             String.raw`7^{1/3}a^{2/3}b`,
             String.raw`7\,a^{2/3}b`,
             String.raw`7^{3}ab`,
             String.raw`7a^{3}b^{1/3}`,
             String.raw`7^{1/3}ab`,
-            String.raw`7a^{2}b^{3}$
+            String.raw`7a^{2}b^{3}`
           ]
         },
 
-        /* — F. “Positive exponents only” formatting — */
+        /* F. “Positive exponents only” formatting (positive vars) */
         {
-          latex: String.raw`\text{10) Write with positive exponents only: }(3a^{2}b^{-1})^{-\tfrac{2}{3}}`,
+          latex: String.raw`\text{Write with positive exponents only (assume positive real variables): }(3a^{2}b^{-1})^{-\tfrac{2}{3}}`,
           choices: [
             String.raw`\dfrac{3^{2/3}a^{4/3}}{b^{2/3}}`,
             String.raw`\dfrac{a^{4/3}}{3^{2/3}b^{2/3}}`,
             String.raw`\dfrac{b^{2/3}}{3^{2/3}a^{4/3}}`,
-            String.raw`\dfrac{b^{2/3}}{3^{2/3}a^{4/3}}`,
             String.raw`3^{-2/3}a^{-4/3}b^{2/3}`,
-            String.raw`3^{2/3}a^{4/3}b^{-2/3}`
+            String.raw`3^{2/3}a^{4/3}b^{-2/3}`,
+            String.raw`\dfrac{b^{2/3}}{3^{2/3}a^{4/3}}`
           ]
         },
 
-        /* — G. Principal radical convention — */
+        /* G. Principal square root (numeric) */
         {
-          latex: String.raw`\text{11) Evaluate the principal square root: }\sqrt{196}`,
+          latex: String.raw`\text{Evaluate the principal square root: }\sqrt{196}`,
           choices: [
             String.raw`-14`,
-            String.raw`- \sqrt{196}`,
+            String.raw`-\sqrt{196}`,
             String.raw`7\sqrt{4}`,
             String.raw`196^{1/2}=-14`,
             String.raw`\pm 14`,
@@ -158,9 +157,9 @@
           ]
         },
 
-        /* — H. Mixed simplify (extract perfect powers) — */
+        /* H. Mixed simplify; extract perfect powers (positive vars) */
         {
-          latex: String.raw`\text{12) Simplify: }\ (27x^{6}y^{4})^{\tfrac{1}{3}}\ \text{and write with radicals only where needed}`,
+          latex: String.raw`\text{Simplify (assume positive real variables): }(27x^{6}y^{4})^{\tfrac{1}{3}}\ \text{and write with radicals only where needed}`,
           choices: [
             String.raw`9x^{2}y^{4/3}`,
             String.raw`3x^{3}y^{4/3}`,
