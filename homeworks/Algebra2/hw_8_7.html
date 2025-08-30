@@ -7,7 +7,7 @@
 
   <script>
     /* =========================================
-       Homework 8-7 — Complex Vectors (all-in-one diagram)
+       Homework 8-7 — Complex Vectors (translated + sums)
        ========================================= */
     window.homeworkData = {
       classId : "Algebra2",
@@ -15,75 +15,82 @@
       title   : "Homework 8-7 — Complex Vectors",
 
       graphics : String.raw`
-\begin{tikzpicture}[scale=0.55]
+\begin{tikzpicture}[scale=0.58]
   \tikzset{axes/.style={->,thick}}
   \tikzset{grid/.style={very thin,color=gray!30}}
   \tikzset{vec/.style={->,very thick}}
-  \tikzset{pt/.style={circle,fill=black,inner sep=1.5pt}}
+  \clip (-8.3,-8.3) rectangle (8.3,8.3);
 
   % Grid and axes
-  \clip (-8.2,-8.2) rectangle (8.2,8.2);
   \draw[grid] (-8,-8) grid (8,8);
   \draw[axes] (-8,0)--(8,0) node[right]{\(\mathbb{R}\)};
   \draw[axes] (0,-8)--(0,8) node[above]{\(i\)};
 
-  % Vectors
-  \draw[vec,red] (0,0)--(2,3) node[midway,above left]{\(v_1\)};
-  \draw[vec,blue] (0,0)--(-4,-2) node[midway,below]{\(v_2\)};
-  \draw[vec,green!60!black] (0,0)--(5,-3) node[midway,below]{\(v_3\)};
-  \draw[vec,orange] (0,0)--(7,4) node[midway,above right]{\(v_4\)};
-  \draw[vec,purple] (0,0)--(-6,5) node[midway,above left]{\(v_5\)};
-  \draw[vec,cyan] (0,0)--(3,-4) node[midway,right]{\(v_6\)};
+  % ---------- Origin-based vectors v1..v8 ----------
+  \draw[vec,red]            (0,0)--( 2, 3) node[midway,above left]{\(\small v_1\)};
+  \draw[vec,blue]           (0,0)--(-4,-2) node[midway,below]{\(\small v_2\)};
+  \draw[vec,green!60!black] (0,0)--( 5,-3) node[midway,below right]{\(\small v_3\)};
+  \draw[vec,purple]         (0,0)--( 7, 0) node[midway,below]{\(\small v_4\)};   % = v1+v3
+  \draw[vec,orange]         (0,0)--( 5, 1) node[midway,above]{\(\small v_5\)};
+  \draw[vec,cyan]           (0,0)--( 3,-6) node[midway,right]{\(\small v_6\)};   % = v3-v1
+  \draw[vec,magenta]        (0,0)--( 7, 4) node[midway,above right]{\(\small v_7\)}; % = v1+v5
+  \draw[vec,brown]          (0,0)--(-2, 2) node[midway,left]{\(\small v_8\)};
+
+  % ---------- Translated vectors u1..u4 (displacements only) ----------
+  \draw[vec,teal]     (-3, 2)--(-1, 6) node[midway,above]{\(\small u_1\)};  % disp  (2,4)
+  \draw[vec,gray]     ( 4,-4)--( 1,-6) node[midway,below]{\(\small u_2\)};  % disp (-3,-2)
+  \draw[vec,black]    (-5,-1)--( 2, 3) node[midway,above]{\(\small u_3\)};  % disp  (7,4)
+  \draw[vec,olive]    (-6, 0)--(-1,-3) node[midway,below]{\(\small u_4\)};  % disp  (5,-3) = v3
 \end{tikzpicture}
 `,
 
-      /* ===== Hidden Answer Key ===== */
-      answerKey : ["A","C","B","D","E","B","F","A","D","E","A","C"],
+      /* ===== Hidden Answer Key (A–F) ===== */
+      answerKey : ["A","C","A","C","C","A","A","D","B","B","A","C"],
 
-      /* ===== 12 Good Questions ===== */
+      /* ===== 12 Questions ===== */
       questions : [
-        { latex: String.raw`\text{Which vector is }2+3i?`,
-          choices: ["\(v_1\)","\(v_2\)","\(v_3\)","\(v_4\)","\(v_5\)","\(v_6\)"]},
+        { latex: String.raw`\text{Which labeled vector equals }v_1+v_3\text{ (tip-to-tail in that order)?}`,
+          choices: ["\(v_4\)","\(v_6\)","\(v_7\)","\(u_1\)","\(u_3\)","\(v_5\)"]},
 
-        { latex: String.raw`\text{Which vector is }-4-2i?`,
-          choices: ["\(v_1\)","\(v_2\)","\(v_3\)","\(v_4\)","\(v_5\)","\(v_6\)"]},
+        { latex: String.raw`\text{Which labeled vector equals }v_3-v_1\text{?}`,
+          choices: ["\(v_4\)","\(v_7\)","\(v_6\)","\(v_1\)","\(u_2\)","\(u_4\)"]},
 
-        { latex: String.raw`\text{Which vector is }5-3i?`,
-          choices: ["\(v_1\)","\(v_2\)","\(v_3\)","\(v_4\)","\(v_5\)","\(v_6\)"]},
+        { latex: String.raw`\text{What complex number (displacement) does the translated vector }u_1\text{ represent?}`,
+          choices: [String.raw`2+4i`, String.raw`4+2i`, String.raw`-2+4i`, String.raw`2-4i`, String.raw`-2-4i`, String.raw`-4+2i`]},
 
-        { latex: String.raw`\text{Which vector is }7+4i?`,
-          choices: ["\(v_1\)","\(v_2\)","\(v_3\)","\(v_4\)","\(v_5\)","\(v_6\)"]},
+        { latex: String.raw`\text{What complex number does the translated vector }u_2\text{ represent?}`,
+          choices: [String.raw`-3+2i`, String.raw`3-2i`, String.raw`-3-2i`, String.raw`-2-3i`, String.raw`3+2i`, String.raw`-2+3i`]},
 
-        { latex: String.raw`\text{Which vector is }-6+5i?`,
-          choices: ["\(v_1\)","\(v_2\)","\(v_3\)","\(v_4\)","\(v_5\)","\(v_6\)"]},
+        { latex: String.raw`\text{Which labeled vector has the same displacement as }u_3\text{?}`,
+          choices: ["\(v_1\)","\(v_4\)","\(v_7\)","\(v_6\)","\(u_2\)","\(u_4\)"]},
 
-        { latex: String.raw`\text{Which vector is }3-4i?`,
-          choices: ["\(v_1\)","\(v_2\)","\(v_3\)","\(v_4\)","\(v_5\)","\(v_6\)"]},
-
-        { latex: String.raw`\text{What is the magnitude of }v_1=2+3i?`,
-          choices: ["\(\sqrt{13}\)","\(\sqrt{5}\)","5","\(\sqrt{29}\)","3","\(\sqrt{7}\)"]},
-
-        { latex: String.raw`\text{What is the magnitude of }v_6=3-4i?`,
-          choices: ["3","4","5","\(\sqrt{7}\)","\(\sqrt{29}\)","\(\sqrt{25}\)"]},
-
-        { latex: String.raw`\text{Compute }v_1+v_3=(2+3i)+(5-3i).`,
-          choices: ["7","7+0i","7+3i","7i","2i","-7+3i"]},
-
-        { latex: String.raw`\text{Compute }v_2+v_5=(-4-2i)+(-6+5i).`,
-          choices: ["-10+3i","-10-7i","2+3i","-2+7i","-6+3i","-12+3i"]},
-
-        { latex: String.raw`\text{Compute }v_4-v_6=(7+4i)-(3-4i).`,
-          choices: ["4+8i","10i","4-8i","-4+8i","7+0i","3+4i"]},
-
-        { latex: String.raw`\text{Is vector addition commutative?}`,
+        { latex: String.raw`\text{Which ordered pair of addends (first then second) produces }v_7\text{ when placed tip-to-tail?}`,
           choices: [
-            "Yes, always: \(z+w=w+z\).",
-            "No, order matters.",
-            "Yes, but only for real numbers.",
-            "Yes, but only for equal magnitudes.",
-            "No, only subtraction is commutative.",
-            "Yes, but only for vertical vectors."
-          ]}
+            String.raw`(v_1\ \text{then}\ v_5)`,
+            String.raw`(v_3\ \text{then}\ v_2)`,
+            String.raw`(v_5\ \text{then}\ v_1)`,
+            String.raw`(v_1\ \text{then}\ v_3)`,
+            String.raw`(u_1\ \text{then}\ v_2)`,
+            String.raw`(v_2\ \text{then}\ v_5)`
+          ]},
+
+        { latex: String.raw`\text{What complex number does }v_8\text{ represent?}`,
+          choices: [String.raw`-2+2i`, String.raw`2-2i`, String.raw`-2-2i`, String.raw`2+2i`, String.raw`-2+i`, String.raw`-1+2i`]},
+
+        { latex: String.raw`\text{Which translated vector has the same displacement as }v_3\text{?}`,
+          choices: ["\(u_1\)","\(u_2\)","\(u_3\)","\(u_4\)","\(v_7\)","\(v_6\)"]},
+
+        { latex: String.raw`\text{Vector sum with different starting points: }u_1+v_2.\ \text{Which labeled vector in the diagram equals this sum?}`,
+          choices: ["\(v_4\)","\(v_8\)","\(v_6\)","\(u_2\)","\(u_4\)","\(v_1\)"]},
+
+        { latex: String.raw`\text{What is the complex number for }u_1+v_2\text{?}`,
+          choices: [String.raw`-2-2i`, String.raw`-2+2i`, String.raw`2-2i`, String.raw`2+2i`, String.raw`-1+2i`, String.raw`-3+0i`]},
+
+        { latex: String.raw`\text{Compute the complex number }u_2+u_1\text{ (sum of two translated vectors).}`,
+          choices: [String.raw`-1+2i`, String.raw`-2+i`, String.raw`1-2i`, String.raw`-3+2i`, String.raw`-1-2i`, String.raw`2-1i`]},
+
+        { latex: String.raw`\text{Which labeled vector equals }u_3-v_5\text{?}`,
+          choices: ["\(v_3\)","\(v_2\)","\(v_1\)","\(v_5\)","\(v_7\)","\(u_1\)"]}
       ]
     };
   </script>
