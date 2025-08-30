@@ -3,223 +3,219 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Chapter 7 Review — With Graphs</title>
+  <title>Chapter 7 Review (Algebra 2)</title>
 
   <script>
     /* =========================================
-       Algebra 2 — Chapter 7 Review (with Graphs)
-       - Mix of exponent/radical skills + graph reading
-       - Graphs: exponentials and rational functions
+       Algebra 2 — Chapter 7 Review
+       15 representative questions
        ========================================= */
     window.homeworkData = {
       classId : "Algebra2",
-      id      : "Chapter 7 Review — Graphs",
-      title   : "Chapter 7 Review — Exponents, Radicals, and Graphs",
+      id      : "Chapter 7 Review",
+      title   : "Chapter 7 Review — Mixed Practice",
 
-      /* ---------- TikZJax graphics: 6 panels (G1–G6), 3 per row ---------- */
+      /* ---------- TikZJax graphics for graphs ---------- */
       graphics : String.raw`
-\begin{tikzpicture}[scale=0.7]
+\begin{tikzpicture}[scale=0.65]
   \tikzset{grid/.style={very thin,color=gray!35}}
   \tikzset{axes/.style={->,thick}}
-  \colorlet{exp}{blue!60!black}
-  \colorlet{rat}{teal!70!black}
+  \colorlet{fun}{blue!60!black}
 
-  % ----- Panel template (window [-4,6] x [-4,6]) -----
-  % Top row centers x = -12cm, 0cm, +12cm at y = +8cm
-  % Bottom row centers same x at y = -4cm
-
-  % G1: y = 2^x (exponential growth)
-  \begin{scope}[xshift=-12cm,yshift=8cm]
-    \clip (-4.2,-4.2) rectangle (4.2,6.2);
-    \draw[grid] (-4,-4) grid (4,6);
-    \draw[axes] (-4,0)--(4,0);
-    \draw[axes] (0,-4)--(0,6);
-    \draw[exp,thick,domain=-3:2.5,samples=200] plot(\x,{pow(2,\x)});
-    \node[anchor=north east,font=\small] at (3.8,-4) {G1};
+  % G1: f(x)=sqrt(x+4)
+  \begin{scope}[xshift=-12cm,yshift=6cm]
+    \clip (-5,-1) rectangle (6,6);
+    \draw[grid] (-5,-1) grid (6,6);
+    \draw[axes] (-5,0)--(6,0);
+    \draw[axes] (0,-1)--(0,6);
+    \draw[fun,thick,domain=-4:6,samples=200] plot(\x,{sqrt(\x+4)});
+    \node[anchor=north east,font=\small] at (5.5,-1) {G1};
   \end{scope}
 
-  % G2: y = (1/2)^x (exponential decay)
-  \begin{scope}[xshift=0cm,yshift=8cm]
-    \clip (-4.2,-4.2) rectangle (4.2,6.2);
-    \draw[grid] (-4,-4) grid (4,6);
-    \draw[axes] (-4,0)--(4,0);
-    \draw[axes] (0,-4)--(0,6);
-    \draw[exp,thick,domain=-3:3,samples=200] plot(\x,{pow(0.5,\x)});
-    \node[anchor=north east,font=\small] at (3.8,-4) {G2};
+  % G2: f(x)=sqrt(x-1)
+  \begin{scope}[xshift=0cm,yshift=6cm]
+    \clip (-5,-1) rectangle (6,6);
+    \draw[grid] (-5,-1) grid (6,6);
+    \draw[axes] (-5,0)--(6,0);
+    \draw[axes] (0,-1)--(0,6);
+    \draw[fun,thick,domain=1:6,samples=200] plot(\x,{sqrt(\x-1)});
+    \node[anchor=north east,font=\small] at (5.5,-1) {G2};
   \end{scope}
 
-  % G3: y = 1/x  (rational)
-  \begin{scope}[xshift=12cm,yshift=8cm]
-    \clip (-4.2,-4.2) rectangle (4.2,6.2);
-    \draw[grid] (-4,-4) grid (4,6);
-    \draw[axes] (-4,0)--(4,0);
-    \draw[axes] (0,-4)--(0,6);
-    \draw[rat,thick,domain=-4:-0.25,samples=200] plot(\x,{1/\x});
-    \draw[rat,thick,domain=0.25:4,samples=200] plot(\x,{1/\x});
-    \node[anchor=north east,font=\small] at (3.8,-4) {G3};
+  % G3: g(x)=2^x-7
+  \begin{scope}[xshift=12cm,yshift=6cm]
+    \clip (-5,-8) rectangle (6,6);
+    \draw[grid] (-5,-8) grid (6,6);
+    \draw[axes] (-5,0)--(6,0);
+    \draw[axes] (0,-8)--(0,6);
+    \draw[fun,thick,domain=-5:3,samples=200] plot(\x,{pow(2,\x)-7});
+    \node[anchor=north east,font=\small] at (5.5,-8) {G3};
   \end{scope}
 
-  % G4: y = 1/(x-2)  (shifted rational)
-  \begin{scope}[xshift=-12cm,yshift=-4cm]
-    \clip (-4.2,-4.2) rectangle (4.2,6.2);
-    \draw[grid] (-4,-4) grid (4,6);
-    \draw[axes] (-4,0)--(4,0);
-    \draw[axes] (0,-4)--(0,6);
-    \draw[rat,thick,domain=-4:1.7,samples=200] plot(\x,{1/(\x-2)});
-    \draw[rat,thick,domain=2.3:4,samples=200] plot(\x,{1/(\x-2)});
-    % vertical asymptote x=2 and horizontal y=0 are visible
-    \node[anchor=north east,font=\small] at (3.8,-4) {G4};
-  \end{scope}
-
-  % G5: y = 1/x + 1  (vertical & horizontal shift)
-  \begin{scope}[xshift=0cm,yshift=-4cm]
-    \clip (-4.2,-4.2) rectangle (4.2,6.2);
-    \draw[grid] (-4,-4) grid (4,6);
-    \draw[axes] (-4,0)--(4,0);
-    \draw[axes] (0,-4)--(0,6);
-    \draw[rat,thick,domain=-4:-0.25,samples=200] plot(\x,{1/\x + 1});
-    \draw[rat,thick,domain=0.25:4,samples=200] plot(\x,{1/\x + 1});
-    \node[anchor=north east,font=\small] at (3.8,-4) {G5};
-  \end{scope}
-
-  % G6: y = -1/x (reflected)
-  \begin{scope}[xshift=12cm,yshift=-4cm]
-    \clip (-4.2,-4.2) rectangle (4.2,6.2);
-    \draw[grid] (-4,-4) grid (4,6);
-    \draw[axes] (-4,0)--(4,0);
-    \draw[axes] (0,-4)--(0,6);
-    \draw[rat,thick,domain=-4:-0.25,samples=200] plot(\x,{-1/\x});
-    \draw[rat,thick,domain=0.25:4,samples=200] plot(\x,{-1/\x});
-    \node[anchor=north east,font=\small] at (3.8,-4) {G6};
+  % G4: g(x)=3^x
+  \begin{scope}[xshift=0cm,yshift=-6cm]
+    \clip (-5,-1) rectangle (6,6);
+    \draw[grid] (-5,-1) grid (6,6);
+    \draw[axes] (-5,0)--(6,0);
+    \draw[axes] (0,-1)--(0,6);
+    \draw[fun,thick,domain=-5:2,samples=200] plot(\x,{pow(3,\x)});
+    \node[anchor=north east,font=\small] at (5.5,-1) {G4};
   \end{scope}
 \end{tikzpicture}
 `,
 
-      /* ===== Hidden answer key (A–F) for the 12 questions ===== */
-      answerKey : ["A","B","C","A","D","B","A","B","A","C","B","B"],
+      /* ===== Hidden answer key (A–F) ===== */
+      answerKey : ["B","C","D","A","E","F","B","C","A","D","B","E","C","A","F"],
 
-      /* ===== 12 Multiple-Choice Questions (mix of skills + graphs) ===== */
       questions : [
-        /* Algebra skills from the review */
         { latex: String.raw`\text{Write in rational exponent form: }\sqrt[3]{7x^{5}}`,
           choices: [
-            String.raw`7^{1/3}x^{5/3}`,      // A (correct)
             String.raw`7^{1/2}x^{5/3}`,
-            String.raw`7^{3}x^{5/3}`,
+            String.raw`7^{1/3}x^{5/3}`,    // B
             String.raw`7^{5/3}x^{1/3}`,
-            String.raw`7^{3/5}x^{1/3}`,
-            String.raw`x^{3/5}7^{1/5}`
+            String.raw`7^{3}x^{5/3}`,
+            String.raw`x^{3/5}7^{1/5}`,
+            String.raw`\sqrt{7x}^{5}`
           ]},
 
         { latex: String.raw`\text{Write in radical form: }x^{\tfrac{2}{3}}y^{\tfrac{1}{5}}`,
           choices: [
             String.raw`\sqrt[5]{x^{2}y}`,
-            String.raw`\sqrt[3]{x^{2}}\;\sqrt[5]{y}`,  // B (correct)
-            String.raw`\sqrt{x^{2}}\;\sqrt[5]{y}`,
-            String.raw`\sqrt[3]{x}\;\sqrt[5]{y^{2}}`,
+            String.raw`\sqrt{x^{2}y}`,
+            String.raw`\sqrt[3]{x^{2}}\;\sqrt[5]{y}`,  // C
             String.raw`\sqrt[15]{x^{2}y}`,
-            String.raw`\sqrt{x^{2}y}`
+            String.raw`\sqrt[3]{x}\sqrt[5]{y^{2}}`,
+            String.raw`\sqrt[2]{xy}`
           ]},
 
-        { latex: String.raw`\text{Simplify: }(3a^{2}b^{3})^{\tfrac{1}{3}}`,
+        { latex: String.raw`\text{Simplify: }(3a^{2}b^{3})^{1/3}`,
           choices: [
             String.raw`3ab`,
             String.raw`a^{2}b^{3}`,
-            String.raw`\sqrt[3]{3}\,a^{2/3}b`,        // C (correct)
+            String.raw`\sqrt[3]{3a^{2}b^{3}}`,
+            String.raw`\sqrt[3]{3}\,a^{2/3}b`,    // D
             String.raw`a^{3}b^{2}`,
-            String.raw`3ab^{3}`,
-            String.raw`\sqrt[3]{3a^{2}b^{3}}`
+            String.raw`3a^{2/3}b`
           ]},
 
         { latex: String.raw`\text{Simplify: }(5x^{4}y)^{0}`,
           choices: [
-            String.raw`1`,                              // A (correct)
-            String.raw`5x^{4}y`,
+            String.raw`1`,                          // A
             String.raw`0`,
-            String.raw`5^{0}x^{0}y^{0}`,
+            String.raw`5x^{4}y`,
+            String.raw`\text{undefined}`,
             String.raw`y^{0}`,
-            String.raw`\text{undefined}`
+            String.raw`5^{0}x^{0}y^{0}`
           ]},
 
         { latex: String.raw`\text{Simplify: }\sqrt[3]{\dfrac{27a^{5}b}{64}}`,
           choices: [
+            String.raw`3a^{5/3}b`,
             String.raw`\dfrac{3a^{5}b}{64}`,
             String.raw`\dfrac{a^{5/3}b}{4}`,
-            String.raw`3a^{5/3}b`,
-            String.raw`\dfrac{3a^{5/3}b^{1/3}}{4}`,     // D (correct)
             String.raw`\dfrac{27a^{5/3}b}{64}`,
+            String.raw`\dfrac{3a^{5/3}b^{1/3}}{4}`, // E
             String.raw`\dfrac{3a^{5/3}}{4b^{1/3}}`
           ]},
 
-        { latex: String.raw`\text{Simplify: }\sqrt{180\,a^{3}b^{2}c^{5}}`,
+        { latex: String.raw`\text{Simplify: }\sqrt{180a^{3}b^{2}c^{5}}`,
           choices: [
             String.raw`12a^{2}bc^{2}\sqrt{5c}`,
-            String.raw`6abc^{2}\sqrt{5ac}`,             // B (correct)
-            String.raw`6a^{3/2}bc^{2}\sqrt{5c}`,
-            String.raw`18abc^{3}\sqrt{10}`,
+            String.raw`12ab^{2}c^{2}\sqrt{5a}`,
             String.raw`3ab^{2}c^{5/2}\sqrt{20}`,
-            String.raw`12ab^{2}c^{2}\sqrt{5a}`
+            String.raw`18abc^{3}\sqrt{10}`,
+            String.raw`6a^{3/2}bc^{2}\sqrt{5c}`,
+            String.raw`6abc^{2}\sqrt{5ac}`          // F
           ]},
 
-        /* Graph interpretation (exponential & rational) */
-        { latex: String.raw`\text{Refer to G1. Which function is graphed?}`,
+        { latex: String.raw`\text{Simplify: }7\sqrt{18}-3\sqrt{2}`,
           choices: [
-            String.raw`y=2^{x}`,                        // A (correct)
-            String.raw`y=\left(\tfrac12\right)^{x}`,
-            String.raw`y=4^{x}`,
-            String.raw`y=2^{x-2}`,
-            String.raw`y=10^{x}`,
-            String.raw`y=-2^{x}`
+            String.raw`18\sqrt{2}`,
+            String.raw`15\sqrt{2}`,                  // B
+            String.raw`12\sqrt{2}`,
+            String.raw`10\sqrt{2}`,
+            String.raw`4\sqrt{2}`,
+            String.raw`3\sqrt{2}`
           ]},
 
-        { latex: String.raw`\text{Refer to G2. Which description fits the graph?}`,
+        { latex: String.raw`\text{Simplify: }\dfrac{\sqrt{3}}{\sqrt{18}}`,
           choices: [
-            String.raw`\text{Increasing exponential}`,
-            String.raw`\text{Decreasing exponential with }y>0\text{ for all }x`,  // B (correct)
-            String.raw`\text{Rational with }x\neq0`,
-            String.raw`\text{Linear with slope }-1`,
-            String.raw`\text{Quadratic opening down}`,
-            String.raw`\text{Absolute value graph}`
+            String.raw`\dfrac{1}{\sqrt{2}}`,
+            String.raw`1`,
+            String.raw`\dfrac{\sqrt{2}}{6}`,         // C
+            String.raw`\dfrac{1}{2\sqrt{2}}`,
+            String.raw`\dfrac{1}{\sqrt{6}}`,
+            String.raw`\dfrac{1}{2\sqrt{3}}`
           ]},
 
-        { latex: String.raw`\text{Refer to G3. What is the domain?}`,
+        { latex: String.raw`\text{Evaluate }f(x)=\sqrt{x+4}\text{ at }x=0,-1,5`,
           choices: [
-            String.raw`\{x\mid x\neq 0\}`,             // A (correct)
+            String.raw`\{2,\ \text{no real},\ 3\}`,   // A
+            String.raw`\{0,1,2\}`,
+            String.raw`\{2,0,3\}`,
+            String.raw`\{2,1,3\}`,
+            String.raw`\{0,\ \text{no real},\ 3\}`,
+            String.raw`\{2,1,\ \text{no real}\}`
+          ]},
+
+        { latex: String.raw`\text{Refer to G2. Domain of }f(x)=\sqrt{x-1}`,
+          choices: [
             String.raw`\{x\mid x\in\mathbb{R}\}`,
-            String.raw`\{x\mid x>0\}`,
             String.raw`\{x\mid x\ge 0\}`,
-            String.raw`\{x\mid x<0\}`,
-            String.raw`\{x\mid x=0\}`
-          ]},
-
-        { latex: String.raw`\text{Refer to G4. Which are the asymptotes?}`,
-          choices: [
-            String.raw`x=0,\ y=0`,
-            String.raw`x=2,\ y=1`,
-            String.raw`x=2,\ y=0`,                     // C (correct)
-            String.raw`x=0,\ y=1`,
-            String.raw`\text{none}`,
-            String.raw`x=1,\ y=0`
-          ]},
-
-        { latex: String.raw`\text{Refer to G5. What is the range?}`,
-          choices: [
-            String.raw`\{y\mid y\in\mathbb{R}\}`,
-            String.raw`\{y\mid y\neq 1\}`,             // B (correct)
-            String.raw`\{y\mid y>1\}`,
+            String.raw`\{x\mid x\ge 1\}`,            // D
             String.raw`\{y\mid y\ge 0\}`,
-            String.raw`\{y\mid y\neq 0\}`,
-            String.raw`\{y\mid y>0\}`
+            String.raw`\{x\mid x\le 1\}`,
+            String.raw`\{y\mid y\in\mathbb{R}\}`
           ]},
 
-        { latex: String.raw`\text{Refer to G6. In which quadrants does the graph lie?}`,
+        { latex: String.raw`\text{Refer to G3. Horizontal asymptote of }g(x)=2^{x}-7`,
           choices: [
-            String.raw`\text{I and III}`,
-            String.raw`\text{II and IV}`,              // B (correct)
-            String.raw`\text{I and IV}`,
-            String.raw`\text{II and III}`,
-            String.raw`\text{All four quadrants}`,
-            String.raw`\text{None}`
+            String.raw`y=2`,
+            String.raw`y=0`,
+            String.raw`y=7`,
+            String.raw`y=-7`,                         // B
+            String.raw`y=1`,
+            String.raw`y=-2`
+          ]},
+
+        { latex: String.raw`\text{Refer to G4. Range of }g(x)=3^{x}`,
+          choices: [
+            String.raw`\{y\mid y\ge 0\}`,             // E
+            String.raw`\{y\mid y\in\mathbb{R}\}`,
+            String.raw`\{y\mid y>1\}`,
+            String.raw`\{y\mid y>3\}`,
+            String.raw`\{y\mid y\le 0\}`,
+            String.raw`\{y\mid y<0\}`
+          ]},
+
+        { latex: String.raw`\text{Factor: }x^{2}-7`,
+          choices: [
+            String.raw`(x-7)(x+1)`,
+            String.raw`x(x-7)`,
+            String.raw`(x-3)(x+3)`,
+            String.raw`(x-7)(x+7)`,                  // C
+            String.raw`(x-7)(x-7)`,
+            String.raw`(x+7)(x+1)`
+          ]},
+
+        { latex: String.raw`\text{Solve: }8^{x}=32`,
+          choices: [
+            String.raw`2`,
+            String.raw`\tfrac{4}{3}`,                // A
+            String.raw`\tfrac{5}{3}`,
+            String.raw`3`,
+            String.raw`4`,
+            String.raw`\tfrac{3}{2}`
+          ]},
+
+        { latex: String.raw`\text{Solve: }\sqrt{x}+5=4`,
+          choices: [
+            String.raw`-1`,
+            String.raw`0`,
+            String.raw`1`,
+            String.raw`9`,
+            String.raw`\text{no solution}`,          // F
+            String.raw`16`
           ]}
       ]
     };
