@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Homework 7-5 (Algebra 2)</title>
+
+  <script>
+    /* =========================================
+       Algebra 2 — Section 7-5
+       Simplifying & Rationalizing Radicals
+       ========================================= */
+    window.homeworkData = {
+      classId : "Algebra2",
+      id      : "Homework 7-5",
+      title   : "Homework 7-5 — Simplifying & Rationalizing Radicals",
+
+      graphics : String.raw``,
+
+      /* ===== Hidden answer key (A–F) ===== */
+      answerKey : ["A","C","B","E","D","F","B","C","E","D","A","F"],
+
+      questions : [
+        /* A. Simplify each expression (numbers only) */
+        {
+          latex: String.raw`\text{Simplify each expression: }\dfrac{2}{\sqrt{5}}`,
+          choices: [
+            String.raw`\dfrac{2\sqrt{5}}{5}`,        /* A correct */
+            String.raw`\dfrac{\sqrt{5}}{2}`,
+            String.raw`\dfrac{\sqrt{5}}{10}`,
+            String.raw`\dfrac{2}{5\sqrt{5}}`,
+            String.raw`\dfrac{\sqrt{10}}{5}`,
+            String.raw`\dfrac{2\sqrt{10}}{5}`
+          ]
+        },
+        {
+          latex: String.raw`\text{Simplify each expression: }\dfrac{1}{\sqrt{7}}`,
+          choices: [
+            String.raw`\dfrac{\sqrt{7}}{2}`,
+            String.raw`\dfrac{7}{\sqrt{7}}`,
+            String.raw`\dfrac{\sqrt{7}}{7}`,         /* C correct */
+            String.raw`\sqrt{7}`,
+            String.raw`\dfrac{1}{7\sqrt{7}}`,
+            String.raw`\dfrac{\sqrt{14}}{14}`
+          ]
+        },
+        {
+          latex: String.raw`\text{Simplify each expression: }\dfrac{2\sqrt{8}}{\sqrt{2}}`,
+          choices: [
+            String.raw`2\sqrt{4}`,
+            String.raw`4`,                            /* B correct */
+            String.raw`\sqrt{8}`,
+            String.raw`2\sqrt{2}`,
+            String.raw`8`,
+            String.raw`\dfrac{\sqrt{16}}{2}`
+          ]
+        },
+        {
+          latex: String.raw`\text{Simplify each expression: }\dfrac{\sqrt{2}}{\sqrt{5}}`,
+          choices: [
+            String.raw`\dfrac{\sqrt{2}}{5}`,
+            String.raw`\dfrac{5}{\sqrt{10}}`,
+            String.raw`\sqrt{\dfrac{2}{5}}`,
+            String.raw`\dfrac{\sqrt{5}}{\sqrt{2}}`,
+            String.raw`\dfrac{\sqrt{10}}{5}`,        /* E correct */
+            String.raw`\sqrt{10}`
+          ]
+        },
+        {
+          latex: String.raw`\text{Simplify each expression: }\dfrac{5\sqrt{3}}{\sqrt{2}}`,
+          choices: [
+            String.raw`\dfrac{5\sqrt{3}}{2}`,
+            String.raw`\dfrac{5\sqrt{2}}{3}`,
+            String.raw`\dfrac{5\sqrt{6}}{4}`,
+            String.raw`\dfrac{5\sqrt{6}}{2}`,        /* D correct */
+            String.raw`\dfrac{\sqrt{6}}{2}`,
+            String.raw`5\sqrt{\dfrac{3}{2}}`
+          ]
+        },
+        {
+          latex: String.raw`\text{Simplify each expression: }\sqrt{\dfrac{3}{2}}`,
+          choices: [
+            String.raw`\dfrac{\sqrt{3}}{2}`,
+            String.raw`\sqrt{\dfrac{2}{3}}`,
+            String.raw`\dfrac{\sqrt{6}}{3}`,
+            String.raw`\sqrt{1.5}`,
+            String.raw`\dfrac{\sqrt{12}}{4}`,
+            String.raw`\dfrac{\sqrt{6}}{2}`          /* F correct */
+          ]
+        },
+        {
+          latex: String.raw`\text{Simplify each expression: }\dfrac{5\sqrt{5}}{\sqrt{15}}`,
+          choices: [
+            String.raw`\dfrac{5\sqrt{15}}{15}`,
+            String.raw`\dfrac{5\sqrt{3}}{3}`,        /* B correct */
+            String.raw`\dfrac{\sqrt{3}}{3}`,
+            String.raw`\dfrac{5}{\sqrt{3}}`,
+            String.raw`\sqrt{3}`,
+            String.raw`\dfrac{5\sqrt{30}}{15}`
+          ]
+        },
+        {
+          latex: String.raw`\text{Simplify each expression: }\sqrt{\dfrac{8}{16}}`,
+          choices: [
+            String.raw`\dfrac{1}{2}`,
+            String.raw`\dfrac{\sqrt{8}}{4}`,
+            String.raw`\dfrac{\sqrt{2}}{2}`,         /* C correct */
+            String.raw`\sqrt{2}`,
+            String.raw`\dfrac{2}{\sqrt{2}}`,
+            String.raw`\sqrt{\dfrac{1}{8}}`
+          ]
+        },
+
+        /* B. Rationalize denominators / combine like terms */
+        {
+          latex: String.raw`\text{Simplify each expression: }\dfrac{5}{1+\sqrt{2}}`,
+          choices: [
+            String.raw`\dfrac{5(1-\sqrt{2})}{-1}`,
+            String.raw`\dfrac{5(1+\sqrt{2})}{3}`,
+            String.raw`5(\sqrt{2}+1)`,
+            String.raw`\dfrac{5}{\sqrt{2}}`,
+            String.raw`5(\sqrt{2}-1)`,               /* E correct */
+            String.raw`\dfrac{5(\sqrt{2}-1)}{2}`
+          ]
+        },
+        {
+          latex: String.raw`\text{Simplify each expression: }\dfrac{4\cdot 7^{40}}{20\cdot 7^{29}}`,
+          choices: [
+            String.raw`7^{11}`,
+            String.raw`\dfrac{7^{40}}{5\cdot 7^{29}}`,
+            String.raw`\dfrac{4}{20}\cdot 7^{40-29}`,
+            String.raw`\dfrac{1}{5}\,7^{11}`,        /* D correct */
+            String.raw`\dfrac{1}{20}\,7^{11}`,
+            String.raw`20\cdot 7^{11}`
+          ]
+        },
+        {
+          latex: String.raw`\text{Simplify each expression: }\dfrac{9}{\sqrt{6}-\sqrt{3}}`,
+          choices: [
+            String.raw`3(\sqrt{6}+\sqrt{3})`,        /* A correct */
+            String.raw`\dfrac{9(\sqrt{6}-\sqrt{3})}{3}`,
+            String.raw`9\sqrt{6}-9\sqrt{3}`,
+            String.raw`\dfrac{9(\sqrt{6}+\sqrt{3})}{9}`,
+            String.raw`3\sqrt{6}-3\sqrt{3}`,
+            String.raw`\sqrt{6}+\sqrt{3}`
+          ]
+        },
+
+        /* C. Variables present — do NOT assume positivity (like #24) */
+        {
+          latex: String.raw`\text{Simplify. Do not assume variables are positive: }\dfrac{10\sqrt{6x\,y^{4}}}{5\sqrt{3y^{3}}}`,
+          choices: [
+            String.raw`2y\sqrt{\dfrac{2x}{y}}`,
+            String.raw`2y^{2}\sqrt{\dfrac{2x}{3y}}`,
+            String.raw`\dfrac{2y^{2}\sqrt{6x}}{|y|\sqrt{3y}}`,
+            String.raw`2\sqrt{\dfrac{2xy}{3}}`,
+            String.raw`2|y|\sqrt{\dfrac{2x}{y}}`,    /* E correct */
+            String.raw`\dfrac{2y^{2}\sqrt{6x}}{5\sqrt{3y^{3}}}`
+          ]
+        }
+      ]
+    };
+  </script>
+
+  <link rel="stylesheet" href="/math-homework/assets/core.css" />
+  <script defer src="/math-homework/assets/core.js"></script>
+  <script defer src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+</head>
+<body>
+  <div id="hw-root">Loading…</div>
+</body>
+</html>
