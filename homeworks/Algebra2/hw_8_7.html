@@ -7,83 +7,82 @@
 
   <script>
     /* =========================================
-       Homework 8-7 — Complex Vectors
+       Homework 8-7 — Complex Vectors (revised)
        ========================================= */
     window.homeworkData = {
       classId : "Algebra2",
       id      : "Homework 8-7",
       title   : "Homework 8-7 — Complex Vectors",
 
-      /* ===== Diagrams ===== */
+      /* ===== Clean diagrams (no value labels), roomy windows ===== */
       graphics : String.raw`
-\begin{tikzpicture}[scale=0.6]
+\begin{tikzpicture}[scale=0.60]
   \tikzset{axes/.style={->,thick}}
   \tikzset{grid/.style={very thin,color=gray!30}}
-  \tikzset{vec/.style={->,thick,blue}}
-  \tikzset{pt/.style={fill=blue,circle,inner sep=1.5pt}}
+  \tikzset{vec/.style={->,very thick}}
+  \tikzset{pt/.style={fill=black,circle,inner sep=1.6pt}}
 
-  % Global grid + axes
-  \begin{scope}[xshift=-8cm,yshift=6cm]
-    \clip (-5.5,-5.5) rectangle (5.5,5.5);
-    \draw[grid] (-5,-5) grid (5,5);
-    \draw[axes] (-5,0)--(5,0) node[right]{\(\mathbb{R}\)};
-    \draw[axes] (0,-5)--(0,5) node[above]{\(i\)};
-
-    % V1: vector for 2+3i
-    \draw[vec] (0,0)--(2,3);
+  % --------- G1: vector from 0 to (2,3) ----------------------------
+  \begin{scope}[xshift=-8cm,yshift=6.5cm]
+    \clip (-6.2,-6.2) rectangle (6.2,6.2);
+    \draw[grid] (-6,-6) grid (6,6);
+    \draw[axes] (-6,0)--(6,0) node[anchor=west]{\(\mathbb{R}\)};
+    \draw[axes] (0,-6)--(0,6) node[anchor=south]{\(i\)};
+    \draw[vec,blue] (0,0)--(2,3);
     \node[pt] at (2,3){};
-    \node[above right] at (2,3){\(2+3i\)};
-    \node[anchor=south west,font=\small] at (-5,4.7) {G1};
+    \node[anchor=south west,font=\small] at (-5.8,5.6) {G1};
   \end{scope}
 
-  % V2: vector for -4-2i
-  \begin{scope}[xshift=8cm,yshift=6cm]
-    \clip (-5.5,-5.5) rectangle (5.5,5.5);
-    \draw[grid] (-5,-5) grid (5,5);
-    \draw[axes] (-5,0)--(5,0) node[right]{\(\mathbb{R}\)};
-    \draw[axes] (0,-5)--(0,5) node[above]{\(i\)};
-
-    \draw[vec] (0,0)--(-4,-2);
+  % --------- G2: vector from 0 to (-4,-2) --------------------------
+  \begin{scope}[xshift=8cm,yshift=6.5cm]
+    \clip (-6.2,-6.2) rectangle (6.2,6.2);
+    \draw[grid] (-6,-6) grid (6,6);
+    \draw[axes] (-6,0)--(6,0) node[anchor=west]{\(\mathbb{R}\)};
+    \draw[axes] (0,-6)--(0,6) node[anchor=south]{\(i\)};
+    \draw[vec,blue] (0,0)--(-4,-2);
     \node[pt] at (-4,-2){};
-    \node[below left] at (-4,-2){\(-4-2i\)};
-    \node[anchor=south west,font=\small] at (-5,4.7) {G2};
+    \node[anchor=south west,font=\small] at (-5.8,5.6) {G2};
   \end{scope}
 
-  % V3: addition (2+i)+(5+3i)
-  \begin{scope}[xshift=-8cm,yshift=-6cm]
-    \clip (-5.5,-5.5) rectangle (5.5,5.5);
-    \draw[grid] (-5,-5) grid (5,5);
-    \draw[axes] (-5,0)--(5,0) node[right]{\(\mathbb{R}\)};
-    \draw[axes] (0,-5)--(0,5) node[above]{\(i\)};
-
-    % Addends
+  % --------- G3: (2+i)+(5+3i) with tip-to-tail ---------------------
+  \begin{scope}[xshift=-8cm,yshift=-6.5cm]
+    % roomy window to fit (7,4)
+    \clip (-2.2,-2.2) rectangle (8.2,6.2);
+    \draw[grid] (-2,-2) grid (8,6);
+    \draw[axes] (-2,0)--(8,0) node[anchor=west]{\(\mathbb{R}\)};
+    \draw[axes] (0,-2)--(0,6) node[anchor=south]{\(i\)};
+    % addend 1 (red): 0 -> (2,1)
     \draw[vec,red] (0,0)--(2,1);
-    \draw[vec,green] (2,1)--(7,4);
-    % Result
-    \draw[vec,blue] (0,0)--(7,4);
+    \node[pt] at (2,1){};
+    % addend 2 (green) placed tip-to-tail: (2,1) -> (7,4)
+    \draw[vec,green!60!black] (2,1)--(7,4);
     \node[pt] at (7,4){};
-    \node[above right] at (7,4){\(7+4i\)};
-    \node[anchor=south west,font=\small] at (-5,4.7) {G3};
+    % resultant (blue): 0 -> (7,4)
+    \draw[vec,blue] (0,0)--(7,4);
+    \node[anchor=south west,font=\small] at (-1.8,5.6) {G3};
   \end{scope}
 
-  % V4: subtraction (5-3i)-(2+i)
-  \begin{scope}[xshift=8cm,yshift=-6cm]
-    \clip (-5.5,-5.5) rectangle (5.5,5.5);
-    \draw[grid] (-5,-5) grid (5,5);
-    \draw[axes] (-5,0)--(5,0) node[right]{\(\mathbb{R}\)};
-    \draw[axes] (0,-5)--(0,5) node[above]{\(i\)};
-
+  % --------- G4: (5-3i) - (2+i) shown as 0->(5,-3) then to (3,-4) --
+  \begin{scope}[xshift=8cm,yshift=-6.5cm]
+    % roomy window to fit (5,-3) and (3,-4)
+    \clip (-1.2,-5.2) rectangle (6.2,2.2);
+    \draw[grid] (-1,-5) grid (6,2);
+    \draw[axes] (-1,0)--(6,0) node[anchor=west]{\(\mathbb{R}\)};
+    \draw[axes] (0,-5)--(0,2) node[anchor=south]{\(i\)};
+    % minuend (red): 0 -> (5,-3)
     \draw[vec,red] (0,0)--(5,-3);
-    \draw[vec,green] (5,-3)--(3,-4);
-    \draw[vec,blue] (0,0)--(3,-4);
+    \node[pt] at (5,-3){};
+    % subtract vector (green) placed from tip: (5,-3) -> (3,-4)
+    \draw[vec,green!60!black] (5,-3)--(3,-4);
     \node[pt] at (3,-4){};
-    \node[below right] at (3,-4){\(3-4i\)};
-    \node[anchor=south west,font=\small] at (-5,4.7) {G4};
+    % result (blue): 0 -> (3,-4)
+    \draw[vec,blue] (0,0)--(3,-4);
+    \node[anchor=south west,font=\small] at (-0.8,1.6) {G4};
   \end{scope}
 \end{tikzpicture}
 `,
 
-      /* ===== Hidden Answer Key ===== */
+      /* ===== Hidden Answer Key (A–F) ===== */
       answerKey : ["A","C","B","D","E","F","C","B","A","D","F","E"],
 
       /* ===== 12 Questions ===== */
@@ -94,17 +93,17 @@
         { latex: String.raw`\text{Refer to G2. What is the length (magnitude) of the vector?}`,
           choices: [
             String.raw`\sqrt{20}`,
-            String.raw`\sqrt{16+4}`,
-            String.raw`\sqrt{(-4)^2+(-2)^2}=\sqrt{20}`,
             String.raw`2\sqrt{5}`,
+            String.raw`\sqrt{(-4)^2+(-2)^2}`,
             String.raw`5`,
-            String.raw`\sqrt{8}`
+            String.raw`\sqrt{8}`,
+            String.raw`4\sqrt{2}`
           ]},
 
-        { latex: String.raw`\text{Which complex number has length 5 and points straight up along the imaginary axis?}`,
+        { latex: String.raw`\text{Which complex number has length 5 and lies on the positive imaginary axis?}`,
           choices: ["5i","-5i","5","-5","4+3i","3+4i"]},
 
-        { latex: String.raw`\text{Give the vector form (complex number) from initial point }(4,7)\text{ to terminal point }(-3,1).`,
+        { latex: String.raw`\text{Vector from initial }(4,7)\text{ to terminal }(-3,1)\text{ equals…}`,
           choices: [
             String.raw`-7-6i`,
             String.raw`7+6i`,
@@ -114,19 +113,19 @@
             String.raw`3-7i`
           ]},
 
-        { latex: String.raw`\text{Refer to G3. Which complex number is the sum?}`,
+        { latex: String.raw`\text{Refer to G3. What is }(2-i)+(5+3i)\text{?}`,
           choices: ["7+4i","2+i","5+3i","3-4i","-7-4i","4+7i"]},
 
-        { latex: String.raw`\text{Refer to G3. Which smaller vector was drawn in red?}`,
+        { latex: String.raw`\text{Refer to G3. Which vector is drawn in red?}`,
           choices: ["2+i","7+4i","3-4i","5+3i","-2-i","4+7i"]},
 
-        { latex: String.raw`\text{Refer to G4. What is the result of }(5-3i)-(2+i)?`,
+        { latex: String.raw`\text{Refer to G4. What is }(5-3i)-(2+i)\text{?}`,
           choices: ["3-4i","7+4i","2+i","-3+4i","5-2i","3+4i"]},
 
-        { latex: String.raw`\text{Find the length of vector }3-4i.`,
+        { latex: String.raw`\text{Find the length of }3-4i.`,
           choices: ["5","7","\u221A7","4","\u221A25","2"]},
 
-        { latex: String.raw`\text{Which complex number has direction straight left along the real axis, magnitude 6?}`,
+        { latex: String.raw`\text{Which complex number is a vector of length }6\text{ pointing left on the real axis?}`,
           choices: ["-6","6","-6i","6i","3-3i","-3+3i"]},
 
         { latex: String.raw`\text{Compute }(2-i)+(5+3i).`,
@@ -141,7 +140,7 @@
             String.raw`\text{Yes, but only if }z,w\in\mathbb{R}.`,
             String.raw`\text{No, order matters.}`,
             String.raw`\text{No, only subtraction is commutative.}`,
-            String.raw`\text{Yes, but only if magnitudes equal.}`,
+            String.raw`\text{Yes, but only if magnitudes are equal.}`,
             String.raw`\text{No, unless both are purely imaginary.}`
           ]}
       ]
