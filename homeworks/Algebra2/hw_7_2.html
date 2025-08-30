@@ -22,20 +22,20 @@
 
       /* ===== 12 Multiple-Choice Questions (6 choices each) ===== */
       questions : [
-        /* — A. Simplify (assume all variables are positive real numbers) — */
+        /* A. Simplify (variables positive) */
         {
-          latex: String.raw`\text{1) Simplify: }\sqrt{144\,a^{4}b^{6}}`,
+          latex: String.raw`\text{Simplify: }\sqrt{144\,a^{4}b^{6}}`,
           choices: [
             String.raw`12ab^{3}`,
             String.raw`12a^{2}b^{3}`,
             String.raw`6a^{2}b^{3}\sqrt{4}`,
             String.raw`12a^{2}b^{2}\sqrt{b^{2}}`,
             String.raw`12|a|^{2}|b|^{3}`,
-            String.raw`144a^{2}b^{3}$
+            String.raw`144a^{2}b^{3}`
           ]
         },
         {
-          latex: String.raw`\text{2) Simplify: }\sqrt[3]{54\,x^{5}y^{2}}`,
+          latex: String.raw`\text{Simplify: }\sqrt[3]{54\,x^{5}y^{2}}`,
           choices: [
             String.raw`3\sqrt[3]{2x^{5}y^{2}}`,
             String.raw`3x^{2}\sqrt[3]{2xy^{2}}`,
@@ -46,7 +46,7 @@
           ]
         },
         {
-          latex: String.raw`\text{3) Simplify: }\sqrt[4]{256\,a^{6}b^{2}}`,
+          latex: String.raw`\text{Simplify: }\sqrt[4]{256\,a^{6}b^{2}}`,
           choices: [
             String.raw`2a\sqrt[4]{4a^{2}b^{2}}`,
             String.raw`4\sqrt[4]{a^{6}b^{2}}`,
@@ -57,7 +57,7 @@
           ]
         },
         {
-          latex: String.raw`\text{4) Simplify: }\sqrt{125\,x^{9}y^{4}}`,
+          latex: String.raw`\text{Simplify: }\sqrt{125\,x^{9}y^{4}}`,
           choices: [
             String.raw`5x^{4}y^{2}\sqrt{5x}`,
             String.raw`5x^{4}y\sqrt{5xy^{2}}`,
@@ -68,7 +68,7 @@
           ]
         },
         {
-          latex: String.raw`\text{5) Simplify: }\sqrt[6]{64\,a^{8}b^{3}}`,
+          latex: String.raw`\text{Simplify: }\sqrt[6]{64\,a^{8}b^{3}}`,
           choices: [
             String.raw`2\sqrt[6]{a^{8}b^{3}}`,
             String.raw`2a^{4/3}\sqrt[6]{b^{3}}`,
@@ -79,7 +79,7 @@
           ]
         },
         {
-          latex: String.raw`\text{6) Simplify: }\sqrt{27\,x^{5}y}`,
+          latex: String.raw`\text{Simplify: }\sqrt{27\,x^{5}y}`,
           choices: [
             String.raw`3xy\sqrt{3x^{3}}`,
             String.raw`3x^{2}\sqrt{3y}`,
@@ -90,9 +90,9 @@
           ]
         },
 
-        /* — B. Simplify (variables may be positive or negative) — */
+        /* B. Variables may be positive or negative (principal roots) */
         {
-          latex: String.raw`\text{7) Simplify: }\sqrt{x^{2}y^{4}z^{5}}\ \ \text{(principal square root)}`,
+          latex: String.raw`\text{Simplify: }\sqrt{x^{2}y^{4}z^{5}}\ \ (\text{principal square root})`,
           choices: [
             String.raw`xy^{2}z^{2}\sqrt{z}`,
             String.raw`|xy^{2}z^{2}|\sqrt{z}`,
@@ -103,18 +103,18 @@
           ]
         },
         {
-          latex: String.raw`\text{8) Simplify: }\sqrt[3]{-8x^{3}y^{6}}`,
+          latex: String.raw`\text{Simplify: }\sqrt[3]{-8x^{3}y^{6}}`,
           choices: [
             String.raw`2xy^{2}`,
             String.raw`-2xy^{2}`,
             String.raw`-2|x|y^{2}`,
             String.raw`-2x|y|^{2}`,
             String.raw`2|x|\,|y|^{2}`,
-            String.raw`-2x^{3}y^{6}$
+            String.raw`-2x^{3}y^{6}`
           ]
         },
         {
-          latex: String.raw`\text{9) Simplify: }\sqrt{9z^{2}}\ \ \text{(principal root)}`,
+          latex: String.raw`\text{Simplify: }\sqrt{9z^{2}}\ \ (\text{principal root})`,
           choices: [
             String.raw`3z`,
             String.raw`|3z|`,
@@ -125,7 +125,7 @@
           ]
         },
         {
-          latex: String.raw`\text{10) Simplify: }\sqrt[4]{x^{2}z^{12}}`,
+          latex: String.raw`\text{Simplify: }\sqrt[4]{x^{2}z^{12}}`,
           choices: [
             String.raw`|z|^{3}\sqrt[4]{x^{2}}`,
             String.raw`z^{3}\sqrt[4]{x^{2}}`,
@@ -136,9 +136,9 @@
           ]
         },
 
-        /* — C. Concept & perfect-square structure — */
+        /* C. Concept + perfect-square expression */
         {
-          latex: String.raw`\text{11) Why does }\sqrt[3]{x^{5}}=x\sqrt[3]{x^{2}}\ \text{not use absolute values, but }\sqrt{x^{5}}=|x|\sqrt{x}\ \text{does?}`,
+          latex: String.raw`\text{Why does }\sqrt[3]{x^{5}}=x\sqrt[3]{x^{2}}\ \text{not use }|\,|\text{, but }\sqrt{x^{5}}=|x|\sqrt{x}\ \text{does?}`,
           choices: [
             String.raw`\text{Because }\sqrt[3]{\,}\text{ always returns a nonnegative value.}`,
             String.raw`\text{Because }x^{5}\text{ is always positive.}`,
@@ -149,13 +149,13 @@
           ]
         },
         {
-          latex: String.raw`\text{12) Simplify (variables may be any real numbers): }\sqrt{9a^{2}-6ab+b^{2}}`,
+          latex: String.raw`\text{Simplify (any real }a,b\text{): }\sqrt{9a^{2}-6ab+b^{2}}`,
           choices: [
             String.raw`3a-b`,
             String.raw`|a-b|`,
             String.raw`3|a|-|b|`,
             String.raw`|3a+b|`,
-            String.raw`\sqrt{(3a-b)^{2}}=3a-b\ \text{ for all }a,b`,
+            String.raw`\sqrt{(3a-b)^{2}}=3a-b`,
             String.raw`|3a-b|`
           ]
         }
