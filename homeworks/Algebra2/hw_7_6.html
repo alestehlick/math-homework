@@ -6,24 +6,29 @@
   <title>Homework 7 — Graphs of √x and a^x</title>
 
   <script>
+    /* =========================================
+       Algebra 2 — Graphs of Radical & Exponential Functions
+       - 6 small graphs (G1–G6) laid out 3 per row via TikZJax
+       - Questions use set-builder notation for domain/range
+       ========================================= */
     window.homeworkData = {
       classId : "Algebra2",
       id      : "Homework 7 — Graphs",
       title   : "Graphs — √x-shifts and a^x",
 
-graphics : String.raw`
+      /* --------- TikZJax graphics (G1–G6) laid out 3 per row --------- */
+      graphics : String.raw`
 \begin{tikzpicture}[scale=0.7]
   \tikzset{grid/.style={very thin,color=gray!35}}
   \tikzset{axes/.style={->,thick}}
   \colorlet{exp}{blue!55!black}
   \colorlet{rad}{teal!60!black}
 
-  % --- Panel template (explicit cm units) ---
-  % Top row: x = -12cm, 0cm, +12cm at y = +8cm
-  % Bottom row: same x at y = -2cm
-  % Each viewport: [-4,6]x[-2,6]
+  % Each panel shows the window [-4,6] × [-2,6]
+  % Top row centers at x = -12cm, 0cm, +12cm and y = +8cm
+  % Bottom row at the same x, y = -2cm
 
-  % G1: y = 4^x
+  % ---------- G1: y = 4^x ----------
   \begin{scope}[xshift=-12cm,yshift=8cm]
     \clip (-4.2,-2.2) rectangle (4.2,6.2);
     \draw[grid] (-4,-2) grid (4,6);
@@ -33,7 +38,7 @@ graphics : String.raw`
     \node[anchor=north east,font=\small] at (3.8,-2) {G1};
   \end{scope}
 
-  % G2: y = (1/4)^x
+  % ---------- G2: y = (1/4)^x ----------
   \begin{scope}[xshift=0cm,yshift=8cm]
     \clip (-4.2,-2.2) rectangle (4.2,6.2);
     \draw[grid] (-4,-2) grid (4,6);
@@ -43,7 +48,7 @@ graphics : String.raw`
     \node[anchor=north east,font=\small] at (3.8,-2) {G2};
   \end{scope}
 
-  % G3: y = sqrt(x) + 3
+  % ---------- G3: y = sqrt(x) + 3 ----------
   \begin{scope}[xshift=12cm,yshift=8cm]
     \clip (-4.2,-2.2) rectangle (4.2,6.2);
     \draw[grid] (-4,-2) grid (4,6);
@@ -53,7 +58,7 @@ graphics : String.raw`
     \node[anchor=north east,font=\small] at (3.8,-2) {G3};
   \end{scope}
 
-  % G4: y = sqrt(x) + 1
+  % ---------- G4: y = sqrt(x) + 1 ----------
   \begin{scope}[xshift=-12cm,yshift=-2cm]
     \clip (-4.2,-2.2) rectangle (4.2,6.2);
     \draw[grid] (-4,-2) grid (4,6);
@@ -63,7 +68,7 @@ graphics : String.raw`
     \node[anchor=north east,font=\small] at (3.8,-2) {G4};
   \end{scope}
 
-  % G5: y = 2^{x-2}
+  % ---------- G5: y = 2^{x-2} ----------
   \begin{scope}[xshift=0cm,yshift=-2cm]
     \clip (-4.2,-2.2) rectangle (4.2,6.2);
     \draw[grid] (-4,-2) grid (4,6);
@@ -73,7 +78,7 @@ graphics : String.raw`
     \node[anchor=north east,font=\small] at (3.8,-2) {G5};
   \end{scope}
 
-  % G6: y = -2\sqrt{x}
+  % ---------- G6: y = -2 sqrt(x) ----------
   \begin{scope}[xshift=12cm,yshift=-2cm]
     \clip (-4.2,-2.2) rectangle (4.2,6.2);
     \draw[grid] (-4,-2) grid (4,6);
@@ -85,8 +90,10 @@ graphics : String.raw`
 \end{tikzpicture}
 `,
 
+      /* ===== Hidden answer key (A–F) for the 12 questions ===== */
       answerKey : ["A","B","A","C","C","A","B","B","B","A","C","C"],
 
+      /* ===== 12 Multiple-Choice Questions (6 choices each) ===== */
       questions : [
         { latex: String.raw`\text{Refer to G1. Which function is graphed?}`,
           choices: [
@@ -97,6 +104,7 @@ graphics : String.raw`
             String.raw`y=-3^{x}`,
             String.raw`y=4^{-x}`
           ]},
+
         { latex: String.raw`\text{Refer to G2. Which function is graphed?}`,
           choices: [
             String.raw`y=4^{x}`,
@@ -106,92 +114,102 @@ graphics : String.raw`
             String.raw`y=\sqrt{x}+3`,
             String.raw`y=10^{x}`
           ]},
+
         { latex: String.raw`\text{Refer to G3. What is the domain?}`,
           choices: [
-            String.raw`[0,\infty)`,
-            String.raw`(-\infty,\infty)`,
-            String.raw`(3,\infty)`,
-            String.raw`[3,\infty)`,
-            String.raw`(-3,\infty)`,
-            String.raw`(-\infty,0]`
+            String.raw`\{x \mid x \ge 0\}`,                  // correct
+            String.raw`\{x \mid x \in \mathbb{R}\}`,
+            String.raw`\{x \mid x > 3\}`,
+            String.raw`\{x \mid x \ge 3\}`,
+            String.raw`\{x \mid x > -3\}`,
+            String.raw`\{x \mid x \le 0\}`
           ]},
+
         { latex: String.raw`\text{Refer to G3. What is the range?}`,
           choices: [
-            String.raw`(-\infty,\infty)`,
-            String.raw`[0,\infty)`,
-            String.raw`[3,\infty)`,
-            String.raw`(-\infty,3]`,
-            String.raw`(0,\infty)`,
-            String.raw`(-\infty,0]`
+            String.raw`\{y \mid y \in \mathbb{R}\}`,
+            String.raw`\{y \mid y \ge 0\}`,
+            String.raw`\{y \mid y \ge 3\}`,                 // correct
+            String.raw`\{y \mid y \le 3\}`,
+            String.raw`\{y \mid y > 0\}`,
+            String.raw`\{y \mid y \le 0\}`
           ]},
+
         { latex: String.raw`\text{Refer to G5. What is the }y\text{-intercept?}`,
           choices: [
             String.raw`0`,
             String.raw`1`,
-            String.raw`\tfrac14`,
-            String.raw`-\tfrac14`,
+            String.raw`\tfrac{1}{4}`,                       // correct
+            String.raw`-\tfrac{1}{4}`,
             String.raw`2`,
             String.raw`4`
           ]},
+
         { latex: String.raw`\text{Which formula matches G6?}`,
           choices: [
-            String.raw`y=-2\sqrt{x}`,
+            String.raw`y=-2\sqrt{x}`,                      // correct
             String.raw`y=-3^{x}`,
             String.raw`y=\sqrt{x}+1`,
             String.raw`y=\sqrt{x}+3`,
             String.raw`y=2^{x-2}`,
             String.raw`y=\left(\tfrac14\right)^{x}`
           ]},
+
         { latex: String.raw`\text{Refer to G4. Compute }f(9).`,
           choices: [
             String.raw`3`,
-            String.raw`4`,
+            String.raw`4`,                                 // correct
             String.raw`5`,
             String.raw`10`,
             String.raw`0`,
             String.raw`1`
           ]},
+
         { latex: String.raw`\text{Which graph shows a decreasing exponential with }y>0\text{ for all }x\text{?}`,
           choices: [
             String.raw`\text{G1}`,
-            String.raw`\text{G2}`,
+            String.raw`\text{G2}`,                         // correct
             String.raw`\text{G3}`,
             String.raw`\text{G4}`,
             String.raw`\text{G5}`,
             String.raw`\text{G6}`
           ]},
+
         { latex: String.raw`\text{For G1, find }f(-2).`,
           choices: [
             String.raw`16`,
-            String.raw`\tfrac{1}{16}`,
+            String.raw`\tfrac{1}{16}`,                     // correct
             String.raw`\tfrac{1}{4}`,
             String.raw`4`,
             String.raw`0`,
             String.raw`-\tfrac{1}{16}`
           ]},
+
         { latex: String.raw`\text{Which description fits G5 compared to }y=2^{x}\text{?}`,
           choices: [
-            String.raw`\text{Shift right }2`,
+            String.raw`\text{Shift right }2`,              // correct
             String.raw`\text{Shift left }2`,
             String.raw`\text{Shift up }2`,
             String.raw`\text{Shift down }2`,
             String.raw`\text{Vertical stretch by }2`,
             String.raw`\text{Reflect across the }x\text{-axis}`
           ]},
+
         { latex: String.raw`\text{Choose the domain and range for G6.}`,
           choices: [
-            String.raw`(-\infty,\infty),\ (-\infty,\infty)`,
-            String.raw`[0,\infty),\ [0,\infty)`,
-            String.raw`[0,\infty),\ (-\infty,0]`,
-            String.raw`(-\infty,0],\ [0,\infty)`,
-            String.raw`(-\infty,0],\ (-\infty,\infty)`,
-            String.raw`[0,\infty),\ [0,2]`
+            String.raw`\{x \mid x \in \mathbb{R}\},\ \{y \mid y \in \mathbb{R}\}`,
+            String.raw`\{x \mid x \ge 0\},\ \{y \mid y \ge 0\}`,
+            String.raw`\{x \mid x \ge 0\},\ \{y \mid y \le 0\}`,   // correct
+            String.raw`\{x \mid x \le 0\},\ \{y \mid y \ge 0\}`,
+            String.raw`\{x \mid x \le 0\},\ \{y \mid y \in \mathbb{R}\}`,
+            String.raw`\{x \mid x \ge 0\},\ \{y \mid 0 \le y \le 2\}`
           ]},
+
         { latex: String.raw`\text{Which graph passes through }(0,3)\text{?}`,
           choices: [
             String.raw`\text{G1}`,
             String.raw`\text{G2}`,
-            String.raw`\text{G3}`,
+            String.raw`\text{G3}`,                          // correct
             String.raw`\text{G4}`,
             String.raw`\text{G5}`,
             String.raw`\text{G6}`
