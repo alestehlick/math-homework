@@ -8,7 +8,8 @@
   <script>
     /* =========================================
        Homework 9-4 — Adding & Subtracting Rational Expressions
-       Extra focus on type B & C (different denominators, complex fractions).
+       Focus on different denominators + a couple complex fractions.
+       All answers double-checked; exactly one correct option per item.
        ========================================= */
     window.homeworkData = {
       classId : "Algebra2",
@@ -18,7 +19,8 @@
       graphics : String.raw``, 
 
       /* ===== Hidden answer key (A–F) ===== */
-      answerKey : ["C","E","B","A","F","D","B","E","A","C","F","D"],
+      /* 1→12: C, E, A, C, C, D, C, A, A, B, B, D */
+      answerKey : ["C","E","A","C","C","D","C","A","A","B","B","D"],
 
       questions : [
         // 1 — like denominators
@@ -33,72 +35,79 @@
           ]},
 
         // 2 — different denominators with factorable quadratics
+        // (2x-6)/(x^2+x-12) + (x^2-36)/(x^2-2x-24) = (x+8)/(x+4)
         { latex: String.raw`\text{Simplify: } \dfrac{2x-6}{x^{2}+x-12}+\dfrac{x^{2}-36}{x^{2}-2x-24}`,
           choices: [
             String.raw`\dfrac{x-2}{x+3}`,
             String.raw`\dfrac{x+6}{x-3}`,
             String.raw`\dfrac{x-6}{x+4}`,
             String.raw`\dfrac{x-6}{x+2}`,
-            String.raw`\dfrac{x-6}{x+3}`, // correct
+            String.raw`\dfrac{x+8}{x+4}`, // correct
             String.raw`\dfrac{x+2}{x-6}`
           ]},
 
-        // 3 — same idea, subtraction
+        // 3 — subtraction with cancellation
+        // (3x+5)/(9x^2-25) - 15x/(25x-15x^2) = 4/(3x-5)
         { latex: String.raw`\text{Simplify: } \dfrac{3x+5}{9x^{2}-25}-\dfrac{15x}{25x-15x^{2}}`,
           choices: [
+            String.raw`\dfrac{4}{3x-5}`, // correct
+            String.raw`\dfrac{3}{5(x-5)}`,
             String.raw`\dfrac{3}{5(x+5)}`,
-            String.raw`\dfrac{3}{5(x-5)}`, // correct
-            String.raw`\dfrac{x}{x+5}`,
+            String.raw`\dfrac{4}{3x+5}`,
             String.raw`\dfrac{x}{x-5}`,
-            String.raw`\dfrac{3}{25x}`,
             String.raw`\dfrac{3}{5x}`
           ]},
 
         // 4 — variable denominators, different
+        // 6x/(x^2-x-12) - 9x/(x^2-6x+8) = -3x(x+13)/[(x-4)(x+3)(x-2)]
         { latex: String.raw`\text{Simplify: } \dfrac{6x}{x^{2}-x-12}-\dfrac{9x}{x^{2}-6x+8}`,
           choices: [
-            String.raw`\dfrac{3x}{(x-6)(x+2)}`,
             String.raw`\dfrac{-3x}{(x-6)(x+2)}`,
-            String.raw`\dfrac{3x}{(x-4)(x-2)}`,
-            String.raw`\dfrac{-3x}{(x-4)(x-2)}`, // correct
-            String.raw`\dfrac{3x}{x-2}`,
-            String.raw`\dfrac{-3}{x-6}`
+            String.raw`\dfrac{-3x}{(x-4)(x-2)}`,
+            String.raw`\dfrac{-3x(x+13)}{(x-4)(x+3)(x-2)}`, // correct
+            String.raw`\dfrac{3x(x+13)}{(x-4)(x+3)(x-2)}`,
+            String.raw`\dfrac{-3x(x-13)}{(x-4)(x+3)(x-2)}`,
+            String.raw`\dfrac{-3x(x+13)}{(x-4)(x-2)}`
           ]},
 
         // 5 — binomial denominators
+        // (y+2)/(y^2+5y-6) - (y-6)/(y^2+10y+24) = (13y+2)/[(y+6)(y-1)(y+4)]
         { latex: String.raw`\text{Simplify: } \dfrac{y+2}{y^{2}+5y-6}-\dfrac{y-6}{y^{2}+10y+24}`,
           choices: [
             String.raw`\dfrac{y+8}{(y+6)(y+4)}`,
-            String.raw`\dfrac{2}{(y+6)(y+4)}`, // correct
+            String.raw`\dfrac{2}{(y+6)(y+4)}`,
+            String.raw`\dfrac{13y+2}{(y+6)(y-1)(y+4)}`, // correct
             String.raw`\dfrac{y+2}{y+4}`,
             String.raw`\dfrac{2y}{(y+6)(y+4)}`,
-            String.raw`\dfrac{y-6}{y+4}`,
             String.raw`0`
           ]},
 
         // 6 — coefficients included
+        // a/(a^2-5a-14) + 5/(a^2-10a+21) = (a^2+2a+10)/[(a-7)(a+2)(a-3)]
         { latex: String.raw`\text{Simplify: } \dfrac{a}{a^{2}-5a-14}+\dfrac{5}{a^{2}-10a+21}`,
           choices: [
             String.raw`\dfrac{a+5}{(a-7)(a-2)}`,
             String.raw`\dfrac{a+2}{(a-7)(a-3)}`,
             String.raw`\dfrac{a+7}{(a-7)(a-3)}`,
-            String.raw`\dfrac{a+5}{(a-7)(a-3)}`, // correct
+            String.raw`\dfrac{a^{2}+2a+10}{(a-7)(a+2)(a-3)}`, // correct
             String.raw`\dfrac{a}{a-7}`,
             String.raw`\dfrac{5}{a-3}`
           ]},
 
         // 7 — simple binomial denominators
+        // 2/(t+5) - 3/(t-5) = -(t+25)/[(t-5)(t+5)]
         { latex: String.raw`\text{Simplify: } \dfrac{2}{t+5}-\dfrac{3}{t-5}`,
           choices: [
-            String.raw`\dfrac{-t-1}{t^{2}-25}`,
-            String.raw`\dfrac{-t+1}{t^{2}-25}`, // correct
-            String.raw`\dfrac{t-1}{t^{2}-25}`,
-            String.raw`\dfrac{t+1}{t^{2}-25}`,
-            String.raw`\dfrac{1}{t-5}`,
-            String.raw`\dfrac{1}{t+5}`
+            String.raw`\dfrac{-(t+1)}{(t-5)(t+5)}`,
+            String.raw`\dfrac{-t+1}{(t-5)(t+5)}`,
+            String.raw`\dfrac{-(t+25)}{(t-5)(t+5)}`, // correct
+            String.raw`\dfrac{t-1}{(t-5)(t+5)}`,
+            String.raw`\dfrac{t+1}{(t-5)(t+5)}`,
+            String.raw`\dfrac{1}{t-5}`
           ]},
 
         // 8 — x/y type fractions
+        // x/y + 1/x = (x^2 + y)/(xy)
         { latex: String.raw`\text{Simplify: } \dfrac{x}{y}+\dfrac{1}{x}`,
           choices: [
             String.raw`\dfrac{x^{2}+y}{xy}`, // correct
@@ -109,7 +118,8 @@
             String.raw`1`
           ]},
 
-        // 9 — complex rational, part C type
+        // 9 — complex rational
+        // ((x/y)+1)/((x/y)-1) = (x+y)/(x-y)
         { latex: String.raw`\text{Simplify: } \dfrac{\tfrac{x}{y}+1}{\tfrac{x}{y}-1}`,
           choices: [
             String.raw`\dfrac{x+y}{x-y}`, // correct
@@ -121,36 +131,39 @@
           ]},
 
         // 10 — another complex rational
+        // ( (2/t - 3/t^2) / (5/t + 1) ) = (2t-3)/(t(t+5))
         { latex: String.raw`\text{Simplify: } \dfrac{\tfrac{2}{t}-\tfrac{3}{t^{2}}}{\tfrac{5}{t}+1}`,
           choices: [
-            String.raw`\dfrac{2t-3}{5+t}`, // correct
-            String.raw`\dfrac{2t+3}{5+t}`,
+            String.raw`\dfrac{2t-3}{t+5}`,
+            String.raw`\dfrac{2t-3}{t(t+5)}`, // correct
+            String.raw`\dfrac{2t+3}{t(t+5)}`,
             String.raw`\dfrac{2t-3}{t+1}`,
             String.raw`\dfrac{2}{t+5}`,
-            String.raw`\dfrac{t-3}{t+5}`,
-            String.raw`1`
+            String.raw`\dfrac{t-3}{t+5}`
           ]},
 
         // 11 — binomial fractions
+        // 5/(x+2) + 3/(x-2) = 4(2x-1)/[(x-2)(x+2)]
         { latex: String.raw`\text{Simplify: } \dfrac{5}{x+2}+\dfrac{3}{x-2}`,
           choices: [
-            String.raw`\dfrac{8x}{x^{2}-4}`, // correct
+            String.raw`\dfrac{8x}{x^{2}-4}`,
+            String.raw`\dfrac{4(2x-1)}{(x-2)(x+2)}`, // correct
+            String.raw`\dfrac{4}{x^{2}-4}`,
             String.raw`\dfrac{8}{x^{2}-4}`,
-            String.raw`\dfrac{8}{x+2}`,
             String.raw`\dfrac{x+2}{x-2}`,
-            String.raw`\dfrac{5x}{x^{2}-4}`,
-            String.raw`\dfrac{3x}{x^{2}-4}`
+            String.raw`\dfrac{4(2x+1)}{(x-2)(x+2)}`
           ]},
 
         // 12 — subtraction with negatives
+        // 6/(x-3) - 8/(x+3) = 2(21-x)/[(x-3)(x+3)]
         { latex: String.raw`\text{Simplify: } \dfrac{6}{x-3}-\dfrac{8}{x+3}`,
           choices: [
-            String.raw`\dfrac{14x}{x^{2}-9}`, // correct
+            String.raw`\dfrac{14x}{x^{2}-9}`,
             String.raw`\dfrac{-14x}{x^{2}-9}`,
             String.raw`\dfrac{2x}{x^{2}-9}`,
+            String.raw`\dfrac{2(21-x)}{(x-3)(x+3)}`, // correct
             String.raw`\dfrac{14}{x^{2}-9}`,
-            String.raw`\dfrac{14}{x-3}`,
-            String.raw`\dfrac{14}{x+3}`
+            String.raw`\dfrac{2(21+x)}{(x-3)(x+3)}`
           ]}
       ]
     };
