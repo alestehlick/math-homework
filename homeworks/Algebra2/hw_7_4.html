@@ -3,177 +3,164 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Homework 7-5 (Algebra 1)</title>
+  <title>Homework 7-4 (Algebra 2)</title>
 
   <script>
-    /* =========================
-       Homework 7-5 — Solve Systems by the ADDITION Method
-       (12 multiple-choice items, no graphs needed)
-       ========================= */
+    /* =========================================
+       Algebra 2 — Section 7-4
+       Operations with Radicals & Exponents
+       ========================================= */
     window.homeworkData = {
-      classId : "Algebra1",
-      id      : "Homework 7-5",
-      title   : "Homework 7-5 — Solve by Addition Method",
+      classId : "Algebra2",
+      id      : "Homework 7-4",
+      title   : "Homework 7-4 — Operations with Radicals & Exponents",
 
-      graphics : "",
+      graphics : String.raw``,  // no diagrams needed
 
-      /* correct choices (A–F) for each question below */
-      answerKey : ["B","A","A","C","D","A","E","C","B","F","D","A"],
+      /* ===== Hidden answer key (A–F) for the 12 questions ===== */
+      answerKey : ["C","E","B","A","F","D","C","A","B","C","E","D"],
 
+      /* ===== 12 Multiple-Choice Questions (6 choices each) ===== */
       questions : [
-        /* A.1  x+y=5 , x−y=3  → (4,1) */
+        /* A: numeric radical products/sums */
         {
-          latex   : String.raw`\text{Solve the system: }\ \begin{cases}x+y=5\\ x-y=3\end{cases}`,
-          choices : [
-            String.raw`(2,3)`,
-            String.raw`(4,1)`,
-            String.raw`(1,4)`,
-            String.raw`(3,2)`,
-            String.raw`(0,5)`,
-            String.raw`\text{No solution}`
+          latex: String.raw`\text{Do the indicated operation and simplify. Variables represent positive real numbers: }\sqrt{8}\cdot\sqrt{7}`,
+          choices: [
+            String.raw`\sqrt{56}`,
+            String.raw`4\sqrt{7}`,
+            String.raw`2\sqrt{14}`,
+            String.raw`14\sqrt{2}`,
+            String.raw`7\sqrt{8}`,
+            String.raw`8\sqrt{7}`
+          ]
+        },
+        {
+          latex: String.raw`\text{Do the indicated operation and simplify. Variables represent positive real numbers: }3\sqrt{5}\cdot\sqrt{6}`,
+          choices: [
+            String.raw`3\sqrt{11}`,
+            String.raw`9\sqrt{30}`,
+            String.raw`3\sqrt{3}`,
+            String.raw`18\sqrt{5}`,
+            String.raw`3\sqrt{30}`,
+            String.raw`\sqrt{90}`
           ]
         },
 
-        /* A.4  x+2y=13 , x+6y=25  → (7,3) */
+        /* A: with variables (assume positive) */
         {
-          latex   : String.raw`\text{Solve the system: }\ \begin{cases}x+2y=13\\ x+6y=25\end{cases}`,
-          choices : [
-            String.raw`(7,3)`,
-            String.raw`(3,7)`,
-            String.raw`(7,-3)`,
-            String.raw`(6,3)`,
-            String.raw`(5,4)`,
-            String.raw`\text{Infinitely many solutions}`
+          latex: String.raw`\text{Do the indicated operation and simplify. Variables represent positive real numbers: }6\sqrt{4a^{4}}\;\cdot\;2\sqrt{2a^{2}}`,
+          choices: [
+            String.raw`12a^{2}\sqrt{2a^{2}}`,
+            String.raw`24a^{3}\sqrt{2}`,
+            String.raw`24a^{2}\sqrt{2a^{2}}`,
+            String.raw`12a^{3}\sqrt{8}`,
+            String.raw`48a^{3}\sqrt{2}`,
+            String.raw`24a^{2}\sqrt{8a^{2}}`
+          ]
+        },
+        {
+          latex: String.raw`\text{Do the indicated operation and simplify. Variables represent positive real numbers: }27^{x}\cdot 3^{x+1}`,
+          choices: [
+            String.raw`3^{4x+1}`,
+            String.raw`3^{3x+1}`,
+            String.raw`27^{x+1}`,
+            String.raw`3^{x+28}`,
+            String.raw`3^{(x+1)27}`,
+            String.raw`3^{4x}`
+          ]
+        },
+        {
+          latex: String.raw`\text{Do the indicated operation and simplify. Variables represent positive real numbers: }2^{65}\cdot 4^{10}`,
+          choices: [
+            String.raw`2^{75}`,
+            String.raw`4^{75}`,
+            String.raw`2^{45}`,
+            String.raw`2^{20}\cdot 4^{55}`,
+            String.raw`4^{85}`,
+            String.raw`2^{85}`
+          ]
+        },
+        {
+          latex: String.raw`\text{Do the indicated operation and simplify. Variables represent positive real numbers: }24^{0}\bigl(2^{11-3}\bigr)`,
+          choices: [
+            String.raw`0`,
+            String.raw`1`,
+            String.raw`2^{11}`,
+            String.raw`256`,
+            String.raw`24\cdot 2^{8}`,
+            String.raw`8`
           ]
         },
 
-        /* A.5  2x+3y=19 , 2x+7y=47  → (-1,7) */
+        /* A: distribute with radicals */
         {
-          latex   : String.raw`\text{Solve the system: }\ \begin{cases}2x+3y=19\\ 2x+7y=47\end{cases}`,
-          choices : [
-            String.raw`(-1,7)`,
-            String.raw`(1,7)`,
-            String.raw`(-7,1)`,
-            String.raw`(1,-7)`,
-            String.raw`\text{No solution}`,
-            String.raw`\text{Infinitely many solutions}`
+          latex: String.raw`\text{Do the indicated operation and simplify. Variables represent positive real numbers: }7\bigl(3+\sqrt{2}\bigr)`,
+          choices: [
+            String.raw`10+\sqrt{2}`,
+            String.raw`7+3\sqrt{2}`,
+            String.raw`21+7\sqrt{2}`,
+            String.raw`21+\sqrt{14}`,
+            String.raw`21+2\sqrt{7}`,
+            String.raw`7\sqrt{5}+21`
+          ]
+        },
+        {
+          latex: String.raw`\text{Do the indicated operation and simplify. Variables represent positive real numbers: }\sqrt{5}\,(x+9)`,
+          choices: [
+            String.raw`x\sqrt{5}+9\sqrt{5}`,
+            String.raw`\sqrt{5x}+9`,
+            String.raw`5x+9`,
+            String.raw`x+9\sqrt{5}`,
+            String.raw`x\sqrt{5}+\sqrt{45}`,
+            String.raw`\sqrt{5x+45}`
           ]
         },
 
-        /* A.6  2x+9y=30 , 2x+y=-2  → (-3,4) */
+        /* A: products / conjugates */
         {
-          latex   : String.raw`\text{Solve the system: }\ \begin{cases}2x+9y=30\\ 2x+y=-2\end{cases}`,
-          choices : [
-            String.raw`(-4,3)`,
-            String.raw`(-3,-4)`,
-            String.raw`(-3,4)`,
-            String.raw`(3,-4)`,
-            String.raw`(4,-3)`,
-            String.raw`\text{No solution}`
+          latex: String.raw`\text{Do the indicated operation and simplify. Variables represent positive real numbers: }(x+\sqrt{5})(x-\sqrt{5})`,
+          choices: [
+            String.raw`x^{2}+5`,
+            String.raw`x^{2}-5`,
+            String.raw`(x-5)^{2}`,
+            String.raw`x^{2}-\sqrt{5}`,
+            String.raw`x^{2}-10`,
+            String.raw`x^{2}-\sqrt{25}`
+          ]
+        },
+        {
+          latex: String.raw`\text{Do the indicated operation and simplify. Variables represent positive real numbers: }(5-\sqrt{2})(3+\sqrt{2})`,
+          choices: [
+            String.raw`15+5\sqrt{2}-3\sqrt{2}-2`,
+            String.raw`17+2\sqrt{2}`,
+            String.raw`13+2\sqrt{2}`,
+            String.raw`13-2\sqrt{2}`,
+            String.raw`15-2+5\sqrt{2}+\sqrt{2}`,
+            String.raw`(5\cdot 3)+(\sqrt{2})^{2}`
+          ]
+        },
+        {
+          latex: String.raw`\text{Do the indicated operation and simplify. Variables represent positive real numbers: }(a+b\sqrt{7})^{2}`,
+          choices: [
+            String.raw`a^{2}+b^{2}\cdot 7`,
+            String.raw`a^{2}+2ab+7b^{2}`,
+            String.raw`a^{2}+7ab+7b^{2}`,
+            String.raw`a^{2}+2ab\sqrt{7}+b^{2}`,
+            String.raw`a^{2}+2ab\sqrt{7}+7b^{2}`,
+            String.raw`(a+b)^{2}\sqrt{7}`
           ]
         },
 
-        /* A.7  x−y=-2 , 6x+y=-19  → (-3,-1) */
+        /* C: do NOT assume variables are positive (absolute values may appear) */
         {
-          latex   : String.raw`\text{Solve the system: }\ \begin{cases}x-y=-2\\ 6x+y=-19\end{cases}`,
-          choices : [
-            String.raw`(3,-1)`,
-            String.raw`(-1,-3)`,
-            String.raw`(-3,1)`,
-            String.raw`(-3,-1)`,
-            String.raw`(1,-3)`,
-            String.raw`\text{No solution}`
-          ]
-        },
-
-        /* A.8  x+y=-3 , x=1  → (1,-4) */
-        {
-          latex   : String.raw`\text{Solve the system: }\ \begin{cases}x+y=-3\\ x=1\end{cases}`,
-          choices : [
-            String.raw`(1,-4)`,
-            String.raw`(-1,4)`,
-            String.raw`(4,-1)`,
-            String.raw`(-4,1)`,
-            String.raw`(1,4)`,
-            String.raw`\text{No solution}`
-          ]
-        },
-
-        /* A.9  9x−4y=-66 , x+4y=6  → (-6,3) */
-        {
-          latex   : String.raw`\text{Solve the system: }\ \begin{cases}9x-4y=-66\\ x+4y=6\end{cases}`,
-          choices : [
-            String.raw`(-6,-3)`,
-            String.raw`(6,3)`,
-            String.raw`(-3,6)`,
-            String.raw`(6,-3)`,
-            String.raw`(-6,3)`,
-            String.raw`\text{No solution}`
-          ]
-        },
-
-        /* A.10  3x−5y=8 , 5y=10  → (6,2) */
-        {
-          latex   : String.raw`\text{Solve the system: }\ \begin{cases}3x-5y=8\\ 5y=10\end{cases}`,
-          choices : [
-            String.raw`(2,6)`,
-            String.raw`(6,-2)`,
-            String.raw`(6,2)`,
-            String.raw`(-6,2)`,
-            String.raw`(2,-6)`,
-            String.raw`\text{No solution}`
-          ]
-        },
-
-        /* B.11  5x+y=17 , 3x+y=12  → (5/2, 9/2) */
-        {
-          latex   : String.raw`\text{Solve the system: }\ \begin{cases}5x+y=17\\ 3x+y=12\end{cases}`,
-          choices : [
-            String.raw`\left(2,\tfrac{9}{2}\right)`,
-            String.raw`\left(\tfrac{5}{2},\tfrac{9}{2}\right)`,
-            String.raw`\left(\tfrac{5}{2},2\right)`,
-            String.raw`\left(\tfrac{9}{2},\tfrac{5}{2}\right)`,
-            String.raw`(5,9)`,
-            String.raw`\text{No solution}`
-          ]
-        },
-
-        /* B.12  2x+6y=5 , 2x−3y=-4  → (-1/2, 1) */
-        {
-          latex   : String.raw`\text{Solve the system: }\ \begin{cases}2x+6y=5\\ 2x-3y=-4\end{cases}`,
-          choices : [
-            String.raw`\left(-1,\tfrac{1}{2}\right)`,
-            String.raw`\left(1,-\tfrac{1}{2}\right)`,
-            String.raw`\left(-\tfrac{1}{2},-1\right)`,
-            String.raw`\left(\tfrac{1}{2},1\right)`,
-            String.raw`\left(-1,-\tfrac{1}{2}\right)`,
-            String.raw`\left(-\tfrac{1}{2},1\right)`
-          ]
-        },
-
-        /* B.13  x+3y=8 , x−3y=10  → (9, -1/3) */
-        {
-          latex   : String.raw`\text{Solve the system: }\ \begin{cases}x+3y=8\\ x-3y=10\end{cases}`,
-          choices : [
-            String.raw`(9,\tfrac{1}{3})`,
-            String.raw`(-9,\tfrac{1}{3})`,
-            String.raw`(9,-3)`,
-            String.raw`(9,-\tfrac{1}{3})`,
-            String.raw`(-\tfrac{1}{3},9)`,
-            String.raw`\text{No solution}`
-          ]
-        },
-
-        /* B.16  x+2y=9 , 3x−2y=7  → (4, 5/2) */
-        {
-          latex   : String.raw`\text{Solve the system: }\ \begin{cases}x+2y=9\\ 3x-2y=7\end{cases}`,
-          choices : [
-            String.raw`\left(4,\tfrac{5}{2}\right)`,
-            String.raw`\left(\tfrac{5}{2},4\right)`,
-            String.raw`\left(4,-\tfrac{5}{2}\right)`,
-            String.raw`\left(-4,\tfrac{5}{2}\right)`,
-            String.raw`(3,3)`,
-            String.raw`\text{No solution}`
+          latex: String.raw`\text{Do the indicated operation and simplify. Do \emph{not} assume variables are positive: }\sqrt{36c^{2}}\cdot\sqrt{48c^{2}}`,
+          choices: [
+            String.raw`24c^{2}\sqrt{3}`,
+            String.raw`24c\sqrt{3}`,
+            String.raw`12|c|\sqrt{12c^{2}}`,
+            String.raw`24|c|^{2}\sqrt{3}`,
+            String.raw`12|c|^{2}\sqrt{12}`,
+            String.raw`6c^{2}\sqrt{48}`
           ]
         }
       ]
@@ -181,9 +168,7 @@
   </script>
 
   <link rel="stylesheet" href="/math-homework/assets/core.css" />
-  <link rel="stylesheet" href="https://tikzjax.com/v1/fonts.css" />
   <script defer src="/math-homework/assets/core.js"></script>
-  <script defer src="https://tikzjax.com/v1/tikzjax.js"></script>
   <script defer src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
 </head>
 <body>
