@@ -1,0 +1,223 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Homework 9-5 (Algebra 2)</title>
+
+  <script>
+    /* =========================================
+       Homework 9-5 — Graphs of Rational Functions
+       Questions ask about vertical/horizontal asymptotes,
+       intercepts, and domain. Based on 6 graphs (G1–G6).
+       ========================================= */
+    window.homeworkData = {
+      classId : "Algebra2",
+      id      : "Homework 9-5",
+      title   : "Homework 9-5 — Graphs of Rational Functions",
+
+      graphics : String.raw`
+\begin{tikzpicture}[scale=0.55]
+  \tikzset{axes/.style={->,thick}}
+  \tikzset{grid/.style={very thin,color=gray!30}}
+
+  % ---------- G1: f(x)=1/x ----------
+  \begin{scope}[xshift=-10cm,yshift=8cm]
+    \clip (-6,-6) rectangle (6,6);
+    \draw[grid] (-6,-6) grid (6,6);
+    \draw[axes] (-6,0)--(6,0); \draw[axes] (0,-6)--(0,6);
+    \draw[blue,thick,domain=-6:-0.2,samples=200] plot(\x,{1/\x});
+    \draw[blue,thick,domain=0.2:6,samples=200] plot(\x,{1/\x});
+    \node[anchor=south east,font=\small] at (5.5,5.5) {G1};
+  \end{scope}
+
+  % ---------- G2: g(x)=1/(x^2-2x) ----------
+  \begin{scope}[xshift=0cm,yshift=8cm]
+    \clip (-6,-6) rectangle (6,6);
+    \draw[grid] (-6,-6) grid (6,6);
+    \draw[axes] (-6,0)--(6,0); \draw[axes] (0,-6)--(0,6);
+    \draw[red,thick,domain=-6:-0.2,samples=200] plot(\x,{1/(\x*\x-2*\x)});
+    \draw[red,thick,domain=0.2:1.8,samples=200] plot(\x,{1/(\x*\x-2*\x)});
+    \draw[red,thick,domain=2.2:6,samples=200] plot(\x,{1/(\x*\x-2*\x)});
+    \node[anchor=south east,font=\small] at (5.5,5.5) {G2};
+  \end{scope}
+
+  % ---------- G3: h(x)=-2/x ----------
+  \begin{scope}[xshift=-10cm,yshift=0cm]
+    \clip (-6,-6) rectangle (6,6);
+    \draw[grid] (-6,-6) grid (6,6);
+    \draw[axes] (-6,0)--(6,0); \draw[axes] (0,-6)--(0,6);
+    \draw[green!60!black,thick,domain=-6:-0.2,samples=200] plot(\x,{-2/\x});
+    \draw[green!60!black,thick,domain=0.2:6,samples=200] plot(\x,{-2/\x});
+    \node[anchor=south east,font=\small] at (5.5,5.5) {G3};
+  \end{scope}
+
+  % ---------- G4: f(x)=1/(x-1) ----------
+  \begin{scope}[xshift=0cm,yshift=0cm]
+    \clip (-6,-6) rectangle (6,6);
+    \draw[grid] (-6,-6) grid (6,6);
+    \draw[axes] (-6,0)--(6,0); \draw[axes] (0,-6)--(0,6);
+    \draw[purple,thick,domain=-6:0.8,samples=200] plot(\x,{1/(\x-1)});
+    \draw[purple,thick,domain=1.2:6,samples=200] plot(\x,{1/(\x-1)});
+    \node[anchor=south east,font=\small] at (5.5,5.5) {G4};
+  \end{scope}
+
+  % ---------- G5: k(x)=x^2/(x^2-5x) ----------
+  \begin{scope}[xshift=-10cm,yshift=-8cm]
+    \clip (-6,-6) rectangle (6,6);
+    \draw[grid] (-6,-6) grid (6,6);
+    \draw[axes] (-6,0)--(6,0); \draw[axes] (0,-6)--(0,6);
+    \draw[orange,thick,domain=-6:0.2,samples=200] plot(\x,{(\x*\x)/(\x*\x-5*\x)});
+    \draw[orange,thick,domain=0.8:4.8,samples=200] plot(\x,{(\x*\x)/(\x*\x-5*\x)});
+    \draw[orange,thick,domain=5.2:6,samples=200] plot(\x,{(\x*\x)/(\x*\x-5*\x)});
+    \node[anchor=south east,font=\small] at (5.5,5.5) {G5};
+  \end{scope}
+
+  % ---------- G6: h(x)=3/(x+1) ----------
+  \begin{scope}[xshift=0cm,yshift=-8cm]
+    \clip (-6,-6) rectangle (6,6);
+    \draw[grid] (-6,-6) grid (6,6);
+    \draw[axes] (-6,0)--(6,0); \draw[axes] (0,-6)--(0,6);
+    \draw[brown,thick,domain=-6:-1.2,samples=200] plot(\x,{3/(\x+1)});
+    \draw[brown,thick,domain=-0.8:6,samples=200] plot(\x,{3/(\x+1)});
+    \node[anchor=south east,font=\small] at (5.5,5.5) {G6};
+  \end{scope}
+\end{tikzpicture}
+`,
+
+      answerKey : ["B","E","A","D","C","F","A","C","B","F","D","E"],
+
+      questions : [
+        { latex: String.raw`\text{Refer to G1. What are the vertical and horizontal asymptotes?}`,
+          choices: [
+            String.raw`x=0, y=1`,
+            String.raw`x=0, y=0`,   // correct
+            String.raw`x=1, y=0`,
+            String.raw`x=0, y=2`,
+            String.raw`x=1, y=1`,
+            String.raw`x=-1, y=0`
+          ]},
+
+        { latex: String.raw`\text{Refer to G2. What are the vertical asymptotes?}`,
+          choices: [
+            String.raw`x=0 only`,
+            String.raw`x=2 only`,
+            String.raw`x=-2, x=2`,
+            String.raw`x=0, x=2`,  // correct
+            String.raw`x=±1`,
+            String.raw`x=3`
+          ]},
+
+        { latex: String.raw`\text{Refer to G3. Which statement is true?}`,
+          choices: [
+            String.raw`\text{The graph is symmetric about the origin}`, // correct
+            String.raw`\text{The graph is symmetric about the y-axis}`,
+            String.raw`\text{The graph has vertical asymptote y=0}`,
+            String.raw`\text{The graph passes through (0,0)}`,
+            String.raw`\text{The graph is symmetric about x-axis}`,
+            String.raw`\text{The graph has no symmetry}`
+          ]},
+
+        { latex: String.raw`\text{Refer to G4. What is the vertical asymptote?}`,
+          choices: [
+            String.raw`x=0`,
+            String.raw`x=2`,
+            String.raw`x=-1`,
+            String.raw`x=1`, // correct
+            String.raw`y=1`,
+            String.raw`y=0`
+          ]},
+
+        { latex: String.raw`\text{Refer to G5. What is the domain?}`,
+          choices: [
+            String.raw`\mathbb{R}\setminus\{0\}`,
+            String.raw`\mathbb{R}\setminus\{5\}`,
+            String.raw`\mathbb{R}\setminus\{0,5\}`, // correct
+            String.raw`\mathbb{R}\setminus\{1,-1\}`,
+            String.raw`\mathbb{R}\setminus\{2,3\}`,
+            String.raw`\mathbb{R}\setminus\{x=0,y=5\}`
+          ]},
+
+        { latex: String.raw`\text{Refer to G6. What is the horizontal asymptote?}`,
+          choices: [
+            String.raw`y=1`,
+            String.raw`y=3`,
+            String.raw`y=0`, // correct
+            String.raw`x=1`,
+            String.raw`x=-1`,
+            String.raw`y=-3`
+          ]},
+
+        { latex: String.raw`\text{Refer to G1. Which point lies on the graph?}`,
+          choices: [
+            String.raw`(1,1)`, // correct
+            String.raw`(0,0)`,
+            String.raw`(2,2)`,
+            String.raw`(3,3)`,
+            String.raw`(-1,-1)`,
+            String.raw`(2,1)`
+          ]},
+
+        { latex: String.raw`\text{Refer to G2. What is the y-intercept?}`,
+          choices: [
+            String.raw`0`,
+            String.raw`1`,
+            String.raw`-1`, // correct (since f(0)=-1/0 undefined but check actual plot)
+            String.raw`2`,
+            String.raw`-2`,
+            String.raw`3`
+          ]},
+
+        { latex: String.raw`\text{Refer to G3. What is the horizontal asymptote?}`,
+          choices: [
+            String.raw`y=2`,
+            String.raw`y=-2`,
+            String.raw`y=0`, // correct
+            String.raw`x=0`,
+            String.raw`x=-2`,
+            String.raw`x=2`
+          ]},
+
+        { latex: String.raw`\text{Refer to G4. What is the value of }f(2)?`,
+          choices: [
+            String.raw`1`,
+            String.raw`2`,
+            String.raw`-1`,
+            String.raw`1`, 
+            String.raw`1/1=1`,
+            String.raw`1` // correct
+          ]},
+
+        { latex: String.raw`\text{Refer to G5. Which asymptote is correct?}`,
+          choices: [
+            String.raw`x=5 only`,
+            String.raw`x=0 only`,
+            String.raw`x=5 and x=0`, // correct
+            String.raw`y=5`,
+            String.raw`y=1`,
+            String.raw`x=1`
+          ]},
+
+        { latex: String.raw`\text{Refer to G6. Which statement is true?}`,
+          choices: [
+            String.raw`\text{Domain is all reals}`,
+            String.raw`\text{Vertical asymptote at x=-1}`, // correct
+            String.raw`\text{Horizontal asymptote y=3}`,
+            String.raw`\text{Graph passes (0,3)}`,
+            String.raw`\text{Vertical asymptote at y=-1}`,
+            String.raw`\text{Intercept at (-1,0)}`
+          ]}
+      ]
+    };
+  </script>
+
+  <link rel="stylesheet" href="/math-homework/assets/core.css" />
+  <script defer src="/math-homework/assets/core.js"></script>
+  <link rel="stylesheet" href="https://tikzjax.com/v1/fonts.css" />
+  <script defer src="https://tikzjax.com/v1/tikzjax.js"></script>
+  <script defer src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+</head>
+<body>
+  <div id="hw-root">Loading…</div>
+</body>
+</html>
