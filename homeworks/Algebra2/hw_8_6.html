@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Homework 8-6 (Algebra 2)</title>
+
+  <script>
+    /* =========================================
+       Homework 8-6 — Graphing Complex Numbers & Absolute Value
+       ========================================= */
+    window.homeworkData = {
+      classId : "Algebra2",
+      id      : "Homework 8-6",
+      title   : "Homework 8-6 — Graphing Complex Numbers & Absolute Value",
+
+      /* ===== Complex plane with labeled points A–H ===== */
+      graphics : String.raw`
+\begin{tikzpicture}[scale=0.6]
+  \tikzset{grid/.style={very thin,color=gray!30}}
+  \tikzset{axes/.style={->,thick}}
+  \tikzset{pt/.style={blue,fill=blue,draw=blue,circle,inner sep=1.6pt}}
+  \colorlet{axiscol}{black}
+
+  % Window and grid
+  \clip (-8.3,-6.3) rectangle (8.3,6.3);
+  \draw[grid] (-8,-6) grid (8,6);
+
+  % Axes
+  \draw[axes,axiscol] (-8,0)--(8,0) node[anchor=west]{\(\mathbb{R}\)};
+  \draw[axes,axiscol] (0,-6)--(0,6) node[anchor=south]{\(i\)};
+
+  % Tick labels (light)
+  \foreach \x in {-8,-6,-4,-2,2,4,6,8}
+    \node[below,scale=.75] at (\x,0) {\(\x\)};
+  \foreach \y in {-6,-4,-2,2,4,6}
+    \node[left,scale=.75] at (0,\y) {\(\y i\)};
+
+  % ===== Labeled points =====
+  % A(4,3), B(0,3), C(-2,-2), D(7,1), E(0,-4), F(-1,5), G(3,-2), H(-6,0)
+  \node[pt,label={right:\(A\)}] at ( 4, 3) {};
+  \node[pt,label={right:\(B\)}] at ( 0, 3) {};
+  \node[pt,label={left :\(C\)}] at (-2,-2) {};
+  \node[pt,label={right:\(D\)}] at ( 7, 1) {};
+  \node[pt,label={right:\(E\)}] at ( 0,-4) {};
+  \node[pt,label={left :\(F\)}] at (-1, 5) {};
+  \node[pt,label={right:\(G\)}] at ( 3,-2) {};
+  \node[pt,label={below:\(H\)}] at (-6, 0) {};
+\end{tikzpicture}
+`,
+
+      /* ===== Hidden Answer Key (A–F) ===== */
+      answerKey : ["A","F","C","D","B","E","A","A","B","A","A","B"],
+
+      /* ===== 12 Questions ===== */
+      questions : [
+        { latex: String.raw`\text{Refer to the graph. Which point represents }4+3i\text{?}`,
+          choices: ["A","B","C","D","E","F"]},
+
+        { latex: String.raw`\text{Which point represents }-1+5i\text{?}`,
+          choices: ["A","B","C","D","E","F"]},
+
+        { latex: String.raw`\text{Which point represents }-2-2i\text{?}`,
+          choices: ["A","B","C","D","E","G"]},
+
+        { latex: String.raw`\text{Which point represents }7+i\text{?}`,
+          choices: ["A","B","C","D","E","H"]},
+
+        { latex: String.raw`\text{Which point lies at }0+3i\text{?}`,
+          choices: ["A","B","C","D","E","F"]},
+
+        { latex: String.raw`\text{Which point lies at }0-4i\text{?}`,
+          choices: ["A","B","C","D","E","G"]},
+
+        { latex: String.raw`\text{Find }|3i|.`,
+          choices: [
+            String.raw`3`,
+            String.raw`-3`,
+            String.raw`i`,
+            String.raw`-i`,
+            String.raw`0`,
+            String.raw`\sqrt{3}`
+          ]},
+
+        { latex: String.raw`\text{Find }|1-7i|.`,
+          choices: [
+            String.raw`\sqrt{50}`,
+            String.raw`50`,
+            String.raw`7`,
+            String.raw`\sqrt{48}`,
+            String.raw`\sqrt{49}`,
+            String.raw`8`
+          ]},
+
+        { latex: String.raw`\text{Find }|5+2i|.`,
+          choices: [
+            String.raw`\sqrt{21}`,
+            String.raw`\sqrt{29}`,
+            String.raw`5`,
+            String.raw`2`,
+            String.raw`7`,
+            String.raw`3`
+          ]},
+
+        { latex: String.raw`\text{Find }|-7-8i|.`,
+          choices: [
+            String.raw`\sqrt{113}`,
+            String.raw`15`,
+            String.raw`-15`,
+            String.raw`7+8i`,
+            String.raw`113`,
+            String.raw`\sqrt{7^2-8^2}`
+          ]},
+
+        { latex: String.raw`\text{Find }|2+\pi i|\text{ (nearest hundredth).}`,
+          choices: [
+            String.raw`3.73`,
+            String.raw`3.82`,
+            String.raw`3.94`,
+            String.raw`4.01`,
+            String.raw`3.70`,
+            String.raw`3.67`
+          ]},
+
+        { latex: String.raw`\text{Find }\left|-\dfrac{18}{7}+\dfrac{\sqrt{5}}{7}i\right|\text{ (nearest hundredth).}`,
+          choices: [
+            String.raw`2.55`,
+            String.raw`2.59`,
+            String.raw`2.62`,
+            String.raw`2.65`,
+            String.raw`2.70`,
+            String.raw`2.75`
+          ]}
+      ]
+    };
+  </script>
+
+  <link rel="stylesheet" href="/math-homework/assets/core.css" />
+  <script defer src="/math-homework/assets/core.js"></script>
+  <script defer src="https://tikzjax.com/v1/tikzjax.js"></script>
+  <script defer src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+</head>
+<body>
+  <div id="hw-root">Loading…</div>
+</body>
+</html>
