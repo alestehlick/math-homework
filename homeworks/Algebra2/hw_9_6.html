@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Homework 9-6 (Algebra 2)</title>
+
+  <script>
+    /* =========================================
+       Homework 9-6 — Solving Rational Equations
+       ========================================= */
+    window.homeworkData = {
+      classId : "Algebra2",
+      id      : "Homework 9-6",
+      title   : "Homework 9-6 — Solving Rational Equations",
+
+      graphics : String.raw``,  // none needed
+
+      /* ===== Hidden answer key ===== */
+      answerKey : [
+        "C","B","D","E","A","F","B","E","A","C",
+        "F","D","C","B","A","E","C","B","F","D",
+        "B","E"
+      ],
+
+      questions : [
+        { latex: String.raw`\text{Solve: } \dfrac{9}{a}=3` , 
+          choices: ["a=1","a=9","a=3","a=-3","a=-9","\text{no sol.}"]},
+
+        { latex: String.raw`\dfrac{16}{x+2}=4` , 
+          choices: ["x=0","x=2","x=-2","x=-4","x=4","x=6"]},
+
+        { latex: String.raw`\dfrac{25}{a+4}=5` , 
+          choices: ["a=1","a=0","a=2","a=1","a=5","a=9"]},
+
+        { latex: String.raw`\dfrac{x+7}{x+9}=\dfrac{1}{2}` , 
+          choices: ["x=2","x=1","x=-1","x=-2","x=-11","\text{no sol.}"]},
+
+        { latex: String.raw`\dfrac{x+24}{x}=\dfrac{x}{4}` , 
+          choices: ["x=12\text{ or }-8","x=4","x=6","x=-4","x=\pm12","\text{no sol.}"]},
+
+        { latex: String.raw`\dfrac{1}{x+6}=\dfrac{2}{x+9}` , 
+          choices: ["x=0","x=2","x=-2","x=-9","x=-3","x=3"]},
+
+        { latex: String.raw`\dfrac{a+8}{5}=\dfrac{3a}{7}` , 
+          choices: ["a=5","a=7","a=6","a=-7","a=-5","\text{no sol.}"]},
+
+        { latex: String.raw`\dfrac{x+6}{x+16}=-\dfrac{3}{5}` , 
+          choices: ["x=-16","x=0","x=4","x=5","x=-39/4","x=-5"]},
+
+        { latex: String.raw`\dfrac{a-4}{8}+\dfrac{a}{16}=\dfrac{11}{a+3}` , 
+          choices: ["a=1","a=2","a=4","a=5","a=8","a=11"]},
+
+        { latex: String.raw`\dfrac{c+9}{c-9}-\dfrac{24}{c}=5` , 
+          choices: ["c=9","c=12","c=-9","c=-12","c=15","c=-15"]},
+
+        { latex: String.raw`\dfrac{x+6}{x-8}=\dfrac{x+3}{x+10}` , 
+          choices: ["x=0","x=1","x=-1","x=-2","x=-4","x=4"]},
+
+        { latex: String.raw`\dfrac{8}{y(y-2)}=\dfrac{y}{3y}` , 
+          choices: ["y=0","y=2","y=4","y=-2","y=6\text{ or }-4","y=\pm8"]},
+
+        { latex: String.raw`\dfrac{6x}{x^{2}-3x-18}=\dfrac{5x}{x^{2}-4x-12}` , 
+          choices: ["x=0","x=1","x=2","x=3\text{ or }0","x=4","x=6"]},
+
+        { latex: String.raw`\dfrac{a^{2}-8}{a^{2}-2a-8}=\dfrac{16}{a^{2}-a-6}` , 
+          choices: ["a=1","a=2","a=3","a=4","a=5","a=6"]},
+
+        { latex: String.raw`\dfrac{t-20}{t^{2}}=\dfrac{-6t}{2t^{2}+10t}` , 
+          choices: ["t=10","t=20","t=-10","t=-20","t=\pm10","\text{no sol.}"]},
+
+        { latex: String.raw`\dfrac{x}{6}+\dfrac{x}{7}=\dfrac{x}{3}` , 
+          choices: ["x=0","x=1","x=2","x=3","x=4","x=6"]},
+
+        { latex: String.raw`\dfrac{7}{9x}+\dfrac{1}{18}=\dfrac{3}{4x}` , 
+          choices: ["x=1","x=2","x=3","x=4","x=6","x=9"]},
+
+        { latex: String.raw`\dfrac{2x}{x^{2}+1}+\dfrac{5x}{x^{2}+1}=1` , 
+          choices: ["x=0","x=\pm1","x=\pm\sqrt{2}","x=\pm2","x=\pm3","x=\pm4"]},
+
+        { latex: String.raw`\dfrac{x-3}{x+5}-\dfrac{3x}{x+2}=\dfrac{4}{x^{2}+7x+10}` , 
+          choices: ["x=1","x=2","x=-1","x=-2","x=-3","x=3"]},
+
+        { latex: String.raw`\dfrac{4}{x-1}-\dfrac{x}{x+2}=\dfrac{2}{x^{2}+x-2}` , 
+          choices: ["x=6\text{ or }-1","x=1","x=2","x=-2","x=3","x=-3"]},
+
+        { latex: String.raw`\dfrac{1}{x+3}+\dfrac{2x}{x-2}=\dfrac{5}{x^{2}-x-2}` , 
+          choices: ["x=1","x=2","x=-1","x=-2","x=3","x=-3"]},
+
+        { latex: String.raw`\dfrac{1}{x-a}+\dfrac{2}{x+b}=\dfrac{3}{x^{2}+bx-ab}` , 
+          choices: ["x=a","x=-b","x=\dfrac{a-b}{2}","x=\dfrac{a+b}{2}","x=\dfrac{a+2b}{3}","x=\dfrac{2a-b}{3}"]}
+      ]
+    };
+  </script>
+
+  <link rel="stylesheet" href="/math-homework/assets/core.css" />
+  <script defer src="/math-homework/assets/core.js"></script>
+  <script defer src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+</head>
+<body>
+  <div id="hw-root">Loading…</div>
+</body>
+</html>
