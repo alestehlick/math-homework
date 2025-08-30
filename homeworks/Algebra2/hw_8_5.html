@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Homework 8-5 (Algebra 2)</title>
+
+  <script>
+    /* =========================================
+       Homework 8-5 — Quadratic Discriminant & Solving
+       ========================================= */
+    window.homeworkData = {
+      classId : "Algebra2",
+      id      : "Homework 8-5",
+      title   : "Homework 8-5 — Quadratic Discriminant & Solving",
+
+      graphics : String.raw``,  // no graphs needed
+
+      /* ===== Hidden Answer Key (A–F) ===== */
+      answerKey : ["C","E","B","A","F","D","B","A","E","C","F","B"],
+
+      /* ===== 12 Questions (6 options each) ===== */
+      questions : [
+        /* ----- Discriminant & Nature ----- */
+        { latex: String.raw`\text{For }x^2+3x-1=0\text{, choose the correct pair }(D,\text{nature}).`,
+          choices: [
+            String.raw`D=9;\ \text{two real (rational) roots}`,
+            String.raw`D=5;\ \text{two real (irrational) roots}`,
+            String.raw`D=13;\ \text{two real (irrational) roots}`,
+            String.raw`D=-13;\ \text{two nonreal complex roots}`,
+            String.raw`D=0;\ \text{one real double root}`,
+            String.raw`D=13;\ \text{two real (rational) roots}`
+          ]},
+
+        { latex: String.raw`\text{For }2x^2+3x+4=0\text{, choose }(D,\text{nature}).`,
+          choices: [
+            String.raw`D=7;\ \text{two real}`,
+            String.raw`D=23;\ \text{two real}`,
+            String.raw`D=0;\ \text{one real double}`,
+            String.raw`D=32;\ \text{two real}`,
+            String.raw`D=-23;\ \text{two nonreal complex}`,
+            String.raw`D=-7;\ \text{two nonreal complex}`
+          ]},
+
+        { latex: String.raw`\text{For }x^2-5x+8=0\text{, choose }(D,\text{nature}).`,
+          choices: [
+            String.raw`D=25;\ \text{two real}`,
+            String.raw`D=-7;\ \text{two nonreal complex}`,
+            String.raw`D=7;\ \text{two real}`,
+            String.raw`D=0;\ \text{one real double}`,
+            String.raw`D=-1;\ \text{two nonreal complex}`,
+            String.raw`D=1;\ \text{two real}`
+          ]},
+
+        { latex: String.raw`\text{For }x^2-4x+4=0\text{, choose }(D,\text{nature}).`,
+          choices: [
+            String.raw`D=0;\ \text{one real double root}`,
+            String.raw`D=4;\ \text{two real (rational) roots}`,
+            String.raw`D=-4;\ \text{two nonreal complex roots}`,
+            String.raw`D=8;\ \text{two real (irrational) roots}`,
+            String.raw`D=16;\ \text{two real (rational) roots}`,
+            String.raw`D=0;\ \text{two nonreal roots}`
+          ]},
+
+        { latex: String.raw`\text{For }3x^2+2x-5=0\text{, choose }(D,\text{nature}).`,
+          choices: [
+            String.raw`D=20;\ \text{two real (irrational)}`,
+            String.raw`D=16;\ \text{two real (rational)}`,
+            String.raw`D=64;\ \text{one real double}`,
+            String.raw`D=-64;\ \text{nonreal}`,
+            String.raw`D=36;\ \text{two real (rational)}`,
+            String.raw`D=64;\ \text{two real (rational)}`
+          ]},
+
+        /* ----- Solve the quadratic ----- */
+        { latex: String.raw`\text{Solve }x^2+3x-5=0.`,
+          choices: [
+            String.raw`x=\dfrac{3\pm\sqrt{29}}{2}`,
+            String.raw`x=\dfrac{-3\pm\sqrt{25}}{2}`,
+            String.raw`x=-3\pm\sqrt{5}`,
+            String.raw`x=\dfrac{-3\pm\sqrt{29}}{2}`,
+            String.raw`x=\dfrac{3\pm\sqrt{13}}{2}`,
+            String.raw`x=-\dfrac{3}{2}\pm\dfrac{\sqrt{29}}{4}`
+          ]},
+
+        { latex: String.raw`\text{Solve }3x^2+4x+8=0.`,
+          choices: [
+            String.raw`x=\dfrac{-4\pm 4\sqrt{5}}{6}`,
+            String.raw`x=\dfrac{-2\pm 2i\sqrt{5}}{3}`,
+            String.raw`x=\dfrac{-2\pm i\sqrt{5}}{3}`,
+            String.raw`x=\dfrac{-4\pm i\sqrt{80}}{3}`,
+            String.raw`x=\dfrac{-4\pm i\sqrt{20}}{6}`,
+            String.raw`x=\dfrac{-2\pm 2\sqrt{5}}{3}`
+          ]},
+
+        { latex: String.raw`\text{Solve }5x^2+3x-2=0.`,
+          choices: [
+            String.raw`x\in\left\{-1,\ \dfrac{2}{5}\right\}`,
+            String.raw`x\in\left\{\dfrac{2}{5},\ -1\right\}`,
+            String.raw`x=\dfrac{-3\pm\sqrt{49}}{10}`,
+            String.raw`x=\dfrac{3\pm 7}{10}`,
+            String.raw`x=\{-2,\,\tfrac{1}{5}\}`,
+            String.raw`x=\{-\tfrac{2}{5},\,1\}`
+          ]},
+
+        { latex: String.raw`\text{Solve }4x^2-2x+3=0.`,
+          choices: [
+            String.raw`x=\dfrac{1\pm i\sqrt{11}}{4}`,
+            String.raw`x=\dfrac{-1\pm i\sqrt{11}}{4}`,
+            String.raw`x=\dfrac{2\pm i\sqrt{11}}{4}`,
+            String.raw`x=\dfrac{1\pm \sqrt{11}}{4}`,
+            String.raw`x=\dfrac{1\pm i\sqrt{44}}{8}`,
+            String.raw`x=\dfrac{-1\pm \sqrt{11}}{4}`
+          ]},
+
+        { latex: String.raw`\text{Solve }x^2+5x+6=0.`,
+          choices: [
+            String.raw`x=-2\text{ only}`,
+            String.raw`x=-2,-3`,
+            String.raw`x=2,3`,
+            String.raw`x=-3\text{ only}`,
+            String.raw`x=\dfrac{-5\pm\sqrt{25-24}}{2}`,
+            String.raw`x=-6,-1`
+          ]},
+
+        { latex: String.raw`\text{Solve }3x^2-2x+1=0.`,
+          choices: [
+            String.raw`x=\dfrac{2\pm 2i\sqrt{2}}{6}`,
+            String.raw`x=\dfrac{1\pm i\sqrt{2}}{3}`,
+            String.raw`x=\dfrac{-1\pm i\sqrt{2}}{3}`,
+            String.raw`x=\dfrac{1\pm \sqrt{2}}{3}`,
+            String.raw`x=\dfrac{2\pm i\sqrt{8}}{3}`,
+            String.raw`x=\dfrac{1\pm i\sqrt{8}}{6}`
+          ]},
+
+        { latex: String.raw`\text{Solve }t(t+1)=4-t.`,
+          choices: [
+            String.raw`t=-2\pm\sqrt{5}`,
+            String.raw`t=-1\pm\sqrt{5}`,
+            String.raw`t=1\pm\sqrt{5}`,
+            String.raw`t=\dfrac{-1\pm\sqrt{5}}{2}`,
+            String.raw`t=\dfrac{-2\pm\sqrt{20}}{2}`,
+            String.raw`t=\dfrac{-1\pm\sqrt{20}}{2}`
+          ]}
+      ]
+    };
+  </script>
+
+  <link rel="stylesheet" href="/math-homework/assets/core.css" />
+  <script defer src="/math-homework/assets/core.js"></script>
+  <script defer src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+</head>
+<body>
+  <div id="hw-root">Loading…</div>
+</body>
+</html>
