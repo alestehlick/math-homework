@@ -10,177 +10,255 @@
     window.homeworkData = {
       classId : "Algebra1",
       id      : "Homework 6-2",
-      title   : "Homework 6-2 — Relations & Functions",
+      title   : "Homework 6-2 — Relations",
 
-      /* 12 capital letters A-F  */
-      answerKey : ["B","A","C","B","B","A","A","A","A","B","B","C"],
+      /* 12 answers (A–F) */
+      answerKey : ["A","B","C","D","E","C","F","B","D","C","E","B"],
 
-      /*  graphics slot not needed for this set */
-      /*  graphics : "" , */
+      /* Graphs RG1–RG12 (3 per row × 4 rows) — all % comments removed for TikZJax */
+      graphics : String.raw`
+\begin{tikzpicture}[scale=0.62]
+  \tikzset{grid/.style={very thin,color=gray!30}}
+  \tikzset{axes/.style={->,thick}}
 
-      /*  EXACTLY 12 questions, SIX choices each  */
+  \begin{scope}[xshift=-12cm,yshift=12cm]
+    \clip (-4.2,-4.2) rectangle (4.2,4.2);
+    \draw[grid] (-4,-4) grid (4,4);
+    \draw[axes] (-4,0)--(4,0); \draw[axes] (0,-4)--(0,4);
+    \draw[blue,thick] (2,-4)--(2,4);
+    \node[anchor=south east,font=\small] at (3.7,3.7) {RG1};
+  \end{scope}
+
+  \begin{scope}[xshift=-2cm,yshift=12cm]
+    \clip (-4.2,-4.2) rectangle (4.2,4.2);
+    \draw[grid] (-4,-4) grid (4,4);
+    \draw[axes] (-4,0)--(4,0); \draw[axes] (0,-4)--(0,4);
+    \draw[blue,thick] (-4,-1)--(4,-1);
+    \node[anchor=south east,font=\small] at (3.7,3.7) {RG2};
+  \end{scope}
+
+  \begin{scope}[xshift=8cm,yshift=12cm]
+    \clip (-4.2,-4.2) rectangle (4.2,4.2);
+    \draw[grid] (-4,-4) grid (4,4);
+    \draw[axes] (-4,0)--(4,0); \draw[axes] (0,-4)--(0,4);
+    \fill[blue] (-3,2) circle (3pt);
+    \fill[blue] (0,2)  circle (3pt);
+    \fill[blue] (2,2)  circle (3pt);
+    \node[anchor=south east,font=\small] at (3.7,3.7) {RG3};
+  \end{scope}
+
+  \begin{scope}[xshift=-12cm,yshift=3cm]
+    \clip (-4.2,-4.2) rectangle (4.2,4.2);
+    \draw[grid] (-4,-4) grid (4,4);
+    \draw[axes] (-4,0)--(4,0); \draw[axes] (0,-4)--(0,4);
+    \draw[blue,thick,domain=-4:0] plot(\x,{-\x});
+    \draw[blue,thick,domain=0:4]  plot(\x,{\x});
+    \node[anchor=south east,font=\small] at (3.7,3.7) {RG4};
+  \end{scope}
+
+  \begin{scope}[xshift=-2cm,yshift=3cm]
+    \clip (-4.2,-4.2) rectangle (4.2,4.2);
+    \draw[grid] (-4,-4) grid (4,4);
+    \draw[axes] (-4,0)--(4,0); \draw[axes] (0,-4)--(0,4);
+    \draw[blue,thick,domain=-4:4] plot(\x,{\x+1});
+    \node[anchor=south east,font=\small] at (3.7,3.7) {RG5};
+  \end{scope}
+
+  \begin{scope}[xshift=8cm,yshift=3cm]
+    \clip (-4.2,-4.2) rectangle (4.2,4.2);
+    \draw[grid] (-4,-4) grid (4,4);
+    \draw[axes] (-4,0)--(4,0); \draw[axes] (0,-4)--(0,4);
+    \draw[blue,thick,domain=-4:4] plot(\x,{-2*\x+3});
+    \node[anchor=south east,font=\small] at (3.7,3.7) {RG6};
+  \end{scope}
+
+  \begin{scope}[xshift=-12cm,yshift=-6cm]
+    \clip (-4.2,-4.2) rectangle (4.2,4.2);
+    \draw[grid] (-4,-4) grid (4,4);
+    \draw[axes] (-4,0)--(4,0); \draw[axes] (0,-4)--(0,4);
+    \fill[blue] (-3,2) circle (3pt);
+    \fill[blue] (1,-1) circle (3pt);
+    \node[anchor=south east,font=\small] at (3.7,3.7) {RG7};
+  \end{scope}
+
+  \begin{scope}[xshift=-2cm,yshift=-6cm]
+    \clip (-4.2,-4.2) rectangle (4.2,4.2);
+    \draw[grid] (-4,-4) grid (4,4);
+    \draw[axes] (-4,0)--(4,0); \draw[axes] (0,-4)--(0,4);
+    \fill[blue] (1,-2) circle (3pt);
+    \fill[blue] (1,0)  circle (3pt);
+    \fill[blue] (1,3)  circle (3pt);
+    \node[anchor=south east,font=\small] at (3.7,3.7) {RG8};
+  \end{scope}
+
+  \begin{scope}[xshift=8cm,yshift=-6cm]
+    \clip (-4.2,-4.2) rectangle (4.2,4.2);
+    \draw[grid] (-4,-4) grid (4,4);
+    \draw[axes] (-4,0)--(4,0); \draw[axes] (0,-4)--(0,4);
+    \draw[blue,thick,domain=0:2] plot(\x,{\x*\x});
+    \fill[blue] (0,0) circle (2pt);
+    \node[anchor=south east,font=\small] at (3.7,3.7) {RG9};
+  \end{scope}
+
+  \begin{scope}[xshift=-12cm,yshift=-15cm]
+    \clip (-4.2,-4.2) rectangle (4.2,4.2);
+    \draw[grid] (-4,-4) grid (4,4);
+    \draw[axes] (-4,0)--(4,0); \draw[axes] (0,-4)--(0,4);
+    \draw[blue,thick] (0,0) circle (2);
+    \node[anchor=south east,font=\small] at (3.7,3.7) {RG10};
+  \end{scope}
+
+  \begin{scope}[xshift=-2cm,yshift=-15cm]
+    \clip (-4.2,-4.2) rectangle (4.2,4.2);
+    \draw[grid] (-4,-4) grid (4,4);
+    \draw[axes] (-4,0)--(4,0); \draw[axes] (0,-4)--(0,4);
+    \foreach \xx/\yy in {-2/-3, -1/-1, 0/1, 1/3}
+      \fill[blue] (\xx,\yy) circle (3pt);
+    \node[anchor=south east,font=\small] at (3.7,3.7) {RG11};
+  \end{scope}
+
+  \begin{scope}[xshift=8cm,yshift=-15cm]
+    \clip (-4.2,-4.2) rectangle (4.2,4.2);
+    \draw[grid] (-4,-4) grid (4,4);
+    \draw[axes] (-4,0)--(4,0); \draw[axes] (0,-4)--(0,4);
+    \foreach \yy in {-3,-2,-1,0,1,2,3}
+      \fill[blue] (-1,\yy) circle (3pt);
+    \node[anchor=south east,font=\small] at (3.7,3.7) {RG12};
+  \end{scope}
+\end{tikzpicture}`,
+
+      /* 12 questions, 6 choices each */
       questions : [
-        /*  Q1 ---------------------------------------------------------------- */
         {
-          latex : String.raw`\text{For the set }R_1=\{\,(2,4),(5,9),(8,2)\,\}\text{, what is its domain?}`,
+          latex : String.raw`\text{Refer to Graph RG1. What is the domain in set-builder notation?}`,
           choices : [
-            String.raw`\{4,9,2\}`,
-            String.raw`\{2,5,8\}`,              /* correct */
-            String.raw`\{2,4,8\}`,
-            String.raw`\{5,4,9\}`,
-            String.raw`\{2,8,4,9\}`,
-            String.raw`\{2,5,9\}`
+            String.raw`\{\,x \mid x=2\,\}`,
+            String.raw`\{\,y \mid y=2\,\}`,
+            String.raw`\{\,x \mid x>2\,\}`,
+            String.raw`\{\,x \mid x\ne 2\,\}`,
+            String.raw`\{\,x \mid x\le 2\,\}`,
+            String.raw`\{\, (x,y) \mid x=2 \,\}`
           ]
         },
-
-        /*  Q2 ---------------------------------------------------------------- */
         {
-          latex : String.raw`\text{Which statement best describes }R_1\text{?}`,
+          latex : String.raw`\text{Refer to Graph RG2. What is the range in set-builder notation?}`,
           choices : [
-            String.raw`\text{Both a relation and a function}`,     /* correct */
-            String.raw`\text{A relation that is not a function}`,
-            String.raw`\text{Neither a relation nor a function}`,
-            String.raw`\text{Domain has repeated values}`,
-            String.raw`\text{Each input has two outputs}`,
-            String.raw`\text{Range contains no duplicates}`
+            String.raw`\{\,x \mid x=-1\,\}`,
+            String.raw`\{\,y \mid y=-1\,\}`,
+            String.raw`\{\,y \mid y=1\,\}`,
+            String.raw`\{\,y \mid y\ge -1\,\}`,
+            String.raw`\{\,y \mid \text{any }y\,\}`,
+            String.raw`\{\,x \mid \text{any }x\,\}`
           ]
         },
-
-        /*  Q3 ---------------------------------------------------------------- */
         {
-          latex : String.raw`\text{Consider the set }R_2=\{3,4,7,9\}\text{.  Which option is correct?}`,
+          latex : String.raw`\text{Refer to Graph RG3. What is the domain?}`,
           choices : [
-            String.raw`\text{Both a relation and a function}`,
-            String.raw`\text{A relation that is not a function}`,
-            String.raw`\text{Neither a relation nor a function}`,  /* correct */
-            String.raw`\text{A function with domain }\{3,4,7,9\}`,
-            String.raw`\text{Range equals domain}`,
-            String.raw`\text{Ordered pairs with repeating }x`
+            String.raw`\{\,x \mid x=2\,\}`,
+            String.raw`\{\,y \mid y\in\{-3,0,2\}\,\}`,
+            String.raw`\{\,x \mid x\in\{-3,0,2\}\,\}`,
+            String.raw`\{\,x \mid x\in\{-3,2\}\,\}`,
+            String.raw`\{\,x \mid x\in\{-3,0,2,4\}\,\}`,
+            String.raw`\{\, (x,y) \mid y=2 \,\}`
           ]
         },
-
-        /*  Q4 ---------------------------------------------------------------- */
         {
-          latex : String.raw`\text{Classify }R_3=\{\,(1,3),(1,6),(4,9),(6,1)\,\}\text{.}`,
+          latex : String.raw`\text{Refer to Graph RG4. What is the range in set-builder notation?}`,
           choices : [
-            String.raw`\text{Both a relation and a function}`,
-            String.raw`\text{A relation that is not a function}`,  /* correct */
-            String.raw`\text{Neither a relation nor a function}`,
-            String.raw`\text{Every }x\text{ is paired with itself}`,
-            String.raw`\text{Domain is }\{3,6,9,1\}`,
-            String.raw`\text{Range is }\{1,4,6\}`
+            String.raw`\{\,y \mid y>0\,\}`,
+            String.raw`\{\,x \mid x\ge 0\,\}`,
+            String.raw`\{\,y \mid y\le 0\,\}`,
+            String.raw`\{\,y \mid y\ge 0\,\}`,
+            String.raw`\{\, (x,y) \mid y=\lvert x\rvert \,\}`,
+            String.raw`\{\,y \mid y=0\,\}`
           ]
         },
-
-        /*  Q5 ---------------------------------------------------------------- */
         {
-          latex : String.raw`\text{Classify }R_4=\{\,(-3,2),(-3,4),(6,8),(7,1)\,\}\text{.}`,
+          latex : String.raw`\text{Refer to Graph RG5. Which set-builder notation describes the relation graphed?}`,
           choices : [
-            String.raw`\text{Both a relation and a function}`,
-            String.raw`\text{A relation that is not a function}`,  /* correct */
-            String.raw`\text{Neither a relation nor a function}`,
-            String.raw`\text{Function with constant output }2`,
-            String.raw`\text{Domain has four distinct values}`,
-            String.raw`\text{Range has duplicate }1`
+            String.raw`\{\, (x,y) \mid y=x-1 \,\}`,
+            String.raw`\{\, (x,y) \mid x=y+1 \,\}`,
+            String.raw`\{\, (x,y) \mid y=-x+1 \,\}`,
+            String.raw`\{\, y \mid y=x+1 \,\}`,
+            String.raw`\{\, (x,y) \mid y=x+1 \,\}`,
+            String.raw`\{\, (x,y) \mid y=\lvert x\rvert+1 \,\}`
           ]
         },
-
-        /*  Q6 ---------------------------------------------------------------- */
         {
-          latex : String.raw`\text{Classify }R_5=\{\,(-4,7),(-2,5),(3,7)\,\}\text{.}`,
+          latex : String.raw`\text{Refer to Graph RG6. Which set-builder notation describes the relation graphed?}`,
           choices : [
-            String.raw`\text{Both a relation and a function}`,     /* correct */
-            String.raw`\text{A relation that is not a function}`,
-            String.raw`\text{Neither a relation nor a function}`,
-            String.raw`\text{Repeated }x\text{ values}`,
-            String.raw`\text{Domain is }\{-4,-2,5\}`,
-            String.raw`\text{Range is }\{5,7\}`
+            String.raw`\{\, (x,y) \mid y=2x+3 \,\}`,
+            String.raw`\{\, (x,y) \mid y=-x+3 \,\}`,
+            String.raw`\{\, (x,y) \mid y=-2x+3 \,\}`,
+            String.raw`\{\, (x,y) \mid y=-2x-3 \,\}`,
+            String.raw`\{\, (x,y) \mid x=-2y+3 \,\}`,
+            String.raw`\{\, (x,y) \mid y=-\tfrac{1}{2}x+3 \,\}`
           ]
         },
-
-        /*  Q7 ---------------------------------------------------------------- */
         {
-          latex : String.raw`\text{Classify }R_7=\{\,(1,3),(2,3),(4,7),(8,1)\,\}\text{.}`,
+          latex : String.raw`\text{Refer to Graph RG7. Which set-builder notation describes the relation graphed?}`,
           choices : [
-            String.raw`\text{Both a relation and a function}`,     /* correct */
-            String.raw`\text{A relation that is not a function}`,
-            String.raw`\text{Neither a relation nor a function}`,
-            String.raw`\text{Function with constant output }3`,
-            String.raw`\text{Domain has duplicate }4`,
-            String.raw`\text{Range equals domain}`
+            String.raw`\{\, (x,y) \mid x\in\{-3,1\} \,\}`,
+            String.raw`\{\, (x,y) \mid y=2 \,\}`,
+            String.raw`\{\, (x,y) \mid y\in\{2,-1\} \text{ and } x=1 \,\}`,
+            String.raw`\{\, (x,y) \mid x\in\{-3,1\} \text{ and } y=2 \,\}`,
+            String.raw`\{\, (x,y) \mid y=-x \,\}`,
+            String.raw`\{\, (x,y) \mid (x,y)\in\{(-3,2),(1,-1)\} \,\}`
           ]
         },
-
-        /*  Q8 ---------------------------------------------------------------- */
         {
-          latex : String.raw`\text{Classify the set }\{(2,3),(4,3)\}\text{.}`,
+          latex : String.raw`\text{Refer to Graph RG8. Which set-builder notation describes the relation graphed?}`,
           choices : [
-            String.raw`\text{Both a relation and a function}`,     /* correct */
-            String.raw`\text{A relation that is not a function}`,
-            String.raw`\text{Neither a relation nor a function}`,
-            String.raw`\text{Not a set of ordered pairs}`,
-            String.raw`\text{Domain }\{3,4\}`,
-            String.raw`\text{Range }\{2\}`
+            String.raw`\{\, (x,y) \mid x\in\{-2,0,3\} \,\}`,
+            String.raw`\{\, (x,y) \mid x=1 \text{ and } y\in\{-2,0,3\} \,\}`,
+            String.raw`\{\, (x,y) \mid y=1 \text{ and } x\in\{-2,0,3\} \,\}`,
+            String.raw`\{\, (x,y) \mid x=-1 \text{ and } y\in\{-2,0,3\} \,\}`,
+            String.raw`\{\, (x,y) \mid x=1 \text{ and } y=-2 \,\}`,
+            String.raw`\{\, (x,y) \mid y\in\{-2,0,3\} \,\}`
           ]
         },
-
-        /*  Q9 ---------------------------------------------------------------- */
         {
-          latex : String.raw`\text{Classify the set }\{(2,3),(3,4)\}\text{.}`,
+          latex : String.raw`\text{Refer to Graph RG9. Which set-builder notation describes the relation graphed?}`,
           choices : [
-            String.raw`\text{Both a relation and a function}`,     /* correct */
-            String.raw`\text{A relation that is not a function}`,
-            String.raw`\text{Neither a relation nor a function}`,
-            String.raw`\text{Repeated }x\text{ values}`,
-            String.raw`\text{Range is }\{2,3,4\}`,
-            String.raw`\text{Domain equals range}`
+            String.raw`\{\, (x,y) \mid y=x^2 \,\}`,
+            String.raw`\{\, (x,y) \mid y\ge x^2 \,\}`,
+            String.raw`\{\, (x,y) \mid y=x \text{ and } x\ge 0 \,\}`,
+            String.raw`\{\, (x,y) \mid y=x^2 \text{ and } x\ge 0 \,\}`,
+            String.raw`\{\, (x,y) \mid y=(x-2)^2 \,\}`,
+            String.raw`\{\, (x,y) \mid y=-x^2 \text{ and } x\ge 0 \,\}`
           ]
         },
-
-        /*  Q10 --------------------------------------------------------------- */
         {
-          latex : String.raw`\text{Classify the set }\{(2,3),(2,4)\}\text{.}`,
+          latex : String.raw`\text{Refer to Graph RG10. Which set-builder notation describes the relation graphed?}`,
           choices : [
-            String.raw`\text{Both a relation and a function}`,
-            String.raw`\text{A relation that is not a function}`,  /* correct */
-            String.raw`\text{Neither a relation nor a function}`,
-            String.raw`\text{Domain }\{3,4\}`,
-            String.raw`\text{Function with constant output }2`,
-            String.raw`\text{Range is }\{2,3,4\}`
+            String.raw`\{\, (x,y) \mid x^2+y^2<4 \,\}`,
+            String.raw`\{\, (x,y) \mid x^2+y^2=16 \,\}`,
+            String.raw`\{\, (x,y) \mid x^2+y^2=4 \,\}`,
+            String.raw`\{\, (x,y) \mid y=x^2+4 \,\}`,
+            String.raw`\{\, (x,y) \mid x^2+y^2=2 \,\}`,
+            String.raw`\{\, (x,y) \mid x^2+y^2\ge 4 \,\}`
           ]
         },
-
-        /*  Q11 --------------------------------------------------------------- */
         {
-          latex : String.raw`\text{Using the table, decide whether the relation is a function: }\\
-\begin{array}{c|c}
-x & y\\\hline
--2 & 0\\
--1 & 4\\
-0 & 3\\
-1 & -1\\
-1 & 4
-\end{array}`,
+          latex : String.raw`\text{Refer to Graph RG11. Which set-builder notation describes the relation graphed?}`,
           choices : [
-            String.raw`\text{Yes, it is a function}`,
-            String.raw`\text{No, it is a relation but not a function}`, /* correct */
-            String.raw`\text{No, it is not a relation}`,
-            String.raw`\text{Domain is }\{-2,-1,0,1,4\}`,
-            String.raw`\text{Range has exactly two values}`,
-            String.raw`\text{Every }y\text{ is paired with two }x`
+            String.raw`\{\, (x,y) \mid x\in\mathbb{Z},\ y=2x+1 \,\}`,
+            String.raw`\{\, (x,y) \mid x\in\{-2,-1,0,1\},\ y=-2x+1 \,\}`,
+            String.raw`\{\, (x,y) \mid y\in\mathbb{Z},\ -2\le y\le 1,\ y=2x+1 \,\}`,
+            String.raw`\{\, (x,y) \mid x=2y+1 \,\}`,
+            String.raw`\{\, (x,y) \mid x\in\mathbb{Z},\ -2\le x\le 1,\ y=2x+1 \,\}`,
+            String.raw`\{\, (x,y) \mid x\in\mathbb{Z},\ x\ge -2,\ y=2x+1 \,\}`
           ]
         },
-
-        /*  Q12 --------------------------------------------------------------- */
         {
-          latex : String.raw`\text{What is the domain of the relation given in the table above?}`,
+          latex : String.raw`\text{Refer to Graph RG12. Which set-builder notation describes the relation graphed?}`,
           choices : [
-            String.raw`\{0,3,4,-1\}`,
-            String.raw`\{0,1,3,4\}`,
-            String.raw`\{-2,-1,0,1\}`,           /* correct */
-            String.raw`\{0,-1,4\}`,
-            String.raw`\{-2,-1,1,4\}`,
-            String.raw`\{0,3,4\}`
+            String.raw`\{\, (x,y) \mid x=-1 \,\}`,
+            String.raw`\{\, (x,y) \mid x=-1 \text{ and } y\in\{-3,-2,-1,0,1,2,3\} \,\}`,
+            String.raw`\{\, (x,y) \mid y=-1 \text{ and } x\in\{-3,-2,-1,0,1,2,3\} \,\}`,
+            String.raw`\{\, (x,y) \mid x=1 \text{ and } y\in\{-3,-2,-1,0,1,2,3\} \,\}`,
+            String.raw`\{\, (x,y) \mid x=-1 \text{ and } y\in\{-3,-2,-1,0,1,2\} \,\}`,
+            String.raw`\{\, (x,y) \mid x\in\mathbb{Z},\ y=-1 \,\}`
           ]
         }
       ]
