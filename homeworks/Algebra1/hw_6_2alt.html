@@ -16,13 +16,11 @@
       answerKey : ["A","B","C","D","E","C","F","B","D","C","E","B"],
 
       /* Graphs RG1–RG12 (3 per row × 4 rows) */
-      graphics : String.raw`
+            graphics : String.raw`
 \begin{tikzpicture}[scale=0.62]
   \tikzset{grid/.style={very thin,color=gray!30}}
   \tikzset{axes/.style={->,thick}}
 
-  % ===== Row 1: RG1–RG4 =====
-  % RG1: vertical line x = 2
   \begin{scope}[xshift=-12cm,yshift=12cm]
     \clip (-4.2,-4.2) rectangle (4.2,4.2);
     \draw[grid] (-4,-4) grid (4,4);
@@ -31,7 +29,6 @@
     \node[anchor=south east,font=\small] at (3.7,3.7) {RG1};
   \end{scope}
 
-  % RG2: horizontal line y = -1
   \begin{scope}[xshift=-2cm,yshift=12cm]
     \clip (-4.2,-4.2) rectangle (4.2,4.2);
     \draw[grid] (-4,-4) grid (4,4);
@@ -40,7 +37,6 @@
     \node[anchor=south east,font=\small] at (3.7,3.7) {RG2};
   \end{scope}
 
-  % RG3: three points at y=2 with x in {-3,0,2}
   \begin{scope}[xshift=8cm,yshift=12cm]
     \clip (-4.2,-4.2) rectangle (4.2,4.2);
     \draw[grid] (-4,-4) grid (4,4);
@@ -51,7 +47,6 @@
     \node[anchor=south east,font=\small] at (3.7,3.7) {RG3};
   \end{scope}
 
-  % RG4: y = |x|
   \begin{scope}[xshift=-12cm,yshift=3cm]
     \clip (-4.2,-4.2) rectangle (4.2,4.2);
     \draw[grid] (-4,-4) grid (4,4);
@@ -61,8 +56,6 @@
     \node[anchor=south east,font=\small] at (3.7,3.7) {RG4};
   \end{scope}
 
-  % ===== Row 2: RG5–RG8 =====
-  % RG5: line y = x + 1
   \begin{scope}[xshift=-2cm,yshift=3cm]
     \clip (-4.2,-4.2) rectangle (4.2,4.2);
     \draw[grid] (-4,-4) grid (4,4);
@@ -71,7 +64,6 @@
     \node[anchor=south east,font=\small] at (3.7,3.7) {RG5};
   \end{scope}
 
-  % RG6: line y = -2x + 3
   \begin{scope}[xshift=8cm,yshift=3cm]
     \clip (-4.2,-4.2) rectangle (4.2,4.2);
     \draw[grid] (-4,-4) grid (4,4);
@@ -80,7 +72,6 @@
     \node[anchor=south east,font=\small] at (3.7,3.7) {RG6};
   \end{scope}
 
-  % RG7: two points {(-3,2),(1,-1)}
   \begin{scope}[xshift=-12cm,yshift=-6cm]
     \clip (-4.2,-4.2) rectangle (4.2,4.2);
     \draw[grid] (-4,-4) grid (4,4);
@@ -90,7 +81,6 @@
     \node[anchor=south east,font=\small] at (3.7,3.7) {RG7};
   \end{scope}
 
-  % RG8: vertical set at x=1 with y in {-2,0,3}
   \begin{scope}[xshift=-2cm,yshift=-6cm]
     \clip (-4.2,-4.2) rectangle (4.2,4.2);
     \draw[grid] (-4,-4) grid (4,4);
@@ -101,18 +91,15 @@
     \node[anchor=south east,font=\small] at (3.7,3.7) {RG8};
   \end{scope}
 
-  % ===== Row 3: RG9–RG12 =====
-  % RG9: right-half parabola y = x^2 with x >= 0
   \begin{scope}[xshift=8cm,yshift=-6cm]
     \clip (-4.2,-4.2) rectangle (4.2,4.2);
     \draw[grid] (-4,-4) grid (4,4);
     \draw[axes] (-4,0)--(4,0); \draw[axes] (0,-4)--(0,4);
     \draw[blue,thick,domain=0:2] plot(\x,{\x*\x});
-    \fill[blue] (0,0) circle (2pt); % emphasize endpoint
+    \fill[blue] (0,0) circle (2pt);
     \node[anchor=south east,font=\small] at (3.7,3.7) {RG9};
   \end{scope}
 
-  % RG10: circle x^2 + y^2 = 4
   \begin{scope}[xshift=-12cm,yshift=-15cm]
     \clip (-4.2,-4.2) rectangle (4.2,4.2);
     \draw[grid] (-4,-4) grid (4,4);
@@ -121,7 +108,6 @@
     \node[anchor=south east,font=\small] at (3.7,3.7) {RG10};
   \end{scope}
 
-  % RG11: discrete y = 2x + 1 for integer x in {-2,-1,0,1}
   \begin{scope}[xshift=-2cm,yshift=-15cm]
     \clip (-4.2,-4.2) rectangle (4.2,4.2);
     \draw[grid] (-4,-4) grid (4,4);
@@ -131,7 +117,6 @@
     \node[anchor=south east,font=\small] at (3.7,3.7) {RG11};
   \end{scope}
 
-  % RG12: vertical at x=-1 with integer y from -3 to 3
   \begin{scope}[xshift=8cm,yshift=-15cm]
     \clip (-4.2,-4.2) rectangle (4.2,4.2);
     \draw[grid] (-4,-4) grid (4,4);
@@ -141,7 +126,6 @@
     \node[anchor=south east,font=\small] at (3.7,3.7) {RG12};
   \end{scope}
 \end{tikzpicture}`,
-
       /* 12 questions, 6 choices each */
       questions : [
         /* Q1 — RG1 (DOMAIN) */
