@@ -15,8 +15,8 @@
       /* 12 answers (A–F) */
       answerKey : ["A","B","C","D","E","C","F","B","D","C","E","B"],
 
-      /* Graphs RG1–RG12 (3 per row × 4 rows) */
-            graphics : String.raw`
+      /* Graphs RG1–RG12 (3 per row × 4 rows) — all % comments removed for TikZJax */
+      graphics : String.raw`
 \begin{tikzpicture}[scale=0.62]
   \tikzset{grid/.style={very thin,color=gray!30}}
   \tikzset{axes/.style={->,thick}}
@@ -126,13 +126,13 @@
     \node[anchor=south east,font=\small] at (3.7,3.7) {RG12};
   \end{scope}
 \end{tikzpicture}`,
+
       /* 12 questions, 6 choices each */
       questions : [
-        /* Q1 — RG1 (DOMAIN) */
         {
           latex : String.raw`\text{Refer to Graph RG1. What is the \textbf{domain} in set-builder notation?}`,
           choices : [
-            String.raw`\{\,x \mid x=2\,\}`,                                        /* A — correct */
+            String.raw`\{\,x \mid x=2\,\}`,
             String.raw`\{\,y \mid y=2\,\}`,
             String.raw`\{\,x \mid x>2\,\}`,
             String.raw`\{\,x \mid x\ne 2\,\}`,
@@ -140,47 +140,39 @@
             String.raw`\{\, (x,y) \mid x=2 \,\}`
           ]
         },
-
-        /* Q2 — RG2 (RANGE) */
         {
           latex : String.raw`\text{Refer to Graph RG2. What is the \textbf{range} in set-builder notation?}`,
           choices : [
             String.raw`\{\,x \mid x=-1\,\}`,
-            String.raw`\{\,y \mid y=-1\,\}`,                                       /* B — correct */
+            String.raw`\{\,y \mid y=-1\,\}`,
             String.raw`\{\,y \mid y=1\,\}`,
             String.raw`\{\,y \mid y\ge -1\,\}`,
             String.raw`\{\,y \mid \text{any }y\,\}`,
             String.raw`\{\,x \mid \text{any }x\,\}`
           ]
         },
-
-        /* Q3 — RG3 (DOMAIN) */
         {
           latex : String.raw`\text{Refer to Graph RG3. What is the \textbf{domain}?}`,
           choices : [
             String.raw`\{\,x \mid x=2\,\}`,
             String.raw`\{\,y \mid y\in\{-3,0,2\}\,\}`,
-            String.raw`\{\,x \mid x\in\{-3,0,2\}\,\}`,                              /* C — correct */
+            String.raw`\{\,x \mid x\in\{-3,0,2\}\,\}`,
             String.raw`\{\,x \mid x\in\{-3,2\}\,\}`,
             String.raw`\{\,x \mid x\in\{-3,0,2,4\}\,\}`,
             String.raw`\{\, (x,y) \mid y=2 \,\}`
           ]
         },
-
-        /* Q4 — RG4 (RANGE) */
         {
           latex : String.raw`\text{Refer to Graph RG4. What is the \textbf{range} in set-builder notation?}`,
           choices : [
             String.raw`\{\,y \mid y>0\,\}`,
             String.raw`\{\,x \mid x\ge 0\,\}`,
             String.raw`\{\,y \mid y\le 0\,\}`,
-            String.raw`\{\,y \mid y\ge 0\,\}`,                                     /* D — correct */
+            String.raw`\{\,y \mid y\ge 0\,\}`,
             String.raw`\{\, (x,y) \mid y=\lvert x\rvert \,\}`,
             String.raw`\{\,y \mid y=0\,\}`
           ]
         },
-
-        /* Q5 — RG5 (RELATION) */
         {
           latex : String.raw`\text{Refer to Graph RG5. Which set-builder notation describes the \textbf{relation} graphed?}`,
           choices : [
@@ -188,25 +180,21 @@
             String.raw`\{\, (x,y) \mid x=y+1 \,\}`,
             String.raw`\{\, (x,y) \mid y=-x+1 \,\}`,
             String.raw`\{\, y \mid y=x+1 \,\}`,
-            String.raw`\{\, (x,y) \mid y=x+1 \,\}`,                                 /* E — correct */
+            String.raw`\{\, (x,y) \mid y=x+1 \,\}`,
             String.raw`\{\, (x,y) \mid y=\lvert x\rvert+1 \,\}`
           ]
         },
-
-        /* Q6 — RG6 (RELATION) */
         {
           latex : String.raw`\text{Refer to Graph RG6. Which set-builder notation describes the \textbf{relation} graphed?}`,
           choices : [
             String.raw`\{\, (x,y) \mid y=2x+3 \,\}`,
             String.raw`\{\, (x,y) \mid y=-x+3 \,\}`,
-            String.raw`\{\, (x,y) \mid y=-2x+3 \,\}`,                               /* C — correct */
+            String.raw`\{\, (x,y) \mid y=-2x+3 \,\}`,
             String.raw`\{\, (x,y) \mid y=-2x-3 \,\}`,
             String.raw`\{\, (x,y) \mid x=-2y+3 \,\}`,
             String.raw`\{\, (x,y) \mid y=-\tfrac{1}{2}x+3 \,\}`
           ]
         },
-
-        /* Q7 — RG7 (RELATION, discrete two points) */
         {
           latex : String.raw`\text{Refer to Graph RG7. Which set-builder notation describes the \textbf{relation} graphed?}`,
           choices : [
@@ -215,50 +203,42 @@
             String.raw`\{\, (x,y) \mid y\in\{2,-1\} \text{ and } x=1 \,\}`,
             String.raw`\{\, (x,y) \mid x\in\{-3,1\} \text{ and } y=2 \,\}`,
             String.raw`\{\, (x,y) \mid y=-x \,\}`,
-            String.raw`\{\, (x,y) \mid (x,y)\in\{(-3,2),(1,-1)\} \,\}`             /* F — correct */
+            String.raw`\{\, (x,y) \mid (x,y)\in\{(-3,2),(1,-1)\} \,\}`
           ]
         },
-
-        /* Q8 — RG8 (RELATION, vertical finite set) */
         {
           latex : String.raw`\text{Refer to Graph RG8. Which set-builder notation describes the \textbf{relation} graphed?}`,
           choices : [
             String.raw`\{\, (x,y) \mid x\in\{-2,0,3\} \,\}`,
-            String.raw`\{\, (x,y) \mid x=1 \text{ and } y\in\{-2,0,3\} \,\}`,       /* B — correct */
+            String.raw`\{\, (x,y) \mid x=1 \text{ and } y\in\{-2,0,3\} \,\}`,
             String.raw`\{\, (x,y) \mid y=1 \text{ and } x\in\{-2,0,3\} \,\}`,
             String.raw`\{\, (x,y) \mid x=-1 \text{ and } y\in\{-2,0,3\} \,\}`,
             String.raw`\{\, (x,y) \mid x=1 \text{ and } y=-2 \,\}`,
             String.raw`\{\, (x,y) \mid y\in\{-2,0,3\} \,\}`
           ]
         },
-
-        /* Q9 — RG9 (RELATION, restricted parabola) */
         {
           latex : String.raw`\text{Refer to Graph RG9. Which set-builder notation describes the \textbf{relation} graphed?}`,
           choices : [
             String.raw`\{\, (x,y) \mid y=x^2 \,\}`,
             String.raw`\{\, (x,y) \mid y\ge x^2 \,\}`,
             String.raw`\{\, (x,y) \mid y=x \text{ and } x\ge 0 \,\}`,
-            String.raw`\{\, (x,y) \mid y=x^2 \text{ and } x\ge 0 \,\}`,             /* D — correct */
+            String.raw`\{\, (x,y) \mid y=x^2 \text{ and } x\ge 0 \,\}`,
             String.raw`\{\, (x,y) \mid y=(x-2)^2 \,\}`,
             String.raw`\{\, (x,y) \mid y=-x^2 \text{ and } x\ge 0 \,\}`
           ]
         },
-
-        /* Q10 — RG10 (RELATION, circle) */
         {
           latex : String.raw`\text{Refer to Graph RG10. Which set-builder notation describes the \textbf{relation} graphed?}`,
           choices : [
             String.raw`\{\, (x,y) \mid x^2+y^2<4 \,\}`,
             String.raw`\{\, (x,y) \mid x^2+y^2=16 \,\}`,
-            String.raw`\{\, (x,y) \mid x^2+y^2=4 \,\}`,                              /* C — correct */
+            String.raw`\{\, (x,y) \mid x^2+y^2=4 \,\}`,
             String.raw`\{\, (x,y) \mid y=x^2+4 \,\}`,
             String.raw`\{\, (x,y) \mid x^2+y^2=2 \,\}`,
             String.raw`\{\, (x,y) \mid x^2+y^2\ge 4 \,\}`
           ]
         },
-
-        /* Q11 — RG11 (RELATION, integer x in a range) */
         {
           latex : String.raw`\text{Refer to Graph RG11. Which set-builder notation describes the \textbf{relation} graphed?}`,
           choices : [
@@ -266,17 +246,15 @@
             String.raw`\{\, (x,y) \mid x\in\{-2,-1,0,1\},\ y=-2x+1 \,\}`,
             String.raw`\{\, (x,y) \mid y\in\mathbb{Z},\ -2\le y\le 1,\ y=2x+1 \,\}`,
             String.raw`\{\, (x,y) \mid x=2y+1 \,\}`,
-            String.raw`\{\, (x,y) \mid x\in\mathbb{Z},\ -2\le x\le 1,\ y=2x+1 \,\}`,/* E — correct */
+            String.raw`\{\, (x,y) \mid x\in\mathbb{Z},\ -2\le x\le 1,\ y=2x+1 \,\}`,
             String.raw`\{\, (x,y) \mid x\in\mathbb{Z},\ x\ge -2,\ y=2x+1 \,\}`
           ]
         },
-
-        /* Q12 — RG12 (RELATION, vertical integer strip) */
         {
           latex : String.raw`\text{Refer to Graph RG12. Which set-builder notation describes the \textbf{relation} graphed?}`,
           choices : [
             String.raw`\{\, (x,y) \mid x=-1 \,\}`,
-            String.raw`\{\, (x,y) \mid x=-1 \text{ and } y\in\{-3,-2,-1,0,1,2,3\} \,\}`, /* B — correct */
+            String.raw`\{\, (x,y) \mid x=-1 \text{ and } y\in\{-3,-2,-1,0,1,2,3\} \,\}`,
             String.raw`\{\, (x,y) \mid y=-1 \text{ and } x\in\{-3,-2,-1,0,1,2,3\} \,\}`,
             String.raw`\{\, (x,y) \mid x=1 \text{ and } y\in\{-3,-2,-1,0,1,2,3\} \,\}`,
             String.raw`\{\, (x,y) \mid x=-1 \text{ and } y\in\{-3,-2,-1,0,1,2\} \,\}`,
