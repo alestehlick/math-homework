@@ -10,6 +10,7 @@
        Algebra 2 — Section 6-8
        Solving Systems of Three (or more) Variables
        5 multiple-choice questions, 6 options each.
+       Smart distractors included.
        ============================================ */
     window.homeworkData = {
       classId : "Algebra2",
@@ -18,65 +19,87 @@
 
       graphics : "",
 
-      answerKey : ["C","B","D","F","A"],
+      /* Verified by direct substitution below */
+      answerKey : ["D","B","D","C","A"],
 
       questions : [
         {
-          latex: String.raw`\text{Solve the system } \begin{cases}x+y-z=-4\\ 2x+5y+z=25\\ x-2y-z=-16\end{cases}`,
+          latex: String.raw`\text{Solve } \begin{cases}
+3x+4y=2\\
+x+y+2z=7\\
+3x-4y+3z=19
+\end{cases}`,
           choices: [
-            String.raw`\text{ }(0,\,0,\,0)`,
-            String.raw`\text{ }(1,\,2,\,3)`,
-            String.raw`\text{ }(2,\,3,\,-1)`, /* correct */
-            String.raw`\text{ }(-1,\,5,\,2)`,
-            String.raw`\text{ }(4,\,-2,\,1)`,
+            String.raw`\text{ }(2,\,-1,\,2)`,
+            String.raw`\text{ }(2,\,1,\,3)`,
+            String.raw`\text{ }(3,\,-1,\,3)`,
+            String.raw`\text{ }(2,\,-1,\,3)`, /* correct */
+            String.raw`\text{ }(-2,\,-1,\,3)`,
             String.raw`\text{No solution}`
           ]
         },
 
         {
-          latex: String.raw`\text{Solve } \begin{cases}x-y-z=-3\\ 2x+y-6z=20\\ x-2y+z=-13\end{cases}`,
+          latex: String.raw`\text{Solve } \begin{cases}
+x-2y+2z=-9\\
+4x+3y-4z=21\\
+3x-y+4z=-8
+\end{cases}`,
           choices: [
-            String.raw`\text{ }(1,\,1,\,1)`,
-            String.raw`\text{ }(2,\,-1,\,3)`, /* correct */
-            String.raw`\text{ }(-2,\,4,\,0)`,
-            String.raw`\text{ }(3,\,0,\,-2)`,
-            String.raw`\text{ }(0,\,5,\,2)`,
+            String.raw`\text{ }(1,\,3,\,-1)`,
+            String.raw`\text{ }(1,\,3,\,-2)`, /* correct */
+            String.raw`\text{ }(1,\,2,\,-2)`,
+            String.raw`\text{ }(-1,\,3,\,-2)`,
+            String.raw`\text{ }(2,\,3,\,-2)`,
             String.raw`\text{Infinitely many solutions}`
           ]
         },
 
         {
-          latex: String.raw`\text{Solve } \begin{cases}5x+3y=17\\ 2x-4z=2\\ 3x+y-5z=7\end{cases}`,
+          latex: String.raw`\text{Solve } \begin{cases}
+5x+3y=17\\
+2x-4z=2\\
+3x+y-5z=7
+\end{cases}`,
           choices: [
-            String.raw`\text{ }(1,\,2,\,3)`,
-            String.raw`\text{ }(2,\,3,\,1)`,
-            String.raw`\text{ }(3,\,2,\,1)`,
-            String.raw`\text{ }(1,\,4,\,2)`, /* correct */
+            String.raw`\text{ }(1,\,4,\,1)`,
+            String.raw`\text{ }(1,\,3,\,0)`,
+            String.raw`\text{ }(2,\,4,\,0)`,
+            String.raw`\text{ }(1,\,4,\,0)`, /* correct */
             String.raw`\text{ }(0,\,0,\,0)`,
             String.raw`\text{No solution}`
           ]
         },
 
         {
-          latex: String.raw`\text{Solve } \begin{cases}2x+3y-z=21\\ x-y+z=1\\ x-2y+z=5\end{cases}`,
+          latex: String.raw`\text{Solve } \begin{cases}
+2x+2y-z=3\\
+2x+y+z=7\\
+2x+3y=2
+\end{cases}`,
           choices: [
+            String.raw`\text{ }(4,\,-2,\,-1)`,
+            String.raw`\text{ }(4,\,-1,\,1)`,
+            String.raw`\text{ }(4,\,-2,\,1)`, /* correct */
+            String.raw`\text{ }(5,\,-2,\,1)`,
             String.raw`\text{ }(1,\,2,\,3)`,
-            String.raw`\text{ }(0,\,1,\,2)`,
-            String.raw`\text{ }(2,\,1,\,-1)`,
-            String.raw`\text{ }(3,\,2,\,5)`,
-            String.raw`\text{ }(-1,\,0,\,1)`,
-            String.raw`\text{ }(4,\,3,\,-2)` /* correct */
+            String.raw`\text{No solution}`
           ]
         },
 
         {
-          latex: String.raw`\text{Solve the 4-variable system } \begin{cases}2x+5y-7z+w=-28\\ x+y+2z+3w=7\\ 2x+3y-z-w=4\\ 3x-2y-z+5w=-11\end{cases}`,
+          latex: String.raw`\text{Solve the 4-variable system } \begin{cases}
+-3x -y -3z +3w=2\\
+-y -3z +3w=11\\
+3x -3y +w=19\\
+x -y -z +3w=16
+\end{cases}`,
           choices: [
-            String.raw`\text{ }(1,\,-1,\,2,\,3)`, /* correct */
-            String.raw`\text{ }(0,\,0,\,0,\,0)`,
-            String.raw`\text{ }(2,\,3,\,1,\,0)`,
-            String.raw`\text{ }(3,\,1,\,2,\,-1)`,
-            String.raw`\text{ }(-1,\,2,\,3,\,1)`,
+            String.raw`\text{ }(3,\,-2,\,1,\,4)`, /* correct */
+            String.raw`\text{ }(3,\,-2,\,1,\,3)`,
+            String.raw`\text{ }(3,\,-2,\,0,\,4)`,
+            String.raw`\text{ }(3,\,-1,\,1,\,4)`,
+            String.raw`\text{ }(2,\,-2,\,1,\,4)`,
             String.raw`\text{No solution}`
           ]
         }
