@@ -56,7 +56,7 @@
     \node[anchor=south east,font=\small,fill=white,inner sep=1pt] at (6.6,6) {G3};
   \end{scope}
 
-  \begin{scope}[xshift=-12.5cm,yshift=0cm]
+  \begin{scope}[xshift=-12.5cm,yshift=-2cm]
     \frameA
     \path[fill=sol,opacity=.35] (0,0) -- (0,4) -- (4,2) -- ({14/3},0) -- cycle;
     \draw[L1,domain=0:7] plot(\x,{-3*\x+14});
@@ -64,21 +64,21 @@
     \node[anchor=south east,font=\small,fill=white,inner sep=1pt] at (6.6,6) {G4};
   \end{scope}
 
-  \begin{scope}[xshift=0cm,yshift=0cm]
+  \begin{scope}[xshift=0cm,yshift=-2cm]
     \frameA
     \draw[L1,domain=-4:7] plot(\x,{\x});
     \draw[L1,domain=-4:7] plot(\x,{\x+2});
     \node[anchor=south east,font=\small,fill=white,inner sep=1pt] at (6.6,6) {G5};
   \end{scope}
 
-  \begin{scope}[xshift=12.5cm,yshift=0cm]
+  \begin{scope}[xshift=12.5cm,yshift=-2cm]
     \frameA
     \draw[L1,domain=-4:7] plot(\x,{0.5*\x+1});
     \draw[L1,domain=-4:7] plot(\x,{-1*\x+3});
     \node[anchor=south east,font=\small,fill=white,inner sep=1pt] at (6.6,6) {G6};
   \end{scope}
 
-  \begin{scope}[xshift=0cm,yshift=-10cm]
+  \begin{scope}[xshift=0cm,yshift=-14cm]
     \frameA
     \draw[L1,domain=-4:7] plot(\x,{2*\x-1});
     \draw[L2,domain=-4:7] plot(\x,{2*\x-1});
