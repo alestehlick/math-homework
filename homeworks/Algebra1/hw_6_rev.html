@@ -3,219 +3,156 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Chapter 6 Review</title>
+  <title>Chapter 6 Review (Algebra 1)</title>
 
   <script>
     /* =========================
-       Chapter 6 — Review (12 Qs)
-       7 graphs laid out neatly: 3 per row (two full rows + one centered).
-       All panels share the same size and window [-3,10]×[-1,10].
+       Chapter 6 Review — Essential Skills
+       Focus on: slope, intercepts, functions/relations, direct variation,
+       equations of lines, and inequalities (skip trivial quadrant ID).
        ========================= */
     window.homeworkData = {
-      classId : "Algebra2",
-      id      : "Chapter 6 - Review",
-      title   : "Chapter 6 — Review",
+      classId : "Algebra1",
+      id      : "Chapter 6 Review",
+      title   : "Chapter 6 Review — Slope, Intercepts, Functions, Direct Variation",
 
-      graphics : String.raw`
-\begin{tikzpicture}[scale=0.4]
-  \tikzset{grid/.style={very thin,color=gray!28}}
-  \tikzset{axes/.style={->,thick}}
-  \tikzset{L1/.style={blue,thick}}
-  \tikzset{L2/.style={red,thick,dashed}}
-  \colorlet{sol}{blue!50!red!35}
+      graphics : "",
 
-  \def\frameA{
-    \clip (-3,-1) rectangle (10,10);
-    \draw[grid] (-3,-1) grid (10,10);
-    \draw[axes] (-3,0)--(10,0);
-    \draw[axes] (0,-1)--(0,10);
-  }
+      answerKey : ["B","C","A","D","B","E","C","A","F","D","C","B"],
 
-  % ---------- Row 1: G1, G2, G3 ----------
-  \begin{scope}[xshift=-12.5cm,yshift=10cm]
-    \frameA
-    \draw[L1,domain=-3:10] plot(\x,{-2*\x+14});
-    \draw[L1,domain=-3:10] plot(\x,{\x+5});
-    \fill (3,8) circle (2pt)
-      node[anchor=south west,font=\scriptsize] {};
-    \node[anchor=north east,font=\small,fill=white,inner sep=1pt] at (9.6,9.6) {G1};
-  \end{scope}
-
-  \begin{scope}[xshift=0cm,yshift=10cm]
-    \frameA
-    \draw[L1,domain=-3:10] plot(\x,{\x+8});
-    \draw[L1,domain=-3:10] plot(\x,{-3*\x});
-    \node[anchor=north east,font=\small,fill=white,inner sep=1pt] at (9.6,9.6) {G2};
-  \end{scope}
-
-  \begin{scope}[xshift=12.5cm,yshift=10cm]
-    \frameA
-    \begin{scope}
-      \clip (-3,{(-3+6)/2}) -- (10,{(10+6)/2}) -- (10,10) -- (-3,10) -- cycle;
-      \path[fill=sol,opacity=.35] (-3,{-4*(-3)-2}) -- (10,{-4*(10)-2}) -- (10,10) -- (-3,10) -- cycle;
-    \end{scope}
-    \draw[L1,domain=-3:10] plot(\x,{(\x+6)/2});
-    \draw[L2,domain=-3:10] plot(\x,{-4*\x-2});
-    \node[anchor=north east,font=\small,fill=white,inner sep=1pt] at (9.6,9.6) {G3};
-  \end{scope}
-
-  % ---------- Row 2: G4, G5, G6 ----------
-  \begin{scope}[xshift=-12.5cm,yshift=0cm]
-    \frameA
-    \path[fill=sol,opacity=.35] (0,0) -- (0,4) -- (4,2) -- ({14/3},0) -- cycle;
-    \draw[L1,domain=0:10] plot(\x,{-3*\x+14});
-    \draw[L1,domain=0:10] plot(\x,{-0.5*\x+4});
-    \node[anchor=north east,font=\small,fill=white,inner sep=1pt] at (9.6,9.6) {G4};
-  \end{scope}
-
-  \begin{scope}[xshift=0cm,yshift=0cm]
-    \frameA
-    \draw[L1,domain=-3:10] plot(\x,{\x});
-    \draw[L1,domain=-3:10] plot(\x,{\x+2});
-    \node[anchor=north east,font=\small,fill=white,inner sep=1pt] at (9.6,9.6) {G5};
-  \end{scope}
-
-  \begin{scope}[xshift=12.5cm,yshift=0cm]
-    \frameA
-    \draw[L1,domain=-3:10] plot(\x,{0.5*\x+1});
-    \draw[L1,domain=-3:10] plot(\x,{-1*\x+3});
-    \node[anchor=north east,font=\small,fill=white,inner sep=1pt] at (9.6,9.6) {G6};
-  \end{scope}
-
-  % ---------- Row 3: Centered G7 ----------
-  \begin{scope}[xshift=0cm,yshift=-10cm]
-    \frameA
-    \draw[L1,domain=-3:10] plot(\x,{2*\x-1});
-    \draw[L2,domain=-3:10] plot(\x,{2*\x-1});
-    \node[anchor=north east,font=\small,fill=white,inner sep=1pt] at (9.6,9.6) {G7};
-  \end{scope}
-\end{tikzpicture}
-`,
-
-      /* ---------- Answer key (letters A–F) ---------- */
-      answerKey : ["A","A","C","D","B","E","C","B","A","D","C","F"],
-
-      /* ---------- 12 questions (unchanged) ---------- */
       questions : [
-        { latex: String.raw`\text{Refer to G1. Mark the system and its solution that matches the graph.}`,
-          choices: [
-            String.raw`\begin{cases}2x+y=14\\ x-y=-5\end{cases}\ \text{; solution }(3,\,8)`,
-            String.raw`\begin{cases}2x+y=14\\ x+y=-5\end{cases}\ \text{; solution }(3,\,8)`,
-            String.raw`\begin{cases}2x-y=14\\ x-y=-5\end{cases}\ \text{; solution }(8,\,3)`,
-            String.raw`\begin{cases}2x+y=14\\ y-x=-5\end{cases}\ \text{; solution }(8,\,3)`,
-            String.raw`\begin{cases}x+y=14\\ x-y=-5\end{cases}\ \text{; solution }(3,\,11)`,
-            String.raw`\begin{cases}2x+y=14\\ x-y=-5\end{cases}\ \text{; solution }(0,\,14)`
-          ]},
-
-        { latex: String.raw`\text{Refer to G2. Mark the system and its solution that matches the graph.}`,
-          choices: [
-            String.raw`\begin{cases}x-y=-8\\ 3x+y=0\end{cases}\ \text{; solution }(-2,\,6)`,
-            String.raw`\begin{cases}x+y=-8\\ 3x+y=0\end{cases}\ \text{; solution }(2,\,-6)`,
-            String.raw`\begin{cases}x-y=8\\ 3x-y=0\end{cases}\ \text{; solution }(-2,\,6)`,
-            String.raw`\begin{cases}x-y=-8\\ 3x-y=0\end{cases}\ \text{; solution }(2,\,-6)`,
-            String.raw`\begin{cases}y-x=-8\\ 3x+y=0\end{cases}\ \text{; solution }(-6,\,2)`,
-            String.raw`\begin{cases}x-y=-8\\ 3x+y=0\end{cases}\ \text{; solution }(0,\,0)`
-          ]},
-
-        { latex: String.raw`\text{Solve algebraically and classify. } \begin{cases}y=3x+9\\ 2x+5y=28\end{cases}`,
-          choices: [
-            String.raw`\text{Dependent (same line)}`,
-            String.raw`\text{Inconsistent (parallel)} `,
-            String.raw`\text{Consistent independent; solution }(-1,\,6)`,
-            String.raw`\text{Consistent independent; solution }(1,\,-6)`,
-            String.raw`\text{Inconsistent; solution }(-1,\,6)`,
-            String.raw`\text{Dependent; solution set is all real pairs}`
-          ]},
-
-        { latex: String.raw`\text{Solve algebraically and classify. } \begin{cases}y=2x+8\\ 2x-y=3\end{cases}`,
-          choices: [
-            String.raw`\text{Consistent independent; solution }(0,\,3)`,
-            String.raw`\text{Dependent (infinitely many solutions)}`,
-            String.raw`\text{Consistent independent; solution }(1,\,10)`,
-            String.raw`\text{Inconsistent (parallel lines); no solution}`,
-            String.raw`\text{Consistent independent; solution }(-1,\,6)`,
-            String.raw`\text{Cannot be determined}`
-          ]},
-
-        { latex: String.raw`\text{A two-digit number has digit sum 11. Adding 45 yields the number with its digits reversed. What is the original number?}`,
-          choices: [
-            String.raw`\text{83}`,
-            String.raw`\text{38}`,
-            String.raw`\text{29}`,
-            String.raw`\text{74}`,
-            String.raw`\text{47}`,
-            String.raw`\text{56}`
-          ]},
-
-        { latex: String.raw`\text{Evelyn invests \$8400 in a certificate and \$9600 in a money market. The certificate rate is 2.5% more than the money market rate. If the total yearly interest is \$1830, what are the rates?}`,
-          choices: [
-            String.raw`\text{Money: 7%, Certificate: 9.5%}`,
-            String.raw`\text{Money: 8%, Certificate: 10.5%}`,
-            String.raw`\text{Money: 8.5%, Certificate: 11%}`,
-            String.raw`\text{Money: 10%, Certificate: 12.5%}`,
-            String.raw`\text{Money: 9%, Certificate: 11.5%}`,
-            String.raw`\text{Money: 11%, Certificate: 13.5%}`
-          ]},
-
-        { latex: String.raw`\text{Refer to G3. Mark the system and a point that lies in the shaded solution region.}`,
-          choices: [
-            String.raw`\begin{cases}x-2y\ge -6\\ 4x+y<-2\end{cases}\ \text{; point }(0,\,1)`,
-            String.raw`\begin{cases}x-2y\le -6\\ 4x+y>-2\end{cases}\ \text{; point }(-3,\,2)`,
-            String.raw`\begin{cases}x-2y\le -6\\ 4x+y>-2\end{cases}\ \text{; point }(-1,\,4)`,
-            String.raw`\begin{cases}x-2y\ge -6\\ 4x+y>-2\end{cases}\ \text{; point }(2,\,-1)`,
-            String.raw`\begin{cases}x-2y\le -6\\ 4x+y\le -2\end{cases}\ \text{; point }(3,\,0)`,
-            String.raw`\begin{cases}x-2y\ge -6\\ 4x+y\le -2\end{cases}\ \text{; point }(-4,\,-4)`
-          ]},
-
-        { latex: String.raw`\text{Refer to G4. Which system of inequalities matches the shaded region?}`,
-          choices: [
-            String.raw`\begin{cases}x\ge 0\\ y\ge 0\\ y\ge -3x+14\\ y\le -\tfrac12 x+4\end{cases}`,
-            String.raw`\begin{cases}x\ge 0\\ y\ge 0\\ y\le -3x+14\\ y\le -\tfrac12 x+4\end{cases}`,
-            String.raw`\begin{cases}x\le 0\\ y\ge 0\\ y\le -3x+14\\ y\le -\tfrac12 x+4\end{cases}`,
-            String.raw`\begin{cases}x\ge 0\\ y\ge 0\\ y\ge -3x+14\\ y\ge -\tfrac12 x+4\end{cases}`,
-            String.raw`\begin{cases}x\ge 0\\ y\ge 0\\ y\le 3x-14\\ y\le -\tfrac12 x+4\end{cases}`,
-            String.raw`\begin{cases}x\ge 0\\ y\ge 0\\ y\ge 3x-14\\ y\le \tfrac12 x+4\end{cases}`
-          ]},
-
-        { latex: String.raw`\text{Solve } \begin{cases}xy=-12\\ x+y=1\end{cases}\text{. (Give the full solution set.)}`,
-          choices: [
-            String.raw`\text{ }\{(4,\,-3),\,(-3,\,4)\}`,
-            String.raw`\text{ }\{(3,\,-4),\,(-4,\,3)\}`,
-            String.raw`\text{ }\{(1,\,-12),\,(-1,\,12)\}`,
-            String.raw`\text{ }(1,\,-12)\text{ only}`,
-            String.raw`\text{ }(0,\,1)\text{ only}`,
-            String.raw`\text{No real solution}`
-          ]},
-
-        { latex: String.raw`\text{Solve } \begin{cases}x^2+y=34\\ x^2+y^2=106\end{cases}\text{. (Choose the complete set of real solutions.)}`,
-          choices: [
-            String.raw`\text{ }\{(5,\,9),\,(-5,\,9)\}`,
-            String.raw`\text{ }\{(\sqrt{42},\,-8),\,(-\sqrt{42},\,-8)\}`,
-            String.raw`\text{ }\{(5,\,9),\,(\sqrt{42},\,-8)\}`,
-            String.raw`\text{ }\{(5,\,9),\,(-5,\,9),\,(\sqrt{42},\,-8),\,(-\sqrt{42},\,-8)\}`,
-            String.raw`\text{ }\{(5,\,-9),\,(-5,\,-9),\,(\sqrt{42},\,8),\,(-\sqrt{42},\,8)\}`,
-            String.raw`\text{No real solution}`
-          ]},
-
-        { latex: String.raw`\text{Solve the 3-variable system } \begin{cases}x+2y+z=7\\ 2x-y+z=6\\ 3x+2y-4z=58\end{cases}`,
-          choices: [
-            String.raw`\text{ }(7,\,2,\,-5)`,
-            String.raw`\text{ }(6,\,1,\,-4)`,
-            String.raw`\text{ }(8,\,3,\,-7)`,
-            String.raw`\text{ }(8,\,3,\,7)`,
-            String.raw`\text{ }(3,\,8,\,-7)`,
-            String.raw`\text{ }(-8,\,-3,\,7)`
-          ]},
-
-        { latex: String.raw`\text{Using G5–G7, choose the correct classification triple (G5, G6, G7). Options: Inconsistent; Independent & consistent; Dependent}`,
-          choices: [
-            String.raw`\text{Independent & consistent; Inconsistent; Dependent}`,
-            String.raw`\text{Dependent; Independent & consistent; Inconsistent}`,
-            String.raw`\text{Independent & consistent; Dependent; Inconsistent}`,
-            String.raw`\text{Inconsistent; Dependent; Independent & consistent}`,
-            String.raw`\text{Dependent; Inconsistent; Independent & consistent}`,
-            String.raw`\text{Inconsistent; Independent & consistent; Dependent}`
-          ]}
+        {
+          latex   : String.raw`\text{Which of the following relations is also a function? }R=\{(3,7),(-2,4),(1,8)\}`,
+          choices : [
+            String.raw`\text{No; not a relation}`,
+            String.raw`\text{Yes; function, domain } \{-2,1,3\},\ \text{range }\{4,7,8\}`,
+            String.raw`\text{Yes; but not a function}`,
+            String.raw`\text{No; repeated input}`,
+            String.raw`\text{Yes; domain } \{-2,1,3\},\ \text{range }\{7,8\}`,
+            String.raw`\text{Cannot determine}`
+          ]
+        },
+        {
+          latex   : String.raw`\text{Given }y=x+4\text{ for }-4\le x\le 6,\ \text{what is the slope and }y\text{-intercept?}`,
+          choices : [
+            String.raw`m=4,\ b=1`,
+            String.raw`m=1,\ b=4`,
+            String.raw`m=4,\ b=-1`,
+            String.raw`m=-1,\ b=4`,
+            String.raw`m=0,\ b=4`,
+            String.raw`m=1,\ b=-4`
+          ]
+        },
+        {
+          latex   : String.raw`\text{Find the slope of the line through }(2,5)\text{ and }(3,-7).`,
+          choices : [
+            String.raw`-12`,
+            String.raw`\tfrac{-12}{1}`,
+            String.raw`\tfrac{12}{1}`,
+            String.raw`\tfrac{7}{2}`,
+            String.raw`-5`,
+            String.raw`\tfrac{-7}{2}`
+          ]
+        },
+        {
+          latex   : String.raw`\text{Place the equation }5x+y=9\text{ in slope-intercept form and state the slope.}`,
+          choices : [
+            String.raw`y=5x+9,\ m=5`,
+            String.raw`y=-5x+9,\ m=-5`,
+            String.raw`y=9x+5,\ m=9`,
+            String.raw`y=-5x+9,\ m=-5`,
+            String.raw`y=5x-9,\ m=5`,
+            String.raw`y=-\tfrac{1}{5}x+9,\ m=-\tfrac{1}{5}`
+          ]
+        },
+        {
+          latex   : String.raw`\text{Equation of line with }m=3\text{ and }b=-\tfrac{1}{5}.`,
+          choices : [
+            String.raw`y=-3x+\tfrac{1}{5}`,
+            String.raw`y=3x-\tfrac{1}{5}`,
+            String.raw`y=\tfrac{1}{5}x-3`,
+            String.raw`y=-\tfrac{1}{5}x+3`,
+            String.raw`y=3x+\tfrac{1}{5}`,
+            String.raw`y=-\tfrac{1}{5}x-3`
+          ]
+        },
+        {
+          latex   : String.raw`\text{Find the equation of the line through }(2,9)\text{ and }(-1,4).`,
+          choices : [
+            String.raw`y=2x+5`,
+            String.raw`y=\tfrac{5}{3}x+\tfrac{13}{3}`,
+            String.raw`y=\tfrac{5}{3}x+\tfrac{7}{3}`,
+            String.raw`y=-\tfrac{5}{3}x+9`,
+            String.raw`y=5x-1`,
+            String.raw`y=3x+4`
+          ]
+        },
+        {
+          latex   : String.raw`\text{If }y\text{ varies directly with }x\text{ and }y=12\text{ when }x=3,\ \text{find }y\text{ when }x=15.`,
+          choices : [
+            String.raw`y=36`,
+            String.raw`y=60`,
+            String.raw`y=15`,
+            String.raw`y=9`,
+            String.raw`y=6`,
+            String.raw`y=20`
+          ]
+        },
+        {
+          latex   : String.raw`\text{A city has } \$3 \text{ tax on } \$42.87 \text{. How much tax on a } \$5 \text{ item (direct variation)?}`,
+          choices : [
+            String.raw`\$0.25`,
+            String.raw`\$0.35`,
+            String.raw`\$0.50`,
+            String.raw`\$0.75`,
+            String.raw`\$1.00`,
+            String.raw`\$1.25`
+          ]
+        },
+        {
+          latex   : String.raw`\text{Rewrite }3x+y=6\text{ in slope-intercept form and give the slope-intercept pair.}`,
+          choices : [
+            String.raw`y=3x+6,\ (m=3,b=6)`,
+            String.raw`y=-3x+6,\ (m=-3,b=6)`,
+            String.raw`y=\tfrac{1}{3}x+6,\ (m=\tfrac{1}{3},b=6)`,
+            String.raw`y=6x+3,\ (m=6,b=3)`,
+            String.raw`y=-\tfrac{1}{3}x+6,\ (m=-\tfrac{1}{3},b=6)`,
+            String.raw`y=-3x-6,\ (m=-3,b=-6)`
+          ]
+        },
+        {
+          latex   : String.raw`\text{Graphically, which inequality describes the shaded half-plane above the line }y=x+7\text{?}`,
+          choices : [
+            String.raw`y\le x+7`,
+            String.raw`y\ge x+7`,
+            String.raw`y>x+7`,
+            String.raw`y<x+7`,
+            String.raw`x\le y+7`,
+            String.raw`x\ge y+7`
+          ]
+        },
+        {
+          latex   : String.raw`\text{Graph }6x+2y<18.\ \text{Which point lies in the solution region?}`,
+          choices : [
+            String.raw`(0,0)`,
+            String.raw`(3,5)`,
+            String.raw`(6,6)`,
+            String.raw`(-3,0)`,
+            String.raw`(0,9)`,
+            String.raw`(10,0)`
+          ]
+        },
+        {
+          latex   : String.raw`\text{Find the slope of the line parallel to }5x+y=8\text{.}`,
+          choices : [
+            String.raw`-5`,
+            String.raw`\tfrac{1}{5}`,
+            String.raw`5`,
+            String.raw`8`,
+            String.raw`0`,
+            String.raw`-1`
+          ]
+        }
       ]
     };
   </script>
