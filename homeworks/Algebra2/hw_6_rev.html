@@ -8,8 +8,8 @@
   <script>
     /* =========================
        Chapter 6 — Review (12 Qs)
-       7 graphs laid out neatly: 3 per row (two full rows + one centered).
-       All panels share the same size and window [-3,10]×[-1,10].
+       7 graphs: 3 per row (two rows) + one centered.
+       Original separation restored.
        ========================= */
     window.homeworkData = {
       classId : "Algebra2",
@@ -25,77 +25,70 @@
   \colorlet{sol}{blue!50!red!35}
 
   \def\frameA{
-    \clip (-3,-1) rectangle (10,10);
-    \draw[grid] (-3,-1) grid (10,10);
-    \draw[axes] (-3,0)--(10,0);
-    \draw[axes] (0,-1)--(0,10);
+    \clip (-4,-4) rectangle (7,7);
+    \draw[grid] (-4,-4) grid (7,7);
+    \draw[axes] (-4,0)--(7,0);
+    \draw[axes] (0,-4)--(0,7);
   }
 
-  % ---------- Row 1: G1, G2, G3 ----------
   \begin{scope}[xshift=-12.5cm,yshift=10cm]
     \frameA
-    \draw[L1,domain=-3:10] plot(\x,{-2*\x+14});
-    \draw[L1,domain=-3:10] plot(\x,{\x+5});
-    \fill (3,8) circle (2pt)
-      node[anchor=south west,font=\scriptsize] {};
-    \node[anchor=north east,font=\small,fill=white,inner sep=1pt] at (9.6,9.6) {G1};
+    \draw[L1,domain=-4:7] plot(\x,{-2*\x+14});
+    \draw[L1,domain=-4:7] plot(\x,{\x+5});
+    \node[anchor=south east,font=\small,fill=white,inner sep=1pt] at (6.6,6.6) {G1};
   \end{scope}
 
   \begin{scope}[xshift=0cm,yshift=10cm]
     \frameA
-    \draw[L1,domain=-3:10] plot(\x,{\x+8});
-    \draw[L1,domain=-3:10] plot(\x,{-3*\x});
-    \node[anchor=north east,font=\small,fill=white,inner sep=1pt] at (9.6,9.6) {G2};
+    \draw[L1,domain=-4:7] plot(\x,{\x+8});
+    \draw[L1,domain=-4:7] plot(\x,{-3*\x});
+    \node[anchor=south east,font=\small,fill=white,inner sep=1pt] at (6.6,6.6) {G2};
   \end{scope}
 
   \begin{scope}[xshift=12.5cm,yshift=10cm]
     \frameA
     \begin{scope}
-      \clip (-3,{(-3+6)/2}) -- (10,{(10+6)/2}) -- (10,10) -- (-3,10) -- cycle;
-      \path[fill=sol,opacity=.35] (-3,{-4*(-3)-2}) -- (10,{-4*(10)-2}) -- (10,10) -- (-3,10) -- cycle;
+      \clip (-1,{(-1+6)/2}) -- (7,{(7+6)/2}) -- (7,7) -- ({-9/4},7) -- cycle;
+      \path[fill=sol,opacity=.35] (-1,{-4*(-1)-2}) -- (10,{-4*(10)-2}) -- (7,7) -- (-4,7) -- cycle;
     \end{scope}
-    \draw[L1,domain=-3:10] plot(\x,{(\x+6)/2});
-    \draw[L2,domain=-3:10] plot(\x,{-4*\x-2});
-    \node[anchor=north east,font=\small,fill=white,inner sep=1pt] at (9.6,9.6) {G3};
+    \draw[L1,domain=-4:7] plot(\x,{(\x+6)/2});
+    \draw[L2,domain=-4:7] plot(\x,{-4*\x-2});
+    \node[anchor=south east,font=\small,fill=white,inner sep=1pt] at (6.6,6.6) {G3};
   \end{scope}
 
-  % ---------- Row 2: G4, G5, G6 ----------
   \begin{scope}[xshift=-12.5cm,yshift=0cm]
     \frameA
     \path[fill=sol,opacity=.35] (0,0) -- (0,4) -- (4,2) -- ({14/3},0) -- cycle;
-    \draw[L1,domain=0:10] plot(\x,{-3*\x+14});
-    \draw[L1,domain=0:10] plot(\x,{-0.5*\x+4});
-    \node[anchor=north east,font=\small,fill=white,inner sep=1pt] at (9.6,9.6) {G4};
+    \draw[L1,domain=0:7] plot(\x,{-3*\x+14});
+    \draw[L1,domain=0:7] plot(\x,{-0.5*\x+4});
+    \node[anchor=south east,font=\small,fill=white,inner sep=1pt] at (6.6,6.6) {G4};
   \end{scope}
 
   \begin{scope}[xshift=0cm,yshift=0cm]
     \frameA
-    \draw[L1,domain=-3:10] plot(\x,{\x});
-    \draw[L1,domain=-3:10] plot(\x,{\x+2});
-    \node[anchor=north east,font=\small,fill=white,inner sep=1pt] at (9.6,9.6) {G5};
+    \draw[L1,domain=-4:7] plot(\x,{\x});
+    \draw[L1,domain=-4:7] plot(\x,{\x+2});
+    \node[anchor=south east,font=\small,fill=white,inner sep=1pt] at (6.6,6.6) {G5};
   \end{scope}
 
   \begin{scope}[xshift=12.5cm,yshift=0cm]
     \frameA
-    \draw[L1,domain=-3:10] plot(\x,{0.5*\x+1});
-    \draw[L1,domain=-3:10] plot(\x,{-1*\x+3});
-    \node[anchor=north east,font=\small,fill=white,inner sep=1pt] at (9.6,9.6) {G6};
+    \draw[L1,domain=-4:7] plot(\x,{0.5*\x+1});
+    \draw[L1,domain=-4:7] plot(\x,{-1*\x+3});
+    \node[anchor=south east,font=\small,fill=white,inner sep=1pt] at (6.6,6.6) {G6};
   \end{scope}
 
-  % ---------- Row 3: Centered G7 ----------
   \begin{scope}[xshift=0cm,yshift=-10cm]
     \frameA
-    \draw[L1,domain=-3:10] plot(\x,{2*\x-1});
-    \draw[L2,domain=-3:10] plot(\x,{2*\x-1});
-    \node[anchor=north east,font=\small,fill=white,inner sep=1pt] at (9.6,9.6) {G7};
+    \draw[L1,domain=-4:7] plot(\x,{2*\x-1});
+    \draw[L2,domain=-4:7] plot(\x,{2*\x-1});
+    \node[anchor=south east,font=\small,fill=white,inner sep=1pt] at (6.6,6.6) {G7};
   \end{scope}
 \end{tikzpicture}
 `,
 
-      /* ---------- Answer key (letters A–F) ---------- */
       answerKey : ["A","A","C","D","B","E","C","B","A","D","C","F"],
 
-      /* ---------- 12 questions (unchanged) ---------- */
       questions : [
         { latex: String.raw`\text{Refer to G1. Mark the system and its solution that matches the graph.}`,
           choices: [
