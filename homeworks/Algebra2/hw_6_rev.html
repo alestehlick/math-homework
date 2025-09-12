@@ -9,7 +9,7 @@
     /* =========================
        Chapter 6 — Review (12 Qs)
        7 graphs laid out neatly: 3 per row (two full rows + one centered).
-       All panels share the same size and window [-1,10]×[-1,10].
+       All panels share the same size and window [-3,10]×[-1,10].
        ========================= */
     window.homeworkData = {
       classId : "Algebra2",
@@ -23,94 +23,83 @@
   \tikzset{L1/.style={blue,thick}}
   \tikzset{L2/.style={red,thick,dashed}}
   \colorlet{sol}{blue!50!red!35}
-  % Uniform frame macro (same box everywhere)
+
   \def\frameA{
-    \clip (-4,-4) rectangle (7,7);
-    \draw[grid] (-4,-4) grid (7,7);
-    \draw[axes] (-4,0)--(7,0);
-    \draw[axes] (0,-4)--(0,7);
+    \clip (-3,-1) rectangle (10,10);
+    \draw[grid] (-3,-1) grid (10,10);
+    \draw[axes] (-3,0)--(10,0);
+    \draw[axes] (0,-1)--(0,10);
   }
 
   % ---------- Row 1: G1, G2, G3 ----------
-  % G1: 2x+y=14 and x-y=-5
   \begin{scope}[xshift=-12.5cm,yshift=10cm]
     \frameA
-    \draw[L1,domain=-4:7] plot(\x,{-2*\x+14});
-    \draw[L1,domain=-4:7] plot(\x,{\x+5});
-    \fill (3,8) circle (2pt);
-    \node[anchor=south east,font=\small] at (9.6,9.6) {G1};
+    \draw[L1,domain=-3:10] plot(\x,{-2*\x+14});
+    \draw[L1,domain=-3:10] plot(\x,{\x+5});
+    \fill (3,8) circle (2pt)
+      node[anchor=south west,font=\scriptsize] {};
+    \node[anchor=north east,font=\small,fill=white,inner sep=1pt] at (9.6,9.6) {G1};
   \end{scope}
 
-  % G2: x-y=-8 and 3x+y=0
   \begin{scope}[xshift=0cm,yshift=10cm]
     \frameA
-    \draw[L1,domain=-4:7] plot(\x,{\x+8});     % y = x+8
-    \draw[L1,domain=-4:7] plot(\x,{-3*\x});    % y = -3x
-    \fill (-2,6) circle (2pt);
-    \node[anchor=south east,font=\small] at (9.6,9.6) {G2};
+    \draw[L1,domain=-3:10] plot(\x,{\x+8});
+    \draw[L1,domain=-3:10] plot(\x,{-3*\x});
+    \node[anchor=north east,font=\small,fill=white,inner sep=1pt] at (9.6,9.6) {G2};
   \end{scope}
 
-  % G3: inequalities x-2y<=-6 (=> y>= (x+6)/2) and 4x+y>-2 (=> y>-4x-2)
   \begin{scope}[xshift=12.5cm,yshift=10cm]
     \frameA
     \begin{scope}
-     \clip (-1,{(-1+6)/2}) -- (7,{(7+6)/2}) -- (7,7) -- ({-9/4},7) -- cycle; % y >= (x+6)/2
-      \path[fill=sol,opacity=.35] (-1,{-4*(-1)-2}) -- (10,{-4*(10)-2}) -- (7,7) -- (-4,7) -- cycle;
+      \clip (-3,{(-3+6)/2}) -- (10,{(10+6)/2}) -- (10,10) -- (-3,10) -- cycle;
+      \path[fill=sol,opacity=.35] (-3,{-4*(-3)-2}) -- (10,{-4*(10)-2}) -- (10,10) -- (-3,10) -- cycle;
     \end{scope}
-    \draw[L1,domain=-4:7] plot(\x,{(\x+6)/2});  % solid
-    \draw[L2,domain=-4:7] plot(\x,{-4*\x-2});   % dashed
-    \node[anchor=south east,font=\small] at (9.6,9.6) {G3};
+    \draw[L1,domain=-3:10] plot(\x,{(\x+6)/2});
+    \draw[L2,domain=-3:10] plot(\x,{-4*\x-2});
+    \node[anchor=north east,font=\small,fill=white,inner sep=1pt] at (9.6,9.6) {G3};
   \end{scope}
 
   % ---------- Row 2: G4, G5, G6 ----------
-  % G4: LP feasible region y<=-3x+14, y<=-1/2 x+4, x>=0, y>=0
   \begin{scope}[xshift=-12.5cm,yshift=0cm]
     \frameA
     \path[fill=sol,opacity=.35] (0,0) -- (0,4) -- (4,2) -- ({14/3},0) -- cycle;
     \draw[L1,domain=0:10] plot(\x,{-3*\x+14});
     \draw[L1,domain=0:10] plot(\x,{-0.5*\x+4});
-    \node[anchor=south east,font=\small] at (9.6,9.6) {G4};
+    \node[anchor=north east,font=\small,fill=white,inner sep=1pt] at (9.6,9.6) {G4};
   \end{scope}
 
-  % G5: parallel (inconsistent)
   \begin{scope}[xshift=0cm,yshift=0cm]
     \frameA
-    \draw[L1,domain=-1:10] plot(\x,{\x});
-    \draw[L1,domain=-1:10] plot(\x,{\x+2});
-    \node[anchor=south east,font=\small] at (9.6,9.6) {G5};
-  </begin{scope}
+    \draw[L1,domain=-3:10] plot(\x,{\x});
+    \draw[L1,domain=-3:10] plot(\x,{\x+2});
+    \node[anchor=north east,font=\small,fill=white,inner sep=1pt] at (9.6,9.6) {G5};
+  \end{scope}
 
-  % G6: intersect once (independent/consistent)
   \begin{scope}[xshift=12.5cm,yshift=0cm]
     \frameA
-    \draw[L1,domain=-1:10] plot(\x,{0.5*\x+1});
-    \draw[L1,domain=-1:10] plot(\x,{-1*\x+3});
-    \node[anchor=south east,font=\small] at (9.6,9.6) {G6};
+    \draw[L1,domain=-3:10] plot(\x,{0.5*\x+1});
+    \draw[L1,domain=-3:10] plot(\x,{-1*\x+3});
+    \node[anchor=north east,font=\small,fill=white,inner sep=1pt] at (9.6,9.6) {G6};
   \end{scope}
 
-  % ---------- Row 3: center G7, keep spacing with empty frames ----------
-
-  % G7: same line (dependent)
+  % ---------- Row 3: Centered G7 ----------
   \begin{scope}[xshift=0cm,yshift=-10cm]
     \frameA
-    \draw[L1,domain=-1:10] plot(\x,{2*\x-1});
-    \draw[L2,domain=-1:10] plot(\x,{2*\x-1});
-    \node[anchor=south east,font=\small] at (9.6,9.6) {G7};
+    \draw[L1,domain=-3:10] plot(\x,{2*\x-1});
+    \draw[L2,domain=-3:10] plot(\x,{2*\x-1});
+    \node[anchor=north east,font=\small,fill=white,inner sep=1pt] at (9.6,9.6) {G7};
   \end{scope}
-
-
 \end{tikzpicture}
 `,
 
       /* ---------- Answer key (letters A–F) ---------- */
       answerKey : ["A","A","C","D","B","E","C","B","A","D","C","F"],
 
-      /* ---------- 12 questions ---------- */
+      /* ---------- 12 questions (unchanged) ---------- */
       questions : [
-        /* Q1–Q2 rewritten: choose SYSTEM + SOLUTION that matches the graph */
         { latex: String.raw`\text{Refer to G1. Mark the system and its solution that matches the graph.}`,
           choices: [
-            String.raw`\begin{cases}2x+y=14\\ x-y=-5\end{cases}\ \text{; solution }(3,\,8)`,  /* correct */
+            String.raw`\begin{cases}2x+y=14\\ x-y=-5\end{cases}\ \text{; solution }(3,\,8)`,
             String.raw`\begin{cases}2x+y=14\\ x+y=-5\end{cases}\ \text{; solution }(3,\,8)`,
             String.raw`\begin{cases}2x-y=14\\ x-y=-5\end{cases}\ \text{; solution }(8,\,3)`,
             String.raw`\begin{cases}2x+y=14\\ y-x=-5\end{cases}\ \text{; solution }(8,\,3)`,
@@ -120,7 +109,7 @@
 
         { latex: String.raw`\text{Refer to G2. Mark the system and its solution that matches the graph.}`,
           choices: [
-            String.raw`\begin{cases}x-y=-8\\ 3x+y=0\end{cases}\ \text{; solution }(-2,\,6)`,  /* correct */
+            String.raw`\begin{cases}x-y=-8\\ 3x+y=0\end{cases}\ \text{; solution }(-2,\,6)`,
             String.raw`\begin{cases}x+y=-8\\ 3x+y=0\end{cases}\ \text{; solution }(2,\,-6)`,
             String.raw`\begin{cases}x-y=8\\ 3x-y=0\end{cases}\ \text{; solution }(-2,\,6)`,
             String.raw`\begin{cases}x-y=-8\\ 3x-y=0\end{cases}\ \text{; solution }(2,\,-6)`,
@@ -128,7 +117,6 @@
             String.raw`\begin{cases}x-y=-8\\ 3x+y=0\end{cases}\ \text{; solution }(0,\,0)`
           ]},
 
-        /* Algebraic (unchanged) */
         { latex: String.raw`\text{Solve algebraically and classify. } \begin{cases}y=3x+9\\ 2x+5y=28\end{cases}`,
           choices: [
             String.raw`\text{Dependent (same line)}`,
@@ -169,29 +157,26 @@
             String.raw`\text{Money: 11%, Certificate: 13.5%}`
           ]},
 
-        /* Q7 rewritten: choose INEQUALITY SYSTEM + A POINT in the region */
         { latex: String.raw`\text{Refer to G3. Mark the system and a point that lies in the shaded solution region.}`,
           choices: [
             String.raw`\begin{cases}x-2y\ge -6\\ 4x+y<-2\end{cases}\ \text{; point }(0,\,1)`,
             String.raw`\begin{cases}x-2y\le -6\\ 4x+y>-2\end{cases}\ \text{; point }(-3,\,2)`,
-            String.raw`\begin{cases}x-2y\le -6\\ 4x+y>-2\end{cases}\ \text{; point }(-1,\,4)`,  /* correct */
+            String.raw`\begin{cases}x-2y\le -6\\ 4x+y>-2\end{cases}\ \text{; point }(-1,\,4)`,
             String.raw`\begin{cases}x-2y\ge -6\\ 4x+y>-2\end{cases}\ \text{; point }(2,\,-1)`,
             String.raw`\begin{cases}x-2y\le -6\\ 4x+y\le -2\end{cases}\ \text{; point }(3,\,0)`,
             String.raw`\begin{cases}x-2y\ge -6\\ 4x+y\le -2\end{cases}\ \text{; point }(-4,\,-4)`
           ]},
 
-        /* Q8: NEW — system of inequalities for G4 (no linear programming) */
         { latex: String.raw`\text{Refer to G4. Which system of inequalities matches the shaded region?}`,
           choices: [
             String.raw`\begin{cases}x\ge 0\\ y\ge 0\\ y\ge -3x+14\\ y\le -\tfrac12 x+4\end{cases}`,
-            String.raw`\begin{cases}x\ge 0\\ y\ge 0\\ y\le -3x+14\\ y\le -\tfrac12 x+4\end{cases}`, /* correct */
+            String.raw`\begin{cases}x\ge 0\\ y\ge 0\\ y\le -3x+14\\ y\le -\tfrac12 x+4\end{cases}`,
             String.raw`\begin{cases}x\le 0\\ y\ge 0\\ y\le -3x+14\\ y\le -\tfrac12 x+4\end{cases}`,
             String.raw`\begin{cases}x\ge 0\\ y\ge 0\\ y\ge -3x+14\\ y\ge -\tfrac12 x+4\end{cases}`,
             String.raw`\begin{cases}x\ge 0\\ y\ge 0\\ y\le 3x-14\\ y\le -\tfrac12 x+4\end{cases}`,
             String.raw`\begin{cases}x\ge 0\\ y\ge 0\\ y\ge 3x-14\\ y\le \tfrac12 x+4\end{cases}`
           ]},
 
-        /* 9–12 unchanged (algebraic/mix) */
         { latex: String.raw`\text{Solve } \begin{cases}xy=-12\\ x+y=1\end{cases}\text{. (Give the full solution set.)}`,
           choices: [
             String.raw`\text{ }\{(4,\,-3),\,(-3,\,4)\}`,
