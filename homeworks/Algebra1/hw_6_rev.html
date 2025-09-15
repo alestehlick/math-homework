@@ -18,7 +18,8 @@
 
       graphics : "",
 
-      answerKey : ["B","C","A","D","B","E","C","A","F","D","C","B"],
+      /* Updated answer key (unique & correct) */
+      answerKey : ["B","B","A","B","B","C","B","B","B","C","A","A"],
 
       questions : [
         {
@@ -47,7 +48,7 @@
           latex   : String.raw`\text{Find the slope of the line through }(2,5)\text{ and }(3,-7).`,
           choices : [
             String.raw`-12`,
-            String.raw`\tfrac{-12}{1}`,
+            String.raw`\tfrac{-6}{1}`,
             String.raw`\tfrac{12}{1}`,
             String.raw`\tfrac{7}{2}`,
             String.raw`-5`,
@@ -60,7 +61,7 @@
             String.raw`y=5x+9,\ m=5`,
             String.raw`y=-5x+9,\ m=-5`,
             String.raw`y=9x+5,\ m=9`,
-            String.raw`y=-5x+9,\ m=-5`,
+            String.raw`y=-5x-9,\ m=-5`,
             String.raw`y=5x-9,\ m=5`,
             String.raw`y=-\tfrac{1}{5}x+9,\ m=-\tfrac{1}{5}`
           ]
@@ -81,14 +82,14 @@
           choices : [
             String.raw`y=2x+5`,
             String.raw`y=\tfrac{5}{3}x+\tfrac{13}{3}`,
-            String.raw`y=\tfrac{5}{3}x+\tfrac{7}{3}`,
+            String.raw`y=\tfrac{5}{3}x+\tfrac{17}{3}`,
             String.raw`y=-\tfrac{5}{3}x+9`,
             String.raw`y=5x-1`,
             String.raw`y=3x+4`
           ]
         },
         {
-          latex   : String.raw`\text{If }y\text{ varies directly with }x\text{ and }y=12\text{ when }x=3,\ \text{find }y\text{ when }x=15.`,
+          latex   : String.raw`\text{If }y\text{ varies directly with }x\text{ and }y=12\text{ when }x=3,\ \text{find }y\text{ when }x=15.}`,
           choices : [
             String.raw`y=36`,
             String.raw`y=60`,
@@ -121,7 +122,7 @@
           ]
         },
         {
-          latex   : String.raw`\text{Graphically, which inequality describes the shaded half-plane above the line }y=x+7\text{?}`,
+          latex   : String.raw`\text{Graphically, which inequality describes the shaded half-plane \emph{strictly above} the line }y=x+7\text{?}`,
           choices : [
             String.raw`y\le x+7`,
             String.raw`y\ge x+7`,
@@ -137,7 +138,7 @@
             String.raw`(0,0)`,
             String.raw`(3,5)`,
             String.raw`(6,6)`,
-            String.raw`(-3,0)`,
+            String.raw`(-3,18)`,
             String.raw`(0,9)`,
             String.raw`(10,0)`
           ]
