@@ -17,8 +17,9 @@
 
       graphics : String.raw``,  // no graphics needed
 
-      /* ===== Hidden answer key (A–F) for the 12 questions ===== */
-      answerKey : ["C","E","B","A","F","D","C","B","E","A","D","F"],
+      /* ===== Hidden answer key (A–F) for the 12 questions =====
+         Q9 corrected to "B"; others unchanged */
+      answerKey : ["C","E","B","A","F","D","C","B","B","A","D","F"],
 
       /* ===== 12 Multiple-Choice Questions (6 choices each) ===== */
       questions : [
@@ -69,12 +70,12 @@
         {
           latex: String.raw`\text{Do the indicated operations and simplify. Variables represent positive real numbers: }2\sqrt{7}-5\sqrt{7}-\sqrt{63}`,
           choices: [
-            String.raw`-3\sqrt{7}-\sqrt{63}`,
-            String.raw`-3\sqrt{7}-3\sqrt{7}`,
+            String.raw`-3\sqrt{7}-\sqrt{7}`,      /* changed: = -4√7 */
+            String.raw`-3\sqrt{7}-2\sqrt{7}`,     /* changed: = -5√7 */
             String.raw`-9\sqrt{7}`,
             String.raw`-2\sqrt{7}`,
             String.raw`\sqrt{7}`,
-            String.raw`-6\sqrt{7}`
+            String.raw`-6\sqrt{7}`                 /* sole correct */
           ]
         },
         {
@@ -99,13 +100,11 @@
             String.raw`10y\sqrt{3x}`
           ]
         },
-
-        /* Exponent operations mirroring section B */
         {
           latex: String.raw`\text{Do the indicated operations and simplify. Variables represent positive real numbers: }7^{36}+8^{10}-2\cdot 7^{36}`,
           choices: [
             String.raw`7^{36}-8^{10}`,
-            String.raw`8^{10}-7^{36}`,
+            String.raw`8^{10}-7^{36}`,  /* correct */
             String.raw`-7^{36}+2\cdot 8^{10}`,
             String.raw`(8^{5}-7^{18})^{2}`,
             String.raw`-\,8^{10}+7^{36}`,
@@ -116,7 +115,7 @@
           latex: String.raw`\text{Do the indicated operations and simplify. Variables represent positive real numbers: }3\cdot 5^{17}-8\cdot 5^{17}`,
           choices: [
             String.raw`5^{17}`,
-            String.raw`-5\cdot 5^{17}`,
+            String.raw`-5\cdot 5^{17}`, /* correct */
             String.raw`-8\cdot 5^{17}`,
             String.raw`-15^{17}`,
             String.raw`-5^{18}`,
@@ -126,7 +125,7 @@
         {
           latex: String.raw`\text{Do the indicated operations and simplify. Variables represent positive real numbers: }6^{x}+6^{x+1}`,
           choices: [
-            String.raw`7\cdot 6^{x}`,
+            String.raw`7\cdot 6^{x}`,   /* correct */
             String.raw`6^{2x+1}`,
             String.raw`6^{x}\,(x+1)`,
             String.raw`6^{x-1}`,
@@ -140,13 +139,11 @@
             String.raw`3\cdot 5^{20}`,
             String.raw`5^{21}`,
             String.raw`8\cdot 5^{10}`,
-            String.raw`4\cdot 5^{20}`,
+            String.raw`4\cdot 5^{20}`,  /* correct */
             String.raw`5^{20}(3+20)`,
             String.raw`5^{40}`
           ]
         },
-
-        /* A final radical with variables combining like terms */
         {
           latex: String.raw`\text{Do the indicated operations and simplify. Variables represent positive real numbers: }\sqrt{27c^{2}d^{2}}-cd\sqrt{12}+\sqrt{75c^{2}d^{2}}`,
           choices: [
@@ -155,7 +152,7 @@
             String.raw`5cd\sqrt{3}`,
             String.raw`-cd\sqrt{3}`,
             String.raw`8cd\sqrt{3}`,
-            String.raw`6cd\sqrt{3}`
+            String.raw`6cd\sqrt{3}`      /* correct */
           ]
         }
       ]
