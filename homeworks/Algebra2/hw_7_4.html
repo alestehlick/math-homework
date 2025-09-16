@@ -51,9 +51,9 @@
           latex: String.raw`\text{Do the indicated operation and simplify. Variables represent positive real numbers: }6\sqrt{4a^{4}}\;\cdot\;2\sqrt{2a^{2}}`,
           choices: [
             String.raw`12a^{2}\sqrt{2a^{2}}`,
-            String.raw`24a^{3}\sqrt{2}`,
-            String.raw`24a^{2}\sqrt{2a^{2}}`,
-            String.raw`12a^{3}\sqrt{8}`,
+            String.raw`24a^{3}\sqrt{2}`,          /* correct */
+            String.raw`24a^{2}\sqrt{2a}`,         /* edited: not equivalent to correct */
+            String.raw`12a^{3}\sqrt{2}`,          /* edited: not equivalent to correct */
             String.raw`48a^{3}\sqrt{2}`,
             String.raw`24a^{2}\sqrt{8a^{2}}`
           ]
@@ -131,9 +131,9 @@
         {
           latex: String.raw`\text{Do the indicated operation and simplify. Variables represent positive real numbers: }(5-\sqrt{2})(3+\sqrt{2})`,
           choices: [
-            String.raw`15+5\sqrt{2}-3\sqrt{2}-2`,
+            String.raw`15+5\sqrt{2}-3\sqrt{2}-4`,  /* edited so it no longer equals the simplified result */
             String.raw`17+2\sqrt{2}`,
-            String.raw`13+2\sqrt{2}`,
+            String.raw`13+2\sqrt{2}`,              /* correct (simplified) */
             String.raw`13-2\sqrt{2}`,
             String.raw`15-2+5\sqrt{2}+\sqrt{2}`,
             String.raw`(5\cdot 3)+(\sqrt{2})^{2}`
@@ -146,7 +146,7 @@
             String.raw`a^{2}+2ab+7b^{2}`,
             String.raw`a^{2}+7ab+7b^{2}`,
             String.raw`a^{2}+2ab\sqrt{7}+b^{2}`,
-            String.raw`a^{2}+2ab\sqrt{7}+7b^{2}`,
+            String.raw`a^{2}+2ab\sqrt{7}+7b^{2}`,  /* correct */
             String.raw`(a+b)^{2}\sqrt{7}`
           ]
         },
@@ -157,9 +157,9 @@
           choices: [
             String.raw`24c^{2}\sqrt{3}`,
             String.raw`24c\sqrt{3}`,
-            String.raw`12|c|\sqrt{12c^{2}}`,
-            String.raw`24|c|^{2}\sqrt{3}`,
-            String.raw`12|c|^{2}\sqrt{12}`,
+            String.raw`12|c|\sqrt{12}`,            /* edited: no longer equivalent */
+            String.raw`24|c|^{2}\sqrt{3}`,         /* correct */
+            String.raw`12|c|^{2}\sqrt{6}`,         /* edited: not equivalent */
             String.raw`6c^{2}\sqrt{48}`
           ]
         }
