@@ -8,14 +8,13 @@
   <script>
     /* =========================================
        Homework 7-2 — Solve Systems BY GRAPHING
-       TikZ bundle first (G1–G12); questions reference G#.
        ========================================= */
     window.homeworkData = {
       classId : "Algebra1",
       id      : "Homework 7-2",
       title   : "Homework 7-2 — Graphing Systems (TikZ)",
 
-      /* ===== All 12 graphs (with clipping) ===== */
+      // ⬇︎ TikZ with comments removed + G8 fixed (\end{scope})
       graphics : String.raw`
 \begin{tikzpicture}[scale=0.58]
   \tikzset{axes/.style={->,thick}}
@@ -154,155 +153,30 @@
   \end{scope}
 \end{tikzpicture}
 `
-
-      /* ===== Hidden answer key (A–F) ===== */
-      answerKey : ["A","D","C","B","A","E","B","F","B","C","A","A"],
-
-      /* ===== 12 questions, 6 choices each ===== */
-      questions : [
-        {
-          latex : String.raw`\text{Refer to Graph G1. What is the solution and classification?}`,
-          choices : [
-            String.raw`\left(\tfrac{5}{3},\tfrac{7}{3}\right);\ \text{consistent independent}`,
-            String.raw`(2,3);\ \text{consistent independent}`,
-            String.raw`(1,3);\ \text{consistent independent}`,
-            String.raw`\text{no solution; inconsistent}`,
-            String.raw`\text{infinitely many; dependent}`,
-            String.raw`(0,4);\ \text{consistent independent}`
-          ]
-        },
-        {
-          latex : String.raw`\text{Refer to Graph G2. Choose the correct statement.}`,
-          choices : [
-            String.raw`(2,-3);\ \text{consistent independent}`,
-            String.raw`(0,1);\ \text{consistent independent}`,
-            String.raw`\text{infinitely many; dependent}`,
-            String.raw`\text{no solution; inconsistent}`,
-            String.raw`(3,3);\ \text{consistent independent}`,
-            String.raw`(-1,3);\ \text{consistent independent}`
-          ]
-        },
-        {
-          latex : String.raw`\text{Refer to Graph G3. Choose the correct statement.}`,
-          choices : [
-            String.raw`(2,0);\ \text{consistent independent}`,
-            String.raw`(0,3);\ \text{consistent independent}`,
-            String.raw`\text{infinitely many; dependent}`,
-            String.raw`\text{no solution; inconsistent}`,
-            String.raw`(3,-1.5);\ \text{consistent independent}`,
-            String.raw`(1,1.5);\ \text{consistent independent}`
-          ]
-        },
-        {
-          latex : String.raw`\text{Refer to Graph G4. What ordered pair solves the system?}`,
-          choices : [
-            String.raw`(0,-1)`,
-            String.raw`(2,-1)`,
-            String.raw`(2,0)`,
-            String.raw`(-2,-1)`,
-            String.raw`(-1,2)`,
-            String.raw`(1,-2)`
-          ]
-        },
-        {
-          latex : String.raw`\text{Refer to Graph G5. Choose the solution and classification.}`,
-          choices : [
-            String.raw`(2,2);\ \text{consistent independent}`,
-            String.raw`(1,2.5);\ \text{consistent independent}`,
-            String.raw`(3,2);\ \text{consistent independent}`,
-            String.raw`(2,1);\ \text{consistent independent}`,
-            String.raw`\text{no solution; inconsistent}`,
-            String.raw`\text{infinitely many; dependent}`
-          ]
-        },
-        {
-          latex : String.raw`\text{Refer to Graph G6. Choose the correct ordered pair.}`,
-          choices : [
-            String.raw`(1,2)`,
-            String.raw`(0,1)`,
-            String.raw`(3,1)`,
-            String.raw`(1,0)`,
-            String.raw`(2,1)`,
-            String.raw`(2,0)`
-          ]
-        },
-        {
-          latex : String.raw`\text{Refer to Graph G7. Choose the solution.}`,
-          choices : [
-            String.raw`(-3,-2)`,
-            String.raw`(-2,-3)`,
-            String.raw`(-2,-3);\ \text{consistent independent}`,
-            String.raw`\text{no solution}`,
-            String.raw`(2,-3)`,
-            String.raw`(0,-3)`
-          ]
-        },
-        {
-          latex : String.raw`\text{Refer to Graph G8. Choose the solution and classification.}`,
-          choices : [
-            String.raw`(-1,1);\ \text{consistent independent}`,
-            String.raw`(1,-1);\ \text{consistent independent}`,
-            String.raw`(-3,7);\ \text{consistent independent}`,
-            String.raw`\text{no solution; inconsistent}`,
-            String.raw`\text{infinitely many; dependent}`,
-            String.raw`(-1,3);\ \text{consistent independent}`
-          ]
-        },
-        {
-          latex : String.raw`\text{Refer to Graph G9. Choose the ordered pair of intersection.}`,
-          choices : [
-            String.raw`(1,0)`,
-            String.raw`\left(\tfrac{3}{2},\tfrac{1}{4}\right)`,
-            String.raw`(2,1)`,
-            String.raw`(1.5,1.25)`,
-            String.raw`(0.25,1.5)`,
-            String.raw`(3,0.5)`
-          ]
-        },
-        {
-          latex : String.raw`\text{Refer to Graph G10. Classify the system.}`,
-          choices : [
-            String.raw`\text{inconsistent (no solution)}`,
-            String.raw`\text{independent (one solution)}`,
-            String.raw`\text{dependent (infinitely many solutions)}`,
-            String.raw`\text{neither of the above}`,
-            String.raw`\text{cannot be determined}`,
-            String.raw`\text{perpendicular lines}`
-          ]
-        },
-        {
-          latex : String.raw`\text{Refer to Graph G11. Classify the system.}`,
-          choices : [
-            String.raw`\text{inconsistent (no solution)}`,
-            String.raw`\text{dependent (infinitely many)}`,
-            String.raw`\text{independent (one solution)}`,
-            String.raw`\text{cannot determine}`,
-            String.raw`\text{coincident lines}`,
-            String.raw`\text{same slope and intercept}`
-          ]
-        },
-        {
-          latex : String.raw`\text{Refer to Graph G12. Estimate the solution.}`,
-          choices : [
-            String.raw`(2.7,2.3)`,
-            String.raw`(3,2)`,
-            String.raw`(2.3,2.7)`,
-            String.raw`(2,3)`,
-            String.raw`(3.2,1.8)`,
-            String.raw`(2.5,2.5)`
-          ]
-        }
-      ]
     };
   </script>
 
   <link rel="stylesheet" href="/math-homework/assets/core.css" />
-  <link rel="stylesheet" href="https://tikzjax.com/v1/fonts.css" />
   <script defer src="/math-homework/assets/core.js"></script>
+
+  <!-- TikZJax must come AFTER your scripts -->
+  <link rel="stylesheet" href="https://tikzjax.com/v1/fonts.css" />
   <script defer src="https://tikzjax.com/v1/tikzjax.js"></script>
   <script defer src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
 </head>
 <body>
-  <div id="hw-root">Loading…</div>
+  <div id="hw-root">
+    <div id="hw-graphics"></div>
+  </div>
+
+  <script>
+    // Mount the TikZ by injecting a <script type="text/tikz"> via innerHTML.
+    // DO NOT use textContent.
+    (function mountTikZ() {
+      const host = document.getElementById('hw-graphics');
+      host.innerHTML = `<script type="text/tikz">${window.homeworkData.graphics}</script>`;
+      // TikZJax will auto-scan and render this block.
+    })();
+  </script>
 </body>
 </html>
