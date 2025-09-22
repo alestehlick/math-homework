@@ -5,34 +5,17 @@
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Homework 7-2 (Algebra 1)</title>
 
-  <!-- minimal styles -->
-  <style>
-    body{margin:0;font-family:"EB Garamond",serif;background:#f6f4ef;color:#222}
-    #hw-root{max-width:720px;margin:3rem auto;padding:2rem 2.5rem;background:#fff;border-radius:12px;box-shadow:0 4px 18px rgba(0,0,0,.1)}
-    h1{text-align:center;font-weight:normal;font-size:1.9rem;margin:0 0 1.6rem}
-    .student-info{display:flex;flex-wrap:wrap;gap:1.5rem;margin-bottom:1.8rem}
-    .student-info input{margin-left:.4rem;padding:.25rem .5rem;font-size:1rem;font-family:inherit}
-    .question{margin-bottom:1.7rem}
-    .choices{list-style:none;padding:0;margin:.6rem 0 0}
-    .choices li{margin:.35rem 0}
-    .choices input[type="radio"]{margin-right:.55rem;transform:scale(1.15)}
-    button{display:block;margin:2rem auto 0;padding:.65rem 1.8rem;font-size:1rem;font-family:inherit;background:#4b7a5d;color:#fff;border:none;border-radius:6px;cursor:pointer}
-    button:hover{background:#3e654d}
-    #media{text-align:center;margin:1rem 0}
-    #media script[type="text/tikz"]{display:inline-block}
-  </style>
-
-  <!-- TikZJax + fonts + MathJax -->
-  <link rel="stylesheet" href="https://tikzjax.com/v1/fonts.css" />
-  <script defer src="https://tikzjax.com/v1/tikzjax.js"></script>
-  <script defer src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
-
   <script>
-    /* ====== DATA ====== */
+    /* =========================================
+       Homework 7-2 — Solve Systems BY GRAPHING
+       TikZ bundle first (G1–G12); questions reference G#.
+       ========================================= */
     window.homeworkData = {
       classId : "Algebra1",
       id      : "Homework 7-2",
       title   : "Homework 7-2 — Graphing Systems (TikZ)",
+
+      /* ===== All 12 graphs (with clipping) ===== */
       graphics : String.raw`
 \begin{tikzpicture}[scale=0.58]
   \tikzset{axes/.style={->,thick}}
@@ -50,7 +33,6 @@
       \draw[blue,thick,domain=\winmin:\winmax] plot(\x,{-1*\x+4});
       \draw[red, thick,domain=\winmin:\winmax]  plot(\x,{2*\x-1});
       \fill (5/3,7/3) circle (2pt);
-    \begin{scope}
     \end{scope}
     \node[font=\small,anchor=south west] at (-3.3,3) {G1};
   \end{scope}
@@ -113,7 +95,7 @@
     \node[font=\small,anchor=south west] at (-3.3,3) {G6};
   \end{scope}
 
-  % ---------- G7 ( x-1 and y=-3 → (-2,-3) ) ----------
+  % ---------- G7 ( y=x-1 and y=-3 → (-2,-3) ) ----------
   \begin{scope}[xshift=-6.5cm,yshift=-17.4cm]
     \axesbox
     \begin{scope}
@@ -125,7 +107,7 @@
     \node[font=\small,anchor=south west] at (-3.3,3) {G7};
   \end{scope}
 
-  % ---------- G8 ( x=-1 and -2x+1 → (-1,3) ) ----------
+  % ---------- G8 ( x=-1 and y=-2x+1 → (-1,3) ) ----------
   \begin{scope}[xshift=6.5cm,yshift=-17.4cm]
     \axesbox
     \begin{scope}
@@ -133,9 +115,9 @@
       \draw[blue,thick] (-1,\winmin) -- (-1,\winmax);
       \draw[red, thick,domain=\winmin:\winmax] plot(\x,{-2*\x+1});
       \fill (-1,3) circle (2pt);
-    \end{scope]
+    \end{scope}
     \node[font=\small,anchor=south west] at (-3.3,3) {G8};
-  \end{scope}
+  </end{scope}
 
   % ---------- G9 ( 1.5x-2 and -0.5x+1 → (1.5,0.25) ) ----------
   \begin{scope}[xshift=19.5cm,yshift=-17.4cm]
@@ -184,9 +166,14 @@
   \end{scope}
 \end{tikzpicture}
 `,
-      answerKey : ["A","D","C","B","A","E","C","F","B","C","A","A"],
+
+      /* ===== Hidden answer key (A–F) ===== */
+      answerKey : ["A","D","C","B","A","E","B","F","B","C","A","A"],
+
+      /* ===== 12 questions, 6 choices each ===== */
       questions : [
-        { latex : String.raw`\text{Refer to Graph G1. What is the solution and classification?}`,
+        {
+          latex : String.raw`\text{Refer to Graph G1. What is the solution and classification?}`,
           choices : [
             String.raw`\left(\tfrac{5}{3},\tfrac{7}{3}\right);\ \text{consistent independent}`,
             String.raw`(2,3);\ \text{consistent independent}`,
@@ -194,8 +181,10 @@
             String.raw`\text{no solution; inconsistent}`,
             String.raw`\text{infinitely many; dependent}`,
             String.raw`(0,4);\ \text{consistent independent}`
-          ]},
-        { latex : String.raw`\text{Refer to Graph G2. Choose the correct statement.}`,
+          ]
+        },
+        {
+          latex : String.raw`\text{Refer to Graph G2. Choose the correct statement.}`,
           choices : [
             String.raw`(2,-3);\ \text{consistent independent}`,
             String.raw`(0,1);\ \text{consistent independent}`,
@@ -203,8 +192,10 @@
             String.raw`\text{no solution; inconsistent}`,
             String.raw`(3,3);\ \text{consistent independent}`,
             String.raw`(-1,3);\ \text{consistent independent}`
-          ]},
-        { latex : String.raw`\text{Refer to Graph G3. Choose the correct statement.}`,
+          ]
+        },
+        {
+          latex : String.raw`\text{Refer to Graph G3. Choose the correct statement.}`,
           choices : [
             String.raw`(2,0);\ \text{consistent independent}`,
             String.raw`(0,3);\ \text{consistent independent}`,
@@ -212,8 +203,10 @@
             String.raw`\text{no solution; inconsistent}`,
             String.raw`(3,-1.5);\ \text{consistent independent}`,
             String.raw`(1,1.5);\ \text{consistent independent}`
-          ]},
-        { latex : String.raw`\text{Refer to Graph G4. What ordered pair solves the system?}`,
+          ]
+        },
+        {
+          latex : String.raw`\text{Refer to Graph G4. What ordered pair solves the system?}`,
           choices : [
             String.raw`(0,-1)`,
             String.raw`(2,-1)`,
@@ -221,8 +214,10 @@
             String.raw`(-2,-1)`,
             String.raw`(-1,2)`,
             String.raw`(1,-2)`
-          ]},
-        { latex : String.raw`\text{Refer to Graph G5. Choose the solution and classification.}`,
+          ]
+        },
+        {
+          latex : String.raw`\text{Refer to Graph G5. Choose the solution and classification.}`,
           choices : [
             String.raw`(2,2);\ \text{consistent independent}`,
             String.raw`(1,2.5);\ \text{consistent independent}`,
@@ -230,8 +225,10 @@
             String.raw`(2,1);\ \text{consistent independent}`,
             String.raw`\text{no solution; inconsistent}`,
             String.raw`\text{infinitely many; dependent}`
-          ]},
-        { latex : String.raw`\text{Refer to Graph G6. Choose the correct ordered pair.}`,
+          ]
+        },
+        {
+          latex : String.raw`\text{Refer to Graph G6. Choose the correct ordered pair.}`,
           choices : [
             String.raw`(1,2)`,
             String.raw`(0,1)`,
@@ -239,8 +236,10 @@
             String.raw`(1,0)`,
             String.raw`(2,1)`,
             String.raw`(2,0)`
-          ]},
-        { latex : String.raw`\text{Refer to Graph G7. Choose the solution.}`,
+          ]
+        },
+        {
+          latex : String.raw`\text{Refer to Graph G7. Choose the solution.}`,
           choices : [
             String.raw`(-3,-2)`,
             String.raw`(-2,-3)`,
@@ -248,8 +247,10 @@
             String.raw`\text{no solution}`,
             String.raw`(2,-3)`,
             String.raw`(0,-3)`
-          ]},
-        { latex : String.raw`\text{Refer to Graph G8. Choose the solution and classification.}`,
+          ]
+        },
+        {
+          latex : String.raw`\text{Refer to Graph G8. Choose the solution and classification.}`,
           choices : [
             String.raw`(-1,1);\ \text{consistent independent}`,
             String.raw`(1,-1);\ \text{consistent independent}`,
@@ -257,8 +258,10 @@
             String.raw`\text{no solution; inconsistent}`,
             String.raw`\text{infinitely many; dependent}`,
             String.raw`(-1,3);\ \text{consistent independent}`
-          ]},
-        { latex : String.raw`\text{Refer to Graph G9. Choose the ordered pair of intersection.}`,
+          ]
+        },
+        {
+          latex : String.raw`\text{Refer to Graph G9. Choose the ordered pair of intersection.}`,
           choices : [
             String.raw`(1,0)`,
             String.raw`\left(\tfrac{3}{2},\tfrac{1}{4}\right)`,
@@ -266,8 +269,10 @@
             String.raw`(1.5,1.25)`,
             String.raw`(0.25,1.5)`,
             String.raw`(3,0.5)`
-          ]},
-        { latex : String.raw`\text{Refer to Graph G10. Classify the system.}`,
+          ]
+        },
+        {
+          latex : String.raw`\text{Refer to Graph G10. Classify the system.}`,
           choices : [
             String.raw`\text{inconsistent (no solution)}`,
             String.raw`\text{independent (one solution)}`,
@@ -275,8 +280,10 @@
             String.raw`\text{neither of the above}`,
             String.raw`\text{cannot be determined}`,
             String.raw`\text{perpendicular lines}`
-          ]},
-        { latex : String.raw`\text{Refer to Graph G11. Classify the system.}`,
+          ]
+        },
+        {
+          latex : String.raw`\text{Refer to Graph G11. Classify the system.}`,
           choices : [
             String.raw`\text{inconsistent (no solution)}`,
             String.raw`\text{dependent (infinitely many)}`,
@@ -284,8 +291,10 @@
             String.raw`\text{cannot determine}`,
             String.raw`\text{coincident lines}`,
             String.raw`\text{same slope and intercept}`
-          ]},
-        { latex : String.raw`\text{Refer to Graph G12. Estimate the solution.}`,
+          ]
+        },
+        {
+          latex : String.raw`\text{Refer to Graph G12. Estimate the solution.}`,
           choices : [
             String.raw`(2.7,2.3)`,
             String.raw`(3,2)`,
@@ -293,85 +302,19 @@
             String.raw`(2,3)`,
             String.raw`(3.2,1.8)`,
             String.raw`(2.5,2.5)`
-          ]}
+          ]
+        }
       ]
     };
+  </script>
 
-    /* ====== BUILDER (inline, no external core.js needed) ====== */
-    const SCRIPT_URL  = "https://script.google.com/macros/s/AKfycbwkLwPoES1_hxHn6pdu2qdGCE3bosqwcZg6z23B6w72iQLDAIMzZZf4ZAFC44aKWTIcNg/exec";
-    const COOLDOWN_MS = 120_000;
-
-    function sanitizeTikz(src){
-      if (!src) return src;
-      return src
-        .replaceAll("\\begin{scope]", "\\begin{scope}")
-        .replaceAll("\\end{scope]", "\\end{scope}")
-        .replace(/<\s*begin\{scope\}\s*>?/gi, "\\begin{scope}")
-        .replace(/<\s*\/\s*end\{scope\}\s*>?/gi, "\\end{scope}")
-        .replace(/<\s*\/\s*begin\{scope\}\s*>?/gi, "\\end{scope}");
-    }
-    function looksLikeTikz(src){ return typeof src === "string" && /\\begin\{tikzpicture\}/.test(src); }
-    function mountTikzInto(el, src){
-      if (/<script[^>]+type=["']text\/tikz["']/.test(src) || /<(svg|img)\b/i.test(src)) {
-        el.innerHTML = src;
-      } else {
-        const fixed = sanitizeTikz(src);
-        el.innerHTML = `<script type="text/tikz">\n${fixed}\n</script>`;
-      }
-      if (window.tikzjax?.process) { try { window.tikzjax.process(); } catch {} }
-      else window.addEventListener("load", () => { try { window.tikzjax?.process?.(); } catch {} }, { once:true });
-    }
-
-    function buildForm(d){
-      const root = document.getElementById("hw-root");
-      const wrap = t => `\\(${t}\\)`;
-      root.innerHTML = `
-        <h1>${d.title ?? "Homework"}</h1>
-        <form id="hwForm">
-          <input type="hidden" name="classId"   value="${d.classId}">
-          <input type="hidden" name="homeworkId" value="${d.id}">
-          <div class="student-info">
-            <label>First&nbsp;Name: <input name="firstName" required></label>
-            <label>Last&nbsp;Name:&nbsp; <input name="lastName"  required></label>
-          </div>
-          ${d.graphics ? `<div id="media"></div>` : ``}
-          <div id="qbox"></div>
-          <button type="submit">Submit</button>
-        </form>`;
-      if (d.graphics){
-        const media = document.getElementById("media");
-        if (looksLikeTikz(d.graphics)) mountTikzInto(media, d.graphics);
-        else media.innerHTML = d.graphics;
-      }
-      const qbox = document.getElementById("qbox");
-      (d.questions || []).forEach((q,i) => {
-        const opts = (q.choices || []).map((txt,j) => {
-          const letter = String.fromCharCode(65 + j);
-          return `<li><label><input type="radio" name="q${i+1}" value="${letter}" required> ${wrap(txt)}</label></li>`;
-        }).join("");
-        qbox.insertAdjacentHTML("beforeend", `
-          <div class="question">
-            <p><strong>Q${i+1}.</strong> ${wrap(q.latex)}</p>
-            <ul class="choices">${opts}</ul>
-          </div>`);
-      });
-      if (window.MathJax?.typeset) { try { MathJax.typeset(); } catch {} }
-      document.getElementById("hwForm").addEventListener("submit", ev => handleSubmit(ev, d));
-    }
-
-    async function handleSubmit(ev, d){
-      ev.preventDefault();
-      const f   = ev.target;
-      const fn  = f.firstName.value.trim();
-      const ln  = f.lastName.value.trim();
-      if (!fn || !ln) { alert("Please enter both first and last names."); return; }
-      const key  = `last_${d.classId}_${d.id}_${fn}_${ln}`.toLowerCase();
-      const now  = Date.now();
-      const last = Number(localStorage.getItem(key)) || 0;
-      if (now - last < COOLDOWN_MS){
-        alert(`Please wait ${Math.ceil((COOLDOWN_MS - (now - last))/1000)} s before retrying.`);
-        return;
-      }
-      const answers = [];
-      for (let i = 1; i <= d.questions.length; i++) answers.push(f[`q${i}`].value);
-      const body = new URLSearchParams({
+  <link rel="stylesheet" href="/math-homework/assets/core.css" />
+  <link rel="stylesheet" href="https://tikzjax.com/v1/fonts.css" />
+  <script defer src="/math-homework/assets/core.js"></script>
+  <script defer src="https://tikzjax.com/v1/tikzjax.js"></script>
+  <script defer src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+</head>
+<body>
+  <div id="hw-root">Loading…</div>
+</body>
+</html>
