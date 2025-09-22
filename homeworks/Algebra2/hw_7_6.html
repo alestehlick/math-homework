@@ -17,15 +17,16 @@
 
       graphics : String.raw``,  // no graphs here
 
-      /* ===== Hidden answer key (A–F) ===== */
-      answerKey : ["B","C","D","A","E","B","C","D","A","F","E","C"],
+      /* ===== Hidden answer key (A–F) =====
+         Updated: Q7 key corrected to "B" */
+      answerKey : ["B","C","D","A","E","B","B","D","A","F","E","C"],
 
       questions : [
         {
           latex: String.raw`\text{Factor: }x\sqrt{3}-y\sqrt{3}`,
           choices: [
             String.raw`\sqrt{3}(x+y)`,
-            String.raw`\sqrt{3}(x-y)`,     // B
+            String.raw`\sqrt{3}(x-y)`,     // B (correct)
             String.raw`\sqrt{3}(xy)`,
             String.raw`(x-y)(3)`,
             String.raw`(x+y)(\sqrt{3})^{2}`,
@@ -35,9 +36,9 @@
         {
           latex: String.raw`\text{Factor: }x^{2}\sqrt{5}-z\sqrt{10}`,
           choices: [
-            String.raw`\sqrt{5}(x^{2}-z\sqrt{2})`,
+            String.raw`\sqrt{5}\bigl(x^{2}+z\sqrt{2}\bigr)`,
             String.raw`\sqrt{10}(x^{2}-z)`,
-            String.raw`\sqrt{5}(x^{2}-z\sqrt{2})`,  // C
+            String.raw`\sqrt{5}(x^{2}-z\sqrt{2})`,  // C (correct)
             String.raw`\sqrt{2}(x^{2}\sqrt{5}-z)`,
             String.raw`\sqrt{2}(x^{2}+z)\sqrt{5}`,
             String.raw`\sqrt{10}(x^{2}+z)`
@@ -49,7 +50,7 @@
             String.raw`(x+5)(x+\sqrt{5})`,
             String.raw`(x+\sqrt{5})(x+2\sqrt{5})`,
             String.raw`(x+\sqrt{5})(x+\sqrt{25})`,
-            String.raw`(x+\sqrt{5})^{2}`,           // D
+            String.raw`(x+\sqrt{5})^{2}`,           // D (correct)
             String.raw`(x+5)(x+\sqrt{25})`,
             String.raw`(x^{2}+5)(x+2)`
           ]
@@ -57,7 +58,7 @@
         {
           latex: String.raw`\text{Solve: }x+\sqrt{12}=3\sqrt{3}`,
           choices: [
-            String.raw`3`,                           // A
+            String.raw`\sqrt{3}`,                    // A (correct)
             String.raw`2`,
             String.raw`0`,
             String.raw`-3`,
@@ -72,7 +73,7 @@
             String.raw`\dfrac{6\sqrt{7}}{5\sqrt{2}}`,
             String.raw`\dfrac{5\sqrt{7}}{6\sqrt{2}}`,
             String.raw`7`,
-            String.raw`\dfrac{\sqrt{14}}{2}`,        // E
+            String.raw`\dfrac{\sqrt{14}}{2}`,        // E (correct)
             String.raw`3`
           ]
         },
@@ -80,7 +81,7 @@
           latex: String.raw`\text{Solve: }\sqrt{20}-3x\sqrt{5}=8`,
           choices: [
             String.raw`-1`,
-            String.raw`-2`,                          // B
+            String.raw`\dfrac{2\sqrt{5}-8}{3\sqrt{5}}`,  // B (correct)
             String.raw`1`,
             String.raw`2`,
             String.raw`0`,
@@ -91,7 +92,7 @@
           latex: String.raw`\text{Solve: }5x\sqrt{8}-3x\sqrt{2}=\sqrt{15}`,
           choices: [
             String.raw`0`,
-            String.raw`\dfrac{\sqrt{15}}{7\sqrt{2}}`, // C
+            String.raw`\dfrac{\sqrt{15}}{7\sqrt{2}}`, // B (correct)
             String.raw`\dfrac{5}{\sqrt{2}}`,
             String.raw`\dfrac{\sqrt{30}}{5}`,
             String.raw`\dfrac{3}{\sqrt{2}}`,
@@ -104,7 +105,7 @@
             String.raw`0`,
             String.raw`1`,
             String.raw`2`,
-            String.raw`\dfrac{3}{\sqrt{5}}`,         // D
+            String.raw`\dfrac{9-\sqrt{15}}{3\sqrt{5}}`, // D (correct)
             String.raw`\dfrac{9}{\sqrt{5}}`,
             String.raw`-3`
           ]
@@ -112,7 +113,7 @@
         {
           latex: String.raw`\text{Solve: }y\sqrt{6}-3y=2`,
           choices: [
-            String.raw`\dfrac{2}{\sqrt{6}-3}`,       // A
+            String.raw`\dfrac{2}{\sqrt{6}-3}`,       // A (correct)
             String.raw`\dfrac{2}{\sqrt{6}+3}`,
             String.raw`\dfrac{2}{\sqrt{3}}`,
             String.raw`2\sqrt{6}`,
@@ -123,12 +124,12 @@
         {
           latex: String.raw`\text{Factor. Assume all variables are positive: }\sqrt{5x^{3}y^{2}}+2\sqrt{15x^{2}y^{2}}+3\sqrt{5xy^{2}}`,
           choices: [
-            String.raw`\sqrt{5xy^{2}}(x+2\sqrt{3x}+3)`,
-            String.raw`\sqrt{5xy^{2}}(x+3\sqrt{3x}+2)`,
-            String.raw`\sqrt{5xy^{2}}(x+2\sqrt{3x}+3)`,  // F
+            String.raw`\sqrt{5xy^{2}}\bigl(x+2\sqrt{3}+3\bigr)`,
+            String.raw`\sqrt{5xy^{2}}\bigl(x+3\sqrt{3x}+2\bigr)`,
+            String.raw`\sqrt{5xy^{2}}\bigl(x+2\sqrt{3}+3\bigr)`,
             String.raw`xy^{2}(5+2\sqrt{15}+3)`,
             String.raw`5\sqrt{xy^{2}}(x+2+3)`,
-            String.raw`\sqrt{5x^{2}y^{2}}(1+2\sqrt{3}+3)`
+            String.raw`\sqrt{5xy^{2}}\bigl(x+2\sqrt{3x}+3\bigr)`  // F (correct)
           ]
         },
         {
@@ -137,8 +138,8 @@
             String.raw`1`,
             String.raw`3`,
             String.raw`\dfrac{9}{\sqrt{7}}`,
-            String.raw`\dfrac{9}{\sqrt{7}-1}`,       // E
-            String.raw`\dfrac{9}{\sqrt{7}+1}`,
+            String.raw`\dfrac{9}{\sqrt{7}-1}`,
+            String.raw`\dfrac{9}{\sqrt{7}+1}`,       // E (correct)
             String.raw`\text{no real solution}`
           ]
         },
@@ -147,7 +148,7 @@
           choices: [
             String.raw`0`,
             String.raw`\text{no solution}`,
-            String.raw`-\dfrac{1}{12\sqrt{3}+6\sqrt{2}}`, // C
+            String.raw`-\dfrac{1}{14\sqrt{2}}`,      // C (correct)
             String.raw`\dfrac{1}{12\sqrt{3}+6\sqrt{2}}`,
             String.raw`1`,
             String.raw`\dfrac{1}{6}`
