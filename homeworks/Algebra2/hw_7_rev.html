@@ -64,8 +64,8 @@
 \end{tikzpicture}
 `,
 
-      /* ===== Hidden answer key (A–F) ===== */
-      answerKey : ["B","C","D","A","E","F","B","C","A","D","B","E","C","A","F"],
+      /* ===== Updated hidden answer key (A–F), matches fixes ===== */
+      answerKey : ["B","C","D","A","E","F","A","E","A","C","D","A","C","C","F"],
 
       questions : [
         { latex: String.raw`\text{Write in rational exponent form: }\sqrt[3]{7x^{5}}`,
@@ -130,8 +130,8 @@
 
         { latex: String.raw`\text{Simplify: }7\sqrt{18}-3\sqrt{2}`,
           choices: [
-            String.raw`18\sqrt{2}`,
-            String.raw`15\sqrt{2}`,                  // B
+            String.raw`18\sqrt{2}`,                 // A
+            String.raw`15\sqrt{2}`,
             String.raw`12\sqrt{2}`,
             String.raw`10\sqrt{2}`,
             String.raw`4\sqrt{2}`,
@@ -142,13 +142,13 @@
           choices: [
             String.raw`\dfrac{1}{\sqrt{2}}`,
             String.raw`1`,
-            String.raw`\dfrac{\sqrt{2}}{6}`,         // C
+            String.raw`\dfrac{\sqrt{2}}{6}`,
             String.raw`\dfrac{1}{2\sqrt{2}}`,
-            String.raw`\dfrac{1}{\sqrt{6}}`,
+            String.raw`\dfrac{1}{\sqrt{6}}`,        // E
             String.raw`\dfrac{1}{2\sqrt{3}}`
           ]},
 
-        { latex: String.raw`\text{Evaluate }f(x)=\sqrt{x+4}\text{ at }x=0,-1,5`,
+        { latex: String.raw`\text{Evaluate }f(x)=\sqrt{x+4}\text{ at }x=0,-5,5`,
           choices: [
             String.raw`\{2,\ \text{no real},\ 3\}`,   // A
             String.raw`\{0,1,2\}`,
@@ -162,7 +162,7 @@
           choices: [
             String.raw`\{x\mid x\in\mathbb{R}\}`,
             String.raw`\{x\mid x\ge 0\}`,
-            String.raw`\{x\mid x\ge 1\}`,            // D
+            String.raw`\{x\mid x\ge 1\}`,            // C
             String.raw`\{y\mid y\ge 0\}`,
             String.raw`\{x\mid x\le 1\}`,
             String.raw`\{y\mid y\in\mathbb{R}\}`
@@ -173,14 +173,14 @@
             String.raw`y=2`,
             String.raw`y=0`,
             String.raw`y=7`,
-            String.raw`y=-7`,                         // B
+            String.raw`y=-7`,                         // D
             String.raw`y=1`,
             String.raw`y=-2`
           ]},
 
         { latex: String.raw`\text{Refer to G4. Range of }g(x)=3^{x}`,
           choices: [
-            String.raw`\{y\mid y\ge 0\}`,             // E
+            String.raw`\{y\mid y> 0\}`,              // A (fixed)
             String.raw`\{y\mid y\in\mathbb{R}\}`,
             String.raw`\{y\mid y>1\}`,
             String.raw`\{y\mid y>3\}`,
@@ -188,7 +188,7 @@
             String.raw`\{y\mid y<0\}`
           ]},
 
-        { latex: String.raw`\text{Factor: }x^{2}-7`,
+        { latex: String.raw`\text{Factor: }x^{2}-49`,
           choices: [
             String.raw`(x-7)(x+1)`,
             String.raw`x(x-7)`,
@@ -201,8 +201,8 @@
         { latex: String.raw`\text{Solve: }8^{x}=32`,
           choices: [
             String.raw`2`,
-            String.raw`\tfrac{4}{3}`,                // A
-            String.raw`\tfrac{5}{3}`,
+            String.raw`\tfrac{4}{3}`,
+            String.raw`\tfrac{5}{3}`,                // C
             String.raw`3`,
             String.raw`4`,
             String.raw`\tfrac{3}{2}`
