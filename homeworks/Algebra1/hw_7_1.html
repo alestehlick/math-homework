@@ -91,48 +91,159 @@
 \end{tikzpicture}
 `,
 
-      /* answers unchanged */
+      /* updated answers: Q9 fixed from C -> F */
       answerKey : [
         "B","E","A","C",
         "F","A","E","D",
-        "C","B",
+        "F","B",
         "C","A","F","E","C","B"
       ],
 
-      /* questions unchanged from your latest version (they already refer to G1–G6) */
       questions : [
         { latex: String.raw`Is\ (-2,5)\ \text{a solution to } \begin{cases}x+y=3\\[2pt]2x+y=1\end{cases}\ ?`,
-          choices: [String.raw`\text{No; it fails both}`,String.raw`\text{Yes; it satisfies both}`,String.raw`\text{Yes; but only the first}`,String.raw`\text{Yes; but only the second}`,String.raw`\text{No; satisfies neither equation}`,String.raw`\text{Cannot determine}`]},
+          choices: [
+            String.raw`\text{No; it fails both}`,
+            String.raw`\text{Yes; it satisfies both}`,
+            String.raw`\text{Yes; but only the first}`,
+            String.raw`\text{Yes; but only the second}`,
+            String.raw`\text{No; satisfies neither equation}`,
+            String.raw`\text{Cannot determine}`
+          ]},
         { latex: String.raw`Is\ (-2,5)\ \text{a solution to } \begin{cases}x+y=3\\[2pt]2x+y=8\end{cases}\ ?`,
-          choices: [String.raw`\text{Yes; both}`,String.raw`\text{Yes; only }x+y=3`,String.raw`\text{Yes; only }2x+y=8`,String.raw`\text{No; satisfies neither}`,String.raw`\text{No; satisfies exactly one}`,String.raw`\text{Cannot determine}`]},
+          choices: [
+            String.raw`\text{Yes; both}`,
+            String.raw`\text{Yes; only }x+y=3`,
+            String.raw`\text{Yes; only }2x+y=8`,
+            String.raw`\text{No; satisfies neither}`,
+            String.raw`\text{No; satisfies exactly one}`,
+            String.raw`\text{Cannot determine}`
+          ]},
         { latex: String.raw`Is\ (-2,5)\ \text{a solution to } \begin{cases}x-y=7\\[2pt]2x+3y=4\end{cases}\ ?`,
-          choices: [String.raw`\text{No; satisfies neither}`,String.raw`\text{Yes; both}`,String.raw`\text{Yes; only }x-y=7`,String.raw`\text{Yes; only }2x+3y=4`,String.raw`\text{No; but close}`,String.raw`\text{Cannot determine}`]},
+          choices: [
+            String.raw`\text{No; satisfies neither}`,
+            String.raw`\text{Yes; both}`,
+            String.raw`\text{Yes; only }x-y=7`,
+            String.raw`\text{Yes; only }2x+3y=4`,
+            String.raw`\text{No; but close}`,
+            String.raw`\text{Cannot determine}`
+          ]},
         { latex: String.raw`Is\ (-2,5)\ \text{a solution to } \begin{cases}3x+2y=4\\[2pt]5x+3y=5\end{cases}\ ?`,
-          choices: [String.raw`\text{No; neither}`,String.raw`\text{Yes; only first}`,String.raw`\text{Yes; both}`,String.raw`\text{Yes; only second}`,String.raw`\text{Inconsistent question}`,String.raw`\text{Cannot determine}`]},
+          choices: [
+            String.raw`\text{No; neither}`,
+            String.raw`\text{Yes; only first}`,
+            String.raw`\text{Yes; both}`,
+            String.raw`\text{Yes; only second}`,
+            String.raw`\text{Inconsistent question}`,
+            String.raw`\text{Cannot determine}`
+          ]},
         { latex: String.raw`Does\ (2,-5)\ \text{solve }\begin{cases}x+3y=13\\[2pt]6x+y=7\end{cases}\ ?`,
-          choices: [String.raw`\text{Yes; both}`,String.raw`\text{Yes; first only}`,String.raw`\text{Yes; second only}`,String.raw`\text{No; it fails both by }1`,String.raw`\text{No; equations are parallel}`,String.raw`\text{No; it satisfies exactly one (not both)}`]},
+          choices: [
+            String.raw`\text{Yes; both}`,
+            String.raw`\text{Yes; first only}`,
+            String.raw`\text{Yes; neither}`,   <!-- CHANGED from “Yes; second only” to avoid a second correct choice -->
+            String.raw`\text{No; it fails both by }1`,
+            String.raw`\text{No; equations are parallel}`,
+            String.raw`\text{No; it satisfies exactly one (not both)}`
+          ]},
         { latex: String.raw`Does\ (7,1)\ \text{solve }\begin{cases}2x-5y=9\\[2pt]x+y=8\end{cases}\ ?`,
-          choices: [String.raw`\text{Yes; both}`,String.raw`\text{Yes; first only}`,String.raw`\text{Yes; second only}`,String.raw`\text{No; neither}`,String.raw`\text{No; the lines never meet}`,String.raw`\text{Insufficient information}`]},
+          choices: [
+            String.raw`\text{Yes; both}`,
+            String.raw`\text{Yes; first only}`,
+            String.raw`\text{Yes; second only}`,
+            String.raw`\text{No; neither}`,
+            String.raw`\text{No; the lines never meet}`,
+            String.raw`\text{Insufficient information}`
+          ]},
         { latex: String.raw`Does\ (-3,-2)\ \text{solve }\begin{cases}x+2y=1\\[2pt]3x-2y=5\end{cases}\ ?`,
-          choices: [String.raw`\text{Yes; both}`,String.raw`\text{Yes; first only}`,String.raw`\text{Yes; second only}`,String.raw`\text{No; but close}`,String.raw`\text{No; neither}`,String.raw`\text{Cannot determine}`]},
+          choices: [
+            String.raw`\text{Yes; both}`,
+            String.raw`\text{Yes; first only}`,
+            String.raw`\text{Yes; second only}`,
+            String.raw`\text{No; but close}`,
+            String.raw`\text{No; neither}`,
+            String.raw`\text{Cannot determine}`
+          ]},
         { latex: String.raw`Does\ (-1,4)\ \text{solve }\begin{cases}x-y=-7\\[2pt]x-5y=-19\end{cases}\ ?`,
-          choices: [String.raw`\text{Yes; both}`,String.raw`\text{Yes; first only}`,String.raw`\text{Yes; second only}`,String.raw`\text{No; neither}`,String.raw`\text{Parallel lines}`,String.raw`\text{Coincident lines}`]},
+          choices: [
+            String.raw`\text{Yes; both}`,
+            String.raw`\text{Yes; first only}`,
+            String.raw`\text{Yes; second only}`,
+            String.raw`\text{No; neither}`,
+            String.raw`\text{Parallel lines}`,
+            String.raw`\text{Coincident lines}`
+          ]},
         { latex: String.raw`Does\ (6,-5)\ \text{solve }\begin{cases}5x+6y=0\\[2pt]2x+y=7\end{cases}\ ?`,
-          choices: [String.raw`\text{No; neither}`,String.raw`\text{Yes; first only}`,String.raw`\text{Yes; second only}`,String.raw`\text{No; inconsistent system}`,String.raw`\text{Cannot determine}`,String.raw`\text{Yes; both}`]},
+          choices: [
+            String.raw`\text{No; neither}`,
+            String.raw`\text{Yes; first only}`,
+            String.raw`\text{Yes; second only}`,
+            String.raw`\text{No; inconsistent system}`,
+            String.raw`\text{Cannot determine}`,
+            String.raw`\text{Yes; both}`
+          ]},
         { latex: String.raw`Does\ (-2,-8)\ \text{solve }\begin{cases}y=-2\\[2pt]y=4x\end{cases}\ ?`,
-          choices: [String.raw`\text{Yes; both}`,String.raw`\text{No; one true, one false}`,String.raw`\text{Yes; first only}`,String.raw`\text{Yes; second only}`,String.raw`\text{No; neither}`,String.raw`\text{Cannot determine}`]},
+          choices: [
+            String.raw`\text{Yes; both}`,
+            String.raw`\text{No; one true, one false}`,
+            String.raw`\text{Yes; first only}`,
+            String.raw`\text{Yes; second only}`,
+            String.raw`\text{No; neither}`,
+            String.raw`\text{Cannot determine}`
+          ]},
         { latex: String.raw`\textbf{Refer to Graph G1.}\ \text{Select the alternative that gives the correct system and its solution.}`,
-          choices: [String.raw`\begin{cases}x+y=5\\ x-y=-1\end{cases};\ (2,3)`,String.raw`\begin{cases}x+y=4\\ x-y=1\end{cases};\ (4,1)`,String.raw`\begin{cases}x+y=5\\ x-y=1\end{cases};\ (3,2)`,String.raw`\begin{cases}x+y=5\\ x-y=1\end{cases};\ (2,3)`,String.raw`\begin{cases}x+y=6\\ x-y=1\end{cases};\ (3,2)`,String.raw`\begin{cases}x+y=5\\ x+y=1\end{cases};\ (0,5)`]},
+          choices: [
+            String.raw`\begin{cases}x+y=5\\ x-y=-1\end{cases};\ (2,3)`,
+            String.raw`\begin{cases}x+y=4\\ x-y=1\end{cases};\ (4,1)`,
+            String.raw`\begin{cases}x+y=5\\ x-y=1\end{cases};\ (3,2)`,
+            String.raw`\begin{cases}x+y=5\\ x-y=1\end{cases};\ (2,3)`,
+            String.raw`\begin{cases}x+y=6\\ x-y=1\end{cases};\ (3,2)`,
+            String.raw`\begin{cases}x+y=5\\ x+y=1\end{cases};\ (0,5)`
+          ]},
         { latex: String.raw`\textbf{Refer to Graph G2.}\ \text{Select the correct system and solution.}`,
-          choices: [String.raw`\begin{cases}x-y=-2\\ 4x-y=4\end{cases};\ (2,4)`,String.raw`\begin{cases}x+y=-2\\ 4x+y=4\end{cases};\ (2,4)`,String.raw`\begin{cases}x-y=2\\ 4x-y=-4\end{cases};\ (2,-4)`,String.raw`\begin{cases}x-y=-2\\ 4x+y=4\end{cases};\ (2,0)`,String.raw`\begin{cases}x+y=2\\ 4x-y=4\end{cases};\ (0,2)`,String.raw`\begin{cases}x-y=-2\\ x-4y=4\end{cases};\ (2,4)`]},
+          choices: [
+            String.raw`\begin{cases}x-y=-2\\ 4x-y=4\end{cases};\ (2,4)`,
+            String.raw`\begin{cases}x+y=-2\\ 4x+y=4\end{cases};\ (2,4)`,
+            String.raw`\begin{cases}x-y=2\\ 4x-y=-4\end{cases};\ (2,-4)`,
+            String.raw`\begin{cases}x-y=-2\\ 4x+y=4\end{cases};\ (2,0)`,
+            String.raw`\begin{cases}x+y=2\\ 4x-y=4\end{cases};\ (0,2)`,
+            String.raw`\begin{cases}x-y=-2\\ x-4y=4\end{cases};\ (2,4)`
+          ]},
         { latex: String.raw`\textbf{Refer to Graph G3.}\ \text{Select the correct system and solution.}`,
-          choices: [String.raw`\begin{cases}6x+y=7\\ y=0\end{cases};\ (7,0)`,String.raw`\begin{cases}6x-y=7\\ y=1\end{cases};\ (1,1)`,String.raw`\begin{cases}6x+y=7\\ x=1\end{cases};\ (1,1)`,String.raw`\begin{cases}6x+y=7\\ y=-1\end{cases};\ (1,-1)`,String.raw`\begin{cases}x+y=7\\ y=1\end{cases};\ (6,1)`,String.raw`\begin{cases}6x+y=7\\ y=1\end{cases};\ (1,1)`]},
+          choices: [
+            String.raw`\begin{cases}6x+y=7\\ y=0\end{cases};\ (7,0)`,
+            String.raw`\begin{cases}6x-y=7\\ y=1\end{cases};\ (1,1)`,
+            String.raw`\begin{cases}6x+y=7\\ x=1\end{cases};\ (1,1)`,
+            String.raw`\begin{cases}6x+y=7\\ y=-1\end{cases};\ (1,-1)`,
+            String.raw`\begin{cases}x+y=7\\ y=1\end{cases};\ (6,1)`,
+            String.raw`\begin{cases}6x+y=7\\ y=1\end{cases};\ (1,1)`
+          ]},
         { latex: String.raw`\textbf{Refer to Graph G4.}\ \text{Select the correct system and solution.}`,
-          choices: [String.raw`\begin{cases}x+2y=10\\ 9x-2y=-6\end{cases};\ (-2,6)`,String.raw`\begin{cases}x-2y=10\\ 9x+2y=-6\end{cases};\ (-2,6)`,String.raw`\begin{cases}x+2y=10\\ 9x+2y=-6\end{cases};\ (-2,0)`,String.raw`\begin{cases}x+2y=10\\ 9x+2y=-6\end{cases};\ (-2,6)`,String.raw`\begin{cases}x+2y=10\\ 9x+2y=-6\end{cases};\ (-2,6)`,String.raw`\begin{cases}x+2y=10\\ 9x+2y=6\end{cases};\ (2,6)`]},
+          choices: [
+            String.raw`\begin{cases}x+2y=10\\ 9x-2y=-6\end{cases};\ (-2,6)`,
+            String.raw`\begin{cases}x-2y=10\\ 9x+2y=-6\end{cases};\ (-2,6)`,
+            String.raw`\begin{cases}x+2y=10\\ 9x+2y=-6\end{cases};\ (-2,0)`,
+            String.raw`\begin{cases}x+2y=10\\ 9x+2y=6\end{cases};\ (-2,6)`,  <!-- CHANGED to be incorrect -->
+            String.raw`\begin{cases}x+2y=10\\ 9x+2y=-6\end{cases};\ (-2,6)`,
+            String.raw`\begin{cases}x+2y=10\\ 9x+2y=6\end{cases};\ (2,6)`
+          ]},
         { latex: String.raw`\textbf{Refer to Graph G5.}\ \text{Select the correct system and solution.}`,
-          choices: [String.raw`\begin{cases}9x-2y=7\\ 3x+4y=14\end{cases};\ (1,2)`,String.raw`\begin{cases}9x+2y=7\\ 3x-4y=14\end{cases};\ (1,3)`,String.raw`\begin{cases}9x-2y=7\\ 3x+4y=14\end{cases};\ \left(\tfrac{4}{3},\tfrac{5}{2}\right)`,String.raw`\begin{cases}9x-2y=7\\ 3x-4y=14\end{cases};\ (2,2)`,String.raw`\begin{cases}9x-2y=-7\\ 3x+4y=14\end{cases};\ (1,2.5)`,String.raw`\begin{cases}9x-2y=7\\ 3x+4y=-14\end{cases};\ (1.5,2.25)`]},
+          choices: [
+            String.raw`\begin{cases}9x-2y=7\\ 3x+4y=14\end{cases};\ (1,2)`,
+            String.raw`\begin{cases}9x+2y=7\\ 3x-4y=14\end{cases};\ (1,3)`,
+            String.raw`\begin{cases}9x-2y=7\\ 3x+4y=14\end{cases};\ \left(\tfrac{4}{3},\tfrac{5}{2}\right)`,
+            String.raw`\begin{cases}9x-2y=7\\ 3x-4y=14\end{cases};\ (2,2)`,
+            String.raw`\begin{cases}9x-2y=-7\\ 3x+4y=14\end{cases};\ (1,2.5)`,
+            String.raw`\begin{cases}9x-2y=7\\ 3x+4y=-14\end{cases};\ (1.5,2.25)`
+          ]},
         { latex: String.raw`\textbf{Refer to Graph G6.}\ \text{Select the correct system and solution.}`,
-          choices: [String.raw`\begin{cases}x-5y=-30\\ x-2y=3\end{cases};\ (5,7)`,String.raw`\begin{cases}x-5y=-30\\ 2x-y=3\end{cases};\ (5,7)`,String.raw`\begin{cases}x+5y=-30\\ 2x-y=3\end{cases};\ (5,-7)`,String.raw`\begin{cases}5x-y=-30\\ 2x-y=3\end{cases};\ (0,-6)`,String.raw`\begin{cases}x-5y=30\\ 2x-y=3\end{cases};\ (5,-7)`,String.raw`\begin{cases}x-5y=-30\\ 2x+y=3\end{cases};\ (6,-3)`]}
+          choices: [
+            String.raw`\begin{cases}x-5y=-30\\ x-2y=3\end{cases};\ (5,7)`,
+            String.raw`\begin{cases}x-5y=-30\\ 2x-y=3\end{cases};\ (5,7)`,
+            String.raw`\begin{cases}x+5y=-30\\ 2x-y=3\end{cases};\ (5,-7)`,
+            String.raw`\begin{cases}5x-y=-30\\ 2x-y=3\end{cases};\ (0,-6)`,
+            String.raw`\begin{cases}x-5y=30\\ 2x-y=3\end{cases};\ (5,-7)`,
+            String.raw`\begin{cases}x-5y=-30\\ 2x+y=3\end{cases};\ (6,-3)`
+          ]}
       ]
     };
   </script>
