@@ -77,15 +77,6 @@
     \node[anchor=south west,font=\small] at (-5.7,5.4) {G5};
   \end{scope}
 
-  % ---------- G6: x - 5y = -30  and  2x - y = 3  -> (5,7)
-  \begin{scope}[xshift=16cm,yshift=-8cm]
-    \clip (-\W-0.2,-\W-0.2) rectangle (\W+0.2,\W+0.2);
-    \axesbox
-    \draw[blue,thick,domain=-10:10] plot(\x,{(1/5)*\x+6});
-    \draw[red,thick,domain=-10:10]  plot(\x,{2*\x-3});
-    \fill (5,7) circle (2.2pt);
-    \node[anchor=south west,font=\small] at (-5.7,5.4) {G6};
-  \end{scope}
 \end{tikzpicture]
 `,
 
