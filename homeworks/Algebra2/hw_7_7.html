@@ -80,12 +80,12 @@
 
   % ---------- G6: y = -2 sqrt(x) ----------
   \begin{scope}[xshift=12cm,yshift=-2cm]
-    \clip (-4.2,-2.2) rectangle (4.2,6.2);
-    \draw[grid] (-4,-2) grid (4,6);
+    \clip (-4.2,-4.2) rectangle (4.2,4.2);
+    \draw[grid] (-4,-4) grid (4,4);
     \draw[axes] (-4,0)--(4,0);
-    \draw[axes] (0,-2)--(0,6);
+    \draw[axes] (0,-4)--(0,4);
     \draw[rad,thick,domain=0:9,samples=200] plot(\x,{-2*sqrt(\x)});
-    \node[anchor=north east,font=\small] at (4,5.8) {G6};
+    \node[anchor=north east,font=\small] at (4,3.8) {G6};
   \end{scope}
 \end{tikzpicture}
 `,
