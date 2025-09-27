@@ -45,7 +45,7 @@
     \draw[axes] (-4,0)--(4,0);
     \draw[axes] (0,-2)--(0,6);
     \draw[exp,thick,domain=-2:2,samples=200] plot(\x,{pow(0.25,\x)});
-    \node[anchor=north east,font=\small] at (3.8,-2) {G2};
+    \node[anchor=north east,font=\small] at (3.9,5.7) {G2};
   \end{scope}
 
   % ---------- G3: y = sqrt(x) + 3 ----------
@@ -55,7 +55,7 @@
     \draw[axes] (-4,0)--(4,0);
     \draw[axes] (0,-2)--(0,6);
     \draw[rad,thick,domain=0:9,samples=200] plot(\x,{sqrt(\x)+3});
-    \node[anchor=north east,font=\small] at (3.8,-2) {G3};
+    \node[anchor=north east,font=\small] at (3.9,5.7) {G3};
   \end{scope}
 
   % ---------- G4: y = sqrt(x) + 1 ----------
@@ -65,7 +65,7 @@
     \draw[axes] (-4,0)--(4,0);
     \draw[axes] (0,-2)--(0,6);
     \draw[rad,thick,domain=0:16,samples=200] plot(\x,{sqrt(\x)+1});
-    \node[anchor=north east,font=\small] at (3.8,-2) {G4};
+    \node[anchor=north east,font=\small] at (3.9,5.7) {G4};
   \end{scope}
 
   % ---------- G5: y = 2^{x-2} ----------
@@ -75,7 +75,7 @@
     \draw[axes] (-4,0)--(4,0);
     \draw[axes] (0,-2)--(0,6);
     \draw[exp,thick,domain=-2:6,samples=200] plot(\x,{pow(2,\x-2)});
-    \node[anchor=north east,font=\small] at (3.8,-2) {G5};
+    \node[anchor=north east,font=\small] at (3.9,5.7) {G5};
   \end{scope}
 
   % ---------- G6: y = -2 sqrt(x) ----------
@@ -85,7 +85,7 @@
     \draw[axes] (-4,0)--(4,0);
     \draw[axes] (0,-2)--(0,6);
     \draw[rad,thick,domain=0:9,samples=200] plot(\x,{-2*sqrt(\x)});
-    \node[anchor=north east,font=\small] at (3.8,-2) {G6};
+    \node[anchor=north east,font=\small] at (3.9,5.7) {G6};
   \end{scope}
 \end{tikzpicture}
 `,
