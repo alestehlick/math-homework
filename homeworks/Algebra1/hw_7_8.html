@@ -6,24 +6,19 @@
   <title>Homework 7-8 (Algebra 1)</title>
 
   <script>
-    /* =========================
-       Homework 7-8 — Simple Interest & Investment Systems
-       I = P r t, with r as a decimal and t in years.
-       ========================= */
     window.homeworkData = {
       classId : "Algebra1",
       id      : "Homework 7-8",
       title   : "Homework 7-8 — Simple Interest & Investment Systems",
 
-      graphics : String.raw``,  // no graphs for this section
+      graphics : String.raw``,
 
-      /* Hidden answer key (A–F) for the 12 questions */
       answerKey : ["A","B","A","C","B","B","A","A","D","E","C","F"],
 
       questions : [
-        /* 1. Complete the table entry */
+        /* 1 */
         {
-          latex : String.raw`\text{Complete: } P=500,\ r=0.12,\ t=4.\ \text{ Find }I\text{ (simple interest).}`,
+          latex : String.raw`\text{Use } I=Prt.\ \text{Given }P=500,\ r=0.12,\ t=4\text{ years, find the simple interest }I\text{ (in dollars).}`,
           choices : [
             String.raw`240`,
             String.raw`200`,
@@ -36,7 +31,7 @@
 
         /* 2 */
         {
-          latex : String.raw`\text{Complete: } P=x,\ r=0.045,\ t=2.\ \text{ Find }I\text{ (in terms of }x\text{).}`,
+          latex : String.raw`\text{Use } I=Prt.\ \text{Given }P=x,\ r=0.045,\ t=2\text{ years, write }I\text{ in terms of }x\text{.}`,
           choices : [
             String.raw`0.045x`,
             String.raw`0.09x`,
@@ -49,7 +44,7 @@
 
         /* 3 */
         {
-          latex : String.raw`\text{Complete: } P=112,\ r=x,\ t=0.5.\ \text{ Find }I\text{ (in terms of }x\text{).}`,
+          latex : String.raw`\text{Use } I=Prt.\ \text{Given }P=112,\ r=x\ (\text{decimal}),\ t=0.5\text{ year, write }I\text{ in terms of }x\text{.}`,
           choices : [
             String.raw`56x`,
             String.raw`112x`,
@@ -62,7 +57,7 @@
 
         /* 4 */
         {
-          latex : String.raw`\text{Complete: } P=30,\ r=0.04,\ t=x.\ \text{ Find }I\text{ (in terms of }x\text{).}`,
+          latex : String.raw`\text{Use } I=Prt.\ \text{Given }P=30,\ r=0.04,\ t=x\text{ years, write }I\text{ in terms of }x\text{.}`,
           choices : [
             String.raw`0.04x`,
             String.raw`30x`,
@@ -75,7 +70,7 @@
 
         /* 5 */
         {
-          latex : String.raw`\text{Complete: } P=500,\ t=2,\ I=50.\ \text{ Find }r\text{ (as a decimal).}`,
+          latex : String.raw`\text{Use } I=Prt.\ \text{Given }P=500,\ t=2\text{ years, and }I=50,\ \text{find the annual rate }r\text{ (as a decimal).}`,
           choices : [
             String.raw`0.5`,
             String.raw`0.05`,
@@ -88,7 +83,7 @@
 
         /* 6 */
         {
-          latex : String.raw`\text{Complete: } P=200,\ r=x,\ I=200x.\ \text{ Find }t\text{ (in years).}`,
+          latex : String.raw`\text{Use } I=Prt.\ \text{Given }P=200,\ r=x,\ I=200x,\ \text{find the time }t\text{ (in years).}`,
           choices : [
             String.raw`0.5`,
             String.raw`1`,
@@ -99,9 +94,9 @@
           ]
         },
 
-        /* 7 – compute interest */
+        /* 7 */
         {
-          latex : String.raw`\$400\text{ for }4\text{ years at }8\%\text{ annual interest. Find }I\text{.}`,
+          latex : String.raw`\text{Find the simple interest: }\$400\ \text{invested for }4\ \text{years at }8\%\text{ per year.}`,
           choices : [
             String.raw`\$128`,
             String.raw`\$129`,
@@ -114,7 +109,7 @@
 
         /* 8 */
         {
-          latex : String.raw`\$8437\text{ at }5\tfrac{1}{2}\%\text{ for }6\text{ months. Find }I\text{ to the nearest cent.}`,
+          latex : String.raw`\text{Find the simple interest to the nearest cent: }\$8437\ \text{at }5\tfrac{1}{2}\%\ \text{for }6\ \text{months (use }t=0.5\text{ year).}`,
           choices : [
             String.raw`\$232.02`,
             String.raw`\$231.75`,
@@ -125,9 +120,9 @@
           ]
         },
 
-        /* 9 – write the system */
+        /* 9 */
         {
-          latex : String.raw`\text{Two accounts total } \$600 \text{ and earn } \$30 \text{ in a year. First account at }7\%\text{ with principal }x,\ \text{second at }5\%\text{ with principal }y.\ \text{Which system matches?}`,
+          latex : String.raw`\text{Two accounts total }\$600\text{ of principal and earn }\$30\text{ of interest in one year. The first account (principal }x\text{) earns }7\%\text{ and the second (principal }y\text{) earns }5\%.\ \text{Which system models this?}`,
           choices : [
             String.raw`\begin{aligned} x+y&=30\\ 0.07x+0.05y&=600 \end{aligned}`,
             String.raw`\begin{aligned} x-y&=600\\ 0.07x-0.05y&=30 \end{aligned}`,
@@ -138,9 +133,9 @@
           ]
         },
 
-        /* 10 – write the system with a rate relation */
+        /* 10 */
         {
-          latex : String.raw`\text{Income from two accounts is the same. First: }341\text{ at rate }x\text{ for }2\text{ years. Second: }237\text{ at rate }y\text{ for }2\text{ years. Also } y=x+0.03.\ \text{Choose the correct system.}`,
+          latex : String.raw`\text{Two investments earn the same total interest over }2\text{ years. One is }\$341\text{ at rate }x,\ \text{the other is }\$237\text{ at rate }y.\ \text{Also }y=x+0.03.\ \text{Choose the system that represents this.}`,
           choices : [
             String.raw`\begin{aligned} 341x=237y\\ y=x-0.03 \end{aligned}`,
             String.raw`\begin{aligned} 341x=237y\\ y=0.03x \end{aligned}`,
@@ -151,9 +146,9 @@
           ]
         },
 
-        /* 11 – solve a classic two-account system */
+        /* 11 */
         {
-          latex : String.raw`\text{Mrs. Hill invests } \$15{,}000 \text{ at }8\% \text{ and }10\%. \text{ Total annual interest is } \$1330.\ \text{How much at }8\%\text{ and at }10\%\text{? }(x\text{ at }8\%,\ y\text{ at }10\%)`,
+          latex : String.raw`\text{Mrs. Hill invests }\$15{,}000\text{ split between }8\%\text{ and }10\%.\ \text{The total annual interest is }\$1330.\ \text{How much is at }8\%\text{ and how much at }10\%\text{? }(x\text{ at }8\%,\ y\text{ at }10\%)`,
           choices : [
             String.raw`(9000,\ 6000)`,
             String.raw`(6000,\ 9000)`,
@@ -164,9 +159,9 @@
           ]
         },
 
-        /* 12 – solve another two-account system */
+        /* 12 */
         {
-          latex : String.raw`\text{Mr. Hunt invests } \$10{,}000 \text{ split between }10\%\text{ and }9.5\%\text{. Total annual interest is } \$971.\ \text{How much at }10\%\text{ and at }9.5\%\text{? }(x\ \text{at }10\%,\ y\ \text{at }9.5\%)`,
+          latex : String.raw`\text{Mr. Hunt invests }\$10{,}000\text{ split between }10\%\text{ and }9.5\%.\ \text{The total annual interest is }\$971.\ \text{How much is at }10\%\text{ and how much at }9.5\%\text{? }(x\text{ at }10\%,\ y\text{ at }9.5\%)`,
           choices : [
             String.raw`(5000,\ 5000)`,
             String.raw`(4500,\ 5500)`,
@@ -190,4 +185,3 @@
   <div id="hw-root">Loading…</div>
 </body>
 </html>
-
