@@ -44,10 +44,10 @@
 
 
   \begin{scope}[xshift=12cm,yshift=6cm]
-    \clip (-5,-8) rectangle (6,6);
-    \draw[grid] (-5,-8) grid (6,6);
+    \clip (-5,-8) rectangle (6,1);
+    \draw[grid] (-5,-8) grid (6,1);
     \draw[axes] (-5,0)--(6,0);
-    \draw[axes] (0,-8)--(0,6);
+    \draw[axes] (0,-8)--(0,1);
     \draw[fun,thick,domain=-5:3,samples=200] plot(\x,{pow(2,\x)-7});
     \node[anchor=north east,font=\small] at (5,5) {G3};
   \end{scope}
