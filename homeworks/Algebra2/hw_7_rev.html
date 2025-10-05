@@ -61,11 +61,15 @@
     \draw[fun,thick,domain=-5:2,samples=200] plot(\x,{pow(3,\x)});
     \node[anchor=north east,font=\small] at (5,5) {G4};
   \end{scope}
-\end{tikzpicture}
+\end{tikzpicture>
 `,
 
-      /* ===== Updated hidden answer key (A–F), matches fixes ===== */
-      answerKey : ["B","C","D","A","E","F","A","E","A","C","D","A","C","C","F"],
+      /* ===== Corrected hidden answer key (A–F) =====
+         Q13 -> D (was C)
+         Q15 -> E (was F)
+         Others unchanged
+      */
+      answerKey : ["B","C","D","A","E","F","A","E","A","C","D","A","D","C","E"],
 
       questions : [
         { latex: String.raw`\text{Write in rational exponent form: }\sqrt[3]{7x^{5}}`,
@@ -104,8 +108,9 @@
             String.raw`0`,
             String.raw`5x^{4}y`,
             String.raw`\text{undefined}`,
-            String.raw`y^{0}`,
-            String.raw`5^{0}x^{0}y^{0}`
+            /* Replaced to avoid extra "1" answers */
+            String.raw`5x^{4}`,                     // E (not 1)
+            String.raw`y`                           // F (not 1)
           ]},
 
         { latex: String.raw`\text{Simplify: }\sqrt[3]{\dfrac{27a^{5}b}{64}}`,
@@ -144,7 +149,8 @@
             String.raw`1`,
             String.raw`\dfrac{\sqrt{2}}{6}`,
             String.raw`\dfrac{1}{2\sqrt{2}}`,
-            String.raw`\dfrac{1}{\sqrt{6}}`,        // E
+            /* Rationalized-denominator form */
+            String.raw`\dfrac{\sqrt{6}}{6}`,        // E (keyed)
             String.raw`\dfrac{1}{2\sqrt{3}}`
           ]},
 
@@ -180,7 +186,7 @@
 
         { latex: String.raw`\text{Refer to G4. Range of }g(x)=3^{x}`,
           choices: [
-            String.raw`\{y\mid y> 0\}`,              // A (fixed)
+            String.raw`\{y\mid y> 0\}`,              // A
             String.raw`\{y\mid y\in\mathbb{R}\}`,
             String.raw`\{y\mid y>1\}`,
             String.raw`\{y\mid y>3\}`,
@@ -193,7 +199,7 @@
             String.raw`(x-7)(x+1)`,
             String.raw`x(x-7)`,
             String.raw`(x-3)(x+3)`,
-            String.raw`(x-7)(x+7)`,                  // C
+            String.raw`(x-7)(x+7)`,                  // D (corrected key)
             String.raw`(x-7)(x-7)`,
             String.raw`(x+7)(x+1)`
           ]},
@@ -214,7 +220,7 @@
             String.raw`0`,
             String.raw`1`,
             String.raw`9`,
-            String.raw`\text{no solution}`,          // F
+            String.raw`\text{no solution}`,          // E (corrected key)
             String.raw`16`
           ]}
       ]
