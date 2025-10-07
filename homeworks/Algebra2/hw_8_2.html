@@ -24,7 +24,7 @@
         { latex: String.raw`\text{Write in } a+bi \text{ form: } 7`,
           choices: [
             String.raw`7i`,
-            String.raw`7+0i`,
+            String.raw`7+0i`,       // B (correct)
             String.raw`0+7i`,
             String.raw`-7+0i`,
             String.raw`\pm 7`,
@@ -37,7 +37,7 @@
             String.raw`-3`,
             String.raw`-3-0i`,
             String.raw`0+3i`,
-            String.raw`0-3i`,
+            String.raw`0-3i`,       // E (correct)
             String.raw`-3i-3`
           ]},
 
@@ -45,7 +45,7 @@
           choices: [
             String.raw`\Re=11,\ \Im=5`,
             String.raw`\Re=5i,\ \Im=11`,
-            String.raw`\Re=5,\ \Im=11`,
+            String.raw`\Re=5,\ \Im=11`,  // C (correct)
             String.raw`\Re=16,\ \Im=0`,
             String.raw`\Re=0,\ \Im=16`,
             String.raw`\Re=11,\ \Im=5i`
@@ -53,7 +53,7 @@
 
         { latex: String.raw`\text{Give }\Re(z)\text{ and }\Im(z)\text{ for }z=-5`,
           choices: [
-            String.raw`\Re=-5,\ \Im=0`,
+            String.raw`\Re=-5,\ \Im=0`,  // A (correct)
             String.raw`\Re=5,\ \Im=0`,
             String.raw`\Re=0,\ \Im=-5`,
             String.raw`\Re=-5,\ \Im=1`,
@@ -67,8 +67,8 @@
             String.raw`\Re=2,\ \Im=0`,
             String.raw`\Re=0,\ \Im=1+2`,
             String.raw`\Re=1+2,\ \Im=1`,
-            String.raw`\Re=2,\ \Im=1`,
-            String.raw`\Re=2,\ \Im=1\text{ (so }2+i\text{)}`
+            String.raw`\Re=2,\ \Im=-1`,                    /* made incorrect to avoid duplicate */
+            String.raw`\Re=2,\ \Im=1\text{ (so }2+i\text{)}` // F (correct)
           ]},
 
         { latex: String.raw`\text{Give }\Re(z)\text{ and }\Im(z)\text{ for }z=\dfrac{3+12i}{9}`,
@@ -76,7 +76,7 @@
             String.raw`\Re=\dfrac{1}{9},\ \Im=\dfrac{12}{9}`,
             String.raw`\Re=\dfrac{3}{9},\ \Im=\dfrac{4}{9}`,
             String.raw`\Re=\dfrac{4}{3},\ \Im=\dfrac{1}{3}`,
-            String.raw`\Re=\dfrac{1}{3},\ \Im=\dfrac{4}{3}`,
+            String.raw`\Re=\dfrac{1}{3},\ \Im=\dfrac{4}{3}`, // D (correct)
             String.raw`\Re= \dfrac{13}{9},\ \Im=0`,
             String.raw`\Re= \dfrac{1}{3},\ \Im=\dfrac{2}{3}`
           ]},
@@ -85,7 +85,7 @@
           choices: [
             String.raw`6+6i`,
             String.raw`12-6i`,
-            String.raw`6-6i`,
+            String.raw`6-6i`,        // C (correct)
             String.raw`(6-2)i`,
             String.raw`-6-6i`,
             String.raw`3-2i`
@@ -94,7 +94,7 @@
         { latex: String.raw`\text{Compute: }(3+4i)+(6+i)`,
           choices: [
             String.raw`3+5i`,
-            String.raw`9+5i`,
+            String.raw`9+5i`,        // B (correct)
             String.raw`9+3i`,
             String.raw`6+5i`,
             String.raw`-9+5i`,
@@ -103,7 +103,7 @@
 
         { latex: String.raw`\text{Compute: }(5-8i)-(-2-i)`,
           choices: [
-            String.raw`7-7i`,
+            String.raw`7-7i`,        // A (correct)
             String.raw`3-9i`,
             String.raw`7+7i`,
             String.raw`-7+7i`,
@@ -117,7 +117,7 @@
             String.raw`1+i`,
             String.raw`-1+i`,
             String.raw`-i-1`,
-            String.raw`1-i`,
+            String.raw`1-i`,         // E (correct)
             String.raw`i-1`
           ]},
 
@@ -126,19 +126,19 @@
             String.raw`4\sqrt{3}-2\sqrt{6}\,i`,
             String.raw`3\sqrt{3}+3\sqrt{6}\,i`,
             String.raw`\sqrt{30}\,(1+i)`,
-            String.raw`( \sqrt{3}+\sqrt{27})+(\sqrt{54}-\sqrt{6})i`,
-            String.raw`4\sqrt{3}+2\sqrt{6}\,i`,
+            String.raw`( \sqrt{3}+\sqrt{27})+(\sqrt{54}-\sqrt{6})i`, // D (correct, unsimplified but equal)
+            String.raw`4\sqrt{3}-2\sqrt{6}\,i`,                       /* changed from + to - to avoid duplicate */
             String.raw`2\sqrt{3}+4\sqrt{6}\,i`
           ]},
 
         { latex: String.raw`\text{Compute and simplify: }(\sqrt{3}-2i)-(5+\tfrac{3}{2}i)-(-4-\tfrac{7}{5}i)`,
           choices: [
             String.raw`\sqrt{3}-6+\tfrac{1}{10}i`,
-            String.raw`\sqrt{3}-1+\tfrac{21}{10}i`,
+            String.raw`\sqrt{3}-1+\tfrac{21}{10}i`,   /* made incorrect (imag sign +) */
             String.raw`-1-\sqrt{3}-\tfrac{21}{10}i`,
-            String.raw`-1+\sqrt{3}-\tfrac{21}{10}i`,
-            String.raw`\sqrt{3}-1-\tfrac{21}{10}i`,
-            String.raw`1-\sqrt{3}-\tfrac{21}{10}i`
+            String.raw`-1+\sqrt{3}+\tfrac{21}{10}i`,  /* made incorrect (imag sign +) */
+            String.raw`\sqrt{3}-1+\tfrac{21}{10}i`,   /* made incorrect (imag sign +) */
+            String.raw`\sqrt{3}-1-\tfrac{21}{10}i`    // F (correct)
           ]}
       ]
     };
