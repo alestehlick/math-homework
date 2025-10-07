@@ -1,162 +1,54 @@
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
   <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Homework 8-1 (Algebra 2)</title>
-
-  <script>
-    /* =========================================
-       Homework 8-1 — Radicals & Complex Numbers
-       ========================================= */
-    window.homeworkData = {
-      classId : "Algebra2",
-      id      : "Homework 8-1",
-      title   : "Homework 8-1 — Radicals & Complex Numbers",
-
-      graphics : String.raw``,  // No graphs needed
-
-      /* ===== Hidden Answer Key (A–F) =====
-         Q3  -> D  (i^26 = -1)
-         Q6  -> D  (sqrt(-675xy) = 15 i sqrt(3xy))
-         Q9  -> A  (sqrt(49x^2), x any real -> 7|x|)
-         Q10 -> E  (cube root extraction with x,y,z)
-      */
-      answerKey : ["C","B","D","A","F","D","C","B","A","E","D","F"],
-
-      /* ===== 12 Multiple-Choice Questions ===== */
-      questions : [
-        { latex: String.raw`\text{Simplify: } \sqrt{48}`,
-          choices: [
-            String.raw`4\sqrt{2}`,        /* non-equivalent distractor */
-            String.raw`12\sqrt{2}`,
-            String.raw`4\sqrt{3}`,        // C (correct)
-            String.raw`6\sqrt{2}`,
-            String.raw`8\sqrt{3}`,
-            String.raw`16`
-          ]},
-
-        { latex: String.raw`\text{Simplify: } \sqrt{-9}`,
-          choices: [
-            String.raw`-3`,
-            String.raw`3i`,               // B (correct: principal root)
-            String.raw`-3i`,
-            String.raw`\pm 3`,
-            String.raw`\sqrt{3}i`,
-            String.raw`9i`
-          ]},
-
-        { latex: String.raw`\text{Simplify: } i^{26}`,
-          choices: [
-            String.raw`i`,
-            String.raw`-i`,
-            String.raw`1`,
-            String.raw`-1`,               // D (correct)
-            String.raw`0`,                /* replaced to avoid duplicating 1 */
-            String.raw`i^3`
-          ]},
-
-        { latex: String.raw`\text{Simplify: } \sqrt{121a^2 b}`,
-          choices: [
-            String.raw`11a\sqrt{b}`,      // A (correct under standard HS convention)
-            String.raw`121ab`,
-            String.raw`11\sqrt{a^2 b}`,
-            String.raw`a\sqrt{121b}`,
-            String.raw`ab\sqrt{11}`,
-            String.raw`b\sqrt{121a^2}`
-          ]},
-
-        { latex: String.raw`\text{Simplify: } \sqrt[3]{-135}`,
-          choices: [
-            String.raw`-9\sqrt[3]{5}`,
-            String.raw`-3\sqrt[3]{15}`,
-            String.raw`3\sqrt[3]{15}`,
-            String.raw`-5\sqrt[3]{3}`,
-            String.raw`3\sqrt[3]{-15}`,   /* avoids duplicating -5∛3 */
-            String.raw`-3\sqrt[3]{5}`      // F (correct)
-          ]},
-
-        /* Revised to avoid absolute value in the result */
-        { latex: String.raw`\text{Simplify: } \sqrt{-675\,x\,y}`,
-          choices: [
-            String.raw`15xy\sqrt{-3y}`,
-            String.raw`15x^2 y\sqrt{-3}`,
-            String.raw`15x\sqrt{45y}`,
-            String.raw`15i\sqrt{3xy}`,    // D (correct)
-            String.raw`-15xyi\sqrt{3y}`,
-            String.raw`i\sqrt{675xy}`
-          ]},
-
-        { latex: String.raw`\text{Solve: } x^2 + 49 = 0`,
-          choices: [
-            String.raw`x = \pm 7`,
-            String.raw`x = \pm \sqrt{49}`,
-            String.raw`x = \pm 7i`,       // C (correct)
-            String.raw`x = \pm i`,
-            String.raw`x = \pm \sqrt{-49}`,
-            String.raw`x = \pm 14`
-          ]},
-
-        { latex: String.raw`\text{Solve: } x^2 + 4 = 0`,
-          choices: [
-            String.raw`x = \pm 4`,
-            String.raw`x = \pm 2i`,       // B (correct)
-            String.raw`x = \pm i`,
-            String.raw`x = \pm 2`,        /* replaces ±√-4 to avoid duplicate form */
-            String.raw`x = \pm \frac{1}{2}`,
-            String.raw`x = \pm \sqrt{4}`
-          ]},
-
-        /* ANY REAL: absolute value appears in the result */
-        { latex: String.raw`\text{Simplify: } \sqrt{49x^2}\ \text{ (}x\text{ any real)}`,
-          choices: [
-            String.raw`7|x|`,             // A (correct)
-            String.raw`7x`,
-            String.raw`-7x`,
-            String.raw`\pm 7x`,
-            String.raw`49x`,
-            String.raw`7`
-          ]},
-
-        { latex: String.raw`\text{Simplify: } \sqrt[3]{-98x^3 y^5 z^7}`,
-          choices: [
-            String.raw`-7xy^2 z^2\sqrt[3]{2yz}`,
-            String.raw`-7x^3 y^5 z^7`,
-            String.raw`-7xy^3 z^2\sqrt[3]{2y^2z}`,
-            String.raw`-7xyz\sqrt[3]{2y^2 z^4}`,
-            String.raw`-xy z^2\sqrt[3]{98 y^2 z}`,   // E (correct)
-            String.raw`-7x^2 y^2 z^3`
-          ]},
-
-        { latex: String.raw`\text{Solve: } x^2 + 200 = 0`,
-          choices: [
-            String.raw`x = \pm 200i`,
-            String.raw`x = \pm \sqrt{200}`,
-            String.raw`x = \pm 10\sqrt{2}`,
-            String.raw`x = \pm 10\sqrt{2}i`, // D (correct)
-            String.raw`x = \pm 20\sqrt{2}`,
-            String.raw`x = \pm 20i`
-          ]},
-
-        /* POSITIVE VARIABLES: absolute value collapses */
-        { latex: String.raw`\text{Simplify: } \sqrt{25x^2}\ \text{ (assume }x\ge 0\text{)}`,
-          choices: [
-            String.raw`25x`,
-            String.raw`x^2`,
-            String.raw`\pm 5x`,
-            String.raw`5x^2`,
-            String.raw`5\sqrt{x^2}`,
-            String.raw`5x`                // F (correct under the stated assumption)
-          ]}
-      ]
-    };
-  </script>
-
-  <link rel="stylesheet" href="/math-homework/assets/core.css" />
-  <script defer src="/math-homework/assets/core.js"></script>
-  <script defer src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+  <title>Homework Assignments - Algebra II</title>
 </head>
 <body>
-  <div id="hw-root">Loading…</div>
+  <h1>Homework Algebra II</h1>
+  <ul>
+    <li><a href="hw_6_1.html">6-1</a></li>
+    <li><a href="hw_6_2.html">6-2</a></li>
+    <li><a href="hw_6_3.html">6-3</a></li>
+    <li><a href="hw_6_4.html">6-4</a></li>
+    <li><a href="hw_6_5.html">6-5</a></li>
+    <li><a href="hw_6_6.html">6-6</a></li>
+    <li><a href="hw_6_7.html">6-7</a></li>
+    <li><a href="hw_6_8.html">6-8</a></li>
+    <li><a href="hw_6_9.html">6-9</a></li>
+    <li><a href="hw_6_10.html">6-10</a></li>
+    <li><a href="hw_6_rev.html">6-rev</a></li>  
+   
+    <p style="margin-bottom: 20px;"> </p>
+    
+    <li><a href="hw_7_1.html">7-1</a></li>
+    <li><a href="hw_7_2.html">7-2</a></li>
+    <li><a href="hw_7_3.html">7-3</a></li>
+    <li><a href="hw_7_4.html">7-4</a></li>
+    <li><a href="hw_7_5.html">7-5</a></li>
+    <li><a href="hw_7_6.html">7-6</a></li>
+    <li><a href="hw_7_7.html">7-7</a></li>
+    <li><a href="hw_7_8.html">7-8</a></li>
+    <li><a href="hw_7_9.html">7-9</a></li>
+    <li><a href="hw_7_10.html">7-10</a></li>
+    <li><a href="hw_7_rev.html">7-rev</a></li>
+
+    <p style="margin-bottom: 20px;"> </p>
+    
+    <li><a href="hw_8_1.html">8-1</a></li>
+    <li><a href="hw_8_2.html">8-2</a></li>
+    <li><a href="hw_8_3.html">8-3</a></li>
+    <li><a href="hw_8_4.html">8-4</a></li>
+    <li><a href="hw_8_5.html">8-5</a></li>
+    <li><a href="hw_8_6.html">8-6</a></li>
+    <li><a href="hw_8_7.html">8-7</a></li>
+    <li><a href="hw_8_8.html">8-8</a></li>
+    <li><a href="hw_8_9.html">8-9</a></li>
+    <li><a href="hw_8_10.html">8-10</a></li>
+    <li><a href="hw_8_rev.html">8-rev</a></li>
+  </ul>
+
+  
 </body>
 </html>
