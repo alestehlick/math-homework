@@ -3,149 +3,151 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Homework 8-4 (Algebra 2)</title>
+  <title>Homework 8-3 (Algebra 2)</title>
 
   <script>
     /* =========================================
-       Homework 8-4 — Complex Division, Conjugates & Reciprocals
+       Homework 8-3 — Multiplying Complex Numbers
        ========================================= */
     window.homeworkData = {
       classId : "Algebra2",
-      id      : "Homework 8-4",
-      title   : "Homework 8-4 — Complex Division, Conjugates & Reciprocals",
+      id      : "Homework 8-3",
+      title   : "Homework 8-3 — Multiplying Complex Numbers",
 
-      graphics : String.raw``,  // no graphics for this section
+      graphics : String.raw``,  // no graphs needed
 
-      /* ===== Hidden Answer Key (A–F) for the 12 questions ===== */
-      answerKey : ["A","A","A","B","B","C","A","A","C","B","A","A"],
+      /* ===== Hidden Answer Key (A–F) =====
+         Q2 key -> B  (7 - i)
+         Q4 key -> E  (-42 + 2i)
+         Q5 key -> A  (-1 + 30i)  [kept letter A, changed value]
+         Q6 key -> E  (32 + 126i) [fixed product]
+         Q8 key -> A  (3 - 5/6 i) [removed duplicate in C]
+         Q10: kept B (13 - 8√3 i); rewrote options to avoid duplicates
+         Q11 key -> E  (-11 - 2i)
+         Q12 key -> F  (-644 - 960i)
+      */
+      answerKey : ["D","B","B","E","A","E","C","A","A","B","E","F"],
 
-      /* ===== 12 Multiple-Choice Questions (6 choices each) ===== */
+      /* ===== 12 Questions ===== */
       questions : [
-        /* Conjugates */
-        { latex: String.raw`\text{Give the conjugate of }\,3-4i.`,
+        { latex: String.raw`\text{Simplify: } -3(2+5i)`,
           choices: [
-            String.raw`3+4i`,        // A (correct)
+            String.raw`6+15i`,
+            String.raw`-6+15i`,
+            String.raw`6-15i`,
+            String.raw`-6-15i`,   // D (correct)
+            String.raw`-3+10i`,
+            String.raw`-15+6i`
+          ]},
+
+        { latex: String.raw`\text{Simplify: } (3+i)(2-i)`,
+          choices: [
+            String.raw`5+i`,
+            String.raw`7-i`,      // B (correct)
+            String.raw`7+i`,
+            String.raw`6-3i`,
+            String.raw`-7+i`,
+            String.raw`7`
+          ]},
+
+        { latex: String.raw`\text{Simplify: } (1+6i)(3-2i)`,
+          choices: [
+            String.raw`3+16i`,
+            String.raw`15+16i`,   // B (correct)
+            String.raw`-9+6i`,
             String.raw`-3+4i`,
-            String.raw`3-4i`,
-            String.raw`-3-4i`,
-            String.raw`4+3i`,
-            String.raw`3-4`
+            String.raw`3-16i`,
+            String.raw`15-6i`
           ]},
 
-        { latex: String.raw`\text{Give the conjugate of }\, -6i.`,
+        { latex: String.raw`\text{Simplify: } (-4-6i)(3-5i)`,
           choices: [
-            String.raw`6i`,          // A (correct)
-            String.raw`-6i`,
-            String.raw`6`,
-            String.raw`-6`,
-            String.raw`0`,
-            String.raw`-6-i`
+            String.raw`-12+30i`,
+            String.raw`-12-30i`,
+            String.raw`-2+38i`,
+            String.raw`-38+2i`,
+            String.raw`-42+2i`,   // E (correct)
+            String.raw`-2-38i`
           ]},
 
-        /* Write in a+bi */
-        { latex: String.raw`\text{Write in }a+bi\text{ form: } \dfrac{5+8i}{4}.`,
+        { latex: String.raw`\text{Simplify: } (7+2i)(1+4i)`,
           choices: [
-            String.raw`\dfrac{5}{4}+2i`,      // A (correct)
-            String.raw`\dfrac{5}{4}-2`,
-            String.raw`\dfrac{5}{4}i+2`,
-            String.raw`5+\dfrac{2i}{4}`,
-            String.raw`2+\dfrac{5}{4}i`,
-            String.raw`\dfrac{5}{4}-2i`
+            String.raw`-1+30i`,   // A (correct)
+            String.raw`7-30i`,
+            String.raw`5+28i`,
+            String.raw`35+8i`,
+            String.raw`-7+30i`,
+            String.raw`5-28i`
           ]},
 
-        { latex: String.raw`\text{Write in }a+bi\text{ form: } \dfrac{-3i+7}{5}.`,
+        { latex: String.raw`\text{Simplify: } (12+5i)(6+8i)`,
           choices: [
-            String.raw`\dfrac{7}{5}+\dfrac{3}{5}i`,
-            String.raw`\dfrac{7}{5}-\dfrac{3}{5}i`,   // B (correct)
-            String.raw`-\dfrac{7}{5}+\dfrac{3}{5}i`,
-            String.raw`7-\dfrac{3i}{5}`,
-            String.raw`\dfrac{7-3i}{5i}`,
-            String.raw`\dfrac{7}{5}-\dfrac{5}{3}i`
+            String.raw`72+96i`,
+            String.raw`72+10i`,
+            String.raw`2+15i`,
+            String.raw`22+156i`,
+            String.raw`32+126i`,  // E (correct)
+            String.raw`52+126i`
           ]},
 
-        /* Divide by i (rationalize) */
-        { latex: String.raw`\text{Simplify: }\dfrac{5}{2i}.`,
+        { latex: String.raw`\text{Simplify: } (2+\tfrac{1}{3}i)i`,
           choices: [
-            String.raw`\dfrac{5}{2}i`,
-            String.raw`-\dfrac{5}{2}i`,   // B (correct)
-            String.raw`\dfrac{5i}{2i}=\dfrac{5}{2}`,
-            String.raw`-5i`,
-            String.raw`\dfrac{2}{5i}`,
-            String.raw`-\dfrac{2}{5}i`
+            String.raw`2i+\tfrac{1}{3}i^2`,
+            String.raw`2+\tfrac{1}{3}i`,
+            String.raw`-\tfrac{1}{3}+2i`, // C (correct)
+            String.raw`-2+\tfrac{1}{3}i`,
+            String.raw`\tfrac{1}{3}+2i`,
+            String.raw`2+\tfrac{1}{3}i^2`
           ]},
 
-        { latex: String.raw`\text{Simplify: }\dfrac{7}{3i}.`,
+        { latex: String.raw`\text{Simplify: } \dfrac{18-5i}{6}`,
           choices: [
-            String.raw`\dfrac{7}{3}i`,
-            String.raw`\left(\dfrac{7}{3}\right)i`,
-            String.raw`-\dfrac{7}{3}i`,   // C (correct)
-            String.raw`\dfrac{7i}{3i}=\dfrac{7}{3}`,
-            String.raw`-\dfrac{3}{7}i`,
-            String.raw`\dfrac{3}{7}i`
+            String.raw`3-\tfrac{5}{6}i`, // A (correct)
+            String.raw`3+\tfrac{5}{6}i`,
+            String.raw`\tfrac{18}{6}-\tfrac{7}{6}i`,
+            String.raw`-3+\tfrac{5}{6}i`,
+            String.raw`-3-\tfrac{5}{6}i`,
+            String.raw`5-3i`
           ]},
 
-        /* Straightforward divisions */
-        { latex: String.raw`\text{Simplify: }\dfrac{18i}{6}.`,
+        { latex: String.raw`\text{Simplify: } (\sqrt{2}i)^3`,
           choices: [
-            String.raw`3i`,          // A (correct)
-            String.raw`-3i`,
-            String.raw`3`,
-            String.raw`\dfrac{i}{3}`,
-            String.raw`\dfrac{18}{6i}`,
-            String.raw`-\dfrac{i}{3}`
+            String.raw`-2\sqrt{2}i`,     // A (correct)
+            String.raw`2\sqrt{2}i`,
+            String.raw`-2i`,
+            String.raw`2i`,
+            String.raw`(\sqrt{2})^3 i`,  // changed to avoid being equal to A
+            String.raw`-2\sqrt{3}i`
           ]},
 
-        { latex: String.raw`\text{Simplify: }\dfrac{4-2i}{2}.`,
+        { latex: String.raw`\text{Simplify: } (4-\sqrt{3}i)^2`,
           choices: [
-            String.raw`2-i`,         // A (correct)
-            String.raw`2+i`,
-            String.raw`4-2i`,
-            String.raw`2-2i`,
-            String.raw`1-i`,
-            String.raw`-2+i`
+            String.raw`19+8\sqrt{3}i`,
+            String.raw`13-8\sqrt{3}i`,   // B (correct)
+            String.raw`13+8\sqrt{3}i`,
+            String.raw`19-8\sqrt{3}i`,
+            String.raw`13-4\sqrt{3}i`,
+            String.raw`19+4\sqrt{3}i`
           ]},
 
-        { latex: String.raw`\text{Simplify: }\dfrac{-2+7i}{-2i}.`,
+        { latex: String.raw`\text{Simplify: } (1+2i)^3`,
           choices: [
-            String.raw`-\dfrac{7}{2}+i`,
-            String.raw`\dfrac{7}{2}-i`,
-            String.raw`-\dfrac{7}{2}-i`,   // C (correct)
-            String.raw`\dfrac{1}{i}-\dfrac{7}{2}`,
-            String.raw`\dfrac{7}{2}+i`,
-            String.raw`-i+\dfrac{7}{2}`
+            String.raw`1+8i`,
+            String.raw`-7+24i`,
+            String.raw`-7-24i`,
+            String.raw`1+2i`,
+            String.raw`-11-2i`,          // E (correct)
+            String.raw`7+24i`
           ]},
 
-        /* Reciprocals */
-        { latex: String.raw`\text{Which equals }(2-3i)^{-1}\text{ in }a+bi\text{ form?}`,
+        { latex: String.raw`\text{Simplify: } (5-3i)^4`,
           choices: [
-            String.raw`\dfrac{2-3i}{13}`,
-            String.raw`\dfrac{2+3i}{13}`,   // B (correct)
-            String.raw`\dfrac{2-3i}{-5}`,
-            String.raw`\dfrac{2+3i}{5}`,
-            String.raw`\dfrac{2-3i}{5}`,
-            String.raw`\dfrac{2+3i}{-5}`
-          ]},
-
-        /* Division via conjugate */
-        { latex: String.raw`\text{Simplify: }\dfrac{7+i}{\,1-2i\,}.`,
-          choices: [
-            String.raw`1+3i`,        // A (correct)
-            String.raw`1-3i`,
-            String.raw`-1+3i`,
-            String.raw`5+15i`,
-            String.raw`(7+i)(1+2i)`,
-            String.raw`3i-1`
-          ]},
-
-        /* General formula */
-        { latex: String.raw`\text{Let }z=a+bi,\ w=c+di\ (c,d\in\mathbb{R},\ c+di\neq0).\ \text{Which is } \dfrac{z}{w}\ ?`,
-          choices: [
-            String.raw`\dfrac{ac+bd}{c^2+d^2}+\dfrac{bc-ad}{c^2+d^2}i`,   // A (correct)
-            String.raw`\dfrac{ac-bd}{c^2+d^2}+\dfrac{ad+bc}{c^2+d^2}i`,
-            String.raw`\dfrac{ac+bd}{c-d}+\dfrac{bc-ad}{c-d}i`,
-            String.raw`\dfrac{ac+bd}{c^2-d^2}+\dfrac{ad+bc}{c^2-d^2}i`,
-            String.raw`\dfrac{a}{c}+\dfrac{b}{d}i`,
-            String.raw`\dfrac{ac+bd}{(c^2+d^2)i}+\dfrac{bc-ad}{c^2+d^2}`
+            String.raw`625-375i`,
+            String.raw`256-240i`,
+            String.raw`625-150i`,
+            String.raw`625+150i`,
+            String.raw`244-720i`,
+            String.raw`-644-960i`        // F (correct)
           ]}
       ]
     };
