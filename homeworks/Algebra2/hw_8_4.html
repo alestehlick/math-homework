@@ -77,7 +77,7 @@
         { latex: String.raw`\text{Simplify: }\dfrac{7}{3i}.`,
           choices: [
             String.raw`\dfrac{7}{3}i`,
-            String.raw`\dfrac{7}{3}`,      /* changed: distinct wrong distractor (missing i) */
+            String.raw`\dfrac{7}{3}`,      /* distinct wrong distractor (missing i) */
             String.raw`-\dfrac{7}{3}i`,    // C (correct)
             String.raw`\dfrac{7i}{3i}=\dfrac{7}{3}`,
             String.raw`-\dfrac{3}{7}i`,
@@ -107,34 +107,34 @@
 
         { latex: String.raw`\text{Simplify: }\dfrac{-2+7i}{-2i}.`,
           choices: [
-            String.raw`-\dfrac{7}{2}+i`,
+            String.raw`-\dfrac{7}{2}-i`,   // A (correct simplification)
             String.raw`\dfrac{7}{2}-i`,
-            String.raw`-\dfrac{7}{2}-i`,   // C (correct)
+            String.raw`-\dfrac{7}{2}+i`,
             String.raw`\dfrac{1}{i}-\dfrac{7}{2}`,
             String.raw`\dfrac{7}{2}+i`,
             String.raw`-i+\dfrac{7}{2}`
           ]},
 
-        /* Reciprocals */
+        /* Reciprocals (now explicit a+bi for all choices) */
         { latex: String.raw`\text{Which equals }(2-3i)^{-1}\text{ in }a+bi\text{ form?}`,
           choices: [
-            String.raw`\dfrac{2-3i}{13}`,
-            String.raw`\dfrac{2+3i}{13}`,   // B (correct)
-            String.raw`\dfrac{2-3i}{-5}`,
-            String.raw`\dfrac{2+3i}{5}`,
-            String.raw`\dfrac{2-3i}{5}`,
-            String.raw`\dfrac{2+3i}{-5}`
+            String.raw`\dfrac{2}{13}+\dfrac{3}{13}i`,   // A (correct)
+            String.raw`\dfrac{2}{13}-\dfrac{3}{13}i`,
+            String.raw`-\dfrac{2}{13}+\dfrac{3}{13}i`,
+            String.raw`-\dfrac{2}{13}-\dfrac{3}{13}i`,
+            String.raw`\dfrac{3}{13}+\dfrac{2}{13}i`,
+            String.raw`\dfrac{2}{13}+\dfrac{3}{13}`     /* missing i */
           ]},
 
         /* Division via conjugate */
         { latex: String.raw`\text{Simplify: }\dfrac{7+i}{\,1-2i\,}.`,
           choices: [
-            String.raw`1+3i`,        // A (correct)
             String.raw`1-3i`,
+            String.raw`1+3i`,        // B (correct)
             String.raw`-1+3i`,
             String.raw`5+15i`,
-            String.raw`(7+i)(1+2i)`,
-            String.raw`3i-1`
+            String.raw`-1-3i`,
+            String.raw`1+\dfrac{3}{5}i`
           ]},
 
         /* General formula */
