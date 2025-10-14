@@ -17,8 +17,7 @@
       graphics : String.raw``,  // no graphs needed
 
       /* ===== Hidden Answer Key (A–F) =====
-         Q10 key corrected to B (was C).
-         Q11 key corrected to B (was F).
+         (Keys preserved; only distractors adjusted for soundness.)
       */
       answerKey : ["C","E","B","A","F","D","B","A","E","B","B","B"],
 
@@ -92,18 +91,18 @@
             String.raw`x=\dfrac{-2\pm 2i\sqrt{5}}{3}`,                 // B (correct)
             String.raw`x=\dfrac{-2\pm i\sqrt{5}}{3}`,
             String.raw`x=\dfrac{-4\pm i\sqrt{80}}{3}`,
-            String.raw`x=\dfrac{-4\pm i\sqrt{20}}{6}`,
+            String.raw`x=\dfrac{-4\pm i\sqrt{20}}{3}`,                 /* changed to avoid equivalence with C */
             String.raw`x=\dfrac{-2\pm 2\sqrt{5}}{3}`
           ]},
 
         { latex: String.raw`\text{Solve }5x^2+3x-2=0.`,
           choices: [
             String.raw`x\in\left\{-1,\ \dfrac{2}{5}\right\}`,          // A (correct)
-            String.raw`x\in\left\{\dfrac{2}{5},\ -1\right\}`,          /* reordered duplicate -> made wrong */
-            String.raw`x=\dfrac{-3\pm\sqrt{45}}{10}`,                  /* was √49 -> changed to avoid second correct */
-            String.raw`x=\dfrac{3\pm 7}{10}`,
-            String.raw`x=\{-2,\,\tfrac{1}{5}\}`,
-            String.raw`x=\{-\tfrac{2}{5},\,1\}`
+            String.raw`x\in\left\{-1,\ \dfrac{1}{5}\right\}`,          /* replaced (no longer same set as A) */
+            String.raw`x=\dfrac{-3\pm\sqrt{45}}{10}`,                  /* wrong Δ */
+            String.raw`x=\dfrac{3\pm 5}{10}`,                          /* wrong values */
+            String.raw`x=\{-2,\,\tfrac{1}{5}\}`,                       /* wrong set */
+            String.raw`x=\{-\tfrac{1}{5},\,1\}`                        /* wrong set */
           ]},
 
         { latex: String.raw`\text{Solve }4x^2-2x+3=0.`,
@@ -111,8 +110,8 @@
             String.raw`x=\dfrac{1\pm \sqrt{11}}{4}`,                   /* missing i -> wrong */
             String.raw`x=\dfrac{-1\pm i\sqrt{11}}{4}`,
             String.raw`x=\dfrac{2\pm i\sqrt{11}}{4}`,
-            String.raw`x=\dfrac{1\pm \sqrt{11}}{4}`,
-            String.raw`x=\dfrac{1\pm i\sqrt{44}}{8}`,                  // E (correct; unsimplified)
+            String.raw`x=\dfrac{1\pm i\sqrt{11}}{8}`,                  /* changed to avoid duplicating A */
+            String.raw`x=\dfrac{1\pm i\sqrt{44}}{8}`,                  // E (correct form)
             String.raw`x=\dfrac{-1\pm \sqrt{11}}{4}`
           ]},
 
@@ -122,18 +121,18 @@
             String.raw`x=-2,-3`,                                       // B (correct)
             String.raw`x=2,3`,
             String.raw`x=-3\text{ only}`,
-            String.raw`x=\dfrac{-5\pm\sqrt{29}}{2}`,                   /* was Δ=25-24 -> changed to avoid second correct */
+            String.raw`x=\dfrac{-5\pm\sqrt{29}}{2}`,                   /* adjusted to be wrong */
             String.raw`x=-6,-1`
           ]},
 
         { latex: String.raw`\text{Solve }3x^2-2x+1=0.`,
           choices: [
-            String.raw`x=\dfrac{2\pm 2i\sqrt{2}}{6}`,
+            String.raw`x=\dfrac{2\pm i\sqrt{2}}{6}`,                   /* replaced (no longer equal to B) */
             String.raw`x=\dfrac{1\pm i\sqrt{2}}{3}`,                   // B (correct)
             String.raw`x=\dfrac{-1\pm i\sqrt{2}}{3}`,
             String.raw`x=\dfrac{1\pm \sqrt{2}}{3}`,
             String.raw`x=\dfrac{2\pm i\sqrt{8}}{3}`,
-            String.raw`x=\dfrac{1\pm i\sqrt{8}}{3}`                    /* was /6 equivalent -> changed to avoid duplicate */
+            String.raw`x=\dfrac{1\pm i\sqrt{8}}{3}`
           ]},
 
         { latex: String.raw`\text{Solve }t(t+1)=4-t.`,
@@ -142,7 +141,7 @@
             String.raw`t=-1\pm\sqrt{5}`,                               // B (correct)
             String.raw`t=1\pm\sqrt{5}`,
             String.raw`t=\dfrac{-1\pm\sqrt{5}}{2}`,
-            String.raw`t=\dfrac{-2\pm\sqrt{20}}{4}`,                   /* was /2 equivalent -> changed to avoid duplicate */
+            String.raw`t=\dfrac{-2\pm\sqrt{20}}{3}`,                   /* changed to avoid duplicating D */
             String.raw`t=\dfrac{-1\pm\sqrt{20}}{2}`
           ]}
       ]
