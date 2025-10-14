@@ -40,17 +40,17 @@
       questions : [
         { latex: String.raw`\text{Simplify: } \sqrt[5]{-32}`,
           choices: [
-            String.raw`-2`,
+            String.raw`-2`,                 // A (correct)
             String.raw`2`,
             String.raw`-4`,
             String.raw`4`,
-            String.raw`\sqrt[5]{-32}`,
-            String.raw`-\sqrt[5]{32}`
+            String.raw`\sqrt[5]{32}`,       // changed (was unsimplified correct form)
+            String.raw`-\sqrt[5]{16}`       // changed (was another correct form)
           ]},
 
         { latex: String.raw`\text{Solve } x^2+3x-2=0.`,
           choices: [
-            String.raw`x=\dfrac{-3\pm\sqrt{17}}{2}`,
+            String.raw`x=\dfrac{-3\pm\sqrt{17}}{2}`,   // A (correct)
             String.raw`x=\dfrac{3\pm\sqrt{17}}{2}`,
             String.raw`x=\dfrac{-3\pm\sqrt{13}}{2}`,
             String.raw`x=\dfrac{3\pm\sqrt{5}}{2}`,
@@ -62,15 +62,15 @@
           choices: [
             String.raw`x=1\pm\sqrt{2}`,
             String.raw`x=1\pm\dfrac{\sqrt{2}}{4}`,
-            String.raw`x=\dfrac{4\pm\sqrt{8}}{2}`,
-            String.raw`x=1\pm\dfrac{\sqrt{2}}{2}`,
+            String.raw`x=1\pm\sqrt{\tfrac{2}{3}}`,         // changed to distinct wrong
+            String.raw`x=1\pm\dfrac{\sqrt{2}}{2}`,         // D (correct)
             String.raw`x=2\pm\sqrt{2}`,
-            String.raw`x=\dfrac{4\pm 2\sqrt{2}}{2}`
+            String.raw`x=2\pm\dfrac{\sqrt{2}}{2}`          // changed to distinct wrong
           ]},
 
         { latex: String.raw`\text{Simplify (}a,b>0\text{): } \sqrt{-a^{5}b^{8}}`,
           choices: [
-            String.raw`i\,a^{2}b^{4}\sqrt{a}`,
+            String.raw`i\,a^{2}b^{4}\sqrt{a}`,            // A (correct)
             String.raw`a^{2}b^{4}\sqrt{-a}`,
             String.raw`-i\,a^{2}b^{4}\sqrt{a}`,
             String.raw`i\,a^{3}b^{4}\sqrt{a}`,
@@ -80,7 +80,7 @@
 
         { latex: String.raw`\text{Compute: }(1+7i)+(-5+i)`,
           choices: [
-            String.raw`-4+8i`,
+            String.raw`-4+8i`,                           // A (correct)
             String.raw`-4-8i`,
             String.raw`4+8i`,
             String.raw`-6+8i`,
@@ -90,7 +90,7 @@
 
         { latex: String.raw`\text{Compute: }(-4+2i)-(-2-6i)`,
           choices: [
-            String.raw`-2+8i`,
+            String.raw`-2+8i`,                           // A (correct)
             String.raw`-6+8i`,
             String.raw`-2-8i`,
             String.raw`2+8i`,
@@ -100,7 +100,7 @@
 
         { latex: String.raw`\text{Compute: }(2+i)(3-4i)`,
           choices: [
-            String.raw`10-5i`,
+            String.raw`10-5i`,                           // A (correct)
             String.raw`10+5i`,
             String.raw`-10-5i`,
             String.raw`6-11i`,
@@ -110,7 +110,7 @@
 
         { latex: String.raw`\text{Compute: }(9-2i)(1-i)`,
           choices: [
-            String.raw`7-11i`,
+            String.raw`7-11i`,                           // A (correct)
             String.raw`11-7i`,
             String.raw`7+11i`,
             String.raw`-7-11i`,
@@ -120,7 +120,7 @@
 
         { latex: String.raw`\text{Simplify: }\dfrac{4+2i}{1-4i}\ \text{ (write in }a+bi\text{).}`,
           choices: [
-            String.raw`-\dfrac{4}{17}+\dfrac{18}{17}i`,
+            String.raw`-\dfrac{4}{17}+\dfrac{18}{17}i`,  // A (correct)
             String.raw`\dfrac{4}{17}+\dfrac{18}{17}i`,
             String.raw`-\dfrac{4}{17}-\dfrac{18}{17}i`,
             String.raw`\dfrac{4+18i}{17}`,
@@ -130,7 +130,7 @@
 
         { latex: String.raw`\text{Find }|{-6+5i}|.`,
           choices: [
-            String.raw`\sqrt{61}`,
+            String.raw`\sqrt{61}`,                       // A (correct)
             String.raw`11`,
             String.raw`\sqrt{11}`,
             String.raw`\sqrt{61}\,i`,
@@ -139,10 +139,14 @@
           ]},
 
         { latex: String.raw`\text{Refer to the diagram. Which labeled vector equals }(-1+i)+(3+2i)\text{?}`,
-          choices: [String.raw`P`, String.raw`Q`, String.raw`R`, String.raw`U`, String.raw`S_1`, String.raw`S_2`]},
+          choices: [String.raw`P`, String.raw`Q`, String.raw`R`, String.raw`U`, String.raw`S_1`, String.raw`S_2`]
+          // Correct: S_1 (2,3) -> E
+        },
 
         { latex: String.raw`\text{Refer to the diagram. Which labeled vector represents }5i\text{?}`,
-          choices: [String.raw`P`, String.raw`Q`, String.raw`R`, String.raw`U`, String.raw`S_1`, String.raw`S_2`]}
+          choices: [String.raw`P`, String.raw`Q`, String.raw`R`, String.raw`U`, String.raw`S_1`, String.raw`S_2`]
+          // Correct: P -> A
+        }
       ]
     };
   </script>
