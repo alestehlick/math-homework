@@ -21,7 +21,7 @@
 
       /* ===== 12 Multiple-Choice Questions (6 choices each) ===== */
       questions : [
-        /* Conjugates */
+        /* Q1 — Conjugates */
         { latex: String.raw`\text{Give the conjugate of }\,3-4i.`,
           choices: [
             String.raw`3+4i`,        // A (correct)
@@ -32,6 +32,7 @@
             String.raw`3-4`
           ]},
 
+        /* Q2 — Conjugates */
         { latex: String.raw`\text{Give the conjugate of }\, -6i.`,
           choices: [
             String.raw`6i`,          // A (correct)
@@ -42,7 +43,7 @@
             String.raw`-6-i`
           ]},
 
-        /* Write in a+bi */
+        /* Q3 — Write in a+bi */
         { latex: String.raw`\text{Write in }a+bi\text{ form: } \dfrac{5+8i}{4}.`,
           choices: [
             String.raw`\dfrac{5}{4}+2i`,      // A (correct)
@@ -53,6 +54,7 @@
             String.raw`\dfrac{5}{4}-2i`
           ]},
 
+        /* Q4 — Write in a+bi */
         { latex: String.raw`\text{Write in }a+bi\text{ form: } \dfrac{-3i+7}{5}.`,
           choices: [
             String.raw`\dfrac{7}{5}+\dfrac{3}{5}i`,
@@ -63,7 +65,7 @@
             String.raw`\dfrac{7}{5}-\dfrac{5}{3}i`
           ]},
 
-        /* Divide by i (rationalize) */
+        /* Q5 — Divide by i (rationalize) */
         { latex: String.raw`\text{Simplify: }\dfrac{5}{2i}.`,
           choices: [
             String.raw`\dfrac{5}{2}i`,
@@ -74,7 +76,7 @@
             String.raw`-\dfrac{2}{5}i`
           ]},
 
-        /* CHALLENGE: Complex division (nontrivial) */
+        /* Q6 — CHALLENGE: Complex division */
         { latex: String.raw`\text{Simplify: }\dfrac{4+3i}{3-i}\ \text{ (write in }a+bi\text{).}`,
           choices: [
             String.raw`\dfrac{11}{10}-\dfrac{13}{10}i`,
@@ -85,7 +87,7 @@
             String.raw`1+\dfrac{3}{10}i`
           ]},
 
-        /* CHALLENGE: Complex division (nontrivial) */
+        /* Q7 — CHALLENGE: Complex division */
         { latex: String.raw`\text{Simplify: }\dfrac{5-2i}{1+2i}\ \text{ (write in }a+bi\text{).}`,
           choices: [
             String.raw`\dfrac{1}{5}-\dfrac{12}{5}i`,     // A (correct)
@@ -96,7 +98,7 @@
             String.raw`\dfrac{7}{5}-\dfrac{2}{5}i`
           ]},
 
-        /* CHALLENGE: Complex division (nontrivial) */
+        /* Q8 — CHALLENGE: Complex division */
         { latex: String.raw`\text{Simplify: }\dfrac{6+8i}{2-3i}\ \text{ (write in }a+bi\text{).}`,
           choices: [
             String.raw`-\dfrac{12}{13}+\dfrac{34}{13}i`,  // A (correct)
@@ -107,7 +109,7 @@
             String.raw`-\dfrac{34}{13}+\dfrac{12}{13}i`
           ]},
 
-        /* Reciprocals (explicit a+bi for all choices) */
+        /* Q9 — Reciprocals (explicit a+bi for all choices) */
         { latex: String.raw`\text{Which equals }(2-3i)^{-1}\text{ in }a+bi\text{ form?}`,
           choices: [
             String.raw`\dfrac{2}{13}+\dfrac{3}{13}i`,   // A (correct)
@@ -118,7 +120,7 @@
             String.raw`\dfrac{2}{13}+\dfrac{3}{13}`     /* missing i */
           ]},
 
-        /* Division via conjugate */
+        /* Q10 — Division via conjugate */
         { latex: String.raw`\text{Simplify: }\dfrac{7+i}{\,1-2i\,}\ \text{ (write in }a+bi\text{).}`,
           choices: [
             String.raw`1-3i`,
@@ -129,7 +131,7 @@
             String.raw`1+\dfrac{3}{5}i`
           ]},
 
-        /* General formula */
+        /* Q11 — General formula */
         { latex: String.raw`\text{Let }z=a+bi,\ w=c+di\ (c,d\in\mathbb{R},\ c+di\neq0).\ \text{Which is } \dfrac{z}{w}\ ?`,
           choices: [
             String.raw`\dfrac{ac+bd}{c^2+d^2}+\dfrac{bc-ad}{c^2+d^2}i`,   // A (correct)
@@ -138,6 +140,17 @@
             String.raw`\dfrac{ac+bd}{c^2-d^2}+\dfrac{ad+bc}{c^2-d^2}i`,
             String.raw`\dfrac{a}{c}+\dfrac{b}{d}i`,
             String.raw`\dfrac{ac+bd}{(c^2+d^2)i}+\dfrac{bc-ad}{c^2+d^2}`
+          ]},
+
+        /* Q12 — NEW: another clean a+bi division (to match 12th key = A) */
+        { latex: String.raw`\text{Simplify: }\dfrac{3+4i}{4+3i}\ \text{ (write in }a+bi\text{).}`,
+          choices: [
+            String.raw`\dfrac{24}{25}+\dfrac{7}{25}i`,  // A (correct)
+            String.raw`\dfrac{24}{25}-\dfrac{7}{25}i`,
+            String.raw`\dfrac{7}{25}+\dfrac{24}{25}i`,
+            String.raw`-\dfrac{24}{25}+\dfrac{7}{25}i`,
+            String.raw`\dfrac{7}{25}-\dfrac{24}{25}i`,
+            String.raw`-\dfrac{24}{25}-\dfrac{7}{25}i`
           ]}
       ]
     };
