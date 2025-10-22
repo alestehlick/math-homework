@@ -28,7 +28,7 @@
       questions : [
         { latex: String.raw`\text{Simplify: } \sqrt{48}`,
           choices: [
-            String.raw`4\sqrt{2}`,        /* non-equivalent distractor */
+            String.raw`4\sqrt{2}`,
             String.raw`12\sqrt{2}`,
             String.raw`4\sqrt{3}`,        // C (correct)
             String.raw`6\sqrt{2}`,
@@ -52,16 +52,16 @@
             String.raw`-i`,
             String.raw`1`,
             String.raw`-1`,               // D (correct)
-            String.raw`0`,                /* replaced to avoid duplicating 1 */
-            String.raw`i^3`
+            String.raw`0`,
+            String.raw`2i`                 // changed from i^3 to avoid duplicate of -i
           ]},
 
         { latex: String.raw`\text{Simplify (assume } a,b \geq 0): \sqrt{121a^2 b}`,
           choices: [
-            String.raw`11a\sqrt{b}`,      // A (correct under standard HS convention)
+            String.raw`11a\sqrt{b}`,      // A (correct under stated assumption)
             String.raw`121ab`,
-            String.raw`11\sqrt{a^2 b}`,
-            String.raw`a\sqrt{121b}`,
+            String.raw`11\sqrt{ab}`,      // changed: now incorrect
+            String.raw`a\sqrt{11b}`,      // changed: now incorrect
             String.raw`ab\sqrt{11}`,
             String.raw`b\sqrt{121a^2}`
           ]},
@@ -72,11 +72,10 @@
             String.raw`-3\sqrt[3]{15}`,
             String.raw`3\sqrt[3]{15}`,
             String.raw`-5\sqrt[3]{3}`,
-            String.raw`3\sqrt[3]{-15}`,   /* avoids duplicating -5∛3 */
-            String.raw`-3\sqrt[3]{5}`      // F (correct)
+            String.raw`-3\sqrt[3]{10}`,   // changed to avoid equivalence with B
+            String.raw`-3\sqrt[3]{5}`     // F (correct)
           ]},
 
-        /* Revised to avoid absolute value in the result */
         { latex: String.raw`\text{Simplify: } \sqrt{-675\,x\,y}`,
           choices: [
             String.raw`15xy\sqrt{-3y}`,
@@ -102,12 +101,11 @@
             String.raw`x = \pm 4`,
             String.raw`x = \pm 2i`,       // B (correct)
             String.raw`x = \pm i`,
-            String.raw`x = \pm 2`,        /* replaces ±√-4 to avoid duplicate form */
+            String.raw`x = \pm 2`,        // replaces ±√-4 to avoid duplicate form
             String.raw`x = \pm \frac{1}{2}`,
             String.raw`x = \pm \sqrt{4}`
           ]},
 
-        /* ANY REAL: absolute value appears in the result */
         { latex: String.raw`\text{Simplify: } \sqrt{49x^2}\ \text{ (}x\text{ any real)}`,
           choices: [
             String.raw`7|x|`,             // A (correct)
@@ -138,14 +136,13 @@
             String.raw`x = \pm 20i`
           ]},
 
-        /* POSITIVE VARIABLES: absolute value collapses */
         { latex: String.raw`\text{Simplify: } \sqrt{25x^2}\ \text{ (assume }x\ge 0\text{)}`,
           choices: [
             String.raw`25x`,
             String.raw`x^2`,
             String.raw`\pm 5x`,
             String.raw`5x^2`,
-            String.raw`5\sqrt{x^2}`,
+            String.raw`5\sqrt{x}`,        // changed from 5\sqrt{x^2} to avoid equivalence with 5x
             String.raw`5x`                // F (correct under the stated assumption)
           ]}
       ]
