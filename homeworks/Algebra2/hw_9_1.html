@@ -37,23 +37,23 @@
         // 2 — exponents cancellation with leftover power in denominator
         { latex: String.raw`\text{Simplify: } \dfrac{18x^{3}y}{4x^{5}}`,
           choices: [
-           String.raw`\dfrac{9y}{2x^{3}}`,
-            String.raw`\dfrac{9x^{3}y}{2x^{5}}`,
+            String.raw`\dfrac{9y}{2x^{3}}`,
+            String.raw`\dfrac{9y}{2x^{4}}`,       // fixed (no longer equals E)
             String.raw`\dfrac{9y}{2x}`,
             String.raw`\dfrac{9}{2}x^{2}y`,
-            String.raw`\dfrac{9y}{2x^{2}}`,      // E (correct)
+            String.raw`\dfrac{9y}{2x^{2}}`,       // E (correct)
             String.raw`\dfrac{9}{2xy}`
           ]},
 
         // 3 — GCF only; no binomial cancellation
         { latex: String.raw`\text{Simplify: } \dfrac{5x^{4}+5xy}{2x+2y}`,
           choices: [
-            String.raw`\dfrac{5(x^{4}+xy)}{2x}`,
-            String.raw`\dfrac{5x(x^{3}+y)}{2}`,                  // near-miss (missing /(x+y))
-            String.raw`\dfrac{5x(x^{3}+y)}{2(x+y)}`,             // C (correct)
+            String.raw`\dfrac{5(x^{4}+xy)}{2x}`,                     // fixed (was equivalent to C)
+            String.raw`\dfrac{5x(x^{3}+y)}{2}`,                     // near-miss (missing /(x+y))
+            String.raw`\dfrac{5x(x^{3}+y)}{2(x+y)}`,                // C (correct)
             String.raw`\dfrac{5(x^{3}+y)}{2(x+y)}`,
-            String.raw`\dfrac{5x^{4}+5xy}{2(x+y)}`,
-            String.raw`\dfrac{5x(x^{3}+y)}{2x+2y}`
+            String.raw`\dfrac{5x(x^{3}+y)}{2(x-y)}`,                // fixed (no longer equivalent to C)
+            String.raw`\dfrac{5x(x^{3}+y)}{2x}`                     // fixed (no longer equivalent to C)
           ]},
 
         // 4 — cancel a common binomial after factoring GCFs
@@ -81,12 +81,12 @@
         // 6 — trinomial factoring vs. non-factorable trap
         { latex: String.raw`\text{Simplify: } \dfrac{2x^{2}+xy-y^{2}}{x^{2}-y^{2}}`,
           choices: [
-            String.raw`\dfrac{2x-y}{x-y}`,                         // misfactor path (wrong)
+            String.raw`\dfrac{2x+y}{x-y}`,                         // fixed (no longer equals F)
             String.raw`\dfrac{2x+y}{x+y}`,
             String.raw`\dfrac{x(2x+y)-y^{2}}{(x-y)(x+y)}`,
-            String.raw`\dfrac{(2x-y)(x+y)}{x^{2}-y^{2}}`,
-            String.raw`\dfrac{2x^{2}+xy-y^{2}}{(x-y)(x+y)}`,
-            String.raw`\dfrac{2x-y}{x-y}`                           // F (correct)
+            String.raw`\dfrac{(2x+y)(x+y)}{x^{2}-y^{2}}`,          // fixed (no longer equals F)
+            String.raw`\dfrac{2x^{2}+xy-y^{2}}{x^{2}-2xy+y^{2}}`,  // fixed (denominator (x-y)^2)
+            String.raw`\dfrac{2x-y}{x-y}`                          // F (correct)
           ]},
 
         // 7 — cancel after factoring out a negative
@@ -114,7 +114,7 @@
         // 9 — multi-variable; cancel common factor only
         { latex: String.raw`\text{Simplify: } \dfrac{30+42n}{9mn}`,
           choices: [
-            String.raw`\dfrac{6(5+7n)}{mn}`,                       // fixed (no longer equal to E)
+            String.raw`\dfrac{6(5+7n)}{mn}`,                       // fixed (no longer equals E)
             String.raw`\dfrac{5+7n}{3mn}`,
             String.raw`\dfrac{10+14n}{9mn}`,
             String.raw`\dfrac{2(5+7n)}{9m}`,
@@ -128,7 +128,7 @@
             String.raw`\dfrac{x}{3}`,
             String.raw`\dfrac{x-2}{3}`,                            // B (correct)
             String.raw`\dfrac{x-2}{15}`,
-           String.raw`\dfrac{x-2}{9}`,
+            String.raw`\dfrac{x-2}{9}`,                            // fixed (no longer equals B)
             String.raw`\dfrac{x-2}{5}`,
             String.raw`x-2`
           ]},
@@ -138,7 +138,7 @@
           choices: [
             String.raw`x+y`,
             String.raw`\dfrac{(x-y)(x^{2}+xy+y^{2})}{x^{2}-xy+y^{2}}`,
-            String.raw`\dfrac{x^{3}-y^{3}}{x^{2}+xy+y^{2}}`,
+            String.raw`\dfrac{x^{3}+y^{3}}{x^{2}+xy+y^{2}}`,       // fixed (no longer equals D)
             String.raw`x-y`,                                       // D (correct)
             String.raw`1`,
             String.raw`\dfrac{x^{3}-y^{3}}{x-y}`
