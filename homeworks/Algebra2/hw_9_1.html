@@ -8,9 +8,8 @@
   <script>
     /* =========================================
        Homework 9-1 — Simplifying Rational Expressions
-       Types mirror the source page: monomial cancellation,
-       GCF factoring, diff. of squares, perfect-square trinomials,
-       grouping, sum/diff of cubes, sign traps.
+       Types: monomial cancellation, GCF, diff. of squares,
+       perfect-square trinomials, grouping, sum/diff of cubes, sign traps.
        ========================================= */
     window.homeworkData = {
       classId : "Algebra2",
@@ -27,8 +26,8 @@
         // 1 — basic monomial cancellation
         { latex: String.raw`\text{Simplify. Leave answer in factored form: } \dfrac{3a^{2}b}{9ab}`,
           choices: [
-            String.raw`3a`,                   // common mistake (divide by b only)
-            String.raw`\dfrac{a}{3}`,         // correct
+            String.raw`3a`,
+            String.raw`\dfrac{a}{3}`,            // B (correct)
             String.raw`\dfrac{a^{2}}{3}`,
             String.raw`\dfrac{1}{3b}`,
             String.raw`\dfrac{b}{3}`,
@@ -40,9 +39,9 @@
           choices: [
             String.raw`\dfrac{9xy}{2x^{3}}`,
             String.raw`\dfrac{9x^{3}y}{2x^{5}}`,
-            String.raw`\dfrac{9y}{2x}`,       // lost one x only
+            String.raw`\dfrac{9y}{2x}`,
             String.raw`\dfrac{9}{2}x^{2}y`,
-            String.raw`\dfrac{9y}{2x^{2}}`,   // correct
+            String.raw`\dfrac{9y}{2x^{2}}`,      // E (correct)
             String.raw`\dfrac{9}{2xy}`
           ]},
 
@@ -50,28 +49,28 @@
         { latex: String.raw`\text{Simplify: } \dfrac{5x^{4}+5xy}{2x+2y}`,
           choices: [
             String.raw`\dfrac{5(x^{4}+xy)}{2(x+y)}`,
-            String.raw`\dfrac{5x(x^{3}+y)}{2(x+y)}`,   // correct
-            String.raw`\dfrac{5(x^{3}+y)}{2}`,
-            String.raw`\dfrac{5x^{3}+5y}{2}`,
-            String.raw`\dfrac{5x(x^{3}+y)}{2x+2y}`,    // unreduced copy
-            String.raw`\dfrac{5x^{4}+5xy}{2(x+y)}`
+            String.raw`\dfrac{5x(x^{3}+y)}{2}`,                  // near-miss (missing /(x+y))
+            String.raw`\dfrac{5x(x^{3}+y)}{2(x+y)}`,             // C (correct)
+            String.raw`\dfrac{5(x^{3}+y)}{2(x+y)}`,
+            String.raw`\dfrac{5x^{4}+5xy}{2(x+y)}`,
+            String.raw`\dfrac{5x(x^{3}+y)}{2x+2y}`
           ]},
 
         // 4 — cancel a common binomial after factoring GCFs
         { latex: String.raw`\text{Simplify: } \dfrac{147a^{3}+147a^{2}b}{14a^{2}+14ab}`,
           choices: [
-            String.raw`\dfrac{147a^{2}(a+b)}{14a(a+b)} = \dfrac{147a}{14}`, // shows work; not a final single form
+            String.raw`21a`,
             String.raw`\dfrac{21a^{2}}{2}`,
-            String.raw`21a`,                        // close but off
-            String.raw`\dfrac{147a^{2}}{14a}=\; \boxed{ \dfrac{147}{14}a } = \dfrac{21}{2}a`, // correct (shows reasoning)
+            String.raw`\dfrac{147}{14}`,
+            String.raw`\dfrac{21}{2}a`,                            // D (correct)
             String.raw`7a(a+b)`,
-            String.raw`\dfrac{147a^{3}}{14a^{2}}= \, 10a \text{ (rounded)}`
+            String.raw`a`
           ]},
 
         // 5 — linear over linear; difference of squares trap
         { latex: String.raw`\text{Simplify: } \dfrac{x^{2}-y^{2}}{x^{2}+2xy+y^{2}}`,
           choices: [
-            String.raw`\dfrac{(x-y)(x+y)}{(x+y)^{2}} = \dfrac{x-y}{x+y}`,  // correct
+            String.raw`\dfrac{x-y}{x+y}`,                          // A (correct)
             String.raw`\dfrac{x-y}{x^{2}+y^{2}}`,
             String.raw`\dfrac{x+y}{x-y}`,
             String.raw`\dfrac{x^{2}-y^{2}}{(x+y)^{2}}`,
@@ -82,31 +81,31 @@
         // 6 — trinomial factoring vs. non-factorable trap
         { latex: String.raw`\text{Simplify: } \dfrac{2x^{2}+xy-y^{2}}{x^{2}-y^{2}}`,
           choices: [
-            String.raw`\dfrac{(2x-y)(x+y)}{(x-y)(x+y)}=\dfrac{2x-y}{x-y}`, // looks plausible but numerator misfactored
-            String.raw`\dfrac{(2x+y)(x-y)}{(x-y)(x+y)}=\dfrac{2x+y}{x+y}`,
+            String.raw`\dfrac{2x-y}{x-y}`,                         // misfactor path (wrong)
+            String.raw`\dfrac{2x+y}{x+y}`,
             String.raw`\dfrac{x(2x+y)-y^{2}}{(x-y)(x+y)}`,
             String.raw`\dfrac{(2x-y)(x+y)}{x^{2}-y^{2}}`,
             String.raw`\dfrac{2x^{2}+xy-y^{2}}{(x-y)(x+y)}`,
-            String.raw`\dfrac{(2x-y)(x+y)}{(x-y)(x+y)}=\dfrac{2x-y}{x-y}`  // correct factoring: 2x^2+xy-y^2 = (2x-y)(x+y)
+            String.raw`\dfrac{2x-y}{x-y}`                           // F (correct)
           ]},
 
         // 7 — cancel after factoring out a negative
         { latex: String.raw`\text{Simplify: } \dfrac{y^{2}-x^{2}}{x-y}`,
           choices: [
-            String.raw`\dfrac{(y-x)(y+x)}{x-y}=\dfrac{y+x}{1}`, // forgot negative
             String.raw`y+x`,
-            String.raw`-(x+y)`,                    // correct
             String.raw`x+y`,
-            String.raw`\dfrac{(x-y)(x+y)}{x-y}=x+y`,
+            String.raw`-(x+y)`,                                    // C (correct)
+            String.raw`\dfrac{y+x}{x-y}`,
+            String.raw`\dfrac{(x-y)(x+y)}{x-y}`,
             String.raw`\text{Cannot simplify}`
           ]},
 
         // 8 — common binomial factor after grouping
         { latex: String.raw`\text{Simplify: } \dfrac{x^{2}+2xy+y^{2}}{x^{2}+xy}`,
           choices: [
-            String.raw`\dfrac{(x+y)^{2}}{x(x+y)}=\dfrac{x+y}{x}`,      // correct
-            String.raw`\dfrac{x^{2}+2xy+y^{2}}{x(x+y)}=\dfrac{x+y}{x+y}`,
-            String.raw`\dfrac{x+y}{x+y} = 1`,
+            String.raw`\dfrac{x+y}{x}`,                            // A (correct)
+            String.raw`\dfrac{x+y}{x+y}`,
+            String.raw`1`,
             String.raw`\dfrac{x^{2}}{x^{2}+xy}`,
             String.raw`\dfrac{x+y}{y}`,
             String.raw`\dfrac{x}{x+y}`
@@ -115,19 +114,19 @@
         // 9 — multi-variable; cancel common factor only
         { latex: String.raw`\text{Simplify: } \dfrac{30+42n}{9mn}`,
           choices: [
-            String.raw`\dfrac{6(5+7n)}{9mn}=\dfrac{2(5+7n)}{3mn}`,
-            String.raw`\dfrac{5+7n}{3mn}`,       // dropped factor 2
+            String.raw`\dfrac{6(5+7n)}{mn}`,                       // fixed (no longer equal to E)
+            String.raw`\dfrac{5+7n}{3mn}`,
             String.raw`\dfrac{10+14n}{9mn}`,
             String.raw`\dfrac{2(5+7n)}{9m}`,
-            String.raw`\dfrac{2(5+7n)}{3mn}`,    // correct
-            String.raw`\dfrac{6(5+7n)}{mn}`
+            String.raw`\dfrac{2(5+7n)}{3mn}`,                      // E (correct)
+            String.raw`\dfrac{6(5+7n)}{mn^{2}}`
           ]},
 
         // 10 — cancel a binomial after factoring numbers & variables
         { latex: String.raw`\text{Simplify: } \dfrac{5x^{2}y-10xy}{15xy}`,
           choices: [
-            String.raw`\dfrac{5xy(x-2)}{15xy}=\dfrac{x-2}{3}`,  // correct
-            String.raw`\dfrac{5x^{2}y}{15xy}=\dfrac{x}{3}`,
+            String.raw`\dfrac{x}{3}`,
+            String.raw`\dfrac{x-2}{3}`,                            // B (correct)
             String.raw`\dfrac{x-2}{15}`,
             String.raw`\dfrac{x(x-2)}{3x}`,
             String.raw`\dfrac{x-2}{5}`,
@@ -137,21 +136,19 @@
         // 11 — sum/difference of cubes cancellation
         { latex: String.raw`\text{Simplify: } \dfrac{x^{3}-y^{3}}{x^{2}+xy+y^{2}}`,
           choices: [
-            String.raw`\dfrac{(x-y)(x^{2}+xy+y^{2})}{x^{2}+xy+y^{2}}=x-y`,  // tempting but wrong problem (sign)
-            String.raw`\dfrac{(x-y)(x^{2}+xy+y^{2})}{x^{2}-xy+y^{2}}`,
             String.raw`x+y`,
-            String.raw`x-y`,                     // correct (since numerator factors as (x-y)(x^2+xy+y^2))
-            String.raw`\dfrac{x^{3}-y^{3}}{x^{2}+xy+y^{2}} \text{ (no change)}`,
-            String.raw`1`
+            String.raw`\dfrac{(x-y)(x^{2}+xy+y^{2})}{x^{2}-xy+y^{2}}`,
+            String.raw`\dfrac{x^{3}-y^{3}}{x^{2}+xy+y^{2}}`,
+            String.raw`x-y`,                                       // D (correct)
+            String.raw`1`,
+            String.raw`\dfrac{x^{3}-y^{3}}{x-y}`
           ]},
 
-        // 12 — grouping then cancel (matches C-type on page)
+        // 12 — grouping then cancel to a clean final fraction
         { latex: String.raw`\text{Simplify: } \dfrac{x^{3}-xy^{2}+x^{2}y-y^{3}}{x^{3}-y^{3}}`,
           choices: [
-            String.raw`\dfrac{(x^{2}(x-y)+y(x^{2}-y^{2}))}{(x-y)(x^{2}+xy+y^{2})}
-            = \dfrac{(x-y)(x^{2}+xy)}{(x-y)(x^{2}+xy+y^{2})}
-            = \dfrac{x^{2}+xy}{x^{2}+xy+y^{2}}`,  // correct (fully factored/canceled)
-            String.raw`\dfrac{x^{2}+xy+y^{2}}{x^{2}+xy}`,
+            String.raw`\dfrac{(x+y)^{2}}{x^{2}+xy+y^{2}}`,         // A (correct)
+            String.raw`\dfrac{x^{2}+xy+y^{2}}{(x+y)^{2}}`,
             String.raw`\dfrac{x-y}{x^{2}+xy+y^{2}}`,
             String.raw`\dfrac{x^{2}+xy}{x-y}`,
             String.raw`1`,
