@@ -16,14 +16,17 @@
 
       graphics : String.raw` `,  // no graphs needed
 
-      answerKey : ["C","B","E","F","D","A","E","B","C","F","A","D"],
+      /* Corrected answer key after fixes:
+         Q4 -> D, Q6 -> D, Q7 -> D, Q10 -> E, Q11 -> C, Q12 -> E
+      */
+      answerKey : ["C","B","E","D","D","D","D","B","C","E","C","E"],
 
       questions : [
         { latex: String.raw`\text{Classify } 2x^2 + 3x + 5.`,
           choices: [
             String.raw`\text{Monomial, degree 2}`,
             String.raw`\text{Binomial, degree 1}`,
-            String.raw`\text{Trinomial, degree 2}`,
+            String.raw`\text{Trinomial, degree 2}`,   // C (correct)
             String.raw`\text{Polynomial (4 terms), degree 2}`,
             String.raw`\text{Monomial, degree 3}`,
             String.raw`\text{Trinomial, degree 3}`
@@ -32,7 +35,7 @@
         { latex: String.raw`\text{Classify } -4x^2y + 5xy + y - 8.`,
           choices: [
             String.raw`\text{Trinomial, degree 2}`,
-            String.raw`\text{Polynomial (4 terms), degree 3}`,
+            String.raw`\text{Polynomial (4 terms), degree 3}`,     // B (correct)
             String.raw`\text{Binomial, degree 3}`,
             String.raw`\text{Polynomial (5 terms), degree 3}`,
             String.raw`\text{Trinomial, degree 4}`,
@@ -45,7 +48,7 @@
             String.raw`\text{Polynomial (4 terms), degree 3}`,
             String.raw`\text{Trinomial, degree 4}`,
             String.raw`\text{Binomial, degree 4}`,
-            String.raw`\text{Monomial, degree 4}`,
+            String.raw`\text{Monomial, degree 4}`,                // E (correct)
             String.raw`\text{Monomial, degree 3}`
           ]},
 
@@ -54,7 +57,7 @@
             String.raw`\text{Monomial, degree 3}`,
             String.raw`\text{Binomial, degree 2}`,
             String.raw`\text{Polynomial (3 terms), degree 4}`,
-            String.raw`\text{Binomial, degree 4}`,
+            String.raw`\text{Binomial, degree 4}`,                 // D (correct)
             String.raw`\text{Monomial, degree 4}`,
             String.raw`\text{Binomial, degree 3}`
           ]},
@@ -64,44 +67,44 @@
             String.raw`\text{Monomial, degree 4}`,
             String.raw`\text{Binomial, degree 4}`,
             String.raw`\text{Polynomial (4 terms), degree 3}`,
-            String.raw`\text{Trinomial, degree 4}`,
+            String.raw`\text{Trinomial, degree 4}`,               // D (correct)
             String.raw`\text{Polynomial (5 terms), degree 4}`,
             String.raw`\text{Trinomial, degree 3}`
           ]},
 
         { latex: String.raw`\text{Evaluate } 3x^2 + 4z - 8 \text{ if } x=3, z=2.`,
           choices: [
-            "19","22","25","27","30","32"
+            "19","22","25","27","30","32"                         // D (correct = 27)
           ]},
 
         { latex: String.raw`\text{Evaluate } 5x^2 - 3y^2 - 4z \text{ if } x=3, y=-4, z=2.`,
           choices: [
-            "40","24","72","64","68","36"
+            "40","24","72","-11","68","36"                        // D (correct = -11)
           ]},
 
         { latex: String.raw`\text{Evaluate } x^2 + x + 1 \text{ if } x=11.`,
           choices: [
-            "110","133","120","111","122","135"
+            "110","133","120","111","122","135"                   // B (correct)
           ]},
 
         { latex: String.raw`\text{Evaluate } 52z + 2z^5 \text{ if } z=2.`,
           choices: [
-            "104","128","168","172","184","200"
+            "104","128","168","172","184","200"                   // C (correct)
           ]},
 
         { latex: String.raw`\text{Evaluate } 5m - 3 \text{ if } m=0.`,
           choices: [
-            "5","2","3","-5","-3","-2"
+            "5","2","3","-5","-3","-2"                            // E (correct = -3)
           ]},
 
         { latex: String.raw`\text{Evaluate } y^5 - 2y^3 - 7 \text{ if } y=-2.`,
           choices: [
-            "-55","-37","-25","-11","-7","0"
+            "-55","-37","-23","-11","-7","0"                      // C (correct = -23)
           ]},
 
         { latex: String.raw`\text{Evaluate } -2x^4 - x^3 + x^2 - x + 1 \text{ if } x=-4.`,
           choices: [
-            "-567","-527","-487","-447","-407","-367"
+            "-567","-527","-487","-447","-427","-367"             // E (correct = -427)
           ]}
       ]
     };
