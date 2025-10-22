@@ -37,7 +37,7 @@
         // 2 — exponents cancellation with leftover power in denominator
         { latex: String.raw`\text{Simplify: } \dfrac{18x^{3}y}{4x^{5}}`,
           choices: [
-            String.raw`\dfrac{9xy}{2x^{3}}`,
+           String.raw`\dfrac{9y}{2x^{3}}`,
             String.raw`\dfrac{9x^{3}y}{2x^{5}}`,
             String.raw`\dfrac{9y}{2x}`,
             String.raw`\dfrac{9}{2}x^{2}y`,
@@ -48,7 +48,7 @@
         // 3 — GCF only; no binomial cancellation
         { latex: String.raw`\text{Simplify: } \dfrac{5x^{4}+5xy}{2x+2y}`,
           choices: [
-            String.raw`\dfrac{5(x^{4}+xy)}{2(x+y)}`,
+            String.raw`\dfrac{5(x^{4}+xy)}{2x}`,
             String.raw`\dfrac{5x(x^{3}+y)}{2}`,                  // near-miss (missing /(x+y))
             String.raw`\dfrac{5x(x^{3}+y)}{2(x+y)}`,             // C (correct)
             String.raw`\dfrac{5(x^{3}+y)}{2(x+y)}`,
@@ -128,7 +128,7 @@
             String.raw`\dfrac{x}{3}`,
             String.raw`\dfrac{x-2}{3}`,                            // B (correct)
             String.raw`\dfrac{x-2}{15}`,
-            String.raw`\dfrac{x(x-2)}{3x}`,
+           String.raw`\dfrac{x-2}{9}`,
             String.raw`\dfrac{x-2}{5}`,
             String.raw`x-2`
           ]},
