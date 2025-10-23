@@ -17,9 +17,10 @@
 
       graphics : String.raw``,  // none needed
 
-      /* Hidden answer key (A–F) for Q1–Q12 */
-      /* 1:C, 2:E, 3:A, 4:A, 5:A, 6:D, 7:A, 8:B, 9:A, 10:B, 11:A, 12:D */
-      answerKey : ["C","E","A","A","A","D","A","B","A","B","A","D"],
+      /* Hidden answer key (A–F) for Q1–Q12
+         1:C, 2:E, 3:A, 4:A, 5:A, 6:D, 7:A, 8:A, 9:A, 10:B, 11:A, 12:D
+      */
+      answerKey : ["C","E","A","A","A","D","A","A","A","B","A","D"],
 
       questions : [
         /* 1 */
@@ -88,8 +89,8 @@
           choices: [
             String.raw`\dfrac{a-6}{a-3}`,
             String.raw`\dfrac{2(a-6)}{(a-3)^{2}}`,
-            String.raw`\dfrac{a-6}{(a-3)^{2}}`,
-            String.raw`\dfrac{a-6}{(a-3)^{2}}`,   // correct
+            String.raw`\dfrac{a-6}{a-3}`,                 // changed (now a wrong distractor)
+            String.raw`\dfrac{a-6}{(a-3)^{2}}`,           // correct
             String.raw`1`,
             String.raw`\dfrac{a-6}{2(a-3)}`
           ]},
@@ -110,15 +111,15 @@
         { latex: String.raw`\text{Divide: }\;
           \left(\dfrac{9a^{2}-5a+6}{a^{2}-5a+6}\right)\div\left(\dfrac{a^{2}+4a+4}{a^{2}+9a+14}\right)`,
           choices: [
-            String.raw`\dfrac{(9a^{2}-5a+6)(a+7)}{(a-2)(a-3)(a+2)}`, // correct simplified product
-            String.raw`\dfrac{9a^{2}-5a+6}{(a-2)(a-3)}\cdot\dfrac{a+7}{a+2}`,
+            String.raw`\dfrac{(9a^{2}-5a+6)(a+7)}{(a-2)(a-3)(a+2)}`, // correct single fraction
+            String.raw`\dfrac{9a^{2}-5a+6}{(a-2)(a-3)}\cdot\dfrac{a+7}{a+3}`, // adjusted near-miss
             String.raw`\dfrac{9a^{2}-5a+6}{a-3}`,
             String.raw`\dfrac{9a^{2}-5a+6}{a-2}`,
             String.raw`\dfrac{9a^{2}-5a+6}{a+7}`,
             String.raw`1`
           ]},
 
-        /* 9 — new valid problem */
+        /* 9 */
         { latex: String.raw`\text{Divide: }\;
           \left(\dfrac{x^{2}-9}{x^{2}-x-6}\right)\div\left(\dfrac{x-3}{x+2}\right)`,
           choices: [
@@ -130,7 +131,7 @@
             String.raw`x`
           ]},
 
-        /* 10 — complex rational (corrected) */
+        /* 10 — complex rational */
         { latex: String.raw`\text{Simplify the complex rational expression: }\;
           \dfrac{\dfrac{x^{2}-1}{5x-1}}{\dfrac{x+1}{10x}}`,
           choices: [
@@ -142,7 +143,7 @@
             String.raw`2x-2`
           ]},
 
-        /* 11 — complex: sum of unit fractions over linear (corrected) */
+        /* 11 — complex: sum of unit fractions over linear */
         { latex: String.raw`\text{Simplify: }\;
           \dfrac{\dfrac{1}{a+b}+\dfrac{1}{a+3b}}{a^{2}+4ab+3b^{2}}`,
           choices: [
@@ -154,14 +155,14 @@
             String.raw`\dfrac{a+2b}{(a+2b)^{2}}`
           ]},
 
-        /* 12 — complex: nested linear-over-linear (clean) */
+        /* 12 — complex: nested linear-over-linear */
         { latex: String.raw`\text{Simplify: }\;
           \dfrac{\dfrac{c^{2}+6c+8}{c^{2}+c-3}}{\dfrac{c^{2}+7c+12}{c^{2}+2c-3}}`,
           choices: [
             String.raw`\dfrac{c+2}{c-2}`,
             String.raw`\dfrac{c+2}{c-1}`,
             String.raw`\dfrac{c+1}{c+3}`,
-            String.raw`\dfrac{(c+2)(c-1)}{c-2}`, // correct
+            String.raw`\dfrac{(c+2)(c-1)}{c^{2}+c-3}`, // correct
             String.raw`\dfrac{(c+2)(c-3)}{(c+3)(c-1)}`,
             String.raw`1`
           ]}
