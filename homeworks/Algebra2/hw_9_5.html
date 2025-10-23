@@ -84,8 +84,10 @@
 \end{tikzpicture}
 `,
 
-      /* ===== Updated hidden answer key (A–F) ===== */
-      answerKey : ["B","D","A","D","C","C","A","B","C","B","C","B"],
+      /* ===== Updated hidden answer key (A–F) =====
+         Q11 corrected to A (x=5 only).
+      */
+      answerKey : ["B","D","A","D","C","C","A","B","C","B","A","B"],
 
       questions : [
         { latex: String.raw`\text{Refer to G1. What are the vertical and horizontal asymptotes?}`,
@@ -192,9 +194,9 @@
         /* ==== Keep two conceptual checks ==== */
         { latex: String.raw`\text{Refer to G5. Which vertical asymptotes are correct?}`,
           choices: [
-            String.raw`x=5\ \text{ only}`,
+            String.raw`x=5\ \text{ only}`,  // ✔
             String.raw`x=0\ \text{ only}`,
-            String.raw`x=5\ \text{ and }x=0`, // ✔
+            String.raw`x=5\ \text{ and }x=0`,
             String.raw`y=5`,
             String.raw`y=1`,
             String.raw`x=1`
