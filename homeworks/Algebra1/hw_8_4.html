@@ -16,14 +16,17 @@
 
       graphics : String.raw` `,
 
-      answerKey : ["C","A","F","D","B","E","C","D","F","A","B","E"],
+      /* Corrected answer key (A–F):
+         1 C, 2 A, 3 F, 4 D, 5 B, 6 A, 7 A, 8 A, 9 A, 10 A, 11 C, 12 A
+      */
+      answerKey : ["C","A","F","D","B","A","A","A","A","A","C","A"],
 
       questions : [
         { latex: String.raw`\text{Multiply: }(8x^3y)(4xy^2z).`,
           choices: [
             String.raw`32x^3y^2z`,
             String.raw`32x^4yz`,
-            String.raw`32x^4y^3z`,
+            String.raw`32x^4y^3z`,   // C (correct)
             String.raw`12x^4y^3z`,
             String.raw`24x^4y^3z`,
             String.raw`36x^4y^3z`
@@ -31,7 +34,7 @@
 
         { latex: String.raw`\text{Multiply: }(3x^3y^2)(18x).`,
           choices: [
-            String.raw`54x^4y^2`,
+            String.raw`54x^4y^2`,    // A (correct)
             String.raw`54x^3y^2`,
             String.raw`18x^4y^2`,
             String.raw`36x^4y^2`,
@@ -46,7 +49,7 @@
             String.raw`12a^3b^2`,
             String.raw`-12a^3b^2`,
             String.raw`-12a^2b^2`,
-            String.raw`-12a^3b^3`
+            String.raw`-12a^3b^3`    // F (correct)
           ]},
 
         { latex: String.raw`\text{Multiply: }(2abc)(-3a^3b).`,
@@ -54,7 +57,7 @@
             String.raw`-6a^3b^2c`,
             String.raw`-6a^2b^2c`,
             String.raw`-5a^4b^2c`,
-            String.raw`-6a^4b^2c`,
+            String.raw`-6a^4b^2c`,   // D (correct)
             String.raw`6a^4b^2c`,
             String.raw`-6a^4bc`
           ]},
@@ -62,7 +65,7 @@
         { latex: String.raw`\text{Multiply: }(36m^2n^5)(-3mn^7).`,
           choices: [
             String.raw`-108m^2n^{12}`,
-            String.raw`-108m^3n^{12}`,
+            String.raw`-108m^3n^{12}`, // B (correct)
             String.raw`108m^3n^{12}`,
             String.raw`-108m^3n^{11}`,
             String.raw`-36m^3n^{12}`,
@@ -71,19 +74,19 @@
 
         { latex: String.raw`\text{Perform: }(2x^2+3x-8)(7x).`,
           choices: [
-            String.raw`14x^3+21x^2-56x`,
+            String.raw`14x^3+21x^2-56x`, // A (correct)
             String.raw`14x^2+21x-56x`,
             String.raw`14x^3+21x^2+56x`,
             String.raw`14x^3-21x^2-56x`,
-            String.raw`14x^3+21x^2-56x`,
+            String.raw`14x^3+21x-56`,    // changed (now wrong)
             String.raw`7x^3+3x^2-8x`
           ]},
 
         { latex: String.raw`\text{Perform: }(5a+10b)(-4b).`,
           choices: [
-            String.raw`-20ab-40b^2`,
+            String.raw`-20ab-40b^2`,    // A (correct)
             String.raw`-5ab-40b^2`,
-            String.raw`-20ab-40b^2`,
+            String.raw`-20ab+40b^2`,    // changed (now wrong)
             String.raw`-20a-40b^2`,
             String.raw`-10ab-20b^2`,
             String.raw`20ab-40b^2`
@@ -91,17 +94,17 @@
 
         { latex: String.raw`\text{Perform: }(4m^2-3mn-10)(6m).`,
           choices: [
-            String.raw`24m^3-18m^2n-60m`,
+            String.raw`24m^3-18m^2n-60m`, // A (correct)
             String.raw`24m^3-18mn-60m`,
             String.raw`24m^3-18m^2n-10m`,
-            String.raw`24m^3-18m^2n-60m`,
+            String.raw`24m^3-18m^2n+60m`, // changed (now wrong)
             String.raw`24m^3+18m^2n-60m`,
             String.raw`6m^3-3mn-10m`
           ]},
 
         { latex: String.raw`\text{Perform: }(8k^2+9k+6)(-7k).`,
           choices: [
-            String.raw`-56k^3-63k^2-42k`,
+            String.raw`-56k^3-63k^2-42k`, // A (correct)
             String.raw`-56k^2-63k-42k`,
             String.raw`56k^3+63k^2+42k`,
             String.raw`-56k^3+63k^2-42k`,
@@ -111,7 +114,7 @@
 
         { latex: String.raw`\text{Perform: }(k-m-p)(3a).`,
           choices: [
-            String.raw`3ak-3am-3ap`,
+            String.raw`3ak-3am-3ap`,   // A (correct)
             String.raw`3ak-3a-m-p`,
             String.raw`3ak-3am+p`,
             String.raw`3ak-3am-3p`,
@@ -123,7 +126,7 @@
           choices: [
             String.raw`-90ab^2`,
             String.raw`-90a^2b^2`,
-            String.raw`-90a^2b^3`,
+            String.raw`-90a^2b^3`,  // C (correct)
             String.raw`-90a^2b`,
             String.raw`90a^2b^3`,
             String.raw`-30a^2b^3`
@@ -131,7 +134,7 @@
 
         { latex: String.raw`\text{Simplify: }(3x^2y^3)(4xyz^4)-(3xy^2)(xyz^2).`,
           choices: [
-            String.raw`12x^3y^4z^4-3x^2y^3z^2`,
+            String.raw`12x^3y^4z^4-3x^2y^3z^2`, // A (correct)
             String.raw`12x^3y^4z^4-3xy^3z^2`,
             String.raw`12x^3y^3z^4-3x^2y^3z^2`,
             String.raw`12x^2y^3z^4-3x^2y^3z^2`,
@@ -150,4 +153,3 @@
   <div id="hw-root">Loading…</div>
 </body>
 </html>
-
