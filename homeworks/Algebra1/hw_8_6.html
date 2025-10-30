@@ -16,13 +16,16 @@
 
       graphics : String.raw` `,
 
-      answerKey : ["B","E","D","A","C","F","D","A","C","F","B","E"],
+      /* Final corrected answer key (A–F):
+         1 B, 2 E, 3 D, 4 A, 5 C, 6 A, 7 A, 8 D, 9 A, 10 A, 11 A, 12 B
+      */
+      answerKey : ["B","E","D","A","C","A","A","D","A","A","A","B"],
 
       questions : [
         { latex: String.raw`\text{Multiply: }(x^2+xy+y^2)(x+y).`,
           choices: [
             String.raw`x^3+y^3`,
-            String.raw`x^3+2x^2y+2xy^2+y^3`,
+            String.raw`x^3+2x^2y+2xy^2+y^3`,  // correct
             String.raw`x^3+xy+y^3`,
             String.raw`x^3+3xy+y^3`,
             String.raw`x^2+2xy+y^2`,
@@ -35,7 +38,7 @@
             String.raw`3a^3+19a^2-18a-28`,
             String.raw`3a^3-21a^2-2a-4`,
             String.raw`3a^3-23a^2-4a+28`,
-            String.raw`3a^3-23a^2+10a+28`,
+            String.raw`3a^3-23a^2+10a+28`,  // correct
             String.raw`3a^3-21a^2-2a-28`
           ]},
 
@@ -44,17 +47,17 @@
             String.raw`12x^3+15x^2y-3xy^2-9y^3`,
             String.raw`12x^3+6x^2y+3xy^2-9y^3`,
             String.raw`12x^3+9x^2y-18xy^2-9y^3`,
-            String.raw`12x^3+15x^2y-3xy^2-9y^3`,
+            String.raw`12x^3+12x^2y-15xy^2-9y^3`,  // correct
             String.raw`12x^3+9x^2y-9y^3`,
             String.raw`6x^3+3xy-9y^2`
           ]},
 
         { latex: String.raw`\text{Multiply: }(7a+3b-9c+d)(a+b).`,
           choices: [
-            String.raw`7a^2+10ab+3b^2-9ac-9bc+ad+bd`,
+            String.raw`7a^2+10ab+3b^2-9ac-9bc+ad+bd`, // correct
             String.raw`7a^2+3ab-9ac+ad+b^2`,
             String.raw`7a^2+7ab+3b^2-9c(a+b)+d(a+b)`,
-            String.raw`7a^2+10ab+3b^2-9ac-9bc+ad+bd`,
+            String.raw`7a^2+7ab+3b^2-9ac-9bc+ad+bd`,
             String.raw`7a^2+ab+3b^2`,
             String.raw`7a^2+10ab-9c+d`
           ]},
@@ -63,7 +66,7 @@
           choices: [
             String.raw`6x^3-13x^2-7x+28`,
             String.raw`6x^3-13x^2+7x-28`,
-            String.raw`6x^3-13x^2+33x-28`,
+            String.raw`6x^3-17x^2+19x-28`,   // correct
             String.raw`6x^3-x^2+28`,
             String.raw`2x^3-7x+28`,
             String.raw`6x^3-21x^2+28`
@@ -71,7 +74,7 @@
 
         { latex: String.raw`\text{Multiply: }(2a+4b)(3a-9).`,
           choices: [
-            String.raw`6a^2+12ab-18a-36b`,
+            String.raw`6a^2+12ab-18a-36b`,   // correct
             String.raw`6a^2+12ab+18a-36b`,
             String.raw`6a^2-18a+12ab-36b`,
             String.raw`6a^2+12a-36b`,
@@ -81,7 +84,7 @@
 
         { latex: String.raw`\text{Multiply: }(3x-6)(3x+5).`,
           choices: [
-            String.raw`9x^2-3x-30`,
+            String.raw`9x^2-3x-30`,   // correct
             String.raw`9x^2+9x-30`,
             String.raw`9x^2-18x-30`,
             String.raw`9x^2-3x+30`,
@@ -94,49 +97,51 @@
             String.raw`6x^3+7x^2+18x+48`,
             String.raw`6x^3-15x^2+24x+48`,
             String.raw`6x^3-15x^2+18x+48`,
-            String.raw`6x^3-15x^2+24x+48`,
+            String.raw`6x^3-3x^2-6x+48`,   // correct
             String.raw`2x^3-5x^2+24x+48`,
             String.raw`6x^3-5x^2+8x+48`
           ]},
 
         { latex: String.raw`\text{Multiply: }(5x^2-7x+4)(x-3).`,
           choices: [
-            String.raw`5x^3-22x^2+25x-12`,
+            String.raw`5x^3-22x^2+25x-12`,  // correct
             String.raw`5x^3-15x^2+12x`,
             String.raw`5x^3-7x^2+4x-12`,
-            String.raw`5x^3-22x^2+25x-12`,
+            String.raw`5x^3-21x^2+25x-12`,
             String.raw`5x^3-22x^2+7x-12`,
             String.raw`5x^3-7x^2+25x-12`
           ]},
 
         { latex: String.raw`\text{Multiply: }(x^2-3x-9)(x^2+4x-6).`,
           choices: [
-            String.raw`x^4+x^3-21x^2-6x+54`,
+            String.raw`x^4+x^3-27x^2-18x+54`, // correct
             String.raw`x^4+x^3-21x^2+6x+54`,
             String.raw`x^4-7x^3-21x^2-6x+54`,
-            String.raw`x^4+x^3-21x^2-6x+54`,
+            String.raw`x^4+x^3-27x^2-6x+54`,
             String.raw`x^4-7x^3-21x^2+6x+54`,
             String.raw`x^4+x^3+21x^2-6x-54`
           ]},
 
-        { latex: String.raw`\text{Give the correct justification for the step: }a(b+c)=(b+c)a.`,
+        /* --- Replaced items: simplifications --- */
+
+        { latex: String.raw`\text{Simplify: }(a+b+c)\bigl(a^{2}+b^{2}+c^{2}-ab-ac-bc\bigr).`,
           choices: [
-            String.raw`\text{Distributive property}`,
-            String.raw`\text{Commutative property}`,
-            String.raw`\text{Associative property}`,
-            String.raw`\text{Identity property}`,
-            String.raw`\text{Inverse property}`,
-            String.raw`\text{Closure property}`
+            String.raw`a^{3}+b^{3}+c^{3}-3abc`,  // correct
+            String.raw`a^{3}+b^{3}+c^{3}+3abc`,
+            String.raw`(a+b+c)^{3}`,
+            String.raw`a^{3}+b^{3}+c^{3}`,
+            String.raw`a^{3}+b^{3}+c^{3}-abc`,
+            String.raw`(a+b)(b+c)(c+a)`
           ]},
 
-        { latex: String.raw`\text{Give the correct justification for the step: }ac+bc+(a+b)d=ac+bc+ad+bd.`,
+        { latex: String.raw`\text{Simplify: }(a-2b)\bigl(a^{5}+2a^{4}b+4a^{3}b^{2}+8a^{2}b^{3}+16ab^{4}+32b^{5}\bigr).`,
           choices: [
-            String.raw`\text{Commutative property}`,
-            String.raw`\text{Associative property}`,
-            String.raw`\text{Distributive property}`,
-            String.raw`\text{Identity property}`,
-            String.raw`\text{Distributive property applied to }(a+b)d`,
-            String.raw`\text{Closure property}`
+            String.raw`a^{6}+64b^{6}`,
+            String.raw`a^{6}-64b^{6}`,  // correct
+            String.raw`a^{6}-32b^{6}`,
+            String.raw`(a-2b)^{6}`,
+            String.raw`a^{6}-48b^{6}`,
+            String.raw`a^{6}-128b^{6}`
           ]}
       ]
     };
