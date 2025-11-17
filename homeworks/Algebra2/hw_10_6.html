@@ -7,140 +7,226 @@
 
   <script>
     /* =========================
-       Homework 10-6 — Graphs of Sine, Cosine, Tangent, and Cotangent
+       Homework 10-6 — Graphs of Trig Functions
        ========================= */
     window.homeworkData = {
       classId : "Algebra2",
       id      : "Homework 10-6",
-      title   : "Homework 10-6 — Graphs of Sine, Cosine, Tangent, and Cotangent",
+      title   : "Homework 10-6 — Graphs of Trig Functions",
 
-      graphics : String.raw``,
+      graphics : String.raw`
+\begin{tikzpicture}[scale=0.55]
+
+  % ---------- G1: y = sin x ----------
+  \begin{scope}[xshift=-8cm,yshift=4cm]
+    \draw[->] (-6.8,0) -- (6.8,0);
+    \draw[->] (0,-1.5) -- (0,1.5);
+    \draw[domain=-6.28:6.28,smooth,variable=\x] plot (\x,{sin(\x r)});
+    \node at (0,-0.7) {$0$};
+    \node at (1.57,-0.7) {$\tfrac{\pi}{2}$};
+    \node at (3.14,-0.7) {$\pi$};
+    \node at (4.71,-0.7) {$\tfrac{3\pi}{2}$};
+    \node at (6.28,-0.7) {$2\pi$};
+    \node at (-3.14,-0.7) {$-\pi$};
+    \node at (-6.28,-0.7) {$-2\pi$};
+    \node[anchor=south east,font=\small] at (6.6,1.4) {G1};
+  \end{scope}
+
+  % ---------- G2: y = cos x ----------
+  \begin{scope}[xshift=0cm,yshift=4cm]
+    \draw[->] (-6.8,0) -- (6.8,0);
+    \draw[->] (0,-1.5) -- (0,1.5);
+    \draw[domain=-6.28:6.28,smooth,variable=\x] plot (\x,{cos(\x r)});
+    \node at (0,-0.7) {$0$};
+    \node at (1.57,-0.7) {$\tfrac{\pi}{2}$};
+    \node at (3.14,-0.7) {$\pi$};
+    \node at (4.71,-0.7) {$\tfrac{3\pi}{2}$};
+    \node at (6.28,-0.7) {$2\pi$};
+    \node at (-3.14,-0.7) {$-\pi$};
+    \node at (-6.28,-0.7) {$-2\pi$};
+    \node[anchor=south east,font=\small] at (6.6,1.4) {G2};
+  \end{scope}
+
+  % ---------- G3: y = tan x ----------
+  \begin{scope}[xshift=8cm,yshift=4cm]
+    \draw[->] (-5,0) -- (5,0);
+    \draw[->] (0,-3.5) -- (0,3.5);
+    \draw[dashed] (-1.57,-3.5) -- (-1.57,3.5);
+    \draw[dashed] (1.57,-3.5) -- (1.57,3.5);
+    \draw[dashed] (-4.71,-3.5) -- (-4.71,3.5);
+    \draw[dashed] (4.71,-3.5) -- (4.71,3.5);
+    \draw[domain=-4.5:-1.6,smooth,variable=\x] plot (\x,{tan(\x r)});
+    \draw[domain=-1.4:1.4,smooth,variable=\x] plot (\x,{tan(\x r)});
+    \draw[domain=1.6:4.5,smooth,variable=\x] plot (\x,{tan(\x r)});
+    \node at (0,-0.6) {$0$};
+    \node at (1.57,-0.6) {$\tfrac{\pi}{2}$};
+    \node at (-1.57,-0.6) {$-\tfrac{\pi}{2}$};
+    \node[anchor=south east,font=\small] at (4.8,3.3) {G3};
+  \end{scope}
+
+  % ---------- G4: y = 2 cos x ----------
+  \begin{scope}[xshift=-8cm,yshift=-4cm]
+    \draw[->] (-6.8,0) -- (6.8,0);
+    \draw[->] (0,-2.5) -- (0,2.5);
+    \draw[domain=-6.28:6.28,smooth,variable=\x] plot (\x,{2*cos(\x r)});
+    \node at (0,-0.7) {$0$};
+    \node at (3.14,-0.7) {$\pi$};
+    \node at (6.28,-0.7) {$2\pi$};
+    \node[anchor=south east,font=\small] at (6.6,2.4) {G4};
+  \end{scope}
+
+  % ---------- G5: y = (1/4) sin x ----------
+  \begin{scope}[xshift=0cm,yshift=-4cm]
+    \draw[->] (-6.8,0) -- (6.8,0);
+    \draw[->] (0,-1) -- (0,1);
+    \draw[domain=-6.28:6.28,smooth,variable=\x] plot (\x,{0.25*sin(\x r)});
+    \node at (0,-0.7) {$0$};
+    \node at (3.14,-0.7) {$\pi$};
+    \node at (6.28,-0.7) {$2\pi$};
+    \node[anchor=south east,font=\small] at (6.6,0.9) {G5};
+  \end{scope}
+
+  % ---------- G6: y = cos 2x ----------
+  \begin{scope}[xshift=8cm,yshift=-4cm]
+    \draw[->] (-6.8,0) -- (6.8,0);
+    \draw[->] (0,-1.5) -- (0,1.5);
+    \draw[domain=-6.28:6.28,smooth,variable=\x] plot (\x,{cos(2*\x r)});
+    \node at (0,-0.7) {$0$};
+    \node at (1.57,-0.7) {$\tfrac{\pi}{2}$};
+    \node at (3.14,-0.7) {$\pi$};
+    \node at (4.71,-0.7) {$\tfrac{3\pi}{2}$};
+    \node at (6.28,-0.7) {$2\pi$};
+    \node[anchor=south east,font=\small] at (6.6,1.4) {G6};
+  \end{scope}
+
+\end{tikzpicture}
+`,
 
       /* Correct options for Q1–Q12 below */
-      answerKey : ["A","A","A","C","A","B","C","D","B","B","B","B"],
+      answerKey : ["A","D","F","C","A","C","C","D","B","B","B","B"],
 
       questions : [
         /* ---------- A-type (3) ---------- */
-        { latex: String.raw`\text{Give the domain of }y=\sin x.`,
+        { latex: String.raw`\text{Which graph shows }y=\sin x\text{?}`,
           choices: [
-            String.raw`\text{all real numbers }x`,
-            String.raw`\text{all real }x\text{ with }-1\le x\le 1`,
-            String.raw`\{x:x\ne k\pi,\ k\text{ an integer}\}`,
-            String.raw`\{x:x\ne \tfrac{\pi}{2}+k\pi,\ k\text{ an integer}\}`,
-            String.raw`\{x:x\ge 0\}`,
-            String.raw`\{-\pi\le x\le\pi\}`
+            String.raw`\text{Graph G1}`,
+            String.raw`\text{Graph G2}`,
+            String.raw`\text{Graph G3}`,
+            String.raw`\text{Graph G4}`,
+            String.raw`\text{Graph G5}`,
+            String.raw`\text{Graph G6}`
           ]},
 
-        { latex: String.raw`\text{Give the range of }y=\cos x.`,
+        { latex: String.raw`\text{Which graph shows }y=2\cos x\text{?}`,
           choices: [
-            String.raw`\{-1\le y\le 1\}`,
-            String.raw`\{0\le y\le 1\}`,
-            String.raw`\{y:y\ge 0\}`,
-            String.raw`\{y:y\le 0\}`,
-            String.raw`\text{all real numbers }y`,
-            String.raw`\{-\pi\le y\le\pi\}`
+            String.raw`\text{Graph G1}`,
+            String.raw`\text{Graph G2}`,
+            String.raw`\text{Graph G3}`,
+            String.raw`\text{Graph G4}`,
+            String.raw`\text{Graph G5}`,
+            String.raw`\text{Graph G6}`
           ]},
 
-        { latex: String.raw`\text{Are }f(x)=\sin x\text{ and }f(x)=\cos x\text{ continuous?}`,
+        { latex: String.raw`\text{Which graph shows }y=\cos 2x\text{?}`,
           choices: [
-            String.raw`\text{Yes, both are continuous for every real }x.`,
-            String.raw`\text{Only } \sin x \text{ is continuous; } \cos x \text{ is not.}`,
-            String.raw`\text{Only } \cos x \text{ is continuous; } \sin x \text{ is not.}`,
-            String.raw`\text{Both are discontinuous only at }x=0.`,
-            String.raw`\text{Both are discontinuous at every multiple of }\tfrac{\pi}{2}.`,
-            String.raw`\text{Neither is a function, so continuity does not apply.}`
+            String.raw`\text{Graph G1}`,
+            String.raw`\text{Graph G2}`,
+            String.raw`\text{Graph G3}`,
+            String.raw`\text{Graph G4}`,
+            String.raw`\text{Graph G5}`,
+            String.raw`\text{Graph G6}`
           ]},
 
         /* ---------- B-type (8) ---------- */
-        { latex: String.raw`\text{Which description gives the domain of }y=\tan x\text{?}`,
+        { latex: String.raw`\text{Using graph G1, what is the }y\text{-coordinate when }x=0\text{?}`,
           choices: [
-            String.raw`\text{all real }x`,
+            String.raw`-1`,
+            String.raw`-\dfrac12`,
+            String.raw`0`,
+            String.raw`\dfrac12`,
+            String.raw`1`,
+            String.raw`\text{undefined}`
+          ]},
+
+        { latex: String.raw`\text{Using graph G2 on }0\le x\le2\pi,\ \text{at which of the following }x\text{-values does the graph have a maximum?}`,
+          choices: [
+            String.raw`0`,
+            String.raw`\dfrac{\pi}{2}`,
+            String.raw`\pi`,
+            String.raw`\dfrac{3\pi}{2}`,
+            String.raw`2\pi`,
+            String.raw`\text{none of these}`
+          ]},
+
+        { latex: String.raw`\text{Which description gives the domain of the function in graph G3?}`,
+          choices: [
+            String.raw`\{x:x\text{ is a real number}\}`,
             String.raw`\{x:x\ne k\pi,\ k\text{ an integer}\}`,
             String.raw`\{x:x\ne \tfrac{\pi}{2}+k\pi,\ k\text{ an integer}\}`,
-            String.raw`0\le x\le 2\pi`,
-            String.raw`\{x:-1\le x\le 1\}`,
-            String.raw`\{x:x\ne 0\}`
+            String.raw`-\dfrac{\pi}{2}<x<\dfrac{\pi}{2}`,
+            String.raw`0\le x\le2\pi`,
+            String.raw`\{x:x\ne0\}`
           ]},
 
-        { latex: String.raw`\text{Give the range of }y=\sin x.`,
+        { latex: String.raw`\text{Which graph is \emph{not} continuous for all real }x\text{?}`,
           choices: [
-            String.raw`\{-1\le y\le 1\}`,
-            String.raw`\{0\le y\le 1\}`,
-            String.raw`\{y:y\ge 0\}`,
-            String.raw`\{y:y\le 0\}`,
-            String.raw`\text{all real }y`,
-            String.raw`\{-2\le y\le 2\}`
+            String.raw`\text{Graph G1}`,
+            String.raw`\text{Graph G2}`,
+            String.raw`\text{Graph G3}`,
+            String.raw`\text{Graph G4}`,
+            String.raw`\text{Graph G5}`,
+            String.raw`\text{Graph G6}`
           ]},
 
-        { latex: String.raw`\text{Give the range of }y=\tan x.`,
+        { latex: String.raw`\text{Order the amplitudes of graphs G5, G1, and G4 from smallest to largest.}`,
           choices: [
-            String.raw`\{-1\le y\le 1\}`,
-            String.raw`\text{all real }y`,
-            String.raw`\{y:y\ge 0\}`,
-            String.raw`\{y:y\le 0\}`,
-            String.raw`\{y:y\ne 0\}`,
-            String.raw`0\le y\le\pi`
+            String.raw`\text{G4,\ G1,\ G5}`,
+            String.raw`\text{G5,\ G4,\ G1}`,
+            String.raw`\text{G1,\ G5,\ G4}`,
+            String.raw`\text{G5,\ G1,\ G4}`,
+            String.raw`\text{G1,\ G4,\ G5}`,
+            String.raw`\text{G4,\ G5,\ G1}`
           ]},
 
-        { latex: String.raw`\text{Compare }y=2\cos x\text{ with }y=\cos x.\ \text{Which statement is true?}`,
+        { latex: String.raw`\text{What is the period of the function shown in graph G6?}`,
           choices: [
-            String.raw`y=2\cos x\text{ is the graph of }y=\cos x\text{ shifted }2\text{ units to the right.}`,
-            String.raw`y=2\cos x\text{ is the graph of }y=\cos x\text{ shifted }2\text{ units upward.}`,
-            String.raw`y=2\cos x\text{ has maximum value }2\text{ and minimum value }-2.`,
-            String.raw`y=2\cos x\text{ has period }2\text{ instead of }2\pi.`,
-            String.raw`y=2\cos x\text{ is no longer periodic.}`,
-            String.raw`y=2\cos x\text{ has domain }0\le x\le 2\pi.`
+            String.raw`\dfrac{\pi}{2}`,
+            String.raw`\pi`,
+            String.raw`2\pi`,
+            String.raw`4\pi`,
+            String.raw`\dfrac{3\pi}{2}`,
+            String.raw`6\pi`
           ]},
 
-        { latex: String.raw`\text{Give the range of }y=\dfrac14\sin x.`,
+        { latex: String.raw`\text{Which graphs have range equal to all real numbers?}`,
           choices: [
-            String.raw`\{-1\le y\le 1\}`,
-            String.raw`\{-4\le y\le 4\}`,
-            String.raw`\text{all real }y`,
-            String.raw`\left\{-\dfrac14\le y\le\dfrac14\right\}`,
-            String.raw`\left\{0\le y\le\dfrac14\right\}`,
-            String.raw`\left\{-\dfrac14\le y\le 1\right\}`
+            String.raw`\text{G1 only}`,
+            String.raw`\text{G3 only}`,
+            String.raw`\text{G1 and G3}`,
+            String.raw`\text{G2 and G3}`,
+            String.raw`\text{G1,\ G2,\ and G3}`,
+            String.raw`\text{none of these}`
           ]},
 
-        { latex: String.raw`\text{One complete cycle of }y=\sin 2x\text{ occurs over which interval?}`,
+        { latex: String.raw`\text{If the graph of G3 is vertically compressed by a factor of } \dfrac12,\ \text{which equation describes the new graph?}`,
           choices: [
-            String.raw`0\le x\le \dfrac{\pi}{2}`,
-            String.raw`0\le x\le \pi`,
-            String.raw`0\le x\le 2\pi`,
-            String.raw`-\pi\le x\le\pi`,
-            String.raw`-2\pi\le x\le 2\pi`,
-            String.raw`\pi\le x\le 2\pi`
-          ]},
-
-        { latex: String.raw`\text{Which statement about }f(x)=\tan x\text{ is true?}`,
-          choices: [
-            String.raw`f\text{ is continuous for every real }x.`,
-            String.raw`f\text{ is not continuous, because its graph has breaks at }x=\tfrac{\pi}{2}+k\pi.`,
-            String.raw`f\text{ is continuous only for }0<x<\pi.`,
-            String.raw`f\text{ is continuous only for }x\ge 0.`,
-            String.raw`f\text{ is not continuous, because it fails the vertical line test.}`,
-            String.raw`f\text{ is not a function.}`
-          ]},
-
-        { latex: String.raw`f(x)=\cot x.\ \text{Which description of its domain and range is correct?}`,
-          choices: [
-            String.raw`\text{Domain: all real }x;\ \text{Range: }-1\le y\le 1.`,
-            String.raw`\text{Domain: }x\ne k\pi,\ k\text{ an integer; Range: all real }y.`,
-            String.raw`\text{Domain: }x\ne \tfrac{\pi}{2}+k\pi,\ k\text{ an integer; Range: all real }y.`,
-            String.raw`\text{Domain: all real }x;\ \text{Range: }y\ne 0.`,
-            String.raw`\text{Domain: }0\le x\le 2\pi;\ \text{Range: all real }y.`,
-            String.raw`\text{Domain: all real }x;\ \text{Range: }y\ge 0.`
+            String.raw`y=2\tan x`,
+            String.raw`y=\dfrac12\tan x`,
+            String.raw`y=\tan\left(\dfrac{x}{2}\right)`,
+            String.raw`y=\tan(2x)`,
+            String.raw`y=\dfrac12\cot x`,
+            String.raw`y=\cot x`
           ]},
 
         /* ---------- C-type (1) ---------- */
-        { latex: String.raw`\text{After graphing }y=\tan x\text{ and }y=\cot x,\ \text{what general conclusion can you draw?}`,
+        { latex: String.raw`\text{Compare graphs G1 and G2. Which statement is true about the relationship between the sine and cosine graphs?}`,
           choices: [
-            String.raw`Both graphs have period }2\pi\text{ and range }-1\le y\le 1.`,
-            String.raw`Both are periodic with period }\pi\text{ and have range equal to all real numbers.`,
-            String.raw`y=\tan x\text{ is periodic, but }y=\cot x\text{ is not.}`,
-            String.raw`Neither graph is periodic.`,
-            String.raw`Both are continuous for every real }x\text{.`,
-            String.raw`Both fail the vertical line test and are not functions.`
+            String.raw`\text{The graph of }y=\cos x\text{ is the graph of }y=\sin x\text{ shifted } \dfrac{\pi}{2} \text{ units to the right.}`,
+            String.raw`\text{The graph of }y=\cos x\text{ is the graph of }y=\sin x\text{ shifted } \dfrac{\pi}{2} \text{ units to the left.}`,
+            String.raw`\text{The graph of }y=\sin x\text{ is obtained by reflecting }y=\cos x\text{ across the }y\text{-axis.}`,
+            String.raw`\text{The graphs of }y=\sin x\text{ and }y=\cos x\text{ have different periods.}`,
+            String.raw`\text{The graph of }y=\sin x\text{ is the graph of }y=\cos x\text{ shifted }1\text{ unit upward.}`,
+            String.raw`\text{The graphs have no simple shift or reflection relationship.}`
           ]}
       ]
     };
