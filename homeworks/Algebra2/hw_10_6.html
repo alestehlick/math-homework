@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Homework 10-6 (Algebra 2)</title>
+
+  <script>
+    /* =========================
+       Homework 10-6 — Graphs of Sine, Cosine, Tangent, and Cotangent
+       ========================= */
+    window.homeworkData = {
+      classId : "Algebra2",
+      id      : "Homework 10-6",
+      title   : "Homework 10-6 — Graphs of Sine, Cosine, Tangent, and Cotangent",
+
+      graphics : String.raw``,
+
+      /* Correct options for Q1–Q12 below */
+      answerKey : ["A","A","A","C","A","B","C","D","B","B","B","B"],
+
+      questions : [
+        /* ---------- A-type (3) ---------- */
+        { latex: String.raw`\text{Give the domain of }y=\sin x.`,
+          choices: [
+            String.raw`\text{all real numbers }x`,
+            String.raw`\text{all real }x\text{ with }-1\le x\le 1`,
+            String.raw`\{x:x\ne k\pi,\ k\text{ an integer}\}`,
+            String.raw`\{x:x\ne \tfrac{\pi}{2}+k\pi,\ k\text{ an integer}\}`,
+            String.raw`\{x:x\ge 0\}`,
+            String.raw`\{-\pi\le x\le\pi\}`
+          ]},
+
+        { latex: String.raw`\text{Give the range of }y=\cos x.`,
+          choices: [
+            String.raw`\{-1\le y\le 1\}`,
+            String.raw`\{0\le y\le 1\}`,
+            String.raw`\{y:y\ge 0\}`,
+            String.raw`\{y:y\le 0\}`,
+            String.raw`\text{all real numbers }y`,
+            String.raw`\{-\pi\le y\le\pi\}`
+          ]},
+
+        { latex: String.raw`\text{Are }f(x)=\sin x\text{ and }f(x)=\cos x\text{ continuous?}`,
+          choices: [
+            String.raw`\text{Yes, both are continuous for every real }x.`,
+            String.raw`\text{Only } \sin x \text{ is continuous; } \cos x \text{ is not.}`,
+            String.raw`\text{Only } \cos x \text{ is continuous; } \sin x \text{ is not.}`,
+            String.raw`\text{Both are discontinuous only at }x=0.`,
+            String.raw`\text{Both are discontinuous at every multiple of }\tfrac{\pi}{2}.`,
+            String.raw`\text{Neither is a function, so continuity does not apply.}`
+          ]},
+
+        /* ---------- B-type (8) ---------- */
+        { latex: String.raw`\text{Which description gives the domain of }y=\tan x\text{?}`,
+          choices: [
+            String.raw`\text{all real }x`,
+            String.raw`\{x:x\ne k\pi,\ k\text{ an integer}\}`,
+            String.raw`\{x:x\ne \tfrac{\pi}{2}+k\pi,\ k\text{ an integer}\}`,
+            String.raw`0\le x\le 2\pi`,
+            String.raw`\{x:-1\le x\le 1\}`,
+            String.raw`\{x:x\ne 0\}`
+          ]},
+
+        { latex: String.raw`\text{Give the range of }y=\sin x.`,
+          choices: [
+            String.raw`\{-1\le y\le 1\}`,
+            String.raw`\{0\le y\le 1\}`,
+            String.raw`\{y:y\ge 0\}`,
+            String.raw`\{y:y\le 0\}`,
+            String.raw`\text{all real }y`,
+            String.raw`\{-2\le y\le 2\}`
+          ]},
+
+        { latex: String.raw`\text{Give the range of }y=\tan x.`,
+          choices: [
+            String.raw`\{-1\le y\le 1\}`,
+            String.raw`\text{all real }y`,
+            String.raw`\{y:y\ge 0\}`,
+            String.raw`\{y:y\le 0\}`,
+            String.raw`\{y:y\ne 0\}`,
+            String.raw`0\le y\le\pi`
+          ]},
+
+        { latex: String.raw`\text{Compare }y=2\cos x\text{ with }y=\cos x.\ \text{Which statement is true?}`,
+          choices: [
+            String.raw`y=2\cos x\text{ is the graph of }y=\cos x\text{ shifted }2\text{ units to the right.}`,
+            String.raw`y=2\cos x\text{ is the graph of }y=\cos x\text{ shifted }2\text{ units upward.}`,
+            String.raw`y=2\cos x\text{ has maximum value }2\text{ and minimum value }-2.`,
+            String.raw`y=2\cos x\text{ has period }2\text{ instead of }2\pi.`,
+            String.raw`y=2\cos x\text{ is no longer periodic.}`,
+            String.raw`y=2\cos x\text{ has domain }0\le x\le 2\pi.`
+          ]},
+
+        { latex: String.raw`\text{Give the range of }y=\dfrac14\sin x.`,
+          choices: [
+            String.raw`\{-1\le y\le 1\}`,
+            String.raw`\{-4\le y\le 4\}`,
+            String.raw`\text{all real }y`,
+            String.raw`\left\{-\dfrac14\le y\le\dfrac14\right\}`,
+            String.raw`\left\{0\le y\le\dfrac14\right\}`,
+            String.raw`\left\{-\dfrac14\le y\le 1\right\}`
+          ]},
+
+        { latex: String.raw`\text{One complete cycle of }y=\sin 2x\text{ occurs over which interval?}`,
+          choices: [
+            String.raw`0\le x\le \dfrac{\pi}{2}`,
+            String.raw`0\le x\le \pi`,
+            String.raw`0\le x\le 2\pi`,
+            String.raw`-\pi\le x\le\pi`,
+            String.raw`-2\pi\le x\le 2\pi`,
+            String.raw`\pi\le x\le 2\pi`
+          ]},
+
+        { latex: String.raw`\text{Which statement about }f(x)=\tan x\text{ is true?}`,
+          choices: [
+            String.raw`f\text{ is continuous for every real }x.`,
+            String.raw`f\text{ is not continuous, because its graph has breaks at }x=\tfrac{\pi}{2}+k\pi.`,
+            String.raw`f\text{ is continuous only for }0<x<\pi.`,
+            String.raw`f\text{ is continuous only for }x\ge 0.`,
+            String.raw`f\text{ is not continuous, because it fails the vertical line test.}`,
+            String.raw`f\text{ is not a function.}`
+          ]},
+
+        { latex: String.raw`f(x)=\cot x.\ \text{Which description of its domain and range is correct?}`,
+          choices: [
+            String.raw`\text{Domain: all real }x;\ \text{Range: }-1\le y\le 1.`,
+            String.raw`\text{Domain: }x\ne k\pi,\ k\text{ an integer; Range: all real }y.`,
+            String.raw`\text{Domain: }x\ne \tfrac{\pi}{2}+k\pi,\ k\text{ an integer; Range: all real }y.`,
+            String.raw`\text{Domain: all real }x;\ \text{Range: }y\ne 0.`,
+            String.raw`\text{Domain: }0\le x\le 2\pi;\ \text{Range: all real }y.`,
+            String.raw`\text{Domain: all real }x;\ \text{Range: }y\ge 0.`
+          ]},
+
+        /* ---------- C-type (1) ---------- */
+        { latex: String.raw`\text{After graphing }y=\tan x\text{ and }y=\cot x,\ \text{what general conclusion can you draw?}`,
+          choices: [
+            String.raw`Both graphs have period }2\pi\text{ and range }-1\le y\le 1.`,
+            String.raw`Both are periodic with period }\pi\text{ and have range equal to all real numbers.`,
+            String.raw`y=\tan x\text{ is periodic, but }y=\cot x\text{ is not.}`,
+            String.raw`Neither graph is periodic.`,
+            String.raw`Both are continuous for every real }x\text{.`,
+            String.raw`Both fail the vertical line test and are not functions.`
+          ]}
+      ]
+    };
+  </script>
+
+  <link rel="stylesheet" href="/math-homework/assets/core.css" />
+  <link rel="stylesheet" href="https://tikzjax.com/v1/fonts.css" />
+  <script defer src="/math-homework/assets/core.js"></script>
+  <script defer src="https://tikzjax.com/v1/tikzjax.js"></script>
+  <script defer src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+</head>
+<body>
+  <div id="hw-root">Loading…</div>
+</body>
+</html>
