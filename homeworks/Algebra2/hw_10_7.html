@@ -1,0 +1,223 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Homework 10-7 (Algebra 2)</title>
+
+  <script>
+    /* =========================
+       Homework 10-7 — Amplitude and Period of Trig Functions (Graph Version)
+       ========================= */
+    window.homeworkData = {
+      classId : "Algebra2",
+      id      : "Homework 10-7",
+      title   : "Homework 10-7 — Amplitude and Period of Trig Functions",
+
+      graphics : String.raw`
+\begin{tikzpicture}[scale=0.55]
+
+  \begin{scope}[xshift=-8cm,yshift=4cm]
+    \draw[->] (0,-4.5) -- (0,4.5);
+    \draw[->] (0,0) -- (6.8,0);
+    \draw[domain=0:6.28,smooth,variable=\x] plot (\x,{4*sin(\x r)});
+    \node at (0,-0.7) {$0$};
+    \node at (3.14,-0.7) {$\pi$};
+    \node at (6.28,-0.7) {$2\pi$};
+    \node[anchor=south east] at (6.6,4.3) {G1};
+  \end{scope}
+
+  \begin{scope}[xshift=0cm,yshift=4cm]
+    \draw[->] (0,-1.5) -- (0,1.5);
+    \draw[->] (0,0) -- (6.8,0);
+    \draw[domain=0:6.28,smooth,variable=\x] plot (\x,{cos(4*\x r)});
+    \node at (0,-0.7) {$0$};
+    \node at (3.14,-0.7) {$\pi$};
+    \node at (6.28,-0.7) {$2\pi$};
+    \node[anchor=south east] at (6.6,1.4) {G2};
+  \end{scope}
+
+  \begin{scope}[xshift=8cm,yshift=4cm,xscale=0.4]
+    \draw[->] (0,-1.5) -- (0,1.5);
+    \draw[->] (0,0) -- (19.5,0);
+    \draw[domain=0:18.85,smooth,variable=\x] plot (\x,{sin((\x/3) r)});
+    \node at (0,-0.7) {$0$};
+    \node at (6.28,-0.7) {$2\pi$};
+    \node at (12.57,-0.7) {$4\pi$};
+    \node at (18.85,-0.7) {$6\pi$};
+    \node[anchor=south east] at (19.3,1.4) {G3};
+  \end{scope}
+
+  \begin{scope}[xshift=-8cm,yshift=-4cm]
+    \draw[->] (0,-1.5) -- (0,1.5);
+    \draw[->] (0,0) -- (6.8,0);
+    \draw[domain=0:6.28,smooth,variable=\x] plot (\x,{0.5*cos(\x r)});
+    \node at (0,-0.7) {$0$};
+    \node at (3.14,-0.7) {$\pi$};
+    \node at (6.28,-0.7) {$2\pi$};
+    \node[anchor=south east] at (6.6,1.4) {G4};
+  \end{scope}
+
+  \begin{scope}[xshift=0cm,yshift=-4cm]
+    \draw[->] (0,-3.5) -- (0,3.5);
+    \draw[->] (0,0) -- (6.8,0);
+    \draw[domain=0:6.28,smooth,variable=\x] plot (\x,{-3*sin(\x r)});
+    \node at (0,-0.7) {$0$};
+    \node at (3.14,-0.7) {$\pi$};
+    \node at (6.28,-0.7) {$2\pi$};
+    \node[anchor=south east] at (6.6,3.4) {G5};
+  \end{scope}
+
+  \begin{scope}[xshift=8cm,yshift=-4cm,xscale=0.5]
+    \draw[->] (0,-2.5) -- (0,4);
+    \draw[->] (0,0) -- (13.2,0);
+    \draw[domain=0:12.57,smooth,variable=\x] plot (\x,{2*cos((\x/2) r)+1});
+    \node at (0,-0.7) {$0$};
+    \node at (6.28,-0.7) {$2\pi$};
+    \node at (12.57,-0.7) {$4\pi$};
+    \node[anchor=south east] at (13,3.8) {G6};
+  \end{scope}
+
+\end{tikzpicture}
+`,
+
+      /* Correct options for Q1–Q12 below */
+      answerKey : ["C","A","C","B","B","E","C","B","D","F","B","C"],
+
+      questions : [
+        /* A-type questions (3) */
+        { latex: String.raw`\text{Which graph shows a sine function with amplitude }4\text{ and period }2\pi\text{?}`,
+          choices: [
+            String.raw`\text{Graph G2}`,
+            String.raw`\text{Graph G3}`,
+            String.raw`\text{Graph G1}`,
+            String.raw`\text{Graph G4}`,
+            String.raw`\text{Graph G5}`,
+            String.raw`\text{Graph G6}`
+          ]},
+
+        { latex: String.raw`\text{Refer to graph G2. What are its amplitude and period?}`,
+          choices: [
+            String.raw`(1,\ \tfrac{\pi}{2})`,
+            String.raw`(1,\ 2\pi)`,
+            String.raw`(4,\ 2\pi)`,
+            String.raw`(4,\ \tfrac{\pi}{2})`,
+            String.raw`(1,\ \pi)`,
+            String.raw`(2,\ \pi)`
+          ]},
+
+        { latex: String.raw`\text{Refer to graph G3. What are its amplitude and period?}`,
+          choices: [
+            String.raw`(1,\ 2\pi)`,
+            String.raw`(1,\ 3\pi)`,
+            String.raw`(1,\ 6\pi)`,
+            String.raw`(3,\ 2\pi)`,
+            String.raw`(3,\ 6\pi)`,
+            String.raw`(1,\ \tfrac{\pi}{3})`
+          ]},
+
+        /* B-type questions (8) */
+        { latex: String.raw`\text{Refer to graph G4. What is its range?}`,
+          choices: [
+            String.raw`\{-1\le y\le 1\}`,
+            String.raw`\left\{-\tfrac12\le y\le\tfrac12\right\}`,
+            String.raw`\left\{-\tfrac14\le y\le\tfrac14\right\}`,
+            String.raw`\left\{-\tfrac32\le y\le\tfrac32\right\}`,
+            String.raw`\{-3\le y\le3\}`,
+            String.raw`\{y:y\text{ is a real number}\}`
+          ]},
+
+        { latex: String.raw`\text{Which equation could produce graph G5?}`,
+          choices: [
+            String.raw`y=3\sin x`,
+            String.raw`y=-3\sin x`,
+            String.raw`y=3\cos x`,
+            String.raw`y=-3\cos x`,
+            String.raw`y=3\sin(3x)`,
+            String.raw`y=-3\sin(2x)`
+          ]},
+
+        { latex: String.raw`\text{Which graphs have the same period as G1 but a different amplitude?}`,
+          choices: [
+            String.raw`\text{G2 only}`,
+            String.raw`\text{G3 only}`,
+            String.raw`\text{G4 only}`,
+            String.raw`\text{G5 only}`,
+            String.raw`\text{G4 and G5}`,
+            String.raw`\text{G2 and G3}`
+          ]},
+
+        { latex: String.raw`\text{Refer to graph G6. What is its range?}`,
+          choices: [
+            String.raw`\{-3\le y\le3\}`,
+            String.raw`\{-2\le y\le2\}`,
+            String.raw`\{-1\le y\le3\}`,
+            String.raw`\{0\le y\le3\}`,
+            String.raw`\{1\le y\le3\}`,
+            String.raw`\{-1\le y\le1\}`
+          ]},
+
+        { latex: String.raw`\text{Compare graphs G1 and G5. Which statement is true?}`,
+          choices: [
+            String.raw`\text{G1 and G5 have the same amplitude and the same period.}`,
+            String.raw`\text{G1 and G5 have the same period but different amplitudes.}`,
+            String.raw`\text{G1 and G5 have the same amplitude but different periods.}`,
+            String.raw`\text{G1 has a larger amplitude and a shorter period than G5.}`,
+            String.raw`\text{G5 has a larger amplitude and a shorter period than G1.}`,
+            String.raw`\text{G1 and G5 have neither the same amplitude nor the same period.}`
+          ]},
+
+        { latex: String.raw`\text{Which graph appears to have the greatest period?}`,
+          choices: [
+            String.raw`\text{G1}`,
+            String.raw`\text{G2}`,
+            String.raw`\text{G4}`,
+            String.raw`\text{G3}`,
+            String.raw`\text{G5}`,
+            String.raw`\text{G6}`
+          ]},
+
+        { latex: String.raw`\text{Which graph represents a function with amplitude }2\text{?}`,
+          choices: [
+            String.raw`\text{G1}`,
+            String.raw`\text{G2}`,
+            String.raw`\text{G3}`,
+            String.raw`\text{G4}`,
+            String.raw`\text{G5}`,
+            String.raw`\text{G6}`
+          ]},
+
+        { latex: String.raw`\text{Which equation best matches graph G2?}`,
+          choices: [
+            String.raw`y=\cos x`,
+            String.raw`y=\cos4x`,
+            String.raw`y=4\cos x`,
+            String.raw`y=\sin4x`,
+            String.raw`y=4\sin x`,
+            String.raw`y=\sin x`
+          ]},
+
+        /* C-type question (1) */
+        { latex: String.raw`\text{Look at graphs G1, G2, G3, and G6. Each comes from a function of the form }y=a\sin(bx)\text{ or }y=a\cos(bx).\ \text{If }P\text{ is the period, which equation describes the relationship between }b\text{ and }P\text{?}`,
+          choices: [
+            String.raw`P=b`,
+            String.raw`P=\dfrac{2\pi}{a}`,
+            String.raw`P=\dfrac{2\pi}{|b|}`,
+            String.raw`P=2\pi|b|`,
+            String.raw`P=\dfrac{|b|}{2\pi}`,
+            String.raw`P=\dfrac{a}{b}`
+          ]}
+      ]
+    };
+  </script>
+
+  <link rel="stylesheet" href="/math-homework/assets/core.css" />
+  <link rel="stylesheet" href="https://tikzjax.com/v1/fonts.css" />
+  <script defer src="/math-homework/assets/core.js"></script>
+  <script defer src="https://tikzjax.com/v1/tikzjax.js"></script>
+  <script defer src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+</head>
+<body>
+  <div id="hw-root">Loading…</div>
+</body>
+</html>
