@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Homework 10-2 (Algebra 2)</title>
+
+  <script>
+    /* =========================
+       Homework 9-2 — Right Triangle Trigonometry
+       ========================= */
+    window.homeworkData = {
+      classId : "Algebra2",
+      id      : "Homework 10-2",
+      title   : "Homework 10-2 — Right Triangle Trigonometry",
+
+      graphics : String.raw``,
+
+      /* Correct options for Q1–Q12 below */
+      answerKey : ["C","A","F","B","D","B","C","B","D","D","D","C"],
+
+      questions : [
+        /* ---------- A-type (3) ---------- */
+        { latex: String.raw`\text{Find the measure of the angle to the nearest minute: } \tan A = 0.3249.`,
+          choices: [
+            String.raw`17^\circ30'`,
+            String.raw`17^\circ55'`,
+            String.raw`18^\circ0'`,
+            String.raw`18^\circ30'`,
+            String.raw`19^\circ0'`,
+            String.raw`6^\circ0'`
+          ]},
+
+        { latex: String.raw`\text{Find the measure of the angle to the nearest minute: } \sin B = 0.9511.`,
+          choices: [
+            String.raw`72^\circ0'`,
+            String.raw`70^\circ30'`,
+            String.raw`71^\circ0'`,
+            String.raw`72^\circ30'`,
+            String.raw`18^\circ0'`,
+            String.raw`42^\circ44'`
+          ]},
+
+        { latex: String.raw`\text{Find the measure of the angle to the nearest minute: } \cos B = 0.7346.`,
+          choices: [
+            String.raw`36^\circ18'`,
+            String.raw`41^\circ16'`,
+            String.raw`42^\circ0'`,
+            String.raw`43^\circ30'`,
+            String.raw`48^\circ51'`,
+            String.raw`42^\circ44'`
+          ]},
+
+        /* ---------- B-type (8) ---------- */
+        { latex: String.raw`\text{In right triangle }ABC,\ \angle C = 90^\circ,\ A = 38^\circ,\ b = 5.\ \text{Solve the triangle. Which choice gives }(a,c,B)\text{ to the nearest tenth and nearest minute?}`,
+          choices: [
+            String.raw`a\approx3.1,\ c\approx5.9,\ B\approx52^\circ0'`,
+            String.raw`a\approx3.9,\ c\approx6.3,\ B\approx52^\circ0'`,
+            String.raw`a\approx3.9,\ c\approx6.3,\ B\approx38^\circ0'`,
+            String.raw`a\approx4.8,\ c\approx6.3,\ B\approx52^\circ0'`,
+            String.raw`a\approx3.9,\ c\approx5.0,\ B\approx52^\circ0'`,
+            String.raw`a\approx5.0,\ c\approx6.3,\ B\approx38^\circ0'`
+          ]},
+
+        { latex: String.raw`\text{In right triangle }ABC,\ \angle C = 90^\circ,\ a = 12,\ c = 25.\ \text{Solve the triangle. Which choice gives }(b,A,B)\text{ to the nearest tenth and nearest minute?}`,
+          choices: [
+            String.raw`b\approx13.0,\ A\approx28^\circ41',\ B\approx61^\circ19'`,
+            String.raw`b\approx21.9,\ A\approx61^\circ19',\ B\approx28^\circ41'`,
+            String.raw`b\approx21.9,\ A\approx28^\circ0',\ B\approx62^\circ0'`,
+            String.raw`b\approx21.9,\ A\approx28^\circ41',\ B\approx61^\circ19'`,
+            String.raw`b\approx25.0,\ A\approx28^\circ41',\ B\approx61^\circ19'`,
+            String.raw`b\approx21.9,\ A\approx31^\circ0',\ B\approx59^\circ0'`
+          ]},
+
+        { latex: String.raw`\text{In right triangle }ABC,\ \angle C = 90^\circ,\ b = 6,\ c = 9.\ \text{Solve the triangle. Which choice gives }(a,A,B)\text{ to the nearest tenth and nearest minute?}`,
+          choices: [
+            String.raw`a\approx6.7,\ A\approx41^\circ49',\ B\approx48^\circ11'`,
+            String.raw`a\approx6.7,\ A\approx48^\circ11',\ B\approx41^\circ49'`,
+            String.raw`a\approx5.7,\ A\approx48^\circ11',\ B\approx41^\circ49'`,
+            String.raw`a\approx6.0,\ A\approx48^\circ11',\ B\approx42^\circ0'`,
+            String.raw`a\approx6.7,\ A\approx50^\circ0',\ B\approx40^\circ0'`,
+            String.raw`a\approx7.5,\ A\approx48^\circ11',\ B\approx41^\circ49'`
+          ]},
+
+        { latex: String.raw`\text{An airplane begins its descent at an altitude of }7200\text{ ft and descends at an angle of depression of }5^\circ.\ \text{Find the horizontal distance it travels before landing, to the nearest tenth of a mile. }(1\text{ mile }=5280\text{ ft})`,
+          choices: [
+            String.raw`7.2\text{ mi}`,
+            String.raw`10.5\text{ mi}`,
+            String.raw`15.6\text{ mi}`,
+            String.raw`18.2\text{ mi}`,
+            String.raw`20.0\text{ mi}`,
+            String.raw`23.5\text{ mi}`
+          ]},
+
+        { latex: String.raw`\text{A }40\text{-ft guy wire supports a vertical pole and makes an angle of }68^\circ\text{ with the ground. How high up the pole does the wire reach? Round to the nearest tenth of a foot.}`,
+          choices: [
+            String.raw`14.9\text{ ft}`,
+            String.raw`37.1\text{ ft}`,
+            String.raw`15.2\text{ ft}`,
+            String.raw`36.0\text{ ft}`,
+            String.raw`39.2\text{ ft}`,
+            String.raw`40.0\text{ ft}`
+          ]},
+
+        { latex: String.raw`\text{Across a river, point }C\text{ is }320\text{ m from point }B\text{ along a straight bank. From point }C,\ \angle C\text{ between }\overline{CB}\text{ and }\overline{CA}\text{ is }64^\circ.\ \text{Find }AC\text{ to the nearest meter.}`,
+          choices: [
+            String.raw`320\text{ m}`,
+            String.raw`657\text{ m}`,
+            String.raw`701\text{ m}`,
+            String.raw`730\text{ m}`,
+            String.raw`840\text{ m}`,
+            String.raw`900\text{ m}`
+          ]},
+
+        { latex: String.raw`\text{A }20\text{-ft ladder leans against a house and reaches }18\text{ ft up the wall. What is the measure of the angle the ladder makes with the ground, to the nearest degree?}`,
+          choices: [
+            String.raw`42^\circ`,
+            String.raw`53^\circ`,
+            String.raw`61^\circ`,
+            String.raw`64^\circ`,
+            String.raw`68^\circ`,
+            String.raw`72^\circ`
+          ]},
+
+        { latex: String.raw`Andy stands on Camp Creek Bald at an elevation of }4844\text{ ft. Big Knob is }20000\text{ ft away horizontally, and the angle of elevation from Andy to Big Knob is }0.1^\circ.\ \text{What is the elevation of Big Knob, to the nearest foot?}`,
+          choices: [
+            String.raw`4844\text{ ft}`,
+            String.raw`4855\text{ ft}`,
+            String.raw`4865\text{ ft}`,
+            String.raw`4879\text{ ft}`,
+            String.raw`4889\text{ ft}`,
+            String.raw`4910\text{ ft}`
+          ]},
+
+        /* ---------- C-type (1) ---------- */
+        { latex: String.raw`\text{Solve for }x\text{ without substituting decimal values:}\qquad \sin53^\circ = \dfrac{\sin41^\circ}{319-x}.`,
+          choices: [
+            String.raw`x = 319 - \dfrac{\sin53^\circ}{\sin41^\circ}`,
+            String.raw`x = 319 + \dfrac{\sin41^\circ}{\sin53^\circ}`,
+            String.raw`x = 319 - \dfrac{\sin41^\circ}{\sin53^\circ}`,
+            String.raw`x = \dfrac{319\sin53^\circ - \sin41^\circ}{\sin41^\circ}`,
+            String.raw`x = 319\dfrac{\sin41^\circ}{\sin53^\circ}`,
+            String.raw`x = \dfrac{\sin41^\circ}{\sin53^\circ}`
+          ]}
+      ]
+    };
+  </script>
+
+  <link rel="stylesheet" href="/math-homework/assets/core.css" />
+  <link rel="stylesheet" href="https://tikzjax.com/v1/fonts.css" />
+  <script defer src="/math-homework/assets/core.js"></script>
+  <script defer src="https://tikzjax.com/v1/tikzjax.js"></script>
+  <script defer src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+</head>
+<body>
+  <div id="hw-root">Loading…</div>
+</body>
+</html>
