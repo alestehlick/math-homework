@@ -15,88 +15,92 @@
       title   : "Homework 10-6 — Graphs of Trig Functions",
 
       graphics : String.raw`
-\begin{tikzpicture}[scale=0.55]
+\begin{tikzpicture}[scale=0.8]
 
-  % ---------- G1: y = sin x ----------
-  \begin{scope}[xshift=-8cm,yshift=4cm]
-    \draw[->] (-6.8,0) -- (6.8,0);
-    \draw[->] (0,-1.5) -- (0,1.5);
+  \begin{scope}[xshift=-6cm,yshift=3.5cm]
+    \clip (-6.6,-1.6) rectangle (6.6,1.6);
+    \draw[->] (-6.3,0) -- (6.3,0);
+    \draw[->] (0,-1.4) -- (0,1.4);
     \draw[domain=-6.28:6.28,smooth,variable=\x] plot (\x,{sin(\x r)});
-    \node at (0,-0.7) {$0$};
-    \node at (1.57,-0.7) {$\tfrac{\pi}{2}$};
-    \node at (3.14,-0.7) {$\pi$};
-    \node at (4.71,-0.7) {$\tfrac{3\pi}{2}$};
-    \node at (6.28,-0.7) {$2\pi$};
-    \node at (-3.14,-0.7) {$-\pi$};
-    \node at (-6.28,-0.7) {$-2\pi$};
-    \node[anchor=south east,font=\small] at (6.6,1.4) {G1};
+    \node at (0,-0.5) {$0$};
+    \node at (1.57,-0.5) {$\frac{\pi}{2}$};
+    \node at (3.14,-0.5) {$\pi$};
+    \node at (4.71,-0.5) {$\frac{3\pi}{2}$};
+    \node at (6.28,-0.5) {$2\pi$};
+    \node at (-3.14,-0.5) {$-\pi$};
+    \node at (-6.28,-0.5) {$-2\pi$};
+    \node[anchor=south east,font=\small] at (6.2,1.4) {G1};
   \end{scope}
 
-  % ---------- G2: y = cos x ----------
-  \begin{scope}[xshift=0cm,yshift=4cm]
-    \draw[->] (-6.8,0) -- (6.8,0);
-    \draw[->] (0,-1.5) -- (0,1.5);
+  \begin{scope}[xshift=0cm,yshift=3.5cm]
+    \clip (-6.6,-1.6) rectangle (6.6,1.6);
+    \draw[->] (-6.3,0) -- (6.3,0);
+    \draw[->] (0,-1.4) -- (0,1.4);
     \draw[domain=-6.28:6.28,smooth,variable=\x] plot (\x,{cos(\x r)});
-    \node at (0,-0.7) {$0$};
-    \node at (1.57,-0.7) {$\tfrac{\pi}{2}$};
-    \node at (3.14,-0.7) {$\pi$};
-    \node at (4.71,-0.7) {$\tfrac{3\pi}{2}$};
-    \node at (6.28,-0.7) {$2\pi$};
-    \node at (-3.14,-0.7) {$-\pi$};
-    \node at (-6.28,-0.7) {$-2\pi$};
-    \node[anchor=south east,font=\small] at (6.6,1.4) {G2};
+    \node at (0,-0.5) {$0$};
+    \node at (1.57,-0.5) {$\frac{\pi}{2}$};
+    \node at (3.14,-0.5) {$\pi$};
+    \node at (4.71,-0.5) {$\frac{3\pi}{2}$};
+    \node at (6.28,-0.5) {$2\pi$};
+    \node at (-3.14,-0.5) {$-\pi$};
+    \node at (-6.28,-0.5) {$-2\pi$};
+    \node[anchor=south east,font=\small] at (6.2,1.4) {G2};
   \end{scope}
 
-  % ---------- G3: y = tan x ----------
-  \begin{scope}[xshift=8cm,yshift=4cm]
-    \draw[->] (-5,0) -- (5,0);
-    \draw[->] (0,-3.5) -- (0,3.5);
-    \draw[dashed] (-1.57,-3.5) -- (-1.57,3.5);
-    \draw[dashed] (1.57,-3.5) -- (1.57,3.5);
-    \draw[dashed] (-4.71,-3.5) -- (-4.71,3.5);
-    \draw[dashed] (4.71,-3.5) -- (4.71,3.5);
-    \draw[domain=-4.5:-1.6,smooth,variable=\x] plot (\x,{tan(\x r)});
+  \begin{scope}[xshift=6cm,yshift=3.5cm]
+    \clip (-3.6,-3.1) rectangle (3.6,3.1);
+    \draw[->] (-3.3,0) -- (3.3,0);
+    \draw[->] (0,-3) -- (0,3);
+    \draw[dashed] (-1.57,-3) -- (-1.57,3);
+    \draw[dashed] (1.57,-3) -- (1.57,3);
+    \draw[domain=-3.1:-1.6,smooth,variable=\x] plot (\x,{tan(\x r)});
     \draw[domain=-1.4:1.4,smooth,variable=\x] plot (\x,{tan(\x r)});
-    \draw[domain=1.6:4.5,smooth,variable=\x] plot (\x,{tan(\x r)});
-    \node at (0,-0.6) {$0$};
-    \node at (1.57,-0.6) {$\tfrac{\pi}{2}$};
-    \node at (-1.57,-0.6) {$-\tfrac{\pi}{2}$};
-    \node[anchor=south east,font=\small] at (4.8,3.3) {G3};
+    \draw[domain=1.6:3.1,smooth,variable=\x] plot (\x,{tan(\x r)});
+    \node at (0,-0.5) {$0$};
+    \node at (1.57,-0.5) {$\frac{\pi}{2}$};
+    \node at (-1.57,-0.5) {$-\frac{\pi}{2}$};
+    \node at (3.14,-0.5) {$\pi$};
+    \node at (-3.14,-0.5) {$-\pi$};
+    \node[anchor=south east,font=\small] at (3.2,2.9) {G3};
   \end{scope}
 
-  % ---------- G4: y = 2 cos x ----------
-  \begin{scope}[xshift=-8cm,yshift=-4cm]
-    \draw[->] (-6.8,0) -- (6.8,0);
-    \draw[->] (0,-2.5) -- (0,2.5);
+  \begin{scope}[xshift=-6cm,yshift=-3.5cm]
+    \clip (-6.6,-2.3) rectangle (6.6,2.3);
+    \draw[->] (-6.3,0) -- (6.3,0);
+    \draw[->] (0,-2.1) -- (0,2.1);
     \draw[domain=-6.28:6.28,smooth,variable=\x] plot (\x,{2*cos(\x r)});
-    \node at (0,-0.7) {$0$};
-    \node at (3.14,-0.7) {$\pi$};
-    \node at (6.28,-0.7) {$2\pi$};
-    \node[anchor=south east,font=\small] at (6.6,2.4) {G4};
+    \node at (0,-0.5) {$0$};
+    \node at (3.14,-0.5) {$\pi$};
+    \node at (6.28,-0.5) {$2\pi$};
+    \node at (-3.14,-0.5) {$-\pi$};
+    \node at (-6.28,-0.5) {$-2\pi$};
+    \node[anchor=south east,font=\small] at (6.2,2.1) {G4};
   \end{scope}
 
-  % ---------- G5: y = (1/4) sin x ----------
-  \begin{scope}[xshift=0cm,yshift=-4cm]
-    \draw[->] (-6.8,0) -- (6.8,0);
-    \draw[->] (0,-1) -- (0,1);
+  \begin{scope}[xshift=0cm,yshift=-3.5cm]
+    \clip (-6.6,-0.7) rectangle (6.6,0.7);
+    \draw[->] (-6.3,0) -- (6.3,0);
+    \draw[->] (0,-0.6) -- (0,0.6);
     \draw[domain=-6.28:6.28,smooth,variable=\x] plot (\x,{0.25*sin(\x r)});
-    \node at (0,-0.7) {$0$};
-    \node at (3.14,-0.7) {$\pi$};
-    \node at (6.28,-0.7) {$2\pi$};
-    \node[anchor=south east,font=\small] at (6.6,0.9) {G5};
+    \node at (0,-0.4) {$0$};
+    \node at (3.14,-0.4) {$\pi$};
+    \node at (6.28,-0.4) {$2\pi$};
+    \node at (-3.14,-0.4) {$-\pi$};
+    \node at (-6.28,-0.4) {$-2\pi$};
+    \node[anchor=south east,font=\small] at (6.2,0.55) {G5};
   \end{scope}
 
-  % ---------- G6: y = cos 2x ----------
-  \begin{scope}[xshift=8cm,yshift=-4cm]
-    \draw[->] (-6.8,0) -- (6.8,0);
-    \draw[->] (0,-1.5) -- (0,1.5);
+  \begin{scope}[xshift=6cm,yshift=-3.5cm]
+    \clip (-6.6,-1.6) rectangle (6.6,1.6);
+    \draw[->] (-6.3,0) -- (6.3,0);
+    \draw[->] (0,-1.4) -- (0,1.4);
     \draw[domain=-6.28:6.28,smooth,variable=\x] plot (\x,{cos(2*\x r)});
-    \node at (0,-0.7) {$0$};
-    \node at (1.57,-0.7) {$\tfrac{\pi}{2}$};
-    \node at (3.14,-0.7) {$\pi$};
-    \node at (4.71,-0.7) {$\tfrac{3\pi}{2}$};
-    \node at (6.28,-0.7) {$2\pi$};
-    \node[anchor=south east,font=\small] at (6.6,1.4) {G6};
+    \node at (0,-0.5) {$0$};
+    \node at (1.57,-0.5) {$\frac{\pi}{2}$};
+    \node at (3.14,-0.5) {$\pi$};
+    \node at (4.71,-0.5) {$\frac{3\pi}{2}$};
+    \node at (6.28,-0.5) {$2\pi$};
+    \node[anchor=south east,font=\small] at (6.2,1.4) {G6};
   \end{scope}
 
 \end{tikzpicture}
@@ -154,7 +158,7 @@
             String.raw`\dfrac{\pi}{2}`,
             String.raw`\pi`,
             String.raw`\dfrac{3\pi}{2}`,
-            String.raw`2\pi`,
+            String.raw`\dfrac{5\pi}{4}`,
             String.raw`\text{none of these}`
           ]},
 
@@ -162,7 +166,7 @@
           choices: [
             String.raw`\{x:x\text{ is a real number}\}`,
             String.raw`\{x:x\ne k\pi,\ k\text{ an integer}\}`,
-            String.raw`\{x:x\ne \tfrac{\pi}{2}+k\pi,\ k\text{ an integer}\}`,
+            String.raw`\left\{x:x\ne \dfrac{\pi}{2}+k\pi,\ k\text{ an integer}\right\}`,
             String.raw`-\dfrac{\pi}{2}<x<\dfrac{\pi}{2}`,
             String.raw`0\le x\le2\pi`,
             String.raw`\{x:x\ne0\}`
