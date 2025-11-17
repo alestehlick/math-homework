@@ -24,7 +24,7 @@
           choices: [
             String.raw`(y-144)(y+1)`,
             String.raw`y(y-144)`,
-            String.raw`(y-12)(y+12)`,
+            String.raw`(y-12)(y+12)`,        // ✔
             String.raw`(y-12)^2`,
             String.raw`(y+12)^2`,
             String.raw`y^2+144`
@@ -35,18 +35,18 @@
             String.raw`x(x-y^2)`,
             String.raw`(x-y)^2`,
             String.raw`x^2-2xy+y^2`,
-            String.raw`(x-y)(x+y)`,
+            String.raw`(x-y)(x+y)`,          // ✔
             String.raw`(x+y)^2`,
             String.raw`(x-y^2)(x+y^2)`
           ]},
 
         { latex: String.raw`\text{Factor: } 49x^2 - 4`,
           choices: [
-            String.raw`(7x-2)(7x+2)`,
+            String.raw`(7x-2)(7x+2)`,        // ✔
             String.raw`7(x-2)(x+2)`,
             String.raw`(49x-4)(x+1)`,
             String.raw`(7x-4)(7x+1)`,
-            String.raw`(7x)^2 - 2^2 = \text{prime}`,
+            String.raw`(7x)^2 - 2^2=\text{prime}`,
             String.raw`(7x+2)^2`
           ]},
 
@@ -57,13 +57,13 @@
             String.raw`9(x^2-10)`,
             String.raw`(9x^2-10^2)`,
             String.raw`(3x-10)^2`,
-            String.raw`(3x-10)(3x+10)`
+            String.raw`(3x-10)(3x+10)`       // ✔
           ]},
 
         { latex: String.raw`\text{Factor: } 2a^2 - 242`,
           choices: [
             String.raw`2(a-242)`,
-            String.raw`2(a-11)(a+11)`,
+            String.raw`2(a-11)(a+11)`,       // ✔
             String.raw`(2a-11)(a+11)`,
             String.raw`2(a-121)^2`,
             String.raw`(a-22)(a+11)`,
@@ -76,7 +76,7 @@
             String.raw`5(5-20y^2)`,
             String.raw`25(1-10y)^2`,
             String.raw`(5-10y)(5+10y)`,
-            String.raw`25(1-2y)(1+2y)`,
+            String.raw`25(1-2y)(1+2y)`,      // ✔
             String.raw`(5-2y)(5+2y)`
           ]},
 
@@ -84,7 +84,7 @@
           choices: [
             String.raw`6(a-49)(a+49)`,
             String.raw`(36a-7)(a+7)`,
-            String.raw`(6a-7)(6a+7)`,
+            String.raw`(6a-7)(6a+7)`,        // ✔
             String.raw`(6a-49)(6a+49)`,
             String.raw`(6a-7)^2`,
             String.raw`(36a^2-7^2)=\text{prime}`
@@ -95,14 +95,14 @@
             String.raw`(25x-7)(x+7)`,
             String.raw`25(x^2-49)`,
             String.raw`(5x-49)(5x+49)`,
-            String.raw`(5x-7)(5x+7)`,
+            String.raw`(5x-7)(5x+7)`,        // ✔
             String.raw`(5x-7)^2`,
             String.raw`(25x^2-7)^2`
           ]},
 
         { latex: String.raw`\text{Factor: } a^2 - 225b^2`,
           choices: [
-            String.raw`(a-15b)(a+15b)`,
+            String.raw`(a-15b)(a+15b)`,      // ✔
             String.raw`(a-225b)(a+225b)`,
             String.raw`a(a-225b^2)`,
             String.raw`(a-15b)^2`,
@@ -117,13 +117,13 @@
             String.raw`(a^2x - y)(x + y)`,
             String.raw`(ax-y)^2`,
             String.raw`(a^2x^2 - y^2)=\text{prime}`,
-            String.raw`(ax-y)(ax+y)`
+            String.raw`(ax-y)(ax+y)`         // ✔
           ]},
 
         { latex: String.raw`\text{Factor: } 4x^2 - 16`,
           choices: [
             String.raw`(2x-16)(2x+16)`,
-            String.raw`4(x-2)(x+2)`,
+            String.raw`4(x-2)(x+2)`,         // ✔
             String.raw`(2x-4)^2`,
             String.raw`4(x^2-16)`,
             String.raw`(x-4)(x+4)`,
@@ -136,7 +136,7 @@
             String.raw`x(ax-4)(ax+4)`,
             String.raw`(a-4)(a+4)`,
             String.raw`x^2(a-16)(a+16)`,
-            String.raw`x^2(a-4)(a+4)`,
+            String.raw`x^2(a-4)(a+4)`,       // ✔
             String.raw`x^2(a-8)(a+2)`
           ]}
       ]
