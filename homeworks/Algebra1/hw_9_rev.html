@@ -19,35 +19,35 @@
 
       graphics : String.raw``,
 
-      /* Correct answers for Q1–Q12 */
-      answerKey : ["B","F","C","A","E","D","C","A","F","E","B","D"],
+      /* Correct answers for Q1–Q12 (fixed to match unique correct options) */
+      answerKey : ["A","A","C","A","B","D","C","C","C","A","A","D"],
 
       questions : [
         { latex: String.raw`\text{Factor completely: } 8x^3y^2+5xy^2-2x`,
           choices: [
-            String.raw`x(8x^2y^2+5y^2-2)`,
-            String.raw`x(8x^2y^2+5y^2-2)`,
+            String.raw`x(8x^2y^2+5y^2-2)`,                  // correct
+            String.raw`x(8x^2y+5y^2-2)`,
             String.raw`(8xy+5)(xy^2-2)`,
-            String.raw`x(2y^2)(4x^2+... )`,
+            String.raw`x(8x^2y^2+5y-2)`,
             String.raw`xy(8x^2y+5y-2)`,
             String.raw`(8x^2+5y^2)(xy-2)`
           ]},
 
         { latex: String.raw`\text{Factor completely: } x^4+3x^2+2`,
           choices: [
-            String.raw`(x^2+1)(x^2+2)`,
-            String.raw`(x^2+2)(x^2+1)`,
-            String.raw`x^2(x^2+3)+2`,
+            String.raw`(x^2+1)(x^2+2)`,                      // correct
             String.raw`(x^2+3)(x^2-1)`,
+            String.raw`x^2(x^2+3)+2`,
             String.raw`(x^2+4)(x^2-1)`,
-            String.raw`(x^2+1)(x^2+2)`
+            String.raw`(x^2+2)(x^2-1)`,
+            String.raw`(x^2+1)(x^2+3)`
           ]},
 
         { latex: String.raw`\text{Factor completely: } x^2+5x-14`,
           choices: [
-            String.raw`(x+7)(x-2)`,
+            String.raw`(x-7)(x+2)`,
             String.raw`(x+14)(x-1)`,
-            String.raw`(x+7)(x-2)`,
+            String.raw`(x+7)(x-2)`,                          // correct
             String.raw`(x+2)(x-7)`,
             String.raw`(x-14)(x+1)`,
             String.raw`(x+5)(x-14)`
@@ -55,7 +55,7 @@
 
         { latex: String.raw`\text{Factor completely: } a^2-9b^2`,
           choices: [
-            String.raw`(a-3b)(a+3b)`,
+            String.raw`(a-3b)(a+3b)`,                        // correct
             String.raw`(a-9b)(a+b)`,
             String.raw`(a-3b)^2`,
             String.raw`(a-b)(a+9b)`,
@@ -66,7 +66,7 @@
         { latex: String.raw`\text{Factor completely: } x^2-30x+108`,
           choices: [
             String.raw`(x-6)(x-24)`,
-            String.raw`(x-9)(x-12)`,
+            String.raw`(x-9)(x-12)`,                         // correct
             String.raw`(x-18)(x-12)`,
             String.raw`(x-27)(x-3)`,
             String.raw`(x-6)(x-18)`,
@@ -78,7 +78,7 @@
             String.raw`(25x-12y)(x+12y)`,
             String.raw`(5x-12y)^2`,
             String.raw`(25x-144)(y^2+1)`,
-            String.raw`(5x-12y)(5x+12y)`,
+            String.raw`(5x-12y)(5x+12y)`,                    // correct
             String.raw`(x-12y)(25x+12y)`,
             String.raw`(5x+12y)(5x+12y)`
           ]},
@@ -87,7 +87,7 @@
           choices: [
             String.raw`(x-14)(x+6)`,
             String.raw`(x-21)(x+4)`,
-            String.raw`(x-12)(x+7)`,
+            String.raw`(x-12)(x+7)`,                         // correct
             String.raw`(x-7)(x+12)`,
             String.raw`(x-14)(x+6)`,
             String.raw`(x-28)(x+3)`
@@ -97,50 +97,50 @@
           choices: [
             String.raw`2(6x^2+11x-35)`,
             String.raw`2(x+7)(6x-5)`,
-            String.raw`2(3x-5)(2x+7)`,
+            String.raw`2(3x-5)(2x+7)`,                       // correct
             String.raw`(12x+35)(x-2)`,
             String.raw`2(6x+5)(x-7)`,
-            String.raw`2(x+7)(6x-5)`
+            String.raw`2(3x+5)(2x-7)`
           ]},
 
         { latex: String.raw`\text{Factor completely: } (x+y)^2-9`,
           choices: [
             String.raw`(x+y-3)^2`,
             String.raw`(x+y-9)(x+y+1)`,
-            String.raw`(x+y-3)(x+y+3)`,
+            String.raw`(x+y-3)(x+y+3)`,                      // correct
             String.raw`(x+y-9)(x+y+9)`,
             String.raw`(x+y-1)(x+y+9)`,
-            String.raw`(x+y-3)(x+y+3)`
+            String.raw`(x+y-1)(x+y+3)`
           ]},
 
         { latex: String.raw`\text{Factor completely: } 2x^2+15x+7`,
           choices: [
-            String.raw`(2x+1)(x+7)`,
+            String.raw`(2x+1)(x+7)`,                         // correct
             String.raw`(2x+7)(x+1)`,
-            String.raw`(2x+1)(x+7)`,
-            String.raw`(2x+14)(x+1/2)`,
-            String.raw`(2x+1)(x+7)`,
-            String.raw`(2x+7)(x+1)`
+            String.raw`(2x+7)(x+2)`,
+            String.raw`(2x-1)(x+7)`,
+            String.raw`(x+7)^2`,
+            String.raw`(x+1)(x+14)`
           ]},
 
         { latex: String.raw`\text{Factor completely: } 9x^2-25`,
           choices: [
-            String.raw`(3x-5)(3x+5)`,
+            String.raw`(3x-5)(3x+5)`,                        // correct
             String.raw`(x-25)(9x+1)`,
             String.raw`(9x-25)(x+1)`,
             String.raw`(3x-25)(3x+1)`,
             String.raw`(x-5)(9x+5)`,
-            String.raw`(3x-5)(3x+5)`
+            String.raw`(3x-5)(3x+1)`
           ]},
 
         { latex: String.raw`\text{Factor completely: } x^4+6x^2+9`,
           choices: [
-            String.raw`(x^2+3)(x^2+3)`,
+            String.raw`(x^2+9)(x^2+1)`,
             String.raw`(x^2+6)(x^2+3)`,
             String.raw`(x^2+9)(x^2+1)`,
-            String.raw`(x^2+3)^2`,
+            String.raw`(x^2+3)^2`,                           // correct
             String.raw`(x^2+6)(x^2+3)`,
-            String.raw`(x^2+3)(x^2+3)`
+            String.raw`(x^2+12)(x^2-3)`
           ]}
       ]
     };
