@@ -14,16 +14,16 @@
       id      : "Homework 9-1",
       title   : "Homework 9-1 — Factoring (GCF)",
 
-      graphics : String.raw`
-`,
+      graphics : String.raw`\n`,
 
-      answerKey : ["B","A","E","D","C","F","B","E","C","A","D","F"],
+      /* UPDATED answer key after fixing choices */
+      answerKey : ["B","A","B","A","C","F","B","B","B","A","A","A"],
 
       questions : [
         { latex: String.raw`\text{Factor: } 7x^2 - 49xy + 28y^2`,
           choices: [
             String.raw`x(7x - 49y + 28y)`,
-            String.raw`7(x^2 - 7xy + 4y^2)`,
+            String.raw`7(x^2 - 7xy + 4y^2)`,     // ✔
             String.raw`7x(x - 7y + 28y)`,
             String.raw`7(x^2 - xy + 28y^2)`,
             String.raw`(7x^2)(-49xy)(28y^2)`,
@@ -32,7 +32,7 @@
 
         { latex: String.raw`\text{Factor: } a^2 - a`,
           choices: [
-            String.raw`a(a - 1)`,
+            String.raw`a(a - 1)`,                 // ✔
             String.raw`a^2(1-a)`,
             String.raw`a(a+1)`,
             String.raw`(a-1)^2`,
@@ -42,20 +42,20 @@
 
         { latex: String.raw`\text{Factor: } 8x - 32y`,
           choices: [
-            String.raw`4(2x - 8y)`,
-            String.raw`8(x - 4y)`,
+            String.raw`4(2x - 4y)`,
+            String.raw`8(x - 4y)`,                // ✔
             String.raw`16(x - 2y)`,
-            String.raw`2(4x - 16y)`,
+            String.raw`2(4x - 8y)`,
             String.raw`8(x+4y)`,
             String.raw`(8x)(-32y)`
           ]},
 
         { latex: String.raw`\text{Factor: } ax + ay`,
           choices: [
-            String.raw`a(x+y)`,
+            String.raw`a(x+y)`,                   // ✔
             String.raw`x(a+y)`,
             String.raw`a(x-y)`,
-            String.raw`a(x+y)`,
+            String.raw`a^2(x+y)`,
             String.raw`y(a+x)`,
             String.raw`ax(1+y)`
           ]},
@@ -64,7 +64,7 @@
           choices: [
             String.raw`3x(7x^2 - 2x - 1)`,
             String.raw`21(x^3 - 6x^2 - 3)`,
-            String.raw`3(7x^3 - 2x^2 - 1)`,
+            String.raw`3(7x^3 - 2x^2 - 1)`,       // ✔
             String.raw`(21x^3)(-6x^2)(-3)`,
             String.raw`x(21x^2 - 6x - 3)`,
             String.raw`(7x^3)(-2x^2)(-1)`
@@ -77,23 +77,23 @@
             String.raw`y(3+x)`,
             String.raw`x(x+3y)`,
             String.raw`(x+y)(3x)`,
-            String.raw`3(x+y)`
+            String.raw`3(x+y)`                    // ✔
           ]},
 
         { latex: String.raw`\text{Factor: } 15x + 30`,
           choices: [
             String.raw`3(x+10)`,
-            String.raw`15(x+2)`,
+            String.raw`15(x+2)`,                  // ✔
             String.raw`30(x+15)`,
             String.raw`5(x+6)`,
             String.raw`15(x-2)`,
-            String.raw`30(x+1/2)`
+            String.raw`30(x+\tfrac12)`
           ]},
 
         { latex: String.raw`\text{Factor: } x^2 - 3x`,
           choices: [
             String.raw`(x-3)(x+1)`,
-            String.raw`x(x-3)`,
+            String.raw`x(x-3)`,                   // ✔
             String.raw`x(x+3)`,
             String.raw`x^2(x-3)`,
             String.raw`x(x^2-3)`,
@@ -103,41 +103,41 @@
         { latex: String.raw`\text{Factor: } 6a^2 + 48a - 24`,
           choices: [
             String.raw`12(a^2+4a-2)`,
-            String.raw`6(a^2+8a-4)`,
-            String.raw`6( a^2+8a-4 )`,
-            String.raw`2(3a^2+24a-12)`,
-            String.raw`3(2a^2+16a-8)`,
+            String.raw`6(a^2+8a-4)`,              // ✔
+            String.raw`6(a^2+8a+4)`,
+            String.raw`2(3a^2+24a-6)`,
+            String.raw`3(2a^2+16a-6)`,
             String.raw`24(a^2+2a-1)`
           ]},
 
         { latex: String.raw`\text{Factor: } 10 - 50x`,
           choices: [
-            String.raw`10(1-5x)`,
-            String.raw`5(2-10x)`,
+            String.raw`10(1-5x)`,                 // ✔
+            String.raw`5(2-5x)`,
             String.raw`50(1-x)`,
-            String.raw`-10(5x-1)`,
-            String.raw`2(5-25x)`,
+            String.raw`-10(5x+1)`,
+            String.raw`2(5-15x)`,
             String.raw`10(x-5)`
           ]},
 
         { latex: String.raw`\text{Factor: } 6a^2b + 3ab^2`,
           choices: [
-            String.raw`3ab(2a+b)`,
-            String.raw`ab(6a+3b)`,
+            String.raw`3ab(2a+b)`,                // ✔
+            String.raw`ab(6a+b)`,
             String.raw`6ab(a+b)`,
-            String.raw`3ab(2a+b)`,
+            String.raw`3ab(2a-b)`,
             String.raw`a^2b(6+3b)`,
             String.raw`3ab(a+2b)`
           ]},
 
         { latex: String.raw`\text{Factor: } 300x^2 - 100x`,
           choices: [
-            String.raw`100x(3x-1)`,
-            String.raw`10x(30x-10)`,
-            String.raw`50x(6x-2)`,
-            String.raw`100x(3x-1)`,
-            String.raw`x(300x-100)`,
-            String.raw`25x(12x-4)`
+            String.raw`100x(3x-1)`,               // ✔
+            String.raw`10x(30x-1)`,
+            String.raw`50x(6x-3)`,
+            String.raw`100x(3x+1)`,
+            String.raw`x(300x-10)`,
+            String.raw`25x(12x-5)`
           ]}
       ]
     };
