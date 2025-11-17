@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Homework 10-3 (Algebra 2)</title>
+
+  <script>
+    /* =========================
+       Homework 10-3 — Special Right Triangles & Reciprocal Trig Ratios
+       ========================= */
+    window.homeworkData = {
+      classId : "Algebra2",
+      id      : "Homework 10-3",
+      title   : "Homework 10-3 — Special Right Triangles & Reciprocal Trig Ratios",
+
+      graphics : String.raw``,
+
+      /* Correct options for Q1–Q12 below */
+      answerKey : ["B","A","E","C","B","C","D","D","D","B","B","C"],
+
+      questions : [
+        /* ---------- A-type (3) ---------- */
+        { latex: String.raw`\text{Without using a calculator, find the exact value of } \cos 60^\circ.`,
+          choices: [
+            String.raw`1`,
+            String.raw`\dfrac12`,
+            String.raw`\dfrac{\sqrt3}{2}`,
+            String.raw`\dfrac{\sqrt2}{2}`,
+            String.raw`0`,
+            String.raw`2`
+          ]},
+
+        { latex: String.raw`\text{Without using a calculator, find the exact value of } \sin 45^\circ.`,
+          choices: [
+            String.raw`\dfrac{\sqrt2}{2}`,
+            String.raw`1`,
+            String.raw`\dfrac{\sqrt3}{2}`,
+            String.raw`\dfrac12`,
+            String.raw`\dfrac{\sqrt3}{3}`,
+            String.raw`\sqrt2`
+          ]},
+
+        { latex: String.raw`\text{Without using a calculator, find the exact value of } \csc 45^\circ.`,
+          choices: [
+            String.raw`\dfrac{\sqrt2}{2}`,
+            String.raw`1`,
+            String.raw`\dfrac{\sqrt3}{2}`,
+            String.raw`2`,
+            String.raw`\sqrt2`,
+            String.raw`\dfrac1{\sqrt2}`
+          ]},
+
+        /* ---------- B-type (8) ---------- */
+        { latex: String.raw`\text{Use a calculator to find } \sec 37^\circ51'.\ \text{Round to four decimal places.}`,
+          choices: [
+            String.raw`1.2234`,
+            String.raw`1.2570`,
+            String.raw`1.2664`,
+            String.raw`1.3054`,
+            String.raw`1.0071`,
+            String.raw`0.8910`
+          ]},
+
+        { latex: String.raw`\cot A = 1.71.\ \text{Find }A\text{ to the nearest minute.}`,
+          choices: [
+            String.raw`29^\circ42'`,
+            String.raw`30^\circ19'`,
+            String.raw`31^\circ30'`,
+            String.raw`58^\circ41'`,
+            String.raw`60^\circ18'`,
+            String.raw`30^\circ0'`
+          ]},
+
+        { latex: String.raw`\text{Use a calculator to find } \csc 83^\circ12'.\ \text{Round to four decimal places.}`,
+          choices: [
+            String.raw`1.0000`,
+            String.raw`1.0040`,
+            String.raw`1.0071`,
+            String.raw`1.0176`,
+            String.raw`0.9929`,
+            String.raw`0.9920`
+          ]},
+
+        { latex: String.raw`\sec A = 2.4.\ \text{Find }A\text{ to the nearest degree.}`,
+          choices: [
+            String.raw`24^\circ`,
+            String.raw`42^\circ`,
+            String.raw`60^\circ`,
+            String.raw`65^\circ`,
+            String.raw`69^\circ`,
+            String.raw`75^\circ`
+          ]},
+
+        { latex: String.raw`\text{Calculate } 2\sin35^\circ\cos35^\circ.\ \text{Round to four decimal places.}`,
+          choices: [
+            String.raw`0.8192`,
+            String.raw`0.8660`,
+            String.raw`0.9004`,
+            String.raw`0.9397`,
+            String.raw`0.9848`,
+            String.raw`1.0000`
+          ]},
+
+        { latex: String.raw`\text{Calculate } \csc40^\circ\tan40^\circ.\ \text{Round to four decimal places.}`,
+          choices: [
+            String.raw`0.7660`,
+            String.raw`0.8391`,
+            String.raw`1.0000`,
+            String.raw`1.3054`,
+            String.raw`1.5321`,
+            String.raw`1.7330`
+          ]},
+
+        { latex: String.raw`\text{In right triangle }ABC,\ \angle C = 90^\circ,\ AB = 10,\ \angle A = 30^\circ.\ \text{Which ordered pair lists }(AC,BC)\text{ in simplest radical form?}`,
+          choices: [
+            String.raw`\left(5,\ 5\sqrt3\right)`,
+            String.raw`\left(5\sqrt3,\ 5\right)`,
+            String.raw`\left(10,\ 5\sqrt3\right)`,
+            String.raw`\left(5,\ 10\right)`,
+            String.raw`\left(5\sqrt2,\ 5\sqrt2\right)`,
+            String.raw`\left(5\sqrt3,\ 10\right)`
+          ]},
+
+        { latex: String.raw`\text{In right triangle }KLM,\ \angle K = 90^\circ,\ KL = 9,\ \angle L = 45^\circ.\ \text{Find the length of }LM\text{ in simplest radical form.}`,
+          choices: [
+            String.raw`9`,
+            String.raw`9\sqrt2`,
+            String.raw`18`,
+            String.raw`9\sqrt3`,
+            String.raw`4.5\sqrt2`,
+            String.raw`6\sqrt3`
+          ]},
+
+        /* ---------- C-type (1) ---------- */
+        { latex: String.raw`\text{In right triangle }ABC,\ \angle C = 90^\circ\text{ and }A,B\text{ are acute. Which choice correctly completes both statements?}\\[4pt]
+(i)\ \dfrac{\sin A}{\cos A} = \_\_\_.\\
+(ii)\ \sin A = \_\_\_.`,
+          choices: [
+            String.raw`\text{(i) }\sin B\quad\text{(ii) }\tan B`,
+            String.raw`\text{(i) }\tan A\quad\text{(ii) }\sin B`,
+            String.raw`\text{(i) }\tan A\quad\text{(ii) }\cos B`,
+            String.raw`\text{(i) }\cos A\quad\text{(ii) }\sin B`,
+            String.raw`\text{(i) }\sec A\quad\text{(ii) }\csc B`,
+            String.raw`\text{(i) }\sin A\quad\text{(ii) }\cos A`
+          ]}
+      ]
+    };
+  </script>
+
+  <link rel="stylesheet" href="/math-homework/assets/core.css" />
+  <link rel="stylesheet" href="https://tikzjax.com/v1/fonts.css" />
+  <script defer src="/math-homework/assets/core.js"></script>
+  <script defer src="https://tikzjax.com/v1/tikzjax.js"></script>
+  <script defer src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+</head>
+<body>
+  <div id="hw-root">Loading…</div>
+</body>
+</html>
