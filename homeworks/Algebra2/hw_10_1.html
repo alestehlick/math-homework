@@ -1,0 +1,196 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Algebra 2 — Chapter 10 Trigonometric Ratios</title>
+
+  <script>
+    /* =========================
+       Homework 10-1 — Trigonometric Ratios
+       ========================= */
+    window.homeworkData = {
+      classId : "Algebra2",
+      id      : "Homework 10-1",
+      title   : "Homework 10-1 — Trigonometric Ratios",
+
+      graphics : String.raw`
+\begin{tikzpicture}[scale=0.9]
+  % Triangle G1: 6-8-10
+  \begin{scope}[xshift=-6cm]
+    \draw (0,0) node[below left]{C} --
+          (4,0) node[below]{B} --
+          (0,3) node[above]{A} -- cycle;
+    \draw (0,0) -- (0.5,0) -- (0.5,0.5) -- (0,0.5) -- cycle;
+    \node at (2,-0.4) {8};
+    \node at (-0.5,1.5) {6};
+    \node at (2,2) {10};
+    \node[anchor=south east,font=\small] at (3.8,2.8) {G1};
+  \end{scope}
+
+  % Triangle G2: 5-12-13
+  \begin{scope}
+    \draw (0,0) node[below left]{R} --
+          (4.8,0) node[below]{Q} --
+          (0,2) node[above]{P} -- cycle;
+    \draw (0,0) -- (0.5,0) -- (0.5,0.5) -- (0,0.5) -- cycle;
+    \node at (2.4,-0.4) {12};
+    \node at (-0.5,1) {5};
+    \node at (2.4,1.7) {13};
+    \node[anchor=south east,font=\small] at (4.6,2.5) {G2};
+  \end{scope}
+
+  % Triangle G3: 7-24-25
+  \begin{scope}[xshift=6cm]
+    \draw (0,0) node[below left]{M} --
+          (4.8,0) node[below]{L} --
+          (0,2.8) node[above]{K} -- cycle;
+    \draw (0,0) -- (0.5,0) -- (0.5,0.5) -- (0,0.5) -- cycle;
+    \node at (2.4,-0.4) {24};
+    \node at (-0.5,1.4) {7};
+    \node at (2.4,2.1) {25};
+    \node[anchor=south east,font=\small] at (4.6,3.1) {G3};
+  \end{scope}
+\end{tikzpicture}
+`,
+
+      /* Correct options for Q1–Q12 below */
+      answerKey : ["C","A","C","B","B","B","A","A","A","A","A","C"],
+
+      questions : [
+        /* A-type questions (3) */
+        { latex: String.raw`\text{Refer to triangle G1. Which ordered triple gives }(\sin A,\cos A,\tan A)\text{ correct to three decimal places?}`,
+          choices: [
+            String.raw`(0.600,\ 0.800,\ 0.750)`,
+            String.raw`(0.600,\ 0.800,\ 1.333)`,
+            String.raw`(0.800,\ 0.600,\ 1.333)`,
+            String.raw`(0.800,\ 0.600,\ 0.750)`,
+            String.raw`(0.750,\ 0.600,\ 1.333)`,
+            String.raw`(0.800,\ 0.750,\ 0.600)`
+          ]},
+
+        { latex: String.raw`\text{Refer to triangle G2. Which ordered triple gives }(\sin P,\cos P,\tan P)\text{ correct to three decimal places?}`,
+          choices: [
+            String.raw`(0.923,\ 0.385,\ 2.400)`,
+            String.raw`(0.385,\ 0.923,\ 2.400)`,
+            String.raw`(0.923,\ 0.385,\ 0.417)`,
+            String.raw`(0.385,\ 0.923,\ 0.417)`,
+            String.raw`(0.923,\ 0.222,\ 2.400)`,
+            String.raw`(0.222,\ 0.975,\ 0.417)`
+          ]},
+
+        { latex: String.raw`\text{Refer to triangle G3. Which ordered triple gives }(\sin K,\cos K,\tan K)\text{ correct to three decimal places?}`,
+          choices: [
+            String.raw`(0.280,\ 0.960,\ 0.291)`,
+            String.raw`(0.960,\ 0.280,\ 0.291)`,
+            String.raw`(0.960,\ 0.280,\ 3.429)`,
+            String.raw`(0.280,\ 0.960,\ 3.429)`,
+            String.raw`(0.960,\ 0.720,\ 3.429)`,
+            String.raw`(0.720,\ 0.280,\ 3.429)`
+          ]},
+
+        /* B-type questions (8) */
+        { latex: String.raw`\text{Use a calculator to find } \sin 38^\circ10'.\ \text{Round to four decimal places.}`,
+          choices: [
+            String.raw`0.6161`,
+            String.raw`0.6180`,
+            String.raw`0.6150`,
+            String.raw`0.7880`,
+            String.raw`0.7771`,
+            String.raw`0.5385`
+          ]},
+
+        { latex: String.raw`\text{Use a calculator to find } \cos 12^\circ.\ \text{Round to four decimal places.}`,
+          choices: [
+            String.raw`0.2079`,
+            String.raw`0.9781`,
+            String.raw`0.9788`,
+            String.raw`0.9511`,
+            String.raw`0.9925`,
+            String.raw`0.9703`
+          ]},
+
+        { latex: String.raw`\text{Use a calculator to find } \tan 42^\circ50'.\ \text{Round to four decimal places.}`,
+          choices: [
+            String.raw`0.9170`,
+            String.raw`0.9271`,
+            String.raw`0.9021`,
+            String.raw`1.0824`,
+            String.raw`0.9657`,
+            String.raw`0.8391`
+          ]},
+
+        { latex: String.raw`\text{Use a calculator to find } \cos 57^\circ20'.\ \text{Round to four decimal places.}`,
+          choices: [
+            String.raw`0.5398`,
+            String.raw`0.6160`,
+            String.raw`0.8480`,
+            String.raw`0.6020`,
+            String.raw`0.5600`,
+            String.raw`0.4245`
+          ]},
+
+        { latex: String.raw`\text{Change } 75.28^\circ \text{ to degrees, minutes, and seconds.}`,
+          choices: [
+            String.raw`75^\circ16'48''`,
+            String.raw`75^\circ28'16''`,
+            String.raw`75^\circ16'18''`,
+            String.raw`75^\circ17'48''`,
+            String.raw`75^\circ28'48''`,
+            String.raw`75^\circ16'08''`
+          ]},
+
+        { latex: String.raw`\text{Assuming } \angle C \text{ is the right angle, } a=5,\ c=10.\ \text{Find } \sin A.`,
+          choices: [
+            String.raw`0.5000`,
+            String.raw`0.8660`,
+            String.raw`0.7071`,
+            String.raw`0.6000`,
+            String.raw`0.2500`,
+            String.raw`0.3000`
+          ]},
+
+        { latex: String.raw`\text{Assuming } \angle C \text{ is the right angle, } a=2,\ b=5.\ \text{Find } \sin A \text{ to four decimal places.}`,
+          choices: [
+            String.raw`0.3714`,
+            String.raw`0.9285`,
+            String.raw`0.4472`,
+            String.raw`0.4000`,
+            String.raw`0.3162`,
+            String.raw`0.8944`
+          ]},
+
+        { latex: String.raw`\text{Use a calculator to find } \sin 32^\circ29'41''.\ \text{Round to five decimal places.}`,
+          choices: [
+            String.raw`0.53722`,
+            String.raw`0.53227`,
+            String.raw`0.54300`,
+            String.raw`0.49221`,
+            String.raw`0.80712`,
+            String.raw`0.47821`
+          ]},
+
+        /* C-type question (1) */
+        { latex: String.raw`\text{In a right triangle, the acute angles }A\text{ and }B\text{ satisfy }\sin A=\cos B.\ \text{Which statement must be true?}`,
+          choices: [
+            String.raw`A=B`,
+            String.raw`A+B=45^\circ`,
+            String.raw`A+B=90^\circ`,
+            String.raw`A-B=90^\circ`,
+            String.raw`A\text{ is twice }B`,
+            String.raw`B=90^\circ`
+          ]}
+      ]
+    };
+  </script>
+
+  <link rel="stylesheet" href="/math-homework/assets/core.css" />
+  <link rel="stylesheet" href="https://tikzjax.com/v1/fonts.css" />
+  <script defer src="/math-homework/assets/core.js"></script>
+  <script defer src="https://tikzjax.com/v1/tikzjax.js"></script>
+  <script defer src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+</head>
+<body>
+  <div id="hw-root">Loading…</div>
+</body>
+</html>
