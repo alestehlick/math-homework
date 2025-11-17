@@ -3,150 +3,188 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Homework 9-2 (Algebra 1)</title>
+  <title>Homework 9-2 (Algebra 2)</title>
 
   <script>
-    /* =========================
-       Homework 9-2 — Factoring (Difference of Squares & GCF)
-       ========================= */
+    /* =========================================
+       Homework 9-2 — Multiply Rational Expressions
+       Types mirror the source set: monomials, GCF,
+       quadratics (including perfect squares & diff. of squares),
+       grouping, cubes, mixed-variable products, and sign traps.
+       Leave results factored.
+       ========================================= */
     window.homeworkData = {
-      classId : "Algebra1",
+      classId : "Algebra2",
       id      : "Homework 9-2",
-      title   : "Homework 9-2 — Factoring (Difference of Squares & GCF)",
+      title   : "Homework 9-2 — Multiply Rational Expressions",
 
-      graphics : String.raw``,
+      graphics : String.raw``,  // no graphics for this section
 
-      /* Correct options for Q1–Q12 below */
-      answerKey : ["C","D","A","F","B","E","C","D","A","F","B","E"],
+      /* ===== Hidden answer key (A–F) for the 12 questions =====
+         Fixed: Q6 -> C, Q9 -> C
+      */
+      answerKey : ["E","D","B","C","A","C","B","A","C","C","D","B"],
 
+      /* ===== 12 Multiple-Choice Questions (6 choices each) ===== */
       questions : [
-        { latex: String.raw`\text{Factor: } y^2-144`,
+        /* 1. Monomial × monomial; power rules */
+        { latex: String.raw`\text{Multiply. Leave your answer in factored form: } 
+          \left(\dfrac{9xy^{4}}{4x^{5}y}\right)\!\left(\dfrac{2x^{3}}{15x}\right)`,
           choices: [
-            String.raw`(y-144)(y+1)`,
-            String.raw`y(y-144)`,
-            String.raw`(y-12)(y+12)`,        // ✔
-            String.raw`(y-12)^2`,
-            String.raw`(y+12)^2`,
-            String.raw`y^2+144`
+            String.raw`\dfrac{3y^{3}}{5x^{3}}`,
+            String.raw`\dfrac{3y^{2}}{10x^{2}}`,
+            String.raw`\dfrac{3y^{3}}{10x}`, 
+            String.raw`\dfrac{y^{3}}{10x^{2}}`,
+            String.raw`\dfrac{3y^{3}}{10x^{2}}`,   // correct
+            String.raw`\dfrac{3x^{2}y^{3}}{10}`
           ]},
 
-        { latex: String.raw`\text{Factor: } x^2 - y^2`,
+        /* 2. Coefficients + variable cancellation */
+        { latex: String.raw`\text{Multiply: } 
+          \left(\dfrac{5a^{2}b^{6}}{10a^{3}b^{5}}\right)\!\left(\dfrac{6a^{4}}{2b^{2}}\right)`,
           choices: [
-            String.raw`x(x-y^2)`,
-            String.raw`(x-y)^2`,
-            String.raw`x^2-2xy+y^2`,
-            String.raw`(x-y)(x+y)`,          // ✔
-            String.raw`(x+y)^2`,
-            String.raw`(x-y^2)(x+y^2)`
+            String.raw`\dfrac{3a^{2}}{b}`,
+            String.raw`\dfrac{3a^{4}}{2b^{2}}`,
+            String.raw`\dfrac{6a^{3}}{b^{2}}`,
+            String.raw`\dfrac{3a^{3}}{2b}`,       // correct
+            String.raw`\dfrac{a^{3}}{6b}`,
+            String.raw`\dfrac{9a^{3}}{4b}`
           ]},
 
-        { latex: String.raw`\text{Factor: } 49x^2 - 4`,
+        /* 3. Mixed variables; big cancellation */
+        { latex: String.raw`\text{Multiply: } 
+          \left(\dfrac{8a^{2}b}{7ac^{5}}\right)\!\left(\dfrac{21ac^{4}}{4a^{3}}\right)`,
           choices: [
-            String.raw`(7x-2)(7x+2)`,        // ✔
-            String.raw`7(x-2)(x+2)`,
-            String.raw`(49x-4)(x+1)`,
-            String.raw`(7x-4)(7x+1)`,
-            String.raw`(7x)^2 - 2^2=\text{prime}`,
-            String.raw`(7x+2)^2`
+            String.raw`\dfrac{12b}{ac^{2}}`,
+            String.raw`\dfrac{6b}{ac}`,           // correct
+            String.raw`\dfrac{6ab}{c}`,
+            String.raw`\dfrac{3b}{2ac}`,
+            String.raw`\dfrac{6b}{a^{2}c}`,
+            String.raw`\dfrac{42ab}{28c}`
           ]},
 
-        { latex: String.raw`\text{Factor: } 9x^2 - 100`,
+        /* 4. Trinomial × binomial with diff-of-sq; sign trap */
+        { latex: String.raw`\text{Multiply: }
+          \left(\dfrac{x^{2}-xy-2y^{2}}{x^{2}-y^{2}}\right)\!
+          \left(\dfrac{3x^{2}+6xy+3y^{2}}{x+y}\right)`,
           choices: [
-            String.raw`(9x-10)(x+10)`,
-            String.raw`(3x-5)(3x-5)`,
-            String.raw`9(x^2-10)`,
-            String.raw`(9x^2-10^2)`,
-            String.raw`(3x-10)^2`,
-            String.raw`(3x-10)(3x+10)`       // ✔
+            String.raw`3\dfrac{(x-2y)}{(x-y)}`,
+            String.raw`3\dfrac{(x+y)}{(x-y)}`,
+            String.raw`3\dfrac{(x-2y)(x+y)}{(x-y)}`,   // correct
+            String.raw`3\dfrac{(x-2y)}{(x+y)}`,
+            String.raw`\dfrac{3(x-2y)}{x^{2}-y^{2}}`,
+            String.raw`\dfrac{3(x-2y)(x+y)}{(x+y)^{2}}`
           ]},
 
-        { latex: String.raw`\text{Factor: } 2a^2 - 242`,
+        /* 5. Four quadratics; everything cancels nicely */
+        { latex: String.raw`\text{Multiply: }
+          \left(\dfrac{a^{2}+2a-15}{a^{2}-6a+9}\right)\!
+          \left(\dfrac{a^{2}+3a-18}{a^{2}+11a+30}\right)`,
           choices: [
-            String.raw`2(a-242)`,
-            String.raw`2(a-11)(a+11)`,       // ✔
-            String.raw`(2a-11)(a+11)`,
-            String.raw`2(a-121)^2`,
-            String.raw`(a-22)(a+11)`,
-            String.raw`(a-121)(a+2)`
+            String.raw`\dfrac{1}{a-3}`,          // correct
+            String.raw`\dfrac{a-3}{a+5}`,
+            String.raw`\dfrac{a+5}{a-3}`,
+            String.raw`1`,
+            String.raw`\dfrac{a+6}{a-3}`,
+            String.raw`\dfrac{a-3}{a+6}`
           ]},
 
-        { latex: String.raw`\text{Factor: } 25 - 100y^2`,
+        /* 6. Classic quadratics; perfect squares & diff of squares */
+        { latex: String.raw`\text{Multiply: }
+          \left(\dfrac{x^{2}+9x+18}{x^{2}+5x+6}\right)\!
+          \left(\dfrac{x^{2}+4x+4}{x^{2}-36}\right)`,
           choices: [
-            String.raw`(25-10y)(25+10y)`,
-            String.raw`5(5-20y^2)`,
-            String.raw`25(1-10y)^2`,
-            String.raw`(5-10y)(5+10y)`,
-            String.raw`25(1-2y)(1+2y)`,      // ✔
-            String.raw`(5-2y)(5+2y)`
+            String.raw`\dfrac{x+6}{x-6}`,
+            String.raw`\dfrac{x+2}{x-6}\cdot(x+6)`,
+            String.raw`\dfrac{x+2}{x-6}`,        // correct
+            String.raw`\dfrac{x+6}{x+2}`,
+            String.raw`\dfrac{x+2}{x+6}`,
+            String.raw`1`
           ]},
 
-        { latex: String.raw`\text{Factor: } 36a^2 - 49`,
+        /* 7. Linear factors with coefficients; reduce to half */
+        { latex: String.raw`\text{Multiply: }
+          \left(\dfrac{4a-12}{a^{2}+9a+14}\right)\!
+          \left(\dfrac{a^{2}+3a-42}{8a-48}\right)`,
           choices: [
-            String.raw`6(a-49)(a+49)`,
-            String.raw`(36a-7)(a+7)`,
-            String.raw`(6a-7)(6a+7)`,        // ✔
-            String.raw`(6a-49)(6a+49)`,
-            String.raw`(6a-7)^2`,
-            String.raw`(36a^2-7^2)=\text{prime}`
+            String.raw`\dfrac{a-3}{a+2}`,
+            String.raw`\dfrac{a-3}{2(a+2)}`,     // correct
+            String.raw`\dfrac{2(a-3)}{a+2}`,
+            String.raw`\dfrac{a+2}{2(a-3)}`,
+            String.raw`\dfrac{a-6}{2(a+2)}`,
+            String.raw`1`
           ]},
 
-        { latex: String.raw`\text{Factor: } 25x^2 - 49`,
+        /* 8. Perfect square over diff. of squares, times a factorable trinomial */
+        { latex: String.raw`\text{Multiply: }
+          \left(\dfrac{(x-y)^{2}}{x^{2}-y^{2}}\right)\!
+          \left(\dfrac{x^{2}+3xy+2y^{2}}{x+y}\right)`,
           choices: [
-            String.raw`(25x-7)(x+7)`,
-            String.raw`25(x^2-49)`,
-            String.raw`(5x-49)(5x+49)`,
-            String.raw`(5x-7)(5x+7)`,        // ✔
-            String.raw`(5x-7)^2`,
-            String.raw`(25x^2-7)^2`
+            String.raw`\dfrac{(x-y)(x+2y)}{x+y}`,      // correct
+            String.raw`\dfrac{x-y}{x+2y}`,
+            String.raw`\dfrac{x-2y}{x+y}`,
+            String.raw`\dfrac{x+2y}{x-y}`,
+            String.raw`\dfrac{(x-y)^{2}}{x+y}`,
+            String.raw`1`
           ]},
 
-        { latex: String.raw`\text{Factor: } a^2 - 225b^2`,
+        /* 9. Everything cancels to 1 */
+        { latex: String.raw`\text{Multiply: }
+          \left(\dfrac{3x^{2}-12}{x^{2}-4}\right)\!
+          \left(\dfrac{x-2}{3x-6}\right)`,
           choices: [
-            String.raw`(a-15b)(a+15b)`,      // ✔
-            String.raw`(a-225b)(a+225b)`,
-            String.raw`a(a-225b^2)`,
-            String.raw`(a-15b)^2`,
-            String.raw`a^2+225b^2`,
-            String.raw`(a-5b)(a+45b)`
+            String.raw`\dfrac{x+2}{x-2}`,
+            String.raw`\dfrac{x-2}{x+2}`,
+            String.raw`1`,                         // correct
+            String.raw`x-2`,
+            String.raw`x+2`,
+            String.raw`\dfrac{3}{x-2}`
           ]},
 
-        { latex: String.raw`\text{Factor: } a^2x^2 - y^2`,
+        /* 10. Exponents with two variables */
+        { latex: String.raw`\text{Multiply: }
+          \left(\dfrac{x^{2}y^{5}}{6x^{3}y}\right)\!
+          \left(\dfrac{9x}{3y^{2}}\right)`,
           choices: [
-            String.raw`(ax-y^2)(ax+y^2)`,
-            String.raw`x^2(a-y)(a+y)`,
-            String.raw`(a^2x - y)(x + y)`,
-            String.raw`(ax-y)^2`,
-            String.raw`(a^2x^2 - y^2)=\text{prime}`,
-            String.raw`(ax-y)(ax+y)`         // ✔
+            String.raw`\dfrac{y^{4}}{2x}`,
+            String.raw`\dfrac{y^{3}}{2}`,
+            String.raw`\dfrac{y^{2}}{2}`,         // correct
+            String.raw`\dfrac{x y^{2}}{2}`,
+            String.raw`\dfrac{3y^{2}}{2x}`,
+            String.raw`\dfrac{y}{2}`
           ]},
 
-        { latex: String.raw`\text{Factor: } 4x^2 - 16`,
+        /* 11. Cubes + perfect square */
+        { latex: String.raw`\text{Multiply: }
+          \left(\dfrac{x^{3}-8}{x^{2}+2x+4}\right)\!
+          \left(\dfrac{x+2}{x^{2}-4x+4}\right)`,
           choices: [
-            String.raw`(2x-16)(2x+16)`,
-            String.raw`4(x-2)(x+2)`,         // ✔
-            String.raw`(2x-4)^2`,
-            String.raw`4(x^2-16)`,
-            String.raw`(x-4)(x+4)`,
-            String.raw`2(x-4)(2x+4)`
+            String.raw`\dfrac{x-2}{x+2}`,
+            String.raw`\dfrac{x+2}{(x-2)^{2}}`,
+            String.raw`\dfrac{x-2}{(x+2)^{2}}`,
+            String.raw`\dfrac{x+2}{x-2}`,         // correct
+            String.raw`1`,
+            String.raw`\dfrac{x^{2}-4}{x-2}`
           ]},
 
-        { latex: String.raw`\text{Factor: } a^2x^2 - 16x^2`,
+        /* 12. Many-term special forms (diff of squares & cubes) */
+        { latex: String.raw`\text{Multiply: }
+          \left(\dfrac{m^{2}-n^{2}}{m^{3}-n^{3}}\right)\!
+          \left(\dfrac{m-n}{m+n}\right)`,
           choices: [
-            String.raw`(ax-16x)(ax+16x)`,
-            String.raw`x(ax-4)(ax+4)`,
-            String.raw`(a-4)(a+4)`,
-            String.raw`x^2(a-16)(a+16)`,
-            String.raw`x^2(a-4)(a+4)`,       // ✔
-            String.raw`x^2(a-8)(a+2)`
+            String.raw`\dfrac{1}{m^{2}+mn+n^{2}}`,
+            String.raw`\dfrac{m-n}{m^{2}+mn+n^{2}}`,  // correct
+            String.raw`\dfrac{m+n}{m^{2}+mn+n^{2}}`,
+            String.raw`\dfrac{m-n}{m^{2}-mn+n^{2}}`,
+            String.raw`\dfrac{(m-n)^{2}}{(m+n)(m^{2}+mn+n^{2})}`,
+            String.raw`1`
           ]}
       ]
     };
   </script>
 
   <link rel="stylesheet" href="/math-homework/assets/core.css" />
-  <link rel="stylesheet" href="https://tikzjax.com/v1/fonts.css" />
   <script defer src="/math-homework/assets/core.js"></script>
-  <script defer src="https://tikzjax.com/v1/tikzjax.js"></script>
   <script defer src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
 </head>
 <body>
