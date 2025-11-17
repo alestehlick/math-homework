@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Algebra 2 — Chapter 10 Review</title>
+
+  <script>
+    /* =========================
+       Chapter 10 Review — Trigonometry
+       ========================= */
+    window.homeworkData = {
+      classId : "Algebra2",
+      id      : "Chapter 10 Review",
+      title   : "Chapter 10 Review — Trigonometry",
+
+      graphics : String.raw``,
+
+      /* Correct options for Q1–Q12 below */
+      answerKey : ["C","B","D","B","C","D","A","C","E","B","A","C"],
+
+      questions : [
+        /* ---------- A-type (3) ---------- */
+        { latex: String.raw`\text{Without using a calculator, find the exact value of } \cos 30^\circ.`,
+          choices: [
+            String.raw`1`,
+            String.raw`\dfrac12`,
+            String.raw`\dfrac{\sqrt3}{2}`,
+            String.raw`\dfrac{\sqrt2}{2}`,
+            String.raw`\dfrac{\sqrt3}{3}`,
+            String.raw`0`
+          ]},
+
+        { latex: String.raw`\text{Convert }36^\circ\text{ to radian measure.}`,
+          choices: [
+            String.raw`\dfrac{\pi}{6}`,
+            String.raw`\dfrac{\pi}{5}`,
+            String.raw`\dfrac{2\pi}{5}`,
+            String.raw`\dfrac{3\pi}{10}`,
+            String.raw`\dfrac{7\pi}{18}`,
+            String.raw`\dfrac{5\pi}{18}`
+          ]},
+
+        { latex: String.raw`\text{Convert }\dfrac{\pi}{8}\text{ radians to degree measure.}`,
+          choices: [
+            String.raw`18^\circ`,
+            String.raw`20^\circ`,
+            String.raw`22^\circ`,
+            String.raw`22.5^\circ`,
+            String.raw`30^\circ`,
+            String.raw`45^\circ`
+          ]},
+
+        /* ---------- B-type (8) ---------- */
+        { latex: String.raw`\text{In right triangle }ABC,\ AC=6,\ CB=2,\ \angle C\text{ is a right angle. Which ordered triple gives }(\sin A,\cos A,\tan A)\text{ rounded to four decimal places?}`,
+          choices: [
+            String.raw`(0.3333,\ 0.9428,\ 3.0000)`,
+            String.raw`(0.3162,\ 0.9487,\ 0.3333)`,
+            String.raw`(0.9487,\ 0.3162,\ 3.0000)`,
+            String.raw`(0.3333,\ 0.8165,\ 0.4082)`,
+            String.raw`(0.4472,\ 0.8944,\ 0.5000)`,
+            String.raw`(0.2425,\ 0.9701,\ 0.2500)`
+          ]},
+
+        { latex: String.raw`\text{In right triangle }DEF,\ DE=12,\ EF=3,\ \angle F\text{ is a right angle. Which ordered triple gives }(\sin D,\cos D,\tan D)\text{ rounded to four decimal places?}`,
+          choices: [
+            String.raw`(0.1961,\ 0.9806,\ 0.2000)`,
+            String.raw`(0.9701,\ 0.2425,\ 4.0000)`,
+            String.raw`(0.2425,\ 0.9701,\ 0.2500)`,
+            String.raw`(0.3162,\ 0.9487,\ 0.3333)`,
+            String.raw`(0.2500,\ 0.9682,\ 0.2425)`,
+            String.raw`(0.6000,\ 0.8000,\ 0.7500)`
+          ]},
+
+        { latex: String.raw`\text{In right triangle }XZY,\ \angle Z=90^\circ,\ ZY=8,\ \angle X=16^\circ.\ \text{Find the length of the hypotenuse }XY\text{ to the nearest tenth.}`,
+          choices: [
+            String.raw`26.9`,
+            String.raw`27.9`,
+            String.raw`28.0`,
+            String.raw`29.0`,
+            String.raw`30.0`,
+            String.raw`31.5`
+          ]},
+
+        { latex: String.raw`\text{In right triangle }LNM,\ \angle L=90^\circ,\ LN=5,\ LM=7.\ \text{Find the measure of }\angle M\text{ to the nearest minute.}`,
+          choices: [
+            String.raw`35^\circ32'`,
+            String.raw`35^\circ38'`,
+            String.raw`40^\circ00'`,
+            String.raw`35^\circ03'`,
+            String.raw`55^\circ32'`,
+            String.raw`54^\circ22'`
+          ]},
+
+        { latex: String.raw`\text{Candy uses a 15-inch board that makes a }47^\circ\text{ angle with a horizontal shelf. To the nearest tenth of an inch, how high does the board reach above the shelf?}`,
+          choices: [
+            String.raw`10.2`,
+            String.raw`10.6`,
+            String.raw`11.0`,
+            String.raw`11.4`,
+            String.raw`12.0`,
+            String.raw`9.8`
+          ]},
+
+        { latex: String.raw`\tan A=0.4639.\ \text{Find the measure of }A\text{ to the nearest minute.}`,
+          choices: [
+            String.raw`23^\circ10'`,
+            String.raw`24^\circ30'`,
+            String.raw`24^\circ50'`,
+            String.raw`25^\circ10'`,
+            String.raw`24^\circ53'`,
+            String.raw`26^\circ00'`
+          ]},
+
+        { latex: String.raw`\cos A=0.3475.\ \text{Find the measure of }A\text{ to the nearest minute (acute angle).}`,
+          choices: [
+            String.raw`20^\circ20'`,
+            String.raw`69^\circ40'`,
+            String.raw`70^\circ20'`,
+            String.raw`110^\circ20'`,
+            String.raw`290^\circ20'`,
+            String.raw`300^\circ20'`
+          ]},
+
+        { latex: String.raw`\text{Find the exact value of }\tan540^\circ.`,
+          choices: [
+            String.raw`0`,
+            String.raw`-1`,
+            String.raw`\sqrt3`,
+            String.raw`-\,\sqrt3`,
+            String.raw`1`,
+            String.raw`\text{undefined}`
+          ]},
+
+        /* ---------- C-type (1) ---------- */
+        { latex: String.raw`\text{For an acute angle }A,\ \text{which equation correctly describes the relationship between sine and cosine of complementary angles?}`,
+          choices: [
+            String.raw`\sin(90^\circ+A)=\cos A`,
+            String.raw`\sin A=\cos(90^\circ-A)`,
+            String.raw`\sin(90^\circ-A)=\cos A`,
+            String.raw`\sin(2A)=2\sin A\cos A`,
+            String.raw`\cos(90^\circ-A)=-\sin A`,
+            String.raw`\tan(90^\circ-A)=\cot A`
+          ]}
+      ]
+    };
+  </script>
+
+  <link rel="stylesheet" href="/math-homework/assets/core.css" />
+  <link rel="stylesheet" href="https://tikzjax.com/v1/fonts.css" />
+  <script defer src="/math-homework/assets/core.js"></script>
+  <script defer src="https://tikzjax.com/v1/tikzjax.js"></script>
+  <script defer src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+</head>
+<body>
+  <div id="hw-root">Loading…</div>
+</body>
+</html>
