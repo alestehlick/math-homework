@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Homework 10-4 (Algebra 2)</title>
+
+  <script>
+    /* =========================
+       Homework 10-4 — Trigonometric Ratios of Any Angle
+       ========================= */
+    window.homeworkData = {
+      classId : "Algebra2",
+      id      : "Homework 10-4",
+      title   : "Homework 10-4 — Trigonometric Ratios of Any Angle",
+
+      graphics : String.raw``,
+
+      /* Correct options for Q1–Q12 below */
+      answerKey : ["C","A","B","B","C","D","E","C","B","D","B","C"],
+
+      questions : [
+        /* ---------- A-type (3) ---------- */
+        { latex: String.raw`\text{Find the reference angle for }52^\circ.`,
+          choices: [
+            String.raw`38^\circ`,
+            String.raw`28^\circ`,
+            String.raw`52^\circ`,
+            String.raw`128^\circ`,
+            String.raw`308^\circ`,
+            String.raw`232^\circ`
+          ]},
+
+        { latex: String.raw`\text{Find the reference angle for }345^\circ.`,
+          choices: [
+            String.raw`15^\circ`,
+            String.raw`35^\circ`,
+            String.raw`45^\circ`,
+            String.raw`75^\circ`,
+            String.raw`165^\circ`,
+            String.raw`345^\circ`
+          ]},
+
+        { latex: String.raw`\text{Find the reference angle for }-140^\circ.`,
+          choices: [
+            String.raw`140^\circ`,
+            String.raw`40^\circ`,
+            String.raw`50^\circ`,
+            String.raw`220^\circ`,
+            String.raw`320^\circ`,
+            String.raw`20^\circ`
+          ]},
+
+        /* ---------- B-type (8) ---------- */
+        { latex: String.raw`\text{Use a reference angle to find } \sin200^\circ \text{ to four decimal places.}`,
+          choices: [
+            String.raw`-0.1736`,
+            String.raw`-0.3420`,
+            String.raw`-0.6428`,
+            String.raw`0.3420`,
+            String.raw`0.9397`,
+            String.raw`0.6428`
+          ]},
+
+        { latex: String.raw`\text{Find } \cos(-12^\circ) \text{ to four decimal places.}`,
+          choices: [
+            String.raw`-0.9781`,
+            String.raw`0.2079`,
+            String.raw`0.9781`,
+            String.raw`0.9780`,
+            String.raw`0.9945`,
+            String.raw`1.0000`
+          ]},
+
+        { latex: String.raw`\text{Find } \csc112^\circ10' \text{ to four decimal places.}`,
+          choices: [
+            String.raw`0.9261`,
+            String.raw`0.9848`,
+            String.raw`1.0176`,
+            String.raw`1.0798`,
+            String.raw`1.2200`,
+            String.raw`1.3054`
+          ]},
+
+        { latex: String.raw`\text{Find } \tan340^\circ \text{ to four decimal places.}`,
+          choices: [
+            String.raw`-2.7475`,
+            String.raw`-1.1918`,
+            String.raw`-0.8391`,
+            String.raw`0.3640`,
+            String.raw`-0.3640`,
+            String.raw`0.8391`
+          ]},
+
+        { latex: String.raw`\text{Find the exact value of } \cos135^\circ.`,
+          choices: [
+            String.raw`-\dfrac{\sqrt3}{2}`,
+            String.raw`-\dfrac12`,
+            String.raw`-\dfrac{\sqrt2}{2}`,
+            String.raw`\dfrac{\sqrt2}{2}`,
+            String.raw`\dfrac12`,
+            String.raw`\dfrac{\sqrt3}{2}`
+          ]},
+
+        { latex: String.raw`\text{Find the exact value of } \sin300^\circ.`,
+          choices: [
+            String.raw`-\dfrac{\sqrt2}{2}`,
+            String.raw`-\dfrac{\sqrt3}{2}`,
+            String.raw`-\dfrac12`,
+            String.raw`\dfrac{\sqrt3}{2}`,
+            String.raw`\dfrac12`,
+            String.raw`\dfrac{\sqrt2}{2}`
+          ]},
+
+        { latex: String.raw`\text{Find the exact value of } \tan(-45^\circ).`,
+          choices: [
+            String.raw`-\sqrt3`,
+            String.raw`-\dfrac{\sqrt3}{3}`,
+            String.raw`0`,
+            String.raw`-1`,
+            String.raw`1`,
+            String.raw`\sqrt3`
+          ]},
+
+        { latex: String.raw`\text{Find the exact value of } \csc210^\circ.`,
+          choices: [
+            String.raw`2`,
+            String.raw`-2`,
+            String.raw`-\dfrac12`,
+            String.raw`1`,
+            String.raw`-1`,
+            String.raw`\dfrac12`
+          ]},
+
+        /* ---------- C-type (1) ---------- */
+        { latex: String.raw`\text{Angle }A\text{ is in standard position and its terminal ray passes through }(-1,\sqrt5).\ \text{Which ordered pair gives }(\cos A,\csc A)\text{ in exact form?}`,
+          choices: [
+            String.raw`\left(\dfrac{\sqrt6}{6},\ \dfrac{\sqrt{30}}5\right)`,
+            String.raw`\left(-\dfrac{\sqrt6}{6},\ -\dfrac{\sqrt{30}}5\right)`,
+            String.raw`\left(-\dfrac{\sqrt6}{6},\ \dfrac{\sqrt{30}}5\right)`,
+            String.raw`\left(-\dfrac{\sqrt5}{6},\ \dfrac{\sqrt{30}}5\right)`,
+            String.raw`\left(\dfrac{\sqrt6}{6},\ -\dfrac{\sqrt{30}}5\right)`,
+            String.raw`\left(-\dfrac1{\sqrt6},\ \dfrac{\sqrt5}{\sqrt6}\right)`
+          ]}
+      ]
+    };
+  </script>
+
+  <link rel="stylesheet" href="/math-homework/assets/core.css" />
+  <link rel="stylesheet" href="https://tikzjax.com/v1/fonts.css" />
+  <script defer src="/math-homework/assets/core.js"></script>
+  <script defer src="https://tikzjax.com/v1/tikzjax.js"></script>
+  <script defer src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+</head>
+<body>
+  <div id="hw-root">Loading…</div>
+</body>
+</html>
