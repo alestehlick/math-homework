@@ -7,258 +7,58 @@
 
   <script>
     /* =========================
-       Homework 10-1 — Solids and Perspective
+       Homework 10-1 — Perspective in Space
+       Focus: understanding the proof of an equidistance statement
        ========================= */
     window.homeworkData = {
       classId : "Geometry",
       id      : "Homework 10-1",
-      title   : "Homework 10-1 — Solids and Perspective",
+      title   : "Homework 10-1 — Perspective in Space",
 
-      graphics : String.raw`
-\begin{tikzpicture}[scale=0.9]
+      graphics : String.raw``,
 
-  \begin{scope}[xshift=-6cm,yshift=3cm]
-    \draw (0,0) circle (1);
-    \node at (0,-1.5) {G1};
-  \end{scope}
-
-  \begin{scope}[xshift=-2cm,yshift=3cm]
-    \draw (0,-1)--(-1,1)--(1,1)--cycle;
-    \draw (0,1) ellipse (1 and 0.25);
-    \node at (0,-1.7) {G2};
-  \end{scope}
-
-  \begin{scope}[xshift=2cm,yshift=3cm]
-    \draw (0,-1.2) ellipse (1 and 0.25);
-    \draw (-1,-1.2)--(-1,1.2);
-    \draw (1,-1.2)--(1,1.2);
-    \draw (0,1.2) ellipse (1 and 0.25);
-    \node at (0,-1.9) {G3};
-  \end{scope}
-
-  \begin{scope}[xshift=6cm,yshift=3cm]
-    \draw (-0.5,1)--(0.5,1)--(1,0.3)--(0,-0.2)--(-1,0.3)--cycle;
-    \draw (-0.5,-1)--(0.5,-1)--(1,-1.7)--(0,-2.2)--(-1,-1.7)--cycle;
-    \draw (-0.5,1)--(-0.5,-1);
-    \draw (0.5,1)--(0.5,-1);
-    \draw (1,0.3)--(1,-1.7);
-    \draw (-1,0.3)--(-1,-1.7);
-    \draw (0,-0.2)--(0,-2.2);
-    \node at (0,-2.6) {G4};
-  \end{scope}
-
-
-  \begin{scope}[xshift=-4cm,yshift=-1cm]
-    \draw (0,-1.2)--(-1,1.2)--(1,1.2)--cycle;
-    \draw (0,0.3) ellipse (0.8 and 0.2);
-    \node at (0,-1.9) {G5};
-  \end{scope}
-
-  \begin{scope}[xshift=0cm,yshift=-1cm]
-    \draw (0,-1.2)--(-1,1.2)--(1,1.2)--cycle;
-    \draw (0,-1.2)--(0,1.2);
-    \node at (0,-1.9) {G6};
-  \end{scope}
-
-
-  \begin{scope}[xshift=4cm,yshift=-1cm]
-    \draw (0,-1.2) ellipse (0.9 and 0.25);
-    \draw (-0.9,-1.2)--(-0.9,1.2);
-    \draw (0.9,-1.2)--(0.9,1.2);
-    \draw (0,1.2) ellipse (0.9 and 0.25);
-    \draw (0,0.3) ellipse (0.7 and 0.2);
-    \node at (0,-1.9) {G7};
-  \end{scope}
-
-  \begin{scope}[xshift=8cm,yshift=-1cm]
-    \draw (0,-1.2) ellipse (0.9 and 0.25);
-    \draw (-0.9,-1.2)--(-0.9,1.2);
-    \draw (0.9,-1.2)--(0.9,1.2);
-    \draw (0,1.2) ellipse (0.9 and 0.25);
-    \draw (0,-1.2)--(0,1.2);
-    \node at (0,-1.9) {G8};
-  \end{scope}
-
-
-  \begin{scope}[xshift=-2cm,yshift=-5cm]
-    \draw (-1,-0.5)--(1,-0.5)--(1,0.5)--(-1,0.5)--cycle;
-    \draw (-1,-1.5)--(1,-1.5)--(1,-0.5)--(-1,-0.5)--cycle;
-    \node at (0,-2.1) {G9};
-  \end{scope}
-
-  \begin{scope}[xshift=2cm,yshift=-5cm]
-    \draw (-1,-0.5)--(1,0.5)--(1,1.5)--(-1,0.5)--cycle;
-    \draw (-1,1.5)--(1,-0.5)--(1,-1.5)--(-1,0.5)--cycle;
-    \node at (0,-2.1) {G10};
-  \end{scope}
-\end{tikzpicture}
-
-\begin{tikzpicture}[scale=0.9]
-
-  \begin{scope}[xshift=-6cm,yshift=2.5cm]
-    \draw (-1,-1)--(1,-1)--(1,1)--(-1,1)--cycle;
-    \draw (-1,-1)--(0,0);
-    \draw (1,-1)--(0,0);
-    \draw (1,1)--(0,0);
-    \draw (-1,1)--(0,0);
-    \node at (0,-1.7) {R1};
-  \end{scope}
-
-  \begin{scope}[xshift=0cm,yshift=2.5cm]
-    \draw (0,-1)--(0,1);
-    \draw (0,1)--(-1.5,1.2)--(-1.5,-0.8)--(0,-1);
-    \draw (0,1)--(1.5,1.2)--(1.5,-0.8)--(0,-1);
-    \node at (0,-1.7) {R2};
-  \end{scope}
-
-  \begin{scope}[xshift=6cm,yshift=2.5cm]
-    \draw (-1,0.2)--(1,0.2)--(0,-1.5)--cycle;
-    \draw (-1,0.2)--(-0.3,1.5)--(0.3,1.5)--(1,0.2);
-    \draw (-0.3,1.5)--(0,-1.5);
-    \draw (0.3,1.5)--(0,-1.5);
-    \node at (0,-1.9) {R3};
-  \end{scope}
-
-
-  \begin{scope}[xshift=0cm,yshift=-2.5cm]
-    \draw (-3,0)--(3,0);
-    \draw (-2.5,0)--(-2.5,1);
-    \draw (-2.7,1)--(-2.3,1);
-    \draw (-1.5,0)--(-1.5,0.7);
-    \draw (-1.7,0.7)--(-1.3,0.7);
-    \draw (-0.5,0)--(-0.5,0.5);
-    \draw (-0.7,0.5)--(-0.3,0.5);
-    \draw (0.4,0)--(0.4,0.4);
-    \draw (0.25,0.4)--(0.55,0.4);
-    \draw (1.1,0)--(1.1,0.3);
-    \draw (0.95,0.3)--(1.25,0.3);
-    \node at (0,-0.8) {T1};
-  \end{scope}
-\end{tikzpicture}
-`,
-
-      /* Correct answers for Q1–Q12 */
-      answerKey : ["C","D","B","A","A","B","A","B","C","B","C","A"],
+      /* Correct answers for Q1–Q3 */
+      answerKey : ["A","A","A"],
 
       questions : [
-        /* ---------- Type A (3) ---------- */
+        /* ---------- Proof-understanding Q1 ---------- */
         {
-          latex: String.raw`\text{Refer to solids }G1\text{--}G4. Which one represents a cylinder?`,
+          latex: String.raw`\text{Consider the following statement about points }A,B,P,Q\text{ and a point }X\text{ on segment }\overline{AB}:\\[4pt]
+\qquad\textbf{Statement.}\ \text{If }AP = AQ\text{ and }BP = BQ,\text{ then every point }X\text{ on }\overline{AB}\text{ satisfies }XP = XQ.\\[6pt]
+\text{Which description best summarizes the overall strategy of the proof presented in class?}`,
           choices: [
-            String.raw`G1`,
-            String.raw`G2`,
-            String.raw`G3`,
-            String.raw`G4`,
-            String.raw`\text{Both }G2\text{ and }G3`,
-            String.raw`\text{None of these}`
-          ]
-        },
-        {
-          latex: String.raw`\text{Refer again to }G1\text{--}G4. Which solid is a prism (two parallel congruent polygonal bases)?`,
-          choices: [
-            String.raw`G1`,
-            String.raw`G2`,
-            String.raw`G3`,
-            String.raw`G4`,
-            String.raw`\text{Both }G3\text{ and }G4`,
-            String.raw`\text{None of these}`
-          ]
-        },
-        {
-          latex: String.raw`\text{Refer to cylinder diagrams }G7\text{ and }G8.\ \text{A plane intersects a circular cylinder to form a rectangle when the plane is vertical. Which diagram shows a rectangular cross section?}`,
-          choices: [
-            String.raw`G7`,
-            String.raw`G8`,
-            String.raw`\text{Both }G7\text{ and }G8`,
-            String.raw`\text{Neither diagram}`
+            String.raw`\text{First prove that } \triangle ABP \cong \triangle ABQ \text{ so that } \angle PAB \cong \angle QAB. \text{ Then, for any point } X \text{ on } \overline{AB}, \text{ use those equal angles together with the common side } \overline{AX} \text{ to show } \triangle PAX \cong \triangle QAX \text{ and conclude } XP = XQ.`,
+            String.raw`\text{First assume that } XP = XQ \text{ for every point } X \text{ on } \overline{AB}, \text{ and then deduce that } AP = AQ \text{ and } BP = BQ.`,
+            String.raw`\text{First choose the midpoint } X \text{ of } \overline{AB} \text{ and prove } AP = BP \text{ and } AQ = BQ, \text{ then claim that every other point on } \overline{AB} \text{ also has this property.}`,
+            String.raw`\text{First drop perpendiculars from } P \text{ and } Q \text{ to } \overline{AB} \text{ and prove } \overline{AB} \perp \overline{PQ}, \text{ which immediately gives } XP = XQ \text{ for every } X \text{ on } \overline{AB}.`
           ]
         },
 
-        /* ---------- Type B (8) ---------- */
+        /* ---------- Proof-understanding Q2 ---------- */
         {
-          latex: String.raw`\text{Refer to cone diagrams }G5\text{ and }G6.\ \text{In which diagram is the plane horizontal (parallel to the base), so that the cross section is a circle?}`,
+          latex: String.raw`\text{In the proof we want to show } \triangle ABP \cong \triangle ABQ \text{ using SSS. We already know } AP = AQ \text{ and } BP = BQ.\\[4pt]
+\text{Which additional fact is needed to apply SSS and complete this congruence?}`,
           choices: [
-            String.raw`G5`,
-            String.raw`G6`,
-            String.raw`\text{Both }G5\text{ and }G6`,
-            String.raw`\text{Neither diagram}`
-          ]
-        },
-        {
-          latex: String.raw`\text{Refer to plane diagrams }G9\text{ and }G10.\ \text{Which diagram shows two parallel planes?}`,
-          choices: [
-            String.raw`G9`,
-            String.raw`G10`,
-            String.raw`\text{Both }G9\text{ and }G10`,
-            String.raw`\text{Neither diagram}`
-          ]
-        },
-        {
-          latex: String.raw`\text{Which diagram shows two planes that intersect in a line?}`,
-          choices: [
-            String.raw`G9`,
-            String.raw`G10`,
-            String.raw`\text{Both }G9\text{ and }G10`,
-            String.raw`\text{Neither diagram}`
-          ]
-        },
-        {
-          latex: String.raw`\text{Refer to rooms }R1,R2,R3.\ \text{Which room is drawn using one-point perspective (all depth edges meet at a single vanishing point)?}`,
-          choices: [
-            String.raw`R1`,
-            String.raw`R2`,
-            String.raw`R3`,
-            String.raw`\text{None of them}`
-          ]
-        },
-        {
-          latex: String.raw`\text{Which room is drawn using two-point perspective (two different vanishing directions on the horizon, vertical edges staying parallel)?}`,
-          choices: [
-            String.raw`R1`,
-            String.raw`R2`,
-            String.raw`R3`,
-            String.raw`\text{None of them}`
-          ]
-        },
-        {
-          latex: String.raw`\text{Which room suggests three-point perspective (vertical edges also slant toward a third vanishing point)?}`,
-          choices: [
-            String.raw`R1`,
-            String.raw`R2`,
-            String.raw`R3`,
-            String.raw`\text{None of them}`
-          ]
-        },
-        {
-          latex: String.raw`\text{Look at picture }T1.\ \text{Why are the trees drawn smaller as they get farther to the right?}`,
-          choices: [
-            String.raw`\text{The trees on the right are younger and actually shorter.}`,
-            String.raw`\text{Objects farther away from the viewer are drawn smaller to create the illusion of depth.}`,
-            String.raw`\text{The ground is sloping upward so the trees have less room to grow.}`,
-            String.raw`\text{There is no particular reason; the sizes are random.}`,
-            String.raw`\text{To make a repeating pattern of small trees on the right.}`
-          ]
-        },
-        {
-          latex: String.raw`\text{In picture }T1,\ \text{where is the vanishing point for the road and row of trees most likely located?}`,
-          choices: [
-            String.raw`\text{Far to the left along the line of the road.}`,
-            String.raw`\text{Roughly in the middle of the picture.}`,
-            String.raw`\text{Far to the right along the line of the road.}`,
-            String.raw`\text{There is no vanishing point in this picture.}`,
-            String.raw`\text{Directly above the tallest tree.}`
+            String.raw`AB = AB`,
+            String.raw`AP = BP`,
+            String.raw`AQ = BQ`,
+            String.raw`P,A,Q \text{ are collinear}`,
+            String.raw`P,B,Q \text{ are collinear}`,
+            String.raw`AP + BP = AQ + BQ`
           ]
         },
 
-        /* ---------- Type C (1) ---------- */
+        /* ---------- Proof-understanding Q3 ---------- */
         {
-          latex: String.raw`\text{You want to draw a couch along one wall and a window on the adjacent wall in room }R2.\ \text{The top edge of the couch is along the left wall. To keep the perspective correct, how should that top edge be drawn?}`,
+          latex: String.raw`\text{Later in the proof we take a point } X \text{ on } \overline{AB} \text{ and draw segments } \overline{XP} \text{ and } \overline{XQ}. \text{ From earlier steps we know } AP = AQ,\ AX = AX,\text{ and } \angle PAX \cong \angle QAX.\\[4pt]
+\text{Which triangle congruence criterion is used to conclude } \triangle PAX \cong \triangle QAX\text{?}`,
           choices: [
-            String.raw`\text{Slanting toward the same direction as the top edge of the left wall (toward the left vanishing direction).}`,
-            String.raw`\text{Slanting toward the same direction as the top edge of the right wall (toward the right vanishing direction).}`,
-            String.raw`\text{Perfectly horizontal, with no slant at all.}`,
-            String.raw`\text{Vertical, pointing straight up and down.}`,
-            String.raw`\text{It does not matter; any direction will still look correct in perspective.}`
+            String.raw`\text{SAS}`,
+            String.raw`\text{SSS}`,
+            String.raw`\text{ASA}`,
+            String.raw`\text{AAS}`,
+            String.raw`\text{HL}`,
+            String.raw`\text{No standard congruence criterion applies.}`
           ]
         }
       ]
@@ -266,9 +66,7 @@
   </script>
 
   <link rel="stylesheet" href="/math-homework/assets/core.css" />
-  <link rel="stylesheet" href="https://tikzjax.com/v1/fonts.css" />
   <script defer src="/math-homework/assets/core.js"></script>
-  <script defer src="https://tikzjax.com/v1/tikzjax.js"></script>
   <script defer src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
 </head>
 <body>
