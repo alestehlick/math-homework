@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Homework 10-3 (Geometry)</title>
+
+  <script>
+    /* =========================
+       Homework 10-3 — Perpendiculars in Space
+       ========================= */
+    window.homeworkData = {
+      classId : "Geometry",
+      id      : "Homework 10-3",
+      title   : "Homework 10-3 — Perpendiculars in Space",
+
+      graphics : String.raw`<img src="im10_6.png" alt="Three planes with common edge BC and points A, X, and D." style="max-width:260px;">`,
+
+      /* Correct options for Q1–Q12 below */
+      answerKey : ["B","C","C","A","B","A","A","C","C","A","B","C"],
+
+      questions : [
+        /* ---------- A-type (3) ---------- */
+        {
+          latex: String.raw`\text{Which description best matches perpendicular planes?}`,
+          choices: [
+            String.raw`\text{Two planes that intersect in a line.}`,
+            String.raw`\text{Two planes that form right dihedral angles.}`,
+            String.raw`\text{Two planes that do not intersect.}`,
+            String.raw`\text{A plane that contains a line perpendicular to another line.}`,
+            String.raw`\text{A plane and a line that never meet.}`
+          ]
+        },
+        {
+          latex: String.raw`\text{A line } \ell \text{ is perpendicular to plane } p \text{ at point } A \text{ if}`,
+          choices: [
+            String.raw`\ell \text{ lies in } p \text{ and forms a right angle with another line in } p.`,
+            String.raw`\ell \text{ intersects } p \text{ at } A \text{ and is perpendicular to one line in } p \text{ through } A.`,
+            String.raw`\ell \text{ intersects } p \text{ at } A \text{ and is perpendicular to every line in } p \text{ that passes through } A.`,
+            String.raw`\ell \text{ does not intersect } p.`,
+            String.raw`\ell \text{ is parallel to every line in } p.`
+          ]
+        },
+        {
+          latex: String.raw`\text{A perpendicular bisecting plane of segment } \overline{AB} \text{ is}`,
+          choices: [
+            String.raw`\text{any plane that passes through } A \text{ and } B.`,
+            String.raw`\text{a plane that contains } \overline{AB} \text{ and a right angle.}`,
+            String.raw`\text{a plane that bisects } \overline{AB} \text{ and is perpendicular to the line containing } \overline{AB}.`,
+            String.raw`\text{a plane that is parallel to } \overline{AB}.`,
+            String.raw`\text{a plane that contains a point equidistant from } A \text{ and } B.`
+          ]
+        },
+
+        /* ---------- B-type (8) ---------- */
+        {
+          latex: String.raw`\text{Line } \ell \text{ is perpendicular to intersecting lines } m \text{ and } n \text{ at point } A, \text{ and plane } p \text{ contains } m \text{ and } n. \text{ What can you conclude?}`,
+          choices: [
+            String.raw`\ell \perp p`,
+            String.raw`m \perp n`,
+            String.raw`\ell \parallel p`,
+            String.raw`\ell \text{ lies in } p`,
+            String.raw`p \parallel m`
+          ]
+        },
+        {
+          latex: String.raw`\text{Plane } n \text{ contains line } \overline{AB}. \text{ At point } B, \overline{AB} \perp \text{ plane } m. \text{ What follows from this information?}`,
+          choices: [
+            String.raw`m \parallel n`,
+            String.raw`m \perp n`,
+            String.raw`\overline{AB} \text{ lies in plane } m`,
+            String.raw`\overline{AB} \parallel m`,
+            String.raw`\overline{AB} \perp n`
+          ]
+        },
+        {
+          latex: String.raw`\overline{AB} \perp p \text{ at } B. \text{ Points } C \text{ and } D \text{ lie in plane } p \text{ with } \overline{BC} \cong \overline{BD}. \text{ Which conclusion is guaranteed?}`,
+          choices: [
+            String.raw`\overline{AC} \cong \overline{AD}`,
+            String.raw`\overline{AC} \cong \overline{BC}`,
+            String.raw`\overline{AD} \cong \overline{BD}`,
+            String.raw`\angle CBD \text{ is a right angle}`,
+            String.raw`\overline{CD} \perp \overline{AB}`
+          ]
+        },
+        {
+          latex: String.raw`\text{Point } P \text{ lies in the perpendicular bisecting plane of } \overline{AB}. \text{ What must be true?}`,
+          choices: [
+            String.raw`PA = PB`,
+            String.raw`PA = AB`,
+            String.raw`PB = AB`,
+            String.raw`P \text{ lies on } \overline{AB}.`,
+            String.raw`P \text{ is equidistant from the midpoint of } \overline{AB} \text{ and } A.`
+          ]
+        },
+        {
+          latex: String.raw`\text{From point } P \text{ not on plane } p, \text{ several segments are drawn from } P \text{ to different points on } p. \text{ Which segment has the smallest length?}`,
+          choices: [
+            String.raw`\text{Any segment that lies in plane } p.`,
+            String.raw`\text{Any segment making an acute angle with } p.`,
+            String.raw`\text{The segment that is perpendicular to } p.`,
+            String.raw`\text{The segment that is parallel to a line in } p.`,
+            String.raw`\text{They all have the same length.}`
+          ]
+        },
+        {
+          latex: String.raw`\text{In the figure (im10\_6.png), line } \overline{BC} \text{ is the common edge of three planes. One plane contains point } A, \text{ the middle plane contains point } X, \text{ and the third plane contains point } D. \text{ Which notation correctly names the dihedral angle whose faces contain } A \text{ and } X \text{ and whose edge is } \overline{BC}?`,
+          choices: [
+            String.raw`\angle ABX`,
+            String.raw`\angle CAX`,
+            String.raw`\angle A\!-\!BC\!-\!X`,
+            String.raw`\angle BCA`,
+            String.raw`\angle X\!-\!BA\!-\!C`
+          ]
+        },
+        {
+          latex: String.raw`\text{Using the same figure, suppose } \angle A\!-\!BC\!-\!X \text{ and } \angle X\!-\!BC\!-\!D \text{ form a dihedral linear pair. Which equation expresses an Angle Addition Theorem for these dihedral angles?}`,
+          choices: [
+            String.raw`m\angle A\!-\!BC\!-\!D = m\angle A\!-\!BC\!-\!X + m\angle X\!-\!BC\!-\!D`,
+            String.raw`m\angle A\!-\!BC\!-\!X = m\angle A\!-\!BC\!-\!D + m\angle X\!-\!BC\!-\!D`,
+            String.raw`m\angle X\!-\!BC\!-\!D = m\angle A\!-\!BC\!-\!D - m\angle A\!-\!BC\!-\!X`,
+            String.raw`m\angle A\!-\!BC\!-\!D = m\angle A\!-\!BC\!-\!X - m\angle X\!-\!BC\!-\!D`,
+            String.raw`m\angle A\!-\!BC\!-\!D = m\angle X\!-\!BC\!-\!D`
+          ]
+        },
+        {
+          latex: String.raw`\text{Two dihedral angles share the same edge and their noncommon faces form a straight angle (a dihedral linear pair). If one of the dihedral angles is a right dihedral angle, what can you conclude?}`,
+          choices: [
+            String.raw`\text{The other dihedral angle is acute.}`,
+            String.raw`\text{The other dihedral angle is obtuse.}`,
+            String.raw`\text{The other dihedral angle is also a right dihedral angle, so the planes are perpendicular.}`,
+            String.raw`\text{The planes are parallel.}`,
+            String.raw`\text{Nothing can be concluded about the other angle.}`
+          ]
+        },
+
+        /* ---------- C-type (1) ---------- */
+        {
+          latex: String.raw`\text{Consider the statement: "If intersecting planes } p \text{ and } q \text{ are each perpendicular to a third plane } r, \text{ then the line of intersection of } p \text{ and } q \text{ is perpendicular to } r." Which first step is most helpful in proving this statement?}`,
+          choices: [
+            String.raw`\text{Choose a point } P \text{ in plane } r \text{ that is not on } p \text{ or } q, \text{ and draw a line in } r \text{ through } P \text{ parallel to } p.`,
+            String.raw`\text{Let } \ell \text{ be the line where } p \text{ and } q \text{ intersect, choose the point } A \text{ where } \ell \text{ meets } r, \text{ and look for two intersecting lines in } r \text{ through } A.`,
+            String.raw`\text{Prove first that } p \parallel q, \text{ since both are perpendicular to } r.`,
+            String.raw`\text{Assume that } \ell \perp r \text{ and show that this leads to a contradiction.}`,
+            String.raw`\text{Pick any line in } p \text{ and show that it is perpendicular to every line in } q.`
+          ]
+        }
+      ]
+    };
+  </script>
+
+  <link rel="stylesheet" href="/math-homework/assets/core.css" />
+  <link rel="stylesheet" href="https://tikzjax.com/v1/fonts.css" />
+  <script defer src="/math-homework/assets/core.js"></script>
+  <script defer src="https://tikzjax.com/v1/tikzjax.js"></script>
+  <script defer src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+</head>
+<body>
+  <div id="hw-root">Loading…</div>
+</body>
+</html>
