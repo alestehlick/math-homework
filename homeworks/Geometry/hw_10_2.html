@@ -8,6 +8,7 @@
   <script>
     /* =========================
        Homework 10-2 — Separation in Space
+       Uses external images im10_1.png … im10_4.png
        ========================= */
     window.homeworkData = {
       classId : "Geometry",
@@ -15,185 +16,165 @@
       title   : "Homework 10-2 — Separation in Space",
 
       graphics : String.raw`
-\begin{tikzpicture}[scale=0.9]
-  \begin{scope}[xshift=-4cm,yshift=0cm]
-    \draw (-1.6,-1.4)--(0.2,1.4)--(1.2,1.4)--(-0.6,-1.4)--cycle;
-    \draw (1.6,-1.4)--(0.2,1.4)--(-0.2,1.4)--(2.0,-1.4)--cycle;
-    \draw[thick] (0,1.6)--(0,-1.6);
-    \node[left] at (0,1.6) {A};
-    \node[left] at (0,-1.6) {B};
-    \node[right] at (0.9,0.4) {L};
-    \node[left] at (-0.9,0.4) {M};
-    \node[right] at (0.05,0.1) {N};
-    \draw (0,0.1)--(0.8,0.5);
-    \draw (0,0.1)--(-0.8,0.5);
-    \node at (0,-2.0) {D1};
-  \end{scope}
+<div style="display:flex;flex-wrap:wrap;gap:1rem;justify-content:center;">
+  <figure style="max-width:220px;text-align:center;">
+    <img src="im10_1.png" alt="Figure 1: two intersecting planes with points A, C, D, E, F." style="max-width:100%;height:auto;">
+    <figcaption>Figure 1</figcaption>
+  </figure>
 
-  \begin{scope}[xshift=4cm,yshift=0cm]
-    \fill[gray!10] (-2,-0.2) rectangle (2,0.2);
-    \draw (-2,-0.2)--(2,-0.2)--(2,0.2)--(-2,0.2)--cycle;
-    \node at (0,0) {p};
-    \node at (0,1.1) {$s_1$};
-    \node at (0,-1.1) {$s_2$};
-    \draw[->] (0,0.2)--(0,1);
-    \draw[->] (0,-0.2)--(0,-1);
-    \node at (0,-2.0) {D2};
-  \end{scope}
-\end{tikzpicture}
+  <figure style="max-width:220px;text-align:center;">
+    <img src="im10_2.png" alt="Figure 2: several planes meeting in a line with points A, B, C, D, E, X, Y, Z." style="max-width:100%;height:auto;">
+    <figcaption>Figure 2</figcaption>
+  </figure>
 
-\begin{tikzpicture}[scale=0.9]
-  \begin{scope}[xshift=0cm,yshift=0cm]
-    \draw (-2,0.4)--(2,1.2)--(2,-1.2)--(-2,-0.4)--cycle;
-    \draw (-1.5,-1.2)--(1.5,1.2)--(1.5,2.0)--(-1.5,-0.4)--cycle;
-    \draw[thick] (-1.7,-0.8)--(1.7,0.8);
-    \node at (-1.8,0.7) {a};
-    \node at (-1.2,-1.1) {b};
-    \node[below right] at (1.7,0.8) {$\ell$};
-    \node at (0,-2.0) {D3};
-  \end{scope}
-\end{tikzpicture}
+  <figure style="max-width:220px;text-align:center;">
+    <img src="im10_3.png" alt="Figure 3: two planes a and b meeting along PQ with points L, M, X." style="max-width:100%;height:auto;">
+    <figcaption>Figure 3</figcaption>
+  </figure>
+
+  <figure style="max-width:220px;text-align:center;">
+    <img src="im10_4.png" alt="Figure 4: plane p dividing space into half-spaces s1 and s2 with line k and points L, M, S, T, X, Y." style="max-width:100%;height:auto;">
+    <figcaption>Figure 4</figcaption>
+  </figure>
+</div>
 `,
 
       /* Correct answers for Q1–Q12 */
-      answerKey : ["C","A","B","B","E","A","D","B","E","D","C","D"],
+      answerKey : ["B","A","C","E","C","D","B","E","B","C","D","D"],
 
       questions : [
         /* ---------- Type A (3) ---------- */
         {
-          latex: String.raw`\text{What is a dihedral angle?}`,
+          latex: String.raw`\text{1. What is a dihedral angle?}`,
           choices: [
-            String.raw`\text{The union of two rays with a common endpoint.}`,
-            String.raw`\text{The union of two segments that share a midpoint.}`,
-            String.raw`\text{The union of two half-planes that have the same line as a common edge.}`,
-            String.raw`\text{The union of two planes that do not intersect.}`,
-            String.raw`\text{The union of two parallel lines in a plane.}`,
-            String.raw`\text{The union of two half-spaces that do not intersect.}`
+            String.raw`\text{A. The union of two rays with a common endpoint.}`,
+            String.raw`\text{B. The union of two half-planes that have the same line as a common edge.}`,
+            String.raw`\text{C. The union of two parallel planes.}`,
+            String.raw`\text{D. The region between two parallel lines.}`,
+            String.raw`\text{E. The union of two half-spaces that do not intersect.}`
           ]
         },
         {
-          latex: String.raw`\text{The edge of a dihedral angle is}`,
+          latex: String.raw`\text{2. The \emph{edge} of a dihedral angle is}`,
           choices: [
-            String.raw`\text{the intersection line of its two half-planes.}`,
-            String.raw`\text{the angle between two rays.}`,
-            String.raw`\text{any point in the interior of the dihedral angle.}`,
-            String.raw`\text{one of the half-planes that forms the dihedral angle.}`,
-            String.raw`\text{the union of the two half-planes.}`,
-            String.raw`\text{the plane that contains the dihedral angle.}`
+            String.raw`\text{A. the intersection line of its two half-planes.}`,
+            String.raw`\text{B. the union of the two faces.}`,
+            String.raw`\text{C. any point in the interior of the dihedral angle.}`,
+            String.raw`\text{D. the plane angle used to measure the dihedral angle.}`,
+            String.raw`\text{E. any plane that contains the dihedral angle.}`
           ]
         },
         {
-          latex: String.raw`\text{In diagram D1, }N\text{ lies on the edge line and }L\text{ and }M\text{ lie in the two faces of the dihedral angle. If }m\angle LNM=90^\circ,\text{ what kind of dihedral angle is shown?}`,
+          latex: String.raw`\text{3. A \emph{face} of a dihedral angle is}`,
           choices: [
-            String.raw`\text{An acute dihedral angle}`,
-            String.raw`\text{A right dihedral angle}`,
-            String.raw`\text{An obtuse dihedral angle}`,
-            String.raw`\text{A straight dihedral angle}`,
-            String.raw`\text{A reflex dihedral angle}`,
-            String.raw`\text{There is not enough information to tell.}`
+            String.raw`\text{A. the common edge of the two half-planes.}`,
+            String.raw`\text{B. the union of both half-planes.}`,
+            String.raw`\text{C. one of the half-planes that forms the dihedral angle.}`,
+            String.raw`\text{D. the interior wedge of the dihedral angle.}`,
+            String.raw`\text{E. any plane that contains the edge.}`
           ]
         },
 
         /* ---------- Type B (8) ---------- */
         {
-          latex: String.raw`\text{According to the Space Separation Postulate and diagram D2, plane }p\text{ separates space into which three disjoint sets?}`,
+          latex: String.raw`\text{4. Refer to Figure 1. Which point lies in the interior of the left face only (not on the edge and not in the right face)?}`,
           choices: [
-            String.raw`S_1,S_2,\text{ and the line where the two half-spaces meet}`,
-            String.raw`s_1,s_2,\text{ and }p`,
-            String.raw`s_1\text{ and }s_2\text{ only}`,
-            String.raw`\text{Plane }p\text{ only}`,
-            String.raw`p\text{ and one half-space }s_1`,
-            String.raw`s_1',s_2',\text{ and }p'`
+            String.raw`\text{A. }A`,
+            String.raw`\text{B. }C`,
+            String.raw`\text{C. }D`,
+            String.raw`\text{D. }E`,
+            String.raw`\text{E. }F`,
+            String.raw`\text{F. None of these}`
           ]
         },
         {
-          latex: String.raw`\text{In diagram D2, let }S\text{ be all of space. What is }s_1\cap s_2\text{?}`,
+          latex: String.raw`\text{5. Refer to Figure 1. Which segment lies entirely on the edge where the two planes intersect?}`,
           choices: [
-            String.raw`S`,
-            String.raw`s_1`,
-            String.raw`s_2`,
-            String.raw`p`,
-            String.raw`\emptyset`,
-            String.raw`s_1\cup s_2`
+            String.raw`\text{A. }\overline{AC}`,
+            String.raw`\text{B. }\overline{AD}`,
+            String.raw`\text{C. }\overline{CD}`,
+            String.raw`\text{D. }\overline{CE}`,
+            String.raw`\text{E. }\overline{DE}`,
+            String.raw`\text{F. }\overline{CF}`
           ]
         },
         {
-          latex: String.raw`\text{In diagram D2, what is }s_1\cup s_2\cup p\text{?}`,
+          latex: String.raw`\text{6. Refer to Figure 2, where several planes meet along a common line through }Y\text{ and }Z.\ \text{For any two distinct planes that intersect in that line, how many dihedral angles do they form?}`,
           choices: [
-            String.raw`S`,
-            String.raw`s_1`,
-            String.raw`s_2`,
-            String.raw`p`,
-            String.raw`s_1\cup s_2`,
-            String.raw`s_1\cap s_2`
+            String.raw`\text{A. }1`,
+            String.raw`\text{B. }2`,
+            String.raw`\text{C. }3`,
+            String.raw`\text{D. }4`,
+            String.raw`\text{E. }6`,
+            String.raw`\text{F. Infinitely many}`
           ]
         },
         {
-          latex: String.raw`\text{Again letting }S\text{ be all of space, what is }p'\text{?}`,
+          latex: String.raw`\text{7. Refer to Figure 3. Planes }a\text{ and }b\text{ meet along edge }\overline{PQ}.\ \text{Ray }QX\text{ lies in plane }a\text{ and ray }QL\text{ lies in plane }b.\ \text{The plane angle }\angle XQL\text{ measures the dihedral angle. If }m\angle XQL=90^\circ,\text{ what kind of dihedral angle do the planes form?}`,
           choices: [
-            String.raw`p`,
-            String.raw`s_1`,
-            String.raw`s_2`,
-            String.raw`s_1\cup s_2`,
-            String.raw`(s_1\cup s_2\cup p)'`,
-            String.raw`\emptyset`
+            String.raw`\text{A. An acute dihedral angle}`,
+            String.raw`\text{B. A right dihedral angle}`,
+            String.raw`\text{C. An obtuse dihedral angle}`,
+            String.raw`\text{D. A straight dihedral angle}`,
+            String.raw`\text{E. A reflex dihedral angle}`,
+            String.raw`\text{F. There is not enough information to tell.}`
           ]
         },
         {
-          latex: String.raw`\text{With }S\text{ as all of space, what is }(s_1\cup p)'\text{?}`,
+          latex: String.raw`\text{8. Refer to Figure 4. Plane }p\text{ divides space into two half-spaces }s_1\text{ and }s_2.\ \text{Let }S\text{ be all of space. What is }s_1\cap s_2\text{?}`,
           choices: [
-            String.raw`s_1`,
-            String.raw`s_2`,
-            String.raw`p`,
-            String.raw`s_1\cup s_2`,
-            String.raw`\emptyset`,
-            String.raw`S`
+            String.raw`\text{A. }S`,
+            String.raw`\text{B. }s_1`,
+            String.raw`\text{C. }s_2`,
+            String.raw`\text{D. }p`,
+            String.raw`\text{E. }\emptyset`,
+            String.raw`\text{F. }s_1\cup s_2`
           ]
         },
         {
-          latex: String.raw`\text{Still using diagram D2 with }S\text{ as all of space, what is }(s_1\cup s_2\cup p)'\text{?}`,
+          latex: String.raw`\text{9. Still using Figure 4 and }S\text{ as the universal set. What is }s_1\cup p\text{?}`,
           choices: [
-            String.raw`S`,
-            String.raw`s_1\cup s_2`,
-            String.raw`s_1`,
-            String.raw`p`,
-            String.raw`\emptyset`,
-            String.raw`s_1\cap s_2`
+            String.raw`\text{A. }S`,
+            String.raw`\text{B. }s_2'`,
+            String.raw`\text{C. }p'`,
+            String.raw`\text{D. }s_1'`,
+            String.raw`\text{E. }s_1\cup s_2`,
+            String.raw`\text{F. }\emptyset`
           ]
         },
         {
-          latex: String.raw`\text{In diagram D3, planes }a\text{ and }b\text{ intersect in line }\ell.\ \text{How many dihedral angles are formed by planes }a\text{ and }b\text{?}`,
+          latex: String.raw`\text{10. With the same notation, what is }p'\text{ (the complement of plane }p\text{ in }S\text{)?}`,
           choices: [
-            String.raw`1`,
-            String.raw`2`,
-            String.raw`3`,
-            String.raw`4`,
-            String.raw`6`,
-            String.raw`\text{Infinitely many}`
+            String.raw`\text{A. }s_1`,
+            String.raw`\text{B. }s_2`,
+            String.raw`\text{C. }s_1\cup s_2`,
+            String.raw`\text{D. }s_1\cap s_2`,
+            String.raw`\text{E. }S`,
+            String.raw`\text{F. }\emptyset`
           ]
         },
         {
-          latex: String.raw`\text{Is a dihedral angle a closed surface?}`,
+          latex: String.raw`\text{11. What is }(s_1\cup s_2\cup p)'\text{?}`,
           choices: [
-            String.raw`\text{Yes, because it is the union of all its interior points.}`,
-            String.raw`\text{Yes, the two half-planes and their interior form a closed surface.}`,
-            String.raw`\text{No, because a solid is the union of a closed surface and its interior, while a dihedral angle consists only of two half-planes.}`,
-            String.raw`\text{No, because a dihedral angle has no faces.}`,
-            String.raw`\text{Yes, but only when its measure is }90^\circ\text{.}`,
-            String.raw`\text{No, because the edge line is not part of it.}`
+            String.raw`\text{A. }S`,
+            String.raw`\text{B. }s_1`,
+            String.raw`\text{C. }s_2`,
+            String.raw`\text{D. }\emptyset`,
+            String.raw`\text{E. }p`,
+            String.raw`\text{F. }s_1\cup s_2`
           ]
         },
 
         /* ---------- Type C (1) ---------- */
         {
-          latex: String.raw`\text{Three distinct planes in space can intersect in different ways. What is the greatest possible number of parts into which three planes can separate space?}`,
+          latex: String.raw`\text{12. Three distinct planes in space can intersect in different ways. What is the greatest possible number of parts into which three planes can separate space?}`,
           choices: [
-            String.raw`4`,
-            String.raw`6`,
-            String.raw`7`,
-            String.raw`8`,
-            String.raw`9`,
-            String.raw`\text{Infinitely many}`
+            String.raw`\text{A. }4`,
+            String.raw`\text{B. }6`,
+            String.raw`\text{C. }7`,
+            String.raw`\text{D. }8`,
+            String.raw`\text{E. }9`,
+            String.raw`\text{F. Infinitely many}`
           ]
         }
       ]
