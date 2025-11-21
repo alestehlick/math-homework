@@ -9,7 +9,7 @@ body{
   font-family:"EB Garamond",serif;
   background:#f6f4ef;
   color:#222;
-  line-height:1.4;               /* slightly open but not huge */
+  line-height:1.5;               /* a touch more open overall */
 }
 
 #hw-root{
@@ -48,12 +48,12 @@ h1{
 
 .question{
   max-width:60rem;               /* card width */
-  margin:1.4rem auto 1.8rem;     /* space between questions */
+  margin:1.4rem auto 1.9rem;     /* space between questions */
 }
 
 .question p{
-  margin:0.25rem 0 0.6rem;       /* space under stem */
-  line-height:1.45;              /* a bit more open in stem */
+  margin:0.25rem 0 0.65rem;      /* space under stem */
+  line-height:1.6;               /* more breathing room in the stem */
 }
 
 .choices,
@@ -65,7 +65,7 @@ h1{
 
 .choices li,
 .question li{
-  margin:0.35rem 0;              /* vertical gap between choices */
+  margin:0.4rem 0;               /* vertical gap between choices */
 }
 
 .question label{
@@ -73,7 +73,7 @@ h1{
   grid-template-columns:auto 1fr;
   column-gap:0.45rem;
   align-items:flex-start;
-  line-height:1.4;               /* main control inside each choice */
+  line-height:1.55;              /* main control for wrapped choices */
   white-space:normal;
   word-wrap:break-word;
 }
