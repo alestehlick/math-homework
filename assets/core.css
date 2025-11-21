@@ -53,7 +53,7 @@ h1{
 
 .question p{
   margin:0.25rem 0 0.65rem;      /* space under stem */
-  line-height:1.7;               /* stems are clearly readable */
+  line-height:1.6;               /* a bit more open for stems */
 }
 
 .choices,
@@ -73,7 +73,7 @@ h1{
   grid-template-columns:auto 1fr;
   column-gap:0.45rem;
   align-items:flex-start;
-  line-height:1.6;               /* wrapped choice lines a bit open */
+  line-height:1.55;              /* spacing inside wrapped choices */
   white-space:normal;
   word-wrap:break-word;
 }
@@ -122,9 +122,9 @@ mjx-container[jax="CHTML"] mjx-mtext{
   white-space:normal !important;
 }
 
-/* Loosen line spacing specifically for inline math inside questions */
-.question mjx-container[jax="CHTML"]{
-  line-height:1.8;               /* key setting: makes Q2-like stems breathe */
+/* KEY: loosen line spacing for the actual text produced by \text{…} */
+mjx-container[jax="CHTML"] mjx-utext{
+  line-height:1.8;               /* controls the spacing between wrapped lines */
 }
 
 /* Left-align display math if it ever appears */
