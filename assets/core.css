@@ -109,6 +109,46 @@ mjx-container[jax="CHTML"] mjx-mtext {
   white-space: normal !important;
 }
 
+/* ── Softer spacing for long math questions ───────────────────────── */
+
+body{
+  line-height: 1.45;              /* slightly more open overall */
+}
+
+.question{
+  margin: 1.6rem auto 2.0rem;      /* a bit more space between questions */
+}
+
+/* Question stem */
+.question p{
+  margin: 0.35rem 0 0.9rem;        /* extra space under the stem */
+  line-height: 1.6;
+}
+
+/* Choice list */
+.question ul{
+  margin: 0;                       /* keep list tight to stem */
+}
+
+.question li{
+  margin: 0.45rem 0;               /* more gap between choices */
+}
+
+/* Radio + text block */
+.question label{
+  display: grid;
+  grid-template-columns: auto 1fr;
+  column-gap: 0.5rem;
+  align-items: flex-start;
+  line-height: 1.7;                /* main control: opens multi-line choices */
+}
+
+/* Nudge MathJax container so it flows like normal text */
+.question label mjx-container[jax="CHTML"]{
+  margin-top: 0.05rem;
+}
+
+
 /* Optional: left-align display math instead of centering it */
 mjx-container[display="true"] {
   text-align: left;
