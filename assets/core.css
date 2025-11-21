@@ -102,3 +102,16 @@ button:hover{ background:#3e654d; }
 }
 
 
+/* Allow long MathJax expressions (questions / choices) to wrap */
+mjx-container[jax="CHTML"] mjx-math,
+mjx-container[jax="CHTML"] mjx-mrow,
+mjx-container[jax="CHTML"] mjx-mtext {
+  white-space: normal !important;
+}
+
+/* Optional: left-align display math instead of centering it */
+mjx-container[display="true"] {
+  text-align: left;
+}
+
+
