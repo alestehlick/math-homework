@@ -9,7 +9,7 @@ body{
   font-family:"EB Garamond",serif;
   background:#f6f4ef;
   color:#222;
-  line-height:1.5;               /* a touch more open overall */
+  line-height:1.5;               /* global default */
 }
 
 #hw-root{
@@ -53,7 +53,7 @@ h1{
 
 .question p{
   margin:0.25rem 0 0.65rem;      /* space under stem */
-  line-height:1.6;               /* more breathing room in the stem */
+  line-height:1.7;               /* stems are clearly readable */
 }
 
 .choices,
@@ -73,7 +73,7 @@ h1{
   grid-template-columns:auto 1fr;
   column-gap:0.45rem;
   align-items:flex-start;
-  line-height:1.55;              /* main control for wrapped choices */
+  line-height:1.6;               /* wrapped choice lines a bit open */
   white-space:normal;
   word-wrap:break-word;
 }
@@ -122,9 +122,9 @@ mjx-container[jax="CHTML"] mjx-mtext{
   white-space:normal !important;
 }
 
-/* Loosen line spacing for inline math inside questions */
+/* Loosen line spacing specifically for inline math inside questions */
 .question mjx-container[jax="CHTML"]{
-  line-height:1.6;               /* THIS fixes the tight Q2 spacing */
+  line-height:1.8;               /* key setting: makes Q2-like stems breathe */
 }
 
 /* Left-align display math if it ever appears */
