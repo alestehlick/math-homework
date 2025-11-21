@@ -54,3 +54,39 @@ button:hover{ background:#3e654d; }
 /* TikZ container */
 #media { text-align:center; margin:1rem 0; }
 #media script[type="text/tikz"]{ display:inline-block; }
+
+
+/* Better layout for long multiple-choice questions */
+.question {
+  max-width: 60rem;        /* keep each question from stretching too wide */
+  margin: 1.2rem auto;
+}
+
+.question p {
+  margin-bottom: 0.6rem;
+}
+
+.question ul {
+  list-style: none;
+  padding-left: 0;
+  margin: 0.2rem 0 0.4rem;
+}
+
+.question li {
+  margin: 0.2rem 0;
+}
+
+.question label {
+  display: grid;           /* put radio on the left, text on the right */
+  grid-template-columns: auto 1fr;
+  column-gap: 0.4rem;
+  align-items: flex-start;
+  line-height: 1.4;
+  white-space: normal;     /* allow wrapping even with MathJax inline text */
+  word-wrap: break-word;
+}
+
+.question input[type="radio"] {
+  margin-top: 0.25rem;
+}
+
