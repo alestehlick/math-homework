@@ -122,6 +122,11 @@ mjx-container[jax="CHTML"] mjx-mtext{
   white-space:normal !important;
 }
 
+/* Loosen line spacing for inline math inside questions */
+.question mjx-container[jax="CHTML"]{
+  line-height:1.6;               /* THIS fixes the tight Q2 spacing */
+}
+
 /* Left-align display math if it ever appears */
 mjx-container[display="true"]{
   text-align:left;
