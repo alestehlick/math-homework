@@ -1,13 +1,15 @@
 /* =========================
-   core.css  — Geometry HW
+   core.css — Geometry HW
    ========================= */
+
+/* Base page -------------------------------------------------------- */
 
 body{
   margin:0;
   font-family:"EB Garamond",serif;
   background:#f6f4ef;
   color:#222;
-  line-height:1.5;               /* slightly open default */
+  line-height:1.4;               /* slightly open but not huge */
 }
 
 #hw-root{
@@ -26,7 +28,7 @@ h1{
   margin:0 0 1.6rem;
 }
 
-/* ── Student info ───────────────────────────────────────── */
+/* Student info ----------------------------------------------------- */
 
 .student-info{
   display:flex;
@@ -42,16 +44,16 @@ h1{
   font-family:inherit;
 }
 
-/* ── Questions + choices ───────────────────────────────── */
+/* Questions + choices ---------------------------------------------- */
 
 .question{
-  max-width:60rem;
-  margin:1.8rem auto 2.2rem;
+  max-width:60rem;               /* card width */
+  margin:1.4rem auto 1.8rem;     /* space between questions */
 }
 
 .question p{
-  margin:0.35rem 0 0.9rem;       /* space under stem */
-  line-height:1.7;               /* more open inside stem */
+  margin:0.25rem 0 0.6rem;       /* space under stem */
+  line-height:1.45;              /* a bit more open in stem */
 }
 
 .choices,
@@ -63,15 +65,15 @@ h1{
 
 .choices li,
 .question li{
-  margin:0.45rem 0;              /* vertical gap between choices */
+  margin:0.35rem 0;              /* vertical gap between choices */
 }
 
 .question label{
   display:grid;                  /* radio on left, text on right */
   grid-template-columns:auto 1fr;
-  column-gap:0.5rem;
+  column-gap:0.45rem;
   align-items:flex-start;
-  line-height:1.8;               /* main control: spacing in wrapped choices */
+  line-height:1.4;               /* main control inside each choice */
   white-space:normal;
   word-wrap:break-word;
 }
@@ -79,11 +81,11 @@ h1{
 .question input[type="radio"],
 .choices input[type="radio"]{
   margin-right:.55rem;
-  margin-top:0.25rem;
+  margin-top:0.2rem;
   transform:scale(1.15);
 }
 
-/* ── Button ─────────────────────────────────────────────── */
+/* Button ----------------------------------------------------------- */
 
 button{
   display:block;
@@ -101,7 +103,7 @@ button:hover{
   background:#3e654d;
 }
 
-/* ── TikZ container ─────────────────────────────────────── */
+/* TikZ container --------------------------------------------------- */
 
 #media{
   text-align:center;
@@ -111,21 +113,16 @@ button:hover{
   display:inline-block;
 }
 
-/* ── MathJax tweaks (wrapping + line spacing) ───────────── */
+/* MathJax tweaks: wrapping + alignment ----------------------------- */
 
+/* Allow long MathJax expressions (questions / choices) to wrap */
 mjx-container[jax="CHTML"] mjx-math,
 mjx-container[jax="CHTML"] mjx-mrow,
 mjx-container[jax="CHTML"] mjx-mtext{
-  white-space:normal !important;  /* allow wrapping inside math */
-  line-height:1.7;                /* more leading between wrapped lines */
+  white-space:normal !important;
 }
 
-/* keep display-style math left-aligned inside blocks */
+/* Left-align display math if it ever appears */
 mjx-container[display="true"]{
   text-align:left;
-}
-
-/* small nudge so inline math sits nicely with text in labels */
-.question label mjx-container[jax="CHTML"]{
-  margin-top:0.05rem;
 }
