@@ -1,10 +1,15 @@
-/* core.css */
+/* =========================
+   core.css  — Geometry HW
+   ========================= */
+
 body{
   margin:0;
   font-family:"EB Garamond",serif;
   background:#f6f4ef;
   color:#222;
+  line-height:1.5;               /* slightly open default */
 }
+
 #hw-root{
   max-width:720px;
   margin:3rem auto;
@@ -13,30 +18,73 @@ body{
   border-radius:12px;
   box-shadow:0 4px 18px rgba(0,0,0,.1);
 }
+
 h1{
   text-align:center;
   font-weight:normal;
   font-size:1.9rem;
   margin:0 0 1.6rem;
 }
+
+/* ── Student info ───────────────────────────────────────── */
+
 .student-info{
   display:flex;
   flex-wrap:wrap;
   gap:1.5rem;
   margin-bottom:1.8rem;
 }
+
 .student-info input{
   margin-left:.4rem;
   padding:.25rem .5rem;
   font-size:1rem;
   font-family:inherit;
 }
-.question{ margin-bottom:1.7rem; }
-.choices{ list-style:none; padding:0; margin:.6rem 0 0; }
-.choices li{ margin:.35rem 0; }
-.choices input[type="radio"]{ margin-right:.55rem; transform:scale(1.15); }
 
-/* button */
+/* ── Questions + choices ───────────────────────────────── */
+
+.question{
+  max-width:60rem;
+  margin:1.8rem auto 2.2rem;
+}
+
+.question p{
+  margin:0.35rem 0 0.9rem;       /* space under stem */
+  line-height:1.7;               /* more open inside stem */
+}
+
+.choices,
+.question ul{
+  list-style:none;
+  padding:0;
+  margin:0;
+}
+
+.choices li,
+.question li{
+  margin:0.45rem 0;              /* vertical gap between choices */
+}
+
+.question label{
+  display:grid;                  /* radio on left, text on right */
+  grid-template-columns:auto 1fr;
+  column-gap:0.5rem;
+  align-items:flex-start;
+  line-height:1.8;               /* main control: spacing in wrapped choices */
+  white-space:normal;
+  word-wrap:break-word;
+}
+
+.question input[type="radio"],
+.choices input[type="radio"]{
+  margin-right:.55rem;
+  margin-top:0.25rem;
+  transform:scale(1.15);
+}
+
+/* ── Button ─────────────────────────────────────────────── */
+
 button{
   display:block;
   margin:2rem auto 0;
@@ -49,109 +97,35 @@ button{
   border-radius:6px;
   cursor:pointer;
 }
-button:hover{ background:#3e654d; }
-
-/* TikZ container */
-#media { text-align:center; margin:1rem 0; }
-#media script[type="text/tikz"]{ display:inline-block; }
-
-
-/* Better layout for long multiple-choice questions */
-.question {
-  max-width: 60rem;        /* keep each question from stretching too wide */
-  margin: 1.2rem auto;
+button:hover{
+  background:#3e654d;
 }
 
-.question p {
-  margin-bottom: 0.6rem;
+/* ── TikZ container ─────────────────────────────────────── */
+
+#media{
+  text-align:center;
+  margin:1rem 0;
+}
+#media script[type="text/tikz"]{
+  display:inline-block;
 }
 
-.question ul {
-  list-style: none;
-  padding-left: 0;
-  margin: 0.2rem 0 0.4rem;
-}
+/* ── MathJax tweaks (wrapping + line spacing) ───────────── */
 
-.question li {
-  margin: 0.2rem 0;
-}
-
-.question label {
-  display: grid;           /* put radio on the left, text on the right */
-  grid-template-columns: auto 1fr;
-  column-gap: 0.4rem;
-  align-items: flex-start;
-  line-height: 1.4;
-  white-space: normal;     /* allow wrapping even with MathJax inline text */
-  word-wrap: break-word;
-}
-
-.question input[type="radio"] {
-  margin-top: 0.25rem;
-}
-
-
-/* Allow long MathJax expressions (questions / choices) to wrap */
-.mjx-math {
-  white-space: normal !important;
-}
-
-/* Optional: keep display-style math left-aligned instead of centered */
-.mjx-container[display="true"] {
-  text-align: left;
-}
-
-
-/* Allow long MathJax expressions (questions / choices) to wrap */
 mjx-container[jax="CHTML"] mjx-math,
 mjx-container[jax="CHTML"] mjx-mrow,
-mjx-container[jax="CHTML"] mjx-mtext {
-  white-space: normal !important;
+mjx-container[jax="CHTML"] mjx-mtext{
+  white-space:normal !important;  /* allow wrapping inside math */
+  line-height:1.7;                /* more leading between wrapped lines */
 }
 
-/* ── Softer spacing for long math questions ───────────────────────── */
-
-body{
-  line-height: 1.45;              /* slightly more open overall */
+/* keep display-style math left-aligned inside blocks */
+mjx-container[display="true"]{
+  text-align:left;
 }
 
-.question{
-  margin: 1.6rem auto 2.0rem;      /* a bit more space between questions */
-}
-
-/* Question stem */
-.question p{
-  margin: 0.35rem 0 0.9rem;        /* extra space under the stem */
-  line-height: 1.6;
-}
-
-/* Choice list */
-.question ul{
-  margin: 0;                       /* keep list tight to stem */
-}
-
-.question li{
-  margin: 0.45rem 0;               /* more gap between choices */
-}
-
-/* Radio + text block */
-.question label{
-  display: grid;
-  grid-template-columns: auto 1fr;
-  column-gap: 0.5rem;
-  align-items: flex-start;
-  line-height: 1.7;                /* main control: opens multi-line choices */
-}
-
-/* Nudge MathJax container so it flows like normal text */
+/* small nudge so inline math sits nicely with text in labels */
 .question label mjx-container[jax="CHTML"]{
-  margin-top: 0.05rem;
+  margin-top:0.05rem;
 }
-
-
-/* Optional: left-align display math instead of centering it */
-mjx-container[display="true"] {
-  text-align: left;
-}
-
-
