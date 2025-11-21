@@ -21,22 +21,36 @@
       answerKey : ["A","A","A"],
 
       questions : [
-        /* ---------- Proof-understanding Q1 ---------- */
         {
-          latex: String.raw`\text{Consider the following statement about points }A,B,P,Q\text{ and a point }X\text{ on segment }\overline{AB}:\\[4pt]
-\qquad\textbf{Statement.}\ \text{If }AP = AQ\text{ and }BP = BQ,\text{ then every point }X\text{ on }\overline{AB}\text{ satisfies }XP = XQ.\\[6pt]
-\text{Which description best summarizes the overall strategy of the proof presented in class?}`,
+          latex: String.raw`\
+\text{Consider points }A,B,P,Q\text{ and a point }X\text{ on segment }\overline{AB}.
+\text{ Assume }AP = AQ\text{ and }BP = BQ.\text{ Which description best}
+\text{ summarizes a correct proof that every point }X\text{ on }\overline{AB}
+\text{ satisfies }XP = XQ\text{?}`,
           choices: [
-            String.raw`\text{First prove that } \triangle ABP \cong \triangle ABQ \text{ so that } \angle PAB \cong \angle QAB. \text{ Then, for any point } X \text{ on } \overline{AB}, \text{ use those equal angles together with the common side } \overline{AX} \text{ to show } \triangle PAX \cong \triangle QAX \text{ and conclude } XP = XQ.`,
-            String.raw`\text{First assume that } XP = XQ \text{ for every point } X \text{ on } \overline{AB}, \text{ and then deduce that } AP = AQ \text{ and } BP = BQ.`,
-            String.raw`\text{First choose the midpoint } X \text{ of } \overline{AB} \text{ and prove } AP = BP \text{ and } AQ = BQ, \text{ then claim that every other point on } \overline{AB} \text{ also has this property.}`,
-            String.raw`\text{First drop perpendiculars from } P \text{ and } Q \text{ to } \overline{AB} \text{ and prove } \overline{AB} \perp \overline{PQ}, \text{ which immediately gives } XP = XQ \text{ for every } X \text{ on } \overline{AB}.`
+            String.raw`\
+\text{First prove that } \triangle ABP \cong \triangle ABQ \text{ so that }
+\angle PAB \cong \angle QAB.\ \text{Then, for any point }X\text{ on }\overline{AB},
+\text{ use those equal angles together with the common side }\overline{AX}
+\text{ to show } \triangle PAX \cong \triangle QAX \text{ and conclude } XP = XQ.`,
+            String.raw`\
+\text{First assume that }XP = XQ\text{ for every point }X\text{ on }\overline{AB},
+\text{ and then deduce that }AP = AQ\text{ and }BP = BQ.`,
+            String.raw`\
+\text{First choose the midpoint }X\text{ of }\overline{AB}\text{ and prove }
+AP = BP \text{ and } AQ = BQ,\text{ then claim that every other point on }
+\overline{AB}\text{ also has this property.}`,
+            String.raw`\
+\text{First drop perpendiculars from }P\text{ and }Q\text{ to }\overline{AB}
+\text{ and prove }\overline{AB} \perp \overline{PQ},\text{ which immediately gives }
+XP = XQ\text{ for every }X\text{ on }\overline{AB}.`
           ]
         },
 
-        /* ---------- Proof-understanding Q2 ---------- */
         {
-          latex: String.raw`\text{In the proof we want to show } \triangle ABP \cong \triangle ABQ \text{ using SSS. We already know } AP = AQ \text{ and } BP = BQ.\\[4pt]
+          latex: String.raw`\
+\text{In the proof we want to show } \triangle ABP \cong \triangle ABQ
+\text{ using SSS. We already know }AP = AQ\text{ and }BP = BQ.\ 
 \text{Which additional fact is needed to apply SSS and complete this congruence?}`,
           choices: [
             String.raw`AB = AB`,
@@ -48,10 +62,13 @@
           ]
         },
 
-        /* ---------- Proof-understanding Q3 ---------- */
         {
-          latex: String.raw`\text{Later in the proof we take a point } X \text{ on } \overline{AB} \text{ and draw segments } \overline{XP} \text{ and } \overline{XQ}. \text{ From earlier steps we know } AP = AQ,\ AX = AX,\text{ and } \angle PAX \cong \angle QAX.\\[4pt]
-\text{Which triangle congruence criterion is used to conclude } \triangle PAX \cong \triangle QAX\text{?}`,
+          latex: String.raw`\
+\text{Now take a point }X\text{ on }\overline{AB}\text{ and draw }
+\overline{XP}\text{ and }\overline{XQ}.\ \text{From earlier steps we know }
+AP = AQ,\ AX = AX,\text{ and }\angle PAX \cong \angle QAX.\ 
+\text{Which triangle congruence criterion is used to conclude }
+\triangle PAX \cong \triangle QAX\text{?}`,
           choices: [
             String.raw`\text{SAS}`,
             String.raw`\text{SSS}`,
