@@ -90,3 +90,15 @@ button:hover{ background:#3e654d; }
   margin-top: 0.25rem;
 }
 
+
+/* Allow long MathJax expressions (questions / choices) to wrap */
+.mjx-math {
+  white-space: normal !important;
+}
+
+/* Optional: keep display-style math left-aligned instead of centered */
+.mjx-container[display="true"] {
+  text-align: left;
+}
+
+
