@@ -23,38 +23,35 @@
       questions : [
         {
           latex: String.raw`\
-\text{Consider points }A,B,P,Q\text{ and a point }X\text{ on segment }\overline{AB}.\\
-\text{Assume }AP = AQ\text{ and }BP = BQ.\\
-\text{Which description best summarizes a correct proof that every point }X\\
-\text{on }\overline{AB}\text{ satisfies }XP = XQ\text{?}`,
+\text{Consider points }A,B,P,Q\text{ and a point }X\text{ on segment }\overline{AB}.
+\text{ Assume }AP = AQ\text{ and }BP = BQ.
+\text{ Which description best summarizes a correct proof that every point }X
+\text{ on }\overline{AB}\text{ satisfies }XP = XQ\text{?}`,
           choices: [
             String.raw`\
 \text{First prove that }\triangle ABP \cong \triangle ABQ\text{ so that }
-\angle PAB \cong \angle QAB.\\
-\text{Then, for any point }X\text{ on }\overline{AB},\text{ use those equal angles}\\
-\text{together with the common side }\overline{AX}\text{ to show }
-\triangle PAX \cong \triangle QAX\\
-\text{and conclude }XP = XQ\text{.}`,
+\angle PAB \cong \angle QAB.\ \text{Then, for any point }X\text{ on }\overline{AB},
+\text{ use those equal angles together with the common side }\overline{AX}
+\text{ to show }\triangle PAX \cong \triangle QAX\text{ and conclude }XP = XQ\text{.}`,
             String.raw`\
-\text{First assume that }XP = XQ\text{ for every point }X\text{ on }\overline{AB},\\
-\text{and then deduce that }AP = AQ\text{ and }BP = BQ\text{.}`,
+\text{First assume that }XP = XQ\text{ for every point }X\text{ on }\overline{AB},
+\text{ and then deduce that }AP = AQ\text{ and }BP = BQ\text{.}`,
             String.raw`\
 \text{First choose the midpoint }X\text{ of }\overline{AB}\text{ and prove }
-AP = BP \text{ and }AQ = BQ.\\
-\text{Then claim that every other point on }\overline{AB}\text{ also has this property.}`,
+AP = BP \text{ and }AQ = BQ,\text{ then claim that every other point on }
+\overline{AB}\text{ also has this property.}`,
             String.raw`\
-\text{First drop perpendiculars from }P\text{ and }Q\text{ to }\overline{AB}\\
-\text{and prove }\overline{AB} \perp \overline{PQ},\text{ which immediately gives }
-XP = XQ\\
-\text{for every }X\text{ on }\overline{AB}\text{.}`
+\text{First drop perpendiculars from }P\text{ and }Q\text{ to }\overline{AB}
+\text{ and prove }\overline{AB} \perp \overline{PQ},\text{ which immediately gives }
+XP = XQ\text{ for every }X\text{ on }\overline{AB}\text{.}`
           ]
         },
 
         {
           latex: String.raw`\
-\text{In the proof we want to show }\triangle ABP \cong \triangle ABQ\text{ using SSS.}\\
-\text{We already know }AP = AQ\text{ and }BP = BQ\text{.}\\
-\text{Which additional fact is needed to apply SSS and complete this congruence?}`,
+\text{In the proof we want to show }\triangle ABP \cong \triangle ABQ\text{ using SSS.}
+\text{ We already know }AP = AQ\text{ and }BP = BQ\text{.}
+\text{ Which additional fact is needed to apply SSS and complete this congruence?}`,
           choices: [
             String.raw`AB = AB`,
             String.raw`AP = BP`,
@@ -67,10 +64,10 @@ XP = XQ\\
 
         {
           latex: String.raw`\
-\text{Now take a point }X\text{ on }\overline{AB}\text{ and draw }\overline{XP}\text{ and }\overline{XQ}\text{.}\\
-\text{From earlier steps we know }AP = AQ,\ AX = AX,\text{ and }
-\angle PAX \cong \angle QAX\text{.}\\
-\text{Which triangle congruence criterion is used to conclude }
+\text{Now take a point }X\text{ on }\overline{AB}\text{ and draw }\overline{XP}
+\text{ and }\overline{XQ}\text{. From earlier steps we know }
+AP = AQ,\ AX = AX,\text{ and }\angle PAX \cong \angle QAX\text{.}
+\text{ Which triangle congruence criterion is used to conclude }
 \triangle PAX \cong \triangle QAX\text{?}`,
           choices: [
             String.raw`\text{SAS}`,
