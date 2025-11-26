@@ -28,22 +28,22 @@
   </figure>
 
   <figure style="max-width:220px;text-align:center;">
-    <img src="im10_3.png" alt="Figure 3: two planes a and b meeting along PQ with points L, M, X." style="max-width:100%;height:auto;">
+    <img src="im10_3.png" alt="Figure 3: a cluster of plane regions with points S, V, O, T, N, U, Q, M, R, L." style="max-width:100%;height:auto;">
     <figcaption>Figure 3</figcaption>
   </figure>
 
   <figure style="max-width:220px;text-align:center;">
-    <img src="im10_4.png" alt="Figure 4: plane p dividing space into half-spaces s1 and s2 with line k and points L, M, S, T, X, Y." style="max-width:100%;height:auto;">
+    <img src="im10_4.png" alt="Figure 4: two planes a and b meeting along line PQ with points P, Q, X, L, M." style="max-width:100%;height:auto;">
     <figcaption>Figure 4</figcaption>
   </figure>
 </div>
 `,
 
       /* Correct answers for Q1–Q12 */
-      answerKey : ["B","A","C","E","C","D","B","E","A","C","D","D"],
+      answerKey : ["B","A","C","A","B","A","B","B","E","A","C","D"],
 
       questions : [
-        /* ---------- Type A (3) ---------- */
+        /* ---------- Type A (definitions) ---------- */
         {
           latex: String.raw`\text{What is a dihedral angle?}`,
           choices: [
@@ -75,42 +75,39 @@
           ]
         },
 
-        /* ---------- Type B (8) ---------- */
+        /* ---------- Type B: figure-based (matching textbook 4–8) ---------- */
         {
-          latex: String.raw`\text{Refer to Figure 1. Which point lies in the interior of the left face only (not on the edge and not in the right face)?}`,
+          latex: String.raw`\text{Refer to Figure 4. Name the faces of the dihedral angle.}`,
           choices: [
-            String.raw`A`,
-            String.raw`C`,
-            String.raw`D`,
-            String.raw`E`,
-            String.raw`F`,
-            String.raw`\text{None of these}`
+            String.raw`\text{planes }a\text{ and }b`,
+            String.raw`\text{line }PQ`,
+            String.raw`\overline{PM}\text{ and }\overline{QL}`,
+            String.raw`\overrightarrow{XM}\text{ and }\overrightarrow{XL}`,
+            String.raw`\text{points }P\text{ and }Q`
           ]
         },
         {
-          latex: String.raw`\text{Refer to Figure 1. Which segment lies entirely on the edge where the two planes intersect?}`,
+          latex: String.raw`\text{Refer to Figure 4. What is the edge of the dihedral angle?}`,
           choices: [
-            String.raw`\overline{AC}`,
-            String.raw`\overline{AD}`,
-            String.raw`\overline{CD}`,
-            String.raw`\overline{CE}`,
-            String.raw`\overline{DE}`,
-            String.raw`\overline{CF}`
+            String.raw`\overline{PQ}`,
+            String.raw`\text{line }PQ`,
+            String.raw`\overrightarrow{XM}`,
+            String.raw`\overrightarrow{XL}`,
+            String.raw`\text{line }XM`
           ]
         },
         {
-          latex: String.raw`\text{Refer to Figure 2, where several planes meet along a common line through }Y\text{ and }Z.\ \text{For any two distinct planes that intersect in that line, how many dihedral angles do they form?}`,
+          latex: String.raw`\text{Refer to Figure 4. Which of the following is a plane angle used to measure the dihedral angle?}`,
           choices: [
-            String.raw`1`,
-            String.raw`2`,
-            String.raw`3`,
-            String.raw`4`,
-            String.raw`6`,
-            String.raw`\text{Infinitely many}`
+            String.raw`\angle MXL`,
+            String.raw`\angle PXM`,
+            String.raw`\angle PMQ`,
+            String.raw`\angle XLQ`,
+            String.raw`\angle MXQ`
           ]
         },
         {
-          latex: String.raw`\text{Refer to Figure 3. Planes }a\text{ and }b\text{ meet along edge }\overline{PQ}.\ \text{Ray }QX\text{ lies in plane }a\text{ and ray }QL\text{ lies in plane }b.\ \text{The plane angle }\angle XQL\text{ measures the dihedral angle. If }m\angle XQL=90^\circ,\text{ what kind of dihedral angle do the planes form?}`,
+          latex: String.raw`\text{Refer to Figure 4. If }m\angle MXL = 90^\circ,\text{ what is the dihedral angle called?}`,
           choices: [
             String.raw`\text{An acute dihedral angle}`,
             String.raw`\text{A right dihedral angle}`,
@@ -121,7 +118,19 @@
           ]
         },
         {
-          latex: String.raw`\text{Refer to Figure 4. Plane }p\text{ divides space into two half-spaces }s_1\text{ and }s_2.\ \text{Let }S\text{ be all of space. What is }s_1\cap s_2\text{?}`,
+          latex: String.raw`\text{Refer to Figure 4. Find }a\cap b\text{.}`,
+          choices: [
+            String.raw`\text{plane }a`,
+            String.raw`\text{line }PQ`,
+            String.raw`\overline{PQ}`,
+            String.raw`\{P,Q\}`,
+            String.raw`\emptyset`
+          ]
+        },
+
+        /* ---------- Type B/C: set-theoretic half-space questions ---------- */
+        {
+          latex: String.raw`\text{A plane }p\text{ divides space into two half-spaces }s_1\text{ and }s_2.\ \text{Let }S\text{ be all of space. What is }s_1\cap s_2\text{?}`,
           choices: [
             String.raw`S`,
             String.raw`s_1`,
@@ -143,7 +152,7 @@
           ]
         },
         {
-          latex: String.raw`\text{Again using Figure 4, what is }p'\text{ (the complement of plane }p\text{ in }S\text{)?}`,
+          latex: String.raw`\text{Again with the same notation, what is }p'\text{ (the complement of plane }p\text{ in }S\text{)?}`,
           choices: [
             String.raw`s_1`,
             String.raw`s_2`,
@@ -153,19 +162,8 @@
             String.raw`\emptyset`
           ]
         },
-        {
-          latex: String.raw`\text{What is }(s_1\cup s_2\cup p)'\text{?}`,
-          choices: [
-            String.raw`S`,
-            String.raw`s_1`,
-            String.raw`s_2`,
-            String.raw`\emptyset`,
-            String.raw`p`,
-            String.raw`s_1\cup s_2`
-          ]
-        },
 
-        /* ---------- Type C (1) ---------- */
+        /* ---------- Type C ---------- */
         {
           latex: String.raw`\text{Three distinct planes in space can intersect in different ways. What is the greatest possible number of parts into which three planes can separate space?}`,
           choices: [
