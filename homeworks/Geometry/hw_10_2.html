@@ -48,7 +48,7 @@
           latex: String.raw`\text{What is a dihedral angle?}`,
           choices: [
             String.raw`\text{The union of two rays with a common endpoint.}`,
-            String.raw`\text{The union of two half-planes that have the same line as a common edge.}`,
+            String.raw`\text{The union of a line and two half-planes that have that line as a common edge.}`,
             String.raw`\text{The union of two parallel planes.}`,
             String.raw`\text{The region between two parallel lines.}`,
             String.raw`\text{The union of two half-spaces that do not intersect.}`
@@ -57,7 +57,7 @@
         {
           latex: String.raw`\text{The edge of a dihedral angle is}`,
           choices: [
-            String.raw`\text{the intersection line of its two half-planes.}`,
+            String.raw`\text{the common edge (line) of the two half-planes that form the dihedral angle.}`,
             String.raw`\text{the union of the two faces.}`,
             String.raw`\text{any point in the interior of the dihedral angle.}`,
             String.raw`\text{the plane angle used to measure the dihedral angle.}`,
@@ -69,7 +69,7 @@
           choices: [
             String.raw`\text{the common edge of the two half-planes.}`,
             String.raw`\text{the union of both half-planes.}`,
-            String.raw`\text{one of the half-planes that forms the dihedral angle.}`,
+            String.raw`\text{the union of the edge of a dihedral angle and one of the half-planes that form the dihedral angle.}`,
             String.raw`\text{the interior wedge of the dihedral angle.}`,
             String.raw`\text{any plane that contains the edge.}`
           ]
@@ -97,7 +97,7 @@
           ]
         },
         {
-          latex: String.raw`\text{Refer to Figure 4. Which of the following is a plane angle used to measure the dihedral angle?}`,
+          latex: String.raw`\text{Refer to Figure 4. Name a plane angle of the dihedral angle.}`,
           choices: [
             String.raw`\angle MXL`,
             String.raw`\angle PXM`,
@@ -128,9 +128,9 @@
           ]
         },
 
-        /* ---------- Type B/C: set-theoretic half-space questions ---------- */
+        /* ---------- Half-space questions (using Postulate 10.1) ---------- */
         {
-          latex: String.raw`\text{A plane }p\text{ divides space into two half-spaces }s_1\text{ and }s_2.\ \text{Let }S\text{ be all of space. What is }s_1\cap s_2\text{?}`,
+          latex: String.raw`\text{A plane }p\text{ separates space }S\text{ into two half-spaces }s_1\text{ and }s_2\text{ as in the Space Separation Postulate. What is }s_1\cap s_2\text{?}`,
           choices: [
             String.raw`S`,
             String.raw`s_1`,
