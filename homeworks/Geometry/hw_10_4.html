@@ -116,27 +116,26 @@
           ]
         },
 
-        /* ───────────── 2 proof-type questions on Theorem 10.9 ───────────── */
+        /* ───────────── 2 intuitive proof questions on Theorem 10.9 ───────────── */
 
         {
-          latex: String.raw`\text{Theorem 10.9 states: "If two lines are parallel, then any plane containing exactly one of the two lines is parallel to the other line." To prove this, we use an indirect proof. What is the most appropriate temporary assumption to begin the proof?}`,
+          latex: String.raw`\text{Theorem 10.9 states: "If two lines are parallel, then any plane containing exactly one of the two lines is parallel to the other line." To prove this, we use an indirect proof. What do we temporarily assume about the relationship between plane }n\text{ and line }\overleftrightarrow{CD}\text{?}`,
           choices: [
-            String.raw`\text{Assume that plane }n\text{ is perpendicular to line }\overleftrightarrow{CD}\text{.}`,
-            String.raw`\text{Assume that plane }n\text{ contains both lines }\overleftrightarrow{AB}\text{ and }\overleftrightarrow{CD}\text{.}`,
-            String.raw`\text{Assume that plane }n\text{ meets line }\overleftrightarrow{CD}\text{ at some point }P\text{ (that is, they are not parallel).}`,
-            String.raw`\text{Assume that line }\overleftrightarrow{AB}\text{ is not parallel to line }\overleftrightarrow{CD}\text{.}`,
-            String.raw`\text{Assume that plane }n\text{ contains neither }\overleftrightarrow{AB}\text{ nor }\overleftrightarrow{CD}\text{.}`
+            String.raw`\text{Plane }n\text{ contains line }\overleftrightarrow{CD}\text{.}`,
+            String.raw`\text{Plane }n\text{ is perpendicular to line }\overleftrightarrow{CD}\text{.}`,
+            String.raw`\text{Plane }n\text{ meets line }\overleftrightarrow{CD}\text{ at some point }P\text{ (that is, they are not parallel).}`,
+            String.raw`\text{Plane }n\text{ is skew to line }\overleftrightarrow{CD}\text{.}`
           ]
         },
 
         {
-          latex: String.raw`\text{Continue the indirect proof of Theorem 10.9. Suppose plane }n\text{ contains }\overleftrightarrow{AB}\text{ but not }\overleftrightarrow{CD}\text{, and we temporarily assume that }n\text{ meets }\overleftrightarrow{CD}\text{ at }P\text{. Using the fact that }\overleftrightarrow{AB}\parallel\overleftrightarrow{CD}\text{ and }\overleftrightarrow{AB}\subset n\text{, which statement must then be true and leads to a contradiction?}`,
+          latex: String.raw`\text{Still in the proof of Theorem 10.9, suppose plane }n\text{ meets }\overleftrightarrow{CD}\text{ at }P\text{ and plane }m\text{ is defined as the plane containing both lines }\overleftrightarrow{AB}\text{ and }\overleftrightarrow{CD}\text{. Why does this lead to a contradiction with the given }\overleftrightarrow{AB}\parallel\overleftrightarrow{CD}\text{?}`,
           choices: [
-            String.raw`\text{The entire line }\overleftrightarrow{CD}\text{ lies in plane }n\text{, so plane }n\text{ contains both parallel lines.}`,
-            String.raw`\text{Line }\overleftrightarrow{AB}\text{ becomes perpendicular to plane }n\text{.}`,
-            String.raw`\text{Lines }\overleftrightarrow{AB}\text{ and }\overleftrightarrow{CD}\text{ must intersect at a point in plane }n\text{.}`,
-            String.raw`\text{Plane }n\text{ must coincide with every plane containing }\overleftrightarrow{CD}\text{.}`,
-            String.raw`\text{Point }P\text{ must be the midpoint of segment }\overline{AC}\text{.}`
+            String.raw`\text{Because then both planes }m\text{ and }n\text{ would be perpendicular to }\overleftrightarrow{CD}\text{.}`,
+            String.raw`\text{Because planes }m\text{ and }n\text{ would have to be parallel, so they could not share the line }\overleftrightarrow{AB}\text{.}`,
+            String.raw`\text{Because planes }m\text{ and }n\text{ intersect in exactly one line, }\overleftrightarrow{AB}\text{, and the point }P\text{ where }\overleftrightarrow{CD}\text{ meets }n\text{ must also lie on }\overleftrightarrow{AB}\text{, so }\overleftrightarrow{AB}\text{ and }\overleftrightarrow{CD}\text{ would intersect at }P\text{.}`,
+            String.raw`\text{Because }\overleftrightarrow{CD}\text{ would have to lie in plane }n\text{ but not in plane }m\text{.}`,
+            String.raw`\text{Because line }\overleftrightarrow{AB}\text{ would become perpendicular to line }\overleftrightarrow{CD}\text{.}`
           ]
         }
       ],
@@ -152,8 +151,8 @@
         "A", // 8
         "A", // 9
         "A", // 10
-        "C", // 11 (new proof Q: assume n meets CD)
-        "A"  // 12 (new proof Q: conclude CD lies in n)
+        "C", // 11  (assume n meets CD at P)
+        "C"  // 12  (AB and CD would then intersect at P)
       ]
     };
   </script>
@@ -165,4 +164,4 @@
 <body>
   <div id="hw-root">Loading…</div>
 </body>
-</html>
+</ht
