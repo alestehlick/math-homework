@@ -2,28 +2,8 @@
 <html lang="en">
 <head>
   <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Homework 10-4 (Geometry)</title>
-
-  <!-- Core homework styles -->
-  <link rel="stylesheet" href="/math-homework/assets/core.css" />
-
-  <!-- MathJax configuration -->
-  <script>
-    window.MathJax = {
-      tex: {
-        inlineMath: [['\\(', '\\)']],
-        displayMath: [['\\[', '\\]']]
-      },
-      svg: { fontCache: 'global' }
-    };
-  </script>
-  <script id="MathJax-script"
-          async
-          src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js">
-  </script>
-</head>
-<body>
-  <div id="hw-root"></div>
 
   <script>
     window.homeworkData = {
@@ -31,132 +11,130 @@
       id      : "Homework 10-4",
       title   : "Homework 10-4 — Parallels in Space",
 
+      graphics : String.raw``,
+
       questions : [
         /* ───────────── 10 B-type questions ───────────── */
 
         {
-          latex: String.raw`Consider the statement: “Two planes that are each parallel to the same line are parallel to each other.”  What shows that this statement is false in space?`,
+          latex: String.raw`\text{Consider the statement: "Two planes that are each parallel to the same line are parallel to each other." What shows that this statement is false in space?}`,
           choices: [
-            String.raw`If two planes are parallel to the same line, they must coincide, so they are the very same plane.`,
-            String.raw`Two planes that are parallel to the same line are always perpendicular to each other.`,
-            String.raw`Two distinct planes can intersect in a line while both fail to meet that line, so each plane is parallel to the line but the planes intersect each other.`,
-            String.raw`It is impossible for a plane to be parallel to a line, so the statement cannot even be made.`
+            String.raw`\text{If two planes are parallel to the same line, they must coincide, so they are the very same plane.}`,
+            String.raw`\text{Two planes that are parallel to the same line are always perpendicular to each other.}`,
+            String.raw`\text{Two distinct planes can intersect in a line while both fail to meet that line, so each plane is parallel to the line but the planes intersect each other.}`,
+            String.raw`\text{It is impossible for a plane to be parallel to a line, so the statement cannot even be made.}`
           ]
         },
 
         {
-          latex: String.raw`Consider the statement: “Two lines that are each parallel to the same plane are parallel to each other.”  Why is this statement false in space?`,
+          latex: String.raw`\text{Consider the statement: "Two lines that are each parallel to the same plane are parallel to each other." Why is this statement false in space?}`,
           choices: [
-            String.raw`Any line parallel to a plane must lie in that plane, so the two lines coincide.`,
-            String.raw`Two different lines can both miss the plane and therefore be skew to each other, even though each line is parallel to the plane.`,
-            String.raw`Two lines parallel to the same plane must intersect in that plane.`,
-            String.raw`Whenever a line is parallel to a plane, it is also perpendicular to the plane, so no two such lines can be parallel.`
+            String.raw`\text{Any line parallel to a plane must lie in that plane, so the two lines coincide.}`,
+            String.raw`\text{Two different lines can both miss the plane and therefore be skew to each other, even though each line is parallel to the plane.}`,
+            String.raw`\text{Two lines parallel to the same plane must intersect in that plane.}`,
+            String.raw`\text{Whenever a line is parallel to a plane, it is also perpendicular to the plane, so no two such lines can be parallel.}`
           ]
         },
 
         {
-          latex: String.raw`Planes \(p\) and \(q\) are parallel.  Which sentence correctly describes possible lines \(\ell\) in plane \(p\) and \(m\) in plane \(q\)?`,
+          latex: String.raw`\text{Planes }p\text{ and }q\text{ are parallel. Which sentence correctly describes possible lines }\ell\text{ in plane }p\text{ and }m\text{ in plane }q\text{?}`,
           choices: [
-            String.raw`It is possible for \(\ell\) and \(m\) to be skew lines, so the statement “any line in the first plane is parallel to any line in the second plane” is false.`,
-            String.raw`Every line in \(p\) must be parallel to every line in \(q\).`,
-            String.raw`Any line in \(p\) intersects any line in \(q\) at exactly one point.`,
-            String.raw`If \(\ell\) and \(m\) are not parallel, then planes \(p\) and \(q\) cannot be parallel.`
+            String.raw`\text{It is possible for }\ell\text{ and }m\text{ to be skew lines, so the statement "any line in the first plane is parallel to any line in the second plane" is false.}`,
+            String.raw`\text{Every line in }p\text{ must be parallel to every line in }q\text{.}`,
+            String.raw`\text{Any line in }p\text{ intersects any line in }q\text{ at exactly one point.}`,
+            String.raw`\text{If }\ell\text{ and }m\text{ are not parallel, then planes }p\text{ and }q\text{ cannot be parallel.}`
           ]
         },
 
         {
-          latex: String.raw`Line \(\ell\) is parallel to plane \(n\).  Which description of the relationship between \(\ell\) and the lines lying in plane \(n\) is correct?`,
+          latex: String.raw`\text{Line }\ell\text{ is parallel to plane }n\text{. Which description of the relationship between }\ell\text{ and the lines lying in plane }n\text{ is correct?}`,
           choices: [
-            String.raw`Every line in \(n\) is parallel to \(\ell\).`,
-            String.raw`No line in \(n\) can be parallel to \(\ell\).`,
-            String.raw`Some, but not all, lines in \(n\) are parallel to \(\ell\).`,
-            String.raw`Every line in \(n\) intersects \(\ell\).`
+            String.raw`\text{Every line in }n\text{ is parallel to }\ell\text{.}`,
+            String.raw`\text{No line in }n\text{ can be parallel to }\ell\text{.}`,
+            String.raw`\text{Some, but not all, lines in }n\text{ are parallel to }\ell\text{.}`,
+            String.raw`\text{Every line in }n\text{ intersects }\ell\text{.}`
           ]
         },
 
         {
-          latex: String.raw`Consider the statement: “If two lines are each perpendicular to the same line, then they are parallel to each other.”  How should this be classified in space?`,
+          latex: String.raw`\text{Consider the statement: "If two lines are each perpendicular to the same line, then they are parallel to each other." How should this be classified in space?}`,
           choices: [
-            String.raw`Always true, because any two lines perpendicular to a third line must lie in the same plane.`,
-            String.raw`Always true, because they form corresponding angles with the third line.`,
-            String.raw`False, because in space two lines can both be perpendicular to a third line and still form a right angle with each other instead of being parallel.`,
-            String.raw`False, because perpendicular lines are never coplanar.`
+            String.raw`\text{Always true, because any two lines perpendicular to a third line must lie in the same plane.}`,
+            String.raw`\text{Always true, because they form corresponding angles with the third line.}`,
+            String.raw`\text{False, because in space two lines can both be perpendicular to a third line and still form a right angle with each other instead of being parallel.}`,
+            String.raw`\text{False, because perpendicular lines are never coplanar.}`
           ]
         },
 
         {
-          latex: String.raw`Planes \(p\) and \(q\) intersect and are each perpendicular to a third plane \(r\).  What must be true about the line \(p \cap q\)?`,
+          latex: String.raw`\text{Planes }p\text{ and }q\text{ intersect and are each perpendicular to a third plane }r\text{. What must be true about the line }p\cap q\text{?}`,
           choices: [
-            String.raw`\(p \cap q \perp r\).`,
-            String.raw`\(p \cap q \parallel r\).`,
-            String.raw`\(p \cap q\) lies entirely in plane \(r\).`,
-            String.raw`\(p \cap q\) is skew to every line in plane \(r\).`
+            String.raw`\textstyle p\cap q \perp r\text{.}`,
+            String.raw`\textstyle p\cap q \parallel r\text{.}`,
+            String.raw`\text{The line }p\cap q\text{ lies entirely in plane }r\text{.}`,
+            String.raw`\text{The line }p\cap q\text{ is skew to every line in plane }r\text{.}`
           ]
         },
 
         {
-          latex: String.raw`Line \(\overline{AB}\) is perpendicular to plane \(p\) at point \(B\).  Points \(C\) and \(D\) lie in plane \(p\) with \(BC = BD\).  What conclusion follows?`,
+          latex: String.raw`\text{Line }\overline{AB}\text{ is perpendicular to plane }p\text{ at point }B\text{. Points }C\text{ and }D\text{ lie in plane }p\text{ with }BC = BD\text{. What conclusion follows?}`,
           choices: [
-            String.raw`\(AC = AD\).`,
-            String.raw`\(AC = BC\).`,
-            String.raw`\(AD = BD\).`,
-            String.raw`\(AC = BD\).`
+            String.raw`\text{ }AC = AD\text{.}`,
+            String.raw`\text{ }AC = BC\text{.}`,
+            String.raw`\text{ }AD = BD\text{.}`,
+            String.raw`\text{ }AC = BD\text{.}`
           ]
         },
 
         {
-          latex: String.raw`Plane \(m\) is the perpendicular bisecting plane of segment \(\overline{AB}\).  Point \(P\) lies in plane \(m\).  What must be true?`,
+          latex: String.raw`\text{Plane }m\text{ is the perpendicular bisecting plane of segment }\overline{AB}\text{. Point }P\text{ lies in plane }m\text{. What must be true?}`,
           choices: [
-            String.raw`\(PA = PB\).`,
-            String.raw`\(PA = AB\).`,
-            String.raw`\(P\) lies on segment \(\overline{AB}\).`,
-            String.raw`\(P\) is the midpoint of \(\overline{AB}\).`
+            String.raw`\text{ }PA = PB\text{.}`,
+            String.raw`\text{ }PA = AB\text{.}`,
+            String.raw`\text{Point }P\text{ lies on segment }\overline{AB}\text{.}`,
+            String.raw`\text{Point }P\text{ is the midpoint of }\overline{AB}\text{.}`
           ]
         },
 
         {
-          latex: String.raw`Point \(P\) lies outside plane \(p\).  Segment \(\overline{PQ}\) is perpendicular to plane \(p\) at \(Q\), and \(R\) is any other point in plane \(p\) (with \(R \ne Q\)).  How do the distances from \(P\) to \(Q\) and to \(R\) compare?`,
+          latex: String.raw`\text{Point }P\text{ lies outside plane }p\text{. Segment }\overline{PQ}\text{ is perpendicular to plane }p\text{ at }Q\text{, and }R\text{ is any other point in plane }p\text{ (with }R\ne Q\text{). How do the distances from }P\text{ to }Q\text{ and to }R\text{ compare?}`,
           choices: [
-            String.raw`\(PQ < PR\).`,
-            String.raw`\(PQ = PR\).`,
-            String.raw`\(PQ > PR\).`,
-            String.raw`There is not enough information to compare \(PQ\) and \(PR\).`
+            String.raw`\text{ }PQ < PR\text{.}`,
+            String.raw`\text{ }PQ = PR\text{.}`,
+            String.raw`\text{ }PQ > PR\text{.}`,
+            String.raw`\text{There is not enough information to compare }PQ\text{ and }PR\text{.}`
           ]
         },
 
         {
-          latex: String.raw`Plane \(k\) is described as “the perpendicular bisecting plane of segment \(\overline{AB}\).”  Which pair of conditions correctly expresses this definition?`,
+          latex: String.raw`\text{Plane }k\text{ is described as "the perpendicular bisecting plane of segment }\overline{AB}\text{." Which pair of conditions correctly expresses this definition?}`,
           choices: [
-            String.raw`Plane \(k\) contains the midpoint of \(\overline{AB}\) and is perpendicular to line \(\overleftrightarrow{AB}\).`,
-            String.raw`Plane \(k\) is perpendicular to line \(\overleftrightarrow{AB}\) and contains both endpoints \(A\) and \(B\).`,
-            String.raw`Plane \(k\) contains the midpoint of \(\overline{AB}\) and is parallel to line \(\overleftrightarrow{AB}\).`,
-            String.raw`Plane \(k\) contains both endpoints \(A\) and \(B\) and is parallel to every line perpendicular to \(\overleftrightarrow{AB}\).`
+            String.raw`\text{Plane }k\text{ contains the midpoint of }\overline{AB}\text{ and is perpendicular to line }\overleftrightarrow{AB}\text{.}`,
+            String.raw`\text{Plane }k\text{ is perpendicular to line }\overleftrightarrow{AB}\text{ and contains both endpoints }A\text{ and }B\text{.}`,
+            String.raw`\text{Plane }k\text{ contains the midpoint of }\overline{AB}\text{ and is parallel to line }\overleftrightarrow{AB}\text{.}`,
+            String.raw`\text{Plane }k\text{ contains both endpoints }A\text{ and }B\text{ and is parallel to every line perpendicular to }\overleftrightarrow{AB}\text{.}`
           ]
         },
 
         /* ───────────── 2 questions about the theorem / proof ───────────── */
 
         {
-          latex: String.raw`Consider the theorem:  
-
-“If lines \(\overleftrightarrow{AB}\) and \(\overleftrightarrow{CD}\) are parallel and a plane \(n\) contains \(\overleftrightarrow{AB}\) but not \(\overleftrightarrow{CD}\), then plane \(n\) is parallel to line \(\overleftrightarrow{CD}\).”  
-
-The proof is begun as an indirect proof.  Which temporary assumption is introduced in order to obtain a contradiction?`,
+          latex: String.raw`\text{Consider the theorem: "If lines }\overleftrightarrow{AB}\text{ and }\overleftrightarrow{CD}\text{ are parallel and a plane }n\text{ contains }\overleftrightarrow{AB}\text{ but not }\overleftrightarrow{CD}\text{, then plane }n\text{ is parallel to line }\overleftrightarrow{CD}\text{." The proof is begun as an indirect proof. Which temporary assumption is introduced in order to obtain a contradiction?}`,
           choices: [
-            String.raw`Assume that plane \(n\) is perpendicular to line \(\overleftrightarrow{CD}\).`,
-            String.raw`Assume that plane \(n\) contains both lines \(\overleftrightarrow{AB}\) and \(\overleftrightarrow{CD}\).`,
-            String.raw`Assume that plane \(n\) intersects line \(\overleftrightarrow{CD}\) at some point \(P\).`,
-            String.raw`Assume that line \(\overleftrightarrow{AB}\) is not parallel to line \(\overleftrightarrow{CD}\).`
+            String.raw`\text{Assume that plane }n\text{ is perpendicular to line }\overleftrightarrow{CD}\text{.}`,
+            String.raw`\text{Assume that plane }n\text{ contains both lines }\overleftrightarrow{AB}\text{ and }\overleftrightarrow{CD}\text{.}`,
+            String.raw`\text{Assume that plane }n\text{ intersects line }\overleftrightarrow{CD}\text{ at some point }P\text{.}`,
+            String.raw`\text{Assume that line }\overleftrightarrow{AB}\text{ is not parallel to line }\overleftrightarrow{CD}\text{.}`
           ]
         },
 
         {
-          latex: String.raw`In the same theorem, a new plane \(m\) is introduced that contains both lines \(\overleftrightarrow{AB}\) and \(\overleftrightarrow{CD}\).  The proof then states that planes \(m\) and \(n\) intersect in exactly one line, \(\overleftrightarrow{AB}\).  Which fact justifies this step?`,
+          latex: String.raw`\text{In the same theorem, a new plane }m\text{ is introduced that contains both lines }\overleftrightarrow{AB}\text{ and }\overleftrightarrow{CD}\text{. The proof then states that planes }m\text{ and }n\text{ intersect in exactly one line, }\overleftrightarrow{AB}\text{. Which fact justifies this step?}`,
           choices: [
-            String.raw`Definition of parallel planes`,
-            String.raw`Plane Intersection Postulate (two intersecting planes intersect in exactly one line)`,
-            String.raw`Definition of perpendicular planes`,
-            String.raw`Theorem: “If a plane contains a line perpendicular to another plane, then the planes are perpendicular.”`
+            String.raw`\text{Definition of parallel planes}`,
+            String.raw`\text{Plane Intersection Postulate (two intersecting planes intersect in exactly one line)}`,
+            String.raw`\text{Definition of perpendicular planes}`,
+            String.raw`\text{Theorem: "If a plane contains a line perpendicular to another plane, then the planes are perpendicular."}`
           ]
         }
       ],
@@ -178,7 +156,12 @@ The proof is begun as an indirect proof.  Which temporary assumption is introduc
     };
   </script>
 
-  <!-- Core homework logic (form builder, submission, etc.) -->
-  <script src="/math-homework/assets/core.js"></script>
+  <!-- Core homework styles & logic -->
+  <link rel="stylesheet" href="/math-homework/assets/core.css" />
+  <script defer src="/math-homework/assets/core.js"></script>
+  <script defer src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+</head>
+<body>
+  <div id="hw-root">Loading…</div>
 </body>
 </html>
