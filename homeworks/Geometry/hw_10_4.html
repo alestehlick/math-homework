@@ -116,25 +116,27 @@
           ]
         },
 
-        /* ───────────── 2 questions about the theorem / proof ───────────── */
+        /* ───────────── 2 proof-type questions on Theorem 10.9 ───────────── */
 
         {
-          latex: String.raw`\text{Consider the theorem: "If lines }\overleftrightarrow{AB}\text{ and }\overleftrightarrow{CD}\text{ are parallel and a plane }n\text{ contains }\overleftrightarrow{AB}\text{ but not }\overleftrightarrow{CD}\text{, then plane }n\text{ is parallel to line }\overleftrightarrow{CD}\text{." The proof is begun as an indirect proof. Which temporary assumption is introduced in order to obtain a contradiction?}`,
+          latex: String.raw`\text{Theorem 10.9 states: "If two lines are parallel, then any plane containing exactly one of the two lines is parallel to the other line." To prove this, we use an indirect proof. What is the most appropriate temporary assumption to begin the proof?}`,
           choices: [
             String.raw`\text{Assume that plane }n\text{ is perpendicular to line }\overleftrightarrow{CD}\text{.}`,
             String.raw`\text{Assume that plane }n\text{ contains both lines }\overleftrightarrow{AB}\text{ and }\overleftrightarrow{CD}\text{.}`,
-            String.raw`\text{Assume that plane }n\text{ intersects line }\overleftrightarrow{CD}\text{ at some point }P\text{.}`,
-            String.raw`\text{Assume that line }\overleftrightarrow{AB}\text{ is not parallel to line }\overleftrightarrow{CD}\text{.}`
+            String.raw`\text{Assume that plane }n\text{ meets line }\overleftrightarrow{CD}\text{ at some point }P\text{ (that is, they are not parallel).}`,
+            String.raw`\text{Assume that line }\overleftrightarrow{AB}\text{ is not parallel to line }\overleftrightarrow{CD}\text{.}`,
+            String.raw`\text{Assume that plane }n\text{ contains neither }\overleftrightarrow{AB}\text{ nor }\overleftrightarrow{CD}\text{.}`
           ]
         },
 
         {
-          latex: String.raw`\text{In the same theorem, a new plane }m\text{ is introduced that contains both lines }\overleftrightarrow{AB}\text{ and }\overleftrightarrow{CD}\text{. The proof then states that planes }m\text{ and }n\text{ intersect in exactly one line, }\overleftrightarrow{AB}\text{. Which fact justifies this step?}`,
+          latex: String.raw`\text{Continue the indirect proof of Theorem 10.9. Suppose plane }n\text{ contains }\overleftrightarrow{AB}\text{ but not }\overleftrightarrow{CD}\text{, and we temporarily assume that }n\text{ meets }\overleftrightarrow{CD}\text{ at }P\text{. Using the fact that }\overleftrightarrow{AB}\parallel\overleftrightarrow{CD}\text{ and }\overleftrightarrow{AB}\subset n\text{, which statement must then be true and leads to a contradiction?}`,
           choices: [
-            String.raw`\text{Definition of parallel planes}`,
-            String.raw`\text{Plane Intersection Postulate (two intersecting planes intersect in exactly one line)}`,
-            String.raw`\text{Definition of perpendicular planes}`,
-            String.raw`\text{Theorem: "If a plane contains a line perpendicular to another plane, then the planes are perpendicular."}`
+            String.raw`\text{The entire line }\overleftrightarrow{CD}\text{ lies in plane }n\text{, so plane }n\text{ contains both parallel lines.}`,
+            String.raw`\text{Line }\overleftrightarrow{AB}\text{ becomes perpendicular to plane }n\text{.}`,
+            String.raw`\text{Lines }\overleftrightarrow{AB}\text{ and }\overleftrightarrow{CD}\text{ must intersect at a point in plane }n\text{.}`,
+            String.raw`\text{Plane }n\text{ must coincide with every plane containing }\overleftrightarrow{CD}\text{.}`,
+            String.raw`\text{Point }P\text{ must be the midpoint of segment }\overline{AC}\text{.}`
           ]
         }
       ],
@@ -150,13 +152,12 @@
         "A", // 8
         "A", // 9
         "A", // 10
-        "C", // 11
-        "B"  // 12
+        "C", // 11 (new proof Q: assume n meets CD)
+        "A"  // 12 (new proof Q: conclude CD lies in n)
       ]
     };
   </script>
 
-  <!-- Core homework styles & logic -->
   <link rel="stylesheet" href="/math-homework/assets/core.css" />
   <script defer src="/math-homework/assets/core.js"></script>
   <script defer src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
