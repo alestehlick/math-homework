@@ -36,19 +36,10 @@
     \draw[thick, red] (1,2)--(3,2)--(4,-2)--cycle;
     \node[anchor=south west,font=\small] at (0.1,2.1) {G2};
   \end{scope}
-
-  \begin{scope}[xshift=-10cm,yshift=-10cm,scale=0.5]
-    \clip (-18,-10) rectangle (32,17);
-    \draw[grid] (-18,-10) grid (32,16);
-    \draw[axes] (-18,0)--(32,0);
-    \draw[axes] (0,-10)--(0,16);
-    \draw[thick, red] (-16.1,-8.2)--(-10,15)--(24.7,15)--(30.8,-8.2)--cycle;
-    \node[anchor=south west,font=\small] at (-17.5,10.2) {G3};
-  \end{scope}
 \end{tikzpicture}
 `,
 
-      answerKey : ["C","D","C","A","B","C","B","A","A"],
+      answerKey : ["C","D","C","A","B","C","B","A"],
 
       questions : [
         /* ---------- A. Exercises (6) ---------- */
@@ -133,16 +124,7 @@
             String.raw`2+\sqrt{17}`
           ]},
 
-        /* ---------- C. Exercises (1) ---------- */
-        { latex: String.raw`\text{Refer to G3. Determine the perimeter of the trapezoid shown to the nearest tenth.}`,
-          choices: [
-            String.raw`129.6`, /* correct */
-            String.raw`129.5`,
-            String.raw`129.0`,
-            String.raw`130.0`,
-            String.raw`81.6`,
-            String.raw`127.6`
-          ]}
+
       ]
     };
   </script>
