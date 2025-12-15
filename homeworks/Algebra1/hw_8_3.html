@@ -3,152 +3,154 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Homework 8-3 (Algebra 1)</title>
+  <title>Homework 11-1 (Algebra 1)</title>
 
   <script>
     /* =========================
-       Homework 8-3 — Subtracting Polynomials
+       Homework 11-1 — Solve
+       (A: 4, B: 6, C: 2)
        ========================= */
     window.homeworkData = {
       classId : "Algebra1",
-      id      : "Homework 8-3",
-      title   : "Homework 8-3 — Subtracting Polynomials",
+      id      : "Homework 11-1",
+      title   : "Homework 11-1 — Solve",
 
-      graphics : String.raw` `,  // no figures needed for this section
+      graphics : String.raw``,
 
-      /* Answer key (A–F) embedded but not displayed */
-      answerKey : ["D","B","A","D","C","C","C","C","B","D","A","A"],
+      answerKey : ["A","D","C","B","B","D","C","B","C","C","D","C"],
 
       questions : [
-        { latex: String.raw`\text{Subtract }(2a-5)\text{ from }(5a+3).`,
+        { latex: String.raw`\text{Solve.}\; 5x=0`,
           choices: [
-            String.raw`3a+2`,
-            String.raw`7a-2`,
-            String.raw`3a-2`,
-            String.raw`3a+8`,
-            String.raw`7a+8`,
-            String.raw`-3a+8`
+            String.raw`x=0`,
+            String.raw`x=5`,
+            String.raw`x=-5`,
+            String.raw`x=\dfrac{1}{5}`,
+            String.raw`\text{no solution}`,
+            String.raw`\text{all real numbers}`
           ]},
 
-        { latex: String.raw`\text{Subtract }(a^2-6)\text{ from }(3a^2+2a-4).`,
+        { latex: String.raw`\text{Solve.}\; (x-2)(x+4)=0`,
           choices: [
-            String.raw`2a^2+2a-10`,
-            String.raw`2a^2+2a+2`,
-            String.raw`4a^2+2a+2`,
-            String.raw`2a^2-2a+2`,
-            String.raw`2a^2+8`,
-            String.raw`a^2+2a+2`
+            String.raw`x=-2\text{ or }x=4`,
+            String.raw`x=2\text{ only}`,
+            String.raw`x=-4\text{ only}`,
+            String.raw`x=2\text{ or }x=-4`,
+            String.raw`x=-2\text{ or }x=-4`,
+            String.raw`\text{no solution}`
           ]},
 
-        { latex: String.raw`\text{Subtract }(-4x-8y+3)\text{ from }(x+2y-3).`,
+        { latex: String.raw`\text{Solve.}\; (y+5)(y+2)=0`,
           choices: [
-            String.raw`5x+10y-6`,
-            String.raw`5x+6y-10`,
-            String.raw`3x+10y-6`,
-            String.raw`5x-10y-6`,
-            String.raw`-5x-10y+6`,
-            String.raw`5x+10y+6`
+            String.raw`y=5\text{ or }y=2`,
+            String.raw`y=-5\text{ or }y=2`,
+            String.raw`y=-5\text{ or }y=-2`,
+            String.raw`y=5\text{ or }y=-2`,
+            String.raw`y=-3\text{ or }y=-7`,
+            String.raw`\text{no solution}`
           ]},
 
-        { latex: String.raw`\text{Subtract }(-4x^2-8xy+3y^2)\text{ from }(x^2+4xy-10y^2).`,
+        { latex: String.raw`\text{Solve.}\; 2x(x+7)=0`,
           choices: [
-            String.raw`5x^2+12xy+13y^2`,
-            String.raw`x^2+12xy-13y^2`,
-            String.raw`5x^2-12xy-13y^2`,
-            String.raw`5x^2+12xy-13y^2`,
-            String.raw`3x^2+4xy-7y^2`,
-            String.raw`5x^2+4xy-7y^2`
+            String.raw`x=7\text{ or }x=0`,
+            String.raw`x=-7\text{ or }x=0`,
+            String.raw`x=-7\text{ only}`,
+            String.raw`x=0\text{ only}`,
+            String.raw`x=7\text{ only}`,
+            String.raw`\text{no solution}`
           ]},
 
-        { latex: String.raw`\text{Subtract }(8a^3-9a^2+10a+7)\text{ from }(a^3+3a^2-4a).`,
+        { latex: String.raw`\text{Solve.}\; -5x(x-1)(3x+2)=0`,
           choices: [
-            String.raw`7a^3+12a^2-14a-7`,
-            String.raw`-7a^3+12a^2-14a+7`,
-            String.raw`-7a^3+12a^2-14a-7`,
-            String.raw`-7a^3-12a^2+14a-7`,
-            String.raw`-7a^3+11a^2-14a-7`,
-            String.raw`-8a^3+12a^2-14a-7`
+            String.raw`x=0,\;1,\;\dfrac{2}{3}`,
+            String.raw`x=0,\;1,\;-\dfrac{2}{3}`,
+            String.raw`x=0,\;-1,\;-\dfrac{2}{3}`,
+            String.raw`x=0,\;1,\;-\dfrac{3}{2}`,
+            String.raw`x=1,\;-\dfrac{2}{3}`,
+            String.raw`x=0,\;-\dfrac{2}{3}`
           ]},
 
-        { latex: String.raw`\text{Subtract }(2xy-y^2)\text{ from }(4x^2-3xy+9y^2).`,
+        { latex: String.raw`\text{Solve.}\; (4x+1)(3x+2)=0`,
           choices: [
-            String.raw`4x^2+5xy+10y^2`,
-            String.raw`4x^2-5xy+8y^2`,
-            String.raw`4x^2-5xy+10y^2`,
-            String.raw`2x^2-5xy+10y^2`,
-            String.raw`4x^2-3xy+10y^2`,
-            String.raw`-4x^2-5xy+10y^2`
+            String.raw`x=\dfrac{1}{4}\text{ or }x=\dfrac{2}{3}`,
+            String.raw`x=-\dfrac{1}{4}\text{ only}`,
+            String.raw`x=-\dfrac{2}{3}\text{ only}`,
+            String.raw`x=-\dfrac{1}{4}\text{ or }x=-\dfrac{2}{3}`,
+            String.raw`x=\dfrac{1}{4}\text{ or }x=-\dfrac{2}{3}`,
+            String.raw`\text{no solution}`
           ]},
 
-        { latex: String.raw`\text{Subtract }(2x+9)\text{ from }(3x-7).`,
+        { latex: String.raw`\text{Solve.}\; (2x-11)(4x-5)=0`,
           choices: [
-            String.raw`x+16`,
-            String.raw`-x-16`,
-            String.raw`x-16`,
-            String.raw`x-2`,
-            String.raw`-x+16`,
-            String.raw`x+2`
+            String.raw`x=\dfrac{11}{2}\text{ or }x=-\dfrac{5}{4}`,
+            String.raw`x=-\dfrac{11}{2}\text{ or }x=\dfrac{5}{4}`,
+            String.raw`x=\dfrac{11}{2}\text{ or }x=\dfrac{5}{4}`,
+            String.raw`x=\dfrac{11}{4}\text{ or }x=\dfrac{5}{2}`,
+            String.raw`x=\dfrac{11}{2}\text{ only}`,
+            String.raw`x=\dfrac{5}{4}\text{ only}`
           ]},
 
-        { latex: String.raw`\text{Subtract }(8a-4)\text{ from }(3a).`,
+        { latex: String.raw`\text{Solve.}\; x^2+5x-36=0`,
           choices: [
-            String.raw`5a+4`,
-            String.raw`-5a-4`,
-            String.raw`-5a+4`,
-            String.raw`5a-4`,
-            String.raw`-a+4`,
-            String.raw`-4a+5`
+            String.raw`x=9\text{ or }x=-4`,
+            String.raw`x=4\text{ or }x=-9`,
+            String.raw`x=-4\text{ or }x=9`,
+            String.raw`x=4\text{ or }x=9`,
+            String.raw`x=-4\text{ or }x=-9`,
+            String.raw`\text{no solution}`
           ]},
 
-        { latex: String.raw`\text{Subtract }(4x-7y-9)\text{ from }0.`,
+        { latex: String.raw`\text{Solve.}\; x^2-x-56=0`,
           choices: [
-            String.raw`4x-7y-9`,
-            String.raw`-4x+7y+9`,
-            String.raw`4x+7y+9`,
-            String.raw`-4x-7y+9`,
-            String.raw`-4x-7y-9`,
-            String.raw`7y-4x-9`
+            String.raw`x=8\text{ or }x=7`,
+            String.raw`x=-8\text{ or }x=7`,
+            String.raw`x=8\text{ or }x=-7`,
+            String.raw`x=-8\text{ or }x=-7`,
+            String.raw`x=7\text{ or }x=-8`,
+            String.raw`\text{no solution}`
           ]},
 
-        { latex: String.raw`\text{Compute }(6x+y-7)-(5x-y+7).`,
+        { latex: String.raw`\text{Solve.}\; x^2-x=0`,
           choices: [
-            String.raw`x+2y+14`,
-            String.raw`-x+2y-14`,
-            String.raw`x-2y-14`,
-            String.raw`x+2y-14`,
-            String.raw`x+y-14`,
-            String.raw`x+2y-7`
+            String.raw`x=0\text{ only}`,
+            String.raw`x=1\text{ only}`,
+            String.raw`x=0\text{ or }x=1`,
+            String.raw`x=-1\text{ or }x=0`,
+            String.raw`x=-1\text{ or }x=1`,
+            String.raw`\text{all real numbers}`
           ]},
 
-        { latex: String.raw`\text{Perform }(-x^3+x^2y+xy^2+y^3)-(5x^3+2x^2y-y^3+3y^4).`,
+        { latex: String.raw`\text{Solve.}\; 14x^2-29x+12=0`,
           choices: [
-            String.raw`-6x^3-x^2y+xy^2+2y^3-3y^4`,
-            String.raw`6x^3-x^2y+xy^2+2y^3-3y^4`,
-            String.raw`-6x^3+x^2y+xy^2+2y^3-3y^4`,
-            String.raw`-6x^3-x^2y-xy^2+2y^3-3y^4`,
-            String.raw`-6x^3-x^2y+xy^2-2y^3-3y^4`,
-            String.raw`-5x^3-x^2y+xy^2+2y^3-3y^4`
+            String.raw`x=-\dfrac{3}{2}\text{ or }x=-\dfrac{4}{7}`,
+            String.raw`x=\dfrac{3}{2}\text{ only}`,
+            String.raw`x=\dfrac{4}{7}\text{ only}`,
+            String.raw`x=\dfrac{3}{2}\text{ or }x=\dfrac{4}{7}`,
+            String.raw`x=\dfrac{2}{3}\text{ or }x=\dfrac{7}{4}`,
+            String.raw`\text{no solution}`
           ]},
 
-        { latex: String.raw`\text{A rectangle has perimeter }6x+6\text{ and width }x+2.\text{ Find the length.}`,
+        { latex: String.raw`\text{Solve.}\; 15x^3-17x^2-42x=0`,
           choices: [
-            String.raw`2x+1`,
-            String.raw`x+1`,
-            String.raw`3x+1`,
-            String.raw`2x+3`,
-            String.raw`x+3`,
-            String.raw`3x+3`
-          ]}
+            String.raw`x=0,\;\dfrac{7}{3},\;\dfrac{6}{5}`,
+            String.raw`x=0,\;-\dfrac{7}{3},\;-\dfrac{6}{5}`,
+            String.raw`x=0,\;\dfrac{7}{3},\;-\dfrac{6}{5}`,
+            String.raw`x=0,\;\dfrac{3}{7},\;-\dfrac{5}{6}`,
+            String.raw`x=0,\;\dfrac{7}{3}\text{ only}`,
+            String.raw`x=\dfrac{7}{3},\;-\dfrac{6}{5}`
+          ]},
       ]
     };
   </script>
 
   <link rel="stylesheet" href="/math-homework/assets/core.css" />
+  <link rel="stylesheet" href="https://tikzjax.com/v1/fonts.css" />
   <script defer src="/math-homework/assets/core.js"></script>
+  <script defer src="https://tikzjax.com/v1/tikzjax.js"></script>
   <script defer src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
 </head>
+
 <body>
   <div id="hw-root">Loading…</div>
 </body>
 </html>
-
