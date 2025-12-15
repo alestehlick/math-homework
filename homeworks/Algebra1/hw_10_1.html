@@ -14,148 +14,133 @@
       id      : "Homework 10-1",
       title   : "Homework 10-1 — Radicals and Exponents",
 
-      graphics : "",
+      graphics : String.raw``,
 
       answerKey : ["B","C","D","B","B","B","B","B","B","B","C","C"],
 
       questions : [
         /* ---------- A. Exercises (10) ---------- */
-        {
-          latex: String.raw`A1. Change each radical to exponential form: \(\sqrt{12x^7}\)`,
+        { latex: String.raw`\text{Change each radical to exponential form: }\sqrt{12x^7}.`,
           choices: [
-            String.raw`\((12x^7)^2\)`,
-            String.raw`\((12x^7)^{\tfrac{1}{2}}\)`,
-            String.raw`\((12x^7)^{\tfrac{7}{12}}\)`,
-            String.raw`\((12x^7)^{\tfrac{1}{7}}\)`,
-            String.raw`\((12x^7)^{\tfrac{2}{7}}\)`,
-            String.raw`\((12x^7)^{-\tfrac{1}{2}}\)`
-          ]
-        },
-        {
-          latex: String.raw`A2. Change each radical to exponential form: \(\sqrt[3]{9a^4b^2}\)`,
+            String.raw`(12x^7)^2`,
+            String.raw`(12x^7)^{\tfrac{1}{2}}`,  /* correct */
+            String.raw`(12x^7)^{\tfrac{7}{12}}`,
+            String.raw`(12x^7)^{\tfrac{1}{7}}`,
+            String.raw`(12x^7)^{\tfrac{2}{7}}`,
+            String.raw`(12x^7)^{-\tfrac{1}{2}}`
+          ]},
+
+        { latex: String.raw`\text{Change each radical to exponential form: }\sqrt[3]{9a^4b^2}.`,
           choices: [
-            String.raw`\((9a^4b^2)^3\)`,
-            String.raw`\((9a^4b^2)^{\tfrac{1}{4}}\)`,
-            String.raw`\((9a^4b^2)^{\tfrac{1}{3}}\)`,
-            String.raw`\((9a^4b^2)^{\tfrac{3}{1}}\)`,
-            String.raw`\((9a^4b^2)^{\tfrac{2}{3}}\)`,
-            String.raw`\((9a^4b^2)^{-\tfrac{1}{3}}\)`
-          ]
-        },
-        {
-          latex: String.raw`A3. Change each radical to exponential form: \(\sqrt[4]{16m^3n}\)`,
+            String.raw`(9a^4b^2)^3`,
+            String.raw`(9a^4b^2)^{\tfrac{1}{4}}`,
+            String.raw`(9a^4b^2)^{\tfrac{1}{3}}`,  /* correct */
+            String.raw`(9a^4b^2)^{\tfrac{3}{1}}`,
+            String.raw`(9a^4b^2)^{\tfrac{2}{3}}`,
+            String.raw`(9a^4b^2)^{-\tfrac{1}{3}}`
+          ]},
+
+        { latex: String.raw`\text{Change each radical to exponential form: }\sqrt[4]{16m^3n}.`,
           choices: [
-            String.raw`\((16m^3n)^4\)`,
-            String.raw`\((16m^3n)^{\tfrac{1}{3}}\)`,
-            String.raw`\((16m^3n)^{\tfrac{3}{4}}\)`,
-            String.raw`\((16m^3n)^{\tfrac{1}{4}}\)`,
-            String.raw`\((16m^3n)^{\tfrac{4}{1}}\)`,
-            String.raw`\((16m^3n)^{-\tfrac{1}{4}}\)`
-          ]
-        },
-        {
-          latex: String.raw`A4. Change each exponential expression to radical form: \(2^{\tfrac{3}{5}}\)`,
+            String.raw`(16m^3n)^4`,
+            String.raw`(16m^3n)^{\tfrac{1}{3}}`,
+            String.raw`(16m^3n)^{\tfrac{3}{4}}`,
+            String.raw`(16m^3n)^{\tfrac{1}{4}}`,  /* correct */
+            String.raw`(16m^3n)^{\tfrac{4}{1}}`,
+            String.raw`(16m^3n)^{-\tfrac{1}{4}}`
+          ]},
+
+        { latex: String.raw`\text{Change each exponential expression to radical form: }2^{\tfrac{3}{5}}.`,
           choices: [
-            String.raw`\(\sqrt[3]{2^5}\)`,
-            String.raw`\(\sqrt[5]{2^3}\)`,
-            String.raw`\(\sqrt{2^5}\)`,
-            String.raw`\(\sqrt[5]{2^{-3}}\)`,
-            String.raw`\(\sqrt[5]{2^5}\)`,
-            String.raw`\(\sqrt[15]{2^3}\)`
-          ]
-        },
-        {
-          latex: String.raw`A5. Change each exponential expression to radical form: \(x^{\tfrac{5}{2}}\)`,
+            String.raw`\sqrt[3]{2^5}`,
+            String.raw`\sqrt[5]{2^3}`,  /* correct */
+            String.raw`\sqrt{2^5}`,
+            String.raw`\sqrt[5]{2^{-3}}`,
+            String.raw`\sqrt[5]{2^5}`,
+            String.raw`\sqrt[15]{2^3}`
+          ]},
+
+        { latex: String.raw`\text{Change each exponential expression to radical form: }x^{\tfrac{5}{2}}.`,
           choices: [
-            String.raw`\(\sqrt{x^{\tfrac{2}{5}}}\)`,
-            String.raw`\(\sqrt{x^5}\)`,
-            String.raw`\(\sqrt[5]{x^2}\)`,
-            String.raw`\(\sqrt{x^2}\)`,
-            String.raw`\(\sqrt[5]{x^{10}}\)`,
-            String.raw`\(\sqrt{x^{10}}\)`
-          ]
-        },
-        {
-          latex: String.raw`A6. Change each exponential expression to radical form: \(5^{\tfrac{3}{4}}a^{\tfrac{1}{2}}b^{\tfrac{2}{3}}\)`,
+            String.raw`\sqrt{x^{\tfrac{2}{5}}}`,
+            String.raw`\sqrt{x^5}`,  /* correct */
+            String.raw`\sqrt[5]{x^2}`,
+            String.raw`\sqrt{x^2}`,
+            String.raw`\sqrt[5]{x^{10}}`,
+            String.raw`\sqrt{x^{10}}`
+          ]},
+
+        { latex: String.raw`\text{Change each exponential expression to radical form: }5^{\tfrac{3}{4}}a^{\tfrac{1}{2}}b^{\tfrac{2}{3}}.`,
           choices: [
-            String.raw`\(\sqrt[4]{5}\,\sqrt{a}\,\sqrt[3]{b^2}\)`,
-            String.raw`\(\sqrt[4]{125}\,\sqrt{a}\,\sqrt[3]{b^2}\)`,
-            String.raw`\(\sqrt[3]{125ab^2}\)`,
-            String.raw`\(\sqrt[4]{125a^2b^3}\)`,
-            String.raw`\(\sqrt{125ab^2}\)`,
-            String.raw`\(\sqrt[12]{125ab^2}\)`
-          ]
-        },
-        {
-          latex: String.raw`A7. What two integers is this radical between? \(\sqrt{50}\)`,
+            String.raw`\sqrt[4]{5}\,\sqrt{a}\,\sqrt[3]{b^2}`,
+            String.raw`\sqrt[4]{125}\,\sqrt{a}\,\sqrt[3]{b^2}`,  /* correct */
+            String.raw`\sqrt[3]{125ab^2}`,
+            String.raw`\sqrt[4]{125a^2b^3}`,
+            String.raw`\sqrt{125ab^2}`,
+            String.raw`\sqrt[12]{125ab^2}`
+          ]},
+
+        { latex: String.raw`\text{What two integers is this radical between? }\sqrt{50}.`,
           choices: [
-            String.raw`between \(6\) and \(7\)`,
-            String.raw`between \(7\) and \(8\)`,
-            String.raw`between \(8\) and \(9\)`,
-            String.raw`between \(5\) and \(6\)`,
-            String.raw`between \(9\) and \(10\)`,
-            String.raw`between \(4\) and \(5\)`
-          ]
-        },
-        {
-          latex: String.raw`A8. What two integers is this radical between? \(\sqrt[3]{120}\)`,
+            String.raw`\text{between }6\text{ and }7`,
+            String.raw`\text{between }7\text{ and }8`,  /* correct */
+            String.raw`\text{between }8\text{ and }9`,
+            String.raw`\text{between }5\text{ and }6`,
+            String.raw`\text{between }9\text{ and }10`,
+            String.raw`\text{between }4\text{ and }5`
+          ]},
+
+        { latex: String.raw`\text{What two integers is this radical between? }\sqrt[3]{120}.`,
           choices: [
-            String.raw`between \(3\) and \(4\)`,
-            String.raw`between \(4\) and \(5\)`,
-            String.raw`between \(5\) and \(6\)`,
-            String.raw`between \(2\) and \(3\)`,
-            String.raw`between \(6\) and \(7\)`,
-            String.raw`between \(1\) and \(2\)`
-          ]
-        },
-        {
-          latex: String.raw`A9. Use a calculator to find the following square root, rounding to the nearest tenth: \(\sqrt{111}\)`,
+            String.raw`\text{between }3\text{ and }4`,
+            String.raw`\text{between }4\text{ and }5`,  /* correct */
+            String.raw`\text{between }5\text{ and }6`,
+            String.raw`\text{between }2\text{ and }3`,
+            String.raw`\text{between }6\text{ and }7`,
+            String.raw`\text{between }1\text{ and }2`
+          ]},
+
+        { latex: String.raw`\text{Use a calculator to find the following square root, rounding to the nearest tenth: }\sqrt{111}.`,
           choices: [
-            String.raw`\(10.4\)`,
-            String.raw`\(10.5\)`,
-            String.raw`\(10.6\)`,
-            String.raw`\(10.3\)`,
-            String.raw`\(11.5\)`,
-            String.raw`\(9.5\)`
-          ]
-        },
-        {
-          latex: String.raw`A10. Use a calculator to find the following square root, rounding to the nearest tenth: \(\sqrt{148}\)`,
+            String.raw`10.4`,
+            String.raw`10.5`,  /* correct */
+            String.raw`10.6`,
+            String.raw`10.3`,
+            String.raw`11.5`,
+            String.raw`9.5`
+          ]},
+
+        { latex: String.raw`\text{Use a calculator to find the following square root, rounding to the nearest tenth: }\sqrt{148}.`,
           choices: [
-            String.raw`\(12.1\)`,
-            String.raw`\(12.2\)`,
-            String.raw`\(12.3\)`,
-            String.raw`\(12.6\)`,
-            String.raw`\(11.2\)`,
-            String.raw`\(12.0\)`
-          ]
-        },
+            String.raw`12.1`,
+            String.raw`12.2`,  /* correct */
+            String.raw`12.3`,
+            String.raw`12.6`,
+            String.raw`11.2`,
+            String.raw`12.0`
+          ]},
 
         /* ---------- B. Exercises (1) ---------- */
-        {
-          latex: String.raw`B1. Find the following higher root to the nearest hundredth, using a scientific calculator: \(\sqrt[4]{571{,}787}\)`,
+        { latex: String.raw`\text{Find the following higher root to the nearest hundredth, using a scientific calculator: }\sqrt[4]{571{,}787}.`,
           choices: [
-            String.raw`\(27.48\)`,
-            String.raw`\(27.49\)`,
-            String.raw`\(27.50\)`,
-            String.raw`\(27.58\)`,
-            String.raw`\(26.50\)`,
-            String.raw`\(28.50\)`
-          ]
-        },
+            String.raw`27.48`,
+            String.raw`27.49`,
+            String.raw`27.50`,  /* correct */
+            String.raw`27.58`,
+            String.raw`26.50`,
+            String.raw`28.50`
+          ]},
 
         /* ---------- C. Exercises (1) ---------- */
-        {
-          latex: String.raw`C1. Approximate \(\sqrt{795}\) to the nearest tenth without using a calculator.`,
+        { latex: String.raw`\text{Approximate }\sqrt{795}\text{ to the nearest tenth without using a calculator.}`,
           choices: [
-            String.raw`\(28.0\)`,
-            String.raw`\(28.1\)`,
-            String.raw`\(28.2\)`,
-            String.raw`\(28.3\)`,
-            String.raw`\(29.2\)`,
-            String.raw`\(27.9\)`
-          ]
-        }
+            String.raw`28.0`,
+            String.raw`28.1`,
+            String.raw`28.2`,  /* correct */
+            String.raw`28.3`,
+            String.raw`29.2`,
+            String.raw`27.9`
+          ]}
       ]
     };
   </script>
