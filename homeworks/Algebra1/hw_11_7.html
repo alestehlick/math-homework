@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Homework 11-6 (Algebra 1)</title>
+
+  <script>
+    /* =========================
+       Homework 11-6 — Quadratic Formula
+       (A: 4, B: 6, C: 2)
+       ========================= */
+    window.homeworkData = {
+      classId : "Algebra1",
+      id      : "Homework 11-6",
+      title   : "Homework 11-6 — Quadratic Formula",
+
+      graphics : String.raw``,
+
+      answerKey : ["C","D","B","A","C","A","B","B","A","C","A","C"],
+
+      questions : [
+        { latex: String.raw`\text{Use the quadratic formula to find the solution set for each equation.}\; x^{2}+6x+8=0`,
+          choices: [
+            String.raw`\left\{2,4\right\}`,
+            String.raw`\left\{-2,4\right\}`,
+            String.raw`\left\{-4,-2\right\}`,
+            String.raw`\left\{-4,2\right\}`,
+            String.raw`\left\{-8,1\right\}`,
+            String.raw`\text{no real solution}`
+          ]},
+
+        { latex: String.raw`\text{Use the quadratic formula to find the solution set for each equation.}\; x^{2}+4x+3=0`,
+          choices: [
+            String.raw`\left\{-1,3\right\}`,
+            String.raw`\left\{-3,1\right\}`,
+            String.raw`\left\{1,3\right\}`,
+            String.raw`\left\{-3,-1\right\}`,
+            String.raw`\left\{-4,1\right\}`,
+            String.raw`\text{no real solution}`
+          ]},
+
+        { latex: String.raw`\text{Use the quadratic formula to find the solution set for each equation.}\; x^{2}-9x=-8`,
+          choices: [
+            String.raw`\left\{-1,-8\right\}`,
+            String.raw`\left\{1,8\right\}`,
+            String.raw`\left\{-1,8\right\}`,
+            String.raw`\left\{1,-8\right\}`,
+            String.raw`\left\{0,9\right\}`,
+            String.raw`\text{no real solution}`
+          ]},
+
+        { latex: String.raw`\text{Use the quadratic formula to find the solution set for each equation.}\; 4x^{2}-5x-9=0`,
+          choices: [
+            String.raw`\left\{-1,\dfrac{9}{4}\right\}`,
+            String.raw`\left\{1,\dfrac{9}{4}\right\}`,
+            String.raw`\left\{-1,-\dfrac{9}{4}\right\}`,
+            String.raw`\left\{-\dfrac{9}{4},1\right\}`,
+            String.raw`\left\{-\dfrac{1}{4},\dfrac{9}{4}\right\}`,
+            String.raw`\text{no real solution}`
+          ]},
+
+        { latex: String.raw`\text{Use the quadratic formula to solve each equation.}\; 2x^{2}-9x+4=0`,
+          choices: [
+            String.raw`\left\{4,-\dfrac12\right\}`,
+            String.raw`\left\{-4,\dfrac12\right\}`,
+            String.raw`\left\{\dfrac12,4\right\}`,
+            String.raw`\left\{-\dfrac12,4\right\}`,
+            String.raw`\left\{2,1\right\}`,
+            String.raw`\text{no real solution}`
+          ]},
+
+        { latex: String.raw`\text{Use the quadratic formula to solve each equation.}\; 3x^{2}=2x+5`,
+          choices: [
+            String.raw`\left\{-1,\dfrac{5}{3}\right\}`,
+            String.raw`\left\{1,\dfrac{5}{3}\right\}`,
+            String.raw`\left\{-1,-\dfrac{5}{3}\right\}`,
+            String.raw`\left\{-\dfrac{5}{3},1\right\}`,
+            String.raw`\left\{\dfrac{2}{3},-\dfrac{5}{3}\right\}`,
+            String.raw`\text{no real solution}`
+          ]},
+
+        { latex: String.raw`\text{Use the quadratic formula to solve each equation.}\; 7m^{2}+9m=-2`,
+          choices: [
+            String.raw`\left\{-1,\dfrac{2}{7}\right\}`,
+            String.raw`\left\{-1,-\dfrac{2}{7}\right\}`,
+            String.raw`\left\{1,-\dfrac{2}{7}\right\}`,
+            String.raw`\left\{-\dfrac{7}{2},-1\right\}`,
+            String.raw`\left\{-\dfrac{9}{7},-2\right\}`,
+            String.raw`\text{no real solution}`
+          ]},
+
+        { latex: String.raw`\text{Use the quadratic formula to solve each equation.}\; 15x^{2}+22x+8=0`,
+          choices: [
+            String.raw`\left\{-\dfrac{4}{5},\dfrac{2}{3}\right\}`,
+            String.raw`\left\{-\dfrac{4}{5},-\dfrac{2}{3}\right\}`,
+            String.raw`\left\{\dfrac{4}{5},\dfrac{2}{3}\right\}`,
+            String.raw`\left\{-\dfrac{2}{5},-\dfrac{3}{4}\right\}`,
+            String.raw`\left\{-\dfrac{4}{3},-\dfrac{2}{5}\right\}`,
+            String.raw`\text{no real solution}`
+          ]},
+
+        { latex: String.raw`\text{Use the quadratic formula to solve each equation.}\; -3k^{2}+2k+10=0`,
+          choices: [
+            String.raw`\left\{\dfrac{1-\sqrt{31}}{3},\dfrac{1+\sqrt{31}}{3}\right\}`,
+            String.raw`\left\{\dfrac{-1-\sqrt{31}}{3},\dfrac{-1+\sqrt{31}}{3}\right\}`,
+            String.raw`\left\{\dfrac{1-\sqrt{31}}{6},\dfrac{1+\sqrt{31}}{6}\right\}`,
+            String.raw`\left\{\dfrac{1-\sqrt{124}}{3},\dfrac{1+\sqrt{124}}{3}\right\}`,
+            String.raw`\left\{\dfrac{1-\sqrt{31}}{2},\dfrac{1+\sqrt{31}}{2}\right\}`,
+            String.raw`\text{no real solution}`
+          ]},
+
+        { latex: String.raw`\text{Use the quadratic formula to solve each equation.}\; 8x^{2}=26x+7`,
+          choices: [
+            String.raw`\left\{\dfrac{7}{2},\dfrac{1}{4}\right\}`,
+            String.raw`\left\{-\dfrac{7}{2},-\dfrac{1}{4}\right\}`,
+            String.raw`\left\{\dfrac{7}{2},-\dfrac{1}{4}\right\}`,
+            String.raw`\left\{\dfrac{13}{8},-\dfrac{7}{2}\right\}`,
+            String.raw`\left\{-\dfrac{7}{4},\dfrac{1}{2}\right\}`,
+            String.raw`\text{no real solution}`
+          ]},
+
+        { latex: String.raw`\text{Use the quadratic formula to solve each equation. Estimate answers rounded to the nearest hundredth.}\; -2.5x^{2}+7.4x-3.8=0`,
+          choices: [
+            String.raw`\left\{0.66,\,2.30\right\}`,
+            String.raw`\left\{-0.66,\,2.30\right\}`,
+            String.raw`\left\{0.66,\,-2.30\right\}`,
+            String.raw`\left\{0.62,\,2.38\right\}`,
+            String.raw`\left\{0.76,\,2.20\right\}`,
+            String.raw`\text{no real solution}`
+          ]},
+
+        { latex: String.raw`\text{Use the quadratic formula to solve each equation. Estimate answers rounded to the nearest hundredth.}\; \dfrac{2}{3}x^{2}-\dfrac{4}{5}x-\dfrac{1}{2}=0`,
+          choices: [
+            String.raw`\left\{-1.65,\,0.45\right\}`,
+            String.raw`\left\{-0.45,\,-1.65\right\}`,
+            String.raw`\left\{-0.45,\,1.65\right\}`,
+            String.raw`\left\{-0.40,\,1.70\right\}`,
+            String.raw`\left\{-0.53,\,1.58\right\}`,
+            String.raw`\text{no real solution}`
+          ]}
+      ]
+    };
+  </script>
+
+  <link rel="stylesheet" href="/math-homework/assets/core.css" />
+  <link rel="stylesheet" href="https://tikzjax.com/v1/fonts.css" />
+  <script defer src="/math-homework/assets/core.js"></script>
+  <script defer src="https://tikzjax.com/v1/tikzjax.js"></script>
+  <script defer src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+</head>
+
+<body>
+  <div id="hw-root">Loading…</div>
+</body>
+</html>
