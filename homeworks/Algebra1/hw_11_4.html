@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Homework 11-4 (Algebra 1)</title>
+
+  <script>
+    /* =========================
+       Homework 11-4 — Completing the Square
+       (A: 4, B: 6, C: 2)
+       ========================= */
+    window.homeworkData = {
+      classId : "Algebra1",
+      id      : "Homework 11-4",
+      title   : "Homework 11-4 — Completing the Square",
+
+      graphics : String.raw``,
+
+      answerKey : ["C","D","C","B","D","B","B","C","B","C","C","A"],
+
+      questions : [
+        { latex: String.raw`\text{What number must be added to complete each square? }\;x^2+8x`,
+          choices: [
+            String.raw`8`,
+            String.raw`4`,
+            String.raw`16`,
+            String.raw`64`,
+            String.raw`32`,
+            String.raw`0`
+          ]},
+
+        { latex: String.raw`\text{What number must be added to complete each square? }\;x^2-12x`,
+          choices: [
+            String.raw`6`,
+            String.raw`144`,
+            String.raw`24`,
+            String.raw`36`,
+            String.raw`12`,
+            String.raw`18`
+          ]},
+
+        { latex: String.raw`\text{Solve each quadratic equation by completing the square. }\;x^2+4x-5=0`,
+          choices: [
+            String.raw`\{1,5\}`,
+            String.raw`\{-1,5\}`,
+            String.raw`\{1,-5\}`,
+            String.raw`\{-5\}`,
+            String.raw`\{-1,-5\}`,
+            String.raw`\text{no solution}`
+          ]},
+
+        { latex: String.raw`\text{Solve each quadratic equation by completing the square. }\;y^2-6y=7`,
+          choices: [
+            String.raw`\{7,1\}`,
+            String.raw`\{7,-1\}`,
+            String.raw`\{-7,1\}`,
+            String.raw`\{-7,-1\}`,
+            String.raw`\{3,4\}`,
+            String.raw`\{-1\}`
+          ]},
+
+        { latex: String.raw`\text{Solve by completing the square. Give the solution set. }\;x^2-10x=24`,
+          choices: [
+            String.raw`\{12,2\}`,
+            String.raw`\{-12,2\}`,
+            String.raw`\{5,-5\}`,
+            String.raw`\{12,-2\}`,
+            String.raw`\{-2\}`,
+            String.raw`\{-12,-2\}`
+          ]},
+
+        { latex: String.raw`\text{Solve by completing the square. Give the solution set. }\;a^2+6a=55`,
+          choices: [
+            String.raw`\{11,-5\}`,
+            String.raw`\{5,-11\}`,
+            String.raw`\{-3,3\}`,
+            String.raw`\{-11\}`,
+            String.raw`\{5,11\}`,
+            String.raw`\text{no solution}`
+          ]},
+
+        { latex: String.raw`\text{Solve by completing the square. Give the solution set. }\;x^2-2x-99=0`,
+          choices: [
+            String.raw`\{9,-11\}`,
+            String.raw`\{11,-9\}`,
+            String.raw`\{-11,9\}`,
+            String.raw`\{10,-10\}`,
+            String.raw`\{1,-99\}`,
+            String.raw`\{11,9\}`
+          ]},
+
+        { latex: String.raw`\text{Solve by completing the square. Give the solution set. }\;m^2-14m+40=0`,
+          choices: [
+            String.raw`\{-10,-4\}`,
+            String.raw`\{10,-4\}`,
+            String.raw`\{10,4\}`,
+            String.raw`\{7,9\}`,
+            String.raw`\{5,8\}`,
+            String.raw`\{14,40\}`
+          ]},
+
+        { latex: String.raw`\text{Solve by completing the square. Give the solution set. }\;x^2+x=2`,
+          choices: [
+            String.raw`\{2,-1\}`,
+            String.raw`\{1,-2\}`,
+            String.raw`\{-1,2\}`,
+            String.raw`\{-2\}`,
+            String.raw`\{1\}`,
+            String.raw`\text{no solution}`
+          ]},
+
+        { latex: String.raw`\text{Solve by completing the square. Give the solution set. }\;4x=x^2-3`,
+          choices: [
+            String.raw`x=2\pm 7`,
+            String.raw`x=-2\pm\sqrt{7}`,
+            String.raw`x=2\pm\sqrt{7}`,
+            String.raw`x=-2\pm 7`,
+            String.raw`x=\dfrac{4\pm\sqrt{7}}{2}`,
+            String.raw`x=2\pm\sqrt{3}`
+          ]},
+
+        { latex: String.raw`\text{Solve by completing the square. }\;x^2+3x+1=0`,
+          choices: [
+            String.raw`x=\dfrac{-3\pm 5}{2}`,
+            String.raw`x=\dfrac{3\pm\sqrt{5}}{2}`,
+            String.raw`x=\dfrac{-3\pm\sqrt{5}}{2}`,
+            String.raw`x=-3\pm\sqrt{5}`,
+            String.raw`x=\dfrac{-1\pm\sqrt{5}}{2}`,
+            String.raw`x=\dfrac{-3\pm\sqrt{13}}{2}`
+          ]},
+
+        { latex: String.raw`\text{Solve by completing the square. }\;3m^2+15m-36=0`,
+          choices: [
+            String.raw`m=\dfrac{-5\pm\sqrt{73}}{2}`,
+            String.raw`m=\dfrac{5\pm\sqrt{73}}{2}`,
+            String.raw`m=\dfrac{-5\pm 73}{2}`,
+            String.raw`m=\dfrac{-15\pm\sqrt{73}}{6}`,
+            String.raw`m=\dfrac{-5\pm\sqrt{49}}{2}`,
+            String.raw`\text{no solution}`
+          ]}
+      ]
+    };
+  </script>
+
+  <link rel="stylesheet" href="/math-homework/assets/core.css" />
+  <link rel="stylesheet" href="https://tikzjax.com/v1/fonts.css" />
+  <script defer src="/math-homework/assets/core.js"></script>
+  <script defer src="https://tikzjax.com/v1/tikzjax.js"></script>
+  <script defer src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+</head>
+
+<body>
+  <div id="hw-root">Loading…</div>
+</body>
+</html>
