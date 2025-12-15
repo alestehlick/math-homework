@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Homework 11-2 (Algebra 1)</title>
+
+  <script>
+    /* =========================
+       Homework 11-2 — Quadratic Equations
+       (A: 4, B: 6, C: 2)
+       ========================= */
+    window.homeworkData = {
+      classId : "Algebra1",
+      id      : "Homework 11-2",
+      title   : "Homework 11-2 — Quadratic Equations",
+
+      graphics : String.raw`
+\begin{tikzpicture}[scale=0.55]
+  \tikzset{box/.style={thick}}
+  \begin{scope}
+    \draw[box] (0,0) rectangle (13,11);
+    \draw[box] (1,1) rectangle (12,10);
+
+    \node[font=\small] at (6.5,-0.8) {52};
+    \node[font=\small,rotate=90] at (13.8,5.5) {44};
+
+    \draw[<->,thick] (0.7,10.5) -- (1.7,10.5);
+    \node[font=\small] at (1.2,10.9) {$x$};
+
+    \draw[<->,thick] (12.5,9.3) -- (12.5,10.3);
+    \node[font=\small] at (12.9,9.8) {$x$};
+
+    \node[anchor=north west,font=\small] at (-0.2,11.6) {D1};
+  \end{scope}
+\end{tikzpicture}
+`,
+
+      answerKey : ["A","C","D","B","B","D","C","B","C","B","B","C"],
+
+      questions : [
+        /* ---------- Type A (4) ---------- */
+        { latex: String.raw`\text{Solve each quadratic equation. }\; y^{2}+6y+9=0`,
+          choices: [
+            String.raw`y=-3`,
+            String.raw`y=3`,
+            String.raw`y=-6`,
+            String.raw`y=0`,
+            String.raw`\text{no solution}`,
+            String.raw`\text{all real numbers}`
+          ]},
+
+        { latex: String.raw`\text{Solve each quadratic equation. }\; a^{2}+2a-15=0`,
+          choices: [
+            String.raw`a=5\text{ or }a=-3`,
+            String.raw`a=15\text{ or }a=-1`,
+            String.raw`a=-5\text{ or }a=3`,
+            String.raw`a=-3\text{ or }a=5`,
+            String.raw`a=-15\text{ or }a=1`,
+            String.raw`\text{no real solutions}`
+          ]},
+
+        { latex: String.raw`\text{Solve each quadratic equation. }\; p^{2}=2p+24`,
+          choices: [
+            String.raw`p=4\text{ or }p=-6`,
+            String.raw`p=6`,
+            String.raw`p=-4`,
+            String.raw`p=6\text{ or }p=-4`,
+            String.raw`p=2\text{ or }p=-12`,
+            String.raw`\text{no solution}`
+          ]},
+
+        { latex: String.raw`\text{Solve each quadratic equation. }\; x^{2}+3x=0`,
+          choices: [
+            String.raw`x=3\text{ or }x=0`,
+            String.raw`x=0\text{ or }x=-3`,
+            String.raw`x=-3`,
+            String.raw`x=0`,
+            String.raw`x=-3\text{ or }x=3`,
+            String.raw`\text{all real numbers}`
+          ]},
+
+        /* ---------- Type B (6) ---------- */
+        { latex: String.raw`\text{Solve each quadratic equation. }\; 30=a^{2}+13a`,
+          choices: [
+            String.raw`a=15\text{ or }a=-2`,
+            String.raw`a=2\text{ or }a=-15`,
+            String.raw`a=-2\text{ or }a=15`,
+            String.raw`a=-15`,
+            String.raw`a=2`,
+            String.raw`\text{no solution}`
+          ]},
+
+        { latex: String.raw`\text{Solve each quadratic equation. }\; 16y^{2}=9`,
+          choices: [
+            String.raw`y=\pm\dfrac{4}{3}`,
+            String.raw`y=\dfrac{3}{4}`,
+            String.raw`y=-\dfrac{3}{4}`,
+            String.raw`y=\pm\dfrac{3}{4}`,
+            String.raw`y=\pm\dfrac{3}{16}`,
+            String.raw`y=\pm\dfrac{9}{4}`
+          ]},
+
+        { latex: String.raw`\text{Solve each quadratic equation. }\; 2r-r^{2}=0`,
+          choices: [
+            String.raw`r=0\text{ or }r=-2`,
+            String.raw`r=2`,
+            String.raw`r=0\text{ or }r=2`,
+            String.raw`r=0`,
+            String.raw`r=-2`,
+            String.raw`\text{no solution}`
+          ]},
+
+        { latex: String.raw`\text{Solve each quadratic equation. }\; 14x^{2}+19x-40=0`,
+          choices: [
+            String.raw`x=\dfrac{5}{2}\text{ or }x=-\dfrac{8}{7}`,
+            String.raw`x=-\dfrac{5}{2}\text{ or }x=\dfrac{8}{7}`,
+            String.raw`x=\dfrac{5}{2}\text{ or }x=\dfrac{8}{7}`,
+            String.raw`x=-\dfrac{8}{7}\text{ or }x=\dfrac{5}{2}`,
+            String.raw`x=-\dfrac{5}{7}\text{ or }x=\dfrac{8}{2}`,
+            String.raw`\text{no real solutions}`
+          ]},
+
+        { latex: String.raw`\text{Set up a quadratic equation and solve. }\;\text{The difference of two numbers is }6\text{ and the difference of their squares is }60.\text{ Find the two numbers.}`,
+          choices: [
+            String.raw`4\text{ and }10`,
+            String.raw`1\text{ and }7`,
+            String.raw`2\text{ and }8`,
+            String.raw`3\text{ and }9`,
+            String.raw`-2\text{ and }4`,
+            String.raw`6\text{ and }12`
+          ]},
+
+        { latex: String.raw`\text{Set up a quadratic equation and solve. }\;\text{A farmer planted }168\text{ tomato plants. If he had }2\text{ more plants in a row than the number of rows, how many rows did he have?}`,
+          choices: [
+            String.raw`10`,
+            String.raw`12`,
+            String.raw`14`,
+            String.raw`7`,
+            String.raw`24`,
+            String.raw`16`
+          ]},
+
+        /* ---------- Type C (2) ---------- */
+        { latex: String.raw`\text{Set up a quadratic equation and solve. }\;\text{Joe said, “If five times my age in 8 years is subtracted from the square of my present age, the result is 86.” Find Joe’s present age.}`,
+          choices: [
+            String.raw`13`,
+            String.raw`14`,
+            String.raw`15`,
+            String.raw`9`,
+            String.raw`18`,
+            String.raw`21`
+          ]},
+
+        { latex: String.raw`\text{Refer to D1. A sidewalk of width }x\text{ is built inside a }52\text{ ft by }44\text{ ft rectangle. If the remaining flower garden area is }1748\text{ ft}^2\text{, what is }x\text{?}`,
+          choices: [
+            String.raw`x=1`,
+            String.raw`x=2`,
+            String.raw`x=3`,
+            String.raw`x=6`,
+            String.raw`x=9`,
+            String.raw`x=45`
+          ]}
+      ]
+    };
+  </script>
+
+  <link rel="stylesheet" href="/math-homework/assets/core.css" />
+  <link rel="stylesheet" href="https://tikzjax.com/v1/fonts.css" />
+  <script defer src="/math-homework/assets/core.js"></script>
+  <script defer src="https://tikzjax.com/v1/tikzjax.js"></script>
+  <script defer src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+</head>
+
+<body>
+  <div id="hw-root">Loading…</div>
+</body>
+</html>
