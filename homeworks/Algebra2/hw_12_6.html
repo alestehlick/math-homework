@@ -3,24 +3,25 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Homework 12-6 (Algebra 2)</title>
+  <title>Homework 10-6 (Algebra 2)</title>
 
   <script>
     /* =========================
-       Homework 12-6 — Word Problems about Logs
+       Homework 10-6 — Exponential Growth & Interest Rates
+       Key distinction:
+       - Effective annual rate r (annual compounding): A = P(1+r)^t
+       - Continuous rate r (continuous compounding): A = Pe^{rt}
        12 questions total: 4 type A, 6 type B, 2 type C
-       Topics: continuously compounded interest, half-life, populations,
-               exponential growth/decay, Richter scale equation.
        ========================= */
     window.homeworkData = {
       classId : "Algebra2",
-      id      : "Homework 12-6",
-      title   : "Homework 12-6 — Word Problems about Logs",
+      id      : "Homework 10-6",
+      title   : "Homework 10-6 — Effective Annual Rate vs Continuous Rate",
 
       graphics : String.raw``,
 
       /* Correct answers for Q1–Q12 */
-      answerKey : ["B","C","D","A","D","F","B","E","C","A","D","B"],
+      answerKey : ["B","A","A","B","B","C","B","D","B","B","B","A"],
 
       questions : [
 
@@ -29,50 +30,50 @@
         ----------------------- */
 
         {
-          latex: String.raw`\text{Which formula models continuously compounded interest (annual rate }r\text{, time }t\text{ in years)?}`,
+          latex: String.raw`\text{An investment earns a \emph{continuous rate} }r\text{ for }t\text{ years. Which formula applies?}`,
           choices: [
-            String.raw`A=P\left(1+r\right)^{t}`,
+            String.raw`A=P(1+r)^t`,
             String.raw`A=Pe^{rt}`,
-            String.raw`A=P\left(1+\dfrac{r}{n}\right)^{t}`,
-            String.raw`A=P\left(1+\dfrac{t}{r}\right)`,
-            String.raw`A=P-rt`,
-            String.raw`A=\dfrac{P}{1-rt}`
+            String.raw`A=P\left(1+\dfrac{r}{n}\right)^{nt}`,
+            String.raw`A=Pe^{t/r}`,
+            String.raw`A=P(1+rt)`,
+            String.raw`A=\dfrac{P}{(1-r)^t}`
           ]
         },
 
         {
-          latex: String.raw`\text{A quantity has half-life }h.\ \text{Which formula matches the half-life model?}`,
+          latex: String.raw`\text{An investment earns an \emph{effective annual rate} }r\text{ (compounded annually) for }t\text{ years. Which formula applies?}`,
           choices: [
-            String.raw`N=N_{0}(2)^{t/h}`,
-            String.raw`N=N_{0}\left(\dfrac{1}{2}\right)^{h/t}`,
-            String.raw`N=N_{0}\left(\dfrac{1}{2}\right)^{t/h}`,
-            String.raw`N=N_{0}\left(\dfrac{t}{h}\right)^{2}`,
-            String.raw`N=N_{0}-\dfrac{t}{h}`,
-            String.raw`N=N_{0}\left(1-\dfrac{1}{2}\right)^{t}`
+            String.raw`A=P(1+r)^t`,
+            String.raw`A=Pe^{rt}`,
+            String.raw`A=P\left(1+\dfrac{r}{n}\right)^{nt}`,
+            String.raw`A=Pe^{t/r}`,
+            String.raw`A=P(1+rt)`,
+            String.raw`A=\dfrac{P}{(1-r)^t}`
           ]
         },
 
         {
-          latex: String.raw`\text{A city is growing at an exponential rate. Which formula best models its population?}`,
+          latex: String.raw`\text{If an account has an effective annual rate of }5\%\text{, what is the equivalent continuous rate }r\text{?}`,
           choices: [
-            String.raw`P(t)=P_{0}+kt`,
-            String.raw`P(t)=P_{0}-kt`,
-            String.raw`P(t)=\dfrac{P_{0}}{t}`,
-            String.raw`P(t)=P_{0}e^{kt}`,
-            String.raw`P(t)=P_{0}t^{k}`,
-            String.raw`P(t)=P_{0}\left(1-\dfrac{k}{t}\right)`
+            String.raw`r=\ln(1.05)\approx 0.04879\ \text{(about }4.88\%\text{)}`,
+            String.raw`r=0.05`,
+            String.raw`r=e^{0.05}-1`,
+            String.raw`r=\ln(0.05)`,
+            String.raw`r=1.05`,
+            String.raw`r=\ln\!\left(\dfrac{1}{0.95}\right)`
           ]
         },
 
         {
-          latex: String.raw`\text{In the model }y=y_{0}e^{kt},\text{ which condition gives exponential decay?}`,
+          latex: String.raw`\text{If an account has a continuous rate of }8\%\text{, what is the equivalent effective annual rate?}`,
           choices: [
-            String.raw`k<0`,
-            String.raw`k>0`,
-            String.raw`k=0`,
-            String.raw`y_{0}<0`,
-            String.raw`y_{0}=0`,
-            String.raw`y_{0}>1`
+            String.raw`8.00\%`,
+            String.raw`e^{0.08}-1\approx 8.33\%`,
+            String.raw`\ln(1.08)\approx 7.70\%`,
+            String.raw`\dfrac{0.08}{12}\approx 0.67\%`,
+            String.raw`1.08\%`,
+            String.raw`e^{0.08}\approx 1.0833\%`
           ]
         },
 
@@ -81,74 +82,74 @@
         ----------------------- */
 
         {
-          latex: String.raw`\text{Evelyn invests }\$12{,}000\text{ for 30 months at }9.8\%\text{ compounded continuously. What is the value at maturity (nearest dollar)?}`,
+          latex: String.raw`\text{Faith Baptist Church invests }\$15{,}000\text{ for 18 months at a \emph{continuous rate} of }9.6\%.\ \text{What is the value at maturity (nearest cent)?}`,
           choices: [
-            String.raw`\$14{,}920`,
-            String.raw`\$15{,}780`,
-            String.raw`\$13{,}860`,
-            String.raw`\$15{,}331`,
-            String.raw`\$16{,}420`,
-            String.raw`\$12{,}980`
+            String.raw`\$17,211.04`,
+            String.raw`\$17,323.26`,
+            String.raw`\$17,440.00`,
+            String.raw`\$16,800.00`,
+            String.raw`\$17,590.00`,
+            String.raw`\$17,030.00`
           ]
         },
 
         {
-          latex: String.raw`\text{Brent invests }\$8{,}000\text{ at }10.25\%\text{ compounded continuously and receives }\$11{,}500.\ \text{How long (in years, nearest hundredth) was it invested?}`,
+          latex: String.raw`\text{Same investment: }\$15{,}000\text{ for 18 months at an \emph{effective annual rate} of }9.6\%.\ \text{Use }A=P(1+r)^t\text{. Value at maturity (nearest cent)?}`,
+          choices: [
+            String.raw`\$17,323.26`,
+            String.raw`\$17,159.58`,
+            String.raw`\$17,211.04`,
+            String.raw`\$17,000.00`,
+            String.raw`\$17,400.00`,
+            String.raw`\$16,950.00`
+          ]
+        },
+
+        {
+          latex: String.raw`\text{Brent invests }\$8{,}000\text{ at a continuous rate of }10.25\%\text{ and receives }\$11{,}500.\ \text{How long (nearest hundredth of a year) was it invested?}`,
           choices: [
             String.raw`2.85`,
+            String.raw`3.54`,
             String.raw`3.02`,
-            String.raw`3.29`,
             String.raw`4.10`,
             String.raw`4.54`,
-            String.raw`3.54`
+            String.raw`3.29`
           ]
         },
 
         {
-          latex: String.raw`\text{An investment grows from }\$550{,}000\text{ to }\$827{,}000\text{ in 4 years with interest compounded continuously. What annual rate }r\text{ (nearest hundredth percent) did the bank pay?}`,
+          latex: String.raw`\text{An investment grows from }\$550{,}000\text{ to }\$827{,}000\text{ in 4 years with continuous compounding. What continuous rate }r\text{ (nearest hundredth percent) is this?}`,
           choices: [
+            String.raw`9.80\%`,
+            String.raw`10.97\%`,
             String.raw`8.67\%`,
             String.raw`10.20\%`,
             String.raw`12.50\%`,
-            String.raw`9.10\%`,
-            String.raw`10.97\%`,
             String.raw`7.45\%`
           ]
         },
 
         {
-          latex: String.raw`\text{A 20 g sample of magnesium-28 has a half-life of 21 hours. How long will it take for only 5 g to be left?}`,
+          latex: String.raw`\text{Convert a continuous rate of }6\%\text{ to an equivalent effective annual rate (nearest hundredth percent).}`,
           choices: [
-            String.raw`21\text{ hours}`,
-            String.raw`63\text{ hours}`,
-            String.raw`84\text{ hours}`,
-            String.raw`10.5\text{ hours}`,
-            String.raw`42\text{ hours}`,
-            String.raw`105\text{ hours}`
+            String.raw`6.00\%`,
+            String.raw`6.18\%`,
+            String.raw`5.82\%`,
+            String.raw`6.36\%`,
+            String.raw`6.50\%`,
+            String.raw`5.94\%`
           ]
         },
 
         {
-          latex: String.raw`\text{Candy studies bromine-80. After 1 hour, 10 g has diminished to }0.942\text{ g. What is its half-life (in hours, nearest thousandth)?}`,
+          latex: String.raw`\text{Convert an effective annual rate of }12\%\text{ to an equivalent continuous rate (nearest hundredth percent).}`,
           choices: [
-            String.raw`0.176`,
-            String.raw`0.500`,
-            String.raw`0.293`,
-            String.raw`1.707`,
-            String.raw`2.930`,
-            String.raw`3.407`
-          ]
-        },
-
-        {
-          latex: String.raw`\text{A 20 g sample of magnesium-28 has a half-life of 21 hours. How many grams remain after 63 hours?}`,
-          choices: [
-            String.raw`2.5\text{ g}`,
-            String.raw`5\text{ g}`,
-            String.raw`10\text{ g}`,
-            String.raw`7.5\text{ g}`,
-            String.raw`1.25\text{ g}`,
-            String.raw`15\text{ g}`
+            String.raw`12.00\%`,
+            String.raw`11.33\%`,
+            String.raw`10.71\%`,
+            String.raw`12.75\%`,
+            String.raw`11.00\%`,
+            String.raw`9.35\%`
           ]
         },
 
@@ -157,26 +158,26 @@
         ----------------------- */
 
         {
-          latex: String.raw`\text{The Richter scale equation is }y=\log\!\left(\dfrac{x}{x_{0}}\right).\ \text{Find the magnitude if }x=10{,}000{,}000x_{0}.`,
+          latex: String.raw`\text{A bank wants an effective annual rate of }9.8\%\text{ but compounds continuously. What continuous rate should it advertise (nearest hundredth percent)?}`,
           choices: [
-            String.raw`5`,
-            String.raw`6`,
-            String.raw`8`,
-            String.raw`7`,
-            String.raw`10{,}000{,}000`,
-            String.raw`0.0000001`
+            String.raw`9.80\%`,
+            String.raw`9.35\%`,
+            String.raw`10.30\%`,
+            String.raw`9.61\%`,
+            String.raw`8.96\%`,
+            String.raw`10.25\%`
           ]
         },
 
         {
-          latex: String.raw`\text{In }y=\log\!\left(\dfrac{x}{x_{0}}\right),\text{ what do }x\text{ and }x_{0}\text{ represent?}`,
+          latex: String.raw`\text{A quantity doubles in 6 years under the model }A=Pe^{rt}.\ \text{Which pair gives (continuous rate }r,\ \text{equivalent effective annual rate) to the nearest hundredth percent?}`,
           choices: [
-            String.raw`x\text{ is a percent rate and }x_{0}\text{ is time}`,
-            String.raw`x\text{ is the measured value and }x_{0}\text{ is a reference value}`,
-            String.raw`x\text{ is time and }x_{0}\text{ is the population}`,
-            String.raw`x\text{ is the half-life and }x_{0}\text{ is the initial amount}`,
-            String.raw`x\text{ is always }1\text{ and }x_{0}\text{ is always }0`,
-            String.raw`x\text{ is the magnitude and }x_{0}\text{ is the base of the log}`
+            String.raw`(11.55\%,\ 12.25\%)`,
+            String.raw`(12.25\%,\ 11.55\%)`,
+            String.raw`(11.55\%,\ 11.55\%)`,
+            String.raw`(12.00\%,\ 12.00\%)`,
+            String.raw`(10.97\%,\ 12.00\%)`,
+            String.raw`(12.25\%,\ 12.25\%)`
           ]
         }
 
