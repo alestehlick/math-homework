@@ -1,0 +1,197 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Homework 12-5 (Algebra 2)</title>
+
+  <script>
+    /* =========================
+       Homework 12-5 — Common Logs, Natural Logs, and Solving Exponential Equations
+       12 questions total: 4 type A, 6 type B, 2 type C
+       For “approximate,” round to 3 decimals.
+       ========================= */
+    window.homeworkData = {
+      classId : "Algebra2",
+      id      : "Homework 12-5",
+      title   : "Homework 12-5 — Common Logs, Natural Logs, and Solving Exponential Equations",
+
+      graphics : String.raw``,
+
+      /* Correct answers for Q1–Q12 */
+      answerKey : ["B","D","C","A","B","C","A","B","A","B","A","B"],
+
+      questions : [
+
+        /* -----------------------
+           Type A (4)
+        ----------------------- */
+
+        {
+          latex: String.raw`\text{Find }\log 1\text{ and }\ln 1.`,
+          choices: [
+            String.raw`\big(\log 1,\ \ln 1\big)=(1,1)`,
+            String.raw`\big(\log 1,\ \ln 1\big)=(0,0)`,
+            String.raw`\big(\log 1,\ \ln 1\big)=(0,1)`,
+            String.raw`\big(\log 1,\ \ln 1\big)=(1,0)`,
+            String.raw`\big(\log 1,\ \ln 1\big)=(-1,-1)`,
+            String.raw`\big(\log 1,\ \ln 1\big)=\text{undefined}`
+          ]
+        },
+
+        {
+          latex: String.raw`\text{Find }\log 1{,}000{,}000\text{ and }\ln 1{,}000{,}000.`,
+          choices: [
+            String.raw`\big(\log 1{,}000{,}000,\ \ln 1{,}000{,}000\big)=\big(6,\ \ln 10\big)`,
+            String.raw`\big(\log 1{,}000{,}000,\ \ln 1{,}000{,}000\big)=\big(10,\ 6\big)`,
+            String.raw`\big(\log 1{,}000{,}000,\ \ln 1{,}000{,}000\big)=\big(6,\ 6\big)`,
+            String.raw`\big(\log 1{,}000{,}000,\ \ln 1{,}000{,}000\big)=\big(6,\ 6\ln 10\big)`,
+            String.raw`\big(\log 1{,}000{,}000,\ \ln 1{,}000{,}000\big)=\big(1,\ 6\ln 10\big)`,
+            String.raw`\big(\log 1{,}000{,}000,\ \ln 1{,}000{,}000\big)=\big(6,\ \ln 6\big)`
+          ]
+        },
+
+        {
+          latex: String.raw`\text{Without a calculator, find }\ln\!\left(\sqrt[3]{e^{2}}\right).`,
+          choices: [
+            String.raw`\dfrac{3}{2}`,
+            String.raw`2`,
+            String.raw`\dfrac{2}{3}`,
+            String.raw`\dfrac{1}{3}`,
+            String.raw`\ln\!\left(\dfrac{2}{3}\right)`,
+            String.raw`0`
+          ]
+        },
+
+        {
+          latex: String.raw`\text{Write as a single logarithm: }\ \ln 20-2\ln 3+5\ln 2.`,
+          choices: [
+            String.raw`\ln\!\left(\dfrac{640}{9}\right)`,
+            String.raw`\ln\!\left(\dfrac{640}{3}\right)`,
+            String.raw`\ln\!\left(\dfrac{640}{18}\right)`,
+            String.raw`\ln(20)+5\ln 2-2\ln 9`,
+            String.raw`\ln\!\left(\dfrac{20\cdot 2^{5}}{3}\right)`,
+            String.raw`\ln\!\left(\dfrac{20\cdot 2^{5}}{3^{3}}\right)`
+          ]
+        },
+
+        /* -----------------------
+           Type B (6)
+           Solve. Give the answer in natural logs and then as an approximate decimal.
+        ----------------------- */
+
+        {
+          latex: String.raw`\text{Solve: }2^{x}=5.\ \text{(Natural logs first, then approximate.)}`,
+          choices: [
+            String.raw`x=\dfrac{\ln 2}{\ln 5}\approx 0.431`,
+            String.raw`x=\dfrac{\ln 5}{\ln 2}\approx 2.322`,
+            String.raw`x=\ln 5-\ln 2\approx 0.916`,
+            String.raw`x=\ln\!\left(\dfrac{5}{2}\right)\approx 0.916`,
+            String.raw`x=\dfrac{\ln 5}{2\ln 2}\approx 1.161`,
+            String.raw`x=\dfrac{\ln 2}{\ln 5-\ln 2}\approx 0.756`
+          ]
+        },
+
+        {
+          latex: String.raw`\text{Solve: }3^{2x}=2.\ \text{(Natural logs first, then approximate.)}`,
+          choices: [
+            String.raw`x=\dfrac{\ln 2}{\ln 3}\approx 0.631`,
+            String.raw`x=\dfrac{2\ln 2}{\ln 3}\approx 1.262`,
+            String.raw`x=\dfrac{\ln 2}{2\ln 3}\approx 0.315`,
+            String.raw`x=\dfrac{\ln 3}{2\ln 2}\approx 0.792`,
+            String.raw`x=\ln\!\left(\dfrac{2}{3}\right)\approx -0.405`,
+            String.raw`x=\ln 2-2\ln 3\approx -1.792`
+          ]
+        },
+
+        {
+          latex: String.raw`\text{Solve: }4^{x+1}=9.\ \text{(Natural logs first, then approximate.)}`,
+          choices: [
+            String.raw`x=\dfrac{\ln 9}{\ln 4}-1\approx 0.585`,
+            String.raw`x=\dfrac{\ln 9}{\ln 4}+1\approx 2.585`,
+            String.raw`x=\dfrac{\ln 4}{\ln 9}-1\approx -0.614`,
+            String.raw`x=\ln 9-\ln 4\approx 1.504`,
+            String.raw`x=\ln\!\left(\dfrac{9}{4}\right)\approx 0.811`,
+            String.raw`x=\dfrac{\ln 9}{\ln 4-1}\approx 0.811`
+          ]
+        },
+
+        {
+          latex: String.raw`\text{Solve: }6^{\,2x-1}=3.\ \text{(Natural logs first, then approximate.)}`,
+          choices: [
+            String.raw`x=\dfrac{\left(\dfrac{\ln 3}{\ln 6}\right)-1}{2}\approx -0.193`,
+            String.raw`x=\dfrac{1+\left(\dfrac{\ln 3}{\ln 6}\right)}{2}\approx 0.807`,
+            String.raw`x=\dfrac{1+\left(\dfrac{\ln 6}{\ln 3}\right)}{2}\approx 1.815`,
+            String.raw`x=1+\dfrac{\ln 3}{2\ln 6}\approx 1.307`,
+            String.raw`x=\dfrac{\ln 3}{2\ln 6}\approx 0.153`,
+            String.raw`x=\dfrac{\ln 6}{2\ln 3}\approx 0.815`
+          ]
+        },
+
+        {
+          latex: String.raw`\text{Solve: }0.7^{x}=0.43.\ \text{(Natural logs first, then approximate.)}`,
+          choices: [
+            String.raw`x=\dfrac{\ln 0.43}{\ln 0.7}\approx 2.366`,
+            String.raw`x=\dfrac{\ln 0.7}{\ln 0.43}\approx 0.423`,
+            String.raw`x=\ln\!\left(\dfrac{0.43}{0.7}\right)\approx -0.487`,
+            String.raw`x=\ln 0.43-\ln 0.7\approx -0.173`,
+            String.raw`x=\dfrac{\ln 0.43}{0.7}\approx -1.210`,
+            String.raw`x=\dfrac{\ln 0.43}{-\ln 0.7}\approx -2.366`
+          ]
+        },
+
+        {
+          latex: String.raw`\text{Solve: }5^{x-7}=20.\ \text{(Natural logs first, then approximate.)}`,
+          choices: [
+            String.raw`x=7+\dfrac{\ln 5}{\ln 20}\approx 7.339`,
+            String.raw`x=7+\dfrac{\ln 20}{\ln 5}\approx 8.861`,
+            String.raw`x=7+\ln\!\left(\dfrac{20}{5}\right)\approx 8.099`,
+            String.raw`x=7+\ln 20-\ln 5\approx 9.996`,
+            String.raw`x=7+\dfrac{\ln 4}{\ln 5}\approx 7.861`,
+            String.raw`x=\dfrac{\ln 20}{\ln 5}-7\approx -5.139`
+          ]
+        },
+
+        /* -----------------------
+           Type C (2)
+        ----------------------- */
+
+        {
+          latex: String.raw`\text{Solve: }8^{\,3x+4}=3^{x}.\ \text{(Natural logs first, then approximate.)}`,
+          choices: [
+            String.raw`x=\dfrac{-4\ln 8}{3\ln 8-\ln 3}\approx -1.618`,
+            String.raw`x=\dfrac{4\ln 8}{3\ln 8-\ln 3}\approx 1.618`,
+            String.raw`x=\dfrac{-4\ln 3}{3\ln 8-\ln 3}\approx -0.699`,
+            String.raw`x=\dfrac{-4\ln 8}{3\ln 3-\ln 8}\approx 0.737`,
+            String.raw`x=\dfrac{-4}{3-\left(\dfrac{\ln 3}{\ln 8}\right)}\approx -1.157`,
+            String.raw`x=\dfrac{\ln 3-4\ln 8}{3\ln 8}\approx -1.157`
+          ]
+        },
+
+        {
+          latex: String.raw`\text{Solve: }18^{\,3x}=2^{\,4x-5}.\ \text{(Natural logs first, then approximate.)}`,
+          choices: [
+            String.raw`x=\dfrac{5\ln 2}{3\ln 18-4\ln 2}\approx 0.588`,
+            String.raw`x=\dfrac{-5\ln 2}{3\ln 18-4\ln 2}\approx -0.588`,
+            String.raw`x=\dfrac{-5}{3\ln 18-4\ln 2}\approx -0.190`,
+            String.raw`x=\dfrac{-5\ln 2}{3\ln 18+4\ln 2}\approx -0.126`,
+            String.raw`x=\dfrac{-5\ln 18}{3\ln 2-4\ln 18}\approx 0.126`,
+            String.raw`x=\dfrac{4\ln 2-5\ln 18}{3\ln 18}\approx -1.230`
+          ]
+        }
+
+      ]
+    };
+  </script>
+
+  <link rel="stylesheet" href="/math-homework/assets/core.css" />
+  <link rel="stylesheet" href="https://tikzjax.com/v1/fonts.css" />
+  <script defer src="/math-homework/assets/core.js"></script>
+  <script defer src="https://tikzjax.com/v1/tikzjax.js"></script>
+  <script defer src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+</head>
+
+<body>
+  <div id="hw-root">Loading…</div>
+</body>
+</html>
