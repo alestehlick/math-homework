@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Homework 11-6 (Algebra II)</title>
+
+  <script>
+    /* =========================
+       Homework 11-6 — Sum and Difference Identities
+       5 from Type A, 7 from Type B, plus Portuguese set: 272a, 273.
+       Portuguese trig abbreviations rendered in English: sin, cos, tan, cot, sec, csc.
+       ========================= */
+    window.homeworkData = {
+      classId : "Algebra2",
+      id      : "Homework 11-6",
+      title   : "Homework 11-6 — Sum and Difference Identities",
+
+      graphics : String.raw``,
+
+      /* Correct answers for Q1–Q14 */
+      answerKey : ["B","C","B","C","E","B","C","D","D","B","C","D","C","D"],
+
+      questions : [
+
+        /* ---------- A (5) ---------- */
+
+        { latex: String.raw`\text{Without using a table or calculator, evaluate }\cos 75^\circ\text{ exactly.}`,
+          choices: [
+            String.raw`\dfrac{\sqrt6+\sqrt2}{4}`,
+            String.raw`\dfrac{\sqrt6-\sqrt2}{4}`,
+            String.raw`\dfrac{\sqrt3-1}{2}`,
+            String.raw`\dfrac{\sqrt2-\sqrt6}{4}`,
+            String.raw`\dfrac{\sqrt2}{2}`,
+            String.raw`\dfrac{\sqrt3}{2}`
+          ]},
+
+        { latex: String.raw`\text{Without using a table or calculator, evaluate }\sin 105^\circ\text{ exactly.}`,
+          choices: [
+            String.raw`\dfrac{\sqrt6-\sqrt2}{4}`,
+            String.raw`\dfrac{\sqrt3}{2}`,
+            String.raw`\dfrac{\sqrt6+\sqrt2}{4}`,
+            String.raw`\dfrac{\sqrt2}{2}`,
+            String.raw`-\dfrac{\sqrt6+\sqrt2}{4}`,
+            String.raw`\dfrac{\sqrt2-\sqrt6}{4}`
+          ]},
+
+        { latex: String.raw`\text{Without using a table or calculator, evaluate }\cos 195^\circ\text{ exactly.}`,
+          choices: [
+            String.raw`\dfrac{\sqrt6+\sqrt2}{4}`,
+            String.raw`-\dfrac{\sqrt6+\sqrt2}{4}`,
+            String.raw`-\dfrac{\sqrt6-\sqrt2}{4}`,
+            String.raw`\dfrac{\sqrt6-\sqrt2}{4}`,
+            String.raw`-\dfrac{\sqrt2}{2}`,
+            String.raw`-\dfrac{\sqrt3}{2}`
+          ]},
+
+        { latex: String.raw`\text{Without using a table or calculator, evaluate }\sin 120^\circ\text{ exactly.}`,
+          choices: [
+            String.raw`\dfrac{1}{2}`,
+            String.raw`\dfrac{\sqrt3}{3}`,
+            String.raw`\dfrac{\sqrt3}{2}`,
+            String.raw`\dfrac{\sqrt2}{2}`,
+            String.raw`-\dfrac{\sqrt3}{2}`,
+            String.raw`0`
+          ]},
+
+        { latex: String.raw`\text{Two right triangles are given. In the first, }\sin\alpha=\dfrac{2}{7}\text{ and }\cos\alpha=\dfrac{\sqrt{45}}{7}.\ \text{In the second, }\sin\beta=\dfrac{4}{5}\text{ and }\cos\beta=\dfrac{3}{5}.\ \text{Find }\sin(\alpha+\beta)\text{ and simplify.}`,
+          choices: [
+            String.raw`\dfrac{6-12\sqrt5}{35}`,
+            String.raw`\dfrac{6+4\sqrt5}{35}`,
+            String.raw`\dfrac{6+12\sqrt5}{49}`,
+            String.raw`\dfrac{12+12\sqrt5}{35}`,
+            String.raw`\dfrac{6+12\sqrt5}{35}`,
+            String.raw`\dfrac{12\sqrt5-6}{35}`
+          ]},
+
+        /* ---------- B (7) ---------- */
+
+        { latex: String.raw`\text{Simplify: }\sin(x+360^\circ).`,
+          choices: [
+            String.raw`-\sin x`,
+            String.raw`\sin x`,
+            String.raw`\cos x`,
+            String.raw`-\cos x`,
+            String.raw`\tan x`,
+            String.raw`0`
+          ]},
+
+        { latex: String.raw`\text{Simplify: }\cos(90^\circ-x).`,
+          choices: [
+            String.raw`\cos x`,
+            String.raw`-\sin x`,
+            String.raw`\sin x`,
+            String.raw`-\cos x`,
+            String.raw`\tan x`,
+            String.raw`\cot x`
+          ]},
+
+        { latex: String.raw`\text{Simplify: }\cos(180^\circ+x).`,
+          choices: [
+            String.raw`\cos x`,
+            String.raw`\sin x`,
+            String.raw`-\sin x`,
+            String.raw`-\cos x`,
+            String.raw`\tan x`,
+            String.raw`\sec x`
+          ]},
+
+        { latex: String.raw`\text{Which expression is equivalent to }\tan(2x)\text{?}`,
+          choices: [
+            String.raw`\dfrac{2\tan x}{1+\tan^2 x}`,
+            String.raw`\dfrac{1-\tan^2 x}{2\tan x}`,
+            String.raw`\dfrac{2\sin x\cos x}{\cos^2 x+\sin^2 x}`,
+            String.raw`\dfrac{2\tan x}{1-\tan^2 x}`,
+            String.raw`\dfrac{\tan^2 x-1}{2\tan x}`,
+            String.raw`\dfrac{\tan^2 x}{1-\tan^2 x}`
+          ]},
+
+        { latex: String.raw`\text{Which expression is equivalent to }\cos(2\alpha)\text{, written using }\sin\alpha\text{?}`,
+          choices: [
+            String.raw`2\sin^2\alpha-1`,
+            String.raw`1-2\sin^2\alpha`,
+            String.raw`1-2\cos^2\alpha`,
+            String.raw`2\cos^2\alpha-1`,
+            String.raw`1+2\sin^2\alpha`,
+            String.raw`1+\tan^2\alpha`
+          ]},
+
+        { latex: String.raw`\text{Which expression is equivalent to }\cos(2\alpha)\text{, written using }\cos\alpha\text{?}`,
+          choices: [
+            String.raw`1-2\cos^2\alpha`,
+            String.raw`2\sin^2\alpha-1`,
+            String.raw`2\cos^2\alpha-1`,
+            String.raw`1-2\sin^2\alpha`,
+            String.raw`1`,
+            String.raw`\sec^2\alpha`
+          ]},
+
+        { latex: String.raw`\text{Simplify: }\cos\!\left(\dfrac{\pi}{2}-(x-y)\right).`,
+          choices: [
+            String.raw`\sin(x+y)`,
+            String.raw`\cos(x-y)`,
+            String.raw`-\sin(x-y)`,
+            String.raw`\sin(x-y)`,
+            String.raw`\cos(x+y)`,
+            String.raw`-\cos(x-y)`
+          ]},
+
+        /* ---------- Portuguese set (272a, 273), rendered in English notation ---------- */
+
+        { latex: String.raw`\text{(272a) Simplify: }\sin(a+b)\sin(a-b).`,
+          choices: [
+            String.raw`\sin^2 a-\sin^2 b`,
+            String.raw`\cos^2 a-\cos^2 b`,
+            String.raw`\cos^2 b-\cos^2 a`,
+            String.raw`\sin^2 b-\sin^2 a`,
+            String.raw`\cos(2b)-\cos(2a)`,
+            String.raw`\dfrac{\cos(2a)-\cos(2b)}{2}`
+          ]},
+
+        { latex: String.raw`\text{(273) Simplify: }\tan(45^\circ+x)\cot(45^\circ-x).`,
+          choices: [
+            String.raw`\dfrac{1-\sin2x}{1+\sin2x}`,
+            String.raw`\dfrac{1+\cos2x}{1-\cos2x}`,
+            String.raw`1`,
+            String.raw`\dfrac{1+\sin2x}{1-\sin2x}`,
+            String.raw`\dfrac{1-\cos2x}{1+\cos2x}`,
+            String.raw`\dfrac{1+\tan^2 x}{1-\tan^2 x}`
+          ]}
+      ]
+    };
+  </script>
+
+  <link rel="stylesheet" href="/math-homework/assets/core.css" />
+  <link rel="stylesheet" href="https://tikzjax.com/v1/fonts.css" />
+  <script defer src="/math-homework/assets/core.js"></script>
+  <script defer src="https://tikzjax.com/v1/tikzjax.js"></script>
+  <script defer src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+</head>
+<body>
+  <div id="hw-root">Loading…</div>
+</body>
+</html>
