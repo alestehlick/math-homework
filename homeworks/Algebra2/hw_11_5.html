@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Homework 11-5 (Algebra II)</title>
+
+  <script>
+    /* =========================
+       Homework 11-5 — Trigonometric Identities (Proof Steps)
+       3 from A, 4 from B, plus Portuguese set: 261–267.
+       Portuguese trig abbreviations rendered in English: sin, cos, tan, cot, sec, csc.
+       ========================= */
+    window.homeworkData = {
+      classId : "Algebra2",
+      id      : "Homework 11-5",
+      title   : "Homework 11-5 — Trigonometric Identities",
+
+      graphics : String.raw``,
+
+      /* Correct answers for Q1–Q14 */
+      answerKey : ["C","A","D","B","C","A","C","E","B","A","C","B","D","A"],
+
+      questions : [
+
+        /* ---------- A (3) ---------- */
+
+        { latex: String.raw`\text{In the proof of }\dfrac{\cos^2 x+\sin^2 x}{\sin x\cos x\tan x}=\csc^2 x,\ \text{which identity justifies replacing }\cos^2 x+\sin^2 x\text{ with }1\text{?}`,
+          choices: [
+            String.raw`\tan x=\dfrac{\sin x}{\cos x}`,
+            String.raw`1+\tan^2 x=\sec^2 x`,
+            String.raw`\sin^2 x+\cos^2 x=1`,
+            String.raw`\csc x=\dfrac{1}{\cos x}`,
+            String.raw`\sin(-x)=-\sin x`,
+            String.raw`\cos(2x)=\cos^2 x-\sin^2 x`
+          ]},
+
+        { latex: String.raw`\text{In the proof of }\dfrac{\cos^2 x+\sin^2 x}{\sin x\cos x\tan x}=\csc^2 x,\ \text{which substitution is made for }\tan x\text{?}`,
+          choices: [
+            String.raw`\tan x=\dfrac{\sin x}{\cos x}`,
+            String.raw`\tan x=\dfrac{\cos x}{\sin x}`,
+            String.raw`\tan x=\dfrac{1}{\sin x}`,
+            String.raw`\tan x=\dfrac{1}{\cos x}`,
+            String.raw`\tan x=\sin x\cos x`,
+            String.raw`\tan x=\sin^2 x+\cos^2 x`
+          ]},
+
+        { latex: String.raw`\text{A proof lists a chain of equal expressions from the top line to the bottom line. What property guarantees that the first and last expressions are equal?}`,
+          choices: [
+            String.raw`\text{Distributive property}`,
+            String.raw`\text{Commutative property}`,
+            String.raw`\text{Associative property}`,
+            String.raw`\text{Transitive property of equality}`,
+            String.raw`\text{Reflexive property of equality}`,
+            String.raw`\text{Additive inverse property}`
+          ]},
+
+        /* ---------- B (4) ---------- */
+
+        { latex: String.raw`\text{To begin proving the identity }\sin\theta=\csc\theta-\cos\theta\cot\theta,\ \text{which is the best first step?}`,
+          choices: [
+            String.raw`\text{Replace }\sin\theta\text{ with }\sqrt{1-\cos^2\theta}`,
+            String.raw`\text{Rewrite }\csc\theta\text{ and }\cot\theta\text{ in terms of }\sin\theta\text{ and }\cos\theta`,
+            String.raw`\text{Rewrite }\cos\theta\text{ as }1-\sin^2\theta`,
+            String.raw`\text{Divide both sides by }\cos\theta`,
+            String.raw`\text{Replace }\cot\theta\text{ with }\tan\theta`,
+            String.raw`\text{Square both sides}`
+          ]},
+
+        { latex: String.raw`\text{To begin proving the identity }\sec\theta=\sin\theta\tan\theta+\sin\theta\cot\theta,\ \text{which is the best first step?}`,
+          choices: [
+            String.raw`\text{Rewrite }\sec\theta\text{ as }\dfrac{\sin\theta}{\cos\theta}`,
+            String.raw`\text{Rewrite }\sin\theta\text{ as }\dfrac{1}{\csc\theta}`,
+            String.raw`\text{Rewrite }\tan\theta\text{ and }\cot\theta\text{ in terms of }\sin\theta\text{ and }\cos\theta`,
+            String.raw`\text{Rewrite }\sec\theta\text{ as }\dfrac{1}{\sin\theta}`,
+            String.raw`\text{Replace }\sin\theta\text{ with }1-\cos^2\theta`,
+            String.raw`\text{Factor the left side}`
+          ]},
+
+        { latex: String.raw`\text{To begin proving the identity }\cos x-\sin x=\cos x(1-\tan x),\ \text{which is the best first step?}`,
+          choices: [
+            String.raw`\text{Rewrite }\tan x\text{ as }\dfrac{\sin x}{\cos x}\text{ on the right-hand side}`,
+            String.raw`\text{Rewrite }\cos x\text{ as }\dfrac{1}{\sec x}\text{ on the left-hand side}`,
+            String.raw`\text{Rewrite }\sin x\text{ as }\dfrac{1}{\csc x}\text{ on the left-hand side}`,
+            String.raw`\text{Divide both sides by }\sin x`,
+            String.raw`\text{Replace }1\text{ with }\sin^2 x+\cos^2 x\text{ on the left-hand side}`,
+            String.raw`\text{Square both sides}`
+          ]},
+
+        { latex: String.raw`\text{To begin proving the identity }\cot x(\tan x+\sec x)=1+\csc x,\ \text{which is the best first step?}`,
+          choices: [
+            String.raw`\text{Replace }\cot x\text{ with }\tan x`,
+            String.raw`\text{Rewrite }\csc x\text{ as }\dfrac{1}{\cos x}`,
+            String.raw`\text{Distribute: }\cot x\tan x+\cot x\sec x`,
+            String.raw`\text{Combine }1+\csc x\text{ into a single fraction immediately}`,
+            String.raw`\text{Square both sides}`,
+            String.raw`\text{Divide both sides by }\tan x`
+          ]},
+
+        /* ---------- Portuguese set (261–267), rendered in English notation ---------- */
+
+        { latex: String.raw`\text{Simplify }(1+\cot x)^2+(1-\cot x)^2.\ \text{After expanding and combining like terms, what do you get?}`,
+          choices: [
+            String.raw`2-2\cot^2 x`,
+            String.raw`2\cot x`,
+            String.raw`2+\cot^2 x`,
+            String.raw`1+\cot^2 x`,
+            String.raw`2+2\cot^2 x`,
+            String.raw`2\csc^2 x-1`
+          ]},
+
+        { latex: String.raw`\text{Simplify }\dfrac{1-2\cos^2 x+\cos^4 x}{1-2\sin^2 x+\sin^4 x}\text{ to a single power of a trig ratio.}`,
+          choices: [
+            String.raw`\tan^2 x`,
+            String.raw`\tan^4 x`,
+            String.raw`\cot^4 x`,
+            String.raw`\sec^4 x`,
+            String.raw`\csc^4 x`,
+            String.raw`1`
+          ]},
+
+        { latex: String.raw`\text{Which expression is equivalent to }\cot x-\cos x\text{?}`,
+          choices: [
+            String.raw`\cos x(\csc x-1)`,
+            String.raw`\sin x(\sec x-1)`,
+            String.raw`\cos x(\sec x-1)`,
+            String.raw`\sin x(\csc x-1)`,
+            String.raw`\cos x(\csc x+1)`,
+            String.raw`\sin x(\sec x+1)`
+          ]},
+
+        { latex: String.raw`\text{Starting from }\dfrac{\cos x+\cos y}{\sin x-\sin y}=\dfrac{\sin x+\sin y}{\cos y-\cos x},\ \text{what equation do you get after cross-multiplying?}`,
+          choices: [
+            String.raw`\cos x+\cos y=\sin x+\sin y`,
+            String.raw`(\cos x-\cos y)(\sin x-\sin y)=(\cos x+\cos y)(\sin x+\sin y)`,
+            String.raw`(\cos x+\cos y)(\cos y-\cos x)=(\sin x+\sin y)(\sin x-\sin y)`,
+            String.raw`\cos^2 x-\cos^2 y=\sin^2 x+\sin^2 y`,
+            String.raw`\cos^2 x+\cos^2 y=\sin^2 x-\sin^2 y`,
+            String.raw`\sin x-\sin y=\cos y-\cos x`
+          ]},
+
+        { latex: String.raw`\text{In simplifying }\dfrac{\cos x+\cot x}{\tan x+\sec x},\ \text{a common factor cancels from numerator and denominator. Which factor is it?}`,
+          choices: [
+            String.raw`(\cos x+1)`,
+            String.raw`(\sin x+1)`,
+            String.raw`(\sin x-1)`,
+            String.raw`(\cos x-1)`,
+            String.raw`(\sin^2 x+\cos^2 x)`,
+            String.raw`(\sin x\cos x)`
+          ]},
+
+        { latex: String.raw`\text{Simplify }\dfrac{\sin^2 x-\cos^2 y}{\cos^2 x\cos^2 y}+1\text{.}`,
+          choices: [
+            String.raw`\tan^2 x+\tan^2 y`,
+            String.raw`\tan^2 x\tan y`,
+            String.raw`\tan x\tan y`,
+            String.raw`\tan^2 x\tan^2 y`,
+            String.raw`\sec^2 x\sec^2 y`,
+            String.raw`\csc^2 x\csc^2 y`
+          ]},
+
+        { latex: String.raw`\text{(267) Which expression is equal to }\csc x-\cot x\text{?}`,
+          choices: [
+            String.raw`\dfrac{1-\cos x}{\sin x}`,
+            String.raw`\dfrac{1+\cos x}{\sin x}`,
+            String.raw`\dfrac{1-\sin x}{\cos x}`,
+            String.raw`\dfrac{1+\sin x}{\cos x}`,
+            String.raw`\dfrac{\sin x}{1-\cos x}`,
+            String.raw`\dfrac{\cos x}{1-\sin x}`
+          ]}
+      ]
+    };
+  </script>
+
+  <link rel="stylesheet" href="/math-homework/assets/core.css" />
+  <link rel="stylesheet" href="https://tikzjax.com/v1/fonts.css" />
+  <script defer src="/math-homework/assets/core.js"></script>
+  <script defer src="https://tikzjax.com/v1/tikzjax.js"></script>
+  <script defer src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+</head>
+<body>
+  <div id="hw-root">Loading…</div>
+</body>
+</html>
