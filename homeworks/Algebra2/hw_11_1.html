@@ -1,0 +1,219 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Homework 11-1 (Algebra II)</title>
+
+  <script>
+    /* =========================
+       Homework 11-1 — Trig Applications
+       Includes: Law of Sines, ambiguous SSA, circumscribed circle radius,
+       and one trapezoid perimeter problem (Exercise 22).
+       Portuguese items include image placeholders by filename.
+       ========================= */
+    window.homeworkData = {
+      classId : "Algebra2",
+      id      : "Homework 11-1",
+      title   : "Homework 11-1 — Law of Sines",
+
+      /* ---------- Image placeholders (add these files to the same folder) ---------- */
+      graphics : String.raw`
+<div class="img-grid" style="display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:14px;align-items:start;">
+  <div class="img-item">
+    <div style="font-weight:600;margin:0 0 6px 0;">625a (file: <code>625a.png</code>)</div>
+    <img src="625a.png" alt="Exercise 625a" style="max-width:100%;height:auto;border:1px solid #ccc;border-radius:8px;" />
+  </div>
+  <div class="img-item">
+    <div style="font-weight:600;margin:0 0 6px 0;">625b (file: <code>625b.png</code>)</div>
+    <img src="625b.png" alt="Exercise 625b" style="max-width:100%;height:auto;border:1px solid #ccc;border-radius:8px;" />
+  </div>
+  <div class="img-item">
+    <div style="font-weight:600;margin:0 0 6px 0;">626a (file: <code>626a.png</code>)</div>
+    <img src="626a.png" alt="Exercise 626a" style="max-width:100%;height:auto;border:1px solid #ccc;border-radius:8px;" />
+  </div>
+  <div class="img-item">
+    <div style="font-weight:600;margin:0 0 6px 0;">626b (file: <code>626b.png</code>)</div>
+    <img src="626b.png" alt="Exercise 626b" style="max-width:100%;height:auto;border:1px solid #ccc;border-radius:8px;" />
+  </div>
+  <div class="img-item">
+    <div style="font-weight:600;margin:0 0 6px 0;">628a (file: <code>628a.png</code>)</div>
+    <img src="628a.png" alt="Exercise 628a" style="max-width:100%;height:auto;border:1px solid #ccc;border-radius:8px;" />
+  </div>
+  <div class="img-item">
+    <div style="font-weight:600;margin:0 0 6px 0;">628b (file: <code>628b.png</code>)</div>
+    <img src="628b.png" alt="Exercise 628b" style="max-width:100%;height:auto;border:1px solid #ccc;border-radius:8px;" />
+  </div>
+</div>
+`,
+
+      /* ---------- Hidden answer key (A–F) for 13 questions ---------- */
+      answerKey : ["A","A","C","D","B","E","A","C","F","B","D","A","E"],
+
+      /* ---------- 13 Multiple-Choice Questions ---------- */
+      questions : [
+
+        /* =======================
+           Type A (2 questions)
+           ======================= */
+
+        { latex: String.raw`\textbf{(Type A)}\ \text{In }\triangle ABC,\ \text{angles are in degrees and side }a\text{ is opposite }A,\ b\text{ opposite }B,\ c\text{ opposite }C.\ \text{Given }A=35^\circ,\ B=17^\circ,\ b=5.\ \text{Classify the data (SSS, SSA, SAA, SAS, ASA, AAA) and find }a.}`,
+          choices: [
+            String.raw`\text{SAA; }a\approx 9.8`,
+            String.raw`\text{ASA; }a\approx 9.8`,
+            String.raw`\text{SAA; }a\approx 2.6`,
+            String.raw`\text{SSA; }a\approx 9.8`,
+            String.raw`\text{SAS; }a\approx 9.8`,
+            String.raw`\text{SAA; }a\approx 12.4`
+          ]},
+
+        { latex: String.raw`\textbf{(Type A)}\ \text{In }\triangle ABC,\ \text{given }B=82^\circ,\ C=57^\circ,\ a=6.\ \text{Classify the data (SSS, SSA, SAA, SAS, ASA, AAA) and find }c.}`,
+          choices: [
+            String.raw`\text{SAA; }c\approx 7.7`,
+            String.raw`\text{ASA; }c\approx 7.7`,
+            String.raw`\text{SAA; }c\approx 4.7`,
+            String.raw`\text{SSA; }c\approx 7.7`,
+            String.raw`\text{SAA; }c\approx 9.1`,
+            String.raw`\text{SAS; }c\approx 7.7`
+          ]},
+
+        /* =======================
+           Type B (2 questions)
+           ======================= */
+
+        { latex: String.raw`\textbf{(Type B)}\ \text{In }\triangle ABC,\ \text{given }C=46^\circ,\ a=5,\ c=4.\ \text{How many triangles are possible, and what are the possible values of }B\text{?}`,
+          choices: [
+            String.raw`\text{0 triangles (no solution).}`,
+            String.raw`\text{1 triangle; }B\approx 70^\circ`,
+            String.raw`\text{2 triangles; }B\approx 70^\circ\ \text{or}\ 18^\circ`,
+            String.raw`\text{2 triangles; }B\approx 64^\circ\ \text{or}\ 116^\circ`,
+            String.raw`\text{1 triangle; }B\approx 18^\circ`,
+            String.raw`\text{2 triangles; }B\approx 46^\circ\ \text{or}\ 134^\circ`
+          ]},
+
+        { latex: String.raw`\textbf{(Type B)}\ \text{In }\triangle ABC,\ \text{given }A=23^\circ,\ a=2,\ b=3.\ \text{How many triangles are possible, and what are the possible values of }B\text{?}`,
+          choices: [
+            String.raw`\text{0 triangles (no solution).}`,
+            String.raw`\text{1 triangle; }B\approx 35.9^\circ`,
+            String.raw`\text{1 triangle; }B\approx 144.1^\circ`,
+            String.raw`\text{2 triangles; }B\approx 35.9^\circ\ \text{or}\ 144.1^\circ`,
+            String.raw`\text{2 triangles; }B\approx 23^\circ\ \text{or}\ 157^\circ`,
+            String.raw`\text{2 triangles; }B\approx 46^\circ\ \text{or}\ 134^\circ`
+          ]},
+
+        /* =======================
+           Type C (Exercise 22 only)
+           ======================= */
+
+        { latex: String.raw`\textbf{(Type C — Exercise 22)}\ \text{In trapezoid }ABCD,\ \overline{BC}\parallel\overline{AD}\ \text{and } \overline{AB}\perp\overline{BC},\ \overline{AB}\perp\overline{AD}.\ \text{Given }m\angle BAC=25^\circ,\ AB=26,\ CD=31.\ \text{Find the perimeter of }ABCD\text{ (nearest tenth).}`,
+          choices: [
+            String.raw`74.0`,
+            String.raw`98.1`,
+            String.raw`103.4`,
+            String.raw`86.0`,
+            String.raw`92.9`,
+            String.raw`110.5`
+          ]},
+
+        /* =======================
+           Portuguese set (with images): 625a, 625b, 626a, 626b, 628a, 628b
+           ======================= */
+
+        { latex: String.raw`\textbf{(625a)}\ \text{Refer to the diagram labeled 625a above. Determine the value of }x.`,
+          choices: [
+            String.raw`6`,
+            String.raw`6\sqrt{3}`,
+            String.raw`12`,
+            String.raw`3\sqrt{2}`,
+            String.raw`6\sqrt{2}`,
+            String.raw`12\sqrt{2}`
+          ]},
+
+        { latex: String.raw`\textbf{(625b)}\ \text{Refer to the diagram labeled 625b above. Determine the value of }x.`,
+          choices: [
+            String.raw`6\sqrt{6}`,
+            String.raw`9\sqrt{2}`,
+            String.raw`12`,
+            String.raw`6\sqrt{3}`,
+            String.raw`18\sin(15^\circ)`,
+            String.raw`18\cos(15^\circ)`
+          ]},
+
+        { latex: String.raw`\textbf{(626a)}\ \text{Refer to the diagram labeled 626a above. Determine the radius }R\text{ of the circumscribed circle.}`,
+          choices: [
+            String.raw`3\sqrt{3}`,
+            String.raw`6`,
+            String.raw`4\sqrt{3}`,
+            String.raw`8`,
+            String.raw`12`,
+            String.raw`6\sqrt{3}`
+          ]},
+
+        { latex: String.raw`\textbf{(626b)}\ \text{Refer to the diagram labeled 626b above. Determine the radius }R\text{ of the circumscribed circle.}`,
+          choices: [
+            String.raw`6\sqrt{2}`,
+            String.raw`9`,
+            String.raw`9\sqrt{3}`,
+            String.raw`12`,
+            String.raw`4\sqrt{3}`,
+            String.raw`9\sqrt{2}`
+          ]},
+
+        { latex: String.raw`\textbf{(628a)}\ \text{Refer to the diagram labeled 628a above. Determine the measure of angle }x.`,
+          choices: [
+            String.raw`75^\circ`,
+            String.raw`105^\circ`,
+            String.raw`60^\circ`,
+            String.raw`45^\circ`,
+            String.raw`30^\circ`,
+            String.raw`120^\circ`
+          ]},
+
+        { latex: String.raw`\textbf{(628b)}\ \text{Refer to the diagram labeled 628b above. Determine the measure of angle }x.`,
+          choices: [
+            String.raw`30^\circ`,
+            String.raw`35^\circ`,
+            String.raw`60^\circ`,
+            String.raw`45^\circ`,
+            String.raw`90^\circ`,
+            String.raw`15^\circ`
+          ]},
+
+        /* =======================
+           Portuguese set (no image provided here): 629, 631
+           (Rendered in English, same style: “determine x / determine R”.)
+           ======================= */
+
+        { latex: String.raw`\textbf{(629)}\ \text{In }\triangle ABC,\ AB=10,\ AC=14,\ \text{and }m\angle A=60^\circ.\ \text{Determine }x=BC.`,
+          choices: [
+            String.raw`2\sqrt{39}`,
+            String.raw`2\sqrt{34}`,
+            String.raw`6\sqrt{6}`,
+            String.raw`\sqrt{39}`,
+            String.raw`12`,
+            String.raw`14`
+          ]},
+
+        { latex: String.raw`\textbf{(631)}\ \text{In }\triangle ABC,\ a=16\ \text{and }A=60^\circ.\ \text{Determine the radius }R\text{ of the circumscribed circle.}`,
+          choices: [
+            String.raw`8`,
+            String.raw`8\sqrt{3}`,
+            String.raw`4\sqrt{3}`,
+            String.raw`\dfrac{16}{3}`,
+            String.raw`\dfrac{16\sqrt{3}}{3}`,
+            String.raw`16`
+          ]}
+      ]
+    };
+  </script>
+
+  <link rel="stylesheet" href="/math-homework/assets/core.css" />
+  <link rel="stylesheet" href="https://tikzjax.com/v1/fonts.css" />
+  <script defer src="/math-homework/assets/core.js"></script>
+  <script defer src="https://tikzjax.com/v1/tikzjax.js"></script>
+  <script defer src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+</head>
+<body>
+  <div id="hw-root">Loading…</div>
+</body>
+</html>
