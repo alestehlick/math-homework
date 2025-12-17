@@ -10,6 +10,7 @@
        Homework 11-4 — Trigonometric Identities
        4 from Type A, 4 from Type B, plus Portuguese set: 249, 253a,b, 254, 257.
        Proofs are rendered as “choose the correct key step / identity / simplification”.
+       NOTE: Portuguese trig abbreviations have been rendered in English (sin, cos, tan, cot, sec, csc).
        ========================= */
     window.homeworkData = {
       classId : "Algebra2",
@@ -113,56 +114,56 @@
 
         /* -----------------------
            Portuguese set: 249, 253a, 253b, 254, 257
-           (Rendered as “choose the key step”.)
+           (Rendered as “choose the key step”, using English trig notation.)
            ----------------------- */
 
-        { latex: String.raw`\text{(249) In proving }(1+\cotg^2 x)(1-\cos^2 x)=1\text{, which identity is used to rewrite }1+\cotg^2 x\text{?}`,
+        { latex: String.raw`\text{In proving }(1+\cot^2 x)(1-\cos^2 x)=1\text{, which identity is used to rewrite }1+\cot^2 x\text{?}`,
           choices: [
             String.raw`\sec^2 x`,
-            String.raw`\cosec^2 x`,
-            String.raw`1-\sen^2 x`,
-            String.raw`\tg^2 x`,
+            String.raw`\csc^2 x`,
+            String.raw`1-\sin^2 x`,
+            String.raw`\tan^2 x`,
             String.raw`\cos^2 x`,
-            String.raw`1+\sen^2 x`
+            String.raw`1+\sin^2 x`
           ]},
 
-        { latex: String.raw`\text{(253a) Which expression is equal to }\cos^4 x+\sen^4 x+2(\sen x\cos x)^2\text{?}`,
+        { latex: String.raw`\text{Which expression is equal to }\cos^4 x+\sin^4 x+2(\sin x\cos x)^2\text{?}`,
           choices: [
-            String.raw`(\sen x+\cos x)^2`,
-            String.raw`(\sen^2 x+\cos^2 x)^2`,
-            String.raw`(\sen^2 x-\cos^2 x)^2`,
-            String.raw`(\sen x-\cos x)^2`,
-            String.raw`\sen^2 x+\cos^2 x`,
-            String.raw`1-2\sen^2 x\cos^2 x`
+            String.raw`(\sin x+\cos x)^2`,
+            String.raw`(\sin^2 x+\cos^2 x)^2`,
+            String.raw`(\sin^2 x-\cos^2 x)^2`,
+            String.raw`(\sin x-\cos x)^2`,
+            String.raw`\sin^2 x+\cos^2 x`,
+            String.raw`1-2\sin^2 x\cos^2 x`
           ]},
 
-        { latex: String.raw`\text{(253b) Simplify }\dfrac{\sen x}{\cosec x}\text{.}`,
+        { latex: String.raw`\text{Simplify }\dfrac{\sin x}{\csc x}\text{.}`,
           choices: [
             String.raw`1`,
-            String.raw`\sen x`,
-            String.raw`\sen^2 x`,
+            String.raw`\sin x`,
+            String.raw`\sin^2 x`,
             String.raw`\cos^2 x`,
-            String.raw`\tg x`,
-            String.raw`\cosec^2 x`
+            String.raw`\tan x`,
+            String.raw`\csc^2 x`
           ]},
 
-        { latex: String.raw`\text{(254) A common-denominator form of }\tg x+\cotg x\text{ is:}`,
+        { latex: String.raw`\text{A common-denominator form of }\tan x+\cot x\text{ is:}`,
           choices: [
-            String.raw`\dfrac{\sen^2 x-\cos^2 x}{\sen x\cos x}`,
-            String.raw`\dfrac{\sen^2 x+\cos^2 x}{\sen x\cos x}`,
-            String.raw`\dfrac{\sen x+\cos x}{\sen x\cos x}`,
-            String.raw`\dfrac{\sen x\cos x}{\sen^2 x+\cos^2 x}`,
-            String.raw`\dfrac{\sen x\cos x}{\sen^2 x-\cos^2 x}`,
-            String.raw`\dfrac{1+\tg^2 x}{1+\cotg^2 x}`
+            String.raw`\dfrac{\sin^2 x-\cos^2 x}{\sin x\cos x}`,
+            String.raw`\dfrac{\sin^2 x+\cos^2 x}{\sin x\cos x}`,
+            String.raw`\dfrac{\sin x+\cos x}{\sin x\cos x}`,
+            String.raw`\dfrac{\sin x\cos x}{\sin^2 x+\cos^2 x}`,
+            String.raw`\dfrac{\sin x\cos x}{\sin^2 x-\cos^2 x}`,
+            String.raw`\dfrac{1+\tan^2 x}{1+\cot^2 x}`
           ]},
 
-        { latex: String.raw`\text{(257) In simplifying }\dfrac{\cotg^2 x}{1+\cotg^2 x}\text{, which replacement is used for }1+\cotg^2 x\text{?}`,
+        { latex: String.raw`\text{In simplifying }\dfrac{\cot^2 x}{1+\cot^2 x}\text{, which replacement is used for }1+\cot^2 x\text{?}`,
           choices: [
             String.raw`\sec^2 x`,
-            String.raw`\sen^2 x`,
+            String.raw`\sin^2 x`,
             String.raw`\cos^2 x`,
-            String.raw`\cosec^2 x`,
-            String.raw`\tg^2 x`,
+            String.raw`\csc^2 x`,
+            String.raw`\tan^2 x`,
             String.raw`1-\cos^2 x`
           ]}
       ]
