@@ -55,7 +55,7 @@
 `,
 
       /* ---------- Hidden answer key (A–F) for 13 questions ---------- */
-      answerKey : ["B","D","A","B","C","C","B","B","A","D","E","F","B"],
+      answerKey : ["B","D","A","B","C","A","B","B","A","D","E","F","B"],
 
       /* ---------- Questions ---------- */
       questions : [
@@ -123,16 +123,23 @@
             String.raw`125`
           ]},
 
-        /* Source: B. Exercises #10 (figure: 10.png) */
-        { latex: String.raw`\text{Refer to Figure 5 above. The segment labeled }6\text{ is the diagonal of a face of the cube. Find the volume of the cube (exact).}`,
-          choices: [
-            String.raw`54`,
-            String.raw`27\sqrt{2}`,
-            String.raw`54\sqrt{2}`,
-            String.raw`108\sqrt{2}`,
-            String.raw`36\sqrt{2}`,
-            String.raw`216`
-          ]},
+          /* Source: B. Exercises #10 (figure: 10.png) */
+          { latex: String.raw`\text{Refer to Figure 5 above. The segment labeled }6\text{ is the space diagonal of the cube. Find the volume of the cube (exact).}`,
+    choices: [
+      String.raw`24\sqrt{3}`,   // correct
+      String.raw`54\sqrt{2}`,
+      String.raw`216`,
+      String.raw`54`,
+      String.raw`24`,
+      String.raw`8`
+    ]},
+
+
+
+
+
+
+
 
         /* Source: (word) #16 */
         { latex: String.raw`\text{A right rectangular prism has volume }3536\text{ ft}^3\text{ and height }26\text{ ft. The length of the base is }9\text{ ft longer than the width. What are the base dimensions (length, width)?}`,
