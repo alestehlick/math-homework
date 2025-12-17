@@ -1,0 +1,197 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Homework 12-6 (Algebra 2)</title>
+
+  <script>
+    /* =========================
+       Homework 12-6 — Word Problems about Logs
+       12 questions total: 4 type A, 6 type B, 2 type C
+       Topics: continuously compounded interest, half-life, populations,
+               exponential growth/decay, Richter scale equation.
+       ========================= */
+    window.homeworkData = {
+      classId : "Algebra2",
+      id      : "Homework 12-6",
+      title   : "Homework 12-6 — Word Problems about Logs",
+
+      graphics : String.raw``,
+
+      /* Correct answers for Q1–Q12 */
+      answerKey : ["B","C","D","A","D","F","B","E","C","A","D","B"],
+
+      questions : [
+
+        /* -----------------------
+           Type A (4)
+        ----------------------- */
+
+        {
+          latex: String.raw`\text{Which formula models continuously compounded interest (annual rate }r\text{, time }t\text{ in years)?}`,
+          choices: [
+            String.raw`A=P\left(1+r\right)^{t}`,
+            String.raw`A=Pe^{rt}`,
+            String.raw`A=P\left(1+\dfrac{r}{n}\right)^{t}`,
+            String.raw`A=P\left(1+\dfrac{t}{r}\right)`,
+            String.raw`A=P-rt`,
+            String.raw`A=\dfrac{P}{1-rt}`
+          ]
+        },
+
+        {
+          latex: String.raw`\text{A quantity has half-life }h.\ \text{Which formula matches the half-life model?}`,
+          choices: [
+            String.raw`N=N_{0}(2)^{t/h}`,
+            String.raw`N=N_{0}\left(\dfrac{1}{2}\right)^{h/t}`,
+            String.raw`N=N_{0}\left(\dfrac{1}{2}\right)^{t/h}`,
+            String.raw`N=N_{0}\left(\dfrac{t}{h}\right)^{2}`,
+            String.raw`N=N_{0}-\dfrac{t}{h}`,
+            String.raw`N=N_{0}\left(1-\dfrac{1}{2}\right)^{t}`
+          ]
+        },
+
+        {
+          latex: String.raw`\text{A city is growing at an exponential rate. Which formula best models its population?}`,
+          choices: [
+            String.raw`P(t)=P_{0}+kt`,
+            String.raw`P(t)=P_{0}-kt`,
+            String.raw`P(t)=\dfrac{P_{0}}{t}`,
+            String.raw`P(t)=P_{0}e^{kt}`,
+            String.raw`P(t)=P_{0}t^{k}`,
+            String.raw`P(t)=P_{0}\left(1-\dfrac{k}{t}\right)`
+          ]
+        },
+
+        {
+          latex: String.raw`\text{In the model }y=y_{0}e^{kt},\text{ which condition gives exponential decay?}`,
+          choices: [
+            String.raw`k<0`,
+            String.raw`k>0`,
+            String.raw`k=0`,
+            String.raw`y_{0}<0`,
+            String.raw`y_{0}=0`,
+            String.raw`y_{0}>1`
+          ]
+        },
+
+        /* -----------------------
+           Type B (6)
+        ----------------------- */
+
+        {
+          latex: String.raw`\text{Evelyn invests }\$12{,}000\text{ for 30 months at }9.8\%\text{ compounded continuously. What is the value at maturity (nearest dollar)?}`,
+          choices: [
+            String.raw`\$14{,}920`,
+            String.raw`\$15{,}780`,
+            String.raw`\$13{,}860`,
+            String.raw`\$15{,}331`,
+            String.raw`\$16{,}420`,
+            String.raw`\$12{,}980`
+          ]
+        },
+
+        {
+          latex: String.raw`\text{Brent invests }\$8{,}000\text{ at }10.25\%\text{ compounded continuously and receives }\$11{,}500.\ \text{How long (in years, nearest hundredth) was it invested?}`,
+          choices: [
+            String.raw`2.85`,
+            String.raw`3.02`,
+            String.raw`3.29`,
+            String.raw`4.10`,
+            String.raw`4.54`,
+            String.raw`3.54`
+          ]
+        },
+
+        {
+          latex: String.raw`\text{An investment grows from }\$550{,}000\text{ to }\$827{,}000\text{ in 4 years with interest compounded continuously. What annual rate }r\text{ (nearest hundredth percent) did the bank pay?}`,
+          choices: [
+            String.raw`8.67\%`,
+            String.raw`10.20\%`,
+            String.raw`12.50\%`,
+            String.raw`9.10\%`,
+            String.raw`10.97\%`,
+            String.raw`7.45\%`
+          ]
+        },
+
+        {
+          latex: String.raw`\text{A 20 g sample of magnesium-28 has a half-life of 21 hours. How long will it take for only 5 g to be left?}`,
+          choices: [
+            String.raw`21\text{ hours}`,
+            String.raw`63\text{ hours}`,
+            String.raw`84\text{ hours}`,
+            String.raw`10.5\text{ hours}`,
+            String.raw`42\text{ hours}`,
+            String.raw`105\text{ hours}`
+          ]
+        },
+
+        {
+          latex: String.raw`\text{Candy studies bromine-80. After 1 hour, 10 g has diminished to }0.942\text{ g. What is its half-life (in hours, nearest thousandth)?}`,
+          choices: [
+            String.raw`0.176`,
+            String.raw`0.500`,
+            String.raw`0.293`,
+            String.raw`1.707`,
+            String.raw`2.930`,
+            String.raw`3.407`
+          ]
+        },
+
+        {
+          latex: String.raw`\text{A 20 g sample of magnesium-28 has a half-life of 21 hours. How many grams remain after 63 hours?}`,
+          choices: [
+            String.raw`2.5\text{ g}`,
+            String.raw`5\text{ g}`,
+            String.raw`10\text{ g}`,
+            String.raw`7.5\text{ g}`,
+            String.raw`1.25\text{ g}`,
+            String.raw`15\text{ g}`
+          ]
+        },
+
+        /* -----------------------
+           Type C (2)
+        ----------------------- */
+
+        {
+          latex: String.raw`\text{The Richter scale equation is }y=\log\!\left(\dfrac{x}{x_{0}}\right).\ \text{Find the magnitude if }x=10{,}000{,}000x_{0}.`,
+          choices: [
+            String.raw`5`,
+            String.raw`6`,
+            String.raw`8`,
+            String.raw`7`,
+            String.raw`10{,}000{,}000`,
+            String.raw`0.0000001`
+          ]
+        },
+
+        {
+          latex: String.raw`\text{In }y=\log\!\left(\dfrac{x}{x_{0}}\right),\text{ what do }x\text{ and }x_{0}\text{ represent?}`,
+          choices: [
+            String.raw`x\text{ is a percent rate and }x_{0}\text{ is time}`,
+            String.raw`x\text{ is the measured value and }x_{0}\text{ is a reference value}`,
+            String.raw`x\text{ is time and }x_{0}\text{ is the population}`,
+            String.raw`x\text{ is the half-life and }x_{0}\text{ is the initial amount}`,
+            String.raw`x\text{ is always }1\text{ and }x_{0}\text{ is always }0`,
+            String.raw`x\text{ is the magnitude and }x_{0}\text{ is the base of the log}`
+          ]
+        }
+
+      ]
+    };
+  </script>
+
+  <link rel="stylesheet" href="/math-homework/assets/core.css" />
+  <link rel="stylesheet" href="https://tikzjax.com/v1/fonts.css" />
+  <script defer src="/math-homework/assets/core.js"></script>
+  <script defer src="https://tikzjax.com/v1/tikzjax.js"></script>
+  <script defer src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+</head>
+
+<body>
+  <div id="hw-root">Loading…</div>
+</body>
+</html>
