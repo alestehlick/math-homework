@@ -1,0 +1,197 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Homework 12-2 (Algebra 2)</title>
+
+  <script>
+    /* =========================
+       Homework 12-2 — Inverse Trigonometric Functions
+       12 questions total: 4 type A, 6 type B, 2 type C
+       Note: Sin, Cos, Tan, Sec (capital) = principal branch (inverse function).
+             sin, cos, tan, sec (lowercase) = relation with its full domain (not one-to-one).
+       ========================= */
+    window.homeworkData = {
+      classId : "Algebra2",
+      id      : "Homework 12-2",
+      title   : "Homework 12-2 — Inverse Trigonometric Functions",
+
+      graphics : String.raw``,
+
+      /* Correct answers for Q1–Q12 */
+      answerKey : ["B","A","E","D","B","B","A","A","B","B","B","B"],
+
+      questions : [
+
+        /* -----------------------
+           Type A (4)
+        ----------------------- */
+
+        {
+          latex: String.raw`\text{For the inverse cosine function }y=\text{Cos}^{-1}x,\text{ which interval is the principal range for }y\text{?}`,
+          choices: [
+            String.raw`-\dfrac{\pi}{2}\le y\le \dfrac{\pi}{2}`,
+            String.raw`0\le y\le \pi`,
+            String.raw`0<y<2\pi`,
+            String.raw`-\pi<y\le \pi`,
+            String.raw`0\le y<\dfrac{\pi}{2}`,
+            String.raw`\dfrac{\pi}{2}\le y\le \dfrac{3\pi}{2}`
+          ]
+        },
+
+        {
+          latex: String.raw`\text{For the inverse tangent function }y=\text{Tan}^{-1}x,\text{ which interval is the principal range for }y\text{?}`,
+          choices: [
+            String.raw`-\dfrac{\pi}{2}<y<\dfrac{\pi}{2}`,
+            String.raw`0\le y\le \pi`,
+            String.raw`-\pi\le y\le \pi`,
+            String.raw`0<y<2\pi`,
+            String.raw`0\le y<\dfrac{\pi}{2}`,
+            String.raw`\dfrac{\pi}{2}\le y\le \dfrac{3\pi}{2}`
+          ]
+        },
+
+        {
+          latex: String.raw`\text{Which set of ordered pairs could lie on the graph of }y=\text{Cos}^{-1}x\text{ (principal values)?}`,
+          choices: [
+            String.raw`\{(1,0),(0,\tfrac{\pi}{2}),(-1,0)\}`,
+            String.raw`\{(1,0),(0,-\tfrac{\pi}{2}),(-1,\pi)\}`,
+            String.raw`\{(1,\pi),(0,\tfrac{\pi}{2}),(-1,0)\}`,
+            String.raw`\{(1,0),(0,\tfrac{\pi}{2}),(-1,2\pi)\}`,
+            String.raw`\{(1,0),(0,\tfrac{\pi}{2}),(-1,\pi)\}`,
+            String.raw`\{(1,0),(0,\pi),(-1,\tfrac{\pi}{2})\}`
+          ]
+        },
+
+        {
+          latex: String.raw`\text{Which set of ordered pairs could lie on the graph of }y=\text{Tan}^{-1}x\text{ (principal values)?}`,
+          choices: [
+            String.raw`\{(0,0),(1,\tfrac{\pi}{4}),(-1,\tfrac{\pi}{4})\}`,
+            String.raw`\{(0,0),(1,\tfrac{3\pi}{4}),(-1,-\tfrac{3\pi}{4})\}`,
+            String.raw`\{(0,0),(1,\tfrac{\pi}{4}),(-1,-\tfrac{\pi}{4}),(\sqrt{3},\tfrac{4\pi}{3})\}`,
+            String.raw`\{(0,0),(1,\tfrac{\pi}{4}),(-1,-\tfrac{\pi}{4}),(\sqrt{3},\tfrac{\pi}{3})\}`,
+            String.raw`\{(0,0),(1,-\tfrac{\pi}{4}),(-1,\tfrac{\pi}{4}),(\sqrt{3},\tfrac{\pi}{3})\}`,
+            String.raw`\{(0,0),(1,\tfrac{\pi}{2}),(-1,-\tfrac{\pi}{2})\}`
+          ]
+        },
+
+        /* -----------------------
+           Type B (6)
+        ----------------------- */
+
+        {
+          latex: String.raw`\text{Find all angles }\theta\text{ with }0\le \theta<2\pi\text{ such that }\sin\theta=\dfrac{\sqrt{2}}{2}.`,
+          choices: [
+            String.raw`\left\{\dfrac{\pi}{4},\dfrac{5\pi}{4}\right\}`,
+            String.raw`\left\{\dfrac{\pi}{4},\dfrac{3\pi}{4}\right\}`,
+            String.raw`\left\{\dfrac{3\pi}{4},\dfrac{7\pi}{4}\right\}`,
+            String.raw`\left\{\dfrac{\pi}{2},\dfrac{3\pi}{2}\right\}`,
+            String.raw`\left\{\dfrac{\pi}{4}\right\}`,
+            String.raw`\left\{\dfrac{\pi}{4},\dfrac{7\pi}{4}\right\}`
+          ]
+        },
+
+        {
+          latex: String.raw`\text{Find all angles }\theta\text{ with }0\le \theta<2\pi\text{ such that }\tan\theta=\sqrt{3}.`,
+          choices: [
+            String.raw`\left\{\dfrac{\pi}{3},\dfrac{2\pi}{3}\right\}`,
+            String.raw`\left\{\dfrac{\pi}{3},\dfrac{4\pi}{3}\right\}`,
+            String.raw`\left\{\dfrac{\pi}{6},\dfrac{7\pi}{6}\right\}`,
+            String.raw`\left\{\dfrac{2\pi}{3},\dfrac{5\pi}{3}\right\}`,
+            String.raw`\left\{\dfrac{\pi}{3}\right\}`,
+            String.raw`\left\{\dfrac{4\pi}{3},\dfrac{5\pi}{3}\right\}`
+          ]
+        },
+
+        {
+          latex: String.raw`\text{Find all angles }\theta\text{ with }0\le \theta<2\pi\text{ such that }\cos\theta=-\dfrac{\sqrt{2}}{2}.`,
+          choices: [
+            String.raw`\left\{\dfrac{3\pi}{4},\dfrac{5\pi}{4}\right\}`,
+            String.raw`\left\{\dfrac{\pi}{4},\dfrac{3\pi}{4}\right\}`,
+            String.raw`\left\{\dfrac{5\pi}{4},\dfrac{7\pi}{4}\right\}`,
+            String.raw`\left\{\dfrac{\pi}{4},\dfrac{5\pi}{4}\right\}`,
+            String.raw`\left\{\dfrac{3\pi}{4}\right\}`,
+            String.raw`\left\{\dfrac{2\pi}{3},\dfrac{4\pi}{3}\right\}`
+          ]
+        },
+
+        {
+          latex: String.raw`\text{Find all angles }\theta\text{ with }0\le \theta<2\pi\text{ such that }\sin\theta=-\dfrac{1}{2}.`,
+          choices: [
+            String.raw`\left\{\dfrac{7\pi}{6},\dfrac{11\pi}{6}\right\}`,
+            String.raw`\left\{\dfrac{\pi}{6},\dfrac{5\pi}{6}\right\}`,
+            String.raw`\left\{\dfrac{5\pi}{6},\dfrac{7\pi}{6}\right\}`,
+            String.raw`\left\{\dfrac{11\pi}{6},\dfrac{\pi}{6}\right\}`,
+            String.raw`\left\{\dfrac{3\pi}{2}\right\}`,
+            String.raw`\left\{\dfrac{2\pi}{3},\dfrac{4\pi}{3}\right\}`
+          ]
+        },
+
+        {
+          latex: String.raw`\text{Evaluate in the principal range: }\text{Sin}^{-1}\!\left(-\dfrac{\sqrt{3}}{2}\right).`,
+          choices: [
+            String.raw`-\dfrac{2\pi}{3}`,
+            String.raw`-\dfrac{\pi}{3}`,
+            String.raw`\dfrac{2\pi}{3}`,
+            String.raw`\dfrac{4\pi}{3}`,
+            String.raw`\dfrac{5\pi}{3}`,
+            String.raw`-\dfrac{\pi}{6}`
+          ]
+        },
+
+        {
+          latex: String.raw`\text{Evaluate in the principal range: }\text{Tan}^{-1}(-1).`,
+          choices: [
+            String.raw`-\dfrac{\pi}{3}`,
+            String.raw`-\dfrac{\pi}{4}`,
+            String.raw`\dfrac{\pi}{4}`,
+            String.raw`\dfrac{3\pi}{4}`,
+            String.raw`-\dfrac{3\pi}{4}`,
+            String.raw`\dfrac{\pi}{3}`
+          ]
+        },
+
+        /* -----------------------
+           Type C (2)
+        ----------------------- */
+
+        {
+          latex: String.raw`\text{Consider the relation }y=\sec^{-1}x.\ \text{For which values of }x\text{ is this relation undefined?}`,
+          choices: [
+            String.raw`x\le -1\ \text{or}\ x\ge 1`,
+            String.raw`-1<x<1`,
+            String.raw`x=0\ \text{only}`,
+            String.raw`x\ne 0`,
+            String.raw`x>1`,
+            String.raw`x<-1`
+          ]
+        },
+
+        {
+          latex: String.raw`\text{Find }\sin\!\big(\text{Sec}^{-1}(1.5)\big).`,
+          choices: [
+            String.raw`\dfrac{2}{3}`,
+            String.raw`\dfrac{\sqrt{5}}{3}`,
+            String.raw`\dfrac{\sqrt{5}}{2}`,
+            String.raw`\dfrac{3}{2}`,
+            String.raw`-\dfrac{\sqrt{5}}{3}`,
+            String.raw`\dfrac{\sqrt{5}}{9}`
+          ]
+        }
+
+      ]
+    };
+  </script>
+
+  <link rel="stylesheet" href="/math-homework/assets/core.css" />
+  <link rel="stylesheet" href="https://tikzjax.com/v1/fonts.css" />
+  <script defer src="/math-homework/assets/core.js"></script>
+  <script defer src="https://tikzjax.com/v1/tikzjax.js"></script>
+  <script defer src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+</head>
+
+<body>
+  <div id="hw-root">Loading…</div>
+</body>
+</html>
