@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Homework 11-4 (Algebra II)</title>
+
+  <script>
+    /* =========================
+       Homework 11-4 — Trigonometric Identities
+       4 from Type A, 4 from Type B, plus Portuguese set: 249, 253a,b, 254, 257.
+       Proofs are rendered as “choose the correct key step / identity / simplification”.
+       ========================= */
+    window.homeworkData = {
+      classId : "Algebra2",
+      id      : "Homework 11-4",
+      title   : "Homework 11-4 — Trigonometric Identities",
+
+      graphics : String.raw``,
+
+      /* Correct answers for Q1–Q13 */
+      answerKey : ["B","C","B","C","C","C","C","C","B","B","C","B","D"],
+
+      questions : [
+
+        /* -----------------------
+           Type A (4)
+           ----------------------- */
+
+        { latex: String.raw`\text{In a right triangle with angle }\theta\text{, the side opposite }\theta\text{ has length }a,\ \text{the side adjacent to }\theta\text{ has length }b,\ \text{and the hypotenuse has length }c.\ \text{Which expression equals }\cot\theta\text{?}`,
+          choices: [
+            String.raw`\dfrac{a}{b}`,
+            String.raw`\dfrac{b}{a}`,
+            String.raw`\dfrac{a}{c}`,
+            String.raw`\dfrac{b}{c}`,
+            String.raw`\dfrac{c}{a}`,
+            String.raw`\dfrac{c}{b}`
+          ]},
+
+        { latex: String.raw`\text{Write an expression equivalent to } \sin^2\theta-1 \text{. Simplify as much as possible.}`,
+          choices: [
+            String.raw`\cos^2\theta`,
+            String.raw`-\sin^2\theta`,
+            String.raw`-\cos^2\theta`,
+            String.raw`1-\cos^2\theta`,
+            String.raw`\sin^2\theta-1`,
+            String.raw`\tan^2\theta`
+          ]},
+
+        { latex: String.raw`\text{Write an expression equivalent to } \sec^2\theta-1 \text{. Simplify as much as possible.}`,
+          choices: [
+            String.raw`\cot^2\theta`,
+            String.raw`\tan^2\theta`,
+            String.raw`\sin^2\theta`,
+            String.raw`\dfrac{1}{\cos^2\theta}`,
+            String.raw`\csc^2\theta`,
+            String.raw`1-\sin^2\theta`
+          ]},
+
+        { latex: String.raw`\text{Write an expression equivalent to } 1-\cos^2\theta \text{. Simplify as much as possible.}`,
+          choices: [
+            String.raw`\tan^2\theta`,
+            String.raw`1-\sin^2\theta`,
+            String.raw`\sin^2\theta`,
+            String.raw`-\sin^2\theta`,
+            String.raw`\cos^2\theta`,
+            String.raw`\sec^2\theta`
+          ]},
+
+        /* -----------------------
+           Type B (4)
+           ----------------------- */
+
+        { latex: String.raw`\text{To simplify }\dfrac{\cos^2\theta}{1-\sin^2\theta}\text{ to }1\text{, which identity justifies rewriting }1-\sin^2\theta\text{ as }\cos^2\theta\text{?}`,
+          choices: [
+            String.raw`1+\tan^2\theta=\sec^2\theta`,
+            String.raw`1+\cot^2\theta=\csc^2\theta`,
+            String.raw`\sin^2\theta+\cos^2\theta=1`,
+            String.raw`\tan\theta=\dfrac{\sin\theta}{\cos\theta}`,
+            String.raw`\cot\theta=\dfrac{\cos\theta}{\sin\theta}`,
+            String.raw`\sec\theta=\dfrac{1}{\sin\theta}`
+          ]},
+
+        { latex: String.raw`\text{Simplify } \dfrac{\sec\theta}{\csc\theta}\text{.}`,
+          choices: [
+            String.raw`\sin\theta`,
+            String.raw`\cos\theta`,
+            String.raw`\tan\theta`,
+            String.raw`\cot\theta`,
+            String.raw`\sec\theta`,
+            String.raw`\csc\theta`
+          ]},
+
+        { latex: String.raw`\text{In simplifying } \sin\theta+\cos\theta\tan\theta\text{, which expression is equivalent to }\cos\theta\tan\theta\text{?}`,
+          choices: [
+            String.raw`\cos^2\theta`,
+            String.raw`\sin^2\theta`,
+            String.raw`\sin\theta`,
+            String.raw`\tan\theta`,
+            String.raw`\sec\theta`,
+            String.raw`1`
+          ]},
+
+        { latex: String.raw`\text{To simplify } \dfrac{\csc^2\theta-\cot^2\theta}{1+\tan^2\theta}\text{ to }\cos^2\theta\text{, which pair of identities is used first?}`,
+          choices: [
+            String.raw`\csc^2\theta-\cot^2\theta=\sec^2\theta\ \text{ and }\ 1+\tan^2\theta=\csc^2\theta`,
+            String.raw`\csc^2\theta-\cot^2\theta=1+\tan^2\theta\ \text{ and }\ 1+\tan^2\theta=1+\cot^2\theta`,
+            String.raw`\csc^2\theta-\cot^2\theta=1\ \text{ and }\ 1+\tan^2\theta=\sec^2\theta`,
+            String.raw`\csc^2\theta-\cot^2\theta=\cos^2\theta\ \text{ and }\ 1+\tan^2\theta=\sin^2\theta`,
+            String.raw`\csc^2\theta-\cot^2\theta=\tan^2\theta\ \text{ and }\ 1+\tan^2\theta=\cot^2\theta`,
+            String.raw`\csc^2\theta-\cot^2\theta=1\ \text{ and }\ 1+\tan^2\theta=1`
+          ]},
+
+        /* -----------------------
+           Portuguese set: 249, 253a, 253b, 254, 257
+           (Rendered as “choose the key step”.)
+           ----------------------- */
+
+        { latex: String.raw`\text{(249) In proving }(1+\cotg^2 x)(1-\cos^2 x)=1\text{, which identity is used to rewrite }1+\cotg^2 x\text{?}`,
+          choices: [
+            String.raw`\sec^2 x`,
+            String.raw`\cosec^2 x`,
+            String.raw`1-\sen^2 x`,
+            String.raw`\tg^2 x`,
+            String.raw`\cos^2 x`,
+            String.raw`1+\sen^2 x`
+          ]},
+
+        { latex: String.raw`\text{(253a) Which expression is equal to }\cos^4 x+\sen^4 x+2(\sen x\cos x)^2\text{?}`,
+          choices: [
+            String.raw`(\sen x+\cos x)^2`,
+            String.raw`(\sen^2 x+\cos^2 x)^2`,
+            String.raw`(\sen^2 x-\cos^2 x)^2`,
+            String.raw`(\sen x-\cos x)^2`,
+            String.raw`\sen^2 x+\cos^2 x`,
+            String.raw`1-2\sen^2 x\cos^2 x`
+          ]},
+
+        { latex: String.raw`\text{(253b) Simplify }\dfrac{\sen x}{\cosec x}\text{.}`,
+          choices: [
+            String.raw`1`,
+            String.raw`\sen x`,
+            String.raw`\sen^2 x`,
+            String.raw`\cos^2 x`,
+            String.raw`\tg x`,
+            String.raw`\cosec^2 x`
+          ]},
+
+        { latex: String.raw`\text{(254) A common-denominator form of }\tg x+\cotg x\text{ is:}`,
+          choices: [
+            String.raw`\dfrac{\sen^2 x-\cos^2 x}{\sen x\cos x}`,
+            String.raw`\dfrac{\sen^2 x+\cos^2 x}{\sen x\cos x}`,
+            String.raw`\dfrac{\sen x+\cos x}{\sen x\cos x}`,
+            String.raw`\dfrac{\sen x\cos x}{\sen^2 x+\cos^2 x}`,
+            String.raw`\dfrac{\sen x\cos x}{\sen^2 x-\cos^2 x}`,
+            String.raw`\dfrac{1+\tg^2 x}{1+\cotg^2 x}`
+          ]},
+
+        { latex: String.raw`\text{(257) In simplifying }\dfrac{\cotg^2 x}{1+\cotg^2 x}\text{, which replacement is used for }1+\cotg^2 x\text{?}`,
+          choices: [
+            String.raw`\sec^2 x`,
+            String.raw`\sen^2 x`,
+            String.raw`\cos^2 x`,
+            String.raw`\cosec^2 x`,
+            String.raw`\tg^2 x`,
+            String.raw`1-\cos^2 x`
+          ]}
+      ]
+    };
+  </script>
+
+  <link rel="stylesheet" href="/math-homework/assets/core.css" />
+  <link rel="stylesheet" href="https://tikzjax.com/v1/fonts.css" />
+  <script defer src="/math-homework/assets/core.js"></script>
+  <script defer src="https://tikzjax.com/v1/tikzjax.js"></script>
+  <script defer src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+</head>
+<body>
+  <div id="hw-root">Loading…</div>
+</body>
+</html>
