@@ -21,27 +21,27 @@
       graphics : String.raw`
 <div class="img-grid" style="display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:14px;align-items:start;">
   <div class="img-item">
-    <div style="font-weight:600;margin:0 0 6px 0;">Figure 1</code>)</div>
+    <div style="font-weight:600;margin:0 0 6px 0;">Figure 1</div>
     <img src="625a.png" alt="Exercise 625a" style="max-width:100%;height:auto;border:1px solid #ccc;border-radius:8px;" />
   </div>
   <div class="img-item">
-    <div style="font-weight:600;margin:0 0 6px 0;">625b (file: <code>625b.png</code>)</div>
+    <div style="font-weight:600;margin:0 0 6px 0;">Figure 2</div>
     <img src="625b.png" alt="Exercise 625b" style="max-width:100%;height:auto;border:1px solid #ccc;border-radius:8px;" />
   </div>
   <div class="img-item">
-    <div style="font-weight:600;margin:0 0 6px 0;">626a (file: <code>626a.png</code>)</div>
+    <div style="font-weight:600;margin:0 0 6px 0;">Figure 3</div>
     <img src="626a.png" alt="Exercise 626a" style="max-width:100%;height:auto;border:1px solid #ccc;border-radius:8px;" />
   </div>
   <div class="img-item">
-    <div style="font-weight:600;margin:0 0 6px 0;">626b (file: <code>626b.png</code>)</div>
+    <div style="font-weight:600;margin:0 0 6px 0;">Figure 4</div>
     <img src="626b.png" alt="Exercise 626b" style="max-width:100%;height:auto;border:1px solid #ccc;border-radius:8px;" />
   </div>
   <div class="img-item">
-    <div style="font-weight:600;margin:0 0 6px 0;">628a (file: <code>628a.png</code>)</div>
+    <div style="font-weight:600;margin:0 0 6px 0;">Figure 5</div>
     <img src="628a.png" alt="Exercise 628a" style="max-width:100%;height:auto;border:1px solid #ccc;border-radius:8px;" />
   </div>
   <div class="img-item">
-    <div style="font-weight:600;margin:0 0 6px 0;">628b (file: <code>628b.png</code>)</div>
+    <div style="font-weight:600;margin:0 0 6px 0;">Figure 6</div>
     <img src="628b.png" alt="Exercise 628b" style="max-width:100%;height:auto;border:1px solid #ccc;border-radius:8px;" />
   </div>
 </div>
@@ -57,7 +57,7 @@
            Type A (2 questions)
            ======================= */
 
-        { latex: String.raw`\textbf{(Type A)}\ \text{In }\triangle ABC,\ \text{angles are in degrees and side }a\text{ is opposite }A,\ b\text{ opposite }B,\ c\text{ opposite }C.\ \text{Given }A=35^\circ,\ B=17^\circ,\ b=5.\ \text{Classify the data (SSS, SSA, SAA, SAS, ASA, AAA) and find }a.}`,
+        { latex: String.raw`\text{In }\triangle ABC,\ \text{angles are in degrees and side }a\text{ is opposite }A,\ b\text{ opposite }B,\ c\text{ opposite }C.\ \text{Given }A=35^\circ,\ B=17^\circ,\ b=5.\ \text{Classify the data (SSS, SSA, SAA, SAS, ASA, AAA) and find }a.}`,
           choices: [
             String.raw`\text{SAA; }a\approx 9.8`,
             String.raw`\text{ASA; }a\approx 9.8`,
@@ -67,7 +67,7 @@
             String.raw`\text{SAA; }a\approx 12.4`
           ]},
 
-        { latex: String.raw`\textbf{(Type A)}\ \text{In }\triangle ABC,\ \text{given }B=82^\circ,\ C=57^\circ,\ a=6.\ \text{Classify the data (SSS, SSA, SAA, SAS, ASA, AAA) and find }c.}`,
+        { latex: String.raw`\text{In }\triangle ABC,\ \text{given }B=82^\circ,\ C=57^\circ,\ a=6.\ \text{Classify the data (SSS, SSA, SAA, SAS, ASA, AAA) and find }c.}`,
           choices: [
             String.raw`\text{SAA; }c\approx 7.7`,
             String.raw`\text{ASA; }c\approx 7.7`,
@@ -81,7 +81,7 @@
            Type B (2 questions)
            ======================= */
 
-        { latex: String.raw`\textbf{(Type B)}\ \text{In }\triangle ABC,\ \text{given }C=46^\circ,\ a=5,\ c=4.\ \text{How many triangles are possible, and what are the possible values of }B\text{?}`,
+        { latex: String.raw`\text{In }\triangle ABC,\ \text{given }C=46^\circ,\ a=5,\ c=4.\ \text{How many triangles are possible, and what are the possible values of }B\text{?}`,
           choices: [
             String.raw`\text{0 triangles (no solution).}`,
             String.raw`\text{1 triangle; }B\approx 70^\circ`,
@@ -91,7 +91,7 @@
             String.raw`\text{2 triangles; }B\approx 46^\circ\ \text{or}\ 134^\circ`
           ]},
 
-        { latex: String.raw`\textbf{(Type B)}\ \text{In }\triangle ABC,\ \text{given }A=23^\circ,\ a=2,\ b=3.\ \text{How many triangles are possible, and what are the possible values of }B\text{?}`,
+        { latex: String.raw`\text{In }\triangle ABC,\ \text{given }A=23^\circ,\ a=2,\ b=3.\ \text{How many triangles are possible, and what are the possible values of }B\text{?}`,
           choices: [
             String.raw`\text{0 triangles (no solution).}`,
             String.raw`\text{1 triangle; }B\approx 35.9^\circ`,
@@ -105,7 +105,7 @@
            Type C (Exercise 22 only)
            ======================= */
 
-        { latex: String.raw`\textbf{(Type C — Exercise 22)}\ \text{In trapezoid }ABCD,\ \overline{BC}\parallel\overline{AD}\ \text{and } \overline{AB}\perp\overline{BC},\ \overline{AB}\perp\overline{AD}.\ \text{Given }m\angle BAC=25^\circ,\ AB=26,\ CD=31.\ \text{Find the perimeter of }ABCD\text{ (nearest tenth).}`,
+        { latex: String.raw`\text{In trapezoid }ABCD,\ \overline{BC}\parallel\overline{AD}\ \text{and } \overline{AB}\perp\overline{BC},\ \overline{AB}\perp\overline{AD}.\ \text{Given }m\angle BAC=25^\circ,\ AB=26,\ CD=31.\ \text{Find the perimeter of }ABCD\text{ (nearest tenth).}`,
           choices: [
             String.raw`74.0`,
             String.raw`98.1`,
@@ -116,7 +116,7 @@
           ]},
 
         /* =======================
-           Portuguese set (with images): Figure 1, 625b, 626a, 626b, 628a, 628b
+           Portuguese set (with images): Figure 1, Figure 2, Figure 3, Figure 4, Figure 5, Figure 6
            ======================= */
 
         { latex: String.raw`\text{Refer to Figure 1 above. Determine the value of }x.`,
@@ -129,7 +129,7 @@
             String.raw`12\sqrt{2}`
           ]},
 
-        { latex: String.raw`\textbf{(625b)}\ \text{Refer to the diagram labeled 625b above. Determine the value of }x.`,
+        { latex: String.raw`text{Refer to Figure 2 above. Determine the value of }x.`,
           choices: [
             String.raw`6\sqrt{6}`,
             String.raw`9\sqrt{2}`,
@@ -139,7 +139,7 @@
             String.raw`18\cos(15^\circ)`
           ]},
 
-        { latex: String.raw`\textbf{(626a)}\ \text{Refer to the diagram labeled 626a above. Determine the radius }R\text{ of the circumscribed circle.}`,
+        { latex: String.raw`\text{Refer to the diagram labeled Figure 3 above. Determine the radius }R\text{ of the circumscribed circle.}`,
           choices: [
             String.raw`3\sqrt{3}`,
             String.raw`6`,
@@ -149,7 +149,7 @@
             String.raw`6\sqrt{3}`
           ]},
 
-        { latex: String.raw`\textbf{(626b)}\ \text{Refer to the diagram labeled 626b above. Determine the radius }R\text{ of the circumscribed circle.}`,
+        { latex: String.raw`\text{Refer to Figure 4 above. Determine the radius }R\text{ of the circumscribed circle.}`,
           choices: [
             String.raw`6\sqrt{2}`,
             String.raw`9`,
@@ -159,7 +159,7 @@
             String.raw`9\sqrt{2}`
           ]},
 
-        { latex: String.raw`\textbf{(628a)}\ \text{Refer to the diagram labeled 628a above. Determine the measure of angle }x.`,
+        { latex: String.raw`\text{Refer to the diagram labeled Figure 5 above. Determine the measure of angle }x.`,
           choices: [
             String.raw`75^\circ`,
             String.raw`105^\circ`,
@@ -169,7 +169,7 @@
             String.raw`120^\circ`
           ]},
 
-        { latex: String.raw`\textbf{(628b)}\ \text{Refer to the diagram labeled 628b above. Determine the measure of angle }x.`,
+        { latex: String.raw`\text{Refer to the diagram labeled Figure 6 above. Determine the measure of angle }x.`,
           choices: [
             String.raw`30^\circ`,
             String.raw`35^\circ`,
