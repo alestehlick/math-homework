@@ -1,0 +1,231 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Homework 12-Review (Algebra 2)</title>
+
+  <script>
+    /* =========================
+       Homework 12-Review — Logs, Inverses, and Exponential Equations
+       16-question assorted review based on the provided set.
+       ========================= */
+    window.homeworkData = {
+      classId : "Algebra2",
+      id      : "Homework 12-Review",
+      title   : "Homework 12-Review — Logs, Inverses, and Exponential Equations",
+
+      graphics : String.raw``,
+
+      /* Correct answers for Q1–Q16 */
+      answerKey : ["B","C","D","B","B","A","B","B","A","A","A","B","C","A","B","A"],
+
+      questions : [
+
+        {
+          latex: String.raw`\text{For }f=\{(1,7),(2,8),(-3,9)\},\ \text{which option gives }f^{-1}\text{ and correctly states whether }f^{-1}\text{ is a function?}`,
+          choices: [
+            String.raw`f^{-1}=\{(7,1),(8,2),(9,-3)\},\ \text{and }f^{-1}\text{ is not a function}`,
+            String.raw`f^{-1}=\{(7,1),(8,2),(9,-3)\},\ \text{and }f^{-1}\text{ is a function}`,
+            String.raw`f^{-1}=\{(1,7),(2,8),(-3,9)\},\ \text{and }f^{-1}\text{ is a function}`,
+            String.raw`f^{-1}=\{(7,1),(8,2),(-3,9)\},\ \text{and }f^{-1}\text{ is a function}`,
+            String.raw`f^{-1}=\{(7,1),(7,2),(9,-3)\},\ \text{and }f^{-1}\text{ is a function}`,
+            String.raw`f^{-1}=\{(7,1),(8,2),(9,3)\},\ \text{and }f^{-1}\text{ is a function}`
+          ]
+        },
+
+        {
+          latex: String.raw`\text{If }f(x)=3x-7,\ \text{find }f^{-1}(x).`,
+          choices: [
+            String.raw`\dfrac{x-7}{3}`,
+            String.raw`3x+7`,
+            String.raw`\dfrac{x+7}{3}`,
+            String.raw`3x-7`,
+            String.raw`7-3x`,
+            String.raw`\dfrac{1}{3x-7}`
+          ]
+        },
+
+        {
+          latex: String.raw`\text{If }g(x)=2x^{2}-8,\ \text{which option correctly describes }g^{-1}(x)\text{ and whether it is a function?}`,
+          choices: [
+            String.raw`g^{-1}(x)=\sqrt{\dfrac{x+8}{2}},\ \text{and it is a function}`,
+            String.raw`g^{-1}(x)=\sqrt{\dfrac{x+8}{2}},\ \text{and it is not a function}`,
+            String.raw`g^{-1}(x)=\pm\sqrt{\dfrac{x+8}{2}},\ \text{and it is a function}`,
+            String.raw`g^{-1}(x)=\pm\sqrt{\dfrac{x+8}{2}},\ \text{and it is not a function}`,
+            String.raw`g^{-1}(x)=\pm\sqrt{\dfrac{x-8}{2}},\ \text{and it is not a function}`,
+            String.raw`g^{-1}(x)=\dfrac{x+8}{2},\ \text{and it is a function}`
+          ]
+        },
+
+        {
+          latex: String.raw`\text{Change to log form: }3^{4}=81.`,
+          choices: [
+            String.raw`\log_{4}81=3`,
+            String.raw`\log_{3}81=4`,
+            String.raw`\log_{81}3=4`,
+            String.raw`\log_{3}4=81`,
+            String.raw`\log_{81}4=3`,
+            String.raw`\log 3=81^{4}`
+          ]
+        },
+
+        {
+          latex: String.raw`\text{Change to log form: }7^{-2}=\dfrac{1}{49}.`,
+          choices: [
+            String.raw`\log_{7}\!\left(\dfrac{1}{49}\right)=2`,
+            String.raw`\log_{7}\!\left(\dfrac{1}{49}\right)=-2`,
+            String.raw`\log_{-2}7=\dfrac{1}{49}`,
+            String.raw`\log_{49}7=-2`,
+            String.raw`\log_{7}49=-2`,
+            String.raw`\log_{7}(-2)=\dfrac{1}{49}`
+          ]
+        },
+
+        {
+          latex: String.raw`\text{Change to exponential form: }\log_{2}\!\left(\dfrac{1}{16}\right)=-4.`,
+          choices: [
+            String.raw`2^{-4}=\dfrac{1}{16}`,
+            String.raw`2^{4}=\dfrac{1}{16}`,
+            String.raw`(-2)^{4}=\dfrac{1}{16}`,
+            String.raw`2^{-16}=\dfrac{1}{4}`,
+            String.raw`\left(\dfrac{1}{2}\right)^{-4}=\dfrac{1}{16}`,
+            String.raw`\left(\dfrac{1}{16}\right)^{2}=-4`
+          ]
+        },
+
+        {
+          latex: String.raw`\text{Change to exponential form: }\ln 7.8=2.0541.`,
+          choices: [
+            String.raw`10^{2.0541}=7.8`,
+            String.raw`e^{2.0541}=7.8`,
+            String.raw`\ln(2.0541)=7.8`,
+            String.raw`e^{7.8}=2.0541`,
+            String.raw`\ln(7.8)=e^{2.0541}`,
+            String.raw`7.8^{e}=2.0541`
+          ]
+        },
+
+        {
+          latex: String.raw`\text{Give the answer in radians: }\ \text{Cos}^{-1}\!\left(\dfrac{\sqrt{3}}{2}\right).`,
+          choices: [
+            String.raw`\dfrac{\pi}{3}`,
+            String.raw`\dfrac{\pi}{6}`,
+            String.raw`\dfrac{5\pi}{6}`,
+            String.raw`-\dfrac{\pi}{6}`,
+            String.raw`\dfrac{7\pi}{6}`,
+            String.raw`-\dfrac{\pi}{3}`
+          ]
+        },
+
+        {
+          latex: String.raw`\text{Give the answer in radians: }\ \text{Sin}^{-1}\!\left(\dfrac{\sqrt{3}}{2}\right).`,
+          choices: [
+            String.raw`\dfrac{\pi}{3}`,
+            String.raw`\dfrac{2\pi}{3}`,
+            String.raw`-\dfrac{\pi}{3}`,
+            String.raw`\dfrac{\pi}{6}`,
+            String.raw`-\dfrac{\pi}{6}`,
+            String.raw`\dfrac{5\pi}{3}`
+          ]
+        },
+
+        {
+          latex: String.raw`\text{Give the answer in radians: }\ \text{Tan}^{-1}(-1).`,
+          choices: [
+            String.raw`-\dfrac{\pi}{4}`,
+            String.raw`\dfrac{3\pi}{4}`,
+            String.raw`\dfrac{\pi}{4}`,
+            String.raw`-\dfrac{3\pi}{4}`,
+            String.raw`\pi`,
+            String.raw`0`
+          ]
+        },
+
+        {
+          latex: String.raw`\text{Use log laws to rewrite: }\log_{4}(ab^{2}).`,
+          choices: [
+            String.raw`\log_{4}a+2\log_{4}b`,
+            String.raw`2\log_{4}a+\log_{4}b`,
+            String.raw`\log_{4}a+\log_{4}(b^{2})`,
+            String.raw`\log_{4}(a+b^{2})`,
+            String.raw`\log_{4}a\cdot 2\log_{4}b`,
+            String.raw`\log_{4}a-\log_{4}(b^{2})`
+          ]
+        },
+
+        {
+          latex: String.raw`\text{Use log laws to rewrite: }\log\sqrt{\dfrac{x^{2}}{y}}.`,
+          choices: [
+            String.raw`\dfrac{1}{2}\log x-\log y`,
+            String.raw`\log x-\dfrac{1}{2}\log y`,
+            String.raw`2\log x-\log y`,
+            String.raw`\log x+\dfrac{1}{2}\log y`,
+            String.raw`\dfrac{1}{2}(2\log x+\log y)`,
+            String.raw`\log(x^{2})-\log(y^{2})`
+          ]
+        },
+
+        {
+          latex: String.raw`\text{Use log laws to rewrite: }\log\sqrt{x^{2}yz^{3}}.`,
+          choices: [
+            String.raw`\log x+\log y+3\log z`,
+            String.raw`2\log x+\dfrac{1}{2}\log y+\dfrac{3}{2}\log z`,
+            String.raw`\log x+\dfrac{1}{2}\log y+\dfrac{3}{2}\log z`,
+            String.raw`\dfrac{1}{2}\log x+\dfrac{1}{2}\log y+\dfrac{3}{2}\log z`,
+            String.raw`\log x+\dfrac{1}{2}\log(yz^{3})`,
+            String.raw`\log(x^{2}yz^{3})`
+          ]
+        },
+
+        {
+          latex: String.raw`\text{Evaluate: }\log_{4}32.`,
+          choices: [
+            String.raw`\dfrac{5}{2}`,
+            String.raw`\dfrac{2}{5}`,
+            String.raw`\dfrac{3}{2}`,
+            String.raw`\dfrac{5}{4}`,
+            String.raw`2`,
+            String.raw`3`
+          ]
+        },
+
+        {
+          latex: String.raw`\text{Evaluate: }\log_{5}\!\left(\dfrac{1}{25}\right).`,
+          choices: [
+            String.raw`2`,
+            String.raw`-2`,
+            String.raw`-\dfrac{1}{2}`,
+            String.raw`\dfrac{1}{25}`,
+            String.raw`5`,
+            String.raw`-25`
+          ]
+        },
+
+        {
+          latex: String.raw`\text{Solve: }\log x+\log 4=3.`,
+          choices: [
+            String.raw`x=250`,
+            String.raw`x=40`,
+            String.raw`x=4000`,
+            String.raw`x=996`,
+            String.raw`x=25`,
+            String.raw`x=2.5`
+          ]
+        }
+
+      ]
+    };
+  </script>
+
+  <link rel="stylesheet" href="/math-homework/assets/core.css" />
+  <link rel="stylesheet" href="https://tikzjax.com/v1/fonts.css" />
+  <script defer src="/math-homework/assets/core.js"></script>
+  <script defer src="https://tikzjax.com/v1/tikzjax.js"></script>
+  <script defer src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+</head>
+
+<body>
+  <div id="hw-root">Loading…</div>
+</body>
+</html>
