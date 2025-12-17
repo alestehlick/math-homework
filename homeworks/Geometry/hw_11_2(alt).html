@@ -1,0 +1,361 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Homework 11-2 (Geometry)</title>
+
+  <script>
+    /* =========================
+       Homework 11-2 — Volume of Prisms (Geometry)
+
+       IMPORTANT (format upgrade):
+       - This file uses the NEW, nicer authoring format:
+           q.stem  (HTML prose, with math written as \( ... \) or \[ ... \])
+           q.media (optional per-question figure, shown next to the stem)
+         → Requires your layout-first core.js (the v5-style we discussed).
+         → If you still use the old core.js that forces everything into \( ... \),
+           you will NOT get the intended layout.
+
+       REQUIRED SOURCE REFERENCES (your provided sets):
+       - Type A uses A. Exercises: #1, #2, #4, #9, #12
+       - Type B uses B. Exercises: #15, #16, #17, #18
+       - Portuguese set uses: #327, #330, #333
+
+       IMAGE NAMING RULE (per your instruction):
+       Any figure used is referenced by the ORIGINAL problem number from the set.
+       Put these PNG files in the same folder as this HTML:
+         11-2-1.png, 11-2-2.png, 11-2-4.png, 11-2-9.png, 11-2-12.png
+       ========================= */
+
+    window.homeworkData = {
+      classId : "Geometry",
+      id      : "Homework 11-2",
+      title   : "Homework 11-2 — Volume of Prisms",
+
+      /* No global graphics: figures are placed next to the relevant questions */
+      graphics : "",
+
+      /* Correct answers (A–F) for Q1–Q12 (kept exactly as your original file) */
+      answerKey : ["C","D","B","C","B","C","C","A","A","A","C","C"],
+
+      questions : [
+
+        /* =======================
+           Type A (5 questions)
+           ======================= */
+
+        /* Source: A. Exercises #1 (figure: 11-2-1.png) */
+        {
+          stem: String.raw`
+            <p><b>Refer to Figure 1.</b></p>
+            <p>Find the volume of the prism shown.</p>
+          `,
+          media: `
+            <figure class="q-fig">
+              <img src="11-2-1.png" alt="A. Exercise #1" />
+              <figcaption>Figure 1 (A. Exercise #1)</figcaption>
+            </figure>
+          `,
+          choices: [
+            String.raw`\(54\)`,
+            String.raw`\(108\)`,
+            String.raw`\(162\)`,
+            String.raw`\(324\)`,
+            String.raw`\(81\)`,
+            String.raw`\(18\)`
+          ]
+        },
+
+        /* Source: A. Exercises #2 (figure: 11-2-2.png) */
+        {
+          stem: String.raw`
+            <p><b>Refer to Figure 2.</b></p>
+            <p>
+              The base is a triangle with base \(12\) and perpendicular height \(9\).
+              The prism height is \(5\).
+            </p>
+            <p>Find the volume.</p>
+          `,
+          media: `
+            <figure class="q-fig">
+              <img src="11-2-2.png" alt="A. Exercise #2" />
+              <figcaption>Figure 2 (A. Exercise #2)</figcaption>
+            </figure>
+          `,
+          choices: [
+            String.raw`\(135\)`,
+            String.raw`\(180\)`,
+            String.raw`\(216\)`,
+            String.raw`\(270\)`,
+            String.raw`\(300\)`,
+            String.raw`\(540\)`
+          ]
+        },
+
+        /* Source: A. Exercises #4 (figure: 11-2-4.png) */
+        {
+          stem: String.raw`
+            <p><b>Refer to Figure 3.</b></p>
+            <p>
+              Each edge of the base is \(7\). In the base, a dashed segment of length \(4.8\)
+              is drawn perpendicular to a base edge (so you may use it as a base-height pair).
+              The prism height is \(23\).
+            </p>
+            <p>Find the volume.</p>
+          `,
+          media: `
+            <figure class="q-fig">
+              <img src="11-2-4.png" alt="A. Exercise #4" />
+              <figcaption>Figure 3 (A. Exercise #4)</figcaption>
+            </figure>
+          `,
+          choices: [
+            String.raw`\(966\)`,
+            String.raw`\(1932\)`,
+            String.raw`\(1848\)`,
+            String.raw`\(1610\)`,
+            String.raw`\(2016\)`,
+            String.raw`\(1050\)`
+          ]
+        },
+
+        /* Source: A. Exercises #9 (figure: 11-2-9.png) */
+        {
+          stem: String.raw`
+            <p><b>Refer to Figure 4.</b></p>
+            <p>
+              The base is a right triangle with legs \(8\) and \(12\).
+              The prism height is \(10\).
+            </p>
+            <p>Find the volume.</p>
+          `,
+          media: `
+            <figure class="q-fig">
+              <img src="11-2-9.png" alt="A. Exercise #9" />
+              <figcaption>Figure 4 (A. Exercise #9)</figcaption>
+            </figure>
+          `,
+          choices: [
+            String.raw`\(96\)`,
+            String.raw`\(240\)`,
+            String.raw`\(480\)`,
+            String.raw`\(560\)`,
+            String.raw`\(720\)`,
+            String.raw`\(960\)`
+          ]
+        },
+
+        /* Source: A. Exercises #12 (figure: 11-2-12.png) */
+        {
+          stem: String.raw`
+            <p><b>Refer to Figure 5.</b></p>
+            <p>
+              Each base edge is \(15\). A dashed segment from the base center to a side
+              is drawn perpendicular to that side and has length \(18.1\) (so it can be used
+              as an apothem). The prism height is \(34\).
+            </p>
+            <p>Find the volume.</p>
+          `,
+          media: `
+            <figure class="q-fig">
+              <img src="11-2-12.png" alt="A. Exercise #12" />
+              <figcaption>Figure 5 (A. Exercise #12)</figcaption>
+            </figure>
+          `,
+          choices: [
+            String.raw`\(1086\)`,
+            String.raw`\(36924\)`,
+            String.raw`\(18462\)`,
+            String.raw`\(32580\)`,
+            String.raw`\(40000\)`,
+            String.raw`\(21720\)`
+          ]
+        },
+
+        /* =======================
+           Type B (4 questions)
+           ======================= */
+
+        /* Source: B. Exercises #15 */
+        {
+          stem: String.raw`
+            <p>
+              The bases of a prism are rhombi with diagonals \(16\text{ ft}\) and \(24\text{ ft}\).
+              The height of the prism is \(3\text{ ft}\).
+            </p>
+            <p>What is the volume?</p>
+          `,
+          choices: [
+            String.raw`\(192\text{ ft}^3\)`,
+            String.raw`\(288\text{ ft}^3\)`,
+            String.raw`\(576\text{ ft}^3\)`,
+            String.raw`\(1152\text{ ft}^3\)`,
+            String.raw`\(768\text{ ft}^3\)`,
+            String.raw`\(96\text{ ft}^3\)`
+          ]
+        },
+
+        /* Source: B. Exercises #16 */
+        {
+          stem: String.raw`
+            <p>
+              A concrete water trough is a rectangular prism measuring
+              \(24\text{ in}\times 48\text{ in}\times 96\text{ in}\).
+              If \(1\text{ gallon}=231\text{ in}^3\),
+              about how many gallons will fill the trough? <span class="note">(nearest tenth)</span>
+            </p>
+          `,
+          choices: [
+            String.raw`\(231.0\)`,
+            String.raw`\(384.0\)`,
+            String.raw`\(478.8\)`,
+            String.raw`\(512.0\)`,
+            String.raw`\(720.0\)`,
+            String.raw`\(1106.0\)`
+          ]
+        },
+
+        /* Source: B. Exercises #17 */
+        {
+          stem: String.raw`
+            <p>
+              The base areas of a triangular prism and a hexagonal prism are both
+              \(52\text{ cm}^2\), and their heights are the same.
+            </p>
+            <p>
+              If the volume of the triangular prism is \(468\text{ cm}^3\),
+              what is the height, and what is the volume of the hexagonal prism?
+            </p>
+          `,
+          choices: [
+            String.raw`\(\left(9\text{ cm},\,468\text{ cm}^3\right)\)`,
+            String.raw`\(\left(9\text{ cm},\,936\text{ cm}^3\right)\)`,
+            String.raw`\(\left(6\text{ cm},\,312\text{ cm}^3\right)\)`,
+            String.raw`\(\left(12\text{ cm},\,624\text{ cm}^3\right)\)`,
+            String.raw`\(\left(4\text{ cm},\,208\text{ cm}^3\right)\)`,
+            String.raw`\(\left(9\text{ cm},\,52\text{ cm}^3\right)\)`
+          ]
+        },
+
+        /* Source: B. Exercises #18 */
+        {
+          stem: String.raw`
+            <p>
+              A square cake pan is a rectangular prism with an \(8\)-by-\(8\) inch base
+              and height \(2\) inches.
+            </p>
+            <p>
+              If \(114\text{ in}^3\) of batter is poured in, how many cubic inches must the batter
+              expand to fill the pan?
+            </p>
+          `,
+          choices: [
+            String.raw`\(14\text{ in}^3\)`,
+            String.raw`\(7\text{ in}^3\)`,
+            String.raw`\(114\text{ in}^3\)`,
+            String.raw`\(128\text{ in}^3\)`,
+            String.raw`\(16\text{ in}^3\)`,
+            String.raw`\(28\text{ in}^3\)`
+          ]
+        },
+
+        /* =======================
+           Portuguese set (3 questions) — translated
+           ======================= */
+
+        /* Source: Portuguese #327 */
+        {
+          stem: String.raw`
+            <p>
+              A right prism has an equilateral triangle as its base.
+              The prism height equals the triangle side length.
+            </p>
+            <p>
+              If the prism volume is \(2\sqrt{3}\text{ cm}^3\), determine
+              <b>(triangle side length, total surface area)</b>.
+            </p>
+          `,
+          choices: [
+            String.raw`\(\left(2\text{ cm},\,12+2\sqrt3\text{ cm}^2\right)\)`,
+            String.raw`\(\left(2\text{ cm},\,12+4\sqrt3\text{ cm}^2\right)\)`,
+            String.raw`\(\left(4\text{ cm},\,48+8\sqrt3\text{ cm}^2\right)\)`,
+            String.raw`\(\left(2\text{ cm},\,24+2\sqrt3\text{ cm}^2\right)\)`,
+            String.raw`\(\left(2\text{ cm},\,12+\sqrt3\text{ cm}^2\right)\)`,
+            String.raw`\(\left(2\sqrt3\text{ cm},\,12+2\sqrt3\text{ cm}^2\right)\)`
+          ]
+        },
+
+        /* Source: Portuguese #330 */
+        {
+          stem: String.raw`
+            <p>
+              A prism has height \(3\text{ m}\) and a square base inscribed in a circle of radius \(2\text{ m}\).
+            </p>
+            <p>What is the volume of the prism?</p>
+          `,
+          choices: [
+            String.raw`\(12\text{ m}^3\)`,
+            String.raw`\(18\text{ m}^3\)`,
+            String.raw`\(24\text{ m}^3\)`,
+            String.raw`\(24\sqrt2\text{ m}^3\)`,
+            String.raw`\(48\text{ m}^3\)`,
+            String.raw`\(8\text{ m}^3\)`
+          ]
+        },
+
+        /* Source: Portuguese #333 */
+        {
+          stem: String.raw`
+            <p>
+              The base of an oblique parallelepiped is a square of side \(a\).
+              A lateral edge has length \(b\) and forms a \(60^\circ\) angle with each of the two adjacent sides of the base.
+            </p>
+            <p>Determine the volume.</p>
+          `,
+          choices: [
+            String.raw`\(a^{2}b\)`,
+            String.raw`\(\dfrac{a^{2}b}{2}\)`,
+            String.raw`\(\dfrac{a^{2}b\sqrt2}{2}\)`,
+            String.raw`\(\dfrac{a^{2}b\sqrt3}{2}\)`,
+            String.raw`\(a^{2}b\sqrt2\)`,
+            String.raw`\(\dfrac{ab^{2}\sqrt2}{2}\)`
+          ]
+        }
+
+      ]
+    };
+  </script>
+
+  <!-- Small style additions specific to this homework (safe to keep) -->
+  <style>
+    .q-fig{ margin:0; }
+    .q-fig img{
+      max-width:100%;
+      height:auto;
+      border:1px solid #cfcfcf;
+      border-radius:10px;
+      display:block;
+    }
+    .q-fig figcaption{
+      margin-top:6px;
+      font-size:0.95rem;
+      color:#444;
+      text-align:left;
+    }
+    .note{ color:#555; font-style:italic; }
+  </style>
+
+  <link rel="stylesheet" href="/math-homework/assets/core.css" />
+
+  <!-- IMPORTANT: this should be your layout-first core.js that supports q.stem + q.media -->
+  <script defer src="/math-homework/assets/core.js"></script>
+
+  <!-- MathJax (for \( ... \) and \[ ... \]) -->
+  <script defer src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+</head>
+
+<body>
+  <div id="hw-root">Loading…</div>
+</body>
+</html>
