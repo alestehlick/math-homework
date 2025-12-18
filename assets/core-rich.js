@@ -157,16 +157,20 @@ async function buildForm(d) {
 
     const hasMedia = media.length > 0;
 
-    qbox.insertAdjacentHTML("beforeend", `
-      <div class="question q-card">
-        <div class="q-head"><strong>Q${n}.</strong></div>
-        <div class="q-grid ${hasMedia ? "has-media" : "no-media"}">
-          <div class="q-stem" id="stem_${n}"></div>
-          ${hasMedia ? `<div class="q-media" id="media_${n}"></div>` : ``}
-        </div>
+qbox.insertAdjacentHTML("beforeend", `
+  <div class="question q-card">
+    <div class="q-head"><strong>Q${n}.</strong></div>
+
+    <div class="q-grid ${hasMedia ? "has-media" : "no-media"}">
+      <div class="q-left">
+        <div class="q-stem" id="stem_${n}"></div>
         <ul class="choices" id="choices_${n}"></ul>
       </div>
-    `);
+      ${hasMedia ? `<div class="q-media" id="media_${n}"></div>` : ``}
+    </div>
+  </div>
+`);
+
 
     // stem (HTML)
     const stemEl = document.getElementById(`stem_${n}`);
