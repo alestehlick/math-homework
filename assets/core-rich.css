@@ -1,0 +1,189 @@
+/* =========================
+   core.css — Geometry HW
+   ========================= */
+
+/* Base page -------------------------------------------------------- */
+
+body{
+  margin:0;
+  font-family:"EB Garamond",serif;
+  background:#f6f4ef;
+  color:#222;
+  line-height:1.5;               /* global default */
+}
+
+#hw-root{
+  max-width:720px;
+  margin:3rem auto;
+  padding:2rem 2.5rem;
+  background:#fff;
+  border-radius:12px;
+  box-shadow:0 4px 18px rgba(0,0,0,.1);
+}
+
+h1{
+  text-align:center;
+  font-weight:normal;
+  font-size:1.9rem;
+  margin:0 0 1.6rem;
+}
+
+/* Student info ----------------------------------------------------- */
+
+.student-info{
+  display:flex;
+  flex-wrap:wrap;
+  gap:1.5rem;
+  margin-bottom:1.8rem;
+}
+
+.student-info input{
+  margin-left:.4rem;
+  padding:.25rem .5rem;
+  font-size:1rem;
+  font-family:inherit;
+}
+
+/* Questions + choices ---------------------------------------------- */
+
+.question{
+  max-width:60rem;               /* card width */
+  margin:1.4rem auto 1.9rem;     /* space between questions */
+}
+
+.question p{
+  margin:0.25rem 0 0.65rem;      /* space under stem */
+  line-height:1.6;               /* a bit more open for stems */
+}
+
+.choices,
+.question ul{
+  list-style:none;
+  padding:0;
+  margin:0;
+}
+
+.choices li,
+.question li{
+  margin:0.4rem 0;               /* vertical gap between choices */
+}
+
+.question label{
+  display:grid;                  /* radio on left, text on right */
+  grid-template-columns:auto 1fr;
+  column-gap:0.45rem;
+  align-items:flex-start;
+  line-height:1.55;              /* spacing inside wrapped choices */
+  white-space:normal;
+  word-wrap:break-word;
+}
+
+.question input[type="radio"],
+.choices input[type="radio"]{
+  margin-right:.55rem;
+  margin-top:0.2rem;
+  transform:scale(1.15);
+}
+
+/* Button ----------------------------------------------------------- */
+
+button{
+  display:block;
+  margin:2rem auto 0;
+  padding:.65rem 1.8rem;
+  font-size:1rem;
+  font-family:inherit;
+  background:#4b7a5d;
+  color:#fff;
+  border:none;
+  border-radius:6px;
+  cursor:pointer;
+}
+button:hover{
+  background:#3e654d;
+}
+
+/* TikZ container --------------------------------------------------- */
+
+#media{
+  text-align:center;
+  margin:1rem 0;
+}
+#media script[type="text/tikz"]{
+  display:inline-block;
+}
+
+/* MathJax tweaks: wrapping + alignment ----------------------------- */
+
+/* Allow long MathJax expressions (questions / choices) to wrap */
+mjx-container[jax="CHTML"] mjx-math,
+mjx-container[jax="CHTML"] mjx-mrow,
+mjx-container[jax="CHTML"] mjx-mtext{
+  white-space:normal !important;
+}
+
+/* KEY: loosen line spacing for the actual text produced by \text{…} */
+mjx-container[jax="CHTML"] mjx-utext{
+  line-height:1.8;               /* controls the spacing between wrapped lines */
+}
+
+/* Left-align display math if it ever appears */
+mjx-container[display="true"]{
+  text-align:left;
+}
+
+
+
+
+
+
+
+
+
+
+/* ===== core-rich layout add-on ===== */
+
+.q-card { margin: 1.4rem auto 1.9rem; }
+
+.q-head { margin-bottom: .45rem; }
+
+.q-grid{
+  display: grid;
+  gap: 14px;
+  align-items: start;
+}
+
+.q-grid.has-media{
+  grid-template-columns: 1fr minmax(200px, 300px);
+}
+
+.q-grid.no-media{
+  grid-template-columns: 1fr;
+}
+
+.q-stem p{ margin: 0 0 .75rem; }
+.q-stem p:last-child{ margin-bottom: 0; }
+
+.q-media img, .q-media svg{
+  max-width: 100%;
+  height: auto;
+  display: block;
+  border: 1px solid #ccc;
+  border-radius: 10px;
+}
+
+.q-media figure{ margin: 0; }
+.q-media figcaption{
+  margin-top: 6px;
+  font-size: .95rem;
+  color: #444;
+  text-align: left;
+}
+
+@media (max-width: 640px){
+  .q-grid.has-media{ grid-template-columns: 1fr; }
+}
+
+.q-left { min-width: 0; }          /* prevents overflow issues */
+.q-left .choices { margin-top: .6rem; }
+
