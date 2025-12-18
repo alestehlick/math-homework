@@ -184,3 +184,7 @@ mjx-container[display="true"]{
   .q-grid.has-media{ grid-template-columns: 1fr; }
 }
 
+.q-left { min-width: 0; }          /* prevents overflow issues */
+.q-left .choices { margin-top: .6rem; }
+
+
