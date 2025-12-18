@@ -8,9 +8,12 @@
   <script>
     /* =========================================================
        Homework 10-1 — Radicals and Exponents
-       Recast to core-rich format (text-first stems; MathJax only
-       for the math fragments).
-       Source: provided old-form Homework 10-1 HTML (12 questions).
+       Recast to core-rich format.
+
+       Fix note:
+       - Some LaTeX commands (e.g. \tfrac, \frac) were breaking because
+         JavaScript interprets \t and \f as escape sequences in normal strings.
+       - All stems are now String.raw`...` so backslashes reach MathJax intact.
        ========================================================= */
 
     window.homeworkData = {
@@ -18,111 +21,107 @@
       id      : "Homework 10-1",
       title   : "Homework 10-1 — Radicals and Exponents",
 
-      /* No shared graphics for this homework */
       graphics : String.raw``,
 
       /* Correct answers for Q1–Q12 */
       answerKey : ["B","C","D","B","B","B","B","B","B","B","C","C"],
 
       questions : [
-        /* -----------------------------
-           A (10)
-           ----------------------------- */
-
+        /* ---------- A (10) ---------- */
         {
-          stem: `
+          stem: String.raw`
             <p>Change the radical to exponential form:</p>
-            <p class="math">\\(\\sqrt{12x^7}\\)</p>
+            <p class="math">\(\sqrt{12x^7}\)</p>
           `,
           choices: [
-            String.raw`\( (12x^7)^2 \)`,
-            String.raw`\( (12x^7)^{\tfrac{1}{2}} \)`,
-            String.raw`\( (12x^7)^{\tfrac{7}{12}} \)`,
-            String.raw`\( (12x^7)^{\tfrac{1}{7}} \)`,
-            String.raw`\( (12x^7)^{\tfrac{2}{7}} \)`,
-            String.raw`\( (12x^7)^{-\tfrac{1}{2}} \)`
+            String.raw`\((12x^7)^2\)`,
+            String.raw`\((12x^7)^{\tfrac{1}{2}}\)`,
+            String.raw`\((12x^7)^{\tfrac{7}{12}}\)`,
+            String.raw`\((12x^7)^{\tfrac{1}{7}}\)`,
+            String.raw`\((12x^7)^{\tfrac{2}{7}}\)`,
+            String.raw`\((12x^7)^{-\tfrac{1}{2}}\)`
           ]
         },
 
         {
-          stem: `
+          stem: String.raw`
             <p>Change the radical to exponential form:</p>
-            <p class="math">\\(\\sqrt[3]{9a^4b^2}\\)</p>
+            <p class="math">\(\sqrt[3]{9a^4b^2}\)</p>
           `,
           choices: [
-            String.raw`\( (9a^4b^2)^3 \)`,
-            String.raw`\( (9a^4b^2)^{\tfrac{1}{4}} \)`,
-            String.raw`\( (9a^4b^2)^{\tfrac{1}{3}} \)`,
-            String.raw`\( (9a^4b^2)^{\tfrac{3}{1}} \)`,
-            String.raw`\( (9a^4b^2)^{\tfrac{2}{3}} \)`,
-            String.raw`\( (9a^4b^2)^{-\tfrac{1}{3}} \)`
+            String.raw`\((9a^4b^2)^3\)`,
+            String.raw`\((9a^4b^2)^{\tfrac{1}{4}}\)`,
+            String.raw`\((9a^4b^2)^{\tfrac{1}{3}}\)`,
+            String.raw`\((9a^4b^2)^{\tfrac{3}{1}}\)`,
+            String.raw`\((9a^4b^2)^{\tfrac{2}{3}}\)`,
+            String.raw`\((9a^4b^2)^{-\tfrac{1}{3}}\)`
           ]
         },
 
         {
-          stem: `
+          stem: String.raw`
             <p>Change the radical to exponential form:</p>
-            <p class="math">\\(\\sqrt[4]{16m^3n}\\)</p>
+            <p class="math">\(\sqrt[4]{16m^3n}\)</p>
           `,
           choices: [
-            String.raw`\( (16m^3n)^4 \)`,
-            String.raw`\( (16m^3n)^{\tfrac{1}{3}} \)`,
-            String.raw`\( (16m^3n)^{\tfrac{3}{4}} \)`,
-            String.raw`\( (16m^3n)^{\tfrac{1}{4}} \)`,
-            String.raw`\( (16m^3n)^{\tfrac{4}{1}} \)`,
-            String.raw`\( (16m^3n)^{-\tfrac{1}{4}} \)`
+            String.raw`\((16m^3n)^4\)`,
+            String.raw`\((16m^3n)^{\tfrac{1}{3}}\)`,
+            String.raw`\((16m^3n)^{\tfrac{3}{4}}\)`,
+            String.raw`\((16m^3n)^{\tfrac{1}{4}}\)`,
+            String.raw`\((16m^3n)^{\tfrac{4}{1}}\)`,
+            String.raw`\((16m^3n)^{-\tfrac{1}{4}}\)`
           ]
         },
 
         {
-           stem: String.raw`
-    <p>Change the exponential expression to radical form:</p>
-    <p class="math">\(\,2^{\tfrac{3}{5}}\,\)</p>
-  `,
-          choices: [
-            String.raw`\( \sqrt[3]{2^5} \)`,
-            String.raw`\( \sqrt[5]{2^3} \)`,
-            String.raw`\( \sqrt{2^5} \)`,
-            String.raw`\( \sqrt[5]{2^{-3}} \)`,
-            String.raw`\( \sqrt[5]{2^5} \)`,
-            String.raw`\( \sqrt[15]{2^3} \)`
-          ]
-        },
-
-        {
-          stem: `
+          stem: String.raw`
             <p>Change the exponential expression to radical form:</p>
-            <p class="math">\\(x^{\tfrac{5}{2}}\\)</p>
+            <p class="math">\(\,2^{\tfrac{3}{5}}\,\)</p>
           `,
           choices: [
-            String.raw`\( \sqrt{x^{\tfrac{2}{5}}} \)`,
-            String.raw`\( \sqrt{x^5} \)`,
-            String.raw`\( \sqrt[5]{x^2} \)`,
-            String.raw`\( \sqrt{x^2} \)`,
-            String.raw`\( \sqrt[5]{x^{10}} \)`,
-            String.raw`\( \sqrt{x^{10}} \)`
+            String.raw`\(\sqrt[3]{2^5}\)`,
+            String.raw`\(\sqrt[5]{2^3}\)`,
+            String.raw`\(\sqrt{2^5}\)`,
+            String.raw`\(\sqrt[5]{2^{-3}}\)`,
+            String.raw`\(\sqrt[5]{2^5}\)`,
+            String.raw`\(\sqrt[15]{2^3}\)`
           ]
         },
 
         {
-          stem: `
+          stem: String.raw`
             <p>Change the exponential expression to radical form:</p>
-            <p class="math">\\(5^{\tfrac{3}{4}}a^{\tfrac{1}{2}}b^{\tfrac{2}{3}}\\)</p>
+            <p class="math">\(\,x^{\tfrac{5}{2}}\,\)</p>
           `,
           choices: [
-            String.raw`\( \sqrt[4]{5}\,\sqrt{a}\,\sqrt[3]{b^2} \)`,
-            String.raw`\( \sqrt[4]{125}\,\sqrt{a}\,\sqrt[3]{b^2} \)`,
-            String.raw`\( \sqrt[3]{125ab^2} \)`,
-            String.raw`\( \sqrt[4]{125a^2b^3} \)`,
-            String.raw`\( \sqrt{125ab^2} \)`,
-            String.raw`\( \sqrt[12]{125ab^2} \)`
+            String.raw`\(\sqrt{x^{\tfrac{2}{5}}}\)`,
+            String.raw`\(\sqrt{x^5}\)`,
+            String.raw`\(\sqrt[5]{x^2}\)`,
+            String.raw`\(\sqrt{x^2}\)`,
+            String.raw`\(\sqrt[5]{x^{10}}\)`,
+            String.raw`\(\sqrt{x^{10}}\)`
           ]
         },
 
         {
-          stem: `
-            <p>Between which two consecutive integers does this value lie?</p>
-            <p class="math">\\(\\sqrt{50}\\)</p>
+          stem: String.raw`
+            <p>Change the exponential expression to radical form:</p>
+            <p class="math">\(\,5^{\tfrac{3}{4}}a^{\tfrac{1}{2}}b^{\tfrac{2}{3}}\,\)</p>
+          `,
+          choices: [
+            String.raw`\(\sqrt[4]{5}\,\sqrt{a}\,\sqrt[3]{b^2}\)`,
+            String.raw`\(\sqrt[4]{125}\,\sqrt{a}\,\sqrt[3]{b^2}\)`,
+            String.raw`\(\sqrt[3]{125ab^2}\)`,
+            String.raw`\(\sqrt[4]{125a^2b^3}\)`,
+            String.raw`\(\sqrt{125ab^2}\)`,
+            String.raw`\(\sqrt[12]{125ab^2}\)`
+          ]
+        },
+
+        {
+          stem: String.raw`
+            <p>What two consecutive integers is this radical between?</p>
+            <p class="math">\(\sqrt{50}\)</p>
           `,
           choices: [
             String.raw`\(\text{between }6\text{ and }7\)`,
@@ -135,9 +134,9 @@
         },
 
         {
-          stem: `
-            <p>Between which two consecutive integers does this value lie?</p>
-            <p class="math">\\(\\sqrt[3]{120}\\)</p>
+          stem: String.raw`
+            <p>What two consecutive integers is this radical between?</p>
+            <p class="math">\(\sqrt[3]{120}\)</p>
           `,
           choices: [
             String.raw`\(\text{between }3\text{ and }4\)`,
@@ -150,9 +149,9 @@
         },
 
         {
-          stem: `
-            <p>Use a calculator and round to the nearest tenth:</p>
-            <p class="math">\\(\\sqrt{111}\\)</p>
+          stem: String.raw`
+            <p>Use a calculator to find the square root, rounding to the nearest tenth:</p>
+            <p class="math">\(\sqrt{111}\)</p>
           `,
           choices: [
             String.raw`\(10.4\)`,
@@ -165,9 +164,9 @@
         },
 
         {
-          stem: `
-            <p>Use a calculator and round to the nearest tenth:</p>
-            <p class="math">\\(\\sqrt{148}\\)</p>
+          stem: String.raw`
+            <p>Use a calculator to find the square root, rounding to the nearest tenth:</p>
+            <p class="math">\(\sqrt{148}\)</p>
           `,
           choices: [
             String.raw`\(12.1\)`,
@@ -179,14 +178,11 @@
           ]
         },
 
-        /* -----------------------------
-           B (1)
-           ----------------------------- */
-
+        /* ---------- B (1) ---------- */
         {
-          stem: `
-            <p>Find the value to the nearest hundredth (use a scientific calculator):</p>
-            <p class="math">\\(\\sqrt[4]{571{,}787}\\)</p>
+          stem: String.raw`
+            <p>Find the higher root to the nearest hundredth (use a scientific calculator):</p>
+            <p class="math">\(\sqrt[4]{571{,}787}\)</p>
           `,
           choices: [
             String.raw`\(27.48\)`,
@@ -198,14 +194,11 @@
           ]
         },
 
-        /* -----------------------------
-           C (1)
-           ----------------------------- */
-
+        /* ---------- C (1) ---------- */
         {
-          stem: `
-            <p>Approximate the value to the nearest tenth <em>without</em> using a calculator.</p>
-            <p class="math">\\(\\sqrt{795}\\)</p>
+          stem: String.raw`
+            <p>Approximate to the nearest tenth <em>without</em> using a calculator:</p>
+            <p class="math">\(\sqrt{795}\)</p>
           `,
           choices: [
             String.raw`\(28.0\)`,
