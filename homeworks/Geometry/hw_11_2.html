@@ -7,22 +7,21 @@
 
   <script>
     /* =========================
-       Homework 11-2 — Volume of Prisms (Geometry)
+       Homework 11-2 — Prism Volume (Geometry)
 
-       REQUIRED SOURCE REFERENCES (your provided sets):
-       - Type A uses A. Exercises: #1, #2, #4, #9, #12
-       - Type B uses B. Exercises: #15, #16, #17, #18
-       - Portuguese set uses: #327, #330, #333
+       SOURCE REFERENCES (from your provided sets):
+       - Type A (4): A. Exercises #1, #2, #3, #4
+       - Portuguese (fixed): #303
+       - Type B (4): B. Exercises #15, #16, #17, #18
+       - Portuguese (4 more): #312, #314, #325, #331
 
-       IMAGE NAMING RULE (per your instruction):
-       Any figure used is referenced by the ORIGINAL problem number from the set.
-       Put these PNG files in the same folder as this HTML:
-         11-2-1.png, 11-2-2.png, 11-2-4.png, 11-2-9.png, 11-2-12.png
+       IMAGE FILES (named by ORIGINAL problem number in the source set):
+         11-2-1.png, 11-2-2.png, 11-2-3.png, 11-2-4.png, 11-2-303.png
        ========================= */
     window.homeworkData = {
       classId : "Geometry",
       id      : "Homework 11-2",
-      title   : "Homework 11-2 — Volume of Prisms",
+      title   : "Homework 11-2 — Prism Volume",
 
       /* ---------- Image placeholders (add these files to the same folder) ---------- */
       graphics : String.raw`
@@ -39,84 +38,87 @@
 
   <div class="img-item">
     <div style="font-weight:600;margin:0 0 6px 0;">Figure 3</div>
-    <img src="11-2-4.png" alt="A. Exercises #4" style="max-width:100%;height:auto;border:1px solid #ccc;border-radius:8px;" />
+    <img src="11-2-3.png" alt="A. Exercises #3" style="max-width:100%;height:auto;border:1px solid #ccc;border-radius:8px;" />
   </div>
 
   <div class="img-item">
     <div style="font-weight:600;margin:0 0 6px 0;">Figure 4</div>
-    <img src="11-2-9.png" alt="A. Exercises #9" style="max-width:100%;height:auto;border:1px solid #ccc;border-radius:8px;" />
+    <img src="11-2-4.png" alt="A. Exercises #4" style="max-width:100%;height:auto;border:1px solid #ccc;border-radius:8px;" />
   </div>
 
   <div class="img-item">
     <div style="font-weight:600;margin:0 0 6px 0;">Figure 5</div>
-    <img src="11-2-12.png" alt="A. Exercises #12" style="max-width:100%;height:auto;border:1px solid #ccc;border-radius:8px;" />
+    <img src="11-2-303.png" alt="Portuguese #303" style="max-width:100%;height:auto;border:1px solid #ccc;border-radius:8px;" />
   </div>
 </div>
 `,
 
-      /* ---------- Hidden answer key (A–F) for 12 questions ---------- */
-      answerKey : ["C","D","B","C","B","C","C","A","A","A","C","C"],
+      /* ---------- Hidden answer key (A–F) for 13 questions ---------- */
+      answerKey : ["C","C","D","D","B","C","C","A","A","A","B","A","B"],
 
-      /* ---------- Questions ---------- */
       questions : [
 
         /* =======================
-           Type A (5 questions)
+           Type A (4 questions)
            ======================= */
 
         /* Source: A. Exercises #1 (figure: 11-2-1.png) */
         { latex: String.raw`\text{Refer to Figure 1 above. Find the volume of the prism.}`,
           choices: [
             String.raw`54`,
-            String.raw`108`,
+            String.raw`81`,
             String.raw`162`,
             String.raw`324`,
-            String.raw`81`,
-            String.raw`18`
+            String.raw`486`,
+            String.raw`972`
           ]},
 
         /* Source: A. Exercises #2 (figure: 11-2-2.png) */
         { latex: String.raw`\text{Refer to Figure 2 above. The triangular base has base }12\text{ and perpendicular height }9,\text{ and the prism height is }5.\text{ Find the volume.}`,
           choices: [
             String.raw`135`,
-            String.raw`180`,
             String.raw`216`,
             String.raw`270`,
             String.raw`300`,
+            String.raw`360`,
             String.raw`540`
           ]},
 
+        /* Source: A. Exercises #3 (figure: 11-2-3.png) */
+        { latex: String.raw`\text{Refer to Figure 3 above. The base is a }4\times 4\text{ square, and the perpendicular height is }12.\text{ Find the volume.}`,
+          choices: [
+            String.raw`64`,
+            String.raw`128`,
+            String.raw`160`,
+            String.raw`192`,
+            String.raw`256`,
+            String.raw`384`
+          ]},
+
         /* Source: A. Exercises #4 (figure: 11-2-4.png) */
-        { latex: String.raw`\text{Refer to Figure 3 above. Each edge of the base is }7,\text{ the dashed segment in the base is perpendicular to a base edge and has length }4.8,\text{ and the prism height is }23.\text{ Find the volume.}`,
+        { latex: String.raw`\text{Refer to Figure 4 above. The base is a regular pentagon with side length }7\text{ and apothem }4.8,\text{ and the prism height is }23.\text{ Find the volume.}`,
           choices: [
             String.raw`966`,
-            String.raw`1932`,
+            String.raw`1680`,
             String.raw`1848`,
-            String.raw`1610`,
+            String.raw`1932`,
             String.raw`2016`,
-            String.raw`1050`
+            String.raw`2100`
           ]},
 
-        /* Source: A. Exercises #9 (figure: 11-2-9.png) */
-        { latex: String.raw`\text{Refer to Figure 4 above. The base is a right triangle with legs }8\text{ and }12,\text{ and the prism height is }10.\text{ Find the volume.}`,
-          choices: [
-            String.raw`96`,
-            String.raw`240`,
-            String.raw`480`,
-            String.raw`560`,
-            String.raw`720`,
-            String.raw`960`
-          ]},
+        /* =======================
+           Portuguese #303 (1 question)
+           ======================= */
 
-        /* Source: A. Exercises #12 (figure: 11-2-12.png) */
-        { latex: String.raw`\text{Refer to Figure 5 above. Each base edge is }15,\text{ the dashed segment from the base center to a side (perpendicular) is }18.1,\text{ and the prism height is }34.\text{ Find the volume.}`,
+        /* Source: Portuguese #303 (figure: 11-2-303.png) */
+        { latex: String.raw`\text{Refer to Figure 5 above (Problem 303). For prism (a), which choice gives (lateral area, total area, volume) in terms of }a\text{?}`,
           choices: [
-            String.raw`1086`,
-            String.raw`36924`,
-            String.raw`18462`,
-            String.raw`32580`,
-            String.raw`40000`,
-            String.raw`21720`
+            String.raw`\left(3a^{2},\ 3a^{2}+\dfrac{\sqrt3}{2}a^{2},\ \dfrac{\sqrt3}{4}a^{3}\right)`,
+            String.raw`\left(6a^{2},\ 6a^{2}+\dfrac{\sqrt3}{2}a^{2},\ \dfrac{\sqrt3}{2}a^{3}\right)`,
+            String.raw`\left(6a^{2},\ 6a^{2}+\dfrac{\sqrt3}{4}a^{2},\ \dfrac{\sqrt3}{2}a^{3}\right)`,
+            String.raw`\left(6a^{2},\ 6a^{2}+\dfrac{\sqrt3}{2}a^{2},\ \dfrac{\sqrt3}{4}a^{3}\right)`,
+            String.raw`\left(12a^{2},\ 12a^{2}+\dfrac{\sqrt3}{2}a^{2},\ \dfrac{\sqrt3}{2}a^{3}\right)`,
+            String.raw`\left(6a^{2},\ 6a^{2}+\sqrt3\,a^{2},\ \dfrac{\sqrt3}{2}a^{3}\right)`
           ]},
 
         /* =======================
@@ -129,13 +131,13 @@
             String.raw`192\text{ ft}^3`,
             String.raw`288\text{ ft}^3`,
             String.raw`576\text{ ft}^3`,
-            String.raw`1152\text{ ft}^3`,
             String.raw`768\text{ ft}^3`,
+            String.raw`1152\text{ ft}^3`,
             String.raw`96\text{ ft}^3`
           ]},
 
         /* Source: B. Exercises #16 */
-        { latex: String.raw`\text{A concrete water trough is a rectangular prism measuring }24\text{ in}\times 48\text{ in}\times 96\text{ in. If }1\text{ gallon}=231\text{ in}^3\text{, about how many gallons will fill the trough? (nearest tenth)}`,
+        { latex: String.raw`\text{A rectangular prism trough measures }24\text{ in}\times 48\text{ in}\times 96\text{ in. If }1\text{ gallon}=231\text{ in}^3\text{, about how many gallons will fill the trough? (nearest tenth)}`,
           choices: [
             String.raw`231.0`,
             String.raw`384.0`,
@@ -157,7 +159,7 @@
           ]},
 
         /* Source: B. Exercises #18 */
-        { latex: String.raw`\text{A square cake pan is a rectangular prism with an }8\text{-by-}8\text{ inch base and height }2\text{ inches. If }114\text{ in}^3\text{ of batter is poured in, how many cubic inches must the batter expand to fill the pan?}`,
+        { latex: String.raw`\text{A square cake pan is an }8\text{-by-}8\text{ inch base with height }2\text{ inches. If }114\text{ in}^3\text{ of batter is poured in, how many cubic inches must it expand to fill the pan?}`,
           choices: [
             String.raw`14\text{ in}^3`,
             String.raw`7\text{ in}^3`,
@@ -168,40 +170,51 @@
           ]},
 
         /* =======================
-           Portuguese set (3 questions) — translated
+           Portuguese set (4 questions)
            ======================= */
 
-        /* Source: Portuguese #327 */
-        { latex: String.raw`\text{A right prism has an equilateral triangle as its base. The prism height equals the triangle side length, and the prism volume is }2\sqrt3\text{ cm}^3\text{. What are (triangle side length, total surface area)?}`,
+        /* Source: Portuguese #312 */
+        { latex: String.raw`\text{A prism has an equilateral triangle base of side }a\text{. The prism height equals twice the altitude of the base triangle. Determine the volume in terms of }a\text{.}`,
           choices: [
-            String.raw`\left(2\text{ cm},\,12+2\sqrt3\text{ cm}^2\right)`,
-            String.raw`\left(2\text{ cm},\,12+4\sqrt3\text{ cm}^2\right)`,
-            String.raw`\left(4\text{ cm},\,48+8\sqrt3\text{ cm}^2\right)`,
-            String.raw`\left(2\text{ cm},\,24+2\sqrt3\text{ cm}^2\right)`,
-            String.raw`\left(2\text{ cm},\,12+\sqrt3\text{ cm}^2\right)`,
-            String.raw`\left(2\sqrt3\text{ cm},\,12+2\sqrt3\text{ cm}^2\right)`
+            String.raw`\dfrac{3}{4}a^{3}`,
+            String.raw`\dfrac{\sqrt3}{4}a^{3}`,
+            String.raw`\dfrac{3}{2}a^{3}`,
+            String.raw`\dfrac{\sqrt3}{2}a^{3}`,
+            String.raw`\dfrac{1}{2}a^{3}`,
+            String.raw`\dfrac{3\sqrt3}{4}a^{3}`
           ]},
 
-        /* Source: Portuguese #330 */
-        { latex: String.raw`\text{A prism has height }3\text{ m and a square base inscribed in a circle of radius }2\text{ m. What is the volume of the prism?}`,
+        /* Source: Portuguese #314 */
+        { latex: String.raw`\text{A regular hexagonal prism has height }3\text{ m. If the height were }5\text{ m, the volume would increase by }6\text{ m}^3.\text{ What is the original volume?}`,
           choices: [
+            String.raw`6\text{ m}^3`,
+            String.raw`9\text{ m}^3`,
             String.raw`12\text{ m}^3`,
+            String.raw`15\text{ m}^3`,
             String.raw`18\text{ m}^3`,
-            String.raw`24\text{ m}^3`,
-            String.raw`24\sqrt2\text{ m}^3`,
-            String.raw`48\text{ m}^3`,
-            String.raw`8\text{ m}^3`
+            String.raw`3\text{ m}^3`
           ]},
 
-        /* Source: Portuguese #333 */
-        { latex: String.raw`\text{The base of an oblique parallelepiped is a square of side }a\text{. A lateral edge has length }b\text{ and forms a }60^\circ\text{ angle with each of the two adjacent sides of the base. Determine the volume.}`,
+        /* Source: Portuguese #325 (challenging) */
+        { latex: String.raw`\text{A right prism has a rhombus base where one diagonal is }\dfrac{3}{4}\text{ of the other, and the sum of the diagonals is }14\text{ cm. The prism height equals the semiperimeter of the base. Which choice gives (total surface area, volume)?}`,
           choices: [
-            String.raw`a^{2}b`,
-            String.raw`\dfrac{a^{2}b}{2}`,
-            String.raw`\dfrac{a^{2}b\sqrt2}{2}`,
-            String.raw`\dfrac{a^{2}b\sqrt3}{2}`,
-            String.raw`a^{2}b\sqrt2`,
-            String.raw`\dfrac{ab^{2}\sqrt2}{2}`
+            String.raw`\left(248\text{ cm}^2,\ 240\text{ cm}^3\right)`,
+            String.raw`\left(200\text{ cm}^2,\ 240\text{ cm}^3\right)`,
+            String.raw`\left(248\text{ cm}^2,\ 120\text{ cm}^3\right)`,
+            String.raw`\left(224\text{ cm}^2,\ 240\text{ cm}^3\right)`,
+            String.raw`\left(248\text{ cm}^2,\ 480\text{ cm}^3\right)`,
+            String.raw`\left(256\text{ cm}^2,\ 240\text{ cm}^3\right)`
+          ]},
+
+        /* Source: Portuguese #331 (challenging) */
+        { latex: String.raw`\text{A right prism has a square base inscribed in a circle of radius }8\text{ cm. If the volume is }768\text{ cm}^3,\text{ what is the total surface area (exact)?}`,
+          choices: [
+            String.raw`256+96\sqrt2`,
+            String.raw`256+192\sqrt2`,
+            String.raw`128+192\sqrt2`,
+            String.raw`256+384\sqrt2`,
+            String.raw`512+192\sqrt2`,
+            String.raw`256+64\sqrt2`
           ]}
       ]
     };
