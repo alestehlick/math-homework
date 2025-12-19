@@ -1,0 +1,345 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Homework 11-4 (Geometry)</title>
+
+  <script>
+    /* =========================
+       Homework 11-4 — Volume of Pyramids (Geometry)
+       Uses: /math-homework/assets/core-rich.js
+
+       REQUIRED SOURCE REFERENCES (your provided sets):
+       - Type A uses A. Exercises: #1, #7, #9
+       - Type B uses B. Exercises: #8, #10, #11, #12
+       - Portuguese set MUST include: #384(a), #384(b)
+       - Portuguese (additional): #386, #389, #418, #422
+       - Portuguese (challenging): #420, #434
+
+       IMAGE NAMING RULE (STRICT):
+       Any figure used is referenced by the ORIGINAL problem number from the set.
+       PNG files live in the SAME folder as this HTML.
+
+       Required image files for this homework:
+         11-4-1.png
+         11-4-384.png
+       ========================= */
+
+    window.homeworkData = {
+      classId : "Geometry",
+      id      : "Homework 11-4",
+      title   : "Homework 11-4 — Volume of Pyramids",
+
+      graphics : String.raw``,
+
+      /* Correct answers for Q1–Q15 */
+      answerKey : ["B","A","C","C","A","B","A","D","C","A","B","B","C","C","A"],
+
+      questions : [
+
+        /* =========================================================
+           Type A (3)
+           ========================================================= */
+
+        /* Source: A. Exercises #1 (figure) */
+        {
+          stem: String.raw`
+            <p><b>Refer to Figure 1.</b> Find the volume of the pyramid.</p>
+          `,
+          media: String.raw`
+            <figure>
+              <img src="11-4-1.png" alt="A. Exercise #1" />
+              <figcaption>Figure 1</figcaption>
+            </figure>
+          `,
+          choiceWrap: false,
+          choices: [
+            String.raw`56 cubic units`,
+            String.raw`168 cubic units`,
+            String.raw`336 cubic units`,
+            String.raw`112 cubic units`,
+            String.raw`224 cubic units`,
+            String.raw`84 cubic units`
+          ]
+        },
+
+        /* Source: A. Exercises #7 (word) */
+        {
+          stem: String.raw`
+            <p>The base of a pyramid is a rhombus with diagonals 24 inches and 29 inches.</p>
+            <p>The height of the pyramid is 35 inches. Find the volume.</p>
+          `,
+          choiceWrap: false,
+          choices: [
+            String.raw`4060 in<sup>3</sup>`,
+            String.raw`12,180 in<sup>3</sup>`,
+            String.raw`3480 in<sup>3</sup>`,
+            String.raw`40,600 in<sup>3</sup>`,
+            String.raw`2320 in<sup>3</sup>`,
+            String.raw`2900 in<sup>3</sup>`
+          ]
+        },
+
+        /* Source: A. Exercises #9 (word) */
+        {
+          stem: String.raw`
+            <p>Find the volume of a pyramid with a square base of side 18 centimeters and height 25 centimeters.</p>
+          `,
+          choiceWrap: false,
+          choices: [
+            String.raw`2250 cm<sup>3</sup>`,
+            String.raw`8100 cm<sup>3</sup>`,
+            String.raw`2700 cm<sup>3</sup>`,
+            String.raw`5400 cm<sup>3</sup>`,
+            String.raw`3240 cm<sup>3</sup>`,
+            String.raw`900 cm<sup>3</sup>`
+          ]
+        },
+
+        /* =========================================================
+           Type B (4)
+           ========================================================= */
+
+        /* Source: A. Exercises #8 (cone; volume) */
+        {
+          stem: String.raw`
+            <p>The volume of a circular cone is \(1728\pi\) cubic feet.</p>
+            <p>If the height is 36 feet, what is the diameter of the base?</p>
+          `,
+          choiceWrap: false,
+          choices: [
+            String.raw`12 ft`,
+            String.raw`18 ft`,
+            String.raw`24 ft`,
+            String.raw`48 ft`,
+            String.raw`36 ft`,
+            String.raw`6 ft`
+          ]
+        },
+
+        /* Source: B. Exercises #10 */
+        {
+          stem: String.raw`
+            <p>A circular cone is placed inside a rectangular pyramid.</p>
+            <p>The pyramid has a 37-by-43 inch base and height 55 inches.</p>
+            <p>The cone has diameter 34 inches, and the vertices (apexes) of both solids are the same.</p>
+            <p>What is the volume <em>inside the pyramid but outside the cone</em>?</p>
+            <p><em>Give an exact answer in terms of \(\pi\).</em></p>
+          `,
+          choices: [
+            String.raw`\(\dfrac{87505-15895\pi}{3}\)`,
+            String.raw`\(\,87505-15895\pi\,\)`,
+            String.raw`\(\dfrac{87505}{3}-15895\pi\)`,
+            String.raw`\(\dfrac{87505-5298\pi}{3}\)`,
+            String.raw`\(\dfrac{87505-15895\pi}{9}\)`,
+            String.raw`\(\dfrac{87505-289\pi}{3}\)`
+          ]
+        },
+
+        /* Source: B. Exercises #11 */
+        {
+          stem: String.raw`
+            <p>A cone sits point-down inside a cube.</p>
+            <p>The base of the cone is a circle inscribed in a face of the cube, and the cone’s vertex is on the opposite face.</p>
+            <p>If the cube has volume 729 in<sup>3</sup>, what are the cone’s height, radius, and volume?</p>
+            <p><em>Answer format: (height, radius, volume).</em></p>
+          `,
+          choices: [
+            String.raw`\(\,(9,\ 9,\ 243\pi)\,\)`,
+            String.raw`\(\,(9,\ \tfrac{9}{2},\ \tfrac{243\pi}{4})\,\)`,
+            String.raw`\(\,(\tfrac{9}{2},\ \tfrac{9}{2},\ \tfrac{243\pi}{8})\,\)`,
+            String.raw`\(\,(9,\ \tfrac{9}{2},\ \tfrac{81\pi}{4})\,\)`,
+            String.raw`\(\,(18,\ \tfrac{9}{2},\ \tfrac{243\pi}{2})\,\)`,
+            String.raw`\(\,(9,\ \tfrac{9}{4},\ \tfrac{243\pi}{16})\,\)`
+          ]
+        },
+
+        /* Source: B. Exercises #12 */
+        {
+          stem: String.raw`
+            <p>A cylinder encloses a cone.</p>
+            <p>The cylinder and the cone have the same base area, and both have height 4 feet.</p>
+            <p>If the volume of the cone is \(324\pi\) ft<sup>3</sup>, what are the volume and radius of the cylinder?</p>
+            <p><em>Answer format: (volume, radius).</em></p>
+          `,
+          choices: [
+            String.raw`\(\,(972\pi,\ 9\sqrt3)\,\)`,
+            String.raw`\(\,(324\pi,\ 9\sqrt3)\,\)`,
+            String.raw`\(\,(972\pi,\ 9)\,\)`,
+            String.raw`\(\,(1296\pi,\ 9\sqrt3)\,\)`,
+            String.raw`\(\,(972\pi,\ 3\sqrt3)\,\)`,
+            String.raw`\(\,(324\pi,\ 9)\,\)`
+          ]
+        },
+
+        /* =========================================================
+           Portuguese set — MUST include 384(a), 384(b)
+           ========================================================= */
+
+        /* Source: Portuguese #384(a) (diagram in 11-4-384.png) */
+        {
+          stem: String.raw`
+            <p><b>Refer to Figure 2 (Portuguese #384a).</b></p>
+            <p>Find the <strong>volume</strong> of the regular pyramid.</p>
+            <p><em>Give an exact answer.</em></p>
+          `,
+          media: String.raw`
+            <figure>
+              <img src="11-4-384.png" alt="Portuguese #384 (a) and (b)" />
+              <figcaption>Figure 2 (Problems 384a and 384b)</figcaption>
+            </figure>
+          `,
+          choices: [
+            String.raw`\(\dfrac{125}{6}\)`,
+            String.raw`\(\dfrac{125\sqrt3}{3}\)`,
+            String.raw`\(\dfrac{125\sqrt3}{12}\)`,
+            String.raw`\(\dfrac{125\sqrt3}{6}\)`,
+            String.raw`\(\dfrac{25\sqrt3}{6}\)`,
+            String.raw`\(\dfrac{75\sqrt3}{6}\)`
+          ]
+        },
+
+        /* Source: Portuguese #384(b) (same diagram file) */
+        {
+          stem: String.raw`
+            <p><b>Refer to Figure 2 (Portuguese #384b).</b></p>
+            <p>Find the <strong>volume</strong> of the regular pyramid.</p>
+            <p><em>Round to the nearest tenth.</em></p>
+          `,
+          choiceWrap: false,
+          choices: [
+            String.raw`66.1 cm<sup>3</sup>`,
+            String.raw`77.4 cm<sup>3</sup>`,
+            String.raw`88.1 cm<sup>3</sup>`,
+            String.raw`96.0 cm<sup>3</sup>`,
+            String.raw`110.0 cm<sup>3</sup>`,
+            String.raw`44.0 cm<sup>3</sup>`
+          ]
+        },
+
+        /* =========================================================
+           Portuguese set (4 regular)
+           ========================================================= */
+
+        /* Source: Portuguese #386 */
+        {
+          stem: String.raw`
+            <p>A regular tetrahedron has edge length 3 cm.</p>
+            <p>Find the <strong>volume</strong> of the tetrahedron.</p>
+            <p><em>Give an exact answer.</em></p>
+          `,
+          choices: [
+            String.raw`\(\dfrac{9\sqrt2}{4}\)`,
+            String.raw`\(\dfrac{27\sqrt2}{4}\)`,
+            String.raw`\(\dfrac{9}{4\sqrt2}\)`,
+            String.raw`\(\dfrac{27}{6\sqrt2}\)`,
+            String.raw`\(\dfrac{9\sqrt3}{4}\)`,
+            String.raw`\(\dfrac{27\sqrt3}{12}\)`
+          ]
+        },
+
+        /* Source: Portuguese #389 */
+        {
+          stem: String.raw`
+            <p>Determine the edge length of a regular tetrahedron whose volume is \(18\sqrt2\) m<sup>3</sup>.</p>
+          `,
+          choiceWrap: false,
+          choices: [
+            String.raw`3 m`,
+            String.raw`6 m`,
+            String.raw`9 m`,
+            String.raw`12 m`,
+            String.raw`4 m`,
+            String.raw`8 m`
+          ]
+        },
+
+        /* Source: Portuguese #418 */
+        {
+          stem: String.raw`
+            <p>Compute the volume of a pyramid with height 12 cm whose base is a rhombus with diagonals 6 cm and 10 cm.</p>
+          `,
+          choiceWrap: false,
+          choices: [
+            String.raw`60 cm<sup>3</sup>`,
+            String.raw`120 cm<sup>3</sup>`,
+            String.raw`180 cm<sup>3</sup>`,
+            String.raw`240 cm<sup>3</sup>`,
+            String.raw`30 cm<sup>3</sup>`,
+            String.raw`360 cm<sup>3</sup>`
+          ]
+        },
+
+        /* Source: Portuguese #422 */
+        {
+          stem: String.raw`
+            <p>The area of the base of a regular hexagonal pyramid is \(216\sqrt3\) m<sup>2</sup>.</p>
+            <p>If the height is 16 m, find the volume of the pyramid.</p>
+          `,
+          choices: [
+            String.raw`\(\,576\sqrt3\,\)`,
+            String.raw`\(\,864\sqrt3\,\)`,
+            String.raw`\(\,1152\sqrt3\,\)`,
+            String.raw`\(\,1728\sqrt3\,\)`,
+            String.raw`\(\,3456\sqrt3\,\)`,
+            String.raw`\(\,768\sqrt3\,\)`
+          ]
+        },
+
+        /* =========================================================
+           Portuguese set (2 challenging)
+           ========================================================= */
+
+        /* Source: Portuguese #420 */
+        {
+          stem: String.raw`
+            <p>Determine the ratio between the volumes of two pyramids, \(P_1\) and \(P_2\), given that:</p>
+            <ul>
+              <li>\(P_1\) has a regular hexagon base of side \(a\) and height \(a\).</li>
+              <li>\(P_2\) has an equilateral triangle base of side \(a\) and height \(a\).</li>
+            </ul>
+            <p>Find \(V_1:V_2\).</p>
+          `,
+          choiceWrap: false,
+          choices: [
+            String.raw`1 : 6`,
+            String.raw`3 : 2`,
+            String.raw`6 : 1`,
+            String.raw`2 : 3`,
+            String.raw`1 : 3`,
+            String.raw`3 : 1`
+          ]
+        },
+
+        /* Source: Portuguese #434 */
+        {
+          stem: String.raw`
+            <p>A regular hexagonal pyramid has volume \(60\sqrt3\) m<sup>3</sup>, and the side length of the hexagon is 4 m.</p>
+            <p>Find the <strong>lateral edge</strong> (apex to a base vertex) and the <strong>height</strong> of the pyramid.</p>
+            <p><em>Answer format: (lateral edge, height).</em></p>
+          `,
+          choiceWrap: false,
+          choices: [
+            String.raw`(8.5 m, 7.5 m)`,
+            String.raw`(7.5 m, 8.5 m)`,
+            String.raw`(8.0 m, 7.5 m)`,
+            String.raw`(8.5 m, 6.0 m)`,
+            String.raw`(9.0 m, 7.5 m)`,
+            String.raw`(8.5 m, 7.0 m)`
+          ]
+        }
+
+      ]
+    };
+  </script>
+
+  <link rel="stylesheet" href="/math-homework/assets/core-rich.css" />
+  <script defer src="/math-homework/assets/core-rich.js"></script>
+  <script defer src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+</head>
+
+<body>
+  <div id="hw-root">Loading…</div>
+</body>
+</html>
