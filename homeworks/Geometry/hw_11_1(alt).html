@@ -3,119 +3,101 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Homework 11-1 (Geometry)</title>
+  <title>Homework 11-2 (Geometry)</title>
 
   <script>
     /* =========================
-       Homework 11-1 — Volume of Box-Like Solids (Geometry)
+       Homework 11-2 — Volume of Prisms (Geometry)
        Adapted for: /math-homework/assets/core-rich.js
 
        REQUIRED SOURCE REFERENCES (your provided sets):
-       - Type A uses A. Exercises: #1, #2, #3, #4
-       - Type B uses B. Exercises: #9, #10, and word problems #16, #17
-       - Portuguese set uses: #261, #262, #264, #268, #269
+       - Type A uses A. Exercises: #1, #3, #8
+       - Type B uses B. Exercises: #15, #16, #17, #18
+       - Portuguese set uses: #303(a,b,c), #304, #306, #317, #308, #323
 
-       IMAGE NAMING RULE (per your instruction):
+       IMAGE NAMING RULE (STRICT):
        Any figure used is referenced by the ORIGINAL problem number from the set.
-       Put these PNG files in the same folder as this HTML:
-         11-1-1.png, 11-1-2.png, 11-1-3.png, 11-1-9.png, 11-1-10.png
+       Put these PNG files in the SAME folder as this HTML:
+         11-2-1.png, 11-2-3.png, 11-2-8.png, 11-2-303.png
        ========================= */
 
     window.homeworkData = {
       classId : "Geometry",
-      id      : "Homework 11-1",
-      title   : "Homework 11-1 — Volume of Box-Like Solids",
+      id      : "Homework 11-2",
+      title   : "Homework 11-2 — Volume of Prisms",
 
       /* Figures are attached to the relevant questions (per-question media) */
-      graphics : "",
+      graphics : String.raw``,
 
-      /* Hidden answer key (A–F) for 13 questions (kept from your original file) */
-      answerKey : ["B","D","A","B","C","A","B","B","A","D","E","F","B"],
+      /* Correct answers for Q1–Q15 */
+      answerKey : ["B","C","E","C","D","B","B","B","C","A","C","B","B","B","C"],
 
       questions : [
 
         /* =======================
-           Type A (4 questions)
+           Type A (3 questions)
            ======================= */
 
-        /* Source: A. Exercises #1 (figure: 11-1-1.png) */
+        /* Source: A. Exercises #1 (figure: 11-2-1.png) */
         {
           stem: String.raw`
-            <p><b>Refer to the figure.</b> Find the volume of the solid.</p>
+            <p><b>Refer to Figure 1.</b> Find the volume of the prism.</p>
           `,
           media: String.raw`
             <figure>
-              <img src="11-1-1.png" alt="A. Exercise #1" />
-              <figcaption>Figure (A. Exercise #1)</figcaption>
+              <img src="11-2-1.png" alt="A. Exercise #1" />
+              <figcaption>Figure 1 (A. Exercise #1)</figcaption>
             </figure>
           `,
           choices: [
-            String.raw`48`,
-            String.raw`64`,
-            String.raw`16`,
-            String.raw`256`,
-            String.raw`12`,
-            String.raw`4`
+            String.raw`54 cubic units`,
+            String.raw`162 cubic units`,
+            String.raw`108 cubic units`,
+            String.raw`27 cubic units`,
+            String.raw`81 cubic units`,
+            String.raw`486 cubic units`
           ]
         },
 
-        /* Source: A. Exercises #2 (figure: 11-1-2.png) */
+        /* Source: A. Exercises #3 (figure: 11-2-3.png) */
         {
           stem: String.raw`
-            <p><b>Refer to the figure.</b> Find the volume of the solid.</p>
+            <p><b>Refer to Figure 2.</b> Find the volume of the prism.</p>
           `,
           media: String.raw`
             <figure>
-              <img src="11-1-2.png" alt="A. Exercise #2" />
-              <figcaption>Figure (A. Exercise #2)</figcaption>
+              <img src="11-2-3.png" alt="A. Exercise #3" />
+              <figcaption>Figure 2 (A. Exercise #3)</figcaption>
             </figure>
           `,
           choices: [
-            String.raw`27`,
-            String.raw`54`,
-            String.raw`72`,
-            String.raw`81`,
-            String.raw`90`,
-            String.raw`108`
+            String.raw`144 cubic units`,
+            String.raw`96 cubic units`,
+            String.raw`192 cubic units`,
+            String.raw`48 cubic units`,
+            String.raw`256 cubic units`,
+            String.raw`768 cubic units`
           ]
         },
 
-        /* Source: A. Exercises #3 (figure: 11-1-3.png) */
+        /* Source: A. Exercises #8 (figure: 11-2-8.png) */
         {
           stem: String.raw`
-            <p><b>Refer to the figure.</b> Find the volume of the solid.</p>
+            <p><b>Refer to Figure 3.</b> Find the volume of the prism.</p>
           `,
           media: String.raw`
             <figure>
-              <img src="11-1-3.png" alt="A. Exercise #3" />
-              <figcaption>Figure (A. Exercise #3)</figcaption>
+              <img src="11-2-8.png" alt="A. Exercise #8" />
+              <figcaption>Figure 3 (A. Exercise #8)</figcaption>
             </figure>
           `,
           choices: [
-            String.raw`70`,
-            String.raw`35`,
-            String.raw`14`,
-            String.raw`72`,
-            String.raw`140`,
-            String.raw`49`
-          ]
-        },
-
-        /* Source: A. Exercises #4 (word) */
-        {
-          stem: String.raw`
-            <p>
-              A cube has edge length \(24\) inches.
-              What is its volume?
-            </p>
-          `,
-          choices: [
-            String.raw`3456\text{ in}^3`,
-            String.raw`13824\text{ in}^3`,
-            String.raw`576\text{ in}^3`,
-            String.raw`864\text{ in}^3`,
-            String.raw`55296\text{ in}^3`,
-            String.raw`96\text{ in}^3`
+            String.raw`104 cubic units`,
+            String.raw`416 cubic units`,
+            String.raw`624 cubic units`,
+            String.raw`768 cubic units`,
+            String.raw`832 cubic units`,
+            String.raw`1664 cubic units`
           ]
         },
 
@@ -123,186 +105,234 @@
            Type B (4 questions)
            ======================= */
 
-        /* Source: B. Exercises #9 (figure: 11-1-9.png) */
+        /* Source: B. Exercises #15 */
         {
           stem: String.raw`
-            <p><b>Refer to the figure.</b></p>
-            <p>
-              The segment labeled \(10\) is the diagonal of a face of the cube.
-              Find the volume of the cube (exact).
-            </p>
-          `,
-          media: String.raw`
-            <figure>
-              <img src="11-1-9.png" alt="B. Exercise #9" />
-              <figcaption>Figure (B. Exercise #9)</figcaption>
-            </figure>
+            <p>The bases of a prism are rhombi with diagonals 16 ft and 24 ft.</p>
+            <p>The height of the prism is 3 ft.</p>
+            <p>Find the volume of the prism.</p>
           `,
           choices: [
-            String.raw`500\sqrt{2}`,
-            String.raw`250`,
-            String.raw`250\sqrt{2}`,
-            String.raw`125\sqrt{2}`,
-            String.raw`1000`,
-            String.raw`125`
+            String.raw`192 ft<sup>3</sup>`,
+            String.raw`384 ft<sup>3</sup>`,
+            String.raw`576 ft<sup>3</sup>`,
+            String.raw`768 ft<sup>3</sup>`,
+            String.raw`864 ft<sup>3</sup>`,
+            String.raw`1152 ft<sup>3</sup>`
           ]
         },
 
-        /* Source: B. Exercises #10 (figure: 11-1-10.png) */
+        /* Source: B. Exercises #16 */
         {
           stem: String.raw`
-            <p><b>Refer to the figure.</b></p>
-            <p>
-              The segment labeled \(6\) is the <b>space diagonal</b> of the cube.
-              Find the volume of the cube (exact).
-            </p>
-          `,
-          media: String.raw`
-            <figure>
-              <img src="11-1-10.png" alt="B. Exercise #10" />
-              <figcaption>Figure (B. Exercise #10)</figcaption>
-            </figure>
+            <p>A concrete water trough is a rectangular prism that measures 24 in by 48 in by 96 in.</p>
+            <p>About how many gallons of water will fill the trough, if 1 gallon = 231 in<sup>3</sup>?</p>
+            <p><em>(Round to the nearest whole gallon.)</em></p>
           `,
           choices: [
-            String.raw`24\sqrt{3}`,
-            String.raw`54\sqrt{2}`,
-            String.raw`216`,
-            String.raw`54`,
-            String.raw`24`,
-            String.raw`8`
+            String.raw`240 gallons`,
+            String.raw`319 gallons`,
+            String.raw`399 gallons`,
+            String.raw`479 gallons`,
+            String.raw`552 gallons`,
+            String.raw`705 gallons`
           ]
         },
 
-        /* Source: (word) #16 */
+        /* Source: B. Exercises #17 */
         {
           stem: String.raw`
-            <p>
-              A right rectangular prism has volume \(3536\text{ ft}^3\) and height \(26\text{ ft}\).
-              The length of the base is \(9\text{ ft}\) longer than the width.
-            </p>
-            <p>What are the base dimensions \((\text{length},\ \text{width})\)?</p>
+            <p>The areas of the bases of a triangular prism and a hexagonal prism are both 52 cm<sup>2</sup>.</p>
+            <p>The prisms have the same height. The volume of the triangular prism is 468 cm<sup>3</sup>.</p>
+            <p>What is the height, and what is the volume of the hexagonal prism?</p>
           `,
           choices: [
-            String.raw`(18\text{ ft},\,9\text{ ft})`,
-            String.raw`(17\text{ ft},\,8\text{ ft})`,
-            String.raw`(19\text{ ft},\,10\text{ ft})`,
-            String.raw`(16\text{ ft},\,7\text{ ft})`,
-            String.raw`(20\text{ ft},\,11\text{ ft})`,
-            String.raw`(15\text{ ft},\,6\text{ ft})`
+            String.raw`Height 8 cm; volume 416 cm<sup>3</sup>`,
+            String.raw`Height 9 cm; volume 468 cm<sup>3</sup>`,
+            String.raw`Height 9 cm; volume 936 cm<sup>3</sup>`,
+            String.raw`Height 18 cm; volume 468 cm<sup>3</sup>`,
+            String.raw`Height 10 cm; volume 520 cm<sup>3</sup>`,
+            String.raw`Height 7.5 cm; volume 390 cm<sup>3</sup>`
           ]
         },
 
-        /* Source: (word) #17 */
+        /* Source: B. Exercises #18 */
         {
           stem: String.raw`
-            <p>
-              Mercury fills a rectangular container of dimensions
-              \(12\text{ cm}\times 18\text{ cm}\times 10\text{ cm}\).
-              If the density of mercury is \(13.6\ \text{g/cm}^3\),
-              what mass of mercury is in the full container?
-            </p>
+            <p>A cake pan is a rectangular prism with an 8-in by 8-in base and a height of 2 in.</p>
+            <p>If 114 in<sup>3</sup> of batter are poured into the pan, how many cubic inches can the cake expand before it reaches the top?</p>
           `,
           choices: [
-            String.raw`2160\text{ g}`,
-            String.raw`29376\text{ g}`,
-            String.raw`13600\text{ g}`,
-            String.raw`14688\text{ g}`,
-            String.raw`293.76\text{ g}`,
-            String.raw`2.9376\times 10^5\text{ g}`
+            String.raw`7 in<sup>3</sup>`,
+            String.raw`14 in<sup>3</sup>`,
+            String.raw`114 in<sup>3</sup>`,
+            String.raw`128 in<sup>3</sup>`,
+            String.raw`242 in<sup>3</sup>`,
+            String.raw`28 in<sup>3</sup>`
           ]
         },
 
         /* =======================
-           Portuguese set (5 questions) — translated
+           Portuguese set (translated)
            ======================= */
 
-        /* Source: Portuguese #261 */
+        /* Source: Portuguese #303a (figure: 11-2-303.png) */
         {
           stem: String.raw`
-            <p>
-              A cube has the sum of the lengths of all its edges equal to \(30\text{ cm}\).
-              Which choice gives <b>(space diagonal, total surface area, volume)</b>?
-            </p>
+            <p><b>Refer to Figure 4.</b></p>
+            <p><strong>(Portuguese #303a)</strong> A regular triangular prism has an equilateral-triangle base with side length \(a\).</p>
+            <p>The height of the prism is \(2a\).</p>
+            <p>Which expression gives the <strong>volume</strong> of the prism?</p>
+          `,
+          media: String.raw`
+            <figure>
+              <img src="11-2-303.png" alt="Portuguese #303 diagram (a, b, c)" />
+              <figcaption>Figure 4 (Portuguese #303)</figcaption>
+            </figure>
           `,
           choices: [
-            String.raw`\left(\dfrac{5\sqrt3}{2}\text{ cm},\ \dfrac{75}{2}\text{ cm}^2,\ \dfrac{125}{8}\text{ cm}^3\right)`,
-            String.raw`\left(\dfrac{5\sqrt2}{2}\text{ cm},\ \dfrac{75}{2}\text{ cm}^2,\ \dfrac{125}{8}\text{ cm}^3\right)`,
-            String.raw`\left(5\sqrt3\text{ cm},\ 75\text{ cm}^2,\ 125\text{ cm}^3\right)`,
-            String.raw`\left(\dfrac{5\sqrt3}{2}\text{ cm},\ 75\text{ cm}^2,\ \dfrac{125}{4}\text{ cm}^3\right)`,
-            String.raw`\left(\dfrac{5\sqrt3}{2}\text{ cm},\ \dfrac{25}{2}\text{ cm}^2,\ \dfrac{125}{8}\text{ cm}^3\right)`,
-            String.raw`\left(\dfrac{5\sqrt3}{2}\text{ cm},\ \dfrac{75}{2}\text{ cm}^2,\ \dfrac{25}{8}\text{ cm}^3\right)`
+            String.raw`\(\dfrac{\sqrt3}{4}a^3\)`,
+            String.raw`\(\dfrac{\sqrt3}{2}a^3\)`,
+            String.raw`\(\dfrac{3\sqrt3}{2}a^3\)`,
+            String.raw`\(\dfrac{\sqrt3}{4}a^2\)`,
+            String.raw`\(6a^3\)`,
+            String.raw`\(\dfrac{\sqrt3}{2}a^2\)`
           ]
         },
 
-        /* Source: Portuguese #262 */
+        /* Source: Portuguese #303b (figure: 11-2-303.png) */
         {
           stem: String.raw`
-            <p>
-              A cube has face diagonal \(5\sqrt2\text{ cm}\).
-              Which choice gives <b>(space diagonal, total surface area, volume)</b>?
-            </p>
+            <p><b>Refer to Figure 4.</b></p>
+            <p><strong>(Portuguese #303b)</strong> A regular hexagonal prism has base side length \(x\).</p>
+            <p>The height of the prism is \(\dfrac{5x}{2}\).</p>
+            <p>Which expression gives the <strong>lateral area</strong> of the prism?</p>
+            <p><em>(Lateral area = perimeter of base \(\times\) height.)</em></p>
+          `,
+          media: String.raw`
+            <figure>
+              <img src="11-2-303.png" alt="Portuguese #303 diagram (a, b, c)" />
+              <figcaption>Figure 4 (Portuguese #303)</figcaption>
+            </figure>
           `,
           choices: [
-            String.raw`\left(5\sqrt2\text{ cm},\ 150\text{ cm}^2,\ 125\text{ cm}^3\right)`,
-            String.raw`\left(\dfrac{5\sqrt3}{2}\text{ cm},\ 125\text{ cm}^2,\ 150\text{ cm}^3\right)`,
-            String.raw`\left(5\sqrt6\text{ cm},\ 150\text{ cm}^2,\ 125\text{ cm}^3\right)`,
-            String.raw`\left(5\sqrt3\text{ cm},\ 150\text{ cm}^2,\ 125\text{ cm}^3\right)`,
-            String.raw`\left(5\sqrt3\text{ cm},\ 300\text{ cm}^2,\ 125\text{ cm}^3\right)`,
-            String.raw`\left(10\sqrt3\text{ cm},\ 150\text{ cm}^2,\ 125\text{ cm}^3\right)`
+            String.raw`\(6x^2\)`,
+            String.raw`\(12x^2\)`,
+            String.raw`\(15x^2\)`,
+            String.raw`\(30x^2\)`,
+            String.raw`\(15x^3\)`,
+            String.raw`\(3\sqrt3\,x^2\)`
           ]
         },
 
-        /* Source: Portuguese #264 */
+        /* Source: Portuguese #303c (figure: 11-2-303.png) */
         {
           stem: String.raw`
-            <p>
-              A cube has volume eight times the volume of a cube whose edge length is \(2\text{ cm}\).
-              What are <b>(edge length, space diagonal)</b> of the larger cube?
-            </p>
+            <p><b>Refer to Figure 4.</b></p>
+            <p><strong>(Portuguese #303c)</strong> A right triangular prism has a right-triangle base with legs \(k\) and \(\dfrac{2k}{3}\).</p>
+            <p>The length (height) of the prism is \(k\).</p>
+            <p>Which expression gives the <strong>volume</strong> of the prism?</p>
+          `,
+          media: String.raw`
+            <figure>
+              <img src="11-2-303.png" alt="Portuguese #303 diagram (a, b, c)" />
+              <figcaption>Figure 4 (Portuguese #303)</figcaption>
+            </figure>
           `,
           choices: [
-            String.raw`\left(4\text{ cm},\ 4\sqrt2\text{ cm}\right)`,
-            String.raw`\left(6\text{ cm},\ 6\sqrt3\text{ cm}\right)`,
-            String.raw`\left(8\text{ cm},\ 8\sqrt3\text{ cm}\right)`,
-            String.raw`\left(3\text{ cm},\ 3\sqrt3\text{ cm}\right)`,
-            String.raw`\left(4\text{ cm},\ 4\sqrt3\text{ cm}\right)`,
-            String.raw`\left(2\text{ cm},\ 2\sqrt3\text{ cm}\right)`
+            String.raw`\(\dfrac{1}{3}k^3\)`,
+            String.raw`\(\dfrac{1}{2}k^3\)`,
+            String.raw`\(\dfrac{2}{3}k^3\)`,
+            String.raw`\(\dfrac{1}{3}k^2\)`,
+            String.raw`\(k^3\)`,
+            String.raw`\(\dfrac{1}{6}k^3\)`
           ]
         },
 
-        /* Source: Portuguese #268 */
+        /* Source: Portuguese #304 (one of the Portuguese set) */
         {
           stem: String.raw`
-            <p>
-              A cubic metal container has edge length \(120\text{ cm}\) and is filled with water.
-              If one gallon has volume \(21600\text{ cm}^3\), how many gallons can the container hold?
-            </p>
+            <p><strong>(Portuguese #304)</strong> A prism has height 10 cm. Its base is a right isosceles triangle with hypotenuse 6 cm.</p>
+            <p>Find the <strong>volume</strong> of the prism.</p>
           `,
           choices: [
-            String.raw`60`,
-            String.raw`72`,
-            String.raw`75`,
-            String.raw`84`,
-            String.raw`90`,
-            String.raw`80`
+            String.raw`45 cm<sup>3</sup>`,
+            String.raw`60 cm<sup>3</sup>`,
+            String.raw`90 cm<sup>3</sup>`,
+            String.raw`120 cm<sup>3</sup>`,
+            String.raw`180 cm<sup>3</sup>`,
+            String.raw`30 cm<sup>3</sup>`
           ]
         },
 
-        /* Source: Portuguese #269 */
+        /* Source: Portuguese #306 (one of the Portuguese set) */
         {
           stem: String.raw`
-            <p>
-              In a cube, the distance between the centers of two adjacent faces is \(5\text{ cm}\).
-              What is the volume of the cube (exact)?
-            </p>
+            <p><strong>(Portuguese #306)</strong> A right prism has height 25 cm and a regular hexagon as its base.</p>
+            <p>The apothem of the hexagon is \(4\sqrt3\) cm.</p>
+            <p>Find the <strong>volume</strong> of the prism.</p>
           `,
           choices: [
-            String.raw`125\sqrt2\text{ cm}^3`,
-            String.raw`250\sqrt2\text{ cm}^3`,
-            String.raw`500\sqrt2\text{ cm}^3`,
-            String.raw`250\text{ cm}^3`,
-            String.raw`125\text{ cm}^3`,
-            String.raw`1000\text{ cm}^3`
+            String.raw`\(1200\sqrt3\) cm<sup>3</sup>`,
+            String.raw`\(2400\sqrt3\) cm<sup>3</sup>`,
+            String.raw`\(960\sqrt3\) cm<sup>3</sup>`,
+            String.raw`2400 cm<sup>3</sup>`,
+            String.raw`\(600\sqrt3\) cm<sup>3</sup>`,
+            String.raw`\(4800\sqrt3\) cm<sup>3</sup>`
+          ]
+        },
+
+        /* Source: Portuguese #317 (one of the Portuguese set) */
+        {
+          stem: String.raw`
+            <p><strong>(Portuguese #317)</strong> A right prism has height 15 cm. Its base is a triangle with side lengths 4 cm, 6 cm, and 8 cm.</p>
+            <p>Find the <strong>volume</strong> of the prism.</p>
+          `,
+          choices: [
+            String.raw`\(15\sqrt{15}\) cm<sup>3</sup>`,
+            String.raw`\(45\sqrt{15}\) cm<sup>3</sup>`,
+            String.raw`\(135\sqrt{15}\) cm<sup>3</sup>`,
+            String.raw`\(45\sqrt{5}\) cm<sup>3</sup>`,
+            String.raw`\(90\sqrt{15}\) cm<sup>3</sup>`,
+            String.raw`\(270\sqrt{15}\) cm<sup>3</sup>`
+          ]
+        },
+
+        /* =======================
+           Portuguese set — challenging (2 questions)
+           ======================= */
+
+        /* Source: Portuguese #308 (challenging) */
+        {
+          stem: String.raw`
+            <p><strong>(Portuguese #308)</strong> A right prism has a regular hexagon as its base.</p>
+            <p>The volume is 4 m<sup>3</sup> and the lateral surface area is 12 m<sup>2</sup>.</p>
+            <p>Which choice gives the side length \(s\) of the hexagon and the height \(h\) of the prism?</p>
+          `,
+          choices: [
+            String.raw`\(s=\dfrac{4}{9}\), \(h=\dfrac{3\sqrt3}{2}\) (meters)`,
+            String.raw`\(s=\dfrac{4\sqrt3}{9}\), \(h=\dfrac{3\sqrt3}{2}\) (meters)`,
+            String.raw`\(s=\dfrac{8\sqrt3}{9}\), \(h=\dfrac{3\sqrt3}{4}\) (meters)`,
+            String.raw`\(s=\dfrac{4\sqrt3}{3}\), \(h=\dfrac{\sqrt3}{2}\) (meters)`,
+            String.raw`\(s=\dfrac{2\sqrt3}{9}\), \(h=3\sqrt3\) (meters)`,
+            String.raw`\(s=\dfrac{4\sqrt3}{9}\), \(h=\dfrac{3}{2}\) (meters)`
+          ]
+        },
+
+        /* Source: Portuguese #323 (challenging) */
+        {
+          stem: String.raw`
+            <p><strong>(Portuguese #323)</strong> A regular hexagonal prism has base area \(96\sqrt3\) cm<sup>2</sup>.</p>
+            <p>The height of the prism is equal to the apothem of the base.</p>
+            <p>Find the <strong>volume</strong> of the prism.</p>
+          `,
+          choices: [
+            String.raw`384 cm<sup>3</sup>`,
+            String.raw`768 cm<sup>3</sup>`,
+            String.raw`1152 cm<sup>3</sup>`,
+            String.raw`1536 cm<sup>3</sup>`,
+            String.raw`\(1152\sqrt3\) cm<sup>3</sup>`,
+            String.raw`288 cm<sup>3</sup>`
           ]
         }
 
@@ -310,31 +340,9 @@
     };
   </script>
 
-  <link rel="stylesheet" href="/math-homework/assets/core.css" />
-
-  <!-- New core for new homeworks -->
+  <link rel="stylesheet" href="/math-homework/assets/core-rich.css" />
   <script defer src="/math-homework/assets/core-rich.js"></script>
-
-  <!-- MathJax -->
   <script defer src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
-
-  <!-- Optional: figure styling (safe even if you already added the core-rich CSS add-on globally) -->
-  <style>
-    .q-media figure{ margin:0; }
-    .q-media img{
-      max-width:100%;
-      height:auto;
-      display:block;
-      border:1px solid #ccc;
-      border-radius:10px;
-    }
-    .q-media figcaption{
-      margin-top:6px;
-      font-size:.95rem;
-      color:#444;
-      text-align:left;
-    }
-  </style>
 </head>
 
 <body>
