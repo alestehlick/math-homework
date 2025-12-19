@@ -137,10 +137,6 @@ mjx-container[display="true"]{
 
 
 
-
-
-
-
 /* ===== core-rich layout add-on ===== */
 
 .q-card { margin: 1.4rem auto 1.9rem; }
@@ -154,36 +150,96 @@ mjx-container[display="true"]{
 }
 
 .q-grid.has-media{
-  grid-template-columns: 1fr minmax(200px, 300px);
+  grid-template-columns: 1fr minmax(220px, 320px);
 }
 
 .q-grid.no-media{
   grid-template-columns: 1fr;
 }
 
+.q-left { min-width: 0; }           /* prevents overflow issues */
+.q-left .choices { margin-top: .6rem; }
+
 .q-stem p{ margin: 0 0 .75rem; }
 .q-stem p:last-child{ margin-bottom: 0; }
 
-.q-media img, .q-media svg{
-  max-width: 100%;
-  height: auto;
-  display: block;
-  border: 1px solid #ccc;
-  border-radius: 10px;
+/* =========================
+   Standardized media sizing (BEST behavior)
+   ========================= */
+
+/* right column container */
+.q-media{
+  width: 100%;
+  justify-self: end;
 }
 
+/* remove default figure margins */
 .q-media figure{ margin: 0; }
+
+/*
+  Standard “plate” for images:
+  - fixed visual footprint (prevents random huge/tiny figures)
+  - contain (no cropping) so labels never disappear
+  - padding + border makes scans/PNGs look consistent
+*/
+.q-media img{
+  width: 100%;
+  height: 230px;               /* STANDARD HEIGHT (tweak 210–260) */
+  display: block;
+  object-fit: contain;         /* safe default: no cropping */
+
+  border: 1px solid #ccc;
+  border-radius: 12px;
+  background: #fff;
+  padding: 10px;
+  box-sizing: border-box;
+}
+
+/*
+  If media is SVG (including TikZJax output), treat it similarly.
+  Note: object-fit doesn't apply reliably to inline SVG, so we box it
+  and limit height with max-height.
+*/
+.q-media svg{
+  width: 100%;
+  height: 230px;               /* match img footprint */
+  display: block;
+
+  border: 1px solid #ccc;
+  border-radius: 12px;
+  background: #fff;
+  padding: 10px;
+  box-sizing: border-box;
+}
+
+/* caption: consistent and textbook-like */
 .q-media figcaption{
   margin-top: 6px;
   font-size: .95rem;
   color: #444;
-  text-align: left;
+  text-align: center;
+  line-height: 1.25;
 }
 
+/* Optional: if someone uses <img loading="lazy">, avoid layout jumps */
+.q-media img[loading="lazy"]{
+  contain: layout paint;
+}
+
+/* Responsive: stack on small screens and let figures breathe */
 @media (max-width: 640px){
   .q-grid.has-media{ grid-template-columns: 1fr; }
+
+  .q-media{
+    justify-self: start;
+  }
+
+  .q-media img,
+  .q-media svg{
+    height: 260px;             /* slightly taller on mobile */
+  }
 }
 
-.q-left { min-width: 0; }          /* prevents overflow issues */
-.q-left .choices { margin-top: .6rem; }
+
+
 
