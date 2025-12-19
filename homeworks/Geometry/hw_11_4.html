@@ -7,15 +7,13 @@
 
   <script>
     /* =========================
-       Homework 11-4 — Volume of Pyramids (Geometry)
+       Homework 11-4 — Volume of Pyramids and Cones (Geometry)
        Uses: /math-homework/assets/core-rich.js
 
        REQUIRED SOURCE REFERENCES (your provided sets):
-       - Type A uses A. Exercises: #1, #7, #9
-       - Type B uses B. Exercises: #8, #10, #11, #12
-       - Portuguese set MUST include: #384(a), #384(b)
-       - Portuguese (additional): #386, #389, #418, #422
-       - Portuguese (challenging): #420, #434
+       - Type A uses A. Exercises: #1, #3, #4
+       - Type B uses B. Exercises: #10, #11, #12
+       - Portuguese set uses: #395, #388, #410, #418, #439, #592(a), #592(c), #597, #622, #629
 
        IMAGE NAMING RULE (STRICT):
        Any figure used is referenced by the ORIGINAL problem number from the set.
@@ -23,26 +21,31 @@
 
        Required image files for this homework:
          11-4-1.png
-         11-4-384.png
+         11-4-3.png
+         11-4-4.png
+         11-4-10.png
+         11-4-11.png
+         11-4-12.png
+         11-4-592.png
        ========================= */
 
     window.homeworkData = {
       classId : "Geometry",
       id      : "Homework 11-4",
-      title   : "Homework 11-4 — Volume of Pyramids",
+      title   : "Homework 11-4 — Volume of Pyramids and Cones",
 
       graphics : String.raw``,
 
-      /* Correct answers for Q1–Q15 */
-      answerKey : ["B","A","C","C","A","B","A","D","C","A","B","B","C","C","A"],
+      /* Correct answers for Q1–Q16 */
+      answerKey : ["B","A","B","A","B","A","A","B","B","B","C","B","C","D","A","A"],
 
       questions : [
 
         /* =========================================================
-           Type A (3)
+           A. Exercises (Use #1, #3, #4)
            ========================================================= */
 
-        /* Source: A. Exercises #1 (figure) */
+        /* Source: A #1 (figure) */
         {
           stem: String.raw`
             <p><b>Refer to Figure 1.</b> Find the volume of the pyramid.</p>
@@ -64,68 +67,68 @@
           ]
         },
 
-        /* Source: A. Exercises #7 (word) */
+        /* Source: A #3 (figure) */
         {
           stem: String.raw`
-            <p>The base of a pyramid is a rhombus with diagonals 24 inches and 29 inches.</p>
-            <p>The height of the pyramid is 35 inches. Find the volume.</p>
+            <p><b>Refer to Figure 2.</b> Find the volume of the cone.</p>
+            <p><em>Give your answer in terms of \(\pi\).</em></p>
           `,
-          choiceWrap: false,
+          media: String.raw`
+            <figure>
+              <img src="11-4-3.png" alt="A. Exercise #3" />
+              <figcaption>Figure 2</figcaption>
+            </figure>
+          `,
           choices: [
-            String.raw`4060 in<sup>3</sup>`,
-            String.raw`12,180 in<sup>3</sup>`,
-            String.raw`3480 in<sup>3</sup>`,
-            String.raw`40,600 in<sup>3</sup>`,
-            String.raw`2320 in<sup>3</sup>`,
-            String.raw`2900 in<sup>3</sup>`
+            String.raw`\(\dfrac{10115\pi}{3}\)`,
+            String.raw`\(\,10115\pi\,\)`,
+            String.raw`\(\dfrac{40460\pi}{3}\)`,
+            String.raw`\(\dfrac{10115\pi}{6}\)`,
+            String.raw`\(\dfrac{289\pi}{3}\cdot 35\)` ,
+            String.raw`\(\dfrac{5780\pi}{3}\)`
           ]
         },
 
-        /* Source: A. Exercises #9 (word) */
+        /* Source: A #4 (figure) */
         {
           stem: String.raw`
-            <p>Find the volume of a pyramid with a square base of side 18 centimeters and height 25 centimeters.</p>
+            <p><b>Refer to Figure 3.</b> Find the volume of the pyramid.</p>
+            <p><em>Give an exact answer.</em></p>
           `,
-          choiceWrap: false,
+          media: String.raw`
+            <figure>
+              <img src="11-4-4.png" alt="A. Exercise #4" />
+              <figcaption>Figure 3</figcaption>
+            </figure>
+          `,
           choices: [
-            String.raw`2250 cm<sup>3</sup>`,
-            String.raw`8100 cm<sup>3</sup>`,
-            String.raw`2700 cm<sup>3</sup>`,
-            String.raw`5400 cm<sup>3</sup>`,
-            String.raw`3240 cm<sup>3</sup>`,
-            String.raw`900 cm<sup>3</sup>`
+            String.raw`\(\,3388\,\)`,
+            String.raw`\(\dfrac{3388}{3}\)`,
+            String.raw`\(\dfrac{1694}{3}\)`,
+            String.raw`\(\,1694\,\)`,
+            String.raw`\(\dfrac{3388}{9}\)`,
+            String.raw`\(\,10164\,\)`
           ]
         },
 
         /* =========================================================
-           Type B (4)
+           B. Exercises (Use #10, #11, #12)
            ========================================================= */
 
-        /* Source: A. Exercises #8 (cone; volume) */
+        /* Source: B #10 (image recommended) */
         {
           stem: String.raw`
-            <p>The volume of a circular cone is \(1728\pi\) cubic feet.</p>
-            <p>If the height is 36 feet, what is the diameter of the base?</p>
-          `,
-          choiceWrap: false,
-          choices: [
-            String.raw`12 ft`,
-            String.raw`18 ft`,
-            String.raw`24 ft`,
-            String.raw`48 ft`,
-            String.raw`36 ft`,
-            String.raw`6 ft`
-          ]
-        },
-
-        /* Source: B. Exercises #10 */
-        {
-          stem: String.raw`
-            <p>A circular cone is placed inside a rectangular pyramid.</p>
-            <p>The pyramid has a 37-by-43 inch base and height 55 inches.</p>
-            <p>The cone has diameter 34 inches, and the vertices (apexes) of both solids are the same.</p>
-            <p>What is the volume <em>inside the pyramid but outside the cone</em>?</p>
+            <p><b>Refer to Figure 4.</b></p>
+            <p>A circular cone is placed inside a rectangular pyramid. The pyramid has a 37-by-43 inch base and a height of 55 inches.</p>
+            <p>The diameter of the cone is 34 inches, and the vertices (apexes) of both the pyramid and the cone are the same.</p>
+            <p>What is the volume <em>outside the cone but inside the pyramid</em>?</p>
             <p><em>Give an exact answer in terms of \(\pi\).</em></p>
+          `,
+          media: String.raw`
+            <figure>
+              <img src="11-4-10.png" alt="B. Exercise #10" />
+              <figcaption>Figure 4</figcaption>
+            </figure>
           `,
           choices: [
             String.raw`\(\dfrac{87505-15895\pi}{3}\)`,
@@ -137,128 +140,112 @@
           ]
         },
 
-        /* Source: B. Exercises #11 */
+        /* Source: B #11 (image recommended) */
         {
           stem: String.raw`
-            <p>A cone sits point-down inside a cube.</p>
-            <p>The base of the cone is a circle inscribed in a face of the cube, and the cone’s vertex is on the opposite face.</p>
-            <p>If the cube has volume 729 in<sup>3</sup>, what are the cone’s height, radius, and volume?</p>
+            <p><b>Refer to Figure 5.</b></p>
+            <p>A cone sits point-down in a cube. The base of the cone is a circle inscribed in the base of the cube.</p>
+            <p>If the cube has a volume of 729 cubic inches, what is the cone’s height, radius, and volume?</p>
             <p><em>Answer format: (height, radius, volume).</em></p>
           `,
+          media: String.raw`
+            <figure>
+              <img src="11-4-11.png" alt="B. Exercise #11" />
+              <figcaption>Figure 5</figcaption>
+            </figure>
+          `,
           choices: [
-            String.raw`\(\,(9,\ 9,\ 243\pi)\,\)`,
+            String.raw`\(\,(9,\ \tfrac{9}{2},\ 243\pi)\,\)`,
             String.raw`\(\,(9,\ \tfrac{9}{2},\ \tfrac{243\pi}{4})\,\)`,
+            String.raw`\(\,(9,\ 9,\ \tfrac{243\pi}{4})\,\)`,
             String.raw`\(\,(\tfrac{9}{2},\ \tfrac{9}{2},\ \tfrac{243\pi}{8})\,\)`,
-            String.raw`\(\,(9,\ \tfrac{9}{2},\ \tfrac{81\pi}{4})\,\)`,
-            String.raw`\(\,(18,\ \tfrac{9}{2},\ \tfrac{243\pi}{2})\,\)`,
-            String.raw`\(\,(9,\ \tfrac{9}{4},\ \tfrac{243\pi}{16})\,\)`
+            String.raw`\(\,(9,\ \tfrac{9}{4},\ \tfrac{243\pi}{16})\,\)`,
+            String.raw`\(\,(9,\ \tfrac{9}{2},\ \tfrac{81\pi}{4})\,\)`
           ]
         },
 
-        /* Source: B. Exercises #12 */
+        /* Source: B #12 (image recommended) */
         {
           stem: String.raw`
-            <p>A cylinder encloses a cone.</p>
-            <p>The cylinder and the cone have the same base area, and both have height 4 feet.</p>
+            <p><b>Refer to Figure 6.</b></p>
+            <p>A cylinder encloses a cone. The cylinder and cone have the same base area, and both have height 4 feet.</p>
             <p>If the volume of the cone is \(324\pi\) ft<sup>3</sup>, what are the volume and radius of the cylinder?</p>
             <p><em>Answer format: (volume, radius).</em></p>
+          `,
+          media: String.raw`
+            <figure>
+              <img src="11-4-12.png" alt="B. Exercise #12" />
+              <figcaption>Figure 6</figcaption>
+            </figure>
           `,
           choices: [
             String.raw`\(\,(972\pi,\ 9\sqrt3)\,\)`,
             String.raw`\(\,(324\pi,\ 9\sqrt3)\,\)`,
             String.raw`\(\,(972\pi,\ 9)\,\)`,
+            String.raw`\(\,(324\pi,\ 9)\,\)`,
             String.raw`\(\,(1296\pi,\ 9\sqrt3)\,\)`,
-            String.raw`\(\,(972\pi,\ 3\sqrt3)\,\)`,
-            String.raw`\(\,(324\pi,\ 9)\,\)`
+            String.raw`\(\,(972\pi,\ 3\sqrt3)\,\)`
           ]
         },
 
         /* =========================================================
-           Portuguese set — MUST include 384(a), 384(b)
+           Portuguese set (395, 388, 410, 418, 439, 592a, 592c, 597, 622, 629)
            ========================================================= */
 
-        /* Source: Portuguese #384(a) (diagram in 11-4-384.png) */
+        /* Source: PT #395 */
         {
           stem: String.raw`
-            <p><b>Refer to Figure 2 (Portuguese #384a).</b></p>
-            <p>Find the <strong>volume</strong> of the regular pyramid.</p>
-            <p><em>Give an exact answer.</em></p>
-          `,
-          media: String.raw`
-            <figure>
-              <img src="11-4-384.png" alt="Portuguese #384 (a) and (b)" />
-              <figcaption>Figure 2 (Problems 384a and 384b)</figcaption>
-            </figure>
-          `,
-          choices: [
-            String.raw`\(\dfrac{125}{6}\)`,
-            String.raw`\(\dfrac{125\sqrt3}{3}\)`,
-            String.raw`\(\dfrac{125\sqrt3}{12}\)`,
-            String.raw`\(\dfrac{125\sqrt3}{6}\)`,
-            String.raw`\(\dfrac{25\sqrt3}{6}\)`,
-            String.raw`\(\dfrac{75\sqrt3}{6}\)`
-          ]
-        },
-
-        /* Source: Portuguese #384(b) (same diagram file) */
-        {
-          stem: String.raw`
-            <p><b>Refer to Figure 2 (Portuguese #384b).</b></p>
-            <p>Find the <strong>volume</strong> of the regular pyramid.</p>
-            <p><em>Round to the nearest tenth.</em></p>
+            <p>A pyramid has height 6 cm. Its base is a square with perimeter 8 cm.</p>
+            <p>Calculate the volume of the pyramid.</p>
           `,
           choiceWrap: false,
           choices: [
-            String.raw`66.1 cm<sup>3</sup>`,
-            String.raw`77.4 cm<sup>3</sup>`,
-            String.raw`88.1 cm<sup>3</sup>`,
-            String.raw`96.0 cm<sup>3</sup>`,
-            String.raw`110.0 cm<sup>3</sup>`,
-            String.raw`44.0 cm<sup>3</sup>`
+            String.raw`8 cm<sup>3</sup>`,
+            String.raw`16 cm<sup>3</sup>`,
+            String.raw`32 cm<sup>3</sup>`,
+            String.raw`4 cm<sup>3</sup>`,
+            String.raw`8/3 cm<sup>3</sup>`,
+            String.raw`24 cm<sup>3</sup>`
           ]
         },
 
-        /* =========================================================
-           Portuguese set (4 regular)
-           ========================================================= */
-
-        /* Source: Portuguese #386 */
+        /* Source: PT #388 */
         {
           stem: String.raw`
-            <p>A regular tetrahedron has edge length 3 cm.</p>
-            <p>Find the <strong>volume</strong> of the tetrahedron.</p>
-            <p><em>Give an exact answer.</em></p>
+            <p>A regular tetrahedron has total surface area \(12\sqrt3\) cm<sup>2</sup>.</p>
+            <p>Find its height and its volume.</p>
+            <p><em>Answer format: (height, volume).</em></p>
           `,
           choices: [
-            String.raw`\(\dfrac{9\sqrt2}{4}\)`,
-            String.raw`\(\dfrac{27\sqrt2}{4}\)`,
-            String.raw`\(\dfrac{9}{4\sqrt2}\)`,
-            String.raw`\(\dfrac{27}{6\sqrt2}\)`,
-            String.raw`\(\dfrac{9\sqrt3}{4}\)`,
-            String.raw`\(\dfrac{27\sqrt3}{12}\)`
+            String.raw`\(\,(2\sqrt2,\ 6\sqrt2)\,\)`,
+            String.raw`\(\,(2\sqrt2,\ 2\sqrt6)\,\)`,
+            String.raw`\(\,(2\sqrt6,\ 2\sqrt2)\,\)`,
+            String.raw`\(\,(\sqrt2,\ 2\sqrt6)\,\)`,
+            String.raw`\(\,(2\sqrt2,\ \sqrt6)\,\)`,
+            String.raw`\(\,(4\sqrt2,\ 4\sqrt6)\,\)`
           ]
         },
 
-        /* Source: Portuguese #389 */
+        /* Source: PT #410 (volume only; no trigonometry required) */
         {
           stem: String.raw`
-            <p>Determine the edge length of a regular tetrahedron whose volume is \(18\sqrt2\) m<sup>3</sup>.</p>
+            <p>A regular hexagonal pyramid has height 12 cm and base edge length \(\dfrac{10\sqrt3}{3}\) cm.</p>
+            <p>Find the volume of the pyramid.</p>
           `,
-          choiceWrap: false,
           choices: [
-            String.raw`3 m`,
-            String.raw`6 m`,
-            String.raw`9 m`,
-            String.raw`12 m`,
-            String.raw`4 m`,
-            String.raw`8 m`
+            String.raw`\(\,50\sqrt3\,\text{cm}^3\)`,
+            String.raw`\(\,200\sqrt3\,\text{cm}^3\)`,
+            String.raw`\(\,600\sqrt3\,\text{cm}^3\)`,
+            String.raw`\(\,100\sqrt3\,\text{cm}^3\)`,
+            String.raw`\(\,400\sqrt3\,\text{cm}^3\)`,
+            String.raw`\(\,200\,\text{cm}^3\)`
           ]
         },
 
-        /* Source: Portuguese #418 */
+        /* Source: PT #418 */
         {
           stem: String.raw`
-            <p>Compute the volume of a pyramid with height 12 cm whose base is a rhombus with diagonals 6 cm and 10 cm.</p>
+            <p>Calculate the volume of a pyramid of height 12 cm whose base is a rhombus with diagonals 6 cm and 10 cm.</p>
           `,
           choiceWrap: false,
           choices: [
@@ -271,62 +258,115 @@
           ]
         },
 
-        /* Source: Portuguese #422 */
+        /* Source: PT #439 (no trigonometry; use regular-pyramid formulas) */
         {
           stem: String.raw`
-            <p>The area of the base of a regular hexagonal pyramid is \(216\sqrt3\) m<sup>2</sup>.</p>
-            <p>If the height is 16 m, find the volume of the pyramid.</p>
+            <p>In a regular triangular pyramid, the lateral area is four times the base area.</p>
+            <p>Find the volume of the pyramid if the base edge length is 3 cm.</p>
+            <p><em>Give an exact answer.</em></p>
           `,
           choices: [
-            String.raw`\(\,576\sqrt3\,\)`,
-            String.raw`\(\,864\sqrt3\,\)`,
-            String.raw`\(\,1152\sqrt3\,\)`,
-            String.raw`\(\,1728\sqrt3\,\)`,
-            String.raw`\(\,3456\sqrt3\,\)`,
-            String.raw`\(\,768\sqrt3\,\)`
+            String.raw`\(\dfrac{9\sqrt{15}}{2}\)`,
+            String.raw`\(\dfrac{9\sqrt{15}}{4}\)`,
+            String.raw`\(\dfrac{9\sqrt{15}}{8}\)`,
+            String.raw`\(\dfrac{27\sqrt{15}}{8}\)`,
+            String.raw`\(\dfrac{3\sqrt{15}}{8}\)`,
+            String.raw`\(\dfrac{9\sqrt5}{8}\)`
           ]
         },
 
-        /* =========================================================
-           Portuguese set (2 challenging)
-           ========================================================= */
-
-        /* Source: Portuguese #420 */
+        /* Source: PT #592(a) (diagram: 11-4-592.png) */
         {
           stem: String.raw`
-            <p>Determine the ratio between the volumes of two pyramids, \(P_1\) and \(P_2\), given that:</p>
+            <p><b>Refer to Figure 7 (Portuguese #592a).</b></p>
+            <p>The cone is right, with height \(h\) and radius \(\dfrac{h}{2}\).</p>
+            <p>Write the volume of the cone as an expression in \(h\).</p>
+          `,
+          media: String.raw`
+            <figure>
+              <img src="11-4-592.png" alt="Portuguese #592 diagram (a and c)" />
+              <figcaption>Figure 7</figcaption>
+            </figure>
+          `,
+          choices: [
+            String.raw`\(\dfrac{\pi h^3}{4}\)`,
+            String.raw`\(\dfrac{\pi h^3}{12}\)`,
+            String.raw`\(\dfrac{\pi h^3}{3}\)`,
+            String.raw`\(\dfrac{\pi h^2}{12}\)`,
+            String.raw`\(\dfrac{\pi h^3}{24}\)`,
+            String.raw`\(\dfrac{\pi h^3}{6}\)`
+          ]
+        },
+
+        /* Source: PT #592(c) (same diagram file) */
+        {
+          stem: String.raw`
+            <p><b>Refer to Figure 7 (Portuguese #592c).</b></p>
+            <p>The figure shows a <em>semi-cone</em> whose generating segment has length \(d\), and whose base has diameter \(d\).</p>
+            <p>Write the volume as an expression in \(d\).</p>
+            <p><em>Give an exact answer in terms of \(\pi\).</em></p>
+          `,
+          choices: [
+            String.raw`\(\dfrac{\pi\sqrt3\,d^3}{24}\)`,
+            String.raw`\(\dfrac{\pi\sqrt3\,d^3}{96}\)`,
+            String.raw`\(\dfrac{\pi\sqrt3\,d^3}{48}\)`,
+            String.raw`\(\dfrac{\pi\,d^3}{48}\)`,
+            String.raw`\(\dfrac{\pi\sqrt3\,d^3}{12}\)`,
+            String.raw`\(\dfrac{\pi\sqrt3\,d^2}{48}\)`
+          ]
+        },
+
+        /* Source: PT #597 */
+        {
+          stem: String.raw`
+            <p>A cone of revolution has height 3 cm and volume \(16\pi\) cm<sup>3</sup>.</p>
+            <p>Determine the radius of the base.</p>
+          `,
+          choiceWrap: false,
+          choices: [
+            String.raw`2 cm`,
+            String.raw`3 cm`,
+            String.raw`4√3 cm`,
+            String.raw`4 cm`,
+            String.raw`8 cm`,
+            String.raw`16 cm`
+          ]
+        },
+
+        /* Source: PT #622 (conceptual; volume scaling) */
+        {
+          stem: String.raw`
+            <p>What happens to the volume \(V\) of a cone if we:</p>
             <ul>
-              <li>\(P_1\) has a regular hexagon base of side \(a\) and height \(a\).</li>
-              <li>\(P_2\) has an equilateral triangle base of side \(a\) and height \(a\).</li>
+              <li>double its height, keeping the radius the same?</li>
+              <li>double its base radius, keeping the height the same?</li>
             </ul>
-            <p>Find \(V_1:V_2\).</p>
           `,
           choiceWrap: false,
           choices: [
-            String.raw`1 : 6`,
-            String.raw`3 : 2`,
-            String.raw`6 : 1`,
-            String.raw`2 : 3`,
-            String.raw`1 : 3`,
-            String.raw`3 : 1`
+            String.raw`Doubling the height doubles \(V\); doubling the radius makes \(V\) four times as large.`,
+            String.raw`Doubling the height doubles \(V\); doubling the radius doubles \(V\).`,
+            String.raw`Doubling the height makes \(V\) four times as large; doubling the radius doubles \(V\).`,
+            String.raw`Doubling the height makes \(V\) four times as large; doubling the radius makes \(V\) four times as large.`,
+            String.raw`Doubling the height does not change \(V\); doubling the radius makes \(V\) four times as large.`,
+            String.raw`Doubling the height doubles \(V\); doubling the radius makes \(V\) eight times as large.`
           ]
         },
 
-        /* Source: Portuguese #434 */
+        /* Source: PT #629 (sector makes a cone; total area and volume) */
         {
           stem: String.raw`
-            <p>A regular hexagonal pyramid has volume \(60\sqrt3\) m<sup>3</sup>, and the side length of the hexagon is 4 m.</p>
-            <p>Find the <strong>lateral edge</strong> (apex to a base vertex) and the <strong>height</strong> of the pyramid.</p>
-            <p><em>Answer format: (lateral edge, height).</em></p>
+            <p>A circular sector has radius \(R\) and central angle \(120^\circ\). Rolling it forms a cone.</p>
+            <p>Find the <strong>total surface area</strong> and the <strong>volume</strong> of the cone.</p>
+            <p><em>Answer format: (total area, volume).</em></p>
           `,
-          choiceWrap: false,
           choices: [
-            String.raw`(8.5 m, 7.5 m)`,
-            String.raw`(7.5 m, 8.5 m)`,
-            String.raw`(8.0 m, 7.5 m)`,
-            String.raw`(8.5 m, 6.0 m)`,
-            String.raw`(9.0 m, 7.5 m)`,
-            String.raw`(8.5 m, 7.0 m)`
+            String.raw`\(\left(\dfrac{4\pi R^2}{9},\ \dfrac{2\sqrt2\,\pi R^3}{81}\right)\)`,
+            String.raw`\(\left(\dfrac{\pi R^2}{3},\ \dfrac{2\sqrt2\,\pi R^3}{81}\right)\)`,
+            String.raw`\(\left(\dfrac{4\pi R^2}{9},\ \dfrac{2\sqrt2\,\pi R^3}{27}\right)\)`,
+            String.raw`\(\left(\dfrac{\pi R^2}{9},\ \dfrac{2\sqrt2\,\pi R^3}{81}\right)\)`,
+            String.raw`\(\left(\dfrac{4\pi R^2}{9},\ \dfrac{2\pi R^3}{81}\right)\)`,
+            String.raw`\(\left(\dfrac{2\pi R^2}{9},\ \dfrac{2\sqrt2\,\pi R^3}{81}\right)\)`
           ]
         }
 
