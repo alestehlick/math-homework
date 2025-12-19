@@ -1,0 +1,303 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Homework 11-3 (Geometry)</title>
+
+  <script>
+    /* =========================
+       Homework 11-3 — Volume of Cylinders (Geometry)
+       Uses: /math-homework/assets/core-rich.js
+
+       REQUIRED SOURCE REFERENCES (your provided sets):
+       - Type A uses A. Exercises: #1, #4, #6
+       - Type B uses B. Exercises: #11, #12, #13, #14
+       - Portuguese set uses: #496, #499, #503, #504, #552, #564
+
+       IMAGE NAMING RULE (STRICT):
+       Any figure used is referenced by the ORIGINAL problem number from the set.
+       PNG files live in the SAME folder as this HTML.
+       Required image files for this homework:
+         11-3-1.png
+         11-3-4.png
+         11-3-6.png
+         11-3-496.png
+       ========================= */
+
+    window.homeworkData = {
+      classId : "Geometry",
+      id      : "Homework 11-3",
+      title   : "Homework 11-3 — Volume of Cylinders",
+
+      graphics : String.raw``,
+
+      /* Correct answers for Q1–Q13 */
+      answerKey : ["B","D","B","B","C","A","C","C","C","C","B","B","A"],
+
+      questions : [
+
+        /* =======================
+           Type A (3 questions)
+           ======================= */
+
+        /* Source: A. Exercises #1 (figure: 11-3-1.png) */
+        {
+          stem: String.raw`
+            <p><b>Refer to Figure 1.</b> Find the volume of the cylinder.</p>
+            <p><em>Give your answer in terms of \(\pi\).</em></p>
+          `,
+          media: String.raw`
+            <figure>
+              <img src="11-3-1.png" alt="A. Exercise #1" />
+              <figcaption>Figure 1</figcaption>
+            </figure>
+          `,
+          choices: [
+            String.raw`63\pi`,
+            String.raw`441\pi`,
+            String.raw`882\pi`,
+            String.raw`1764\pi`,
+            String.raw`49\pi`,
+            String.raw`441`
+          ]
+        },
+
+        /* Source: A. Exercises #4 (figure: 11-3-4.png) */
+        {
+          stem: String.raw`
+            <p><b>Refer to Figure 2.</b> Find the volume of the cylinder.</p>
+            <p><em>Give your answer in terms of \(\pi\).</em></p>
+          `,
+          media: String.raw`
+            <figure>
+              <img src="11-3-4.png" alt="A. Exercise #4" />
+              <figcaption>Figure 2</figcaption>
+            </figure>
+          `,
+          choices: [
+            String.raw`384`,
+            String.raw`192\pi`,
+            String.raw`48\pi`,
+            String.raw`384\pi`,
+            String.raw`768\pi`,
+            String.raw`1536\pi`
+          ]
+        },
+
+        /* Source: A. Exercises #6 (figure: 11-3-6.png) */
+        {
+          stem: String.raw`
+            <p><b>Refer to Figure 3.</b> Find the volume of the cylinder.</p>
+            <p><em>Give your answer in terms of \(\pi\).</em></p>
+          `,
+          media: String.raw`
+            <figure>
+              <img src="11-3-6.png" alt="A. Exercise #6" />
+              <figcaption>Figure 3</figcaption>
+            </figure>
+          `,
+          choices: [
+            String.raw`36864\pi`,
+            String.raw`9216\pi`,
+            String.raw`1536\pi`,
+            String.raw`576\pi`,
+            String.raw`147456\pi`,
+            String.raw`9216`
+          ]
+        },
+
+        /* =======================
+           Type B (4 questions)
+           ======================= */
+
+        /* Source: B. Exercises #11 */
+        {
+          stem: String.raw`
+            <p>The circumference of a cylinder is \(86\pi\) meters, and the height is 63 meters.</p>
+            <p>Find the <strong>surface area</strong> and the <strong>volume</strong>, in terms of \(\pi\).</p>
+            <p><em>Answer format: (surface area, volume).</em></p>
+          `,
+          choices: [
+            String.raw`(5418\pi,\ 2709\pi)`,
+            String.raw`(9116\pi,\ 116487\pi)`,
+            String.raw`(9116\pi,\ 2709\pi)`,
+            String.raw`(5418\pi,\ 116487\pi)`,
+            String.raw`(18232\pi,\ 465948\pi)`,
+            String.raw`(3698\pi,\ 116487\pi)`
+          ]
+        },
+
+        /* Source: B. Exercises #12 */
+        {
+          stem: String.raw`
+            <p>The circumference of a cylinder is \(24\pi\) inches, and its volume is \(4896\pi\) cubic inches.</p>
+            <p>What is the height of the cylinder?</p>
+          `,
+          choices: [
+            String.raw`12`,
+            String.raw`17`,
+            String.raw`34`,
+            String.raw`68`,
+            String.raw`144`,
+            String.raw`408`
+          ]
+        },
+
+        /* Source: B. Exercises #13 */
+        {
+          stem: String.raw`
+            <p>A cylindrical piece of iron has diameter 2 inches and length 16 inches.</p>
+            <p>If it is melted and poured into a rectangular mold with a \(1\)-by-\(3\) inch base, what will be the length of the rectangular piece of iron?</p>
+            <p><em>Give your answer in terms of \(\pi\).</em></p>
+          `,
+          choices: [
+            String.raw`\frac{16\pi}{3}`,
+            String.raw`16\pi`,
+            String.raw`\frac{8\pi}{3}`,
+            String.raw`\frac{32\pi}{3}`,
+            String.raw`\frac{16}{3}`,
+            String.raw`48\pi`
+          ]
+        },
+
+        /* Source: B. Exercises #14 */
+        {
+          stem: String.raw`
+            <p>How many gallons of water will fill a circular cylinder that has radius 27 feet and height 38 feet?</p>
+            <p>Assume 1 cubic foot of water is 7.5 gallons.</p>
+            <p><em>Round to the nearest whole gallon.</em></p>
+          `,
+          choices: [
+            String.raw`87028`,
+            String.raw`207765`,
+            String.raw`652713`,
+            String.raw`870284`,
+            String.raw`628000`,
+            String.raw`673000`
+          ]
+        },
+
+        /* =======================
+           Portuguese set (4 regular + 2 challenging)
+           ======================= */
+
+        /* Source: Portuguese #496 (figure: 11-3-496.png) */
+        {
+          stem: String.raw`
+            <p><b>Refer to Figure 4.</b></p>
+            <p>In the figure, the cylinder has height \(g\) and radius \(\dfrac{g}{2}\).</p>
+            <p>Find the volume of the oblique cylinder as a function of \(g\).</p>
+          `,
+          media: String.raw`
+            <figure>
+              <img src="11-3-496.png" alt="Portuguese #496 diagram" />
+              <figcaption>Figure 4</figcaption>
+            </figure>
+          `,
+          choices: [
+            String.raw`\pi g^3`,
+            String.raw`\frac{\pi g^3}{2}`,
+            String.raw`\frac{\pi g^3}{4}`,
+            String.raw`\frac{\pi g^2}{4}`,
+            String.raw`\frac{\pi g^3}{8}`,
+            String.raw`\frac{\pi g^3}{16}`
+          ]
+        },
+
+        /* Source: Portuguese #499 */
+        {
+          stem: String.raw`
+            <p>A right circular cylinder has radius 3 cm and height 3 cm.</p>
+            <p>Determine the lateral area of the cylinder.</p>
+            <p><em>Give your answer in terms of \(\pi\).</em></p>
+          `,
+          choices: [
+            String.raw`6\pi`,
+            String.raw`9\pi`,
+            String.raw`18\pi`,
+            String.raw`36\pi`,
+            String.raw`12\pi`,
+            String.raw`24\pi`
+          ]
+        },
+
+        /* Source: Portuguese #503 */
+        {
+          stem: String.raw`
+            <p>What is the height of a cylindrical reservoir if the radius of the base is 150 m and the lateral area is \(900\pi\) m<sup>2</sup>?</p>
+          `,
+          choices: [
+            String.raw`1`,
+            String.raw`2`,
+            String.raw`3`,
+            String.raw`4`,
+            String.raw`6`,
+            String.raw`9`
+          ]
+        },
+
+        /* Source: Portuguese #504 */
+        {
+          stem: String.raw`
+            <p>A cylindrical tank has height 8 m and diameter 2 m.</p>
+            <p>Determine the total surface area of the tank.</p>
+            <p><em>Give your answer in terms of \(\pi\).</em></p>
+          `,
+          choices: [
+            String.raw`16\pi`,
+            String.raw`18\pi`,
+            String.raw`20\pi`,
+            String.raw`36\pi`,
+            String.raw`72\pi`,
+            String.raw`144\pi`
+          ]
+        },
+
+        /* Source: Portuguese #552 (challenging) */
+        {
+          stem: String.raw`
+            <p>A right cylinder has radius \(r\) and generatrix \(g\) (height \(=g\)).</p>
+            <p>By how much must the radius be increased so that the <strong>lateral area</strong> of the new cylinder equals the <strong>total area</strong> of the original cylinder?</p>
+            <p><em>Give your answer as an expression in \(r\) and \(g\).</em></p>
+          `,
+          choices: [
+            String.raw`\frac{r}{g}`,
+            String.raw`\frac{r^2}{g}`,
+            String.raw`\frac{g}{r^2}`,
+            String.raw`\frac{r^2}{2g}`,
+            String.raw`\frac{2r^2}{g}`,
+            String.raw`\frac{r^2}{g^2}`
+          ]
+        },
+
+        /* Source: Portuguese #564 (challenging) */
+        {
+          stem: String.raw`
+            <p>A cylinder has radius \(r\) and height \(h\).</p>
+            <p>The difference between the area of the base and the lateral area is equal to the area of a circle of radius \(h\).</p>
+            <p>Find \(r\) as a function of \(h\).</p>
+          `,
+          choices: [
+            String.raw`h(1+\sqrt2)`,
+            String.raw`h(\sqrt2-1)`,
+            String.raw`h(1-\sqrt2)`,
+            String.raw`2h`,
+            String.raw`h\sqrt2`,
+            String.raw`h(2+\sqrt2)`
+          ]
+        }
+
+      ]
+    };
+  </script>
+
+  <link rel="stylesheet" href="/math-homework/assets/core-rich.css" />
+  <script defer src="/math-homework/assets/core-rich.js"></script>
+  <script defer src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+</head>
+
+<body>
+  <div id="hw-root">Loading…</div>
+</body>
+</html>
