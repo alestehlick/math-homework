@@ -13,7 +13,7 @@
        REQUIRED SOURCE REFERENCES (your provided sets):
        - Type A uses A. Exercises: #1, #4, #6
        - Type B uses B. Exercises: #11, #12, #13, #14
-       - Portuguese set uses: #496, #499, #503, #504, #552, #564
+       - Portuguese set uses: #496, #560, #561, #563, #550, #553
 
        IMAGE NAMING RULE (STRICT):
        Any figure used is referenced by the ORIGINAL problem number from the set.
@@ -33,7 +33,7 @@
       graphics : String.raw``,
 
       /* Correct answers for Q1–Q13 */
-      answerKey : ["B","D","B","B","C","A","C","C","C","C","B","B","A"],
+      answerKey : ["B","D","B","B","C","A","C","C","B","C","B","D","A"],
 
       questions : [
 
@@ -54,12 +54,12 @@
             </figure>
           `,
           choices: [
-            String.raw`63\pi`,
-            String.raw`441\pi`,
-            String.raw`882\pi`,
-            String.raw`1764\pi`,
-            String.raw`49\pi`,
-            String.raw`441`
+            String.raw`\(\,63\pi\,\)`,
+            String.raw`\(\,441\pi\,\)`,
+            String.raw`\(\,882\pi\,\)`,
+            String.raw`\(\,1764\pi\,\)`,
+            String.raw`\(\,49\pi\,\)`,
+            String.raw`\(\,441\,\)`
           ]
         },
 
@@ -76,12 +76,12 @@
             </figure>
           `,
           choices: [
-            String.raw`384`,
-            String.raw`192\pi`,
-            String.raw`48\pi`,
-            String.raw`384\pi`,
-            String.raw`768\pi`,
-            String.raw`1536\pi`
+            String.raw`\(\,384\,\)`,
+            String.raw`\(\,192\pi\,\)`,
+            String.raw`\(\,48\pi\,\)`,
+            String.raw`\(\,384\pi\,\)`,
+            String.raw`\(\,768\pi\,\)`,
+            String.raw`\(\,1536\pi\,\)`
           ]
         },
 
@@ -98,12 +98,12 @@
             </figure>
           `,
           choices: [
-            String.raw`36864\pi`,
-            String.raw`9216\pi`,
-            String.raw`1536\pi`,
-            String.raw`576\pi`,
-            String.raw`147456\pi`,
-            String.raw`9216`
+            String.raw`\(\,36864\pi\,\)`,
+            String.raw`\(\,9216\pi\,\)`,
+            String.raw`\(\,1536\pi\,\)`,
+            String.raw`\(\,576\pi\,\)`,
+            String.raw`\(\,147456\pi\,\)`,
+            String.raw`\(\,9216\,\)`
           ]
         },
 
@@ -111,7 +111,7 @@
            Type B (4 questions)
            ======================= */
 
-        /* Source: B. Exercises #11 */
+        /* Source: B. Exercises #11 (both surface area and volume are asked) */
         {
           stem: String.raw`
             <p>The circumference of a cylinder is \(86\pi\) meters, and the height is 63 meters.</p>
@@ -119,12 +119,12 @@
             <p><em>Answer format: (surface area, volume).</em></p>
           `,
           choices: [
-            String.raw`(5418\pi,\ 2709\pi)`,
-            String.raw`(9116\pi,\ 116487\pi)`,
-            String.raw`(9116\pi,\ 2709\pi)`,
-            String.raw`(5418\pi,\ 116487\pi)`,
-            String.raw`(18232\pi,\ 465948\pi)`,
-            String.raw`(3698\pi,\ 116487\pi)`
+            String.raw`\(\,(5418\pi,\ 2709\pi)\,\)`,
+            String.raw`\(\,(9116\pi,\ 116487\pi)\,\)`,
+            String.raw`\(\,(9116\pi,\ 2709\pi)\,\)`,
+            String.raw`\(\,(5418\pi,\ 116487\pi)\,\)`,
+            String.raw`\(\,(18232\pi,\ 465948\pi)\,\)`,
+            String.raw`\(\,(3698\pi,\ 116487\pi)\,\)`
           ]
         },
 
@@ -152,12 +152,12 @@
             <p><em>Give your answer in terms of \(\pi\).</em></p>
           `,
           choices: [
-            String.raw`\frac{16\pi}{3}`,
-            String.raw`16\pi`,
-            String.raw`\frac{8\pi}{3}`,
-            String.raw`\frac{32\pi}{3}`,
-            String.raw`\frac{16}{3}`,
-            String.raw`48\pi`
+            String.raw`\(\dfrac{16\pi}{3}\)`,
+            String.raw`\(\,16\pi\,\)`,
+            String.raw`\(\dfrac{8\pi}{3}\)`,
+            String.raw`\(\dfrac{32\pi}{3}\)`,
+            String.raw`\(\dfrac{16}{3}\)`,
+            String.raw`\(\,48\pi\,\)`
           ]
         },
 
@@ -168,18 +168,19 @@
             <p>Assume 1 cubic foot of water is 7.5 gallons.</p>
             <p><em>Round to the nearest whole gallon.</em></p>
           `,
+          choiceWrap: false,
           choices: [
-            String.raw`87028`,
-            String.raw`207765`,
-            String.raw`652713`,
-            String.raw`870284`,
-            String.raw`628000`,
-            String.raw`673000`
+            String.raw`87,028`,
+            String.raw`207,765`,
+            String.raw`652,713`,
+            String.raw`870,284`,
+            String.raw`628,000`,
+            String.raw`673,000`
           ]
         },
 
         /* =======================
-           Portuguese set (4 regular + 2 challenging)
+           Portuguese set (4 regular volume-focused)
            ======================= */
 
         /* Source: Portuguese #496 (figure: 11-3-496.png) */
@@ -196,95 +197,111 @@
             </figure>
           `,
           choices: [
-            String.raw`\pi g^3`,
-            String.raw`\frac{\pi g^3}{2}`,
-            String.raw`\frac{\pi g^3}{4}`,
-            String.raw`\frac{\pi g^2}{4}`,
-            String.raw`\frac{\pi g^3}{8}`,
-            String.raw`\frac{\pi g^3}{16}`
+            String.raw`\(\pi g^3\)`,
+            String.raw`\(\dfrac{\pi g^3}{2}\)`,
+            String.raw`\(\dfrac{\pi g^3}{4}\)`,
+            String.raw`\(\dfrac{\pi g^2}{4}\)`,
+            String.raw`\(\dfrac{\pi g^3}{8}\)`,
+            String.raw`\(\dfrac{\pi g^3}{16}\)`
           ]
         },
 
-        /* Source: Portuguese #499 */
+        /* Source: Portuguese #560 */
         {
           stem: String.raw`
-            <p>A right circular cylinder has radius 3 cm and height 3 cm.</p>
-            <p>Determine the lateral area of the cylinder.</p>
+            <p>An oblique cylinder has base radius 3 cm.</p>
+            <p>The generatrix is 8 cm and forms an angle of \(45^\circ\) with the base.</p>
+            <p>Find the volume of the cylinder.</p>
             <p><em>Give your answer in terms of \(\pi\).</em></p>
           `,
           choices: [
-            String.raw`6\pi`,
-            String.raw`9\pi`,
-            String.raw`18\pi`,
-            String.raw`36\pi`,
-            String.raw`12\pi`,
-            String.raw`24\pi`
+            String.raw`\(\,18\sqrt2\,\pi\)`,
+            String.raw`\(\,36\sqrt2\,\pi\)`,
+            String.raw`\(\,72\sqrt2\,\pi\)`,
+            String.raw`\(\,36\pi\)`,
+            String.raw`\(\,18\pi\)`,
+            String.raw`\(\,144\sqrt2\,\pi\)`
           ]
         },
 
-        /* Source: Portuguese #503 */
+        /* Source: Portuguese #561 */
         {
           stem: String.raw`
-            <p>What is the height of a cylindrical reservoir if the radius of the base is 150 m and the lateral area is \(900\pi\) m<sup>2</sup>?</p>
-          `,
-          choices: [
-            String.raw`1`,
-            String.raw`2`,
-            String.raw`3`,
-            String.raw`4`,
-            String.raw`6`,
-            String.raw`9`
-          ]
-        },
-
-        /* Source: Portuguese #504 */
-        {
-          stem: String.raw`
-            <p>A cylindrical tank has height 8 m and diameter 2 m.</p>
-            <p>Determine the total surface area of the tank.</p>
+            <p>A cylinder has base radius 5 cm.</p>
+            <p>The generatrices are 15 cm long and form an angle of \(60^\circ\) with the base.</p>
+            <p>Find the volume of the cylinder.</p>
             <p><em>Give your answer in terms of \(\pi\).</em></p>
           `,
           choices: [
-            String.raw`16\pi`,
-            String.raw`18\pi`,
-            String.raw`20\pi`,
-            String.raw`36\pi`,
-            String.raw`72\pi`,
-            String.raw`144\pi`
+            String.raw`\(\,375\sqrt3\,\pi\)`,
+            String.raw`\(\,\dfrac{375}{2}\,\pi\)`,
+            String.raw`\(\,\dfrac{375\sqrt3}{2}\,\pi\)`,
+            String.raw`\(\,\dfrac{225\sqrt3}{2}\,\pi\)`,
+            String.raw`\(\,125\sqrt3\,\pi\)`,
+            String.raw`\(\,\dfrac{225}{2}\,\pi\)`
           ]
         },
 
-        /* Source: Portuguese #552 (challenging) */
+        /* Source: Portuguese #563 */
         {
           stem: String.raw`
-            <p>A right cylinder has radius \(r\) and generatrix \(g\) (height \(=g\)).</p>
-            <p>By how much must the radius be increased so that the <strong>lateral area</strong> of the new cylinder equals the <strong>total area</strong> of the original cylinder?</p>
-            <p><em>Give your answer as an expression in \(r\) and \(g\).</em></p>
+            <p>Two right circular cylinders have the same lateral area.</p>
+            <p>Their radii are 9 cm and 12 cm. The height of the first cylinder is 10 cm.</p>
+            <p>What is the ratio of their volumes \(V_1:V_2\)?</p>
           `,
           choices: [
-            String.raw`\frac{r}{g}`,
-            String.raw`\frac{r^2}{g}`,
-            String.raw`\frac{g}{r^2}`,
-            String.raw`\frac{r^2}{2g}`,
-            String.raw`\frac{2r^2}{g}`,
-            String.raw`\frac{r^2}{g^2}`
+            String.raw`\(\,1:1\,\)`,
+            String.raw`\(\,3:4\,\)`,
+            String.raw`\(\,4:3\,\)`,
+            String.raw`\(\,9:12\,\)`,
+            String.raw`\(\,81:144\,\)`,
+            String.raw`\(\,2:3\,\)`
           ]
         },
 
-        /* Source: Portuguese #564 (challenging) */
+        /* =======================
+           Portuguese set — challenging (2 volume-focused)
+           ======================= */
+
+        /* Source: Portuguese #550 (challenging) */
         {
           stem: String.raw`
-            <p>A cylinder has radius \(r\) and height \(h\).</p>
-            <p>The difference between the area of the base and the lateral area is equal to the area of a circle of radius \(h\).</p>
-            <p>Find \(r\) as a function of \(h\).</p>
+            <p>A statement claims the following:</p>
+            <p>
+              The volume \(V\) of a right circular cylinder equals the product of its total area \(A_T\)
+              and one fourth of the harmonic mean of the radius \(r\) and the height \(h\).
+            </p>
+            <p>The harmonic mean of \(r\) and \(h\) is \(H=\dfrac{2rh}{r+h}\).</p>
+            <p>If you simplify the expression \(V = A_T \cdot \dfrac{1}{4}\,H\), what do you get?</p>
           `,
           choices: [
-            String.raw`h(1+\sqrt2)`,
-            String.raw`h(\sqrt2-1)`,
-            String.raw`h(1-\sqrt2)`,
-            String.raw`2h`,
-            String.raw`h\sqrt2`,
-            String.raw`h(2+\sqrt2)`
+            String.raw`\(\pi r h\)`,
+            String.raw`\(\pi r^2(r+h)\)`,
+            String.raw`\(\dfrac{\pi r^2 h}{2}\)`,
+            String.raw`\(\pi r^2 h\)`,
+            String.raw`\(\dfrac{2\pi r^2 h}{r+h}\)`,
+            String.raw`\(\pi r^3\)`
+          ]
+        },
+
+        /* Source: Portuguese #553 (challenging) */
+        {
+          stem: String.raw`
+            <p>A rectangular sheet of metal is 5 m by 4 m. You can roll it to form a cylinder in two different ways:</p>
+            <ul>
+              <li><strong>Option A:</strong> circumference = 5 m and height = 4 m</li>
+              <li><strong>Option B:</strong> circumference = 4 m and height = 5 m</li>
+            </ul>
+            <p>Which option produces the <strong>larger volume</strong>?</p>
+          `,
+          choiceWrap: false,
+          choices: [
+            String.raw`Option A produces the larger volume.`,
+            String.raw`Option B produces the larger volume.`,
+            String.raw`They produce the same volume.`,
+            String.raw`Option A is larger only if \(\pi&lt;3\).`,
+            String.raw`Option B is larger only if \(\pi&gt;3\).`,
+            String.raw`It depends on the thickness of the metal.`
           ]
         }
 
