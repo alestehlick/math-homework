@@ -50,33 +50,40 @@
   /* -------------------------
      Styling for inline TikZ
      ------------------------- */
-  function injectInlineTikzStyles(){
-    if (document.getElementById("coreRichInlineTikzStyles")) return;
-    const style = document.createElement("style");
-    style.id = "coreRichInlineTikzStyles";
-    style.textContent = `
-      .q-tikz-inline{
-        margin: 10px 0 12px;
-        overflow: visible;
-      }
-      .q-tikz-inline .tikz-caption{
-        margin-top: 8px;
-        text-align: center;
-        font-size: 0.98rem;
-        color: #333;
-      }
-      /* TikZJax outputs SVG; keep it responsive */
-      .q-tikz-inline svg{
-        max-width: 100%;
-        height: auto;
-        display: block;
-        margin: 0 auto;
-      }
-      /* Prevent accidental clipping in some layouts */
-      .q-left, .q-stem{ overflow: visible; }
-    `;
-    document.head.appendChild(style);
-  }
+function injectInlineTikzStyles(){
+  if (document.getElementById("coreRichInlineTikzStyles")) return;
+  const style = document.createElement("style");
+  style.id = "coreRichInlineTikzStyles";
+  style.textContent = `
+    .q-tikz-inline{
+      margin: 10px 0 12px;
+      overflow: visible;
+      width: 100%;
+      display: block;
+    }
+    /* TikZJax outputs SVG; keep it responsive */
+    .q-tikz-inline svg{
+      max-width: 100%;
+      height: auto;
+      display: block;
+      margin: 0 auto;
+    }
+    /* Caption under TikZ: force true centering even if other CSS overrides */
+    .q-tikz-inline .tikz-caption{
+      margin-top: 8px;
+      width: 100%;
+      display: block;
+      text-align: center !important;
+      font-size: 0.98rem;
+      color: #333;
+      line-height: 1.25;
+    }
+    /* Prevent accidental clipping in some layouts */
+    .q-left, .q-stem{ overflow: visible; }
+  `;
+  document.head.appendChild(style);
+}
+
 
   /* -------------------------
      Modal for zoom
