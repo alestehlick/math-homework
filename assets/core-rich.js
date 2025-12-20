@@ -1,287 +1,342 @@
-/*═══════════════════════════════════════════════════════════════════════
-  core-rich.js  v1.0  (Textbook layout + MathJax/TikZ-safe)
-  ───────────────────────────────────────────────────────────────────────
-  Authoring model (new homeworks):
-    d.questions[i] = {
-      stem   : "<p>HTML prose with math like \\(x^2\\)</p>",   // required
-      media  : "<img ...>" | raw TikZ | "<svg...>",           // optional
-      choices: ["54", "\\frac{a}{2}", "<span>None</span>", ...],
-      choiceWrap: true|false   // optional, default true
-    }
+/* =========================
+   core-rich.js — Geometry HW renderer
+   - supports stem (HTML) or latex (LaTeX string)
+   - supports media as:
+       (A) raw TikZ code: contains \begin{tikzpicture}...\end{tikzpicture}
+           -> we create <script type="text/tikz"> in the DOM (safe)
+       (B) HTML media: <img>, <svg>, <figure>... etc
+   - caption is supported via q.mediaCaption (always preserved)
+   ========================= */
 
-  Key improvements:
-    • Stems are real HTML (paragraphs, lists, tables, etc.)
-    • Per-question media (side-by-side layout, responsive)
-    • MathJax typeset done correctly after DOM insertion
-    • Auto-wrap choices into \( ... \) ONLY when appropriate
-    • TikZ auto-wrap into <script type="text/tikz"> when detected
-═══════════════════════════════════════════════════════════════════════*/
+(function(){
+  "use strict";
 
-const SCRIPT_URL  = "https://script.google.com/macros/s/AKfycbw2Y_ZP_gexERkUJF3geWuU-ivVlvc-1lYZatzo-mh4HNjo3gnmZDMUoHuIkJmmxIudLA/exec";
-const COOLDOWN_MS = 120_000;
-
-if (window.__coreRichLoaded__) {
-  console.warn("Duplicate core-rich.js detected");
-} else {
-  window.__coreRichLoaded__ = true;
-
-  // Optional authoring helpers (use in your homeworkData if you like):
-  //   stem: `Use ${m("V=Bh")} ... ${dm("\\frac12bh")}`
-  window.m  = s => `\\(${s}\\)`;
-  window.dm = s => `\\[${s}\\]`;
-
-  document.addEventListener("DOMContentLoaded", () => {
-    if (!window.homeworkData) { alert("Error: homeworkData not found."); return; }
-    buildForm(window.homeworkData);
-  });
-}
-
-/*──────────────────────────────────────────────────────────────────────*/
-/*  MathJax: typeset dynamic DOM correctly  */
-async function typesetMath(root) {
-  const MJ = window.MathJax;
-  if (!MJ) return;
-
-  // Wait until MathJax is actually ready (v3)
-  try {
-    if (MJ.startup?.promise) await MJ.startup.promise;
-  } catch {}
-
-  try {
-    if (MJ.typesetPromise) await MJ.typesetPromise([root]);
-    else if (MJ.typeset) MJ.typeset([root]);
-  } catch (e) {
-    console.warn("MathJax typeset error:", e);
-  }
-}
-
-/*──────────────────────────────────────────────────────────────────────*/
-/*  TikZ helpers  */
-function sanitizeTikz(src) {
-  if (!src) return src;
-  return String(src)
-    .replaceAll("\\begin{scope]", "\\begin{scope}")
-    .replaceAll("\\end{scope]", "\\end{scope}")
-    .replace(/<\s*begin\{scope\}\s*>/gi, "\\begin{scope}")
-    .replace(/<\s*\/\s*end\{scope\}\s*>/gi, "\\end{scope}")
-    .replace(/<\s*\/\s*begin\{scope\}\s*>/gi, "\\end{scope}")
-    .replace(/\\end\{tikzpicture\}>/g, "\\end{tikzpicture}")
-    .replace(/^.*\?.*$/gm, "")
-    .trim();
-}
-
-function looksLikeTikz(src) {
-  return typeof src === "string" &&
-         /\\begin\{tikzpicture\}[\s\S]*\\end\{tikzpicture\}/.test(src);
-}
-
-function whenTikzjaxReady(cb) {
-  if (window.tikzjax?.process) { try { cb(); } catch {} return; }
-  const t0 = Date.now();
-  const id = setInterval(() => {
-    if (window.tikzjax?.process) {
-      clearInterval(id);
-      try { cb(); } catch {}
-    } else if (Date.now() - t0 > 8000) {
-      clearInterval(id);
-    }
-  }, 120);
-  window.addEventListener("load", () => {
-    if (window.tikzjax?.process) { try { cb(); } catch {} }
-  }, { once:true });
-}
-
-function mountTikzInto(el, src) {
-  const fixed = sanitizeTikz(src);
-  if (/<script[^>]+type=["']text\/tikz["']/.test(fixed) || /<(svg|img)\b/i.test(fixed)) {
-    el.innerHTML = fixed;
-  } else {
-    el.innerHTML = `<script type="text/tikz" data-origin="core-rich">\n${fixed}\n</script>`;
-  }
-  whenTikzjaxReady(() => { try { window.tikzjax.process(); } catch {} });
-}
-
-/*──────────────────────────────────────────────────────────────────────*/
-/*  Choice wrapping rules (prevents the “red \(” disaster)  */
-function hasHtmlTags(s) {
-  return /<[^>]+>/.test(s);
-}
-function hasExplicitMathDelims(s) {
-  return /\\\(|\\\)|\\\[|\\\]/.test(s);
-}
-function wrapChoiceIfNeeded(txt, doWrap) {
-  const s = String(txt);
-
-  if (!doWrap) return s;                 // teacher opted out
-  if (hasHtmlTags(s)) return s;          // HTML choice → do not wrap
-  if (hasExplicitMathDelims(s)) return s; // already has \( \) or \[ \]
-  return `\\(${s}\\)`;                   // auto-wrap as math
-}
-
-/*──────────────────────────────────────────────────────────────────────*/
-/*  Build static DOM  */
-async function buildForm(d) {
   const root = document.getElementById("hw-root");
-  if (!root) { alert("Error: #hw-root not found."); return; }
 
-  root.innerHTML = `
-    <h1>${escapeHtml(d.title ?? "Homework")}</h1>
-    <form id="hwForm">
-      <input type="hidden" name="classId"    value="${escapeAttr(d.classId ?? "")}">
-      <input type="hidden" name="homeworkId" value="${escapeAttr(d.id ?? "")}">
-      <div class="student-info">
-        <label>First&nbsp;Name: <input name="firstName" required></label>
-        <label>Last&nbsp;Name:&nbsp; <input name="lastName"  required></label>
-      </div>
-      ${d.graphics ? `<div id="media" class="global-media"></div>` : ``}
-      <div id="qbox"></div>
-      <button type="submit">Submit</button>
-    </form>`;
-
-  // optional global graphics (if you still want it sometimes)
-  if (d.graphics) {
-    const media = document.getElementById("media");
-    const g = String(d.graphics);
-    if (looksLikeTikz(g)) mountTikzInto(media, g);
-    else media.innerHTML = g;
+  function renderFatal(msg){
+    if (!root) return;
+    root.innerHTML = `
+      <div style="padding:1rem;border:1px solid #c66;border-radius:10px;background:#fff0f0;">
+        <strong>Render error:</strong> ${escapeHtml(msg)}
+      </div>`;
   }
 
-  const qbox = document.getElementById("qbox");
-  const questions = d.questions || [];
+  function escapeHtml(s){
+    return String(s)
+      .replaceAll("&","&amp;")
+      .replaceAll("<","&lt;")
+      .replaceAll(">","&gt;")
+      .replaceAll('"',"&quot;")
+      .replaceAll("'","&#39;");
+  }
 
-  questions.forEach((q, i) => {
-    const n = i + 1;
-    const stem = (q?.stem ?? "").toString();
-    const media = (q?.media ?? "").toString().trim();
-    const choiceWrap = (q?.choiceWrap ?? true);
+  function hasHtmlTags(s){
+    return /<\/?[a-z][\s\S]*>/i.test(String(s || ""));
+  }
 
-    const hasMedia = media.length > 0;
+  function looksLikeTikz(s){
+    const t = String(s || "");
+    return /\\begin\{tikzpicture\}[\s\S]*\\end\{tikzpicture\}/.test(t);
+  }
 
-qbox.insertAdjacentHTML("beforeend", `
-  <div class="question q-card">
-    <div class="q-head"><strong>Q${n}.</strong></div>
+  function makeEl(tag, cls, html){
+    const el = document.createElement(tag);
+    if (cls) el.className = cls;
+    if (html !== undefined) el.innerHTML = html;
+    return el;
+  }
 
-    <div class="q-grid ${hasMedia ? "has-media" : "no-media"}">
-      <div class="q-left">
-        <div class="q-stem" id="stem_${n}"></div>
-        <ul class="choices" id="choices_${n}"></ul>
-      </div>
-      ${hasMedia ? `<div class="q-media" id="media_${n}"></div>` : ``}
-    </div>
-  </div>
-`);
+  // --- modal for media zoom (simple + reliable) ---
+  function ensureModal(){
+    let modal = document.getElementById("mediaModal");
+    if (modal) return modal;
 
+    const style = document.createElement("style");
+    style.textContent = `
+      #mediaModal{
+        position:fixed; inset:0;
+        background:rgba(0,0,0,.55);
+        display:none;
+        align-items:center;
+        justify-content:center;
+        padding:24px;
+        z-index:9999;
+      }
+      #mediaModal .panel{
+        background:#fff;
+        border-radius:14px;
+        max-width:min(960px, 96vw);
+        max-height:92vh;
+        overflow:auto;
+        padding:18px;
+        box-shadow:0 10px 30px rgba(0,0,0,.25);
+      }
+      #mediaModal .panel figure{ margin:0; }
+      #mediaModal .panel figcaption{
+        margin-top:10px;
+        text-align:center;
+        font-size:1rem;
+        color:#333;
+      }
+      #mediaModal .close{
+        position:sticky;
+        top:0;
+        float:right;
+        border:none;
+        background:#eee;
+        border-radius:10px;
+        padding:6px 10px;
+        cursor:pointer;
+        margin-bottom:10px;
+      }
+    `;
+    document.head.appendChild(style);
 
-    // stem (HTML)
-    const stemEl = document.getElementById(`stem_${n}`);
-    stemEl.innerHTML = stem;
+    modal = document.createElement("div");
+    modal.id = "mediaModal";
+    modal.innerHTML = `<div class="panel">
+      <button class="close" type="button">Close</button>
+      <div class="content"></div>
+    </div>`;
+    document.body.appendChild(modal);
 
-    // media (HTML/img/svg or raw TikZ)
-    if (hasMedia) {
-      const mEl = document.getElementById(`media_${n}`);
-      if (looksLikeTikz(media)) mountTikzInto(mEl, media);
-      else mEl.innerHTML = media;
+    modal.addEventListener("click", (e) => {
+      if (e.target === modal) modal.style.display = "none";
+    });
+    modal.querySelector(".close").addEventListener("click", () => {
+      modal.style.display = "none";
+    });
+
+    return modal;
+  }
+
+  function openModalWith(node){
+    const modal = ensureModal();
+    const content = modal.querySelector(".content");
+    content.innerHTML = "";
+    content.appendChild(node);
+    modal.style.display = "flex";
+
+    // If TikZ was inside, ask tikzjax to (re)process in modal
+    processTikz();
+    typesetMath();
+  }
+
+  // --- TikZ mounting (DOM-based, safe) ---
+  function mountTikzInto(container, tikzCode, caption){
+    container.innerHTML = "";
+
+    const fig = document.createElement("figure");
+
+    const scr = document.createElement("script");
+    scr.type = "text/tikz";
+    // IMPORTANT: set textContent so no HTML parsing issues
+    scr.textContent = String(tikzCode || "");
+    fig.appendChild(scr);
+
+    if (caption) {
+      const cap = document.createElement("figcaption");
+      cap.textContent = caption;
+      fig.appendChild(cap);
     }
+
+    // click-to-zoom
+    fig.style.cursor = "zoom-in";
+    fig.addEventListener("click", () => {
+      openModalWith(fig.cloneNode(true));
+    });
+
+    container.appendChild(fig);
+  }
+
+  function normalizeHtmlMedia(container, html, caption){
+    container.innerHTML = String(html || "");
+
+    // If author gave a caption string, ensure it's visible even if HTML lacks figcaption
+    if (caption) {
+      const existingFigcaption = container.querySelector("figcaption");
+      if (!existingFigcaption) {
+        const fig = container.querySelector("figure");
+        if (fig) {
+          const cap = document.createElement("figcaption");
+          cap.textContent = caption;
+          fig.appendChild(cap);
+        } else {
+          // wrap first img/svg in a figure
+          const node = container.querySelector("img, svg");
+          if (node) {
+            const fig2 = document.createElement("figure");
+            fig2.appendChild(node);
+            const cap2 = document.createElement("figcaption");
+            cap2.textContent = caption;
+            fig2.appendChild(cap2);
+            container.innerHTML = "";
+            container.appendChild(fig2);
+          }
+        }
+      }
+    }
+
+    // click-to-zoom if we have a figure now
+    const fig = container.querySelector("figure");
+    if (fig) {
+      fig.style.cursor = "zoom-in";
+      fig.addEventListener("click", () => openModalWith(fig.cloneNode(true)));
+    }
+  }
+
+  // --- MathJax + TikZJax hooks ---
+  function typesetMath(){
+    if (window.MathJax && typeof window.MathJax.typesetPromise === "function") {
+      return window.MathJax.typesetPromise().catch(()=>{});
+    }
+    return Promise.resolve();
+  }
+
+  function processTikz(){
+    // TikZJax v1 usually exposes window.tikzjax.process()
+    if (window.tikzjax && typeof window.tikzjax.process === "function") {
+      try { window.tikzjax.process(); } catch(_) {}
+    }
+  }
+
+  // call after render, and again after load (in case libs load later)
+  function postRender(){
+    processTikz();
+    typesetMath();
+
+    window.addEventListener("load", () => {
+      processTikz();
+      typesetMath();
+    });
+  }
+
+  // --- main render ---
+  const data = window.homeworkData;
+  if (!data || !Array.isArray(data.questions)) {
+    renderFatal("homeworkData not found or invalid. Make sure window.homeworkData is defined BEFORE core-rich.js loads.");
+    return;
+  }
+
+  root.innerHTML = "";
+
+  const title = makeEl("h1", "", escapeHtml(data.title || data.id || "Homework"));
+  root.appendChild(title);
+
+  // student info
+  const info = makeEl("div", "student-info");
+  info.innerHTML = `
+    <label>First Name: <input id="firstName" type="text" autocomplete="given-name"></label>
+    <label>Last Name: <input id="lastName" type="text" autocomplete="family-name"></label>
+  `;
+  root.appendChild(info);
+
+  const form = document.createElement("form");
+  form.id = "hwForm";
+  form.addEventListener("submit", (e) => e.preventDefault());
+  root.appendChild(form);
+
+  data.questions.forEach((q, i) => {
+    const n = i + 1;
+
+    const card = makeEl("section", "q-card question");
+
+    const head = makeEl("div", "q-head");
+    head.innerHTML = `<strong>Q${n}.</strong>`;
+    card.appendChild(head);
+
+    const hasMedia = !!(q.media && String(q.media).trim().length);
+    const grid = makeEl("div", "q-grid " + (hasMedia ? "has-media" : "no-media"));
+    card.appendChild(grid);
+
+    const left = makeEl("div", "q-left");
+    grid.appendChild(left);
+
+    // stem
+    const stem = makeEl("div", "q-stem");
+    if (q.stem) {
+      stem.innerHTML = String(q.stem);
+    } else if (q.latex) {
+      // render latex as inline math
+      stem.innerHTML = `<p>\\(${String(q.latex)}\\)</p>`;
+    } else {
+      stem.innerHTML = `<p><em>(No prompt provided.)</em></p>`;
+    }
+    left.appendChild(stem);
 
     // choices
-    const cEl = document.getElementById(`choices_${n}`);
-    const choices = q?.choices || [];
-    cEl.innerHTML = choices.map((txt, j) => {
-      const letter = String.fromCharCode(65 + j); // A-F
-      const body = wrapChoiceIfNeeded(txt, choiceWrap);
-      return `
-        <li>
-          <label>
-            <input type="radio" name="q${n}" value="${letter}" required>
-            <span class="choice-text">${body}</span>
-          </label>
-        </li>`;
-    }).join("");
+    const choices = Array.isArray(q.choices) ? q.choices : [];
+    const ul = makeEl("ul", "choices");
+    choices.forEach((choiceText, idx) => {
+      const letter = String.fromCharCode("A".charCodeAt(0) + idx);
+      const li = document.createElement("li");
+
+      const id = `q${n}_${letter}`;
+      const label = document.createElement("label");
+
+      const input = document.createElement("input");
+      input.type = "radio";
+      input.name = `q${n}`;
+      input.value = letter;
+      input.id = id;
+
+      const span = document.createElement("span");
+      span.className = "choice-text";
+      span.innerHTML = String(choiceText);
+
+      label.appendChild(input);
+      label.appendChild(span);
+
+      li.appendChild(label);
+      ul.appendChild(li);
+    });
+    left.appendChild(ul);
+
+    // media column
+    if (hasMedia) {
+      const right = makeEl("div", "q-media");
+      grid.appendChild(right);
+
+      const mWrap = document.createElement("div");
+      mWrap.id = `media_${n}`;
+      right.appendChild(mWrap);
+
+      const caption = q.mediaCaption ? String(q.mediaCaption) : "";
+
+      // IMPORTANT:
+      // - if media is raw TikZ code (not HTML), mountTikzInto
+      // - else treat as HTML and preserve wrapper/caption
+      const mediaStr = String(q.media);
+
+      if (looksLikeTikz(mediaStr) && !hasHtmlTags(mediaStr)) {
+        mountTikzInto(mWrap, mediaStr, caption);
+      } else {
+        normalizeHtmlMedia(mWrap, mediaStr, caption);
+      }
+    }
+
+    form.appendChild(card);
   });
 
-  // Typeset everything we just injected
-  await typesetMath(root);
-
-  // Hook submit (same behavior as your current core)
-  document.getElementById("hwForm")
-          .addEventListener("submit", ev => handleSubmit(ev, d));
-}
-
-/*──────────────────────────────────────────────────────────────────────*/
-/*  Submit handler (same logic as yours)  */
-async function handleSubmit(ev, d) {
-  ev.preventDefault();
-  const f   = ev.target;
-  const fn  = f.firstName.value.trim();
-  const ln  = f.lastName.value.trim();
-  if (!fn || !ln) { alert("Please enter both first and last names."); return; }
-
-  const key  = `last_${d.classId}_${d.id}_${fn}_${ln}`.toLowerCase();
-  const now  = Date.now();
-  const last = Number(localStorage.getItem(key)) || 0;
-  if (now - last < COOLDOWN_MS) {
-    alert(`Please wait ${Math.ceil((COOLDOWN_MS - (now - last)) / 1000)} s before retrying.`);
-    return;
-  }
-
-  const answers = [];
-  for (let i = 1; i <= d.questions.length; i++)
-    answers.push(f[`q${i}`].value);
-
-  const body = new URLSearchParams({
-    classId   : d.classId,
-    homeworkId: d.id,
-    firstName : fn,
-    lastName  : ln,
-    answers   : JSON.stringify(answers),
-    answerKey : JSON.stringify(d.answerKey)
+  // submit button + scoring (optional)
+  const btn = document.createElement("button");
+  btn.type = "button";
+  btn.textContent = "Submit";
+  btn.addEventListener("click", () => {
+    if (!Array.isArray(data.answerKey)) {
+      alert("No answer key provided in homeworkData.");
+      return;
+    }
+    let correct = 0;
+    data.questions.forEach((_, i) => {
+      const n = i + 1;
+      const chosen = form.querySelector(`input[name="q${n}"]:checked`);
+      const val = chosen ? chosen.value : null;
+      if (val && val === data.answerKey[i]) correct++;
+    });
+    alert(`Score: ${correct} / ${data.questions.length}`);
   });
+  root.appendChild(btn);
 
-  try {
-    const r   = await fetch(SCRIPT_URL, { method: "POST", body });
-    const txt = await r.text();
-    localStorage.setItem(key, String(now));
-    handleReply(txt, d.questions.length);
-  } catch (e) {
-    alert("Network / script error: " + e);
-  }
-}
-
-/*──────────────────────────────────────────────────────────────────────*/
-/*  Interpret server reply (same as yours)  */
-function handleReply(msg, total) {
-  if (msg.startsWith("SUBMITTED|")) {
-    const [, raw, flag] = msg.split("|");
-    const scored = flag === "LATE" ? Math.ceil(raw * 0.85) : raw;
-    alert(`${flag === "LATE" ? "Late submission (85 % cap)\n" : ""}Score ${scored}/${total}`);
-    return;
-  }
-  if (msg.startsWith("RETRY_HIGH|")) {
-    const [, raw, disp, cap] = msg.split("|");
-    alert(cap === "CAP"
-      ? `Retry accepted.\nRaw ${raw}/${total} → Capped 85 % → ${disp}/${total}`
-      : `Retry accepted.\nScore ${disp}/${total}`);
-    return;
-  }
-  if (msg.startsWith("RETRY_LOW|")) {
-    const [, disp, prev] = msg.split("|");
-    alert(`Retry recorded.\nRetry ${disp}/${total} < Previous ${prev}/${total}\nHigher score kept.`);
-    return;
-  }
-  if (msg === "ERR|INVALID_NAME")        alert("Name not in roster.");
-  else if (msg === "ERR|LIMIT_EXCEEDED") alert("Max 2 attempts reached.");
-  else if (msg.startsWith("ERR|"))       alert("Server error:\n" + msg.slice(4));
-  else                                   alert("Unexpected reply:\n" + msg);
-}
-
-/*──────────────────────────────────────────────────────────────────────*/
-/*  Tiny safety helpers for title/id injection  */
-function escapeHtml(s){
-  return String(s).replace(/[&<>"']/g, c => ({
-    "&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;","'":"&#39;"
-  }[c]));
-}
-function escapeAttr(s){
-  // enough for attributes in your use-case
-  return escapeHtml(s).replace(/`/g, "&#96;");
-}
+  postRender();
+})();
