@@ -1,0 +1,393 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Homework 11-Rev (Geometry)</title>
+
+  <script>
+/* =========================
+   Homework 11-Rev — Chapter 11 Review (Volumes)
+
+   REQUIRED SOURCE REFERENCES (your provided sets):
+   - Diagram set (“Find the volume of each geometric solid”): #1, #2, #3, #4, #5, #6, #7, #8, #9
+   - Text set (“In the following exercises H=height, V=volume, ...”): #11, #12, #13, #14, #16, #17, #20, #22
+   - Torus set: #23
+
+   IMAGE NAMING RULE:
+   Any figure used is referenced by the ORIGINAL problem number from the source set.
+   PNG files live in the SAME folder as this HTML.
+   Required figure files for this homework:
+   - 11-rev-1.png, 11-rev-2.png, 11-rev-3.png, 11-rev-4.png, 11-rev-5.png,
+     11-rev-6.png, 11-rev-7.png, 11-rev-8.png, 11-rev-9.png, 11-rev-23.png
+   ========================= */
+    window.homeworkData = {
+      classId : "Geometry",
+      id      : "Homework 11-Rev",
+      title   : "Homework 11-Rev — Chapter 11 Review (Volumes)",
+
+      graphics : String.raw``,
+
+      answerKey : ["B","C","C","C","C","B","C","B","C","B","A","B","B","A","B","B","B","D"],
+
+      questions : [
+
+        {
+          stem: String.raw`
+            <p><strong>Refer to Figure 1.</strong> Find the volume of the cone.</p>
+          `,
+          media: String.raw`
+            <figure>
+              <img src="11-rev-1.png" alt="Exercise #1" />
+              <figcaption>Figure 1 (Exercise #1)</figcaption>
+            </figure>
+          `,
+          choiceWrap: false,
+          choices: [
+            String.raw`\(784\pi\) cubic units`,
+            String.raw`\(\dfrac{784}{3}\pi\) cubic units`,
+            String.raw`\(392\pi\) cubic units`,
+            String.raw`\(\dfrac{49}{3}\pi\) cubic units`,
+            String.raw`\(112\pi\) cubic units`,
+            String.raw`\(\dfrac{1568}{3}\pi\) cubic units`
+          ]
+        },
+
+        {
+          stem: String.raw`
+            <p><strong>Refer to Figure 2.</strong> The prism has base area \(B=82\) square inches and height \(9\) inches.</p>
+            <p>Find the volume.</p>
+          `,
+          media: String.raw`
+            <figure>
+              <img src="11-rev-2.png" alt="Exercise #2" />
+              <figcaption>Figure 2 (Exercise #2)</figcaption>
+            </figure>
+          `,
+          choiceWrap: false,
+          choices: [
+            String.raw`656 in<sup>3</sup>`,
+            String.raw`820 in<sup>3</sup>`,
+            String.raw`738 in<sup>3</sup>`,
+            String.raw`246 in<sup>3</sup>`,
+            String.raw`784 in<sup>3</sup>`,
+            String.raw`92 in<sup>3</sup>`
+          ]
+        },
+
+        {
+          stem: String.raw`
+            <p><strong>Refer to Figure 3.</strong> The pyramid’s height is \(12\) units. Its base is a regular hexagon with side length \(3\) units and apothem \(3.1\) units.</p>
+            <p>Find the volume of the pyramid.</p>
+          `,
+          media: String.raw`
+            <figure>
+              <img src="11-rev-3.png" alt="Exercise #3" />
+              <figcaption>Figure 3 (Exercise #3)</figcaption>
+            </figure>
+          `,
+          choiceWrap: false,
+          choices: [
+            String.raw`37.2 cubic units`,
+            String.raw`55.8 cubic units`,
+            String.raw`111.6 cubic units`,
+            String.raw`334.8 cubic units`,
+            String.raw`279 cubic units`,
+            String.raw`27.9 cubic units`
+          ]
+        },
+
+        {
+          stem: String.raw`
+            <p><strong>Refer to Figure 4.</strong> Find the volume of the (tilted) cylinder.</p>
+            <p><em>Reminder:</em> A cylinder’s volume depends on the base area and the perpendicular height.</p>
+          `,
+          media: String.raw`
+            <figure>
+              <img src="11-rev-4.png" alt="Exercise #4" />
+              <figcaption>Figure 4 (Exercise #4)</figcaption>
+            </figure>
+          `,
+          choiceWrap: false,
+          choices: [
+            String.raw`\(60\pi\) cubic units`,
+            String.raw`\(75\pi\) cubic units`,
+            String.raw`\(150\pi\) cubic units`,
+            String.raw`\(300\pi\) cubic units`,
+            String.raw`\(25\pi\) cubic units`,
+            String.raw`\(50\pi\) cubic units`
+          ]
+        },
+
+        {
+          stem: String.raw`
+            <p><strong>Refer to Figure 5.</strong> Find the volume of the sphere.</p>
+          `,
+          media: String.raw`
+            <figure>
+              <img src="11-rev-5.png" alt="Exercise #5" />
+              <figcaption>Figure 5 (Exercise #5)</figcaption>
+            </figure>
+          `,
+          choiceWrap: false,
+          choices: [
+            String.raw`\(243\pi\) cubic units`,
+            String.raw`\(324\pi\) cubic units`,
+            String.raw`\(972\pi\) cubic units`,
+            String.raw`\(2916\pi\) cubic units`,
+            String.raw`\(648\pi\) cubic units`,
+            String.raw`\(1296\pi\) cubic units`
+          ]
+        },
+
+        {
+          stem: String.raw`
+            <p><strong>Refer to Figure 6.</strong> The prism has a regular hexagonal base with side length \(8\) and apothem \(7\). The height is \(23\).</p>
+            <p>Find the volume.</p>
+          `,
+          media: String.raw`
+            <figure>
+              <img src="11-rev-6.png" alt="Exercise #6" />
+              <figcaption>Figure 6 (Exercise #6)</figcaption>
+            </figure>
+          `,
+          choiceWrap: false,
+          choices: [
+            String.raw`1680 cubic units`,
+            String.raw`3864 cubic units`,
+            String.raw`1932 cubic units`,
+            String.raw`840 cubic units`,
+            String.raw`336 cubic units`,
+            String.raw`2688 cubic units`
+          ]
+        },
+
+        {
+          stem: String.raw`
+            <p><strong>Refer to Figure 7.</strong> Find the volume of the cube.</p>
+          `,
+          media: String.raw`
+            <figure>
+              <img src="11-rev-7.png" alt="Exercise #7" />
+              <figcaption>Figure 7 (Exercise #7)</figcaption>
+            </figure>
+          `,
+          choiceWrap: false,
+          choices: [
+            String.raw`81 cubic units`,
+            String.raw`243 cubic units`,
+            String.raw`729 cubic units`,
+            String.raw`6561 cubic units`,
+            String.raw`648 cubic units`,
+            String.raw`512 cubic units`
+          ]
+        },
+
+        {
+          stem: String.raw`
+            <p><strong>Refer to Figure 8.</strong> The solid is a <em>regular tetrahedron</em> with edge length \(5\).</p>
+            <p>Find the volume.</p>
+          `,
+          media: String.raw`
+            <figure>
+              <img src="11-rev-8.png" alt="Exercise #8" />
+              <figcaption>Figure 8 (Exercise #8)</figcaption>
+            </figure>
+          `,
+          choiceWrap: false,
+          choices: [
+            String.raw`\(\dfrac{125\sqrt2}{3}\) cubic units`,
+            String.raw`\(\dfrac{125\sqrt2}{12}\) cubic units`,
+            String.raw`\(\dfrac{25\sqrt2}{12}\) cubic units`,
+            String.raw`\(\dfrac{125}{12}\) cubic units`,
+            String.raw`\(\dfrac{125\sqrt3}{12}\) cubic units`,
+            String.raw`\(\dfrac{125\sqrt2}{6}\) cubic units`
+          ]
+        },
+
+        {
+          stem: String.raw`
+            <p><strong>Refer to Figure 9.</strong> The solid is a <em>regular octahedron</em> with edge length \(3\).</p>
+            <p>Find the volume.</p>
+          `,
+          media: String.raw`
+            <figure>
+              <img src="11-rev-9.png" alt="Exercise #9" />
+              <figcaption>Figure 9 (Exercise #9)</figcaption>
+            </figure>
+          `,
+          choiceWrap: false,
+          choices: [
+            String.raw`\(18\sqrt2\) cubic units`,
+            String.raw`\(6\sqrt2\) cubic units`,
+            String.raw`\(9\sqrt2\) cubic units`,
+            String.raw`\(12\sqrt2\) cubic units`,
+            String.raw`\(27\sqrt2\) cubic units`,
+            String.raw`\(3\sqrt2\) cubic units`
+          ]
+        },
+
+        {
+          stem: String.raw`
+            <p>A square prism has base side length \(s=8\) and height \(H=22\).</p>
+            <p>Find its volume.</p>
+          `,
+          choiceWrap: false,
+          choices: [
+            String.raw`704 cubic units`,
+            String.raw`1408 cubic units`,
+            String.raw`176 cubic units`,
+            String.raw`352 cubic units`,
+            String.raw`2816 cubic units`,
+            String.raw`1024 cubic units`
+          ]
+        },
+
+        {
+          stem: String.raw`
+            <p>An equilateral triangular pyramid has base side length \(s=34\) and height \(H=38\).</p>
+            <p>Find its volume.</p>
+            <p><em>Hint:</em> The area of an equilateral triangle with side \(s\) is \( \dfrac{\sqrt3}{4}s^2 \).</p>
+          `,
+          choiceWrap: false,
+          choices: [
+            String.raw`\(\dfrac{10982}{3}\sqrt3\) cubic units`,
+            String.raw`\(10982\sqrt3\) cubic units`,
+            String.raw`\(\dfrac{289}{3}\sqrt3\) cubic units`,
+            String.raw`\(\dfrac{10982}{12}\sqrt3\) cubic units`,
+            String.raw`\(\dfrac{10982}{3}\) cubic units`,
+            String.raw`\(\dfrac{1156}{3}\sqrt3\) cubic units`
+          ]
+        },
+
+        {
+          stem: String.raw`
+            <p>Find the volume of a right circular cone with radius \(r=6\) and height \(H=10\).</p>
+          `,
+          choiceWrap: false,
+          choices: [
+            String.raw`\(60\pi\) cubic units`,
+            String.raw`\(120\pi\) cubic units`,
+            String.raw`\(180\pi\) cubic units`,
+            String.raw`\(240\pi\) cubic units`,
+            String.raw`\(360\pi\) cubic units`,
+            String.raw`\(20\pi\) cubic units`
+          ]
+        },
+
+        {
+          stem: String.raw`
+            <p>Find the volume of a sphere with radius \(r=14\).</p>
+          `,
+          choiceWrap: false,
+          choices: [
+            String.raw`\(\dfrac{5488}{3}\pi\) cubic units`,
+            String.raw`\(\dfrac{10976}{3}\pi\) cubic units`,
+            String.raw`\(10976\pi\) cubic units`,
+            String.raw`\(\dfrac{1372}{3}\pi\) cubic units`,
+            String.raw`\(\dfrac{2744}{3}\pi\) cubic units`,
+            String.raw`\(\dfrac{21952}{3}\pi\) cubic units`
+          ]
+        },
+
+        {
+          stem: String.raw`
+            <p>A regular dodecahedron has a face with perimeter \(10\) meters.</p>
+            <p>Assume each face is a regular pentagon, so the edge length is \(e=2\) meters. Use the formula</p>
+            <p class="math">\(V=\dfrac{15+7\sqrt5}{3}\,e^3\).</p>
+            <p>Find the volume.</p>
+          `,
+          choiceWrap: false,
+          choices: [
+            String.raw`\(\dfrac{8}{3}(15+7\sqrt5)\) m<sup>3</sup>`,
+            String.raw`\(\dfrac{4}{3}(15+7\sqrt5)\) m<sup>3</sup>`,
+            String.raw`\(\dfrac{8}{3}(15+5\sqrt5)\) m<sup>3</sup>`,
+            String.raw`\(\dfrac{8}{4}(15+7\sqrt5)\) m<sup>3</sup>`,
+            String.raw`\(\dfrac{8}{3}(7+15\sqrt5)\) m<sup>3</sup>`,
+            String.raw`\(\dfrac{8}{3}(15-7\sqrt5)\) m<sup>3</sup>`
+          ]
+        },
+
+        {
+          stem: String.raw`
+            <p>A regular octahedron has surface area \(S=50\sqrt3\) square units.</p>
+            <p>Find its volume.</p>
+            <p><em>Hint:</em> For a regular octahedron with edge \(e\), \(S=2\sqrt3\,e^2\) and \(V=\dfrac{\sqrt2}{3}e^3\).</p>
+          `,
+          choiceWrap: false,
+          choices: [
+            String.raw`\(\dfrac{125\sqrt2}{6}\) cubic units`,
+            String.raw`\(\dfrac{125\sqrt2}{3}\) cubic units`,
+            String.raw`\(\dfrac{125\sqrt2}{12}\) cubic units`,
+            String.raw`\(\dfrac{250\sqrt2}{3}\) cubic units`,
+            String.raw`\(\dfrac{25\sqrt2}{3}\) cubic units`,
+            String.raw`\(\dfrac{125}{3}\) cubic units`
+          ]
+        },
+
+        {
+          stem: String.raw`
+            <p>Find the volume of a hemisphere with diameter \(d=12\) inches.</p>
+          `,
+          choiceWrap: false,
+          choices: [
+            String.raw`\(72\pi\) in<sup>3</sup>`,
+            String.raw`\(144\pi\) in<sup>3</sup>`,
+            String.raw`\(288\pi\) in<sup>3</sup>`,
+            String.raw`\(216\pi\) in<sup>3</sup>`,
+            String.raw`\(36\pi\) in<sup>3</sup>`,
+            String.raw`\(576\pi\) in<sup>3</sup>`
+          ]
+        },
+
+        {
+          stem: String.raw`
+            <p><strong>Refer to Figure 10.</strong> A rubber hose is \(10\) inches long and has inside radius \(1\) inch.</p>
+            <p>The ends are attached to form a torus (a “doughnut” shape). Find the volume.</p>
+            <p><em>Hint:</em> The distance around the center of the torus equals the hose length.</p>
+          `,
+          media: String.raw`
+            <figure>
+              <img src="11-rev-23.png" alt="Torus exercises diagram" />
+              <figcaption>Figure 10 (Exercise #23)</figcaption>
+            </figure>
+          `,
+          choiceWrap: false,
+          choices: [
+            String.raw`\(5\pi\) in<sup>3</sup>`,
+            String.raw`\(10\pi\) in<sup>3</sup>`,
+            String.raw`\(20\pi\) in<sup>3</sup>`,
+            String.raw`\(100\pi\) in<sup>3</sup>`,
+            String.raw`10 in<sup>3</sup>`,
+            String.raw`20 in<sup>3</sup>`
+          ]
+        },
+
+        {
+          stem: String.raw`
+            <p>Which statement best describes <strong>Cavalieri’s principle</strong>?</p>
+          `,
+          choiceWrap: false,
+          choices: [
+            String.raw`Two solids have the same volume if they have the same surface area.`,
+            String.raw`Two solids have the same volume if they have the same base area.`,
+            String.raw`A solid’s volume is always equal to \(\text{(base area)}\times \text{(slant height)}\).`,
+            String.raw`If two solids have the same height and the same cross-sectional area at every height, then they have the same volume.`,
+            String.raw`A cone always has half the volume of a cylinder with the same base and height.`,
+            String.raw`A sphere’s volume is always equal to \(\pi r^2h\).`
+          ]
+        }
+
+      ]
+    };
+  </script>
+
+  <link rel="stylesheet" href="/math-homework/assets/core-rich.css" />
+  <script defer src="/math-homework/assets/core-rich.js"></script>
+  <script defer src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+</head>
+
+<body>
+  <div id="hw-root">Loading…</div>
+</body>
+</html>
