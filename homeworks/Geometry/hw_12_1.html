@@ -202,37 +202,47 @@
         },
 
         {
-          stem: String.raw`
-            <p><strong>Refer to Figure 5.</strong> Triangle \(ABC\) and triangle \(A'B'C'\) are shown.</p>
-            <p>Which line is the red line of reflection?</p>
-          `,
-          mediaCaption: "Figure 5",
-          media: String.raw`\begin{tikzpicture}[scale=0.7]
-  \clip (-7,-1) rectangle (7,5);
-  \draw[very thin,gray!25] (-5,-1) grid (5,5);
-  \draw[->,thick] (-7,0)--(7,0);
-  \draw[->,thick] (0,-1)--(0,5);
-  \draw[thick, red] (0,-1)--(0,5);
+  stem: String.raw`
+    <p><strong>Refer to Figure 5.</strong> Triangle \(ABC\) and triangle \(A'B'C'\) are shown.</p>
+    <p>Which line is the red line of reflection?</p>
+  `,
+  mediaCaption: "Figure 5",
+  media: String.raw`\begin{tikzpicture}[scale=0.6]
+  % --- View window (big enough for everything) ---
+  \clip (-8,-3) rectangle (12,13);
 
-  \fill (-3,1) circle (2.2pt) node[left] {$A$};
-  \fill (-4,4) circle (2.2pt) node[left] {$B$};
-  \fill (-1,3) circle (2.2pt) node[above] {$C$};
-  \draw[thick] (-3,1)--(-4,4)--(-1,3)--cycle;
+  % --- Grid ---
+  \draw[very thin,gray!25] (-8,-3) grid (12,13);
 
-  \fill (3,1) circle (2.2pt) node[right] {$A'$};
-  \fill (4,4) circle (2.2pt) node[right] {$B'$};
-  \fill (1,3) circle (2.2pt) node[above] {$C'$};
-  \draw[thick] (3,1)--(4,4)--(1,3)--cycle;
+  % --- Axes ---
+  \draw[->,thick] (-8,0)--(12,0) node[below right] {$x$};
+  \draw[->,thick] (0,-3)--(0,13) node[above left] {$y$};
+
+  % --- Line of reflection: y = 2x (draw extra long; clip will crop neatly) ---
+  \draw[thick,red] (-10,-20)--(10,20) node[above right] {$y=2x$};
+
+  % --- Original triangle ABC (right/below the line) ---
+  \fill (5,0)  circle (2.2pt) node[below right] {$A$};
+  \fill (10,0) circle (2.2pt) node[below] {$B$};
+  \fill (10,5) circle (2.2pt) node[right] {$C$};
+  \draw[thick] (5,0)--(10,0)--(10,5)--cycle;
+
+  % --- Reflected triangle A'B'C' (computed as reflection across y=2x) ---
+  \fill (-3,4)  circle (2.2pt) node[left] {$A'$};
+  \fill (-6,8)  circle (2.2pt) node[left] {$B'$};
+  \fill (-2,11) circle (2.2pt) node[above] {$C'$};
+  \draw[thick] (-3,4)--(-6,8)--(-2,11)--cycle;
 \end{tikzpicture}`,
-          choices: [
-            String.raw`The \(x\)-axis`,
-            String.raw`The \(y\)-axis`,
-            String.raw`The line \(y=x\)`,
-            String.raw`The line \(y=-x\)`,
-            String.raw`The line \(x=1\)`,
-            String.raw`The line \(y=1\)`
-          ]
-        },
+  choices: [
+    String.raw`The \(x\)-axis`,
+    String.raw`The \(y\)-axis`,
+    String.raw`The line \(y=x\)`,
+    String.raw`The line \(y=-x\)`,
+    String.raw`The line \(y=2x\)`,
+    String.raw`The line \(x=1\)`
+  ]
+},
+
 
         /* ---------- Type C (2) ---------- */
 
