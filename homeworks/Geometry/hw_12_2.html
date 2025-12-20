@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Homework 12-2 (Geometry)</title>
+
+  <script>
+    /* =========================
+       Homework 12-2 — Linear Maps: Translations and Rotations (Geometry)
+       - TikZ is stored as RAW \begin{tikzpicture}...\end{tikzpicture} in q.media
+       - Caption goes in q.mediaCaption
+       - core-rich.js will render TikZ inline (part of the stem flow)
+       ========================= */
+    window.homeworkData = {
+      classId : "Geometry",
+      id      : "Homework 12-2",
+      title   : "Homework 12-2 — Linear Maps: Translations and Rotations",
+
+      /* Correct answers for Q1–Q12 */
+      answerKey : ["B","C","D","A","E","A","B","F","C","D","B","A"],
+
+      questions : [
+
+        /* ---------- Type A (4) ---------- */
+
+        {
+          stem: String.raw`
+            <p><strong>Refer to Figure 1.</strong> Point \(P\) is shown on the coordinate plane.</p>
+            <p>Translate \(P\) by the vector \(\langle 4,-3\rangle\). What are the coordinates of \(P'\)?</p>
+          `,
+          mediaCaption: "Figure 1",
+          media: String.raw`\begin{tikzpicture}[scale=0.62]
+  \draw[very thin,gray!30] (-5,-4) grid (6,6);
+  \draw[->,thick] (-5,0)--(6,0) node[below right] {$x$};
+  \draw[->,thick] (0,-4)--(0,6) node[above left] {$y$};
+  \fill (-1,2) circle (2.2pt) node[above left] {$P$};
+\end{tikzpicture}`,
+          choices: [
+            String.raw`\( (3,1) \)`,
+            String.raw`\( (3,-1) \)`,
+            String.raw`\( (-5,-1) \)`,
+            String.raw`\( (-1,-1) \)`,
+            String.raw`\( (4,-3) \)`,
+            String.raw`\( (-4,5) \)`
+          ]
+        },
+
+        {
+          stem: String.raw`
+            <p><strong>Refer to Figure 2.</strong> Triangle \(ABC\) is shown on the coordinate plane.</p>
+            <p>Translate the triangle \(2\) units left and \(1\) unit up. Which choice gives \(A',B',C'\) (in the same order)?</p>
+          `,
+          mediaCaption: "Figure 2",
+          media: String.raw`\begin{tikzpicture}[scale=0.62]
+  \draw[very thin,gray!30] (-5,-1) grid (7,7);
+  \draw[->,thick] (-5,0)--(7,0) node[below right] {$x$};
+  \draw[->,thick] (0,-1)--(0,7) node[above left] {$y$};
+
+  \fill (1,1) circle (2.2pt) node[below left] {$A$};
+  \fill (4,1) circle (2.2pt) node[below right] {$B$};
+  \fill (2,4) circle (2.2pt) node[above] {$C$};
+  \draw[thick] (1,1)--(4,1)--(2,4)--cycle;
+\end{tikzpicture}`,
+          choices: [
+            String.raw`\(A'(3,0),\;B'(6,0),\;C'(4,3)\)`,
+            String.raw`\(A'(-1,0),\;B'(2,0),\;C'(0,3)\)`,
+            String.raw`\(A'(-1,2),\;B'(2,2),\;C'(0,5)\)`,
+            String.raw`\(A'(3,2),\;B'(6,2),\;C'(4,5)\)`,
+            String.raw`\(A'(-1,2),\;B'(0,5),\;C'(2,2)\)`,
+            String.raw`\(A'(2,0),\;B'(-1,2),\;C'(0,5)\)`
+          ]
+        },
+
+        {
+          stem: String.raw`
