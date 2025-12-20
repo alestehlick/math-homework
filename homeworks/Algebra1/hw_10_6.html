@@ -8,31 +8,13 @@
   <script>
     /* =========================
        Homework 10-6 — The Pythagorean Theorem
-
-       SOURCE REFERENCES:
-       - Recast from the provided old-form Homework 10-6 HTML.
-       - A: items 1–8
-       - B: items 9–11
-       - C: item 12
-
-       RENDERING RULES APPLIED:
-       - Stems are HTML.
-       - Math appears only in \( ... \) fragments.
-       - TikZ is placed in homeworkData.graphics and injected by core-rich.
-       - Any field containing LaTeX backslashes uses String.raw`...`.
-       - Choices that are plain text set choiceWrap:false.
-
-       NOTE:
-       This homework uses one shared diagram, so graphics is non-empty.
+       Updated for NEW core-rich.js:
+       - TikZ must appear in q.media (raw tikzpicture), not homeworkData.graphics.
+       - TikZJax must be loaded.
        ========================= */
 
-    window.homeworkData = {
-      classId : "Algebra1",
-      id      : "Homework 10-6",
-      title   : "Homework 10-6 — The Pythagorean Theorem",
-
-      graphics : String.raw`
-\begin{tikzpicture}[scale=0.9]
+    const TRIANGLE_CAPTION = "Right triangle diagram";
+    const TRIANGLE_MEDIA = String.raw`\begin{tikzpicture}[scale=0.9]
   \draw (0,0) -- (5,0) -- (5,3) -- cycle;
   \draw (5,0) rectangle (4.6,0.4);
   \node[below] at (2.5,0) {$a$};
@@ -41,8 +23,15 @@
   \node[below left] at (0,0) {$B$};
   \node[below right] at (5,0) {$C$};
   \node[above right] at (5,3) {$A$};
-\end{tikzpicture}
-`,
+\end{tikzpicture}`;
+
+    window.homeworkData = {
+      classId : "Algebra1",
+      id      : "Homework 10-6",
+      title   : "Homework 10-6 — The Pythagorean Theorem",
+
+      /* Not used by the new core-rich.js */
+      graphics : String.raw``,
 
       answerKey : ["B","B","B","C","B","B","A","C","A","B","A","A"],
 
@@ -53,6 +42,8 @@
             <p>Refer to the right triangle in the diagram. Find the unknown side:</p>
             <p class="math">\(a=4,\ b=5,\ c=?\)</p>
           `,
+          mediaCaption: TRIANGLE_CAPTION,
+          media: TRIANGLE_MEDIA,
           choices: [
             String.raw`\(\sqrt{9}\)`,
             String.raw`\(\sqrt{41}\)`,
@@ -68,6 +59,8 @@
             <p>Refer to the right triangle in the diagram. Find the unknown side:</p>
             <p class="math">\(a=3,\ b=3,\ c=?\)</p>
           `,
+          mediaCaption: TRIANGLE_CAPTION,
+          media: TRIANGLE_MEDIA,
           choices: [
             String.raw`\(\sqrt{18}\)`,
             String.raw`\(\,3\sqrt{2}\,\)`,
@@ -83,6 +76,8 @@
             <p>Refer to the right triangle in the diagram. Find the unknown side:</p>
             <p class="math">\(a=2,\ b=?,\ c=8\)</p>
           `,
+          mediaCaption: TRIANGLE_CAPTION,
+          media: TRIANGLE_MEDIA,
           choices: [
             String.raw`\(\sqrt{60}\)`,
             String.raw`\(\,2\sqrt{15}\,\)`,
@@ -98,6 +93,8 @@
             <p>Refer to the right triangle in the diagram. Find the unknown side:</p>
             <p class="math">\(a=1,\ b=9,\ c=?\)</p>
           `,
+          mediaCaption: TRIANGLE_CAPTION,
+          media: TRIANGLE_MEDIA,
           choices: [
             String.raw`\(\sqrt{80}\)`,
             String.raw`\(\sqrt{81}\)`,
@@ -113,6 +110,8 @@
             <p>Refer to the right triangle in the diagram. Find the unknown side:</p>
             <p class="math">\(a=?,\ b=2,\ c=5\)</p>
           `,
+          mediaCaption: TRIANGLE_CAPTION,
+          media: TRIANGLE_MEDIA,
           choices: [
             String.raw`\(\sqrt{29}\)`,
             String.raw`\(\sqrt{21}\)`,
@@ -128,15 +127,10 @@
             <p>Refer to the right triangle in the diagram. Find the unknown side:</p>
             <p class="math">\(a=6,\ b=?,\ c=10\)</p>
           `,
+          mediaCaption: TRIANGLE_CAPTION,
+          media: TRIANGLE_MEDIA,
           choiceWrap: false,
-          choices: [
-            "6",
-            "8",
-            "10",
-            "4",
-            "√36",
-            "√28"
-          ]
+          choices: ["6","8","10","4","√36","√28"]
         },
 
         {
@@ -144,6 +138,8 @@
             <p>Determine whether the triangle is a right triangle using the Pythagorean theorem:</p>
             <p class="math">\(\text{sides }9,\ 12,\ 15\)</p>
           `,
+          mediaCaption: TRIANGLE_CAPTION,
+          media: TRIANGLE_MEDIA,
           choiceWrap: false,
           choices: [
             "Yes, because 9² + 12² = 15².",
@@ -160,6 +156,8 @@
             <p>Determine whether the triangle is a right triangle using the Pythagorean theorem:</p>
             <p class="math">\(\text{sides }5,\ 6,\ 8\)</p>
           `,
+          mediaCaption: TRIANGLE_CAPTION,
+          media: TRIANGLE_MEDIA,
           choiceWrap: false,
           choices: [
             "Yes, because 5² + 6² = 8².",
@@ -178,14 +176,7 @@
             <p class="math">\(a=3,\ b=\sqrt{7}\)</p>
           `,
           choiceWrap: false,
-          choices: [
-            "4",
-            "√7 + 3",
-            "√7 − 3",
-            "5",
-            "√7",
-            "16"
-          ]
+          choices: ["4","√7 + 3","√7 − 3","5","√7","16"]
         },
 
         {
@@ -210,14 +201,7 @@
             <p>The bottom of the ladder is \(24\) feet from the house. How high up the wall does the ladder reach?</p>
           `,
           choiceWrap: false,
-          choices: [
-            "7",
-            "24",
-            "25",
-            "√1201",
-            "15",
-            "1"
-          ]
+          choices: ["7","24","25","√1201","15","1"]
         },
 
         /* ---------- C (1) ---------- */
@@ -240,8 +224,16 @@
   </script>
 
   <link rel="stylesheet" href="/math-homework/assets/core-rich.css" />
-  <script defer src="/math-homework/assets/core-rich.js"></script>
+
+  <!-- TikZJax (needed for TikZ rendering) -->
+  <link rel="stylesheet" href="https://tikzjax.com/v1/fonts.css" />
+  <script defer src="https://tikzjax.com/v1/tikzjax.js"></script>
+
+  <!-- MathJax -->
   <script defer src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+
+  <!-- core-rich LAST -->
+  <script defer src="/math-homework/assets/core-rich.js"></script>
 </head>
 
 <body>
