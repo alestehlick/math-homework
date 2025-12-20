@@ -17,8 +17,10 @@
 
        RENDERING RULES APPLIED:
        - Any field containing LaTeX backslashes uses String.raw`...` (prevents JS escape issues like \tfrac).
-       - Questions with choices that are plain text (words/sentences) set choiceWrap:false
-         to avoid MathJax “math mode” italics and spacing issues.
+       - Questions with choices that are plain text set choiceWrap:false.
+
+       CONTENT UPDATE:
+       - Q1–Q3: Correct answers are written with the exponent distributed to each factor and simplified.
        ========================= */
 
     window.homeworkData = {
@@ -35,46 +37,46 @@
 
         {
           stem: String.raw`
-            <p>Change the radical to exponential form:</p>
+            <p>Change the radical to exponential form. Write your answer with the exponent distributed to each factor.</p>
             <p class="math">\(\sqrt{12x^7}\)</p>
           `,
           choices: [
-            String.raw`\((12x^7)^2\)`,
             String.raw`\((12x^7)^{\tfrac{1}{2}}\)`,
-            String.raw`\((12x^7)^{\tfrac{7}{12}}\)`,
-            String.raw`\((12x^7)^{\tfrac{1}{7}}\)`,
-            String.raw`\((12x^7)^{\tfrac{2}{7}}\)`,
-            String.raw`\((12x^7)^{-\tfrac{1}{2}}\)`
+            String.raw`\(\,12^{\tfrac{1}{2}}x^{\tfrac{7}{2}}\,\)`,
+            String.raw`\(\,12^{\tfrac{1}{2}}x^{7}\,\)`,
+            String.raw`\(\,12x^{\tfrac{7}{2}}\,\)`,
+            String.raw`\(\,12^{\tfrac{7}{2}}x^{\tfrac{1}{2}}\,\)`,
+            String.raw`\(\,12^{-\tfrac{1}{2}}x^{-\tfrac{7}{2}}\,\)`
           ]
         },
 
         {
           stem: String.raw`
-            <p>Change the radical to exponential form:</p>
+            <p>Change the radical to exponential form. Write your answer with the exponent distributed to each factor.</p>
             <p class="math">\(\sqrt[3]{9a^4b^2}\)</p>
           `,
           choices: [
-            String.raw`\((9a^4b^2)^3\)`,
-            String.raw`\((9a^4b^2)^{\tfrac{1}{4}}\)`,
             String.raw`\((9a^4b^2)^{\tfrac{1}{3}}\)`,
-            String.raw`\((9a^4b^2)^{\tfrac{3}{1}}\)`,
-            String.raw`\((9a^4b^2)^{\tfrac{2}{3}}\)`,
-            String.raw`\((9a^4b^2)^{-\tfrac{1}{3}}\)`
+            String.raw`\(\,3a^{\tfrac{4}{3}}b^{\tfrac{2}{3}}\,\)`,
+            String.raw`\(\,9^{\tfrac{1}{3}}a^{\tfrac{4}{3}}b^{\tfrac{2}{3}}\,\)`,
+            String.raw`\(\,9^{\tfrac{1}{3}}a^{4}b^{\tfrac{2}{3}}\,\)`,
+            String.raw`\(\,9^{\tfrac{1}{3}}a^{\tfrac{4}{3}}b^{\tfrac{1}{3}}\,\)`,
+            String.raw`\(\,9^{\tfrac{1}{3}}a^{\tfrac{1}{3}}b^{\tfrac{4}{3}}\,\)`
           ]
         },
 
         {
           stem: String.raw`
-            <p>Change the radical to exponential form:</p>
+            <p>Change the radical to exponential form. Write your answer with the exponent distributed to each factor and simplified.</p>
             <p class="math">\(\sqrt[4]{16m^3n}\)</p>
           `,
           choices: [
-            String.raw`\((16m^3n)^4\)`,
-            String.raw`\((16m^3n)^{\tfrac{1}{3}}\)`,
-            String.raw`\((16m^3n)^{\tfrac{3}{4}}\)`,
             String.raw`\((16m^3n)^{\tfrac{1}{4}}\)`,
-            String.raw`\((16m^3n)^{\tfrac{4}{1}}\)`,
-            String.raw`\((16m^3n)^{-\tfrac{1}{4}}\)`
+            String.raw`\(\,16^{\tfrac{1}{4}}m^{\tfrac{1}{4}}n^{\tfrac{1}{4}}\,\)`,
+            String.raw`\(\,4m^{\tfrac{3}{4}}n^{\tfrac{1}{4}}\,\)`,
+            String.raw`\(\,2m^{\tfrac{3}{4}}n^{\tfrac{1}{4}}\,\)`,
+            String.raw`\(\,2m^{\tfrac{1}{4}}n^{\tfrac{3}{4}}\,\)`,
+            String.raw`\(\,2m^{\tfrac{3}{4}}n^{4}\,\)`
           ]
         },
 
