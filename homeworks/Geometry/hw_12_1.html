@@ -1,0 +1,337 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Homework 12-1 (Geometry)</title>
+
+  <script>
+/* =========================
+   Homework 12-1 — Linear Maps: Reflections (Geometry)
+
+   REQUIRED SOURCE REFERENCES (your provided set “12-1 — Reflections”):
+   - Skills used from A. Exercises: #1–#6 (reflect preimage across a given line), #7–#10 (properties of reflection)
+   - Skills used from B. Exercises: #11–#15 (identify reflection line; reflection properties)
+   - Skills used from C. Exercises: #16–#17 (distance/angle preservation; congruence under reflection)
+
+   NOTE:
+   - All questions are custom-crafted (not direct copies) and use TikZ figures (no PNG files required).
+
+   IMAGE NAMING RULE:
+   - No external image files are used in this homework.
+   ========================= */
+    window.homeworkData = {
+      classId : "Geometry",
+      id      : "Homework 12-1",
+      title   : "Homework 12-1 — Linear Maps: Reflections",
+
+      graphics : String.raw``,
+
+      answerKey : ["B","C","C","C","C","B","B","A","B","B","B","D"],
+
+      questions : [
+
+        /* ---------- Type A (4) ---------- */
+
+        {
+          stem: String.raw`
+            <p><strong>Refer to Figure 1.</strong> The point \(P\) is shown on the coordinate plane.</p>
+            <p>Reflect \(P\) across the line of reflection \(\ell\). What are the coordinates of the image \(P'\)?</p>
+          `,
+          media: String.raw`
+            <figure>
+              <script type="text/tikz">
+\begin{tikzpicture}[scale=0.65]
+  \clip (-4,-1) rectangle (4,5);
+  \draw[very thin,gray!30] (-4,-1) grid (4,5);
+  \draw[->,thick] (-4,0)--(4,0);
+  \draw[->,thick] (0,-1)--(0,5);
+  \draw[thick] (0,-1)--(0,5) node[above] {$\ell$};
+  \fill (2,1) circle (2.2pt) node[above right] {$P$};
+\end{tikzpicture}
+              </script>
+              <figcaption>Figure 1</figcaption>
+            </figure>
+          `,
+          choiceWrap: false,
+          choices: [
+            String.raw`\( (2,1) \)`,
+            String.raw`\( (-2,1) \)`,
+            String.raw`\( (2,-1) \)`,
+            String.raw`\( (-2,-1) \)`,
+            String.raw`\( (1,2) \)`,
+            String.raw`\( (-1,2) \)`
+          ]
+        },
+
+        {
+          stem: String.raw`
+            <p><strong>Refer to Figure 2.</strong> The point \(Q\) is shown, and the line of reflection \(\ell\) is the diagonal line.</p>
+            <p>Reflect \(Q\) across \(\ell\). What are the coordinates of \(Q'\)?</p>
+          `,
+          media: String.raw`
+            <figure>
+              <script type="text/tikz">
+\begin{tikzpicture}[scale=0.65]
+  \clip (-1,-1) rectangle (6,6);
+  \draw[very thin,gray!30] (-1,-1) grid (6,6);
+  \draw[->,thick] (-1,0)--(6,0);
+  \draw[->,thick] (0,-1)--(0,6);
+  \draw[thick] (-1,-1)--(6,6) node[above] {$\ell$};
+  \fill (3,1) circle (2.2pt) node[below right] {$Q$};
+\end{tikzpicture}
+              </script>
+              <figcaption>Figure 2</figcaption>
+            </figure>
+          `,
+          choiceWrap: false,
+          choices: [
+            String.raw`\( (3,1) \)`,
+            String.raw`\( (-3,1) \)`,
+            String.raw`\( (1,3) \)`,
+            String.raw`\( (1,-3) \)`,
+            String.raw`\( (-1,3) \)`,
+            String.raw`\( (3,-1) \)`
+          ]
+        },
+
+        {
+          stem: String.raw`
+            <p><strong>Refer to Figure 3.</strong> Segment \(\overline{AB}\) is shown, and the line of reflection is \(\ell\).</p>
+            <p>Reflect \(\overline{AB}\) across \(\ell\). Which choice gives the coordinates of \(A'\) and \(B'\)?</p>
+          `,
+          media: String.raw`
+            <figure>
+              <script type="text/tikz">
+\begin{tikzpicture}[scale=0.62]
+  \clip (-4,-4) rectangle (6,6);
+  \draw[very thin,gray!30] (-4,-4) grid (6,6);
+  \draw[->,thick] (-4,0)--(6,0);
+  \draw[->,thick] (0,-4)--(0,6);
+  \draw[thick] (-4,1)--(6,1) node[right] {$\ell$};
+  \fill (-1,4) circle (2.2pt) node[above left] {$A(-1,4)$};
+  \fill (3,2) circle (2.2pt) node[above right] {$B(3,2)$};
+  \draw[thick] (-1,4)--(3,2);
+\end{tikzpicture}
+              </script>
+              <figcaption>Figure 3</figcaption>
+            </figure>
+          `,
+          choiceWrap: false,
+          choices: [
+            String.raw`\(A'(-1,2),\;B'(3,0)\)`,
+            String.raw`\(A'(1,-2),\;B'(3,0)\)`,
+            String.raw`\(A'(-1,-2),\;B'(3,0)\)`,
+            String.raw`\(A'(-1,-2),\;B'(0,3)\)`,
+            String.raw`\(A'(3,0),\;B'(-1,-2)\)`,
+            String.raw`\(A'(-1,6),\;B'(3,0)\)`
+          ]
+        },
+
+        {
+          stem: String.raw`
+            <p><strong>Refer to Figure 4.</strong> Triangle \(ABC\) is shown. The line of reflection is \(\ell\).</p>
+            <p>Reflect the triangle across \(\ell\). Which choice gives the coordinates of \(A',B',C'\) (in the same order)?</p>
+          `,
+          media: String.raw`
+            <figure>
+              <script type="text/tikz">
+\begin{tikzpicture}[scale=0.62]
+  \clip (-1,-1) rectangle (6,5);
+  \draw[very thin,gray!30] (-1,-1) grid (6,5);
+  \draw[->,thick] (-1,0)--(6,0);
+  \draw[->,thick] (0,-1)--(0,5);
+  \draw[thick] (2,-1)--(2,5) node[above] {$\ell$};
+  \fill (0,1) circle (2.2pt) node[left] {$A(0,1)$};
+  \fill (1,3) circle (2.2pt) node[above left] {$B(1,3)$};
+  \fill (3,2) circle (2.2pt) node[right] {$C(3,2)$};
+  \draw[thick] (0,1)--(1,3)--(3,2)--cycle;
+\end{tikzpicture}
+              </script>
+              <figcaption>Figure 4</figcaption>
+            </figure>
+          `,
+          choiceWrap: false,
+          choices: [
+            String.raw`\(A'(0,1),\;B'(1,3),\;C'(3,2)\)`,
+            String.raw`\(A'(2,1),\;B'(3,3),\;C'(1,2)\)`,
+            String.raw`\(A'(4,1),\;B'(3,3),\;C'(1,2)\)`,
+            String.raw`\(A'(4,1),\;B'(1,3),\;C'(3,2)\)`,
+            String.raw`\(A'(1,1),\;B'(3,3),\;C'(4,2)\)`,
+            String.raw`\(A'(4,-1),\;B'(3,3),\;C'(1,2)\)`
+          ]
+        },
+
+        /* ---------- Type B (6) ---------- */
+
+        {
+          stem: String.raw`
+            <p>Under a reflection across a line \(\ell\), a point \(P\) maps to its image \(P'\).</p>
+            <p>Which statement is always true?</p>
+          `,
+          choiceWrap: false,
+          choices: [
+            String.raw`\(\ell\) is parallel to \(\overline{PP'}\).`,
+            String.raw`\(\ell\) passes through both \(P\) and \(P'\).`,
+            String.raw`\(\ell\) is perpendicular to \(\overline{PP'}\) and passes through the midpoint of \(\overline{PP'}\).`,
+            String.raw`The length \(PP'\) equals the distance from \(P\) to \(\ell\).`,
+            String.raw`\(P\) and \(P'\) are always on the same side of \(\ell\).`,
+            String.raw`\(\angle(PP',\ell)=0^\circ\).`
+          ]
+        },
+
+        {
+          stem: String.raw`
+            <p>A point \(P\) is \(d\) units from the line of reflection \(\ell\). Let \(P'\) be the image of \(P\) after reflecting across \(\ell\).</p>
+            <p>What is the distance \(PP'\)?</p>
+          `,
+          choiceWrap: false,
+          choices: [
+            String.raw`\(d\)`,
+            String.raw`\(2d\)`,
+            String.raw`\(\dfrac{d}{2}\)`,
+            String.raw`\(d^2\)`,
+            String.raw`\(0\)`,
+            String.raw`\(4d\)`
+          ]
+        },
+
+        {
+          stem: String.raw`
+            <p>A segment lies entirely on the line of reflection \(\ell\).</p>
+            <p>What happens to that segment after reflecting across \(\ell\)?</p>
+          `,
+          choiceWrap: false,
+          choices: [
+            String.raw`It moves to the other side of \(\ell\) and stays parallel to itself.`,
+            String.raw`It stays in the same place (it maps to itself).`,
+            String.raw`It becomes perpendicular to \(\ell\).`,
+            String.raw`Its length doubles.`,
+            String.raw`Its endpoints swap and the segment changes location.`,
+            String.raw`It collapses to a single point.`
+          ]
+        },
+
+        {
+          stem: String.raw`
+            <p>A \(45^\circ\) angle is reflected across a line.</p>
+            <p>What is the measure of the reflected angle?</p>
+          `,
+          choiceWrap: false,
+          choices: [
+            String.raw`\(45^\circ\)`,
+            String.raw`\(90^\circ\)`,
+            String.raw`\(135^\circ\)`,
+            String.raw`\(180^\circ\)`,
+            String.raw`\(30^\circ\)`,
+            String.raw`\(60^\circ\)`
+          ]
+        },
+
+        {
+          stem: String.raw`
+            <p>Points \(A(1,2)\) and \(A'(5,2)\) are reflections of each other across a line \(\ell\).</p>
+            <p>Which equation could be the line of reflection \(\ell\)?</p>
+          `,
+          choiceWrap: false,
+          choices: [
+            String.raw`\(y=2\)`,
+            String.raw`\(x=3\)`,
+            String.raw`\(y=x\)`,
+            String.raw`\(x=2\)`,
+            String.raw`\(y=3\)`,
+            String.raw`\(y=-x\)`
+          ]
+        },
+
+        {
+          stem: String.raw`
+            <p><strong>Refer to Figure 5.</strong> Triangle \(ABC\) and triangle \(A'B'C'\) are shown.</p>
+            <p>Which line is the line of reflection \(\ell\)?</p>
+          `,
+          media: String.raw`
+            <figure>
+              <script type="text/tikz">
+\begin{tikzpicture}[scale=0.7]
+  \clip (-5,-1) rectangle (5,5);
+  \draw[very thin,gray!25] (-5,-1) grid (5,5);
+  \draw[->,thick] (-5,0)--(5,0);
+  \draw[->,thick] (0,-1)--(0,5);
+  \draw[thick] (0,-1)--(0,5) node[above] {$\ell$};
+
+  \fill (-3,1) circle (2.2pt) node[left] {$A$};
+  \fill (-4,4) circle (2.2pt) node[left] {$B$};
+  \fill (-1,3) circle (2.2pt) node[above] {$C$};
+  \draw[thick] (-3,1)--(-4,4)--(-1,3)--cycle;
+
+  \fill (3,1) circle (2.2pt) node[right] {$A'$};
+  \fill (4,4) circle (2.2pt) node[right] {$B'$};
+  \fill (1,3) circle (2.2pt) node[above] {$C'$};
+  \draw[thick] (3,1)--(4,4)--(1,3)--cycle;
+\end{tikzpicture}
+              </script>
+              <figcaption>Figure 5</figcaption>
+            </figure>
+          `,
+          choiceWrap: false,
+          choices: [
+            String.raw`The \(x\)-axis`,
+            String.raw`The \(y\)-axis`,
+            String.raw`The line \(y=x\)`,
+            String.raw`The line \(y=-x\)`,
+            String.raw`The line \(x=1\)`,
+            String.raw`The line \(y=1\)`
+          ]
+        },
+
+        /* ---------- Type C (2) ---------- */
+
+        {
+          stem: String.raw`
+            <p>Given: \(\overline{A'B'}\) is the reflection of \(\overline{AB}\) in line \(\ell\).</p>
+            <p>Which statement is the best reason that \(AB \cong A'B'\)?</p>
+          `,
+          choiceWrap: false,
+          choices: [
+            String.raw`A reflection always changes the length of a segment.`,
+            String.raw`A reflection preserves distances between points.`,
+            String.raw`\(\overline{AB}\) must be perpendicular to \(\ell\).`,
+            String.raw`\(\ell\) must pass through \(A\) and \(B\).`,
+            String.raw`\(\overline{AB}\) must be parallel to \(\ell\).`,
+            String.raw`Only angles are preserved under a reflection, not lengths.`
+          ]
+        },
+
+        {
+          stem: String.raw`
+            <p>Given: \(A',B',C'\) are reflections of \(A,B,C\) across a line \(\ell\), respectively.</p>
+            <p>Which conclusion must be true?</p>
+          `,
+          choiceWrap: false,
+          choices: [
+            String.raw`\(\triangle ABC\) is similar to \(\triangle A'B'C'\), but not necessarily congruent.`,
+            String.raw`\(\angle A \cong \angle B'\) always.`,
+            String.raw`The perimeter of \(\triangle A'B'C'\) is twice the perimeter of \(\triangle ABC\).`,
+            String.raw`\(\triangle ABC \cong \triangle A'B'C'\).`,
+            String.raw`The area of \(\triangle A'B'C'\) is always different from the area of \(\triangle ABC\).`,
+            String.raw`The reflection always makes \(\triangle A'B'C'\) larger than \(\triangle ABC\).`
+          ]
+        }
+
+      ]
+    };
+  </script>
+
+  <link rel="stylesheet" href="/math-homework/assets/core-rich.css" />
+  <script defer src="/math-homework/assets/core-rich.js"></script>
+
+  <link rel="stylesheet" href="https://tikzjax.com/v1/fonts.css" />
+  <script defer src="https://tikzjax.com/v1/tikzjax.js"></script>
+
+  <script defer src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+</head>
+
+<body>
+  <div id="hw-root">Loading…</div>
+</body>
+</html>
