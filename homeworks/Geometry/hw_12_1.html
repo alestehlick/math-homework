@@ -200,7 +200,7 @@
             {
       stem: String.raw`
         <p><strong>Refer to Figure 5.</strong> Triangle \(ABC\) and triangle \(A'B'C'\) are shown.</p>
-        <p>Which line is the red line of reflection?</p>
+        <p>Mark the equation of the line of reflection.</p>
       `,
       mediaCaption: "Figure 5",
       media: String.raw`\begin{tikzpicture}[scale=0.6]
@@ -239,18 +239,17 @@
 {
   stem: String.raw`
     <p><strong>Refer to Figure 6.</strong> Parallelogram \(ABCD\) and its image \(A'B'C'D'\) are shown.</p>
-    <p>The red line is the line of reflection. Which equation matches the red line?</p>
+    <p>Mark the equation of the line of reflection.</p>
   `,
   mediaCaption: "Figure 6",
   media: String.raw`\begin{tikzpicture}[scale=0.75]
-  % --- View window (chosen so every labeled point + the whole red line segment is visible) ---
 
   % --- Grid ---
-  \draw[very thin,gray!25] (-8,-6) grid (8,6);
+  \draw[very thin,gray!25] (-7,-4) grid (7,4);
 
   % --- Axes ---
-  \draw[->,thick] (-8,0)--(8,0) node[below right] {$x$};
-  \draw[->,thick] (0,-6)--(0,6) node[above left] {$y$};
+  \draw[->,thick] (-7,0)--(7,0) node[below right] {$x$};
+  \draw[->,thick] (0,-4)--(0,4) node[above left] {$y$};
 
   % --- Original parallelogram ABCD (crosses the red line) ---
   % A(-2,1), B(3,1), C(6,2), D(1,2)
