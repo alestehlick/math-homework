@@ -8,7 +8,21 @@
   <script>
     /* =========================
        Homework 10-5 — Simplifying (Combining Radicals)
+
+       SOURCE REFERENCES:
+       - Recast from the provided old-form Homework 10-5 HTML.
+       - A: items 1–6
+       - B: items 7–11
+       - C: item 12
+
+       RENDERING RULES APPLIED:
+       - Stems are HTML.
+       - Math appears only in \( ... \) fragments.
+       - Any field containing LaTeX backslashes uses String.raw`...`
+         (prevents JS escape issues).
+       - Choices that are plain text use choiceWrap:false.
        ========================= */
+
     window.homeworkData = {
       classId : "Algebra1",
       id      : "Homework 10-5",
@@ -19,136 +33,194 @@
       answerKey : ["B","C","D","D","B","C","A","B","B","A","A","C"],
 
       questions : [
-        /* ---------- A. Exercises (6) ---------- */
-        { latex: String.raw`\text{Simplify: }\sqrt{3}+5\sqrt{3}.`,
+        /* ---------- A (6) ---------- */
+        {
+          stem: String.raw`
+            <p>Simplify:</p>
+            <p class="math">\(\sqrt{3}+5\sqrt{3}\)</p>
+          `,
           choices: [
-            String.raw`5\sqrt{6}`,
-            String.raw`6\sqrt{3}`, /* correct */
-            String.raw`\sqrt{18}`,
-            String.raw`\sqrt{3}`,
-            String.raw`6\sqrt{6}`,
-            String.raw`\sqrt{15}`
-          ]},
+            String.raw`\(\,5\sqrt{6}\,\)`,
+            String.raw`\(\,6\sqrt{3}\,\)`,
+            String.raw`\(\sqrt{18}\)`,
+            String.raw`\(\sqrt{3}\)`,
+            String.raw`\(\,6\sqrt{6}\,\)`,
+            String.raw`\(\sqrt{15}\)`
+          ]
+        },
 
-        { latex: String.raw`\text{Simplify: }\sqrt{8}+3\sqrt{2}-4\sqrt{2}.`,
+        {
+          stem: String.raw`
+            <p>Simplify:</p>
+            <p class="math">\(\sqrt{8}+3\sqrt{2}-4\sqrt{2}\)</p>
+          `,
           choices: [
-            String.raw`2\sqrt{2}`,
-            String.raw`-\sqrt{2}`,
-            String.raw`\sqrt{2}`, /* correct */
-            String.raw`\sqrt{8}`,
-            String.raw`\sqrt{6}`,
-            String.raw`0`
-          ]},
+            String.raw`\(\,2\sqrt{2}\,\)`,
+            String.raw`\(\,-\sqrt{2}\,\)`,
+            String.raw`\(\sqrt{2}\)`,
+            String.raw`\(\sqrt{8}\)`,
+            String.raw`\(\sqrt{6}\)`,
+            String.raw`\(\,0\,\)`
+          ]
+        },
 
-        { latex: String.raw`\text{Simplify: }\sqrt{20}+4\sqrt{5}.`,
+        {
+          stem: String.raw`
+            <p>Simplify:</p>
+            <p class="math">\(\sqrt{20}+4\sqrt{5}\)</p>
+          `,
           choices: [
-            String.raw`5\sqrt{5}`,
-            String.raw`2\sqrt{5}`,
-            String.raw`4\sqrt{5}`,
-            String.raw`6\sqrt{5}`, /* correct */
-            String.raw`\sqrt{100}`,
-            String.raw`\sqrt{20}`
-          ]},
+            String.raw`\(\,5\sqrt{5}\,\)`,
+            String.raw`\(\,2\sqrt{5}\,\)`,
+            String.raw`\(\,4\sqrt{5}\,\)`,
+            String.raw`\(\,6\sqrt{5}\,\)`,
+            String.raw`\(\sqrt{100}\)`,
+            String.raw`\(\sqrt{20}\)`
+          ]
+        },
 
-        { latex: String.raw`\text{Simplify: }5\sqrt{12}-6\sqrt{3}.`,
+        {
+          stem: String.raw`
+            <p>Simplify:</p>
+            <p class="math">\(\,5\sqrt{12}-6\sqrt{3}\,\)</p>
+          `,
           choices: [
-            String.raw`10\sqrt{3}`,
-            String.raw`-\sqrt{3}`,
-            String.raw`4\sqrt{12}`,
-            String.raw`4\sqrt{3}`, /* correct */
-            String.raw`\sqrt{3}`,
-            String.raw`2\sqrt{3}`
-          ]},
+            String.raw`\(\,10\sqrt{3}\,\)`,
+            String.raw`\(\,-\sqrt{3}\,\)`,
+            String.raw`\(\,4\sqrt{12}\,\)`,
+            String.raw`\(\,4\sqrt{3}\,\)`,
+            String.raw`\(\sqrt{3}\)`,
+            String.raw`\(\,2\sqrt{3}\,\)`
+          ]
+        },
 
-        { latex: String.raw`\text{Simplify: }\sqrt{12}-\sqrt{48}.`,
+        {
+          stem: String.raw`
+            <p>Simplify:</p>
+            <p class="math">\(\sqrt{12}-\sqrt{48}\)</p>
+          `,
           choices: [
-            String.raw`2\sqrt{3}`,
-            String.raw`-2\sqrt{3}`, /* correct */
-            String.raw`-4\sqrt{3}`,
-            String.raw`-\sqrt{3}`,
-            String.raw`0`,
-            String.raw`-3\sqrt{3}`
-          ]},
+            String.raw`\(\,2\sqrt{3}\,\)`,
+            String.raw`\(\,-2\sqrt{3}\,\)`,
+            String.raw`\(\,-4\sqrt{3}\,\)`,
+            String.raw`\(\,-\sqrt{3}\,\)`,
+            String.raw`\(\,0\,\)`,
+            String.raw`\(\,-3\sqrt{3}\,\)`
+          ]
+        },
 
-        { latex: String.raw`\text{Simplify: }3\sqrt{5}+\sqrt{18}+\sqrt{27}.`,
+        {
+          stem: String.raw`
+            <p>Simplify:</p>
+            <p class="math">\(\,3\sqrt{5}+\sqrt{18}+\sqrt{27}\,\)</p>
+          `,
           choices: [
-            String.raw`3\sqrt{10}`,
-            String.raw`6\sqrt{5}+3\sqrt{3}`,
-            String.raw`3\sqrt{5}+3\sqrt{2}+3\sqrt{3}`, /* correct */
-            String.raw`3\sqrt{5}+3\sqrt{18}+3\sqrt{27}`,
-            String.raw`6\sqrt{5}`,
-            String.raw`3\sqrt{5}+3\sqrt{6}`
-          ]},
+            String.raw`\(\,3\sqrt{10}\,\)`,
+            String.raw`\(\,6\sqrt{5}+3\sqrt{3}\,\)`,
+            String.raw`\(\,3\sqrt{5}+3\sqrt{2}+3\sqrt{3}\,\)`,
+            String.raw`\(\,3\sqrt{5}+3\sqrt{18}+3\sqrt{27}\,\)`,
+            String.raw`\(\,6\sqrt{5}\,\)`,
+            String.raw`\(\,3\sqrt{5}+3\sqrt{6}\,\)`
+          ]
+        },
 
-        /* ---------- B. Exercises (5) ---------- */
-        { latex: String.raw`\text{Simplify: }\sqrt{5}+\sqrt{20}-\sqrt{72}.`,
+        /* ---------- B (5) ---------- */
+        {
+          stem: String.raw`
+            <p>Simplify:</p>
+            <p class="math">\(\sqrt{5}+\sqrt{20}-\sqrt{72}\)</p>
+          `,
           choices: [
-            String.raw`3\sqrt{5}-6\sqrt{2}`, /* correct */
-            String.raw`3\sqrt{5}-6\sqrt{5}`,
-            String.raw`2\sqrt{5}-6\sqrt{2}`,
-            String.raw`3\sqrt{25}-6\sqrt{2}`,
-            String.raw`\sqrt{5}-6\sqrt{2}`,
-            String.raw`3\sqrt{5}-6\sqrt{8}`
-          ]},
+            String.raw`\(\,3\sqrt{5}-6\sqrt{2}\,\)`,
+            String.raw`\(\,3\sqrt{5}-6\sqrt{5}\,\)`,
+            String.raw`\(\,2\sqrt{5}-6\sqrt{2}\,\)`,
+            String.raw`\(\,3\sqrt{25}-6\sqrt{2}\,\)`,
+            String.raw`\(\,\sqrt{5}-6\sqrt{2}\,\)`,
+            String.raw`\(\,3\sqrt{5}-6\sqrt{8}\,\)`
+          ]
+        },
 
-        { latex: String.raw`\text{Simplify: }\sqrt{x}+3\sqrt{xy}+5\sqrt{x}.`,
+        {
+          stem: String.raw`
+            <p>Simplify:</p>
+            <p class="math">\(\sqrt{x}+3\sqrt{xy}+5\sqrt{x}\)</p>
+          `,
           choices: [
-            String.raw`6\sqrt{xy}`,
-            String.raw`6\sqrt{x}+3\sqrt{xy}`, /* correct */
-            String.raw`6\sqrt{x}+3\sqrt{y}`,
-            String.raw`3\sqrt{x}+3\sqrt{xy}`,
-            String.raw`5\sqrt{x}+3\sqrt{xy}`,
-            String.raw`\sqrt{x}(6+3y)`
-          ]},
+            String.raw`\(\,6\sqrt{xy}\,\)`,
+            String.raw`\(\,6\sqrt{x}+3\sqrt{xy}\,\)`,
+            String.raw`\(\,6\sqrt{x}+3\sqrt{y}\,\)`,
+            String.raw`\(\,3\sqrt{x}+3\sqrt{xy}\,\)`,
+            String.raw`\(\,5\sqrt{x}+3\sqrt{xy}\,\)`,
+            String.raw`\(\,\sqrt{x}(6+3y)\,\)`
+          ]
+        },
 
-        { latex: String.raw`\text{Simplify: }4\sqrt{x}+3\sqrt{y}-2\sqrt{x}.`,
+        {
+          stem: String.raw`
+            <p>Simplify:</p>
+            <p class="math">\(\,4\sqrt{x}+3\sqrt{y}-2\sqrt{x}\,\)</p>
+          `,
           choices: [
-            String.raw`2\sqrt{xy}+3`,
-            String.raw`2\sqrt{x}+3\sqrt{y}`, /* correct */
-            String.raw`6\sqrt{xy}`,
-            String.raw`2\sqrt{y}+3\sqrt{x}`,
-            String.raw`2\sqrt{x}+\sqrt{y}`,
-            String.raw`\sqrt{x}+3\sqrt{y}`
-          ]},
+            String.raw`\(\,2\sqrt{xy}+3\,\)`,
+            String.raw`\(\,2\sqrt{x}+3\sqrt{y}\,\)`,
+            String.raw`\(\,6\sqrt{xy}\,\)`,
+            String.raw`\(\,2\sqrt{y}+3\sqrt{x}\,\)`,
+            String.raw`\(\,2\sqrt{x}+\sqrt{y}\,\)`,
+            String.raw`\(\,\sqrt{x}+3\sqrt{y}\,\)`
+          ]
+        },
 
-        { latex: String.raw`\text{Simplify: }a\sqrt{3}-3a\sqrt{3}+\sqrt{2}.`,
+        {
+          stem: String.raw`
+            <p>Simplify:</p>
+            <p class="math">\(\,a\sqrt{3}-3a\sqrt{3}+\sqrt{2}\,\)</p>
+          `,
           choices: [
-            String.raw`-2a\sqrt{3}+\sqrt{2}`, /* correct */
-            String.raw`-2\sqrt{3a}+\sqrt{2}`,
-            String.raw`-2a\sqrt{6}`,
-            String.raw`-2a\sqrt{3}-\sqrt{2}`,
-            String.raw`-3a\sqrt{3}+\sqrt{2}`,
-            String.raw`2a\sqrt{3}+\sqrt{2}`
-          ]},
+            String.raw`\(\,-2a\sqrt{3}+\sqrt{2}\,\)`,
+            String.raw`\(\,-2\sqrt{3a}+\sqrt{2}\,\)`,
+            String.raw`\(\,-2a\sqrt{6}\,\)`,
+            String.raw`\(\,-2a\sqrt{3}-\sqrt{2}\,\)`,
+            String.raw`\(\,-3a\sqrt{3}+\sqrt{2}\,\)`,
+            String.raw`\(\,2a\sqrt{3}+\sqrt{2}\,\)`
+          ]
+        },
 
-        { latex: String.raw`\text{Simplify: }\sqrt{32a^3}+\sqrt{2a}-5\sqrt{6}.`,
+        {
+          stem: String.raw`
+            <p>Simplify:</p>
+            <p class="math">\(\sqrt{32a^3}+\sqrt{2a}-5\sqrt{6}\)</p>
+          `,
           choices: [
-            String.raw`(4a+1)\sqrt{2a}-5\sqrt{6}`, /* correct */
-            String.raw`(4a+1)\sqrt{2a}-5\sqrt{6a}`,
-            String.raw`(4a+1)\sqrt{2a-5\sqrt{6}}`,
-            String.raw`4a\sqrt{2a}-5\sqrt{6}`,
-            String.raw`(4a+1)\sqrt{2a}-5\sqrt{2a}`,
-            String.raw`(4a+1)\sqrt{a}-5\sqrt{6}`
-          ]},
+            String.raw`\(\,(4a+1)\sqrt{2a}-5\sqrt{6}\,\)`,
+            String.raw`\(\,(4a+1)\sqrt{2a}-5\sqrt{6a}\,\)`,
+            String.raw`\(\,(4a+1)\sqrt{2a-5\sqrt{6}}\,\)`,
+            String.raw`\(\,4a\sqrt{2a}-5\sqrt{6}\,\)`,
+            String.raw`\(\,(4a+1)\sqrt{2a}-5\sqrt{2a}\,\)`,
+            String.raw`\(\,(4a+1)\sqrt{a}-5\sqrt{6}\,\)`
+          ]
+        },
 
-        /* ---------- C. Exercises (1) ---------- */
-        { latex: String.raw`\text{Simplify: }\sqrt{a^3b}+\sqrt[3]{a^4b}+\sqrt[4]{a^5b}+a\sqrt[6]{a^3b^3}.`,
+        /* ---------- C (1) ---------- */
+        {
+          stem: String.raw`
+            <p>Simplify:</p>
+            <p class="math">\(\sqrt{a^3b}+\sqrt[3]{a^4b}+\sqrt[4]{a^5b}+a\sqrt[6]{a^3b^3}\)</p>
+          `,
           choices: [
-            String.raw`a\sqrt{ab}+a\sqrt[3]{ab}+a\sqrt[4]{ab}`,
-            String.raw`2a\sqrt{ab}+\sqrt[3]{ab}+\sqrt[4]{ab}`,
-            String.raw`2a\sqrt{ab}+a\sqrt[3]{ab}+a\sqrt[4]{ab}`, /* correct */
-            String.raw`2\sqrt{ab}+a\sqrt[3]{ab}+a\sqrt[4]{ab}`,
-            String.raw`2a\sqrt{a^3b}+a\sqrt[3]{ab}+a\sqrt[4]{ab}`,
-            String.raw`2a\sqrt{ab}+a\sqrt[3]{a^2b}+a\sqrt[4]{a^2b}`
-          ]}
+            String.raw`\(\,a\sqrt{ab}+a\sqrt[3]{ab}+a\sqrt[4]{ab}\,\)`,
+            String.raw`\(\,2a\sqrt{ab}+\sqrt[3]{ab}+\sqrt[4]{ab}\,\)`,
+            String.raw`\(\,2a\sqrt{ab}+a\sqrt[3]{ab}+a\sqrt[4]{ab}\,\)`,
+            String.raw`\(\,2\sqrt{ab}+a\sqrt[3]{ab}+a\sqrt[4]{ab}\,\)`,
+            String.raw`\(\,2a\sqrt{a^3b}+a\sqrt[3]{ab}+a\sqrt[4]{ab}\,\)`,
+            String.raw`\(\,2a\sqrt{ab}+a\sqrt[3]{a^2b}+a\sqrt[4]{a^2b}\,\)`
+          ]
+        }
       ]
     };
   </script>
 
-  <link rel="stylesheet" href="/math-homework/assets/core.css" />
-  <link rel="stylesheet" href="https://tikzjax.com/v1/fonts.css" />
-  <script defer src="/math-homework/assets/core.js"></script>
-  <script defer src="https://tikzjax.com/v1/tikzjax.js"></script>
+  <link rel="stylesheet" href="/math-homework/assets/core-rich.css" />
+  <script defer src="/math-homework/assets/core-rich.js"></script>
   <script defer src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
 </head>
 
