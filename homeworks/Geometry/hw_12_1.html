@@ -8,13 +8,12 @@
   <script>
 /* =========================
    Homework 12-1 — Linear Maps: Reflections (Geometry)
-
-   NOTE:
-   Avoid typing the literal closing tag sequence of a script element inside this data block.
-   Your TikZ template strings already use <\/script>, which is good.
-
-   (Questions unchanged — only rendering fixed.)
    ========================= */
+
+const TIKZ_OPEN  = "<scr" + "ipt type=\"text/tikz\">";
+const TIKZ_CLOSE = "</scr" + "ipt>";
+
+    
     window.homeworkData = {
       classId : "Geometry",
       id      : "Homework 12-1",
@@ -33,21 +32,22 @@
             <p><strong>Refer to Figure 1.</strong> The point \(P\) is shown on the coordinate plane.</p>
             <p>Reflect \(P\) across the line of reflection \(\ell\). What are the coordinates of the image \(P'\)?</p>
           `,
-          media: String.raw`
-            <figure>
-              <script type="text/tikz">
-\begin{tikzpicture}[scale=0.65]
-  \clip (-4,-1) rectangle (4,5);
-  \draw[very thin,gray!30] (-4,-1) grid (4,5);
-  \draw[->,thick] (-4,0)--(4,0);
-  \draw[->,thick] (0,-1)--(0,5);
-  \draw[thick] (0,-1)--(0,5) node[above] {$\ell$};
-  \fill (2,1) circle (2.2pt) node[above right] {$P$};
-\end{tikzpicture}
-              <\/script>
-              <figcaption>Figure 1</figcaption>
-            </figure>
-          `,
+            media: `
+    <figure>
+      ${TIKZ_OPEN}
+  ${String.raw`\begin{tikzpicture}[scale=0.65]
+    \clip (-4,-1) rectangle (4,5);
+    \draw[very thin,gray!30] (-4,-1) grid (4,5);
+    \draw[->,thick] (-4,0)--(4,0);
+    \draw[->,thick] (0,-1)--(0,5);
+    \draw[thick] (0,-1)--(0,5) node[above] {$\ell$};
+    \fill (2,1) circle (2.2pt) node[above right] {$P$};
+  \end{tikzpicture}`}
+      ${TIKZ_CLOSE}
+      <figcaption>Figure 1</figcaption>
+    </figure>
+  `,
+
           choiceWrap: false,
           choices: [
             String.raw`\( (2,1) \)`,
