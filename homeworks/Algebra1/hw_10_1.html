@@ -15,9 +15,10 @@
        - B: item 11
        - C: item 12
 
-       NOTE (MathJax + JS backslashes):
-       All stems/choices that include LaTeX are written as String.raw`...`
-       so sequences like \tfrac are not corrupted by JavaScript escapes.
+       RENDERING RULES APPLIED:
+       - Any field containing LaTeX backslashes uses String.raw`...` (prevents JS escape issues like \tfrac).
+       - Questions with choices that are plain text (words/sentences) set choiceWrap:false
+         to avoid MathJax “math mode” italics and spacing issues.
        ========================= */
 
     window.homeworkData = {
@@ -31,6 +32,7 @@
 
       questions : [
         /* ---------- A (10) ---------- */
+
         {
           stem: String.raw`
             <p>Change the radical to exponential form:</p>
@@ -126,13 +128,14 @@
             <p>Between which two consecutive integers does this value lie?</p>
             <p class="math">\(\sqrt{50}\)</p>
           `,
+          choiceWrap: false,
           choices: [
-            String.raw`between 6 and 7`,
-            String.raw`between 7 and 8`,
-            String.raw`between 8 and 9`,
-            String.raw`between 5 and 6`,
-            String.raw`between 9 and 10`,
-            String.raw`between 4 and 5`
+            "between 6 and 7",
+            "between 7 and 8",
+            "between 8 and 9",
+            "between 5 and 6",
+            "between 9 and 10",
+            "between 4 and 5"
           ]
         },
 
@@ -141,13 +144,14 @@
             <p>Between which two consecutive integers does this value lie?</p>
             <p class="math">\(\sqrt[3]{120}\)</p>
           `,
+          choiceWrap: false,
           choices: [
-            String.raw`between 3 and 4`,
-            String.raw`between 4 and 5`,
-            String.raw`between 5 and 6`,
-            String.raw`between 2 and 3`,
-            String.raw`between 6 and 7`,
-            String.raw`between 1 and 2`
+            "between 3 and 4",
+            "between 4 and 5",
+            "between 5 and 6",
+            "between 2 and 3",
+            "between 6 and 7",
+            "between 1 and 2"
           ]
         },
 
@@ -156,13 +160,14 @@
             <p>Use a calculator and round to the nearest tenth:</p>
             <p class="math">\(\sqrt{111}\)</p>
           `,
+          choiceWrap: false,
           choices: [
-            String.raw`10.4`,
-            String.raw`10.5`,
-            String.raw`10.6`,
-            String.raw`10.3`,
-            String.raw`11.5`,
-            String.raw`9.5`
+            "10.4",
+            "10.5",
+            "10.6",
+            "10.3",
+            "11.5",
+            "9.5"
           ]
         },
 
@@ -171,13 +176,14 @@
             <p>Use a calculator and round to the nearest tenth:</p>
             <p class="math">\(\sqrt{148}\)</p>
           `,
+          choiceWrap: false,
           choices: [
-            String.raw`12.1`,
-            String.raw`12.2`,
-            String.raw`12.3`,
-            String.raw`12.6`,
-            String.raw`11.2`,
-            String.raw`12.0`
+            "12.1",
+            "12.2",
+            "12.3",
+            "12.6",
+            "11.2",
+            "12.0"
           ]
         },
 
@@ -187,13 +193,14 @@
             <p>Find the value to the nearest hundredth (use a scientific calculator):</p>
             <p class="math">\(\sqrt[4]{571{,}787}\)</p>
           `,
+          choiceWrap: false,
           choices: [
-            String.raw`27.48`,
-            String.raw`27.49`,
-            String.raw`27.50`,
-            String.raw`27.58`,
-            String.raw`26.50`,
-            String.raw`28.50`
+            "27.48",
+            "27.49",
+            "27.50",
+            "27.58",
+            "26.50",
+            "28.50"
           ]
         },
 
@@ -203,13 +210,14 @@
             <p>Approximate to the nearest tenth <em>without</em> using a calculator:</p>
             <p class="math">\(\sqrt{795}\)</p>
           `,
+          choiceWrap: false,
           choices: [
-            String.raw`28.0`,
-            String.raw`28.1`,
-            String.raw`28.2`,
-            String.raw`28.3`,
-            String.raw`29.2`,
-            String.raw`27.9`
+            "28.0",
+            "28.1",
+            "28.2",
+            "28.3",
+            "29.2",
+            "27.9"
           ]
         }
       ]
