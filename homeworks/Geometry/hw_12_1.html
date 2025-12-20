@@ -9,16 +9,12 @@
 /* =========================
    Homework 12-1 — Linear Maps: Reflections (Geometry)
 
-   REQUIRED SOURCE REFERENCES (your provided set “12-1 — Reflections”):
-   - Skills used from A. Exercises: #1–#6 (reflect preimage across a given line), #7–#10 (properties of reflection)
-   - Skills used from B. Exercises: #11–#15 (identify reflection line; reflection properties)
-   - Skills used from C. Exercises: #16–#17 (distance/angle preservation; congruence under reflection)
+   IMPORTANT RENDERING NOTE (why your page broke):
+   In an HTML <script> tag, the parser will terminate the script as soon as it sees </script>,
+   EVEN if it appears inside a JavaScript template string.
+   So we must write the TikZ blocks’ closing tag as <\/script> inside JS strings.
 
-   NOTE:
-   - All questions are custom-crafted (not direct copies) and use TikZ figures (no PNG files required).
-
-   IMAGE NAMING RULE:
-   - No external image files are used in this homework.
+   (Questions unchanged — only rendering fixed.)
    ========================= */
     window.homeworkData = {
       classId : "Geometry",
@@ -49,7 +45,7 @@
   \draw[thick] (0,-1)--(0,5) node[above] {$\ell$};
   \fill (2,1) circle (2.2pt) node[above right] {$P$};
 \end{tikzpicture}
-              </script>
+              <\/script>
               <figcaption>Figure 1</figcaption>
             </figure>
           `,
@@ -80,7 +76,7 @@
   \draw[thick] (-1,-1)--(6,6) node[above] {$\ell$};
   \fill (3,1) circle (2.2pt) node[below right] {$Q$};
 \end{tikzpicture}
-              </script>
+              <\/script>
               <figcaption>Figure 2</figcaption>
             </figure>
           `,
@@ -113,7 +109,7 @@
   \fill (3,2) circle (2.2pt) node[above right] {$B(3,2)$};
   \draw[thick] (-1,4)--(3,2);
 \end{tikzpicture}
-              </script>
+              <\/script>
               <figcaption>Figure 3</figcaption>
             </figure>
           `,
@@ -147,7 +143,7 @@
   \fill (3,2) circle (2.2pt) node[right] {$C(3,2)$};
   \draw[thick] (0,1)--(1,3)--(3,2)--cycle;
 \end{tikzpicture}
-              </script>
+              <\/script>
               <figcaption>Figure 4</figcaption>
             </figure>
           `,
@@ -269,7 +265,7 @@
   \fill (1,3) circle (2.2pt) node[above] {$C'$};
   \draw[thick] (3,1)--(4,4)--(1,3)--cycle;
 \end{tikzpicture}
-              </script>
+              <\/script>
               <figcaption>Figure 5</figcaption>
             </figure>
           `,
@@ -325,6 +321,7 @@
   <link rel="stylesheet" href="/math-homework/assets/core-rich.css" />
   <script defer src="/math-homework/assets/core-rich.js"></script>
 
+  <!-- TikZJax must load after core-rich.js -->
   <link rel="stylesheet" href="https://tikzjax.com/v1/fonts.css" />
   <script defer src="https://tikzjax.com/v1/tikzjax.js"></script>
 
