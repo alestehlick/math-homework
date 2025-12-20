@@ -30,7 +30,6 @@
           `,
           mediaCaption: "Figure 1",
           media: String.raw`\begin{tikzpicture}[scale=0.65]
-  \clip (-4,-1) rectangle (4,5);
   \draw[very thin,gray!30] (-4,-1) grid (4,5);
   \draw[->,thick] (-4,0)--(4,0);
   \draw[->,thick] (0,-1)--(0,5);
@@ -54,7 +53,6 @@
           `,
           mediaCaption: "Figure 2",
           media: String.raw`\begin{tikzpicture}[scale=0.65]
-  \clip (-1,-1) rectangle (6,6);
   \draw[very thin,gray!30] (-1,-1) grid (6,6);
   \draw[->,thick] (-1,0)--(6,0);
   \draw[->,thick] (0,-1)--(0,6);
@@ -78,7 +76,6 @@
           `,
           mediaCaption: "Figure 3",
           media: String.raw`\begin{tikzpicture}[scale=0.62]
-  \clip (-4,-4) rectangle (6,6);
   \draw[very thin,gray!30] (-4,-4) grid (6,6);
   \draw[->,thick] (-4,0)--(6,0);
   \draw[->,thick] (0,-4)--(0,6);
@@ -104,7 +101,6 @@
           `,
           mediaCaption: "Figure 4",
           media: String.raw`\begin{tikzpicture}[scale=0.62]
-  \clip (-1,-1) rectangle (6,5);
   \draw[very thin,gray!30] (-1,-1) grid (6,5);
   \draw[->,thick] (-1,0)--(6,0);
   \draw[->,thick] (0,-1)--(0,5);
@@ -247,8 +243,6 @@
   `,
   mediaCaption: "Figure 6",
   media: String.raw`\begin{tikzpicture}[scale=0.55]
-  % --- View window (chosen so nothing is clipped) ---
-  \clip (-10,-12) rectangle (10,12);
 
   % --- Grid ---
   \draw[very thin,gray!25] (-10,-12) grid (10,12);
@@ -257,9 +251,6 @@
   \draw[->,thick] (-10,0)--(10,0) node[below right] {$x$};
   \draw[->,thick] (0,-12)--(0,12) node[above left] {$y$};
 
-  % --- Line of reflection: y = -3x ---
-  % Draw it long; the clip window crops it neatly.
-  \draw[thick,red] (-6,18)--(6,-18) node[below right] {$y=-3x$};
 
   % --- Rectangle ABCD (crosses the line) ---
   % A(1,1), B(4,1), C(4,5), D(1,5)
