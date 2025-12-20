@@ -1,11 +1,12 @@
 /* =========================
-   core-rich.js — Geometry HW renderer
-   - supports stem (HTML) or latex (LaTeX string)
-   - supports media as:
-       (A) raw TikZ code: contains \begin{tikzpicture}...\end{tikzpicture}
-           -> we create <script type="text/tikz"> in the DOM (safe)
-       (B) HTML media: <img>, <svg>, <figure>... etc
-   - caption is supported via q.mediaCaption (always preserved)
+   core-rich.js — Geometry HW renderer (improved TikZ handling)
+   - stem: HTML (q.stem) OR LaTeX string (q.latex)
+   - media:
+       (A) TikZ code (raw \begin{tikzpicture}...\end{tikzpicture})
+       (B) HTML media (<img>, <svg>, <figure>..., etc)
+     NEW: TikZ is rendered INLINE by default (part of the question flow),
+          while images/HTML remain on the RIGHT media column.
+   - caption: q.mediaCaption (preferred); can also be extracted from <figcaption> for legacy media strings
    ========================= */
 
 (function(){
@@ -34,7 +35,7 @@
     return /<\/?[a-z][\s\S]*>/i.test(String(s || ""));
   }
 
-  function looksLikeTikz(s){
+  function looksLikeRawTikz(s){
     const t = String(s || "");
     return /\\begin\{tikzpicture\}[\s\S]*\\end\{tikzpicture\}/.test(t);
   }
@@ -46,7 +47,40 @@
     return el;
   }
 
-  // --- modal for media zoom (simple + reliable) ---
+  /* -------------------------
+     Styling for inline TikZ
+     ------------------------- */
+  function injectInlineTikzStyles(){
+    if (document.getElementById("coreRichInlineTikzStyles")) return;
+    const style = document.createElement("style");
+    style.id = "coreRichInlineTikzStyles";
+    style.textContent = `
+      .q-tikz-inline{
+        margin: 10px 0 12px;
+        overflow: visible;
+      }
+      .q-tikz-inline .tikz-caption{
+        margin-top: 8px;
+        text-align: center;
+        font-size: 0.98rem;
+        color: #333;
+      }
+      /* TikZJax outputs SVG; keep it responsive */
+      .q-tikz-inline svg{
+        max-width: 100%;
+        height: auto;
+        display: block;
+        margin: 0 auto;
+      }
+      /* Prevent accidental clipping in some layouts */
+      .q-left, .q-stem{ overflow: visible; }
+    `;
+    document.head.appendChild(style);
+  }
+
+  /* -------------------------
+     Modal for zoom
+     ------------------------- */
   function ensureModal(){
     let modal = document.getElementById("mediaModal");
     if (modal) return modal;
@@ -65,7 +99,7 @@
       #mediaModal .panel{
         background:#fff;
         border-radius:14px;
-        max-width:min(960px, 96vw);
+        max-width:min(1000px, 96vw);
         max-height:92vh;
         overflow:auto;
         padding:18px;
@@ -116,43 +150,85 @@
     content.innerHTML = "";
     content.appendChild(node);
     modal.style.display = "flex";
-
-    // If TikZ was inside, ask tikzjax to (re)process in modal
     processTikz();
     typesetMath();
   }
 
-  // --- TikZ mounting (DOM-based, safe) ---
-  function mountTikzInto(container, tikzCode, caption){
-    container.innerHTML = "";
+  /* -------------------------
+     TikZ extraction + mounting
+     ------------------------- */
 
-    const fig = document.createElement("figure");
+  // Legacy support: if q.media is HTML containing <script type="text/tikz"> ... </script>,
+  // extract its TikZ + (optional) <figcaption>.
+  function extractTikzFromHtml(html){
+    try{
+      const tpl = document.createElement("template");
+      tpl.innerHTML = String(html || "");
+
+      const scr = tpl.content.querySelector('script[type="text/tikz"]');
+      if (!scr) return null;
+
+      const cap = tpl.content.querySelector("figcaption");
+      return {
+        tikz: (scr.textContent || "").trim(),
+        caption: cap ? (cap.textContent || "").trim() : ""
+      };
+    } catch(_) {
+      return null;
+    }
+  }
+
+  // Returns null if not TikZ. Otherwise returns {tikz, caption}.
+  function getTikzPayload(q){
+    const mediaStr = String(q.media || "").trim();
+    if (!mediaStr) return null;
+
+    // Preferred: raw TikZ string
+    if (looksLikeRawTikz(mediaStr) && !hasHtmlTags(mediaStr)) {
+      return { tikz: mediaStr, caption: String(q.mediaCaption || "").trim() };
+    }
+
+    // Back-compat: HTML wrapper containing script[type="text/tikz"]
+    const extracted = extractTikzFromHtml(mediaStr);
+    if (extracted && extracted.tikz) {
+      const cap = String(q.mediaCaption || "").trim() || extracted.caption || "";
+      return { tikz: extracted.tikz, caption: cap };
+    }
+
+    return null;
+  }
+
+  function mountTikzInline(intoEl, tikzCode, caption){
+    intoEl.innerHTML = "";
+
+    const wrap = document.createElement("div");
+    wrap.className = "q-tikz-inline";
 
     const scr = document.createElement("script");
     scr.type = "text/tikz";
-    // IMPORTANT: set textContent so no HTML parsing issues
     scr.textContent = String(tikzCode || "");
-    fig.appendChild(scr);
+    wrap.appendChild(scr);
 
     if (caption) {
-      const cap = document.createElement("figcaption");
+      const cap = document.createElement("div");
+      cap.className = "tikz-caption";
       cap.textContent = caption;
-      fig.appendChild(cap);
+      wrap.appendChild(cap);
     }
 
-    // click-to-zoom
-    fig.style.cursor = "zoom-in";
-    fig.addEventListener("click", () => {
-      openModalWith(fig.cloneNode(true));
-    });
+    // zoom
+    wrap.style.cursor = "zoom-in";
+    wrap.addEventListener("click", () => openModalWith(wrap.cloneNode(true)));
 
-    container.appendChild(fig);
+    intoEl.appendChild(wrap);
   }
 
+  /* -------------------------
+     HTML media (images/svg/figure) in right column
+     ------------------------- */
   function normalizeHtmlMedia(container, html, caption){
     container.innerHTML = String(html || "");
 
-    // If author gave a caption string, ensure it's visible even if HTML lacks figcaption
     if (caption) {
       const existingFigcaption = container.querySelector("figcaption");
       if (!existingFigcaption) {
@@ -162,7 +238,6 @@
           cap.textContent = caption;
           fig.appendChild(cap);
         } else {
-          // wrap first img/svg in a figure
           const node = container.querySelector("img, svg");
           if (node) {
             const fig2 = document.createElement("figure");
@@ -177,7 +252,6 @@
       }
     }
 
-    // click-to-zoom if we have a figure now
     const fig = container.querySelector("figure");
     if (fig) {
       fig.style.cursor = "zoom-in";
@@ -185,7 +259,9 @@
     }
   }
 
-  // --- MathJax + TikZJax hooks ---
+  /* -------------------------
+     MathJax + TikZJax hooks
+     ------------------------- */
   function typesetMath(){
     if (window.MathJax && typeof window.MathJax.typesetPromise === "function") {
       return window.MathJax.typesetPromise().catch(()=>{});
@@ -194,24 +270,25 @@
   }
 
   function processTikz(){
-    // TikZJax v1 usually exposes window.tikzjax.process()
     if (window.tikzjax && typeof window.tikzjax.process === "function") {
       try { window.tikzjax.process(); } catch(_) {}
     }
   }
 
-  // call after render, and again after load (in case libs load later)
   function postRender(){
     processTikz();
     typesetMath();
-
     window.addEventListener("load", () => {
       processTikz();
       typesetMath();
     });
   }
 
-  // --- main render ---
+  /* -------------------------
+     Main render
+     ------------------------- */
+  injectInlineTikzStyles();
+
   const data = window.homeworkData;
   if (!data || !Array.isArray(data.questions)) {
     renderFatal("homeworkData not found or invalid. Make sure window.homeworkData is defined BEFORE core-rich.js loads.");
@@ -246,7 +323,18 @@
     card.appendChild(head);
 
     const hasMedia = !!(q.media && String(q.media).trim().length);
-    const grid = makeEl("div", "q-grid " + (hasMedia ? "has-media" : "no-media"));
+
+    // Detect TikZ (raw OR embedded in HTML)
+    const tikzPayload = hasMedia ? getTikzPayload(q) : null;
+
+    // TikZ defaults to inline; allow override per question:
+    //    q.mediaInline = false  -> force it to the right column (rare)
+    const tikzInline = !!tikzPayload && (q.mediaInline !== false);
+
+    // If TikZ is inline, we should NOT activate "has-media" grid behavior.
+    const gridHasRightColumn = hasMedia && !tikzInline;
+
+    const grid = makeEl("div", "q-grid " + (gridHasRightColumn ? "has-media" : "no-media"));
     card.appendChild(grid);
 
     const left = makeEl("div", "q-left");
@@ -257,12 +345,19 @@
     if (q.stem) {
       stem.innerHTML = String(q.stem);
     } else if (q.latex) {
-      // render latex as inline math
+      // keep as inline math (your original behavior)
       stem.innerHTML = `<p>\\(${String(q.latex)}\\)</p>`;
     } else {
       stem.innerHTML = `<p><em>(No prompt provided.)</em></p>`;
     }
     left.appendChild(stem);
+
+    // NEW: TikZ inline block (between stem and choices)
+    if (tikzInline && tikzPayload && tikzPayload.tikz) {
+      const tikzBlock = document.createElement("div");
+      mountTikzInline(tikzBlock, tikzPayload.tikz, tikzPayload.caption);
+      left.appendChild(tikzBlock);
+    }
 
     // choices
     const choices = Array.isArray(q.choices) ? q.choices : [];
@@ -292,8 +387,8 @@
     });
     left.appendChild(ul);
 
-    // media column
-    if (hasMedia) {
+    // Right-column media (images / non-TikZ HTML)
+    if (gridHasRightColumn) {
       const right = makeEl("div", "q-media");
       grid.appendChild(right);
 
@@ -302,23 +397,13 @@
       right.appendChild(mWrap);
 
       const caption = q.mediaCaption ? String(q.mediaCaption) : "";
-
-      // IMPORTANT:
-      // - if media is raw TikZ code (not HTML), mountTikzInto
-      // - else treat as HTML and preserve wrapper/caption
-      const mediaStr = String(q.media);
-
-      if (looksLikeTikz(mediaStr) && !hasHtmlTags(mediaStr)) {
-        mountTikzInto(mWrap, mediaStr, caption);
-      } else {
-        normalizeHtmlMedia(mWrap, mediaStr, caption);
-      }
+      normalizeHtmlMedia(mWrap, String(q.media), caption);
     }
 
     form.appendChild(card);
   });
 
-  // submit button + scoring (optional)
+  // Submit button + quick scoring
   const btn = document.createElement("button");
   btn.type = "button";
   btn.textContent = "Submit";
