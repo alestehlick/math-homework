@@ -18,7 +18,7 @@
       title   : "Homework 12-2 — Linear Maps: Translations and Rotations",
 
       /* Correct answers for Q1–Q12 */
-      answerKey : ["B","C","D","A","E","A","B","F","C","D","B","A"],
+      answerKey : ["B","C","D","A","E","A","B","F","C","D","B","A","B","C"],
 
       questions : [
 
@@ -242,6 +242,44 @@
 
       ]
     };
+
+    /* ---- append to questions[] ---- */
+
+{
+  stem: String.raw`
+    <p>A transformation is the composition of two reflections: first in line \(l\), then in line \(m\).</p>
+    <p>The lines \(l\) and \(m\) intersect at point \(P\). Which statement must be true?</p>
+  `,
+  choices: [
+    String.raw`The composition is a translation by a vector perpendicular to \(l\).`,
+    String.raw`The composition is a rotation about point \(P\).`,
+    String.raw`The composition is a reflection in a line through \(P\).`,
+    String.raw`The composition changes the size of every figure.`,
+    String.raw`The composition is a rotation, but its center is not at \(P\).`,
+    String.raw`The composition is the identity transformation for any angle.`
+  ]
+},
+{
+  stem: String.raw`
+    <p>Let \(R_O(\theta)\) be a rotation by \(\theta\) about point \(O\).</p>
+    <p>Consider the composition \(R_P(\theta)\circ R_O(-\theta)\), where \(O\neq P\) and \(\theta\neq 0^\circ\).</p>
+    <p>Which statement is always true?</p>
+  `,
+  choices: [
+    String.raw`The composition is always the identity transformation.`,
+    String.raw`The composition is always a reflection.`,
+    String.raw`The composition is always a translation.`,
+    String.raw`The composition is a translation only when \(\theta=180^\circ\).`,
+    String.raw`The composition is a rotation about \(O\).`,
+    String.raw`The composition changes the size of the figure.`
+  ]
+}
+
+/* ---- also append to answerKey[] ----
+   Q13 = B
+   Q14 = C
+*/
+
   </script>
 
   <link rel="stylesheet" href="/math-homework/assets/core-rich.css" />
