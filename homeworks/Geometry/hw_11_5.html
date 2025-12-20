@@ -1,0 +1,327 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Homework 11-5 (Geometry)</title>
+
+  <script>
+    /* =========================
+       Homework 11-5 — Volume of Spheres and Regular Polyhedra (Geometry)
+       Uses: /math-homework/assets/core-rich.js
+
+       SELECTION RULES SATISFIED:
+       - Type A: 4 questions (A #1, A #3, A #6, A #9)
+       - Type B: 3 questions (B #13, B #15, B #18)
+       - Type C: 1 question (conceptual, uses the provided formula table image)
+       - Portuguese: 4 questions (PT #687, #688, #697, #700)
+       - Portuguese (challenging): 2 questions (PT #695, #698)
+
+       IMAGE NAMING RULE (STRICT):
+       Any figure used is referenced by the ORIGINAL problem number from the source set.
+       PNG files live in the SAME folder as this HTML.
+
+       Required image files for this homework:
+         11-5-table.png
+       ========================= */
+
+    window.homeworkData = {
+      classId : "Geometry",
+      id      : "Homework 11-5",
+      title   : "Homework 11-5 — Volume of Spheres and Regular Polyhedra",
+
+      graphics : String.raw``,
+
+      /* Correct answers for Q1–Q14 */
+      answerKey : ["B","B","A","B","B","A","C","A","A","A","B","C","B","A"],
+
+      questions : [
+
+        /* =========================================================
+           Type A (4)
+           ========================================================= */
+
+        /* A #1 */
+        {
+          stem: String.raw`
+            <p><b>Sphere.</b> Give the volume of a sphere with radius 18 feet.</p>
+            <p><em>Answer in terms of \(\pi\).</em></p>
+          `,
+          choiceWrap: false,
+          choices: [
+            String.raw`\(5832\pi\) ft<sup>3</sup>`,
+            String.raw`\(7776\pi\) ft<sup>3</sup>`,
+            String.raw`\(3888\pi\) ft<sup>3</sup>`,
+            String.raw`\(972\pi\) ft<sup>3</sup>`,
+            String.raw`\(7776\) ft<sup>3</sup>`,
+            String.raw`\(23328\pi\) ft<sup>3</sup>`
+          ]
+        },
+
+        /* A #3 */
+        {
+          stem: String.raw`
+            <p><b>Regular polyhedron.</b> A hexahedron is another name for a cube.</p>
+            <p>Give the volume of a hexahedron with an edge of 3 yards.</p>
+          `,
+          choiceWrap: false,
+          choices: [
+            String.raw`9 yd<sup>3</sup>`,
+            String.raw`27 yd<sup>3</sup>`,
+            String.raw`54 yd<sup>3</sup>`,
+            String.raw`81 yd<sup>3</sup>`,
+            String.raw`18 yd<sup>3</sup>`,
+            String.raw`3 yd<sup>3</sup>`
+          ]
+        },
+
+        /* A #6 */
+        {
+          stem: String.raw`
+            <p><b>Sphere.</b> Give the volume of a sphere with diameter \(8\sqrt3\) inches.</p>
+            <p><em>Answer in terms of \(\pi\).</em></p>
+          `,
+          choiceWrap: false,
+          choices: [
+            String.raw`\(256\sqrt3\,\pi\) in<sup>3</sup>`,
+            String.raw`\(192\sqrt3\,\pi\) in<sup>3</sup>`,
+            String.raw`\(768\sqrt3\,\pi\) in<sup>3</sup>`,
+            String.raw`\(256\pi\) in<sup>3</sup>`,
+            String.raw`\(512\sqrt3\,\pi\) in<sup>3</sup>`,
+            String.raw`\(256\sqrt3\) in<sup>3</sup>`
+          ]
+        },
+
+        /* A #9 */
+        {
+          stem: String.raw`
+            <p><b>Sphere.</b> A “great circle” is a largest possible circle on a sphere (its radius equals the sphere’s radius).</p>
+            <p>A sphere has a great circle with circumference \(32\pi\) centimeters. Find the volume of the sphere.</p>
+            <p><em>Answer in terms of \(\pi\).</em></p>
+          `,
+          choiceWrap: false,
+          choices: [
+            String.raw`\(4096\pi\) cm<sup>3</sup>`,
+            String.raw`\(\dfrac{16384}{3}\pi\) cm<sup>3</sup>`,
+            String.raw`\(\dfrac{8192}{3}\pi\) cm<sup>3</sup>`,
+            String.raw`\(\dfrac{2048}{3}\pi\) cm<sup>3</sup>`,
+            String.raw`\(\dfrac{16384}{3}\) cm<sup>3</sup>`,
+            String.raw`\(\dfrac{32768}{3}\pi\) cm<sup>3</sup>`
+          ]
+        },
+
+        /* =========================================================
+           Type B (3)
+           ========================================================= */
+
+        /* B #13 */
+        {
+          stem: String.raw`
+            <p>A spherical balloon has \(36\pi\) cubic inches of air in it. What is the circumference of the balloon?</p>
+            <p><em>Answer in terms of \(\pi\).</em></p>
+          `,
+          choiceWrap: false,
+          choices: [
+            String.raw`\(2\pi\) in`,
+            String.raw`\(6\pi\) in`,
+            String.raw`\(12\pi\) in`,
+            String.raw`\(18\pi\) in`,
+            String.raw`\(3\pi\) in`,
+            String.raw`\(36\pi\) in`
+          ]
+        },
+
+        /* B #15 */
+        {
+          stem: String.raw`
+            <p>The volume of a sphere is \(16{,}222.67\pi\) cubic millimeters. What is the radius of the sphere?</p>
+            <p><em>Round only if needed.</em></p>
+          `,
+          choiceWrap: false,
+          choices: [
+            String.raw`23 mm`,
+            String.raw`24 mm`,
+            String.raw`12 mm`,
+            String.raw`46 mm`,
+            String.raw`69 mm`,
+            String.raw`\(\dfrac{23}{3}\) mm`
+          ]
+        },
+
+        /* B #18 */
+        {
+          stem: String.raw`
+            <p>A ball whose diameter is 8 inches is placed in a cube whose edge measures 8 inches.</p>
+            <p>How many cubic inches of sand will fill the box containing the ball?</p>
+            <p><em>Give an exact answer in terms of \(\pi\).</em></p>
+          `,
+          choiceWrap: false,
+          choices: [
+            String.raw`512`,
+            String.raw`\(512-256\pi\)`,
+            String.raw`\(512-\dfrac{256}{3}\pi\)`,
+            String.raw`\(512-\dfrac{512}{3}\pi\)`,
+            String.raw`\(\dfrac{256}{3}\pi\)`,
+            String.raw`\(512-\dfrac{128}{3}\pi\)`
+          ]
+        },
+
+        /* =========================================================
+           Type C (1) — uses the provided volume-formula table
+           ========================================================= */
+
+        {
+          stem: String.raw`
+            <p><b>Use the table in Figure 1.</b></p>
+            <p>A cube and a regular octahedron both have edge length \(e\).</p>
+            <p>What is the ratio \(\dfrac{V_{\text{octahedron}}}{V_{\text{cube}}}\)?</p>
+            <p><em>(This checks that you can read and use the formula table.)</em></p>
+          `,
+          media: String.raw`
+            <figure>
+              <img src="11-5-table.png" alt="Regular polyhedron volume formulas table" />
+              <figcaption>Figure 1 (Volume formulas)</figcaption>
+            </figure>
+          `,
+          choiceWrap: false,
+          choices: [
+            String.raw`\(\dfrac{\sqrt2}{3}\)`,
+            String.raw`\(\dfrac{3}{\sqrt2}\)`,
+            String.raw`\(\sqrt2\)`,
+            String.raw`\(\dfrac{2}{3}\)`,
+            String.raw`\(\dfrac{\sqrt2}{9}\)`,
+            String.raw`\(\dfrac{1}{3}\)`
+          ]
+        },
+
+        /* =========================================================
+           Portuguese set (4)
+           ========================================================= */
+
+        /* PT #687 */
+        {
+          stem: String.raw`
+            <p>(Portuguese #687)</p>
+            <p>Determine the volume of a sphere whose surface area is \(100\pi\) cm<sup>2</sup>.</p>
+            <p><em>Answer in terms of \(\pi\).</em></p>
+          `,
+          choiceWrap: false,
+          choices: [
+            String.raw`\(\dfrac{500}{3}\pi\) cm<sup>3</sup>`,
+            String.raw`\(100\pi\) cm<sup>3</sup>`,
+            String.raw`\(500\pi\) cm<sup>3</sup>`,
+            String.raw`\(\dfrac{250}{3}\pi\) cm<sup>3</sup>`,
+            String.raw`\(\dfrac{125}{3}\pi\) cm<sup>3</sup>`,
+            String.raw`\(\dfrac{400}{3}\pi\) cm<sup>3</sup>`
+          ]
+        },
+
+        /* PT #688 */
+        {
+          stem: String.raw`
+            <p>(Portuguese #688)</p>
+            <p>Determine the radius \(r\) of a sphere such that its volume and its surface area are expressed by the same numerical value (both in terms of \(\pi\)).</p>
+            <p><em>Hint: set \(\dfrac{4}{3}\pi r^3 = 4\pi r^2\).</em></p>
+          `,
+          choiceWrap: false,
+          choices: [
+            String.raw`3`,
+            String.raw`1`,
+            String.raw`\(\dfrac{4}{3}\)`,
+            String.raw`6`,
+            String.raw`9`,
+            String.raw`12`
+          ]
+        },
+
+        /* PT #697 */
+        {
+          stem: String.raw`
+            <p>(Portuguese #697)</p>
+            <p>Two metal spheres of radii \(2r\) and \(3r\) are melted and fused into a single larger sphere.</p>
+            <p>Determine the radius \(R\) of the new sphere in terms of \(r\).</p>
+          `,
+          choiceWrap: false,
+          choices: [
+            String.raw`\(5r\)`,
+            String.raw`\(\sqrt[3]{35}\,r\)`,
+            String.raw`\(\sqrt{35}\,r\)`,
+            String.raw`\(35r\)`,
+            String.raw`\(\sqrt[3]{250}\,r\)`,
+            String.raw`\(3r\)`
+          ]
+        },
+
+        /* PT #700 */
+        {
+          stem: String.raw`
+            <p>(Portuguese #700)</p>
+            <p>Determine the diameter of a sphere obtained by fusing two spheres of diameter 10 cm.</p>
+            <p><em>Give an exact answer.</em></p>
+          `,
+          choiceWrap: false,
+          choices: [
+            String.raw`10 cm`,
+            String.raw`\(10\sqrt2\) cm`,
+            String.raw`\(10\sqrt[3]{2}\) cm`,
+            String.raw`\(5\sqrt[3]{2}\) cm`,
+            String.raw`\(10\sqrt[3]{4}\) cm`,
+            String.raw`\(20\sqrt[3]{2}\) cm`
+          ]
+        },
+
+        /* =========================================================
+           Portuguese (challenging) (2)
+           ========================================================= */
+
+        /* PT #695 */
+        {
+          stem: String.raw`
+            <p>(Portuguese #695 — challenging)</p>
+            <p>A gold ball of radius \(r\) is melted and transformed into a cylinder of radius \(r\).</p>
+            <p>Determine the height \(h\) of the cylinder in terms of \(r\).</p>
+          `,
+          choiceWrap: false,
+          choices: [
+            String.raw`\(h=r\)`,
+            String.raw`\(h=\dfrac{4}{3}r\)`,
+            String.raw`\(h=4r\)`,
+            String.raw`\(h=\dfrac{3}{4}r\)`,
+            String.raw`\(h=2r\)`,
+            String.raw`\(h=\dfrac{4}{3}r^2\)`
+          ]
+        },
+
+        /* PT #698 */
+        {
+          stem: String.raw`
+            <p>(Portuguese #698 — challenging)</p>
+            <p>A solid is formed by two right cones of equal volume with a common base circle of radius 6 cm (a “double cone”).</p>
+            <p>The surface area of the solid equals the surface area of a sphere of radius 6 cm.</p>
+            <p>Determine the ratio between the volumes of the solid and the sphere.</p>
+            <p><em>Answer format: \(V_{\text{solid}}:V_{\text{sphere}}\).</em></p>
+          `,
+          choiceWrap: false,
+          choices: [
+            String.raw`\(\sqrt3:2\)`,
+            String.raw`\(2:\sqrt3\)`,
+            String.raw`\(\sqrt3:1\)`,
+            String.raw`\(1:\sqrt3\)`,
+            String.raw`\(3:2\)`,
+            String.raw`\(2:3\)`
+          ]
+        }
+
+      ]
+    };
+  </script>
+
+  <link rel="stylesheet" href="/math-homework/assets/core-rich.css" />
+  <script defer src="/math-homework/assets/core-rich.js"></script>
+  <script defer src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+</head>
+
+<body>
+  <div id="hw-root">Loading…</div>
+</body>
+</html>
