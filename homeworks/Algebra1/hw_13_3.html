@@ -1,0 +1,272 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Homework 13-3 (Algebra 1)</title>
+
+  <script>
+    /* =========================
+       Homework 13-3 — Work Problems (Algebra 1)
+       Adapted for: /math-homework/assets/core-rich.js
+
+       REQUIRED SOURCE REFERENCES (your provided sets):
+       - Type A uses A. Exercises: #1, #2, #4, #6
+       - Type B uses B. Exercises: #7, #8, #9, #10, #11, #12
+       - Type C uses C. Exercises: #15, #16
+
+       IMAGE NAMING RULE (STRICT):
+       No figures used in this homework.
+       ========================= */
+
+    window.homeworkData = {
+      classId : "Algebra1",
+      id      : "Homework 13-3",
+      title   : "Homework 13-3 — Work Problems",
+
+      graphics : String.raw``,
+
+      /* Correct answers for Q1–Q12 */
+      answerKey : ["B","D","A","C","C","B","E","A","D","B","E","C"],
+
+      questions : [
+
+        /* Q1 — Source: A. Exercise #1 */
+        {
+          stem: String.raw`
+            <p>Peter can mow a lawn in 3 hours, and Jon can mow the same lawn in 6 hours.</p>
+            <p>If they work together at constant rates, how long will it take them to mow one lawn?</p>
+          `,
+          choiceWrap: false,
+          choices: [
+            String.raw`1.5 hours`,
+            String.raw`2 hours`,
+            String.raw`3 hours`,
+            String.raw`4 hours`,
+            String.raw`4.5 hours`,
+            String.raw`9 hours`
+          ]
+        },
+
+        /* Q2 — Source: A. Exercise #2 */
+        {
+          stem: String.raw`
+            <p>Sheila can wash a car in 1 hour, and Susan can also wash a car in 1 hour.</p>
+            <p>If they wash one car together, how long will it take?</p>
+          `,
+          choiceWrap: false,
+          choices: [
+            String.raw`15 minutes`,
+            String.raw`20 minutes`,
+            String.raw`25 minutes`,
+            String.raw`30 minutes`,
+            String.raw`45 minutes`,
+            String.raw`60 minutes`
+          ]
+        },
+
+        /* Q3 — Source: A. Exercise #4 */
+        {
+          stem: String.raw`
+            <p>Darla can make the puppets in 4 hours. If she works with her sister, who would take 6 hours working alone, they will share the work.</p>
+            <p>If the girls work together at constant rates, how long will it take them to finish the puppets?</p>
+          `,
+          choiceWrap: false,
+          choices: [
+            String.raw`2.4 hours`,
+            String.raw`3.0 hours`,
+            String.raw`4.0 hours`,
+            String.raw`5.0 hours`,
+            String.raw`6.0 hours`,
+            String.raw`10.0 hours`
+          ]
+        },
+
+        /* Q4 — Source: A. Exercise #6 */
+        {
+          stem: String.raw`
+            <p>One water pipe can fill a swimming pool in 9 hours.</p>
+            <p>When a second pipe is added, the two pipes together can fill the pool in 3 hours.</p>
+            <p>If the second pipe worked alone, how long would it take to fill the pool?</p>
+          `,
+          choiceWrap: false,
+          choices: [
+            String.raw`1.5 hours`,
+            String.raw`3.0 hours`,
+            String.raw`4.5 hours`,
+            String.raw`6.0 hours`,
+            String.raw`9.0 hours`,
+            String.raw`12.0 hours`
+          ]
+        },
+
+        /* Q5 — Source: B. Exercise #7 */
+        {
+          stem: String.raw`
+            <p><em>Round your answer to the nearest tenth.</em></p>
+            <p>Phil can load a truck in 2 hours.</p>
+            <p>With Bob’s help, they finished loading one truck in 45 minutes.</p>
+            <p>How long would it take Bob to load the truck working alone?</p>
+          `,
+          choiceWrap: false,
+          choices: [
+            String.raw`0.8 hours`,
+            String.raw`1.0 hours`,
+            String.raw`1.2 hours`,
+            String.raw`1.5 hours`,
+            String.raw`2.0 hours`,
+            String.raw`2.7 hours`
+          ]
+        },
+
+        /* Q6 — Source: B. Exercise #8 */
+        {
+          stem: String.raw`
+            <p><em>Round your answer to the nearest tenth.</em></p>
+            <p>A computer can grade 2000 objective-answer exams in 10 minutes.</p>
+            <p>A newer computer can grade the same 2000 exams in less time.</p>
+            <p>If the two computers together can grade 2000 exams in 3 minutes, how long does it take the new computer to grade 2000 exams by itself?</p>
+          `,
+          choiceWrap: false,
+          choices: [
+            String.raw`3.0 minutes`,
+            String.raw`4.3 minutes`,
+            String.raw`5.0 minutes`,
+            String.raw`6.0 minutes`,
+            String.raw`6.7 minutes`,
+            String.raw`10.0 minutes`
+          ]
+        },
+
+        /* Q7 — Source: B. Exercise #9 */
+        {
+          stem: String.raw`
+            <p><em>Round your answers to the nearest tenth if needed.</em></p>
+            <p>Sam takes twice as long as Brent to remove tassels from an acre of corn.</p>
+            <p>Working together, they can remove tassels from one acre in 50 minutes.</p>
+            <p>How long does it take each person to do the job alone?</p>
+          `,
+          choiceWrap: false,
+          choices: [
+            String.raw`Brent: 50 min, Sam: 100 min`,
+            String.raw`Brent: 50 min, Sam: 25 min`,
+            String.raw`Brent: 75 min, Sam: 37.5 min`,
+            String.raw`Brent: 100 min, Sam: 200 min`,
+            String.raw`Brent: 75 min, Sam: 150 min`,
+            String.raw`Brent: 150 min, Sam: 75 min`
+          ]
+        },
+
+        /* Q8 — Source: B. Exercise #10 */
+        {
+          stem: String.raw`
+            <p><em>Round your answer to the nearest tenth.</em></p>
+            <p>Ron, Mike, and Tim are going to paint one side of a house together.</p>
+            <ul>
+              <li>Ron can paint one side in 4 hours.</li>
+              <li>Mike can paint an equal area in 3 hours.</li>
+              <li>Tim can paint an equal area in 2 hours.</li>
+            </ul>
+            <p>If they work together at constant rates, how long will it take them to paint one side of the house?</p>
+          `,
+          choiceWrap: false,
+          choices: [
+            String.raw`0.9 hours`,
+            String.raw`1.0 hours`,
+            String.raw`1.5 hours`,
+            String.raw`2.0 hours`,
+            String.raw`2.8 hours`,
+            String.raw`4.0 hours`
+          ]
+        },
+
+        /* Q9 — Source: B. Exercise #11 */
+        {
+          stem: String.raw`
+            <p><em>Round your answers to the nearest tenth.</em></p>
+            <p>Joy takes 3 hours longer than Fran to clean a house.</p>
+            <p>If the girls work together, they can clean the house in 4 hours.</p>
+            <p>How long does it take each girl working alone?</p>
+          `,
+          choiceWrap: false,
+          choices: [
+            String.raw`Fran: 4.0 hours, Joy: 7.0 hours`,
+            String.raw`Fran: 5.0 hours, Joy: 8.0 hours`,
+            String.raw`Fran: 6.0 hours, Joy: 9.0 hours`,
+            String.raw`Fran: 6.8 hours, Joy: 9.8 hours`,
+            String.raw`Fran: 7.2 hours, Joy: 10.2 hours`,
+            String.raw`Fran: 8.0 hours, Joy: 11.0 hours`
+          ]
+        },
+
+        /* Q10 — Source: B. Exercise #12 */
+        {
+          stem: String.raw`
+            <p><em>Round your answer to the nearest tenth.</em></p>
+            <p>Dan can reshingle a roof in 10 hours, and Rob can do the same job in 8 hours.</p>
+            <p>Dave has never done the job alone, but last time he helped with a similar roof it took the three men 3.5 hours working together.</p>
+            <p>How long would it take Dave to reshingle the roof working alone?</p>
+          `,
+          choiceWrap: false,
+          choices: [
+            String.raw`8.0 hours`,
+            String.raw`16.5 hours`,
+            String.raw`18.0 hours`,
+            String.raw`20.0 hours`,
+            String.raw`22.0 hours`,
+            String.raw`28.0 hours`
+          ]
+        },
+
+        /* Q11 — Source: C. Exercise #15 */
+        {
+          stem: String.raw`
+            <p><em>Round your answer to the nearest tenth.</em></p>
+            <p>A machine at a light-bulb factory must complete a rush order in 24 hours.</p>
+            <p>After 7 hours, the first machine breaks down, and a second machine is used to complete the job in 5 more hours.</p>
+            <p>The first machine alone would have taken 15 hours to do the entire job.</p>
+            <p>How long would it take to do the entire job using only the second machine?</p>
+          `,
+          choiceWrap: false,
+          choices: [
+            String.raw`6.0 hours`,
+            String.raw`8.0 hours`,
+            String.raw`9.0 hours`,
+            String.raw`10.0 hours`,
+            String.raw`9.4 hours`,
+            String.raw`15.0 hours`
+          ]
+        },
+
+        /* Q12 — Source: C. Exercise #16 */
+        {
+          stem: String.raw`
+            <p><em>Round your answers to the nearest tenth.</em></p>
+            <p>Pam takes 2 hours longer than Carla to make a dress.</p>
+            <p>Together they can finish the dress in 4 hours.</p>
+            <p>How long does each take working alone?</p>
+          `,
+          choiceWrap: false,
+          choices: [
+            String.raw`Carla: 6.0 hours, Pam: 8.0 hours`,
+            String.raw`Carla: 7.0 hours, Pam: 9.0 hours`,
+            String.raw`Carla: 7.1 hours, Pam: 9.1 hours`,
+            String.raw`Carla: 8.0 hours, Pam: 10.0 hours`,
+            String.raw`Carla: 5.5 hours, Pam: 7.5 hours`,
+            String.raw`Carla: 9.1 hours, Pam: 7.1 hours`
+          ]
+        }
+
+      ]
+    };
+  </script>
+
+  <link rel="stylesheet" href="/math-homework/assets/core-rich.css" />
+  <script defer src="/math-homework/assets/core-rich.js"></script>
+  <script defer src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+</head>
+
+<body>
+  <div id="hw-root">Loading…</div>
+</body>
+</html>
