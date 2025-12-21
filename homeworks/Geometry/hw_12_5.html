@@ -1,0 +1,337 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Homework 12-5 (Geometry)</title>
+
+  <script>
+    /* =========================
+       Homework 12-5 — Transformations & Symmetry (Geometry)
+       Adapted for: /math-homework/assets/core-rich.js
+
+       REQUIRED SOURCE REFERENCES (your provided set: 12-6):
+       - Type A uses A. Exercises: #1, #2, #3, #4
+       - Type B uses A. Exercises: #5, #6, #7, #10 and B. Exercises: #11, #13
+       - Type C (2 crafted, conceptual): symmetry/invariance extensions consistent with this section
+
+       FIGURES:
+       - All figures are drawn with TikZ (no PNG files needed).
+       ========================= */
+
+    window.homeworkData = {
+      classId : "Geometry",
+      id      : "Homework 12-6",
+      title   : "Homework 12-6 — Transformations & Symmetry",
+
+      graphics : String.raw``,
+
+      answerKey : ["C","C","B","A","D","C","B","A","B","B","C","D"],
+
+      questions : [
+
+        /* ---------- Type A (4) ---------- */
+
+        /* Source: A. Exercises #1 */
+        {
+          stem: String.raw`
+            <p><strong>Refer to Figure 1.</strong> Points \(A\) and \(C\) are on a coordinate plane, and \(k\) is the \(x\)-axis.</p>
+            <p>Let \(P\) be a point on line \(k\). For which point \(P\) is the distance \(AP+PC\) the smallest?</p>
+          `,
+          mediaCaption: "Figure 1",
+          media: String.raw`\begin{tikzpicture}[scale=0.70]
+  \draw[very thin,gray!25] (-4,-3) grid (9,5);
+  \draw[->,thick] (-4,0)--(9,0) node[below right] {$x$};
+  \draw[->,thick] (0,-3)--(0,5) node[above left] {$y$};
+
+  \draw[thick] (-4,0)--(9,0);
+  \node[font=\small] at (8.5,0.4) {$k$};
+
+  \fill (-2,3) circle (2.2pt) node[above left] {$A$};
+  \fill (4,-1) circle (2.2pt) node[below right] {$C$};
+  \fill (-2,0) circle (2.2pt) node[below] {$E$};
+\end{tikzpicture}`,
+          choices: [
+            String.raw`\(\,(-2,0)\,\)`,
+            String.raw`\(\,(1,0)\,\)`,
+            String.raw`\(\,(7,0)\,\)`,
+            String.raw`\(\,(4,0)\,\)`,
+            String.raw`\(\,(0,0)\,\)`,
+            String.raw`\(\,(9,0)\,\)`
+          ]
+        },
+
+        /* Source: A. Exercises #2 */
+        {
+          stem: String.raw`
+            <p><strong>Refer to Figure 1.</strong> The point \(E\) is directly below \(A\) on line \(k\).</p>
+            <p>Why is \(E\) <em>not</em> the answer to the previous question (the point that makes \(AP+PC\) as small as possible)?</p>
+          `,
+          choices: [
+            String.raw`Because \(E\) is not on line \(k\).`,
+            String.raw`Because \(AE\) is not perpendicular to \(k\).`,
+            String.raw`Because the goal is to minimize the <em>sum</em> \(AP+PC\), not just the distance from \(A\) to line \(k\).`,
+            String.raw`Because a reflection changes the lengths of segments.`,
+            String.raw`Because the best point must lie between \(A\) and \(C\).`,
+            String.raw`Because the shortest path must pass through \((0,0)\).`
+          ]
+        },
+
+        /* Source: A. Exercises #3 */
+        {
+          stem: String.raw`
+            <p><strong>Refer to Figure 2.</strong> Points \(A\) and \(D\) are above line \(k\) (the \(x\)-axis).</p>
+            <p>Let \(G\) be a point on line \(k\). For which point \(G\) is the distance \(AG+GD\) the smallest?</p>
+          `,
+          mediaCaption: "Figure 2",
+          media: String.raw`\begin{tikzpicture}[scale=0.70]
+  \draw[very thin,gray!25] (-4,-2) grid (9,6);
+  \draw[->,thick] (-4,0)--(9,0) node[below right] {$x$};
+  \draw[->,thick] (0,-2)--(0,6) node[above left] {$y$};
+
+  \draw[thick] (-4,0)--(9,0);
+  \node[font=\small] at (8.5,0.4) {$k$};
+
+  \fill (-2,3) circle (2.2pt) node[above left] {$A$};
+  \fill (5,4) circle (2.2pt) node[above right] {$D$};
+  \fill (-2,0) circle (2.2pt) node[below] {$E$};
+\end{tikzpicture}`,
+          choices: [
+            String.raw`\(\,(-2,0)\,\)`,
+            String.raw`\(\,(1,0)\,\)`,
+            String.raw`\(\,(7,0)\,\)`,
+            String.raw`\(\,(0,0)\,\)`,
+            String.raw`\(\,(5,0)\,\)`,
+            String.raw`\(\,(3,0)\,\)`
+          ]
+        },
+
+        /* Source: A. Exercises #4 */
+        {
+          stem: String.raw`
+            <p><strong>Refer to Figure 2.</strong> Let \(G\) be the point on \(k\) that makes \(AG+GD\) as small as possible. Let \(E\) be the point shown on \(k\).</p>
+            <p>Which comparison must be true?</p>
+          `,
+          choices: [
+            String.raw`\(\,AG+GD &lt; AE+ED\,\)`,
+            String.raw`\(\,AG+GD = AE+ED\,\)`,
+            String.raw`\(\,AG+GD &gt; AE+ED\,\)`,
+            String.raw`There is not enough information to compare the sums.`,
+            String.raw`\(\,AG = AE\,\)`,
+            String.raw`\(\,GD = ED\,\)`
+          ]
+        },
+
+        /* ---------- Type B (6) ---------- */
+
+        /* Source: A. Exercises #5 */
+        {
+          stem: String.raw`
+            <p><strong>Refer to Figure 3.</strong> Points \(D\) and \(B\) are above line \(k\) (the \(x\)-axis).</p>
+            <p>Let \(P\) be a point on \(k\). For which point \(P\) is the distance \(DP+PB\) the smallest?</p>
+          `,
+          mediaCaption: "Figure 3",
+          media: String.raw`\begin{tikzpicture}[scale=0.70]
+  \draw[very thin,gray!25] (-1,-2) grid (11,6);
+  \draw[->,thick] (-1,0)--(11,0) node[below right] {$x$};
+  \draw[->,thick] (0,-2)--(0,6) node[above left] {$y$};
+
+  \draw[thick] (-1,0)--(11,0);
+  \node[font=\small] at (10.5,0.4) {$k$};
+
+  \fill (5,4) circle (2.2pt) node[above left] {$D$};
+  \fill (8,3) circle (2.2pt) node[above right] {$B$};
+\end{tikzpicture}`,
+          choices: [
+            String.raw`\(\,(6,0)\,\)`,
+            String.raw`\(\,(7,0)\,\)`,
+            String.raw`\(\,(5,0)\,\)`,
+            String.raw`\(\,\left(\tfrac{47}{7},0\right)\,\)`,
+            String.raw`\(\,\left(\tfrac{47}{7},1\right)\,\)`,
+            String.raw`\(\,\left(0,\tfrac{47}{7}\right)\,\)`
+          ]
+        },
+
+        /* Source: A. Exercises #6 (electron bounces off DC) */
+        {
+          stem: String.raw`
+            <p><strong>Refer to Figure 4.</strong> An electron moves from \(X\) to \(Y\) inside the rectangle by bouncing off side \(\overline{DC}\) (the top side) exactly once.</p>
+            <p>At which point on \(\overline{DC}\) does it bounce? (Give the coordinate of the bounce point.)</p>
+          `,
+          mediaCaption: "Figure 4",
+          media: String.raw`\begin{tikzpicture}[scale=0.62]
+  \draw[very thin,gray!25] (-1,-1) grid (11,7);
+  \draw[thick] (0,0) rectangle (10,6);
+  \node[font=\small] at (0,-0.4) {$A$};
+  \node[font=\small] at (10,-0.4) {$B$};
+  \node[font=\small] at (10,6.4) {$C$};
+  \node[font=\small] at (0,6.4) {$D$};
+
+  \fill (3,2) circle (2.2pt) node[below right] {$X$};
+  \fill (7,1) circle (2.2pt) node[below right] {$Y$};
+\end{tikzpicture}`,
+          choices: [
+            String.raw`\(\,(4,6)\,\)`,
+            String.raw`\(\,\left(\tfrac{43}{9},0\right)\,\)`,
+            String.raw`\(\,\left(\tfrac{43}{9},6\right)\,\)`,
+            String.raw`\(\,(7,6)\,\)`,
+            String.raw`\(\,(9,6)\,\)`,
+            String.raw`\(\,\left(\tfrac{43}{9},3\right)\,\)`
+          ]
+        },
+
+        /* Source: A. Exercises #7 (electron bounces off AD) */
+        {
+          stem: String.raw`
+            <p><strong>Refer to Figure 4.</strong> The electron moves from \(X\) to \(Y\) by bouncing off side \(\overline{AD}\) (the left side) exactly once.</p>
+            <p>At which point on \(\overline{AD}\) does it bounce? (Give the coordinate of the bounce point.)</p>
+          `,
+          choices: [
+            String.raw`\(\,(0,2)\,\)`,
+            String.raw`\(\,\left(0,\tfrac{17}{10}\right)\,\)`,
+            String.raw`\(\,(0,1)\,\)`,
+            String.raw`\(\,\left(\tfrac{17}{10},0\right)\,\)`,
+            String.raw`\(\,(0,3)\,\)`,
+            String.raw`\(\,\left(0,\tfrac{7}{10}\right)\,\)`
+          ]
+        },
+
+        /* Source: A. Exercises #10 (electron bounces off AB then DC) */
+        {
+          stem: String.raw`
+            <p><strong>Refer to Figure 4.</strong> The electron moves from \(X\) to \(Y\) by bouncing off \(\overline{AB}\) (bottom side) and then off \(\overline{DC}\) (top side), in that order.</p>
+            <p>What is the first bounce point on \(\overline{AB}\)?</p>
+          `,
+          choices: [
+            String.raw`\(\,\left(\tfrac{47}{13},0\right)\,\)`,
+            String.raw`\(\,\left(\tfrac{43}{9},0\right)\,\)`,
+            String.raw`\(\,\left(\tfrac{8}{13},0\right)\,\)`,
+            String.raw`\(\,(3,0)\,\)`,
+            String.raw`\(\,(7,0)\,\)`,
+            String.raw`\(\,\left(\tfrac{47}{13},6\right)\,\)`
+          ]
+        },
+
+        /* Source: B. Exercises #11 (telephone line) */
+        {
+          stem: String.raw`
+            <p><strong>Refer to Figure 5.</strong> Two houses are at points \(A\) and \(B\). The phone line is the line \(\ell\) (the \(x\)-axis).</p>
+            <p>You want to choose a point \(P\) on \(\ell\) so that the total wire length \(AP+PB\) is as small as possible.</p>
+            <p>Which point \(P\) should you choose?</p>
+          `,
+          mediaCaption: "Figure 5",
+          media: String.raw`\begin{tikzpicture}[scale=0.70]
+  \draw[very thin,gray!25] (-4,-2) grid (7,5);
+  \draw[->,thick] (-4,0)--(7,0) node[below right] {$x$};
+  \draw[->,thick] (0,-2)--(0,5) node[above left] {$y$};
+
+  \draw[thick] (-4,0)--(7,0);
+  \node[font=\small] at (6.5,0.4) {$\ell$};
+
+  \fill (-2,3) circle (2.2pt) node[above left] {$A$};
+  \fill (4,2) circle (2.2pt) node[above right] {$B$};
+\end{tikzpicture}`,
+          choices: [
+            String.raw`\(\,(0,0)\,\)`,
+            String.raw`\(\,\left(\tfrac{8}{5},0\right)\,\)`,
+            String.raw`\(\,(1,0)\,\)`,
+            String.raw`\(\,(2,0)\,\)`,
+            String.raw`\(\,(-2,0)\,\)`,
+            String.raw`\(\,(4,0)\,\)`
+          ]
+        },
+
+        /* Source: B. Exercises #13 */
+        {
+          stem: String.raw`
+            <p>The “method of reflection” is used to find a point on a line that gives the shortest total distance to two points.</p>
+            <p>Which theorem is typically used to justify why the reflected straight path gives the shortest distance?</p>
+          `,
+          choices: [
+            String.raw`Pythagorean Theorem`,
+            String.raw`Triangle Inequality`,
+            String.raw`Vertical Angles Theorem`,
+            String.raw`Midpoint Theorem`,
+            String.raw`Angle Sum Theorem`,
+            String.raw`Parallel Lines Theorem`
+          ]
+        },
+
+        /* ---------- Type C (2 crafted, conceptual) ---------- */
+
+        {
+          stem: String.raw`
+            <p><strong>Symmetry question.</strong> A figure is unchanged by reflection across line \(k\) and also unchanged by reflection across line \(m\).</p>
+            <p>Suppose \(k\) and \(m\) intersect and form a \(40^\circ\) angle. What additional symmetry must the figure have?</p>
+          `,
+          mediaCaption: "Figure 6",
+          media: String.raw`\begin{tikzpicture}[scale=0.75]
+  \draw[very thin,gray!25] (-2,-2) grid (6,5);
+  \draw[thick] (-2,0)--(6,0);
+  \node[font=\small] at (5.6,0.35) {$k$};
+
+  \draw[thick] (-1.5,-1.3)--(5.5,4.0);
+  \node[font=\small] at (5.1,3.9) {$m$};
+
+  \fill (1,0) circle (2.2pt);
+  \node[font=\small] at (1.3,-0.4) {intersection};
+\end{tikzpicture}`,
+          choices: [
+            String.raw`A translation parallel to \(k\)`,
+            String.raw`A rotation of \(40^\circ\) about the intersection point`,
+            String.raw`A rotation of \(80^\circ\) about the intersection point`,
+            String.raw`A rotation of \(20^\circ\) about the intersection point`,
+            String.raw`Only a third reflection (but no rotation)`,
+            String.raw`A dilation centered at the intersection point`
+          ]
+        },
+
+        {
+          stem: String.raw`
+            <p><strong>Deep shortest-path idea (symmetry).</strong> Points \(A\) and \(C\) are on opposite sides of a line \(k\). You want the shortest broken path from \(A\) to a point \(P\) on \(k\) and then to \(C\).</p>
+            <p>Let \(C^*\) be the reflection of \(C\) across line \(k\). Which statement best explains why the point \(P\) that minimizes \(AP+PC\) is where the segment \(\overline{AC^*}\) meets line \(k\)?</p>
+          `,
+          mediaCaption: "Figure 7",
+          media: String.raw`\begin{tikzpicture}[scale=0.70]
+  \draw[very thin,gray!25] (-4,-3) grid (8,5);
+  \draw[->,thick] (-4,0)--(8,0);
+  \draw[->,thick] (0,-3)--(0,5);
+
+  \draw[thick] (-4,0)--(8,0);
+  \node[font=\small] at (7.6,0.4) {$k$};
+
+  \fill (-2,3) circle (2.2pt) node[above left] {$A$};
+  \fill (4,-2) circle (2.2pt) node[below right] {$C$};
+  \fill (4,2) circle (2.2pt) node[above right] {$C^*$};
+\end{tikzpicture}`,
+          choices: [
+            String.raw`Because the shortest broken path always hits \(k\) at a right angle.`,
+            String.raw`Because \(P\) must be the midpoint of \(\overline{AC}\).`,
+            String.raw`Because reflections make distances shorter than they were before.`,
+            String.raw`Because reflecting \(C\) to \(C^*\) turns \(AP+PC\) into a straight distance \(AC^*\) when \(P\) lies on \(\overline{AC^*}\), and any other choice of \(P\) gives a longer total by the triangle inequality.`,
+            String.raw`Because points \(A\), \(P\), and \(C\) must be collinear for the path to be shortest.`,
+            String.raw`Because the method only works when \(k\) is vertical.`
+          ]
+        }
+
+      ]
+    };
+  </script>
+
+  <link rel="stylesheet" href="/math-homework/assets/core-rich.css" />
+
+  <!-- TikZJax (must be available when core-rich.js calls tikzjax.process()) -->
+  <link rel="stylesheet" href="https://tikzjax.com/v1/fonts.css" />
+  <script defer src="https://tikzjax.com/v1/tikzjax.js"></script>
+
+  <!-- MathJax -->
+  <script defer src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+
+  <!-- Core renderer LAST -->
+  <script defer src="/math-homework/assets/core-rich.js"></script>
+</head>
+
+<body>
+  <div id="hw-root">Loading…</div>
+</body>
+</html>
