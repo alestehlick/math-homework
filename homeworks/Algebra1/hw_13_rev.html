@@ -1,0 +1,375 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Homework 13-Review (Algebra 1)</title>
+
+  <script>
+    /* =========================
+       Homework 13-Review — Chapter 13 Review (Algebra 1)
+       16-question mixed review covering: rational equations, literal equations,
+       setting up equations from tables, and applications (work/motion/investment).
+
+       REQUIRED SOURCE REFERENCES (your provided Chapter 13 review set):
+       - Selected Exercises: #1, #3, #5, #6, #9, #10,
+                            #11, #12, #14, #16,
+                            #17, #18,
+                            #21, #22, #24, #25
+
+       IMAGE NAMING RULE (STRICT):
+       No figures used. The tables (#17 and #18) are recreated directly in HTML.
+       ========================= */
+
+    window.homeworkData = {
+      classId : "Algebra1",
+      id      : "Homework 13-Review",
+      title   : "Homework 13 Review — Rational Equations and Applications",
+
+      graphics : String.raw``,
+
+      /* Correct answers for Q1–Q16 */
+      answerKey : ["A","B","C","D","B","F","E","A","B","C","A","D","B","C","A","E"],
+
+      questions : [
+
+        /* -----------------------------
+           Rational equations (solve)
+           ----------------------------- */
+
+        /* Source: Review #1 */
+        {
+          stem: String.raw`
+            <p>Solve for \(x\):</p>
+            <p class="math">\(\dfrac{x+8}{6}+\dfrac{x-6}{2}=1\)</p>
+          `,
+          choices: [
+            String.raw`\(\,x=4\,\)`,
+            String.raw`\(\,x=-4\,\)`,
+            String.raw`\(\,x=1\,\)`,
+            String.raw`\(\,x=10\,\)`,
+            String.raw`\(\,x=\dfrac{5}{2}\,\)`,
+            String.raw`\(\,\text{no solution}\,\)`
+          ]
+        },
+
+        /* Source: Review #3 */
+        {
+          stem: String.raw`
+            <p>Solve for \(x\):</p>
+            <p class="math">\(\dfrac{5}{x}=25\)</p>
+          `,
+          choices: [
+            String.raw`\(\,x=5\,\)`,
+            String.raw`\(\,x=\dfrac{1}{5}\,\)`,
+            String.raw`\(\,x=25\,\)`,
+            String.raw`\(\,x=\dfrac{5}{25}\,\)`,
+            String.raw`\(\,x=-\dfrac{1}{5}\,\)`,
+            String.raw`\(\,\text{no solution}\,\)`
+          ]
+        },
+
+        /* Source: Review #5 */
+        {
+          stem: String.raw`
+            <p>Solve for \(x\):</p>
+            <p class="math">\(\dfrac{x+8}{2x-6}=\dfrac{17}{23}\)</p>
+          `,
+          choices: [
+            String.raw`\(\,x=3\,\)`,
+            String.raw`\(\,x=23\,\)`,
+            String.raw`\(\,x=26\,\)`,
+            String.raw`\(\,x=17\,\)`,
+            String.raw`\(\,x=-26\,\)`,
+            String.raw`\(\,x=\dfrac{26}{3}\,\)`
+          ]
+        },
+
+        /* Source: Review #6 */
+        {
+          stem: String.raw`
+            <p>Solve for \(x\):</p>
+            <p class="math">\(\dfrac{12x-3}{x^2+4x-5}-\dfrac{5}{x+5}=\dfrac{6}{x-1}\)</p>
+            <p><em>(Remember: denominators cannot be zero.)</em></p>
+          `,
+          choices: [
+            String.raw`\(\,x=-5\,\)`,
+            String.raw`\(\,x=1\,\)`,
+            String.raw`\(\,x=5\,\)`,
+            String.raw`\(\,x=28\,\)`,
+            String.raw`\(\,x=-28\,\)`,
+            String.raw`\(\,\text{no solution}\,\)`
+          ]
+        },
+
+        /* Source: Review #9 */
+        {
+          stem: String.raw`
+            <p>Solve for \(x\):</p>
+            <p class="math">\(\dfrac{2x-2}{x^4-x^2}=\dfrac{x-5}{x^3+x^2}\)</p>
+          `,
+          choices: [
+            String.raw`\(\,x=-1\,\)`,
+            String.raw`\(\,x=7\,\)`,
+            String.raw`\(\,x=5\,\)`,
+            String.raw`\(\,x=2\,\)`,
+            String.raw`\(\,x=1\,\)`,
+            String.raw`\(\,x=0\,\)`
+          ]
+        },
+
+        /* Source: Review #10 */
+        {
+          stem: String.raw`
+            <p>Solve for \(x\):</p>
+            <p class="math">\(\dfrac{6}{x^2-x-2}=\dfrac{1}{x^2+x-6}-\dfrac{4}{x^2+4x+3}\)</p>
+            <p><em>(Watch for values that make a denominator zero.)</em></p>
+          `,
+          choices: [
+            String.raw`\(\,x=-1\,\)`,
+            String.raw`\(\,x=2\,\)`,
+            String.raw`\(\,x=-3\,\)`,
+            String.raw`\(\,x=1\,\)`,
+            String.raw`\(\,x=3\,\)`,
+            String.raw`\(\,\text{no solution}\,\)`
+          ]
+        },
+
+        /* -----------------------------
+           Literal equations (solve for the stated variable)
+           ----------------------------- */
+
+        /* Source: Review #11 */
+        {
+          stem: String.raw`
+            <p>Solve for \(n\):</p>
+            <p class="math">\(\dfrac{R}{n}=n\)</p>
+          `,
+          choices: [
+            String.raw`\(\,n=\dfrac{R}{2}\,\)`,
+            String.raw`\(\,n=\dfrac{R}{n}\,\)`,
+            String.raw`\(\,n=\dfrac{1}{\sqrt{R}}\,\)`,
+            String.raw`\(\,n=\sqrt{R}\,\)`,
+            String.raw`\(\,n=\pm\sqrt{R}\,\)`,
+            String.raw`\(\,n=R^2\,\)`
+          ]
+        },
+
+        /* Source: Review #12 */
+        {
+          stem: String.raw`
+            <p>Solve for \(z\):</p>
+            <p class="math">\(3x+4z=n\)</p>
+          `,
+          choices: [
+            String.raw`\(\,z=\dfrac{n-3x}{4}\,\)`,
+            String.raw`\(\,z=\dfrac{3x-n}{4}\,\)`,
+            String.raw`\(\,z=\dfrac{n}{4}-3x\,\)`,
+            String.raw`\(\,z=\dfrac{n}{3}-\dfrac{4z}{3}\,\)`,
+            String.raw`\(\,z=\dfrac{n+3x}{4}\,\)`,
+            String.raw`\(\,z=\dfrac{4}{n-3x}\,\)`
+          ]
+        },
+
+        /* Source: Review #14 */
+        {
+          stem: String.raw`
+            <p>Solve for \(A\):</p>
+            <p class="math">\(\dfrac{3A}{R-A}=S\)</p>
+          `,
+          choices: [
+            String.raw`\(\,A=\dfrac{3S}{R-A}\,\)`,
+            String.raw`\(\,A=\dfrac{SR}{S+3}\,\)`,
+            String.raw`\(\,A=\dfrac{SR}{S-3}\,\)`,
+            String.raw`\(\,A=\dfrac{3R}{S+A}\,\)`,
+            String.raw`\(\,A=\dfrac{R-A}{3S}\,\)`,
+            String.raw`\(\,A=\dfrac{S+3}{SR}\,\)`
+          ]
+        },
+
+        /* Source: Review #16 */
+        {
+          stem: String.raw`
+            <p>Solve for \(r\):</p>
+            <p class="math">\(r^2-3r=K\)</p>
+          `,
+          choices: [
+            String.raw`\(\,r=\dfrac{3\pm\sqrt{9-4K}}{2}\,\)`,
+            String.raw`\(\,r=\dfrac{-3\pm\sqrt{9+4K}}{2}\,\)`,
+            String.raw`\(\,r=\dfrac{3\pm\sqrt{9+4K}}{2}\,\)`,
+            String.raw`\(\,r=\dfrac{3\pm\sqrt{K}}{2}\,\)`,
+            String.raw`\(\,r=\pm\sqrt{3K}\,\)`,
+            String.raw`\(\,r=3\pm\sqrt{9+4K}\,\)`
+          ]
+        },
+
+        /* -----------------------------
+           Tables: complete and write an equation
+           ----------------------------- */
+
+        /* Source: Review #17 */
+        {
+          stem: String.raw`
+            <p>A trip is made at one rate going and another rate returning.</p>
+            <p>The table shows rate \(r\), time \(t\), and distance \(d\), where \(d=rt\).</p>
+
+            <table style="border-collapse:collapse; margin:0.6rem 0; width:100%; max-width:520px;">
+              <tr>
+                <th style="border:1px solid #999; padding:6px; text-align:left;">&nbsp;</th>
+                <th style="border:1px solid #999; padding:6px;">\(r\)</th>
+                <th style="border:1px solid #999; padding:6px;">\(t\)</th>
+                <th style="border:1px solid #999; padding:6px;">\(d\)</th>
+              </tr>
+              <tr>
+                <td style="border:1px solid #999; padding:6px;">going</td>
+                <td style="border:1px solid #999; padding:6px;">\(x-5\)</td>
+                <td style="border:1px solid #999; padding:6px;">7</td>
+                <td style="border:1px solid #999; padding:6px;">?</td>
+              </tr>
+              <tr>
+                <td style="border:1px solid #999; padding:6px;">returning</td>
+                <td style="border:1px solid #999; padding:6px;">\(x+5\)</td>
+                <td style="border:1px solid #999; padding:6px;">4</td>
+                <td style="border:1px solid #999; padding:6px;">?</td>
+              </tr>
+            </table>
+
+            <p>Which equation correctly represents that the distance going equals the distance returning?</p>
+          `,
+          choices: [
+            String.raw`\(\,7(x-5)=4(x+5)\,\)`,
+            String.raw`\(\,7(x+5)=4(x-5)\,\)`,
+            String.raw`\(\,7(x-5)+4(x+5)=0\,\)`,
+            String.raw`\(\,\dfrac{x-5}{7}=\dfrac{x+5}{4}\,\)`,
+            String.raw`\(\,\dfrac{7}{x-5}=\dfrac{4}{x+5}\,\)`,
+            String.raw`\(\,(x-5)-(x+5)=7-4\,\)`
+          ]
+        },
+
+        /* Source: Review #18 */
+        {
+          stem: String.raw`
+            <p>Two people can complete a job working alone, and also together.</p>
+            <p>Use the table (portion of job per hour is the rate of work):</p>
+
+            <table style="border-collapse:collapse; margin:0.6rem 0; width:100%; max-width:520px;">
+              <tr>
+                <th style="border:1px solid #999; padding:6px; text-align:left;">&nbsp;</th>
+                <th style="border:1px solid #999; padding:6px;">hours alone</th>
+                <th style="border:1px solid #999; padding:6px;">portion of job per hour</th>
+              </tr>
+              <tr>
+                <td style="border:1px solid #999; padding:6px;">first</td>
+                <td style="border:1px solid #999; padding:6px;">5</td>
+                <td style="border:1px solid #999; padding:6px;">?</td>
+              </tr>
+              <tr>
+                <td style="border:1px solid #999; padding:6px;">second</td>
+                <td style="border:1px solid #999; padding:6px;">\(x\)</td>
+                <td style="border:1px solid #999; padding:6px;">?</td>
+              </tr>
+              <tr>
+                <td style="border:1px solid #999; padding:6px;">together</td>
+                <td style="border:1px solid #999; padding:6px;">2</td>
+                <td style="border:1px solid #999; padding:6px;">?</td>
+              </tr>
+            </table>
+
+            <p>Which equation correctly models the situation?</p>
+          `,
+          choices: [
+            String.raw`\(\,\dfrac{1}{5}-\dfrac{1}{x}=\dfrac{1}{2}\,\)`,
+            String.raw`\(\,\dfrac{1}{5}+\dfrac{1}{2}=\dfrac{1}{x}\,\)`,
+            String.raw`\(\,\dfrac{1}{5}+\dfrac{1}{x}=2\,\)`,
+            String.raw`\(\,\dfrac{1}{5}+\dfrac{1}{x}=\dfrac{1}{2}\,\)`,
+            String.raw`\(\,\dfrac{5}{1}+\dfrac{x}{1}=\dfrac{2}{1}\,\)`,
+            String.raw`\(\,\dfrac{x}{5}=\dfrac{1}{2}\,\)`
+          ]
+        },
+
+        /* -----------------------------
+           Applications (fractions/work/motion/investment)
+           ----------------------------- */
+
+        /* Source: Review #21 */
+        {
+          stem: String.raw`
+            <p>What number must be added to <em>both</em> the numerator and the denominator of \(\dfrac{7}{8}\)</p>
+            <p>to produce a fraction equivalent to \(\dfrac{12}{13}\)?</p>
+          `,
+          choices: [
+            String.raw`\(\,3\,\)`,
+            String.raw`\(\,5\,\)`,
+            String.raw`\(\,6\,\)`,
+            String.raw`\(\,7\,\)`,
+            String.raw`\(\,8\,\)`,
+            String.raw`\(\,13\,\)`
+          ]
+        },
+
+        /* Source: Review #22 */
+        {
+          stem: String.raw`
+            <p>Dana has decorated the church for Christmas in 5 hours, and Carla has done it in 3 hours.</p>
+            <p>If they work together, how long will it take them?</p>
+            <p><em>(Choose the exact value.)</em></p>
+          `,
+          choiceWrap: false,
+          choices: [
+            String.raw`1.5 hours`,
+            String.raw`1.8 hours`,
+            String.raw`1.875 hours`,
+            String.raw`2.0 hours`,
+            String.raw`2.4 hours`,
+            String.raw`3.0 hours`
+          ]
+        },
+
+        /* Source: Review #24 */
+        {
+          stem: String.raw`
+            <p>Paul bikes 40 miles in the same amount of time that Mary drives 100 miles.</p>
+            <p>Mary travels 12 mph more than twice Paul’s rate.</p>
+            <p>How fast does each travel?</p>
+          `,
+          choiceWrap: false,
+          choices: [
+            String.raw`Paul: 24 mph; Mary: 60 mph`,
+            String.raw`Paul: 20 mph; Mary: 52 mph`,
+            String.raw`Paul: 30 mph; Mary: 72 mph`,
+            String.raw`Paul: 16 mph; Mary: 44 mph`,
+            String.raw`Paul: 40 mph; Mary: 100 mph`,
+            String.raw`Paul: 12 mph; Mary: 36 mph`
+          ]
+        },
+
+        /* Source: Review #25 */
+        {
+          stem: String.raw`
+            <p>Sandy invested $1000, part at 11% and part at 7%.</p>
+            <p>If she earned $100 annually, how much is invested at each rate?</p>
+          `,
+          choiceWrap: false,
+          choices: [
+            String.raw`$700 at 11% and $300 at 7%`,
+            String.raw`$650 at 11% and $350 at 7%`,
+            String.raw`$800 at 11% and $200 at 7%`,
+            String.raw`$500 at 11% and $500 at 7%`,
+            String.raw`$750 at 11% and $250 at 7%`,
+            String.raw`$900 at 11% and $100 at 7%`
+          ]
+        }
+
+      ]
+    };
+  </script>
+
+  <link rel="stylesheet" href="/math-homework/assets/core-rich.css" />
+  <script defer src="/math-homework/assets/core-rich.js"></script>
+  <script defer src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+</head>
+
+<body>
+  <div id="hw-root">Loading…</div>
+</body>
+</html>
