@@ -1,0 +1,321 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Homework 12-6 (Geometry)</title>
+
+  <script>
+    /* =========================
+       Homework 12-6 — Symmetry (Geometry)
+       - 4 Type A, 6 Type B, 2 Type C (crafted)
+       - TikZ is stored as RAW \begin{tikzpicture}...\end{tikzpicture} in q.media
+       - Caption goes in q.mediaCaption
+       ========================= */
+
+    const FIG_PANEL = String.raw`\begin{tikzpicture}[scale=0.72]
+  \begin{scope}
+    \node[font=\small] at (-0.4,2.2) {1.};
+    \draw[thick] (0,2.0)--(0.6,2.2)--(1.5,2.05)--(0.8,1.9)--(1.4,1.7)--(0.6,1.75)--(0.0,1.55)--(0.2,1.85)--cycle;
+  \end{scope}
+
+  \begin{scope}[xshift=4.0cm]
+    \node[font=\small] at (-0.4,2.2) {2.};
+    \draw[thick] (1.1,2.0) -- (0.78,2.78) -- (0.0,3.1) -- (-0.78,2.78) -- (-1.1,2.0) -- (-0.78,1.22) -- (0.0,0.9) -- (0.78,1.22) -- cycle;
+    \draw[thick] (0,2.0) -- (1.1,2.0);
+    \draw[thick] (0,2.0) -- (0.78,2.78);
+    \draw[thick] (0,2.0) -- (0.0,3.1);
+    \draw[thick] (0,2.0) -- (-0.78,2.78);
+    \draw[thick] (0,2.0) -- (-1.1,2.0);
+    \draw[thick] (0,2.0) -- (-0.78,1.22);
+    \draw[thick] (0,2.0) -- (0.0,0.9);
+    \draw[thick] (0,2.0) -- (0.78,1.22);
+  \end{scope}
+
+  \begin{scope}[xshift=8.0cm]
+    \node[font=\small] at (-0.4,2.2) {3.};
+    \draw[thick] (-0.9,1.2) -- (0.9,1.2) -- (0.9,2.8) -- (-0.9,2.8) -- cycle;
+    \draw[thick] (0.0,2.8) .. controls (0.2,3.1) and (0.6,3.1) .. (0.8,2.8);
+    \draw[thick] (0.8,2.8) .. controls (0.6,2.6) and (0.2,2.6) .. (0.0,2.8);
+    \draw[thick] (-0.9,2.0) .. controls (-1.2,1.8) and (-1.2,1.4) .. (-0.9,1.2);
+  \end{scope}
+
+  \begin{scope}[yshift=-3.0cm]
+    \node[font=\small] at (-0.4,2.2) {4.};
+    \draw[thick] (0,2.0) ellipse (1.6 and 0.9);
+    \draw[thick] (-1.0,2.0) -- (-1.0,2.7);
+    \draw[thick] ( 1.0,2.0) -- ( 1.0,2.7);
+    \draw[thick] (-1.0,2.0) -- (-1.0,1.3);
+    \draw[thick] ( 1.0,2.0) -- ( 1.0,1.3);
+    \draw[thick] (-0.6,2.05)--(-0.2,2.05)--(0.2,1.95)--(0.6,1.95);
+    \draw[thick] (-0.2,2.05)--(-0.2,1.95);
+    \draw[thick] (0.2,2.05)--(0.2,1.95);
+  \end{scope}
+
+  \begin{scope}[xshift=4.0cm,yshift=-3.0cm]
+    \node[font=\small] at (-0.4,2.2) {5.};
+    \draw[thick] (0,2.6) -- (0,1.2);
+    \draw[thick] (0,2.6) .. controls (0.6,2.9) and (1.0,2.4) .. (0.6,2.1);
+    \draw[thick] (0,2.6) .. controls (-0.6,2.9) and (-1.0,2.4) .. (-0.6,2.1);
+    \draw[thick] (-0.6,2.1) .. controls (-0.4,1.8) and (-0.2,1.6) .. (0,1.2);
+    \draw[thick] (0.6,2.1) .. controls (0.4,1.8) and (0.2,1.6) .. (0,1.2);
+    \draw[thick] (0,1.15) circle (0.18);
+  \end{scope}
+
+  \begin{scope}[xshift=8.0cm,yshift=-3.0cm]
+    \node[font=\small] at (-0.4,2.2) {6.};
+    \draw[thick]
+      (0,3.0) -- (0.6,2.0) -- (1.8,2.0) -- (0.85,1.35) --
+      (1.2,0.2) -- (0,0.9) -- (-1.2,0.2) -- (-0.85,1.35) --
+      (-1.8,2.0) -- (-0.6,2.0) -- cycle;
+  \end{scope}
+
+  \begin{scope}[yshift=-6.2cm]
+    \node[font=\small] at (-0.4,2.2) {7.};
+    \draw[thick] (-0.8,1.3) -- (1.0,1.3) -- (1.5,2.7) -- (-0.3,2.7) -- cycle;
+  \end{scope}
+
+  \begin{scope}[xshift=8.0cm,yshift=-6.2cm]
+    \node[font=\small] at (-0.4,2.2) {8.};
+    \draw[thick] (0,1.2) -- (0,1.7);
+    \draw[thick] (-1.3,1.7) -- (1.3,1.7);
+    \draw[thick] (-1.1,1.7) .. controls (-0.8,3.1) and (-0.3,3.3) .. (0,3.35);
+    \draw[thick] ( 1.1,1.7) .. controls ( 0.8,3.1) and ( 0.3,3.3) .. (0,3.35);
+    \draw[thick] (-0.7,1.7) .. controls (-0.5,2.8) and (-0.2,3.0) .. (0,3.1);
+    \draw[thick] ( 0.7,1.7) .. controls ( 0.5,2.8) and ( 0.2,3.0) .. (0,3.1);
+    \draw[thick] (-0.35,1.7) .. controls (-0.25,2.6) and (-0.1,2.8) .. (0,2.9);
+    \draw[thick] ( 0.35,1.7) .. controls ( 0.25,2.6) and ( 0.1,2.8) .. (0,2.9);
+  \end{scope}
+\end{tikzpicture>`.replace("<", "\\"); /* safety in some editors */
+
+    window.homeworkData = {
+      classId : "Geometry",
+      id      : "Homework 12-6",
+      title   : "Homework 12-6 — Symmetry",
+
+      answerKey : ["F","C","E","A","B","B","D","C","D","E","C","B"],
+
+      questions : [
+
+        /* ---------- Type A (4) ---------- */
+
+        {
+          stem: String.raw`
+            <p><strong>Refer to the diagram (Figures 1–8).</strong></p>
+            <p>How many axes of symmetry does <strong>Figure 2</strong> have?</p>
+          `,
+          mediaCaption: "Figures 1–8",
+          media: FIG_PANEL,
+          choices: [
+            String.raw`\(0\)`,
+            String.raw`\(1\)`,
+            String.raw`\(2\)`,
+            String.raw`\(4\)`,
+            String.raw`\(5\)`,
+            String.raw`\(8\)`
+          ]
+        },
+
+        {
+          stem: String.raw`
+            <p><strong>Refer to the diagram (Figures 1–8).</strong></p>
+            <p>How many axes of symmetry does <strong>Figure 4</strong> have?</p>
+          `,
+          mediaCaption: "Figures 1–8",
+          media: FIG_PANEL,
+          choices: [
+            String.raw`\(0\)`,
+            String.raw`\(1\)`,
+            String.raw`\(2\)`,
+            String.raw`\(3\)`,
+            String.raw`\(4\)`,
+            String.raw`\(5\)`
+          ]
+        },
+
+        {
+          stem: String.raw`
+            <p><strong>Refer to the diagram (Figures 1–8).</strong></p>
+            <p>How many axes of symmetry does <strong>Figure 6</strong> have?</p>
+          `,
+          mediaCaption: "Figures 1–8",
+          media: FIG_PANEL,
+          choices: [
+            String.raw`\(0\)`,
+            String.raw`\(1\)`,
+            String.raw`\(2\)`,
+            String.raw`\(4\)`,
+            String.raw`\(5\)`,
+            String.raw`\(10\)`
+          ]
+        },
+
+        {
+          stem: String.raw`
+            <p><strong>Refer to the diagram (Figures 1–8).</strong></p>
+            <p>How many axes of symmetry does <strong>Figure 7</strong> have?</p>
+          `,
+          mediaCaption: "Figures 1–8",
+          media: FIG_PANEL,
+          choices: [
+            String.raw`\(0\)`,
+            String.raw`\(1\)`,
+            String.raw`\(2\)`,
+            String.raw`\(3\)`,
+            String.raw`\(4\)`,
+            String.raw`\(6\)`
+          ]
+        },
+
+        /* ---------- Type B (6) ---------- */
+
+        {
+          stem: String.raw`
+            <p><strong>Refer to the diagram (Figures 1–8).</strong></p>
+            <p>Which figures have <strong>rotational symmetry</strong>?</p>
+          `,
+          mediaCaption: "Figures 1–8",
+          media: FIG_PANEL,
+          choices: [
+            String.raw`Figures \(2\) and \(6\) only`,
+            String.raw`Figures \(2,4,6,7\) only`,
+            String.raw`Figures \(1,2,4,6\) only`,
+            String.raw`Figures \(2,4,7,8\) only`,
+            String.raw`Figures \(4,5,6,7\) only`,
+            String.raw`Figures \(2,3,6,7\) only`
+          ]
+        },
+
+        {
+          stem: String.raw`
+            <p><strong>Refer to the diagram (Figures 1–8).</strong></p>
+            <p>What is the <strong>smallest angle of rotation</strong> for <strong>Figure 2</strong>?</p>
+          `,
+          mediaCaption: "Figures 1–8",
+          media: FIG_PANEL,
+          choices: [
+            String.raw`\(30^\circ\)`,
+            String.raw`\(45^\circ\)`,
+            String.raw`\(60^\circ\)`,
+            String.raw`\(72^\circ\)`,
+            String.raw`\(90^\circ\)`,
+            String.raw`\(180^\circ\)`
+          ]
+        },
+
+        {
+          stem: String.raw`
+            <p><strong>Refer to the diagram (Figures 1–8).</strong></p>
+            <p>What is the <strong>smallest angle of rotation</strong> for <strong>Figure 6</strong>?</p>
+          `,
+          mediaCaption: "Figures 1–8",
+          media: FIG_PANEL,
+          choices: [
+            String.raw`\(36^\circ\)`,
+            String.raw`\(45^\circ\)`,
+            String.raw`\(60^\circ\)`,
+            String.raw`\(72^\circ\)`,
+            String.raw`\(90^\circ\)`,
+            String.raw`\(180^\circ\)`
+          ]
+        },
+
+        {
+          stem: String.raw`
+            <p><strong>Refer to the diagram (Figures 1–8).</strong></p>
+            <p>Which figures have <strong>point symmetry</strong>?</p>
+          `,
+          mediaCaption: "Figures 1–8",
+          media: FIG_PANEL,
+          choices: [
+            String.raw`Figures \(2\) and \(7\) only`,
+            String.raw`Figures \(4\) and \(6\) only`,
+            String.raw`Figures \(2,4,7\) only`,
+            String.raw`Figures \(1,3,5\) only`,
+            String.raw`Figures \(2,6,8\) only`,
+            String.raw`Figures \(1,4,7\) only`
+          ]
+        },
+
+        {
+          stem: String.raw`
+            <p>A <strong>regular pentagon</strong> has rotational symmetry.</p>
+            <p>What is the <strong>smallest angle of rotation</strong>?</p>
+          `,
+          choices: [
+            String.raw`\(36^\circ\)`,
+            String.raw`\(45^\circ\)`,
+            String.raw`\(60^\circ\)`,
+            String.raw`\(72^\circ\)`,
+            String.raw`\(90^\circ\)`,
+            String.raw`\(180^\circ\)`
+          ]
+        },
+
+        {
+          stem: String.raw`
+            <p>A <strong>square</strong> is listed in the exercises.</p>
+            <p>How many <strong>lines of symmetry</strong> does a square have?</p>
+          `,
+          choices: [
+            String.raw`\(0\)`,
+            String.raw`\(1\)`,
+            String.raw`\(2\)`,
+            String.raw`\(3\)`,
+            String.raw`\(4\)`,
+            String.raw`\(8\)`
+          ]
+        },
+
+        /* ---------- Type C (2) — crafted “nice” ones ---------- */
+
+        {
+          stem: String.raw`
+            <p><strong>Type C (Symmetry).</strong></p>
+            <p>A figure has <em>exactly</em> \(3\) lines (axes) of symmetry.</p>
+            <p>Which statement must be true?</p>
+          `,
+          choices: [
+            String.raw`The figure has no rotational symmetry.`,
+            String.raw`The figure has \(90^\circ\) rotational symmetry.`,
+            String.raw`The figure has \(120^\circ\) rotational symmetry.`,
+            String.raw`The figure must have point symmetry.`,
+            String.raw`The figure must have \(45^\circ\) rotational symmetry.`,
+            String.raw`The figure must have exactly \(6\) lines of symmetry.`
+          ]
+        },
+
+        {
+          stem: String.raw`
+            <p><strong>Type C (Symmetry).</strong></p>
+            <p>A figure has \(90^\circ\) rotational symmetry.</p>
+            <p>Which statement is always true?</p>
+          `,
+          choices: [
+            String.raw`The figure must have exactly \(2\) lines of symmetry.`,
+            String.raw`The figure has point symmetry.`,
+            String.raw`The figure must be a square.`,
+            String.raw`The figure cannot have any lines of symmetry.`,
+            String.raw`The figure must have \(45^\circ\) rotational symmetry.`,
+            String.raw`The figure must have exactly \(4\) lines of symmetry.`
+          ]
+        }
+
+      ]
+    };
+  </script>
+
+  <link rel="stylesheet" href="/math-homework/assets/core-rich.css" />
+
+  <link rel="stylesheet" href="https://tikzjax.com/v1/fonts.css" />
+  <script defer src="https://tikzjax.com/v1/tikzjax.js"></script>
+
+  <script defer src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+
+  <script defer src="/math-homework/assets/core-rich.js"></script>
+</head>
+
+<body>
+  <div id="hw-root">Loading…</div>
+</body>
+</html>
