@@ -1,0 +1,304 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Homework 12-Review (Algebra 1)</title>
+
+  <script>
+    /* =========================
+       Homework 12-Review — Rational Expressions (Algebra 1)
+       16-question assorted review based on the provided Chapter 12 review set.
+
+       SOURCE REFERENCES (original problem numbers from the image set):
+       - Undefined rational expressions: #2, #4, #5
+       - LCM of polynomials: #6, #7, #10
+       - Simplify rational expressions: #11, #12, #13, #15
+       - Perform operations (leave in factored form when appropriate): #16, #19, #25, #29, #30, #39
+
+       IMAGE NAMING RULE (STRICT):
+       Any figure used is referenced by the ORIGINAL problem number from the set.
+       PNG files live in the SAME folder as this HTML.
+       Figures used in this homework: none
+       ========================= */
+
+    window.homeworkData = {
+      classId : "Algebra1",
+      id      : "Homework 12-Review",
+      title   : "Homework 12-Review — Rational Expressions",
+
+      graphics : String.raw``,
+
+      answerKey : ["C","E","B","D","A","F","B","D","A","E","C","F","B","D","A","E"],
+
+      questions : [
+
+        /* 1) Source: #2 */
+        {
+          stem: String.raw`
+            <p>Give the value(s) of \(x\) that make the rational expression undefined.</p>
+            <p class="math">\(\dfrac{2x+1}{x^{2}+5x}\)</p>
+          `,
+          choices: [
+            String.raw`\(\{0\}\)`,
+            String.raw`\(\{-5\}\)`,
+            String.raw`\(\{0,-5\}\)`,
+            String.raw`\(\left\{-\dfrac{1}{2}\right\}\)`,
+            String.raw`\(\left\{0,-\dfrac{1}{2}\right\}\)`,
+            String.raw`\(\{-5,-1\}\)`
+          ]
+        },
+
+        /* 2) Source: #4 */
+        {
+          stem: String.raw`
+            <p>Give the value(s) of \(x\) that make the rational expression undefined.</p>
+            <p class="math">\(\dfrac{x-9}{3x^{2}+16x+21}\)</p>
+          `,
+          choices: [
+            String.raw`\(\{-3\}\)`,
+            String.raw`\(\left\{-\dfrac{7}{3}\right\}\)`,
+            String.raw`\(\left\{-3, -\dfrac{9}{7}\right\}\)`,
+            String.raw`\(\{3,7\}\)`,
+            String.raw`\(\left\{-3,-\dfrac{7}{3}\right\}\)`,
+            String.raw`\(\left\{\dfrac{7}{3},3\right\}\)`
+          ]
+        },
+
+        /* 3) Source: #5 */
+        {
+          stem: String.raw`
+            <p>Give the value(s) of \(x\) that make the rational expression undefined.</p>
+            <p class="math">\(\dfrac{x-6}{x^{3}-x}\)</p>
+          `,
+          choices: [
+            String.raw`\(\{-6\}\)`,
+            String.raw`\(\{-1,0,1\}\)`,
+            String.raw`\(\{0,1,6\}\)`,
+            String.raw`\(\{-1,1\}\)`,
+            String.raw`\(\{0\}\)`,
+            String.raw`\(\{-6,0,1\}\)`
+          ]
+        },
+
+        /* 4) Source: #6 */
+        {
+          stem: String.raw`
+            <p>Find the LCM of the pair of polynomials.</p>
+            <p class="math">\(x^{2}+14x+24\quad\text{and}\quad x^{3}+20x^{2}+96x\)</p>
+          `,
+          choices: [
+            String.raw`\(\,x(x+12)(x+2)\)` ,
+            String.raw`\(\,x(x+12)(x+8)\)` ,
+            String.raw`\(\,x(x+8)(x+2)\)` ,
+            String.raw`\(\,x(x+12)(x+8)(x+2)\)` ,
+            String.raw`\(\,x^{2}(x+12)(x+8)(x+2)\)` ,
+            String.raw`\(\,x(x+12)^{2}(x+8)(x+2)\)`
+          ]
+        },
+
+        /* 5) Source: #7 */
+        {
+          stem: String.raw`
+            <p>Find the LCM of the pair of polynomials.</p>
+            <p class="math">\(x^{2}-2x-63\quad\text{and}\quad x^{2}-3x-54\)</p>
+          `,
+          choices: [
+            String.raw`\((x-9)(x+7)(x+6)\)` ,
+            String.raw`\((x-9)(x+7)\)` ,
+            String.raw`\((x-9)(x+6)\)` ,
+            String.raw`\((x+7)(x+6)\)` ,
+            String.raw`\((x-7)(x+9)(x+6)\)` ,
+            String.raw`\((x-9)^{2}(x+7)(x+6)\)`
+          ]
+        },
+
+        /* 6) Source: #10 */
+        {
+          stem: String.raw`
+            <p>Find the LCM of the pair of polynomials.</p>
+            <p class="math">\(x^{2}-16\quad\text{and}\quad x^{3}-4x^{2}\)</p>
+          `,
+          choices: [
+            String.raw`\(\,x(x-4)(x+4)\)` ,
+            String.raw`\(\,x^{2}(x-4)\)` ,
+            String.raw`\(\,(x-4)(x+4)\)` ,
+            String.raw`\(\,x^{2}(x-4)(x+4)\)` ,
+            String.raw`\(\,x^{2}(x+4)\)` ,
+            String.raw`\(\,x^{3}(x-4)(x+4)\)`
+          ]
+        },
+
+        /* 7) Source: #11 */
+        {
+          stem: String.raw`
+            <p>Simplify each rational expression. Give your answer in factored form.</p>
+            <p class="math">\(\dfrac{3x+4}{6x^{2}-7x-20}\)</p>
+          `,
+          choices: [
+            String.raw`\(\dfrac{3x+4}{(3x+4)(2x-5)}\)` ,
+            String.raw`\(\dfrac{1}{2x-5}\)` ,
+            String.raw`\(\dfrac{1}{3x+4}\)` ,
+            String.raw`\(\dfrac{1}{(2x-5)(3x+4)}\)` ,
+            String.raw`\(\dfrac{3}{2x-5}\)` ,
+            String.raw`\(\dfrac{2}{3x-4}\)`
+          ]
+        },
+
+        /* 8) Source: #12 */
+        {
+          stem: String.raw`
+            <p>Simplify each rational expression.</p>
+            <p class="math">\(\dfrac{12x+3}{8x+2}\)</p>
+          `,
+          choices: [
+            String.raw`\(\dfrac{3}{8}\)` ,
+            String.raw`\(\dfrac{8}{3}\)` ,
+            String.raw`\(\dfrac{12x+3}{2(4x+1)}\)` ,
+            String.raw`\(\dfrac{3}{2}\)` ,
+            String.raw`\(\dfrac{6}{1}\)` ,
+            String.raw`\(\dfrac{4x+1}{4x+1}\)`
+          ]
+        },
+
+        /* 9) Source: #13 */
+        {
+          stem: String.raw`
+            <p>Simplify each rational expression. Give your answer in factored form.</p>
+            <p class="math">\(\dfrac{x^{2}+7x+10}{x^{2}-x-6}\)</p>
+          `,
+          choices: [
+            String.raw`\(\dfrac{x+5}{x-3}\)` ,
+            String.raw`\(\dfrac{x+2}{x-3}\)` ,
+            String.raw`\(\dfrac{x+5}{x+2}\)` ,
+            String.raw`\(\dfrac{x^{2}+7x+10}{(x-3)(x+2)}\)` ,
+            String.raw`\(\dfrac{x^{2}+7x+10}{x-3}\)` ,
+            String.raw`\(\dfrac{x+5}{(x-3)(x+2)}\)`
+          ]
+        },
+
+        /* 10) Source: #15 */
+        {
+          stem: String.raw`
+            <p>Simplify each rational expression. Give your answer in factored form.</p>
+            <p class="math">\(\dfrac{x^{4}-10x^{3}}{x^{6}+8x^{5}+15x^{4}}\)</p>
+          `,
+          choices: [
+            String.raw`\(\dfrac{x-10}{(x+3)(x+5)}\)` ,
+            String.raw`\(\dfrac{x-10}{x^{2}(x+3)(x+5)}\)` ,
+            String.raw`\(\dfrac{x(x-10)}{(x+3)(x+5)}\)` ,
+            String.raw`\(\dfrac{x-10}{x(x+3)(x+5)}\)` ,
+            String.raw`\(\dfrac{x-10}{x(x+8)(x+15)}\)` ,
+            String.raw`\(\dfrac{x-10}{x^{3}(x+3)(x+5)}\)`
+          ]
+        },
+
+        /* 11) Source: #16 */
+        {
+          stem: String.raw`
+            <p>Perform the operation and simplify. Leave your answer in factored form.</p>
+            <p class="math">\(\dfrac{4x^{3}}{(x-5)^{2}}\cdot\dfrac{x-5}{2x}\)</p>
+          `,
+          choices: [
+            String.raw`\(\dfrac{2x^{2}}{(x-5)^{2}}\)` ,
+            String.raw`\(\dfrac{4x^{2}}{x-5}\)` ,
+            String.raw`\(\dfrac{2x^{2}}{x-5}\)` ,
+            String.raw`\(\dfrac{2x^{3}}{x-5}\)` ,
+            String.raw`\(\dfrac{2x^{2}}{x+5}\)` ,
+            String.raw`\(\dfrac{4x^{3}}{2x(x-5)}\)`
+          ]
+        },
+
+        /* 12) Source: #19 */
+        {
+          stem: String.raw`
+            <p>Perform the operation and simplify. Leave your answer in factored form.</p>
+            <p class="math">\(\dfrac{(9x+2)(x-3)}{(2x-1)(x+4)}\div\dfrac{(9x+2)(x-6)}{(x-6)(2x-1)}\)</p>
+          `,
+          choices: [
+            String.raw`\(\dfrac{x+4}{x-3}\)` ,
+            String.raw`\(\dfrac{x-3}{9x+2}\)` ,
+            String.raw`\(\dfrac{(x-3)(2x-1)}{x+4}\)` ,
+            String.raw`\(\dfrac{x-3}{(9x+2)(x+4)}\)` ,
+            String.raw`\(\dfrac{x-3}{(2x-1)(x+4)}\)` ,
+            String.raw`\(\dfrac{x-3}{x+4}\)`
+          ]
+        },
+
+        /* 13) Source: #25 */
+        {
+          stem: String.raw`
+            <p>Perform the operation and simplify. Leave your answer in factored form.</p>
+            <p class="math">\(\dfrac{5x^{3}}{3x^{2}+x-10}\div\dfrac{15x}{6x^{2}+13x+2}\)</p>
+          `,
+          choices: [
+            String.raw`\(\dfrac{x(6x+1)}{3(3x-5)}\)` ,
+            String.raw`\(\dfrac{x^{2}(6x+1)}{3(3x-5)}\)` ,
+            String.raw`\(\dfrac{x^{2}(6x+1)}{3x-5}\)` ,
+            String.raw`\(\dfrac{x^{2}(6x+1)}{(3x-5)(x+2)}\)` ,
+            String.raw`\(\dfrac{x^{3}(6x+1)}{3(3x-5)}\)` ,
+            String.raw`\(\dfrac{(6x+1)}{3(3x-5)}\)`
+          ]
+        },
+
+        /* 14) Source: #29 */
+        {
+          stem: String.raw`
+            <p>Perform the operation and simplify. Leave your answer in factored form.</p>
+            <p class="math">\(\dfrac{x-1}{x^{2}+9x+18}\div\dfrac{x^{2}}{x^{2}+x-30}\)</p>
+          `,
+          choices: [
+            String.raw`\(\dfrac{(x-1)(x-5)}{x(x+3)}\)` ,
+            String.raw`\(\dfrac{(x-1)(x+6)}{x^{2}(x+3)}\)` ,
+            String.raw`\(\dfrac{(x-1)(x-5)}{(x+3)(x+6)}\)` ,
+            String.raw`\(\dfrac{(x-1)(x-5)}{x^{2}(x+3)}\)` ,
+            String.raw`\(\dfrac{x-1}{x^{2}(x+3)}\)` ,
+            String.raw`\(\dfrac{(x-1)(x-5)}{x^{2}(x+6)}\)`
+          ]
+        },
+
+        /* 15) Source: #30 */
+        {
+          stem: String.raw`
+            <p>Perform the operation and simplify. Leave your answer in factored form.</p>
+            <p class="math">\(\dfrac{4x^{2}+6x}{6x^{2}-x-15}-\dfrac{6x+9}{15+x-6x^{2}}\)</p>
+          `,
+          choices: [
+            String.raw`\(\dfrac{2x+3}{3x-5}\)` ,
+            String.raw`\(\dfrac{2x+3}{6x^{2}-x-15}\)` ,
+            String.raw`\(\dfrac{2x-3}{3x-5}\)` ,
+            String.raw`\(\dfrac{2x+3}{3x+5}\)` ,
+            String.raw`\(\dfrac{(2x+3)^{2}}{(3x-5)(2x+3)}\)` ,
+            String.raw`\(\dfrac{3x-5}{2x+3}\)`
+          ]
+        },
+
+        /* 16) Source: #39 */
+        {
+          stem: String.raw`
+            <p>Perform the operations and simplify.</p>
+            <p class="math">\(\dfrac{x+y}{x^{2}+2xy+y^{2}}+\dfrac{3x}{x-y}-\dfrac{2x+3y}{x+y}\)</p>
+          `,
+          choices: [
+            String.raw`\(\dfrac{x^{2}+2xy+3y^{2}+x-y}{(x+y)(x-y)}\)` ,
+            String.raw`\(\dfrac{x^{2}+2xy+3y^{2}+x-y}{(x+y)^{2}}\)` ,
+            String.raw`\(\dfrac{x^{2}+2xy+y^{2}+x-y}{(x+y)(x-y)}\)` ,
+            String.raw`\(\dfrac{x^{2}+2xy+3y^{2}-x+y}{(x+y)(x-y)}\)` ,
+            String.raw`\(\dfrac{x^{2}+2xy+3y^{2}+x-y}{x^{2}-y^{2}}\)` ,
+            String.raw`\(\dfrac{x^{2}+2xy+3y^{2}+x-y}{x-y}\)`
+          ]
+        }
+
+      ]
+    };
+  </script>
+
+  <link rel="stylesheet" href="/math-homework/assets/core-rich.css" />
+  <script defer src="/math-homework/assets/core-rich.js"></script>
+  <script defer src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+</head>
+
+<body>
+  <div id="hw-root">Loading…</div>
+</body>
+</html>
