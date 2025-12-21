@@ -1,0 +1,306 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Homework 11-3 (Geometry)</title>
+
+  <script>
+    /* =========================
+       Homework 11-3 — Dilations (Geometry)
+
+       SOURCE REFERENCES (from the provided pages):
+       - A: determine scale factor from diagrams with center O; basic scale-factor computations
+       - B: compute missing lengths/angles with a given scale factor; find scale factor + classify (contraction/enlargement)
+       - C: conceptual questions about undoing a dilation and about what a scale factor 2 implies from the center
+
+       - TikZ is stored as RAW \begin{tikzpicture}...\end{tikzpicture} in q.media
+       - Caption goes in q.mediaCaption
+       - core-rich.js renders TikZ inline (part of the stem flow)
+       ========================= */
+    window.homeworkData = {
+      classId : "Geometry",
+      id      : "Homework 11-3",
+      title   : "Homework 11-3 — Dilations",
+
+      /* Correct answers for Q1–Q12 */
+      answerKey : ["B","A","C","D","B","C","C","B","D","A","A","A"],
+
+      questions : [
+
+        /* ---------- Type A (4) ---------- */
+
+        {
+          stem: String.raw`
+            <p><strong>Refer to Figure 1.</strong> The figure is dilated with center \(O\). Triangle \(ABC\) maps to triangle \(A'B'C'\).</p>
+            <p>What is the scale factor?</p>
+          `,
+          mediaCaption: "Figure 1",
+          media: String.raw`\begin{tikzpicture}[scale=0.75]
+  \draw[very thin,gray!25] (-1,-1) grid (7,7);
+  \fill (0,0) circle (2.2pt) node[below left] {$O$};
+
+  \fill (2,1) circle (2.2pt) node[below] {$A$};
+  \fill (3,1) circle (2.2pt) node[below] {$B$};
+  \fill (2,3) circle (2.2pt) node[above left] {$C$};
+  \draw[thick] (2,1)--(3,1)--(2,3)--cycle;
+
+  \fill (4,2) circle (2.2pt) node[below right] {$A'$};
+  \fill (6,2) circle (2.2pt) node[below] {$B'$};
+  \fill (4,6) circle (2.2pt) node[above right] {$C'$};
+  \draw[thick] (4,2)--(6,2)--(4,6)--cycle;
+
+  \draw[dashed] (0,0)--(2,1);
+  \draw[dashed] (0,0)--(4,2);
+  \draw[dashed] (0,0)--(3,1);
+  \draw[dashed] (0,0)--(6,2);
+\end{tikzpicture}`,
+          choices: [
+            String.raw`\(\dfrac12\)`,
+            String.raw`\(\,2\,\)`,
+            String.raw`\(\,3\,\)`,
+            String.raw`\(\,4\,\)`,
+            String.raw`\(\,5\,\)`,
+            String.raw`\(\dfrac13\)`
+          ]
+        },
+
+        {
+          stem: String.raw`
+            <p><strong>Refer to Figure 2.</strong> The figure is dilated with center \(O\). Segment \(\overline{XY}\) maps to \(\overline{X'Y'}\).</p>
+            <p>What is the scale factor?</p>
+          `,
+          mediaCaption: "Figure 2",
+          media: String.raw`\begin{tikzpicture}[scale=0.75]
+  \draw[very thin,gray!25] (-1,-1) grid (7,6);
+  \fill (0,0) circle (2.2pt) node[below left] {$O$};
+
+  \fill (4,0) circle (2.2pt) node[below] {$X$};
+  \fill (4,4) circle (2.2pt) node[above] {$Y$};
+  \draw[thick] (4,0)--(4,4);
+
+  \fill (2,0) circle (2.2pt) node[below] {$X'$};
+  \fill (2,2) circle (2.2pt) node[above left] {$Y'$};
+  \draw[thick] (2,0)--(2,2);
+
+  \draw[dashed] (0,0)--(4,0);
+  \draw[dashed] (0,0)--(2,0);
+\end{tikzpicture}`,
+          choices: [
+            String.raw`\(\dfrac12\)`,
+            String.raw`\(\,2\,\)`,
+            String.raw`\(\,3\,\)`,
+            String.raw`\(\,4\,\)`,
+            String.raw`\(\dfrac14\)`,
+            String.raw`\(\dfrac13\)`
+          ]
+        },
+
+        {
+          stem: String.raw`
+            <p><strong>Refer to Figure 3.</strong> The figure is dilated with center \(O\). Segment \(\overline{AB}\) maps to \(\overline{A'B'}\).</p>
+            <p>What is the scale factor?</p>
+          `,
+          mediaCaption: "Figure 3",
+          media: String.raw`\begin{tikzpicture}[scale=0.8]
+  \draw[very thin,gray!25] (-1,-1) grid (7,7);
+  \fill (0,0) circle (2.2pt) node[below left] {$O$};
+
+  \fill (1,2) circle (2.2pt) node[left] {$A$};
+  \fill (2,1) circle (2.2pt) node[below] {$B$};
+  \draw[thick] (1,2)--(2,1);
+
+  \fill (3,6) circle (2.2pt) node[above] {$A'$};
+  \fill (6,3) circle (2.2pt) node[right] {$B'$};
+  \draw[thick] (3,6)--(6,3);
+
+  \draw[dashed] (0,0)--(1,2);
+  \draw[dashed] (0,0)--(3,6);
+\end{tikzpicture}`,
+          choices: [
+            String.raw`\(\dfrac13\)`,
+            String.raw`\(\,2\,\)`,
+            String.raw`\(\,3\,\)`,
+            String.raw`\(\,4\,\)`,
+            String.raw`\(\dfrac12\)`,
+            String.raw`\(\,5\,\)`
+          ]
+        },
+
+        {
+          stem: String.raw`
+            <p><strong>Refer to Figure 4.</strong> The figure is dilated with center \(O\). Square \(ABCD\) maps to square \(A'B'C'D'\).</p>
+            <p>What is the scale factor?</p>
+          `,
+          mediaCaption: "Figure 4",
+          media: String.raw`\begin{tikzpicture}[scale=0.65]
+  \draw[very thin,gray!25] (-1,-1) grid (10,10);
+  \fill (0,0) circle (2.2pt) node[below left] {$O$};
+
+  \draw[thick] (1,1)--(2,1)--(2,2)--(1,2)--cycle;
+  \node[font=\small] at (1.1,0.7) {$A$};
+  \node[font=\small] at (2.2,0.7) {$B$};
+  \node[font=\small] at (2.2,2.3) {$C$};
+  \node[font=\small] at (0.8,2.3) {$D$};
+
+  \draw[thick] (4,4)--(8,4)--(8,8)--(4,8)--cycle;
+  \node[font=\small] at (4.2,3.6) {$A'$};
+  \node[font=\small] at (8.2,3.6) {$B'$};
+  \node[font=\small] at (8.2,8.3) {$C'$};
+  \node[font=\small] at (3.7,8.3) {$D'$};
+\end{tikzpicture}`,
+          choices: [
+            String.raw`\(\dfrac14\)`,
+            String.raw`\(\dfrac12\)`,
+            String.raw`\(\,2\,\)`,
+            String.raw`\(\,4\,\)`,
+            String.raw`\(\,3\,\)`,
+            String.raw`\(\,5\,\)`
+          ]
+        },
+
+        /* ---------- Type B (6) ---------- */
+
+        {
+          stem: String.raw`
+            <p>In a dilation, \(X\) is the center and \(A\) is mapped onto \(A'\).</p>
+            <p>If \(XA = 9\) units and the scale factor is \(5\), find \(XA'\).</p>
+          `,
+          choices: [
+            String.raw`\(14\)` ,
+            String.raw`\(45\)`,
+            String.raw`\(1.8\)`,
+            String.raw`\(5\)`,
+            String.raw`\(9\)`,
+            String.raw`\(90\)`
+          ]
+        },
+
+        {
+          stem: String.raw`
+            <p>In a dilation with scale factor \(5\), segment \(\overline{AB}\) is mapped onto \(\overline{A'B'}\).</p>
+            <p>If \(AB = 4\) units, find \(A'B'\).</p>
+          `,
+          choices: [
+            String.raw`\(0.8\)` ,
+            String.raw`\(9\)`,
+            String.raw`\(20\)`,
+            String.raw`\(25\)`,
+            String.raw`\(45\)`,
+            String.raw`\(4\)`
+          ]
+        },
+
+        {
+          stem: String.raw`
+            <p>In a dilation with scale factor \(5\), segment \(\overline{AC}\) is mapped onto \(\overline{A'C'}\).</p>
+            <p>If \(A'C' = 30\) units, find \(AC\).</p>
+          `,
+          choices: [
+            String.raw`\(150\)`,
+            String.raw`\(25\)`,
+            String.raw`\(6\)`,
+            String.raw`\(3\)`,
+            String.raw`\(30\)`,
+            String.raw`\(5\)`
+          ]
+        },
+
+        {
+          stem: String.raw`
+            <p>In a dilation with scale factor \(5\), \(\angle ABC\) is mapped onto \(\angle A'B'C'\).</p>
+            <p>If \(m\angle ABC = 82^\circ\), find \(m\angle A'B'C'\).</p>
+          `,
+          choices: [
+            String.raw`\(16.4^\circ\)`,
+            String.raw`\(82^\circ\)`,
+            String.raw`\(410^\circ\)`,
+            String.raw`\(98^\circ\)`,
+            String.raw`\(41^\circ\)`,
+            String.raw`\(180^\circ\)`
+          ]
+        },
+
+        {
+          stem: String.raw`
+            <p>Under a dilation with center \(P\), point \(L\) is mapped onto \(L'\).</p>
+            <p>If \(PL = 10\) units and \(PL' = 30\) units, what is the scale factor, and is it a contraction or an enlargement?</p>
+          `,
+          choices: [
+            String.raw`Scale factor \(=\dfrac{1}{3}\); contraction`,
+            String.raw`Scale factor \(=3\); contraction`,
+            String.raw`Scale factor \(=30\); enlargement`,
+            String.raw`Scale factor \(=3\); enlargement`,
+            String.raw`Scale factor \(=20\); enlargement`,
+            String.raw`Scale factor \(=\dfrac{1}{30}\); contraction`
+          ]
+        },
+
+        {
+          stem: String.raw`
+            <p>Under a dilation with center \(P\), points \(M\) and \(N\) are mapped onto \(M'\) and \(N'\).</p>
+            <p>If \(MN = 7\) units and \(M'N' = 14\) units, what is the scale factor, and is it a contraction or an enlargement?</p>
+          `,
+          choices: [
+            String.raw`Scale factor \(=2\); enlargement`,
+            String.raw`Scale factor \(=\dfrac12\); contraction`,
+            String.raw`Scale factor \(=7\); enlargement`,
+            String.raw`Scale factor \(=14\); enlargement`,
+            String.raw`Scale factor \(=2\); contraction`,
+            String.raw`Scale factor \(=\dfrac12\); enlargement`
+          ]
+        },
+
+        /* ---------- Type C (2) ---------- */
+
+        {
+          stem: String.raw`
+            <p>A contraction has a scale factor of \(0.8\).</p>
+            <p>Which dilation will return the image to its original size, and what is the overall effect of doing both dilations (one after the other)?</p>
+          `,
+          choices: [
+            String.raw`Use scale factor \(1.25\); overall effect is no change in size.`,
+            String.raw`Use scale factor \(0.8\); overall effect is no change in size.`,
+            String.raw`Use scale factor \(1.25\); overall effect is another contraction.`,
+            String.raw`Use scale factor \(0.2\); overall effect is no change in size.`,
+            String.raw`Use scale factor \(0.8\); overall effect is an enlargement.`,
+            String.raw`Use scale factor \(2.5\); overall effect is no change in size.`
+          ]
+        },
+
+        {
+          stem: String.raw`
+            <p>In a dilation with center \(P\), point \(A\) is mapped onto \(A'\) with a scale factor of \(2\).</p>
+            <p>Which statement must be true?</p>
+          `,
+          choices: [
+            String.raw`\(PA' = 2\cdot PA\).`,
+            String.raw`\(PA = 2\cdot PA'\).`,
+            String.raw`\(PA' = PA\).`,
+            String.raw`The distance \(AA'\) must be \(0\).`,
+            String.raw`The dilation changes angle measures.`,
+            String.raw`A dilation with scale factor \(2\) is a contraction.`
+          ]
+        }
+
+      ]
+    };
+  </script>
+
+  <link rel="stylesheet" href="/math-homework/assets/core-rich.css" />
+
+  <!-- TikZJax -->
+  <link rel="stylesheet" href="https://tikzjax.com/v1/fonts.css" />
+  <script defer src="https://tikzjax.com/v1/tikzjax.js"></script>
+
+  <!-- MathJax -->
+  <script defer src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+
+  <!-- Core renderer LAST -->
+  <script defer src="/math-homework/assets/core-rich.js"></script>
+</head>
+
+<body>
+  <div id="hw-root">Loading…</div>
+</body>
+</html>
