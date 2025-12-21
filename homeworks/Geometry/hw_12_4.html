@@ -1,0 +1,307 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Homework 12-4 (Geometry)</title>
+
+  <script>
+    /* =========================
+       Homework 12-4 — Isometries / Invariance under Mappings (Geometry)
+       - TikZ is stored as RAW \begin{tikzpicture}...\end{tikzpicture} in q.media
+       - Caption goes in q.mediaCaption
+       - core-rich.js renders TikZ inline (part of the stem flow)
+       ========================= */
+    window.homeworkData = {
+      classId : "Geometry",
+      id      : "Homework 12-4",
+      title   : "Homework 12-4 — Isometries / Invariance under Mappings",
+
+      /* Correct answers for Q1–Q12 */
+      answerKey : ["A","E","B","C","D","F","B","A","C","E","D","B"],
+
+      questions : [
+
+        /* ---------- Type A (4) ---------- */
+
+        {
+          stem: String.raw`
+            <p><strong>Refer to Figure 1.</strong> Triangle \(ABC\) is mapped to triangle \(A'B'C'\).</p>
+            <p>What type of transformation is shown, and is it an <em>isometry</em>?</p>
+          `,
+          mediaCaption: "Figure 1",
+          media: String.raw`\begin{tikzpicture}[scale=0.62]
+  \draw[very thin,gray!30] (-5,-1) grid (5,5);
+  \draw[->,thick] (-5,0)--(5,0);
+  \draw[->,thick] (0,-1)--(0,5);
+
+  \fill (2,1) circle (2.2pt) node[below right] {$A$};
+  \fill (4,1) circle (2.2pt) node[below right] {$B$};
+  \fill (3,3) circle (2.2pt) node[above] {$C$};
+  \draw[thick] (2,1)--(4,1)--(3,3)--cycle;
+
+  \fill (-1,2) circle (2.2pt) node[above left] {$A'$};
+  \fill (-1,4) circle (2.2pt) node[above left] {$B'$};
+  \fill (-3,3) circle (2.2pt) node[above left] {$C'$};
+  \draw[thick] (-1,2)--(-1,4)--(-3,3)--cycle;
+\end{tikzpicture}`,
+          choices: [
+            String.raw`Rotation; yes, it is an isometry.`,
+            String.raw`Translation; yes, it is an isometry.`,
+            String.raw`Reflection; yes, it is an isometry.`,
+            String.raw`Dilation; yes, it is an isometry.`,
+            String.raw`Dilation; no, it is not an isometry.`,
+            String.raw`Rotation; no, it is not an isometry.`
+          ]
+        },
+
+        {
+          stem: String.raw`
+            <p><strong>Refer to Figure 2.</strong> Triangle \(ABC\) is mapped to triangle \(A'B'C'\) using center \(O\).</p>
+            <p>What type of transformation is shown, and is it an <em>isometry</em>?</p>
+          `,
+          mediaCaption: "Figure 2",
+          media: String.raw`\begin{tikzpicture}[scale=0.62]
+  \draw[very thin,gray!30] (-1,-1) grid (7,7);
+  \draw[->,thick] (-1,0)--(7,0);
+  \draw[->,thick] (0,-1)--(0,7);
+  \fill (0,0) circle (2.2pt) node[below left] {$O$};
+
+  \fill (4,0) circle (2.2pt) node[below] {$A$};
+  \fill (0,4) circle (2.2pt) node[left] {$B$};
+  \fill (4,4) circle (2.2pt) node[above right] {$C$};
+  \draw[thick] (4,0)--(0,4)--(4,4)--cycle;
+
+  \fill (2,0) circle (2.2pt) node[below] {$A'$};
+  \fill (0,2) circle (2.2pt) node[left] {$B'$};
+  \fill (2,2) circle (2.2pt) node[above right] {$C'$};
+  \draw[thick] (2,0)--(0,2)--(2,2)--cycle;
+
+  \draw[dashed] (0,0)--(4,0);
+  \draw[dashed] (0,0)--(2,0);
+\end{tikzpicture}`,
+          choices: [
+            String.raw`Rotation; yes, it is an isometry.`,
+            String.raw`Translation; yes, it is an isometry.`,
+            String.raw`Reflection; yes, it is an isometry.`,
+            String.raw`Dilation; yes, it is an isometry.`,
+            String.raw`Dilation (a reduction); no, it is not an isometry.`,
+            String.raw`Reflection; no, it is not an isometry.`
+          ]
+        },
+
+        {
+          stem: String.raw`
+            <p><strong>Refer to Figure 3.</strong> Segment \(\overline{PQ}\) is mapped to \(\overline{P'Q'}\).</p>
+            <p>What type of transformation is shown, and is it an <em>isometry</em>?</p>
+          `,
+          mediaCaption: "Figure 3",
+          media: String.raw`\begin{tikzpicture}[scale=0.62]
+  \draw[very thin,gray!30] (-4,-1) grid (7,6);
+  \draw[->,thick] (-4,0)--(7,0);
+  \draw[->,thick] (0,-1)--(0,6);
+
+  \fill (-1,3) circle (2.2pt) node[above left] {$P$};
+  \fill (1,4)  circle (2.2pt) node[above] {$Q$};
+  \draw[thick] (-1,3)--(1,4);
+
+  \fill (2,1) circle (2.2pt) node[below right] {$P'$};
+  \fill (4,2) circle (2.2pt) node[below right] {$Q'$};
+  \draw[thick] (2,1)--(4,2);
+\end{tikzpicture}`,
+          choices: [
+            String.raw`Rotation; yes, it is an isometry.`,
+            String.raw`Translation; yes, it is an isometry.`,
+            String.raw`Dilation; no, it is not an isometry.`,
+            String.raw`Reflection; no, it is not an isometry.`,
+            String.raw`Dilation; yes, it is an isometry.`,
+            String.raw`Rotation; no, it is not an isometry.`
+          ]
+        },
+
+        {
+          stem: String.raw`
+            <p><strong>Refer to Figure 4.</strong> Point \(R\) is mapped to point \(R'\) across line \(\ell\).</p>
+            <p>What type of transformation is shown, and is it an <em>isometry</em>?</p>
+          `,
+          mediaCaption: "Figure 4",
+          media: String.raw`\begin{tikzpicture}[scale=0.62]
+  \draw[very thin,gray!30] (-5,-1) grid (6,5);
+  \draw[->,thick] (-5,0)--(6,0);
+  \draw[->,thick] (0,-1)--(0,5);
+
+  \draw[thick] (1,-1)--(1,5);
+  \node[font=\small] at (1.3,4.7) {$\ell$};
+
+  \fill (4,2) circle (2.2pt) node[above right] {$R$};
+  \fill (-2,2) circle (2.2pt) node[above left] {$R'$};
+\end{tikzpicture}`,
+          choices: [
+            String.raw`Rotation; yes, it is an isometry.`,
+            String.raw`Translation; yes, it is an isometry.`,
+            String.raw`Reflection; yes, it is an isometry.`,
+            String.raw`Dilation; no, it is not an isometry.`,
+            String.raw`Dilation; yes, it is an isometry.`,
+            String.raw`Translation; no, it is not an isometry.`
+          ]
+        },
+
+        /* ---------- Type B (6) ---------- */
+
+        {
+          stem: String.raw`
+            <p>Reflect a figure in line \(m\), then reflect its image in line \(\ell\).</p>
+            <p>If \(\ell \parallel m\), what is the composite transformation (in simpler form)?</p>
+          `,
+          choices: [
+            String.raw`A rotation`,
+            String.raw`A reflection`,
+            String.raw`A dilation`,
+            String.raw`A translation`,
+            String.raw`A reduction`,
+            String.raw`No change (identity)`
+          ]
+        },
+
+        {
+          stem: String.raw`
+            <p>Two reflections are performed: first in line \(\ell\), then in line \(m\).</p>
+            <p>If \(\ell\) and \(m\) intersect at an acute angle of \(30^\circ\), what is the magnitude of the rotation formed by the composition?</p>
+          `,
+          choices: [
+            String.raw`\(30^\circ\)`,
+            String.raw`\(45^\circ\)`,
+            String.raw`\(15^\circ\)`,
+            String.raw`\(90^\circ\)`,
+            String.raw`\(120^\circ\)`,
+            String.raw`\(60^\circ\)`
+          ]
+        },
+
+        {
+          stem: String.raw`
+            <p>What must the image be (and why)?</p>
+            <p><strong>A subset of a line</strong> is mapped by an <strong>isometry</strong>.</p>
+          `,
+          choices: [
+            String.raw`A circle, because isometries curve straight figures.`,
+            String.raw`A subset of a line, because isometries preserve straightness.`,
+            String.raw`A triangle, because isometries always create 2D figures.`,
+            String.raw`An angle, because isometries preserve angle measure.`,
+            String.raw`A single point, because isometries collapse distances.`,
+            String.raw`A larger version of the original, because isometries enlarge figures.`
+          ]
+        },
+
+        {
+          stem: String.raw`
+            <p>What must the image be (and why)?</p>
+            <p><strong>An angle</strong> is mapped by a <strong>reduction</strong>.</p>
+          `,
+          choices: [
+            String.raw`An angle with the same measure, because a reduction preserves angle measure.`,
+            String.raw`An angle with half the measure, because a reduction halves everything.`,
+            String.raw`A straight angle, because reductions “flatten” angles.`,
+            String.raw`Not an angle at all, because reductions distort angles.`,
+            String.raw`An angle with double the measure, because a reduction reverses the angle.`,
+            String.raw`A right angle, because reductions make angles perpendicular.`
+          ]
+        },
+
+        {
+          stem: String.raw`
+            <p>What must the image be (and why)?</p>
+            <p><strong>Parallel lines</strong> are mapped by a <strong>reflection</strong>.</p>
+          `,
+          choices: [
+            String.raw`Intersecting lines, because reflections always “flip” one line.`,
+            String.raw`Perpendicular lines, because reflections create right angles.`,
+            String.raw`Parallel lines, because reflections preserve parallelism.`,
+            String.raw`Circles, because reflections bend lines.`,
+            String.raw`A single line, because reflections merge parallel lines.`,
+            String.raw`Two rays, because reflections turn lines into rays.`
+          ]
+        },
+
+        {
+          stem: String.raw`
+            <p>Which two properties are invariant for <strong>isometries</strong> but not for <strong>similarities</strong>?</p>
+          `,
+          choices: [
+            String.raw`Angle measure and parallelism`,
+            String.raw`Parallelism and collinearity`,
+            String.raw`Angle measure and collinearity`,
+            String.raw`Similarity ratio and angle measure`,
+            String.raw`Distance (length) and area`,
+            String.raw`Angle measure and similarity ratio`
+          ]
+        },
+
+        /* ---------- Type C (2) ---------- */
+
+        {
+          stem: String.raw`
+            <p>Let \(T\) be an <strong>isometry</strong>. Triangle \(ABC\) is mapped to triangle \(A'B'C'\).</p>
+            <p>Which statement is the best reason that \(\triangle ABC \cong \triangle A'B'C'\)?</p>
+          `,
+          choices: [
+            String.raw`Isometries preserve only angle measure, so the triangles must be congruent.`,
+            String.raw`Isometries preserve area, so the triangles must be congruent.`,
+            String.raw`A triangle and its image must always be mirror images, so they are congruent.`,
+            String.raw`Isometries preserve distances, so \(AB=A'B'\), \(BC=B'C'\), and \(AC=A'C'\) (SSS).`,
+            String.raw`Isometries always enlarge figures by a fixed scale factor.`,
+            String.raw`Congruence is not related to isometries.`
+          ]
+        },
+
+        {
+          stem: String.raw`
+            <p><strong>Refer to Figure 5.</strong> Points \(A\) and \(B\) map to \(A'\) and \(B'\) under a rotation.</p>
+            <p>Which construction finds the <strong>center of rotation</strong>?</p>
+          `,
+          mediaCaption: "Figure 5",
+          media: String.raw`\begin{tikzpicture}[scale=0.62]
+  \draw[very thin,gray!30] (-1,-1) grid (9,7);
+  \draw[->,thick] (-1,0)--(9,0);
+  \draw[->,thick] (0,-1)--(0,7);
+
+  \fill (2,1) circle (2.2pt) node[below] {$A$};
+  \fill (6,2) circle (2.2pt) node[below right] {$B$};
+
+  \fill (4,6) circle (2.2pt) node[above] {$A'$};
+  \fill (8,4) circle (2.2pt) node[above right] {$B'$};
+
+  \draw[thick] (2,1)--(6,2);
+  \draw[thick] (4,6)--(8,4);
+\end{tikzpicture}`,
+          choices: [
+            String.raw`Find the midpoint of \(\overline{AB}\).`,
+            String.raw`Find the intersection of the perpendicular bisectors of \(\overline{AA'}\) and \(\overline{BB'}\).`,
+            String.raw`Find the intersection of lines \(\overline{AA'}\) and \(\overline{BB'}\).`,
+            String.raw`Find the midpoint of \(\overline{AA'}\) only.`,
+            String.raw`Find the intersection of \(\overline{AB}\) and \(\overline{A'B'}\).`,
+            String.raw`Find the point halfway between \(A\) and \(B'\).`
+          ]
+        }
+
+      ]
+    };
+  </script>
+
+  <link rel="stylesheet" href="/math-homework/assets/core-rich.css" />
+
+  <!-- TikZJax -->
+  <link rel="stylesheet" href="https://tikzjax.com/v1/fonts.css" />
+  <script defer src="https://tikzjax.com/v1/tikzjax.js"></script>
+
+  <!-- MathJax -->
+  <script defer src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+
+  <!-- Core renderer LAST -->
+  <script defer src="/math-homework/assets/core-rich.js"></script>
+</head>
+
+<body>
+  <div id="hw-root">Loading…</div>
+</body>
+</html>
