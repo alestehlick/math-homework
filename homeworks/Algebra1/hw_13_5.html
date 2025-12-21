@@ -1,0 +1,274 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Homework 13-5 (Algebra 1)</title>
+
+  <script>
+    /* =========================
+       Homework 13-5 — Motion Problems (application of rational equations)
+       Adapted for: /math-homework/assets/core-rich.js
+
+       REQUIRED SOURCE REFERENCES (your provided sets):
+       - Type A uses A. Exercises: #1, #2, #3, #4
+       - Type B uses B. Exercises: #5, #6, #8, #9, #10, #12
+       - Type C uses C. Exercises: #13, #14
+
+       IMAGE NAMING RULE (STRICT):
+       No figures used in this homework.
+       ========================= */
+
+    window.homeworkData = {
+      classId : "Algebra1",
+      id      : "Homework 13-5",
+      title   : "Homework 13-5 — Motion Problems",
+
+      graphics : String.raw``,
+
+      /* Correct answers for Q1–Q12 */
+      answerKey : ["A","B","B","A","A","B","A","B","C","A","D","C"],
+
+      questions : [
+
+        /* -----------------------
+           A. Exercises (4)
+           ----------------------- */
+
+        /* Source: A. Exercise #1 */
+        {
+          stem: String.raw`
+            <p>Becky drove the 200 miles to her aunt’s house at a speed 3 mph faster than she returned.</p>
+            <p>Let <b>\(r\)</b> be Becky’s speed (mph) on the return trip.</p>
+            <p>Which table correctly represents the distance, rate, and time for each leg? <em>(Do not solve.)</em></p>
+          `,
+          choiceWrap: false,
+          choices: [
+            String.raw`To aunt: distance 200, rate \(r+3\), time \( \dfrac{200}{r+3} \).  Return: distance 200, rate \(r\), time \( \dfrac{200}{r} \).`,
+            String.raw`To aunt: distance 200, rate \(r-3\), time \( \dfrac{200}{r-3} \).  Return: distance 200, rate \(r\), time \( \dfrac{200}{r} \).`,
+            String.raw`To aunt: distance 200, rate \(r\), time \( \dfrac{200}{r} \).  Return: distance 200, rate \(r+3\), time \( \dfrac{200}{r+3} \).`,
+            String.raw`To aunt: distance 200, rate \(r+3\), time \(200(r+3)\).  Return: distance 200, rate \(r\), time \(200r\).`,
+            String.raw`To aunt: distance 100, rate \(r+3\), time \( \dfrac{100}{r+3} \).  Return: distance 100, rate \(r\), time \( \dfrac{100}{r} \).`,
+            String.raw`To aunt: distance 200, rate \(r+3\), time \( \dfrac{200}{r-3} \).  Return: distance 200, rate \(r\), time \( \dfrac{200}{r+3} \).`
+          ]
+        },
+
+        /* Source: A. Exercise #2 */
+        {
+          stem: String.raw`
+            <p>Brian biked 50 miles <b>against</b> a 5 mph wind and then returned 50 miles <b>with</b> the wind.</p>
+            <p>Let <b>\(v\)</b> be Brian’s biking speed in still air (mph).</p>
+            <p>Which table correctly represents the distance, rate, and time for each part? <em>(Do not solve.)</em></p>
+          `,
+          choiceWrap: false,
+          choices: [
+            String.raw`Against wind: distance 50, rate \(v+5\), time \( \dfrac{50}{v+5} \).  With wind: distance 50, rate \(v-5\), time \( \dfrac{50}{v-5} \).`,
+            String.raw`Against wind: distance 50, rate \(v-5\), time \( \dfrac{50}{v-5} \).  With wind: distance 50, rate \(v+5\), time \( \dfrac{50}{v+5} \).`,
+            String.raw`Against wind: distance 50, rate \(v\), time \( \dfrac{50}{v} \).  With wind: distance 50, rate \(v\), time \( \dfrac{50}{v} \).`,
+            String.raw`Against wind: distance 50, rate \(5-v\), time \( \dfrac{50}{5-v} \).  With wind: distance 50, rate \(v+5\), time \( \dfrac{50}{v+5} \).`,
+            String.raw`Against wind: distance 25, rate \(v-5\), time \( \dfrac{25}{v-5} \).  With wind: distance 25, rate \(v+5\), time \( \dfrac{25}{v+5} \).`,
+            String.raw`Against wind: distance 50, rate \(v-5\), time \(50(v-5)\).  With wind: distance 50, rate \(v+5\), time \(50(v+5)\).`
+          ]
+        },
+
+        /* Source: A. Exercise #3 */
+        {
+          stem: String.raw`
+            <p>At 7:00 A.M., Joe started walking to school at 5 mph.</p>
+            <p>At 7:30 A.M., his brother Tom started riding a bicycle to school at 10 mph.</p>
+            <p>How far did Joe walk before Tom caught up with him?</p>
+          `,
+          choiceWrap: false,
+          choices: [
+            String.raw`2.5 miles`,
+            String.raw`5 miles`,
+            String.raw`7.5 miles`,
+            String.raw`10 miles`,
+            String.raw`12.5 miles`,
+            String.raw`4 miles`
+          ]
+        },
+
+        /* Source: A. Exercise #4 */
+        {
+          stem: String.raw`
+            <p>The girls’ bus left school \(\tfrac{1}{2}\) hour later than the boys’ bus.</p>
+            <p>The boys’ bus traveled 45 mph, and the girls’ bus averaged 50 mph.</p>
+            <p>After the girls’ bus started, how long did it take the girls’ bus to catch up with the boys’ bus?</p>
+          `,
+          choiceWrap: false,
+          choices: [
+            String.raw`4.5 hours`,
+            String.raw`5 hours`,
+            String.raw`4 hours`,
+            String.raw`2.25 hours`,
+            String.raw`9 hours`,
+            String.raw`3.5 hours`
+          ]
+        },
+
+        /* -----------------------
+           B. Exercises (6)
+           ----------------------- */
+
+        /* Source: B. Exercise #5 */
+        {
+          stem: String.raw`
+            <p>Two flights left Karr Airport at the same time.</p>
+            <p>One plane flew 250 mph and the other flew 375 mph.</p>
+            <p>The faster plane went 750 miles farther than the slower plane and traveled one hour longer.</p>
+            <p>How far did each plane travel?</p>
+          `,
+          choiceWrap: false,
+          choices: [
+            String.raw`250 mph plane: 750 miles; 375 mph plane: 1500 miles`,
+            String.raw`250 mph plane: 1000 miles; 375 mph plane: 1750 miles`,
+            String.raw`250 mph plane: 1500 miles; 375 mph plane: 750 miles`,
+            String.raw`250 mph plane: 500 miles; 375 mph plane: 1250 miles`,
+            String.raw`250 mph plane: 900 miles; 375 mph plane: 1650 miles`,
+            String.raw`250 mph plane: 600 miles; 375 mph plane: 1350 miles`
+          ]
+        },
+
+        /* Source: B. Exercise #6 */
+        {
+          stem: String.raw`
+            <p>Mr. Truman drove to his cottage at 45 mph.</p>
+            <p>On the way back, he drove 50 mph but took a route 15 miles shorter than the one he used going.</p>
+            <p>If it took him \(\tfrac{1}{2}\) hour longer to go than to return, how many total miles did he travel on the trip?</p>
+          `,
+          choiceWrap: false,
+          choices: [
+            String.raw`150 miles`,
+            String.raw`165 miles`,
+            String.raw`180 miles`,
+            String.raw`90 miles`,
+            String.raw`75 miles`,
+            String.raw`135 miles`
+          ]
+        },
+
+        /* Source: B. Exercise #8 */
+        {
+          stem: String.raw`
+            <p>Lee walks \(\tfrac{1}{10}\) as fast as a train travels.</p>
+            <p>It takes 1.5 hours longer for Lee to walk 12 miles than for the train to travel 60 miles.</p>
+            <p>Find the speed of each.</p>
+          `,
+          choiceWrap: false,
+          choices: [
+            String.raw`Train: 40 mph; Lee: 4 mph`,
+            String.raw`Train: 30 mph; Lee: 3 mph`,
+            String.raw`Train: 50 mph; Lee: 5 mph`,
+            String.raw`Train: 20 mph; Lee: 2 mph`,
+            String.raw`Train: 60 mph; Lee: 6 mph`,
+            String.raw`Train: 45 mph; Lee: 4.5 mph`
+          ]
+        },
+
+        /* Source: B. Exercise #9 */
+        {
+          stem: String.raw`
+            <p>An airplane flew 700 miles with the wind in the same amount of time that it flew 625 miles against the wind.</p>
+            <p>The average speed of the plane with no wind is 265 mph.</p>
+            <p>What was the wind speed?</p>
+          `,
+          choiceWrap: false,
+          choices: [
+            String.raw`10 mph`,
+            String.raw`15 mph`,
+            String.raw`20 mph`,
+            String.raw`5 mph`,
+            String.raw`265 mph`,
+            String.raw`40 mph`
+          ]
+        },
+
+        /* Source: B. Exercise #10 */
+        {
+          stem: String.raw`
+            <p>Donna and Evan canoed a total of 14 miles upstream and back in 8 hours.</p>
+            <p>If they row at 4 mph in still water, how fast is the current?</p>
+          `,
+          choiceWrap: false,
+          choices: [
+            String.raw`1 mph`,
+            String.raw`2 mph`,
+            String.raw`3 mph`,
+            String.raw`4 mph`,
+            String.raw`0.5 mph`,
+            String.raw`6 mph`
+          ]
+        },
+
+        /* Source: B. Exercise #12 */
+        {
+          stem: String.raw`
+            <p>A bicycle club rode 60 miles to a national forest at a certain average rate.</p>
+            <p>On the return trip over the same route, they traveled 4 mph faster and took 4 hours less.</p>
+            <p>What were their average rates going and returning?</p>
+          `,
+          choiceWrap: false,
+          choices: [
+            String.raw`Going: 6 mph; Returning: 10 mph`,
+            String.raw`Going: 10 mph; Returning: 6 mph`,
+            String.raw`Going: 8 mph; Returning: 12 mph`,
+            String.raw`Going: 5 mph; Returning: 9 mph`,
+            String.raw`Going: 12 mph; Returning: 16 mph`,
+            String.raw`Going: 4 mph; Returning: 8 mph`
+          ]
+        },
+
+        /* -----------------------
+           C. Exercises (2)
+           ----------------------- */
+
+        /* Source: C. Exercise #13 */
+        {
+          stem: String.raw`
+            <p>A touring bus traveling to and from a historical site covers 200 miles in \(4\tfrac{1}{2}\) hours.</p>
+            <p>The rate returning was 10 mph faster than the rate going.</p>
+            <p>Find the rate each way, and the amount of time it took to reach the site.</p>
+          `,
+          choiceWrap: false,
+          choices: [
+            String.raw`Going 35 mph, returning 45 mph; time to site \( \approx 2.9 \) hr`,
+            String.raw`Going 45 mph, returning 55 mph; time to site \( \approx 2.2 \) hr`,
+            String.raw`Going 30 mph, returning 40 mph; time to site \( \approx 3.3 \) hr`,
+            String.raw`Going 40 mph, returning 50 mph; time to site 2.5 hr`,
+            String.raw`Going 50 mph, returning 60 mph; time to site \( \approx 2.0 \) hr`,
+            String.raw`Going 25 mph, returning 35 mph; time to site 4.0 hr`
+          ]
+        },
+
+        /* Source: C. Exercise #14 */
+        {
+          stem: String.raw`
+            <p>Mr. Johnson drives a semitrailer truck.</p>
+            <p>On one trip to a city 275 miles away, he traveled \(\tfrac{1}{2}\) hour longer going than returning along the same route.</p>
+            <p>If his rate going was 5 mph slower than his rate returning, how fast did he travel each way?</p>
+          `,
+          choiceWrap: false,
+          choices: [
+            String.raw`Going 45 mph; returning 50 mph`,
+            String.raw`Going 55 mph; returning 60 mph`,
+            String.raw`Going 50 mph; returning 55 mph`,
+            String.raw`Going 48 mph; returning 53 mph`,
+            String.raw`Going 60 mph; returning 65 mph`,
+            String.raw`Going 52 mph; returning 57 mph`
+          ]
+        }
+
+      ]
+    };
+  </script>
+
+  <link rel="stylesheet" href="/math-homework/assets/core-rich.css" />
+  <script defer src="/math-homework/assets/core-rich.js"></script>
+  <script defer src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+</head>
+
+<body>
+  <div id="hw-root">Loading…</div>
+</body>
+</html>
