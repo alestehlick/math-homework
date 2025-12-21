@@ -1,0 +1,377 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Homework 12-Rev (Geometry)</title>
+
+  <script>
+    /* =========================
+       Homework 12-Rev — Chapter 12 Review (Geometry)
+
+       REQUIRED SOURCE REFERENCES (your provided set):
+       - Diagram/skills: #7, #8, #10, #11
+       - Angle/rotation fact: #9
+       - Symmetry (objects): #12–#17
+       - Dilations: #18, #19, #20
+       - Classification/composition: #21, #24
+       - Conceptual: #26, #27
+
+       IMAGE NAMING RULE:
+       Any figure used is referenced by the ORIGINAL problem number from the set.
+       PNG files live in the SAME folder as this HTML.
+       Required files for this homework:
+       - 12-rev-7.png
+       - 12-rev-8.png
+       - 12-rev-10.png
+       - 12-rev-11.png
+       - 12-rev-12.png
+       - 12-rev-20.png
+       ========================= */
+
+    window.homeworkData = {
+      classId : "Geometry",
+      id      : "Homework 12-Rev",
+      title   : "Homework 12-Rev — Chapter 12 Review",
+
+      graphics : String.raw``,
+
+      /* Correct answers for Q1–Q16 */
+      answerKey : ["B","C","B","C","D","B","C","C","B","C","D","A","C","C","F","B"],
+
+      questions : [
+
+        /* -------------------- Q1 -------------------- */
+        {
+          stem: String.raw`
+            <p><strong>Refer to Figure 1.</strong></p>
+            <p>The segment \(\overline{AB}\) is reflected across line \(\ell\), and then the image is reflected across line \(m\).</p>
+            <p>What single transformation has the same overall effect?</p>
+          `,
+          media: String.raw`
+            <figure>
+              <img src="12-rev-7.png" alt="Problem 7 diagram: segment AB with two parallel lines l and m" />
+              <figcaption>Figure 1</figcaption>
+            </figure>
+          `,
+          choices: [
+            String.raw`A reflection`,
+            String.raw`A translation`,
+            String.raw`A rotation`,
+            String.raw`A dilation`,
+            String.raw`No change (the figure maps to itself)`,
+            String.raw`It cannot be determined from the diagram`
+          ],
+          choiceWrap: false
+        },
+
+        /* -------------------- Q2 -------------------- */
+        {
+          stem: String.raw`
+            <p><strong>Refer to Figure 2.</strong></p>
+            <p>A figure is reflected across line \(\ell\), and then the image is reflected across line \(m\).</p>
+            <p>Which statement best describes the overall result?</p>
+          `,
+          media: String.raw`
+            <figure>
+              <img src="12-rev-8.png" alt="Problem 8 diagram: two intersecting lines l and m with a figure" />
+              <figcaption>Figure 2</figcaption>
+            </figure>
+          `,
+          choices: [
+            String.raw`The result is always a translation parallel to \(\ell\).`,
+            String.raw`The result is always a reflection across a line parallel to \(m\).`,
+            String.raw`The result is a rotation about the intersection point of \(\ell\) and \(m\).`,
+            String.raw`The result is a dilation centered at the intersection point of \(\ell\) and \(m\).`,
+            String.raw`The result is always the identity (no change).`,
+            String.raw`The result depends on the size of the figure but not on \(\ell\) and \(m\).`
+          ]
+        },
+
+        /* -------------------- Q3 -------------------- */
+        {
+          stem: String.raw`
+            <p>The composition of two reflections across intersecting lines is a rotation.</p>
+            <p>If the magnitude of the rotation is \(76^\circ\), what is the measure of the <em>acute</em> angle between the two lines of reflection?</p>
+          `,
+          choices: [
+            String.raw`\(19^\circ\)`,
+            String.raw`\(38^\circ\)`,
+            String.raw`\(76^\circ\)`,
+            String.raw`\(104^\circ\)`,
+            String.raw`\(152^\circ\)`,
+            String.raw`\(304^\circ\)`
+          ]
+        },
+
+        /* -------------------- Q4 -------------------- */
+        {
+          stem: String.raw`
+            <p><strong>Refer to Figure 3.</strong></p>
+            <p>Which isometry maps \(\triangle XYZ\) onto \(\triangle X'Y'Z'\) as drawn?</p>
+          `,
+          media: String.raw`
+            <figure>
+              <img src="12-rev-10.png" alt="Problem 10 diagram: two congruent triangles XYZ and X'Y'Z'" />
+              <figcaption>Figure 3</figcaption>
+            </figure>
+          `,
+          choices: [
+            String.raw`A translation`,
+            String.raw`A rotation`,
+            String.raw`A reflection`,
+            String.raw`A dilation`,
+            String.raw`A contraction toward a point`,
+            String.raw`No isometry can map one triangle to the other`
+          ]
+        },
+
+        /* -------------------- Q5 -------------------- */
+        {
+          stem: String.raw`
+            <p><strong>Refer to Figure 4.</strong></p>
+            <p>Two houses \(A\) and \(B\) must be connected to the telephone line \(\ell\) at the <em>same</em> point \(P\) on \(\ell\).</p>
+            <p>To use the <em>least total length</em> of cable, which construction finds the best point \(P\)?</p>
+          `,
+          media: String.raw`
+            <figure>
+              <img src="12-rev-11.png" alt="Problem 11 diagram: two houses A and B and a line l" />
+              <figcaption>Figure 4</figcaption>
+            </figure>
+          `,
+          choices: [
+            String.raw`Choose the point on \(\ell\) closest to \(A\).`,
+            String.raw`Choose the point on \(\ell\) closest to \(B\).`,
+            String.raw`Choose the midpoint of \(\overline{AB}\), then drop a perpendicular to \(\ell\).`,
+            String.raw`Reflect \(A\) across \(\ell\) to \(A^*\), draw \(\overline{A^*B}\), and take \(P=\overline{A^*B}\cap \ell\).`,
+            String.raw`Reflect \(A\) across \(\ell\) to \(A^*\), then choose the midpoint of \(\overline{A^*B}\).`,
+            String.raw`Any point on \(\ell\) gives the same total cable length.`
+          ]
+        },
+
+        /* -------------------- Q6 -------------------- */
+        {
+          stem: String.raw`
+            <p><strong>Refer to Figure 5.</strong></p>
+            <p>Which object has <em>both</em> line symmetry and rotational symmetry?</p>
+          `,
+          media: String.raw`
+            <figure>
+              <img src="12-rev-12.png" alt="Problems 12–17: four objects (face, window, fan, house)" />
+              <figcaption>Figure 5</figcaption>
+            </figure>
+          `,
+          choices: [
+            String.raw`The face`,
+            String.raw`The window`,
+            String.raw`The fan`,
+            String.raw`The house`,
+            String.raw`All four objects`,
+            String.raw`None of the objects`
+          ],
+          choiceWrap: false
+        },
+
+        /* -------------------- Q7 -------------------- */
+        {
+          stem: String.raw`
+            <p><strong>Refer to Figure 5.</strong></p>
+            <p>Which object has rotational symmetry but <em>no</em> line symmetry?</p>
+          `,
+          media: String.raw`
+            <figure>
+              <img src="12-rev-12.png" alt="Problems 12–17: four objects (face, window, fan, house)" />
+              <figcaption>Figure 5</figcaption>
+            </figure>
+          `,
+          choices: [
+            String.raw`The face`,
+            String.raw`The window`,
+            String.raw`The fan`,
+            String.raw`The house`,
+            String.raw`The window and the house`,
+            String.raw`The face and the house`
+          ],
+          choiceWrap: false
+        },
+
+        /* -------------------- Q8 -------------------- */
+        {
+          stem: String.raw`
+            <p><strong>Refer to Figure 5.</strong></p>
+            <p>For the object in Figure 5 that has rotational symmetry only, what is the <em>smallest</em> angle of rotation?</p>
+          `,
+          media: String.raw`
+            <figure>
+              <img src="12-rev-12.png" alt="Problems 12–17: four objects (face, window, fan, house)" />
+              <figcaption>Figure 5</figcaption>
+            </figure>
+          `,
+          choices: [
+            String.raw`\(60^\circ\)`,
+            String.raw`\(90^\circ\)`,
+            String.raw`\(120^\circ\)`,
+            String.raw`\(180^\circ\)`,
+            String.raw`\(240^\circ\)`,
+            String.raw`\(360^\circ\)`
+          ]
+        },
+
+        /* -------------------- Q9 -------------------- */
+        {
+          stem: String.raw`
+            <p><strong>Refer to Figure 5.</strong></p>
+            <p>Which object has <strong>point symmetry</strong> (that is, it matches itself after a \(180^\circ\) rotation)?</p>
+          `,
+          media: String.raw`
+            <figure>
+              <img src="12-rev-12.png" alt="Problems 12–17: four objects (face, window, fan, house)" />
+              <figcaption>Figure 5</figcaption>
+            </figure>
+          `,
+          choices: [
+            String.raw`The face`,
+            String.raw`The window`,
+            String.raw`The fan`,
+            String.raw`The house`,
+            String.raw`The fan and the window`,
+            String.raw`None of the objects`
+          ],
+          choiceWrap: false
+        },
+
+        /* -------------------- Q10 -------------------- */
+        {
+          stem: String.raw`
+            <p>A dilation has scale factor \(k=3\).</p>
+            <p>If \(MN=4\), what is \(M'N'\)?</p>
+          `,
+          choices: [
+            String.raw`\(1\)`,
+            String.raw`\(\dfrac{4}{3}\)`,
+            String.raw`\(12\)`,
+            String.raw`\(16\)`,
+            String.raw`\(51\)`,
+            String.raw`\(17\)`
+          ]
+        },
+
+        /* -------------------- Q11 -------------------- */
+        {
+          stem: String.raw`
+            <p>A dilation has scale factor \(k=3\).</p>
+            <p>If \(P'Q'=51\), what is \(PQ\)?</p>
+          `,
+          choices: [
+            String.raw`\(153\)`,
+            String.raw`\(54\)`,
+            String.raw`\(34\)`,
+            String.raw`\(17\)`,
+            String.raw`\(3\)`,
+            String.raw`\(8\)`
+          ]
+        },
+
+        /* -------------------- Q12 -------------------- */
+        {
+          stem: String.raw`
+            <p><strong>Refer to Figure 6.</strong></p>
+            <p>A dilation with center \(P\) and scale factor \(k=3\) maps \(\triangle ABC\) to \(\triangle A'B'C'\).</p>
+            <p>Which statement must be true?</p>
+          `,
+          media: String.raw`
+            <figure>
+              <img src="12-rev-20.png" alt="Problem 20 diagram: triangle ABC and center point P for dilation" />
+              <figcaption>Figure 6</figcaption>
+            </figure>
+          `,
+          choices: [
+            String.raw`Points \(P\), \(A\), and \(A'\) are collinear, and \(PA' = 3\cdot PA\).`,
+            String.raw`Segment \(\overline{AA'}\) is perpendicular to \(\overline{PP}\).`,
+            String.raw`Triangle \(A'B'C'\) must be congruent to \(\triangle ABC\).`,
+            String.raw`The dilation must reverse the orientation of \(\triangle ABC\).`,
+            String.raw`Point \(P\) must lie inside \(\triangle ABC\).`,
+            String.raw`The image \(\triangle A'B'C'\) must lie on the opposite side of \(P\) from \(\triangle ABC\).`
+          ]
+        },
+
+        /* -------------------- Q13 -------------------- */
+        {
+          stem: String.raw`
+            <p>A <strong>contraction</strong> toward a point \(P\) maps a triangle to a smaller triangle.</p>
+            <p>How are the original triangle and its image related?</p>
+          `,
+          choices: [
+            String.raw`Always congruent`,
+            String.raw`Always neither congruent nor similar`,
+            String.raw`Always similar (but not necessarily congruent)`,
+            String.raw`Always a reflection`,
+            String.raw`Always a translation`,
+            String.raw`Always a rotation`
+          ]
+        },
+
+        /* -------------------- Q14 -------------------- */
+        {
+          stem: String.raw`
+            <p>A transformation is performed in two steps:</p>
+            <ol>
+              <li>Rotate a figure about point \(P\).</li>
+              <li>Then dilate the result using the same center \(P\) with scale factor \(k\neq 1\).</li>
+            </ol>
+            <p>How are the original figure and the final image related?</p>
+          `,
+          choices: [
+            String.raw`Always congruent`,
+            String.raw`Always neither congruent nor similar`,
+            String.raw`Always similar (but not necessarily congruent)`,
+            String.raw`Always a reflection`,
+            String.raw`Always a translation`,
+            String.raw`Always the identity (no change)`
+          ]
+        },
+
+        /* -------------------- Q15 -------------------- */
+        {
+          stem: String.raw`
+            <p>About the same point \(P\), a figure is rotated \(125^\circ\) clockwise and then rotated \(235^\circ\) clockwise.</p>
+            <p>What single transformation has the same overall effect?</p>
+          `,
+          choices: [
+            String.raw`A rotation of \(250^\circ\) clockwise about \(P\)`,
+            String.raw`A rotation of \(110^\circ\) clockwise about \(P\)`,
+            String.raw`A rotation of \(110^\circ\) counterclockwise about \(P\)`,
+            String.raw`A reflection across a line through \(P\)`,
+            String.raw`A translation`,
+            String.raw`No net change (a rotation of \(0^\circ\))`
+          ]
+        },
+
+        /* -------------------- Q16 -------------------- */
+        {
+          stem: String.raw`
+            <p>What is the key characteristic preserved by an <strong>isometry</strong>?</p>
+          `,
+          choices: [
+            String.raw`Only angle measure is preserved (length may change).`,
+            String.raw`Distance between any two points is preserved.`,
+            String.raw`Only slope is preserved.`,
+            String.raw`Area is preserved but perimeter may change.`,
+            String.raw`Parallel lines are preserved, but lengths are not.`,
+            String.raw`Orientation is always preserved.`
+          ]
+        }
+
+      ]
+    };
+  </script>
+
+  <link rel="stylesheet" href="/math-homework/assets/core-rich.css" />
+  <script defer src="/math-homework/assets/core-rich.js"></script>
+  <script defer src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+</head>
+
+<body>
+  <div id="hw-root">Loading…</div>
+</body>
+</html>
