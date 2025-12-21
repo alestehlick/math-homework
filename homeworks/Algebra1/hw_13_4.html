@@ -1,0 +1,277 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Homework 13-4 (Algebra 1)</title>
+
+  <script>
+    /* =========================
+       Homework 13-4 — Investment Problems (Algebra 1)
+       Adapted for: /math-homework/assets/core-rich.js
+
+       REQUIRED SOURCE REFERENCES (your provided sets):
+       - Type A uses A. Exercises: #2, #4, #5, #6
+       - Type B uses B. Exercises: #11, #12, #14, #15, #16, #17
+       - Type C uses C. Exercises: #19, #20
+
+       IMAGE NAMING RULE (STRICT):
+       No figures used in this homework.
+       ========================= */
+
+    window.homeworkData = {
+      classId : "Algebra1",
+      id      : "Homework 13-4",
+      title   : "Homework 13-4 — Investment Problems",
+
+      graphics : String.raw``,
+
+      /* Correct answers for Q1–Q12 */
+      answerKey : ["B","C","B","A","A","A","A","A","A","A","A","A"],
+
+      questions : [
+
+        /* -----------------------
+           A. Exercises (4)
+           ----------------------- */
+
+        /* Source: A. Exercise #2 */
+        {
+          stem: String.raw`
+            <p>Use the simple-interest relationship \(I=Prt\).</p>
+            <p>How much interest is earned from <b>$200</b> invested for <b>6&nbsp;\(\tfrac{1}{2}\)</b> years at <b>\(5\tfrac{1}{2}\%\)</b>?</p>
+          `,
+          choiceWrap: false,
+          choices: [
+            String.raw`$66.00`,
+            String.raw`$71.50`,
+            String.raw`$65.00`,
+            String.raw`$143.00`,
+            String.raw`$715.00`,
+            String.raw`$5.96`
+          ]
+        },
+
+        /* Source: A. Exercise #4 */
+        {
+          stem: String.raw`
+            <p>Use the simple-interest relationship \(I=Prt\).</p>
+            <p>At <b>\(5\%\)</b>, how long will it take Joe to earn <b>$100</b> in interest from his <b>$200</b> investment?</p>
+          `,
+          choiceWrap: false,
+          choices: [
+            String.raw`2 years`,
+            String.raw`4 years`,
+            String.raw`10 years`,
+            String.raw`20 years`,
+            String.raw`1 year`,
+            String.raw`0.5 year`
+          ]
+        },
+
+        /* Source: A. Exercise #5 */
+        {
+          stem: String.raw`
+            <p>Use the simple-interest relationship \(I=Prt\).</p>
+            <p>Jenny has <b>$350</b> to invest and wants to earn <b>$90</b> interest in the next <b>5 years</b>.</p>
+            <p>What interest rate must she find?</p>
+          `,
+          choiceWrap: false,
+          choices: [
+            String.raw`5%`,
+            String.raw`\(5\tfrac{1}{7}\%\)`,
+            String.raw`\(5\tfrac{1}{2}\%\)`,
+            String.raw`\(4\tfrac{1}{2}\%\)`,
+            String.raw`6%`,
+            String.raw`7%`
+          ]
+        },
+
+        /* Source: A. Exercise #6 */
+        {
+          stem: String.raw`
+            <p>Use the simple-interest relationship \(I=Prt\).</p>
+            <p>Steve’s bank pays <b>\(7\%\)</b> interest.</p>
+            <p>How much must he invest to earn <b>$151</b> in interest in the next <b>4 years</b>?</p>
+          `,
+          choiceWrap: false,
+          choices: [
+            String.raw`$539.29`,
+            String.raw`$3775`,
+            String.raw`$53.93`,
+            String.raw`$431.43`,
+            String.raw`$604.00`,
+            String.raw`$528.50`
+          ]
+        },
+
+        /* -----------------------
+           B. Exercises (6)
+           ----------------------- */
+
+        /* Source: B. Exercise #11 */
+        {
+          stem: String.raw`
+            <p>Use \(I=Prt\) with <b>1 year</b> for “annually.”</p>
+            <p>Mr. Willis has <b>one-fifth</b> of his savings invested at <b>\(6\%\)</b>, <b>three-fifths</b> at <b>\(8\%\)</b>, and the rest at <b>\(10\%\)</b>.</p>
+            <p>His total interest from savings is <b>$1078 annually</b>.</p>
+            <p>How much does he have invested at each rate?</p>
+          `,
+          choiceWrap: false,
+          choices: [
+            String.raw`6%: $2695; 8%: $8085; 10%: $2695`,
+            String.raw`6%: $13475; 8%: $0; 10%: $0`,
+            String.raw`6%: $2700; 8%: $8100; 10%: $2675`,
+            String.raw`6%: $3593.33; 8%: $10780; 10%: $3593.33`,
+            String.raw`6%: $8085; 8%: $2695; 10%: $2695`,
+            String.raw`6%: $2695; 8%: $5390; 10%: $5390`
+          ]
+        },
+
+        /* Source: B. Exercise #12 */
+        {
+          stem: String.raw`
+            <p>Mary invested <b>$2000</b>, part at <b>\(5\tfrac{1}{2}\%\)</b> and part at <b>\(7\%\)</b>.</p>
+            <p>If the total <b>yearly</b> income from the two investments is <b>$115.22</b>, how much is invested in each account?</p>
+          `,
+          choiceWrap: false,
+          choices: [
+            String.raw`$1652 at \(5\tfrac{1}{2}\%\) and $348 at 7%`,
+            String.raw`$348 at \(5\tfrac{1}{2}\%\) and $1652 at 7%`,
+            String.raw`$1000 at \(5\tfrac{1}{2}\%\) and $1000 at 7%`,
+            String.raw`$1200 at \(5\tfrac{1}{2}\%\) and $800 at 7%`,
+            String.raw`$1700 at \(5\tfrac{1}{2}\%\) and $300 at 7%`,
+            String.raw`$1550 at \(5\tfrac{1}{2}\%\) and $450 at 7%`
+          ]
+        },
+
+        /* Source: B. Exercise #14 */
+        {
+          stem: String.raw`
+            <p>Grace plans to invest her <b>$10,000</b> in three kinds of bonds.</p>
+            <p>She will invest <b>half as much in bond B as in bond A</b>, and the rest in bond C.</p>
+            <p>Their yields are <b>\(4\%\)</b>, <b>\(7\%\)</b>, and <b>\(11\%\)</b>, respectively.</p>
+            <p>If her total interest for 1 year is <b>$830</b>, how much will she invest in bonds A, B, and C?</p>
+          `,
+          choiceWrap: false,
+          choices: [
+            String.raw`A: $3000; B: $1500; C: $5500`,
+            String.raw`A: $4000; B: $2000; C: $4000`,
+            String.raw`A: $2000; B: $1000; C: $7000`,
+            String.raw`A: $3000; B: $6000; C: $1000`,
+            String.raw`A: $2500; B: $1250; C: $6250`,
+            String.raw`A: $1500; B: $3000; C: $5500`
+          ]
+        },
+
+        /* Source: B. Exercise #15 */
+        {
+          stem: String.raw`
+            <p>The yearly interest income from two investments is <b>$1050</b>.</p>
+            <p>If <b>$3000</b> is invested at a rate <b>two percentage points higher</b> than that of an <b>$8000</b> investment, what are the interest rates for the two investments?</p>
+          `,
+          choiceWrap: false,
+          choices: [
+            String.raw`$8000 at 9% and $3000 at 11%`,
+            String.raw`$8000 at 11% and $3000 at 9%`,
+            String.raw`$8000 at 8% and $3000 at 10%`,
+            String.raw`$8000 at 10% and $3000 at 12%`,
+            String.raw`$8000 at 7% and $3000 at 9%`,
+            String.raw`$8000 at 9% and $3000 at 7%`
+          ]
+        },
+
+        /* Source: B. Exercise #16 */
+        {
+          stem: String.raw`
+            <p>The Stees plan to invest a total of <b>$8500</b> in two accounts,</p>
+            <ul>
+              <li>one paying <b>\(8\%\)</b> interest,</li>
+              <li>the other paying <b>\(6\tfrac{1}{2}\%\)</b> interest.</li>
+            </ul>
+            <p>How much should they invest in each account in order to gain <b>$3302.50</b> in <b>5 years</b>?</p>
+          `,
+          choiceWrap: false,
+          choices: [
+            String.raw`$7200 at 8% and $1300 at \(6\tfrac{1}{2}\%\)`,
+            String.raw`$6800 at 8% and $1700 at \(6\tfrac{1}{2}\%\)`,
+            String.raw`$6500 at 8% and $2000 at \(6\tfrac{1}{2}\%\)`,
+            String.raw`$7300 at 8% and $1200 at \(6\tfrac{1}{2}\%\)`,
+            String.raw`$6000 at 8% and $2500 at \(6\tfrac{1}{2}\%\)`,
+            String.raw`$8500 at 8% and $0 at \(6\tfrac{1}{2}\%\)`
+          ]
+        },
+
+        /* Source: B. Exercise #17 */
+        {
+          stem: String.raw`
+            <p>Paul plans to buy stocks in a new computer company.</p>
+            <p>He can buy preferred stock with an average yield of <b>\(11\%\)</b> and common stock with an average yield of <b>\(9\%\)</b>.</p>
+            <p>If he invests <b>three-fourths</b> of his money in preferred stock and <b>one-fourth</b> in common stock, he will gain <b>$1312.50</b> in <b>\(2\tfrac{1}{2}\)</b> years.</p>
+            <p>How much must Paul invest?</p>
+          `,
+          choiceWrap: false,
+          choices: [
+            String.raw`$5000`,
+            String.raw`$3500`,
+            String.raw`$6250`,
+            String.raw`$4750`,
+            String.raw`$5200`,
+            String.raw`$6000`
+          ]
+        },
+
+        /* -----------------------
+           C. Exercises (2)
+           ----------------------- */
+
+        /* Source: C. Exercise #19 */
+        {
+          stem: String.raw`
+            <p>Mr. and Mrs. Beach opened a retirement account that will yield <b>\(9\tfrac{1}{2}\%\)</b> interest annually.</p>
+            <p>They also invested an amount in a passbook savings account that pays <b>\(5\tfrac{3}{4}\%\)</b> interest.</p>
+            <p>If their total investment is <b>$2200</b> and they gain a total of <b>$171.50</b> annually in interest, how much did they invest in each account?</p>
+          `,
+          choiceWrap: false,
+          choices: [
+            String.raw`$1200 at \(9\tfrac{1}{2}\%\) and $1000 at \(5\tfrac{3}{4}\%\)`,
+            String.raw`$1000 at \(9\tfrac{1}{2}\%\) and $1200 at \(5\tfrac{3}{4}\%\)`,
+            String.raw`$1100 at \(9\tfrac{1}{2}\%\) and $1100 at \(5\tfrac{3}{4}\%\)`,
+            String.raw`$1500 at \(9\tfrac{1}{2}\%\) and $700 at \(5\tfrac{3}{4}\%\)`,
+            String.raw`$1300 at \(9\tfrac{1}{2}\%\) and $900 at \(5\tfrac{3}{4}\%\)`,
+            String.raw`$1700 at \(9\tfrac{1}{2}\%\) and $500 at \(5\tfrac{3}{4}\%\)`
+          ]
+        },
+
+        /* Source: C. Exercise #20 */
+        {
+          stem: String.raw`
+            <p>An investment of at least <b>$2500</b> pays <b>\(6\tfrac{1}{2}\%\)</b> interest, while an investment of less than <b>$2500</b> pays <b>\(5\tfrac{1}{2}\%\)</b>.</p>
+            <p>Two people invest in this opportunity, one investing <b>$1080 more</b> than the other.</p>
+            <p>The annual interest of one is <b>$88.90 more</b> than that of the other.</p>
+            <p>Find how much was invested at each rate.</p>
+          `,
+          choiceWrap: false,
+          choices: [
+            String.raw`$2950 at \(6\tfrac{1}{2}\%\) and $1870 at \(5\tfrac{1}{2}\%\)`,
+            String.raw`$1870 at \(6\tfrac{1}{2}\%\) and $2950 at \(5\tfrac{1}{2}\%\)`,
+            String.raw`$2500 at \(6\tfrac{1}{2}\%\) and $1420 at \(5\tfrac{1}{2}\%\)`,
+            String.raw`$2700 at \(6\tfrac{1}{2}\%\) and $1620 at \(5\tfrac{1}{2}\%\)`,
+            String.raw`$3000 at \(6\tfrac{1}{2}\%\) and $1920 at \(5\tfrac{1}{2}\%\)`,
+            String.raw`$2950 at \(6\tfrac{1}{2}\%\) and $1970 at \(5\tfrac{1}{2}\%\)`
+          ]
+        }
+
+      ]
+    };
+  </script>
+
+  <link rel="stylesheet" href="/math-homework/assets/core-rich.css" />
+  <script defer src="/math-homework/assets/core-rich.js"></script>
+  <script defer src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+</head>
+
+<body>
+  <div id="hw-root">Loading…</div>
+</body>
+</html>
