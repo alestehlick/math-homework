@@ -1,0 +1,288 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Homework 13-6 (Algebra 1)</title>
+
+  <script>
+    /* =========================
+       Homework 13-6 — Solve for the Stated Variable (Algebra 1)
+       14 questions total (12 usual + 2 challenging)
+
+       REQUIRED SOURCE REFERENCES (your provided sets):
+       - Type A uses A. Exercises: #1, #4, #6, #11
+       - Type B uses B. Exercises: #13, #14, #16, #17, #18, #20
+       - Type C uses C. Exercises: #21, #22
+       - Added challenging (created): #X1, #X2
+
+       IMAGE NAMING RULE (STRICT):
+       No figures used in this homework.
+       ========================= */
+
+    window.homeworkData = {
+      classId : "Algebra1",
+      id      : "Homework 13-6",
+      title   : "Homework 13-6 — Solve for the Stated Variable",
+
+      graphics : String.raw``,
+
+      /* Correct answers for Q1–Q14 */
+      answerKey : ["B","B","A","A","A","A","A","A","A","B","A","A","B","A"],
+
+      questions : [
+
+        /* =======================
+           Type A (4)
+           ======================= */
+
+        /* Source: A. Exercise #1 */
+        {
+          stem: String.raw`
+            <p>Solve for <b>\(c\)</b>:</p>
+            <p class="math">\(e=mc^{2}\)</p>
+          `,
+          choices: [
+            String.raw`\(c=\dfrac{e}{m^{2}}\)`,
+            String.raw`\(c=\sqrt{\dfrac{e}{m}}\)`,
+            String.raw`\(c=\dfrac{e}{m}\)`,
+            String.raw`\(c=\sqrt{em}\)`,
+            String.raw`\(c=\dfrac{m}{e}\)`,
+            String.raw`\(c=\dfrac{e}{c^{2}}\)`
+          ]
+        },
+
+        /* Source: A. Exercise #4 */
+        {
+          stem: String.raw`
+            <p>Solve for <b>\(r\)</b>:</p>
+            <p class="math">\(I=Prt\)</p>
+          `,
+          choices: [
+            String.raw`\(r=IPt\)`,
+            String.raw`\(r=\dfrac{I}{Pt}\)`,
+            String.raw`\(r=\dfrac{P}{It}\)`,
+            String.raw`\(r=\dfrac{Pt}{I}\)`,
+            String.raw`\(r=\dfrac{I}{P+t}\)`,
+            String.raw`\(r=\dfrac{It}{P}\)`
+          ]
+        },
+
+        /* Source: A. Exercise #6 */
+        {
+          stem: String.raw`
+            <p>Solve for <b>\(h\)</b>:</p>
+            <p class="math">\(w=\dfrac{11(h-40)}{2}\)</p>
+          `,
+          choices: [
+            String.raw`\(h=\dfrac{2w+440}{11}\)`,
+            String.raw`\(h=\dfrac{11w+440}{2}\)`,
+            String.raw`\(h=\dfrac{2w-440}{11}\)`,
+            String.raw`\(h=\dfrac{2w}{11}-40\)`,
+            String.raw`\(h=40-\dfrac{2w}{11}\)`,
+            String.raw`\(h=\dfrac{w+40}{11}\)`
+          ]
+        },
+
+        /* Source: A. Exercise #11 */
+        {
+          stem: String.raw`
+            <p>Solve for <b>\(r\)</b>:</p>
+            <p class="math">\(A=\pi r^{2}\)</p>
+          `,
+          choices: [
+            String.raw`\(r=\sqrt{\dfrac{A}{\pi}}\)`,
+            String.raw`\(r=\dfrac{A}{\pi^{2}}\)`,
+            String.raw`\(r=\dfrac{A}{\pi}\)`,
+            String.raw`\(r=\sqrt{\dfrac{\pi}{A}}\)`,
+            String.raw`\(r=\dfrac{2A}{\pi}\)`,
+            String.raw`\(r=\dfrac{\pi}{A}\)`
+          ]
+        },
+
+        /* =======================
+           Type B (6)
+           ======================= */
+
+        /* Source: B. Exercise #13 */
+        {
+          stem: String.raw`
+            <p>Solve for <b>\(r\)</b>:</p>
+            <p class="math">\(V=\dfrac{4}{3}\pi r^{3}\)</p>
+          `,
+          choices: [
+            String.raw`\(r=\sqrt[3]{\dfrac{3V}{4\pi}}\)`,
+            String.raw`\(r=\sqrt[3]{\dfrac{4\pi}{3V}}\)`,
+            String.raw`\(r=\dfrac{3V}{4\pi}\)`,
+            String.raw`\(r=\sqrt[3]{\dfrac{4\pi V}{3}}\)`,
+            String.raw`\(r=\sqrt[3]{\dfrac{3V}{4}}\)`,
+            String.raw`\(r=\sqrt[3]{\dfrac{V}{4\pi}}\)`
+          ]
+        },
+
+        /* Source: B. Exercise #14 */
+        {
+          stem: String.raw`
+            <p>Solve for <b>\(t\)</b>:</p>
+            <p class="math">\(v+10=\dfrac{t}{v}-\dfrac{25}{v}\)</p>
+          `,
+          choices: [
+            String.raw`\(t=v^{2}+10v+25\)`,
+            String.raw`\(t=v^{2}+10v-25\)`,
+            String.raw`\(t=v^{2}-10v+25\)`,
+            String.raw`\(t=(v+10)^{2}\)`,
+            String.raw`\(t=v(v+10)\)`,
+            String.raw`\(t=\dfrac{v+5}{2}\)`
+          ]
+        },
+
+        /* Source: B. Exercise #16 */
+        {
+          stem: String.raw`
+            <p>Solve for <b>\(x\)</b>:</p>
+            <p class="math">\(\dfrac{nx}{b}-n=x\)</p>
+          `,
+          choices: [
+            String.raw`\(x=\dfrac{bn}{\,n-b\,}\)`,
+            String.raw`\(x=\dfrac{bn}{\,b-n\,}\)`,
+            String.raw`\(x=\dfrac{b}{\,n-b\,}\)`,
+            String.raw`\(x=\dfrac{n}{\,n-b\,}\)`,
+            String.raw`\(x=\dfrac{b(n-b)}{n}\)`,
+            String.raw`\(x=\dfrac{n-b}{b}\)`
+          ]
+        },
+
+        /* Source: B. Exercise #17 */
+        {
+          stem: String.raw`
+            <p>Solve for <b>\(x\)</b>:</p>
+            <p class="math">\(\dfrac{3a}{x-a}=y\)</p>
+          `,
+          choices: [
+            String.raw`\(x=\dfrac{a(y+3)}{y}\)`,
+            String.raw`\(x=\dfrac{ay}{y+3}\)`,
+            String.raw`\(x=\dfrac{3a}{y-a}\)`,
+            String.raw`\(x=\dfrac{a(3-y)}{y}\)`,
+            String.raw`\(x=\dfrac{y+3}{ay}\)`,
+            String.raw`\(x=a+3y\)`
+          ]
+        },
+
+        /* Source: B. Exercise #18 */
+        {
+          stem: String.raw`
+            <p>Solve for <b>\(z\)</b>:</p>
+            <p class="math">\(\dfrac{a}{3+z}=\dfrac{b}{3-z}\)</p>
+          `,
+          choices: [
+            String.raw`\(z=\dfrac{3(a-b)}{a+b}\)`,
+            String.raw`\(z=\dfrac{3(b-a)}{a+b}\)`,
+            String.raw`\(z=\dfrac{3(a-b)}{a-b}\)`,
+            String.raw`\(z=\dfrac{a+b}{3(a-b)}\)`,
+            String.raw`\(z=\dfrac{a-b}{a+b}\)`,
+            String.raw`\(z=\dfrac{3(a+b)}{a-b}\)`
+          ]
+        },
+
+        /* Source: B. Exercise #20 */
+        {
+          stem: String.raw`
+            <p>Solve for <b>\(b\)</b>:</p>
+            <p class="math">\(\dfrac{x}{b}-\dfrac{x}{c}=x\)</p>
+          `,
+          choices: [
+            String.raw`\(b=c+1\)`,
+            String.raw`\(b=\dfrac{c}{c+1}\)`,
+            String.raw`\(b=\dfrac{c}{c-1}\)`,
+            String.raw`\(b=\dfrac{c+1}{c}\)`,
+            String.raw`\(b=c-1\)`,
+            String.raw`\(b=\dfrac{1}{c+1}\)`
+          ]
+        },
+
+        /* =======================
+           Type C (2)
+           ======================= */
+
+        /* Source: C. Exercise #21 */
+        {
+          stem: String.raw`
+            <p>Solve for <b>\(x\)</b>:</p>
+            <p class="math">\(Lx^{2}-5nx+4q=0\)</p>
+          `,
+          choices: [
+            String.raw`\(x=\dfrac{5n\pm\sqrt{25n^{2}-16Lq}}{2L}\)`,
+            String.raw`\(x=\dfrac{5n\pm\sqrt{25n^{2}-16Lq}}{L}\)`,
+            String.raw`\(x=\dfrac{-5n\pm\sqrt{25n^{2}-16Lq}}{2L}\)`,
+            String.raw`\(x=\dfrac{5n\pm\sqrt{25n^{2}+16Lq}}{2L}\)`,
+            String.raw`\(x=\dfrac{5n\pm\sqrt{25n^{2}-8Lq}}{2L}\)`,
+            String.raw`\(x=\dfrac{5n\pm\sqrt{25n-16Lq}}{2L}\)`
+          ]
+        },
+
+        /* Source: C. Exercise #22 */
+        {
+          stem: String.raw`
+            <p>Solve for <b>\(v\)</b>:</p>
+            <p class="math">\(\dfrac{3}{v}+R=tv\)</p>
+          `,
+          choices: [
+            String.raw`\(v=\dfrac{R\pm\sqrt{R^{2}+12t}}{2t}\)`,
+            String.raw`\(v=\dfrac{R\pm\sqrt{R^{2}-12t}}{2t}\)`,
+            String.raw`\(v=\dfrac{-R\pm\sqrt{R^{2}+12t}}{2t}\)`,
+            String.raw`\(v=\dfrac{R\pm\sqrt{R^{2}+12t}}{t}\)`,
+            String.raw`\(v=\dfrac{R\pm\sqrt{R^{2}+3t}}{2t}\)`,
+            String.raw`\(v=\dfrac{R\pm\sqrt{R^{2}+12t}}{2}\)`
+          ]
+        },
+
+        /* =======================
+           Added challenging (2)
+           ======================= */
+
+        /* Source: created #X1 */
+        {
+          stem: String.raw`
+            <p><b>Challenge.</b> Solve for <b>\(x\)</b>:</p>
+            <p class="math">\(y=\dfrac{ax+b}{cx+d}\)</p>
+          `,
+          choices: [
+            String.raw`\(x=\dfrac{dy-b}{cy-a}\)`,
+            String.raw`\(x=\dfrac{b-dy}{cy-a}\)`,
+            String.raw`\(x=\dfrac{b-dy}{a-cy}\)`,
+            String.raw`\(x=\dfrac{ay-b}{cy+d}\)`,
+            String.raw`\(x=\dfrac{b+dy}{cy-a}\)`,
+            String.raw`\(x=\dfrac{b-dy}{cy+a}\)`
+          ]
+        },
+
+        /* Source: created #X2 */
+        {
+          stem: String.raw`
+            <p><b>Challenge.</b> Solve for <b>\(x\)</b>:</p>
+            <p class="math">\(\dfrac{1}{x-1}+\dfrac{1}{x+1}=\dfrac{1}{2}\)</p>
+            <p>Which choice lists <em>both</em> solutions?</p>
+          `,
+          choices: [
+            String.raw`\(x=2\pm\sqrt{5}\)`,
+            String.raw`\(x=2\pm 5\)`,
+            String.raw`\(x=-2\pm\sqrt{5}\)`,
+            String.raw`\(x=1\pm\sqrt{5}\)`,
+            String.raw`\(x=2\pm\sqrt{20}\)`,
+            String.raw`\(x=4\pm\sqrt{5}\)`
+          ]
+        }
+
+      ]
+    };
+  </script>
+
+  <link rel="stylesheet" href="/math-homework/assets/core-rich.css" />
+  <script defer src="/math-homework/assets/core-rich.js"></script>
+  <script defer src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+</head>
+
+<body>
+  <div id="hw-root">Loading…</div>
+</body>
+</html>
