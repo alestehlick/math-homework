@@ -1,0 +1,256 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Homework 13-6 (Algebra 2)</title>
+
+  <script>
+    /* =========================
+       Homework 13-6 — The Algebra of Probability (Algebra 2)
+
+       REQUIRED SOURCE REFERENCES (your provided sets):
+       - Type A uses A. Exercises: #1, #3, #7, #10
+       - Type B uses B. Exercises: #11, #13, #15, #18, #21, #23
+       - Type C uses C. Exercises: #27, #28
+
+       IMAGE NAMING RULE (STRICT):
+       No figures are used in this homework.
+       ========================= */
+
+    window.homeworkData = {
+      classId : "Algebra2",
+      id      : "Homework 13-6",
+      title   : "Homework 13-6 — The Algebra of Probability",
+
+      graphics : String.raw``,
+
+      answerKey : ["B","A","C","D","B","C","A","E","A","F","D","B"],
+
+      questions : [
+
+        /* =======================
+           A. Exercises (4)
+           ======================= */
+
+        /* A #1 */
+        {
+          stem: String.raw`
+            <p>There are 7 red marbles, 4 blue marbles, and 3 orange marbles in a bag. One marble is drawn at random.</p>
+            <p>Find <span class="math">\(P(\text{red})\)</span>.</p>
+          `,
+          choices: [
+            String.raw`\(\frac{7}{15}\)`,
+            String.raw`\(\frac{1}{2}\)`,
+            String.raw`\(\frac{7}{3}\)`,
+            String.raw`\(\frac{1}{14}\)`,
+            String.raw`\(\frac{4}{14}\)`,
+            String.raw`\(\frac{3}{14}\)`
+          ]
+        },
+
+        /* A #3 */
+        {
+          stem: String.raw`
+            <p>There are 7 red marbles, 4 blue marbles, and 3 orange marbles in a bag. One marble is drawn at random.</p>
+            <p>Find <span class="math">\(P(\text{white})\)</span>.</p>
+          `,
+          choices: [
+            String.raw`\(\,0\,\)`,
+            String.raw`\(\frac{1}{14}\)`,
+            String.raw`\(\frac{3}{14}\)`,
+            String.raw`\(\frac{7}{14}\)`,
+            String.raw`\(\frac{11}{14}\)`,
+            String.raw`\(\,1\,\)`
+          ]
+        },
+
+        /* A #7 */
+        {
+          stem: String.raw`
+            <p>In a certain algebra class there are 8 girls and 9 boys. Three of the girls and 2 of the boys are left-handed.</p>
+            <p>If a student is chosen at random, find <span class="math">\(P(\text{left-handed student or girl})\)</span>.</p>
+          `,
+          choices: [
+            String.raw`\(\frac{13}{17}\)`,
+            String.raw`\(\frac{5}{17}\)`,
+            String.raw`\(\frac{10}{17}\)`,
+            String.raw`\(\frac{8}{17}\)`,
+            String.raw`\(\frac{3}{17}\)`,
+            String.raw`\(\frac{12}{17}\)`
+          ]
+        },
+
+        /* A #10 */
+        {
+          stem: String.raw`
+            <p>In a certain algebra class there are 8 girls and 9 boys. Three of the girls and 2 of the boys are left-handed.</p>
+            <p>If a student is chosen at random, find <span class="math">\(P(\text{boy or right-handed student})\)</span>.</p>
+          `,
+          choices: [
+            String.raw`\(\frac{21}{17}\)`,
+            String.raw`\(\frac{12}{17}\)`,
+            String.raw`\(\frac{9}{17}\)`,
+            String.raw`\(\frac{14}{17}\)`,
+            String.raw`\(\frac{7}{17}\)`,
+            String.raw`\(\frac{15}{17}\)`
+          ]
+        },
+
+        /* =======================
+           B. Exercises (6)
+           ======================= */
+
+        /* B #11 */
+        {
+          stem: String.raw`
+            <p>There are 8 yellow balls, 3 white balls, 4 green balls, and 2 blue balls in a box.</p>
+            <p>A ball is drawn, <b>replaced</b>, and then a second ball is drawn.</p>
+            <p>Find <span class="math">\(P(E_Y \text{ followed by } E_G)\)</span>.</p>
+          `,
+          choices: [
+            String.raw`\(\frac{64}{289}\)`,
+            String.raw`\(\frac{32}{289}\)`,
+            String.raw`\(\frac{12}{289}\)`,
+            String.raw`\(\frac{8}{17}\)`,
+            String.raw`\(\frac{4}{17}\)`,
+            String.raw`\(\frac{32}{17}\)`
+          ]
+        },
+
+        /* B #13 */
+        {
+          stem: String.raw`
+            <p>There are 8 yellow balls, 3 white balls, 4 green balls, and 2 blue balls in a box.</p>
+            <p>A ball is drawn, <b>replaced</b>, and then a second ball is drawn.</p>
+            <p>Find <span class="math">\(P(E_G \text{ and } E_Y)\)</span> (one green and one yellow in the two draws).</p>
+          `,
+          choices: [
+            String.raw`\(\frac{32}{289}\)`,
+            String.raw`\(\frac{12}{289}\)`,
+            String.raw`\(\frac{64}{289}\)`,
+            String.raw`\(\frac{12}{17}\)`,
+            String.raw`\(\frac{96}{289}\)`,
+            String.raw`\(\frac{16}{289}\)`
+          ]
+        },
+
+        /* B #15 */
+        {
+          stem: String.raw`
+            <p>There are 8 yellow balls, 3 white balls, 4 green balls, and 2 blue balls in a box.</p>
+            <p>A ball is drawn, <b>replaced</b>, and then a second ball is drawn.</p>
+            <p>Find <span class="math">\(P(\text{2 white balls})\)</span>.</p>
+          `,
+          choices: [
+            String.raw`\(\frac{9}{289}\)`,
+            String.raw`\(\frac{3}{17}\)`,
+            String.raw`\(\frac{6}{289}\)`,
+            String.raw`\(\frac{9}{17}\)`,
+            String.raw`\(\frac{196}{289}\)`,
+            String.raw`\(\frac{84}{289}\)`
+          ]
+        },
+
+        /* B #18 */
+        {
+          stem: String.raw`
+            <p>There are 8 yellow balls, 3 white balls, 4 green balls, and 2 blue balls in a box.</p>
+            <p>A ball is drawn, <b>replaced</b>, and then a second ball is drawn.</p>
+            <p>Find <span class="math">\(P(\text{at least one white ball})\)</span>.</p>
+          `,
+          choices: [
+            String.raw`\(\frac{84}{289}\)`,
+            String.raw`\(\frac{196}{289}\)`,
+            String.raw`\(\frac{9}{289}\)`,
+            String.raw`\(\frac{280}{289}\)`,
+            String.raw`\(\frac{93}{289}\)`,
+            String.raw`\(\frac{1}{2}\)`
+          ]
+        },
+
+        /* B #21 */
+        {
+          stem: String.raw`
+            <p>There are 12 red tokens and 8 blue tokens in a bag.</p>
+            <p>A token is chosen, <b>replaced</b>, and then a second token is chosen.</p>
+            <p>Find <span class="math">\(P(\text{red followed by blue})\)</span>.</p>
+          `,
+          choices: [
+            String.raw`\(\frac{6}{25}\)`,
+            String.raw`\(\frac{12}{25}\)`,
+            String.raw`\(\frac{3}{25}\)`,
+            String.raw`\(\frac{3}{5}\)`,
+            String.raw`\(\frac{2}{5}\)`,
+            String.raw`\(\frac{8}{25}\)`
+          ]
+        },
+
+        /* B #23 */
+        {
+          stem: String.raw`
+            <p>There are 12 caramel and 8 cherry chocolates in a box.</p>
+            <p>You choose 2 chocolates <b>without replacing them</b>.</p>
+            <p>Find <span class="math">\(P(\text{both caramel})\)</span>.</p>
+          `,
+          choices: [
+            String.raw`\(\frac{9}{25}\)`,
+            String.raw`\(\frac{3}{5}\)`,
+            String.raw`\(\frac{11}{19}\)`,
+            String.raw`\(\frac{24}{95}\)`,
+            String.raw`\(\frac{48}{95}\)`,
+            String.raw`\(\frac{33}{95}\)`
+          ]
+        },
+
+        /* =======================
+           C. Exercises (2)
+           ======================= */
+
+        /* C #27 */
+        {
+          stem: String.raw`
+            <p>There are 12 caramel and 8 cherry chocolates in a box.</p>
+            <p>You choose 2 chocolates <b>without replacing them</b>.</p>
+            <p>Write <span class="math">\(P(\text{cherry and caramel})\)</span> using combinations and evaluate.</p>
+          `,
+          choices: [
+            String.raw`\(\frac{24}{95}\)`,
+            String.raw`\(\frac{33}{95}\)`,
+            String.raw`\(\frac{14}{95}\)`,
+            String.raw`\(\frac{48}{95}\)`,
+            String.raw`\(\frac{48}{190}\)`,
+            String.raw`\(\frac{6}{25}\)`
+          ]
+        },
+
+        /* C #28 */
+        {
+          stem: String.raw`
+            <p>There are 8 yellow balls, 3 white balls, 4 green balls, and 2 blue balls in a box.</p>
+            <p>A ball is drawn, <b>replaced</b>, and then a second ball is drawn.</p>
+            <p>Write <span class="math">\(P(E_W \text{ and } E_B)\)</span> using combinations and evaluate (one white and one blue in the two draws).</p>
+          `,
+          choices: [
+            String.raw`\(\frac{6}{289}\)`,
+            String.raw`\(\frac{12}{289}\)`,
+            String.raw`\(\frac{5}{289}\)`,
+            String.raw`\(\frac{12}{17}\)`,
+            String.raw`\(\frac{1}{289}\)`,
+            String.raw`\(\frac{93}{289}\)`
+          ]
+        }
+
+      ]
+    };
+  </script>
+
+  <link rel="stylesheet" href="/math-homework/assets/core-rich.css" />
+  <script defer src="/math-homework/assets/core-rich.js"></script>
+  <script defer src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+</head>
+
+<body>
+  <div id="hw-root">Loading…</div>
+</body>
+</html>
