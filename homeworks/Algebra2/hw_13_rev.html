@@ -1,0 +1,308 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Homework 13-rev (Algebra 2)</title>
+
+  <script>
+    /* =========================
+       Homework 13-rev — Chapter 13 Review (Algebra 2)
+
+       SOURCE (your review sheet):
+       Counting / Permutations / Combinations (#1–11),
+       Binomial Theorem (#12–13),
+       Probability (#14–16, #19–22),
+       Descriptive Statistics + Normal Distribution (#23–30).
+
+       This review contains 16 multiple-choice questions (as requested).
+       No figures are used in this homework.
+       ========================= */
+
+    window.homeworkData = {
+      classId : "Algebra2",
+      id      : "Homework 13-rev",
+      title   : "Homework 13 Review",
+
+      graphics : String.raw``,
+
+      answerKey : ["D","C","B","B","B","B","B","A","C","A","C","A","B","D","A","C"],
+
+      questions : [
+
+        /* 1 */
+        {
+          stem: String.raw`
+            <p>A coin is flipped, then a die is rolled. How many outcomes are possible?</p>
+          `,
+          choiceWrap: false,
+          choices: [
+            String.raw`6`,
+            String.raw`8`,
+            String.raw`10`,
+            String.raw`12`,
+            String.raw`24`,
+            String.raw`14`
+          ]
+        },
+
+        /* 2 */
+        {
+          stem: String.raw`
+            <p>Evaluate: <span class="math">\( {}^{7}P_{5} \)</span>.</p>
+          `,
+          choiceWrap: false,
+          choices: [
+            String.raw`210`,
+            String.raw`840`,
+            String.raw`2520`,
+            String.raw`5040`,
+            String.raw`1680`,
+            String.raw`720`
+          ]
+        },
+
+        /* 3 */
+        {
+          stem: String.raw`
+            <p>Evaluate: <span class="math">\( {}^{8}C_{3} \)</span>.</p>
+          `,
+          choiceWrap: false,
+          choices: [
+            String.raw`28`,
+            String.raw`56`,
+            String.raw`84`,
+            String.raw`112`,
+            String.raw`336`,
+            String.raw`8`
+          ]
+        },
+
+        /* 4 */
+        {
+          stem: String.raw`
+            <p>How many different committees of 7 people can be chosen from a group of 10?</p>
+          `,
+          choiceWrap: false,
+          choices: [
+            String.raw`30`,
+            String.raw`120`,
+            String.raw`210`,
+            String.raw`720`,
+            String.raw`35`,
+            String.raw`90`
+          ]
+        },
+
+        /* 5 */
+        {
+          stem: String.raw`
+            <p>How many ways can 5 bicycles be parked in a bicycle rack that has 12 slots?</p>
+          `,
+          choiceWrap: false,
+          choices: [
+            String.raw`792`,
+            String.raw`95,040`,
+            String.raw`248,832`,
+            String.raw`11,880`,
+            String.raw`27,720`,
+            String.raw`24,024`
+          ]
+        },
+
+        /* 6 */
+        {
+          stem: String.raw`
+            <p>How many different ways can the letters of the word <b>algebra</b> be arranged?</p>
+          `,
+          choiceWrap: false,
+          choices: [
+            String.raw`5040`,
+            String.raw`2520`,
+            String.raw`720`,
+            String.raw`840`,
+            String.raw`1260`,
+            String.raw`40320`
+          ]
+        },
+
+        /* 7 */
+        {
+          stem: String.raw`
+            <p>How many ways can 6 children be arranged around a table?</p>
+          `,
+          choiceWrap: false,
+          choices: [
+            String.raw`720`,
+            String.raw`120`,
+            String.raw`60`,
+            String.raw`24`,
+            String.raw`144`,
+            String.raw`36`
+          ]
+        },
+
+        /* 8 */
+        {
+          stem: String.raw`
+            <p>Expand and simplify: <span class="math">\( (x+4y)^3 \)</span>.</p>
+          `,
+          choiceWrap: false,
+          choices: [
+            String.raw`\(\,x^3+12x^2y+48xy^2+64y^3\,\)`,
+            String.raw`\(\,x^3+4x^2y+16xy^2+64y^3\,\)`,
+            String.raw`\(\,x^3+12x^2y+16xy^2+64y^3\,\)`,
+            String.raw`\(\,x^3+48x^2y+12xy^2+64y^3\,\)`,
+            String.raw`\(\,x^3+12x^2y+48xy^2+16y^3\,\)`,
+            String.raw`\(\,x^3+12x^2y+48xy^2-64y^3\,\)`
+          ]
+        },
+
+        /* 9 */
+        {
+          stem: String.raw`
+            <p>Expand and simplify: <span class="math">\( (a-6)^4 \)</span>.</p>
+          `,
+          choiceWrap: false,
+          choices: [
+            String.raw`\(\,a^4-6a^3+216a^2-864a+1296\,\)`,
+            String.raw`\(\,a^4-24a^3+216a^2-864a-1296\,\)`,
+            String.raw`\(\,a^4-24a^3+216a^2-864a+1296\,\)`,
+            String.raw`\(\,a^4+24a^3+216a^2+864a+1296\,\)`,
+            String.raw`\(\,a^4-24a^3+36a^2-864a+1296\,\)`,
+            String.raw`\(\,a^4-12a^2+36\,\)`
+          ]
+        },
+
+        /* 10 */
+        {
+          stem: String.raw`
+            <p>A bag has 5 orange, 3 purple, and 6 blue tokens in it.</p>
+            <p>Find <span class="math">\(P(\text{purple or orange})\)</span>.</p>
+          `,
+          choiceWrap: false,
+          choices: [
+            String.raw`\(\frac{4}{7}\)`,
+            String.raw`\(\frac{8}{15}\)`,
+            String.raw`\(\frac{5}{14}\)`,
+            String.raw`\(\frac{3}{7}\)`,
+            String.raw`\(\frac{8}{13}\)`,
+            String.raw`\(\frac{11}{14}\)`
+          ]
+        },
+
+        /* 11 */
+        {
+          stem: String.raw`
+            <p>There are 7 girls and 6 boys in a class. Three of the girls and 2 of the boys have brown eyes.</p>
+            <p>Find <span class="math">\(P(\text{brown-eyed girl})\)</span>.</p>
+          `,
+          choiceWrap: false,
+          choices: [
+            String.raw`\(\frac{2}{13}\)`,
+            String.raw`\(\frac{5}{13}\)`,
+            String.raw`\(\frac{3}{13}\)`,
+            String.raw`\(\frac{3}{7}\)`,
+            String.raw`\(\frac{7}{13}\)`,
+            String.raw`\(\frac{1}{13}\)`
+          ]
+        },
+
+        /* 12 */
+        {
+          stem: String.raw`
+            <p>There are 7 girls and 6 boys in a class. Three of the girls and 2 of the boys have brown eyes.</p>
+            <p>Find <span class="math">\(P(\text{brown-eyed student or girl})\)</span>.</p>
+          `,
+          choiceWrap: false,
+          choices: [
+            String.raw`\(\frac{9}{13}\)`,
+            String.raw`\(\frac{12}{13}\)`,
+            String.raw`\(\frac{10}{13}\)`,
+            String.raw`\(\frac{7}{13}\)`,
+            String.raw`\(\frac{5}{13}\)`,
+            String.raw`\(\frac{8}{13}\)`
+          ]
+        },
+
+        /* 13 */
+        {
+          stem: String.raw`
+            <p>The following are times (in seconds) for running the quarter mile in one gym class:</p>
+            <p><span class="math">\(55.9,\;49.8,\;49.9,\;60.3,\;53.7,\;58.2,\;56.8,\;60.5,\;61.5,\;61.4,\;60.7,\;59.4,\;59.2,\;61.0,\;59.3\)</span></p>
+            <p>Find the <b>mean</b> (nearest tenth).</p>
+          `,
+          choiceWrap: false,
+          choices: [
+            String.raw`56.9`,
+            String.raw`57.8`,
+            String.raw`58.4`,
+            String.raw`57.3`,
+            String.raw`59.0`,
+            String.raw`55.9`
+          ]
+        },
+
+        /* 14 */
+        {
+          stem: String.raw`
+            <p>Using the same time data:</p>
+            <p><span class="math">\(55.9,\;49.8,\;49.9,\;60.3,\;53.7,\;58.2,\;56.8,\;60.5,\;61.5,\;61.4,\;60.7,\;59.4,\;59.2,\;61.0,\;59.3\)</span></p>
+            <p>Find the <b>standard deviation</b> (nearest tenth).</p>
+          `,
+          choiceWrap: false,
+          choices: [
+            String.raw`14.2`,
+            String.raw`3.9`,
+            String.raw`3.6`,
+            String.raw`3.8`,
+            String.raw`4.1`,
+            String.raw`5.0`
+          ]
+        },
+
+        /* 15 */
+        {
+          stem: String.raw`
+            <p>Using the same time data, find the <b>z-score</b> for the time <span class="math">\(53.7\)</span> (nearest hundredth).</p>
+          `,
+          choiceWrap: false,
+          choices: [
+            String.raw`\(-1.10\)`,
+            String.raw`\(-0.72\)`,
+            String.raw`0.72`,
+            String.raw`1.10`,
+            String.raw`\(-1.64\)`,
+            String.raw`1.64`
+          ]
+        },
+
+        /* 16 */
+        {
+          stem: String.raw`
+            <p>Find <span class="math">\(P(-1.1\le z\le 0.72)\)</span> in the standard normal distribution.</p>
+          `,
+          choiceWrap: false,
+          choices: [
+            String.raw`0.7642`,
+            String.raw`0.1357`,
+            String.raw`0.6286`,
+            String.raw`0.3714`,
+            String.raw`0.8999`,
+            String.raw`0.4714`
+          ]
+        }
+
+      ]
+    };
+  </script>
+
+  <link rel="stylesheet" href="/math-homework/assets/core-rich.css" />
+  <script defer src="/math-homework/assets/core-rich.js"></script>
+  <script defer src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+</head>
+
+<body>
+  <div id="hw-root">Loading…</div>
+</body>
+</html>
