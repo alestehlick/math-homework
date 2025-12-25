@@ -1,0 +1,262 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Homework 14-2 (Algebra 2)</title>
+
+  <script>
+    /* =========================
+       Homework 14-2 — Circles (Algebra 2)
+       Adapted for: /math-homework/assets/core-rich.js
+
+       SOURCE REFERENCES (from the provided images):
+       - Type A: A. Exercises #1, #3, #5, #11, #14
+       - Type B: B. Exercises #16, #17, #18, #19, #20
+       - Type C: C. Exercises #21, #22
+
+       IMAGE NAMING RULE:
+       - No PNG figures are used in this homework.
+       ========================= */
+
+    window.homeworkData = {
+      classId : "Algebra2",
+      id      : "Homework 14-2",
+      title   : "Homework 14-2 — Circles",
+
+      graphics : String.raw``,
+
+      answerKey : ["A","C","B","D","F","B","E","A","C","D","C","A"],
+
+      questions : [
+        /* --------------------
+           Type A (5)
+           -------------------- */
+
+        /* Q1 — A #1 */
+        {
+          stem: String.raw`
+            <p>State the center and radius of the circle:</p>
+            <p>\((x-7)^2+(y-3)^2=49\).</p>
+          `,
+          choices: [
+            String.raw`Center: \((7,3)\), radius: \(7\)`,
+            String.raw`Center: \((-7,3)\), radius: \(7\)`,
+            String.raw`Center: \((7,-3)\), radius: \(7\)`,
+            String.raw`Center: \((7,3)\), radius: \(49\)`,
+            String.raw`Center: \((0,0)\), radius: \(7\)`,
+            String.raw`Center: \((7,3)\), radius: \(\sqrt{7}\)`
+          ],
+          choiceWrap: false
+        },
+
+        /* Q2 — A #3 */
+        {
+          stem: String.raw`
+            <p>State the center and radius of the circle:</p>
+            <p>\((x+6)^2+(y-4)^2=36\).</p>
+          `,
+          choices: [
+            String.raw`Center: \((6,4)\), radius: \(6\)`,
+            String.raw`Center: \((-6,-4)\), radius: \(6\)`,
+            String.raw`Center: \((-6,4)\), radius: \(6\)`,
+            String.raw`Center: \((-6,4)\), radius: \(36\)`,
+            String.raw`Center: \((6,-4)\), radius: \(6\)`,
+            String.raw`Center: \((-6,4)\), radius: \(\sqrt{6}\)`
+          ],
+          choiceWrap: false
+        },
+
+        /* Q3 — A #5 */
+        {
+          stem: String.raw`
+            <p>State the center and radius of the circle:</p>
+            <p>\((x-2)^2+y^2=3\).</p>
+          `,
+          choices: [
+            String.raw`Center: \((2,0)\), radius: \(3\)`,
+            String.raw`Center: \((2,0)\), radius: \(\sqrt{3}\)`,
+            String.raw`Center: \((-2,0)\), radius: \(\sqrt{3}\)`,
+            String.raw`Center: \((0,2)\), radius: \(\sqrt{3}\)`,
+            String.raw`Center: \((0,0)\), radius: \(\sqrt{3}\)`,
+            String.raw`Center: \((2,0)\), radius: \(\sqrt{9}\)`
+          ],
+          choiceWrap: false
+        },
+
+        /* Q4 — A #11 (Graph) */
+        {
+          stem: String.raw`
+            <p>Consider the circle:</p>
+            <p>\(x^2+y^2=16\).</p>
+            <p>Which point lies on this circle?</p>
+          `,
+          choices: [
+            String.raw`\((3,3)\)`,
+            String.raw`\((0,5)\)`,
+            String.raw`\((2,3)\)`,
+            String.raw`\((4,0)\)`,
+            String.raw`\((-2,4)\)`,
+            String.raw`\((1,4)\)`
+          ],
+          choiceWrap: false
+        },
+
+        /* Q5 — A #14 (Graph) */
+        {
+          stem: String.raw`
+            <p>Consider the circle:</p>
+            <p>\(x^2+(y-5)^2=12\).</p>
+            <p>What is the radius?</p>
+          `,
+          choices: [
+            String.raw`\(12\)`,
+            String.raw`\(\sqrt{6}\)`,
+            String.raw`\(2\sqrt{2}\)`,
+            String.raw`\(3\sqrt{2}\)`,
+            String.raw`\(\sqrt{12}\)`,
+            String.raw`\(2\sqrt{3}\)`
+          ],
+          choiceWrap: false
+        },
+
+        /* --------------------
+           Type B (5)
+           -------------------- */
+
+        /* Q6 — B #16 */
+        {
+          stem: String.raw`
+            <p>Write the equation in standard form and identify the center and radius:</p>
+            <p>\(x^2+8x+y^2+6y=18\).</p>
+          `,
+          choices: [
+            String.raw`Standard form: \((x-4)^2+(y-3)^2=43\); center \((4,3)\); radius \(\sqrt{43}\)`,
+            String.raw`Standard form: \((x+4)^2+(y+3)^2=43\); center \((-4,-3)\); radius \(\sqrt{43}\)`,
+            String.raw`Standard form: \((x+4)^2+(y-3)^2=43\); center \((-4,3)\); radius \(\sqrt{43}\)`,
+            String.raw`Standard form: \((x+4)^2+(y+3)^2=18\); center \((-4,-3)\); radius \(\sqrt{18}\)`,
+            String.raw`Standard form: \((x+8)^2+(y+6)^2=43\); center \((-8,-6)\); radius \(\sqrt{43}\)`,
+            String.raw`Standard form: \((x+4)^2+(y+3)^2=25\); center \((-4,-3)\); radius \(5\)`
+          ],
+          choiceWrap: false
+        },
+
+        /* Q7 — B #17 */
+        {
+          stem: String.raw`
+            <p>Write the equation in standard form and identify the center and radius:</p>
+            <p>\(x^2+12x+y^2-2y=10\).</p>
+          `,
+          choices: [
+            String.raw`Standard form: \((x+6)^2+(y+1)^2=47\); center \((-6,-1)\); radius \(\sqrt{47}\)`,
+            String.raw`Standard form: \((x-6)^2+(y-1)^2=47\); center \((6,1)\); radius \(\sqrt{47}\)`,
+            String.raw`Standard form: \((x+6)^2+(y-1)^2=11\); center \((-6,1)\); radius \(\sqrt{11}\)`,
+            String.raw`Standard form: \((x+12)^2+(y-2)^2=10\); center \((-12,2)\); radius \(\sqrt{10}\)`,
+            String.raw`Standard form: \((x+6)^2+(y-1)^2=47\); center \((-6,1)\); radius \(\sqrt{47}\)`,
+            String.raw`Standard form: \((x+6)^2+(y-1)^2=10\); center \((-6,1)\); radius \(\sqrt{10}\)`
+          ],
+          choiceWrap: false
+        },
+
+        /* Q8 — B #18 */
+        {
+          stem: String.raw`
+            <p>Write the equation in standard form and identify the center and radius:</p>
+            <p>\(x^2-6x+y^2+10y=23\).</p>
+          `,
+          choices: [
+            String.raw`Standard form: \((x-3)^2+(y+5)^2=57\); center \((3,-5)\); radius \(\sqrt{57}\)`,
+            String.raw`Standard form: \((x+3)^2+(y-5)^2=57\); center \((-3,5)\); radius \(\sqrt{57}\)`,
+            String.raw`Standard form: \((x-3)^2+(y-5)^2=57\); center \((3,5)\); radius \(\sqrt{57}\)`,
+            String.raw`Standard form: \((x-3)^2+(y+5)^2=23\); center \((3,-5)\); radius \(\sqrt{23}\)`,
+            String.raw`Standard form: \((x-6)^2+(y+10)^2=57\); center \((6,-10)\); radius \(\sqrt{57}\)`,
+            String.raw`Standard form: \((x-3)^2+(y+5)^2=34\); center \((3,-5)\); radius \(\sqrt{34}\)`
+          ],
+          choiceWrap: false
+        },
+
+        /* Q9 — B #19 */
+        {
+          stem: String.raw`
+            <p>Write the equation in standard form and identify the center and radius:</p>
+            <p>\(x^2-8x+y^2-6y=1\).</p>
+          `,
+          choices: [
+            String.raw`Standard form: \((x-4)^2+(y-3)^2=1\); center \((4,3)\); radius \(1\)`,
+            String.raw`Standard form: \((x+4)^2+(y+3)^2=26\); center \((-4,-3)\); radius \(\sqrt{26}\)`,
+            String.raw`Standard form: \((x-4)^2+(y-3)^2=26\); center \((4,3)\); radius \(\sqrt{26}\)`,
+            String.raw`Standard form: \((x-8)^2+(y-6)^2=26\); center \((8,6)\); radius \(\sqrt{26}\)`,
+            String.raw`Standard form: \((x-4)^2+(y-3)^2=10\); center \((4,3)\); radius \(\sqrt{10}\)`,
+            String.raw`Standard form: \((x-4)^2+(y-3)^2=25\); center \((4,3)\); radius \(5\)`
+          ],
+          choiceWrap: false
+        },
+
+        /* Q10 — B #20 */
+        {
+          stem: String.raw`
+            <p>Write the equation in standard form and identify the center and radius:</p>
+            <p>\(x^2+2x+y^2-9y=7\).</p>
+          `,
+          choices: [
+            String.raw`Standard form: \((x+1)^2+\left(y-\dfrac{9}{2}\right)^2=\dfrac{113}{2}\); center \((-1,\dfrac{9}{2})\); radius \(\sqrt{\dfrac{113}{2}}\)`,
+            String.raw`Standard form: \((x-1)^2+\left(y-\dfrac{9}{2}\right)^2=\dfrac{113}{4}\); center \((1,\dfrac{9}{2})\); radius \(\dfrac{\sqrt{113}}{2}\)`,
+            String.raw`Standard form: \((x+1)^2+\left(y+\dfrac{9}{2}\right)^2=\dfrac{113}{4}\); center \((-1,-\dfrac{9}{2})\); radius \(\dfrac{\sqrt{113}}{2}\)`,
+            String.raw`Standard form: \((x+1)^2+\left(y-\dfrac{9}{2}\right)^2=\dfrac{113}{4}\); center \((-1,\dfrac{9}{2})\); radius \(\dfrac{\sqrt{113}}{2}\)`,
+            String.raw`Standard form: \((x+2)^2+(y-9)^2=7\); center \((-2,9)\); radius \(\sqrt{7}\)`,
+            String.raw`Standard form: \((x+1)^2+\left(y-\dfrac{9}{2}\right)^2=\dfrac{81}{4}\); center \((-1,\dfrac{9}{2})\); radius \(\dfrac{9}{2}\)`
+          ],
+          choiceWrap: false
+        },
+
+        /* --------------------
+           Type C (2)
+           -------------------- */
+
+        /* Q11 — C #21 */
+        {
+          stem: String.raw`
+            <p>In a circle, \(\overline{AB}\) is a diameter and \(C\) is any point on the circle (with \(C\neq A,B\)).</p>
+            <p>What is the measure of \(\angle ACB\)?</p>
+          `,
+          choices: [
+            String.raw`\(45^\circ\)`,
+            String.raw`\(60^\circ\)`,
+            String.raw`\(90^\circ\)`,
+            String.raw`\(120^\circ\)`,
+            String.raw`\(150^\circ\)`,
+            String.raw`It cannot be determined from the information given.`
+          ],
+          choiceWrap: false
+        },
+
+        /* Q12 — C #22 */
+        {
+          stem: String.raw`
+            <p>Consider the equation:</p>
+            <p>\(\dfrac{1}{3}x^2-5x+\dfrac{1}{3}y^2+\dfrac{2}{9}y=7\).</p>
+            <p>Identify the center and radius of the circle.</p>
+          `,
+          choices: [
+            String.raw`Center: \(\left(\dfrac{15}{2},-\dfrac{1}{3}\right)\), radius: \(\dfrac{\sqrt{2785}}{6}\)`,
+            String.raw`Center: \(\left(-\dfrac{15}{2},-\dfrac{1}{3}\right)\), radius: \(\dfrac{\sqrt{2785}}{6}\)`,
+            String.raw`Center: \(\left(\dfrac{15}{2},\dfrac{1}{3}\right)\), radius: \(\dfrac{\sqrt{2785}}{6}\)`,
+            String.raw`Center: \(\left(\dfrac{15}{2},-\dfrac{1}{3}\right)\), radius: \(\sqrt{2785}\)`,
+            String.raw`Center: \(\left(\dfrac{15}{2},-\dfrac{1}{3}\right)\), radius: \(\dfrac{\sqrt{2785}}{3}\)`,
+            String.raw`Center: \(\left(15,-\dfrac{1}{3}\right)\), radius: \(\dfrac{\sqrt{2785}}{6}\)`
+          ],
+          choiceWrap: false
+        }
+      ]
+    };
+  </script>
+
+  <link rel="stylesheet" href="/math-homework/assets/core-rich.css" />
+  <script defer src="/math-homework/assets/core-rich.js"></script>
+  <script defer src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+</head>
+
+<body>
+  <div id="hw-root">Loading…</div>
+</body>
+</html>
