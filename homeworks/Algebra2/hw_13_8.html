@@ -1,0 +1,255 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Homework 13-8 (Algebra 2)</title>
+
+  <script>
+    /* =========================
+       Homework 13-8 — Standard Normal Distribution (Algebra 2)
+
+       REQUIRED SOURCE REFERENCES (your provided sets):
+       - Type A uses A. Exercises: #1, #3, #8, #10
+       - Type B uses B. Exercises: #17, #18, #19, #20
+         + two additional Type B items in the same format (find a given a percent)
+       - Type C uses C. Exercises: #21, #22
+
+       IMAGE NAMING RULE (STRICT):
+       No figures are used in this homework.
+       ========================= */
+
+    window.homeworkData = {
+      classId : "Algebra2",
+      id      : "Homework 13-8",
+      title   : "Homework 13-8 — Standard Normal Distribution",
+
+      graphics : String.raw``,
+
+      answerKey : ["C","B","E","A","D","B","A","C","A","B","D","E"],
+
+      questions : [
+
+        /* =======================
+           Type A (4)
+           ======================= */
+
+        /* A #1 */
+        {
+          stem: String.raw`
+            <p>In the standard normal distribution, what percent of the scores occur between 0 and <span class="math">\(2\)</span>?</p>
+          `,
+          choiceWrap: false,
+          choices: [
+            String.raw`34.13%`,
+            String.raw`45.45%`,
+            String.raw`47.72%`,
+            String.raw`49.72%`,
+            String.raw`97.72%`,
+            String.raw`95.45%`
+          ]
+        },
+
+        /* A #3 */
+        {
+          stem: String.raw`
+            <p>In the standard normal distribution, what percent of the scores occur between 0 and <span class="math">\(-1.2\)</span>?</p>
+          `,
+          choiceWrap: false,
+          choices: [
+            String.raw`11.51%`,
+            String.raw`38.49%`,
+            String.raw`34.13%`,
+            String.raw`42.07%`,
+            String.raw`61.51%`,
+            String.raw`88.49%`
+          ]
+        },
+
+        /* A #8 */
+        {
+          stem: String.raw`
+            <p>In the standard normal distribution, what percent of the scores occur between <span class="math">\(-1.5\)</span> and <span class="math">\(1.5\)</span>?</p>
+          `,
+          choiceWrap: false,
+          choices: [
+            String.raw`86.64%`,
+            String.raw`68.27%`,
+            String.raw`73.28%`,
+            String.raw`84.13%`,
+            String.raw`90.00%`,
+            String.raw`95.00%`
+          ]
+        },
+
+        /* A #10 */
+        {
+          stem: String.raw`
+            <p>In the standard normal distribution, what percent of the scores occur between <span class="math">\(-2.57\)</span> and <span class="math">\(2.57\)</span>?</p>
+          `,
+          choiceWrap: false,
+          choices: [
+            String.raw`98.98%`,
+            String.raw`98.00%`,
+            String.raw`95.00%`,
+            String.raw`99.00%`,
+            String.raw`97.98%`,
+            String.raw`99.49%`
+          ]
+        },
+
+        /* =======================
+           Type B (6)
+           ======================= */
+
+        /* B #17 */
+        {
+          stem: String.raw`
+            <p>Find the value of <span class="math">\(a\)</span> such that <span class="math">\(P(0\le x\le a)\)</span> is the given percent.</p>
+            <p><b>17%</b></p>
+          `,
+          choiceWrap: false,
+          choices: [
+            String.raw`0.34`,
+            String.raw`0.50`,
+            String.raw`0.67`,
+            String.raw`0.44`,
+            String.raw`1.28`,
+            String.raw`0.93`
+          ]
+        },
+
+        /* B #18 */
+        {
+          stem: String.raw`
+            <p>Find the value of <span class="math">\(a\)</span> such that <span class="math">\(P(0\le x\le a)\)</span> is the given percent.</p>
+            <p><b>40%</b></p>
+          `,
+          choiceWrap: false,
+          choices: [
+            String.raw`1.15`,
+            String.raw`1.28`,
+            String.raw`0.67`,
+            String.raw`1.64`,
+            String.raw`0.90`,
+            String.raw`1.96`
+          ]
+        },
+
+        /* Type B (additional, same format) */
+        {
+          stem: String.raw`
+            <p>Find the value of <span class="math">\(a\)</span> such that <span class="math">\(P(0\le x\le a)\)</span> is the given percent.</p>
+            <p><b>25%</b></p>
+          `,
+          choiceWrap: false,
+          choices: [
+            String.raw`0.67`,
+            String.raw`0.44`,
+            String.raw`0.75`,
+            String.raw`1.15`,
+            String.raw`0.62`,
+            String.raw`1.28`
+          ]
+        },
+
+        /* B #19 */
+        {
+          stem: String.raw`
+            <p>Find the value of <span class="math">\(a\)</span> such that <span class="math">\(P(-a\le x\le a)\)</span> is the given percent.</p>
+            <p><b>31%</b></p>
+          `,
+          choiceWrap: false,
+          choices: [
+            String.raw`0.67`,
+            String.raw`0.44`,
+            String.raw`0.40`,
+            String.raw`0.39`,
+            String.raw`1.28`,
+            String.raw`0.84`
+          ]
+        },
+
+        /* B #20 */
+        {
+          stem: String.raw`
+            <p>Find the value of <span class="math">\(a\)</span> such that <span class="math">\(P(-a\le x\le a)\)</span> is the given percent.</p>
+            <p><b>95%</b></p>
+          `,
+          choiceWrap: false,
+          choices: [
+            String.raw`2.57`,
+            String.raw`1.64`,
+            String.raw`1.28`,
+            String.raw`1.96`,
+            String.raw`2.00`,
+            String.raw`1.75`
+          ]
+        },
+
+        /* Type B (additional, same format) */
+        {
+          stem: String.raw`
+            <p>Find the value of <span class="math">\(a\)</span> such that <span class="math">\(P(-a\le x\le a)\)</span> is the given percent.</p>
+            <p><b>90%</b></p>
+          `,
+          choiceWrap: false,
+          choices: [
+            String.raw`1.28`,
+            String.raw`1.64`,
+            String.raw`1.50`,
+            String.raw`1.96`,
+            String.raw`1.15`,
+            String.raw`2.33`
+          ]
+        },
+
+        /* =======================
+           Type C (2)
+           ======================= */
+
+        /* C #21 */
+        {
+          stem: String.raw`
+            <p>Find the percent of scores such that <span class="math">\(P(x\le -0.5 \text{ or } x\ge 0.5)\)</span>.</p>
+          `,
+          choiceWrap: false,
+          choices: [
+            String.raw`38.29%`,
+            String.raw`30.85%`,
+            String.raw`50.00%`,
+            String.raw`61.71%`,
+            String.raw`69.15%`,
+            String.raw`95.00%`
+          ]
+        },
+
+        /* C #22 */
+        {
+          stem: String.raw`
+            <p>Find the value of <span class="math">\(a\)</span> such that <span class="math">\(P(x\le -a \text{ or } x\ge a)=25\%\)</span>.</p>
+          `,
+          choiceWrap: false,
+          choices: [
+            String.raw`0.67`,
+            String.raw`1.28`,
+            String.raw`1.12`,
+            String.raw`1.10`,
+            String.raw`1.15`,
+            String.raw`1.96`
+          ]
+        }
+
+      ]
+    };
+  </script>
+
+  <link rel="stylesheet" href="/math-homework/assets/core-rich.css" />
+  <script defer src="/math-homework/assets/core-rich.js"></script>
+  <script defer src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+</head>
+
+<body>
+  <div id="hw-root">Loading…</div>
+</body>
+</html>
