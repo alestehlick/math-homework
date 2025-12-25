@@ -1,0 +1,255 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Homework 13-4 (Algebra 2)</title>
+
+  <script>
+    /* =========================
+       Homework 13-4 — Binomial Theorem (Algebra 2)
+
+       REQUIRED SOURCE REFERENCES (your provided sets):
+       - Type A uses A. Exercises: #1, #3, #6, #10
+       - Type B uses B. Exercises: #11, #12, #14, #16, #18, #19
+       - Type C uses C. Exercises: #20, #21
+
+       IMAGE NAMING RULE (STRICT):
+       No figures are used in this homework.
+       ========================= */
+
+    window.homeworkData = {
+      classId : "Algebra2",
+      id      : "Homework 13-4",
+      title   : "Homework 13-4 — Binomial Theorem",
+
+      graphics : String.raw``,
+
+      answerKey : ["C","A","B","B","B","A","A","B","C","A","A","A"],
+
+      questions : [
+
+        /* =======================
+           A. Exercises (4)
+           ======================= */
+
+        /* A #1 */
+        {
+          stem: String.raw`
+            <p>Expand each binomial and simplify.</p>
+            <p>\(\,(a+b)^3\,\)</p>
+          `,
+          choiceWrap: false,
+          choices: [
+            String.raw`\(\,a^3+3a^2b+ab^2+b^3\,\)`,
+            String.raw`\(\,a^3+2a^2b+2ab^2+b^3\,\)`,
+            String.raw`\(\,a^3+3a^2b+3ab^2+b^3\,\)`,
+            String.raw`\(\,a^3-3a^2b+3ab^2-b^3\,\)`,
+            String.raw`\(\,a^3+3a^2+3ab+b^3\,\)`,
+            String.raw`\(\,a^3+3a^2b+3ab^2\,\)`
+          ]
+        },
+
+        /* A #3 */
+        {
+          stem: String.raw`
+            <p>Expand each binomial and simplify.</p>
+            <p>\(\,(x-4y)^6\,\)</p>
+          `,
+          choiceWrap: false,
+          choices: [
+            String.raw`\(\,x^6-24x^5y+240x^4y^2-1280x^3y^3+3840x^2y^4-6144xy^5+4096y^6\,\)`,
+            String.raw`\(\,x^6-24x^5y+240x^4y^2-1280x^3y^3+3840x^2y^4-6144xy^5-4096y^6\,\)`,
+            String.raw`\(\,x^6-4x^5y+16x^4y^2-64x^3y^3+256x^2y^4-1024xy^5+4096y^6\,\)`,
+            String.raw`\(\,x^6-20x^5y+160x^4y^2-640x^3y^3+1280x^2y^4-1024xy^5+4096y^6\,\)`,
+            String.raw`\(\,x^6-24x^5y+160x^4y^2-1280x^3y^3+3840x^2y^4-6144xy^5+4096y^6\,\)`,
+            String.raw`\(\,x^6-24x^5y+240x^4y^2+1280x^3y^3+3840x^2y^4-6144xy^5+4096y^6\,\)`
+          ]
+        },
+
+        /* A #6 */
+        {
+          stem: String.raw`
+            <p>Expand each binomial and simplify.</p>
+            <p>\(\,(x-5y)^5\,\)</p>
+          `,
+          choiceWrap: false,
+          choices: [
+            String.raw`\(\,x^5-5x^4y+25x^3y^2-125x^2y^3+625xy^4-3125y^5\,\)`,
+            String.raw`\(\,x^5-25x^4y+250x^3y^2-1250x^2y^3+3125xy^4-3125y^5\,\)`,
+            String.raw`\(\,x^5-25x^4y+250x^3y^2-1250x^2y^3+3125xy^4+3125y^5\,\)`,
+            String.raw`\(\,x^5-25x^4y+300x^3y^2-1250x^2y^3+3125xy^4-3125y^5\,\)`,
+            String.raw`\(\,x^5+25x^4y+250x^3y^2+1250x^2y^3+3125xy^4+3125y^5\,\)`,
+            String.raw`\(\,x^5-25x^4y+250x^3y^2-1250x^2y^3+3125xy^4-625y^5\,\)`
+          ]
+        },
+
+        /* A #10 */
+        {
+          stem: String.raw`
+            <p>Expand each binomial and simplify.</p>
+            <p>\(\,(2a^2+7b)^4\,\)</p>
+          `,
+          choiceWrap: false,
+          choices: [
+            String.raw`\(\,16a^8+112a^6b+1176a^4b^2+2744a^2b^3+2401b^4\,\)`,
+            String.raw`\(\,16a^8+224a^6b+1176a^4b^2+2744a^2b^3+2401b^4\,\)`,
+            String.raw`\(\,16a^8+224a^6b+784a^4b^2+2744a^2b^3+2401b^4\,\)`,
+            String.raw`\(\,16a^8+448a^6b+1176a^4b^2+2744a^2b^3+2401b^4\,\)`,
+            String.raw`\(\,8a^8+224a^6b+1176a^4b^2+2744a^2b^3+2401b^4\,\)`,
+            String.raw`\(\,16a^8+224a^6b+1176a^4b^2-2744a^2b^3+2401b^4\,\)`
+          ]
+        },
+
+        /* =======================
+           B. Exercises (6)
+           ======================= */
+
+        /* B #11 */
+        {
+          stem: String.raw`
+            <p>Find the term of the expansion that contains the indicated power and simplify.</p>
+            <p>\(\,(x+3)^9,\; x^5\,\)</p>
+          `,
+          choiceWrap: false,
+          choices: [
+            String.raw`\(\,9{,}072x^5\,\)`,
+            String.raw`\(\,10{,}206x^5\,\)`,
+            String.raw`\(\,30{,}618x^5\,\)`,
+            String.raw`\(\,1{,}134x^5\,\)`,
+            String.raw`\(\,5{,}103x^5\,\)`,
+            String.raw`\(\,12{,}150x^5\,\)`
+          ]
+        },
+
+        /* B #12 */
+        {
+          stem: String.raw`
+            <p>Find the term of the expansion that contains the indicated power and simplify.</p>
+            <p>\(\,(x-y)^8,\; y^7\,\)</p>
+          `,
+          choiceWrap: false,
+          choices: [
+            String.raw`\(\,-8xy^7\,\)`,
+            String.raw`\(\,8xy^7\,\)`,
+            String.raw`\(\,-8x^7y\,\)`,
+            String.raw`\(\,-56x^2y^7\,\)`,
+            String.raw`\(\,-8y^7\,\)`,
+            String.raw`\(\,-8xy^8\,\)`
+          ]
+        },
+
+        /* B #14 */
+        {
+          stem: String.raw`
+            <p>Find the term of the expansion that contains the indicated power and simplify.</p>
+            <p>\(\,(x^2+y^5)^6,\; y^{15}\,\)</p>
+          `,
+          choiceWrap: false,
+          choices: [
+            String.raw`\(\,20x^6y^{15}\,\)`,
+            String.raw`\(\,15x^6y^{15}\,\)`,
+            String.raw`\(\,20x^3y^{15}\,\)`,
+            String.raw`\(\,6x^{12}y^{15}\,\)`,
+            String.raw`\(\,20x^8y^{15}\,\)`,
+            String.raw`\(\,120x^6y^{15}\,\)`
+          ]
+        },
+
+        /* B #16 */
+        {
+          stem: String.raw`
+            <p>Find the third term of \(\,(x+y)^{12}\,\).</p>
+          `,
+          choiceWrap: false,
+          choices: [
+            String.raw`\(\,12x^{11}y\,\)`,
+            String.raw`\(\,66x^{10}y^2\,\)`,
+            String.raw`\(\,220x^{9}y^3\,\)`,
+            String.raw`\(\,792x^{8}y^4\,\)`,
+            String.raw`\(\,x^{10}y^2\,\)`,
+            String.raw`\(\,132x^{10}y^2\,\)`
+          ]
+        },
+
+        /* B #18 */
+        {
+          stem: String.raw`
+            <p>Find the last term of \(\,(2x-y)^{11}\,\).</p>
+          `,
+          choiceWrap: false,
+          choices: [
+            String.raw`\(\,-2^{11}x^{11}\,\)`,
+            String.raw`\(\,2^{11}x^{11}\,\)`,
+            String.raw`\(\,-y^{11}\,\)`,
+            String.raw`\(\,y^{11}\,\)`,
+            String.raw`\(\,-11\cdot(2x)\,y^{10}\,\)`,
+            String.raw`\(\,-2048xy^{10}\,\)`
+          ]
+        },
+
+        /* B #19 */
+        {
+          stem: String.raw`
+            <p>Find the 10th term of \(\,(3x^2+y^4)^{17}\,\).</p>
+          `,
+          choiceWrap: false,
+          choices: [
+            String.raw`\(\,159{,}497{,}910x^{16}y^{36}\,\)`,
+            String.raw`\(\,159{,}497{,}910x^{18}y^{32}\,\)`,
+            String.raw`\(\,24310\cdot 3^{9}x^{14}y^{36}\,\)`,
+            String.raw`\(\,24310\cdot 3^{8}x^{16}y^{40}\,\)`,
+            String.raw`\(\,159{,}497{,}910x^{16}y^{32}\,\)`,
+            String.raw`\(\,53{,}165{,}970x^{16}y^{36}\,\)`
+          ]
+        },
+
+        /* =======================
+           C. Exercises (2)
+           ======================= */
+
+        /* C #20 */
+        {
+          stem: String.raw`
+            <p>Find the middle term of \(\,(x-y)^{10}\,\).</p>
+          `,
+          choiceWrap: false,
+          choices: [
+            String.raw`\(\,-252x^5y^5\,\)`,
+            String.raw`\(\,252x^5y^5\,\)`,
+            String.raw`\(\,-210x^5y^5\,\)`,
+            String.raw`\(\,-252x^6y^4\,\)`,
+            String.raw`\(\,-126x^5y^5\,\)`,
+            String.raw`\(\,-252x^4y^6\,\)`
+          ]
+        },
+
+        /* C #21 */
+        {
+          stem: String.raw`
+            <p>Given that \(\,15{,}360x^{21}y^{12}\,\) and \(\,13{,}440x^{18}y^{16}\,\) are consecutive terms of a binomial expansion, write the factorization of the entire polynomial.</p>
+          `,
+          choiceWrap: false,
+          choices: [
+            String.raw`\(\,(2x^3+y^4)^{10}\,\)`,
+            String.raw`\(\,(x^3+2y^4)^{10}\,\)`,
+            String.raw`\(\,(2x^3+y^4)^{9}\,\)`,
+            String.raw`\(\,(2x+y^4)^{10}\,\)`,
+            String.raw`\(\,(2x^3+y^4)^{11}\,\)`,
+            String.raw`\(\,(4x^3+y^4)^{10}\,\)`
+          ]
+        }
+
+      ]
+    };
+  </script>
+
+  <link rel="stylesheet" href="/math-homework/assets/core-rich.css" />
+  <script defer src="/math-homework/assets/core-rich.js"></script>
+  <script defer src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+</head>
+
+<body>
+  <div id="hw-root">Loading…</div>
+</body>
+</html>
