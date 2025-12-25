@@ -10,13 +10,15 @@
        Homework 14-2 — Circles (Algebra 2)
        Adapted for: /math-homework/assets/core-rich.js
 
-       SOURCE REFERENCES (from the provided images):
-       - Type A: A. Exercises #1, #3, #5, #11, #14
-       - Type B: B. Exercises #16, #17, #18, #19, #20
-       - Type C: C. Exercises #21, #22
+       REQUIRED SOURCE REFERENCES (your provided sets + custom directions):
+       - A. Exercises (center/radius style, from #1–10): #1, #4, #7, #10
+       - B. Exercises (write in standard form): #16, #17, #18, #19, #20
+       - Custom graph-identification circles (teacher-made): G1, G2, G3, G4, G5
+       - Extra challenging (teacher-made): X1, X2
 
        IMAGE NAMING RULE:
-       - No PNG figures are used in this homework.
+       No PNG figures are used.
+       The 5 graph questions use embedded TikZ (Figure 1–Figure 5) drawn in red.
        ========================= */
 
     window.homeworkData = {
@@ -26,233 +28,367 @@
 
       graphics : String.raw``,
 
-      answerKey : ["A","C","B","D","F","B","E","A","C","D","C","A"],
+      answerKey : ["C","D","B","C","B","B","A","D","C","A","B","D","C","E","D","B"],
 
       questions : [
-        /* --------------------
-           Type A (5)
-           -------------------- */
 
-        /* Q1 — A #1 */
+        /* =========================================================
+           4 questions like A #1–10 (identify center and radius)
+           ========================================================= */
+
+        /* Q1 — Source: A #1 */
         {
           stem: String.raw`
             <p>State the center and radius of the circle:</p>
-            <p>\((x-7)^2+(y-3)^2=49\).</p>
+            <p>\((x-7)^2+(y-3)^2=49\)</p>
           `,
           choices: [
-            String.raw`Center: \((7,3)\), radius: \(7\)`,
-            String.raw`Center: \((-7,3)\), radius: \(7\)`,
-            String.raw`Center: \((7,-3)\), radius: \(7\)`,
-            String.raw`Center: \((7,3)\), radius: \(49\)`,
-            String.raw`Center: \((0,0)\), radius: \(7\)`,
-            String.raw`Center: \((7,3)\), radius: \(\sqrt{7}\)`
+            String.raw`Center \((-7,-3)\), radius \(7\)`,
+            String.raw`Center \((7,3)\), radius \(49\)`,
+            String.raw`Center \((7,3)\), radius \(7\)`,
+            String.raw`Center \((-7,3)\), radius \(7\)`,
+            String.raw`Center \((7,-3)\), radius \(7\)`,
+            String.raw`Center \((7,3)\), radius \(\sqrt7\)`
           ],
           choiceWrap: false
         },
 
-        /* Q2 — A #3 */
+        /* Q2 — Source: A #4 */
         {
           stem: String.raw`
             <p>State the center and radius of the circle:</p>
-            <p>\((x+6)^2+(y-4)^2=36\).</p>
+            <p>\((x+9)^2+(y+5)^2=7\)</p>
           `,
           choices: [
-            String.raw`Center: \((6,4)\), radius: \(6\)`,
-            String.raw`Center: \((-6,-4)\), radius: \(6\)`,
-            String.raw`Center: \((-6,4)\), radius: \(6\)`,
-            String.raw`Center: \((-6,4)\), radius: \(36\)`,
-            String.raw`Center: \((6,-4)\), radius: \(6\)`,
-            String.raw`Center: \((-6,4)\), radius: \(\sqrt{6}\)`
+            String.raw`Center \((-9,-5)\), radius \(7\)`,
+            String.raw`Center \((9,5)\), radius \(\sqrt7\)`,
+            String.raw`Center \((-9,5)\), radius \(\sqrt7\)`,
+            String.raw`Center \((-9,-5)\), radius \(\sqrt7\)`,
+            String.raw`Center \((-9,-5)\), radius \(\sqrt{14}\)`,
+            String.raw`Center \((9,-5)\), radius \(\sqrt7\)`
           ],
           choiceWrap: false
         },
 
-        /* Q3 — A #5 */
+        /* Q3 — Source: A #7 */
         {
           stem: String.raw`
             <p>State the center and radius of the circle:</p>
-            <p>\((x-2)^2+y^2=3\).</p>
+            <p>\(x^2+y^2=2\)</p>
           `,
           choices: [
-            String.raw`Center: \((2,0)\), radius: \(3\)`,
-            String.raw`Center: \((2,0)\), radius: \(\sqrt{3}\)`,
-            String.raw`Center: \((-2,0)\), radius: \(\sqrt{3}\)`,
-            String.raw`Center: \((0,2)\), radius: \(\sqrt{3}\)`,
-            String.raw`Center: \((0,0)\), radius: \(\sqrt{3}\)`,
-            String.raw`Center: \((2,0)\), radius: \(\sqrt{9}\)`
+            String.raw`Center \((0,0)\), radius \(2\)`,
+            String.raw`Center \((0,0)\), radius \(\sqrt2\)`,
+            String.raw`Center \((2,0)\), radius \(\sqrt2\)`,
+            String.raw`Center \((0,2)\), radius \(\sqrt2\)`,
+            String.raw`Center \((0,0)\), radius \(1\)`,
+            String.raw`Center \((0,0)\), radius \(\sqrt4\)`
           ],
           choiceWrap: false
         },
 
-        /* Q4 — A #11 (Graph) */
+        /* Q4 — Source: A #10 */
         {
           stem: String.raw`
-            <p>Consider the circle:</p>
-            <p>\(x^2+y^2=16\).</p>
-            <p>Which point lies on this circle?</p>
+            <p>State the center and radius of the circle:</p>
+            <p>\((x+6)^2+(y-2)^2=18\)</p>
           `,
           choices: [
-            String.raw`\((3,3)\)`,
-            String.raw`\((0,5)\)`,
-            String.raw`\((2,3)\)`,
-            String.raw`\((4,0)\)`,
-            String.raw`\((-2,4)\)`,
-            String.raw`\((1,4)\)`
+            String.raw`Center \((-6,2)\), radius \(18\)`,
+            String.raw`Center \((6,-2)\), radius \(3\sqrt2\)`,
+            String.raw`Center \((-6,2)\), radius \(3\sqrt2\)`,
+            String.raw`Center \((-6,2)\), radius \(3\sqrt{18}\)`,
+            String.raw`Center \((-6,-2)\), radius \(3\sqrt2\)`,
+            String.raw`Center \((6,2)\), radius \(3\sqrt2\)`
           ],
           choiceWrap: false
         },
 
-        /* Q5 — A #14 (Graph) */
+        /* =========================================================
+           5 graph questions (TikZ red circle) — choose correct equation
+           ========================================================= */
+
+        /* Q5 — Custom G1 */
         {
           stem: String.raw`
-            <p>Consider the circle:</p>
-            <p>\(x^2+(y-5)^2=12\).</p>
-            <p>What is the radius?</p>
+            <p><b>Refer to Figure 1.</b> Which equation matches the graphed circle?</p>
+          `,
+          media: String.raw`
+            <figure>
+              <script type="text/tikz">
+\begin{tikzpicture}[x=0.55cm,y=0.55cm]
+  \clip (-7,-7) rectangle (7,7);
+  \draw[step=1,gray!25] (-6,-6) grid (6,6);
+  \draw[->,thick] (-6,0)--(6.3,0);
+  \draw[->,thick] (0,-6)--(0,6.3);
+  \draw[red,thick] (2,-1) circle (3);
+  \fill (2,-1) circle (2pt);
+\end{tikzpicture}
+              </script>
+              <figcaption>Figure 1</figcaption>
+            </figure>
           `,
           choices: [
-            String.raw`\(12\)`,
-            String.raw`\(\sqrt{6}\)`,
-            String.raw`\(2\sqrt{2}\)`,
-            String.raw`\(3\sqrt{2}\)`,
-            String.raw`\(\sqrt{12}\)`,
-            String.raw`\(2\sqrt{3}\)`
-          ],
-          choiceWrap: false
+            String.raw`\((x-2)^2+(y-1)^2=9\)`,
+            String.raw`\((x-2)^2+(y+1)^2=9\)`,
+            String.raw`\((x-2)^2+(y+1)^2=3\)`,
+            String.raw`\(x^2+y^2-4x+2y-5=0\)`,
+            String.raw`\(x^2+y^2-4x+2y-4=9\)`,
+            String.raw`\((x+2)^2+(y+1)^2=9\)`
+          ]
         },
 
-        /* --------------------
-           Type B (5)
-           -------------------- */
-
-        /* Q6 — B #16 */
+        /* Q6 — Custom G2 */
         {
           stem: String.raw`
-            <p>Write the equation in standard form and identify the center and radius:</p>
-            <p>\(x^2+8x+y^2+6y=18\).</p>
+            <p><b>Refer to Figure 2.</b> Which equation matches the graphed circle?</p>
+          `,
+          media: String.raw`
+            <figure>
+              <script type="text/tikz">
+\begin{tikzpicture}[x=0.55cm,y=0.55cm]
+  \clip (-7,-7) rectangle (7,7);
+  \draw[step=1,gray!25] (-6,-6) grid (6,6);
+  \draw[->,thick] (-6,0)--(6.3,0);
+  \draw[->,thick] (0,-6)--(0,6.3);
+  \draw[red,thick] (-3,2) circle (2);
+  \fill (-3,2) circle (2pt);
+\end{tikzpicture}
+              </script>
+              <figcaption>Figure 2</figcaption>
+            </figure>
           `,
           choices: [
-            String.raw`Standard form: \((x-4)^2+(y-3)^2=43\); center \((4,3)\); radius \(\sqrt{43}\)`,
-            String.raw`Standard form: \((x+4)^2+(y+3)^2=43\); center \((-4,-3)\); radius \(\sqrt{43}\)`,
-            String.raw`Standard form: \((x+4)^2+(y-3)^2=43\); center \((-4,3)\); radius \(\sqrt{43}\)`,
-            String.raw`Standard form: \((x+4)^2+(y+3)^2=18\); center \((-4,-3)\); radius \(\sqrt{18}\)`,
-            String.raw`Standard form: \((x+8)^2+(y+6)^2=43\); center \((-8,-6)\); radius \(\sqrt{43}\)`,
-            String.raw`Standard form: \((x+4)^2+(y+3)^2=25\); center \((-4,-3)\); radius \(5\)`
-          ],
-          choiceWrap: false
+            String.raw`\((x+3)^2+(y-2)^2=9\)`,
+            String.raw`\(x^2+y^2+6x-4y+9=0\)`,
+            String.raw`\((x+3)^2+(y+2)^2=4\)`,
+            String.raw`\(x^2+y^2+6x-4y+9=4\)`,
+            String.raw`\(x^2+y^2-6x+4y+9=0\)`,
+            String.raw`\((x+3)^2+(y-2)^2=16\)`
+          ]
         },
 
-        /* Q7 — B #17 */
+        /* Q7 — Custom G3 */
         {
           stem: String.raw`
-            <p>Write the equation in standard form and identify the center and radius:</p>
-            <p>\(x^2+12x+y^2-2y=10\).</p>
+            <p><b>Refer to Figure 3.</b> Which equation matches the graphed circle?</p>
+          `,
+          media: String.raw`
+            <figure>
+              <script type="text/tikz">
+\begin{tikzpicture}[x=0.55cm,y=0.55cm]
+  \clip (-7,-7) rectangle (7,7);
+  \draw[step=1,gray!25] (-6,-6) grid (6,6);
+  \draw[->,thick] (-6,0)--(6.3,0);
+  \draw[->,thick] (0,-6)--(0,6.3);
+  \draw[red,thick] (0,0) circle (4);
+  \fill (0,0) circle (2pt);
+\end{tikzpicture}
+              </script>
+              <figcaption>Figure 3</figcaption>
+            </figure>
           `,
           choices: [
-            String.raw`Standard form: \((x+6)^2+(y+1)^2=47\); center \((-6,-1)\); radius \(\sqrt{47}\)`,
-            String.raw`Standard form: \((x-6)^2+(y-1)^2=47\); center \((6,1)\); radius \(\sqrt{47}\)`,
-            String.raw`Standard form: \((x+6)^2+(y-1)^2=11\); center \((-6,1)\); radius \(\sqrt{11}\)`,
-            String.raw`Standard form: \((x+12)^2+(y-2)^2=10\); center \((-12,2)\); radius \(\sqrt{10}\)`,
-            String.raw`Standard form: \((x+6)^2+(y-1)^2=47\); center \((-6,1)\); radius \(\sqrt{47}\)`,
-            String.raw`Standard form: \((x+6)^2+(y-1)^2=10\); center \((-6,1)\); radius \(\sqrt{10}\)`
-          ],
-          choiceWrap: false
+            String.raw`\(x^2+y^2=16\)`,
+            String.raw`\((x-4)^2+y^2=16\)`,
+            String.raw`\(x^2+y^2=4\)`,
+            String.raw`\(x^2+y^2=8\)`,
+            String.raw`\(x^2+y^2=64\)`,
+            String.raw`\((x+4)^2+y^2=16\)`
+          ]
         },
 
-        /* Q8 — B #18 */
+        /* Q8 — Custom G4 */
         {
           stem: String.raw`
-            <p>Write the equation in standard form and identify the center and radius:</p>
-            <p>\(x^2-6x+y^2+10y=23\).</p>
+            <p><b>Refer to Figure 4.</b> Which equation matches the graphed circle?</p>
+          `,
+          media: String.raw`
+            <figure>
+              <script type="text/tikz">
+\begin{tikzpicture}[x=0.55cm,y=0.55cm]
+  \clip (-7,-7) rectangle (7,7);
+  \draw[step=1,gray!25] (-6,-6) grid (6,6);
+  \draw[->,thick] (-6,0)--(6.3,0);
+  \draw[->,thick] (0,-6)--(0,6.3);
+  \draw[red,thick] (1,4) circle ({sqrt(5)});
+  \fill (1,4) circle (2pt);
+\end{tikzpicture}
+              </script>
+              <figcaption>Figure 4</figcaption>
+            </figure>
           `,
           choices: [
-            String.raw`Standard form: \((x-3)^2+(y+5)^2=57\); center \((3,-5)\); radius \(\sqrt{57}\)`,
-            String.raw`Standard form: \((x+3)^2+(y-5)^2=57\); center \((-3,5)\); radius \(\sqrt{57}\)`,
-            String.raw`Standard form: \((x-3)^2+(y-5)^2=57\); center \((3,5)\); radius \(\sqrt{57}\)`,
-            String.raw`Standard form: \((x-3)^2+(y+5)^2=23\); center \((3,-5)\); radius \(\sqrt{23}\)`,
-            String.raw`Standard form: \((x-6)^2+(y+10)^2=57\); center \((6,-10)\); radius \(\sqrt{57}\)`,
-            String.raw`Standard form: \((x-3)^2+(y+5)^2=34\); center \((3,-5)\); radius \(\sqrt{34}\)`
-          ],
-          choiceWrap: false
+            String.raw`\((x-1)^2+(y-4)^2=25\)`,
+            String.raw`\(x^2+y^2-2x-8y+11=0\)`,
+            String.raw`\(x^2+y^2+2x-8y+12=0\)`,
+            String.raw`\(x^2+y^2-2x-8y+12=0\)`,
+            String.raw`\((x+1)^2+(y-4)^2=5\)`,
+            String.raw`\((x-1)^2+(y+4)^2=5\)`
+          ]
         },
 
-        /* Q9 — B #19 */
+        /* Q9 — Custom G5 */
         {
           stem: String.raw`
-            <p>Write the equation in standard form and identify the center and radius:</p>
-            <p>\(x^2-8x+y^2-6y=1\).</p>
+            <p><b>Refer to Figure 5.</b> Which equation matches the graphed circle?</p>
+          `,
+          media: String.raw`
+            <figure>
+              <script type="text/tikz">
+\begin{tikzpicture}[x=0.55cm,y=0.55cm]
+  \clip (-9,-9) rectangle (9,9);
+  \draw[step=1,gray!25] (-8,-8) grid (8,8);
+  \draw[->,thick] (-8,0)--(8.3,0);
+  \draw[->,thick] (0,-8)--(0,8.3);
+  \draw[red,thick] (-5,-3) circle ({sqrt(10)});
+  \fill (-5,-3) circle (2pt);
+\end{tikzpicture}
+              </script>
+              <figcaption>Figure 5</figcaption>
+            </figure>
           `,
           choices: [
-            String.raw`Standard form: \((x-4)^2+(y-3)^2=1\); center \((4,3)\); radius \(1\)`,
-            String.raw`Standard form: \((x+4)^2+(y+3)^2=26\); center \((-4,-3)\); radius \(\sqrt{26}\)`,
-            String.raw`Standard form: \((x-4)^2+(y-3)^2=26\); center \((4,3)\); radius \(\sqrt{26}\)`,
-            String.raw`Standard form: \((x-8)^2+(y-6)^2=26\); center \((8,6)\); radius \(\sqrt{26}\)`,
-            String.raw`Standard form: \((x-4)^2+(y-3)^2=10\); center \((4,3)\); radius \(\sqrt{10}\)`,
-            String.raw`Standard form: \((x-4)^2+(y-3)^2=25\); center \((4,3)\); radius \(5\)`
-          ],
-          choiceWrap: false
+            String.raw`\((x+5)^2+(y-3)^2=10\)`,
+            String.raw`\((x-5)^2+(y+3)^2=10\)`,
+            String.raw`\((x+5)^2+(y+3)^2=10\)`,
+            String.raw`\(x^2+y^2+10x+6y+24=10\)`,
+            String.raw`\(x^2+y^2+10x+6y+23=0\)`,
+            String.raw`\((x+5)^2+(y+3)^2=100\)`
+          ]
         },
 
-        /* Q10 — B #20 */
+        /* =========================================================
+           5 questions like B #16–20 (write equation in standard form)
+           ========================================================= */
+
+        /* Q10 — Source: B #16 */
         {
           stem: String.raw`
-            <p>Write the equation in standard form and identify the center and radius:</p>
-            <p>\(x^2+2x+y^2-9y=7\).</p>
+            <p>Write the equation in standard form:</p>
+            <p>\(x^2+8x+y^2+6y=18\)</p>
           `,
           choices: [
-            String.raw`Standard form: \((x+1)^2+\left(y-\dfrac{9}{2}\right)^2=\dfrac{113}{2}\); center \((-1,\dfrac{9}{2})\); radius \(\sqrt{\dfrac{113}{2}}\)`,
-            String.raw`Standard form: \((x-1)^2+\left(y-\dfrac{9}{2}\right)^2=\dfrac{113}{4}\); center \((1,\dfrac{9}{2})\); radius \(\dfrac{\sqrt{113}}{2}\)`,
-            String.raw`Standard form: \((x+1)^2+\left(y+\dfrac{9}{2}\right)^2=\dfrac{113}{4}\); center \((-1,-\dfrac{9}{2})\); radius \(\dfrac{\sqrt{113}}{2}\)`,
-            String.raw`Standard form: \((x+1)^2+\left(y-\dfrac{9}{2}\right)^2=\dfrac{113}{4}\); center \((-1,\dfrac{9}{2})\); radius \(\dfrac{\sqrt{113}}{2}\)`,
-            String.raw`Standard form: \((x+2)^2+(y-9)^2=7\); center \((-2,9)\); radius \(\sqrt{7}\)`,
-            String.raw`Standard form: \((x+1)^2+\left(y-\dfrac{9}{2}\right)^2=\dfrac{81}{4}\); center \((-1,\dfrac{9}{2})\); radius \(\dfrac{9}{2}\)`
-          ],
-          choiceWrap: false
+            String.raw`\((x+4)^2+(y+3)^2=43\)`,
+            String.raw`\((x-4)^2+(y-3)^2=43\)`,
+            String.raw`\((x+4)^2+(y+3)^2=18\)`,
+            String.raw`\((x+4)^2+(y-3)^2=43\)`,
+            String.raw`\((x+8)^2+(y+6)^2=18\)`,
+            String.raw`\((x+4)^2+(y+3)^2=25\)`
+          ]
         },
 
-        /* --------------------
-           Type C (2)
-           -------------------- */
-
-        /* Q11 — C #21 */
+        /* Q11 — Source: B #17 */
         {
           stem: String.raw`
-            <p>In a circle, \(\overline{AB}\) is a diameter and \(C\) is any point on the circle (with \(C\neq A,B\)).</p>
-            <p>What is the measure of \(\angle ACB\)?</p>
+            <p>Write the equation in standard form:</p>
+            <p>\(x^2+12x+y^2-2y=10\)</p>
           `,
           choices: [
-            String.raw`\(45^\circ\)`,
-            String.raw`\(60^\circ\)`,
-            String.raw`\(90^\circ\)`,
-            String.raw`\(120^\circ\)`,
-            String.raw`\(150^\circ\)`,
-            String.raw`It cannot be determined from the information given.`
-          ],
-          choiceWrap: false
+            String.raw`\((x+6)^2+(y+1)^2=47\)`,
+            String.raw`\((x+6)^2+(y-1)^2=47\)`,
+            String.raw`\((x-6)^2+(y-1)^2=47\)`,
+            String.raw`\((x+6)^2+(y-1)^2=10\)`,
+            String.raw`\((x+12)^2+(y-2)^2=10\)`,
+            String.raw`\((x+6)^2+(y-1)^2=37\)`
+          ]
         },
 
-        /* Q12 — C #22 */
+        /* Q12 — Source: B #18 */
         {
           stem: String.raw`
-            <p>Consider the equation:</p>
-            <p>\(\dfrac{1}{3}x^2-5x+\dfrac{1}{3}y^2+\dfrac{2}{9}y=7\).</p>
-            <p>Identify the center and radius of the circle.</p>
+            <p>Write the equation in standard form:</p>
+            <p>\(x^2-6x+y^2+10y=23\)</p>
           `,
           choices: [
-            String.raw`Center: \(\left(\dfrac{15}{2},-\dfrac{1}{3}\right)\), radius: \(\dfrac{\sqrt{2785}}{6}\)`,
-            String.raw`Center: \(\left(-\dfrac{15}{2},-\dfrac{1}{3}\right)\), radius: \(\dfrac{\sqrt{2785}}{6}\)`,
-            String.raw`Center: \(\left(\dfrac{15}{2},\dfrac{1}{3}\right)\), radius: \(\dfrac{\sqrt{2785}}{6}\)`,
-            String.raw`Center: \(\left(\dfrac{15}{2},-\dfrac{1}{3}\right)\), radius: \(\sqrt{2785}\)`,
-            String.raw`Center: \(\left(\dfrac{15}{2},-\dfrac{1}{3}\right)\), radius: \(\dfrac{\sqrt{2785}}{3}\)`,
-            String.raw`Center: \(\left(15,-\dfrac{1}{3}\right)\), radius: \(\dfrac{\sqrt{2785}}{6}\)`
-          ],
-          choiceWrap: false
+            String.raw`\((x-3)^2+(y+5)^2=23\)`,
+            String.raw`\((x+3)^2+(y-5)^2=57\)`,
+            String.raw`\((x-3)^2+(y-5)^2=57\)`,
+            String.raw`\((x-3)^2+(y+5)^2=57\)`,
+            String.raw`\((x-6)^2+(y+10)^2=23\)`,
+            String.raw`\((x-3)^2+(y+5)^2=34\)`
+          ]
+        },
+
+        /* Q13 — Source: B #19 */
+        {
+          stem: String.raw`
+            <p>Write the equation in standard form:</p>
+            <p>\(x^2-8x+y^2-6y=1\)</p>
+          `,
+          choices: [
+            String.raw`\((x-4)^2+(y-3)^2=1\)`,
+            String.raw`\((x-4)^2+(y-3)^2=25\)`,
+            String.raw`\((x-4)^2+(y-3)^2=26\)`,
+            String.raw`\((x+4)^2+(y+3)^2=26\)`,
+            String.raw`\((x-8)^2+(y-6)^2=1\)`,
+            String.raw`\((x-4)^2+(y+3)^2=26\)`
+          ]
+        },
+
+        /* Q14 — Source: B #20 */
+        {
+          stem: String.raw`
+            <p>Write the equation in standard form:</p>
+            <p>\(x^2+2x+y^2-9y=7\)</p>
+          `,
+          choices: [
+            String.raw`\((x+1)^2+\left(y-\tfrac92\right)^2=7\)`,
+            String.raw`\((x+1)^2+\left(y+\tfrac92\right)^2=\tfrac{113}{4}\)`,
+            String.raw`\((x-1)^2+\left(y-\tfrac92\right)^2=\tfrac{113}{4}\)`,
+            String.raw`\((x+1)^2+(y-9)^2=\tfrac{113}{4}\)`,
+            String.raw`\((x+1)^2+\left(y-\tfrac92\right)^2=\tfrac{113}{4}\)`,
+            String.raw`\((x+2)^2+\left(y-\tfrac92\right)^2=\tfrac{113}{4}\)`
+          ]
+        },
+
+        /* =========================================================
+           2 more challenging questions (teacher-made)
+           ========================================================= */
+
+        /* Q15 — Challenging X1 (diameter endpoints) */
+        {
+          stem: String.raw`
+            <p>A circle has diameter endpoints \(A(-2,3)\) and \(B(4,-1)\).</p>
+            <p>Which equation represents this circle?</p>
+          `,
+          choices: [
+            String.raw`\((x-1)^2+(y-1)^2=52\)`,
+            String.raw`\((x+1)^2+(y+1)^2=13\)`,
+            String.raw`\(x^2+y^2-2x-2y-11=1\)`,
+            String.raw`\((x-1)^2+(y-1)^2=13\)`,
+            String.raw`\((x-1)^2+(y-1)^2=\sqrt{13}\)`,
+            String.raw`\((x-1)^2+(y-1)^2=26\)`
+          ]
+        },
+
+        /* Q16 — Challenging X2 (non-monic general form) */
+        {
+          stem: String.raw`
+            <p>Write the circle in standard form:</p>
+            <p>\(2x^2+2y^2-8x+12y-10=0\)</p>
+          `,
+          choices: [
+            String.raw`\((x+2)^2+(y-3)^2=18\)`,
+            String.raw`\((x-2)^2+(y+3)^2=18\)`,
+            String.raw`\((x-2)^2+(y+3)^2=9\)`,
+            String.raw`\((x-2)^2+(y-3)^2=18\)`,
+            String.raw`\((x-2)^2+(y+3)^2=36\)`,
+            String.raw`\(x^2+y^2-4x+6y=5\)`
+          ]
         }
+
       ]
     };
   </script>
 
   <link rel="stylesheet" href="/math-homework/assets/core-rich.css" />
   <script defer src="/math-homework/assets/core-rich.js"></script>
+
+  <!-- TikZJax (for embedded red circle graphs) -->
+  <link rel="stylesheet" href="https://tikzjax.com/v1/fonts.css" />
+  <script defer src="https://tikzjax.com/v1/tikzjax.js"></script>
+
   <script defer src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
 </head>
 
