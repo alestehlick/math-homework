@@ -1,0 +1,248 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Homework 14-1 (Algebra 2)</title>
+
+  <script>
+    /* =========================
+       Homework 14-1 — Basic Analytic Geometry (Algebra 2)
+       Adapted for: /math-homework/assets/core-rich.js
+
+       REQUIRED SOURCE REFERENCES (your provided sets):
+       - Type A uses A. Exercises: #1, #2, #4, #7, #8
+       - Type B uses B. Exercises: #10; Theorem “The altitude to the hypotenuse of an isosceles right triangle is a median”
+                 (coordinate setup with A(0,k), B(0,0), C(k,0)); and Theorem list #20, #21
+       - Type C uses C. Exercises: #24, #25
+
+       IMAGE NAMING RULE:
+       - No PNG figures are used in this homework.
+       ========================= */
+
+    window.homeworkData = {
+      classId : "Algebra2",
+      id      : "Homework 14-1",
+      title   : "Homework 14-1 — Basic Analytic Geometry",
+
+      graphics : String.raw``,
+
+      answerKey : ["C","A","B","D","F","D","D","C","C","B","D","A"],
+
+      questions : [
+        /* Q1 — Source: A #1 */
+        {
+          stem: String.raw`
+            <p>A plane intersects a right circular conical surface and is <strong>parallel to an element</strong> of the surface.</p>
+            <p>What conic section is formed (non-degenerate case)?</p>
+          `,
+          choices: [
+            String.raw`Circle`,
+            String.raw`Ellipse`,
+            String.raw`Parabola`,
+            String.raw`Hyperbola`,
+            String.raw`A pair of intersecting lines`,
+            String.raw`A single point`
+          ],
+          choiceWrap: false
+        },
+
+        /* Q2 — Source: A #2 */
+        {
+          stem: String.raw`
+            <p>A plane intersects a right circular conical surface and is <strong>perpendicular to the axis</strong> of the cone.</p>
+            <p>Assume the plane does not pass through the vertex. What conic section is formed?</p>
+          `,
+          choices: [
+            String.raw`Circle`,
+            String.raw`Ellipse`,
+            String.raw`Parabola`,
+            String.raw`Hyperbola`,
+            String.raw`A pair of intersecting lines`,
+            String.raw`A single point`
+          ],
+          choiceWrap: false
+        },
+
+        /* Q3 — Source: A #4 */
+        {
+          stem: String.raw`
+            <p>A plane intersects a right circular conical surface, is <strong>not</strong> parallel to an element, is <strong>not</strong> perpendicular to the axis, and intersects only <strong>one nappe</strong>.</p>
+            <p>What conic section is formed (non-degenerate case)?</p>
+          `,
+          choices: [
+            String.raw`Circle`,
+            String.raw`Ellipse`,
+            String.raw`Parabola`,
+            String.raw`Hyperbola`,
+            String.raw`A pair of intersecting lines`,
+            String.raw`A single point`
+          ],
+          choiceWrap: false
+        },
+
+        /* Q4 — Source: A #8 */
+        {
+          stem: String.raw`
+            <p>A plane intersects a right circular conical surface and intersects <strong>both nappes</strong>, but <strong>not</strong> at the vertex.</p>
+            <p>What conic section is formed?</p>
+          `,
+          choices: [
+            String.raw`Circle`,
+            String.raw`Ellipse`,
+            String.raw`Parabola`,
+            String.raw`Hyperbola`,
+            String.raw`A pair of intersecting lines`,
+            String.raw`A single point`
+          ],
+          choiceWrap: false
+        },
+
+        /* Q5 — Source: A #7 */
+        {
+          stem: String.raw`
+            <p>A plane intersects a right circular conical surface, is <strong>perpendicular to the axis</strong>, and intersects <strong>both nappes</strong>.</p>
+            <p>What is the intersection?</p>
+          `,
+          choices: [
+            String.raw`Circle`,
+            String.raw`Ellipse`,
+            String.raw`Parabola`,
+            String.raw`Hyperbola`,
+            String.raw`A pair of intersecting lines`,
+            String.raw`A single point`
+          ],
+          choiceWrap: false
+        },
+
+        /* Q6 — Source: B #10 */
+        {
+          stem: String.raw`
+            <p>Two distinct nonvertical lines are perpendicular.</p>
+            <p>If one line has slope \(m=\dfrac{3}{5}\), what is the slope of a line perpendicular to it?</p>
+          `,
+          choices: [
+            String.raw`\(\dfrac{5}{3}\)`,
+            String.raw`\(-\dfrac{3}{5}\)`,
+            String.raw`\(-\dfrac{5}{3}\)`,
+            String.raw`\(\dfrac{3}{5}\)`,
+            String.raw`\(-\dfrac{5}{8}\)`,
+            String.raw`\(\dfrac{8}{5}\)`
+          ]
+        },
+
+        /* Q7 — Source: (Isosceles right triangle theorem) */
+        {
+          stem: String.raw`
+            <p>Let \(\triangle ABC\) be an isosceles right triangle with</p>
+            <p>\(A(0,k)\), \(B(0,0)\), and \(C(k,0)\).</p>
+            <p>What are the coordinates of the midpoint of \(\overline{AC}\)?</p>
+          `,
+          choices: [
+            String.raw`\(\left(0,\dfrac{k}{2}\right)\)`,
+            String.raw`\(\left(\dfrac{k}{2},0\right)\)`,
+            String.raw`\(\left(\dfrac{k}{3},\dfrac{k}{3}\right)\)`,
+            String.raw`\(\left(\dfrac{k}{2},\dfrac{k}{2}\right)\)`,
+            String.raw`\(\left(k,\dfrac{k}{2}\right)\)`,
+            String.raw`\(\left(\dfrac{k}{2},k\right)\)`
+          ]
+        },
+
+        /* Q8 — Source: (Isosceles right triangle theorem) */
+        {
+          stem: String.raw`
+            <p>Continue with \(A(0,k)\), \(B(0,0)\), \(C(k,0)\).</p>
+            <p>Line \(\overline{AC}\) has slope \(-1\). Let \(BD\) be the altitude from \(B\) to \(\overline{AC}\) (so \(BD\perp AC\)).</p>
+            <p>What is the slope of \(BD\)?</p>
+          `,
+          choices: [
+            String.raw`\(-1\)`,
+            String.raw`\(-2\)`,
+            String.raw`\(\dfrac{1}{2}\)`,
+            String.raw`\(1\)`,
+            String.raw`\(-\dfrac{1}{2}\)`,
+            String.raw`\(0\)`
+          ]
+        },
+
+        /* Q9 — Source: Theorem list #20 (isosceles trapezoid diagonals congruent) */
+        {
+          stem: String.raw`
+            <p>Consider the isosceles trapezoid with vertices</p>
+            <p>\(S(-a,0)\), \(P(a,0)\), \(R(-b,c)\), and \(Q(b,c)\).</p>
+            <p>Find the length of diagonal \(\overline{SQ}\).</p>
+          `,
+          choices: [
+            String.raw`\(\sqrt{(a-b)^2+c^2}\)`,
+            String.raw`\(\sqrt{(a-b)^2-c^2}\)`,
+            String.raw`\(\sqrt{(a+b)^2+c^2}\)`,
+            String.raw`\(\sqrt{(a+b)^2-c^2}\)`,
+            String.raw`\(\sqrt{a^2+b^2+c^2}\)`,
+            String.raw`\(\sqrt{(2a)^2+c^2}\)`
+          ]
+        },
+
+        /* Q10 — Source: Theorem list #21 */
+        {
+          stem: String.raw`
+            <p>A theorem states:</p>
+            <p><em>If the diagonals of a parallelogram are congruent, then the parallelogram is a rectangle.</em></p>
+            <p>If \(PQRS\) is a parallelogram and its diagonals are congruent, what must \(PQRS\) be?</p>
+          `,
+          choices: [
+            String.raw`A rhombus`,
+            String.raw`A rectangle`,
+            String.raw`A kite`,
+            String.raw`An isosceles trapezoid`,
+            String.raw`A trapezoid`,
+            String.raw`A triangle`
+          ],
+          choiceWrap: false
+        },
+
+        /* Q11 — Source: C #24 */
+        {
+          stem: String.raw`
+            <p>Let \(ABCD\) be a parallelogram with coordinates</p>
+            <p>\(A(0,0)\), \(B(p,0)\), \(D(q,r)\), and \(C(p+q,r)\).</p>
+            <p>What is the common midpoint of diagonals \(\overline{AC}\) and \(\overline{BD}\)?</p>
+          `,
+          choices: [
+            String.raw`\(\left(\dfrac{p}{2},\dfrac{r}{2}\right)\)`,
+            String.raw`\(\left(\dfrac{q}{2},\dfrac{r}{2}\right)\)`,
+            String.raw`\(\left(\dfrac{p+q}{2},r\right)\)`,
+            String.raw`\(\left(\dfrac{p+q}{2},\dfrac{r}{2}\right)\)`,
+            String.raw`\(\left(\dfrac{p+q}{2},0\right)\)`,
+            String.raw`\(\left(\dfrac{p-q}{2},\dfrac{r}{2}\right)\)`
+          ]
+        },
+
+        /* Q12 — Source: C #25 */
+        {
+          stem: String.raw`
+            <p>Let \(\triangle ABC\) be a right triangle with \(A(0,0)\), \(B(2u,0)\), and \(C(0,2v)\).</p>
+            <p>Let \(M\) be the midpoint of the hypotenuse \(\overline{BC}\).</p>
+            <p>Which statement is true?</p>
+          `,
+          choices: [
+            String.raw`\(MA=MB=MC\)`,
+            String.raw`\(MA=MB\) but \(MB\ne MC\)`,
+            String.raw`\(MB=MC\) but \(MA\ne MB\)`,
+            String.raw`\(MA=MC\) but \(MA\ne MB\)`,
+            String.raw`\(MA=\dfrac{1}{2}\,AB\)`,
+            String.raw`\(MB=\dfrac{1}{2}\,BC\)`
+          ]
+        }
+      ]
+    };
+  </script>
+
+  <link rel="stylesheet" href="/math-homework/assets/core-rich.css" />
+  <script defer src="/math-homework/assets/core-rich.js"></script>
+  <script defer src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+</head>
+
+<body>
+  <div id="hw-root">Loading…</div>
+</body>
+</html>
