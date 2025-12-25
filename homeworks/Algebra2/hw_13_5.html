@@ -1,0 +1,266 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Homework 13-5 (Algebra 2)</title>
+
+  <script>
+    /* =========================
+       Homework 13-5 — Probability (Algebra 2)
+
+       REQUIRED SOURCE REFERENCES (your provided sets):
+       - Type A uses A. Exercises: #3, #5, #6, #10
+       - Type B uses B. Exercises: #13, #14, #15, #16, #17, #18
+       - Type C uses C. Exercises: #19, #21
+
+       IMAGE NAMING RULE (STRICT):
+       No figures are used in this homework.
+       ========================= */
+
+    window.homeworkData = {
+      classId : "Algebra2",
+      id      : "Homework 13-5",
+      title   : "Homework 13-5 — Probability",
+
+      graphics : String.raw``,
+
+      answerKey : ["B","D","A","C","D","B","C","F","E","A","D","B"],
+
+      questions : [
+
+        /* =======================
+           A. Exercises (4)
+           ======================= */
+
+        /* A #3 */
+        {
+          stem: String.raw`
+            <p>An experiment consists of placing the numbers 1–15 in a hat and drawing one out.</p>
+            <p>Find the probability of the event <span class="math">\(E=\{3 \text{ or } 4\}\)</span>.</p>
+          `,
+          choiceWrap: false,
+          choices: [
+            String.raw`\(\frac{1}{15}\)`,
+            String.raw`\(\frac{2}{15}\)`,
+            String.raw`\(\frac{3}{15}\)`,
+            String.raw`\(\frac{4}{15}\)`,
+            String.raw`\(\frac{13}{15}\)`,
+            String.raw`\(\frac{1}{2}\)`
+          ]
+        },
+
+        /* A #5 */
+        {
+          stem: String.raw`
+            <p>An experiment consists of placing the numbers 1–15 in a hat and drawing one out.</p>
+            <p>Find the probability of the event <span class="math">\(E=\{x&gt;10\}\)</span>.</p>
+          `,
+          choiceWrap: false,
+          choices: [
+            String.raw`\(\frac{2}{5}\)`,
+            String.raw`\(\frac{1}{5}\)`,
+            String.raw`\(\frac{2}{3}\)`,
+            String.raw`\(\frac{1}{3}\)`,
+            String.raw`\(\frac{5}{14}\)`,
+            String.raw`\(\frac{1}{15}\)`
+          ]
+        },
+
+        /* A #6 */
+        {
+          stem: String.raw`
+            <p>An experiment consists of placing the numbers 1–15 in a hat and drawing one out.</p>
+            <p>Find the probability of the event <span class="math">\(E=\{3&lt;x&lt;7\}\)</span>.</p>
+          `,
+          choiceWrap: false,
+          choices: [
+            String.raw`\(\frac{1}{5}\)`,
+            String.raw`\(\frac{2}{15}\)`,
+            String.raw`\(\frac{1}{3}\)`,
+            String.raw`\(\frac{4}{15}\)`,
+            String.raw`\(\frac{3}{5}\)`,
+            String.raw`\(\frac{1}{10}\)`
+          ]
+        },
+
+        /* A #10 */
+        {
+          stem: String.raw`
+            <p>A bag contains 3 red balls, 5 yellow balls, and 2 blue balls.</p>
+            <p>One ball is drawn at random.</p>
+            <p>Find the probability of choosing a yellow ball on the <b>second</b> draw after choosing a yellow ball on the first draw and then <b>replacing it</b>.</p>
+          `,
+          choiceWrap: false,
+          choices: [
+            String.raw`\(\frac{5}{9}\)`,
+            String.raw`\(\frac{4}{9}\)`,
+            String.raw`\(\frac{1}{2}\)`,
+            String.raw`\(\frac{1}{5}\)`,
+            String.raw`\(\frac{1}{4}\)`,
+            String.raw`\(\frac{1}{10}\)`
+          ]
+        },
+
+        /* =======================
+           B. Exercises (6)
+           ======================= */
+
+        /* B #13 */
+        {
+          stem: String.raw`
+            <p>A bag contains 3 red balls, 5 yellow balls, and 2 blue balls.</p>
+            <p>Find the probability <b>without replacement</b> that all yellow balls are selected in 4 draws.</p>
+          `,
+          choiceWrap: false,
+          choices: [
+            String.raw`\(\frac{1}{14}\)`,
+            String.raw`\(\frac{1}{21}\)`,
+            String.raw`\(\frac{1}{84}\)`,
+            String.raw`\(\frac{1}{42}\)`,
+            String.raw`\(\frac{2}{21}\)`,
+            String.raw`\(\frac{5}{42}\)`
+          ]
+        },
+
+        /* B #14 */
+        {
+          stem: String.raw`
+            <p>A bag contains 3 red balls, 5 yellow balls, and 2 blue balls.</p>
+            <p>Find the probability <b>without replacement</b> that at least one blue ball is selected in 3 draws.</p>
+          `,
+          choiceWrap: false,
+          choices: [
+            String.raw`\(\frac{7}{15}\)`,
+            String.raw`\(\frac{8}{15}\)`,
+            String.raw`\(\frac{1}{5}\)`,
+            String.raw`\(\frac{2}{5}\)`,
+            String.raw`\(\frac{1}{3}\)`,
+            String.raw`\(\frac{11}{15}\)`
+          ]
+        },
+
+        /* B #15 */
+        {
+          stem: String.raw`
+            <p>There are 20 girls trying out for the varsity volleyball team. Twelve are juniors and 8 are seniors. There are 6 girls on a team.</p>
+            <p>Assume all girls are equally likely to make the team.</p>
+            <p>What is the probability of an <b>all-senior</b> volleyball team?</p>
+          `,
+          choiceWrap: false,
+          choices: [
+            String.raw`\(\frac{7}{3230}\)`,
+            String.raw`\(\frac{77}{646}\)`,
+            String.raw`\(\frac{7}{9690}\)`,
+            String.raw`\(\frac{11}{190}\)`,
+            String.raw`\(\frac{99}{190}\)`,
+            String.raw`\(\frac{1}{969}\)`
+          ]
+        },
+
+        /* B #16 */
+        {
+          stem: String.raw`
+            <p>There are 20 girls trying out for the varsity volleyball team. Twelve are juniors and 8 are seniors. There are 6 girls on a team.</p>
+            <p>Assume all girls are equally likely to make the team.</p>
+            <p>What is the probability of an <b>all-junior</b> volleyball team?</p>
+          `,
+          choiceWrap: false,
+          choices: [
+            String.raw`\(\frac{7}{9690}\)`,
+            String.raw`\(\frac{77}{646}\)`,
+            String.raw`\(\frac{99}{190}\)`,
+            String.raw`\(\frac{11}{190}\)`,
+            String.raw`\(\frac{7}{3230}\)`,
+            String.raw`\(\frac{77}{3230}\)`
+          ]
+        },
+
+        /* B #17 */
+        {
+          stem: String.raw`
+            <p>There are 20 girls trying out for the varsity volleyball team. Twelve are juniors and 8 are seniors. There are 6 girls on a team.</p>
+            <p>Assume all girls are equally likely to make the team.</p>
+            <p>What is the probability of having <b>2 juniors and 4 seniors</b> on the team?</p>
+          `,
+          choiceWrap: false,
+          choices: [
+            String.raw`\(\frac{77}{3230}\)`,
+            String.raw`\(\frac{308}{969}\)`,
+            String.raw`\(\frac{11}{190}\)`,
+            String.raw`\(\frac{7}{9690}\)`,
+            String.raw`\(\frac{77}{646}\)`,
+            String.raw`\(\frac{99}{190}\)`
+          ]
+        },
+
+        /* B #18 */
+        {
+          stem: String.raw`
+            <p>There are 20 girls trying out for the varsity volleyball team. Twelve are juniors and 8 are seniors. There are 6 girls on a team.</p>
+            <p>Assume all girls are equally likely to make the team.</p>
+            <p>What is the probability of a team consisting of <b>3 juniors and 3 seniors</b>?</p>
+          `,
+          choiceWrap: false,
+          choices: [
+            String.raw`\(\frac{308}{969}\)`,
+            String.raw`\(\frac{77}{646}\)`,
+            String.raw`\(\frac{99}{190}\)`,
+            String.raw`\(\frac{77}{3230}\)`,
+            String.raw`\(\frac{28}{969}\)`,
+            String.raw`\(\frac{308}{3230}\)`
+          ]
+        },
+
+        /* =======================
+           C. Exercises (2)
+           ======================= */
+
+        /* C #19 */
+        {
+          stem: String.raw`
+            <p>There are 20 girls trying out for the varsity volleyball team. Twelve are juniors and 8 are seniors. There are 6 girls on a team.</p>
+            <p>Assume all girls are equally likely to make the team.</p>
+            <p>Find the probability of having <b>1 or 2 seniors</b> and the rest juniors.</p>
+          `,
+          choiceWrap: false,
+          choices: [
+            String.raw`\(\frac{11}{190}\)`,
+            String.raw`\(\frac{77}{646}\)`,
+            String.raw`\(\frac{308}{969}\)`,
+            String.raw`\(\frac{99}{190}\)`,
+            String.raw`\(\frac{7}{9690}\)`,
+            String.raw`\(\frac{99}{3230}\)`
+          ]
+        },
+
+        /* C #21 */
+        {
+          stem: String.raw`
+            <p>There are 20 girls trying out for the varsity volleyball team. Twelve are juniors and 8 are seniors. There are 6 girls on a team.</p>
+            <p>Which underlying assumption makes these volleyball-team probability exercises not realistic?</p>
+          `,
+          choiceWrap: false,
+          choices: [
+            String.raw`There are 6 girls on a team.`,
+            String.raw`All girls are equally likely to make the team.`,
+            String.raw`There are 12 juniors and 8 seniors.`,
+            String.raw`Seniors are always more likely to make the team than juniors.`,
+            String.raw`There are 20 girls trying out.`,
+            String.raw`Juniors and seniors cannot be on the same team.`
+          ]
+        }
+
+      ]
+    };
+  </script>
+
+  <link rel="stylesheet" href="/math-homework/assets/core-rich.css" />
+  <script defer src="/math-homework/assets/core-rich.js"></script>
+  <script defer src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+</head>
+
+<body>
+  <div id="hw-root">Loading…</div>
+</body>
+</html>
