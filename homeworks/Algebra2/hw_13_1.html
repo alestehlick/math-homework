@@ -1,0 +1,269 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Homework 13-1 (Algebra 1)</title>
+
+  <script>
+    /* =========================
+       Homework 13-1 — Counting Principle (Algebra 1)
+       Adapted for: /math-homework/assets/core-rich.js
+
+       REQUIRED SOURCE REFERENCES (your provided sets):
+       - Type A uses A. Exercises: #1, #2, #7, #11
+       - Type B uses B. Exercises: #13, #14, #15, #16, #17, #19
+       - Type C uses C. Exercises: #20, #21
+
+       IMAGE NAMING RULE (STRICT):
+       No figures are used in this homework.
+       ========================= */
+
+    window.homeworkData = {
+      classId : "Algebra1",
+      id      : "Homework 13-1",
+      title   : "Homework 13-1 — Counting Principle",
+
+      graphics : String.raw``,
+
+      answerKey : ["D","E","C","B","A","F","C","D","B","E","A","C"],
+
+      questions : [
+
+        /* =======================
+           Type A (4 questions)
+           ======================= */
+
+        /* Source: A. Exercises #1 */
+        {
+          stem: String.raw`
+            <p>If process <b>A</b> can be done in 9 ways and process <b>B</b> can be done in 20 ways, find the number of ways of doing <b>A</b> followed by <b>B</b>.</p>
+          `,
+          choiceWrap: false,
+          choices: [
+            String.raw`29`,
+            String.raw`160`,
+            String.raw`200`,
+            String.raw`180`,
+            String.raw`360`,
+            String.raw`11`
+          ]
+        },
+
+        /* Source: A. Exercises #2 */
+        {
+          stem: String.raw`
+            <p>If process <b>A</b> can be done in 300 ways and process <b>B</b> can be done in 500 ways, find the number of ways of doing <b>A</b> followed by <b>B</b>.</p>
+          `,
+          choiceWrap: false,
+          choices: [
+            String.raw`800`,
+            String.raw`300,500`,
+            String.raw`250,000`,
+            String.raw`1,500`,
+            String.raw`150,000`,
+            String.raw`1,500,000`
+          ]
+        },
+
+        /* Source: A. Exercises #7 */
+        {
+          stem: String.raw`
+            <p>If process <b>M</b> can be done in 25 ways, process <b>N</b> in 1 way, and process <b>O</b> in 14 ways, find the total number of ways to do all three consecutively.</p>
+          `,
+          choiceWrap: false,
+          choices: [
+            String.raw`40`,
+            String.raw`3500`,
+            String.raw`350`,
+            String.raw`39`,
+            String.raw`25`,
+            String.raw`14`
+          ]
+        },
+
+        /* Source: A. Exercises #11 */
+        {
+          stem: String.raw`
+            <p>You have 4 different coins: a penny, a nickel, a dime, and a quarter.</p>
+            <p>Each coin is flipped once. How many different outcomes are possible?</p>
+          `,
+          choiceWrap: false,
+          choices: [
+            String.raw`8`,
+            String.raw`16`,
+            String.raw`12`,
+            String.raw`4`,
+            String.raw`24`,
+            String.raw`32`
+          ]
+        },
+
+        /* =======================
+           Type B (6 questions)
+           ======================= */
+
+        /* Source: B. Exercises #13 */
+        {
+          stem: String.raw`
+            <p>Three-letter “words” are to be formed from the set <span class="math">\( \{a,k,l,m\} \)</span>.</p>
+            <p>(i) How many different words are there if letters can be used more than once?</p>
+            <p>(ii) How many different words are there if each letter can be used only once?</p>
+            <p>Choose the ordered pair <b>(i, ii)</b>.</p>
+          `,
+          choiceWrap: false,
+          choices: [
+            String.raw`(64, 24)`,
+            String.raw`(64, 12)`,
+            String.raw`(16, 24)`,
+            String.raw`(24, 64)`,
+            String.raw`(60, 24)`,
+            String.raw`(64, 48)`
+          ]
+        },
+
+        /* Source: B. Exercises #14 */
+        {
+          stem: String.raw`
+            <p>One die is rolled twice, and the number is recorded each time.</p>
+            <p>How many possible ordered pairs of numbers are there?</p>
+          `,
+          choiceWrap: false,
+          choices: [
+            String.raw`12`,
+            String.raw`30`,
+            String.raw`18`,
+            String.raw`42`,
+            String.raw`6`,
+            String.raw`36`
+          ]
+        },
+
+        /* Source: B. Exercises #15 */
+        {
+          stem: String.raw`
+            <p>A license plate is made up of 3 letters followed by 2 digits.</p>
+            <p>The letters and digits can be used more than once.</p>
+            <p>How many different license plates can be formed?</p>
+          `,
+          choiceWrap: false,
+          choices: [
+            String.raw`1,757,600,000`,
+            String.raw`17,576`,
+            String.raw`1,757,600`,
+            String.raw`175,760`,
+            String.raw`67,600`,
+            String.raw`2,600`
+          ]
+        },
+
+        /* Source: B. Exercises #16 */
+        {
+          stem: String.raw`
+            <p>A license plate is made up of 3 numbers followed by 3 letters.</p>
+            <p>The letters and numbers can be used only once. Assume the first number can be zero.</p>
+            <p>How many different license plates can be formed?</p>
+          `,
+          choiceWrap: false,
+          choices: [
+            String.raw`17,576,000`,
+            String.raw`15,600`,
+            String.raw`7,800,000`,
+            String.raw`11,232,000`,
+            String.raw`9,360,000`,
+            String.raw`1,123,200`
+          ]
+        },
+
+        /* Source: B. Exercises #17 */
+        {
+          stem: String.raw`
+            <p>How many seven-digit phone numbers can be formed if digits can be used more than once?</p>
+            <p>How many are there if the first digit cannot be 0 or 1?</p>
+            <p>Choose the ordered pair <b>(all, restricted)</b>.</p>
+          `,
+          choiceWrap: false,
+          choices: [
+            String.raw`(9,000,000; 7,000,000)`,
+            String.raw`(10,000,000; 8,000,000)`,
+            String.raw`(10,000,000; 9,000,000)`,
+            String.raw`(1,000,000; 800,000)`,
+            String.raw`(8,000,000; 10,000,000)`,
+            String.raw`(10,000,000; 8,000,000,000)`
+          ]
+        },
+
+        /* Source: B. Exercises #19 */
+        {
+          stem: String.raw`
+            <p>There are 3 students running for president of the senior class, 5 running for vice-president, 3 for secretary, and 2 for treasurer.</p>
+            <p>How many different slates of officers are possible?</p>
+          `,
+          choiceWrap: false,
+          choices: [
+            String.raw`13`,
+            String.raw`30`,
+            String.raw`60`,
+            String.raw`45`,
+            String.raw`90`,
+            String.raw`180`
+          ]
+        },
+
+        /* =======================
+           Type C (2 questions)
+           ======================= */
+
+        /* Source: C. Exercises #20 */
+        {
+          stem: String.raw`
+            <p>A test has 20 true-false questions and 15 multiple-choice questions.</p>
+            <p>Each multiple-choice question has 5 possible answers.</p>
+            <p>Which expression gives the number of different ways the test can be answered?</p>
+          `,
+          choices: [
+            String.raw`\(\,2^{20}\cdot 5^{15}\,\)`,
+            String.raw`\(\,2^{35}\,\)`,
+            String.raw`\(\,5^{35}\,\)`,
+            String.raw`\(\,2^{20}+5^{15}\,\)`,
+            String.raw`\(\,2^{15}\cdot 5^{20}\,\)`,
+            String.raw`\(\,2^{20}\cdot 15^{5}\,\)`
+          ]
+        },
+
+        /* Source: C. Exercises #21 */
+        {
+          stem: String.raw`
+            <p>A stock number is formed as follows:</p>
+            <ul>
+              <li>the first digit cannot be zero,</li>
+              <li>the second digit must be odd,</li>
+              <li>the third character is alphabetic,</li>
+              <li>the last two digits correspond to a group of 20 different two-digit product codes.</li>
+            </ul>
+            <p>How many different stock numbers can be formed?</p>
+          `,
+          choiceWrap: false,
+          choices: [
+            String.raw`2,340`,
+            String.raw`26,000`,
+            String.raw`23,400`,
+            String.raw`11,700`,
+            String.raw`46,800`,
+            String.raw`234,000`
+          ]
+        }
+
+      ]
+    };
+  </script>
+
+  <link rel="stylesheet" href="/math-homework/assets/core-rich.css" />
+  <script defer src="/math-homework/assets/core-rich.js"></script>
+  <script defer src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+</head>
+
+<body>
+  <div id="hw-root">Loading…</div>
+</body>
+</html>
