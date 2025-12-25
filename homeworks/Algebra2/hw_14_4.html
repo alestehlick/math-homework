@@ -1,0 +1,251 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Homework 14-4 (Algebra 2)</title>
+
+  <script>
+    /* =========================
+       Homework 14-4 — Ellipse (Algebra 2)
+       Adapted for: /math-homework/assets/core-rich.js
+
+       SOURCE REFERENCES (from the provided images):
+       - Type A: A. Exercises #1, #3, #5, #6, #7
+       - Type B: B. Exercises #8, #10, #12, #16, #19
+       - Type C: C. Exercises #20, #21
+
+       IMAGE NAMING RULE:
+       - No PNG figures are used in this homework.
+       ========================= */
+
+    window.homeworkData = {
+      classId : "Algebra2",
+      id      : "Homework 14-4",
+      title   : "Homework 14-4 — Ellipse",
+
+      graphics : String.raw``,
+
+      answerKey : ["A","C","D","B","E","B","F","C","A","D","B","E"],
+
+      questions : [
+        /* ======================
+           Type A (5)
+           ====================== */
+
+        /* Q1 — A #1 */
+        {
+          stem: String.raw`
+            <p>Consider the ellipse:</p>
+            <p>\(\dfrac{x^2}{4}+\dfrac{y^2}{9}=1\).</p>
+            <p>Which statement gives the correct center, vertices, and endpoints of the minor axis?</p>
+          `,
+          choices: [
+            String.raw`\text{Center }(0,0);\ \text{vertices }(0,\pm 3);\ \text{minor-axis endpoints }(\pm 2,0)`,
+            String.raw`\text{Center }(0,0);\ \text{vertices }(\pm 3,0);\ \text{minor-axis endpoints }(0,\pm 2)`,
+            String.raw`\text{Center }(0,0);\ \text{vertices }(0,\pm 2);\ \text{minor-axis endpoints }(\pm 3,0)`,
+            String.raw`\text{Center }(0,0);\ \text{vertices }(\pm 2,0);\ \text{minor-axis endpoints }(0,\pm 3)`,
+            String.raw`\text{Center }(2,0);\ \text{vertices }(2,\pm 3);\ \text{minor-axis endpoints }(0,0),(4,0)`,
+            String.raw`\text{Center }(0,0);\ \text{vertices }(0,\pm 9);\ \text{minor-axis endpoints }(\pm 4,0)`
+          ],
+          choiceWrap: false
+        },
+
+        /* Q2 — A #3 */
+        {
+          stem: String.raw`
+            <p>Consider the ellipse:</p>
+            <p>\(\dfrac{x^2}{49}+\dfrac{y^2}{16}=1\).</p>
+            <p>What are the coordinates of the foci?</p>
+          `,
+          choices: [
+            String.raw`\((0,\pm \sqrt{33})\)`,
+            String.raw`\((\pm \sqrt{33},\pm \sqrt{33})\)`,
+            String.raw`\((\pm \sqrt{33},0)\)`,
+            String.raw`\((\pm 33,0)\)`,
+            String.raw`\((\pm \sqrt{65},0)\)`,
+            String.raw`\((\pm 5,0)\)`
+          ]
+        },
+
+        /* Q3 — A #5 */
+        {
+          stem: String.raw`
+            <p>Consider the ellipse:</p>
+            <p>\(x^2+\dfrac{y^2}{4}=1\).</p>
+            <p>What is the length of the major axis?</p>
+          `,
+          choices: [
+            String.raw`\(1\)`,
+            String.raw`\(2\)`,
+            String.raw`\(3\)`,
+            String.raw`\(4\)`,
+            String.raw`\(8\)`,
+            String.raw`\(\sqrt{4}\)`
+          ]
+        },
+
+        /* Q4 — A #6 */
+        {
+          stem: String.raw`
+            <p>What are the three pieces of information you need in order to write the equation of an ellipse (in standard form)?</p>
+          `,
+          choices: [
+            String.raw`\text{Center and one vertex}`,
+            String.raw`\text{Center, the values of }a\text{ and }b,\text{ and whether the major axis is horizontal or vertical}`,
+            String.raw`\text{The two foci only}`,
+            String.raw`\text{Center and radius}`,
+            String.raw`\text{Only the }x\text{- and }y\text{-intercepts}`,
+            String.raw`\text{Slope of a tangent line at a vertex}`
+          ],
+          choiceWrap: false
+        },
+
+        /* Q5 — A #7 */
+        {
+          stem: String.raw`
+            <p>Write the equation of the ellipse where the \(x\)-intercepts are \((4,0)\) and \((-4,0)\), and the \(y\)-intercepts are \((0,3)\) and \((0,-3)\).</p>
+          `,
+          choices: [
+            String.raw`\dfrac{x^2}{9}+\dfrac{y^2}{16}=1`,
+            String.raw`\dfrac{x^2}{4}+\dfrac{y^2}{3}=1`,
+            String.raw`\dfrac{(x-4)^2}{16}+\dfrac{y^2}{9}=1`,
+            String.raw`\dfrac{x^2}{16}+\dfrac{y^2}{3}=1`,
+            String.raw`\dfrac{x^2}{16}+\dfrac{y^2}{9}=1`,
+            String.raw`\dfrac{x^2}{8}+\dfrac{y^2}{9}=1`
+          ]
+        },
+
+        /* ======================
+           Type B (5)
+           ====================== */
+
+        /* Q6 — B #8 */
+        {
+          stem: String.raw`
+            <p>Find the foci of the ellipse:</p>
+            <p>\(\dfrac{x^2}{49}+\dfrac{y^2}{9}=1\).</p>
+          `,
+          choices: [
+            String.raw`\((0,\pm 2\sqrt{10})\)`,
+            String.raw`\((\pm 2\sqrt{10},0)\)`,
+            String.raw`\((\pm \sqrt{10},0)\)`,
+            String.raw`\((\pm 5,0)\)`,
+            String.raw`\((\pm 10,0)\)`,
+            String.raw`\((\pm 2,0)\)`
+          ]
+        },
+
+        /* Q7 — B #10 */
+        {
+          stem: String.raw`
+            <p>Find the foci of the ellipse:</p>
+            <p>\(16x^2+2y^2=32\).</p>
+          `,
+          choices: [
+            String.raw`\((\pm \sqrt{14},0)\)`,
+            String.raw`\((0,\pm 14)\)`,
+            String.raw`\((0,\pm \sqrt{18})\)`,
+            String.raw`\((0,\pm \sqrt{12})\)`,
+            String.raw`\((\pm \sqrt{12},0)\)`,
+            String.raw`\((0,\pm \sqrt{14})\)`
+          ]
+        },
+
+        /* Q8 — B #12 */
+        {
+          stem: String.raw`
+            <p>Write the equation of the ellipse given:</p>
+            <p>Two vertices are \((6,0)\) and \((-6,0)\); the foci are \((4,0)\) and \((-4,0)\).</p>
+          `,
+          choices: [
+            String.raw`\dfrac{x^2}{20}+\dfrac{y^2}{36}=1`,
+            String.raw`\dfrac{(x-6)^2}{36}+\dfrac{y^2}{20}=1`,
+            String.raw`\dfrac{x^2}{36}+\dfrac{y^2}{20}=1`,
+            String.raw`\dfrac{x^2}{36}+\dfrac{y^2}{16}=1`,
+            String.raw`\dfrac{x^2}{16}+\dfrac{y^2}{20}=1`,
+            String.raw`\dfrac{x^2}{36}+\dfrac{y^2}{4}=1`
+          ]
+        },
+
+        /* Q9 — B #16 */
+        {
+          stem: String.raw`
+            <p>Graph and locate the foci (round to the nearest tenth):</p>
+            <p>\(2x^2+3y^2=6\).</p>
+            <p>Which coordinates give the foci?</p>
+          `,
+          choices: [
+            String.raw`\((\pm 1.0,0)\)`,
+            String.raw`\((0,\pm 1.0)\)`,
+            String.raw`\((\pm 1.7,0)\)`,
+            String.raw`\((\pm 0.8,0)\)`,
+            String.raw`\((\pm 2.0,0)\)`,
+            String.raw`\((\pm 1.0,\pm 1.0)\)`
+          ]
+        },
+
+        /* Q10 — B #19 */
+        {
+          stem: String.raw`
+            <p>What happens to the shape of the ellipse if \(a=b\)?</p>
+          `,
+          choices: [
+            String.raw`\text{It becomes a line segment.}`,
+            String.raw`\text{It becomes a parabola.}`,
+            String.raw`\text{It becomes a hyperbola.}`,
+            String.raw`\text{It becomes a circle.}`,
+            String.raw`\text{It becomes two intersecting lines.}`,
+            String.raw`\text{It has no graph.}`
+          ],
+          choiceWrap: false
+        },
+
+        /* ======================
+           Type C (2)
+           ====================== */
+
+        /* Q11 — C #20 */
+        {
+          stem: String.raw`
+            <p>Find the coordinates of the foci of the ellipse:</p>
+            <p>\(\dfrac{(x-2)^2}{16}+\dfrac{(y+1)^2}{7}=1\).</p>
+          `,
+          choices: [
+            String.raw`\((2,-1)\text{ and }(5,-1)\)`,
+            String.raw`\((-1,-1)\text{ and }(5,-1)\)`,
+            String.raw`\((-1,1)\text{ and }(5,1)\)`,
+            String.raw`\((2,-1)\text{ and }(2,2)\)`,
+            String.raw`\((2,-1)\text{ and }(2,-4)\)`,
+            String.raw`\((-1,-1)\text{ and }(2,-1)\)`
+          ],
+          choiceWrap: false
+        },
+
+        /* Q12 — C #21 */
+        {
+          stem: String.raw`
+            <p>Find the equation of the ellipse with vertices \((3,-1)\), \((0,5)\), \((6,5)\), and \((3,11)\).</p>
+          `,
+          choices: [
+            String.raw`\dfrac{(x-3)^2}{36}+\dfrac{(y-5)^2}{9}=1`,
+            String.raw`\dfrac{x^2}{9}+\dfrac{y^2}{36}=1`,
+            String.raw`\dfrac{(x+3)^2}{9}+\dfrac{(y-5)^2}{36}=1`,
+            String.raw`\dfrac{(x-3)^2}{9}+\dfrac{(y-5)^2}{18}=1`,
+            String.raw`\dfrac{(x-3)^2}{9}+\dfrac{(y-5)^2}{36}=1`,
+            String.raw`\dfrac{(x-3)^2}{9}+\dfrac{(y-5)^2}{6}=1`
+          ]
+        }
+      ]
+    };
+  </script>
+
+  <link rel="stylesheet" href="/math-homework/assets/core-rich.css" />
+  <script defer src="/math-homework/assets/core-rich.js"></script>
+  <script defer src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+</head>
+
+<body>
+  <div id="hw-root">Loading…</div>
+</body>
+</html>
