@@ -1,0 +1,268 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Homework 13-7 (Algebra 2)</title>
+
+  <script>
+    /* =========================
+       Homework 13-7 — Descriptive Statistics (Algebra 2)
+
+       REQUIRED SOURCE REFERENCES (your provided sets):
+       - Type A uses A. Exercises: #1, #2, #4, #7
+       - Type B uses B. Exercises: #8, #9, #11, #14, #15, #19
+       - Type C uses C. Exercises: #23, #24
+
+       IMAGE NAMING RULE (STRICT):
+       No figures are used in this homework.
+       ========================= */
+
+    window.homeworkData = {
+      classId : "Algebra2",
+      id      : "Homework 13-7",
+      title   : "Homework 13-7 — Descriptive Statistics",
+
+      graphics : String.raw``,
+
+      answerKey : ["B","B","C","C","A","C","B","B","A","B","C","A"],
+
+      questions : [
+
+        /* =======================
+           A. Exercises (4)
+           Data: 15, 22, 16, 24, 8, 17, 12
+           ======================= */
+
+        /* A #1 (mean) */
+        {
+          stem: String.raw`
+            <p>The following data represent the number of homes built annually for the last seven years:</p>
+            <p><span class="math">\(15,\;22,\;16,\;24,\;8,\;17,\;12\)</span></p>
+            <p>Find the <b>mean</b>.</p>
+          `,
+          choices: [
+            String.raw`\(\,16\,\)`,
+            String.raw`\(\,\frac{114}{7}\,\)`,
+            String.raw`\(\,17\,\)`,
+            String.raw`\(\,\frac{114}{8}\,\)`,
+            String.raw`\(\,15.8\,\)`,
+            String.raw`\(\,16.5\,\)`
+          ]
+        },
+
+        /* A #2 (median) */
+        {
+          stem: String.raw`
+            <p>The data are:</p>
+            <p><span class="math">\(15,\;22,\;16,\;24,\;8,\;17,\;12\)</span></p>
+            <p>Find the <b>median</b>.</p>
+          `,
+          choiceWrap: false,
+          choices: [
+            String.raw`15`,
+            String.raw`16`,
+            String.raw`17`,
+            String.raw`16.5`,
+            String.raw`14`,
+            String.raw`18`
+          ]
+        },
+
+        /* A #4 (range) */
+        {
+          stem: String.raw`
+            <p>The data are:</p>
+            <p><span class="math">\(15,\;22,\;16,\;24,\;8,\;17,\;12\)</span></p>
+            <p>Find the <b>range</b>.</p>
+          `,
+          choiceWrap: false,
+          choices: [
+            String.raw`12`,
+            String.raw`14`,
+            String.raw`16`,
+            String.raw`22`,
+            String.raw`8`,
+            String.raw`7`
+          ]
+        },
+
+        /* A #7 (standard deviation) */
+        {
+          stem: String.raw`
+            <p>The data are:</p>
+            <p><span class="math">\(15,\;22,\;16,\;24,\;8,\;17,\;12\)</span></p>
+            <p>Find the <b>standard deviation</b> (nearest tenth).</p>
+          `,
+          choiceWrap: false,
+          choices: [
+            String.raw`4.1`,
+            String.raw`5.5`,
+            String.raw`5.1`,
+            String.raw`2.6`,
+            String.raw`25.9`,
+            String.raw`181.4`
+          ]
+        },
+
+        /* =======================
+           B. Exercises (6)
+           Data: 97, 69, 93, 88, 92, 77, 32, 77, 87, 74, 85, 65
+           ======================= */
+
+        /* B #8 (mean) */
+        {
+          stem: String.raw`
+            <p>The following data represent scores on a 100-point test:</p>
+            <p><span class="math">\(97,\;69,\;93,\;88,\;92,\;77,\;32,\;77,\;87,\;74,\;85,\;65\)</span></p>
+            <p>Find the <b>mean</b>.</p>
+          `,
+          choiceWrap: false,
+          choices: [
+            String.raw`78`,
+            String.raw`81`,
+            String.raw`79`,
+            String.raw`77`,
+            String.raw`76`,
+            String.raw`64.5`
+          ]
+        },
+
+        /* B #9 (median) */
+        {
+          stem: String.raw`
+            <p>The following data represent scores on a 100-point test:</p>
+            <p><span class="math">\(97,\;69,\;93,\;88,\;92,\;77,\;32,\;77,\;87,\;74,\;85,\;65\)</span></p>
+            <p>Find the <b>median</b>.</p>
+          `,
+          choiceWrap: false,
+          choices: [
+            String.raw`78`,
+            String.raw`82.5`,
+            String.raw`81`,
+            String.raw`77`,
+            String.raw`85`,
+            String.raw`64.5`
+          ]
+        },
+
+        /* B #11 (midrange) */
+        {
+          stem: String.raw`
+            <p>The following data represent scores on a 100-point test:</p>
+            <p><span class="math">\(97,\;69,\;93,\;88,\;92,\;77,\;32,\;77,\;87,\;74,\;85,\;65\)</span></p>
+            <p>Find the <b>midrange</b>.</p>
+          `,
+          choiceWrap: false,
+          choices: [
+            String.raw`65`,
+            String.raw`64.5`,
+            String.raw`32.5`,
+            String.raw`78`,
+            String.raw`81`,
+            String.raw`97`
+          ]
+        },
+
+        /* B #14 (variance) */
+        {
+          stem: String.raw`
+            <p>The following data represent scores on a 100-point test:</p>
+            <p><span class="math">\(97,\;69,\;93,\;88,\;92,\;77,\;32,\;77,\;87,\;74,\;85,\;65\)</span></p>
+            <p>Find the <b>variance</b>.</p>
+          `,
+          choiceWrap: false,
+          choices: [
+            String.raw`3396`,
+            String.raw`283`,
+            String.raw`16.8`,
+            String.raw`65`,
+            String.raw`17`,
+            String.raw`282`
+          ]
+        },
+
+        /* B #15 (standard deviation) */
+        {
+          stem: String.raw`
+            <p>The following data represent scores on a 100-point test:</p>
+            <p><span class="math">\(97,\;69,\;93,\;88,\;92,\;77,\;32,\;77,\;87,\;74,\;85,\;65\)</span></p>
+            <p>Find the <b>standard deviation</b> (nearest tenth).</p>
+          `,
+          choiceWrap: false,
+          choices: [
+            String.raw`16.8`,
+            String.raw`28.3`,
+            String.raw`18.2`,
+            String.raw`14.1`,
+            String.raw`8.4`,
+            String.raw`65`
+          ]
+        },
+
+        /* B #19 (solve for number of scores) */
+        {
+          stem: String.raw`
+            <p>If <span class="math">\( \Sigma x = 150 \)</span> and <span class="math">\( \bar{x} = 7.5 \)</span>, how many scores were there?</p>
+          `,
+          choiceWrap: false,
+          choices: [
+            String.raw`15`,
+            String.raw`20`,
+            String.raw`7.5`,
+            String.raw`22`,
+            String.raw`30`,
+            String.raw`12`
+          ]
+        },
+
+        /* =======================
+           C. Exercises (2)
+           ======================= */
+
+        /* C #23 */
+        {
+          stem: String.raw`
+            <p>What can you conclude about a 100-point test if the <b>median</b> is 70 and the <b>mean</b> is 87?</p>
+          `,
+          choiceWrap: false,
+          choices: [
+            String.raw`The scores are evenly balanced above and below 70.`,
+            String.raw`Most students scored close to 87.`,
+            String.raw`Some very high scores raise the mean, and at least half of the scores are 70 or less.`,
+            String.raw`The range must be 17.`,
+            String.raw`The mean must equal the mode.`,
+            String.raw`The median must be greater than the mean.`
+          ]
+        },
+
+        /* C #24 */
+        {
+          stem: String.raw`
+            <p>Reconsider the set of data at the start of the B exercises.</p>
+            <p>Which statement correctly contrasts the <b>sum of deviations</b> and the <b>mean deviation</b>?</p>
+          `,
+          choiceWrap: false,
+          choices: [
+            String.raw`The sum of deviations from the mean is 0, but the mean deviation is a positive measure of average distance from the mean.`,
+            String.raw`Both the sum of deviations and the mean deviation are always 0.`,
+            String.raw`The mean deviation is the same as the variance.`,
+            String.raw`The sum of deviations is equal to the range.`,
+            String.raw`The mean deviation can be negative.`,
+            String.raw`The sum of deviations is equal to the standard deviation.`
+          ]
+        }
+
+      ]
+    };
+  </script>
+
+  <link rel="stylesheet" href="/math-homework/assets/core-rich.css" />
+  <script defer src="/math-homework/assets/core-rich.js"></script>
+  <script defer src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+</head>
+
+<body>
+  <div id="hw-root">Loading…</div>
+</body>
+</html>
