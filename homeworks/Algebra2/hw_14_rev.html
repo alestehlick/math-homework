@@ -8,287 +8,288 @@
   <script>
     /* =========================
        Homework 14-Review — Chapter 14 Review (Algebra 2)
-       Adapted for: /math-homework/assets/core-rich.js
 
        REQUIRED SOURCE REFERENCES (Chapter 14 Review set):
-       Uses Exercises: #1, #3, #5, #6, #7, #9, #10, #13, #14, #16, #17, #18, #21, #24, #25, #26
+       Uses original exercises: #1, #2, #3, #4, #5, #6, #7, #9, #10, #11, #14, #15, #16, #18, #24, #26
 
-       IMAGE NAMING RULE (STRICT):
+       IMAGE NAMING RULE:
        No figures are used in this homework (no PNG files required).
        ========================= */
 
     window.homeworkData = {
       classId : "Algebra2",
       id      : "Homework 14-Review",
-      title   : "Homework 14 Review",
+      title   : "Homework 14 Review — Chapter 14",
 
       graphics : String.raw``,
 
-      answerKey : ["D","B","A","C","E","F","B","A","C","D","E","B","F","A","C","E"],
+      answerKey : ["D","B","A","C","E","E","E","C","B","A","B","B","D","C","E","B"],
 
       questions : [
 
-        /* Q1 — Source #1 */
+        /* Q1 — #1 */
         {
           stem: String.raw`
             <p>For the points \((4,5)\) and \((-3,2)\):</p>
             <p>Find the distance between them and the midpoint of the segment joining them.</p>
           `,
           choices: [
-            String.raw`Distance \(= \sqrt{34}\), midpoint \(= \left(\tfrac{1}{2},\tfrac{7}{2}\right)\)`,
-            String.raw`Distance \(= \sqrt{58}\), midpoint \(= \left(\tfrac{7}{2},\tfrac{1}{2}\right)\)`,
-            String.raw`Distance \(= \sqrt{58}\), midpoint \(= \left(-\tfrac{1}{2},\tfrac{7}{2}\right)\)`,
-            String.raw`Distance \(= \sqrt{58}\), midpoint \(= \left(\tfrac{1}{2},\tfrac{7}{2}\right)\)`,
-            String.raw`Distance \(= 58\), midpoint \(= \left(\tfrac{1}{2},\tfrac{7}{2}\right)\)`,
-            String.raw`Distance \(= \sqrt{50}\), midpoint \(= \left(\tfrac{1}{2},\tfrac{7}{2}\right)\)`
+            String.raw`Distance \(=\sqrt{58}\), midpoint \(=\left(\tfrac12,\tfrac52\right)\)`,
+            String.raw`Distance \(=\sqrt{50}\), midpoint \(=\left(\tfrac12,\tfrac72\right)\)`,
+            String.raw`Distance \(=\sqrt{58}\), midpoint \(=\left(-\tfrac12,\tfrac72\right)\)`,
+            String.raw`Distance \(=\sqrt{58}\), midpoint \(=\left(\tfrac12,\tfrac72\right)\)`,
+            String.raw`Distance \(=58\), midpoint \(=\left(\tfrac12,\tfrac72\right)\)`,
+            String.raw`Distance \(=\sqrt{34}\), midpoint \(=\left(\tfrac12,\tfrac72\right)\)`
           ],
           choiceWrap: false
         },
 
-        /* Q2 — Source #3 */
+        /* Q2 — #2 */
+        {
+          stem: String.raw`
+            <p>For the points \((-6,9)\) and \((-1,-8)\):</p>
+            <p>Find the distance between them and the midpoint of the segment joining them.</p>
+          `,
+          choices: [
+            String.raw`Distance \(=\sqrt{314}\), midpoint \(=\left(-\tfrac52,\tfrac12\right)\)`,
+            String.raw`Distance \(=\sqrt{314}\), midpoint \(=\left(-\tfrac72,\tfrac12\right)\)`,
+            String.raw`Distance \(=\sqrt{314}\), midpoint \(=\left(-\tfrac72,-\tfrac12\right)\)`,
+            String.raw`Distance \(=\sqrt{289}\), midpoint \(=\left(-\tfrac72,\tfrac12\right)\)`,
+            String.raw`Distance \(=\sqrt{314}\), midpoint \(=\left(\tfrac72,\tfrac12\right)\)`,
+            String.raw`Distance \(=\sqrt{314}\), midpoint \(=\left(-\tfrac72,\tfrac{17}{2}\right)\)`
+          ],
+          choiceWrap: false
+        },
+
+        /* Q3 — #3 */
         {
           stem: String.raw`
             <p>Write the equation of the circle with center \((-6,4)\) and radius \(2\).</p>
           `,
           choices: [
-            String.raw`\((x-6)^2+(y+4)^2=4\)`,
             String.raw`\((x+6)^2+(y-4)^2=4\)`,
+            String.raw`\((x-6)^2+(y+4)^2=4\)`,
             String.raw`\((x+6)^2+(y-4)^2=2\)`,
-            String.raw`\((x-6)^2+(y+4)^2=2\)`,
+            String.raw`\(x^2+y^2=4\)`,
             String.raw`\((x+6)^2+(y+4)^2=4\)`,
             String.raw`\((x-6)^2+(y-4)^2=4\)`
           ],
           choiceWrap: false
         },
 
-        /* Q3 — Source #5 */
+        /* Q4 — #4 */
+        {
+          stem: String.raw`
+            <p>Write the equation of the circle with center \((0,9)\) and radius \(6\).</p>
+          `,
+          choices: [
+            String.raw`\((x-9)^2+y^2=36\)`,
+            String.raw`\(x^2+(y+9)^2=36\)`,
+            String.raw`\(x^2+(y-9)^2=36\)`,
+            String.raw`\(x^2+y^2=36\)`,
+            String.raw`\(x^2+(y-9)^2=6\)`,
+            String.raw`\((x-0)^2+(y-9)^2=6\)`
+          ],
+          choiceWrap: false
+        },
+
+        /* Q5 — #5 */
         {
           stem: String.raw`
             <p>Write the equation of the parabola with vertex \((7,3)\) and focus \((7,8)\).</p>
           `,
           choices: [
-            String.raw`\((x-7)^2=20(y-3)\)`,
             String.raw`\((y-3)^2=20(x-7)\)`,
             String.raw`\((x-7)^2=-20(y-3)\)`,
             String.raw`\((x+7)^2=20(y-3)\)`,
             String.raw`\((x-7)^2=5(y-3)\)`,
+            String.raw`\((x-7)^2=20(y-3)\)`,
             String.raw`\((x-7)^2=10(y-3)\)`
           ],
           choiceWrap: false
         },
 
-        /* Q4 — Source #6 */
+        /* Q6 — #6 */
         {
           stem: String.raw`
             <p>Write the equation of the parabola with focus \((2,6)\) and directrix \(x=-6\).</p>
           `,
           choices: [
-            String.raw`\((y-6)^2=8(x+2)\)`,
-            String.raw`\((y-6)^2=-16(x+2)\)`,
-            String.raw`\((y-6)^2=16(x+2)\)`,
             String.raw`\((x+2)^2=16(y-6)\)`,
+            String.raw`\((y-6)^2=8(x+2)\)`,
+            String.raw`\((y-6)^2=16(x-2)\)`,
             String.raw`\((y+6)^2=16(x+2)\)`,
-            String.raw`\((y-6)^2=16(x-2)\)`
+            String.raw`\((y-6)^2=16(x+2)\)`,
+            String.raw`\((y-6)^2=-16(x+2)\)`
           ],
           choiceWrap: false
         },
 
-        /* Q5 — Source #7 */
+        /* Q7 — #7 */
         {
           stem: String.raw`
-            <p>Write the equation of the ellipse with foci \((5,0)\) and \((-5,0)\), and \(y\)-intercepts \((0,2)\) and \((0,-2)\).</p>
+            <p>Write the equation of the ellipse with foci \((5,0)\) and \((-5,0)\) and \(y\)-intercepts \((0,2)\) and \((0,-2)\).</p>
           `,
           choices: [
-            String.raw`\(\dfrac{x^2}{29}+\dfrac{y^2}{25}=1\)`,
             String.raw`\(\dfrac{x^2}{25}+\dfrac{y^2}{4}=1\)`,
+            String.raw`\(\dfrac{x^2}{29}+\dfrac{y^2}{25}=1\)`,
             String.raw`\(\dfrac{x^2}{4}+\dfrac{y^2}{29}=1\)`,
-            String.raw`\(\dfrac{x^2}{29}+\dfrac{y^2}{2}=1\)`,
+            String.raw`\(\dfrac{x^2}{21}+\dfrac{y^2}{4}=1\)`,
             String.raw`\(\dfrac{x^2}{29}+\dfrac{y^2}{4}=1\)`,
-            String.raw`\(\dfrac{x^2}{21}+\dfrac{y^2}{4}=1\)`
+            String.raw`\(\dfrac{x^2}{29}-\dfrac{y^2}{4}=1\)`
           ],
           choiceWrap: false
         },
 
-        /* Q6 — Source #9 */
+        /* Q8 — #9 */
         {
           stem: String.raw`
             <p>Write the equation of the hyperbola with asymptotes \(y=\dfrac{4}{5}x\) and \(y=-\dfrac{4}{5}x\), and foci \((-\sqrt{41},0)\) and \((\sqrt{41},0)\).</p>
           `,
           choices: [
-            String.raw`\(\dfrac{y^2}{25}-\dfrac{x^2}{16}=1\)`,
             String.raw`\(\dfrac{x^2}{16}-\dfrac{y^2}{25}=1\)`,
+            String.raw`\(\dfrac{y^2}{25}-\dfrac{x^2}{16}=1\)`,
             String.raw`\(\dfrac{x^2}{25}-\dfrac{y^2}{16}=1\)`,
             String.raw`\(\dfrac{x^2}{41}-\dfrac{y^2}{16}=1\)`,
             String.raw`\(\dfrac{x^2}{25}+\dfrac{y^2}{16}=1\)`,
-            String.raw`\(\dfrac{x^2}{16}-\dfrac{y^2}{25}=1\)`
+            String.raw`\(\dfrac{x^2}{16}-\dfrac{y^2}{41}=1\)`
           ],
           choiceWrap: false
         },
 
-        /* Q7 — Source #10 */
+        /* Q9 — #10 */
         {
           stem: String.raw`
             <p>Write the equation of the hyperbola with vertices \((0,4)\) and \((0,-4)\), and foci \((0,6)\) and \((0,-6)\).</p>
           `,
           choices: [
-            String.raw`\(\dfrac{x^2}{16}-\dfrac{y^2}{20}=1\)`,
-            String.raw`\(\dfrac{y^2}{16}-\dfrac{x^2}{20}=1\)`,
             String.raw`\(\dfrac{y^2}{20}-\dfrac{x^2}{16}=1\)`,
+            String.raw`\(\dfrac{y^2}{16}-\dfrac{x^2}{20}=1\)`,
+            String.raw`\(\dfrac{x^2}{16}-\dfrac{y^2}{20}=1\)`,
             String.raw`\(\dfrac{y^2}{36}-\dfrac{x^2}{20}=1\)`,
-            String.raw`\(\dfrac{y^2}{16}-\dfrac{x^2}{36}=1\)`,
-            String.raw`\(\dfrac{y^2}{16}-\dfrac{x^2}{12}=1\)`
+            String.raw`\(\dfrac{y^2}{16}-\dfrac{x^2}{12}=1\)`,
+            String.raw`\(\dfrac{(y-4)^2}{16}-\dfrac{x^2}{20}=1\)`
           ],
           choiceWrap: false
         },
 
-        /* Q8 — Source #13 */
+        /* Q10 — #11 (Graph) */
         {
           stem: String.raw`
-            <p>For the parabola \(y=-\dfrac{1}{12}(x-2)^2+3\), find the focus and the directrix.</p>
+            <p>Graph the circle \((x-4)^2+(y-8)^2=1\).</p>
+            <p>Which choice correctly identifies the center and radius?</p>
           `,
           choices: [
-            String.raw`Focus \((2,0)\), directrix \(y=6\)`,
-            String.raw`Focus \((2,6)\), directrix \(y=0\)`,
-            String.raw`Focus \((0,2)\), directrix \(x=6\)`,
-            String.raw`Focus \((2,0)\), directrix \(x=6\)`,
-            String.raw`Focus \((2,3)\), directrix \(y=0\)`,
-            String.raw`Focus \((2,6)\), directrix \(y=3\)`
+            String.raw`Center \((4,8)\), radius \(1\)`,
+            String.raw`Center \((-4,8)\), radius \(1\)`,
+            String.raw`Center \((4,-8)\), radius \(1\)`,
+            String.raw`Center \((4,8)\), radius \(2\)`,
+            String.raw`Center \((8,4)\), radius \(1\)`,
+            String.raw`Center \((4,8)\), radius \(\tfrac14\)`
           ],
           choiceWrap: false
         },
 
-        /* Q9 — Source #14 */
+        /* Q11 — #14 (Graph) */
         {
           stem: String.raw`
-            <p>Find the foci of the ellipse \(\dfrac{x^2}{16}+\dfrac{y^2}{9}=1\).</p>
+            <p>Graph the ellipse \(\dfrac{x^2}{16}+\dfrac{y^2}{9}=1\).</p>
+            <p>Which choice correctly gives vertices, co-vertices, and foci?</p>
           `,
           choices: [
-            String.raw`\((\pm 5,0)\)`,
-            String.raw`\((0,\pm 5)\)`,
-            String.raw`\((\pm \sqrt{7},0)\)`,
-            String.raw`\((0,\pm \sqrt{7})\)`,
-            String.raw`\((\pm \sqrt{25},0)\)`,
-            String.raw`\((\pm \sqrt{9},0)\)`
+            String.raw`Vertices \((0,\pm 4)\), co-vertices \((\pm 3,0)\), foci \((0,\pm \sqrt7)\)`,
+            String.raw`Vertices \((\pm 4,0)\), co-vertices \((0,\pm 3)\), foci \((\pm \sqrt7,0)\)`,
+            String.raw`Vertices \((\pm 3,0)\), co-vertices \((0,\pm 4)\), foci \((\pm 5,0)\)`,
+            String.raw`Vertices \((\pm 4,0)\), co-vertices \((0,\pm 3)\), foci \((\pm 7,0)\)`,
+            String.raw`Vertices \((\pm 4,0)\), co-vertices \((0,\pm 3)\), foci \((0,\pm \sqrt7)\)`,
+            String.raw`Vertices \((\pm 4,0)\), co-vertices \((0,\pm 9)\), foci \((\pm \sqrt7,0)\)`
           ],
           choiceWrap: false
         },
 
-        /* Q10 — Source #16 */
+        /* Q12 — #15 (Graph) */
         {
           stem: String.raw`
-            <p>For the parabola \(x=\dfrac{1}{4}(y+3)^2+4\), find the focus and the directrix.</p>
+            <p>Graph the hyperbola \(x^2-9y^2=36\).</p>
+            <p>Which choice correctly gives vertices, foci, and asymptotes?</p>
+          `,
+          choices: [
+            String.raw`Vertices \((\pm 6,0)\), foci \((\pm 2\sqrt{10},0)\), asymptotes \(y=\pm 3x\)`,
+            String.raw`Vertices \((\pm 6,0)\), foci \((\pm 2\sqrt{10},0)\), asymptotes \(y=\pm \tfrac13 x\)`,
+            String.raw`Vertices \((0,\pm 6)\), foci \((0,\pm 2\sqrt{10})\), asymptotes \(y=\pm \tfrac13 x\)`,
+            String.raw`Vertices \((\pm 6,0)\), foci \((\pm \sqrt{10},0)\), asymptotes \(y=\pm \tfrac13 x\)`,
+            String.raw`Vertices \((\pm 3,0)\), foci \((\pm 2\sqrt{10},0)\), asymptotes \(y=\pm \tfrac13 x\)`,
+            String.raw`Vertices \((\pm 6,0)\), foci \((\pm 2\sqrt{5},0)\), asymptotes \(y=\pm \tfrac13 x\)`
+          ],
+          choiceWrap: false
+        },
+
+        /* Q13 — #16 (Graph) */
+        {
+          stem: String.raw`
+            <p>Graph the parabola \(x=\dfrac14(y+3)^2+4\).</p>
+            <p>Which choice correctly gives the focus and directrix?</p>
           `,
           choices: [
             String.raw`Focus \((4,-2)\), directrix \(x=3\)`,
-            String.raw`Focus \((3,-3)\), directrix \(x=5\)`,
             String.raw`Focus \((5,-3)\), directrix \(x=5\)`,
+            String.raw`Focus \((3,-3)\), directrix \(x=5\)`,
             String.raw`Focus \((5,-3)\), directrix \(x=3\)`,
-            String.raw`Focus \((3,-3)\), directrix \(x=3\)`,
-            String.raw`Focus \((4,-3)\), directrix \(x=3\)`
+            String.raw`Focus \((4,-3)\), directrix \(x=3\)`,
+            String.raw`Focus \((5,3)\), directrix \(x=3\)`
           ],
           choiceWrap: false
         },
 
-        /* Q11 — Source #17 */
+        /* Q14 — #18 (Graph) */
         {
           stem: String.raw`
-            <p>For the hyperbola \(\dfrac{y^2}{36}-\dfrac{x^2}{16}=1\), find the equations of the asymptotes.</p>
+            <p>Graph the ellipse \(\dfrac{(x-1)^2}{49}+\dfrac{(y+4)^2}{16}=1\).</p>
+            <p>Which choice correctly gives the center, vertices (major axis), and foci?</p>
           `,
           choices: [
-            String.raw`\(\displaystyle y=\pm \frac{2}{3}x\)`,
-            String.raw`\(\displaystyle y=\pm \frac{3}{4}x\)`,
-            String.raw`\(\displaystyle y=\pm \frac{3}{2}x\)`,
-            String.raw`\(\displaystyle y=\pm \frac{4}{3}x\)`,
-            String.raw`\(\displaystyle x=\pm \frac{3}{2}y\)`,
-            String.raw`\(\displaystyle y=\pm \frac{6}{4}x\)`
+            String.raw`Center \((1,4)\); vertices \((1,4\pm 7)\); foci \((1,4\pm \sqrt{33})\)`,
+            String.raw`Center \((1,-4)\); vertices \((1,-4\pm 7)\); foci \((1,-4\pm \sqrt{33})\)`,
+            String.raw`Center \((1,-4)\); vertices \((1\pm 7,-4)\); foci \((1\pm \sqrt{33},-4)\)`,
+            String.raw`Center \((-1,-4)\); vertices \((-1\pm 7,-4)\); foci \((-1\pm \sqrt{33},-4)\)`,
+            String.raw`Center \((1,-4)\); vertices \((1\pm 4,-4)\); foci \((1\pm \sqrt{33},-4)\)`,
+            String.raw`Center \((1,-4)\); vertices \((1\pm 7,-4)\); foci \((1\pm 33,-4)\)`
           ],
           choiceWrap: false
         },
 
-        /* Q12 — Source #18 */
-        {
-          stem: String.raw`
-            <p>Consider the ellipse \(\dfrac{(x-1)^2}{49}+\dfrac{(y+4)^2}{16}=1\).</p>
-            <p>Which statement gives the correct center and the two vertices on the major axis?</p>
-          `,
-          choices: [
-            String.raw`Center \((1,4)\); vertices \((1\pm 7,4)\)`,
-            String.raw`Center \((1,-4)\); vertices \((1\pm 7,-4)\)`,
-            String.raw`Center \((1,-4)\); vertices \((1,-4\pm 7)\)`,
-            String.raw`Center \((-1,-4)\); vertices \((-1\pm 7,-4)\)`,
-            String.raw`Center \((1,-4)\); vertices \((1\pm 4,-4)\)`,
-            String.raw`Center \((1,-4)\); vertices \((1\pm \sqrt{33},-4)\)`
-          ],
-          choiceWrap: false
-        },
-
-        /* Q13 — Source #21 */
-        {
-          stem: String.raw`
-            <p>Find the focus of the parabola \(y=\dfrac{1}{8}(x-1)^2+3\).</p>
-          `,
-          choices: [
-            String.raw`\((1,1)\)`,
-            String.raw`\((1,5)\)`,
-            String.raw`\((5,1)\)`,
-            String.raw`\((3,1)\)`,
-            String.raw`\((1,-1)\)`,
-            String.raw`\((3,5)\)`
-          ],
-          choiceWrap: false
-        },
-
-        /* Q14 — Source #24 */
+        /* Q15 — #24 */
         {
           stem: String.raw`
             <p>Solve the system:</p>
             <p>\(3x+y=6\)</p>
             <p>\(x^2+y^2=10\)</p>
-            <p>Which set lists all real solutions?</p>
+            <p>Which set lists <strong>all</strong> real solutions?</p>
           `,
           choices: [
-            String.raw`\(\{(1,3),(\tfrac{13}{5},-\tfrac{9}{5})\}\)`,
             String.raw`\(\{(1,3)\}\)`,
-            String.raw`\(\{(\tfrac{13}{5},\tfrac{9}{5})\}\)`,
-            String.raw`\(\{(3,1),(-\tfrac{9}{5},\tfrac{13}{5})\}\)`,
+            String.raw`\(\{(1,3),(\tfrac{13}{5},\tfrac{9}{5})\}\)`,
             String.raw`\(\{(1,-3),(\tfrac{13}{5},-\tfrac{9}{5})\}\)`,
+            String.raw`\(\{(3,1),(\tfrac{13}{5},-\tfrac{9}{5})\}\)`,
+            String.raw`\(\{(1,3),(\tfrac{13}{5},-\tfrac{9}{5})\}\)`,
             String.raw`\(\{(-1,3),(-\tfrac{13}{5},-\tfrac{9}{5})\}\)`
           ],
           choiceWrap: false
         },
 
-        /* Q15 — Source #25 */
+        /* Q16 — #26 */
         {
           stem: String.raw`
-            <p>Solve the system:</p>
-            <p>\(x^2-y^2=5\)</p>
-            <p>\(y=x^2-7\)</p>
-            <p>Which set lists all real solutions?</p>
-          `,
-          choices: [
-            String.raw`\(\{(3,2),(-3,2)\}\)`,
-            String.raw`\(\{(\sqrt6,-1),(-\sqrt6,-1)\}\)`,
-            String.raw`\(\{(3,2),(-3,2),(\sqrt6,-1),(-\sqrt6,-1)\}\)`,
-            String.raw`\(\{(3,-2),(-3,-2),(\sqrt6,1),(-\sqrt6,1)\}\)`,
-            String.raw`\(\{(3,2),(\sqrt6,-1)\}\)`,
-            String.raw`\(\{(0,-7)\}\)`
-          ],
-          choiceWrap: false
-        },
-
-        /* Q16 — Source #26 */
-        {
-          stem: String.raw`
-            <p>Let a square have vertices \((0,0)\), \((a,0)\), \((a,a)\), \((0,a)\) with \(a&gt;0\).</p>
+            <p>Let a square have vertices \((0,0)\), \((a,0)\), \((a,a)\), and \((0,a)\) with \(a&gt;0\).</p>
             <p>Which statement best justifies that the diagonals are perpendicular?</p>
           `,
           choices: [
-            String.raw`Both diagonals have slope \(1\), so they are perpendicular.`,
-            String.raw`The diagonals have slopes \(0\) and undefined, so they are perpendicular.`,
-            String.raw`The diagonals are congruent, so they are perpendicular.`,
-            String.raw`The diagonals bisect each other, so they are perpendicular.`,
-            String.raw`One diagonal has slope \(1\) and the other has slope \(-1\), so their slopes are negative reciprocals.`,
-            String.raw`The diagonals have the same midpoint, so they are perpendicular.`
+            "The diagonals are congruent, so they are perpendicular.",
+            "One diagonal has slope 1 and the other has slope −1, so their slopes are negative reciprocals.",
+            "The diagonals have the same slope, so they are perpendicular.",
+            "The diagonals bisect each other, so they are perpendicular.",
+            "The diagonals have different lengths, so they are perpendicular.",
+            "Each diagonal is parallel to a side of the square, so they are perpendicular."
           ],
           choiceWrap: false
         }
