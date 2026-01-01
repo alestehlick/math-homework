@@ -8,218 +8,254 @@
   <script>
     /* =========================
        Homework 11-2 — Law of Cosines
-       3 from A, 3 from B, 1 from C, plus Portuguese set (Figures 1–7).
+
+       REQUIRED SOURCE REFERENCES:
+       - Recast from the provided old-form Homework 11-2 HTML.
+       - Type A: first 3 questions (classification + choose law)
+       - Type B: next 3 questions (solve triangle)
+       - Type C: next 1 question (Law of Cosines to find c)
+       - Portuguese set (with images): Figures 1–7
+         Filenames used here (as provided): 638a.png, 638b.png, 638c.png, 638d.png, 639a.png, 639b.png, 655.png
+
+       IMAGE NAMING RULE (AS USED HERE):
+       Files live in the SAME folder as this HTML.
        ========================= */
+
     window.homeworkData = {
       classId : "Algebra2",
       id      : "Homework 11-2",
       title   : "Homework 11-2 — Law of Cosines",
 
-      /* ---------- Image placeholders (add these files to the same folder) ---------- */
-      graphics : String.raw`
-<div class="img-grid" style="display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:14px;align-items:start;">
-  <div class="img-item">
-    <div style="font-weight:600;margin:0 0 6px 0;">Figure 1</div>
-    <img src="638a.png" alt="Figure 1" style="max-width:100%;height:auto;border:1px solid #ccc;border-radius:8px;" />
-  </div>
-  <div class="img-item">
-    <div style="font-weight:600;margin:0 0 6px 0;">Figure 2</div>
-    <img src="638b.png" alt="Figure 2" style="max-width:100%;height:auto;border:1px solid #ccc;border-radius:8px;" />
-  </div>
-  <div class="img-item">
-    <div style="font-weight:600;margin:0 0 6px 0;">Figure 3</div>
-    <img src="638c.png" alt="Figure 3" style="max-width:100%;height:auto;border:1px solid #ccc;border-radius:8px;" />
-  </div>
-  <div class="img-item">
-    <div style="font-weight:600;margin:0 0 6px 0;">Figure 4</div>
-    <img src="638d.png" alt="Figure 4" style="max-width:100%;height:auto;border:1px solid #ccc;border-radius:8px;" />
-  </div>
-  <div class="img-item">
-    <div style="font-weight:600;margin:0 0 6px 0;">Figure 5</div>
-    <img src="639a.png" alt="Figure 5" style="max-width:100%;height:auto;border:1px solid #ccc;border-radius:8px;" />
-  </div>
-  <div class="img-item">
-    <div style="font-weight:600;margin:0 0 6px 0;">Figure 6</div>
-    <img src="639b.png" alt="Figure 6" style="max-width:100%;height:auto;border:1px solid #ccc;border-radius:8px;" />
-  </div>
-  <div class="img-item">
-    <div style="font-weight:600;margin:0 0 6px 0;">Figure 7</div>
-    <img src="655.png" alt="Figure 7" style="max-width:100%;height:auto;border:1px solid #ccc;border-radius:8px;" />
-  </div>
-</div>
-`,
+      graphics : String.raw``,
 
-      /* ---------- Hidden answer key (A–F) for 14 questions ---------- */
       answerKey : ["B","A","D","C","B","A","A","C","B","C","C","B","D","C"],
 
       questions : [
 
-        /* -----------------------
-           Type A (3 questions)
-           ----------------------- */
+        /* =======================
+           Type A (3)
+           ======================= */
 
-        { latex: String.raw`\text{Classify the given information (SSS, SAS, SSA, ASA, SAA, AAA). Next identify which law (Law of Sines or Law of Cosines) would be used to solve the triangle.}\ \ \text{Given }A=12^\circ,\ b=5,\ c=3.`,
+        {
+          stem: String.raw`
+            <p>Classify the given information (SSS, SAS, SSA, ASA, SAA, AAA).</p>
+            <p>Then identify which law would be used to solve the triangle (Law of Sines or Law of Cosines).</p>
+            <p class="math">Given \(A=12^\circ,\ b=5,\ c=3.\)</p>
+          `,
+          choiceWrap: false,
           choices: [
-            String.raw`\text{SSA; Law of Sines}`,
-            String.raw`\text{SAS; Law of Cosines}`,
-            String.raw`\text{SAA; Law of Sines}`,
-            String.raw`\text{SSS; Law of Cosines}`,
-            String.raw`\text{ASA; Law of Sines}`,
-            String.raw`\text{SAS; Law of Sines}`
-          ]},
+            "SSA; Law of Sines",
+            "SAS; Law of Cosines",
+            "SAA; Law of Sines",
+            "SSS; Law of Cosines",
+            "ASA; Law of Sines",
+            "SAS; Law of Sines"
+          ]
+        },
 
-        { latex: String.raw`\text{Classify the given information (SSS, SAS, SSA, ASA, SAA, AAA). Next identify which law (Law of Sines or Law of Cosines) would be used to solve the triangle.}\ \ \text{Given }a=54,\ B=73^\circ,\ C=49^\circ.`,
+        {
+          stem: String.raw`
+            <p>Classify the given information (SSS, SAS, SSA, ASA, SAA, AAA).</p>
+            <p>Then identify which law would be used to solve the triangle (Law of Sines or Law of Cosines).</p>
+            <p class="math">Given \(a=54,\ B=73^\circ,\ C=49^\circ.\)</p>
+          `,
+          choiceWrap: false,
           choices: [
-            String.raw`\text{SAA; Law of Sines}`,
-            String.raw`\text{ASA; Law of Sines}`,
-            String.raw`\text{SAA; Law of Cosines}`,
-            String.raw`\text{AAA; Law of Sines}`,
-            String.raw`\text{SSA; Law of Sines}`,
-            String.raw`\text{SAS; Law of Cosines}`
-          ]},
+            "SAA; Law of Sines",
+            "ASA; Law of Sines",
+            "SAA; Law of Cosines",
+            "AAA; Law of Sines",
+            "SSA; Law of Sines",
+            "SAS; Law of Cosines"
+          ]
+        },
 
-        { latex: String.raw`\text{Classify the given information (SSS, SAS, SSA, ASA, SAA, AAA). Next identify which law (Law of Sines or Law of Cosines) would be used to solve the triangle.}\ \ \text{Given }A=43^\circ,\ a=7,\ b=9.`,
+        {
+          stem: String.raw`
+            <p>Classify the given information (SSS, SAS, SSA, ASA, SAA, AAA).</p>
+            <p>Then identify which law would be used to solve the triangle (Law of Sines or Law of Cosines).</p>
+            <p class="math">Given \(A=43^\circ,\ a=7,\ b=9.\)</p>
+          `,
+          choiceWrap: false,
           choices: [
-            String.raw`\text{SAS; Law of Cosines}`,
-            String.raw`\text{SSA; Law of Cosines}`,
-            String.raw`\text{SAA; Law of Sines}`,
-            String.raw`\text{SSA; Law of Sines}`,
-            String.raw`\text{SSS; Law of Cosines}`,
-            String.raw`\text{ASA; Law of Sines}`
-          ]},
+            "SAS; Law of Cosines",
+            "SSA; Law of Cosines",
+            "SAA; Law of Sines",
+            "SSA; Law of Sines",
+            "SSS; Law of Cosines",
+            "ASA; Law of Sines"
+          ]
+        },
 
-        /* -----------------------
-           Type B (3 questions)
-           ----------------------- */
+        /* =======================
+           Type B (3)
+           ======================= */
 
-        { latex: String.raw`\text{Solve }\triangle ABC\text{ using the given information. If }a=4,\ b=6,\ c=9,\ \text{find }C\text{ (nearest tenth).}`,
+        {
+          stem: String.raw`
+            <p>Solve \(\triangle ABC\) using the given information.</p>
+            <p class="math">If \(a=4,\ b=6,\ c=9,\) find \(C\) (nearest tenth).</p>
+          `,
+          choiceWrap: false,
           choices: [
-            String.raw`32.1^\circ`,
-            String.raw`20.7^\circ`,
-            String.raw`127.2^\circ`,
-            String.raw`52.8^\circ`,
-            String.raw`85.9^\circ`,
-            String.raw`39.4^\circ`
-          ]},
+            "32.1°",
+            "20.7°",
+            "127.2°",
+            "52.8°",
+            "85.9°",
+            "39.4°"
+          ]
+        },
 
-        { latex: String.raw`\text{Solve }\triangle ABC\text{ using the given information. If }B=82^\circ,\ a=3,\ c=7,\ \text{find }b\text{ (nearest tenth).}`,
+        {
+          stem: String.raw`
+            <p>Solve \(\triangle ABC\) using the given information.</p>
+            <p class="math">If \(B=82^\circ,\ a=3,\ c=7,\) find \(b\) (nearest tenth).</p>
+          `,
+          choiceWrap: false,
           choices: [
-            String.raw`6.2`,
-            String.raw`7.2`,
-            String.raw`7.8`,
-            String.raw`8.4`,
-            String.raw`5.6`,
-            String.raw`9.2`
-          ]},
+            "6.2",
+            "7.2",
+            "7.8",
+            "8.4",
+            "5.6",
+            "9.2"
+          ]
+        },
 
-        { latex: String.raw`\text{Solve }\triangle ABC\text{ using the given information. If }a=7,\ b=9,\ c=11,\ \text{find }B\text{ (nearest tenth).}`,
+        {
+          stem: String.raw`
+            <p>Solve \(\triangle ABC\) using the given information.</p>
+            <p class="math">If \(a=7,\ b=9,\ c=11,\) find \(B\) (nearest tenth).</p>
+          `,
+          choiceWrap: false,
           choices: [
-            String.raw`54.7^\circ`,
-            String.raw`39.4^\circ`,
-            String.raw`85.9^\circ`,
-            String.raw`94.1^\circ`,
-            String.raw`45.3^\circ`,
-            String.raw`60.0^\circ`
-          ]},
+            "54.7°",
+            "39.4°",
+            "85.9°",
+            "94.1°",
+            "45.3°",
+            "60.0°"
+          ]
+        },
 
-        /* -----------------------
-           Type C (1 question)
-           ----------------------- */
+        /* =======================
+           Type C (1)
+           ======================= */
 
-        { latex: String.raw`\text{Given }\triangle ABC\text{ with }A=60^\circ,\ a=9,\ b=7,\ \text{use the Law of Cosines to find }c\text{ (nearest tenth).}`,
+        {
+          stem: String.raw`
+            <p>Given \(\triangle ABC\) with \(A=60^\circ,\ a=9,\ b=7\).</p>
+            <p>Use the Law of Cosines to find \(c\) (nearest tenth).</p>
+          `,
+          choiceWrap: false,
           choices: [
-            String.raw`10.2`,
-            String.raw`8.1`,
-            String.raw`12.1`,
-            String.raw`9.0`,
-            String.raw`14.0`,
-            String.raw`6.9`
-          ]},
+            "10.2",
+            "8.1",
+            "12.1",
+            "9.0",
+            "14.0",
+            "6.9"
+          ]
+        },
 
-        /* -----------------------
-           Portuguese set: Figures 1–7
-           ----------------------- */
+        /* =======================
+           Portuguese set (with images): Figures 1–7
+           ======================= */
 
-        { latex: String.raw`\text{Refer to Figure 1 above. Determine the value of }x.`,
-          choices: [
-            String.raw`12`,
-            String.raw`13`,
-            String.raw`14`,
-            String.raw`15`,
-            String.raw`16`,
-            String.raw`10`
-          ]},
+        {
+          stem: String.raw`<p>Refer to Figure 1. Determine the value of \(x\).</p>`,
+          media: String.raw`
+            <figure>
+              <img src="638a.png" alt="Figure 1 (638a)" />
+              <figcaption>Figure 1</figcaption>
+            </figure>
+          `,
+          choiceWrap: false,
+          choices: ["12","13","14","15","16","10"]
+        },
 
-        { latex: String.raw`\text{Refer to Figure 2 above. Determine the value of }x.`,
-          choices: [
-            String.raw`4`,
-            String.raw`5`,
-            String.raw`6`,
-            String.raw`7`,
-            String.raw`3`,
-            String.raw`5\sqrt{2}`
-          ]},
+        {
+          stem: String.raw`<p>Refer to Figure 2. Determine the value of \(x\).</p>`,
+          media: String.raw`
+            <figure>
+              <img src="638b.png" alt="Figure 2 (638b)" />
+              <figcaption>Figure 2</figcaption>
+            </figure>
+          `,
+          choiceWrap: false,
+          choices: ["4","5","6","7","3","5√2"]
+        },
 
-        { latex: String.raw`\text{Refer to Figure 3 above. Determine the value of }x.`,
-          choices: [
-            String.raw`8`,
-            String.raw`9`,
-            String.raw`10`,
-            String.raw`12`,
-            String.raw`14`,
-            String.raw`6`
-          ]},
+        {
+          stem: String.raw`<p>Refer to Figure 3. Determine the value of \(x\).</p>`,
+          media: String.raw`
+            <figure>
+              <img src="638c.png" alt="Figure 3 (638c)" />
+              <figcaption>Figure 3</figcaption>
+            </figure>
+          `,
+          choiceWrap: false,
+          choices: ["8","9","10","12","14","6"]
+        },
 
-        { latex: String.raw`\text{Refer to Figure 4 above. Determine the value of }x\text{ (nearest tenth).}`,
-          choices: [
-            String.raw`8.0`,
-            String.raw`9.0`,
-            String.raw`9.7`,
-            String.raw`10.4`,
-            String.raw`12.0`,
-            String.raw`6.0`
-          ]},
+        {
+          stem: String.raw`<p>Refer to Figure 4. Determine the value of \(x\) (nearest tenth).</p>`,
+          media: String.raw`
+            <figure>
+              <img src="638d.png" alt="Figure 4 (638d)" />
+              <figcaption>Figure 4</figcaption>
+            </figure>
+          `,
+          choiceWrap: false,
+          choices: ["8.0","9.0","9.7","10.4","12.0","6.0"]
+        },
 
-        { latex: String.raw`\text{Refer to Figure 5 above. Determine the measure of angle }x.`,
-          choices: [
-            String.raw`45^\circ`,
-            String.raw`60^\circ`,
-            String.raw`75^\circ`,
-            String.raw`90^\circ`,
-            String.raw`120^\circ`,
-            String.raw`30^\circ`
-          ]},
+        {
+          stem: String.raw`<p>Refer to Figure 5. Determine the measure of angle \(x\).</p>`,
+          media: String.raw`
+            <figure>
+              <img src="639a.png" alt="Figure 5 (639a)" />
+              <figcaption>Figure 5</figcaption>
+            </figure>
+          `,
+          choiceWrap: false,
+          choices: ["45°","60°","75°","90°","120°","30°"]
+        },
 
-        { latex: String.raw`\text{Refer to Figure 6 above. Determine the measure of angle }x.`,
-          choices: [
-            String.raw`60^\circ`,
-            String.raw`90^\circ`,
-            String.raw`105^\circ`,
-            String.raw`120^\circ`,
-            String.raw`135^\circ`,
-            String.raw`45^\circ`
-          ]},
+        {
+          stem: String.raw`<p>Refer to Figure 6. Determine the measure of angle \(x\).</p>`,
+          media: String.raw`
+            <figure>
+              <img src="639b.png" alt="Figure 6 (639b)" />
+              <figcaption>Figure 6</figcaption>
+            </figure>
+          `,
+          choiceWrap: false,
+          choices: ["60°","90°","105°","120°","135°","45°"]
+        },
 
-        { latex: String.raw`\text{Refer to Figure 7 above. Calculate the perimeter of }\triangle ABC.`,
-          choices: [
-            String.raw`6.5`,
-            String.raw`7.0`,
-            String.raw`7.5`,
-            String.raw`8.0`,
-            String.raw`9.0`,
-            String.raw`10.5`
-          ]}
+        {
+          stem: String.raw`<p>Refer to Figure 7. Calculate the perimeter of \(\triangle ABC\).</p>`,
+          media: String.raw`
+            <figure>
+              <img src="655.png" alt="Figure 7 (655)" />
+              <figcaption>Figure 7</figcaption>
+            </figure>
+          `,
+          choiceWrap: false,
+          choices: ["6.5","7.0","7.5","8.0","9.0","10.5"]
+        }
 
       ]
     };
   </script>
 
-  <link rel="stylesheet" href="/math-homework/assets/core.css" />
-  <link rel="stylesheet" href="https://tikzjax.com/v1/fonts.css" />
-  <script defer src="/math-homework/assets/core.js"></script>
-  <script defer src="https://tikzjax.com/v1/tikzjax.js"></script>
+  <link rel="stylesheet" href="/math-homework/assets/core-rich.css" />
+  <script defer src="/math-homework/assets/core-rich.js"></script>
   <script defer src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
 </head>
+
 <body>
   <div id="hw-root">Loading…</div>
 </body>
