@@ -7,212 +7,294 @@
 
   <script>
     /* =========================
-       Homework 11-1 — Trig Applications
-       Includes: Law of Sines, ambiguous SSA, circumscribed circle radius,
-       and one trapezoid perimeter problem (Exercise 22).
-       Portuguese items include image placeholders by filename.
+       Homework 11-1 — Law of Sines
+
+       REQUIRED SOURCE REFERENCES:
+       - Recast from the provided old-form Homework 11-1 HTML.
+       - Type A: (old file) first 2 questions
+       - Type B: (old file) next 2 questions (ambiguous SSA)
+       - Type C: (old file) trapezoid perimeter problem (Exercise 22)
+       - Portuguese set:
+         - With images: 625a, 625b, 626a, 626b, 628a, 628b
+         - No image provided here: 629, 631
+
+       IMAGE NAMING RULE (UPDATED FOR THIS HOMEWORK):
+       Files live in the SAME folder as this HTML.
+       Filenames used here (as provided): 625a.png, 625b.png, 626a.png, 626b.png, 628a.png, 628b.png
        ========================= */
+
     window.homeworkData = {
       classId : "Algebra2",
       id      : "Homework 11-1",
       title   : "Homework 11-1 — Law of Sines",
 
-      /* ---------- Image placeholders (add these files to the same folder) ---------- */
-      graphics : String.raw`
-<div class="img-grid" style="display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:14px;align-items:start;">
-  <div class="img-item">
-    <div style="font-weight:600;margin:0 0 6px 0;">Figure 1</div>
-    <img src="625a.png" alt="Exercise 625a" style="max-width:100%;height:auto;border:1px solid #ccc;border-radius:8px;" />
-  </div>
-  <div class="img-item">
-    <div style="font-weight:600;margin:0 0 6px 0;">Figure 2</div>
-    <img src="625b.png" alt="Exercise 625b" style="max-width:100%;height:auto;border:1px solid #ccc;border-radius:8px;" />
-  </div>
-  <div class="img-item">
-    <div style="font-weight:600;margin:0 0 6px 0;">Figure 3</div>
-    <img src="626a.png" alt="Exercise 626a" style="max-width:100%;height:auto;border:1px solid #ccc;border-radius:8px;" />
-  </div>
-  <div class="img-item">
-    <div style="font-weight:600;margin:0 0 6px 0;">Figure 4</div>
-    <img src="626b.png" alt="Exercise 626b" style="max-width:100%;height:auto;border:1px solid #ccc;border-radius:8px;" />
-  </div>
-  <div class="img-item">
-    <div style="font-weight:600;margin:0 0 6px 0;">Figure 5</div>
-    <img src="628a.png" alt="Exercise 628a" style="max-width:100%;height:auto;border:1px solid #ccc;border-radius:8px;" />
-  </div>
-  <div class="img-item">
-    <div style="font-weight:600;margin:0 0 6px 0;">Figure 6</div>
-    <img src="628b.png" alt="Exercise 628b" style="max-width:100%;height:auto;border:1px solid #ccc;border-radius:8px;" />
-  </div>
-</div>
-`,
+      graphics : String.raw``,
 
-      /* ---------- Hidden answer key (A–F) for 13 questions ---------- */
       answerKey : ["A","A","C","D","B","E","A","C","F","B","D","A","E"],
 
-      /* ---------- 13 Multiple-Choice Questions ---------- */
       questions : [
 
         /* =======================
-           Type A (2 questions)
+           Type A (2)
            ======================= */
 
-        { latex: String.raw`\text{In }\triangle ABC,\ \text{angles are in degrees and side }a\text{ is opposite }A,\ b\text{ opposite }B,\ c\text{ opposite }C.\ \text{Given }A=35^\circ,\ B=17^\circ,\ b=5.\ \text{Classify the data (SSS, SSA, SAA, SAS, ASA, AAA) and find }a.`,
+        {
+          stem: String.raw`
+            <p>In \(\triangle ABC\), angles are in degrees and side \(a\) is opposite angle \(A\), side \(b\) is opposite \(B\), and side \(c\) is opposite \(C\).</p>
+            <p>Given \(A=35^\circ\), \(B=17^\circ\), and \(b=5\):</p>
+            <ul>
+              <li>Classify the given data (SSS, SSA, SAA, SAS, ASA, AAA).</li>
+              <li>Find \(a\) (nearest tenth).</li>
+            </ul>
+          `,
+          choiceWrap: false,
           choices: [
-            String.raw`\text{SAA; }a\approx 9.8`,
-            String.raw`\text{ASA; }a\approx 9.8`,
-            String.raw`\text{SAA; }a\approx 2.6`,
-            String.raw`\text{SSA; }a\approx 9.8`,
-            String.raw`\text{SAS; }a\approx 9.8`,
-            String.raw`\text{SAA; }a\approx 12.4`
-          ]},
+            "SAA; a ≈ 9.8",
+            "ASA; a ≈ 9.8",
+            "SAA; a ≈ 2.6",
+            "SSA; a ≈ 9.8",
+            "SAS; a ≈ 9.8",
+            "SAA; a ≈ 12.4"
+          ]
+        },
 
-        { latex: String.raw`\text{In }\triangle ABC,\ \text{given }B=82^\circ,\ C=57^\circ,\ a=6.\ \text{Classify the data (SSS, SSA, SAA, SAS, ASA, AAA) and find }c.`,
+        {
+          stem: String.raw`
+            <p>In \(\triangle ABC\), angles are in degrees and side \(a\) is opposite \(A\), side \(b\) is opposite \(B\), and side \(c\) is opposite \(C\).</p>
+            <p>Given \(B=82^\circ\), \(C=57^\circ\), and \(a=6\):</p>
+            <ul>
+              <li>Classify the given data (SSS, SSA, SAA, SAS, ASA, AAA).</li>
+              <li>Find \(c\) (nearest tenth).</li>
+            </ul>
+          `,
+          choiceWrap: false,
           choices: [
-            String.raw`\text{SAA; }c\approx 7.7`,
-            String.raw`\text{ASA; }c\approx 7.7`,
-            String.raw`\text{SAA; }c\approx 4.7`,
-            String.raw`\text{SSA; }c\approx 7.7`,
-            String.raw`\text{SAA; }c\approx 9.1`,
-            String.raw`\text{SAS; }c\approx 7.7`
-          ]},
+            "SAA; c ≈ 7.7",
+            "ASA; c ≈ 7.7",
+            "SAA; c ≈ 4.7",
+            "SSA; c ≈ 7.7",
+            "SAA; c ≈ 9.1",
+            "SAS; c ≈ 7.7"
+          ]
+        },
 
         /* =======================
-           Type B (2 questions)
+           Type B (2) — Ambiguous SSA
            ======================= */
 
-        { latex: String.raw`\text{In }\triangle ABC,\ \text{given }C=46^\circ,\ a=5,\ c=4.\ \text{How many triangles are possible, and what are the possible values of }B\text{?}`,
+        {
+          stem: String.raw`
+            <p>In \(\triangle ABC\), given \(C=46^\circ\), \(a=5\), and \(c=4\).</p>
+            <p>How many triangles are possible, and what are the possible values of \(B\)?</p>
+          `,
+          choiceWrap: false,
           choices: [
-            String.raw`\text{0 triangles (no solution).}`,
-            String.raw`\text{1 triangle; }B\approx 70^\circ`,
-            String.raw`\text{2 triangles; }B\approx 70^\circ\ \text{or}\ 18^\circ`,
-            String.raw`\text{2 triangles; }B\approx 64^\circ\ \text{or}\ 116^\circ`,
-            String.raw`\text{1 triangle; }B\approx 18^\circ`,
-            String.raw`\text{2 triangles; }B\approx 46^\circ\ \text{or}\ 134^\circ`
-          ]},
+            "0 triangles (no solution).",
+            "1 triangle; B ≈ 70°",
+            "2 triangles; B ≈ 70° or 18°",
+            "2 triangles; B ≈ 64° or 116°",
+            "1 triangle; B ≈ 18°",
+            "2 triangles; B ≈ 46° or 134°"
+          ]
+        },
 
-        { latex: String.raw`\text{In }\triangle ABC,\ \text{given }A=23^\circ,\ a=2,\ b=3.\ \text{How many triangles are possible, and what are the possible values of }B\text{?}`,
+        {
+          stem: String.raw`
+            <p>In \(\triangle ABC\), given \(A=23^\circ\), \(a=2\), and \(b=3\).</p>
+            <p>How many triangles are possible, and what are the possible values of \(B\)?</p>
+          `,
+          choiceWrap: false,
           choices: [
-            String.raw`\text{0 triangles (no solution).}`,
-            String.raw`\text{1 triangle; }B\approx 35.9^\circ`,
-            String.raw`\text{1 triangle; }B\approx 144.1^\circ`,
-            String.raw`\text{2 triangles; }B\approx 35.9^\circ\ \text{or}\ 144.1^\circ`,
-            String.raw`\text{2 triangles; }B\approx 23^\circ\ \text{or}\ 157^\circ`,
-            String.raw`\text{2 triangles; }B\approx 46^\circ\ \text{or}\ 134^\circ`
-          ]},
+            "0 triangles (no solution).",
+            "1 triangle; B ≈ 35.9°",
+            "1 triangle; B ≈ 144.1°",
+            "2 triangles; B ≈ 35.9° or 144.1°",
+            "2 triangles; B ≈ 23° or 157°",
+            "2 triangles; B ≈ 46° or 134°"
+          ]
+        },
 
         /* =======================
-           Type C (Exercise 22 only)
+           Type C (1) — Exercise 22
            ======================= */
 
-        { latex: String.raw`\text{In trapezoid }ABCD,\ \overline{BC}\parallel\overline{AD}\ \text{and } \overline{AB}\perp\overline{BC},\ \overline{AB}\perp\overline{AD}.\ \text{Given }m\angle BAC=25^\circ,\ AB=26,\ CD=31.\ \text{Find the perimeter of }ABCD\text{ (nearest tenth).}`,
+        {
+          stem: String.raw`
+            <p>In trapezoid \(ABCD\), \(\overline{BC}\parallel\overline{AD}\), and \(\overline{AB}\perp\overline{BC}\) and \(\overline{AB}\perp\overline{AD}\).</p>
+            <p>Given \(m\angle BAC=25^\circ\), \(AB=26\), and \(CD=31\).</p>
+            <p>Find the perimeter of \(ABCD\) (nearest tenth).</p>
+          `,
+          choiceWrap: false,
           choices: [
-            String.raw`74.0`,
-            String.raw`98.1`,
-            String.raw`103.4`,
-            String.raw`86.0`,
-            String.raw`92.9`,
-            String.raw`110.5`
-          ]},
+            "74.0",
+            "98.1",
+            "103.4",
+            "86.0",
+            "92.9",
+            "110.5"
+          ]
+        },
 
         /* =======================
-           Portuguese set (with images): Figure 1, Figure 2, Figure 3, Figure 4, Figure 5, Figure 6
+           Portuguese set (with images)
            ======================= */
 
-        { latex: String.raw`\text{Refer to Figure 1 above. Determine the value of }x.`,
+        {
+          stem: String.raw`<p>Refer to Figure 1. Determine the value of \(x\).</p>`,
+          media: String.raw`
+            <figure>
+              <img src="625a.png" alt="Figure 1 (Exercise 625a)" />
+              <figcaption>Figure 1</figcaption>
+            </figure>
+          `,
           choices: [
-            String.raw`6`,
-            String.raw`6\sqrt{3}`,
-            String.raw`12`,
-            String.raw`3\sqrt{2}`,
-            String.raw`6\sqrt{2}`,
-            String.raw`12\sqrt{2}`
-          ]},
+            "6",
+            String.raw`\(\,6\sqrt{3}\,\)`,
+            "12",
+            String.raw`\(\,3\sqrt{2}\,\)`,
+            String.raw`\(\,6\sqrt{2}\,\)`,
+            String.raw`\(\,12\sqrt{2}\,\)`
+          ]
+        },
 
-        { latex: String.raw`\text{Refer to Figure 2 above. Determine the value of }x.`,
+        {
+          stem: String.raw`<p>Refer to Figure 2. Determine the value of \(x\).</p>`,
+          media: String.raw`
+            <figure>
+              <img src="625b.png" alt="Figure 2 (Exercise 625b)" />
+              <figcaption>Figure 2</figcaption>
+            </figure>
+          `,
+          choiceWrap: false,
           choices: [
-            String.raw`6\sqrt{6}`,
-            String.raw`9\sqrt{2}`,
-            String.raw`12`,
-            String.raw`6\sqrt{3}`,
-            String.raw`18\sin(15^\circ)`,
-            String.raw`18\cos(15^\circ)`
-          ]},
+            "6√6",
+            "9√2",
+            "12",
+            "6√3",
+            "18 sin(15°)",
+            "18 cos(15°)"
+          ]
+        },
 
-        { latex: String.raw`\text{Refer to Figure 3 above. Determine the radius }R\text{ of the circumscribed circle.}`,
+        {
+          stem: String.raw`<p>Refer to Figure 3. Determine the radius \(R\) of the circumscribed circle.</p>`,
+          media: String.raw`
+            <figure>
+              <img src="626a.png" alt="Figure 3 (Exercise 626a)" />
+              <figcaption>Figure 3</figcaption>
+            </figure>
+          `,
+          choiceWrap: false,
           choices: [
-            String.raw`3\sqrt{3}`,
-            String.raw`6`,
-            String.raw`4\sqrt{3}`,
-            String.raw`8`,
-            String.raw`12`,
-            String.raw`6\sqrt{3}`
-          ]},
+            "3√3",
+            "6",
+            "4√3",
+            "8",
+            "12",
+            "6√3"
+          ]
+        },
 
-        { latex: String.raw`\text{Refer to Figure 4 above. Determine the radius }R\text{ of the circumscribed circle.}`,
+        {
+          stem: String.raw`<p>Refer to Figure 4. Determine the radius \(R\) of the circumscribed circle.</p>`,
+          media: String.raw`
+            <figure>
+              <img src="626b.png" alt="Figure 4 (Exercise 626b)" />
+              <figcaption>Figure 4</figcaption>
+            </figure>
+          `,
+          choiceWrap: false,
           choices: [
-            String.raw`6\sqrt{2}`,
-            String.raw`9`,
-            String.raw`9\sqrt{3}`,
-            String.raw`12`,
-            String.raw`4\sqrt{3}`,
-            String.raw`9\sqrt{2}`
-          ]},
+            "6√2",
+            "9",
+            "9√3",
+            "12",
+            "4√3",
+            "9√2"
+          ]
+        },
 
-        { latex: String.raw`\text{Refer to Figure 5 above. Determine the measure of angle }x.`,
+        {
+          stem: String.raw`<p>Refer to Figure 5. Determine the measure of angle \(x\).</p>`,
+          media: String.raw`
+            <figure>
+              <img src="628a.png" alt="Figure 5 (Exercise 628a)" />
+              <figcaption>Figure 5</figcaption>
+            </figure>
+          `,
+          choiceWrap: false,
           choices: [
-            String.raw`75^\circ`,
-            String.raw`105^\circ`,
-            String.raw`60^\circ`,
-            String.raw`45^\circ`,
-            String.raw`30^\circ`,
-            String.raw`120^\circ`
-          ]},
+            "75°",
+            "105°",
+            "60°",
+            "45°",
+            "30°",
+            "120°"
+          ]
+        },
 
-        { latex: String.raw`\text{Refer to Figure 6 above. Determine the measure of angle }x.`,
+        {
+          stem: String.raw`<p>Refer to Figure 6. Determine the measure of angle \(x\).</p>`,
+          media: String.raw`
+            <figure>
+              <img src="628b.png" alt="Figure 6 (Exercise 628b)" />
+              <figcaption>Figure 6</figcaption>
+            </figure>
+          `,
+          choiceWrap: false,
           choices: [
-            String.raw`30^\circ`,
-            String.raw`35^\circ`,
-            String.raw`60^\circ`,
-            String.raw`45^\circ`,
-            String.raw`90^\circ`,
-            String.raw`15^\circ`
-          ]},
+            "30°",
+            "35°",
+            "60°",
+            "45°",
+            "90°",
+            "15°"
+          ]
+        },
 
         /* =======================
-           Portuguese set (no image provided here): 629, 631
-           (Rendered in English, same style: “determine x / determine R”.)
+           Portuguese set (no image here): 629, 631
            ======================= */
 
-        { latex: String.raw`\text{In }\triangle ABC,\ AB=10,\ AC=14,\ \text{and }m\angle A=60^\circ.\ \text{Determine }x=BC.`,
+        {
+          stem: String.raw`
+            <p>In \(\triangle ABC\), \(AB=10\), \(AC=14\), and \(m\angle A=60^\circ\).</p>
+            <p>Determine \(x=BC\).</p>
+          `,
           choices: [
-            String.raw`2\sqrt{39}`,
-            String.raw`2\sqrt{34}`,
-            String.raw`6\sqrt{6}`,
-            String.raw`\sqrt{39}`,
-            String.raw`12`,
-            String.raw`14`
-          ]},
+            String.raw`\(\,2\sqrt{39}\,\)`,
+            String.raw`\(\,2\sqrt{34}\,\)`,
+            String.raw`\(\,6\sqrt{6}\,\)`,
+            String.raw`\(\sqrt{39}\)`,
+            "12",
+            "14"
+          ]
+        },
 
-        { latex: String.raw`\text{In }\triangle ABC,\ a=16\ \text{and }A=60^\circ.\ \text{Determine the radius }R\text{ of the circumscribed circle.}`,
+        {
+          stem: String.raw`
+            <p>In \(\triangle ABC\), \(a=16\) and \(A=60^\circ\).</p>
+            <p>Determine the radius \(R\) of the circumscribed circle.</p>
+          `,
           choices: [
-            String.raw`8`,
-            String.raw`8\sqrt{3}`,
-            String.raw`4\sqrt{3}`,
-            String.raw`\dfrac{16}{3}`,
-            String.raw`\dfrac{16\sqrt{3}}{3}`,
-            String.raw`16`
-          ]}
+            "8",
+            String.raw`\(\,8\sqrt{3}\,\)`,
+            String.raw`\(\,4\sqrt{3}\,\)`,
+            String.raw`\(\,\dfrac{16}{3}\,\)`,
+            String.raw`\(\,\dfrac{16\sqrt{3}}{3}\,\)`,
+            "16"
+          ]
+        }
+
       ]
     };
   </script>
 
-  <link rel="stylesheet" href="/math-homework/assets/core.css" />
-  <link rel="stylesheet" href="https://tikzjax.com/v1/fonts.css" />
-  <script defer src="/math-homework/assets/core.js"></script>
-  <script defer src="https://tikzjax.com/v1/tikzjax.js"></script>
+  <link rel="stylesheet" href="/math-homework/assets/core-rich.css" />
+  <script defer src="/math-homework/assets/core-rich.js"></script>
   <script defer src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
 </head>
+
 <body>
   <div id="hw-root">Loading…</div>
 </body>
