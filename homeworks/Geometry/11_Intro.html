@@ -5,6 +5,91 @@
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Introductory Reading — Meaning of Volume (Geometry)</title>
 
+  <style>
+    /* Minimal, readable formatting for the reading section */
+    .hw-reading {
+      max-width: 920px;
+      margin: 24px auto;
+      padding: 0 14px 8px;
+      line-height: 1.45;
+    }
+    .hw-reading .panel {
+      background: #f7f9fc;
+      border: 1px solid #e3e8f2;
+      border-radius: 12px;
+      padding: 16px 16px 10px;
+      box-shadow: 0 1px 0 rgba(0,0,0,0.03);
+    }
+    .hw-reading h2 {
+      margin: 0 0 10px;
+      font-size: 1.35rem;
+    }
+    .hw-reading h3 {
+      margin: 14px 0 6px;
+      font-size: 1.08rem;
+    }
+    .hw-reading .accent {
+      color: #0b5cab; /* calm blue */
+      font-weight: 700;
+    }
+    .hw-reading .term {
+      color: #7a1f6f; /* calm purple */
+      font-weight: 700;
+    }
+    .hw-reading .ruleword {
+      color: #0a6b3b; /* calm green */
+      font-weight: 700;
+    }
+    .hw-reading .fine {
+      color: #4b5563;
+      font-size: 0.96rem;
+    }
+    .hw-reading .hr {
+      height: 1px;
+      background: #e6ebf5;
+      margin: 12px 0;
+    }
+    .hw-reading .postulate {
+      background: #ffffff;
+      border: 1px solid #e6ebf5;
+      border-left: 6px solid #0b5cab;
+      border-radius: 12px;
+      padding: 10px 12px;
+      margin: 10px 0;
+    }
+    .hw-reading .postulate .title {
+      font-weight: 800;
+      margin-bottom: 4px;
+    }
+    .hw-reading .postulate .line {
+      margin: 6px 0;
+    }
+    .hw-reading .callout {
+      background: #fff7ed;
+      border: 1px solid #fed7aa;
+      border-left: 6px solid #f59e0b;
+      border-radius: 12px;
+      padding: 10px 12px;
+      margin: 10px 0 6px;
+    }
+    .hw-reading .callout .title {
+      font-weight: 800;
+      margin-bottom: 4px;
+      color: #92400e;
+    }
+    .hw-reading .pill {
+      display: inline-block;
+      padding: 1px 8px;
+      border-radius: 999px;
+      background: #eef2ff;
+      border: 1px solid #dbe1ff;
+      color: #3730a3;
+      font-weight: 700;
+      font-size: 0.92rem;
+      vertical-align: baseline;
+    }
+  </style>
+
   <script>
     /* =========================
        Introductory Reading & Assignment
@@ -17,7 +102,7 @@
 
       answerKey : [
         "B","B","B","C","B","B","B","C","C","B",
-        "C","B","C","B","A","A","B","B","B","B"
+        "C","B","C","B","A","A","A","B","B","C"
       ],
 
       questions : [
@@ -234,67 +319,89 @@
 <body>
 
   <!-- ===== Reading goes BEFORE the auto-graded questions ===== -->
-  <div class="hw-reading" style="max-width: 900px; margin: 24px auto; padding: 0 14px;">
-    <h2>Reading: What Does “Volume” Mean?</h2>
+  <div class="hw-reading">
+    <div class="panel">
+      <h2>Reading: What Does <span class="accent">Volume</span> Mean?</h2>
 
-    <p>
-      When we say that a box has volume <strong>24 cubic units</strong>, we mean something very concrete:
-      if we filled the box with little cubes of size \(1\times1\times1\), exactly 24 of them would fit.
-    </p>
+      <p>
+        When we say that a box has volume <span class="pill">24 cubic units</span>, we mean something very concrete:
+        if we filled the box with little cubes of size \(1\times1\times1\), exactly <strong>24</strong> of them would fit.
+      </p>
 
-    <p>
-      That simple idea — <strong>counting cubes</strong> — is the starting point of volume.
-      Geometry wants a definition that still makes sense for shapes that are not easy to fill directly
-      with cubes, such as pyramids, cones, and spheres. So we write down rules that any reasonable
-      “amount of space” must satisfy. These rules are called <strong>postulates</strong>.
-    </p>
+      <p class="fine">
+        That idea—<span class="term">counting cubes</span>—is the starting point. But geometry wants a definition that
+        still makes sense for shapes that are not easy to fill directly with cubes (pyramids, cones, spheres).
+        So we write down rules that any reasonable “amount of space” must satisfy. These rules are called
+        <span class="term">postulates</span>.
+      </p>
 
-    <hr>
+      <div class="hr"></div>
 
-    <h3>Postulate 1 — The unit cube sets the scale</h3>
-    <p>
-      Imagine measuring length without deciding what “1 unit” means. The numbers would be meaningless.
-      Volume works the same way. We choose a standard piece of space: the cube with side length 1.
-    </p>
-    <p><strong>Postulate:</strong> The volume of the unit cube is defined to be 1.</p>
+      <div class="postulate">
+        <div class="title">Postulate 1 — The unit cube sets the scale</div>
+        <div class="line">
+          Imagine measuring length without agreeing on what “1 unit” means—numbers would be meaningless.
+          Volume works the same way.
+        </div>
+        <div class="line">
+          <span class="ruleword">Postulate:</span> We define \(V(\text{unit cube})=1\).
+        </div>
+      </div>
 
-    <h3>Postulate 2 — Moving a solid does not change its volume</h3>
-    <p>
-      If you rotate a box, slide it across the floor, or flip it over, it does not suddenly contain
-      more or less space. A solid that is the same shape and size is the same solid, even if moved.
-    </p>
-    <p><strong>Postulate:</strong> Solids that are the same shape and size (even if moved or rotated) have the same volume.</p>
+      <div class="postulate">
+        <div class="title">Postulate 2 — Moving a solid does not change its volume</div>
+        <div class="line">
+          If you rotate a box, slide it, or flip it over, it does not suddenly contain more (or less) space.
+        </div>
+        <div class="line">
+          <span class="ruleword">Postulate:</span> Same shape and size (even if moved) ⇒ same volume.
+        </div>
+      </div>
 
-    <h3>Postulate 3 — Volumes add when pieces do not overlap</h3>
-    <p>
-      If you cut a solid cleanly into pieces and keep all the pieces, you have not lost or created space.
-      So the whole volume should equal the sum of the parts.
-    </p>
-    <p>
-      Overlap matters: if pieces overlap, you would count the overlapping space twice.
-    </p>
-    <p><strong>Postulate:</strong> The volume of a solid equals the sum of the volumes of its non-overlapping parts.</p>
+      <div class="postulate">
+        <div class="title">Postulate 3 — Volumes add when pieces do not overlap</div>
+        <div class="line">
+          If you cut a solid cleanly and keep all pieces, you did not destroy or create space.
+          So the whole should equal the sum of its parts.
+        </div>
+        <div class="line">
+          <span class="ruleword">Postulate:</span> If pieces do not overlap, then
+          \(V(\text{whole})=V(\text{part 1})+\cdots\).
+        </div>
+      </div>
 
-    <h3>Postulate 4 — Volume cannot be negative</h3>
-    <p>
-      You can have some space, or no space, but not “negative space.”
-    </p>
-    <p><strong>Postulate:</strong> Every solid has volume \(\ge 0\).</p>
+      <div class="callout">
+        <div class="title">Why “no overlap” matters</div>
+        <div class="line">
+          If two pieces overlap, you would count the overlapping region <strong>twice</strong>.
+          That would inflate the total and break the meaning of measurement.
+        </div>
+      </div>
 
-    <p>
-      A key consequence: if one solid fits entirely inside another, it cannot have greater volume.
-      Intuitively, the bigger solid is the smaller solid plus some leftover space — and leftover space
-      cannot be “negative.”
-    </p>
+      <div class="postulate">
+        <div class="title">Postulate 4 — Volume cannot be negative</div>
+        <div class="line">
+          You can have some space, or no space, but not “negative space.”
+        </div>
+        <div class="line">
+          <span class="ruleword">Postulate:</span> Every solid has \(V\ge 0\).
+        </div>
+      </div>
 
-    <hr>
+      <p class="fine">
+        A key consequence: if solid \(A\) fits inside solid \(B\), then \(A\) cannot have greater volume.
+        Intuitively, \(B\) is “\(A\) plus leftover space,” and leftover space cannot be negative.
+      </p>
 
-    <p>
-      These postulates explain why volume formulas are not magic:
-      for example, the box formula \(V=lwh\) comes from packing the box with unit cubes and adding.
-      They also justify “cut-and-rearrange” reasoning: if you cut a solid and rebuild it with
-      <strong>no gaps and no overlaps</strong>, the volume stays the same.
-    </p>
+      <div class="hr"></div>
+
+      <p class="fine">
+        These postulates explain why volume formulas are not magic. For example, \(V=lwh\) for a box comes from
+        packing it with unit cubes and adding (no overlap). They also justify <span class="term">cut-and-rearrange</span>
+        reasoning: if you cut a solid and rebuild it with <strong>no gaps</strong> and <strong>no overlaps</strong>,
+        the volume stays the same.
+      </p>
+    </div>
   </div>
 
   <!-- ===== Auto-rendered questions ===== -->
