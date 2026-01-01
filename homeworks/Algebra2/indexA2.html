@@ -1,79 +1,134 @@
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
   <meta charset="utf-8" />
-  <title>Homework Assignments - Algebra II</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Homework Assignments - Geometry</title>
+
+  <style>
+    :root{
+      --ink: #0f172a;
+      --muted: rgba(15,23,42,0.72);
+      --stroke: rgba(15,23,42,0.18);
+
+      /* tuned for “no big white plate” */
+      --link-bg: rgba(255,255,255,0.38);
+      --link-bg-hover: rgba(255,255,255,0.52);
+    }
+
+    html, body { height: 100%; }
+
+    body{
+      margin: 0;
+      color: var(--ink);
+      font-family: ui-serif, "Times New Roman", Times, Georgia, serif;
+      line-height: 1.55;
+
+      /* show the background clearly */
+      background: url("background.png") center / cover no-repeat fixed;
+    }
+
+    /* subtle readability veil without looking like a “card” */
+    body::before{
+      content: "";
+      position: fixed;
+      inset: 0;
+      pointer-events: none;
+      background: linear-gradient(
+        rgba(255,255,255,0.10),
+        rgba(255,255,255,0.10)
+      );
+    }
+
+    .wrap{
+      min-height: 100%;
+      display: grid;
+      place-items: center;
+      padding: 56px 20px;
+    }
+
+    .content{
+      width: min(720px, 100%);
+      padding: 6px 2px; /* no card/panel */
+    }
+
+    h1{
+      margin: 0 0 10px 0;
+      font-size: 1.7rem;
+      font-weight: 200;
+      letter-spacing: 0.2px;
+      text-shadow: 0 2px 16px rgba(255,255,255,0.55);
+      text-align: right;
+      font-style: italic;
+    }
+
+    .subtitle{
+      margin: 0 0 18px 0;
+      color: var(--muted);
+      font-size: 1rem;
+      text-shadow: 0 2px 16px rgba(255,255,255,0.55);
+    }
+
+    ul{
+      list-style: none;
+      padding: 0;
+      margin: 0;
+      display: grid;
+      gap: 10px;
+    }
+
+    a{
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 14px;
+
+      text-decoration: none;
+      color: var(--ink);
+      padding: 12px 14px;
+      border-radius: 14px;
+
+      background: var(--link-bg);
+      border: 1px solid var(--stroke);
+      backdrop-filter: blur(10px);
+      -webkit-backdrop-filter: blur(10px);
+
+      transition: transform 140ms ease, background 140ms ease, border-color 140ms ease;
+    }
+
+    a:hover{
+      transform: translateY(-1px);
+      background: var(--link-bg-hover);
+      border-color: rgba(15,23,42,0.28);
+    }
+
+    .tag{
+      color: var(--muted);
+      font-size: 0.95rem;
+      font-variant-numeric: tabular-nums;
+    }
+
+
+    @media (prefers-reduced-motion: reduce){
+      a{ transition: none; }
+      a:hover{ transform: none; }
+    }
+  </style>
 </head>
+
 <body>
-  <h1>Homework Algebra II</h1>
-  <ul>
-    <li><a href="hw_6_1.html">6-1</a></li>
-    <li><a href="hw_6_2.html">6-2</a></li>
-    <li><a href="hw_6_3.html">6-3</a></li>
-    <li><a href="hw_6_4.html">6-4</a></li>
-    <li><a href="hw_6_5.html">6-5</a></li>
-    <li><a href="hw_6_6.html">6-6</a></li>
-    <li><a href="hw_6_7.html">6-7</a></li>
-    <li><a href="hw_6_8.html">6-8</a></li>
-    <li><a href="hw_6_9.html">6-9</a></li>
-    <li><a href="hw_6_10.html">6-10</a></li>
-    <li><a href="hw_6_rev.html">6-rev</a></li>  
-   
-    <p style="margin-bottom: 20px;"> </p>
-    
-    <li><a href="hw_7_1.html">7-1</a></li>
-    <li><a href="hw_7_2.html">7-2</a></li>
-    <li><a href="hw_7_3.html">7-3</a></li>
-    <li><a href="hw_7_4.html">7-4</a></li>
-    <li><a href="hw_7_5.html">7-5</a></li>
-    <li><a href="hw_7_6.html">7-6</a></li>
-    <li><a href="hw_7_7.html">7-7</a></li>
-    <li><a href="hw_7_8.html">7-8</a></li>
-    <li><a href="hw_7_9.html">7-9</a></li>
-    <li><a href="hw_7_10.html">7-10</a></li>
-    <li><a href="hw_7_rev.html">7-rev</a></li>
+  <main class="wrap">
+    <section class="content" role="region" aria-label="rk list">
+      <h1>Algebra II</h1>
 
-    <p style="margin-bottom: 20px;"> </p>
-    
-    <li><a href="hw_8_1.html">8-1</a></li>
-    <li><a href="hw_8_2.html">8-2</a></li>
-    <li><a href="hw_8_3.html">8-3</a></li>
-    <li><a href="hw_8_4.html">8-4</a></li>
-    <li><a href="hw_8_5.html">8-5</a></li>
-    <li><a href="hw_8_6.html">8-6</a></li>
-    <li><a href="hw_8_7.html">8-7</a></li>
-    <li><a href="hw_8_8.html">8-8</a></li>
-    <li><a href="hw_8_9.html">8-9</a></li>
-    <li><a href="hw_8_10.html">8-10</a></li>
-    <li><a href="hw_8_rev.html">8-rev</a></li>
+      <ul>
+        <li><a href="10_Rev.html"><span>Review_Trigonometric_Functions.html</span><span class="tag">Intro</span></a></li>
+        <li><a href="hw_11_1.html"><span>11-1</span><span class="tag">Homework</span></a></li>
+        <li><a href="hw_11_2.html"><span>11-2</span><span class="tag">Homework</span></a></li>
+      </ul>
 
 
-    <p style="margin-bottom: 20px;"> </p>
-    
-    <li><a href="hw_9_1.html">9-1</a></li>
-    <li><a href="hw_9_2.html">9-2</a></li>
-    <li><a href="hw_9_3.html">9-3</a></li>
-    <li><a href="hw_9_4.html">9-4</a></li>
-    <li><a href="hw_9_5.html">9-5</a></li>
-    <li><a href="hw_9_6.html">9-6</a></li>
-    <li><a href="hw_9_7.html">9-7</a></li>
-    <li><a href="hw_9_8.html">9-8</a></li>
-    <li><a href="hw_9_rev.html">9-rev</a></li>
-    
-    <p style="margin-bottom: 20px;"> </p>
-
-    <li><a href="hw_10_1.html">10-1</a></li>
-    <li><a href="hw_10_2.html">10-2</a></li>
-    <li><a href="hw_10_3.html">10-3</a></li>
-    <li><a href="hw_10_4.html">10-4</a></li>
-    <li><a href="hw_10_5.html">10-5</a></li>
-    <li><a href="hw_10_6.html">10-6</a></li>
-    <li><a href="hw_10_7.html">10-7</a></li>
-    <li><a href="hw_10_rev.html">10-rev</a></li>
-    
-  </ul>
-
-  
+    </section>
+  </main>
 </body>
 </html>
