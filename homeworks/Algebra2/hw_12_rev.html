@@ -8,7 +8,7 @@
   <script>
     /* =========================
        Homework 12-Review — Logs, Inverses, and Exponential Equations
-       16-question assorted review based on the provided set.
+       Assorted review set (21 questions) based on the provided items.
        ========================= */
     window.homeworkData = {
       classId : "Algebra2",
@@ -17,259 +17,260 @@
 
       graphics : String.raw``,
 
-      /* Correct answers for Q1–Q16 */
+      /* Correct answers for Q1–Q21 */
       answerKey : ["B","C","D","B","B","B","C","B","B","B","B","B","B","A","A","A","B","C","A","B","A"],
 
       questions : [
 
         {
-          latex: String.raw`\text{For }f=\{(1,7),(2,8),(-3,9)\},\ \text{which option gives }f^{-1}\text{ and correctly states whether }f^{-1}\text{ is a function?}`,
+          stem: String.raw`<p>For \(f=\{(1,7),(2,8),(-3,9)\}\), which option gives \(f^{-1}\) and correctly states whether \(f^{-1}\) is a function?</p>`,
           choices: [
-            String.raw`f^{-1}=\{(7,1),(8,2),(9,-3)\},\ \text{and }f^{-1}\text{ is not a function}`,
-            String.raw`f^{-1}=\{(7,1),(8,2),(9,-3)\},\ \text{and }f^{-1}\text{ is a function}`,
-            String.raw`f^{-1}=\{(1,7),(2,8),(-3,9)\},\ \text{and }f^{-1}\text{ is a function}`,
-            String.raw`f^{-1}=\{(7,1),(8,2),(-3,9)\},\ \text{and }f^{-1}\text{ is a function}`,
-            String.raw`f^{-1}=\{(7,1),(7,2),(9,-3)\},\ \text{and }f^{-1}\text{ is a function}`,
-            String.raw`f^{-1}=\{(7,1),(8,2),(9,3)\},\ \text{and }f^{-1}\text{ is a function}`
+            String.raw`\(f^{-1}=\{(7,1),(8,2),(9,-3)\}\), and \(f^{-1}\) is not a function`,
+            String.raw`\(f^{-1}=\{(7,1),(8,2),(9,-3)\}\), and \(f^{-1}\) is a function`,
+            String.raw`\(f^{-1}=\{(1,7),(2,8),(-3,9)\}\), and \(f^{-1}\) is a function`,
+            String.raw`\(f^{-1}=\{(7,1),(8,2),(-3,9)\}\), and \(f^{-1}\) is a function`,
+            String.raw`\(f^{-1}=\{(7,1),(7,2),(9,-3)\}\), and \(f^{-1}\) is a function`,
+            String.raw`\(f^{-1}=\{(7,1),(8,2),(9,3)\}\), and \(f^{-1}\) is a function`
           ]
         },
 
         {
-          latex: String.raw`\text{If }f(x)=3x-7,\ \text{find }f^{-1}(x).`,
+          stem: String.raw`<p>If \(f(x)=3x-7\), find \(f^{-1}(x)\).</p>`,
           choices: [
-            String.raw`\dfrac{x-7}{3}`,
-            String.raw`3x+7`,
-            String.raw`\dfrac{x+7}{3}`,
-            String.raw`3x-7`,
-            String.raw`7-3x`,
-            String.raw`\dfrac{1}{3x-7}`
+            String.raw`\(\dfrac{x-7}{3}\)`,
+            String.raw`\(3x+7\)`,
+            String.raw`\(\dfrac{x+7}{3}\)`,
+            String.raw`\(3x-7\)`,
+            String.raw`\(7-3x\)`,
+            String.raw`\(\dfrac{1}{3x-7}\)`
           ]
         },
 
         {
-          latex: String.raw`\text{If }g(x)=2x^{2}-8,\ \text{which option correctly describes }g^{-1}(x)\text{ and whether it is a function?}`,
+          stem: String.raw`<p>If \(g(x)=2x^{2}-8\), which option correctly describes \(g^{-1}(x)\) and whether it is a function?</p>`,
           choices: [
-            String.raw`g^{-1}(x)=\sqrt{\dfrac{x+8}{2}},\ \text{and it is a function}`,
-            String.raw`g^{-1}(x)=\sqrt{\dfrac{x+8}{2}},\ \text{and it is not a function}`,
-            String.raw`g^{-1}(x)=\pm\sqrt{\dfrac{x+8}{2}},\ \text{and it is a function}`,
-            String.raw`g^{-1}(x)=\pm\sqrt{\dfrac{x+8}{2}},\ \text{and it is not a function}`,
-            String.raw`g^{-1}(x)=\pm\sqrt{\dfrac{x-8}{2}},\ \text{and it is not a function}`,
-            String.raw`g^{-1}(x)=\dfrac{x+8}{2},\ \text{and it is a function}`
+            String.raw`\(g^{-1}(x)=\sqrt{\dfrac{x+8}{2}}\), and it is a function`,
+            String.raw`\(g^{-1}(x)=\sqrt{\dfrac{x+8}{2}}\), and it is not a function`,
+            String.raw`\(g^{-1}(x)=\pm\sqrt{\dfrac{x+8}{2}}\), and it is a function`,
+            String.raw`\(g^{-1}(x)=\pm\sqrt{\dfrac{x+8}{2}}\), and it is not a function`,
+            String.raw`\(g^{-1}(x)=\pm\sqrt{\dfrac{x-8}{2}}\), and it is not a function`,
+            String.raw`\(g^{-1}(x)=\dfrac{x+8}{2}\), and it is a function`
           ]
         },
 
         {
-          latex: String.raw`\text{Evaluate: }\log_{4}(32).`,
+          stem: String.raw`<p>Evaluate: \( \log_{4}(32) \).</p>`,
           choices: [
-            String.raw`2`,
-            String.raw`\dfrac{5}{2}`,
-            String.raw`3`,
-            String.raw`4`,
-            String.raw`\dfrac{1}{2}`,
-            String.raw`5`
+            String.raw`\(2\)`,
+            String.raw`\(\dfrac{5}{2}\)`,
+            String.raw`\(3\)`,
+            String.raw`\(4\)`,
+            String.raw`\(\dfrac{1}{2}\)`,
+            String.raw`\(5\)`
           ]
         },
 
         {
-          latex: String.raw`\text{Evaluate: }\log_{5}\!\left(\dfrac{1}{25}\right).`,
+          stem: String.raw`<p>Evaluate: \( \log_{5}\!\left(\dfrac{1}{25}\right) \).</p>`,
           choices: [
-            String.raw`-1`,
-            String.raw`-2`,
-            String.raw`2`,
-            String.raw`\dfrac{1}{2}`,
-            String.raw`-\dfrac{1}{2}`,
-            String.raw`25`
+            String.raw`\(-1\)`,
+            String.raw`\(-2\)`,
+            String.raw`\(2\)`,
+            String.raw`\(\dfrac{1}{2}\)`,
+            String.raw`\(-\dfrac{1}{2}\)`,
+            String.raw`\(25\)`
           ]
         },
 
         {
-          latex: String.raw`\text{Evaluate: }\log_{\left(\tfrac{1}{2}\right)}(8).`,
+          stem: String.raw`<p>Evaluate: \( \log_{\left(\tfrac{1}{2}\right)}(8) \).</p>`,
           choices: [
-            String.raw`3`,
-            String.raw`-3`,
-            String.raw`-\dfrac{1}{3}`,
-            String.raw`\dfrac{1}{3}`,
-            String.raw`8`,
-            String.raw`-8`
+            String.raw`\(3\)`,
+            String.raw`\(-3\)`,
+            String.raw`\(-\dfrac{1}{3}\)`,
+            String.raw`\(\dfrac{1}{3}\)`,
+            String.raw`\(8\)`,
+            String.raw`\(-8\)`
           ]
         },
 
         {
-          latex: String.raw`\text{Evaluate: }\log_{27}\!\left(\dfrac{1}{3}\right).`,
+          stem: String.raw`<p>Evaluate: \( \log_{27}\!\left(\dfrac{1}{3}\right) \).</p>`,
           choices: [
-            String.raw`-3`,
-            String.raw`-1`,
-            String.raw`-\dfrac{1}{3}`,
-            String.raw`\dfrac{1}{3}`,
-            String.raw`3`,
-            String.raw`\dfrac{1}{9}`
+            String.raw`\(-3\)`,
+            String.raw`\(-1\)`,
+            String.raw`\(-\dfrac{1}{3}\)`,
+            String.raw`\(\dfrac{1}{3}\)`,
+            String.raw`\(3\)`,
+            String.raw`\(\dfrac{1}{9}\)`
           ]
         },
 
         {
-          latex: String.raw`\text{Evaluate: }\log_{0.1}(1000).`,
+          stem: String.raw`<p>Evaluate: \( \log_{0.1}(1000) \).</p>`,
           choices: [
-            String.raw`3`,
-            String.raw`-3`,
-            String.raw`-\dfrac{1}{3}`,
-            String.raw`\dfrac{1}{3}`,
-            String.raw`-1000`,
-            String.raw`1000`
+            String.raw`\(3\)`,
+            String.raw`\(-3\)`,
+            String.raw`\(-\dfrac{1}{3}\)`,
+            String.raw`\(\dfrac{1}{3}\)`,
+            String.raw`\(-1000\)`,
+            String.raw`\(1000\)`
           ]
         },
 
         {
-          latex: String.raw`\text{Evaluate: }\log_{16}(8).`,
+          stem: String.raw`<p>Evaluate: \( \log_{16}(8) \).</p>`,
           choices: [
-            String.raw`\dfrac{4}{3}`,
-            String.raw`\dfrac{3}{4}`,
-            String.raw`\dfrac{1}{4}`,
-            String.raw`2`,
-            String.raw`-\dfrac{3}{4}`,
-            String.raw`-\dfrac{4}{3}`
+            String.raw`\(\dfrac{4}{3}\)`,
+            String.raw`\(\dfrac{3}{4}\)`,
+            String.raw`\(\dfrac{1}{4}\)`,
+            String.raw`\(2\)`,
+            String.raw`\(-\dfrac{3}{4}\)`,
+            String.raw`\(-\dfrac{4}{3}\)`
           ]
         },
 
         {
-          latex: String.raw`\text{Evaluate: }\log_{9}\!\left(\dfrac{1}{3}\right).`,
+          stem: String.raw`<p>Evaluate: \( \log_{9}\!\left(\dfrac{1}{3}\right) \).</p>`,
           choices: [
-            String.raw`-2`,
-            String.raw`-\dfrac{1}{2}`,
-            String.raw`\dfrac{1}{2}`,
-            String.raw`-\dfrac{1}{3}`,
-            String.raw`\dfrac{2}{3}`,
-            String.raw`\dfrac{1}{3}`
+            String.raw`\(-2\)`,
+            String.raw`\(-\dfrac{1}{2}\)`,
+            String.raw`\(\dfrac{1}{2}\)`,
+            String.raw`\(-\dfrac{1}{3}\)`,
+            String.raw`\(\dfrac{2}{3}\)`,
+            String.raw`\(\dfrac{1}{3}\)`
           ]
         },
 
         {
-          latex: String.raw`\text{Evaluate: }\log_{125}\!\left(\dfrac{1}{5}\right).`,
+          stem: String.raw`<p>Evaluate: \( \log_{125}\!\left(\dfrac{1}{5}\right) \).</p>`,
           choices: [
-            String.raw`-\dfrac{1}{5}`,
-            String.raw`-\dfrac{1}{3}`,
-            String.raw`\dfrac{1}{3}`,
-            String.raw`-3`,
-            String.raw`3`,
-            String.raw`\dfrac{1}{5}`
+            String.raw`\(-\dfrac{1}{5}\)`,
+            String.raw`\(-\dfrac{1}{3}\)`,
+            String.raw`\(\dfrac{1}{3}\)`,
+            String.raw`\(-3\)`,
+            String.raw`\(3\)`,
+            String.raw`\(\dfrac{1}{5}\)`
           ]
         },
 
         {
-          latex: String.raw`\text{Evaluate: }\log_{3}\!\left(\sqrt{27}\right).`,
+          stem: String.raw`<p>Evaluate: \( \log_{3}\!\left(\sqrt{27}\right) \).</p>`,
           choices: [
-            String.raw`\dfrac{1}{2}`,
-            String.raw`\dfrac{3}{2}`,
-            String.raw`3`,
-            String.raw`2`,
-            String.raw`1`,
-            String.raw`\dfrac{9}{2}`
-          ]
-        },
-        {
-          latex: String.raw`\text{Give the answer in radians: }\ \text{Cos}^{-1}\!\left(\dfrac{\sqrt{3}}{2}\right).`,
-          choices: [
-            String.raw`\dfrac{\pi}{3}`,
-            String.raw`\dfrac{\pi}{6}`,
-            String.raw`\dfrac{5\pi}{6}`,
-            String.raw`-\dfrac{\pi}{6}`,
-            String.raw`\dfrac{7\pi}{6}`,
-            String.raw`-\dfrac{\pi}{3}`
+            String.raw`\(\dfrac{1}{2}\)`,
+            String.raw`\(\dfrac{3}{2}\)`,
+            String.raw`\(3\)`,
+            String.raw`\(2\)`,
+            String.raw`\(1\)`,
+            String.raw`\(\dfrac{9}{2}\)`
           ]
         },
 
         {
-          latex: String.raw`\text{Give the answer in radians: }\ \text{Sin}^{-1}\!\left(\dfrac{\sqrt{3}}{2}\right).`,
+          stem: String.raw`<p>Give the answer in radians: \( \text{Cos}^{-1}\!\left(\dfrac{\sqrt{3}}{2}\right) \).</p>`,
           choices: [
-            String.raw`\dfrac{\pi}{3}`,
-            String.raw`\dfrac{2\pi}{3}`,
-            String.raw`-\dfrac{\pi}{3}`,
-            String.raw`\dfrac{\pi}{6}`,
-            String.raw`-\dfrac{\pi}{6}`,
-            String.raw`\dfrac{5\pi}{3}`
+            String.raw`\(\dfrac{\pi}{3}\)`,
+            String.raw`\(\dfrac{\pi}{6}\)`,
+            String.raw`\(\dfrac{5\pi}{6}\)`,
+            String.raw`\(-\dfrac{\pi}{6}\)`,
+            String.raw`\(\dfrac{7\pi}{6}\)`,
+            String.raw`\(-\dfrac{\pi}{3}\)`
           ]
         },
 
         {
-          latex: String.raw`\text{Give the answer in radians: }\ \text{Tan}^{-1}(-1).`,
+          stem: String.raw`<p>Give the answer in radians: \( \text{Sin}^{-1}\!\left(\dfrac{\sqrt{3}}{2}\right) \).</p>`,
           choices: [
-            String.raw`-\dfrac{\pi}{4}`,
-            String.raw`\dfrac{3\pi}{4}`,
-            String.raw`\dfrac{\pi}{4}`,
-            String.raw`-\dfrac{3\pi}{4}`,
-            String.raw`\pi`,
-            String.raw`0`
+            String.raw`\(\dfrac{\pi}{3}\)`,
+            String.raw`\(\dfrac{2\pi}{3}\)`,
+            String.raw`\(-\dfrac{\pi}{3}\)`,
+            String.raw`\(\dfrac{\pi}{6}\)`,
+            String.raw`\(-\dfrac{\pi}{6}\)`,
+            String.raw`\(\dfrac{5\pi}{3}\)`
           ]
         },
 
         {
-          latex: String.raw`\text{Use log laws to rewrite: }\log_{4}(ab^{2}).`,
+          stem: String.raw`<p>Give the answer in radians: \( \text{Tan}^{-1}(-1) \).</p>`,
           choices: [
-            String.raw`\log_{4}a+2\log_{4}b`,
-            String.raw`2\log_{4}a+\log_{4}b`,
-            String.raw`\log_{4}a+\log_{4}(b^{2})`,
-            String.raw`\log_{4}(a+b^{2})`,
-            String.raw`\log_{4}a\cdot 2\log_{4}b`,
-            String.raw`\log_{4}a-\log_{4}(b^{2})`
+            String.raw`\(-\dfrac{\pi}{4}\)`,
+            String.raw`\(\dfrac{3\pi}{4}\)`,
+            String.raw`\(\dfrac{\pi}{4}\)`,
+            String.raw`\(-\dfrac{3\pi}{4}\)`,
+            String.raw`\(\pi\)`,
+            String.raw`\(0\)`
           ]
         },
 
         {
-          latex: String.raw`\text{Use log laws to rewrite: }\log\sqrt{\dfrac{x^{2}}{y}}.`,
+          stem: String.raw`<p>Use log laws to rewrite: \( \log_{4}(ab^{2}) \).</p>`,
           choices: [
-            String.raw`\dfrac{1}{2}\log x-\log y`,
-            String.raw`\log x-\dfrac{1}{2}\log y`,
-            String.raw`2\log x-\log y`,
-            String.raw`\log x+\dfrac{1}{2}\log y`,
-            String.raw`\dfrac{1}{2}(2\log x+\log y)`,
-            String.raw`\log(x^{2})-\log(y^{2})`
+            String.raw`\(\log_{4}a+2\log_{4}b\)`,
+            String.raw`\(2\log_{4}a+\log_{4}b\)`,
+            String.raw`\(\log_{4}a+\log_{4}(b^{2})\)`,
+            String.raw`\(\log_{4}(a+b^{2})\)`,
+            String.raw`\(\log_{4}a\cdot 2\log_{4}b\)`,
+            String.raw`\(\log_{4}a-\log_{4}(b^{2})\)`
           ]
         },
 
         {
-          latex: String.raw`\text{Use log laws to rewrite: }\log\sqrt{x^{2}yz^{3}}.`,
+          stem: String.raw`<p>Use log laws to rewrite: \( \log\sqrt{\dfrac{x^{2}}{y}} \).</p>`,
           choices: [
-            String.raw`\log x+\log y+3\log z`,
-            String.raw`2\log x+\dfrac{1}{2}\log y+\dfrac{3}{2}\log z`,
-            String.raw`\log x+\dfrac{1}{2}\log y+\dfrac{3}{2}\log z`,
-            String.raw`\dfrac{1}{2}\log x+\dfrac{1}{2}\log y+\dfrac{3}{2}\log z`,
-            String.raw`\log x+\dfrac{1}{2}\log(yz^{3})`,
-            String.raw`\log(x^{2}yz^{3})`
+            String.raw`\(\dfrac{1}{2}\log x-\log y\)`,
+            String.raw`\(\log x-\dfrac{1}{2}\log y\)`,
+            String.raw`\(2\log x-\log y\)`,
+            String.raw`\(\log x+\dfrac{1}{2}\log y\)`,
+            String.raw`\(\dfrac{1}{2}(2\log x+\log y)\)`,
+            String.raw`\(\log(x^{2})-\log(y^{2})\)`
           ]
         },
 
         {
-          latex: String.raw`\text{Evaluate: }\log_{4}32.`,
+          stem: String.raw`<p>Use log laws to rewrite: \( \log\sqrt{x^{2}yz^{3}} \).</p>`,
           choices: [
-            String.raw`\dfrac{5}{2}`,
-            String.raw`\dfrac{2}{5}`,
-            String.raw`\dfrac{3}{2}`,
-            String.raw`\dfrac{5}{4}`,
-            String.raw`2`,
-            String.raw`3`
+            String.raw`\(\log x+\log y+3\log z\)`,
+            String.raw`\(2\log x+\dfrac{1}{2}\log y+\dfrac{3}{2}\log z\)`,
+            String.raw`\(\log x+\dfrac{1}{2}\log y+\dfrac{3}{2}\log z\)`,
+            String.raw`\(\dfrac{1}{2}\log x+\dfrac{1}{2}\log y+\dfrac{3}{2}\log z\)`,
+            String.raw`\(\log x+\dfrac{1}{2}\log(yz^{3})\)`,
+            String.raw`\(\log(x^{2}yz^{3})\)`
           ]
         },
 
         {
-          latex: String.raw`\text{Evaluate: }\log_{5}\!\left(\dfrac{1}{25}\right).`,
+          stem: String.raw`<p>Evaluate: \( \log_{4}32 \).</p>`,
           choices: [
-            String.raw`2`,
-            String.raw`-2`,
-            String.raw`-\dfrac{1}{2}`,
-            String.raw`\dfrac{1}{25}`,
-            String.raw`5`,
-            String.raw`-25`
+            String.raw`\(\dfrac{5}{2}\)`,
+            String.raw`\(\dfrac{2}{5}\)`,
+            String.raw`\(\dfrac{3}{2}\)`,
+            String.raw`\(\dfrac{5}{4}\)`,
+            String.raw`\(2\)`,
+            String.raw`\(3\)`
           ]
         },
 
         {
-          latex: String.raw`\text{Solve: }\log x+\log 4=3.`,
+          stem: String.raw`<p>Evaluate: \( \log_{5}\!\left(\dfrac{1}{25}\right) \).</p>`,
           choices: [
-            String.raw`x=250`,
-            String.raw`x=40`,
-            String.raw`x=4000`,
-            String.raw`x=996`,
-            String.raw`x=25`,
-            String.raw`x=2.5`
+            String.raw`\(2\)`,
+            String.raw`\(-2\)`,
+            String.raw`\(-\dfrac{1}{2}\)`,
+            String.raw`\(\dfrac{1}{25}\)`,
+            String.raw`\(5\)`,
+            String.raw`\(-25\)`
+          ]
+        },
+
+        {
+          stem: String.raw`<p>Solve: \( \log x+\log 4=3 \).</p>`,
+          choices: [
+            String.raw`\(x=250\)`,
+            String.raw`\(x=40\)`,
+            String.raw`\(x=4000\)`,
+            String.raw`\(x=996\)`,
+            String.raw`\(x=25\)`,
+            String.raw`\(x=2.5\)`
           ]
         }
 
@@ -277,10 +278,8 @@
     };
   </script>
 
-  <link rel="stylesheet" href="/math-homework/assets/core.css" />
-  <link rel="stylesheet" href="https://tikzjax.com/v1/fonts.css" />
-  <script defer src="/math-homework/assets/core.js"></script>
-  <script defer src="https://tikzjax.com/v1/tikzjax.js"></script>
+  <link rel="stylesheet" href="/math-homework/assets/core-rich.css" />
+  <script defer src="/math-homework/assets/core-rich.js"></script>
   <script defer src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
 </head>
 
