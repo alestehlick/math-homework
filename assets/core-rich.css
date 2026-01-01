@@ -7,9 +7,11 @@
 body{
   margin:0;
   font-family:"EB Garamond",serif;
-  background:#f6f4ef;
   color:#222;
-  line-height:1.5;               /* global default */
+  line-height:1.5;
+
+  /* same background as the index page (file beside each HW html) */
+  background: url("background.png") center / cover no-repeat fixed;
 }
 
 #hw-root{
