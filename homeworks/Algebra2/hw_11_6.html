@@ -3,181 +3,284 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Homework 11-6 (Algebra II)</title>
+  <title>Homework 11-5 (Algebra II)</title>
 
   <script>
     /* =========================
-       Homework 11-6 — Sum and Difference Identities
-       5 from Type A, 7 from Type B, plus Portuguese set: 272a, 273.
-       Portuguese trig abbreviations rendered in English: sin, cos, tan, cot, sec, csc.
+       Homework 11-5 — Trigonometric Identities (Proof Steps)
+
+       REQUIRED SOURCE REFERENCES:
+       - Recast from the provided old-form Homework 11-5 HTML.
+       - Type A: Q1–Q3
+       - Type B: Q4–Q7
+       - Portuguese set: 261–267 (Q8–Q14)
+
+       IMAGE NAMING RULE:
+       - No images used in this homework.
        ========================= */
+
     window.homeworkData = {
       classId : "Algebra2",
-      id      : "Homework 11-6",
-      title   : "Homework 11-6 — Sum and Difference Identities",
+      id      : "Homework 11-5",
+      title   : "Homework 11-5 — Trigonometric Identities",
 
       graphics : String.raw``,
 
-      /* Correct answers for Q1–Q14 */
-      answerKey : ["B","C","B","C","E","B","C","D","D","B","C","D","C","D"],
+      answerKey : ["C","A","D","B","C","A","C","E","B","A","C","B","D","A"],
 
       questions : [
 
-        /* ---------- A (5) ---------- */
+        /* =======================
+           Type A (3)
+           ======================= */
 
-        { latex: String.raw`\text{Without using a table or calculator, evaluate }\cos 75^\circ\text{ exactly.}`,
+        {
+          stem: String.raw`
+            <p>In the proof of</p>
+            <p>\[
+              \dfrac{\cos^2 x+\sin^2 x}{\sin x\cos x\,\tan x}=\csc^2 x,
+            \]</p>
+            <p>which identity justifies replacing \(\cos^2 x+\sin^2 x\) with \(1\)?</p>
+          `,
           choices: [
-            String.raw`\dfrac{\sqrt6+\sqrt2}{4}`,
-            String.raw`\dfrac{\sqrt6-\sqrt2}{4}`,
-            String.raw`\dfrac{\sqrt3-1}{2}`,
-            String.raw`\dfrac{\sqrt2-\sqrt6}{4}`,
-            String.raw`\dfrac{\sqrt2}{2}`,
-            String.raw`\dfrac{\sqrt3}{2}`
-          ]},
+            String.raw`\(\tan x=\dfrac{\sin x}{\cos x}\)`,
+            String.raw`\(1+\tan^2 x=\sec^2 x\)`,
+            String.raw`\(\sin^2 x+\cos^2 x=1\)`,
+            String.raw`\(\csc x=\dfrac{1}{\cos x}\)`,
+            String.raw`\(\sin(-x)=-\sin x\)`,
+            String.raw`\(\cos(2x)=\cos^2 x-\sin^2 x\)`
+          ]
+        },
 
-        { latex: String.raw`\text{Without using a table or calculator, evaluate }\sin 105^\circ\text{ exactly.}`,
+        {
+          stem: String.raw`
+            <p>In the proof of</p>
+            <p>\[
+              \dfrac{\cos^2 x+\sin^2 x}{\sin x\cos x\,\tan x}=\csc^2 x,
+            \]</p>
+            <p>which substitution is made for \(\tan x\)?</p>
+          `,
           choices: [
-            String.raw`\dfrac{\sqrt6-\sqrt2}{4}`,
-            String.raw`\dfrac{\sqrt3}{2}`,
-            String.raw`\dfrac{\sqrt6+\sqrt2}{4}`,
-            String.raw`\dfrac{\sqrt2}{2}`,
-            String.raw`-\dfrac{\sqrt6+\sqrt2}{4}`,
-            String.raw`\dfrac{\sqrt2-\sqrt6}{4}`
-          ]},
+            String.raw`\(\tan x=\dfrac{\sin x}{\cos x}\)`,
+            String.raw`\(\tan x=\dfrac{\cos x}{\sin x}\)`,
+            String.raw`\(\tan x=\dfrac{1}{\sin x}\)`,
+            String.raw`\(\tan x=\dfrac{1}{\cos x}\)`,
+            String.raw`\(\tan x=\sin x\cos x\)`,
+            String.raw`\(\tan x=\sin^2 x+\cos^2 x\)`
+          ]
+        },
 
-        { latex: String.raw`\text{Without using a table or calculator, evaluate }\cos 195^\circ\text{ exactly.}`,
+        {
+          stem: String.raw`
+            <p>A proof lists a chain of equal expressions from the top line to the bottom line.</p>
+            <p>What property guarantees that the first and last expressions are equal?</p>
+          `,
           choices: [
-            String.raw`\dfrac{\sqrt6+\sqrt2}{4}`,
-            String.raw`-\dfrac{\sqrt6+\sqrt2}{4}`,
-            String.raw`-\dfrac{\sqrt6-\sqrt2}{4}`,
-            String.raw`\dfrac{\sqrt6-\sqrt2}{4}`,
-            String.raw`-\dfrac{\sqrt2}{2}`,
-            String.raw`-\dfrac{\sqrt3}{2}`
-          ]},
+            String.raw`Distributive property`,
+            String.raw`Commutative property`,
+            String.raw`Associative property`,
+            String.raw`Transitive property of equality`,
+            String.raw`Reflexive property of equality`,
+            String.raw`Additive inverse property`
+          ]
+        },
 
-        { latex: String.raw`\text{Without using a table or calculator, evaluate }\sin 120^\circ\text{ exactly.}`,
+        /* =======================
+           Type B (4)
+           ======================= */
+
+        {
+          stem: String.raw`
+            <p>To begin proving the identity</p>
+            <p>\[
+              \sin\theta=\csc\theta-\cos\theta\cot\theta,
+            \]</p>
+            <p>which is the best first step?</p>
+          `,
           choices: [
-            String.raw`\dfrac{1}{2}`,
-            String.raw`\dfrac{\sqrt3}{3}`,
-            String.raw`\dfrac{\sqrt3}{2}`,
-            String.raw`\dfrac{\sqrt2}{2}`,
-            String.raw`-\dfrac{\sqrt3}{2}`,
-            String.raw`0`
-          ]},
+            String.raw`Replace \(\sin\theta\) with \(\sqrt{1-\cos^2\theta}\).`,
+            String.raw`Rewrite \(\csc\theta\) and \(\cot\theta\) in terms of \(\sin\theta\) and \(\cos\theta\).`,
+            String.raw`Rewrite \(\cos\theta\) as \(1-\sin^2\theta\).`,
+            String.raw`Divide both sides by \(\cos\theta\).`,
+            String.raw`Replace \(\cot\theta\) with \(\tan\theta\).`,
+            String.raw`Square both sides.`
+          ]
+        },
 
-        { latex: String.raw`\text{Two right triangles are given. In the first, }\sin\alpha=\dfrac{2}{7}\text{ and }\cos\alpha=\dfrac{\sqrt{45}}{7}.\ \text{In the second, }\sin\beta=\dfrac{4}{5}\text{ and }\cos\beta=\dfrac{3}{5}.\ \text{Find }\sin(\alpha+\beta)\text{ and simplify.}`,
+        {
+          stem: String.raw`
+            <p>To begin proving the identity</p>
+            <p>\[
+              \sec\theta=\sin\theta\tan\theta+\sin\theta\cot\theta,
+            \]</p>
+            <p>which is the best first step?</p>
+          `,
           choices: [
-            String.raw`\dfrac{6-12\sqrt5}{35}`,
-            String.raw`\dfrac{6+4\sqrt5}{35}`,
-            String.raw`\dfrac{6+12\sqrt5}{49}`,
-            String.raw`\dfrac{12+12\sqrt5}{35}`,
-            String.raw`\dfrac{6+12\sqrt5}{35}`,
-            String.raw`\dfrac{12\sqrt5-6}{35}`
-          ]},
+            String.raw`Rewrite \(\sec\theta\) as \(\dfrac{\sin\theta}{\cos\theta}\).`,
+            String.raw`Rewrite \(\sin\theta\) as \(\dfrac{1}{\csc\theta}\).`,
+            String.raw`Rewrite \(\tan\theta\) and \(\cot\theta\) in terms of \(\sin\theta\) and \(\cos\theta\).`,
+            String.raw`Rewrite \(\sec\theta\) as \(\dfrac{1}{\sin\theta}\).`,
+            String.raw`Replace \(\sin\theta\) with \(1-\cos^2\theta\).`,
+            String.raw`Factor the left side.`
+          ]
+        },
 
-        /* ---------- B (7) ---------- */
-
-        { latex: String.raw`\text{Simplify: }\sin(x+360^\circ).`,
+        {
+          stem: String.raw`
+            <p>To begin proving the identity</p>
+            <p>\[
+              \cos x-\sin x=\cos x(1-\tan x),
+            \]</p>
+            <p>which is the best first step?</p>
+          `,
           choices: [
-            String.raw`-\sin x`,
-            String.raw`\sin x`,
-            String.raw`\cos x`,
-            String.raw`-\cos x`,
-            String.raw`\tan x`,
-            String.raw`0`
-          ]},
+            String.raw`Rewrite \(\tan x\) as \(\dfrac{\sin x}{\cos x}\) on the right-hand side.`,
+            String.raw`Rewrite \(\cos x\) as \(\dfrac{1}{\sec x}\) on the left-hand side.`,
+            String.raw`Rewrite \(\sin x\) as \(\dfrac{1}{\csc x}\) on the left-hand side.`,
+            String.raw`Divide both sides by \(\sin x\).`,
+            String.raw`Replace \(1\) with \(\sin^2 x+\cos^2 x\) on the left-hand side.`,
+            String.raw`Square both sides.`
+          ]
+        },
 
-        { latex: String.raw`\text{Simplify: }\cos(90^\circ-x).`,
+        {
+          stem: String.raw`
+            <p>To begin proving the identity</p>
+            <p>\[
+              \cot x(\tan x+\sec x)=1+\csc x,
+            \]</p>
+            <p>which is the best first step?</p>
+          `,
           choices: [
-            String.raw`\cos x`,
-            String.raw`-\sin x`,
-            String.raw`\sin x`,
-            String.raw`-\cos x`,
-            String.raw`\tan x`,
-            String.raw`\cot x`
-          ]},
+            String.raw`Replace \(\cot x\) with \(\tan x\).`,
+            String.raw`Rewrite \(\csc x\) as \(\dfrac{1}{\cos x}\).`,
+            String.raw`Distribute: \(\cot x\tan x+\cot x\sec x\).`,
+            String.raw`Combine \(1+\csc x\) into a single fraction immediately.`,
+            String.raw`Square both sides.`,
+            String.raw`Divide both sides by \(\tan x\).`
+          ]
+        },
 
-        { latex: String.raw`\text{Simplify: }\cos(180^\circ+x).`,
+        /* =======================
+           Portuguese set (261–267) — English trig notation
+           ======================= */
+
+        {
+          stem: String.raw`
+            <p>Simplify \((1+\cot x)^2+(1-\cot x)^2\).</p>
+            <p>After expanding and combining like terms, what do you get?</p>
+          `,
           choices: [
-            String.raw`\cos x`,
-            String.raw`\sin x`,
-            String.raw`-\sin x`,
-            String.raw`-\cos x`,
-            String.raw`\tan x`,
-            String.raw`\sec x`
-          ]},
+            String.raw`\(2-2\cot^2 x\)`,
+            String.raw`\(2\cot x\)`,
+            String.raw`\(2+\cot^2 x\)`,
+            String.raw`\(1+\cot^2 x\)`,
+            String.raw`\(2+2\cot^2 x\)`,
+            String.raw`\(2\csc^2 x-1\)`
+          ]
+        },
 
-        { latex: String.raw`\text{Which expression is equivalent to }\tan(2x)\text{?}`,
+        {
+          stem: String.raw`
+            <p>Simplify</p>
+            <p>\[
+              \dfrac{1-2\cos^2 x+\cos^4 x}{1-2\sin^2 x+\sin^4 x}
+            \]</p>
+            <p>to a single power of a trig ratio.</p>
+          `,
           choices: [
-            String.raw`\dfrac{2\tan x}{1+\tan^2 x}`,
-            String.raw`\dfrac{1-\tan^2 x}{2\tan x}`,
-            String.raw`\dfrac{2\sin x\cos x}{\cos^2 x+\sin^2 x}`,
-            String.raw`\dfrac{2\tan x}{1-\tan^2 x}`,
-            String.raw`\dfrac{\tan^2 x-1}{2\tan x}`,
-            String.raw`\dfrac{\tan^2 x}{1-\tan^2 x}`
-          ]},
+            String.raw`\(\tan^2 x\)`,
+            String.raw`\(\tan^4 x\)`,
+            String.raw`\(\cot^4 x\)`,
+            String.raw`\(\sec^4 x\)`,
+            String.raw`\(\csc^4 x\)`,
+            String.raw`\(1\)`
+          ]
+        },
 
-        { latex: String.raw`\text{Which expression is equivalent to }\cos(2\alpha)\text{, written using }\sin\alpha\text{?}`,
+        {
+          stem: String.raw`<p>Which expression is equivalent to \(\cot x-\cos x\)?</p>`,
           choices: [
-            String.raw`2\sin^2\alpha-1`,
-            String.raw`1-2\sin^2\alpha`,
-            String.raw`1-2\cos^2\alpha`,
-            String.raw`2\cos^2\alpha-1`,
-            String.raw`1+2\sin^2\alpha`,
-            String.raw`1+\tan^2\alpha`
-          ]},
+            String.raw`\(\cos x(\csc x-1)\)`,
+            String.raw`\(\sin x(\sec x-1)\)`,
+            String.raw`\(\cos x(\sec x-1)\)`,
+            String.raw`\(\sin x(\csc x-1)\)`,
+            String.raw`\(\cos x(\csc x+1)\)`,
+            String.raw`\(\sin x(\sec x+1)\)`
+          ]
+        },
 
-        { latex: String.raw`\text{Which expression is equivalent to }\cos(2\alpha)\text{, written using }\cos\alpha\text{?}`,
+        {
+          stem: String.raw`
+            <p>Starting from</p>
+            <p>\[
+              \dfrac{\cos x+\cos y}{\sin x-\sin y}=\dfrac{\sin x+\sin y}{\cos y-\cos x},
+            \]</p>
+            <p>what equation do you get after cross-multiplying?</p>
+          `,
           choices: [
-            String.raw`1-2\cos^2\alpha`,
-            String.raw`2\sin^2\alpha-1`,
-            String.raw`2\cos^2\alpha-1`,
-            String.raw`1-2\sin^2\alpha`,
-            String.raw`1`,
-            String.raw`\sec^2\alpha`
-          ]},
+            String.raw`\(\cos x+\cos y=\sin x+\sin y\)`,
+            String.raw`\((\cos x-\cos y)(\sin x-\sin y)=(\cos x+\cos y)(\sin x+\sin y)\)`,
+            String.raw`\((\cos x+\cos y)(\cos y-\cos x)=(\sin x+\sin y)(\sin x-\sin y)\)`,
+            String.raw`\(\cos^2 x-\cos^2 y=\sin^2 x+\sin^2 y\)`,
+            String.raw`\(\cos^2 x+\cos^2 y=\sin^2 x-\sin^2 y\)`,
+            String.raw`\(\sin x-\sin y=\cos y-\cos x\)`
+          ]
+        },
 
-        { latex: String.raw`\text{Simplify: }\cos\!\left(\dfrac{\pi}{2}-(x-y)\right).`,
+        {
+          stem: String.raw`
+            <p>In simplifying \(\dfrac{\cos x+\cot x}{\tan x+\sec x}\), a common factor cancels from numerator and denominator.</p>
+            <p>Which factor is it?</p>
+          `,
           choices: [
-            String.raw`\sin(x+y)`,
-            String.raw`\cos(x-y)`,
-            String.raw`-\sin(x-y)`,
-            String.raw`\sin(x-y)`,
-            String.raw`\cos(x+y)`,
-            String.raw`-\cos(x-y)`
-          ]},
+            String.raw`\((\cos x+1)\)`,
+            String.raw`\((\sin x+1)\)`,
+            String.raw`\((\sin x-1)\)`,
+            String.raw`\((\cos x-1)\)`,
+            String.raw`\((\sin^2 x+\cos^2 x)\)`,
+            String.raw`\((\sin x\cos x)\)`
+          ]
+        },
 
-        /* ---------- Portuguese set (272a, 273), rendered in English notation ---------- */
-
-        { latex: String.raw`\text{(272a) Simplify: }\sin(a+b)\sin(a-b).`,
+        {
+          stem: String.raw`
+            <p>Simplify</p>
+            <p>\[
+              \dfrac{\sin^2 x-\cos^2 y}{\cos^2 x\cos^2 y}+1.
+            \]</p>
+          `,
           choices: [
-            String.raw`\sin^2 a-\sin^2 b`,
-            String.raw`\cos^2 a-\cos^2 b`,
-            String.raw`\cos^2 b-\cos^2 a`,
-            String.raw`\sin^2 b-\sin^2 a`,
-            String.raw`\cos(2b)-\cos(2a)`,
-            String.raw`\dfrac{\cos(2a)-\cos(2b)}{2}`
-          ]},
+            String.raw`\(\tan^2 x+\tan^2 y\)`,
+            String.raw`\(\tan^2 x\tan y\)`,
+            String.raw`\(\tan x\tan y\)`,
+            String.raw`\(\tan^2 x\tan^2 y\)`,
+            String.raw`\(\sec^2 x\sec^2 y\)`,
+            String.raw`\(\csc^2 x\csc^2 y\)`
+          ]
+        },
 
-        { latex: String.raw`\text{(273) Simplify: }\tan(45^\circ+x)\cot(45^\circ-x).`,
+        {
+          stem: String.raw`<p>(267) Which expression is equal to \(\csc x-\cot x\)?</p>`,
           choices: [
-            String.raw`\dfrac{1-\sin2x}{1+\sin2x}`,
-            String.raw`\dfrac{1+\cos2x}{1-\cos2x}`,
-            String.raw`1`,
-            String.raw`\dfrac{1+\sin2x}{1-\sin2x}`,
-            String.raw`\dfrac{1-\cos2x}{1+\cos2x}`,
-            String.raw`\dfrac{1+\tan^2 x}{1-\tan^2 x}`
-          ]}
+            String.raw`\(\dfrac{1-\cos x}{\sin x}\)`,
+            String.raw`\(\dfrac{1+\cos x}{\sin x}\)`,
+            String.raw`\(\dfrac{1-\sin x}{\cos x}\)`,
+            String.raw`\(\dfrac{1+\sin x}{\cos x}\)`,
+            String.raw`\(\dfrac{\sin x}{1-\cos x}\)`,
+            String.raw`\(\dfrac{\cos x}{1-\sin x}\)`
+          ]
+        }
+
       ]
     };
   </script>
 
-  <link rel="stylesheet" href="/math-homework/assets/core.css" />
-  <link rel="stylesheet" href="https://tikzjax.com/v1/fonts.css" />
-  <script defer src="/math-homework/assets/core.js"></script>
-  <script defer src="https://tikzjax.com/v1/tikzjax.js"></script>
+  <link rel="stylesheet" href="/math-homework/assets/core-rich.css" />
+  <script defer src="/math-homework/assets/core-rich.js"></script>
   <script defer src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
 </head>
+
 <body>
   <div id="hw-root">Loading…</div>
 </body>
