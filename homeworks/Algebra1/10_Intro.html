@@ -1,0 +1,466 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Algebra 1 — Roots (Intro Reading + Quiz)</title>
+
+  <style>
+    /* Minimal, readable formatting for the reading section */
+    .hw-reading{
+      max-width: 920px;
+      margin: 24px auto;
+      padding: 0 14px 8px;
+      line-height: 1.5;
+    }
+    .hw-reading .panel{
+      background:#f7f9fc;
+      border:1px solid #e3e8f2;
+      border-radius:12px;
+      padding:16px 16px 12px;
+      box-shadow:0 1px 0 rgba(0,0,0,0.03);
+    }
+    .hw-reading h2{ margin:0 0 10px; font-size:1.35rem; }
+    .hw-reading h3{ margin:14px 0 6px; font-size:1.08rem; }
+    .hw-reading .accent{ color:#0b5cab; font-weight:800; }
+    .hw-reading .term{ color:#7a1f6f; font-weight:800; }
+    .hw-reading .ruleword{ color:#0a6b3b; font-weight:800; }
+    .hw-reading .fine{ color:#4b5563; font-size:0.97rem; }
+    .hw-reading .hr{ height:1px; background:#e6ebf5; margin:12px 0; }
+
+    .hw-reading .example{
+      background:#ffffff;
+      border:1px solid #e6ebf5;
+      border-left:6px solid #0b5cab;
+      border-radius:12px;
+      padding:10px 12px;
+      margin:10px 0;
+    }
+    .hw-reading .example .title{
+      font-weight:900;
+      margin-bottom:4px;
+    }
+
+    .hw-reading .callout{
+      background:#fff7ed;
+      border:1px solid #fed7aa;
+      border-left:6px solid #f59e0b;
+      border-radius:12px;
+      padding:10px 12px;
+      margin:10px 0 6px;
+    }
+    .hw-reading .callout .title{
+      font-weight:900;
+      margin-bottom:4px;
+      color:#92400e;
+    }
+
+    .hw-reading .definition{
+      background:#f0fdf4;
+      border:1px solid #bbf7d0;
+      border-left:6px solid #16a34a;
+      border-radius:12px;
+      padding:10px 12px;
+      margin:12px 0;
+    }
+    .hw-reading .definition .title{
+      font-weight:900;
+      margin-bottom:4px;
+      color:#14532d;
+    }
+
+    .hw-reading .pill{
+      display:inline-block;
+      padding:1px 8px;
+      border-radius:999px;
+      background:#eef2ff;
+      border:1px solid #dbe1ff;
+      color:#3730a3;
+      font-weight:800;
+      font-size:0.92rem;
+      vertical-align:baseline;
+    }
+  </style>
+
+  <script>
+    /* =========================
+       Algebra 1 — Roots (Intro)
+       - Reading + 20 MC questions
+       ========================= */
+    window.homeworkData = {
+      classId : "Algebra1",
+      id      : "A1-Roots-Intro",
+      title   : "Algebra 1 — Roots (Square, Cube, and Beyond)",
+
+      answerKey : [
+        "C","B","A","B","C","A","B","A","B","C",
+        "B","A","C","B","A","B","C","B","A","C"
+      ],
+
+      questions : [
+
+        /* 1 */
+        {
+          stem: String.raw`<p>Which number is \(\sqrt{49}\)?</p>`,
+          choices: [
+            String.raw`\(-7\)`,
+            String.raw`\(\pm 7\)`,
+            String.raw`\(7\)`,
+            String.raw`\(49\)`
+          ]
+        },
+
+        /* 2 */
+        {
+          stem: String.raw`<p>Which statement is true?</p>`,
+          choices: [
+            String.raw`\(\sqrt{16}=-4\)`,
+            String.raw`\(\sqrt{16}=4\)`,
+            String.raw`\(\sqrt{16}=\pm 4\)`,
+            String.raw`\(\sqrt{16}=8\)`
+          ]
+        },
+
+        /* 3 */
+        {
+          stem: String.raw`<p>\(x^2=25\). What are the solutions?</p>`,
+          choices: [
+            String.raw`\(x=5\) or \(x=-5\)`,
+            String.raw`\(x=5\) only`,
+            String.raw`\(x=-5\) only`,
+            String.raw`No solution`
+          ]
+        },
+
+        /* 4 */
+        {
+          stem: String.raw`<p>Which is the best meaning of \(\sqrt{a}\) (for \(a\ge 0\))?</p>`,
+          choices: [
+            String.raw`The number \(x\) such that \(x=a/2\)`,
+            String.raw`The <em>positive</em> number \(x\) such that \(x^2=a\)`,
+            String.raw`Any number \(x\) such that \(x^2=a\)`,
+            String.raw`The number \(x\) such that \(2x=a\)`
+          ]
+        },
+
+        /* 5 */
+        {
+          stem: String.raw`<p>Which number is \(\sqrt{0}\)?</p>`,
+          choices: [
+            String.raw`\(-1\)`,
+            String.raw`\(1\)`,
+            String.raw`\(0\)`,
+            String.raw`undefined`
+          ]
+        },
+
+        /* 6 */
+        {
+          stem: String.raw`<p>Which number is \(\sqrt[3]{-8}\)?</p>`,
+          choices: [
+            String.raw`\(-2\)`,
+            String.raw`\(2\)`,
+            String.raw`\(\pm 2\)`,
+            String.raw`undefined`
+          ]
+        },
+
+        /* 7 */
+        {
+          stem: String.raw`<p>Which number is \(\sqrt[3]{27}\)?</p>`,
+          choices: [
+            String.raw`\(-3\)`,
+            String.raw`\(3\)`,
+            String.raw`\(\pm 3\)`,
+            String.raw`\(\dfrac{1}{3}\)`
+          ]
+        },
+
+        /* 8 */
+        {
+          stem: String.raw`<p>Which number is \(\sqrt[4]{16}\)?</p>`,
+          choices: [
+            String.raw`\(2\)`,
+            String.raw`\(-2\)`,
+            String.raw`\(\pm 2\)`,
+            String.raw`\(4\)`
+          ]
+        },
+
+        /* 9 */
+        {
+          stem: String.raw`<p>Which statement is true?</p>`,
+          choices: [
+            String.raw`\(\sqrt[4]{81}=-3\)`,
+            String.raw`\(\sqrt[4]{81}=3\)`,
+            String.raw`\(\sqrt[4]{81}=\pm 3\)`,
+            String.raw`\(\sqrt[4]{81}=9\)`
+          ]
+        },
+
+        /* 10 */
+        {
+          stem: String.raw`<p>Which expression is <em>not</em> a real number?</p>`,
+          choices: [
+            String.raw`\(\sqrt{9}\)`,
+            String.raw`\(\sqrt[3]{-1}\)`,
+            String.raw`\(\sqrt{-9}\)`,
+            String.raw`\(\sqrt[6]{64}\)`
+          ]
+        },
+
+        /* 11 */
+        {
+          stem: String.raw`<p>\(\sqrt{x}=5\). What is \(x\)?</p>`,
+          choices: [
+            String.raw`\(10\)`,
+            String.raw`\(25\)`,
+            String.raw`\(\pm 25\)`,
+            String.raw`\(-25\)`
+          ]
+        },
+
+        /* 12 */
+        {
+          stem: String.raw`<p>Which statement is true?</p>`,
+          choices: [
+            String.raw`\(\sqrt{a^2}=a\) for all real numbers \(a\)`,
+            String.raw`\(\sqrt{a^2}=|a|\) for all real numbers \(a\)`,
+            String.raw`\(\sqrt{a^2}=-a\) for all real numbers \(a\)`,
+            String.raw`\(\sqrt{a^2}=\pm a\) for all real numbers \(a\)`
+          ]
+        },
+
+        /* 13 */
+        {
+          stem: String.raw`<p>Evaluate: \(\sqrt{(-7)^2}\).</p>`,
+          choices: [
+            String.raw`\(-7\)`,
+            String.raw`\(\pm 7\)`,
+            String.raw`\(7\)`,
+            String.raw`\(49\)`
+          ]
+        },
+
+        /* 14 */
+        {
+          stem: String.raw`<p>Which is true?</p>`,
+          choices: [
+            String.raw`\(\sqrt{-16}=4\)`,
+            String.raw`\(\sqrt{-16}\) is not a real number`,
+            String.raw`\(\sqrt{-16}=-4\)`,
+            String.raw`\(\sqrt{-16}=\pm 4\)`
+          ]
+        },
+
+        /* 15 */
+        {
+          stem: String.raw`<p>Which number is \(\sqrt[6]{64}\)?</p>`,
+          choices: [
+            String.raw`\(2\)`,
+            String.raw`\(-2\)`,
+            String.raw`\(\pm 2\)`,
+            String.raw`\(4\)`
+          ]
+        },
+
+        /* 16 */
+        {
+          stem: String.raw`<p>\(x^4=16\). What are the real solutions?</p>`,
+          choices: [
+            String.raw`\(x=2\) only`,
+            String.raw`\(x=2\) or \(x=-2\)`,
+            String.raw`\(x=\pm 4\)`,
+            String.raw`No real solutions`
+          ]
+        },
+
+        /* 17 */
+        {
+          stem: String.raw`<p>Which is correct?</p>`,
+          choices: [
+            String.raw`\(\sqrt[4]{16}=\pm 2\)`,
+            String.raw`\(\sqrt[4]{16}=-2\)`,
+            String.raw`\(\sqrt[4]{16}=2\)`,
+            String.raw`\(\sqrt[4]{16}=4\)`
+          ]
+        },
+
+        /* 18 */
+        {
+          stem: String.raw`<p>Which statement is true?</p>`,
+          choices: [
+            String.raw`\(\sqrt{36}= -6\)`,
+            String.raw`\(\sqrt{36}= 6\)`,
+            String.raw`\(\sqrt{36}= \pm 6\)`,
+            String.raw`\(\sqrt{36}= 18\)`
+          ]
+        },
+
+        /* 19 */
+        {
+          stem: String.raw`
+            <p>A student says: “\(\sqrt{9}=\pm 3\) because both \(3^2\) and \((-3)^2\) equal 9.”</p>
+            <p>What is the best correction?</p>
+          `,
+          choices: [
+            String.raw`\(\sqrt{9}=3\), but the equation \(x^2=9\) has two solutions: \(x=\pm 3\)`,
+            String.raw`\(\sqrt{9}=-3\) because roots should be negative`,
+            String.raw`\(\sqrt{9}=\pm 3\) is always correct`,
+            String.raw`\(\sqrt{9}\) is undefined`
+          ]
+        },
+
+        /* 20 */
+        {
+          stem: String.raw`
+            <p>Which statement best describes why \(\sqrt{a}\) is defined to be the <em>positive</em> number?</p>
+          `,
+          choices: [
+            String.raw`Because positive numbers are easier to draw`,
+            String.raw`Because otherwise \(x^2=a\) would have no solutions`,
+            String.raw`Because a definition must give exactly one value (a function), not two`,
+            String.raw`Because negative numbers are not real`
+          ]
+        }
+
+      ]
+    };
+  </script>
+
+  <link rel="stylesheet" href="/math-homework/assets/core-rich.css" />
+  <script defer src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+  <script defer src="/math-homework/assets/core-rich.js"></script>
+</head>
+
+<body>
+
+  <!-- ===== Reading goes BEFORE the auto-graded questions ===== -->
+  <div class="hw-reading">
+    <div class="panel">
+      <h2>Reading: <span class="accent">Roots</span> (Square, Cube, Fourth, …)</h2>
+
+      <p class="fine">
+        A <span class="term">root</span> is a way to “undo” an exponent.
+        For example, squaring takes a number \(x\) and produces \(x^2\).
+        The <span class="term">square root</span> goes the other way: it answers the question,
+        “what number squared gives this?”
+      </p>
+
+      <div class="hr"></div>
+
+      <h3>Start with simple examples (square roots)</h3>
+
+      <div class="example">
+        <div class="title">Example 1</div>
+        <div class="fine">\(\sqrt{9}=3\) because \(3^2=9\).</div>
+      </div>
+
+      <div class="example">
+        <div class="title">Example 2</div>
+        <div class="fine">\(\sqrt{49}=7\) because \(7^2=49\).</div>
+      </div>
+
+      <div class="example">
+        <div class="title">Example 3</div>
+        <div class="fine">\(\sqrt{0}=0\) because \(0^2=0\).</div>
+      </div>
+
+      <div class="callout">
+        <div class="title">But wait… what about negatives?</div>
+        <div class="fine">
+          \((-3)^2=9\) is also true. So why don’t we say \(\sqrt{9}=-3\) too?
+        </div>
+      </div>
+
+      <p class="fine">
+        Here is the key idea:
+        the symbol \(\sqrt{\phantom{a}}\) is meant to be a <span class="term">single answer</span>.
+        In math language, it is a <span class="term">function</span>: one input → one output.
+      </p>
+
+      <p class="fine">
+        The equation \(x^2=9\) has <strong>two</strong> solutions (\(x=3\) and \(x=-3\)).
+        But the symbol \(\sqrt{9}\) is defined to mean the <strong>positive</strong> one.
+        That way, \(\sqrt{9}\) is not “two answers.” It is one clear answer.
+      </p>
+
+      <div class="definition">
+        <div class="title">Definition (square root)</div>
+        <div class="fine">
+          For \(a\ge 0\), \(\sqrt{a}\) means the <strong>positive</strong> number \(x\) such that \(x^2=a\).
+        </div>
+      </div>
+
+      <div class="hr"></div>
+
+      <h3>Cube roots (odd roots behave differently)</h3>
+
+      <div class="example">
+        <div class="title">Example 4</div>
+        <div class="fine">\(\sqrt[3]{27}=3\) because \(3^3=27\).</div>
+      </div>
+
+      <div class="example">
+        <div class="title">Example 5</div>
+        <div class="fine">\(\sqrt[3]{-8}=-2\) because \((-2)^3=-8\).</div>
+      </div>
+
+      <p class="fine">
+        Notice something important: with <span class="term">odd</span> powers like cubes,
+        a negative number stays negative. So the cube root of a negative number is a real number.
+        (That is <em>not</em> true for square roots.)
+      </p>
+
+      <div class="hr"></div>
+
+      <h3>Fourth roots, sixth roots, … (even roots)</h3>
+
+      <div class="example">
+        <div class="title">Example 6</div>
+        <div class="fine">\(\sqrt[4]{16}=2\) because \(2^4=16\).</div>
+      </div>
+
+      <div class="example">
+        <div class="title">Example 7</div>
+        <div class="fine">\(\sqrt[6]{64}=2\) because \(2^6=64\).</div>
+      </div>
+
+      <div class="callout">
+        <div class="title">Why do even roots choose the positive answer?</div>
+        <div class="fine">
+          Because even powers erase the sign: \((2)^4=16\) and \((-2)^4=16\).
+          So the equation \(x^4=16\) has two real solutions (\(x=\pm 2\)).
+          But the symbol \(\sqrt[4]{16}\) is defined to be the <strong>positive</strong> one,
+          so it gives one consistent answer.
+        </div>
+      </div>
+
+      <div class="definition">
+        <div class="title">Definition (n-th root)</div>
+        <div class="fine">
+          If \(n\) is a positive integer, then \(\sqrt[n]{a}\) means a number \(x\) such that \(x^n=a\).
+          <br><br>
+          • If \(n\) is <strong>even</strong>, then \(\sqrt[n]{a}\) is defined only for \(a\ge 0\),
+          and it means the <strong>positive</strong> solution.
+          <br>
+          • If \(n\) is <strong>odd</strong>, then \(\sqrt[n]{a}\) exists for any real \(a\),
+          and there is exactly one real solution.
+        </div>
+      </div>
+
+      <p class="fine">
+        So remember:
+        <span class="pill">even root</span> → needs \(a\ge 0\) and gives the positive answer.
+        &nbsp;&nbsp;&nbsp;
+        <span class="pill">odd root</span> → works for negatives too.
+      </p>
+
+    </div>
+  </div>
+
+  <!-- ===== Auto-rendered questions ===== -->
+  <div id="hw-root">Loading…</div>
+
+</body>
+</html>
