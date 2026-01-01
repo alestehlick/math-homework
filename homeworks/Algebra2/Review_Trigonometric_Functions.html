@@ -1,0 +1,390 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Algebra 2 Review — Unit Circle Exact Values</title>
+
+  <style>
+    /* Minimal, readable formatting for the reading section */
+    .hw-reading{
+      max-width: 920px;
+      margin: 24px auto;
+      padding: 0 14px 8px;
+      line-height: 1.45;
+    }
+    .hw-reading .panel{
+      background:#f7f9fc;
+      border:1px solid #e3e8f2;
+      border-radius:12px;
+      padding:16px 16px 12px;
+      box-shadow:0 1px 0 rgba(0,0,0,0.03);
+    }
+    .hw-reading h2{ margin:0 0 10px; font-size:1.35rem; }
+    .hw-reading h3{ margin:14px 0 6px; font-size:1.08rem; }
+    .hw-reading .accent{ color:#0b5cab; font-weight:800; }
+    .hw-reading .term{ color:#7a1f6f; font-weight:800; }
+    .hw-reading .ruleword{ color:#0a6b3b; font-weight:800; }
+    .hw-reading .fine{ color:#4b5563; font-size:0.96rem; }
+    .hw-reading .hr{ height:1px; background:#e6ebf5; margin:12px 0; }
+    .hw-reading .callout{
+      background:#fff7ed;
+      border:1px solid #fed7aa;
+      border-left:6px solid #f59e0b;
+      border-radius:12px;
+      padding:10px 12px;
+      margin:10px 0 6px;
+    }
+    .hw-reading .callout .title{ font-weight:900; margin-bottom:4px; color:#92400e; }
+    .hw-reading table{
+      width:100%;
+      border-collapse:collapse;
+      margin-top:8px;
+      font-size:0.98rem;
+      background:#ffffff;
+      border:1px solid #e6ebf5;
+      border-radius:12px;
+      overflow:hidden;
+    }
+    .hw-reading th, .hw-reading td{
+      border-bottom:1px solid #eef2f7;
+      padding:8px 10px;
+      text-align:center;
+    }
+    .hw-reading th{
+      background:#eef4ff;
+      color:#1f2a44;
+      font-weight:800;
+    }
+    .hw-reading tr:last-child td{ border-bottom:none; }
+  </style>
+
+  <script>
+    /* =========================
+       Algebra 2 Review — Trig Exact Values
+       - 20 questions total
+       - 8 in degrees, 12 in radians
+       ========================= */
+    window.homeworkData = {
+      classId : "Algebra2",
+      id      : "A2-Trig-Review-UnitCircle",
+      title   : "Algebra 2 Review — Sine, Cosine, Tangent (Exact Values)",
+
+      answerKey : [
+        /* 1–8 degrees */
+        "A","B","B","A","A","B","A","A",
+        /* 9–20 radians */
+        "A","A","B","A","A","C","A","A","A","A","A","A"
+      ],
+
+      questions : [
+
+        /* -------------------- (8) Degrees -------------------- */
+
+        {
+          stem: String.raw`<p><strong>(Degrees)</strong> Compute: \(\sin(150^\circ)\).</p>`,
+          choices: [
+            String.raw`\(\dfrac{1}{2}\)`,
+            String.raw`\(-\dfrac{1}{2}\)`,
+            String.raw`\(\dfrac{\sqrt{3}}{2}\)`,
+            String.raw`\(-\dfrac{\sqrt{3}}{2}\)`
+          ]
+        },
+
+        {
+          stem: String.raw`<p><strong>(Degrees)</strong> Compute: \(\cos(210^\circ)\).</p>`,
+          choices: [
+            String.raw`\(\dfrac{\sqrt{3}}{2}\)`,
+            String.raw`\(-\dfrac{\sqrt{3}}{2}\)`,
+            String.raw`\(-\dfrac{1}{2}\)`,
+            String.raw`\(\dfrac{1}{2}\)`
+          ]
+        },
+
+        {
+          stem: String.raw`<p><strong>(Degrees)</strong> Compute: \(\tan(330^\circ)\).</p>`,
+          choices: [
+            String.raw`\(\dfrac{\sqrt{3}}{3}\)`,
+            String.raw`\(-\dfrac{\sqrt{3}}{3}\)`,
+            String.raw`\(-\sqrt{3}\)`,
+            String.raw`\(\sqrt{3}\)`
+          ]
+        },
+
+        {
+          stem: String.raw`<p><strong>(Degrees)</strong> Compute: \(\sin(-30^\circ)\).</p>`,
+          choices: [
+            String.raw`\(-\dfrac{1}{2}\)`,
+            String.raw`\(\dfrac{1}{2}\)`,
+            String.raw`\(-\dfrac{\sqrt{3}}{2}\)`,
+            String.raw`\(\dfrac{\sqrt{3}}{2}\)`
+          ]
+        },
+
+        {
+          stem: String.raw`<p><strong>(Degrees)</strong> Compute: \(\cos(390^\circ)\).</p>`,
+          choices: [
+            String.raw`\(\dfrac{\sqrt{3}}{2}\)`,
+            String.raw`\(-\dfrac{\sqrt{3}}{2}\)`,
+            String.raw`\(\dfrac{1}{2}\)`,
+            String.raw`\(-\dfrac{1}{2}\)`
+          ]
+        },
+
+        {
+          stem: String.raw`<p><strong>(Degrees)</strong> Compute: \(\tan(135^\circ)\).</p>`,
+          choices: [
+            String.raw`\(1\)`,
+            String.raw`\(-1\)`,
+            String.raw`\(\sqrt{3}\)`,
+            String.raw`\(-\sqrt{3}\)`
+          ]
+        },
+
+        {
+          stem: String.raw`<p><strong>(Degrees)</strong> Compute: \(\sin(300^\circ)\).</p>`,
+          choices: [
+            String.raw`\(-\dfrac{\sqrt{3}}{2}\)`,
+            String.raw`\(\dfrac{\sqrt{3}}{2}\)`,
+            String.raw`\(-\dfrac{1}{2}\)`,
+            String.raw`\(\dfrac{1}{2}\)`
+          ]
+        },
+
+        {
+          stem: String.raw`<p><strong>(Degrees)</strong> Compute: \(\cos(120^\circ)\).</p>`,
+          choices: [
+            String.raw`\(-\dfrac{1}{2}\)`,
+            String.raw`\(\dfrac{1}{2}\)`,
+            String.raw`\(-\dfrac{\sqrt{3}}{2}\)`,
+            String.raw`\(\dfrac{\sqrt{3}}{2}\)`
+          ]
+        },
+
+        /* -------------------- (12) Radians -------------------- */
+
+        {
+          stem: String.raw`<p><strong>(Radians)</strong> Compute: \(\sin\!\left(\dfrac{5\pi}{6}\right)\).</p>`,
+          choices: [
+            String.raw`\(\dfrac{1}{2}\)`,
+            String.raw`\(-\dfrac{1}{2}\)`,
+            String.raw`\(\dfrac{\sqrt{3}}{2}\)`,
+            String.raw`\(-\dfrac{\sqrt{3}}{2}\)`
+          ]
+        },
+
+        {
+          stem: String.raw`<p><strong>(Radians)</strong> Compute: \(\cos\!\left(\dfrac{7\pi}{4}\right)\).</p>`,
+          choices: [
+            String.raw`\(\dfrac{\sqrt{2}}{2}\)`,
+            String.raw`\(-\dfrac{\sqrt{2}}{2}\)`,
+            String.raw`\(\dfrac{\sqrt{3}}{2}\)`,
+            String.raw`\(\dfrac{1}{2}\)`
+          ]
+        },
+
+        {
+          stem: String.raw`<p><strong>(Radians)</strong> Compute: \(\tan\!\left(-\dfrac{\pi}{3}\right)\).</p>`,
+          choices: [
+            String.raw`\(\sqrt{3}\)`,
+            String.raw`\(-\sqrt{3}\)`,
+            String.raw`\(-\dfrac{\sqrt{3}}{3}\)`,
+            String.raw`\(\dfrac{\sqrt{3}}{3}\)`
+          ]
+        },
+
+        {
+          stem: String.raw`<p><strong>(Radians)</strong> Compute: \(\sin\!\left(\dfrac{11\pi}{6}\right)\).</p>`,
+          choices: [
+            String.raw`\(-\dfrac{1}{2}\)`,
+            String.raw`\(\dfrac{1}{2}\)`,
+            String.raw`\(-\dfrac{\sqrt{3}}{2}\)`,
+            String.raw`\(\dfrac{\sqrt{3}}{2}\)`
+          ]
+        },
+
+        {
+          stem: String.raw`<p><strong>(Radians)</strong> Compute: \(\cos\!\left(\dfrac{4\pi}{3}\right)\).</p>`,
+          choices: [
+            String.raw`\(-\dfrac{1}{2}\)`,
+            String.raw`\(\dfrac{1}{2}\)`,
+            String.raw`\(-\dfrac{\sqrt{3}}{2}\)`,
+            String.raw`\(\dfrac{\sqrt{3}}{2}\)`
+          ]
+        },
+
+        {
+          stem: String.raw`<p><strong>(Radians)</strong> Compute: \(\tan\!\left(\dfrac{3\pi}{2}\right)\).</p>`,
+          choices: [
+            String.raw`\(0\)`,
+            String.raw`\(1\)`,
+            String.raw`undefined`,
+            String.raw`\(\sqrt{3}\)`
+          ]
+        },
+
+        {
+          stem: String.raw`<p><strong>(Radians)</strong> Compute: \(\sin(2\pi)\).</p>`,
+          choices: [
+            String.raw`\(0\)`,
+            String.raw`\(1\)`,
+            String.raw`\(-1\)`,
+            String.raw`undefined`
+          ]
+        },
+
+        {
+          stem: String.raw`<p><strong>(Radians)</strong> Compute: \(\cos\!\left(-\dfrac{3\pi}{4}\right)\).</p>`,
+          choices: [
+            String.raw`\(-\dfrac{\sqrt{2}}{2}\)`,
+            String.raw`\(\dfrac{\sqrt{2}}{2}\)`,
+            String.raw`\(-\dfrac{1}{2}\)`,
+            String.raw`\(\dfrac{\sqrt{3}}{2}\)`
+          ]
+        },
+
+        {
+          stem: String.raw`<p><strong>(Radians)</strong> Compute: \(\tan\!\left(\dfrac{5\pi}{4}\right)\).</p>`,
+          choices: [
+            String.raw`\(1\)`,
+            String.raw`\(-1\)`,
+            String.raw`\(\sqrt{3}\)`,
+            String.raw`\(-\sqrt{3}\)`
+          ]
+        },
+
+        {
+          stem: String.raw`<p><strong>(Radians)</strong> Compute: \(\sin\!\left(\dfrac{7\pi}{3}\right)\).</p>`,
+          choices: [
+            String.raw`\(\dfrac{\sqrt{3}}{2}\)`,
+            String.raw`\(\dfrac{1}{2}\)`,
+            String.raw`\(-\dfrac{\sqrt{3}}{2}\)`,
+            String.raw`\(-\dfrac{1}{2}\)`
+          ]
+        },
+
+        {
+          stem: String.raw`<p><strong>(Radians)</strong> Compute: \(\cos\!\left(\dfrac{13\pi}{6}\right)\).</p>`,
+          choices: [
+            String.raw`\(\dfrac{\sqrt{3}}{2}\)`,
+            String.raw`\(\dfrac{1}{2}\)`,
+            String.raw`\(-\dfrac{\sqrt{3}}{2}\)`,
+            String.raw`\(-\dfrac{1}{2}\)`
+          ]
+        },
+
+        {
+          stem: String.raw`<p><strong>(Radians)</strong> Compute: \(\tan\!\left(\dfrac{8\pi}{6}\right)\).</p>`,
+          choices: [
+            String.raw`\(\sqrt{3}\)`,
+            String.raw`\(-\sqrt{3}\)`,
+            String.raw`\(\dfrac{\sqrt{3}}{3}\)`,
+            String.raw`\(-\dfrac{\sqrt{3}}{3}\)`
+          ]
+        }
+
+      ]
+    };
+  </script>
+
+  <link rel="stylesheet" href="/math-homework/assets/core-rich.css" />
+  <script defer src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+  <script defer src="/math-homework/assets/core-rich.js"></script>
+</head>
+
+<body>
+
+  <!-- ===== Brief review goes BEFORE the auto-graded questions ===== -->
+  <div class="hw-reading">
+    <div class="panel">
+      <h2>Quick Review: <span class="accent">Exact Trig Values</span> (Unit Circle)</h2>
+
+      <p class="fine">
+        All angles in this assignment reduce to the five “anchor angles”
+        <span class="pill">\(0^\circ, 30^\circ, 45^\circ, 60^\circ, 90^\circ\)</span>
+        (or in radians: <span class="pill">\(0, \frac{\pi}{6}, \frac{\pi}{4}, \frac{\pi}{3}, \frac{\pi}{2}\)</span>).
+      </p>
+
+      <div class="hr"></div>
+
+      <h3>How to solve any problem (fast and reliably)</h3>
+      <p class="fine">
+        <span class="ruleword">Step 1:</span> Reduce the angle to a <span class="term">reference angle</span>
+        (an acute angle made with the \(x\)-axis). You can subtract or add full turns:
+        \(360^\circ\) or \(2\pi\).
+      </p>
+      <p class="fine">
+        <span class="ruleword">Step 2:</span> Decide the <span class="term">quadrant</span> and the sign:
+        <br>
+        Quadrant I: all \(+\) &nbsp;&nbsp;•&nbsp;&nbsp;
+        Quadrant II: \(\sin +\) &nbsp;&nbsp;•&nbsp;&nbsp;
+        Quadrant III: \(\tan +\) &nbsp;&nbsp;•&nbsp;&nbsp;
+        Quadrant IV: \(\cos +\)
+      </p>
+      <p class="fine">
+        <span class="ruleword">Step 3:</span> Use the exact-value table below (then attach the correct sign).
+        Remember: \(\tan\theta=\dfrac{\sin\theta}{\cos\theta}\), and tangent is <span class="term">undefined</span> when \(\cos\theta=0\)
+        (at \(90^\circ, 270^\circ\) or \(\frac{\pi}{2}, \frac{3\pi}{2}\)).
+      </p>
+
+      <div class="hr"></div>
+
+      <h3>Exact values table (memorize / recognize)</h3>
+      <table>
+        <thead>
+          <tr>
+            <th>Angle</th>
+            <th>\(\sin\)</th>
+            <th>\(\cos\)</th>
+            <th>\(\tan\)</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>\(0^\circ\) / \(0\)</td>
+            <td>\(0\)</td>
+            <td>\(1\)</td>
+            <td>\(0\)</td>
+          </tr>
+          <tr>
+            <td>\(30^\circ\) / \(\frac{\pi}{6}\)</td>
+            <td>\(\frac{1}{2}\)</td>
+            <td>\(\frac{\sqrt{3}}{2}\)</td>
+            <td>\(\frac{\sqrt{3}}{3}\)</td>
+          </tr>
+          <tr>
+            <td>\(45^\circ\) / \(\frac{\pi}{4}\)</td>
+            <td>\(\frac{\sqrt{2}}{2}\)</td>
+            <td>\(\frac{\sqrt{2}}{2}\)</td>
+            <td>\(1\)</td>
+          </tr>
+          <tr>
+            <td>\(60^\circ\) / \(\frac{\pi}{3}\)</td>
+            <td>\(\frac{\sqrt{3}}{2}\)</td>
+            <td>\(\frac{1}{2}\)</td>
+            <td>\(\sqrt{3}\)</td>
+          </tr>
+          <tr>
+            <td>\(90^\circ\) / \(\frac{\pi}{2}\)</td>
+            <td>\(1\)</td>
+            <td>\(0\)</td>
+            <td>undefined</td>
+          </tr>
+        </tbody>
+      </table>
+
+      <div class="callout">
+        <div class="title">Common radian “translations”</div>
+        <div class="fine">
+          \(\frac{\pi}{6}=30^\circ\), \(\frac{\pi}{4}=45^\circ\), \(\frac{\pi}{3}=60^\circ\), \(\frac{\pi}{2}=90^\circ\).
+          Also: \(2\pi=360^\circ\).
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ===== Auto-rendered questions ===== -->
+  <div id="hw-root">Loading…</div>
+
+</body>
+</html>
