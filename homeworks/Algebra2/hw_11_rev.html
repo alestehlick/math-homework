@@ -7,11 +7,11 @@
 
   <script>
     /* =========================
-       Homework 11 Review — Chapter 11 Assortment
-       Mix of: Law of Sines / Law of Cosines, applications, identities,
-       exact trig values, and trigonometric equations.
-       (Diagram-based questions are rewritten in words.)
+       Homework 11-Review — Chapter 11 Assortment (NEW FORMAT)
+       Recast from the provided old-form Homework 11-Review HTML.
+       No images used in this homework.
        ========================= */
+
     window.homeworkData = {
       classId : "Algebra2",
       id      : "Homework 11-Review",
@@ -19,12 +19,15 @@
 
       graphics : String.raw``,
 
-      /* Correct answers for Q1–Q16 */
       answerKey : ["A","C","A","A","B","B","A","B","B","C","B","B","B","A","C","C"],
 
       questions : [
 
-        { latex: String.raw`\text{Solve }\triangle ABC.\ \text{Use standard notation: side }a\text{ is opposite angle }A,\ b\text{ opposite }B,\ c\text{ opposite }C.\ \text{Given }A=38^\circ,\ B=72^\circ,\ b=12.\ \text{Find }a\text{ (nearest tenth).}`,
+        {
+          stem: String.raw`
+            <p>Solve \(\triangle ABC\). Use standard notation: side \(a\) is opposite angle \(A\), \(b\) opposite \(B\), \(c\) opposite \(C\).</p>
+            <p>Given \(A=38^\circ,\ B=72^\circ,\ b=12\). Find \(a\) (nearest tenth).</p>
+          `,
           choices: [
             String.raw`7.8`,
             String.raw`11.9`,
@@ -32,9 +35,14 @@
             String.raw`5.6`,
             String.raw`9.8`,
             String.raw`7.1`
-          ]},
+          ]
+        },
 
-        { latex: String.raw`\text{In }\triangle ABC,\ a=7,\ b=5,\ c=4.\ \text{Find angle }A\text{ (nearest degree).}`,
+        {
+          stem: String.raw`
+            <p>In \(\triangle ABC\), \(a=7,\ b=5,\ c=4\).</p>
+            <p>Find angle \(A\) (nearest degree).</p>
+          `,
           choices: [
             String.raw`34^\circ`,
             String.raw`44^\circ`,
@@ -42,9 +50,14 @@
             String.raw`78^\circ`,
             String.raw`101^\circ`,
             String.raw`136^\circ`
-          ]},
+          ]
+        },
 
-        { latex: String.raw`\text{Solve }\triangle ABC.\ \text{Given }A=56^\circ,\ b=8,\ c=6.\ \text{Find }a\text{ (nearest tenth).}`,
+        {
+          stem: String.raw`
+            <p>Solve \(\triangle ABC\).</p>
+            <p>Given \(A=56^\circ,\ b=8,\ c=6\). Find \(a\) (nearest tenth).</p>
+          `,
           choices: [
             String.raw`6.8`,
             String.raw`7.6`,
@@ -52,19 +65,30 @@
             String.raw`9.4`,
             String.raw`6.2`,
             String.raw`8.0`
-          ]},
+          ]
+        },
 
-        { latex: String.raw`\text{In }\triangle ABC,\ \text{given }A=52^\circ,\ a=3,\ b=4.\ \text{How many triangles satisfy the data?}`,
+        {
+          stem: String.raw`
+            <p>In \(\triangle ABC\), given \(A=52^\circ,\ a=3,\ b=4\).</p>
+            <p>How many triangles satisfy the data?</p>
+          `,
           choices: [
-            String.raw`\text{0 triangles (no solution).}`,
-            String.raw`\text{1 triangle.}`,
-            String.raw`\text{2 triangles.}`,
-            String.raw`\text{Cannot be determined from the data.}`,
-            String.raw`\text{1 triangle (with }B\text{ obtuse).}`,
-            String.raw`\text{2 triangles (both with }B\text{ acute).}`
-          ]},
+            String.raw`\(\text{0 triangles (no solution).}\)`,
+            String.raw`\(\text{1 triangle.}\)`,
+            String.raw`\(\text{2 triangles.}\)`,
+            String.raw`\(\text{Cannot be determined from the data.}\)`,
+            String.raw`\(\text{1 triangle (with }B\text{ obtuse).}\)`,
+            String.raw`\(\text{2 triangles (both with }B\text{ acute).}\)`
+          ]
+        },
 
-        { latex: String.raw`\text{A triangular field will be enclosed with a three-strand electric fence. One side of the field lies along a straight road and is }156\text{ ft long. A second side is }212\text{ ft long, and the included angle between these two sides is }112^\circ.\ \text{How many feet of fencing wire are needed (nearest tenth)?}`,
+        {
+          stem: String.raw`
+            <p>A triangular field will be enclosed with a three-strand electric fence.</p>
+            <p>One side lies along a straight road and is \(156\) ft long. A second side is \(212\) ft long, and the included angle between these two sides is \(112^\circ\).</p>
+            <p>How many feet of fencing wire are needed (nearest tenth)?</p>
+          `,
           choices: [
             String.raw`674.7`,
             String.raw`2024.1`,
@@ -72,9 +96,14 @@
             String.raw`606.7`,
             String.raw`1349.4`,
             String.raw`4048.2`
-          ]},
+          ]
+        },
 
-        { latex: String.raw`\text{A triangle has angles }73^\circ\text{ and }85^\circ\text{, and the side between those two angles has length }4.\ \text{Find the side opposite the }73^\circ\text{ angle (nearest tenth).}`,
+        {
+          stem: String.raw`
+            <p>A triangle has angles \(73^\circ\) and \(85^\circ\), and the side between those two angles has length \(4\).</p>
+            <p>Find the side opposite the \(73^\circ\) angle (nearest tenth).</p>
+          `,
           choices: [
             String.raw`8.6`,
             String.raw`10.2`,
@@ -82,9 +111,14 @@
             String.raw`12.6`,
             String.raw`9.1`,
             String.raw`4.0`
-          ]},
+          ]
+        },
 
-        { latex: String.raw`\text{A triangle has two sides of lengths }5\text{ and }11\text{ with an included angle of }124^\circ.\ \text{Let }x\text{ be the angle opposite the side of length }5.\ \text{Find }x\text{ (nearest tenth).}`,
+        {
+          stem: String.raw`
+            <p>A triangle has two sides of lengths \(5\) and \(11\) with an included angle of \(124^\circ\).</p>
+            <p>Let \(x\) be the angle opposite the side of length \(5\). Find \(x\) (nearest tenth).</p>
+          `,
           choices: [
             String.raw`16.7^\circ`,
             String.raw`31.9^\circ`,
@@ -92,9 +126,14 @@
             String.raw`124^\circ`,
             String.raw`24.0^\circ`,
             String.raw`8.4^\circ`
-          ]},
+          ]
+        },
 
-        { latex: String.raw`\text{In a right triangle, the legs have lengths }7\text{ (adjacent) and }4\text{ (opposite) to an acute angle }x.\ \text{Find }x\text{ (nearest degree).}`,
+        {
+          stem: String.raw`
+            <p>In a right triangle, the legs have lengths \(7\) (adjacent) and \(4\) (opposite) to an acute angle \(x\).</p>
+            <p>Find \(x\) (nearest degree).</p>
+          `,
           choices: [
             String.raw`29^\circ`,
             String.raw`30^\circ`,
@@ -102,9 +141,14 @@
             String.raw`45^\circ`,
             String.raw`35^\circ`,
             String.raw`24^\circ`
-          ]},
+          ]
+        },
 
-        { latex: String.raw`\text{A triangle has sides of length }6\text{ and }4\text{ with an included angle of }41^\circ.\ \text{Find the side opposite the }41^\circ\text{ angle (nearest tenth).}`,
+        {
+          stem: String.raw`
+            <p>A triangle has sides of length \(6\) and \(4\) with an included angle of \(41^\circ\).</p>
+            <p>Find the side opposite the \(41^\circ\) angle (nearest tenth).</p>
+          `,
           choices: [
             String.raw`7.1`,
             String.raw`4.0`,
@@ -112,77 +156,111 @@
             String.raw`5.0`,
             String.raw`9.3`,
             String.raw`3.1`
-          ]},
+          ]
+        },
 
-        { latex: String.raw`\text{In a triangle, the angle at the top is }29^\circ\text{ and the side opposite that angle is }4.\ \text{Another side has length }5.\ \text{Let }x\text{ be the angle opposite the side of length }5.\ \text{Which is correct?}`,
+        {
+          stem: String.raw`
+            <p>In a triangle, the angle at the top is \(29^\circ\) and the side opposite that angle is \(4\).</p>
+            <p>Another side has length \(5\). Let \(x\) be the angle opposite the side of length \(5\).</p>
+            <p>Which is correct?</p>
+          `,
           choices: [
-            String.raw`x\approx 37.3^\circ\ \text{only}`,
-            String.raw`x\approx 142.7^\circ\ \text{only}`,
-            String.raw`x\approx 37.3^\circ\ \text{or}\ 142.7^\circ`,
-            String.raw`x\approx 29^\circ\ \text{or}\ 151^\circ`,
-            String.raw`x=60^\circ\ \text{only}`,
-            String.raw`\text{No solution}`
-          ]},
+            String.raw`\(x\approx 37.3^\circ\ \text{only}\)`,
+            String.raw`\(x\approx 142.7^\circ\ \text{only}\)`,
+            String.raw`\(x\approx 37.3^\circ\ \text{or}\ 142.7^\circ\)`,
+            String.raw`\(x\approx 29^\circ\ \text{or}\ 151^\circ\)`,
+            String.raw`\(x=60^\circ\ \text{only}\)`,
+            String.raw`\(\text{No solution}\)`
+          ]
+        },
 
-        { latex: String.raw`\text{Simplify: }\cos^4 x-\sin^4 x.`,
+        {
+          stem: String.raw`
+            <p>Simplify: \(\cos^4 x-\sin^4 x\).</p>
+          `,
           choices: [
-            String.raw`\cos(4x)`,
-            String.raw`\cos(2x)`,
-            String.raw`-\cos(2x)`,
-            String.raw`\sin(2x)`,
-            String.raw`1-2\cos^2 x`,
-            String.raw`\cos^2(2x)`
-          ]},
+            String.raw`\(\cos(4x)\)`,
+            String.raw`\(\cos(2x)\)`,
+            String.raw`\(-\cos(2x)\)`,
+            String.raw`\(\sin(2x)\)`,
+            String.raw`\(1-2\cos^2 x\)`,
+            String.raw`\(\cos^2(2x)\)`
+          ]
+        },
 
-        { latex: String.raw`\text{Simplify: }\sec x\csc x.`,
+        {
+          stem: String.raw`
+            <p>Simplify: \(\sec x\csc x\).</p>
+          `,
           choices: [
-            String.raw`\csc(2x)`,
-            String.raw`2\csc(2x)`,
-            String.raw`\sec(2x)`,
-            String.raw`2\sec(2x)`,
-            String.raw`\csc x+\sec x`,
-            String.raw`\sec x-\csc x`
-          ]},
+            String.raw`\(\csc(2x)\)`,
+            String.raw`\(2\csc(2x)\)`,
+            String.raw`\(\sec(2x)\)`,
+            String.raw`\(2\sec(2x)\)`,
+            String.raw`\(\csc x+\sec x\)`,
+            String.raw`\(\sec x-\csc x\)`
+          ]
+        },
 
-        { latex: String.raw`\text{Evaluate exactly (no calculator): }\sin 15^\circ.`,
+        {
+          stem: String.raw`
+            <p>Evaluate exactly (no calculator): \(\sin 15^\circ\).</p>
+          `,
           choices: [
-            String.raw`\dfrac{\sqrt6+\sqrt2}{4}`,
-            String.raw`\dfrac{\sqrt6-\sqrt2}{4}`,
-            String.raw`\dfrac{\sqrt3}{2}`,
-            String.raw`\dfrac{\sqrt2}{2}`,
-            String.raw`\dfrac{1-\sqrt3}{2}`,
-            String.raw`-\dfrac{\sqrt6-\sqrt2}{4}`
-          ]},
+            String.raw`\(\dfrac{\sqrt6+\sqrt2}{4}\)`,
+            String.raw`\(\dfrac{\sqrt6-\sqrt2}{4}\)`,
+            String.raw`\(\dfrac{\sqrt3}{2}\)`,
+            String.raw`\(\dfrac{\sqrt2}{2}\)`,
+            String.raw`\(\dfrac{1-\sqrt3}{2}\)`,
+            String.raw`\(-\dfrac{\sqrt6-\sqrt2}{4}\)`
+          ]
+        },
 
-        { latex: String.raw`\text{If }\sin A=\dfrac{4}{7}\text{ and }A\text{ is in the first quadrant, find }\sin(2A)\text{ exactly.}`,
+        {
+          stem: String.raw`
+            <p>If \(\sin A=\dfrac{4}{7}\) and \(A\) is in the first quadrant, find \(\sin(2A)\) exactly.</p>
+          `,
           choices: [
-            String.raw`\dfrac{8\sqrt{33}}{49}`,
-            String.raw`\dfrac{\sqrt{33}}{7}`,
-            String.raw`\dfrac{4\sqrt{33}}{49}`,
-            String.raw`\dfrac{16}{49}`,
-            String.raw`\dfrac{8}{7}`,
-            String.raw`\dfrac{33}{49}`
-          ]},
+            String.raw`\(\dfrac{8\sqrt{33}}{49}\)`,
+            String.raw`\(\dfrac{\sqrt{33}}{7}\)`,
+            String.raw`\(\dfrac{4\sqrt{33}}{49}\)`,
+            String.raw`\(\dfrac{16}{49}\)`,
+            String.raw`\(\dfrac{8}{7}\)`,
+            String.raw`\(\dfrac{33}{49}\)`
+          ]
+        },
 
-        { latex: String.raw`\text{Solve. Let }0\le x<2\pi.\ \ \sin^2 x=\sin x.`,
+        {
+          stem: String.raw`
+            <p>Solve. Let \(0\le x<2\pi\).</p>
+            <p>\(\sin^2 x=\sin x\).</p>
+          `,
           choices: [
-            String.raw`x \in \{0,\pi\}`,
-            String.raw`x \in \left\{\dfrac{\pi}{2},\dfrac{3\pi}{2}\right\}`,
-            String.raw`x \in \left\{0,\dfrac{\pi}{2},\pi\right\}`,
-            String.raw`x \in \left\{0,\dfrac{\pi}{2},\pi,\dfrac{3\pi}{2}\right\}`,
-            String.raw`x \in \left\{\dfrac{\pi}{2}\right\}`,
-            String.raw`\text{No solution}`
-          ]},
+            String.raw`\(x \in \{0,\pi\}\)`,
+            String.raw`\(x \in \left\{\dfrac{\pi}{2},\dfrac{3\pi}{2}\right\}\)`,
+            String.raw`\(x \in \left\{0,\dfrac{\pi}{2},\pi\right\}\)`,
+            String.raw`\(x \in \left\{0,\dfrac{\pi}{2},\pi,\dfrac{3\pi}{2}\right\}\)`,
+            String.raw`\(x \in \left\{\dfrac{\pi}{2}\right\}\)`,
+            String.raw`\(\text{No solution}\)`
+          ]
+        },
 
-        { latex: String.raw`\text{Solve. Let }0\le x<2\pi.\ \ \cos(3x)=-\dfrac{\sqrt2}{2}.`,
+        {
+          stem: String.raw`
+            <p>Solve. Let \(0\le x<2\pi\).</p>
+            <p>\(\cos(3x)=-\dfrac{\sqrt2}{2}\).</p>
+          `,
           choices: [
-            String.raw`x \in \left\{\dfrac{\pi}{4},\dfrac{3\pi}{4},\dfrac{5\pi}{4},\dfrac{7\pi}{4}\right\}`,
-            String.raw`x \in \left\{\dfrac{\pi}{12},\dfrac{5\pi}{12},\dfrac{3\pi}{4},\dfrac{13\pi}{12},\dfrac{17\pi}{12},\dfrac{7\pi}{4}\right\}`,
-            String.raw`x \in \left\{\dfrac{\pi}{4},\dfrac{5\pi}{12},\dfrac{11\pi}{12},\dfrac{13\pi}{12},\dfrac{19\pi}{12},\dfrac{7\pi}{4}\right\}`,
-            String.raw`x \in \left\{\dfrac{3\pi}{4},\dfrac{5\pi}{4},\dfrac{11\pi}{4},\dfrac{13\pi}{4},\dfrac{19\pi}{4},\dfrac{21\pi}{4}\right\}`,
-            String.raw`x \in \left\{\dfrac{5\pi}{12},\dfrac{11\pi}{12},\dfrac{19\pi}{12}\right\}`,
-            String.raw`x \in \left\{\dfrac{\pi}{4},\dfrac{11\pi}{12},\dfrac{19\pi}{12}\right\}`
-          ]}
+            String.raw`\(x \in \left\{\dfrac{\pi}{4},\dfrac{3\pi}{4},\dfrac{5\pi}{4},\dfrac{7\pi}{4}\right\}\)`,
+            String.raw`\(x \in \left\{\dfrac{\pi}{12},\dfrac{5\pi}{12},\dfrac{3\pi}{4},\dfrac{13\pi}{12},\dfrac{17\pi}{12},\dfrac{7\pi}{4}\right\}\)`,
+            String.raw`\(x \in \left\{\dfrac{\pi}{4},\dfrac{5\pi}{12},\dfrac{11\pi}{12},\dfrac{13\pi}{12},\dfrac{19\pi}{12},\dfrac{7\pi}{4}\right\}\)`,
+            String.raw`\(x \in \left\{\dfrac{3\pi}{4},\dfrac{5\pi}{4},\dfrac{11\pi}{4},\dfrac{13\pi}{4},\dfrac{19\pi}{4},\dfrac{21\pi}{4}\right\}\)`,
+            String.raw`\(x \in \left\{\dfrac{5\pi}{12},\dfrac{11\pi}{12},\dfrac{19\pi}{12}\right\}\)`,
+            String.raw`\(x \in \left\{\dfrac{\pi}{4},\dfrac{11\pi}{12},\dfrac{19\pi}{12}\right\}\)`
+          ]
+        }
+
       ]
     };
   </script>
