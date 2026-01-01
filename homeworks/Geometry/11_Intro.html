@@ -24,20 +24,16 @@
       margin: 0 0 10px;
       font-size: 1.35rem;
     }
-    .hw-reading h3 {
-      margin: 14px 0 6px;
-      font-size: 1.08rem;
-    }
     .hw-reading .accent {
-      color: #0b5cab; /* calm blue */
+      color: #0b5cab;
       font-weight: 700;
     }
     .hw-reading .term {
-      color: #7a1f6f; /* calm purple */
+      color: #7a1f6f;
       font-weight: 700;
     }
     .hw-reading .ruleword {
-      color: #0a6b3b; /* calm green */
+      color: #0a6b3b;
       font-weight: 700;
     }
     .hw-reading .fine {
@@ -100,7 +96,7 @@
       id      : "Intro-Volume",
       title   : "Introductory Reading — What Volume Means",
 
-      /* Updated key after strengthening Q2, Q3, Q13 */
+      /* Updated key after removing set-difference notation in Q13 */
       answerKey : [
         "B","B","C","C","B","B","B","C","C","B",
         "C","B","B","B","A","A","A","B","B","C"
@@ -119,7 +115,7 @@
           ]
         },
 
-        /* Q2 (replaced) */
+        /* Q2 */
         {
           stem: String.raw`
             <p>A rectangular prism is turned so that a different face is on the floor.</p>
@@ -133,7 +129,7 @@
           ]
         },
 
-        /* Q3 (replaced) */
+        /* Q3 */
         {
           stem: String.raw`
             <p>Two solids have the same volume.</p>
@@ -246,7 +242,7 @@
           ]
         },
 
-        /* Q13 (replaced) */
+        /* Q13 (reframed, no set notation) */
         {
           stem: String.raw`
             <p>Solid \(A\) fits entirely inside solid \(B\), and \(V(A)=V(B)\).</p>
@@ -254,9 +250,9 @@
           `,
           choices: [
             String.raw`\(A\) and \(B\) must be congruent`,
-            String.raw`The leftover part \(B\setminus A\) has volume \(0\)`,
+            String.raw`There is no “extra space” in \(B\) outside \(A\); any leftover part has volume \(0\)`,
             String.raw`This is impossible`,
-            String.raw`The leftover part \(B\setminus A\) has negative volume`
+            String.raw`The leftover part of \(B\) must have negative volume`
           ]
         },
 
