@@ -15,112 +15,15 @@
       id      : "Intro-Volume",
       title   : "Introductory Reading — What Volume Means",
 
-      /* Question 0 is reading-only (not graded) */
       answerKey : [
         "B","B","B","C","B","B","B","C","C","B",
-        "C","B","B","B","A","B","A","B","B","B"
+        "C","B","C","B","A","A","B","B","B","B"
       ],
 
       questions : [
 
-        /* ---------- Reading (ungraded) ---------- */
-
         {
-          stem: String.raw`
-            <h2>Reading: What Does “Volume” Mean?</h2>
-
-            <p>
-            When we say that a box has volume <em>24 cubic units</em>, we mean something very concrete:
-            if we filled the box with little cubes of size \(1\times1\times1\),
-            exactly 24 of them would fit.
-            </p>
-
-            <p>
-            That simple idea — <strong>counting cubes</strong> — is the starting point of volume.
-            Geometry, however, wants a definition that still makes sense for shapes that are not
-            easy to fill directly with cubes, such as pyramids, cones, and spheres.
-            </p>
-
-            <p>
-            To do this, we describe how volume must behave.
-            These rules are called <strong>postulates</strong>.
-            They are not formulas — they are principles that any reasonable idea of
-            “amount of space” must satisfy.
-            </p>
-
-            <hr>
-
-            <h3>Postulate 1 — The unit cube sets the scale</h3>
-            <p>
-            Imagine measuring length without deciding what “1 unit” means.
-            The numbers would be meaningless.
-            Volume works the same way.
-            </p>
-            <p>
-            We choose a standard piece of space:
-            the cube with side length 1.
-            </p>
-            <p>
-            <strong>Postulate:</strong> The volume of the unit cube is defined to be 1.
-            </p>
-
-            <h3>Postulate 2 — Moving a solid does not change its volume</h3>
-            <p>
-            If you rotate a box, slide it across the floor, or flip it over,
-            it does not suddenly contain more or less space.
-            </p>
-            <p>
-            <strong>Postulate:</strong>
-            Solids that are the same shape and size (even if moved or rotated)
-            have the same volume.
-            </p>
-
-            <h3>Postulate 3 — Volumes add when pieces do not overlap</h3>
-            <p>
-            If you cut a solid cleanly into pieces and keep all the pieces,
-            you have not lost or created space.
-            </p>
-            <p>
-            <strong>Postulate:</strong>
-            The volume of a solid equals the sum of the volumes of its non-overlapping parts.
-            </p>
-            <p>
-            This is why overlap matters:
-            if pieces overlap, some space would be counted twice.
-            </p>
-
-            <h3>Postulate 4 — Volume cannot be negative</h3>
-            <p>
-            You can have some space, or no space,
-            but not “negative space.”
-            </p>
-            <p>
-            <strong>Postulate:</strong>
-            Every solid has volume greater than or equal to zero.
-            </p>
-
-            <p>
-            From this, we get an important consequence:
-            if one solid fits entirely inside another,
-            it cannot have greater volume.
-            </p>
-
-            <hr>
-
-            <p>
-            Together, these postulates explain why volume formulas make sense,
-            why cutting and rearranging solids preserves volume,
-            and why volume measures <em>space itself</em>, not appearance.
-            </p>
-          `
-        },
-
-        /* ---------- Questions (20) ---------- */
-
-        {
-          stem: String.raw`
-            <p>Why do we define the volume of the unit cube to be 1?</p>
-          `,
+          stem: String.raw`<p>Why do we define the volume of the unit cube to be 1?</p>`,
           choices: [
             "To make all volumes integers",
             "To fix the meaning of one cubic unit",
@@ -130,9 +33,7 @@
         },
 
         {
-          stem: String.raw`
-            <p>A box is rotated on a table. What happens to its volume?</p>
-          `,
+          stem: String.raw`<p>A box is rotated on a table. What happens to its volume?</p>`,
           choices: [
             "It changes because height changes",
             "It stays the same because the solid is unchanged",
@@ -142,9 +43,7 @@
         },
 
         {
-          stem: String.raw`
-            <p>Two solids have the same shape and size but are in different positions. Their volumes are:</p>
-          `,
+          stem: String.raw`<p>Two solids have the same shape and size but are in different positions. Their volumes are:</p>`,
           choices: [
             "Different",
             "The same",
@@ -154,9 +53,7 @@
         },
 
         {
-          stem: String.raw`
-            <p>You cut a solid into two non-overlapping pieces. What is true?</p>
-          `,
+          stem: String.raw`<p>You cut a solid into two non-overlapping pieces. What is true?</p>`,
           choices: [
             "The total volume increases",
             "The total volume decreases",
@@ -166,9 +63,7 @@
         },
 
         {
-          stem: String.raw`
-            <p>Why is overlap forbidden when adding volumes?</p>
-          `,
+          stem: String.raw`<p>Why is overlap forbidden when adding volumes?</p>`,
           choices: [
             "Overlap changes shape",
             "Overlap counts some space twice",
@@ -178,9 +73,7 @@
         },
 
         {
-          stem: String.raw`
-            <p>Which statement matches the idea of nonnegative volume?</p>
-          `,
+          stem: String.raw`<p>Which statement matches the idea of nonnegative volume?</p>`,
           choices: [
             "Some solids have negative volume",
             "All volumes are at least zero",
@@ -190,9 +83,7 @@
         },
 
         {
-          stem: String.raw`
-            <p>A small box fits entirely inside a larger box. What must be true?</p>
-          `,
+          stem: String.raw`<p>A small box fits entirely inside a larger box. What must be true?</p>`,
           choices: [
             "The small box has larger volume",
             "The small box cannot have larger volume",
@@ -202,9 +93,7 @@
         },
 
         {
-          stem: String.raw`
-            <p>A \(3\times4\times2\) box is filled with unit cubes. How many cubes fit?</p>
-          `,
+          stem: String.raw`<p>A \(3\times4\times2\) box is filled with unit cubes. How many cubes fit?</p>`,
           choices: [
             "\(3+4+2\)",
             "\(3\cdot4+2\)",
@@ -214,9 +103,7 @@
         },
 
         {
-          stem: String.raw`
-            <p>The formula \(V=lwh\) for a box mainly comes from:</p>
-          `,
+          stem: String.raw`<p>The formula \(V=lwh\) for a box mainly comes from:</p>`,
           choices: [
             "Surface area rules",
             "Rotation invariance",
@@ -226,9 +113,7 @@
         },
 
         {
-          stem: String.raw`
-            <p>A solid is cut into 5 equal pieces, each with volume 6. What is the original volume?</p>
-          `,
+          stem: String.raw`<p>A solid is cut into 5 equal pieces, each with volume 6. What is the original volume?</p>`,
           choices: [
             "6",
             "30",
@@ -238,9 +123,7 @@
         },
 
         {
-          stem: String.raw`
-            <p>Two solids look different but have equal volume because:</p>
-          `,
+          stem: String.raw`<p>Two solids look different but have equal volume because:</p>`,
           choices: [
             "They have equal surface area",
             "They have equal height",
@@ -250,9 +133,7 @@
         },
 
         {
-          stem: String.raw`
-            <p>Which statement is false?</p>
-          `,
+          stem: String.raw`<p>Which statement is <em>false</em>?</p>`,
           choices: [
             "Moving a solid does not change volume",
             "Cutting a solid always changes volume",
@@ -262,9 +143,7 @@
         },
 
         {
-          stem: String.raw`
-            <p>If solid \(A\) fits inside solid \(B\), what is impossible?</p>
-          `,
+          stem: String.raw`<p>If solid \(A\) fits inside solid \(B\), what is impossible?</p>`,
           choices: [
             "\(V(A)=V(B)\)",
             "\(V(A)<V(B)\)",
@@ -274,33 +153,27 @@
         },
 
         {
-          stem: String.raw`
-            <p>Why are volume postulates more important than formulas?</p>
-          `,
+          stem: String.raw`<p>Which situation is a correct use of additivity?</p>`,
           choices: [
-            "They replace geometry",
-            "They explain why formulas work",
-            "They avoid computation",
-            "They define surface area"
+            "Pieces overlap a lot, but we still add",
+            "Pieces do not overlap, and we add their volumes",
+            "Pieces are rotated, so volume changes",
+            "Pieces touch, so we cannot add"
           ]
         },
 
         {
-          stem: String.raw`
-            <p>Cut-and-rearrange arguments rely most directly on which idea?</p>
-          `,
+          stem: String.raw`<p>You cut a solid and rearrange the pieces into a new solid with no gaps and no overlaps. The volumes are:</p>`,
           choices: [
-            "Additivity",
-            "Rotation",
-            "Surface area",
-            "Height"
+            "Guaranteed equal",
+            "Always different",
+            "Equal only if the pieces are cubes",
+            "Equal only if the new solid is a box"
           ]
         },
 
         {
-          stem: String.raw`
-            <p>A \(1\times1\times2\) solid has volume:</p>
-          `,
+          stem: String.raw`<p>A \(1\times1\times2\) solid has volume:</p>`,
           choices: [
             "2",
             "1",
@@ -310,11 +183,9 @@
         },
 
         {
-          stem: String.raw`
-            <p>A \(1\times1\times\frac12\) solid has volume \(\frac12\) because:</p>
-          `,
+          stem: String.raw`<p>A \(1\times1\times\frac12\) solid has volume \(\frac12\) because:</p>`,
           choices: [
-            "A unit cube can be split into two equal parts",
+            "A unit cube can be split into two equal parts (no overlap), so volumes add",
             "Rotation halves volume",
             "Surface area halves",
             "Fractions are special cases"
@@ -322,21 +193,17 @@
         },
 
         {
-          stem: String.raw`
-            <p>Which postulate ensures that position does not matter?</p>
-          `,
+          stem: String.raw`<p>Which postulate most directly says that position and orientation do not matter?</p>`,
           choices: [
-            "Unit cube",
-            "Congruence invariance",
-            "Additivity",
-            "Nonnegativity"
+            "Unit cube sets the scale",
+            "Moving the solid does not change its volume (congruence invariance)",
+            "Volumes add",
+            "Volumes are nonnegative"
           ]
         },
 
         {
-          stem: String.raw`
-            <p>Which set best supports proving volume formulas?</p>
-          `,
+          stem: String.raw`<p>Which set best supports proving volume formulas by reasoning (not memorizing)?</p>`,
           choices: [
             "Unit cube only",
             "Unit cube + invariance + additivity",
@@ -346,14 +213,12 @@
         },
 
         {
-          stem: String.raw`
-            <p>Final check: Why can’t a contained object occupy more space than its container?</p>
-          `,
+          stem: String.raw`<p>Final check: Why can’t a contained object occupy more space than its container?</p>`,
           choices: [
             "Because of height",
+            "Because the container is the object moved",
             "Because leftover space cannot be negative",
-            "Because of surface area",
-            "Because of shape"
+            "Because of surface area"
           ]
         }
 
@@ -367,6 +232,73 @@
 </head>
 
 <body>
+
+  <!-- ===== Reading goes BEFORE the auto-graded questions ===== -->
+  <div class="hw-reading" style="max-width: 900px; margin: 24px auto; padding: 0 14px;">
+    <h2>Reading: What Does “Volume” Mean?</h2>
+
+    <p>
+      When we say that a box has volume <strong>24 cubic units</strong>, we mean something very concrete:
+      if we filled the box with little cubes of size \(1\times1\times1\), exactly 24 of them would fit.
+    </p>
+
+    <p>
+      That simple idea — <strong>counting cubes</strong> — is the starting point of volume.
+      Geometry wants a definition that still makes sense for shapes that are not easy to fill directly
+      with cubes, such as pyramids, cones, and spheres. So we write down rules that any reasonable
+      “amount of space” must satisfy. These rules are called <strong>postulates</strong>.
+    </p>
+
+    <hr>
+
+    <h3>Postulate 1 — The unit cube sets the scale</h3>
+    <p>
+      Imagine measuring length without deciding what “1 unit” means. The numbers would be meaningless.
+      Volume works the same way. We choose a standard piece of space: the cube with side length 1.
+    </p>
+    <p><strong>Postulate:</strong> The volume of the unit cube is defined to be 1.</p>
+
+    <h3>Postulate 2 — Moving a solid does not change its volume</h3>
+    <p>
+      If you rotate a box, slide it across the floor, or flip it over, it does not suddenly contain
+      more or less space. A solid that is the same shape and size is the same solid, even if moved.
+    </p>
+    <p><strong>Postulate:</strong> Solids that are the same shape and size (even if moved or rotated) have the same volume.</p>
+
+    <h3>Postulate 3 — Volumes add when pieces do not overlap</h3>
+    <p>
+      If you cut a solid cleanly into pieces and keep all the pieces, you have not lost or created space.
+      So the whole volume should equal the sum of the parts.
+    </p>
+    <p>
+      Overlap matters: if pieces overlap, you would count the overlapping space twice.
+    </p>
+    <p><strong>Postulate:</strong> The volume of a solid equals the sum of the volumes of its non-overlapping parts.</p>
+
+    <h3>Postulate 4 — Volume cannot be negative</h3>
+    <p>
+      You can have some space, or no space, but not “negative space.”
+    </p>
+    <p><strong>Postulate:</strong> Every solid has volume \(\ge 0\).</p>
+
+    <p>
+      A key consequence: if one solid fits entirely inside another, it cannot have greater volume.
+      Intuitively, the bigger solid is the smaller solid plus some leftover space — and leftover space
+      cannot be “negative.”
+    </p>
+
+    <hr>
+
+    <p>
+      These postulates explain why volume formulas are not magic:
+      for example, the box formula \(V=lwh\) comes from packing the box with unit cubes and adding.
+      They also justify “cut-and-rearrange” reasoning: if you cut a solid and rebuild it with
+      <strong>no gaps and no overlaps</strong>, the volume stays the same.
+    </p>
+  </div>
+
+  <!-- ===== Auto-rendered questions ===== -->
   <div id="hw-root">Loading…</div>
+
 </body>
 </html>
