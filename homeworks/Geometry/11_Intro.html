@@ -6,7 +6,7 @@
   <title>Introductory Reading — Meaning of Volume (Geometry)</title>
 
   <style>
-    /* Minimal, lreadable formatting for the reading section */
+    /* Minimal, readable formatting for the reading section */
     .hw-reading {
       max-width: 920px;
       margin: 24px auto;
@@ -100,13 +100,15 @@
       id      : "Intro-Volume",
       title   : "Introductory Reading — What Volume Means",
 
+      /* Updated key after strengthening Q2, Q3, Q13 */
       answerKey : [
-        "B","B","B","C","B","B","B","C","C","B",
-        "C","B","C","B","A","A","A","B","B","C"
+        "B","B","C","C","B","B","B","C","C","B",
+        "C","B","B","B","A","A","A","B","B","C"
       ],
 
       questions : [
 
+        /* Q1 */
         {
           stem: String.raw`<p>Why do we define the volume of the unit cube to be 1?</p>`,
           choices: [
@@ -117,26 +119,35 @@
           ]
         },
 
+        /* Q2 (replaced) */
         {
-          stem: String.raw`<p>A box is rotated on a table. What happens to its volume?</p>`,
+          stem: String.raw`
+            <p>A rectangular prism is turned so that a different face is on the floor.</p>
+            <p>What happens to its volume?</p>
+          `,
           choices: [
-            "It changes because height changes",
+            "It changes because the height changed",
             "It stays the same because the solid is unchanged",
-            "It doubles",
-            "It becomes zero"
+            "It stays the same only if it remains upright",
+            "It depends on which face is on the bottom"
           ]
         },
 
+        /* Q3 (replaced) */
         {
-          stem: String.raw`<p>Two solids have the same shape and size but are in different positions. Their volumes are:</p>`,
+          stem: String.raw`
+            <p>Two solids have the same volume.</p>
+            <p>What must be true?</p>
+          `,
           choices: [
-            "Different",
-            "The same",
-            "The same only if they are cubes",
-            "Impossible to know"
+            "They are congruent",
+            "They have the same surface area",
+            "Nothing about their shape is guaranteed (only the volume matches)",
+            "They must have the same height"
           ]
         },
 
+        /* Q4 */
         {
           stem: String.raw`<p>You cut a solid into two non-overlapping pieces. What is true?</p>`,
           choices: [
@@ -147,6 +158,7 @@
           ]
         },
 
+        /* Q5 */
         {
           stem: String.raw`<p>Why is overlap forbidden when adding volumes?</p>`,
           choices: [
@@ -157,6 +169,7 @@
           ]
         },
 
+        /* Q6 */
         {
           stem: String.raw`<p>Which statement matches the idea of nonnegative volume?</p>`,
           choices: [
@@ -167,6 +180,7 @@
           ]
         },
 
+        /* Q7 */
         {
           stem: String.raw`<p>A small box fits entirely inside a larger box. What must be true?</p>`,
           choices: [
@@ -177,16 +191,18 @@
           ]
         },
 
+        /* Q8 */
         {
           stem: String.raw`<p>A \(3\times4\times2\) box is filled with unit cubes. How many cubes fit?</p>`,
           choices: [
-            "\(3+4+2\)",
-            "\(3\cdot4+2\)",
-            "\(3\cdot4\cdot2\)",
-            "\(3^2+4^2+2^2\)"
+            String.raw`\(3+4+2\)`,
+            String.raw`\(3\cdot4+2\)`,
+            String.raw`\(3\cdot4\cdot2\)`,
+            String.raw`\(3^2+4^2+2^2\)`
           ]
         },
 
+        /* Q9 */
         {
           stem: String.raw`<p>The formula \(V=lwh\) for a box mainly comes from:</p>`,
           choices: [
@@ -197,6 +213,7 @@
           ]
         },
 
+        /* Q10 */
         {
           stem: String.raw`<p>A solid is cut into 5 equal pieces, each with volume 6. What is the original volume?</p>`,
           choices: [
@@ -207,6 +224,7 @@
           ]
         },
 
+        /* Q11 */
         {
           stem: String.raw`<p>Two solids look different but have equal volume because:</p>`,
           choices: [
@@ -217,6 +235,7 @@
           ]
         },
 
+        /* Q12 */
         {
           stem: String.raw`<p>Which statement is <em>false</em>?</p>`,
           choices: [
@@ -227,16 +246,21 @@
           ]
         },
 
+        /* Q13 (replaced) */
         {
-          stem: String.raw`<p>If solid \(A\) fits inside solid \(B\), what is impossible?</p>`,
+          stem: String.raw`
+            <p>Solid \(A\) fits entirely inside solid \(B\), and \(V(A)=V(B)\).</p>
+            <p>Which conclusion best matches the postulates?</p>
+          `,
           choices: [
-            "\(V(A)=V(B)\)",
-            "\(V(A)<V(B)\)",
-            "\(V(A)>V(B)\)",
-            "Both could have zero volume"
+            String.raw`\(A\) and \(B\) must be congruent`,
+            String.raw`The leftover part \(B\setminus A\) has volume \(0\)`,
+            String.raw`This is impossible`,
+            String.raw`The leftover part \(B\setminus A\) has negative volume`
           ]
         },
 
+        /* Q14 */
         {
           stem: String.raw`<p>Which situation is a correct use of additivity?</p>`,
           choices: [
@@ -247,6 +271,7 @@
           ]
         },
 
+        /* Q15 */
         {
           stem: String.raw`<p>You cut a solid and rearrange the pieces into a new solid with no gaps and no overlaps. The volumes are:</p>`,
           choices: [
@@ -257,6 +282,7 @@
           ]
         },
 
+        /* Q16 */
         {
           stem: String.raw`<p>A \(1\times1\times2\) solid has volume:</p>`,
           choices: [
@@ -267,6 +293,7 @@
           ]
         },
 
+        /* Q17 */
         {
           stem: String.raw`<p>A \(1\times1\times\frac12\) solid has volume \(\frac12\) because:</p>`,
           choices: [
@@ -277,6 +304,7 @@
           ]
         },
 
+        /* Q18 */
         {
           stem: String.raw`<p>Which postulate most directly says that position and orientation do not matter?</p>`,
           choices: [
@@ -287,6 +315,7 @@
           ]
         },
 
+        /* Q19 */
         {
           stem: String.raw`<p>Which set best supports proving volume formulas by reasoning (not memorizing)?</p>`,
           choices: [
@@ -297,6 +326,7 @@
           ]
         },
 
+        /* Q20 */
         {
           stem: String.raw`<p>Final check: Why can’t a contained object occupy more space than its container?</p>`,
           choices: [
