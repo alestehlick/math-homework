@@ -3,20 +3,21 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Homework 10-6 (Algebra 2)</title>
+  <title>Homework 12-6 (Algebra 2)</title>
 
   <script>
     /* =========================
-       Homework 10-6 — Exponential Growth & Interest Rates
+       Homework 12-6 — Exponential Growth & Interest Rates
        Key distinction:
        - Effective annual rate r (annual compounding): A = P(1+r)^t
        - Continuous rate r (continuous compounding): A = Pe^{rt}
        12 questions total: 4 type A, 6 type B, 2 type C
        ========================= */
+
     window.homeworkData = {
       classId : "Algebra2",
-      id      : "Homework 10-6",
-      title   : "Homework 10-6 — Effective Annual Rate vs Continuous Rate",
+      id      : "Homework 12-6",
+      title   : "Homework 12-6 — Effective Annual Rate vs Continuous Rate",
 
       graphics : String.raw``,
 
@@ -30,50 +31,50 @@
         ----------------------- */
 
         {
-          latex: String.raw`\text{An investment earns a CONTINUOUS rate }r\text{ for }t\text{ years. Which formula applies?}`,
+          stem: String.raw`<p>An investment earns a <b>CONTINUOUS</b> rate \(r\) for \(t\) years. Which formula applies?</p>`,
           choices: [
-            String.raw`A=P(1+r)^t`,
-            String.raw`A=Pe^{rt}`,
-            String.raw`A=P\left(1+\dfrac{r}{n}\right)^{nt}`,
-            String.raw`A=Pe^{t/r}`,
-            String.raw`A=P(1+rt)`,
-            String.raw`A=\dfrac{P}{(1-r)^t}`
+            String.raw`\(A=P(1+r)^t\)`,
+            String.raw`\(A=Pe^{rt}\)`,
+            String.raw`\(A=P\left(1+\dfrac{r}{n}\right)^{nt}\)`,
+            String.raw`\(A=Pe^{t/r}\)`,
+            String.raw`\(A=P(1+rt)\)`,
+            String.raw`\(A=\dfrac{P}{(1-r)^t}\)`
           ]
         },
 
         {
-          latex: String.raw`\text{An investment earns an EFFECTIVE annual rate }r\text{ (compounded annually) for }t\text{ years. Which formula applies?}`,
+          stem: String.raw`<p>An investment earns an <b>EFFECTIVE annual rate</b> \(r\) (compounded annually) for \(t\) years. Which formula applies?</p>`,
           choices: [
-            String.raw`A=P(1+r)^t`,
-            String.raw`A=Pe^{rt}`,
-            String.raw`A=P\left(1+\dfrac{r}{n}\right)^{nt}`,
-            String.raw`A=Pe^{t/r}`,
-            String.raw`A=P(1+rt)`,
-            String.raw`A=\dfrac{P}{(1-r)^t}`
+            String.raw`\(A=P(1+r)^t\)`,
+            String.raw`\(A=Pe^{rt}\)`,
+            String.raw`\(A=P\left(1+\dfrac{r}{n}\right)^{nt}\)`,
+            String.raw`\(A=Pe^{t/r}\)`,
+            String.raw`\(A=P(1+rt)\)`,
+            String.raw`\(A=\dfrac{P}{(1-r)^t}\)`
           ]
         },
 
         {
-          latex: String.raw`\text{If an account has an effective annual rate of }5\%\text{, what is the equivalent continuous rate }r\text{?}`,
+          stem: String.raw`<p>If an account has an effective annual rate of \(5\%\), what is the equivalent continuous rate \(r\)?</p>`,
           choices: [
-            String.raw`r=\ln(1.05)\approx 0.04879\ \text{(about }4.88\%\text{)}`,
-            String.raw`r=0.05`,
-            String.raw`r=e^{0.05}-1`,
-            String.raw`r=\ln(0.05)`,
-            String.raw`r=1.05`,
-            String.raw`r=\ln\!\left(\dfrac{1}{0.95}\right)`
+            String.raw`\(r=\ln(1.05)\approx 0.04879\) (about \(4.88\%\))`,
+            String.raw`\(r=0.05\)`,
+            String.raw`\(r=e^{0.05}-1\)`,
+            String.raw`\(r=\ln(0.05)\)`,
+            String.raw`\(r=1.05\)`,
+            String.raw`\(r=\ln\!\left(\dfrac{1}{0.95}\right)\)`
           ]
         },
 
         {
-          latex: String.raw`\text{If an account has a continuous rate of }8\%\text{, what is the equivalent effective annual rate?}`,
+          stem: String.raw`<p>If an account has a continuous rate of \(8\%\), what is the equivalent effective annual rate?</p>`,
           choices: [
-            String.raw`8.00\%`,
-            String.raw`e^{0.08}-1\approx 8.33\%`,
-            String.raw`\ln(1.08)\approx 7.70\%`,
-            String.raw`\dfrac{0.08}{12}\approx 0.67\%`,
-            String.raw`1.08\%`,
-            String.raw`e^{0.08}\approx 1.0833\%`
+            String.raw`\(8.00\%\)`,
+            String.raw`\(e^{0.08}-1\approx 8.33\%\)`,
+            String.raw`\(\ln(1.08)\approx 7.70\%\)`,
+            String.raw`\(\dfrac{0.08}{12}\approx 0.67\%\)`,
+            String.raw`\(1.08\%\)`,
+            String.raw`\(e^{0.08}\approx 1.0833\%\)`
           ]
         },
 
@@ -82,74 +83,74 @@
         ----------------------- */
 
         {
-          latex: String.raw`\text{Faith Baptist Church invests }\$15{,}000\text{ for 18 months at a CONTINUOUS rate of }9.6\%.\ \text{What is the value at maturity (nearest cent)?}`,
+          stem: String.raw`<p>Faith Baptist Church invests \(\$15{,}000\) for 18 months at a <b>CONTINUOUS</b> rate of \(9.6\%\). What is the value at maturity (nearest cent)?</p>`,
           choices: [
-            String.raw`\$17,211.04`,
-            String.raw`\$17,323.26`,
-            String.raw`\$17,440.00`,
-            String.raw`\$16,800.00`,
-            String.raw`\$17,590.00`,
-            String.raw`\$17,030.00`
+            String.raw`\(\$17{,}211.04\)`,
+            String.raw`\(\$17{,}323.26\)`,
+            String.raw`\(\$17{,}440.00\)`,
+            String.raw`\(\$16{,}800.00\)`,
+            String.raw`\(\$17{,}590.00\)`,
+            String.raw`\(\$17{,}030.00\)`
           ]
         },
 
         {
-          latex: String.raw`\text{Same investment: }\$15{,}000\text{ for 18 months at an EFFECTIVE annual rate of }9.6\%.\ \text{Use }A=P(1+r)^t\text{. Value at maturity (nearest cent)?}`,
+          stem: String.raw`<p>Same investment: \(\$15{,}000\) for 18 months at an <b>EFFECTIVE annual rate</b> of \(9.6\%\). Use \(A=P(1+r)^t\). Value at maturity (nearest cent)?</p>`,
           choices: [
-            String.raw`\$17,323.26`,
-            String.raw`\$17,159.58`,
-            String.raw`\$17,211.04`,
-            String.raw`\$17,000.00`,
-            String.raw`\$17,400.00`,
-            String.raw`\$16,950.00`
+            String.raw`\(\$17{,}323.26\)`,
+            String.raw`\(\$17{,}159.58\)`,
+            String.raw`\(\$17{,}211.04\)`,
+            String.raw`\(\$17{,}000.00\)`,
+            String.raw`\(\$17{,}400.00\)`,
+            String.raw`\(\$16{,}950.00\)`
           ]
         },
 
         {
-          latex: String.raw`\text{Brent invests }\$8{,}000\text{ at a continuous rate of }10.25\%\text{ and receives }\$11{,}500.\ \text{How long (nearest hundredth of a year) was it invested?}`,
+          stem: String.raw`<p>Brent invests \(\$8{,}000\) at a continuous rate of \(10.25\%\) and receives \(\$11{,}500\). How long (nearest hundredth of a year) was it invested?</p>`,
           choices: [
-            String.raw`2.85`,
-            String.raw`3.54`,
-            String.raw`3.02`,
-            String.raw`4.10`,
-            String.raw`4.54`,
-            String.raw`3.29`
+            String.raw`\(2.85\)`,
+            String.raw`\(3.54\)`,
+            String.raw`\(3.02\)`,
+            String.raw`\(4.10\)`,
+            String.raw`\(4.54\)`,
+            String.raw`\(3.29\)`
           ]
         },
 
         {
-          latex: String.raw`\text{An investment grows from }\$550{,}000\text{ to }\$827{,}000\text{ in 4 years with continuous compounding. What continuous rate }r\text{ (nearest hundredth percent) is this?}`,
+          stem: String.raw`<p>An investment grows from \(\$550{,}000\) to \(\$827{,}000\) in 4 years with continuous compounding. What continuous rate \(r\) (nearest hundredth percent) is this?</p>`,
           choices: [
-            String.raw`9.80\%`,
-            String.raw`10.97\%`,
-            String.raw`8.67\%`,
-            String.raw`10.20\%`,
-            String.raw`12.50\%`,
-            String.raw`7.45\%`
+            String.raw`\(9.80\%\)`,
+            String.raw`\(10.97\%\)`,
+            String.raw`\(8.67\%\)`,
+            String.raw`\(10.20\%\)`,
+            String.raw`\(12.50\%\)`,
+            String.raw`\(7.45\%\)`
           ]
         },
 
         {
-          latex: String.raw`\text{Convert a continuous rate of }6\%\text{ to an equivalent effective annual rate (nearest hundredth percent).}`,
+          stem: String.raw`<p>Convert a continuous rate of \(6\%\) to an equivalent effective annual rate (nearest hundredth percent).</p>`,
           choices: [
-            String.raw`6.00\%`,
-            String.raw`6.18\%`,
-            String.raw`5.82\%`,
-            String.raw`6.36\%`,
-            String.raw`6.50\%`,
-            String.raw`5.94\%`
+            String.raw`\(6.00\%\)`,
+            String.raw`\(6.18\%\)`,
+            String.raw`\(5.82\%\)`,
+            String.raw`\(6.36\%\)`,
+            String.raw`\(6.50\%\)`,
+            String.raw`\(5.94\%\)`
           ]
         },
 
         {
-          latex: String.raw`\text{Convert an effective annual rate of }12\%\text{ to an equivalent continuous rate (nearest hundredth percent).}`,
+          stem: String.raw`<p>Convert an effective annual rate of \(12\%\) to an equivalent continuous rate (nearest hundredth percent).</p>`,
           choices: [
-            String.raw`12.00\%`,
-            String.raw`11.33\%`,
-            String.raw`10.71\%`,
-            String.raw`12.75\%`,
-            String.raw`11.00\%`,
-            String.raw`9.35\%`
+            String.raw`\(12.00\%\)`,
+            String.raw`\(11.33\%\)`,
+            String.raw`\(10.71\%\)`,
+            String.raw`\(12.75\%\)`,
+            String.raw`\(11.00\%\)`,
+            String.raw`\(9.35\%\)`
           ]
         },
 
@@ -158,26 +159,26 @@
         ----------------------- */
 
         {
-          latex: String.raw`\text{A bank wants an effective annual rate of }9.8\%\text{ but compounds continuously. What continuous rate should it advertise (nearest hundredth percent)?}`,
+          stem: String.raw`<p>A bank wants an effective annual rate of \(9.8\%\) but compounds continuously. What continuous rate should it advertise (nearest hundredth percent)?</p>`,
           choices: [
-            String.raw`9.80\%`,
-            String.raw`9.35\%`,
-            String.raw`10.30\%`,
-            String.raw`9.61\%`,
-            String.raw`8.96\%`,
-            String.raw`10.25\%`
+            String.raw`\(9.80\%\)`,
+            String.raw`\(9.35\%\)`,
+            String.raw`\(10.30\%\)`,
+            String.raw`\(9.61\%\)`,
+            String.raw`\(8.96\%\)`,
+            String.raw`\(10.25\%\)`
           ]
         },
 
         {
-          latex: String.raw`\text{A quantity doubles in 6 years under the model }A=Pe^{rt}.\ \text{Which pair gives (continuous rate }r,\ \text{equivalent effective annual rate) to the nearest hundredth percent?}`,
+          stem: String.raw`<p>A quantity doubles in 6 years under the model \(A=Pe^{rt}\). Which pair gives (continuous rate \(r\), equivalent effective annual rate) to the nearest hundredth percent?</p>`,
           choices: [
-            String.raw`(11.55\%,\ 12.25\%)`,
-            String.raw`(12.25\%,\ 11.55\%)`,
-            String.raw`(11.55\%,\ 11.55\%)`,
-            String.raw`(12.00\%,\ 12.00\%)`,
-            String.raw`(10.97\%,\ 12.00\%)`,
-            String.raw`(12.25\%,\ 12.25\%)`
+            String.raw`\((11.55\%,\ 12.25\%)\)`,
+            String.raw`\((12.25\%,\ 11.55\%)\)`,
+            String.raw`\((11.55\%,\ 11.55\%)\)`,
+            String.raw`\((12.00\%,\ 12.00\%)\)`,
+            String.raw`\((10.97\%,\ 12.00\%)\)`,
+            String.raw`\((12.25\%,\ 12.25\%)\)`
           ]
         }
 
@@ -185,10 +186,8 @@
     };
   </script>
 
-  <link rel="stylesheet" href="/math-homework/assets/core.css" />
-  <link rel="stylesheet" href="https://tikzjax.com/v1/fonts.css" />
-  <script defer src="/math-homework/assets/core.js"></script>
-  <script defer src="https://tikzjax.com/v1/tikzjax.js"></script>
+  <link rel="stylesheet" href="/math-homework/assets/core-rich.css" />
+  <script defer src="/math-homework/assets/core-rich.js"></script>
   <script defer src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
 </head>
 
