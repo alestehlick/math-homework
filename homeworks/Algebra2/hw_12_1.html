@@ -7,7 +7,7 @@
 
   <script>
     /* =========================
-       Homework 12-1 — Inverse Relations and Functions
+       Homework 12-1 — Inverse Relations and Functions (NEW FORMAT)
        12 questions total: 4 type A, 6 type B, 2 type C
        ========================= */
     window.homeworkData = {
@@ -17,7 +17,6 @@
 
       graphics : String.raw``,
 
-      /* Correct answers for Q1–Q12 */
       answerKey : ["B","E","B","A","D","F","C","A","B","C","B","C"],
 
       questions : [
@@ -27,50 +26,59 @@
         ----------------------- */
 
         {
-          latex: String.raw`\text{Which relation is NOT a function?}`,
+          stem: String.raw`
+            <p>Which relation is <strong>NOT</strong> a function?</p>
+          `,
           choices: [
-            String.raw`\{(-2,5),(0,1),(3,4)\}`,
-            String.raw`\{(1,2),(1,5),(4,0)\}`,
-            String.raw`\{(-1,3),(2,3),(5,3)\}`,
-            String.raw`\{(0,-2),(2,0),(4,2)\}`,
-            String.raw`\{(7,1),(8,4),(9,6)\}`,
-            String.raw`\{(-3,0),(-2,1),(-1,2)\}`
+            String.raw`\(\{(-2,5),(0,1),(3,4)\}\)`,
+            String.raw`\(\{(1,2),(1,5),(4,0)\}\)`,
+            String.raw`\(\{(-1,3),(2,3),(5,3)\}\)`,
+            String.raw`\(\{(0,-2),(2,0),(4,2)\}\)`,
+            String.raw`\(\{(7,1),(8,4),(9,6)\}\)`,
+            String.raw`\(\{(-3,0),(-2,1),(-1,2)\}\)`
           ]
         },
 
         {
-          latex: String.raw`\text{Let }R=\{(-4,2),(1,-3),(5,0)\}.\ \text{What is the inverse of }R\text{ (as a set of ordered pairs)?}`,
+          stem: String.raw`
+            <p>Let \(R=\{(-4,2),(1,-3),(5,0)\}\).</p>
+            <p>What is the inverse of \(R\) (as a set of ordered pairs)?</p>
+          `,
           choices: [
-            String.raw`\{(4,-2),(-1,3),(-5,0)\}`,
-            String.raw`\{(-4,2),(1,-3),(5,0)\}`,
-            String.raw`\{(2,-4),(1,-3),(0,5)\}`,
-            String.raw`\{(2,4),(-3,-1),(0,-5)\}`,
-            String.raw`\{(2,-4),(-3,1),(0,5)\}`,
-            String.raw`\{(2,-4),(-3,5),(0,1)\}`
+            String.raw`\(\{(4,-2),(-1,3),(-5,0)\}\)`,
+            String.raw`\(\{(-4,2),(1,-3),(5,0)\}\)`,
+            String.raw`\(\{(2,-4),(1,-3),(0,5)\}\)`,
+            String.raw`\(\{(2,4),(-3,-1),(0,-5)\}\)`,
+            String.raw`\(\{(2,-4),(-3,1),(0,5)\}\)`,
+            String.raw`\(\{(2,-4),(-3,5),(0,1)\}\)`
           ]
         },
 
         {
-          latex: String.raw`\text{Which is an example of a function whose inverse is NOT a function?}`,
+          stem: String.raw`
+            <p>Which is an example of a <strong>function</strong> whose inverse is <strong>NOT</strong> a function?</p>
+          `,
           choices: [
-            String.raw`\{(0,1),(1,2),(2,3)\}`,
-            String.raw`\{(1,4),(2,4),(3,7)\}`,
-            String.raw`\{(-1,0),(0,2),(1,5)\}`,
-            String.raw`\{(2,3),(2,4),(5,6)\}`,
-            String.raw`\{(1,5),(2,6),(3,7)\}`,
-            String.raw`\{(4,-1),(5,0),(6,1)\}`
+            String.raw`\(\{(0,1),(1,2),(2,3)\}\)`,
+            String.raw`\(\{(1,4),(2,4),(3,7)\}\)`,
+            String.raw`\(\{(-1,0),(0,2),(1,5)\}\)`,
+            String.raw`\(\{(2,3),(2,4),(5,6)\}\)`,
+            String.raw`\(\{(1,5),(2,6),(3,7)\}\)`,
+            String.raw`\(\{(4,-1),(5,0),(6,1)\}\)`
           ]
         },
 
         {
-          latex: String.raw`\text{Given domain }D=\{-5,3,1,7\}\text{ and }f(x)=x-4,\ \text{write }f\text{ in set form.}`,
+          stem: String.raw`
+            <p>Given domain \(D=\{-5,3,1,7\}\) and \(f(x)=x-4\), write \(f\) in set form.</p>
+          `,
           choices: [
-            String.raw`\{(-5,-9),(3,-1),(1,-3),(7,3)\}`,
-            String.raw`\{(-5,-1),(3,-9),(1,-3),(7,3)\}`,
-            String.raw`\{(-5,-9),(3,1),(1,-3),(7,3)\}`,
-            String.raw`\{(-5,-9),(3,-1),(1,-3),(7,-3)\}`,
-            String.raw`\{(-5,-9),(3,-1),(1,-4),(7,3)\}`,
-            String.raw`\{(-5,-9),(3,-1),(1,-3),(7,11)\}`
+            String.raw`\(\{(-5,-9),(3,-1),(1,-3),(7,3)\}\)`,
+            String.raw`\(\{(-5,-1),(3,-9),(1,-3),(7,3)\}\)`,
+            String.raw`\(\{(-5,-9),(3,1),(1,-3),(7,3)\}\)`,
+            String.raw`\(\{(-5,-9),(3,-1),(1,-3),(7,-3)\}\)`,
+            String.raw`\(\{(-5,-9),(3,-1),(1,-4),(7,3)\}\)`,
+            String.raw`\(\{(-5,-9),(3,-1),(1,-3),(7,11)\}\)`
           ]
         },
 
@@ -79,74 +87,86 @@
         ----------------------- */
 
         {
-          latex: String.raw`\text{Given domain }D=\{-5,3,1,7\}\text{ and }g(x)=2x+6,\ \text{write }g\text{ in set form.}`,
+          stem: String.raw`
+            <p>Given domain \(D=\{-5,3,1,7\}\) and \(g(x)=2x+6\), write \(g\) in set form.</p>
+          `,
           choices: [
-            String.raw`\{(-5,-16),(3,12),(1,8),(7,20)\}`,
-            String.raw`\{(-5,-4),(3,6),(1,8),(7,20)\}`,
-            String.raw`\{(-5,-4),(3,12),(1,2),(7,20)\}`,
-            String.raw`\{(-5,-4),(3,12),(1,8),(7,20)\}`,
-            String.raw`\{(-5,-4),(3,12),(1,8),(7,14)\}`,
-            String.raw`\{(-5,4),(3,12),(1,8),(7,20)\}`
+            String.raw`\(\{(-5,-16),(3,12),(1,8),(7,20)\}\)`,
+            String.raw`\(\{(-5,-4),(3,6),(1,8),(7,20)\}\)`,
+            String.raw`\(\{(-5,-4),(3,12),(1,2),(7,20)\}\)`,
+            String.raw`\(\{(-5,-4),(3,12),(1,8),(7,20)\}\)`,
+            String.raw`\(\{(-5,-4),(3,12),(1,8),(7,14)\}\)`,
+            String.raw`\(\{(-5,4),(3,12),(1,8),(7,20)\}\)`
           ]
         },
 
         {
-          latex: String.raw`\text{Given domain }D=\{-5,3,1,7\}\text{ and }h(x)=3x-8,\ \text{write }h\text{ in set form.}`,
+          stem: String.raw`
+            <p>Given domain \(D=\{-5,3,1,7\}\) and \(h(x)=3x-8\), write \(h\) in set form.</p>
+          `,
           choices: [
-            String.raw`\{(-5,-23),(3,1),(1,-5),(7,15)\}`,
-            String.raw`\{(-5,-23),(3,-1),(1,-5),(7,13)\}`,
-            String.raw`\{(-5,-17),(3,1),(1,-5),(7,13)\}`,
-            String.raw`\{(-5,-23),(3,1),(1,5),(7,13)\}`,
-            String.raw`\{(-5,-23),(3,1),(1,-5),(7,11)\}`,
-            String.raw`\{(-5,-23),(3,1),(1,-5),(7,13)\}`
+            String.raw`\(\{(-5,-23),(3,1),(1,-5),(7,15)\}\)`,
+            String.raw`\(\{(-5,-23),(3,-1),(1,-5),(7,13)\}\)`,
+            String.raw`\(\{(-5,-17),(3,1),(1,-5),(7,13)\}\)`,
+            String.raw`\(\{(-5,-23),(3,1),(1,5),(7,13)\}\)`,
+            String.raw`\(\{(-5,-23),(3,1),(1,-5),(7,11)\}\)`,
+            String.raw`\(\{(-5,-23),(3,1),(1,-5),(7,13)\}\)`
           ]
         },
 
         {
-          latex: String.raw`\text{Using your set form for }h\text{ on }D=\{-5,3,1,7\},\ \text{what is the set of inverse ordered pairs?}`,
+          stem: String.raw`
+            <p>Using your set form for \(h\) on \(D=\{-5,3,1,7\}\), what is the set of inverse ordered pairs?</p>
+          `,
           choices: [
-            String.raw`\{(-5,-23),(3,1),(1,-5),(7,13)\}`,
-            String.raw`\{(-23,-5),(3,1),(-5,1),(13,7)\}`,
-            String.raw`\{(-23,-5),(1,3),(-5,1),(13,7)\}`,
-            String.raw`\{(-23,5),(1,3),(-5,1),(13,7)\}`,
-            String.raw`\{(-23,-5),(1,3),(5,1),(13,7)\}`,
-            String.raw`\{(-23,-5),(1,3),(-5,7),(13,1)\}`
+            String.raw`\(\{(-5,-23),(3,1),(1,-5),(7,13)\}\)`,
+            String.raw`\(\{(-23,-5),(3,1),(-5,1),(13,7)\}\)`,
+            String.raw`\(\{(-23,-5),(1,3),(-5,1),(13,7)\}\)`,
+            String.raw`\(\{(-23,5),(1,3),(-5,1),(13,7)\}\)`,
+            String.raw`\(\{(-23,-5),(1,3),(5,1),(13,7)\}\)`,
+            String.raw`\(\{(-23,-5),(1,3),(-5,7),(13,1)\}\)`
           ]
         },
 
         {
-          latex: String.raw`\text{If }f(x)=x-4,\ \text{what is }f^{-1}(x)\text{?}`,
+          stem: String.raw`
+            <p>If \(f(x)=x-4\), what is \(f^{-1}(x)\)?</p>
+          `,
           choices: [
-            String.raw`x+4`,
-            String.raw`x-4`,
-            String.raw`4-x`,
-            String.raw`-x-4`,
-            String.raw`\dfrac{x}{4}`,
-            String.raw`\dfrac{x+4}{2}`
+            String.raw`\(\,x+4\,\)`,
+            String.raw`\(\,x-4\,\)`,
+            String.raw`\(\,4-x\,\)`,
+            String.raw`\(\,-x-4\,\)`,
+            String.raw`\(\,\dfrac{x}{4}\,\)`,
+            String.raw`\(\,\dfrac{x+4}{2}\,\)`
           ]
         },
 
         {
-          latex: String.raw`\text{If }g(x)=2x+6,\ \text{what is }g^{-1}(x)\text{?}`,
+          stem: String.raw`
+            <p>If \(g(x)=2x+6\), what is \(g^{-1}(x)\)?</p>
+          `,
           choices: [
-            String.raw`\dfrac{x+6}{2}`,
-            String.raw`\dfrac{x-6}{2}`,
-            String.raw`2x-6`,
-            String.raw`\dfrac{x}{2}+6`,
-            String.raw`\dfrac{6-x}{2}`,
-            String.raw`x-3`
+            String.raw`\(\,\dfrac{x+6}{2}\,\)`,
+            String.raw`\(\,\dfrac{x-6}{2}\,\)`,
+            String.raw`\(\,2x-6\,\)`,
+            String.raw`\(\,\dfrac{x}{2}+6\,\)`,
+            String.raw`\(\,\dfrac{6-x}{2}\,\)`,
+            String.raw`\(\,x-3\,\)`
           ]
         },
 
         {
-          latex: String.raw`\text{If }h(x)=3x-8,\ \text{what is }h^{-1}(x)\text{?}`,
+          stem: String.raw`
+            <p>If \(h(x)=3x-8\), what is \(h^{-1}(x)\)?</p>
+          `,
           choices: [
-            String.raw`\dfrac{x-8}{3}`,
-            String.raw`\dfrac{8-x}{3}`,
-            String.raw`\dfrac{x+8}{3}`,
-            String.raw`3x+8`,
-            String.raw`\dfrac{x}{3}+8`,
-            String.raw`3(x+8)`
+            String.raw`\(\,\dfrac{x-8}{3}\,\)`,
+            String.raw`\(\,\dfrac{8-x}{3}\,\)`,
+            String.raw`\(\,\dfrac{x+8}{3}\,\)`,
+            String.raw`\(\,3x+8\,\)`,
+            String.raw`\(\,\dfrac{x}{3}+8\,\)`,
+            String.raw`\(\,3(x+8)\,\)`
           ]
         },
 
@@ -155,26 +175,30 @@
         ----------------------- */
 
         {
-          latex: String.raw`\text{Which statement is always true for a function and its inverse (when both compositions are defined)?}`,
+          stem: String.raw`
+            <p>Which statement is always true for a function and its inverse (when both compositions are defined)?</p>
+          `,
           choices: [
-            String.raw`(f\circ f^{-1})(x)=0`,
-            String.raw`(f\circ f^{-1})(x)=x\ \text{and}\ (f^{-1}\circ f)(x)=x`,
-            String.raw`(f\circ f^{-1})(x)=f(x)`,
-            String.raw`(f^{-1}\circ f)(x)=f^{-1}(x)`,
-            String.raw`(f\circ f^{-1})(x)=1`,
-            String.raw`(f^{-1}\circ f)(x)=-x`
+            String.raw`\((f\circ f^{-1})(x)=0\)` ,
+            String.raw`\((f\circ f^{-1})(x)=x\ \text{ and }\ (f^{-1}\circ f)(x)=x\)` ,
+            String.raw`\((f\circ f^{-1})(x)=f(x)\)` ,
+            String.raw`\((f^{-1}\circ f)(x)=f^{-1}(x)\)` ,
+            String.raw`\((f\circ f^{-1})(x)=1\)` ,
+            String.raw`\((f^{-1}\circ f)(x)=-x\)`
           ]
         },
 
         {
-          latex: String.raw`\text{What function is the identity function?}`,
+          stem: String.raw`
+            <p>What function is the identity function?</p>
+          `,
           choices: [
-            String.raw`i(x)=0`,
-            String.raw`i(x)=1`,
-            String.raw`i(x)=x`,
-            String.raw`i(x)=x^{2}`,
-            String.raw`i(x)=x+1`,
-            String.raw`i(x)=-x`
+            String.raw`\(\,i(x)=0\,\)`,
+            String.raw`\(\,i(x)=1\,\)`,
+            String.raw`\(\,i(x)=x\,\)`,
+            String.raw`\(\,i(x)=x^{2}\,\)`,
+            String.raw`\(\,i(x)=x+1\,\)`,
+            String.raw`\(\,i(x)=-x\,\)`
           ]
         }
 
@@ -182,10 +206,8 @@
     };
   </script>
 
-  <link rel="stylesheet" href="/math-homework/assets/core.css" />
-  <link rel="stylesheet" href="https://tikzjax.com/v1/fonts.css" />
-  <script defer src="/math-homework/assets/core.js"></script>
-  <script defer src="https://tikzjax.com/v1/tikzjax.js"></script>
+  <link rel="stylesheet" href="/math-homework/assets/core-rich.css" />
+  <script defer src="/math-homework/assets/core-rich.js"></script>
   <script defer src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
 </head>
 
