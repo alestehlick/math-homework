@@ -7,13 +7,13 @@
 
   <style>
     :root{
-      --ink: #1f2937;          /* main text */
-      --muted: #4b5563;        /* secondary */
-      --card: rgba(255,255,255,0.78);
-      --card-border: rgba(31,41,55,0.12);
-      --shadow: rgba(0,0,0,0.06);
-      --link: #111827;
-      --link-hover: #0f172a;
+      --ink: #0f172a;
+      --muted: rgba(15,23,42,0.72);
+      --stroke: rgba(15,23,42,0.18);
+
+      /* tuned for “no big white plate” */
+      --link-bg: rgba(255,255,255,0.38);
+      --link-bg-hover: rgba(255,255,255,0.52);
     }
 
     html, body { height: 100%; }
@@ -24,44 +24,47 @@
       font-family: ui-serif, "Times New Roman", Times, Georgia, serif;
       line-height: 1.55;
 
-      /* Background image beside the index file */
-      background:
-        linear-gradient(rgba(255,255,255,0.84), rgba(255,255,255,0.84)),
-        url("background.png");
-      background-size: cover;
-      background-position: center;
-      background-attachment: fixed;
+      /* show the background clearly */
+      background: url("background.png") center / cover no-repeat fixed;
+    }
+
+    /* subtle readability veil without looking like a “card” */
+    body::before{
+      content: "";
+      position: fixed;
+      inset: 0;
+      pointer-events: none;
+      background: linear-gradient(
+        rgba(255,255,255,0.10),
+        rgba(255,255,255,0.10)
+      );
     }
 
     .wrap{
       min-height: 100%;
       display: grid;
       place-items: center;
-      padding: 48px 20px;
+      padding: 56px 20px;
     }
 
-    .panel{
+    .content{
       width: min(720px, 100%);
-      background: var(--card);
-      border: 1px solid var(--card-border);
-      border-radius: 18px;
-      box-shadow: 0 18px 50px var(--shadow);
-      backdrop-filter: blur(6px);
-      -webkit-backdrop-filter: blur(6px);
-      padding: 28px 28px 22px;
+      padding: 6px 2px; /* no card/panel */
     }
 
     h1{
-      margin: 0 0 14px 0;
-      font-size: 1.75rem;
+      margin: 0 0 10px 0;
+      font-size: 1.9rem;
       font-weight: 600;
       letter-spacing: 0.2px;
+      text-shadow: 0 2px 16px rgba(255,255,255,0.55);
     }
 
     .subtitle{
       margin: 0 0 18px 0;
       color: var(--muted);
       font-size: 1rem;
+      text-shadow: 0 2px 16px rgba(255,255,255,0.55);
     }
 
     ul{
@@ -79,19 +82,22 @@
       gap: 14px;
 
       text-decoration: none;
-      color: var(--link);
+      color: var(--ink);
       padding: 12px 14px;
-      border-radius: 12px;
-      border: 1px solid rgba(31,41,55,0.10);
-      background: rgba(255,255,255,0.55);
-      transition: transform 120ms ease, background 120ms ease, border-color 120ms ease;
+      border-radius: 14px;
+
+      background: var(--link-bg);
+      border: 1px solid var(--stroke);
+      backdrop-filter: blur(10px);
+      -webkit-backdrop-filter: blur(10px);
+
+      transition: transform 140ms ease, background 140ms ease, border-color 140ms ease;
     }
 
     a:hover{
       transform: translateY(-1px);
-      background: rgba(255,255,255,0.72);
-      border-color: rgba(31,41,55,0.18);
-      color: var(--link-hover);
+      background: var(--link-bg-hover);
+      border-color: rgba(15,23,42,0.28);
     }
 
     .tag{
@@ -102,11 +108,11 @@
 
     footer{
       margin-top: 18px;
-      color: rgba(75,85,99,0.85);
+      color: rgba(15,23,42,0.62);
       font-size: 0.95rem;
+      text-shadow: 0 2px 16px rgba(255,255,255,0.45);
     }
 
-    /* Respect users who prefer reduced motion */
     @media (prefers-reduced-motion: reduce){
       a{ transition: none; }
       a:hover{ transform: none; }
@@ -116,18 +122,18 @@
 
 <body>
   <main class="wrap">
-    <section class="panel" role="region" aria-label="Homework list">
+    <section class="content" role="region" aria-label="Homework list">
       <h1>Homework Geometry</h1>
       <p class="subtitle">Assignments index</p>
 
       <ul>
-        <li><a href="11_Intro.html"><span>Intro-11</span><span class="tag">Intro</span></a></li>
+        <li><a href="Intro_11.html"><span>Intro-11</span><span class="tag">Intro</span></a></li>
         <li><a href="hw_11_1.html"><span>11-1</span><span class="tag">Homework</span></a></li>
         <li><a href="hw_11_2.html"><span>11-2</span><span class="tag">Homework</span></a></li>
       </ul>
 
       <footer>
-        Keep this page simple; the background carries the atmosphere.
+        Geometry — clarity, measure, and quiet structure.
       </footer>
     </section>
   </main>
