@@ -14,7 +14,7 @@
 (function(){
   "use strict";
 
-  const SCRIPT_URL  = "https://script.google.com/macros/s/AKfycbw2Y_ZP_gexERkUJF3geWuU-ivVlvc-1lYZatzo-mh4HNjo3gnmZDMUoHuIkJmmxIudLA/exec";
+  const SCRIPT_URL  = "https://script.google.com/macros/s/AKfycbw2Y_ZP_gexERkUJF3geWuU-ivVlvc-1lYZatzo-mh4HNjo3gnmZDMUoHuUoHuIkJmmxIudLA/exec";
   const COOLDOWN_MS = 120_000;
 
   const root = document.getElementById("hw-root");
@@ -296,7 +296,6 @@
       const [, rawStr, flag] = msg.split("|");
       const raw = Number(rawStr);
 
-      // Match server: late cap is min(raw, ceil(total*0.85))
       const capLimit = Math.ceil(total * 0.85);
       const scored = (flag === "LATE") ? Math.min(raw, capLimit) : raw;
 
@@ -346,7 +345,6 @@
       return;
     }
 
-    // fixed-length answers array (must match answerKey length)
     const answers = [];
     for (let i = 1; i <= totalQ; i++){
       const chosen = form.querySelector(`input[name="q${i}"]:checked`);
@@ -358,7 +356,6 @@
       return;
     }
 
-    // cooldown (same as core.js)
     const key  = `last_${data.classId}_${data.id}_${fn}_${ln}`.toLowerCase();
     const now  = Date.now();
     const last = Number(localStorage.getItem(key)) || 0;
@@ -383,9 +380,7 @@
       const r   = await fetch(SCRIPT_URL, { method:"POST", body });
       const txt = await r.text();
 
-      // only set cooldown after we got a reply
       localStorage.setItem(key, String(now));
-
       handleReply(txt, totalQ);
     } catch (e){
       alert("Network / script error: " + e);
@@ -410,7 +405,6 @@
   const title = makeEl("h1", "", escapeHtml(data.title || data.id || "Homework"));
   root.appendChild(title);
 
-  // student info
   const info = makeEl("div", "student-info");
   info.innerHTML = `
     <label>First Name: <input id="firstName" type="text" autocomplete="given-name" required></label>
@@ -443,7 +437,6 @@
     const left = makeEl("div", "q-left");
     grid.appendChild(left);
 
-    // stem
     const stem = makeEl("div", "q-stem");
     if (q.stem) {
       stem.innerHTML = String(q.stem);
@@ -454,30 +447,25 @@
     }
     left.appendChild(stem);
 
-    // TikZ inline block
     if (tikzInline && tikzPayload && tikzPayload.tikz) {
       const tikzBlock = document.createElement("div");
       mountTikzInline(tikzBlock, tikzPayload.tikz, tikzPayload.caption);
       left.appendChild(tikzBlock);
     }
 
-    // choices
     const choices = Array.isArray(q.choices) ? q.choices : [];
     const ul = makeEl("ul", "choices");
     choices.forEach((choiceText, idx) => {
       const letter = String.fromCharCode("A".charCodeAt(0) + idx);
       const li = document.createElement("li");
 
-      const id = `q${n}_${letter}`;
       const label = document.createElement("label");
 
       const input = document.createElement("input");
       input.type = "radio";
       input.name = `q${n}`;
       input.value = letter;
-      input.id = id;
 
-      // Make the radio group required (set on one radio in the group)
       if (idx === 0) input.required = true;
 
       const span = document.createElement("span");
@@ -492,7 +480,6 @@
     });
     left.appendChild(ul);
 
-    // Right-column media (images / non-TikZ HTML)
     if (gridHasRightColumn) {
       const right = makeEl("div", "q-media");
       grid.appendChild(right);
@@ -508,32 +495,11 @@
     form.appendChild(card);
   });
 
-  // Buttons
   const submit = document.createElement("button");
   submit.type = "submit";
   submit.id = "submitBtn";
   submit.textContent = "Submit";
   form.appendChild(submit);
-
-  const check = document.createElement("button");
-  check.type = "button";
-  check.style.marginLeft = "10px";
-  check.textContent = "Check score";
-  check.addEventListener("click", () => {
-    if (!Array.isArray(data.answerKey)) {
-      alert("No answer key provided in homeworkData.");
-      return;
-    }
-    let correct = 0;
-    data.questions.forEach((_, i) => {
-      const n = i + 1;
-      const chosen = form.querySelector(`input[name="q${n}"]:checked`);
-      const val = chosen ? chosen.value : "";
-      if (val && val === data.answerKey[i]) correct++;
-    });
-    alert(`Score: ${correct} / ${data.questions.length}`);
-  });
-  form.appendChild(check);
 
   postRender();
 })();
