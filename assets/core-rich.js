@@ -14,7 +14,8 @@
 (function(){
   "use strict";
 
-  const SCRIPT_URL  = "https://script.google.com/macros/s/AKfycbw2Y_ZP_gexERkUJF3geWuU-ivVlvc-1lYZatzo-mh4HNjo3gnmZDMUoHuUoHuIkJmmxIudLA/exec";
+  // MUST match core.js exactly
+  const SCRIPT_URL  = "https://script.google.com/macros/s/AKfycbw2Y_ZP_gexERkUJF3geWuU-ivVlvc-1lYZatzo-mh4HNjo3gnmZDMUoHuIkJmmxIudLA/exec";
   const COOLDOWN_MS = 120_000;
 
   const root = document.getElementById("hw-root");
@@ -339,12 +340,12 @@
 
     const totalQ = data.questions.length;
     const totalK = data.answerKey.length;
-
     if (totalQ !== totalK) {
       alert(`Setup error: questions.length (${totalQ}) != answerKey.length (${totalK}).`);
       return;
     }
 
+    // fixed-length answers array (must match answerKey length)
     const answers = [];
     for (let i = 1; i <= totalQ; i++){
       const chosen = form.querySelector(`input[name="q${i}"]:checked`);
@@ -377,13 +378,18 @@
     if (submitBtn) submitBtn.disabled = true;
 
     try{
-      const r   = await fetch(SCRIPT_URL, { method:"POST", body });
-      const txt = await r.text();
+      const r = await fetch(SCRIPT_URL, { method:"POST", body });
+
+      // If Apps Script ever returns a non-2xx, still try to read text for diagnostics
+      const txt = await r.text().catch(() => "");
+      if (!r.ok && !txt) {
+        throw new Error(`HTTP ${r.status}`);
+      }
 
       localStorage.setItem(key, String(now));
-      handleReply(txt, totalQ);
+      handleReply(txt || `ERR|HTTP_${r.status}`, totalQ);
     } catch (e){
-      alert("Network / script error: " + e);
+      alert("Failed to fetch / network error: " + e);
     } finally {
       if (submitBtn) submitBtn.disabled = false;
     }
@@ -466,6 +472,7 @@
       input.name = `q${n}`;
       input.value = letter;
 
+      // Make the radio group required (set on one radio in the group)
       if (idx === 0) input.required = true;
 
       const span = document.createElement("span");
