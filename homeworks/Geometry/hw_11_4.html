@@ -26,7 +26,8 @@
          11-4-10.png
          11-4-11.png
          11-4-12.png
-         11-4-592.png
+         11-4-592a.png
+         11-4-592c.png
        ========================= */
 
     window.homeworkData = {
@@ -45,7 +46,7 @@
            A. Exercises (Use #1, #3, #4)
            ========================================================= */
 
-        /* Source: A #1 (figure) */
+        /* Source: A #1 (figure: 11-4-1.png) */
         {
           stem: String.raw`
             <p><b>Refer to Figure 1.</b> Find the volume of the pyramid.</p>
@@ -67,7 +68,7 @@
           ]
         },
 
-        /* Source: A #3 (figure) */
+        /* Source: A #3 (figure: 11-4-3.png) */
         {
           stem: String.raw`
             <p><b>Refer to Figure 2.</b> Find the volume of the cone.</p>
@@ -84,12 +85,12 @@
             String.raw`\(\,10115\pi\,\)`,
             String.raw`\(\dfrac{40460\pi}{3}\)`,
             String.raw`\(\dfrac{10115\pi}{6}\)`,
-            String.raw`\(\dfrac{289\pi}{3}\cdot 35\)` ,
+            String.raw`\(\dfrac{289\pi}{3}\cdot 34\)`,
             String.raw`\(\dfrac{5780\pi}{3}\)`
           ]
         },
 
-        /* Source: A #4 (figure) */
+        /* Source: A #4 (figure: 11-4-4.png) */
         {
           stem: String.raw`
             <p><b>Refer to Figure 3.</b> Find the volume of the pyramid.</p>
@@ -115,7 +116,7 @@
            B. Exercises (Use #10, #11, #12)
            ========================================================= */
 
-        /* Source: B #10 (image recommended) */
+        /* Source: B #10 (figure: 11-4-10.png) */
         {
           stem: String.raw`
             <p><b>Refer to Figure 4.</b></p>
@@ -123,6 +124,12 @@
             <p>The diameter of the cone is 34 inches, and the vertices (apexes) of both the pyramid and the cone are the same.</p>
             <p>What is the volume <em>outside the cone but inside the pyramid</em>?</p>
             <p><em>Give an exact answer in terms of \(\pi\).</em></p>
+          `,
+          media: String.raw`
+            <figure>
+              <img src="11-4-10.png" alt="B. Exercise #10" />
+              <figcaption>Figure 4</figcaption>
+            </figure>
           `,
           choices: [
             String.raw`\(\dfrac{87505-15895\pi}{3}\)`,
@@ -134,7 +141,7 @@
           ]
         },
 
-        /* Source: B #11 (image recommended) */
+        /* Source: B #11 (figure: 11-4-11.png) */
         {
           stem: String.raw`
             <p><b>Refer to Figure 5.</b></p>
@@ -158,7 +165,7 @@
           ]
         },
 
-        /* Source: B #12 (image recommended) */
+        /* Source: B #12 (figure: 11-4-12.png) */
         {
           stem: String.raw`
             <p><b>Refer to Figure 5.</b></p>
@@ -183,7 +190,7 @@
         },
 
         /* =========================================================
-           Portuguese set (395, 388, 410, 418, 439, 592a, 592c, 597, 622, 629)
+           Portuguese set
            ========================================================= */
 
         /* Source: PT #395 */
@@ -220,7 +227,7 @@
           ]
         },
 
-        /* Source: PT #410 (volume only; no trigonometry required) */
+        /* Source: PT #410 */
         {
           stem: String.raw`
             <p>A regular hexagonal pyramid has height 12 cm and base edge length \(\dfrac{10\sqrt3}{3}\) cm.</p>
@@ -252,7 +259,7 @@
           ]
         },
 
-        /* Source: PT #439 (no trigonometry; use regular-pyramid formulas) */
+        /* Source: PT #439 */
         {
           stem: String.raw`
             <p>In a regular triangular pyramid, the lateral area is four times the base area.</p>
@@ -269,7 +276,7 @@
           ]
         },
 
-        /* Source: PT #592(a) (diagram: 11-4-592.png) */
+        /* Source: PT #592(a) (figure: 11-4-592a.png) */
         {
           stem: String.raw`
             <p><b>Refer to Figure 6.</b></p>
@@ -278,7 +285,7 @@
           `,
           media: String.raw`
             <figure>
-              <img src="11-4-592a.png" alt="Portuguese #592 diagram (a and c)" />
+              <img src="11-4-592a.png" alt="Portuguese #592(a)" />
               <figcaption>Figure 6</figcaption>
             </figure>
           `,
@@ -292,7 +299,7 @@
           ]
         },
 
-        /* Source: PT #592(c) (same diagram file) */
+        /* Source: PT #592(c) (figure: 11-4-592c.png) */
         {
           stem: String.raw`
             <p><b>Refer to Figure 7.</b></p>
@@ -302,7 +309,7 @@
           `,
           media: String.raw`
             <figure>
-              <img src="11-4-592c.png" alt="Portuguese #592 diagram (a and c)" />
+              <img src="11-4-592c.png" alt="Portuguese #592(c)" />
               <figcaption>Figure 7</figcaption>
             </figure>
           `,
@@ -333,7 +340,7 @@
           ]
         },
 
-        /* Source: PT #622 (conceptual; volume scaling) */
+        /* Source: PT #622 */
         {
           stem: String.raw`
             <p>What happens to the volume \(V\) of a cone if we:</p>
@@ -353,7 +360,7 @@
           ]
         },
 
-        /* Source: PT #629 (sector makes a cone; total area and volume) */
+        /* Source: PT #629 */
         {
           stem: String.raw`
             <p>A circular sector has radius \(R\) and central angle \(120^\circ\). Rolling it forms a cone.</p>
@@ -361,25 +368,4 @@
             <p><em>Answer format: (total area, volume).</em></p>
           `,
           choices: [
-            String.raw`\(\left(\dfrac{4\pi R^2}{9},\ \dfrac{2\sqrt2\,\pi R^3}{81}\right)\)`,
-            String.raw`\(\left(\dfrac{\pi R^2}{3},\ \dfrac{2\sqrt2\,\pi R^3}{81}\right)\)`,
-            String.raw`\(\left(\dfrac{4\pi R^2}{9},\ \dfrac{2\sqrt2\,\pi R^3}{27}\right)\)`,
-            String.raw`\(\left(\dfrac{\pi R^2}{9},\ \dfrac{2\sqrt2\,\pi R^3}{81}\right)\)`,
-            String.raw`\(\left(\dfrac{4\pi R^2}{9},\ \dfrac{2\pi R^3}{81}\right)\)`,
-            String.raw`\(\left(\dfrac{2\pi R^2}{9},\ \dfrac{2\sqrt2\,\pi R^3}{81}\right)\)`
-          ]
-        }
-
-      ]
-    };
-  </script>
-
-  <link rel="stylesheet" href="/math-homework/assets/core-rich.css" />
-  <script defer src="/math-homework/assets/core-rich.js"></script>
-  <script defer src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
-</head>
-
-<body>
-  <div id="hw-root">Loading…</div>
-</body>
-</html>
+            String.raw`\(\left(\dfrac{4\pi R^2}{9},\ \dfrac{2\sqrt2\,\p
