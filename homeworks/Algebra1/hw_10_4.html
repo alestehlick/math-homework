@@ -20,6 +20,10 @@
        - Math appears only in \( ... \) fragments.
        - Any field containing LaTeX backslashes uses String.raw`...`
          (prevents JS escape issues).
+
+       FIXES (this version):
+       - Q8 now explicitly requires rationalizing the denominator (so only one correct choice).
+       - Q9 had a duplicate answer choice; fixed the duplicate to a distinct distractor.
        ========================= */
 
     window.homeworkData = {
@@ -141,7 +145,7 @@
 
         {
           stem: String.raw`
-            <p>Simplify:</p>
+            <p>Simplify and write your answer with <strong>no radical in the denominator</strong>:</p>
             <p class="math">\(\dfrac{\sqrt[3]{5}}{\sqrt[3]{25}}\)</p>
           `,
           choices: [
@@ -158,11 +162,12 @@
           stem: String.raw`
             <p>Perform the indicated operation and give the answer in simplest form:</p>
             <p class="math">\(\sqrt{5xy}\div\sqrt{10x^2y^3}\)</p>
+            <p><em>Assume variables are positive.</em></p>
           `,
           choices: [
             String.raw`\(\dfrac{\sqrt{2x}}{2xy^2}\)`,
             String.raw`\(\dfrac{\sqrt{2x}}{2xy}\)`,
-            String.raw`\(\dfrac{\sqrt{2x}}{2xy^2}\)`,
+            String.raw`\(\dfrac{1}{y\sqrt{2x}}\)`,
             String.raw`\(\dfrac{\sqrt{x}}{2y}\)`,
             String.raw`\(\dfrac{\sqrt{2}}{2xy}\)`,
             String.raw`\(\dfrac{\sqrt{2x}}{xy^2}\)`
@@ -173,6 +178,7 @@
           stem: String.raw`
             <p>Perform the indicated operation and give the answer in simplest form:</p>
             <p class="math">\(\sqrt{r^3s^2t}\div\sqrt{rst}\)</p>
+            <p><em>Assume variables are positive.</em></p>
           `,
           choices: [
             String.raw`\(\sqrt{rs}\)`,
@@ -188,6 +194,7 @@
           stem: String.raw`
             <p>Perform the indicated operation and give the answer in simplest form:</p>
             <p class="math">\(\sqrt{14x^3t^2z^5}\div\sqrt{7xtz}\)</p>
+            <p><em>Assume variables are positive.</em></p>
           `,
           choices: [
             String.raw`\(\,xz^2\sqrt{2t}\,\)`,
