@@ -119,10 +119,17 @@
         /* Source: B #10 (figure: 11-4-10.png) */
         {
           stem: String.raw`
+            <p><b>Refer to Figure 4.</b></p>
             <p>A circular cone is placed inside a rectangular pyramid. The pyramid has a 37-by-43 inch base and a height of 55 inches.</p>
             <p>The diameter of the cone is 34 inches, and the vertices (apexes) of both the pyramid and the cone are the same.</p>
             <p>What is the volume <em>outside the cone but inside the pyramid</em>?</p>
             <p><em>Give an exact answer in terms of \(\pi\).</em></p>
+          `,
+          media: String.raw`
+            <figure>
+              <img src="11-4-10.png" alt="B. Exercise #10" />
+              <figcaption>Figure 4</figcaption>
+            </figure>
           `,
           choices: [
             String.raw`\(\dfrac{87505-15895\pi}{3}\)`,
@@ -137,7 +144,7 @@
         /* Source: B #11 (figure: 11-4-11.png) */
         {
           stem: String.raw`
-            <p><b>Refer to Figure 4.</b></p>
+            <p><b>Refer to Figure 5.</b></p>
             <p>A cone sits point-down in a cube. The base of the cone is a circle inscribed in the base of the cube.</p>
             <p>If the cube has a volume of 729 cubic inches, what is the cone’s height, radius, and volume?</p>
             <p><em>Answer format: (height, radius, volume).</em></p>
@@ -145,7 +152,7 @@
           media: String.raw`
             <figure>
               <img src="11-4-11.png" alt="B. Exercise #11" />
-              <figcaption>Figure 4</figcaption>
+              <figcaption>Figure 5</figcaption>
             </figure>
           `,
           choices: [
@@ -161,7 +168,7 @@
         /* Source: B #12 (figure: 11-4-12.png) */
         {
           stem: String.raw`
-            <p><b>Refer to Figure 5.</b></p>
+            <p><b>Refer to Figure 6.</b></p>
             <p>A cylinder encloses a cone. The cylinder and cone have the same base area, and both have height 4 feet.</p>
             <p>If the volume of the cone is \(324\pi\) ft<sup>3</sup>, what are the volume and radius of the cylinder?</p>
             <p><em>Answer format: (volume, radius).</em></p>
@@ -169,7 +176,7 @@
           media: String.raw`
             <figure>
               <img src="11-4-12.png" alt="B. Exercise #12" />
-              <figcaption>Figure 5</figcaption>
+              <figcaption>Figure 6</figcaption>
             </figure>
           `,
           choices: [
@@ -272,14 +279,14 @@
         /* Source: PT #592(a) (figure: 11-4-592a.png) */
         {
           stem: String.raw`
-            <p><b>Refer to Figure 5.</b></p>
+            <p><b>Refer to Figure 7.</b></p>
             <p>The cone is right, with height \(h\) and radius \(\dfrac{h}{2}\).</p>
             <p>Write the volume of the cone as an expression in \(h\).</p>
           `,
           media: String.raw`
             <figure>
               <img src="11-4-592a.png" alt="Portuguese #592(a)" />
-              <figcaption>Figure 5</figcaption>
+              <figcaption>Figure 7</figcaption>
             </figure>
           `,
           choices: [
@@ -295,7 +302,7 @@
         /* Source: PT #592(c) (figure: 11-4-592c.png) */
         {
           stem: String.raw`
-            <p><b>Refer to Figure 6.</b></p>
+            <p><b>Refer to Figure 8.</b></p>
             <p>The figure shows a <em>semi-cone</em> whose generating segment has length \(d\), and whose base has diameter \(d\).</p>
             <p>Write the volume as an expression in \(d\).</p>
             <p><em>Give an exact answer in terms of \(\pi\).</em></p>
@@ -303,7 +310,7 @@
           media: String.raw`
             <figure>
               <img src="11-4-592c.png" alt="Portuguese #592(c)" />
-              <figcaption>Figure 6</figcaption>
+              <figcaption>Figure 8</figcaption>
             </figure>
           `,
           choices: [
@@ -326,7 +333,7 @@
           choices: [
             String.raw`2 cm`,
             String.raw`3 cm`,
-            String.raw`4√3 cm`,
+            String.raw`\(4\sqrt3\) cm`,
             String.raw`4 cm`,
             String.raw`8 cm`,
             String.raw`16 cm`
@@ -375,8 +382,12 @@
   </script>
 
   <link rel="stylesheet" href="/math-homework/assets/core-rich.css" />
-  <script defer src="/math-homework/assets/core-rich.js"></script>
+
+  <!-- MathJax FIRST -->
   <script defer src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+
+  <!-- core-rich LAST -->
+  <script defer src="/math-homework/assets/core-rich.js"></script>
 </head>
 
 <body>
