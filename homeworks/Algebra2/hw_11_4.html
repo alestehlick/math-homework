@@ -184,7 +184,7 @@
             String.raw`\((\sin^2 x+\cos^2 x)^2\)`,
             String.raw`\((\sin^2 x-\cos^2 x)^2\)`,
             String.raw`\((\sin x-\cos x)^2\)`,
-            String.raw`\(\sin^2 x+\cos^2 x\)`,
+            String.raw`\(\sin^2 x-\cos^2 x\)`,  /* FIXED: was another always-true 1 */
             String.raw`\(1-2\sin^2 x\cos^2 x\)`
           ]
         },
@@ -232,8 +232,12 @@
   </script>
 
   <link rel="stylesheet" href="/math-homework/assets/core-rich.css" />
-  <script defer src="/math-homework/assets/core-rich.js"></script>
+
+  <!-- MathJax FIRST -->
   <script defer src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+
+  <!-- core-rich LAST -->
+  <script defer src="/math-homework/assets/core-rich.js"></script>
 </head>
 
 <body>
