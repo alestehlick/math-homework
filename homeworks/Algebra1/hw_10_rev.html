@@ -16,30 +16,10 @@
 
       graphics : String.raw``,
 
-      answerKey : ["B","C","C","B","A","D","E","C","A","B","D","A","C","D","B","F"],
+      answerKey : ["C","B","A","D","E","C","A","B","D","A","C","D","B","F"],
 
       questions : [
-        /* --- Approximate square roots (nearest tenth) --- */
-        { latex: String.raw`\text{Find the approximate value of }\sqrt{127}\text{ to the nearest tenth.}`,
-          choices: [
-            String.raw`11.2`,
-            String.raw`11.3`,  /* correct */
-            String.raw`11.0`,
-            String.raw`12.7`,
-            String.raw`10.9`,
-            String.raw`11.8`
-          ]},
-
-        { latex: String.raw`\text{Find the approximate value of }\sqrt{0.63}\text{ to the nearest tenth.}`,
-          choices: [
-            String.raw`0.6`,
-            String.raw`0.7`,
-            String.raw`0.8`,  /* correct */
-            String.raw`0.9`,
-            String.raw`0.63`,
-            String.raw`0.79`
-          ]},
-
+       
         /* --- Change radical to exponential form --- */
         { latex: String.raw`\text{Change to exponential form: }\sqrt[4]{16x^5y}.`,
           choices: [
@@ -180,11 +160,11 @@
         { latex: String.raw`\text{If the two legs of a right triangle measure }4\text{ and }6,\text{ what is the length of the hypotenuse?}`,
           choices: [
             String.raw`\sqrt{13}`,
-            String.raw`\sqrt{52}`,
+            String.raw`\sqrt{50}`,     /* changed: was \sqrt{52}, which equals 2\sqrt{13} */
             String.raw`10`,
             String.raw`2\sqrt{10}`,
             String.raw`\sqrt{20}`,
-            String.raw`2\sqrt{13}`  /* correct */
+            String.raw`2\sqrt{13}`     /* correct */
           ]}
       ]
     };
