@@ -87,7 +87,7 @@
             String.raw`\sqrt{3}-1`,
             String.raw`\sqrt{3}+1`, /* correct */
             String.raw`\dfrac{2\sqrt{3}+2}{4}`,
-            String.raw`\dfrac{2\sqrt{3}-2}{2}`,
+            String.raw`\dfrac{2\sqrt{3}-2}{4}`,   /* changed: no longer duplicates choice B */
             String.raw`\dfrac{\sqrt{3}}{1}`
           ]},
 
@@ -127,8 +127,8 @@
             String.raw`\dfrac{16(\sqrt{7}-\sqrt{3})}{10}`,
             String.raw`4(\sqrt{7}+\sqrt{3})`,
             String.raw`8(\sqrt{7}-\sqrt{3})`,
-            String.raw`4(\sqrt{7}-\sqrt{3})`,
-            String.raw`4(\sqrt{7}-\sqrt{3})`, /* correct */
+            String.raw`4(\sqrt{7}+\sqrt{3})`,        /* changed: was a duplicate of the correct option */
+            String.raw`4(\sqrt{7}-\sqrt{3})`         /* correct (answer key F) */
           ]},
 
         /* ---------- C. Exercises (1) ---------- */
@@ -156,4 +156,3 @@
   <div id="hw-root">Loading…</div>
 </body>
 </html>
-
