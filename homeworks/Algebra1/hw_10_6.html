@@ -122,6 +122,7 @@
           ]
         },
 
+        /* Q6: FIXED ROOT DISPLAY by using LaTeX choices and removing choiceWrap:false */
         {
           stem: String.raw`
             <p>Refer to the right triangle in the diagram. Find the unknown side:</p>
@@ -129,8 +130,14 @@
           `,
           mediaCaption: TRIANGLE_CAPTION,
           media: TRIANGLE_MEDIA,
-          choiceWrap: false,
-          choices: ["6","8","10","4","√52","√28"]
+          choices: [
+            String.raw`\(\,6\,\)`,
+            String.raw`\(\,8\,\)`,
+            String.raw`\(\,10\,\)`,
+            String.raw`\(\,4\,\)`,
+            String.raw`\(\sqrt{52}\)`,
+            String.raw`\(\sqrt{28}\)`
+          ]
         },
 
         {
@@ -170,13 +177,20 @@
         },
 
         /* ---------- B (3) ---------- */
+        /* FIXED ROOT DISPLAY by using LaTeX choices and removing choiceWrap:false */
         {
           stem: String.raw`
             <p>Find the third side of the right triangle:</p>
             <p class="math">\(a=3,\ b=\sqrt{7}\)</p>
           `,
-          choiceWrap: false,
-          choices: ["4","√7 + 3","√7 − 3","5","√7","16"]
+          choices: [
+            String.raw`\(\,4\,\)`,
+            String.raw`\(\sqrt{7}+3\)`,
+            String.raw`\(\sqrt{7}-3\)`,
+            String.raw`\(\,5\,\)`,
+            String.raw`\(\sqrt{7}\)`,
+            String.raw`\(\,16\,\)`
+          ]
         },
 
         {
@@ -195,13 +209,20 @@
           ]
         },
 
+        /* FIXED ROOT DISPLAY by using LaTeX choices and removing choiceWrap:false */
         {
           stem: String.raw`
             <p>A \(25\)-foot ladder leans against a house.</p>
             <p>The bottom of the ladder is \(24\) feet from the house. How high up the wall does the ladder reach?</p>
           `,
-          choiceWrap: false,
-          choices: ["7","24","25","√1201","15","1"]
+          choices: [
+            String.raw`\(\,7\,\)`,
+            String.raw`\(\,24\,\)`,
+            String.raw`\(\,25\,\)`,
+            String.raw`\(\sqrt{1201}\)`,
+            String.raw`\(\,15\,\)`,
+            String.raw`\(\,1\,\)`
+          ]
         },
 
         /* ---------- C (1) ---------- */
