@@ -16,7 +16,8 @@
 
       graphics : String.raw``,
 
-      answerKey : ["B","A","C","D","B","C","D","B","F","E","C","B"],
+      /* FIXED: Q8=A, Q9=B, Q11=E */
+      answerKey : ["B","A","C","D","B","C","D","A","B","E","E","B"],
 
       questions : [
         /* ---------- A. Exercises (6) ---------- */
@@ -35,7 +36,7 @@
             String.raw`0`, /* correct */
             String.raw`1`,
             String.raw`-1`,
-            String.raw`\sqrt{0}`,
+            String.raw`\sqrt{1}`,   /* FIXED (was \sqrt{0}, which also equals 0) */
             String.raw`\text{no solution}`,
             String.raw`y\text{ can be any real number}`
           ]},
