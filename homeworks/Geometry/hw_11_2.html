@@ -13,7 +13,7 @@
        REQUIRED SOURCE REFERENCES (your provided sets):
        - Type A uses A. Exercises: #1, #3, #8
        - Type B uses B. Exercises: #15, #16, #17, #18
-       - Portuguese set uses: #303(a,b,c), #304, #306, #317, #308, #323
+       - Portuguese set uses: #303a, #304, #306, #317, #308, #323
 
        IMAGE NAMING RULE (STRICT):
        Any figure used is referenced by the ORIGINAL problem number from the set.
@@ -22,8 +22,6 @@
          11-2-3.png
          11-2-8.png
          11-2-303a.png
-         11-2-303b.png
-         11-2-303c.png
        ========================= */
 
     window.homeworkData = {
@@ -33,7 +31,7 @@
 
       graphics : String.raw``,
 
-      /* Correct answers for Q1–Q14 */
+      /* Correct answers for Q1–Q13 */
       answerKey : ["B","C","D","C","D","B","B","B","C","B","B","B","C"],
 
       questions : [
@@ -45,7 +43,7 @@
         /* Source: A. Exercises #1 (figure: 11-2-1.png) */
         {
           stem: String.raw`
-            <p><b>Refer to Figure 1.</b> Find the volume of the prism to the nearest unit.</p>
+            <p><b>Refer to Figure 1.</b> The base of the prism is an equilateral triangle of side 3. Find the volume of the prism to the nearest unit.</p>
           `,
           media: String.raw`
             <figure>
@@ -67,7 +65,7 @@
         /* Source: A. Exercises #3 (figure: 11-2-3.png) */
         {
           stem: String.raw`
-            <p><b>Refer to Figure 2.</b> Find the volume of the prism.</p>
+            <p><b>Refer to Figure 2.</b> The base of the prism is a square of side 4. Find the volume of the prism.</p>
           `,
           media: String.raw`
             <figure>
@@ -89,7 +87,7 @@
         /* Source: A. Exercises #8 (figure: 11-2-8.png) */
         {
           stem: String.raw`
-            <p><b>Refer to Figure 3.</b> Find the volume of the prism to the nearest unit.</p>
+            <p><b>Refer to Figure 3.</b> The base of the prism is an equilateral triangle of side 8. Find the volume of the prism to the nearest unit.</p>
           `,
           media: String.raw`
             <figure>
@@ -199,17 +197,15 @@
             </figure>
           `,
           choices: [
-            String.raw`\(\dfrac{\sqrt3}{4}a^3\)`,
-            String.raw`\(\dfrac{\sqrt3}{2}a^3\)`,
-            String.raw`\(\dfrac{3\sqrt3}{2}a^3\)`,
-            String.raw`\(\dfrac{\sqrt3}{4}a^2\)`,
+            String.raw`\(\dfrac{\sqrt{3}}{4}a^3\)`,
+            String.raw`\(\dfrac{\sqrt{3}}{2}a^3\)`,
+            String.raw`\(\dfrac{3\sqrt{3}}{2}a^3\)`,
+            String.raw`\(\dfrac{\sqrt{3}}{4}a^2\)`,
             String.raw`\(6a^3\)`,
-            String.raw`\(\dfrac{\sqrt3}{2}a^2\)`
+            String.raw`\(\dfrac{\sqrt{3}}{2}a^2\)`
           ]
         },
 
-  
-        
         /* Source: Portuguese #304 */
         {
           stem: String.raw`
@@ -230,16 +226,16 @@
         {
           stem: String.raw`
             <p>A right prism has height 25 cm and a regular hexagon as its base.</p>
-            <p>The apothem of the hexagon is \(4\sqrt3\) cm.</p>
+            <p>The apothem of the hexagon is \(4\sqrt{3}\) cm.</p>
             <p>Find the <strong>volume</strong> of the prism.</p>
           `,
           choices: [
-            String.raw`\(1200\sqrt3\) cm<sup>3</sup>`,
-            String.raw`\(2400\sqrt3\) cm<sup>3</sup>`,
-            String.raw`\(960\sqrt3\) cm<sup>3</sup>`,
+            String.raw`\(1200\sqrt{3}\) cm<sup>3</sup>`,
+            String.raw`\(2400\sqrt{3}\) cm<sup>3</sup>`,
+            String.raw`\(960\sqrt{3}\) cm<sup>3</sup>`,
             String.raw`2400 cm<sup>3</sup>`,
-            String.raw`\(600\sqrt3\) cm<sup>3</sup>`,
-            String.raw`\(4800\sqrt3\) cm<sup>3</sup>`
+            String.raw`\(600\sqrt{3}\) cm<sup>3</sup>`,
+            String.raw`\(4800\sqrt{3}\) cm<sup>3</sup>`
           ]
         },
 
@@ -271,19 +267,19 @@
             <p>Which choice gives the side length \(s\) of the hexagon and the height \(h\) of the prism?</p>
           `,
           choices: [
-            String.raw`\(s=\dfrac{4}{9}\), \(h=\dfrac{3\sqrt3}{2}\) (meters)`,
-            String.raw`\(s=\dfrac{4\sqrt3}{9}\), \(h=\dfrac{3\sqrt3}{2}\) (meters)`,
-            String.raw`\(s=\dfrac{8\sqrt3}{9}\), \(h=\dfrac{3\sqrt3}{4}\) (meters)`,
-            String.raw`\(s=\dfrac{4\sqrt3}{3}\), \(h=\dfrac{\sqrt3}{2}\) (meters)`,
-            String.raw`\(s=\dfrac{2\sqrt3}{9}\), \(h=3\sqrt3\) (meters)`,
-            String.raw`\(s=\dfrac{4\sqrt3}{9}\), \(h=\dfrac{3}{2}\) (meters)`
+            String.raw`\(s=\dfrac{4}{9}\), \(h=\dfrac{3\sqrt{3}}{2}\) (meters)`,
+            String.raw`\(s=\dfrac{4\sqrt{3}}{9}\), \(h=\dfrac{3\sqrt{3}}{2}\) (meters)`,
+            String.raw`\(s=\dfrac{8\sqrt{3}}{9}\), \(h=\dfrac{3\sqrt{3}}{4}\) (meters)`,
+            String.raw`\(s=\dfrac{4\sqrt{3}}{3}\), \(h=\dfrac{\sqrt{3}}{2}\) (meters)`,
+            String.raw`\(s=\dfrac{2\sqrt{3}}{9}\), \(h=3\sqrt{3}\) (meters)`,
+            String.raw`\(s=\dfrac{4\sqrt{3}}{9}\), \(h=\dfrac{3}{2}\) (meters)`
           ]
         },
 
         /* Source: Portuguese #323 (challenging) */
         {
           stem: String.raw`
-            <p>A regular hexagonal prism has base area \(96\sqrt3\) cm<sup>2</sup>.</p>
+            <p>A regular hexagonal prism has base area \(96\sqrt{3}\) cm<sup>2</sup>.</p>
             <p>The height of the prism is equal to the apothem of the base.</p>
             <p>Find the <strong>volume</strong> of the prism.</p>
           `,
@@ -292,7 +288,7 @@
             String.raw`768 cm<sup>3</sup>`,
             String.raw`1152 cm<sup>3</sup>`,
             String.raw`1536 cm<sup>3</sup>`,
-            String.raw`\(1152\sqrt3\) cm<sup>3</sup>`,
+            String.raw`\(1152\sqrt{3}\) cm<sup>3</sup>`,
             String.raw`288 cm<sup>3</sup>`
           ]
         }
