@@ -1,8 +1,11 @@
+/* core-rich.css (FULLY UPDATED) */
 /* =========================
-   core.css — Geometry HW
+   core-rich.css — Geometry HW
    ========================= */
 
 /* Base page -------------------------------------------------------- */
+
+html, body { height: 100%; }
 
 body{
   margin:0;
@@ -10,8 +13,30 @@ body{
   color:#222;
   line-height:1.5;
 
-  /* same background as the index page (file beside each HW html) */
-  background: url("background.png") center / cover no-repeat fixed;
+  /* IMPORTANT: do not use background-attachment: fixed on mobile */
+  background: none;
+  overflow-x: hidden;
+}
+
+/* Fixed background layer (stable on mobile) */
+body::before{
+  content:"";
+  position: fixed;
+  inset: 0;
+  z-index: -2;
+  background: url("background.png") center / cover no-repeat;
+  transform: translateZ(0);
+  will-change: transform;
+}
+
+/* Optional subtle veil (keeps HW readable without killing background) */
+body::after{
+  content:"";
+  position: fixed;
+  inset: 0;
+  z-index: -1;
+  pointer-events: none;
+  background: rgba(255,255,255,0.05);
 }
 
 #hw-root{
@@ -134,11 +159,6 @@ mjx-container[display="true"]{
   text-align:left;
 }
 
-
-
-
-
-
 /* ===== core-rich layout add-on ===== */
 
 .q-card { margin: 1.4rem auto 1.9rem; }
@@ -199,8 +219,6 @@ mjx-container[display="true"]{
 
 /*
   If media is SVG (including TikZJax output), treat it similarly.
-  Note: object-fit doesn't apply reliably to inline SVG, so we box it
-  and limit height with max-height.
 */
 .q-media svg{
   width: 100%;
@@ -267,5 +285,11 @@ mjx-container[display="true"]{
   margin-top: 6px;
 }
 
-
-
+/* Optional: make the HW root plate nicer on small screens */
+@media (max-width: 640px){
+  #hw-root{
+    margin: 1.5rem 12px;
+    padding: 1.4rem 1.2rem;
+    border-radius: 12px;
+  }
+}
