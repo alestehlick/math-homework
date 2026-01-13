@@ -1,3 +1,4 @@
+<!-- index.html (FULLY UPDATED) -->
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -24,15 +25,28 @@
       font-family: ui-serif, "Times New Roman", Times, Georgia, serif;
       line-height: 1.55;
 
-      /* show the background clearly */
-      background: url("background.png") center / cover no-repeat fixed;
+      /* DO NOT use background-attachment: fixed on mobile */
+      background: none;
+      overflow-x: hidden;
     }
 
-    /* subtle readability veil without looking like a “card” */
+    /* Fixed background layer (stable on mobile) */
     body::before{
       content: "";
       position: fixed;
       inset: 0;
+      z-index: -2;
+      background: url("background.png") center / cover no-repeat;
+      transform: translateZ(0);
+      will-change: transform;
+    }
+
+    /* subtle readability veil */
+    body::after{
+      content: "";
+      position: fixed;
+      inset: 0;
+      z-index: -1;
       pointer-events: none;
       background: linear-gradient(
         rgba(255,255,255,0.10),
@@ -41,7 +55,10 @@
     }
 
     .wrap{
-      min-height: 100%;
+      /* avoid mobile address-bar jump/stretch */
+      min-height: 100vh;
+      min-height: 100svh;
+
       display: grid;
       place-items: center;
       padding: 56px 20px;
@@ -108,7 +125,6 @@
       font-variant-numeric: tabular-nums;
     }
 
-
     @media (prefers-reduced-motion: reduce){
       a{ transition: none; }
       a:hover{ transform: none; }
@@ -131,8 +147,6 @@
         <li><a href="hw_11_6.html"><span>11-6</span><span class="tag">Homework</span></a></li>
         <li><a href="hw_11_rev.html"><span>11-rev</span><span class="tag">Homework</span></a></li>
       </ul>
-
-
     </section>
   </main>
 </body>
