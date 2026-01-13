@@ -14,6 +14,7 @@
        - A: items 1–6
        - B: items 7–11
        - C: item 12
+       - Added Extension: items 13–15 (simplify completely)
 
        RENDERING RULES APPLIED:
        - Stems are HTML.
@@ -29,7 +30,8 @@
 
       graphics : String.raw``,
 
-      answerKey : ["C","D","B","E","A","F","E","C","D","A","B","C"],
+      /* Correct answers for Q1–Q15 */
+      answerKey : ["C","D","B","E","A","F","E","C","D","A","B","C","B","D","A"],
 
       questions : [
         /* ---------- A (6) ---------- */
@@ -100,10 +102,10 @@
           `,
           choices: [
             String.raw`\(\,6\sqrt{34}\,\)`,
-            String.raw`\(\sqrt{1224}\)`,
-            String.raw`\(\,36\sqrt{34}\,\)`,
-            String.raw`\(\,6\sqrt{70}\,\)`,
-            String.raw`\(\sqrt{204}\)`,
+            String.raw`\(\sqrt{1224}\)` ,
+            String.raw`\(\,36\sqrt{34}\,\)` ,
+            String.raw`\(\,6\sqrt{70}\,\)` ,
+            String.raw`\(\sqrt{204}\)` ,
             String.raw`\(\,204\,\)`
           ]
         },
@@ -114,11 +116,11 @@
             <p class="math">\(\sqrt{28}\,\sqrt{35}\)</p>
           `,
           choices: [
-            String.raw`\(\sqrt{980}\)`,
-            String.raw`\(\,14\sqrt{70}\,\)`,
-            String.raw`\(\,28\sqrt{5}\,\)`,
-            String.raw`\(\,14\sqrt{35}\,\)`,
-            String.raw`\(\,35\sqrt{28}\,\)`,
+            String.raw`\(\sqrt{980}\)` ,
+            String.raw`\(\,14\sqrt{70}\,\)` ,
+            String.raw`\(\,28\sqrt{5}\,\)` ,
+            String.raw`\(\,14\sqrt{35}\,\)` ,
+            String.raw`\(\,35\sqrt{28}\,\)` ,
             String.raw`\(\,14\sqrt{5}\,\)`
           ]
         },
@@ -130,11 +132,11 @@
             <p class="math">\(\sqrt[5]{32}\,\sqrt[5]{64}\)</p>
           `,
           choices: [
-            String.raw`\(\sqrt[5]{2048}\)`,
-            String.raw`\(\,8\,\)`,
-            String.raw`\(\,4\sqrt[5]{32}\,\)`,
-            String.raw`\(\,2\sqrt[5]{2}\,\)`,
-            String.raw`\(\,4\sqrt[5]{2}\,\)`,
+            String.raw`\(\sqrt[5]{2048}\)` ,
+            String.raw`\(\,8\,\)` ,
+            String.raw`\(\,4\sqrt[5]{32}\,\)` ,
+            String.raw`\(\,2\sqrt[5]{2}\,\)` ,
+            String.raw`\(\,4\sqrt[5]{2}\,\)` ,
             String.raw`\(\sqrt[5]{2}\)`
           ]
         },
@@ -145,11 +147,11 @@
             <p class="math">\(\sqrt[4]{40}\,\sqrt[4]{54}\)</p>
           `,
           choices: [
-            String.raw`\(\sqrt[4]{2160}\)`,
-            String.raw`\(\sqrt[4]{135}\)`,
-            String.raw`\(\,2\sqrt[4]{135}\,\)`,
-            String.raw`\(\,2\sqrt[4]{540}\,\)`,
-            String.raw`\(\,4\sqrt[4]{135}\,\)`,
+            String.raw`\(\sqrt[4]{2160}\)` ,
+            String.raw`\(\sqrt[4]{135}\)` ,
+            String.raw`\(\,2\sqrt[4]{135}\,\)` ,
+            String.raw`\(\,2\sqrt[4]{540}\,\)` ,
+            String.raw`\(\,4\sqrt[4]{135}\,\)` ,
             String.raw`\(\,2\sqrt{135}\,\)`
           ]
         },
@@ -160,11 +162,11 @@
             <p class="math">\(\sqrt{539}\,\sqrt{242}\)</p>
           `,
           choices: [
-            String.raw`\(\sqrt{130438}\)`,
-            String.raw`\(\,49\sqrt{22}\,\)`,
-            String.raw`\(\,77\sqrt{44}\,\)`,
-            String.raw`\(\,77\sqrt{22}\,\)`,
-            String.raw`\(\,7\sqrt{2662}\,\)`,
+            String.raw`\(\sqrt{130438}\)` ,
+            String.raw`\(\,49\sqrt{22}\,\)` ,
+            String.raw`\(\,77\sqrt{44}\,\)` ,
+            String.raw`\(\,77\sqrt{22}\,\)` ,
+            String.raw`\(\,7\sqrt{2662}\,\)` ,
             String.raw`\(\,77\sqrt{2}\,\)`
           ]
         },
@@ -176,11 +178,11 @@
             <p class="math">\(\sqrt{3x^2y^3}\,\sqrt{2xy}\)</p>
           `,
           choices: [
-            String.raw`\(\,xy^2\sqrt{6x}\,\)`,
-            String.raw`\(\sqrt{6x^3y^4}\)`,
-            String.raw`\(\,x^2y^2\sqrt{6}\,\)`,
-            String.raw`\(\,xy\sqrt{6xy}\,\)`,
-            String.raw`\(\,xy^2\sqrt{6}\,\)`,
+            String.raw`\(\,xy^2\sqrt{6x}\,\)` ,
+            String.raw`\(\sqrt{6x^3y^4}\)` ,
+            String.raw`\(\,x^2y^2\sqrt{6}\,\)` ,
+            String.raw`\(\,xy\sqrt{6xy}\,\)` ,
+            String.raw`\(\,xy^2\sqrt{6}\,\)` ,
             String.raw`\(\,xy^3\sqrt{6x}\,\)`
           ]
         },
@@ -191,11 +193,11 @@
             <p class="math">\(\sqrt[3]{81}\,\sqrt[3]{64}\)</p>
           `,
           choices: [
-            String.raw`\(\sqrt[3]{5184}\)`,
-            String.raw`\(\,12\sqrt[3]{3}\,\)`,
-            String.raw`\(\,4\sqrt[3]{3}\,\)`,
-            String.raw`\(\,6\sqrt[3]{12}\,\)`,
-            String.raw`\(\,12\sqrt[3]{192}\,\)`,
+            String.raw`\(\sqrt[3]{5184}\)` ,
+            String.raw`\(\,12\sqrt[3]{3}\,\)` ,
+            String.raw`\(\,4\sqrt[3]{3}\,\)` ,
+            String.raw`\(\,6\sqrt[3]{12}\,\)` ,
+            String.raw`\(\,12\sqrt[3]{192}\,\)` ,
             String.raw`\(\sqrt[3]{1458}\)`
           ]
         },
@@ -207,14 +209,62 @@
             <p class="math">\(\sqrt[4]{80x^3y^2}\,\sqrt[4]{54x^3y^2}\)</p>
           `,
           choices: [
-            String.raw`\(\sqrt[4]{4320x^6y^4}\)`,
-            String.raw`\(\,4xy\sqrt[4]{270x^2}\,\)`,
-            String.raw`\(\,2xy\sqrt[4]{270x^2}\,\)`,
-            String.raw`\(\,2x^2y\sqrt[4]{270}\,\)`,
-            String.raw`\(\,2xy\sqrt[4]{270x}\,\)`,
+            String.raw`\(\sqrt[4]{4320x^6y^4}\)` ,
+            String.raw`\(\,4xy\sqrt[4]{270x^2}\,\)` ,
+            String.raw`\(\,2xy\sqrt[4]{270x^2}\,\)` ,
+            String.raw`\(\,2x^2y\sqrt[4]{270}\,\)` ,
+            String.raw`\(\,2xy\sqrt[4]{270x}\,\)` ,
             String.raw`\(\,2xy\sqrt{270x^2}\,\)`
           ]
+        },
+
+        /* ---------- Extension (3): Simplify completely ---------- */
+
+        {
+          stem: String.raw`
+            <p>Simplify completely:</p>
+            <p class="math">\(\sqrt[3]{3}\cdot\sqrt{3}\cdot\sqrt[6]{3}\)</p>
+          `,
+          choices: [
+            String.raw`\(\sqrt{3}\)` ,
+            String.raw`\(\,3\,\)` ,
+            String.raw`\(\sqrt[6]{3}\)` ,
+            String.raw`\(\sqrt[3]{3}\)` ,
+            String.raw`\(\sqrt[3]{9}\)` ,
+            String.raw`\(\,1\,\)`
+          ]
+        },
+
+        {
+          stem: String.raw`
+            <p>Simplify completely:</p>
+            <p class="math">\(\sqrt[12]{2}\cdot\sqrt[6]{6}\cdot\sqrt[80]{8}\)</p>
+          `,
+          choices: [
+            String.raw`\(\sqrt[80]{2^{23}}\sqrt[6]{6}\)` ,
+            String.raw`\(\sqrt[80]{2^{69}}\sqrt[6]{3}\)` ,
+            String.raw`\(\sqrt[80]{2^{23}}\sqrt[6]{2}\)` ,
+            String.raw`\(\sqrt[80]{2^{23}}\sqrt[6]{3}\)` ,
+            String.raw`\(\sqrt[80]{2^{23}}\sqrt[3]{3}\)` ,
+            String.raw`\(\sqrt[12]{2}\sqrt[80]{2^3}\sqrt[6]{3}\)`
+          ]
+        },
+
+        {
+          stem: String.raw`
+            <p>Simplify completely:</p>
+            <p class="math">\(\sqrt[3]{\,2\sqrt{2}\,}\)</p>
+          `,
+          choices: [
+            String.raw`\(\sqrt{2}\)` ,
+            String.raw`\(\sqrt[3]{2}\cdot\sqrt{2}\)` ,
+            String.raw`\(\,2^{2/3}\,\)` ,
+            String.raw`\(\,2\,\)` ,
+            String.raw`\(\sqrt[3]{4}\)` ,
+            String.raw`\(\dfrac{1}{\sqrt{2}}\)`
+          ]
         }
+
       ]
     };
   </script>
