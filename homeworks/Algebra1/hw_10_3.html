@@ -31,7 +31,7 @@
       graphics : String.raw``,
 
       /* Correct answers for Q1–Q15 */
-      answerKey : ["C","D","B","E","A","F","E","C","D","A","B","C","B","D","A"],
+      answerKey : ["C","D","B","E","A","F","E","C","D","A","B","C","B","A","A"],
 
       questions : [
         /* ---------- A (6) ---------- */
@@ -235,20 +235,21 @@
           ]
         },
 
-        {
-          stem: String.raw`
-            <p>Simplify completely:</p>
-            <p class="math">\(\sqrt[12]{2}\cdot\sqrt[6]{6}\cdot\sqrt[80]{8}\)</p>
-          `,
-          choices: [
-            String.raw`\(\sqrt[80]{2^{23}}\sqrt[6]{6}\)` ,
-            String.raw`\(\sqrt[80]{2^{69}}\sqrt[6]{3}\)` ,
-            String.raw`\(\sqrt[80]{2^{23}}\sqrt[6]{2}\)` ,
-            String.raw`\(\sqrt[80]{2^{23}}\sqrt[6]{3}\)` ,
-            String.raw`\(\sqrt[80]{2^{23}}\sqrt[3]{3}\)` ,
-            String.raw`\(\sqrt[12]{2}\sqrt[80]{2^3}\sqrt[6]{3}\)`
-          ]
-        },
+       {
+    stem: String.raw`
+      <p>Simplify completely. Give your answer as a <em>single radical</em>:</p>
+      <p class="math">\(\sqrt[12]{2}\cdot\sqrt[6]{6}\cdot\sqrt[8]{8}\)</p>
+    `,
+    choices: [
+      String.raw`\(\sqrt[24]{2^{15}\cdot 3^{4}}\)`,
+      String.raw`\(\sqrt[24]{2^{23}\cdot 3^{4}}\)`,
+      String.raw`\(\sqrt[24]{2^{15}\cdot 3^{2}}\)`,
+      String.raw`\(\sqrt[24]{2^{5}\cdot 3^{4}}\)`,
+      String.raw`\(\sqrt[24]{2^{15}\cdot 3}\)`,
+      String.raw`\(\sqrt[12]{2}\cdot\sqrt[6]{6}\cdot\sqrt[8]{8}\)`
+    ]
+  },
+
 
         {
           stem: String.raw`
