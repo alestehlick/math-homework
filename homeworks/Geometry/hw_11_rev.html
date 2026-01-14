@@ -12,14 +12,13 @@
    REQUIRED SOURCE REFERENCES (your provided sets):
    - Diagram set (“Find the volume of each geometric solid”): #1, #2, #3, #4, #5, #6, #7, #8, #9
    - Text set (“In the following exercises H=height, V=volume, ...”): #11, #12, #13, #14, #16, #17, #20, #22
-   - Torus set: #23
 
    IMAGE NAMING RULE:
    Any figure used is referenced by the ORIGINAL problem number from the source set.
    PNG files live in the SAME folder as this HTML.
    Required figure files for this homework:
    - 11-rev-1.png, 11-rev-2.png, 11-rev-3.png, 11-rev-4.png, 11-rev-5.png,
-     11-rev-6.png, 11-rev-7.png, 11-rev-8.png, 11-rev-9.png, 11-rev-23.png
+     11-rev-6.png, 11-rev-7.png, 11-rev-8.png, 11-rev-9.png
    ========================= */
     window.homeworkData = {
       classId : "Geometry",
@@ -28,13 +27,13 @@
 
       graphics : String.raw``,
 
-      answerKey : ["B","C","C","C","C","B","C","B","C","B","A","B","B","A","B","B","D"],
+      answerKey : ["B","C","C","C","C","B","C","B","C","B","A","B","B","A","B","B"],
 
       questions : [
 
         {
           stem: String.raw`
-            <p><strong>Refer to Figure 1.</strong> Find the volume of the cone.</p>
+            <p><strong>Refer to Figure 1.</strong> The right circular cone has height 16 and radius 7. Find the volume of the cone.</p>
           `,
           media: String.raw`
             <figure>
@@ -99,7 +98,7 @@
 
         {
           stem: String.raw`
-            <p><strong>Refer to Figure 4.</strong> Find the volume of the (tilted) cylinder.</p>
+            <p><strong>Refer to Figure 4.</strong> The oblique circular cylinder displayed has height 6 and diameter 10. Find the volume of the (tilted) cylinder.</p>
             <p><em>Reminder:</em> A cylinder’s volume depends on the base area and the perpendicular height.</p>
           `,
           media: String.raw`
@@ -121,7 +120,7 @@
 
         {
           stem: String.raw`
-            <p><strong>Refer to Figure 5.</strong> Find the volume of the sphere.</p>
+            <p><strong>Refer to Figure 5.</strong> Find the volume of the sphere with radius 18 displayed.</p>
           `,
           media: String.raw`
             <figure>
@@ -131,11 +130,11 @@
           `,
           choiceWrap: false,
           choices: [
-            String.raw`\(243\pi\) cubic units`,
-            String.raw`\(324\pi\) cubic units`,
-            String.raw`\(972\pi\) cubic units`,
             String.raw`\(2916\pi\) cubic units`,
-            String.raw`\(648\pi\) cubic units`,
+            String.raw`\(5832\pi\) cubic units`,
+            String.raw`\(7776\pi\) cubic units`,
+            String.raw`\(3888\pi\) cubic units`,
+            String.raw`\(15552\pi\) cubic units`,
             String.raw`\(1296\pi\) cubic units`
           ]
         },
@@ -164,7 +163,7 @@
 
         {
           stem: String.raw`
-            <p><strong>Refer to Figure 7.</strong> Find the volume of the cube.</p>
+            <p><strong>Refer to Figure 7.</strong> Find the volume of the cube of side 9 displayed.</p>
           `,
           media: String.raw`
             <figure>
@@ -190,7 +189,7 @@
           `,
           media: String.raw`
             <figure>
-              <img src="11-rev-8.png" alt="Exercise #8" />
+              <img src="11-rev-9.png" alt="Exercise #8" />
               <figcaption>Figure 8 (Exercise #8)</figcaption>
             </figure>
           `,
@@ -212,7 +211,7 @@
           `,
           media: String.raw`
             <figure>
-              <img src="11-rev-9.png" alt="Exercise #9" />
+              <img src="11-rev-8.png" alt="Exercise #9" />
               <figcaption>Figure 9 (Exercise #9)</figcaption>
             </figure>
           `,
@@ -338,22 +337,6 @@
             String.raw`\(36\pi\) in<sup>3</sup>`,
             String.raw`\(576\pi\) in<sup>3</sup>`
           ]
-        },
-
-
-        {
-          stem: String.raw`
-            <p>Which statement best describes <strong>Cavalieri’s principle</strong>?</p>
-          `,
-          choiceWrap: false,
-          choices: [
-            String.raw`Two solids have the same volume if they have the same surface area.`,
-            String.raw`Two solids have the same volume if they have the same base area.`,
-            String.raw`A solid’s volume is always equal to \(\text{(base area)}\times \text{(slant height)}\).`,
-            String.raw`If two solids have the same height and the same cross-sectional area at every height, then they have the same volume.`,
-            String.raw`A cone always has half the volume of a cylinder with the same base and height.`,
-            String.raw`A sphere’s volume is always equal to \(\pi r^2h\).`
-          ]
         }
 
       ]
@@ -361,8 +344,12 @@
   </script>
 
   <link rel="stylesheet" href="/math-homework/assets/core-rich.css" />
-  <script defer src="/math-homework/assets/core-rich.js"></script>
+
+  <!-- MathJax FIRST -->
   <script defer src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+
+  <!-- core-rich LAST -->
+  <script defer src="/math-homework/assets/core-rich.js"></script>
 </head>
 
 <body>
