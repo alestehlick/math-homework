@@ -8,8 +8,18 @@
   <script>
     /* =========================
        Homework 11-1 — Solve
-       (A: 4, B: 6, C: 2)
+
+       SOURCE REFERENCES:
+       - Recast from the provided old-form Homework 11-1 content.
+       - A: items 1–4
+       - B: items 5–10
+       - C: items 11–12
+
+       NOTE (MathJax + JS backslashes):
+       All stems/choices that include LaTeX are written as String.raw`...`
+       so sequences like \tfrac, \sqrt, etc. are not corrupted by JS escapes.
        ========================= */
+
     window.homeworkData = {
       classId : "Algebra1",
       id      : "Homework 11-1",
@@ -20,134 +30,194 @@
       answerKey : ["A","D","C","B","B","D","C","B","C","C","D","C"],
 
       questions : [
-        { latex: String.raw`\text{Solve.}\; 5x=0`,
+        /* ---------- A (4) ---------- */
+        {
+          stem: String.raw`
+            <p>Solve:</p>
+            <p class="math">\(5x=0\)</p>
+          `,
           choices: [
-            String.raw`x=0`,
-            String.raw`x=5`,
-            String.raw`x=-5`,
-            String.raw`x=\dfrac{1}{5}`,
-            String.raw`\text{no solution}`,
-            String.raw`\text{all real numbers}`
-          ]},
+            String.raw`\(x=0\)`,
+            String.raw`\(x=5\)`,
+            String.raw`\(x=-5\)`,
+            String.raw`\(x=\dfrac{1}{5}\)`,
+            String.raw`\(\text{no solution}\)`,
+            String.raw`\(\text{all real numbers}\)`
+          ]
+        },
 
-        { latex: String.raw`\text{Solve.}\; (x-2)(x+4)=0`,
+        {
+          stem: String.raw`
+            <p>Solve:</p>
+            <p class="math">\((x-2)(x+4)=0\)</p>
+          `,
           choices: [
-            String.raw`x=-2\text{ or }x=4`,
-            String.raw`x=2\text{ only}`,
-            String.raw`x=-4\text{ only}`,
-            String.raw`x=2\text{ or }x=-4`,
-            String.raw`x=-2\text{ or }x=-4`,
-            String.raw`\text{no solution}`
-          ]},
+            String.raw`\(x=-2\text{ or }x=4\)`,
+            String.raw`\(x=2\text{ only}\)`,
+            String.raw`\(x=-4\text{ only}\)`,
+            String.raw`\(x=2\text{ or }x=-4\)`,
+            String.raw`\(x=-2\text{ or }x=-4\)`,
+            String.raw`\(\text{no solution}\)`
+          ]
+        },
 
-        { latex: String.raw`\text{Solve.}\; (y+5)(y+2)=0`,
+        {
+          stem: String.raw`
+            <p>Solve:</p>
+            <p class="math">\((y+5)(y+2)=0\)</p>
+          `,
           choices: [
-            String.raw`y=5\text{ or }y=2`,
-            String.raw`y=-5\text{ or }y=2`,
-            String.raw`y=-5\text{ or }y=-2`,
-            String.raw`y=5\text{ or }y=-2`,
-            String.raw`y=-3\text{ or }y=-7`,
-            String.raw`\text{no solution}`
-          ]},
+            String.raw`\(y=5\text{ or }y=2\)`,
+            String.raw`\(y=-5\text{ or }y=2\)`,
+            String.raw`\(y=-5\text{ or }y=-2\)`,
+            String.raw`\(y=5\text{ or }y=-2\)`,
+            String.raw`\(y=-3\text{ or }y=-7\)`,
+            String.raw`\(\text{no solution}\)`
+          ]
+        },
 
-        { latex: String.raw`\text{Solve.}\; 2x(x+7)=0`,
+        {
+          stem: String.raw`
+            <p>Solve:</p>
+            <p class="math">\(2x(x+7)=0\)</p>
+          `,
           choices: [
-            String.raw`x=7\text{ or }x=0`,
-            String.raw`x=-7\text{ or }x=0`,
-            String.raw`x=-7\text{ only}`,
-            String.raw`x=0\text{ only}`,
-            String.raw`x=7\text{ only}`,
-            String.raw`\text{no solution}`
-          ]},
+            String.raw`\(x=7\text{ or }x=0\)`,
+            String.raw`\(x=-7\text{ or }x=0\)`,
+            String.raw`\(x=-7\text{ only}\)`,
+            String.raw`\(x=0\text{ only}\)`,
+            String.raw`\(x=7\text{ only}\)`,
+            String.raw`\(\text{no solution}\)`
+          ]
+        },
 
-        { latex: String.raw`\text{Solve.}\; -5x(x-1)(3x+2)=0`,
+        /* ---------- B (6) ---------- */
+        {
+          stem: String.raw`
+            <p>Solve:</p>
+            <p class="math">\(-5x(x-1)(3x+2)=0\)</p>
+          `,
           choices: [
-            String.raw`x=0,\;1,\;\dfrac{2}{3}`,
-            String.raw`x=0,\;1,\;-\dfrac{2}{3}`,
-            String.raw`x=0,\;-1,\;-\dfrac{2}{3}`,
-            String.raw`x=0,\;1,\;-\dfrac{3}{2}`,
-            String.raw`x=1,\;-\dfrac{2}{3}`,
-            String.raw`x=0,\;-\dfrac{2}{3}`
-          ]},
+            String.raw`\(x=0,\;1,\;\dfrac{2}{3}\)`,
+            String.raw`\(x=0,\;1,\;-\dfrac{2}{3}\)`,
+            String.raw`\(x=0,\;-1,\;-\dfrac{2}{3}\)`,
+            String.raw`\(x=0,\;1,\;-\dfrac{3}{2}\)`,
+            String.raw`\(x=1,\;-\dfrac{2}{3}\)`,
+            String.raw`\(x=0,\;-\dfrac{2}{3}\)`
+          ]
+        },
 
-        { latex: String.raw`\text{Solve.}\; (4x+1)(3x+2)=0`,
+        {
+          stem: String.raw`
+            <p>Solve:</p>
+            <p class="math">\((4x+1)(3x+2)=0\)</p>
+          `,
           choices: [
-            String.raw`x=\dfrac{1}{4}\text{ or }x=\dfrac{2}{3}`,
-            String.raw`x=-\dfrac{1}{4}\text{ only}`,
-            String.raw`x=-\dfrac{2}{3}\text{ only}`,
-            String.raw`x=-\dfrac{1}{4}\text{ or }x=-\dfrac{2}{3}`,
-            String.raw`x=\dfrac{1}{4}\text{ or }x=-\dfrac{2}{3}`,
-            String.raw`\text{no solution}`
-          ]},
+            String.raw`\(x=\dfrac{1}{4}\text{ or }x=\dfrac{2}{3}\)`,
+            String.raw`\(x=-\dfrac{1}{4}\text{ only}\)`,
+            String.raw`\(x=-\dfrac{2}{3}\text{ only}\)`,
+            String.raw`\(x=-\dfrac{1}{4}\text{ or }x=-\dfrac{2}{3}\)`,
+            String.raw`\(x=\dfrac{1}{4}\text{ or }x=-\dfrac{2}{3}\)`,
+            String.raw`\(\text{no solution}\)`
+          ]
+        },
 
-        { latex: String.raw`\text{Solve.}\; (2x-11)(4x-5)=0`,
+        {
+          stem: String.raw`
+            <p>Solve:</p>
+            <p class="math">\((2x-11)(4x-5)=0\)</p>
+          `,
           choices: [
-            String.raw`x=\dfrac{11}{2}\text{ or }x=-\dfrac{5}{4}`,
-            String.raw`x=-\dfrac{11}{2}\text{ or }x=\dfrac{5}{4}`,
-            String.raw`x=\dfrac{11}{2}\text{ or }x=\dfrac{5}{4}`,
-            String.raw`x=\dfrac{11}{4}\text{ or }x=\dfrac{5}{2}`,
-            String.raw`x=\dfrac{11}{2}\text{ only}`,
-            String.raw`x=\dfrac{5}{4}\text{ only}`
-          ]},
+            String.raw`\(x=\dfrac{11}{2}\text{ or }x=-\dfrac{5}{4}\)`,
+            String.raw`\(x=-\dfrac{11}{2}\text{ or }x=\dfrac{5}{4}\)`,
+            String.raw`\(x=\dfrac{11}{2}\text{ or }x=\dfrac{5}{4}\)`,
+            String.raw`\(x=\dfrac{11}{4}\text{ or }x=\dfrac{5}{2}\)`,
+            String.raw`\(x=\dfrac{11}{2}\text{ only}\)`,
+            String.raw`\(x=\dfrac{5}{4}\text{ only}\)`
+          ]
+        },
 
-        { latex: String.raw`\text{Solve.}\; x^2+5x-36=0`,
+        {
+          stem: String.raw`
+            <p>Solve:</p>
+            <p class="math">\(x^2+5x-36=0\)</p>
+          `,
           choices: [
-            String.raw`x=9\text{ or }x=-4`,
-            String.raw`x=4\text{ or }x=-9`,
-            /* CHANGED: removed duplicate of choice A */
-            String.raw`x=4\text{ only}`,
-            String.raw`x=4\text{ or }x=9`,
-            String.raw`x=-4\text{ or }x=-9`,
-            String.raw`\text{no solution}`
-          ]},
+            String.raw`\(x=9\text{ or }x=-4\)`,
+            String.raw`\(x=4\text{ or }x=-9\)`,
+            String.raw`\(x=4\text{ only}\)`,
+            String.raw`\(x=4\text{ or }x=9\)`,
+            String.raw`\(x=-4\text{ or }x=-9\)`,
+            String.raw`\(\text{no solution}\)`
+          ]
+        },
 
-        { latex: String.raw`\text{Solve.}\; x^2-x-56=0`,
+        {
+          stem: String.raw`
+            <p>Solve:</p>
+            <p class="math">\(x^2-x-56=0\)</p>
+          `,
           choices: [
-            String.raw`x=8\text{ or }x=7`,
-            String.raw`x=-8\text{ or }x=7`,
-            String.raw`x=8\text{ or }x=-7`,
-            String.raw`x=-8\text{ or }x=-7`,
-            String.raw`x=7\text{ or }x=-8`,
-            String.raw`\text{no solution}`
-          ]},
+            String.raw`\(x=8\text{ or }x=7\)`,
+            String.raw`\(x=-8\text{ or }x=7\)`,
+            String.raw`\(x=8\text{ or }x=-7\)`,
+            String.raw`\(x=-8\text{ or }x=-7\)`,
+            String.raw`\(x=7\text{ or }x=-8\)`,
+            String.raw`\(\text{no solution}\)`
+          ]
+        },
 
-        { latex: String.raw`\text{Solve.}\; x^2-x=0`,
+        {
+          stem: String.raw`
+            <p>Solve:</p>
+            <p class="math">\(x^2-x=0\)</p>
+          `,
           choices: [
-            String.raw`x=0\text{ only}`,
-            String.raw`x=1\text{ only}`,
-            String.raw`x=0\text{ or }x=1`,
-            String.raw`x=-1\text{ or }x=0`,
-            String.raw`x=-1\text{ or }x=1`,
-            String.raw`\text{all real numbers}`
-          ]},
+            String.raw`\(x=0\text{ only}\)`,
+            String.raw`\(x=1\text{ only}\)`,
+            String.raw`\(x=0\text{ or }x=1\)`,
+            String.raw`\(x=-1\text{ or }x=0\)`,
+            String.raw`\(x=-1\text{ or }x=1\)`,
+            String.raw`\(\text{all real numbers}\)`
+          ]
+        },
 
-        { latex: String.raw`\text{Solve.}\; 14x^2-29x+12=0`,
+        /* ---------- C (2) ---------- */
+        {
+          stem: String.raw`
+            <p>Solve:</p>
+            <p class="math">\(14x^2-29x+12=0\)</p>
+          `,
           choices: [
-            String.raw`x=-\dfrac{3}{2}\text{ or }x=-\dfrac{4}{7}`,
-            String.raw`x=\dfrac{3}{2}\text{ only}`,
-            String.raw`x=\dfrac{4}{7}\text{ only}`,
-            String.raw`x=\dfrac{3}{2}\text{ or }x=\dfrac{4}{7}`,
-            String.raw`x=\dfrac{2}{3}\text{ or }x=\dfrac{7}{4}`,
-            String.raw`\text{no solution}`
-          ]},
+            String.raw`\(x=-\dfrac{3}{2}\text{ or }x=-\dfrac{4}{7}\)`,
+            String.raw`\(x=\dfrac{3}{2}\text{ only}\)`,
+            String.raw`\(x=\dfrac{4}{7}\text{ only}\)`,
+            String.raw`\(x=\dfrac{3}{2}\text{ or }x=\dfrac{4}{7}\)`,
+            String.raw`\(x=\dfrac{2}{3}\text{ or }x=\dfrac{7}{4}\)`,
+            String.raw`\(\text{no solution}\)`
+          ]
+        },
 
-        { latex: String.raw`\text{Solve.}\; 15x^3-17x^2-42x=0`,
+        {
+          stem: String.raw`
+            <p>Solve:</p>
+            <p class="math">\(15x^3-17x^2-42x=0\)</p>
+          `,
           choices: [
-            String.raw`x=0,\;\dfrac{7}{3},\;\dfrac{6}{5}`,
-            String.raw`x=0,\;-\dfrac{7}{3},\;-\dfrac{6}{5}`,
-            String.raw`x=0,\;\dfrac{7}{3},\;-\dfrac{6}{5}`,
-            String.raw`x=0,\;\dfrac{3}{7},\;-\dfrac{5}{6}`,
-            String.raw`x=0,\;\dfrac{7}{3}\text{ only}`,
-            String.raw`x=\dfrac{7}{3},\;-\dfrac{6}{5}`
-          ]},
+            String.raw`\(x=0,\;\dfrac{7}{3},\;\dfrac{6}{5}\)`,
+            String.raw`\(x=0,\;-\dfrac{7}{3},\;-\dfrac{6}{5}\)`,
+            String.raw`\(x=0,\;\dfrac{7}{3},\;-\dfrac{6}{5}\)`,
+            String.raw`\(x=0,\;\dfrac{3}{7},\;-\dfrac{5}{6}\)`,
+            String.raw`\(x=0,\;\dfrac{7}{3}\text{ only}\)`,
+            String.raw`\(x=\dfrac{7}{3},\;-\dfrac{6}{5}\)`
+          ]
+        }
       ]
     };
   </script>
 
-  <link rel="stylesheet" href="/math-homework/assets/core.css" />
-  <link rel="stylesheet" href="https://tikzjax.com/v1/fonts.css" />
-  <script defer src="/math-homework/assets/core.js"></script>
-  <script defer src="https://tikzjax.com/v1/tikzjax.js"></script>
+  <link rel="stylesheet" href="/math-homework/assets/core-rich.css" />
+  <script defer src="/math-homework/assets/core-rich.js"></script>
   <script defer src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
 </head>
 
