@@ -8,11 +8,20 @@
   <script>
     /* =========================
        Homework 11-2 — Quadratic Equations
-       (A: 4, B: 6, C: 2)
+
+       SOURCE REFERENCES:
+       - Recast from the provided old-form Homework 11-2 HTML.
+       - A: items 1–4
+       - B: items 5–10
+       - C: items 11–12
 
        NOTE (MathJax + JS backslashes):
        All stems/choices that include LaTeX are written as String.raw`...`
        so sequences like \tfrac, \sqrt, etc. are not corrupted by JS escapes.
+
+       DIAGRAM:
+       - Replaced TikZ diagram D1 with an image.
+       - Required image file (same folder as this HTML): 11-2-d1.png
        ========================= */
 
     window.homeworkData = {
@@ -20,26 +29,7 @@
       id      : "Homework 11-2",
       title   : "Homework 11-2 — Quadratic Equations",
 
-      graphics : String.raw`
-\begin{tikzpicture}[scale=0.55]
-  \tikzset{box/.style={thick}}
-  \begin{scope}
-    \draw[box] (0,0) rectangle (13,11);
-    \draw[box] (1,1) rectangle (12,10);
-
-    \node[font=\small] at (6.5,-0.8) {52};
-    \node[font=\small,rotate=90] at (13.8,5.5) {44};
-
-    \draw[<->,thick] (0.1,9.5) -- (0.9,9.5);
-    \node[font=\small] at (0.5,10) {$x$};
-
-    \draw[<->,thick] (10.6,10.1) -- (10.6,10.9);
-    \node[font=\small] at (11,10.5) {$x$};
-
-    \node[anchor=north west,font=\small] at (-0.2,11.8) {D1};
-  \end{scope}
-\end{tikzpicture}
-`,
+      graphics : String.raw``,
 
       answerKey : ["A","C","D","B","B","D","C","B","C","B","B","C"],
 
@@ -169,7 +159,7 @@
         {
           stem: String.raw`
             <p>Set up a quadratic equation and solve:</p>
-            <p>The difference of two numbers is 6 and the difference of their squares is 60. Find the two numbers.</p>
+            <p>The difference of two numbers is 6, and the difference of their squares is 60. Find the two numbers.</p>
           `,
           choices: [
             String.raw`4 and 10`,
@@ -214,8 +204,14 @@
 
         {
           stem: String.raw`
-            <p><b>Refer to D1.</b> A sidewalk of width \(x\) is built inside a 52 ft by 44 ft rectangle.</p>
-            <p>If the remaining flower-garden area is \(1748\text{ ft}^2\), what is \(x\)?</p>
+            <p><b>Refer to D1 (Figure 1).</b> A sidewalk of width \(x\) is built inside a 52 ft by 44 ft rectangle.</p>
+            <p>If the remaining flower garden area is 1748 ft<sup>2</sup>, what is \(x\)?</p>
+          `,
+          media: String.raw`
+            <figure>
+              <img src="11-2-d1.png" alt="Diagram D1" />
+              <figcaption>Figure 1 (D1)</figcaption>
+            </figure>
           `,
           choices: [
             String.raw`\(x=1\)`,
@@ -233,10 +229,6 @@
   <link rel="stylesheet" href="/math-homework/assets/core-rich.css" />
   <script defer src="/math-homework/assets/core-rich.js"></script>
   <script defer src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
-
-  <!-- Include TikZJax only because this homework uses a TikZ diagram in `graphics`. -->
-  <link rel="stylesheet" href="https://tikzjax.com/v1/fonts.css" />
-  <script defer src="https://tikzjax.com/v1/tikzjax.js"></script>
 </head>
 
 <body>
