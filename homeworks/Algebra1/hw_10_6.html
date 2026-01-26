@@ -8,29 +8,24 @@
   <script>
     /* =========================
        Homework 10-6 — The Pythagorean Theorem
-       Updated for NEW core-rich.js:
-       - TikZ must appear in q.media (raw tikzpicture), not homeworkData.graphics.
-       - TikZJax must be loaded.
+       Updated:
+       - Triangle diagram uses a PNG (no TikZ on the homework page).
+       - MathJax loads before core-rich.js.
        ========================= */
 
     const TRIANGLE_CAPTION = "Right triangle diagram";
-    const TRIANGLE_MEDIA = String.raw`\begin{tikzpicture}[scale=0.9]
-  \draw (0,0) -- (5,0) -- (5,3) -- cycle;
-  \draw (5,0) rectangle (4.6,0.4);
-  \node[below] at (2.5,0) {$a$};
-  \node[right] at (5,1.5) {$b$};
-  \node[above left] at (2.7,1.7) {$c$};
-  \node[below left] at (0,0) {$B$};
-  \node[below right] at (5,0) {$C$};
-  \node[above right] at (5,3) {$A$};
-\end{tikzpicture}`;
+    /* Put this PNG in the SAME folder as this HTML */
+    const TRIANGLE_MEDIA = String.raw`
+      <figure>
+        <img src="10-6-triangle.png" alt="Right triangle labeled a, b, c with vertices A, B, C" />
+      </figure>
+    `;
 
     window.homeworkData = {
       classId : "Algebra1",
       id      : "Homework 10-6",
       title   : "Homework 10-6 — The Pythagorean Theorem",
 
-      /* Not used by the new core-rich.js */
       graphics : String.raw``,
 
       answerKey : ["B","B","B","C","B","B","A","C","A","B","A","A"],
@@ -122,7 +117,6 @@
           ]
         },
 
-        /* Q6: FIXED ROOT DISPLAY by using LaTeX choices and removing choiceWrap:false */
         {
           stem: String.raw`
             <p>Refer to the right triangle in the diagram. Find the unknown side:</p>
@@ -177,7 +171,6 @@
         },
 
         /* ---------- B (3) ---------- */
-        /* FIXED ROOT DISPLAY by using LaTeX choices and removing choiceWrap:false */
         {
           stem: String.raw`
             <p>Find the third side of the right triangle:</p>
@@ -209,7 +202,6 @@
           ]
         },
 
-        /* FIXED ROOT DISPLAY by using LaTeX choices and removing choiceWrap:false */
         {
           stem: String.raw`
             <p>A \(25\)-foot ladder leans against a house.</p>
@@ -246,14 +238,10 @@
 
   <link rel="stylesheet" href="/math-homework/assets/core-rich.css" />
 
-  <!-- TikZJax (must be available when core-rich.js calls tikzjax.process()) -->
-  <link rel="stylesheet" href="https://tikzjax.com/v1/fonts.css" />
-  <script defer src="https://tikzjax.com/v1/tikzjax.js"></script>
-
-  <!-- MathJax -->
+  <!-- MathJax FIRST -->
   <script defer src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
 
-  <!-- Core renderer LAST (so it can immediately typeset/process) -->
+  <!-- core-rich LAST -->
   <script defer src="/math-homework/assets/core-rich.js"></script>
 </head>
 
