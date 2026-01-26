@@ -17,10 +17,42 @@
       graphics : String.raw``,
 
       /* FIXED: Q8=A, Q9=B, Q11=E */
-      answerKey : ["B","A","C","D","B","C","D","A","B","E","E","B"],
+      answerKey : ["A","A","B","A","C","D","B","C","D","A","B","E","E","B"],
 
       questions : [
         /* ---------- A. Exercises (6) ---------- */
+
+      /* Q1:  √3·√x = 1  ⇒  √x = 1/√3  ⇒  x = 1/3 */
+      {
+        latex: String.raw`\text{Solve the equation: }\sqrt{3}\,\sqrt{x}=1.`,
+        choices: [
+          String.raw`x=\dfrac{1}{3}`,          /* correct */
+          String.raw`x=3`,
+          String.raw`x=\dfrac{1}{9}`,
+          String.raw`x=\sqrt{3}`,
+          String.raw`x=0`,
+          String.raw`\text{no solution}`
+        ]
+      },
+      
+      /* Q2:  √5·√x + x = 1.  Let t=√x≥0:  t^2+√5 t -1=0
+              t=(3-√5)/2  ⇒  x=t^2=(7-3√5)/2 */
+      {
+        latex: String.raw`\text{Solve the equation: }\sqrt{5}\,\sqrt{x}+x=1.`,
+        choices: [
+          String.raw`x=\dfrac{7-3\sqrt5}{2}`,  /* correct */
+          String.raw`x=\dfrac{7+3\sqrt5}{2}`,
+          String.raw`x=\dfrac{3-\sqrt5}{2}`,
+          String.raw`x=7-3\sqrt5`,
+          String.raw`x=\dfrac{1}{5}`,
+          String.raw`\text{no solution}`
+        ]
+      },
+
+
+        
+
+        
         { latex: String.raw`\text{Solve each radical equation and check your solution: }\sqrt{x}=7.`,
           choices: [
             String.raw`7`,
