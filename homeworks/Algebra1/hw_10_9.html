@@ -8,7 +8,18 @@
   <script>
     /* =========================
        Homework 10-9 — Conjugates and Rationalizing
+
+       SOURCE REFERENCES:
+       - Recast from the provided old-form Homework 10-9 HTML.
+       - A: items 1–6
+       - B: items 7–11
+       - C: item 12
+
+       NOTE (MathJax + JS backslashes):
+       All stems/choices that include LaTeX are written as String.raw`...`
+       so sequences like \sqrt, \dfrac, etc. are not corrupted by JS escapes.
        ========================= */
+
     window.homeworkData = {
       classId : "Algebra1",
       id      : "Homework 10-9",
@@ -19,136 +30,197 @@
       answerKey : ["B","D","C","A","E","B","C","D","B","A","F","C"],
 
       questions : [
-        /* ---------- A. Exercises (6) ---------- */
-        { latex: String.raw`\text{Give the conjugate of: }-3+\sqrt{5}.`,
-          choices: [
-            String.raw`-3+\sqrt{5}`,
-            String.raw`-3-\sqrt{5}`, /* correct */
-            String.raw`3-\sqrt{5}`,
-            String.raw`3+\sqrt{5}`,
-            String.raw`\sqrt{5}+3`,
-            String.raw`\sqrt{5}-3`
-          ]},
+        /* ---------- A (6) ---------- */
 
-        { latex: String.raw`\text{Give the conjugate of: }\sqrt{7}-\sqrt{11}.`,
+        {
+          stem: String.raw`
+            <p>Give the conjugate of:</p>
+            <p class="math">\(-3+\sqrt{5}\)</p>
+          `,
           choices: [
-            String.raw`\sqrt{11}-\sqrt{7}`,
-            String.raw`-\sqrt{7}-\sqrt{11}`,
-            String.raw`\sqrt{7}-\sqrt{11}`,
-            String.raw`\sqrt{7}+\sqrt{11}`, /* correct */
-            String.raw`-\sqrt{7}+\sqrt{11}`,
-            String.raw`\sqrt{11}+\sqrt{7}-2\sqrt{11}`
-          ]},
+            String.raw`\(-3+\sqrt{5}\)`,
+            String.raw`\(-3-\sqrt{5}\)`,
+            String.raw`\(3-\sqrt{5}\)`,
+            String.raw`\(3+\sqrt{5}\)`,
+            String.raw`\(\sqrt{5}+3\)`,
+            String.raw`\(\sqrt{5}-3\)`
+          ]
+        },
 
-        { latex: String.raw`\text{Simplify: }\dfrac{3}{5+\sqrt{7}}.`,
+        {
+          stem: String.raw`
+            <p>Give the conjugate of:</p>
+            <p class="math">\(\sqrt{7}-\sqrt{11}\)</p>
+          `,
           choices: [
-            String.raw`\dfrac{3}{5-\sqrt{7}}`,
-            String.raw`\dfrac{15-3\sqrt{7}}{18}`,
-            String.raw`\dfrac{5-\sqrt{7}}{6}`, /* correct */
-            String.raw`\dfrac{5+\sqrt{7}}{6}`,
-            String.raw`\dfrac{15-3\sqrt{7}}{32}`,
-            String.raw`\dfrac{15+3\sqrt{7}}{18}`
-          ]},
+            String.raw`\(\sqrt{11}-\sqrt{7}\)`,
+            String.raw`\(-\sqrt{7}-\sqrt{11}\)`,
+            String.raw`\(\sqrt{7}-\sqrt{11}\)`,
+            String.raw`\(\sqrt{7}+\sqrt{11}\)`,
+            String.raw`\(-\sqrt{7}+\sqrt{11}\)`,
+            String.raw`\(\sqrt{11}+\sqrt{7}-2\sqrt{11}\)`
+          ]
+        },
 
-        { latex: String.raw`\text{Simplify: }\dfrac{2+\sqrt{6}}{3-\sqrt{6}}.`,
+        {
+          stem: String.raw`
+            <p>Simplify:</p>
+            <p class="math">\(\dfrac{3}{5+\sqrt{7}}\)</p>
+          `,
           choices: [
-            String.raw`\dfrac{12+5\sqrt{6}}{3}`, /* correct */
-            String.raw`\dfrac{12+5\sqrt{6}}{15}`,
-            String.raw`\dfrac{6+2\sqrt{6}}{3}`,
-            String.raw`\dfrac{12-5\sqrt{6}}{3}`,
-            String.raw`4+\sqrt{6}`,
-            String.raw`\dfrac{2+\sqrt{6}}{3+\sqrt{6}}`
-          ]},
+            String.raw`\(\dfrac{3}{5-\sqrt{7}}\)`,
+            String.raw`\(\dfrac{15-3\sqrt{7}}{18}\)`,
+            String.raw`\(\dfrac{5-\sqrt{7}}{6}\)`,
+            String.raw`\(\dfrac{5+\sqrt{7}}{6}\)`,
+            String.raw`\(\dfrac{15-3\sqrt{7}}{32}\)`,
+            String.raw`\(\dfrac{15+3\sqrt{7}}{18}\)`
+          ]
+        },
 
-        { latex: String.raw`\text{Simplify: }\dfrac{\sqrt{11}}{\sqrt{3}+\sqrt{2}}.`,
+        {
+          stem: String.raw`
+            <p>Simplify:</p>
+            <p class="math">\(\dfrac{2+\sqrt{6}}{3-\sqrt{6}}\)</p>
+          `,
           choices: [
-            String.raw`\dfrac{\sqrt{11}}{\sqrt{3}-\sqrt{2}}`,
-            String.raw`\sqrt{33}+\sqrt{22}`,
-            String.raw`\sqrt{33}-\sqrt{11}`,
-            String.raw`\sqrt{11}(\sqrt{3}+\sqrt{2})`,
-            String.raw`\sqrt{33}-\sqrt{22}`, /* correct */
-            String.raw`\dfrac{\sqrt{33}-\sqrt{22}}{2}`
-          ]},
+            String.raw`\(\dfrac{12+5\sqrt{6}}{3}\)`,
+            String.raw`\(\dfrac{12+5\sqrt{6}}{15}\)`,
+            String.raw`\(\dfrac{6+2\sqrt{6}}{3}\)`,
+            String.raw`\(\dfrac{12-5\sqrt{6}}{3}\)`,
+            String.raw`\(4+\sqrt{6}\)`,
+            String.raw`\(\dfrac{2+\sqrt{6}}{3+\sqrt{6}}\)`
+          ]
+        },
 
-        { latex: String.raw`\text{Simplify: }\dfrac{9}{3+\sqrt{2}}.`,
+        {
+          stem: String.raw`
+            <p>Simplify:</p>
+            <p class="math">\(\dfrac{\sqrt{11}}{\sqrt{3}+\sqrt{2}}\)</p>
+          `,
           choices: [
-            String.raw`\dfrac{27-9\sqrt{2}}{11}`,
-            String.raw`\dfrac{27-9\sqrt{2}}{7}`, /* correct */
-            String.raw`\dfrac{27+9\sqrt{2}}{7}`,
-            String.raw`3-\sqrt{2}`,
-            String.raw`3+\sqrt{2}`,
-            String.raw`\dfrac{9(3-\sqrt{2})}{9-\sqrt{2}}`
-          ]},
+            String.raw`\(\dfrac{\sqrt{11}}{\sqrt{3}-\sqrt{2}}\)`,
+            String.raw`\(\sqrt{33}+\sqrt{22}\)`,
+            String.raw`\(\sqrt{33}-\sqrt{11}\)`,
+            String.raw`\(\sqrt{11}(\sqrt{3}+\sqrt{2})\)`,
+            String.raw`\(\sqrt{33}-\sqrt{22}\)`,
+            String.raw`\(\dfrac{\sqrt{33}-\sqrt{22}}{2}\)`
+          ]
+        },
 
-        /* ---------- B. Exercises (5) ---------- */
-        { latex: String.raw`\text{Simplify: }\dfrac{2}{\sqrt{3}-1}.`,
+        {
+          stem: String.raw`
+            <p>Simplify:</p>
+            <p class="math">\(\dfrac{9}{3+\sqrt{2}}\)</p>
+          `,
           choices: [
-            String.raw`\dfrac{2}{\sqrt{3}+1}`,
-            String.raw`\sqrt{3}-1`,
-            String.raw`\sqrt{3}+1`, /* correct */
-            String.raw`\dfrac{2\sqrt{3}+2}{4}`,
-            String.raw`\dfrac{2\sqrt{3}-2}{4}`,   /* changed: no longer duplicates choice B */
-            String.raw`\dfrac{\sqrt{3}}{1}`
-          ]},
+            String.raw`\(\dfrac{27-9\sqrt{2}}{11}\)`,
+            String.raw`\(\dfrac{27-9\sqrt{2}}{7}\)`,
+            String.raw`\(\dfrac{27+9\sqrt{2}}{7}\)`,
+            String.raw`\(3-\sqrt{2}\)`,
+            String.raw`\(3+\sqrt{2}\)`,
+            String.raw`\(\dfrac{9(3-\sqrt{2})}{9-\sqrt{2}}\)`
+          ]
+        },
 
-        { latex: String.raw`\text{Simplify: }\dfrac{\sqrt{5}-3}{\sqrt{5}+3}.`,
-          choices: [
-            String.raw`\dfrac{\sqrt{5}+3}{\sqrt{5}-3}`,
-            String.raw`\dfrac{14-6\sqrt{5}}{4}`,
-            String.raw`\dfrac{7-3\sqrt{5}}{2}`,
-            String.raw`\dfrac{3\sqrt{5}-7}{2}`, /* correct */
-            String.raw`\dfrac{3-\sqrt{5}}{3+\sqrt{5}}`,
-            String.raw`\dfrac{\sqrt{5}-3}{8}`
-          ]},
+        /* ---------- B (5) ---------- */
 
-        { latex: String.raw`\text{Simplify: }\dfrac{5}{\sqrt{2}-\sqrt{6}}.`,
+        {
+          stem: String.raw`
+            <p>Simplify:</p>
+            <p class="math">\(\dfrac{2}{\sqrt{3}-1}\)</p>
+          `,
           choices: [
-            String.raw`\dfrac{5(\sqrt{2}-\sqrt{6})}{2-6}`,
-            String.raw`-\dfrac{5\sqrt{2}+5\sqrt{6}}{4}`, /* correct */
-            String.raw`\dfrac{5\sqrt{2}+5\sqrt{6}}{4}`,
-            String.raw`-\dfrac{5\sqrt{2}-5\sqrt{6}}{4}`,
-            String.raw`\dfrac{5}{\sqrt{8}-\sqrt{24}}`,
-            String.raw`-\dfrac{5}{2}(\sqrt{2}+\sqrt{6})`
-          ]},
+            String.raw`\(\dfrac{2}{\sqrt{3}+1}\)`,
+            String.raw`\(\sqrt{3}-1\)`,
+            String.raw`\(\sqrt{3}+1\)`,
+            String.raw`\(\dfrac{2\sqrt{3}+2}{4}\)`,
+            String.raw`\(\dfrac{2\sqrt{3}-2}{4}\)`,
+            String.raw`\(\dfrac{\sqrt{3}}{1}\)`
+          ]
+        },
 
-        { latex: String.raw`\text{Simplify: }\dfrac{\sqrt{5}+1}{\sqrt{7}-2}.`,
+        {
+          stem: String.raw`
+            <p>Simplify:</p>
+            <p class="math">\(\dfrac{\sqrt{5}-3}{\sqrt{5}+3}\)</p>
+          `,
           choices: [
-            String.raw`\dfrac{\sqrt{35}+2\sqrt{5}+\sqrt{7}+2}{3}`, /* correct */
-            String.raw`\dfrac{\sqrt{35}+2\sqrt{5}-\sqrt{7}-2}{3}`,
-            String.raw`\dfrac{\sqrt{35}+2\sqrt{5}+\sqrt{7}+2}{11}`,
-            String.raw`\sqrt{35}+2\sqrt{5}+\sqrt{7}+2`,
-            String.raw`\dfrac{\sqrt{5}+1}{\sqrt{7}+2}`,
-            String.raw`\dfrac{\sqrt{35}+2}{3}`
-          ]},
+            String.raw`\(\dfrac{\sqrt{5}+3}{\sqrt{5}-3}\)`,
+            String.raw`\(\dfrac{14-6\sqrt{5}}{4}\)`,
+            String.raw`\(\dfrac{7-3\sqrt{5}}{2}\)`,
+            String.raw`\(\dfrac{3\sqrt{5}-7}{2}\)`,
+            String.raw`\(\dfrac{3-\sqrt{5}}{3+\sqrt{5}}\)`,
+            String.raw`\(\dfrac{\sqrt{5}-3}{8}\)`
+          ]
+        },
 
-        { latex: String.raw`\text{Simplify: }\dfrac{16}{\sqrt{7}+\sqrt{3}}.`,
+        {
+          stem: String.raw`
+            <p>Simplify:</p>
+            <p class="math">\(\dfrac{5}{\sqrt{2}-\sqrt{6}}\)</p>
+          `,
           choices: [
-            String.raw`16(\sqrt{7}-\sqrt{3})`,
-            String.raw`\dfrac{16(\sqrt{7}-\sqrt{3})}{10}`,
-            String.raw`4(\sqrt{7}+\sqrt{3})`,
-            String.raw`8(\sqrt{7}-\sqrt{3})`,
-            String.raw`4(\sqrt{7}+\sqrt{3})`,        /* changed: was a duplicate of the correct option */
-            String.raw`4(\sqrt{7}-\sqrt{3})`         /* correct (answer key F) */
-          ]},
+            String.raw`\(\dfrac{5(\sqrt{2}-\sqrt{6})}{2-6}\)`,
+            String.raw`-\(\dfrac{5\sqrt{2}+5\sqrt{6}}{4}\)`,
+            String.raw`\(\dfrac{5\sqrt{2}+5\sqrt{6}}{4}\)`,
+            String.raw`-\(\dfrac{5\sqrt{2}-5\sqrt{6}}{4}\)`,
+            String.raw`\(\dfrac{5}{\sqrt{8}-\sqrt{24}}\)`,
+            String.raw`-\(\dfrac{5}{2}(\sqrt{2}+\sqrt{6})\)`
+          ]
+        },
 
-        /* ---------- C. Exercises (1) ---------- */
-        { latex: String.raw`\text{Simplify: }\dfrac{3\sqrt{2}-8\sqrt{7}}{4\sqrt{3}+\sqrt{5}}.`,
+        {
+          stem: String.raw`
+            <p>Simplify:</p>
+            <p class="math">\(\dfrac{\sqrt{5}+1}{\sqrt{7}-2}\)</p>
+          `,
           choices: [
-            String.raw`\dfrac{12\sqrt{6}-3\sqrt{10}-32\sqrt{21}+8\sqrt{35}}{53}`,
-            String.raw`\dfrac{12\sqrt{6}+3\sqrt{10}-32\sqrt{21}-8\sqrt{35}}{43}`,
-            String.raw`\dfrac{12\sqrt{6}-3\sqrt{10}-32\sqrt{21}+8\sqrt{35}}{43}`, /* correct */
-            String.raw`\dfrac{12\sqrt{6}-3\sqrt{10}+32\sqrt{21}-8\sqrt{35}}{43}`,
-            String.raw`\dfrac{3\sqrt{2}-8\sqrt{7}}{4\sqrt{3}-\sqrt{5}}`,
-            String.raw`\dfrac{12\sqrt{6}-32\sqrt{21}}{43}`
-          ]}
+            String.raw`\(\dfrac{\sqrt{35}+2\sqrt{5}+\sqrt{7}+2}{3}\)`,
+            String.raw`\(\dfrac{\sqrt{35}+2\sqrt{5}-\sqrt{7}-2}{3}\)`,
+            String.raw`\(\dfrac{\sqrt{35}+2\sqrt{5}+\sqrt{7}+2}{11}\)`,
+            String.raw`\(\sqrt{35}+2\sqrt{5}+\sqrt{7}+2\)`,
+            String.raw`\(\dfrac{\sqrt{5}+1}{\sqrt{7}+2}\)`,
+            String.raw`\(\dfrac{\sqrt{35}+2}{3}\)`
+          ]
+        },
+
+        {
+          stem: String.raw`
+            <p>Simplify:</p>
+            <p class="math">\(\dfrac{16}{\sqrt{7}+\sqrt{3}}\)</p>
+          `,
+          choices: [
+            String.raw`\(16(\sqrt{7}-\sqrt{3})\)`,
+            String.raw`\(\dfrac{16(\sqrt{7}-\sqrt{3})}{10}\)`,
+            String.raw`\(4(\sqrt{7}+\sqrt{3})\)`,
+            String.raw`\(8(\sqrt{7}-\sqrt{3})\)`,
+            String.raw`\(4(\sqrt{7}+\sqrt{3})\)`,
+            String.raw`\(4(\sqrt{7}-\sqrt{3})\)`
+          ]
+        },
+
+        /* ---------- C (1) ---------- */
+
+        {
+          stem: String.raw`
+            <p>Simplify:</p>
+            <p class="math">\(\dfrac{3\sqrt{2}-8\sqrt{7}}{4\sqrt{3}+\sqrt{5}}\)</p>
+          `,
+          choices: [
+            String.raw`\(\dfrac{12\sqrt{6}-3\sqrt{10}-32\sqrt{21}+8\sqrt{35}}{53}\)`,
+            String.raw`\(\dfrac{12\sqrt{6}+3\sqrt{10}-32\sqrt{21}-8\sqrt{35}}{43}\)`,
+            String.raw`\(\dfrac{12\sqrt{6}-3\sqrt{10}-32\sqrt{21}+8\sqrt{35}}{43}\)`,
+            String.raw`\(\dfrac{12\sqrt{6}-3\sqrt{10}+32\sqrt{21}-8\sqrt{35}}{43}\)`,
+            String.raw`\(\dfrac{3\sqrt{2}-8\sqrt{7}}{4\sqrt{3}-\sqrt{5}}\)`,
+            String.raw`\(\dfrac{12\sqrt{6}-32\sqrt{21}}{43}\)`
+          ]
+        }
       ]
     };
   </script>
 
-  <link rel="stylesheet" href="/math-homework/assets/core.css" />
-  <link rel="stylesheet" href="https://tikzjax.com/v1/fonts.css" />
-  <script defer src="/math-homework/assets/core.js"></script>
-  <script defer src="https://tikzjax.com/v1/tikzjax.js"></script>
+  <link rel="stylesheet" href="/math-homework/assets/core-rich.css" />
+  <script defer src="/math-homework/assets/core-rich.js"></script>
   <script defer src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
 </head>
 
