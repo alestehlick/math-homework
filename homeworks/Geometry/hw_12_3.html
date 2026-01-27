@@ -23,8 +23,8 @@
       id      : "Homework 12-3",
       title   : "Homework 12-3 — Dilations",
 
-      /* Correct answers for Q1–Q12 */
-      answerKey : ["B","A","C","D","B","C","C","B","D","A","A","A"],
+      /* Correct answers for Q1–Q12 (updated after choice reordering) */
+      answerKey : ["E","B","A","D","C","F","B","E","A","D","C","F"],
 
       questions : [
 
@@ -56,12 +56,12 @@
   \draw[dashed] (0,0)--(6,2);
 \end{tikzpicture}`,
           choices: [
-            String.raw`\(\dfrac12\)`,
-            String.raw`\(\,2\,\)`,
             String.raw`\(\,3\,\)`,
+            String.raw`\(\dfrac12\)`,
             String.raw`\(\,4\,\)`,
-            String.raw`\(\,5\,\)`,
-            String.raw`\(\dfrac13\)`
+            String.raw`\(\dfrac13\)`,
+            String.raw`\(\,2\,\)`,
+            String.raw`\(\,5\,\)`
           ]
         },
 
@@ -87,12 +87,12 @@
   \draw[dashed] (0,0)--(2,0);
 \end{tikzpicture}`,
           choices: [
-            String.raw`\(\dfrac12\)`,
             String.raw`\(\,2\,\)`,
-            String.raw`\(\,3\,\)`,
+            String.raw`\(\dfrac12\)`,
+            String.raw`\(\dfrac13\)`,
             String.raw`\(\,4\,\)`,
             String.raw`\(\dfrac14\)`,
-            String.raw`\(\dfrac13\)`
+            String.raw`\(\,3\,\)`
           ]
         },
 
@@ -118,12 +118,12 @@
   \draw[dashed] (0,0)--(3,6);
 \end{tikzpicture}`,
           choices: [
-            String.raw`\(\dfrac13\)`,
-            String.raw`\(\,2\,\)`,
             String.raw`\(\,3\,\)`,
-            String.raw`\(\,4\,\)`,
             String.raw`\(\dfrac12\)`,
-            String.raw`\(\,5\,\)`
+            String.raw`\(\,2\,\)`,
+            String.raw`\(\,4\,\)`,
+            String.raw`\(\,5\,\)`,
+            String.raw`\(\dfrac13\)`
           ]
         },
 
@@ -150,11 +150,11 @@
   \node[font=\small] at (3.7,8.3) {$D'$};
 \end{tikzpicture}`,
           choices: [
-            String.raw`\(\dfrac14\)`,
             String.raw`\(\dfrac12\)`,
+            String.raw`\(\,3\,\)`,
             String.raw`\(\,2\,\)`,
             String.raw`\(\,4\,\)`,
-            String.raw`\(\,3\,\)`,
+            String.raw`\(\dfrac14\)`,
             String.raw`\(\,5\,\)`
           ]
         },
@@ -167,11 +167,11 @@
             <p>If \(XA = 9\) units and the scale factor is \(5\), find \(XA'\).</p>
           `,
           choices: [
+            String.raw`\(9\)`,
             String.raw`\(14\)` ,
             String.raw`\(45\)`,
-            String.raw`\(1.8\)`,
             String.raw`\(5\)`,
-            String.raw`\(9\)`,
+            String.raw`\(1.8\)`,
             String.raw`\(90\)`
           ]
         },
@@ -182,12 +182,12 @@
             <p>If \(AB = 4\) units, find \(A'B'\).</p>
           `,
           choices: [
+            String.raw`\(25\)` ,
+            String.raw`\(4\)`,
             String.raw`\(0.8\)` ,
-            String.raw`\(9\)`,
-            String.raw`\(20\)`,
-            String.raw`\(25\)`,
             String.raw`\(45\)`,
-            String.raw`\(4\)`
+            String.raw`\(9\)`,
+            String.raw`\(20\)`
           ]
         },
 
@@ -197,12 +197,12 @@
             <p>If \(A'C' = 30\) units, find \(AC\).</p>
           `,
           choices: [
-            String.raw`\(150\)`,
-            String.raw`\(25\)`,
-            String.raw`\(6\)`,
             String.raw`\(3\)`,
+            String.raw`\(6\)`,
+            String.raw`\(5\)`,
+            String.raw`\(25\)`,
             String.raw`\(30\)`,
-            String.raw`\(5\)`
+            String.raw`\(150\)`
           ]
         },
 
@@ -212,12 +212,12 @@
             <p>If \(m\angle ABC = 82^\circ\), find \(m\angle A'B'C'\).</p>
           `,
           choices: [
+            String.raw`\(180^\circ\)`,
+            String.raw`\(41^\circ\)`,
+            String.raw`\(98^\circ\)`,
             String.raw`\(16.4^\circ\)`,
             String.raw`\(82^\circ\)`,
-            String.raw`\(410^\circ\)`,
-            String.raw`\(98^\circ\)`,
-            String.raw`\(41^\circ\)`,
-            String.raw`\(180^\circ\)`
+            String.raw`\(410^\circ\)`
           ]
         },
 
@@ -227,11 +227,11 @@
             <p>If \(PL = 10\) units and \(PL' = 30\) units, what is the scale factor, and is it a contraction or an enlargement?</p>
           `,
           choices: [
+            String.raw`Scale factor \(=3\); enlargement`,
             String.raw`Scale factor \(=\dfrac{1}{3}\); contraction`,
             String.raw`Scale factor \(=3\); contraction`,
-            String.raw`Scale factor \(=30\); enlargement`,
-            String.raw`Scale factor \(=3\); enlargement`,
             String.raw`Scale factor \(=20\); enlargement`,
+            String.raw`Scale factor \(=30\); enlargement`,
             String.raw`Scale factor \(=\dfrac{1}{30}\); contraction`
           ]
         },
@@ -242,11 +242,11 @@
             <p>If \(MN = 7\) units and \(M'N' = 14\) units, what is the scale factor, and is it a contraction or an enlargement?</p>
           `,
           choices: [
-            String.raw`Scale factor \(=2\); enlargement`,
-            String.raw`Scale factor \(=\dfrac12\); contraction`,
-            String.raw`Scale factor \(=7\); enlargement`,
             String.raw`Scale factor \(=14\); enlargement`,
+            String.raw`Scale factor \(=\dfrac12\); contraction`,
             String.raw`Scale factor \(=2\); contraction`,
+            String.raw`Scale factor \(=2\); enlargement`,
+            String.raw`Scale factor \(=7\); enlargement`,
             String.raw`Scale factor \(=\dfrac12\); enlargement`
           ]
         },
@@ -259,12 +259,12 @@
             <p>Which dilation will return the image to its original size, and what is the overall effect of doing both dilations (one after the other)?</p>
           `,
           choices: [
-            String.raw`Use scale factor \(1.25\); overall effect is no change in size.`,
             String.raw`Use scale factor \(0.8\); overall effect is no change in size.`,
-            String.raw`Use scale factor \(1.25\); overall effect is another contraction.`,
+            String.raw`Use scale factor \(2.5\); overall effect is no change in size.`,
+            String.raw`Use scale factor \(1.25\); overall effect is no change in size.`,
             String.raw`Use scale factor \(0.2\); overall effect is no change in size.`,
-            String.raw`Use scale factor \(0.8\); overall effect is an enlargement.`,
-            String.raw`Use scale factor \(2.5\); overall effect is no change in size.`
+            String.raw`Use scale factor \(1.25\); overall effect is another contraction.`,
+            String.raw`Use scale factor \(0.8\); overall effect is an enlargement.`
           ]
         },
 
@@ -274,12 +274,12 @@
             <p>Which statement must be true?</p>
           `,
           choices: [
-            String.raw`\(PA' = 2\cdot PA\).`,
-            String.raw`\(PA = 2\cdot PA'\).`,
             String.raw`\(PA' = PA\).`,
-            String.raw`The distance \(AA'\) must be \(0\).`,
+            String.raw`\(PA = 2\cdot PA'\).`,
             String.raw`The dilation changes angle measures.`,
-            String.raw`A dilation with scale factor \(2\) is a contraction.`
+            String.raw`A dilation with scale factor \(2\) is a contraction.`,
+            String.raw`The distance \(AA'\) must be \(0\).`,
+            String.raw`\(PA' = 2\cdot PA\).`
           ]
         }
 
