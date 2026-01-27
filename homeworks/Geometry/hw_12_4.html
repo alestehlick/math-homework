@@ -17,8 +17,8 @@
       id      : "Homework 12-4",
       title   : "Homework 12-4 — Isometries / Invariance under Mappings",
 
-      /* Correct answers for Q1–Q12 */
-      answerKey : ["A","E","B","C","D","F","B","A","C","E","D","B"],
+      /* Correct answers for Q1–Q12 (updated after choice reordering) */
+      answerKey : ["D","B","F","A","C","E","A","F","B","D","C","E"],
 
       questions : [
 
@@ -46,12 +46,12 @@
   \draw[thick] (-1,2)--(-1,4)--(-3,3)--cycle;
 \end{tikzpicture}`,
           choices: [
-            String.raw`Rotation; yes, it is an isometry.`,
             String.raw`Translation; yes, it is an isometry.`,
-            String.raw`Reflection; yes, it is an isometry.`,
-            String.raw`Dilation; yes, it is an isometry.`,
             String.raw`Dilation; no, it is not an isometry.`,
-            String.raw`Rotation; no, it is not an isometry.`
+            String.raw`Reflection; yes, it is an isometry.`,
+            String.raw`Rotation; yes, it is an isometry.`,
+            String.raw`Rotation; no, it is not an isometry.`,
+            String.raw`Dilation; yes, it is an isometry.`
           ]
         },
 
@@ -81,11 +81,11 @@
   \draw[dashed] (0,0)--(2,0);
 \end{tikzpicture}`,
           choices: [
+            String.raw`Reflection; yes, it is an isometry.`,
+            String.raw`Dilation (a reduction); no, it is not an isometry.`,
             String.raw`Rotation; yes, it is an isometry.`,
             String.raw`Translation; yes, it is an isometry.`,
-            String.raw`Reflection; yes, it is an isometry.`,
             String.raw`Dilation; yes, it is an isometry.`,
-            String.raw`Dilation (a reduction); no, it is not an isometry.`,
             String.raw`Reflection; no, it is not an isometry.`
           ]
         },
@@ -110,12 +110,12 @@
   \draw[thick] (2,1)--(4,2);
 \end{tikzpicture}`,
           choices: [
-            String.raw`Rotation; yes, it is an isometry.`,
-            String.raw`Translation; yes, it is an isometry.`,
             String.raw`Dilation; no, it is not an isometry.`,
+            String.raw`Rotation; yes, it is an isometry.`,
             String.raw`Reflection; no, it is not an isometry.`,
+            String.raw`Rotation; no, it is not an isometry.`,
             String.raw`Dilation; yes, it is an isometry.`,
-            String.raw`Rotation; no, it is not an isometry.`
+            String.raw`Translation; yes, it is an isometry.`
           ]
         },
 
@@ -137,12 +137,12 @@
   \fill (-2,2) circle (2.2pt) node[above left] {$R'$};
 \end{tikzpicture}`,
           choices: [
-            String.raw`Rotation; yes, it is an isometry.`,
-            String.raw`Translation; yes, it is an isometry.`,
             String.raw`Reflection; yes, it is an isometry.`,
+            String.raw`Translation; yes, it is an isometry.`,
             String.raw`Dilation; no, it is not an isometry.`,
-            String.raw`Dilation; yes, it is an isometry.`,
-            String.raw`Translation; no, it is not an isometry.`
+            String.raw`Rotation; yes, it is an isometry.`,
+            String.raw`Translation; no, it is not an isometry.`,
+            String.raw`Dilation; yes, it is an isometry.`
           ]
         },
 
@@ -154,12 +154,12 @@
             <p>If \(\ell \parallel m\), what is the composite transformation (in simpler form)?</p>
           `,
           choices: [
-            String.raw`A rotation`,
             String.raw`A reflection`,
-            String.raw`A dilation`,
+            String.raw`A rotation`,
             String.raw`A translation`,
-            String.raw`A reduction`,
-            String.raw`No change (identity)`
+            String.raw`A dilation`,
+            String.raw`No change (identity)`,
+            String.raw`A reduction`
           ]
         },
 
@@ -169,12 +169,12 @@
             <p>If \(\ell\) and \(m\) intersect at an acute angle of \(30^\circ\), what is the magnitude of the rotation formed by the composition?</p>
           `,
           choices: [
-            String.raw`\(30^\circ\)`,
-            String.raw`\(45^\circ\)`,
-            String.raw`\(15^\circ\)`,
-            String.raw`\(90^\circ\)`,
             String.raw`\(120^\circ\)`,
-            String.raw`\(60^\circ\)`
+            String.raw`\(15^\circ\)`,
+            String.raw`\(30^\circ\)`,
+            String.raw`\(90^\circ\)`,
+            String.raw`\(60^\circ\)`,
+            String.raw`\(45^\circ\)`
           ]
         },
 
@@ -184,12 +184,12 @@
             <p><strong>A subset of a line</strong> is mapped by an <strong>isometry</strong>.</p>
           `,
           choices: [
-            String.raw`A circle, because isometries curve straight figures.`,
             String.raw`A subset of a line, because isometries preserve straightness.`,
-            String.raw`A triangle, because isometries always create 2D figures.`,
+            String.raw`A circle, because isometries curve straight figures.`,
             String.raw`An angle, because isometries preserve angle measure.`,
+            String.raw`A larger version of the original, because isometries enlarge figures.`,
             String.raw`A single point, because isometries collapse distances.`,
-            String.raw`A larger version of the original, because isometries enlarge figures.`
+            String.raw`A triangle, because isometries always create 2D figures.`
           ]
         },
 
@@ -199,12 +199,12 @@
             <p><strong>An angle</strong> is mapped by a <strong>reduction</strong>.</p>
           `,
           choices: [
-            String.raw`An angle with the same measure, because a reduction preserves angle measure.`,
+            String.raw`A right angle, because reductions make angles perpendicular.`,
+            String.raw`Not an angle at all, because reductions distort angles.`,
             String.raw`An angle with half the measure, because a reduction halves everything.`,
             String.raw`A straight angle, because reductions “flatten” angles.`,
-            String.raw`Not an angle at all, because reductions distort angles.`,
             String.raw`An angle with double the measure, because a reduction reverses the angle.`,
-            String.raw`A right angle, because reductions make angles perpendicular.`
+            String.raw`An angle with the same measure, because a reduction preserves angle measure.`
           ]
         },
 
@@ -214,9 +214,9 @@
             <p><strong>Parallel lines</strong> are mapped by a <strong>reflection</strong>.</p>
           `,
           choices: [
-            String.raw`Intersecting lines, because reflections always “flip” one line.`,
             String.raw`Perpendicular lines, because reflections create right angles.`,
             String.raw`Parallel lines, because reflections preserve parallelism.`,
+            String.raw`Intersecting lines, because reflections always “flip” one line.`,
             String.raw`Circles, because reflections bend lines.`,
             String.raw`A single line, because reflections merge parallel lines.`,
             String.raw`Two rays, because reflections turn lines into rays.`
@@ -229,11 +229,11 @@
           `,
           choices: [
             String.raw`Angle measure and parallelism`,
-            String.raw`Parallelism and collinearity`,
             String.raw`Angle measure and collinearity`,
-            String.raw`Similarity ratio and angle measure`,
+            String.raw`Parallelism and collinearity`,
             String.raw`Distance (length) and area`,
-            String.raw`Angle measure and similarity ratio`
+            String.raw`Angle measure and similarity ratio`,
+            String.raw`Similarity ratio and angle measure`
           ]
         },
 
@@ -245,12 +245,12 @@
             <p>Which statement is the best reason that \(\triangle ABC \cong \triangle A'B'C'\)?</p>
           `,
           choices: [
-            String.raw`Isometries preserve only angle measure, so the triangles must be congruent.`,
-            String.raw`Isometries preserve area, so the triangles must be congruent.`,
             String.raw`A triangle and its image must always be mirror images, so they are congruent.`,
+            String.raw`Isometries preserve area, so the triangles must be congruent.`,
             String.raw`Isometries preserve distances, so \(AB=A'B'\), \(BC=B'C'\), and \(AC=A'C'\) (SSS).`,
-            String.raw`Isometries always enlarge figures by a fixed scale factor.`,
-            String.raw`Congruence is not related to isometries.`
+            String.raw`Isometries preserve only angle measure, so the triangles must be congruent.`,
+            String.raw`Congruence is not related to isometries.`,
+            String.raw`Isometries always enlarge figures by a fixed scale factor.`
           ]
         },
 
@@ -275,11 +275,11 @@
   \draw[thick] (4,6)--(8,4);
 \end{tikzpicture}`,
           choices: [
-            String.raw`Find the midpoint of \(\overline{AB}\).`,
-            String.raw`Find the intersection of the perpendicular bisectors of \(\overline{AA'}\) and \(\overline{BB'}\).`,
-            String.raw`Find the intersection of lines \(\overline{AA'}\) and \(\overline{BB'}\).`,
-            String.raw`Find the midpoint of \(\overline{AA'}\) only.`,
             String.raw`Find the intersection of \(\overline{AB}\) and \(\overline{A'B'}\).`,
+            String.raw`Find the midpoint of \(\overline{AA'}\) only.`,
+            String.raw`Find the midpoint of \(\overline{AB}\).`,
+            String.raw`Find the intersection of lines \(\overline{AA'}\) and \(\overline{BB'}\).`,
+            String.raw`Find the intersection of the perpendicular bisectors of \(\overline{AA'}\) and \(\overline{BB'}\).`,
             String.raw`Find the point halfway between \(A\) and \(B'\).`
           ]
         }
