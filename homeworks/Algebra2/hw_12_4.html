@@ -22,8 +22,8 @@
 
       graphics : String.raw``,
 
-      /* Correct answers for Q1–Q12 */
-      answerKey : ["A","B","B","A","B","B","B","B","B","B","B","C"],
+      /* Updated after shuffling choices to randomize answer distribution */
+      answerKey : ["C","E","A","D","F","B","D","A","E","C","F","B"],
 
       questions : [
 
@@ -34,9 +34,9 @@
         {
           stem: String.raw`<p>Use the laws of logarithms to rewrite: \( \log_{5}(ab) \)</p>`,
           choices: [
-            String.raw`\(\log_{5}a+\log_{5}b\)`,
             String.raw`\(\log_{5}a\cdot\log_{5}b\)`,
             String.raw`\(\log_{5}a-\log_{5}b\)`,
+            String.raw`\(\log_{5}a+\log_{5}b\)`,
             String.raw`\(\log_{5}(a+b)\)`,
             String.raw`\(\log_{5}a+b\)`,
             String.raw`\(\log_{5}a+\log b\)`
@@ -47,10 +47,10 @@
           stem: String.raw`<p>Use the laws of logarithms to rewrite: \( \log_{3}(b^{4}) \)</p>`,
           choices: [
             String.raw`\((\log_{3}b)^{4}\)`,
-            String.raw`\(4\log_{3}b\)`,
             String.raw`\(\log_{12}b\)`,
             String.raw`\(\dfrac{\log_{3}b}{4}\)`,
             String.raw`\(4+\log_{3}b\)`,
+            String.raw`\(4\log_{3}b\)`,
             String.raw`\(\log_{3}b^{4}\)`
           ]
         },
@@ -58,8 +58,8 @@
         {
           stem: String.raw`<p>Use the laws of logarithms to rewrite: \( \log_{7}(a^{2}c) \)</p>`,
           choices: [
-            String.raw`\(\log_{7}a+\log_{7}c\)`,
             String.raw`\(2\log_{7}a+\log_{7}c\)`,
+            String.raw`\(\log_{7}a+\log_{7}c\)`,
             String.raw`\(\log_{7}a+2\log_{7}c\)`,
             String.raw`\(2\log_{7}(ac)\)`,
             String.raw`\(\log_{7}(a^{2}+c)\)`,
@@ -70,10 +70,10 @@
         {
           stem: String.raw`<p>Use the laws of logarithms to rewrite: \( \log_{4}\!\left(\dfrac{a^{2}}{c^{3}}\right) \)</p>`,
           choices: [
-            String.raw`\(2\log_{4}a-3\log_{4}c\)`,
             String.raw`\(2\log_{4}a+3\log_{4}c\)`,
             String.raw`\(\dfrac{2\log_{4}a}{3\log_{4}c}\)`,
             String.raw`\(\log_{4}a-\log_{4}c\)`,
+            String.raw`\(2\log_{4}a-3\log_{4}c\)`,
             String.raw`\(2\log_{4}\!\left(\dfrac{a}{c}\right)\)`,
             String.raw`\(\log_{4}(a^{2})-3c\)`
           ]
@@ -87,11 +87,11 @@
           stem: String.raw`<p>Let \(a=\log_{10}2\) and \(b=\log_{10}5\). Find \( \log_{10}10 \) in terms of \(a\) and \(b\).</p>`,
           choices: [
             String.raw`\(a-b\)`,
-            String.raw`\(a+b\)`,
             String.raw`\(2a+b\)`,
             String.raw`\(a+2b\)`,
             String.raw`\(2a-2b\)`,
-            String.raw`\(b-a\)`
+            String.raw`\(b-a\)`,
+            String.raw`\(a+b\)`
           ]
         },
 
@@ -111,9 +111,9 @@
           stem: String.raw`<p>Let \(m=\log_{10}2\) and \(n=\log_{10}7\). Find \( \log_{10}56 \) in terms of \(m\) and \(n\).</p>`,
           choices: [
             String.raw`\(n+2m\)`,
-            String.raw`\(n+3m\)`,
             String.raw`\(2n+3m\)`,
             String.raw`\(n+m\)`,
+            String.raw`\(n+3m\)`,
             String.raw`\(3n+m\)`,
             String.raw`\(n-3m\)`
           ]
@@ -122,8 +122,8 @@
         {
           stem: String.raw`<p>Let \(p=\log_{10}3\) and \(q=\log_{10}5\). Find \( \log_{10}15 \) in terms of \(p\) and \(q\).</p>`,
           choices: [
-            String.raw`\(p-q\)`,
             String.raw`\(p+q\)`,
+            String.raw`\(p-q\)`,
             String.raw`\(2p+q\)`,
             String.raw`\(p+2q\)`,
             String.raw`\(3p-q\)`,
@@ -135,10 +135,10 @@
           stem: String.raw`<p>Let \(r=\log_{10}2\) and \(s=\log_{10}5\). Find \( \log_{10}\!\left(\dfrac{1}{50}\right) \) in terms of \(r\) and \(s\).</p>`,
           choices: [
             String.raw`\(r+2s\)`,
-            String.raw`\(-r-2s\)`,
             String.raw`\(-r+2s\)`,
             String.raw`\(r-2s\)`,
             String.raw`\(-2r-s\)`,
+            String.raw`\(-r-2s\)`,
             String.raw`\(-r-s\)`
           ]
         },
@@ -147,8 +147,8 @@
           stem: String.raw`<p>Let \(\alpha=\log_{10}2\) and \(\beta=\log_{10}3\). Find \( \log_{10}\!\left(\dfrac{9}{8}\right) \) in terms of \(\alpha\) and \(\beta\).</p>`,
           choices: [
             String.raw`\(2\beta+3\alpha\)`,
-            String.raw`\(2\beta-3\alpha\)`,
             String.raw`\(3\beta-2\alpha\)`,
+            String.raw`\(2\beta-3\alpha\)`,
             String.raw`\(\beta-\alpha\)`,
             String.raw`\(2\alpha-3\beta\)`,
             String.raw`\(3\alpha-2\beta\)`
@@ -163,11 +163,11 @@
           stem: String.raw`<p>For which values of \(x\) will we have \( \log_{10}x<0 \)?</p>`,
           choices: [
             String.raw`\(x<0\)`,
-            String.raw`\(0<x<1\)`,
             String.raw`\(x>1\)`,
             String.raw`\(x=1\)`,
             String.raw`\(x>0\)`,
-            String.raw`\(0<x\le 1\)`
+            String.raw`\(0<x\le 1\)`,
+            String.raw`\(0<x<1\)`
           ]
         },
 
@@ -175,8 +175,8 @@
           stem: String.raw`<p>Give the domain and range of \( y=\log_{10}x \).</p>`,
           choices: [
             String.raw`\(\text{Domain: all real numbers; Range: all real numbers}\)`,
-            String.raw`\(\text{Domain: }x>0;\ \text{Range: }y>0\)`,
             String.raw`\(\text{Domain: }x>0;\ \text{Range: all real numbers}\)`,
+            String.raw`\(\text{Domain: }x>0;\ \text{Range: }y>0\)`,
             String.raw`\(\text{Domain: }x\ge 0;\ \text{Range: all real numbers}\)`,
             String.raw`\(\text{Domain: all real numbers;\ Range: }y>0\)`,
             String.raw`\(\text{Domain: }x>0;\ \text{Range: }y\ge 0\)`
