@@ -17,8 +17,8 @@
       id      : "Homework 12-2",
       title   : "Homework 12-2 — Linear Maps: Translations and Rotations",
 
-      /* Correct answers for Q1–Q12 */
-      answerKey : ["B","C","D","A","E","A","B","F","C","D","B","A","B","C"],
+      /* Correct answers for Q1–Q14 (updated after reordering choices) */
+      answerKey : ["D","A","F","B","C","E","A","D","B","F","C","E","B","A"],
 
       questions : [
 
@@ -37,10 +37,10 @@
   \fill (-1,2) circle (2.2pt) node[above left] {$P$};
 \end{tikzpicture}`,
           choices: [
-            String.raw`\( (3,1) \)`,
-            String.raw`\( (3,-1) \)`,
             String.raw`\( (-5,-1) \)`,
+            String.raw`\( (3,1) \)`,
             String.raw`\( (-1,-1) \)`,
+            String.raw`\( (3,-1) \)`,
             String.raw`\( (4,-3) \)`,
             String.raw`\( (-4,5) \)`
           ]
@@ -63,9 +63,9 @@
   \draw[thick] (1,1)--(4,1)--(2,4)--cycle;
 \end{tikzpicture}`,
           choices: [
+            String.raw`\(A'(-1,2),\;B'(2,2),\;C'(0,5)\)`,
             String.raw`\(A'(3,0),\;B'(6,0),\;C'(4,3)\)`,
             String.raw`\(A'(-1,0),\;B'(2,0),\;C'(0,3)\)`,
-            String.raw`\(A'(-1,2),\;B'(2,2),\;C'(0,5)\)`,
             String.raw`\(A'(3,2),\;B'(6,2),\;C'(4,5)\)`,
             String.raw`\(A'(-1,2),\;B'(0,5),\;C'(2,2)\)`,
             String.raw`\(A'(2,0),\;B'(-1,2),\;C'(0,5)\)`
@@ -88,9 +88,9 @@
             String.raw`\( (-1,-3) \)`,
             String.raw`\( (-3,1) \)`,
             String.raw`\( (3,1) \)`,
-            String.raw`\( (1,3) \)`,
             String.raw`\( (1,-3) \)`,
-            String.raw`\( (-3,-1) \)`
+            String.raw`\( (-3,-1) \)`,
+            String.raw`\( (1,3) \)`
           ]
         },
 
@@ -109,8 +109,8 @@
   \fill (4,5) circle (2.2pt) node[above right] {$A(4,5)$};
 \end{tikzpicture}`,
           choices: [
-            String.raw`\( (-2,-1) \)`,
             String.raw`\( (2,1) \)`,
+            String.raw`\( (-2,-1) \)`,
             String.raw`\( (-4,-5) \)`,
             String.raw`\( (6,7) \)`,
             String.raw`\( (-1,2) \)`,
@@ -128,9 +128,9 @@
           choices: [
             String.raw`The size of the figure changes.`,
             String.raw`The figure must rotate.`,
+            String.raw`The image is congruent to the original figure.`,
             String.raw`The image is always a mirror image of the original.`,
             String.raw`Corresponding angles change measure.`,
-            String.raw`The image is congruent to the original figure.`,
             String.raw`Distances between points are not preserved.`
           ]
         },
@@ -141,12 +141,12 @@
             <p>Where does the final image end up?</p>
           `,
           choices: [
-            String.raw`In the same position as the original figure.`,
             String.raw`It is translated.`,
             String.raw`It is rotated \(140^\circ\) clockwise about \(O\).`,
-            String.raw`It is rotated \(140^\circ\) counterclockwise about \(O\).`,
             String.raw`It becomes a reflection of the original figure.`,
-            String.raw`It becomes larger than the original figure.`
+            String.raw`It becomes larger than the original figure.`,
+            String.raw`In the same position as the original figure.`,
+            String.raw`It is rotated \(140^\circ\) counterclockwise about \(O\).`
           ]
         },
 
@@ -156,8 +156,8 @@
             <p>What is this composition called?</p>
           `,
           choices: [
-            String.raw`a reflection`,
             String.raw`a translation`,
+            String.raw`a reflection`,
             String.raw`a rotation (not \(0^\circ\))`,
             String.raw`no change (it returns to the original position)`,
             String.raw`it cannot be determined from the information given`,
@@ -173,9 +173,9 @@
             String.raw`\(20^\circ\)`,
             String.raw`\(30^\circ\)`,
             String.raw`\(35^\circ\)`,
-            String.raw`\(60^\circ\)`,
+            String.raw`\(40^\circ\)`,
             String.raw`\(80^\circ\)`,
-            String.raw`\(40^\circ\)`
+            String.raw`\(60^\circ\)`
           ]
         },
 
@@ -185,8 +185,8 @@
           `,
           choices: [
             String.raw`\(13.5^\circ\)`,
-            String.raw`\(27^\circ\)`,
             String.raw`\(54^\circ\)`,
+            String.raw`\(27^\circ\)`,
             String.raw`\(73^\circ\)`,
             String.raw`\(108^\circ\)`,
             String.raw`\(153^\circ\)`
@@ -202,9 +202,9 @@
             String.raw`\(P\) and \(P'\) must lie on the same line as the \(x\)-axis.`,
             String.raw`\(P\) and \(P'\) are always the same point.`,
             String.raw`\(PP' = 0\) for every point \(P\).`,
-            String.raw`\(\overline{OP} \cong \overline{OP'}\).`,
             String.raw`The rotation changes the length of \(\overline{OP}\).`,
-            String.raw`A rotation always makes the figure larger.`
+            String.raw`A rotation always makes the figure larger.`,
+            String.raw`\(\overline{OP} \cong \overline{OP'}\).`
           ]
         },
 
@@ -217,8 +217,8 @@
           `,
           choices: [
             String.raw`A translation always reverses the figure.`,
-            String.raw`A translation preserves distances between points.`,
             String.raw`A translation changes the size of the segment.`,
+            String.raw`A translation preserves distances between points.`,
             String.raw`A translation turns every segment \(90^\circ\).`,
             String.raw`A translation forces \(\overline{AB}\) to lie on an axis.`,
             String.raw`A translation makes the segment longer if it moves right.`
@@ -231,57 +231,48 @@
             <p>Which conclusion must be true?</p>
           `,
           choices: [
-            String.raw`\(\triangle ABC \cong \triangle A''B''C''\).`,
             String.raw`\(\triangle ABC\) is similar to \(\triangle A''B''C''\), but not necessarily congruent.`,
             String.raw`The area of \(\triangle A''B''C''\) must be different from the area of \(\triangle ABC\).`,
             String.raw`A rotation always changes the lengths of sides.`,
             String.raw`A rotation always changes angle measures.`,
+            String.raw`\(\triangle ABC \cong \triangle A''B''C''\).`,
             String.raw`\(\angle A \cong \angle B''\) always.`
           ]
         },
 
+        {
+          stem: String.raw`
+            <p>A transformation is the composition of two reflections: first in line \(l\), then in line \(m\).</p>
+            <p>The lines \(l\) and \(m\) intersect at point \(P\). Which statement must be true?</p>
+          `,
+          choices: [
+            String.raw`The composition is a translation by a vector perpendicular to \(l\).`,
+            String.raw`The composition is a rotation about point \(P\).`,
+            String.raw`The composition is a reflection in a line through \(P\).`,
+            String.raw`The composition changes the size of every figure.`,
+            String.raw`The composition is a rotation, but its center is not at \(P\).`,
+            String.raw`The composition is the identity transformation for any angle.`
+          ]
+        },
 
-    /* ---- append to questions[] ---- */
+        {
+          stem: String.raw`
+            <p>Let \(R_O(\theta)\) be a rotation by \(\theta\) about point \(O\).</p>
+            <p>Consider the composition \(R_P(\theta)\circ R_O(-\theta)\), where \(O\neq P\) and \(\theta\neq 0^\circ\).</p>
+            <p>Which statement is always true?</p>
+          `,
+          choices: [
+            String.raw`The composition is always a translation.`,
+            String.raw`The composition is always the identity transformation.`,
+            String.raw`The composition is always a reflection.`,
+            String.raw`The composition is a translation only when \(\theta=180^\circ\).`,
+            String.raw`The composition is a rotation about \(O\).`,
+            String.raw`The composition changes the size of the figure.`
+          ]
+        }
 
-{
-  stem: String.raw`
-    <p>A transformation is the composition of two reflections: first in line \(l\), then in line \(m\).</p>
-    <p>The lines \(l\) and \(m\) intersect at point \(P\). Which statement must be true?</p>
-  `,
-  choices: [
-    String.raw`The composition is a translation by a vector perpendicular to \(l\).`,
-    String.raw`The composition is a rotation about point \(P\).`,
-    String.raw`The composition is a reflection in a line through \(P\).`,
-    String.raw`The composition changes the size of every figure.`,
-    String.raw`The composition is a rotation, but its center is not at \(P\).`,
-    String.raw`The composition is the identity transformation for any angle.`
-  ]
-},
-    
-{
-  stem: String.raw`
-    <p>Let \(R_O(\theta)\) be a rotation by \(\theta\) about point \(O\).</p>
-    <p>Consider the composition \(R_P(\theta)\circ R_O(-\theta)\), where \(O\neq P\) and \(\theta\neq 0^\circ\).</p>
-    <p>Which statement is always true?</p>
-  `,
-  choices: [
-    String.raw`The composition is always the identity transformation.`,
-    String.raw`The composition is always a reflection.`,
-    String.raw`The composition is always a translation.`,
-    String.raw`The composition is a translation only when \(\theta=180^\circ\).`,
-    String.raw`The composition is a rotation about \(O\).`,
-    String.raw`The composition changes the size of the figure.`
-  ]
-}
-
-/* ---- also append to answerKey[] ----
-   Q13 = B
-   Q14 = C
-*/
       ]
     };
-
-    
   </script>
 
   <link rel="stylesheet" href="/math-homework/assets/core-rich.css" />
