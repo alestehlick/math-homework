@@ -9,124 +9,26 @@
     /* =========================
        Homework 12-1 — Inverse Relations and Functions (NEW FORMAT)
        12 questions total: 4 type A, 6 type B, 2 type C
+
+       Notes:
+       - Custom-written questions (no ordered-pair relation sets).
+       - Questions are ordered by depth (foundations → conceptual subtleties).
        ========================= */
     window.homeworkData = {
       classId : "Algebra2",
       id      : "Homework 12-1",
-      title   : "Homework 12-1 — Inverse Relations and Functions",
+      title   : "Homework 12-1 — Inverse Functions",
 
       graphics : String.raw``,
 
-      answerKey : ["B","E","B","A","D","F","C","A","B","C","B","C"],
+      /* Correct answers for Q1–Q12 */
+      answerKey : ["A","B","B","C","A","D","D","A","D","C","C","A"],
 
       questions : [
 
         /* -----------------------
-           Type A (4)
+           Type A (4) — Foundations
         ----------------------- */
-
-        {
-          stem: String.raw`
-            <p>Which relation is <strong>NOT</strong> a function?</p>
-          `,
-          choices: [
-            String.raw`\(\{(-2,5),(0,1),(3,4)\}\)`,
-            String.raw`\(\{(1,2),(1,5),(4,0)\}\)`,
-            String.raw`\(\{(-1,3),(2,3),(5,3)\}\)`,
-            String.raw`\(\{(0,-2),(2,0),(4,2)\}\)`,
-            String.raw`\(\{(7,1),(8,4),(9,6)\}\)`,
-            String.raw`\(\{(-3,0),(-2,1),(-1,2)\}\)`
-          ]
-        },
-
-        {
-          stem: String.raw`
-            <p>Let \(R=\{(-4,2),(1,-3),(5,0)\}\).</p>
-            <p>What is the inverse of \(R\) (as a set of ordered pairs)?</p>
-          `,
-          choices: [
-            String.raw`\(\{(4,-2),(-1,3),(-5,0)\}\)`,
-            String.raw`\(\{(-4,2),(1,-3),(5,0)\}\)`,
-            String.raw`\(\{(2,-4),(1,-3),(0,5)\}\)`,
-            String.raw`\(\{(2,4),(-3,-1),(0,-5)\}\)`,
-            String.raw`\(\{(2,-4),(-3,1),(0,5)\}\)`,
-            String.raw`\(\{(2,-4),(-3,5),(0,1)\}\)`
-          ]
-        },
-
-        {
-          stem: String.raw`
-            <p>Which is an example of a <strong>function</strong> whose inverse is <strong>NOT</strong> a function?</p>
-          `,
-          choices: [
-            String.raw`\(\{(0,1),(1,2),(2,3)\}\)`,
-            String.raw`\(\{(1,4),(2,4),(3,7)\}\)`,
-            String.raw`\(\{(-1,0),(0,2),(1,5)\}\)`,
-            String.raw`\(\{(2,3),(2,4),(5,6)\}\)`,
-            String.raw`\(\{(1,5),(2,6),(3,7)\}\)`,
-            String.raw`\(\{(4,-1),(5,0),(6,1)\}\)`
-          ]
-        },
-
-        {
-          stem: String.raw`
-            <p>Given domain \(D=\{-5,3,1,7\}\) and \(f(x)=x-4\), write \(f\) in set form.</p>
-          `,
-          choices: [
-            String.raw`\(\{(-5,-9),(3,-1),(1,-3),(7,3)\}\)`,
-            String.raw`\(\{(-5,-1),(3,-9),(1,-3),(7,3)\}\)`,
-            String.raw`\(\{(-5,-9),(3,1),(1,-3),(7,3)\}\)`,
-            String.raw`\(\{(-5,-9),(3,-1),(1,-3),(7,-3)\}\)`,
-            String.raw`\(\{(-5,-9),(3,-1),(1,-4),(7,3)\}\)`,
-            String.raw`\(\{(-5,-9),(3,-1),(1,-3),(7,11)\}\)`
-          ]
-        },
-
-        /* -----------------------
-           Type B (6)
-        ----------------------- */
-
-        {
-          stem: String.raw`
-            <p>Given domain \(D=\{-5,3,1,7\}\) and \(g(x)=2x+6\), write \(g\) in set form.</p>
-          `,
-          choices: [
-            String.raw`\(\{(-5,-16),(3,12),(1,8),(7,20)\}\)`,
-            String.raw`\(\{(-5,-4),(3,6),(1,8),(7,20)\}\)`,
-            String.raw`\(\{(-5,-4),(3,12),(1,2),(7,20)\}\)`,
-            String.raw`\(\{(-5,-4),(3,12),(1,8),(7,20)\}\)`,
-            String.raw`\(\{(-5,-4),(3,12),(1,8),(7,14)\}\)`,
-            String.raw`\(\{(-5,4),(3,12),(1,8),(7,20)\}\)`
-          ]
-        },
-
-        {
-          stem: String.raw`
-            <p>Given domain \(D=\{-5,3,1,7\}\) and \(h(x)=3x-8\), write \(h\) in set form.</p>
-          `,
-          choices: [
-            String.raw`\(\{(-5,-23),(3,1),(1,-5),(7,15)\}\)`,
-            String.raw`\(\{(-5,-23),(3,-1),(1,-5),(7,13)\}\)`,
-            String.raw`\(\{(-5,-17),(3,1),(1,-5),(7,13)\}\)`,
-            String.raw`\(\{(-5,-23),(3,1),(1,5),(7,13)\}\)`,
-            String.raw`\(\{(-5,-23),(3,1),(1,-5),(7,11)\}\)`,
-            String.raw`\(\{(-5,-23),(3,1),(1,-5),(7,13)\}\)`
-          ]
-        },
-
-        {
-          stem: String.raw`
-            <p>Using your set form for \(h\) on \(D=\{-5,3,1,7\}\), what is the set of inverse ordered pairs?</p>
-          `,
-          choices: [
-            String.raw`\(\{(-5,-23),(3,1),(1,-5),(7,13)\}\)`,
-            String.raw`\(\{(-23,-5),(3,1),(-5,1),(13,7)\}\)`,
-            String.raw`\(\{(-23,-5),(1,3),(-5,1),(13,7)\}\)`,
-            String.raw`\(\{(-23,5),(1,3),(-5,1),(13,7)\}\)`,
-            String.raw`\(\{(-23,-5),(1,3),(5,1),(13,7)\}\)`,
-            String.raw`\(\{(-23,-5),(1,3),(-5,7),(13,1)\}\)`
-          ]
-        },
 
         {
           stem: String.raw`
@@ -137,7 +39,7 @@
             String.raw`\(\,x-4\,\)`,
             String.raw`\(\,4-x\,\)`,
             String.raw`\(\,-x-4\,\)`,
-            String.raw`\(\,\dfrac{x}{4}\,\)`,
+            String.raw`\(\,\dfrac{1}{x-4}\,\)`,
             String.raw`\(\,\dfrac{x+4}{2}\,\)`
           ]
         },
@@ -158,24 +60,6 @@
 
         {
           stem: String.raw`
-            <p>If \(h(x)=3x-8\), what is \(h^{-1}(x)\)?</p>
-          `,
-          choices: [
-            String.raw`\(\,\dfrac{x-8}{3}\,\)`,
-            String.raw`\(\,\dfrac{8-x}{3}\,\)`,
-            String.raw`\(\,\dfrac{x+8}{3}\,\)`,
-            String.raw`\(\,3x+8\,\)`,
-            String.raw`\(\,\dfrac{x}{3}+8\,\)`,
-            String.raw`\(\,3(x+8)\,\)`
-          ]
-        },
-
-        /* -----------------------
-           Type C (2)
-        ----------------------- */
-
-        {
-          stem: String.raw`
             <p>Which statement is always true for a function and its inverse (when both compositions are defined)?</p>
           `,
           choices: [
@@ -190,15 +74,142 @@
 
         {
           stem: String.raw`
-            <p>What function is the identity function?</p>
+            <p>Which function is one-to-one on <em>all real numbers</em> (so it has an inverse function on \(\mathbb{R}\))?</p>
           `,
           choices: [
-            String.raw`\(\,i(x)=0\,\)`,
-            String.raw`\(\,i(x)=1\,\)`,
-            String.raw`\(\,i(x)=x\,\)`,
-            String.raw`\(\,i(x)=x^{2}\,\)`,
-            String.raw`\(\,i(x)=x+1\,\)`,
-            String.raw`\(\,i(x)=-x\,\)`
+            String.raw`\(\,x^{2}\,\)`,
+            String.raw`\(\,|x|\,\)`,
+            String.raw`\(\,x^{3}\,\)`,
+            String.raw`\(\,x^{2}+1\,\)`,
+            String.raw`\(\,\sin x\,\)`,
+            String.raw`\(\,x^{4}\,\)`
+          ]
+        },
+
+        /* -----------------------
+           Type B (6) — Skills + reasoning
+        ----------------------- */
+
+        {
+          stem: String.raw`
+            <p>If \(g(x)=x^{3}\), what is \(g^{-1}(x)\)?</p>
+          `,
+          choices: [
+            String.raw`\(\,\sqrt[3]{x}\,\)`,
+            String.raw`\(\,x^{3}\,\)`,
+            String.raw`\(\,\sqrt{x}\,\)`,
+            String.raw`\(\,\sqrt[3]{x^{3}}\,\)`,
+            String.raw`\(\,\dfrac{1}{3}x^{3}\,\)`,
+            String.raw`\(\,\dfrac{x-1}{3}\,\)`
+          ]
+        },
+
+        {
+          stem: String.raw`
+            <p>Let \(h(x)=1+\dfrac{2}{x}\).</p>
+            <p>Which choice gives \(h^{-1}(x)\) <em>and</em> the correct domain restriction for \(h^{-1}\)?</p>
+          `,
+          choices: [
+            String.raw`\(\,h^{-1}(x)=\dfrac{x-1}{2}\), domain: all real \(x\)` ,
+            String.raw`\(\,h^{-1}(x)=1+\dfrac{2}{x}\), domain: \(x\ne 0\)` ,
+            String.raw`\(\,h^{-1}(x)=\dfrac{2}{x+1}\), domain: \(x\ne -1\)` ,
+            String.raw`\(\,h^{-1}(x)=\dfrac{2}{x-1}\), domain: \(x\ne 1\)` ,
+            String.raw`\(\,h^{-1}(x)=\dfrac{x}{2}-1\), domain: all real \(x\)` ,
+            String.raw`\(\,h^{-1}(x)=\dfrac{1}{x-1}\), domain: \(x\ne 1\)`
+          ]
+        },
+
+        {
+          stem: String.raw`
+            <p>Let \(p(x)=x^{3}+1\).</p>
+            <p>Which is \(p^{-1}(x)\)?</p>
+          `,
+          choices: [
+            String.raw`\(\,x^{3}-1\,\)`,
+            String.raw`\(\,\sqrt[3]{x}-1\,\)`,
+            String.raw`\(\,\sqrt[3]{x+1}\,\)`,
+            String.raw`\(\,\sqrt[3]{x-1}\,\)`,
+            String.raw`\(\,\dfrac{x-1}{3}\,\)`,
+            String.raw`\(\,(x-1)^{3}\,\)`
+          ]
+        },
+
+        {
+          stem: String.raw`
+            <p>Let \(f(x)=x^{2}\).</p>
+            <p>You want an inverse <em>function</em> specifically equal to \(f^{-1}(x)=\sqrt{x}\).</p>
+            <p>Which domain restriction on \(f\) makes this correct?</p>
+          `,
+          choices: [
+            String.raw`Restrict the domain to \(x\ge 0\).`,
+            String.raw`Restrict the domain to \(x\le 0\).`,
+            String.raw`Restrict the domain to \(x\ne 0\).`,
+            String.raw`Restrict the range to \(y\ge 0\) (no domain change needed).`,
+            String.raw`Restrict the domain to \(x\ge 1\).`,
+            String.raw`No restriction is needed; \(x^{2}\) is one-to-one on \(\mathbb{R}\).`
+          ]
+        },
+
+        {
+          stem: String.raw`
+            <p>Assume \(f\) is one-to-one and \(f(2)=-5\).</p>
+            <p>What is \(f^{-1}(-5)\)?</p>
+          `,
+          choices: [
+            String.raw`\(-5\)`,
+            String.raw`\(5\)`,
+            String.raw`\(-2\)`,
+            String.raw`\(2\)`,
+            String.raw`\(0\)`,
+            String.raw`Cannot be determined from the information given.`
+          ]
+        },
+
+        {
+          stem: String.raw`
+            <p>If \(f(x)=\dfrac{3x-5}{2}\), what is \(f^{-1}(x)\)?</p>
+          `,
+          choices: [
+            String.raw`\(\,\dfrac{3x-5}{2}\,\)`,
+            String.raw`\(\,\dfrac{2x-5}{3}\,\)`,
+            String.raw`\(\,\dfrac{2x+5}{3}\,\)`,
+            String.raw`\(\,\dfrac{3x+5}{2}\,\)`,
+            String.raw`\(\,\dfrac{x+5}{6}\,\)`,
+            String.raw`\(\,\dfrac{2x-5}{6}\,\)`
+          ]
+        },
+
+        /* -----------------------
+           Type C (2) — Deeper conceptual traps
+        ----------------------- */
+
+        {
+          stem: String.raw`
+            <p>Consider \(f(x)=x^{2}\) with domain \(\mathbb{R}\).</p>
+            <p>Which statement is most accurate about “the inverse” of \(f\)?</p>
+          `,
+          choices: [
+            String.raw`The inverse function is \(f^{-1}(x)=\pm\sqrt{x}\).`,
+            String.raw`The inverse function is \(f^{-1}(x)=\sqrt{x}\) with domain \(\mathbb{R}\).`,
+            String.raw`On \(\mathbb{R}\), \(f\) is not one-to-one, so it has no inverse function; restricting to \(x\ge 0\) gives \(f^{-1}(x)=\sqrt{x}\), and restricting to \(x\le 0\) gives \(f^{-1}(x)=-\sqrt{x}\).`,
+            String.raw`The inverse function is \(f^{-1}(x)=x^{2}\).`,
+            String.raw`Two different inverse functions exist on \(\mathbb{R}\): \(\sqrt{x}\) and \(-\sqrt{x}\), without any restriction.`,
+            String.raw`An inverse function exists because \(x^{2}\) passes the horizontal line test on \(\mathbb{R}\).`
+          ]
+        },
+
+        {
+          stem: String.raw`
+            <p>Let \(h(x)=1+\dfrac{2}{x}\) and \(h^{-1}(x)=\dfrac{2}{x-1}\).</p>
+            <p>Which choice gives \((h^{-1}\circ h)(x)\) and the correct restriction on \(x\)?</p>
+          `,
+          choices: [
+            String.raw`\(\,(h^{-1}\circ h)(x)=x\) for \(x\ne 0\).`,
+            String.raw`\(\,(h^{-1}\circ h)(x)=x\) for \(x\ne 1\).`,
+            String.raw`\(\,(h^{-1}\circ h)(x)=x\) for \(x\ne 0,1\).`,
+            String.raw`\(\,(h^{-1}\circ h)(x)=\dfrac{1}{x}\) for \(x\ne 0\).`,
+            String.raw`\(\,(h^{-1}\circ h)(x)=x-1\) for all real \(x\).`,
+            String.raw`\(\,(h^{-1}\circ h)(x)\) is undefined for all real \(x\).`
           ]
         }
 
@@ -207,8 +218,12 @@
   </script>
 
   <link rel="stylesheet" href="/math-homework/assets/core-rich.css" />
-  <script defer src="/math-homework/assets/core-rich.js"></script>
+
+  <!-- MathJax FIRST -->
   <script defer src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+
+  <!-- core-rich LAST -->
+  <script defer src="/math-homework/assets/core-rich.js"></script>
 </head>
 
 <body>
