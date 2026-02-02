@@ -15,142 +15,205 @@
       id      : "Homework 11-5",
       title   : "Homework 11-5 — Completing the Square",
 
-      graphics : String.raw``,
-
+      /* Q1/Q2 wording aligned with the “divide first” method to avoid ambiguity */
       answerKey : ["C","C","A","A","B","C","A","B","A","C","A","A"],
 
       questions : [
         /* ---------- Type A (4) ---------- */
-        { latex: String.raw`\text{What would be added to each side of the equation if you were solving by completing the square? Do not solve.}\; 2x^2+4x=7`,
+        {
+          stem: String.raw`
+            <p><strong>Method note:</strong> First divide both sides so the leading coefficient is \(1\). Then complete the square.</p>
+            <p>What number would be added to <em>each side</em> of the equation if you were solving by completing the square? Do not solve.</p>
+            <p>\(\;2x^2+4x=7\)</p>
+          `,
           choices: [
-            String.raw`\dfrac14`,
-            String.raw`\dfrac12`,
-            String.raw`1`,
-            String.raw`2`,
-            String.raw`4`,
-            String.raw`\dfrac{7}{2}`
-          ]},
+            String.raw`\(\dfrac14\)`,
+            String.raw`\(\dfrac12\)`,
+            String.raw`\(\,1\,\)`,
+            String.raw`\(\,2\,\)`,
+            String.raw`\(\,4\,\)`,
+            String.raw`\(\dfrac{7}{2}\)`
+          ]
+        },
 
-        { latex: String.raw`\text{What would be added to each side of the equation if you were solving by completing the square? Do not solve.}\; 3x^2+18x=2`,
+        {
+          stem: String.raw`
+            <p><strong>Method note:</strong> First divide both sides so the leading coefficient is \(1\). Then complete the square.</p>
+            <p>What number would be added to <em>each side</em> of the equation if you were solving by completing the square? Do not solve.</p>
+            <p>\(\;3x^2+18x=2\)</p>
+          `,
           choices: [
-            String.raw`3`,
-            String.raw`6`,
-            String.raw`9`,
-            String.raw`18`,
-            String.raw`36`,
-            String.raw`81`
-          ]},
+            String.raw`\(\,3\,\)`,
+            String.raw`\(\,6\,\)`,
+            String.raw`\(\,9\,\)`,
+            String.raw`\(\,18\,\)`,
+            String.raw`\(\,36\,\)`,
+            String.raw`\(\,81\,\)`
+          ]
+        },
 
-        { latex: String.raw`\text{Solve each quadratic equation by completing the square.}\; x^2-4x=0`,
+        {
+          stem: String.raw`
+            <p>Solve each quadratic equation by completing the square.</p>
+            <p>\(\;x^2-4x=0\)</p>
+          `,
           choices: [
-            String.raw`\{0,4\}`,
-            String.raw`\{-2,2\}`,
-            String.raw`\{2,4\}`,
-            String.raw`\{0,-4\}`,
-            String.raw`\{4\}`,
-            String.raw`\{0\}`
-          ]},
+            String.raw`\(\{0,4\}\)`,
+            String.raw`\(\{-2,2\}\)`,
+            String.raw`\(\{2,4\}\)`,
+            String.raw`\(\{0,-4\}\)`,
+            String.raw`\(\{4\}\)`,
+            String.raw`\(\{0\}\)`
+          ]
+        },
 
-        { latex: String.raw`\text{Solve each quadratic equation by completing the square.}\; 3x^2-12x=-3`,
+        {
+          stem: String.raw`
+            <p>Solve each quadratic equation by completing the square.</p>
+            <p>\(\;3x^2-12x=-3\)</p>
+          `,
           choices: [
-            String.raw`\left\{2-\sqrt{3},\,2+\sqrt{3}\right\}`,
-            String.raw`\left\{-2-\sqrt{3},\,-2+\sqrt{3}\right\}`,
-            String.raw`\{2-3,\,2+3\}`,
-            String.raw`\{-2-3,\,-2+3\}`,
-            String.raw`\{-\sqrt{3},\,\sqrt{3}\}`,
-            String.raw`\{2,3\}`
-          ]},
+            String.raw`\(\left\{2-\sqrt{3},\,2+\sqrt{3}\right\}\)`,
+            String.raw`\(\left\{-2-\sqrt{3},\,-2+\sqrt{3}\right\}\)`,
+            String.raw`\(\{2-3,\,2+3\}\)`,
+            String.raw`\(\{-2-3,\,-2+3\}\)`,
+            String.raw`\(\{-\sqrt{3},\,\sqrt{3}\}\)`,
+            String.raw`\(\{2,3\}\)`
+          ]
+        },
 
         /* ---------- Type B (6) ---------- */
-        { latex: String.raw`\text{Solve by completing the square. Give the solution set.}\; 2x^2+x=3`,
+        {
+          stem: String.raw`
+            <p>Solve by completing the square. Give the solution set.</p>
+            <p>\(\;2x^2+x=3\)</p>
+          `,
           choices: [
-            String.raw`\left\{-1,\,\tfrac32\right\}`,
-            String.raw`\left\{1,\,-\tfrac32\right\}`,
-            String.raw`\left\{-1,\,-\tfrac32\right\}`,
-            String.raw`\left\{\tfrac32,\,1\right\}`,
-            String.raw`\left\{\tfrac12,\,-3\right\}`,
-            String.raw`\text{no real solution}`
-          ]},
+            String.raw`\(\left\{-1,\,\tfrac32\right\}\)`,
+            String.raw`\(\left\{1,\,-\tfrac32\right\}\)`,
+            String.raw`\(\left\{-1,\,-\tfrac32\right\}\)`,
+            String.raw`\(\left\{\tfrac32,\,1\right\}\)`,
+            String.raw`\(\left\{\tfrac12,\,-3\right\}\)`,
+            String.raw`\(\text{no real solution}\)`
+          ]
+        },
 
-        { latex: String.raw`\text{Solve by completing the square. Give the solution set.}\; 2x^2-x=1`,
+        {
+          stem: String.raw`
+            <p>Solve by completing the square. Give the solution set.</p>
+            <p>\(\;2x^2-x=1\)</p>
+          `,
           choices: [
-            String.raw`\left\{1,\,\tfrac12\right\}`,
-            String.raw`\left\{-1,\,\tfrac12\right\}`,
-            String.raw`\left\{1,\,-\tfrac12\right\}`,
-            String.raw`\left\{-1,\,-\tfrac12\right\}`,
-            String.raw`\left\{\tfrac12,\,-2\right\}`,
-            String.raw`\text{no real solution}`
-          ]},
+            String.raw`\(\left\{1,\,\tfrac12\right\}\)`,
+            String.raw`\(\left\{-1,\,\tfrac12\right\}\)`,
+            String.raw`\(\left\{1,\,-\tfrac12\right\}\)`,
+            String.raw`\(\left\{-1,\,-\tfrac12\right\}\)`,
+            String.raw`\(\left\{\tfrac12,\,-2\right\}\)`,
+            String.raw`\(\text{no real solution}\)`
+          ]
+        },
 
-        { latex: String.raw`\text{Solve by completing the square. Give the solution set.}\; 4x^2-4x=11`,
+        {
+          stem: String.raw`
+            <p>Solve by completing the square. Give the solution set.</p>
+            <p>\(\;4x^2-4x=11\)</p>
+          `,
           choices: [
-            String.raw`\left\{\tfrac12-\sqrt{3},\,\tfrac12+\sqrt{3}\right\}`,
-            String.raw`\left\{\tfrac12-2\sqrt{3},\,\tfrac12+2\sqrt{3}\right\}`,
-            String.raw`\left\{-\tfrac12-\sqrt{3},\,-\tfrac12+\sqrt{3}\right\}`,
-            String.raw`\left\{1-\sqrt{3},\,1+\sqrt{3}\right\}`,
-            String.raw`\left\{-\tfrac12-\sqrt{3},\,\tfrac12+\sqrt{3}\right\}`,
-            String.raw`\text{no real solution}`
-          ]},
+            String.raw`\(\left\{\tfrac12-\sqrt{3},\,\tfrac12+\sqrt{3}\right\}\)`,
+            String.raw`\(\left\{\tfrac12-2\sqrt{3},\,\tfrac12+2\sqrt{3}\right\}\)`,
+            String.raw`\(\left\{-\tfrac12-\sqrt{3},\,-\tfrac12+\sqrt{3}\right\}\)`,
+            String.raw`\(\left\{1-\sqrt{3},\,1+\sqrt{3}\right\}\)`,
+            String.raw`\(\left\{-\tfrac12-\sqrt{3},\,\tfrac12+\sqrt{3}\right\}\)`,
+            String.raw`\(\text{no real solution}\)`
+          ]
+        },
 
-        { latex: String.raw`\text{Solve each equation by completing the square.}\; 6n^2=9n+27`,
+        {
+          stem: String.raw`
+            <p>Solve each equation by completing the square.</p>
+            <p>\(\;6n^2=9n+27\)</p>
+          `,
           choices: [
-            String.raw`\left\{3,\,\tfrac32\right\}`,
-            String.raw`\left\{3,\,-\tfrac32\right\}`,
-            String.raw`\left\{-3,\,\tfrac32\right\}`,
-            String.raw`\left\{\tfrac32,\,-3\right\}`,
-            String.raw`\left\{-3,\,-\tfrac32\right\}`,
-            String.raw`\text{no real solution}`
-          ]},
+            String.raw`\(\left\{3,\,\tfrac32\right\}\)`,
+            String.raw`\(\left\{3,\,-\tfrac32\right\}\)`,
+            String.raw`\(\left\{-3,\,\tfrac32\right\}\)`,
+            String.raw`\(\left\{\tfrac32,\,-3\right\}\)`,
+            String.raw`\(\left\{-3,\,-\tfrac32\right\}\)`,
+            String.raw`\(\text{no real solution}\)`
+          ]
+        },
 
-        { latex: String.raw`\text{Solve each equation by completing the square.}\; 2x^2-6x=-1`,
+        {
+          stem: String.raw`
+            <p>Solve each equation by completing the square.</p>
+            <p>\(\;2x^2-6x=-1\)</p>
+          `,
           choices: [
-            String.raw`\left\{\tfrac{3-\sqrt7}{2},\,\tfrac{3+\sqrt7}{2}\right\}`,
-            String.raw`\left\{\tfrac{-3-\sqrt7}{2},\,\tfrac{-3+\sqrt7}{2}\right\}`,
-            String.raw`\left\{\tfrac{3-7}{2},\,\tfrac{3+7}{2}\right\}`,
-            String.raw`\left\{\tfrac{6-\sqrt7}{2},\,\tfrac{6+\sqrt7}{2}\right\}`,
-            String.raw`\left\{3-\sqrt7,\,3+\sqrt7\right\}`,
-            String.raw`\text{no real solution}`
-          ]},
+            String.raw`\(\left\{\tfrac{3-\sqrt7}{2},\,\tfrac{3+\sqrt7}{2}\right\}\)`,
+            String.raw`\(\left\{\tfrac{-3-\sqrt7}{2},\,\tfrac{-3+\sqrt7}{2}\right\}\)`,
+            String.raw`\(\left\{\tfrac{3-7}{2},\,\tfrac{3+7}{2}\right\}\)`,
+            String.raw`\(\left\{\tfrac{6-\sqrt7}{2},\,\tfrac{6+\sqrt7}{2}\right\}\)`,
+            String.raw`\(\left\{3-\sqrt7,\,3+\sqrt7\right\}\)`,
+            String.raw`\(\text{no real solution}\)`
+          ]
+        },
 
-        { latex: String.raw`\text{Solve each equation by completing the square.}\; 3z^2-2z-8=0`,
+        {
+          stem: String.raw`
+            <p>Solve each equation by completing the square.</p>
+            <p>\(\;3z^2-2z-8=0\)</p>
+          `,
           choices: [
-            String.raw`\left\{2,\,\tfrac43\right\}`,
-            String.raw`\left\{-2,\,\tfrac43\right\}`,
-            String.raw`\left\{2,\,-\tfrac43\right\}`,
-            String.raw`\left\{-2,\,-\tfrac43\right\}`,
-            String.raw`\left\{\tfrac23,\,-4\right\}`,
-            String.raw`\text{no real solution}`
-          ]},
+            String.raw`\(\left\{2,\,\tfrac43\right\}\)`,
+            String.raw`\(\left\{-2,\,\tfrac43\right\}\)`,
+            String.raw`\(\left\{2,\,-\tfrac43\right\}\)`,
+            String.raw`\(\left\{-2,\,-\tfrac43\right\}\)`,
+            String.raw`\(\left\{\tfrac23,\,-4\right\}\)`,
+            String.raw`\(\text{no real solution}\)`
+          ]
+        },
 
         /* ---------- Type C (2) ---------- */
-        { latex: String.raw`\text{Solve.}\; 5x^2+24x+1=0`,
+        {
+          stem: String.raw`
+            <p>Solve.</p>
+            <p>\(\;5x^2+24x+1=0\)</p>
+          `,
           choices: [
-            String.raw`\left\{\dfrac{-12-\sqrt{139}}{5},\,\dfrac{-12+\sqrt{139}}{5}\right\}`,
-            String.raw`\left\{\dfrac{12-\sqrt{139}}{5},\,\dfrac{12+\sqrt{139}}{5}\right\}`,
-            String.raw`\left\{\dfrac{-12-\sqrt{556}}{5},\,\dfrac{-12+\sqrt{556}}{5}\right\}`,
-            String.raw`\left\{\dfrac{-12-139}{5},\,\dfrac{-12+139}{5}\right\}`,
-            String.raw`\left\{-12-\sqrt{139},\,-12+\sqrt{139}\right\}`,
-            String.raw`\text{no real solution}`
-          ]},
+            String.raw`\(\left\{\dfrac{-12-\sqrt{139}}{5},\,\dfrac{-12+\sqrt{139}}{5}\right\}\)`,
+            String.raw`\(\left\{\dfrac{12-\sqrt{139}}{5},\,\dfrac{12+\sqrt{139}}{5}\right\}\)`,
+            String.raw`\(\left\{\dfrac{-12-\sqrt{556}}{5},\,\dfrac{-12+\sqrt{556}}{5}\right\}\)`,
+            String.raw`\(\left\{\dfrac{-12-139}{5},\,\dfrac{-12+139}{5}\right\}\)`,
+            String.raw`\(\left\{-12-\sqrt{139},\,-12+\sqrt{139}\right\}\)`,
+            String.raw`\(\text{no real solution}\)`
+          ]
+        },
 
-        { latex: String.raw`\text{The equation }x^4+3x^2-2=0\text{ can be solved by completing the square. Let }x^2=y\text{ and solve for }y.\text{ Approximate }x\text{ to two decimal places.}`,
+        {
+          stem: String.raw`
+            <p>The equation \(\;x^4+3x^2-2=0\) can be solved by completing the square.</p>
+            <p>Let \(\;x^2=y\) and solve for \(y\). Approximate \(x\) to two decimal places.</p>
+          `,
           choices: [
-            String.raw`x\approx -0.75\text{ or }x\approx 0.75`,
-            String.raw`x\approx -0.56\text{ or }x\approx 0.56`,
-            String.raw`x\approx -1.50\text{ or }x\approx 1.50`,
-            String.raw`x\approx -2.06\text{ or }x\approx 2.06`,
-            String.raw`x\approx 0.56\text{ or }x\approx 1.50`,
-            String.raw`\text{no real solution}`
-          ]}
+            String.raw`\(x\approx -0.75\text{ or }x\approx 0.75\)`,
+            String.raw`\(x\approx -0.56\text{ or }x\approx 0.56\)`,
+            String.raw`\(x\approx -1.50\text{ or }x\approx 1.50\)`,
+            String.raw`\(x\approx -2.06\text{ or }x\approx 2.06\)`,
+            String.raw`\(x\approx 0.56\text{ or }x\approx 1.50\)`,
+            String.raw`\(\text{no real solution}\)`
+          ]
+        }
       ]
     };
   </script>
 
-  <link rel="stylesheet" href="/math-homework/assets/core.css" />
-  <link rel="stylesheet" href="https://tikzjax.com/v1/fonts.css" />
-  <script defer src="/math-homework/assets/core.js"></script>
-  <script defer src="https://tikzjax.com/v1/tikzjax.js"></script>
+  <link rel="stylesheet" href="/math-homework/assets/core-rich.css" />
+
+  <!-- MathJax -->
   <script defer src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+
+  <!-- Core renderer LAST -->
+  <script defer src="/math-homework/assets/core-rich.js"></script>
 </head>
 
 <body>
