@@ -19,7 +19,7 @@
 
       graphics : String.raw``,
 
-      /* Updated after shuffling choices to randomize answer distribution */
+      /* Kept (already perfectly uniform A–F distribution) */
       answerKey : ["E","F","B","C","D","A","E","C","F","A","B","D"],
 
       questions : [
@@ -67,11 +67,13 @@
         {
           stem: String.raw`<p>Write as a single logarithm: \( \ln 20-2\ln 3+5\ln 2 \).</p>`,
           choices: [
-            String.raw`\(\ln\!\left(\dfrac{640}{3}\right)\)`,
+            /* changed (was duplicate of E after simplification) */
+            String.raw`\(\ln(5760)\)`,
             String.raw`\(\ln\!\left(\dfrac{640}{18}\right)\)`,
             String.raw`\(\ln\!\left(\dfrac{640}{9}\right)\)`,
             String.raw`\(\ln(20)+5\ln 2-2\ln 9\)`,
-            String.raw`\(\ln\!\left(\dfrac{20\cdot 2^{5}}{3}\right)\)`,
+            /* changed (no longer duplicates A) */
+            String.raw`\(\ln\!\left(\dfrac{20\cdot 2^{5}}{9}\right)\)`,
             String.raw`\(\ln\!\left(\dfrac{20\cdot 2^{5}}{3^{3}}\right)\)`
           ]
         },
@@ -85,7 +87,8 @@
           stem: String.raw`<p>Solve: \(2^{x}=5\). (Natural logs first, then approximate.)</p>`,
           choices: [
             String.raw`\(x=\dfrac{\ln 2}{\ln 5}\approx 0.431\)`,
-            String.raw`\(x=\ln 5-\ln 2\approx 0.916\)`,
+            /* changed (was redundant with C) */
+            String.raw`\(x=\dfrac{\ln 5}{2}\approx 0.805\)`,
             String.raw`\(x=\ln\!\left(\dfrac{5}{2}\right)\approx 0.916\)`,
             String.raw`\(x=\dfrac{\ln 5}{\ln 2}\approx 2.322\)`,
             String.raw`\(x=\dfrac{\ln 5}{2\ln 2}\approx 1.161\)`,
@@ -110,7 +113,8 @@
           choices: [
             String.raw`\(x=\dfrac{\ln 9}{\ln 4}+1\approx 2.585\)`,
             String.raw`\(x=\dfrac{\ln 4}{\ln 9}-1\approx -0.614\)`,
-            String.raw`\(x=\ln 9-\ln 4\approx 1.504\)`,
+            /* changed (was redundant with D) */
+            String.raw`\(x=\dfrac{\ln 9}{\ln 4}\approx 1.585\)`,
             String.raw`\(x=\ln\!\left(\dfrac{9}{4}\right)\approx 0.811\)`,
             String.raw`\(x=\dfrac{\ln 9}{\ln 4}-1\approx 0.585\)`,
             String.raw`\(x=\dfrac{\ln 9}{\ln 4-1}\approx 0.811\)`
@@ -133,7 +137,8 @@
           stem: String.raw`<p>Solve: \(0.7^{x}=0.43\). (Natural logs first, then approximate.)</p>`,
           choices: [
             String.raw`\(x=\dfrac{\ln 0.7}{\ln 0.43}\approx 0.423\)`,
-            String.raw`\(x=\ln\!\left(\dfrac{0.43}{0.7}\right)\approx -0.487\)`,
+            /* changed (was redundant with C) */
+            String.raw`\(x=\dfrac{\ln\!\left(\dfrac{0.43}{0.7}\right)}{\ln 0.7}\approx 1.363\)`,
             String.raw`\(x=\ln 0.43-\ln 0.7\approx -0.173\)`,
             String.raw`\(x=\dfrac{\ln 0.43}{0.7}\approx -1.210\)`,
             String.raw`\(x=\dfrac{\ln 0.43}{-\ln 0.7}\approx -2.366\)`,
@@ -146,8 +151,9 @@
           choices: [
             String.raw`\(x=7+\dfrac{\ln 20}{\ln 5}\approx 8.861\)`,
             String.raw`\(x=7+\dfrac{\ln 5}{\ln 20}\approx 7.339\)`,
-            String.raw`\(x=7+\ln\!\left(\dfrac{20}{5}\right)\approx 8.099\)`,
-            String.raw`\(x=7+\ln 20-\ln 5\approx 9.996\)`,
+            String.raw`\(x=7+\ln\!\left(\dfrac{20}{5}\right)\approx 8.386\)`,
+            /* changed (was redundant with C) */
+            String.raw`\(x=7+\dfrac{\ln 20}{5}\approx 7.599\)`,
             String.raw`\(x=7+\dfrac{\ln 4}{\ln 5}\approx 7.861\)`,
             String.raw`\(x=\dfrac{\ln 20}{\ln 5}-7\approx -5.139\)`
           ]
@@ -162,9 +168,10 @@
           choices: [
             String.raw`\(x=\dfrac{4\ln 8}{3\ln 8-\ln 3}\approx 1.618\)`,
             String.raw`\(x=\dfrac{-4\ln 8}{3\ln 8-\ln 3}\approx -1.618\)`,
-            String.raw`\(x=\dfrac{-4\ln 3}{3\ln 8-\ln 3}\approx -0.699\)`,
-            String.raw`\(x=\dfrac{-4\ln 8}{3\ln 3-\ln 8}\approx 0.737\)`,
-            String.raw`\(x=\dfrac{-4}{3-\left(\dfrac{\ln 3}{\ln 8}\right)}\approx -1.157\)`,
+            String.raw`\(x=\dfrac{-4\ln 3}{3\ln 8-\ln 3}\approx -0.855\)`,
+            String.raw`\(x=\dfrac{-4\ln 8}{3\ln 3-\ln 8}\approx 5.305\)`,
+            /* changed (was algebraically equivalent to the correct answer) */
+            String.raw`\(x=\dfrac{-4\ln 8}{3\ln 8+\ln 3}\approx -1.134\)`,
             String.raw`\(x=\dfrac{\ln 3-4\ln 8}{3\ln 8}\approx -1.157\)`
           ]
         },
@@ -173,11 +180,11 @@
           stem: String.raw`<p>Solve: \(18^{\,3x}=2^{\,4x-5}\). (Natural logs first, then approximate.)</p>`,
           choices: [
             String.raw`\(x=\dfrac{5\ln 2}{3\ln 18-4\ln 2}\approx 0.588\)`,
-            String.raw`\(x=\dfrac{-5}{3\ln 18-4\ln 2}\approx -0.190\)`,
-            String.raw`\(x=\dfrac{-5\ln 2}{3\ln 18+4\ln 2}\approx -0.126\)`,
+            String.raw`\(x=\dfrac{-5}{3\ln 18-4\ln 2}\approx -0.848\)`,
+            String.raw`\(x=\dfrac{-5\ln 2}{3\ln 18+4\ln 2}\approx -0.288\)`,
             String.raw`\(x=\dfrac{-5\ln 2}{3\ln 18-4\ln 2}\approx -0.588\)`,
-            String.raw`\(x=\dfrac{-5\ln 18}{3\ln 2-4\ln 18}\approx 0.126\)`,
-            String.raw`\(x=\dfrac{4\ln 2-5\ln 18}{3\ln 18}\approx -1.230\)`
+            String.raw`\(x=\dfrac{-5\ln 18}{3\ln 2-4\ln 18}\approx 0.902\)`,
+            String.raw`\(x=\dfrac{4\ln 2-5\ln 18}{3\ln 18}\approx -1.294\)`
           ]
         }
 
@@ -186,8 +193,12 @@
   </script>
 
   <link rel="stylesheet" href="/math-homework/assets/core-rich.css" />
-  <script defer src="/math-homework/assets/core-rich.js"></script>
+
+  <!-- MathJax FIRST -->
   <script defer src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+
+  <!-- core-rich LAST -->
+  <script defer src="/math-homework/assets/core-rich.js"></script>
 </head>
 
 <body>
