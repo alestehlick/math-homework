@@ -36,8 +36,8 @@
 
       graphics : String.raw``,
 
-      /* Correct answers for Q1–Q16 */
-      answerKey : ["B","C","B","C","D","B","C","C","B","C","D","A","C","C","F","B"],
+      /* Correct answers for Q1–Q16 (rebalanced distribution) */
+      answerKey : ["C","A","E","D","B","F","A","C","D","E","B","C","F","A","D","E"],
 
       questions : [
 
@@ -56,8 +56,8 @@
           `,
           choices: [
             String.raw`A reflection`,
-            String.raw`A translation`,
             String.raw`A rotation`,
+            String.raw`A translation`,
             String.raw`A dilation`,
             String.raw`No change (the figure maps to itself)`,
             String.raw`It cannot be determined from the diagram`
@@ -79,9 +79,9 @@
             </figure>
           `,
           choices: [
+            String.raw`The result is a rotation about the intersection point of \(\ell\) and \(m\).`,
             String.raw`The result is always a translation parallel to \(\ell\).`,
             String.raw`The result is always a reflection across a line parallel to \(m\).`,
-            String.raw`The result is a rotation about the intersection point of \(\ell\) and \(m\).`,
             String.raw`The result is a dilation centered at the intersection point of \(\ell\) and \(m\).`,
             String.raw`The result is always the identity (no change).`,
             String.raw`The result depends on the size of the figure but not on \(\ell\) and \(m\).`
@@ -96,10 +96,10 @@
           `,
           choices: [
             String.raw`\(19^\circ\)`,
-            String.raw`\(38^\circ\)`,
             String.raw`\(76^\circ\)`,
             String.raw`\(104^\circ\)`,
             String.raw`\(152^\circ\)`,
+            String.raw`\(38^\circ\)`,
             String.raw`\(304^\circ\)`
           ]
         },
@@ -119,10 +119,10 @@
           choices: [
             String.raw`A translation`,
             String.raw`A rotation`,
+            String.raw`No isometry can map one triangle to the other`,
             String.raw`A reflection`,
             String.raw`A dilation`,
-            String.raw`A contraction toward a point`,
-            String.raw`No isometry can map one triangle to the other`
+            String.raw`A contraction toward a point`
           ]
         },
 
@@ -141,9 +141,9 @@
           `,
           choices: [
             String.raw`Choose the point on \(\ell\) closest to \(A\).`,
+            String.raw`Reflect \(A\) across \(\ell\) to \(A^*\), draw \(\overline{A^*B}\), and take \(P=\overline{A^*B}\cap \ell\).`,
             String.raw`Choose the point on \(\ell\) closest to \(B\).`,
             String.raw`Choose the midpoint of \(\overline{AB}\), then drop a perpendicular to \(\ell\).`,
-            String.raw`Reflect \(A\) across \(\ell\) to \(A^*\), draw \(\overline{A^*B}\), and take \(P=\overline{A^*B}\cap \ell\).`,
             String.raw`Reflect \(A\) across \(\ell\) to \(A^*\), then choose the midpoint of \(\overline{A^*B}\).`,
             String.raw`Any point on \(\ell\) gives the same total cable length.`
           ]
@@ -163,11 +163,11 @@
           `,
           choices: [
             String.raw`The face`,
-            String.raw`The window`,
             String.raw`The fan`,
             String.raw`The house`,
+            String.raw`None of the objects`,
             String.raw`All four objects`,
-            String.raw`None of the objects`
+            String.raw`The window`
           ],
           choiceWrap: false
         },
@@ -185,9 +185,9 @@
             </figure>
           `,
           choices: [
+            String.raw`The fan`,
             String.raw`The face`,
             String.raw`The window`,
-            String.raw`The fan`,
             String.raw`The house`,
             String.raw`The window and the house`,
             String.raw`The face and the house`
@@ -231,9 +231,9 @@
           `,
           choices: [
             String.raw`The face`,
-            String.raw`The window`,
             String.raw`The fan`,
             String.raw`The house`,
+            String.raw`The window`,
             String.raw`The fan and the window`,
             String.raw`None of the objects`
           ],
@@ -247,12 +247,12 @@
             <p>If \(MN=4\), what is \(M'N'\)?</p>
           `,
           choices: [
-            String.raw`\(1\)`,
+            String.raw`\(4\)`,
+            String.raw`\(7\)`,
+            String.raw`\(16\)`,
             String.raw`\(\dfrac{4}{3}\)`,
             String.raw`\(12\)`,
-            String.raw`\(16\)`,
-            String.raw`\(51\)`,
-            String.raw`\(17\)`
+            String.raw`\(1\)`
           ]
         },
 
@@ -264,11 +264,11 @@
           `,
           choices: [
             String.raw`\(153\)`,
-            String.raw`\(54\)`,
-            String.raw`\(34\)`,
             String.raw`\(17\)`,
-            String.raw`\(3\)`,
-            String.raw`\(8\)`
+            String.raw`\(51\)`,
+            String.raw`\(34\)`,
+            String.raw`\(54\)`,
+            String.raw`\(68\)`
           ]
         },
 
@@ -286,12 +286,12 @@
             </figure>
           `,
           choices: [
+            String.raw`\(PA'=PA+3\).`,
+            String.raw`\(\overline{AA'}=3\cdot PA\).`,
             String.raw`Points \(P\), \(A\), and \(A'\) are collinear, and \(PA' = 3\cdot PA\).`,
-            String.raw`Segment \(\overline{AA'}\) is perpendicular to \(\overline{PP}\).`,
             String.raw`Triangle \(A'B'C'\) must be congruent to \(\triangle ABC\).`,
-            String.raw`The dilation must reverse the orientation of \(\triangle ABC\).`,
             String.raw`Point \(P\) must lie inside \(\triangle ABC\).`,
-            String.raw`The image \(\triangle A'B'C'\) must lie on the opposite side of \(P\) from \(\triangle ABC\).`
+            String.raw`The dilation must reverse the orientation of \(\triangle ABC\).`
           ]
         },
 
@@ -303,11 +303,11 @@
           `,
           choices: [
             String.raw`Always congruent`,
-            String.raw`Always neither congruent nor similar`,
-            String.raw`Always similar (but not necessarily congruent)`,
             String.raw`Always a reflection`,
             String.raw`Always a translation`,
-            String.raw`Always a rotation`
+            String.raw`Always a rotation`,
+            String.raw`Always neither congruent nor similar`,
+            String.raw`Always similar (but not necessarily congruent)`
           ]
         },
 
@@ -322,11 +322,11 @@
             <p>How are the original figure and the final image related?</p>
           `,
           choices: [
-            String.raw`Always congruent`,
-            String.raw`Always neither congruent nor similar`,
             String.raw`Always similar (but not necessarily congruent)`,
+            String.raw`Always congruent`,
             String.raw`Always a reflection`,
             String.raw`Always a translation`,
+            String.raw`Always neither congruent nor similar`,
             String.raw`Always the identity (no change)`
           ]
         },
@@ -341,9 +341,9 @@
             String.raw`A rotation of \(250^\circ\) clockwise about \(P\)`,
             String.raw`A rotation of \(110^\circ\) clockwise about \(P\)`,
             String.raw`A rotation of \(110^\circ\) counterclockwise about \(P\)`,
+            String.raw`No net change (a rotation of \(0^\circ\))`,
             String.raw`A reflection across a line through \(P\)`,
-            String.raw`A translation`,
-            String.raw`No net change (a rotation of \(0^\circ\))`
+            String.raw`A translation`
           ]
         },
 
@@ -353,12 +353,12 @@
             <p>What is the key characteristic preserved by an <strong>isometry</strong>?</p>
           `,
           choices: [
-            String.raw`Only angle measure is preserved (length may change).`,
-            String.raw`Distance between any two points is preserved.`,
-            String.raw`Only slope is preserved.`,
             String.raw`Area is preserved but perimeter may change.`,
             String.raw`Parallel lines are preserved, but lengths are not.`,
-            String.raw`Orientation is always preserved.`
+            String.raw`Only angle measure is preserved (length may change).`,
+            String.raw`Orientation is always preserved.`,
+            String.raw`Distance between any two points is preserved.`,
+            String.raw`Only slope is preserved.`
           ]
         }
 
