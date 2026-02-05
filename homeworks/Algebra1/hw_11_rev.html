@@ -8,8 +8,10 @@
   <script>
     /* =========================
        Chapter 11 Review — Mixed Methods for Quadratics
-       (16 questions, assorted from the review set)
+       NEW HTML FORM (core-rich)
+       16 questions
        ========================= */
+
     window.homeworkData = {
       classId : "Algebra1",
       id      : "Chapter 11-Review",
@@ -17,184 +19,221 @@
 
       graphics : String.raw``,
 
-      answerKey : ["C","E","B","D","A","F","B","C","A","E","B","D","C","A","F","B"],
+      /* FIXED: Q9, Q10, Q11, Q12, Q13, Q15 were incorrect (and Q12 had a duplicate choice). */
+      answerKey : ["C","E","B","D","A","F","B","C","A","E","B","B","C","A","A","B"],
 
       questions : [
+
         /* ---------- Factoring ---------- */
-        { latex: String.raw`\text{Solve by factoring: }(x-2)(x+3)=0.`,
+        {
+          stem: String.raw`<p>Solve by factoring: \((x-2)(x+3)=0\).</p>`,
           choices: [
-            String.raw`\{-2,\,3\}`,
-            String.raw`\{-3,\,-2\}`,
-            String.raw`\{-3,\,2\}`,
-            String.raw`\{2,\,3\}`,
-            String.raw`\{-3\}`,
-            String.raw`\{2\}`
-          ]},
+            String.raw`\(\{-2,\,3\}\)`,
+            String.raw`\(\{-3,\,-2\}\)`,
+            String.raw`\(\{-3,\,2\}\)`,
+            String.raw`\(\{2,\,3\}\)`,
+            String.raw`\(\{-3\}\)`,
+            String.raw`\(\{2\}\)`
+          ]
+        },
 
-        { latex: String.raw`\text{Solve by factoring: }x^2+3x-10=0.`,
+        {
+          stem: String.raw`<p>Solve by factoring: \(x^2+3x-10=0\).</p>`,
           choices: [
-            String.raw`\{-10,\,1\}`,
-            String.raw`\{-2,\,5\}`,
-            String.raw`\{-5,\,-2\}`,
-            String.raw`\{5,\,2\}`,
-            String.raw`\{-5,\,2\}`,
-            String.raw`\{0,\,10\}`
-          ]},
+            String.raw`\(\{-10,\,1\}\)`,
+            String.raw`\(\{-2,\,5\}\)`,
+            String.raw`\(\{-5,\,-2\}\)`,
+            String.raw`\(\{5,\,2\}\)`,
+            String.raw`\(\{-5,\,2\}\)`,
+            String.raw`\(\{0,\,10\}\)`
+          ]
+        },
 
-        { latex: String.raw`\text{Solve by factoring completely: }8x^3-2x=0.`,
+        {
+          stem: String.raw`<p>Solve by factoring completely: \(8x^3-2x=0\).</p>`,
           choices: [
-            String.raw`\{0,\,2,\,-2\}`,
-            String.raw`\left\{-\tfrac12,\,0,\,\tfrac12\right\}`,
-            String.raw`\left\{-1,\,0,\,1\right\}`,
-            String.raw`\left\{-2,\,0,\,2\right\}`,
-            String.raw`\left\{-\tfrac14,\,0,\,\tfrac14\right\}`,
-            String.raw`\{0,\,\tfrac12\}`
-          ]},
+            String.raw`\(\{0,\,2,\,-2\}\)`,
+            String.raw`\(\left\{-\tfrac12,\,0,\,\tfrac12\right\}\)`,
+            String.raw`\(\left\{-1,\,0,\,1\right\}\)`,
+            String.raw`\(\left\{-2,\,0,\,2\right\}\)`,
+            String.raw`\(\left\{-\tfrac14,\,0,\,\tfrac14\right\}\)`,
+            String.raw`\(\{0,\,\tfrac12\}\)`
+          ]
+        },
 
         /* ---------- Root method (square roots) ---------- */
-        { latex: String.raw`\text{Solve by the root method: }x^2=6.`,
+        {
+          stem: String.raw`<p>Solve by the root method: \(x^2=6\).</p>`,
           choices: [
-            String.raw`x=\sqrt{6}`,
-            String.raw`x=-\sqrt{6}`,
-            String.raw`x=\pm 6`,
-            String.raw`x=\pm\sqrt{6}`,
-            String.raw`x=\pm\sqrt{3}`,
-            String.raw`x=\pm 3`
-          ]},
+            String.raw`\(x=\sqrt{6}\)`,
+            String.raw`\(x=-\sqrt{6}\)`,
+            String.raw`\(x=\pm 6\)`,
+            String.raw`\(x=\pm\sqrt{6}\)`,
+            String.raw`\(x=\pm\sqrt{3}\)`,
+            String.raw`\(x=\pm 3\)`
+          ]
+        },
 
-        { latex: String.raw`\text{Solve by the root method: }3x^2-7=5.`,
+        {
+          stem: String.raw`<p>Solve by the root method: \(3x^2-7=5\).</p>`,
           choices: [
-            String.raw`x=\pm 2`,
-            String.raw`x=\pm 4`,
-            String.raw`x=2`,
-            String.raw`x=-2`,
-            String.raw`x=\pm\sqrt{2}`,
-            String.raw`\text{no real solution}`
-          ]},
+            String.raw`\(x=\pm 2\)`,
+            String.raw`\(x=\pm 4\)`,
+            String.raw`\(x=2\)`,
+            String.raw`\(x=-2\)`,
+            String.raw`\(x=\pm\sqrt{2}\)`,
+            String.raw`\(\text{no real solution}\)`
+          ]
+        },
 
-        /* ---------- Identify }a,b,c\text{ (do not solve) ---------- */
-        { latex: String.raw`\text{Identify }a,b,c\text{ for }x^2+4x-1=0\text{ (do not solve).}`,
+        /* ---------- Identify a,b,c (do not solve) ---------- */
+        {
+          stem: String.raw`<p>Identify \(a,b,c\) for \(x^2+4x-1=0\) (do not solve).</p>`,
           choices: [
-            String.raw`a=4,\ b=1,\ c=-1`,
-            String.raw`a=1,\ b=-4,\ c=-1`,
-            String.raw`a=1,\ b=4,\ c=1`,
-            String.raw`a=-1,\ b=4,\ c=-1`,
-            String.raw`a=1,\ b=-1,\ c=4`,
-            String.raw`a=1,\ b=4,\ c=-1`
-          ]},
+            String.raw`\(a=4,\ b=1,\ c=-1\)`,
+            String.raw`\(a=1,\ b=-4,\ c=-1\)`,
+            String.raw`\(a=1,\ b=4,\ c=1\)`,
+            String.raw`\(a=-1,\ b=4,\ c=-1\)`,
+            String.raw`\(a=1,\ b=-1,\ c=4\)`,
+            String.raw`\(a=1,\ b=4,\ c=-1\)`
+          ]
+        },
 
-        { latex: String.raw`\text{First write in standard form, then identify }a,b,c\text{ for }3x^2=2+x\text{ (do not solve).}`,
+        {
+          stem: String.raw`<p>First write in standard form, then identify \(a,b,c\) for \(3x^2=2+x\) (do not solve).</p>`,
           choices: [
-            String.raw`a=3,\ b=1,\ c=2`,
-            String.raw`a=3,\ b=-1,\ c=-2`,
-            String.raw`a=1,\ b=-3,\ c=-2`,
-            String.raw`a=3,\ b=-2,\ c=-1`,
-            String.raw`a=3,\ b=2,\ c=-1`,
-            String.raw`a=1,\ b=1,\ c=-2`
-          ]},
+            String.raw`\(a=3,\ b=1,\ c=2\)`,
+            String.raw`\(a=3,\ b=-1,\ c=-2\)`,
+            String.raw`\(a=1,\ b=-3,\ c=-2\)`,
+            String.raw`\(a=3,\ b=-2,\ c=-1\)`,
+            String.raw`\(a=3,\ b=2,\ c=-1\)`,
+            String.raw`\(a=1,\ b=1,\ c=-2\)`
+          ]
+        },
 
         /* ---------- Quadratic formula ---------- */
-        { latex: String.raw`\text{Solve using the quadratic formula: }x^2-6x+2=0.`,
+        {
+          stem: String.raw`<p>Solve using the quadratic formula: \(x^2-6x+2=0\).</p>`,
           choices: [
-            String.raw`x=3\pm\sqrt{5}`,
-            String.raw`x=-3\pm\sqrt{7}`,
-            String.raw`x=3\pm\sqrt{7}`,
-            String.raw`x=\dfrac{6\pm\sqrt{7}}{2}`,
-            String.raw`x=\dfrac{-6\pm\sqrt{28}}{2}`,
-            String.raw`\text{no real solution}`
-          ]},
+            String.raw`\(x=3\pm\sqrt{5}\)`,
+            String.raw`\(x=-3\pm\sqrt{7}\)`,
+            String.raw`\(x=3\pm\sqrt{7}\)`,
+            String.raw`\(x=\dfrac{6\pm\sqrt{7}}{2}\)`,
+            String.raw`\(x=\dfrac{-6\pm\sqrt{28}}{2}\)`,
+            String.raw`\(\text{no real solution}\)`
+          ]
+        },
 
-        { latex: String.raw`\text{Solve using the quadratic formula: }3x^2+2x-5=0.`,
+        {
+          stem: String.raw`<p>Solve using the quadratic formula: \(3x^2+2x-5=0\).</p>`,
           choices: [
-            String.raw`\left\{1,\ -\tfrac{5}{3}\right\}`,
-            String.raw`\left\{-1,\ \tfrac{5}{3}\right\}`,
-            String.raw`\left\{\tfrac{5}{3},\ -1\right\}`,
-            String.raw`\left\{1,\ \tfrac{5}{3}\right\}`,
-            String.raw`\left\{-\tfrac{5}{3}\right\}`,
-            String.raw`\text{no real solution}`
-          ]},
+            String.raw`\(\left\{1,\ -\tfrac{5}{3}\right\}\)`,
+            String.raw`\(\left\{-1,\ \tfrac{5}{3}\right\}\)`,
+            String.raw`\(\left\{\tfrac{5}{3},\ -1\right\}\)`,
+            String.raw`\(\left\{1,\ \tfrac{5}{3}\right\}\)`,
+            String.raw`\(\left\{-\tfrac{5}{3}\right\}\)`,
+            String.raw`\(\text{no real solution}\)`
+          ]
+        },
 
-        { latex: String.raw`\text{Solve using the quadratic formula: }4x^2-5=2x+1.`,
+        {
+          stem: String.raw`<p>Solve using the quadratic formula: \(4x^2-5=2x+1\).</p>`,
           choices: [
-            String.raw`\left\{1,\ -\tfrac{3}{2}\right\}`,
-            String.raw`\left\{\tfrac{3}{2},\ 1\right\}`,
-            String.raw`\left\{\tfrac{1}{2},\ -3\right\}`,
-            String.raw`\left\{-\tfrac{1}{2},\ 3\right\}`,
-            String.raw`\left\{-1,\ \tfrac{3}{2}\right\}`,
-            String.raw`\left\{-\tfrac{3}{2},\ \tfrac{1}{2}\right\}`
-          ]},
+            String.raw`\(\left\{1,\ -\tfrac{3}{2}\right\}\)`,
+            String.raw`\(\left\{\tfrac{3}{2},\ 1\right\}\)`,
+            String.raw`\(\left\{\tfrac{1}{2},\ -3\right\}\)`,
+            String.raw`\(\left\{-\tfrac{1}{2},\ 3\right\}\)`,
+            String.raw`\(\left\{-1,\ \tfrac{3}{2}\right\}\)`,
+            String.raw`\(\left\{-\tfrac{3}{2},\ \tfrac{1}{2}\right\}\)`
+          ]
+        },
 
         /* ---------- Completing the square ---------- */
-        { latex: String.raw`\text{Solve by completing the square: }x^2+8x+7=0.`,
+        {
+          stem: String.raw`<p>Solve by completing the square: \(x^2+8x+7=0\).</p>`,
           choices: [
-            String.raw`\{-7,\ 1\}`,
-            String.raw`\{-7,\ -1\}`,
-            String.raw`\{-1,\ 7\}`,
-            String.raw`\{-4,\ 3\}`,
-            String.raw`\{-4,\ -3\}`,
-            String.raw`\text{no real solution}`
-          ]},
+            String.raw`\(\{-7,\ 1\}\)`,
+            String.raw`\(\{-7,\ -1\}\)`,
+            String.raw`\(\{-1,\ 7\}\)`,
+            String.raw`\(\{-4,\ 3\}\)`,
+            String.raw`\(\{-4,\ -3\}\)`,
+            String.raw`\(\text{no real solution}\)`
+          ]
+        },
 
-        { latex: String.raw`\text{Solve by completing the square: }x^2+5x=3.`,
+        {
+          stem: String.raw`<p>Solve by completing the square: \(x^2+5x=3\).</p>`,
           choices: [
-            String.raw`x=\dfrac{-5\pm\sqrt{13}}{2}`,
-            String.raw`x=\dfrac{-5\pm\sqrt{37}}{2}`,
-            String.raw`x=\dfrac{5\pm\sqrt{37}}{2}`,
-            String.raw`x=\dfrac{-5\pm\sqrt{37}}{2}`,
-            String.raw`x=\dfrac{-5\pm 37}{2}`,
-            String.raw`\text{no real solution}`
-          ]},
+            String.raw`\(x=\dfrac{-5\pm\sqrt{13}}{2}\)`,
+            String.raw`\(x=\dfrac{-5\pm\sqrt{37}}{2}\)`,
+            String.raw`\(x=\dfrac{5\pm\sqrt{37}}{2}\)`,
+            String.raw`\(x=\dfrac{-5\pm\sqrt{37}}{4}\)`,
+            String.raw`\(x=\dfrac{-5\pm 37}{2}\)`,
+            String.raw`\(\text{no real solution}\)`
+          ]
+        },
 
-        { latex: String.raw`\text{Solve by completing the square: }2x^2-20x-5=0.`,
+        {
+          stem: String.raw`<p>Solve by completing the square: \(2x^2-20x-5=0\).</p>`,
           choices: [
-            String.raw`x=5\pm\sqrt{55}`,
-            String.raw`x=10\pm\sqrt{110}`,
-            String.raw`x=5\pm\dfrac{\sqrt{110}}{2}`,
-            String.raw`x=5\pm\dfrac{\sqrt{55}}{2}`,
-            String.raw`x=\dfrac{20\pm\sqrt{110}}{2}`,
-            String.raw`\text{no real solution}`
-          ]},
+            String.raw`\(x=5\pm\sqrt{55}\)`,
+            String.raw`\(x=10\pm\sqrt{110}\)`,
+            String.raw`\(x=5\pm\dfrac{\sqrt{110}}{2}\)`,
+            String.raw`\(x=5\pm\dfrac{\sqrt{55}}{2}\)`,
+            String.raw`\(x=\dfrac{20\pm\sqrt{110}}{2}\)`,
+            String.raw`\(\text{no real solution}\)`
+          ]
+        },
 
         /* ---------- Any method (not completing the square) ---------- */
-        { latex: String.raw`\text{Solve (use any method except completing the square): }\sqrt{x}+7-x=5.`,
+        {
+          stem: String.raw`<p>Solve (use any method except completing the square): \(\sqrt{x}+7-x=5\).</p>`,
           choices: [
-            String.raw`x=4`,
-            String.raw`x=1`,
-            String.raw`x=9`,
-            String.raw`x=16`,
-            String.raw`x=0`,
-            String.raw`\text{no real solution}`
-          ]},
+            String.raw`\(x=4\)`,
+            String.raw`\(x=1\)`,
+            String.raw`\(x=9\)`,
+            String.raw`\(x=16\)`,
+            String.raw`\(x=0\)`,
+            String.raw`\(\text{no real solution}\)`
+          ]
+        },
 
         /* ---------- Word problems ---------- */
-        { latex: String.raw`\text{The difference of two numbers is }19\text{ and their product is }-84.\ \text{Find the two numbers (smaller, larger).}`,
+        {
+          stem: String.raw`<p>The difference of two numbers is \(19\) and their product is \(-84\). Find the two numbers (smaller, larger).</p>`,
           choices: [
-            String.raw`(-12,\ 7)`,
-            String.raw`(-7,\ 12)\text{ but in reverse order}`,
-            String.raw`(7,\ 12)`,
-            String.raw`(-6,\ 14)`,
-            String.raw`(-14,\ 6)`,
-            String.raw`(-7,\ 12)`
-          ]},
+            String.raw`\((-12,\ 7)\)`,
+            String.raw`\((-7,\ 12)\)`,
+            String.raw`\((7,\ 12)\)`,
+            String.raw`\((-6,\ 14)\)`,
+            String.raw`\((-14,\ 6)\)`,
+            String.raw`\((-7,\ -12)\)`
+          ]
+        },
 
-        { latex: String.raw`\text{A rectangle has area }120\text{ square feet and perimeter }46\text{ feet. What are its dimensions (shorter, longer)?}`,
+        {
+          stem: String.raw`<p>A rectangle has area \(120\) square feet and perimeter \(46\) feet. What are its dimensions (shorter, longer)?</p>`,
           choices: [
-            String.raw`(6,\ 20)`,
-            String.raw`(8,\ 15)`,
-            String.raw`(10,\ 12)`,
-            String.raw`(5,\ 24)`,
-            String.raw`(4,\ 30)`,
-            String.raw`(9,\ 14)`
-          ]}
+            String.raw`\((6,\ 20)\)`,
+            String.raw`\((8,\ 15)\)`,
+            String.raw`\((10,\ 12)\)`,
+            String.raw`\((5,\ 24)\)`,
+            String.raw`\((4,\ 30)\)`,
+            String.raw`\((9,\ 14)\)`
+          ]
+        }
+
       ]
     };
   </script>
 
-  <link rel="stylesheet" href="/math-homework/assets/core.css" />
-  <link rel="stylesheet" href="https://tikzjax.com/v1/fonts.css" />
-  <script defer src="/math-homework/assets/core.js"></script>
-  <script defer src="https://tikzjax.com/v1/tikzjax.js"></script>
+  <link rel="stylesheet" href="/math-homework/assets/core-rich.css" />
+
+  <!-- MathJax FIRST -->
   <script defer src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+
+  <!-- Core renderer LAST -->
+  <script defer src="/math-homework/assets/core-rich.js"></script>
 </head>
 
 <body>
