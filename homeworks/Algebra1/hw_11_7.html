@@ -7,9 +7,10 @@
 
   <script>
     /* =========================
-       Homework 11-7 — Solving Quadratic Equations
+       Homework 11-7 — Solving Quadratic Equations (Algebra 1)
        (A: 4, B: 6, C: 2)
        ========================= */
+
     window.homeworkData = {
       classId : "Algebra1",
       id      : "Homework 11-7",
@@ -17,140 +18,172 @@
 
       graphics : String.raw``,
 
+      /* Checked: all answers correct */
       answerKey : ["B","A","B","B","A","B","B","B","A","A","A","A"],
 
       questions : [
+
         /* ---------- Type A (4) ---------- */
-        { latex: String.raw`\text{Use any method to find the solution set for each quadratic equation.}\; a^{2}-2a-8=0`,
-          choices: [
-            String.raw`\left\{-4,\,2\right\}`,
-            String.raw`\left\{-2,\,4\right\}`,
-            String.raw`\left\{2,\,4\right\}`,
-            String.raw`\left\{-2,\,-4\right\}`,
-            String.raw`\left\{4\right\}`,
-            String.raw`\text{no real solution}`
-          ]},
 
-        { latex: String.raw`\text{Use any method to find the solution set for each quadratic equation.}\; x^{2}-3x-5=0`,
+        {
+          stem: String.raw`<p>Use any method to find the solution set for each quadratic equation: \(a^{2}-2a-8=0\).</p>`,
           choices: [
-            String.raw`\left\{\dfrac{3-\sqrt{29}}{2},\,\dfrac{3+\sqrt{29}}{2}\right\}`,
-            String.raw`\left\{\dfrac{-3-\sqrt{29}}{2},\,\dfrac{-3+\sqrt{29}}{2}\right\}`,
-            String.raw`\left\{\dfrac{3-\sqrt{19}}{2},\,\dfrac{3+\sqrt{19}}{2}\right\}`,
-            String.raw`\left\{\dfrac{3-7}{2},\,\dfrac{3+7}{2}\right\}`,
-            String.raw`\left\{\dfrac{-3-\sqrt{19}}{2},\,\dfrac{-3+\sqrt{19}}{2}\right\}`,
-            String.raw`\text{no real solution}`
-          ]},
+            String.raw`\(\{-4,\,2\}\)`,
+            String.raw`\(\{-2,\,4\}\)`,
+            String.raw`\(\{2,\,4\}\)`,
+            String.raw`\(\{-2,\,-4\}\)`,
+            String.raw`\(\{4\}\)`,
+            String.raw`\(\text{no real solution}\)`
+          ]
+        },
 
-        { latex: String.raw`\text{Use any method to find the solution set for each quadratic equation.}\; x^{2}+x=2`,
+        {
+          stem: String.raw`<p>Use any method to find the solution set for each quadratic equation: \(x^{2}-3x-5=0\).</p>`,
           choices: [
-            String.raw`\left\{-1,\,2\right\}`,
-            String.raw`\left\{-2,\,1\right\}`,
-            String.raw`\left\{-2,\,-1\right\}`,
-            String.raw`\left\{1,\,2\right\}`,
-            String.raw`\left\{-1,\,1\right\}`,
-            String.raw`\left\{2\right\}`
-          ]},
+            String.raw`\(\left\{\dfrac{3-\sqrt{29}}{2},\,\dfrac{3+\sqrt{29}}{2}\right\}\)`,
+            String.raw`\(\left\{\dfrac{-3-\sqrt{29}}{2},\,\dfrac{-3+\sqrt{29}}{2}\right\}\)`,
+            String.raw`\(\left\{\dfrac{3-\sqrt{19}}{2},\,\dfrac{3+\sqrt{19}}{2}\right\}\)`,
+            String.raw`\(\left\{\dfrac{3-7}{2},\,\dfrac{3+7}{2}\right\}\)`,
+            String.raw`\(\left\{\dfrac{-3-\sqrt{19}}{2},\,\dfrac{-3+\sqrt{19}}{2}\right\}\)`,
+            String.raw`\(\text{no real solution}\)`
+          ]
+        },
 
-        { latex: String.raw`\text{Use any method to find the solution set for each quadratic equation.}\; x^{2}-21=4x`,
+        {
+          stem: String.raw`<p>Use any method to find the solution set for each quadratic equation: \(x^{2}+x=2\).</p>`,
           choices: [
-            String.raw`\left\{-7,\,3\right\}`,
-            String.raw`\left\{-3,\,7\right\}`,
-            String.raw`\left\{-3,\,21\right\}`,
-            String.raw`\left\{3,\,7\right\}`,
-            String.raw`\left\{-7,\,-3\right\}`,
-            String.raw`\text{no real solution}`
-          ]},
+            String.raw`\(\{-1,\,2\}\)`,
+            String.raw`\(\{-2,\,1\}\)`,
+            String.raw`\(\{-2,\,-1\}\)`,
+            String.raw`\(\{1,\,2\}\)`,
+            String.raw`\(\{-1,\,1\}\)`,
+            String.raw`\(\{2\}\)`
+          ]
+        },
+
+        {
+          stem: String.raw`<p>Use any method to find the solution set for each quadratic equation: \(x^{2}-21=4x\).</p>`,
+          choices: [
+            String.raw`\(\{-7,\,3\}\)`,
+            String.raw`\(\{-3,\,7\}\)`,
+            String.raw`\(\{-3,\,21\}\)`,
+            String.raw`\(\{3,\,7\}\)`,
+            String.raw`\(\{-7,\,-3\}\)`,
+            String.raw`\(\text{no real solution}\)`
+          ]
+        },
 
         /* ---------- Type B (6) ---------- */
-        { latex: String.raw`\text{Use any method to solve each quadratic equation.}\; (x+5)(2x-7)=9`,
-          choices: [
-            String.raw`\left\{-\dfrac{11}{2},\,4\right\}`,
-            String.raw`\left\{\dfrac{11}{2},\,4\right\}`,
-            String.raw`\left\{-\dfrac{11}{2},\,-4\right\}`,
-            String.raw`\left\{-\dfrac{11}{4},\,4\right\}`,
-            String.raw`\left\{-\dfrac{11}{2},\,\dfrac{7}{2}\right\}`,
-            String.raw`\text{no real solution}`
-          ]},
 
-        { latex: String.raw`\text{Use any method to solve each quadratic equation.}\; a^{2}+44a+2=0`,
+        {
+          stem: String.raw`<p>Use any method to solve each quadratic equation: \((x+5)(2x-7)=9\).</p>`,
           choices: [
-            String.raw`a=-22\pm\sqrt{241}`,
-            String.raw`a=-22\pm\sqrt{482}`,
-            String.raw`a=22\pm\sqrt{482}`,
-            String.raw`a=-44\pm\sqrt{482}`,
-            String.raw`a=-22\pm 2\sqrt{482}`,
-            String.raw`\text{no real solution}`
-          ]},
+            String.raw`\(\left\{-\dfrac{11}{2},\,4\right\}\)`,
+            String.raw`\(\left\{\dfrac{11}{2},\,4\right\}\)`,
+            String.raw`\(\left\{-\dfrac{11}{2},\,-4\right\}\)`,
+            String.raw`\(\left\{-\dfrac{11}{4},\,4\right\}\)`,
+            String.raw`\(\left\{-\dfrac{11}{2},\,\dfrac{7}{2}\right\}\)`,
+            String.raw`\(\text{no real solution}\)`
+          ]
+        },
 
-        { latex: String.raw`\text{Use any method to solve each quadratic equation.}\; (3x+4)(2x-5)=4`,
+        {
+          stem: String.raw`<p>Use any method to solve each quadratic equation: \(a^{2}+44a+2=0\).</p>`,
           choices: [
-            String.raw`\left\{\dfrac{3}{2},\,-\dfrac{8}{3}\right\}`,
-            String.raw`\left\{-\dfrac{3}{2},\,\dfrac{8}{3}\right\}`,
-            String.raw`\left\{\dfrac{8}{3},\,\dfrac{3}{2}\right\}`,
-            String.raw`\left\{-\dfrac{8}{3},\,-\dfrac{3}{2}\right\}`,
-            String.raw`\left\{-\dfrac{11}{2},\,4\right\}`,
-            String.raw`\text{no real solution}`
-          ]},
+            String.raw`\(a=-22\pm\sqrt{241}\)`,
+            String.raw`\(a=-22\pm\sqrt{482}\)`,
+            String.raw`\(a=22\pm\sqrt{482}\)`,
+            String.raw`\(a=-44\pm\sqrt{482}\)`,
+            String.raw`\(a=-22\pm 2\sqrt{482}\)`,
+            String.raw`\(\text{no real solution}\)`
+          ]
+        },
 
-        { latex: String.raw`\text{Use any method to solve each quadratic equation.}\; (x-2)^{2}+(x-5)+1=0`,
+        {
+          stem: String.raw`<p>Use any method to solve each quadratic equation: \((3x+4)(2x-5)=4\).</p>`,
           choices: [
-            String.raw`\left\{-3,\,0\right\}`,
-            String.raw`\left\{0,\,3\right\}`,
-            String.raw`\left\{-2,\,1\right\}`,
-            String.raw`\left\{2,\,5\right\}`,
-            String.raw`\left\{3\right\}`,
-            String.raw`\text{no real solution}`
-          ]},
+            String.raw`\(\left\{\dfrac{3}{2},\,-\dfrac{8}{3}\right\}\)`,
+            String.raw`\(\left\{-\dfrac{3}{2},\,\dfrac{8}{3}\right\}\)`,
+            String.raw`\(\left\{\dfrac{8}{3},\,\dfrac{3}{2}\right\}\)`,
+            String.raw`\(\left\{-\dfrac{8}{3},\,-\dfrac{3}{2}\right\}\)`,
+            String.raw`\(\left\{-\dfrac{11}{2},\,4\right\}\)`,
+            String.raw`\(\text{no real solution}\)`
+          ]
+        },
 
-        { latex: String.raw`\text{Use any method to solve each quadratic equation.}\; (y+4)^{2}-y(y+2)=9`,
+        {
+          stem: String.raw`<p>Use any method to solve each quadratic equation: \((x-2)^{2}+(x-5)+1=0\).</p>`,
           choices: [
-            String.raw`y=-\dfrac{7}{6}`,
-            String.raw`y=\dfrac{7}{6}`,
-            String.raw`y=-\dfrac{6}{7}`,
-            String.raw`y=-\dfrac{7}{3}`,
-            String.raw`y=-\dfrac{7}{6}\text{ or }y=0`,
-            String.raw`\text{no real solution}`
-          ]},
+            String.raw`\(\{-3,\,0\}\)`,
+            String.raw`\(\{0,\,3\}\)`,
+            String.raw`\(\{-2,\,1\}\)`,
+            String.raw`\(\{2,\,5\}\)`,
+            String.raw`\(\{3\}\)`,
+            String.raw`\(\text{no real solution}\)`
+          ]
+        },
 
-        { latex: String.raw`\text{Use any method to solve each quadratic equation.}\; (x-6)(x+2)-(x-6)=9`,
+        {
+          stem: String.raw`<p>Use any method to solve each quadratic equation: \((y+4)^{2}-y(y+2)=9\).</p>`,
           choices: [
-            String.raw`\left\{\dfrac{5-\sqrt{85}}{2},\,\dfrac{5+\sqrt{85}}{2}\right\}`,
-            String.raw`\left\{\dfrac{-5-\sqrt{85}}{2},\,\dfrac{-5+\sqrt{85}}{2}\right\}`,
-            String.raw`\left\{\dfrac{5-\sqrt{85}}{4},\,\dfrac{5+\sqrt{85}}{4}\right\}`,
-            String.raw`\left\{\dfrac{5-\sqrt{61}}{2},\,\dfrac{5+\sqrt{61}}{2}\right\}`,
-            String.raw`\left\{\dfrac{5-85}{2},\,\dfrac{5+85}{2}\right\}`,
-            String.raw`\text{no real solution}`
-          ]},
+            String.raw`\(y=-\dfrac{7}{6}\)`,
+            String.raw`\(y=\dfrac{7}{6}\)`,
+            String.raw`\(y=-\dfrac{6}{7}\)`,
+            String.raw`\(y=-\dfrac{7}{3}\)`,
+            String.raw`\(y=-\dfrac{7}{6}\text{ or }y=0\)`,
+            String.raw`\(\text{no real solution}\)`
+          ]
+        },
+
+        {
+          stem: String.raw`<p>Use any method to solve each quadratic equation: \((x-6)(x+2)-(x-6)=9\).</p>`,
+          choices: [
+            String.raw`\(\left\{\dfrac{5-\sqrt{85}}{2},\,\dfrac{5+\sqrt{85}}{2}\right\}\)`,
+            String.raw`\(\left\{\dfrac{-5-\sqrt{85}}{2},\,\dfrac{-5+\sqrt{85}}{2}\right\}\)`,
+            String.raw`\(\left\{\dfrac{5-\sqrt{85}}{4},\,\dfrac{5+\sqrt{85}}{4}\right\}\)`,
+            String.raw`\(\left\{\dfrac{5-\sqrt{61}}{2},\,\dfrac{5+\sqrt{61}}{2}\right\}\)`,
+            String.raw`\(\left\{\dfrac{5-85}{2},\,\dfrac{5+85}{2}\right\}\)`,
+            String.raw`\(\text{no real solution}\)`
+          ]
+        },
 
         /* ---------- Type C (2) ---------- */
-        { latex: String.raw`\text{Find }x\text{ rounded to 3 decimal places.}\; 2x^{2}-7x-8=0`,
-          choices: [
-            String.raw`\left\{-0.908,\,4.408\right\}`,
-            String.raw`\left\{-0.907,\,4.408\right\}`,
-            String.raw`\left\{-0.908,\,4.407\right\}`,
-            String.raw`\left\{0.908,\,4.408\right\}`,
-            String.raw`\left\{-4.408,\,0.908\right\}`,
-            String.raw`\text{no real solution}`
-          ]},
 
-        { latex: String.raw`\text{Find }x\text{ rounded to 3 decimal places.}\; (x-1)^{2}-(3x+2)(x-5)=0`,
+        {
+          stem: String.raw`<p>Find \(x\) rounded to 3 decimal places: \(2x^{2}-7x-8=0\).</p>`,
           choices: [
-            String.raw`\left\{-0.864,\,6.364\right\}`,
-            String.raw`\left\{-0.865,\,6.364\right\}`,
-            String.raw`\left\{-0.864,\,6.363\right\}`,
-            String.raw`\left\{0.864,\,6.364\right\}`,
-            String.raw`\left\{-6.364,\,0.864\right\}`,
-            String.raw`\text{no real solution}`
-          ]}
+            String.raw`\(\{-0.908,\,4.408\}\)`,
+            String.raw`\(\{-0.907,\,4.408\}\)`,
+            String.raw`\(\{-0.908,\,4.407\}\)`,
+            String.raw`\(\{0.908,\,4.408\}\)`,
+            String.raw`\(\{-4.408,\,0.908\}\)`,
+            String.raw`\(\text{no real solution}\)`
+          ]
+        },
+
+        {
+          stem: String.raw`<p>Find \(x\) rounded to 3 decimal places: \((x-1)^{2}-(3x+2)(x-5)=0\).</p>`,
+          choices: [
+            String.raw`\(\{-0.864,\,6.364\}\)`,
+            String.raw`\(\{-0.865,\,6.364\}\)`,
+            String.raw`\(\{-0.864,\,6.363\}\)`,
+            String.raw`\(\{0.864,\,6.364\}\)`,
+            String.raw`\(\{-6.364,\,0.864\}\)`,
+            String.raw`\(\text{no real solution}\)`
+          ]
+        }
+
       ]
     };
   </script>
 
-  <link rel="stylesheet" href="/math-homework/assets/core.css" />
-  <link rel="stylesheet" href="https://tikzjax.com/v1/fonts.css" />
-  <script defer src="/math-homework/assets/core.js"></script>
-  <script defer src="https://tikzjax.com/v1/tikzjax.js"></script>
+  <link rel="stylesheet" href="/math-homework/assets/core-rich.css" />
+
+  <!-- MathJax FIRST -->
   <script defer src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+
+  <!-- core-rich LAST -->
+  <script defer src="/math-homework/assets/core-rich.js"></script>
 </head>
 
 <body>
