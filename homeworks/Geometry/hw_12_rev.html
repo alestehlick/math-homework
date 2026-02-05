@@ -37,7 +37,7 @@
       graphics : String.raw``,
 
       /* Correct answers for Q1–Q16 (rebalanced distribution) */
-      answerKey : ["C","A","E","D","B","F","A","C","D","E","B","C","F","A","D","E"],
+      answerKey : ["C","A","E","D","B","F","A","D","E","B","C","F","A","D","E"],
 
       questions : [
 
@@ -153,7 +153,7 @@
         {
           stem: String.raw`
             <p><strong>Refer to Figure 5.</strong></p>
-            <p>Which object has <em>both</em> line symmetry and rotational symmetry?</p>
+            <p>Which object has <em>both</em> reflection symmetry and rotational symmetry?</p>
           `,
           media: String.raw`
             <figure>
@@ -167,7 +167,7 @@
             String.raw`The house`,
             String.raw`None of the objects`,
             String.raw`All four objects`,
-            String.raw`The window`
+            String.raw`The window and the fan`
           ],
           choiceWrap: false
         },
@@ -176,7 +176,7 @@
         {
           stem: String.raw`
             <p><strong>Refer to Figure 5.</strong></p>
-            <p>Which object has rotational symmetry but <em>no</em> line symmetry?</p>
+            <p>Which object has rotational symmetry but <em>no</em> reflection symmetry?</p>
           `,
           media: String.raw`
             <figure>
@@ -185,7 +185,7 @@
             </figure>
           `,
           choices: [
-            String.raw`The fan`,
+            String.raw`None`,
             String.raw`The face`,
             String.raw`The window`,
             String.raw`The house`,
@@ -195,29 +195,9 @@
           choiceWrap: false
         },
 
-        /* -------------------- Q8 -------------------- */
-        {
-          stem: String.raw`
-            <p><strong>Refer to Figure 5.</strong></p>
-            <p>For the object in Figure 5 that has rotational symmetry only, what is the <em>smallest</em> angle of rotation?</p>
-          `,
-          media: String.raw`
-            <figure>
-              <img src="12-rev-12.png" alt="Problems 12–17: four objects (face, window, fan, house)" />
-              <figcaption>Figure 5</figcaption>
-            </figure>
-          `,
-          choices: [
-            String.raw`\(60^\circ\)`,
-            String.raw`\(90^\circ\)`,
-            String.raw`\(120^\circ\)`,
-            String.raw`\(180^\circ\)`,
-            String.raw`\(240^\circ\)`,
-            String.raw`\(360^\circ\)`
-          ]
-        },
+      
 
-        /* -------------------- Q9 -------------------- */
+        /* -------------------- Q8 -------------------- */
         {
           stem: String.raw`
             <p><strong>Refer to Figure 5.</strong></p>
@@ -240,7 +220,7 @@
           choiceWrap: false
         },
 
-        /* -------------------- Q10 -------------------- */
+        /* -------------------- Q9 -------------------- */
         {
           stem: String.raw`
             <p>A dilation has scale factor \(k=3\).</p>
@@ -256,7 +236,7 @@
           ]
         },
 
-        /* -------------------- Q11 -------------------- */
+        /* -------------------- Q10 -------------------- */
         {
           stem: String.raw`
             <p>A dilation has scale factor \(k=3\).</p>
@@ -272,7 +252,7 @@
           ]
         },
 
-        /* -------------------- Q12 -------------------- */
+        /* -------------------- Q11 -------------------- */
         {
           stem: String.raw`
             <p><strong>Refer to Figure 6.</strong></p>
@@ -295,7 +275,7 @@
           ]
         },
 
-        /* -------------------- Q13 -------------------- */
+        /* -------------------- Q12 -------------------- */
         {
           stem: String.raw`
             <p>A <strong>contraction</strong> toward a point \(P\) maps a triangle to a smaller triangle.</p>
@@ -311,7 +291,7 @@
           ]
         },
 
-        /* -------------------- Q14 -------------------- */
+        /* -------------------- Q13 -------------------- */
         {
           stem: String.raw`
             <p>A transformation is performed in two steps:</p>
@@ -331,7 +311,7 @@
           ]
         },
 
-        /* -------------------- Q15 -------------------- */
+        /* -------------------- Q14 -------------------- */
         {
           stem: String.raw`
             <p>About the same point \(P\), a figure is rotated \(125^\circ\) clockwise and then rotated \(235^\circ\) clockwise.</p>
@@ -347,7 +327,7 @@
           ]
         },
 
-        /* -------------------- Q16 -------------------- */
+        /* -------------------- Q15 -------------------- */
         {
           stem: String.raw`
             <p>What is the key characteristic preserved by an <strong>isometry</strong>?</p>
