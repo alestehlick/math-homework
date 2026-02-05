@@ -10,6 +10,7 @@
        Homework 11-8 — Applications of Quadratics
        (A: 5, B: 5, C: 2)
        ========================= */
+
     window.homeworkData = {
       classId : "Algebra1",
       id      : "Homework 11-8",
@@ -17,140 +18,210 @@
 
       graphics : String.raw``,
 
+      /* Q1–Q12 */
       answerKey : ["C","C","C","A","A","B","A","B","C","D","A","C"],
 
       questions : [
+
         /* ---------- Type A (5) ---------- */
-        { latex: String.raw`\text{An open-top rectangular box has a bottom that is }5\text{ units by }8\text{ units. What is the perimeter of the bottom?}`,
-          choices: [
-            String.raw`16`,
-            String.raw`18`,
-            String.raw`26`,
-            String.raw`30`,
-            String.raw`40`,
-            String.raw`13`
-          ]},
 
-        { latex: String.raw`\text{An open-top rectangular box has a bottom that is }5\text{ units by }8\text{ units. What is the area of the bottom?}`,
+        {
+          stem: String.raw`
+            <p>An open-top rectangular box has a bottom that is \(5\) units by \(8\) units.</p>
+            <p>What is the <strong>perimeter</strong> of the bottom?</p>
+          `,
           choices: [
-            String.raw`13`,
-            String.raw`24`,
-            String.raw`40`,
-            String.raw`26`,
-            String.raw`64`,
-            String.raw`15`
-          ]},
+            String.raw`\(16\)`,
+            String.raw`\(18\)`,
+            String.raw`\(26\)`,
+            String.raw`\(30\)`,
+            String.raw`\(40\)`,
+            String.raw`\(13\)`
+          ]
+        },
 
-        { latex: String.raw`\text{A rectangular box has a bottom that is }5\text{ units by }8\text{ units and a height of }3\text{ units. What is the volume of the box?}`,
+        {
+          stem: String.raw`
+            <p>An open-top rectangular box has a bottom that is \(5\) units by \(8\) units.</p>
+            <p>What is the <strong>area</strong> of the bottom?</p>
+          `,
           choices: [
-            String.raw`40`,
-            String.raw`80`,
-            String.raw`120`,
-            String.raw`160`,
-            String.raw`240`,
-            String.raw`15`
-          ]},
+            String.raw`\(13\)`,
+            String.raw`\(24\)`,
+            String.raw`\(40\)`,
+            String.raw`\(26\)`,
+            String.raw`\(64\)`,
+            String.raw`\(15\)`
+          ]
+        },
 
-        { latex: String.raw`\text{An open-top rectangular box has a bottom that is }5\text{ units by }8\text{ units and a height of }3\text{ units. What is the total surface area of cardboard used (bottom plus four sides, no top)?}`,
+        {
+          stem: String.raw`
+            <p>A rectangular box has a bottom that is \(5\) units by \(8\) units and a height of \(3\) units.</p>
+            <p>What is the <strong>volume</strong> of the box?</p>
+          `,
           choices: [
-            String.raw`118`,
-            String.raw`120`,
-            String.raw`112`,
-            String.raw`104`,
-            String.raw`98`,
-            String.raw`158`
-          ]},
+            String.raw`\(40\)`,
+            String.raw`\(80\)`,
+            String.raw`\(120\)`,
+            String.raw`\(160\)`,
+            String.raw`\(240\)`,
+            String.raw`\(15\)`
+          ]
+        },
 
-        { latex: String.raw`\text{A rectangular box has bottom dimensions }x\text{ by }(2x+4)\text{ and height }(x-3).\ \text{Which expression represents the volume?}`,
+        {
+          stem: String.raw`
+            <p>An open-top rectangular box has a bottom that is \(5\) units by \(8\) units and a height of \(3\) units.</p>
+            <p>What is the <strong>total surface area</strong> of cardboard used (bottom plus four sides, no top)?</p>
+          `,
           choices: [
-            String.raw`x(2x+4)(x-3)`,
-            String.raw`x(2x-4)(x-3)`,
-            String.raw`(2x+4)(x-3)`,
-            String.raw`x(2x+4)(x+3)`,
-            String.raw`x(2x+4)(3-x)`,
-            String.raw`x^{2}(2x+4)(x-3)`
-          ]},
+            String.raw`\(118\)`,
+            String.raw`\(120\)`,
+            String.raw`\(112\)`,
+            String.raw`\(104\)`,
+            String.raw`\(98\)`,
+            String.raw`\(158\)`
+          ]
+        },
+
+        {
+          stem: String.raw`
+            <p>A rectangular box has bottom dimensions \(x\) by \((2x+4)\) and height \((x-3)\).</p>
+            <p>Which expression represents the <strong>volume</strong>?</p>
+          `,
+          choices: [
+            String.raw`\(x(2x+4)(x-3)\)`,
+            String.raw`\(x(2x-4)(x-3)\)`,
+            String.raw`\((2x+4)(x-3)\)`,
+            String.raw`\(x(2x+4)(x+3)\)`,
+            String.raw`\(x(2x+4)(3-x)\)`,
+            String.raw`\(x^{2}(2x+4)(x-3)\)`
+          ]
+        },
 
         /* ---------- Type B (5) ---------- */
-        { latex: String.raw`\text{Two numbers have a difference of }6\text{ and a product of }216.\ \text{Which pair of numbers satisfies both conditions?}`,
-          choices: [
-            String.raw`12\text{ and }18\text{ only}`,
-            String.raw`12\text{ and }18\text{ or }-12\text{ and }-18`,
-            String.raw`-12\text{ and }-18\text{ only}`,
-            String.raw`6\text{ and }36`,
-            String.raw`9\text{ and }24`,
-            String.raw`15\text{ and }21`
-          ]},
 
-        { latex: String.raw`\text{A rectangular patio has area }96\text{ ft}^2\text{. The width is }4\text{ ft less than the length. What are the dimensions?}`,
+        {
+          stem: String.raw`
+            <p>Two numbers have a difference of \(6\) and a product of \(216\).</p>
+            <p>Which pair of numbers satisfies both conditions?</p>
+          `,
           choices: [
-            String.raw`\text{width }8\text{ ft, length }12\text{ ft}`,
-            String.raw`\text{width }12\text{ ft, length }8\text{ ft}`,
-            String.raw`\text{width }6\text{ ft, length }16\text{ ft}`,
-            String.raw`\text{width }4\text{ ft, length }24\text{ ft}`,
-            String.raw`\text{width }10\text{ ft, length }14\text{ ft}`,
-            String.raw`\text{width }9\text{ ft, length }11\text{ ft}`
-          ]},
+            String.raw`\(12\) and \(18\) only`,
+            String.raw`\(12\) and \(18\) or \(-12\) and \(-18\)`,
+            String.raw`\(-12\) and \(-18\) only`,
+            String.raw`\(6\) and \(36\)`,
+            String.raw`\(9\) and \(24\)`,
+            String.raw`\(15\) and \(21\)`
+          ]
+        },
 
-        { latex: String.raw`\text{Start with a square of side length }s\text{ inches. If you increase one side by }3\text{ inches and decrease the adjacent side by }1\text{ inch, you get a rectangle with area }77\text{ in}^2\text{. What is }s\text{?}`,
+        {
+          stem: String.raw`
+            <p>A rectangular patio has area \(96\text{ ft}^2\).</p>
+            <p>The width is \(4\) ft less than the length. What are the dimensions?</p>
+          `,
           choices: [
-            String.raw`5`,
-            String.raw`8`,
-            String.raw`10`,
-            String.raw`11`,
-            String.raw`7`,
-            String.raw`16`
-          ]},
+            String.raw`width \(8\) ft, length \(12\) ft`,
+            String.raw`width \(12\) ft, length \(8\) ft`,
+            String.raw`width \(6\) ft, length \(16\) ft`,
+            String.raw`width \(4\) ft, length \(24\) ft`,
+            String.raw`width \(10\) ft, length \(14\) ft`,
+            String.raw`width \(9\) ft, length \(11\) ft`
+          ]
+        },
 
-        { latex: String.raw`\text{A box is made from a }24\text{-in by }18\text{-in sheet by cutting out squares of side }x\text{ at each corner and folding up the sides. If the bottom area is }265\text{ in}^2\text{, what is }x\text{?}`,
+        {
+          stem: String.raw`
+            <p>Start with a square of side length \(s\) inches.</p>
+            <p>If you increase one side by \(3\) inches and decrease the adjacent side by \(1\) inch, you get a rectangle with area \(77\text{ in}^2\).</p>
+            <p>What is \(s\)?</p>
+          `,
           choices: [
-            String.raw`x=\dfrac{21+\sqrt{274}}{2}`,
-            String.raw`x=\dfrac{21-\sqrt{274}}{4}`,
-            String.raw`x=\dfrac{21-\sqrt{274}}{2}`,
-            String.raw`x=\dfrac{42-\sqrt{274}}{2}`,
-            String.raw`x=\dfrac{21-2\sqrt{274}}{2}`,
-            String.raw`x=2.22`
-          ]},
+            String.raw`\(5\)`,
+            String.raw`\(8\)`,
+            String.raw`\(10\)`,
+            String.raw`\(11\)`,
+            String.raw`\(7\)`,
+            String.raw`\(16\)`
+          ]
+        },
 
-        { latex: String.raw`\text{A right triangle has hypotenuse }8\text{ in. One leg is }3\text{ in longer than the other. To the nearest tenth, what are the lengths of the legs?}`,
+        {
+          stem: String.raw`
+            <p>A box is made from a \(24\)-in by \(18\)-in sheet by cutting out squares of side \(x\) at each corner and folding up the sides.</p>
+            <p>If the <strong>bottom area</strong> is \(265\text{ in}^2\), what is \(x\)?</p>
+          `,
           choices: [
-            String.raw`4.5\text{ in and }7.5\text{ in}`,
-            String.raw`3.5\text{ in and }6.5\text{ in}`,
-            String.raw`5.0\text{ in and }8.0\text{ in}`,
-            String.raw`4.0\text{ in and }7.0\text{ in}`,
-            String.raw`2.0\text{ in and }5.0\text{ in}`,
-            String.raw`3.0\text{ in and }6.0\text{ in}`
-          ]},
+            String.raw`\(x=\dfrac{21+\sqrt{274}}{2}\)`,
+            String.raw`\(x=\dfrac{21-\sqrt{274}}{4}\)`,
+            String.raw`\(x=\dfrac{21-\sqrt{274}}{2}\)`,
+            String.raw`\(x=\dfrac{42-\sqrt{274}}{2}\)`,
+            String.raw`\(x=\dfrac{21-2\sqrt{274}}{2}\)`,
+            String.raw`\(x=2.22\)`
+          ]
+        },
+
+        {
+          stem: String.raw`
+            <p>A right triangle has hypotenuse \(8\) in.</p>
+            <p>One leg is \(3\) in longer than the other. To the nearest tenth, what are the lengths of the legs?</p>
+          `,
+          choices: [
+            String.raw`\(4.5\) in and \(7.5\) in`,
+            String.raw`\(3.5\) in and \(6.5\) in`,
+            String.raw`\(5.0\) in and \(8.0\) in`,
+            String.raw`\(4.0\) in and \(7.0\) in`,
+            String.raw`\(2.0\) in and \(5.0\) in`,
+            String.raw`\(3.0\) in and \(6.0\) in`
+          ]
+        },
 
         /* ---------- Type C (2) ---------- */
-        { latex: String.raw`\text{A rectangle has perimeter }54\text{ in and area }180\text{ in}^2\text{. What are its dimensions?}`,
-          choices: [
-            String.raw`12\text{ in by }15\text{ in}`,
-            String.raw`9\text{ in by }18\text{ in}`,
-            String.raw`10\text{ in by }17\text{ in}`,
-            String.raw`6\text{ in by }30\text{ in}`,
-            String.raw`13\text{ in by }14\text{ in}`,
-            String.raw`8\text{ in by }19\text{ in}`
-          ]},
 
-        { latex: String.raw`\text{A rectangular cardboard sheet has length }3\text{ in more than its width. A box is formed by cutting }3\text{-in squares from each corner and folding up the sides (so the box height is }3\text{ in). If the box volume is }540\text{ in}^3\text{, what are the original cardboard dimensions?}`,
+        {
+          stem: String.raw`
+            <p>A rectangle has perimeter \(54\) in and area \(180\text{ in}^2\).</p>
+            <p>What are its dimensions?</p>
+          `,
           choices: [
-            String.raw`12\text{ in by }18\text{ in}`,
-            String.raw`15\text{ in by }24\text{ in}`,
-            String.raw`18\text{ in by }21\text{ in}`,
-            String.raw`21\text{ in by }24\text{ in}`,
-            String.raw`18\text{ in by }24\text{ in}`,
-            String.raw`9\text{ in by }12\text{ in}`
-          ]}
+            String.raw`\(12\) in by \(15\) in`,
+            String.raw`\(9\) in by \(18\) in`,
+            String.raw`\(10\) in by \(17\) in`,
+            String.raw`\(6\) in by \(30\) in`,
+            String.raw`\(13\) in by \(14\) in`,
+            String.raw`\(8\) in by \(19\) in`
+          ]
+        },
+
+        {
+          stem: String.raw`
+            <p>A rectangular cardboard sheet has length \(3\) in more than its width.</p>
+            <p>A box is formed by cutting \(3\)-in squares from each corner and folding up the sides (so the box height is \(3\) in).</p>
+            <p>If the box volume is \(540\text{ in}^3\), what are the original cardboard dimensions?</p>
+          `,
+          choices: [
+            String.raw`\(12\) in by \(18\) in`,
+            String.raw`\(15\) in by \(24\) in`,
+            String.raw`\(18\) in by \(21\) in`,
+            String.raw`\(21\) in by \(24\) in`,
+            String.raw`\(18\) in by \(24\) in`,
+            String.raw`\(9\) in by \(12\) in`
+          ]
+        }
+
       ]
     };
   </script>
 
-  <link rel="stylesheet" href="/math-homework/assets/core.css" />
-  <link rel="stylesheet" href="https://tikzjax.com/v1/fonts.css" />
-  <script defer src="/math-homework/assets/core.js"></script>
-  <script defer src="https://tikzjax.com/v1/tikzjax.js"></script>
+  <link rel="stylesheet" href="/math-homework/assets/core-rich.css" />
+
+  <!-- MathJax FIRST -->
   <script defer src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+
+  <!-- Core renderer LAST -->
+  <script defer src="/math-homework/assets/core-rich.js"></script>
 </head>
 
 <body>
