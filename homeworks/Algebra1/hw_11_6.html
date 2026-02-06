@@ -8,7 +8,11 @@
   <script>
     /* =========================
        Homework 11-6 — Quadratic Formula
-       (A: 4, B: 6, C: 2)  [12 total]
+       (NOW 17 total: +5 new at the top)
+
+       Added:
+       Q1–Q2: identify a,b,c
+       Q3–Q5: discriminant → number of real solutions
        ========================= */
     window.homeworkData = {
       classId : "Algebra1",
@@ -17,12 +21,95 @@
 
       graphics : String.raw``,
 
-      /* Q1–Q12 */
-      answerKey : ["C","D","B","A","C","A","B","B","A","C","A","C"],
+      /* Q1–Q17 */
+      answerKey : [
+        "C","B","A","F","D",
+        "C","D","B","A","C","A","B","B","A","C","A","C"
+      ],
 
       questions : [
 
-        /* -------------------- Q1 -------------------- */
+        /* -------------------- Q1 (NEW) -------------------- */
+        {
+          stem: String.raw`
+            <p><strong>Identify \(a\), \(b\), and \(c\)</strong> in the quadratic equation (standard form \(ax^2+bx+c=0\)):</p>
+            <p>\(2x^2+5x+1=0\)</p>
+          `,
+          choices: [
+            String.raw`\(a=5,\ b=2,\ c=1\)`,
+            String.raw`\(a=2,\ b=1,\ c=5\)`,
+            String.raw`\(a=2,\ b=5,\ c=1\)`,
+            String.raw`\(a=-2,\ b=5,\ c=1\)`,
+            String.raw`\(a=2,\ b=-5,\ c=1\)`,
+            String.raw`\(a=2,\ b=5,\ c=-1\)`
+          ]
+        },
+
+        /* -------------------- Q2 (NEW) -------------------- */
+        {
+          stem: String.raw`
+            <p><strong>Identify \(a\), \(b\), and \(c\)</strong> in the quadratic equation (standard form \(ax^2+bx+c=0\)):</p>
+            <p>\(-5x+7-x^2=0\)</p>
+          `,
+          choices: [
+            String.raw`\(a=1,\ b=5,\ c=-7\)`,
+            String.raw`\(a=-1,\ b=-5,\ c=7\)`,
+            String.raw`\(a=-1,\ b=5,\ c=7\)`,
+            String.raw`\(a=1,\ b=-5,\ c=7\)`,
+            String.raw`\(a=-1,\ b=-5,\ c=-7\)`,
+            String.raw`\(a=-7,\ b=-5,\ c=-1\)`
+          ]
+        },
+
+        /* -------------------- Q3 (NEW) -------------------- */
+        {
+          stem: String.raw`
+            <p>Use the discriminant \(D=b^2-4ac\) to determine the <strong>number of real solutions</strong>:</p>
+            <p>\(x^2-5x+6=0\)</p>
+          `,
+          choices: [
+            String.raw`Two real solutions`,
+            String.raw`No real solutions`,
+            String.raw`Exactly one real solution (a double root)`,
+            String.raw`Infinitely many solutions`,
+            String.raw`Two real solutions and one is \(0\)`,
+            String.raw`Cannot be determined without graphing`
+          ]
+        },
+
+        /* -------------------- Q4 (NEW) -------------------- */
+        {
+          stem: String.raw`
+            <p>Use the discriminant \(D=b^2-4ac\) to determine the <strong>number of real solutions</strong>:</p>
+            <p>\(2x^2+4x+5=0\)</p>
+          `,
+          choices: [
+            String.raw`Exactly one real solution (a double root)`,
+            String.raw`Two real solutions`,
+            String.raw`Two rational solutions`,
+            String.raw`Two solutions but both are \(0\)`,
+            String.raw`Cannot be determined without solving`,
+            String.raw`No real solutions`
+          ]
+        },
+
+        /* -------------------- Q5 (NEW) -------------------- */
+        {
+          stem: String.raw`
+            <p>Use the discriminant \(D=b^2-4ac\) to determine the <strong>number of real solutions</strong>:</p>
+            <p>\(9x^2-6x+1=0\)</p>
+          `,
+          choices: [
+            String.raw`No real solutions`,
+            String.raw`Two real solutions`,
+            String.raw`Two real solutions and they are opposites`,
+            String.raw`Exactly one real solution (a double root)`,
+            String.raw`Infinitely many solutions`,
+            String.raw`Cannot be determined without a calculator`
+          ]
+        },
+
+        /* -------------------- Q6 (OLD Q1) -------------------- */
         {
           stem: String.raw`
             <p>Use the quadratic formula to find the solution set for each equation:</p>
@@ -38,7 +125,7 @@
           ]
         },
 
-        /* -------------------- Q2 -------------------- */
+        /* -------------------- Q7 (OLD Q2) -------------------- */
         {
           stem: String.raw`
             <p>Use the quadratic formula to find the solution set for each equation:</p>
@@ -54,7 +141,7 @@
           ]
         },
 
-        /* -------------------- Q3 -------------------- */
+        /* -------------------- Q8 (OLD Q3) -------------------- */
         {
           stem: String.raw`
             <p>Use the quadratic formula to find the solution set for each equation:</p>
@@ -70,7 +157,7 @@
           ]
         },
 
-        /* -------------------- Q4 -------------------- */
+        /* -------------------- Q9 (OLD Q4) -------------------- */
         {
           stem: String.raw`
             <p>Use the quadratic formula to find the solution set for each equation:</p>
@@ -86,7 +173,7 @@
           ]
         },
 
-        /* -------------------- Q5 -------------------- */
+        /* -------------------- Q10 (OLD Q5) -------------------- */
         {
           stem: String.raw`
             <p>Use the quadratic formula to solve each equation:</p>
@@ -102,7 +189,7 @@
           ]
         },
 
-        /* -------------------- Q6 -------------------- */
+        /* -------------------- Q11 (OLD Q6) -------------------- */
         {
           stem: String.raw`
             <p>Use the quadratic formula to solve each equation:</p>
@@ -118,7 +205,7 @@
           ]
         },
 
-        /* -------------------- Q7 -------------------- */
+        /* -------------------- Q12 (OLD Q7) -------------------- */
         {
           stem: String.raw`
             <p>Use the quadratic formula to solve each equation:</p>
@@ -134,7 +221,7 @@
           ]
         },
 
-        /* -------------------- Q8 -------------------- */
+        /* -------------------- Q13 (OLD Q8) -------------------- */
         {
           stem: String.raw`
             <p>Use the quadratic formula to solve each equation:</p>
@@ -150,7 +237,7 @@
           ]
         },
 
-        /* -------------------- Q9 -------------------- */
+        /* -------------------- Q14 (OLD Q9) -------------------- */
         {
           stem: String.raw`
             <p>Use the quadratic formula to solve each equation:</p>
@@ -166,7 +253,7 @@
           ]
         },
 
-        /* -------------------- Q10 -------------------- */
+        /* -------------------- Q15 (OLD Q10) -------------------- */
         {
           stem: String.raw`
             <p>Use the quadratic formula to solve each equation:</p>
@@ -182,7 +269,7 @@
           ]
         },
 
-        /* -------------------- Q11 -------------------- */
+        /* -------------------- Q16 (OLD Q11) -------------------- */
         {
           stem: String.raw`
             <p>Use the quadratic formula to solve each equation.</p>
@@ -199,7 +286,7 @@
           ]
         },
 
-        /* -------------------- Q12 -------------------- */
+        /* -------------------- Q17 (OLD Q12) -------------------- */
         {
           stem: String.raw`
             <p>Use the quadratic formula to solve each equation.</p>
