@@ -1,0 +1,316 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>HW-13-2A (Geometry)</title>
+
+  <script>
+    /* =========================
+       HW-13-2A — Thales’ Theorem (Parallel Lines Bundle)
+
+       REQUIRED SOURCE REFERENCES (Portuguese set only):
+       - #413 (a, b, c, d)
+       - #414 (a, b, c)
+       - #415
+       - #416
+       - #425
+       - #426
+
+       IMAGE NAMING RULE (STRICT):
+       Use <section>-<question><subpart>.png when there are subparts.
+       Put these PNG files in the SAME folder as this HTML:
+         13-2A-413a.png
+         13-2A-413b.png
+         13-2A-413c.png
+         13-2A-413d.png
+         13-2A-414a.png
+         13-2A-414b.png
+         13-2A-414c.png
+         13-2A-415.png
+         13-2A-416.png
+         13-2A-425.png
+         13-2A-426.png
+       ========================= */
+
+    window.homeworkData = {
+      classId : "Geometry",
+      id      : "HW-13-2A",
+      title   : "HW-13-2A — Thales’ Theorem (Parallel Lines Bundle)",
+
+      graphics : String.raw``,
+
+      /* Correct answers for Q1–Q11 */
+      answerKey : ["B","D","B","A","C","B","A","D","B","E","C"],
+
+      questions : [
+
+        /* =======================
+           Portuguese Source #413
+           ======================= */
+
+        {
+          stem: String.raw`
+            <p><b>Refer to Figure 1 (Source #413a).</b></p>
+            <p>Lines \(r\), \(s\), and \(t\) are parallel. Find \(x\).</p>
+          `,
+          media: String.raw`
+            <figure>
+              <img src="13-2A-413a.png" alt="Portuguese Source Problem 413a" />
+              <figcaption>Figure 1 — Source #413a</figcaption>
+            </figure>
+          `,
+          choices: [
+            String.raw`\(2\)`,
+            String.raw`\(3\)`,
+            String.raw`\(4\)`,
+            String.raw`\(6\)`,
+            String.raw`\(8\)`,
+            String.raw`\(12\)`
+          ]
+        },
+
+        {
+          stem: String.raw`
+            <p><b>Refer to Figure 2 (Source #413b).</b></p>
+            <p>Lines \(r\), \(s\), and \(t\) are parallel. Find \(x\).</p>
+          `,
+          media: String.raw`
+            <figure>
+              <img src="13-2A-413b.png" alt="Portuguese Source Problem 413b" />
+              <figcaption>Figure 2 — Source #413b</figcaption>
+            </figure>
+          `,
+          choices: [
+            String.raw`\(8\)`,
+            String.raw`\(9\)`,
+            String.raw`\(10\)`,
+            String.raw`\(12\)`,
+            String.raw`\(13.5\)`,
+            String.raw`\(15\)`
+          ]
+        },
+
+        {
+          stem: String.raw`
+            <p><b>Refer to Figure 3 (Source #413c).</b></p>
+            <p>Lines \(r\), \(s\), and \(t\) are parallel. Find \(x\).</p>
+          `,
+          media: String.raw`
+            <figure>
+              <img src="13-2A-413c.png" alt="Portuguese Source Problem 413c" />
+              <figcaption>Figure 3 — Source #413c</figcaption>
+            </figure>
+          `,
+          choices: [
+            String.raw`\(4\)`,
+            String.raw`\(6\)`,
+            String.raw`\(7.5\)`,
+            String.raw`\(9\)`,
+            String.raw`\(10\)`,
+            String.raw`\(12\)`
+          ]
+        },
+
+        {
+          stem: String.raw`
+            <p><b>Refer to Figure 4 (Source #413d).</b></p>
+            <p>Lines \(r\), \(s\), and \(t\) are parallel. Find \(x\).</p>
+          `,
+          media: String.raw`
+            <figure>
+              <img src="13-2A-413d.png" alt="Portuguese Source Problem 413d" />
+              <figcaption>Figure 4 — Source #413d</figcaption>
+            </figure>
+          `,
+          choices: [
+            String.raw`\(6\)`,
+            String.raw`\(5\)`,
+            String.raw`\(4\)`,
+            String.raw`\(8\)`,
+            String.raw`\(10\)`,
+            String.raw`\(12\)`
+          ]
+        },
+
+        /* =======================
+           Portuguese Source #414
+           ======================= */
+
+        {
+          stem: String.raw`
+            <p><b>Refer to Figure 5 (Source #414a).</b></p>
+            <p>Lines \(r\), \(s\), and \(t\) are parallel. Find \(x\).</p>
+          `,
+          media: String.raw`
+            <figure>
+              <img src="13-2A-414a.png" alt="Portuguese Source Problem 414a" />
+              <figcaption>Figure 5 — Source #414a</figcaption>
+            </figure>
+          `,
+          choices: [
+            String.raw`\(2\)`,
+            String.raw`\(3\)`,
+            String.raw`\(\dfrac{10}{3}\)`,
+            String.raw`\(\dfrac{5}{2}\)`,
+            String.raw`\(\dfrac{8}{3}\)`,
+            String.raw`\(\dfrac{7}{2}\)`
+          ]
+        },
+
+        {
+          stem: String.raw`
+            <p><b>Refer to Figure 6 (Source #414b).</b></p>
+            <p>Lines \(r\), \(s\), and \(t\) are parallel. Find \(x\).</p>
+          `,
+          media: String.raw`
+            <figure>
+              <img src="13-2A-414b.png" alt="Portuguese Source Problem 414b" />
+              <figcaption>Figure 6 — Source #414b</figcaption>
+            </figure>
+          `,
+          choices: [
+            String.raw`\(\dfrac{11}{3}\)`,
+            String.raw`\(\dfrac{25}{6}\)`,
+            String.raw`\(\dfrac{7}{2}\)`,
+            String.raw`\(\dfrac{9}{2}\)`,
+            String.raw`\(\dfrac{13}{3}\)`,
+            String.raw`\(\dfrac{25}{7}\)`
+          ]
+        },
+
+        {
+          stem: String.raw`
+            <p><b>Refer to Figure 7 (Source #414c).</b></p>
+            <p>Lines \(r\), \(s\), and \(t\) are parallel. Find \(x\) and \(y\).</p>
+          `,
+          media: String.raw`
+            <figure>
+              <img src="13-2A-414c.png" alt="Portuguese Source Problem 414c" />
+              <figcaption>Figure 7 — Source #414c</figcaption>
+            </figure>
+          `,
+          choices: [
+            String.raw`\(x=\dfrac{10}{3},\ y=\dfrac{18}{5}\)`,
+            String.raw`\(x=\dfrac{18}{5},\ y=\dfrac{10}{3}\)`,
+            String.raw`\(x=3,\ y=\dfrac{18}{5}\)`,
+            String.raw`\(x=\dfrac{10}{3},\ y=6\)`,
+            String.raw`\(x=5,\ y=\dfrac{12}{5}\)`,
+            String.raw`\(x=\dfrac{12}{5},\ y=5\)`
+          ]
+        },
+
+        /* =======================
+           Portuguese Source #415
+           ======================= */
+
+        {
+          stem: String.raw`
+            <p><b>Refer to Figure 8 (Source #415).</b></p>
+            <p>In \(\triangle ABC\), \(\overline{MN} \parallel \overline{BC}\). Find \(x\).</p>
+          `,
+          media: String.raw`
+            <figure>
+              <img src="13-2A-415.png" alt="Portuguese Source Problem 415" />
+              <figcaption>Figure 8 — Source #415</figcaption>
+            </figure>
+          `,
+          choices: [
+            String.raw`\(15\)`,
+            String.raw`\(20\)`,
+            String.raw`\(24\)`,
+            String.raw`\(25\)`,
+            String.raw`\(28\)`,
+            String.raw`\(30\)`
+          ]
+        },
+
+        /* =======================
+           Portuguese Source #416
+           ======================= */
+
+        {
+          stem: String.raw`
+            <p><b>Refer to Figure 9 (Source #416).</b></p>
+            <p>In \(\triangle ABC\), \(\overline{MN} \parallel \overline{BC}\). Find the value of \(\overline{AB}\).</p>
+          `,
+          media: String.raw`
+            <figure>
+              <img src="13-2A-416.png" alt="Portuguese Source Problem 416" />
+              <figcaption>Figure 9 — Source #416</figcaption>
+            </figure>
+          `,
+          choices: [
+            String.raw`\(12\)`,
+            String.raw`\(18\)`,
+            String.raw`\(21\)`,
+            String.raw`\(24\)`,
+            String.raw`\(27\)`,
+            String.raw`\(30\)`
+          ]
+        },
+
+        /* =======================
+           Portuguese Source #425
+           ======================= */
+
+        {
+          stem: String.raw`
+            <p><b>Refer to Figure 10 (Source #425).</b></p>
+            <p>Three lots have fronts on “Rua A” of 40 m, 30 m, and 20 m. The dividing lines are perpendicular to “Rua A”.</p>
+            <p>If the <b>total</b> front on “Rua B” is 180 m, what are the three corresponding fronts on “Rua B”?</p>
+          `,
+          media: String.raw`
+            <figure>
+              <img src="13-2A-425.png" alt="Portuguese Source Problem 425" />
+              <figcaption>Figure 10 — Source #425</figcaption>
+            </figure>
+          `,
+          choices: [
+            String.raw`\(60\text{ m},\ 45\text{ m},\ 30\text{ m}\)`,
+            String.raw`\(70\text{ m},\ 60\text{ m},\ 50\text{ m}\)`,
+            String.raw`\(72\text{ m},\ 54\text{ m},\ 36\text{ m}\)`,
+            String.raw`\(75\text{ m},\ 60\text{ m},\ 45\text{ m}\)`,
+            String.raw`\(80\text{ m},\ 60\text{ m},\ 40\text{ m}\)`,
+            String.raw`\(90\text{ m},\ 60\text{ m},\ 30\text{ m}\)`
+          ]
+        },
+
+        /* =======================
+           Portuguese Source #426
+           ======================= */
+
+        {
+          stem: String.raw`
+            <p><b>Refer to Figure 11 (Source #426).</b></p>
+            <p>Lines \(r\), \(s\), and \(t\) are parallel. Find \(x\) and \(y\).</p>
+          `,
+          media: String.raw`
+            <figure>
+              <img src="13-2A-426.png" alt="Portuguese Source Problem 426" />
+              <figcaption>Figure 11 — Source #426</figcaption>
+            </figure>
+          `,
+          choices: [
+            String.raw`\(x=9,\ y=15\)`,
+            String.raw`\(x=\dfrac{19}{2},\ y=\dfrac{95}{6}\)`,
+            String.raw`\(x=\dfrac{7+\sqrt{145}}{2},\ y=\dfrac{5(7+\sqrt{145})}{6}\)`,
+            String.raw`\(x=\dfrac{7+\sqrt{145}}{3},\ y=\dfrac{5(7+\sqrt{145})}{9}\)`,
+            String.raw`\(x=\dfrac{7+\sqrt{145}}{2},\ y=\dfrac{3(7+\sqrt{145})}{5}\)`,
+            String.raw`\(x=\dfrac{7+\sqrt{145}}{2},\ y=\dfrac{7+\sqrt{145}}{6}\)`
+          ]
+        }
+
+      ]
+    };
+  </script>
+
+  <link rel="stylesheet" href="/math-homework/assets/core-rich.css" />
+  <script defer src="/math-homework/assets/core-rich.js"></script>
+  <script defer src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+</head>
+
+<body>
+  <div id="hw-root">Loading…</div>
+</body>
+</html>
