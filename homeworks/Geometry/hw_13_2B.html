@@ -42,8 +42,8 @@
 
       graphics : String.raw``,
 
-      /* Correct answers for Q1–Q15 */
-      answerKey : ["B","C","B","C","B","A","D","B","E","C","A","F","D","B","E"],
+      /* Correct answers for Q1–Q15 (rebalanced letters by reordering choices in Q1–Q6) */
+      answerKey : ["E","A","D","F","C","B","D","B","E","C","A","F","D","B","E"],
 
       questions : [
 
@@ -63,12 +63,13 @@
               <figcaption>Figure 1</figcaption>
             </figure>
           `,
+          /* Correct is AA; moved to choice E for better key distribution. */
           choices: [
             String.raw`Not similar (insufficient information).`,
-            String.raw`Yes, similar by AA.`,
             String.raw`Yes, similar by SAS.`,
             String.raw`Yes, similar by SSS.`,
             String.raw`Yes, similar by HL.`,
+            String.raw`Yes, similar by AA.`,
             String.raw`Yes, similar by ASA.`
           ]
         },
@@ -85,10 +86,11 @@
               <figcaption>Figure 2</figcaption>
             </figure>
           `,
+          /* Correct is SAS; moved to choice A. */
           choices: [
+            String.raw`Yes, similar by SAS.`,
             String.raw`Not similar.`,
             String.raw`Yes, similar by AA.`,
-            String.raw`Yes, similar by SAS.`,
             String.raw`Yes, similar by SSS.`,
             String.raw`Yes, similar by HL.`,
             String.raw`Yes, similar by AAS.`
@@ -107,11 +109,12 @@
               <figcaption>Figure 3</figcaption>
             </figure>
           `,
+          /* Correct is AA; moved to choice D. */
           choices: [
             String.raw`Not similar.`,
-            String.raw`Yes, similar by AA.`,
             String.raw`Yes, similar by SAS.`,
             String.raw`Yes, similar by SSS.`,
+            String.raw`Yes, similar by AA.`,
             String.raw`Yes, similar by HL.`,
             String.raw`Yes, similar by SSA.`
           ]
@@ -129,13 +132,14 @@
               <figcaption>Figure 4</figcaption>
             </figure>
           `,
+          /* Correct is SAS; moved to choice F. */
           choices: [
             String.raw`Not similar.`,
             String.raw`Yes, similar by AA.`,
-            String.raw`Yes, similar by SAS.`,
             String.raw`Yes, similar by SSS.`,
             String.raw`Yes, similar by HL.`,
-            String.raw`Yes, similar by ASA.`
+            String.raw`Yes, similar by ASA.`,
+            String.raw`Yes, similar by SAS.`
           ]
         },
 
@@ -147,7 +151,7 @@
           choiceWrap: false,
           stem: String.raw`
             <p><b>Refer to Figure 5.</b></p>
-            <p>Given that \(\overline{MN}\) is parallel to \(\overline{QO}\), which pair of angle congruences is enough to conclude</p>
+            <p>Given that \(\overline{QO}\parallel\overline{MN}\), which pair of angle congruences is enough to conclude</p>
             <p class="math">\(\triangle MNP \sim \triangle QOP\) by AA?</p>
           `,
           media: String.raw`
@@ -156,10 +160,11 @@
               <figcaption>Figure 5</figcaption>
             </figure>
           `,
+          /* Correct is: ∠MNP ≅ ∠QOP and ∠MPN ≅ ∠QPO; moved to choice C. */
           choices: [
             String.raw`∠MNP ≅ ∠QPO and ∠MPN ≅ ∠QOP`,
-            String.raw`∠MNP ≅ ∠QOP and ∠MPN ≅ ∠QPO`,
             String.raw`∠MNP ≅ ∠QOP and ∠M ≅ ∠O`,
+            String.raw`∠MNP ≅ ∠QOP and ∠MPN ≅ ∠QPO`,
             String.raw`∠M ≅ ∠Q and ∠N ≅ ∠P`,
             String.raw`∠MNP ≅ ∠QOP and ∠M ≅ ∠P`,
             String.raw`∠MPN ≅ ∠QOP and ∠M ≅ ∠Q`
@@ -179,9 +184,10 @@
               <figcaption>Figure 6</figcaption>
             </figure>
           `,
+          /* Correct is the “right angles + vertical angles” argument; moved to choice B. */
           choices: [
-            String.raw`∠ABC ≅ ∠EDC (both right angles) and ∠ACB ≅ ∠ECD (vertical angles), so AA.`,
             String.raw`∠BAC ≅ ∠CED and ∠BCA ≅ ∠EDC, so AA.`,
+            String.raw`∠ABC ≅ ∠EDC (both right angles) and ∠ACB ≅ ∠ECD (vertical angles), so AA.`,
             String.raw`\(AB=DE\) and \(BC=DC\), so SAS.`,
             String.raw`∠ABC ≅ ∠CED and ∠ACB ≅ ∠EDC, so AA.`,
             String.raw`∠ABC ≅ ∠EDC and \(BC=DC\), so congruent triangles.`,
