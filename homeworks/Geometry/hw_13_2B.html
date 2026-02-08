@@ -1,0 +1,399 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>HW-13-2B (Geometry)</title>
+
+  <script>
+    /* =========================
+       HW-13-2B — Similarity Criteria (AA and SAS)
+
+       REQUIRED SOURCE REFERENCES (your provided sets):
+       - Type A uses A. Exercises: #7, #8, #11, #12
+       - Type B uses B. Exercises: #14, #18
+       - Portuguese set uses: #459(a,b), #460(a,b), #461(a,b), #477, #479, #480
+
+       IMAGE NAMING RULE (STRICT):
+       PNG files live in the SAME folder as this HTML.
+       - If a problem has subparts, include the letter in the filename.
+       Required figure files:
+         13-2B-7.png
+         13-2B-8.png
+         13-2B-11.png
+         13-2B-12.png
+         13-2B-14.png
+         13-2B-18.png
+         13-2B-459a.png
+         13-2B-459b.png
+         13-2B-460a.png
+         13-2B-460b.png
+         13-2B-461a.png
+         13-2B-461b.png
+         13-2B-477.png
+         13-2B-479.png
+         13-2B-480.png
+       ========================= */
+
+    window.homeworkData = {
+      classId : "Geometry",
+      id      : "HW-13-2B",
+      title   : "HW-13-2B — Similarity Criteria (AA and SAS)",
+
+      graphics : String.raw``,
+
+      /* Correct answers for Q1–Q15 */
+      answerKey : ["B","C","B","C","B","A","D","B","E","C","A","F","D","B","E"],
+
+      questions : [
+
+        /* =======================
+           Type A (4 questions)
+           ======================= */
+
+        {
+          choiceWrap: false,
+          stem: String.raw`
+            <p><b>Refer to Figure 1.</b></p>
+            <p>Are the two triangles similar? If yes, which criterion justifies it?</p>
+          `,
+          media: String.raw`
+            <figure>
+              <img src="13-2B-7.png" alt="Two triangles with angle markings" />
+              <figcaption>Figure 1</figcaption>
+            </figure>
+          `,
+          choices: [
+            String.raw`Not similar (insufficient information).`,
+            String.raw`Yes, similar by AA.`,
+            String.raw`Yes, similar by SAS.`,
+            String.raw`Yes, similar by SSS.`,
+            String.raw`Yes, similar by HL.`,
+            String.raw`Yes, similar by ASA.`
+          ]
+        },
+
+        {
+          choiceWrap: false,
+          stem: String.raw`
+            <p><b>Refer to Figure 2.</b></p>
+            <p>Are the two triangles similar? If yes, which criterion justifies it?</p>
+          `,
+          media: String.raw`
+            <figure>
+              <img src="13-2B-8.png" alt="Two triangles with one marked angle and side lengths" />
+              <figcaption>Figure 2</figcaption>
+            </figure>
+          `,
+          choices: [
+            String.raw`Not similar.`,
+            String.raw`Yes, similar by AA.`,
+            String.raw`Yes, similar by SAS.`,
+            String.raw`Yes, similar by SSS.`,
+            String.raw`Yes, similar by HL.`,
+            String.raw`Yes, similar by AAS.`
+          ]
+        },
+
+        {
+          choiceWrap: false,
+          stem: String.raw`
+            <p><b>Refer to Figure 3.</b></p>
+            <p>Are the two triangles similar? If yes, which criterion justifies it?</p>
+          `,
+          media: String.raw`
+            <figure>
+              <img src="13-2B-11.png" alt="Two right triangles with one additional marked acute angle" />
+              <figcaption>Figure 3</figcaption>
+            </figure>
+          `,
+          choices: [
+            String.raw`Not similar.`,
+            String.raw`Yes, similar by AA.`,
+            String.raw`Yes, similar by SAS.`,
+            String.raw`Yes, similar by SSS.`,
+            String.raw`Yes, similar by HL.`,
+            String.raw`Yes, similar by SSA.`
+          ]
+        },
+
+        {
+          choiceWrap: false,
+          stem: String.raw`
+            <p><b>Refer to Figure 4.</b></p>
+            <p>Are the two triangles similar? If yes, which criterion justifies it?</p>
+          `,
+          media: String.raw`
+            <figure>
+              <img src="13-2B-12.png" alt="Two triangles with one marked angle and side lengths" />
+              <figcaption>Figure 4</figcaption>
+            </figure>
+          `,
+          choices: [
+            String.raw`Not similar.`,
+            String.raw`Yes, similar by AA.`,
+            String.raw`Yes, similar by SAS.`,
+            String.raw`Yes, similar by SSS.`,
+            String.raw`Yes, similar by HL.`,
+            String.raw`Yes, similar by ASA.`
+          ]
+        },
+
+        /* =======================
+           Type B (2 questions — proof rendered as MC)
+           ======================= */
+
+        {
+          choiceWrap: false,
+          stem: String.raw`
+            <p><b>Refer to Figure 5.</b></p>
+            <p>Given that \(\overline{MN}\) is parallel to \(\overline{QO}\), which pair of angle congruences is enough to conclude</p>
+            <p class="math">\(\triangle MNP \sim \triangle QOP\) by AA?</p>
+          `,
+          media: String.raw`
+            <figure>
+              <img src="13-2B-14.png" alt="Triangle with a segment connecting two sides" />
+              <figcaption>Figure 5</figcaption>
+            </figure>
+          `,
+          choices: [
+            String.raw`∠MNP ≅ ∠QPO and ∠MPN ≅ ∠QOP`,
+            String.raw`∠MNP ≅ ∠QOP and ∠MPN ≅ ∠QPO`,
+            String.raw`∠MNP ≅ ∠QOP and ∠M ≅ ∠O`,
+            String.raw`∠M ≅ ∠Q and ∠N ≅ ∠P`,
+            String.raw`∠MNP ≅ ∠QOP and ∠M ≅ ∠P`,
+            String.raw`∠MPN ≅ ∠QOP and ∠M ≅ ∠Q`
+          ]
+        },
+
+        {
+          choiceWrap: false,
+          stem: String.raw`
+            <p><b>Refer to Figure 6.</b></p>
+            <p>You are given \(\overline{DB}\perp\overline{DE}\) and \(\overline{DB}\perp\overline{AB}\).</p>
+            <p>Which statement correctly justifies \(\triangle ABC \sim \triangle EDC\) by AA?</p>
+          `,
+          media: String.raw`
+            <figure>
+              <img src="13-2B-18.png" alt="Two right triangles sharing an intersection point" />
+              <figcaption>Figure 6</figcaption>
+            </figure>
+          `,
+          choices: [
+            String.raw`∠ABC ≅ ∠EDC (both right angles) and ∠ACB ≅ ∠ECD (vertical angles), so AA.`,
+            String.raw`∠BAC ≅ ∠CED and ∠BCA ≅ ∠EDC, so AA.`,
+            String.raw`\(AB=DE\) and \(BC=DC\), so SAS.`,
+            String.raw`∠ABC ≅ ∠CED and ∠ACB ≅ ∠EDC, so AA.`,
+            String.raw`∠ABC ≅ ∠EDC and \(BC=DC\), so congruent triangles.`,
+            String.raw`∠BAC ≅ ∠EDC and ∠BCA ≅ ∠ECD, so SSS.`
+          ]
+        },
+
+        /* =======================
+           Portuguese set (ALL)
+           ======================= */
+
+        {
+          stem: String.raw`
+            <p><b>Refer to Figure 7.</b></p>
+            <p>Angles with the same markings are congruent. Find \(x\) and \(y\).</p>
+          `,
+          media: String.raw`
+            <figure>
+              <img src="13-2B-459a.png" alt="Two similar triangles with side lengths and marked angles" />
+              <figcaption>Figure 7</figcaption>
+            </figure>
+          `,
+          choices: [
+            String.raw`\((x,y)=(10,8)\)`,
+            String.raw`\((x,y)=(6,4)\)`,
+            String.raw`\((x,y)=(8,6)\)`,
+            String.raw`\((x,y)=(5,4)\)`,
+            String.raw`\((x,y)=(5,6)\)`,
+            String.raw`\((x,y)=(4,5)\)`
+          ]
+        },
+
+        {
+          stem: String.raw`
+            <p><b>Refer to Figure 8.</b></p>
+            <p>Angles with the same markings are congruent. Find \(x\) and \(y\).</p>
+          `,
+          media: String.raw`
+            <figure>
+              <img src="13-2B-459b.png" alt="Two similar triangles with side lengths and marked angles" />
+              <figcaption>Figure 8</figcaption>
+            </figure>
+          `,
+          choices: [
+            String.raw`\((x,y)=(8,6)\)`,
+            String.raw`\((x,y)=(12,4)\)`,
+            String.raw`\((x,y)=(12,6)\)`,
+            String.raw`\((x,y)=(9,4)\)`,
+            String.raw`\((x,y)=(10,5)\)`,
+            String.raw`\((x,y)=(6,9)\)`
+          ]
+        },
+
+        {
+          stem: String.raw`
+            <p><b>Refer to Figure 9.</b></p>
+            <p>Given \(\alpha=\beta\), find \(x\) and \(y\).</p>
+          `,
+          media: String.raw`
+            <figure>
+              <img src="13-2B-460a.png" alt="Two triangles formed by intersecting segments with labeled lengths" />
+              <figcaption>Figure 9</figcaption>
+            </figure>
+          `,
+          choices: [
+            String.raw`\((x,y)=(9,24)\)`,
+            String.raw`\((x,y)=(12,\tfrac{32}{3})\)`,
+            String.raw`\((x,y)=(9,\tfrac{16}{3})\)`,
+            String.raw`\((x,y)=(8,\tfrac{32}{3})\)`,
+            String.raw`\((x,y)=(9,\tfrac{32}{3})\)`,
+            String.raw`\((x,y)=(6,\tfrac{32}{3})\)`
+          ]
+        },
+
+        {
+          stem: String.raw`
+            <p><b>Refer to Figure 10.</b></p>
+            <p>Given \(\alpha=\beta\), find \(x\) and \(y\).</p>
+          `,
+          media: String.raw`
+            <figure>
+              <img src="13-2B-460b.png" alt="Triangle with an internal segment and labeled lengths" />
+              <figcaption>Figure 10</figcaption>
+            </figure>
+          `,
+          choices: [
+            String.raw`\((x,y)=(6,12)\)`,
+            String.raw`\((x,y)=(8,9)\)`,
+            String.raw`\((x,y)=(7,10)\)`,
+            String.raw`\((x,y)=(10,7)\)`,
+            String.raw`\((x,y)=(9,10)\)`,
+            String.raw`\((x,y)=(7,8)\)`
+          ]
+        },
+
+        {
+          stem: String.raw`
+            <p><b>Refer to Figure 11.</b></p>
+            <p>Find \(x\) and \(y\).</p>
+          `,
+          media: String.raw`
+            <figure>
+              <img src="13-2B-461a.png" alt="Triangle with a point on a side and an interior segment" />
+              <figcaption>Figure 11</figcaption>
+            </figure>
+          `,
+          choices: [
+            String.raw`\((x,y)=\left(6,\tfrac{10}{3}\right)\)`,
+            String.raw`\((x,y)=\left(9,\tfrac{10}{3}\right)\)`,
+            String.raw`\((x,y)=\left(6,\tfrac{5}{3}\right)\)`,
+            String.raw`\((x,y)=\left(5,\tfrac{10}{3}\right)\)`,
+            String.raw`\((x,y)=\left(6,5\right)\)`,
+            String.raw`\((x,y)=\left(3,\tfrac{10}{3}\right)\)`
+          ]
+        },
+
+        {
+          stem: String.raw`
+            <p><b>Refer to Figure 12.</b></p>
+            <p>Find \(x\) and \(y\).</p>
+          `,
+          media: String.raw`
+            <figure>
+              <img src="13-2B-461b.png" alt="Triangle with a point on a side and an interior segment" />
+              <figcaption>Figure 12</figcaption>
+            </figure>
+          `,
+          choices: [
+            String.raw`\((x,y)=\left(10,5\right)\)`,
+            String.raw`\((x,y)=\left(\tfrac{15}{2},4\right)\)`,
+            String.raw`\((x,y)=\left(15,5\right)\)`,
+            String.raw`\((x,y)=\left(\tfrac{10}{3},5\right)\)`,
+            String.raw`\((x,y)=\left(\tfrac{15}{2},6\right)\)`,
+            String.raw`\((x,y)=\left(\tfrac{15}{2},5\right)\)`
+          ]
+        },
+
+        {
+          stem: String.raw`
+            <p><b>Refer to Figure 13.</b></p>
+            <p>Given \(AB=8\), \(BC=15\), \(AC=17\), and \(EC=4\), find \(x=DE\) and \(y=CD\).</p>
+          `,
+          media: String.raw`
+            <figure>
+              <img src="13-2B-477.png" alt="Right triangle with an interior perpendicular segment" />
+              <figcaption>Figure 13</figcaption>
+            </figure>
+          `,
+          choices: [
+            String.raw`\((x,y)=\left(8,\tfrac{17}{2}\right)\)`,
+            String.raw`\((x,y)=\left(\tfrac{15}{2},8\right)\)`,
+            String.raw`\((x,y)=\left(\tfrac{17}{2},\tfrac{15}{2}\right)\)`,
+            String.raw`\((x,y)=\left(\tfrac{15}{2},\tfrac{17}{2}\right)\)`,
+            String.raw`\((x,y)=\left(4,\tfrac{17}{2}\right)\)`,
+            String.raw`\((x,y)=\left(\tfrac{15}{2},\tfrac{15}{2}\right)\)`
+          ]
+        },
+
+        {
+          stem: String.raw`
+            <p><b>Refer to Figure 14.</b></p>
+            <p>In rectangle \(ABCD\), \(AB=20\) cm and \(BC=12\) cm. Point \(M\) is the midpoint of \(\overline{AB}\).</p>
+            <p>Point \(E\) is the intersection of diagonal \(\overline{BD}\) with segment \(\overline{CM}\).</p>
+            <p>Find \(EF\), the distance from \(E\) to \(\overline{AB}\).</p>
+          `,
+          media: String.raw`
+            <figure>
+              <img src="13-2B-479.png" alt="Rectangle with diagonal and a segment from a midpoint" />
+              <figcaption>Figure 14</figcaption>
+            </figure>
+          `,
+          choices: [
+            String.raw`\(2\) cm`,
+            String.raw`\(4\) cm`,
+            String.raw`\(5\) cm`,
+            String.raw`\(6\) cm`,
+            String.raw`\(8\) cm`,
+            String.raw`\(10\) cm`
+          ]
+        },
+
+        {
+          stem: String.raw`
+            <p><b>Refer to Figure 15.</b></p>
+            <p>Find \(x\).</p>
+          `,
+          media: String.raw`
+            <figure>
+              <img src="13-2B-480.png" alt="Triangle with a segment parallel to the base and labeled lengths" />
+              <figcaption>Figure 15</figcaption>
+            </figure>
+          `,
+          choices: [
+            String.raw`\(18\)`,
+            String.raw`\(24\)`,
+            String.raw`\(27\)`,
+            String.raw`\(28\)`,
+            String.raw`\(30\)`,
+            String.raw`\(36\)`
+          ]
+        }
+
+      ]
+    };
+  </script>
+
+  <link rel="stylesheet" href="/math-homework/assets/core-rich.css" />
+  <script defer src="/math-homework/assets/core-rich.js"></script>
+  <script defer src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+</head>
+
+<body>
+  <div id="hw-root">Loading…</div>
+</body>
+</html>
