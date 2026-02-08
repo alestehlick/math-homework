@@ -9,7 +9,7 @@
     /* =========================
        HW-13-rev — Chapter 13 Review (Similarity, Dilation, Circle Proportions)
 
-       PNG NAMING PATTERN (same pattern as before):
+       PNG NAMING PATTERN:
        13-rev-<problem><subpart>.png
        Examples:
          13-rev-462a.png, 13-rev-462b.png
@@ -17,9 +17,9 @@
          13-rev-9.png, 13-rev-12.png
 
        This version:
-       - DELETES the first 5 questions (the dilation set).
-       - INSERTS Portuguese #462(a,b), #463, #467 immediately after the current
-         problem-13 question (the one that references Figure 6 and triangle ABF ~ EBC).
+       - Deletes the first 5 questions (the dilation set).
+       - Inserts Portuguese #462(a,b), #463, #467 immediately after the current
+         problem-13 question (Figure 5).
        ========================= */
 
     window.homeworkData = {
@@ -31,20 +31,20 @@
 
       /* Correct answers for Q1–Q21 */
       answerKey : [
-        "C","D","B",              /* 1–3: old #6–#8 */
-        "A","B","D",              /* 4–6: old #9–#11 */
-        "C","E",                  /* 7–8: old #12–#13 */
+        "C","C","E",              /* 1–3: proportions */
+        "A","B","D",              /* 4–6: similarity checks (Figures 1–3) */
+        "C","A",                  /* 7–8: trapezoid + similarity proportion (Figures 4–5) */
         "C","B","C","B",          /* 9–12: 462a, 462b, 463, 467 */
-        "B",                      /* 13: old #14 */
-        "A","A","B",              /* 14–16: old #15–#17 */
-        "D",                      /* 17: old #18 */
+        "B",                      /* 13: similar triangles find x,y (Figure 10) */
+        "A","A","B",              /* 14–16: side-length similarity sets */
+        "D",                      /* 17: valid similarity criteria */
         "F","E","C","A"           /* 18–21: 494, 501, 470, 472 */
       ],
 
       questions : [
 
         /* =======================
-           Old #6–#8 (now Q1–Q3)
+           Q1–Q3: proportions
            ======================= */
 
         {
@@ -84,7 +84,7 @@
         },
 
         /* =======================
-           Old #9–#11 (now Q4–Q6)
+           Q4–Q6: similarity checks
            ======================= */
 
         {
@@ -145,7 +145,7 @@
         },
 
         /* =======================
-           Old #12 (now Q7)
+           Q7: trapezoid conclusion
            ======================= */
 
         {
@@ -172,7 +172,8 @@
         },
 
         /* =======================
-           Old #13 (now Q8)
+           Q8: similarity proportion
+           (fixed so only ONE option is correct)
            ======================= */
 
         {
@@ -180,7 +181,7 @@
           stem: String.raw`
             <p><b>Refer to Figure 5.</b></p>
             <p>Given \(\triangle ABF \sim \triangle EBC\), \(GB\perp AF\), and \(BD\perp CE\).</p>
-            <p>Which proportionality is the correct corresponding-sides statement from the given similarity?</p>
+            <p>Which proportionality correctly matches <em>corresponding sides</em> from the similarity?</p>
           `,
           media: String.raw`
             <figure>
@@ -190,20 +191,18 @@
           `,
           choices: [
             String.raw`\(\dfrac{AB}{EB}=\dfrac{AF}{EC}\)`,
-            String.raw`\(\dfrac{AB}{BC}=\dfrac{AF}{CE}\)`,
-            String.raw`\(\dfrac{FB}{CB}=\dfrac{AB}{EB}\)`,
-            String.raw`\(\dfrac{AB}{AF}=\dfrac{EB}{CE}\)`,
-            String.raw`\(\dfrac{FB}{AB}=\dfrac{CB}{EB}\)`,
-            String.raw`\(\dfrac{AB}{FB}=\dfrac{CE}{CB}\)`
+            String.raw`\(\dfrac{AB}{BC}=\dfrac{AF}{EC}\)`,
+            String.raw`\(\dfrac{BF}{BC}=\dfrac{AF}{EB}\)`,
+            String.raw`\(\dfrac{AB}{AF}=\dfrac{EB}{BC}\)`,
+            String.raw`\(\dfrac{BF}{AB}=\dfrac{BC}{EC}\)`,
+            String.raw`\(\dfrac{AB}{BF}=\dfrac{EC}{EB}\)`
           ]
         },
 
         /* =======================
            INSERTED Portuguese set: #462(a,b), #463, #467
-           (placed immediately after the problem-13 question above)
            ======================= */
 
-        /* 462a: (8+x)/8 = 21/12 => x = 6 */
         {
           stem: String.raw`<p><b>Refer to Figure 6.</b> With \(r \parallel s\), determine \(x\).</p>`,
           media: String.raw`
@@ -222,7 +221,6 @@
           ]
         },
 
-        /* 462b: x/12 = 8/(8+x) => x = 4(\sqrt7-1) */
         {
           stem: String.raw`<p><b>Refer to Figure 7.</b> With \(r \parallel s\), determine \(x\).</p>`,
           media: String.raw`
@@ -232,16 +230,15 @@
             </figure>
           `,
           choices: [
-            String.raw`\(2(\sqrt{7}-1)\)`,
-            String.raw`\(4(\sqrt{7}-1)\)`,
-            String.raw`\(4(\sqrt{7}+1)\)`,
-            String.raw`\(8(\sqrt{7}-1)\)`,
-            String.raw`\(4\sqrt{7}\)`,
-            String.raw`\(12\)`
+            String.raw`\(\dfrac{12}{5}\)`,
+            String.raw`\(\dfrac{24}{5}\)`,
+            String.raw`\(\dfrac{36}{5}\)`,
+            String.raw`\(\dfrac{48}{5}\)`,
+            String.raw`\(6\)`,
+            String.raw`\(8\)`
           ]
         },
 
-        /* 463: AB/DE = BC/CD => AB = 4*(6/2) = 12 */
         {
           stem: String.raw`<p><b>Refer to Figure 8.</b> If \(\overline{AB}\parallel \overline{ED}\), \(DE=4\) cm, \(CD=2\) cm, and \(BC=6\) cm, find \(AB\).</p>`,
           media: String.raw`
@@ -260,9 +257,8 @@
           ]
         },
 
-        /* 467: triangles ACE and ADB similar => 5/8 = 11/(5+x) => x = 63/5 */
         {
-          stem: String.raw`<p><b>Refer to Figure 9.</b> Given \(AB=8\) cm, \(BC=3\) cm, \(AE=5\) cm, and \(\angle ACE = \angle ADB\). Find \(x=DE\).</p>`,
+          stem: String.raw`<p><b>Refer to Figure 9.</b> Find \(x\).</p>`,
           media: String.raw`
             <figure>
               <img src="13-rev-467.png" alt="Problem 467" />
@@ -412,7 +408,6 @@
             <p>A point \(P\) is \(18\) cm from a circle. A secant through \(P\) determines a chord \(\overline{AB}\) of length \(10\) cm, and \(\overline{AB}\) passes through the center of the circle.</p>
             <p>Find the length of the tangent segment from \(P\) to the circle.</p>
           `,
-
           choices: [
             String.raw`\(3\sqrt{14}\)`,
             String.raw`\(4\sqrt{14}\)`,
@@ -424,13 +419,13 @@
         },
 
         /* =======================
-           Portuguese #470 (now Q20)
+           Portuguese #470 (now Q20) — fixed to match answer sheet
            ======================= */
 
         {
           stem: String.raw`
             <p><b>Refer to Figure 13.</b> Three squares sit on the same line under a slanted segment.</p>
-            <p>The side lengths of the first two squares are \(9\) and \(6\) (as shown). Find the side length \(x\) of the third square.</p>
+            <p>The side lengths of the first two squares are \(a\) and \(b\) (as shown). Find the side length \(x\) of the third square.</p>
           `,
           media: String.raw`
             <figure>
@@ -439,12 +434,12 @@
             </figure>
           `,
           choices: [
-            String.raw`\(2\)`,
-            String.raw`\(3\)`,
-            String.raw`\(4\)`,
-            String.raw`\(5\)`,
-            String.raw`\(6\)`,
-            String.raw`\(7\)`
+            String.raw`\(\,a-b\,\)`,
+            String.raw`\(\,a+b\,\)`,
+            String.raw`\(\dfrac{b^2}{a-b}\)`,
+            String.raw`\(\dfrac{a^2-b^2}{b}\)`,
+            String.raw`\(\dfrac{ab}{a-b}\)`,
+            String.raw`\(\dfrac{a-b}{b}\)`
           ]
         },
 
