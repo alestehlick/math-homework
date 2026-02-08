@@ -53,68 +53,18 @@
 
       /* Correct answers for Q1–Q19 */
       answerKey : [
-        "C", "B",              /* 1–2: proofs */
         "C","C","C","D","B","C",/* 3–8: 491a–f */
         "C","B",               /* 9–10: 492a–b */
         "F","C",               /* 11–12: 493a–b */
         "C","C",               /* 13–14: 495a–b */
         "D","B",               /* 15–16: 496a–b */
         "B","D","C"            /* 17–19: 497, 498, 502 */
+         "C", "B",              /* 1–2: proofs */
       ],
 
       questions : [
 
-        /* =======================
-           Type B (Proof rendered as MC) — #16
-           ======================= */
-        {
-          choiceWrap: false,
-          stem: String.raw`
-            <p><b>Refer to Figure 1.</b></p>
-            <p>You want to prove \(\triangle MPN \sim \triangle BPA\).</p>
-            <p>Which pair of angle congruences is the correct AA justification?</p>
-          `,
-          media: String.raw`
-            <figure>
-              <img src="13-6-16.png" alt="Tangent-secant setup for triangle similarity" />
-              <figcaption>Figure 1</figcaption>
-            </figure>
-          `,
-          choices: [
-            String.raw`\(\angle MNP \cong \angle BPA\) and \(\angle MPN \cong \angle BAP\)`,
-            String.raw`\(\angle MNP \cong \angle BPA\) and \(\angle MPN \cong \angle BPA\)`,
-            String.raw`\(\angle MNP \cong \angle BAP\) (radius ⟂ tangent) and \(\angle MPN \cong \angle BPA\) (same angle at \(P\))`,
-            String.raw`\(\angle MNP \cong \angle BPA\) (vertical angles) and \(\angle MPN \cong \angle BAP\) (alternate interior angles)`,
-            String.raw`\(\angle MNP \cong \angle BAP\) and \(\angle MNP \cong \angle BPA\)`,
-            String.raw`Not enough information to prove similarity.`
-          ]
-        },
-
-        /* =======================
-           Type B (Proof rendered as MC) — #20
-           ======================= */
-        {
-          choiceWrap: false,
-          stem: String.raw`
-            <p><b>Refer to Figure 2.</b></p>
-            <p>A secant and a tangent intersect outside a circle.</p>
-            <p>Which equation states the correct conclusion (Power of a Point: tangent–secant theorem)?</p>
-          `,
-          media: String.raw`
-            <figure>
-              <img src="13-6-20.png" alt="Tangent and secant from an external point" />
-              <figcaption>Figure 2</figcaption>
-            </figure>
-          `,
-          choices: [
-            String.raw`\((\text{tangent}) = (\text{external secant}) + (\text{whole secant})\)`,
-            String.raw`\((\text{tangent})^2 = (\text{inside secant})\cdot(\text{whole secant})\)`,
-            String.raw`\((\text{tangent})^2 = (\text{external secant})\cdot(\text{whole secant})\)`,
-            String.raw`\((\text{tangent}) = (\text{external secant})\cdot(\text{whole secant})\)`,
-            String.raw`\((\text{tangent})^2 = (\text{whole secant})^2\)`,
-            String.raw`\((\text{tangent})^2 = (\text{external secant})^2 + (\text{inside secant})^2\)`
-          ]
-        },
+       
 
         /* =======================
            Portuguese #491 (a–f)
@@ -463,8 +413,62 @@
             String.raw`\(r=R(\sqrt{2}+1)\)`,
             String.raw`\(r=\dfrac{R}{1-\sqrt{2}}\)`
           ]
+        },
+
+ /* =======================
+           Type B (Proof rendered as MC) — #16
+           ======================= */
+        {
+          choiceWrap: false,
+          stem: String.raw`
+            <p><b>Refer to Figure 1.</b></p>
+            <p>You want to prove \(\triangle MPN \sim \triangle BPA\).</p>
+            <p>Which pair of angle congruences is the correct AA justification?</p>
+          `,
+          media: String.raw`
+            <figure>
+              <img src="13-6-16.png" alt="Tangent-secant setup for triangle similarity" />
+              <figcaption>Figure 1</figcaption>
+            </figure>
+          `,
+          choices: [
+            String.raw`\(\angle MNP \cong \angle BPA\) and \(\angle MPN \cong \angle BAP\)`,
+            String.raw`\(\angle MNP \cong \angle BPA\) and \(\angle MPN \cong \angle BPA\)`,
+            String.raw`\(\angle MNP \cong \angle BAP\) (radius ⟂ tangent) and \(\angle MPN \cong \angle BPA\) (same angle at \(P\))`,
+            String.raw`\(\angle MNP \cong \angle BPA\) (vertical angles) and \(\angle MPN \cong \angle BAP\) (alternate interior angles)`,
+            String.raw`\(\angle MNP \cong \angle BAP\) and \(\angle MNP \cong \angle BPA\)`,
+            String.raw`Not enough information to prove similarity.`
+          ]
+        },
+
+        /* =======================
+           Type B (Proof rendered as MC) — #20
+           ======================= */
+        {
+          choiceWrap: false,
+          stem: String.raw`
+            <p><b>Refer to Figure 2.</b></p>
+            <p>A secant and a tangent intersect outside a circle.</p>
+            <p>Which equation states the correct conclusion (Power of a Point: tangent–secant theorem)?</p>
+          `,
+          media: String.raw`
+            <figure>
+              <img src="13-6-20.png" alt="Tangent and secant from an external point" />
+              <figcaption>Figure 2</figcaption>
+            </figure>
+          `,
+          choices: [
+            String.raw`\((\text{tangent}) = (\text{external secant}) + (\text{whole secant})\)`,
+            String.raw`\((\text{tangent})^2 = (\text{inside secant})\cdot(\text{whole secant})\)`,
+            String.raw`\((\text{tangent})^2 = (\text{external secant})\cdot(\text{whole secant})\)`,
+            String.raw`\((\text{tangent}) = (\text{external secant})\cdot(\text{whole secant})\)`,
+            String.raw`\((\text{tangent})^2 = (\text{whole secant})^2\)`,
+            String.raw`\((\text{tangent})^2 = (\text{external secant})^2 + (\text{inside secant})^2\)`
+          ]
         }
 
+
+      
       ]
     };
   </script>
