@@ -1,0 +1,293 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Homework 13-1 (Geometry)</title>
+
+  <script>
+    /* =========================
+       HW13-1 — Similarity: Definition and Basic Proportions (Geometry)
+       Adapted for: /math-homework/assets/core-rich.js
+
+       REQUIRED SOURCE REFERENCES (your provided sets):
+       - Type A uses A. Exercises: #7, #8, #9, #10, #11
+       - Type B uses B. Exercises: #13, #14, #15, #17, #18
+       - Type C uses C. Exercises: #20
+       - Instructor-created (Type C-style): Similarity by AA criterion (no source number)
+
+       IMAGE NAMING RULE (STRICT):
+       Any figure used is referenced by the ORIGINAL problem number from the set.
+       Put these PNG files in the SAME folder as this HTML:
+         13-1-7.png, 13-1-8.png, 13-1-9.png, 13-1-10.png, 13-1-11.png, 13-1-18.png
+       ========================= */
+
+    window.homeworkData = {
+      classId : "Geometry",
+      id      : "HW13-1",
+      title   : "HW13-1 — Similarity: Definition and Basic Proportions",
+
+      graphics : String.raw``,
+
+      /* Correct answers for Q1–Q12 */
+      answerKey : ["B","C","D","A","E","B","A","C","B","D","A","C"],
+
+      questions : [
+
+        /* =======================
+           Type A (5 questions)
+           ======================= */
+
+        /* Source: A. Exercises #7 (figure: 13-1-7.png) */
+        {
+          stem: String.raw`
+            <p><b>Refer to Figure 1.</b> The two figures are similar.</p>
+            <p>Find the ratio of the lengths in the <b>right</b> figure to those in the <b>left</b> figure.</p>
+          `,
+          media: String.raw`
+            <figure>
+              <img src="13-1-7.png" alt="A. Exercise #7" />
+              <figcaption>Figure 1</figcaption>
+            </figure>
+          `,
+          choices: [
+            String.raw`\(4:1\)`,
+            String.raw`\(1:4\)`,
+            String.raw`\(3:4\)`,
+            String.raw`\(4:3\)`,
+            String.raw`\(1:2\)`,
+            String.raw`\(2:1\)`
+          ]
+        },
+
+        /* Source: A. Exercises #8 (figure: 13-1-8.png) */
+        {
+          stem: String.raw`
+            <p><b>Refer to Figure 2.</b> The two triangles are similar.</p>
+            <p>Find the ratio of the lengths in the <b>right</b> triangle to those in the <b>left</b> triangle.</p>
+          `,
+          media: String.raw`
+            <figure>
+              <img src="13-1-8.png" alt="A. Exercise #8" />
+              <figcaption>Figure 2</figcaption>
+            </figure>
+          `,
+          choices: [
+            String.raw`\(3:2\)`,
+            String.raw`\(1:2\)`,
+            String.raw`\(2:3\)`,
+            String.raw`\(2:1\)`,
+            String.raw`\(3:5\)`,
+            String.raw`\(5:3\)`
+          ]
+        },
+
+        /* Source: A. Exercises #9 (figure: 13-1-9.png) */
+        {
+          stem: String.raw`
+            <p><b>Refer to Figure 3.</b> The triangles are similar.</p>
+            <p>Find the values of \(n\) and \(m\).</p>
+          `,
+          media: String.raw`
+            <figure>
+              <img src="13-1-9.png" alt="A. Exercise #9" />
+              <figcaption>Figure 3</figcaption>
+            </figure>
+          `,
+          choices: [
+            String.raw`\(n=6,\ m=8\)`,
+            String.raw`\(n=8,\ m=6\)`,
+            String.raw`\(n=10,\ m=12\)`,
+            String.raw`\(n=12,\ m=16\)`,
+            String.raw`\(n=16,\ m=12\)`,
+            String.raw`\(n=24,\ m=32\)`
+          ]
+        },
+
+        /* Source: A. Exercises #10 (figure: 13-1-10.png) */
+        {
+          stem: String.raw`
+            <p><b>Refer to Figure 4.</b> The two figures are similar.</p>
+            <p>In the smaller figure, the side corresponding to 27 has length 9.</p>
+            <p>Find \(x\), \(y\), and \(z\).</p>
+          `,
+          media: String.raw`
+            <figure>
+              <img src="13-1-10.png" alt="A. Exercise #10" />
+              <figcaption>Figure 4</figcaption>
+            </figure>
+          `,
+          choices: [
+            String.raw`\(x=8,\ y=6,\ z=4\)`,
+            String.raw`\(x=12,\ y=9,\ z=6\)`,
+            String.raw`\(x=6,\ y=8,\ z=4\)`,
+            String.raw`\(x=4,\ y=6,\ z=8\)`,
+            String.raw`\(x=9,\ y=6,\ z=3\)`,
+            String.raw`\(x=18,\ y=12,\ z=6\)`
+          ]
+        },
+
+        /* Source: A. Exercises #11 (figure: 13-1-11.png) */
+        {
+          stem: String.raw`
+            <p><b>Refer to Figure 5.</b> The two figures are similar.</p>
+            <p>Find the values of \(x\) and \(y\).</p>
+          `,
+          media: String.raw`
+            <figure>
+              <img src="13-1-11.png" alt="A. Exercise #11" />
+              <figcaption>Figure 5</figcaption>
+            </figure>
+          `,
+          choices: [
+            String.raw`\(x=6,\ y=7.5\)`,
+            String.raw`\(x=7,\ y=6\)`,
+            String.raw`\(x=7.5,\ y=8\)`,
+            String.raw`\(x=6,\ y=6\)`,
+            String.raw`\(x=7.5,\ y=6\)`,
+            String.raw`\(x=9,\ y=6\)`
+          ]
+        },
+
+        /* =======================
+           Type B (5 questions)
+           ======================= */
+
+        /* Source: B. Exercises #13 */
+        {
+          choiceWrap: false,
+          stem: String.raw`
+            <p>If \(\triangle LPQ \sim \triangle RST\), which statement correctly describes the corresponding angles and sides?</p>
+          `,
+          choices: [
+            String.raw`∠L≅∠S, ∠P≅∠T, ∠Q≅∠R and LP/RT = PQ/RS = LQ/ST`,
+            String.raw`∠L≅∠R, ∠P≅∠S, ∠Q≅∠T and LP/RS = PQ/ST = LQ/RT`,
+            String.raw`∠L≅∠T, ∠P≅∠S, ∠Q≅∠R and LP/ST = PQ/RS = LQ/RT`,
+            String.raw`∠L≅∠R, ∠P≅∠T, ∠Q≅∠S and LP/RT = PQ/ST = LQ/RS`,
+            String.raw`∠L≅∠S, ∠P≅∠R, ∠Q≅∠T and LP/RS = PQ/RT = LQ/ST`,
+            String.raw`∠L≅∠R, ∠P≅∠S, ∠Q≅∠T and LP/ST = PQ/RS = LQ/RT`
+          ]
+        },
+
+        /* Source: B. Exercises #14 */
+        {
+          choiceWrap: false,
+          stem: String.raw`
+            <p>Is every square similar to every other square?</p>
+          `,
+          choices: [
+            String.raw`No. Squares can have different side lengths.`,
+            String.raw`Yes. All squares have four right angles and their sides are in the same ratio.`,
+            String.raw`No. Similarity requires the same perimeter.`,
+            String.raw`Yes. All squares have the same area.`,
+            String.raw`No. Similarity requires congruence.`,
+            String.raw`Yes. All squares have diagonals of the same length.`
+          ]
+        },
+
+        /* Source: B. Exercises #15 */
+        {
+          choiceWrap: false,
+          stem: String.raw`
+            <p>Are congruent triangles also similar?</p>
+          `,
+          choices: [
+            String.raw`No. Congruent triangles must have different shapes.`,
+            String.raw`Yes. They have equal corresponding angles and a scale factor of 1.`,
+            String.raw`No. Similar triangles must have different sizes.`,
+            String.raw`Yes. Only if they are right triangles.`,
+            String.raw`No. Similarity requires proportional angles.`,
+            String.raw`Yes. Only if their perimeters are equal.`
+          ]
+        },
+
+        /* Source: B. Exercises #17 */
+        {
+          choiceWrap: false,
+          stem: String.raw`
+            <p>Which is the best explanation for why two congruent triangles are similar?</p>
+          `,
+          choices: [
+            String.raw`Their areas are equal, so they are similar.`,
+            String.raw`They have three pairs of equal angles, and corresponding sides are proportional with ratio 1.`,
+            String.raw`They have the same perimeter, so they are similar.`,
+            String.raw`They can be placed on top of each other, so they are similar by the Pythagorean Theorem.`,
+            String.raw`Their corresponding sides add to the same total, so they are similar.`,
+            String.raw`They have equal altitudes, so they are similar.`
+          ]
+        },
+
+        /* Source: B. Exercises #18 (figure: 13-1-18.png) */
+        {
+          choiceWrap: false,
+          stem: String.raw`
+            <p><b>Refer to Figure 6.</b> If \(\triangle ABC \sim \triangle XYZ\), the perimeter of \(\triangle ABC\) and the perimeter of \(\triangle XYZ\) are in what ratio?</p>
+          `,
+          media: String.raw`
+            <figure>
+              <img src="13-1-18.png" alt="B. Exercise #18" />
+              <figcaption>Figure 6</figcaption>
+            </figure>
+          `,
+          choices: [
+            String.raw`\(1:3\)`,
+            String.raw`\(2:3\)`,
+            String.raw`\(3:1\)`,
+            String.raw`\(3:2\)`,
+            String.raw`\(5:6\)`,
+            String.raw`\(6:5\)`
+          ]
+        },
+
+        /* =======================
+           Type C (2 questions)
+           ======================= */
+
+        /* Source: C. Exercises #20 */
+        {
+          choiceWrap: false,
+          stem: String.raw`
+            <p>Two triangles are similar. Which statement is always true?</p>
+          `,
+          choices: [
+            String.raw`The difference of their perimeters equals the difference of corresponding sides.`,
+            String.raw`The ratio of their areas equals the ratio of corresponding sides.`,
+            String.raw`The ratio of their perimeters equals the ratio of any pair of corresponding sides.`,
+            String.raw`Their perimeters must be equal.`,
+            String.raw`Their corresponding sides must be equal.`,
+            String.raw`Their areas must be equal.`
+          ]
+        },
+
+        /* Instructor-created (Type C-style): Similarity by AA */
+        {
+          choiceWrap: false,
+          stem: String.raw`
+            <p>Two triangles have \(\angle A \cong \angle D\) and \(\angle B \cong \angle E\).</p>
+            <p>What can you conclude?</p>
+          `,
+          choices: [
+            String.raw`The triangles are similar by AA.`,
+            String.raw`The triangles are congruent by AA.`,
+            String.raw`The triangles are similar only if one pair of sides is equal.`,
+            String.raw`The triangles are congruent only if one pair of sides is proportional.`,
+            String.raw`Nothing can be concluded without a third angle measure.`,
+            String.raw`The triangles must be right triangles.`
+          ]
+        }
+
+      ]
+    };
+  </script>
+
+  <link rel="stylesheet" href="/math-homework/assets/core-rich.css" />
+  <script defer src="/math-homework/assets/core-rich.js"></script>
+  <script defer src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+</head>
+
+<body>
+  <div id="hw-root">Loading…</div>
+</body>
+</html>
+
+<!-- :contentReference[oaicite:0]{index=0} -->
