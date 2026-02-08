@@ -12,7 +12,7 @@
 
        REQUIRED SOURCE REFERENCES (your provided sets):
        - Type A uses A. Exercises: #7, #8, #9, #10, #11
-       - Type B uses B. Exercises: #13, #14, #15, #17, #18
+       - Type B uses B. Exercises: #13, #14, #15, #17, #19
        - Type C uses C. Exercises: #20
        - Instructor-created (Type C-style): Similarity by AA criterion (no source number)
 
@@ -30,7 +30,8 @@
       graphics : String.raw``,
 
       /* Correct answers for Q1–Q12 */
-      answerKey : ["B","C","D","A","E","B","A","C","B","D","A","C"],
+      /* Spread (A–F) is intentionally uniform. */
+      answerKey : ["B","C","D","A","E","F","D","A","C","B","E","F"],
 
       questions : [
 
@@ -140,12 +141,12 @@
             </figure>
           `,
           choices: [
+            String.raw`\(x=4.5,\ y=6\)`,
             String.raw`\(x=6,\ y=7.5\)`,
-            String.raw`\(x=7,\ y=6\)`,
-            String.raw`\(x=7.5,\ y=8\)`,
             String.raw`\(x=6,\ y=6\)`,
-            String.raw`\(x=7.5,\ y=6\)`,
-            String.raw`\(x=9,\ y=6\)`
+            String.raw`\(x=3,\ y=7.5\)`,
+            String.raw`\(x=4.5,\ y=7.5\)`,
+            String.raw`\(x=9,\ y=15\)`
           ]
         },
 
@@ -161,11 +162,11 @@
           `,
           choices: [
             String.raw`∠L≅∠S, ∠P≅∠T, ∠Q≅∠R and LP/RT = PQ/RS = LQ/ST`,
-            String.raw`∠L≅∠R, ∠P≅∠S, ∠Q≅∠T and LP/RS = PQ/ST = LQ/RT`,
             String.raw`∠L≅∠T, ∠P≅∠S, ∠Q≅∠R and LP/ST = PQ/RS = LQ/RT`,
             String.raw`∠L≅∠R, ∠P≅∠T, ∠Q≅∠S and LP/RT = PQ/ST = LQ/RS`,
             String.raw`∠L≅∠S, ∠P≅∠R, ∠Q≅∠T and LP/RS = PQ/RT = LQ/ST`,
-            String.raw`∠L≅∠R, ∠P≅∠S, ∠Q≅∠T and LP/ST = PQ/RS = LQ/RT`
+            String.raw`∠L≅∠R, ∠P≅∠S, ∠Q≅∠T and LP/ST = PQ/RS = LQ/RT`,
+            String.raw`∠L≅∠R, ∠P≅∠S, ∠Q≅∠T and LP/RS = PQ/ST = LQ/RT`
           ]
         },
 
@@ -177,10 +178,10 @@
           `,
           choices: [
             String.raw`No. Squares can have different side lengths.`,
-            String.raw`Yes. All squares have four right angles and their sides are in the same ratio.`,
             String.raw`No. Similarity requires the same perimeter.`,
-            String.raw`Yes. All squares have the same area.`,
             String.raw`No. Similarity requires congruence.`,
+            String.raw`Yes. All squares have four right angles and their sides are in the same ratio.`,
+            String.raw`Yes. All squares have the same area.`,
             String.raw`Yes. All squares have diagonals of the same length.`
           ]
         },
@@ -192,8 +193,8 @@
             <p>Are congruent triangles also similar?</p>
           `,
           choices: [
-            String.raw`No. Congruent triangles must have different shapes.`,
             String.raw`Yes. They have equal corresponding angles and a scale factor of 1.`,
+            String.raw`No. Congruent triangles must have different shapes.`,
             String.raw`No. Similar triangles must have different sizes.`,
             String.raw`Yes. Only if they are right triangles.`,
             String.raw`No. Similarity requires proportional angles.`,
@@ -209,8 +210,8 @@
           `,
           choices: [
             String.raw`Their areas are equal, so they are similar.`,
-            String.raw`They have three pairs of equal angles, and corresponding sides are proportional with ratio 1.`,
             String.raw`They have the same perimeter, so they are similar.`,
+            String.raw`They have three pairs of equal angles, and corresponding sides are proportional with ratio 1.`,
             String.raw`They can be placed on top of each other, so they are similar by the Pythagorean Theorem.`,
             String.raw`Their corresponding sides add to the same total, so they are similar.`,
             String.raw`They have equal altitudes, so they are similar.`
@@ -225,13 +226,13 @@
           `,
           media: String.raw`
             <figure>
-              <img src="13-1-19.png" alt="B. Exercise #18" />
+              <img src="13-1-19.png" alt="B. Exercise #19" />
               <figcaption>Figure 6</figcaption>
             </figure>
           `,
           choices: [
-            String.raw`\(1:3\)`,
             String.raw`\(2:3\)`,
+            String.raw`\(1:3\)`,
             String.raw`\(3:1\)`,
             String.raw`\(3:2\)`,
             String.raw`\(5:6\)`,
@@ -252,9 +253,9 @@
           choices: [
             String.raw`The difference of their perimeters equals the difference of corresponding sides.`,
             String.raw`The ratio of their areas equals the ratio of corresponding sides.`,
-            String.raw`The ratio of their perimeters equals the ratio of any pair of corresponding sides.`,
             String.raw`Their perimeters must be equal.`,
             String.raw`Their corresponding sides must be equal.`,
+            String.raw`The ratio of their perimeters equals the ratio of any pair of corresponding sides.`,
             String.raw`Their areas must be equal.`
           ]
         },
@@ -267,12 +268,12 @@
             <p>What can you conclude?</p>
           `,
           choices: [
-            String.raw`The triangles are similar by AA.`,
             String.raw`The triangles are congruent by AA.`,
             String.raw`The triangles are similar only if one pair of sides is equal.`,
             String.raw`The triangles are congruent only if one pair of sides is proportional.`,
             String.raw`Nothing can be concluded without a third angle measure.`,
-            String.raw`The triangles must be right triangles.`
+            String.raw`The triangles must be right triangles.`,
+            String.raw`The triangles are similar by AA.`
           ]
         }
 
@@ -289,5 +290,3 @@
   <div id="hw-root">Loading…</div>
 </body>
 </html>
-
-<!-- :contentReference[oaicite:0]{index=0} -->
