@@ -8,8 +8,11 @@
   <script>
     /* =========================
        Homework 12-Review — Logs, Inverses, and Exponential Equations
-       Assorted review set (21 questions) based on the provided items.
+
+       Update requested:
+       - Last question is now: given P, A, t, find the EFFECTIVE rate i in A = P(1+i)^t
        ========================= */
+
     window.homeworkData = {
       classId : "Algebra2",
       id      : "Homework 12-Review",
@@ -17,23 +20,15 @@
 
       graphics : String.raw``,
 
-      /* Correct answers for Q1–Q21 */
-      answerKey : ["B","C","D","B","B","B","C","B","B","B","B","B","B","A","A","A","B","C","A","B","A"],
+      /* Correct answers for Q1–Q25 */
+      answerKey : [
+        "C","B","D","B","B","B","C","B","B","B","B","B","B","A","A","A","B","C","A","B","A",
+        "B","E","C","D"
+      ],
 
       questions : [
 
-        {
-          stem: String.raw`<p>For \(f=\{(1,7),(2,8),(-3,9)\}\), which option gives \(f^{-1}\) and correctly states whether \(f^{-1}\) is a function?</p>`,
-          choices: [
-            String.raw`\(f^{-1}=\{(7,1),(8,2),(9,-3)\}\), and \(f^{-1}\) is not a function`,
-            String.raw`\(f^{-1}=\{(7,1),(8,2),(9,-3)\}\), and \(f^{-1}\) is a function`,
-            String.raw`\(f^{-1}=\{(1,7),(2,8),(-3,9)\}\), and \(f^{-1}\) is a function`,
-            String.raw`\(f^{-1}=\{(7,1),(8,2),(-3,9)\}\), and \(f^{-1}\) is a function`,
-            String.raw`\(f^{-1}=\{(7,1),(7,2),(9,-3)\}\), and \(f^{-1}\) is a function`,
-            String.raw`\(f^{-1}=\{(7,1),(8,2),(9,3)\}\), and \(f^{-1}\) is a function`
-          ]
-        },
-
+        /* Q1 (old Q2) */
         {
           stem: String.raw`<p>If \(f(x)=3x-7\), find \(f^{-1}(x)\).</p>`,
           choices: [
@@ -46,18 +41,39 @@
           ]
         },
 
+        /* Q2 (new inverse rational + domain) */
         {
-          stem: String.raw`<p>If \(g(x)=2x^{2}-8\), which option correctly describes \(g^{-1}(x)\) and whether it is a function?</p>`,
+          stem: String.raw`
+            <p>Let \(f(x)=\dfrac{4}{x-3}\).</p>
+            <p>Which option gives the correct formula for \(f^{-1}(x)\) <em>and</em> the domain of \(f^{-1}\)?</p>
+          `,
           choices: [
-            String.raw`\(g^{-1}(x)=\sqrt{\dfrac{x+8}{2}}\), and it is a function`,
-            String.raw`\(g^{-1}(x)=\sqrt{\dfrac{x+8}{2}}\), and it is not a function`,
-            String.raw`\(g^{-1}(x)=\pm\sqrt{\dfrac{x+8}{2}}\), and it is a function`,
-            String.raw`\(g^{-1}(x)=\pm\sqrt{\dfrac{x+8}{2}}\), and it is not a function`,
-            String.raw`\(g^{-1}(x)=\pm\sqrt{\dfrac{x-8}{2}}\), and it is not a function`,
-            String.raw`\(g^{-1}(x)=\dfrac{x+8}{2}\), and it is a function`
+            String.raw`\(f^{-1}(x)=\dfrac{4}{x}+3\), domain: \(x\neq 3\)`,
+            String.raw`\(f^{-1}(x)=3+\dfrac{4}{x}\), domain: \(x\neq 0\)`,
+            String.raw`\(f^{-1}(x)=\dfrac{1}{4}(x-3)\), domain: all real \(x\)`,
+            String.raw`\(f^{-1}(x)=\dfrac{4}{x-3}\), domain: \(x\neq 3\)`,
+            String.raw`\(f^{-1}(x)=\dfrac{x-3}{4}\), domain: \(x\neq 0\)`,
+            String.raw`\(f^{-1}(x)=\dfrac{4}{3-x}\), domain: \(x\neq 0\)`
           ]
         },
 
+        /* Q3 (invertibility/uniqueness) */
+        {
+          stem: String.raw`
+            <p>Let \(g(x)=2x^{2}-8\) with domain all real numbers.</p>
+            <p>Which statement correctly explains whether \(g\) has an inverse function on \(\mathbb{R}\)?</p>
+          `,
+          choices: [
+            String.raw`Yes. Every quadratic function has an inverse function on \(\mathbb{R}\).`,
+            String.raw`Yes. Because \(g\) is continuous, the inverse must be unique.`,
+            String.raw`No. Because \(g(x)\ge -8\), the inverse cannot exist.`,
+            String.raw`No. Because \(g\) is not one-to-one on \(\mathbb{R}\), the inverse is not uniquely defined as a function.`,
+            String.raw`Yes. Because \(g\) passes the horizontal line test on \(\mathbb{R}\).`,
+            String.raw`No. Because the inverse would have domain \(\mathbb{R}\), which is impossible.`
+          ]
+        },
+
+        /* Q4 */
         {
           stem: String.raw`<p>Evaluate: \( \log_{4}(32) \).</p>`,
           choices: [
@@ -65,11 +81,12 @@
             String.raw`\(\dfrac{5}{2}\)`,
             String.raw`\(3\)`,
             String.raw`\(4\)`,
-            String.raw`\(\dfrac{1}{2}\)`,
+            String.raw`\(\dfrac{1}{2}\)` ,
             String.raw`\(5\)`
           ]
         },
 
+        /* Q5 */
         {
           stem: String.raw`<p>Evaluate: \( \log_{5}\!\left(\dfrac{1}{25}\right) \).</p>`,
           choices: [
@@ -82,6 +99,7 @@
           ]
         },
 
+        /* Q6 */
         {
           stem: String.raw`<p>Evaluate: \( \log_{\left(\tfrac{1}{2}\right)}(8) \).</p>`,
           choices: [
@@ -94,6 +112,7 @@
           ]
         },
 
+        /* Q7 */
         {
           stem: String.raw`<p>Evaluate: \( \log_{27}\!\left(\dfrac{1}{3}\right) \).</p>`,
           choices: [
@@ -106,6 +125,7 @@
           ]
         },
 
+        /* Q8 */
         {
           stem: String.raw`<p>Evaluate: \( \log_{0.1}(1000) \).</p>`,
           choices: [
@@ -118,6 +138,7 @@
           ]
         },
 
+        /* Q9 */
         {
           stem: String.raw`<p>Evaluate: \( \log_{16}(8) \).</p>`,
           choices: [
@@ -130,6 +151,7 @@
           ]
         },
 
+        /* Q10 */
         {
           stem: String.raw`<p>Evaluate: \( \log_{9}\!\left(\dfrac{1}{3}\right) \).</p>`,
           choices: [
@@ -142,6 +164,7 @@
           ]
         },
 
+        /* Q11 */
         {
           stem: String.raw`<p>Evaluate: \( \log_{125}\!\left(\dfrac{1}{5}\right) \).</p>`,
           choices: [
@@ -154,6 +177,7 @@
           ]
         },
 
+        /* Q12 */
         {
           stem: String.raw`<p>Evaluate: \( \log_{3}\!\left(\sqrt{27}\right) \).</p>`,
           choices: [
@@ -166,6 +190,7 @@
           ]
         },
 
+        /* Q13 */
         {
           stem: String.raw`<p>Give the answer in radians: \( \text{Cos}^{-1}\!\left(\dfrac{\sqrt{3}}{2}\right) \).</p>`,
           choices: [
@@ -178,6 +203,7 @@
           ]
         },
 
+        /* Q14 */
         {
           stem: String.raw`<p>Give the answer in radians: \( \text{Sin}^{-1}\!\left(\dfrac{\sqrt{3}}{2}\right) \).</p>`,
           choices: [
@@ -190,6 +216,7 @@
           ]
         },
 
+        /* Q15 */
         {
           stem: String.raw`<p>Give the answer in radians: \( \text{Tan}^{-1}(-1) \).</p>`,
           choices: [
@@ -202,6 +229,7 @@
           ]
         },
 
+        /* Q16 */
         {
           stem: String.raw`<p>Use log laws to rewrite: \( \log_{4}(ab^{2}) \).</p>`,
           choices: [
@@ -214,6 +242,7 @@
           ]
         },
 
+        /* Q17 */
         {
           stem: String.raw`<p>Use log laws to rewrite: \( \log\sqrt{\dfrac{x^{2}}{y}} \).</p>`,
           choices: [
@@ -226,6 +255,7 @@
           ]
         },
 
+        /* Q18 */
         {
           stem: String.raw`<p>Use log laws to rewrite: \( \log\sqrt{x^{2}yz^{3}} \).</p>`,
           choices: [
@@ -238,6 +268,7 @@
           ]
         },
 
+        /* Q19 */
         {
           stem: String.raw`<p>Evaluate: \( \log_{4}32 \).</p>`,
           choices: [
@@ -250,6 +281,7 @@
           ]
         },
 
+        /* Q20 */
         {
           stem: String.raw`<p>Evaluate: \( \log_{5}\!\left(\dfrac{1}{25}\right) \).</p>`,
           choices: [
@@ -262,6 +294,7 @@
           ]
         },
 
+        /* Q21 */
         {
           stem: String.raw`<p>Solve: \( \log x+\log 4=3 \).</p>`,
           choices: [
@@ -272,6 +305,65 @@
             String.raw`\(x=25\)`,
             String.raw`\(x=2.5\)`
           ]
+        },
+
+        /* Q22 */
+        {
+          stem: String.raw`<p>Solve for \(x\): \(4\cdot 3^{x}=5^{x}\).</p>`,
+          choices: [
+            String.raw`\(\dfrac{\ln 4}{\ln(3/5)}\)`,
+            String.raw`\(\dfrac{\ln 4}{\ln(5/3)}\)`,
+            String.raw`\(\dfrac{\ln(5/3)}{\ln 4}\)`,
+            String.raw`\(\dfrac{\ln 5-\ln 3}{\ln 4}\)`,
+            String.raw`\(\dfrac{\ln 4}{\ln 5-\ln 3+\ln 4}\)`,
+            String.raw`\(\dfrac{\ln 4}{\ln 15}\)`
+          ]
+        },
+
+        /* Q23 */
+        {
+          stem: String.raw`<p>Solve for \(x\): \(2\cdot 7^{x}=5\cdot 6^{\,1-x}\).</p>`,
+          choices: [
+            String.raw`\(\dfrac{\ln 15}{\ln(7/6)}\)`,
+            String.raw`\(\dfrac{\ln 15}{\ln 6-\ln 7}\)`,
+            String.raw`\(\dfrac{\ln(30)}{\ln(42)}\)`,
+            String.raw`\(\dfrac{\ln 15}{\ln(6/7)}\)`,
+            String.raw`\(\dfrac{\ln 15}{\ln(42)}\)`,
+            String.raw`\(\dfrac{\ln 5-\ln 2}{\ln 6+\ln 7}\)`
+          ]
+        },
+
+        /* Q24 (continuous amount) */
+        {
+          stem: String.raw`
+            <p>A savings account earns interest continuously at a rate of \(3.2\%\) per year.</p>
+            <p>You deposit \(\$2500\) and leave it for \(6\) years. What is the balance \(A\) after \(6\) years?</p>
+            <p class="small">Use \(A=Pe^{rt}\).</p>
+          `,
+          choices: [
+            String.raw`\(\$2500e^{0.032}\)`,
+            String.raw`\(\$2500e^{0.032/6}\)`,
+            String.raw`\(\$2500e^{0.192}\)`,
+            String.raw`\(\$2500e^{3.2\cdot 6}\)`,
+            String.raw`\(\$2500(1.032)^{6}\)`,
+            String.raw`\(\$2500(1.032)^{1/6}\)`
+          ]
+        },
+
+        /* Q25 (effective rate i in A = P(1+i)^t) */
+        {
+          stem: String.raw`
+            <p>An investment grows from \(\$6000\) to \(\$8100\) in \(4\) years.</p>
+            <p>Assuming the model \(A=P(1+i)^{t}\), what is the effective annual rate \(i\)?</p>
+          `,
+          choices: [
+            String.raw`\(\left(\dfrac{6000}{8100}\right)^{1/4}-1\)`,
+            String.raw`\(\left(\dfrac{8100}{6000}\right)^{4}-1\)`,
+            String.raw`\(\dfrac{8100-6000}{4}\)`,
+            String.raw`\(\left(\dfrac{8100}{6000}\right)^{1/4}-1\)`,
+            String.raw`\(\ln\!\left(\dfrac{8100}{6000}\right)\)`,
+            String.raw`\(\dfrac{\ln(8100)-\ln(6000)}{4}\)`
+          ]
         }
 
       ]
@@ -279,8 +371,12 @@
   </script>
 
   <link rel="stylesheet" href="/math-homework/assets/core-rich.css" />
-  <script defer src="/math-homework/assets/core-rich.js"></script>
+
+  <!-- MathJax FIRST -->
   <script defer src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+
+  <!-- Core renderer LAST -->
+  <script defer src="/math-homework/assets/core-rich.js"></script>
 </head>
 
 <body>
