@@ -25,7 +25,8 @@
 
       graphics : String.raw``,
 
-      answerKey : ["C","A","B","B","B","A","A","B","C","A","A","A"],
+      // Balanced uniformly: A,B,C,D,E,F each appears exactly 2 times.
+      answerKey : ["C","D","E","B","F","A","D","B","C","E","A","F"],
 
       questions : [
 
@@ -58,10 +59,10 @@
           `,
           choiceWrap: false,
           choices: [
-            String.raw`\(\,x^6-24x^5y+240x^4y^2-1280x^3y^3+3840x^2y^4-6144xy^5+4096y^6\,\)`,
             String.raw`\(\,x^6-24x^5y+240x^4y^2-1280x^3y^3+3840x^2y^4-6144xy^5-4096y^6\,\)`,
             String.raw`\(\,x^6-4x^5y+16x^4y^2-64x^3y^3+256x^2y^4-1024xy^5+4096y^6\,\)`,
             String.raw`\(\,x^6-20x^5y+160x^4y^2-640x^3y^3+1280x^2y^4-1024xy^5+4096y^6\,\)`,
+            String.raw`\(\,x^6-24x^5y+240x^4y^2-1280x^3y^3+3840x^2y^4-6144xy^5+4096y^6\,\)`,
             String.raw`\(\,x^6-24x^5y+160x^4y^2-1280x^3y^3+3840x^2y^4-6144xy^5+4096y^6\,\)`,
             String.raw`\(\,x^6-24x^5y+240x^4y^2+1280x^3y^3+3840x^2y^4-6144xy^5+4096y^6\,\)`
           ]
@@ -76,10 +77,10 @@
           choiceWrap: false,
           choices: [
             String.raw`\(\,x^5-5x^4y+25x^3y^2-125x^2y^3+625xy^4-3125y^5\,\)`,
-            String.raw`\(\,x^5-25x^4y+250x^3y^2-1250x^2y^3+3125xy^4-3125y^5\,\)`,
             String.raw`\(\,x^5-25x^4y+250x^3y^2-1250x^2y^3+3125xy^4+3125y^5\,\)`,
             String.raw`\(\,x^5-25x^4y+300x^3y^2-1250x^2y^3+3125xy^4-3125y^5\,\)`,
             String.raw`\(\,x^5+25x^4y+250x^3y^2+1250x^2y^3+3125xy^4+3125y^5\,\)`,
+            String.raw`\(\,x^5-25x^4y+250x^3y^2-1250x^2y^3+3125xy^4-3125y^5\,\)`,
             String.raw`\(\,x^5-25x^4y+250x^3y^2-1250x^2y^3+3125xy^4-625y^5\,\)`
           ]
         },
@@ -114,11 +115,11 @@
           choiceWrap: false,
           choices: [
             String.raw`\(\,9{,}072x^5\,\)`,
-            String.raw`\(\,10{,}206x^5\,\)`,
             String.raw`\(\,30{,}618x^5\,\)`,
             String.raw`\(\,1{,}134x^5\,\)`,
             String.raw`\(\,5{,}103x^5\,\)`,
-            String.raw`\(\,12{,}150x^5\,\)`
+            String.raw`\(\,12{,}150x^5\,\)`,
+            String.raw`\(\,10{,}206x^5\,\)`
           ]
         },
 
@@ -147,10 +148,10 @@
           `,
           choiceWrap: false,
           choices: [
-            String.raw`\(\,20x^6y^{15}\,\)`,
             String.raw`\(\,15x^6y^{15}\,\)`,
             String.raw`\(\,20x^3y^{15}\,\)`,
             String.raw`\(\,6x^{12}y^{15}\,\)`,
+            String.raw`\(\,20x^6y^{15}\,\)`,
             String.raw`\(\,20x^8y^{15}\,\)`,
             String.raw`\(\,120x^6y^{15}\,\)`
           ]
@@ -195,11 +196,11 @@
           `,
           choiceWrap: false,
           choices: [
-            String.raw`\(\,159{,}497{,}910x^{16}y^{36}\,\)`,
             String.raw`\(\,159{,}497{,}910x^{18}y^{32}\,\)`,
             String.raw`\(\,24310\cdot 3^{9}x^{14}y^{36}\,\)`,
             String.raw`\(\,24310\cdot 3^{8}x^{16}y^{40}\,\)`,
             String.raw`\(\,159{,}497{,}910x^{16}y^{32}\,\)`,
+            String.raw`\(\,159{,}497{,}910x^{16}y^{36}\,\)`,
             String.raw`\(\,53{,}165{,}970x^{16}y^{36}\,\)`
           ]
         },
@@ -231,12 +232,12 @@
           `,
           choiceWrap: false,
           choices: [
-            String.raw`\(\,(2x^3+y^4)^{10}\,\)`,
             String.raw`\(\,(x^3+2y^4)^{10}\,\)`,
             String.raw`\(\,(2x^3+y^4)^{9}\,\)`,
             String.raw`\(\,(2x+y^4)^{10}\,\)`,
             String.raw`\(\,(2x^3+y^4)^{11}\,\)`,
-            String.raw`\(\,(4x^3+y^4)^{10}\,\)`
+            String.raw`\(\,(4x^3+y^4)^{10}\,\)`,
+            String.raw`\(\,(2x^3+y^4)^{10}\,\)`
           ]
         }
 
