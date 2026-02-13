@@ -10,13 +10,17 @@
        Homework 13-rev — Chapter 13 Review (Algebra 2)
 
        SOURCE (your review sheet):
-       Counting / Permutations / Combinations (#1–11),
-       Binomial Theorem (#12–13),
-       Probability (#14–16, #19–22),
-       Descriptive Statistics + Normal Distribution (#23–30).
+       Counting / Permutations / Combinations,
+       Binomial Theorem,
+       Probability.
 
        This review contains 16 multiple-choice questions (as requested).
        No figures are used in this homework.
+
+       Note:
+       - The previous Q13–Q16 (descriptive stats + normal distribution) were removed.
+       - Four new Q13–Q16 were added: 1 Binomial Theorem + 3 Probability
+         (combinations, circular permutations, permutation with repetition).
        ========================= */
 
     window.homeworkData = {
@@ -26,7 +30,7 @@
 
       graphics : String.raw``,
 
-      // Balanced uniformly: A=3, B=3, C=3, D=3, E=2, F=2.
+      // Balanced distribution: A=3, B=3, C=3, D=3, E=2, F=2.
       answerKey : ["A","B","C","D","E","F","A","B","C","D","E","F","A","B","C","D"],
 
       questions : [
@@ -226,71 +230,76 @@
           ]
         },
 
-        /* 13 */
+        /* =======================
+           NEW 13–16 (replacements)
+           ======================= */
+
+        /* 13 — Binomial Theorem (constant term) */
         {
           stem: String.raw`
-            <p>The following are times (in seconds) for running the quarter mile in one gym class:</p>
-            <p><span class="math">\(55.9,\;49.8,\;49.9,\;60.3,\;53.7,\;58.2,\;56.8,\;60.5,\;61.5,\;61.4,\;60.7,\;59.4,\;59.2,\;61.0,\;59.3\)</span></p>
-            <p>Find the <b>mean</b> (nearest tenth).</p>
+            <p>In the expansion of <span class="math">\( (x-\frac{2}{x})^6 \)</span>, what is the <b>constant term</b>?</p>
           `,
           choiceWrap: false,
           choices: [
-            String.raw`57.8`,
-            String.raw`57.3`,
-            String.raw`58.4`,
-            String.raw`56.9`,
-            String.raw`59.0`,
-            String.raw`55.9`
+            String.raw`\(-160\)`,
+            String.raw`\(160\)`,
+            String.raw`\(-80\)`,
+            String.raw`\(-320\)`,
+            String.raw`\(20\)`,
+            String.raw`\(-20\)`
           ]
         },
 
-        /* 14 */
+        /* 14 — Probability using combinations */
         {
           stem: String.raw`
-            <p>Using the same time data:</p>
-            <p><span class="math">\(55.9,\;49.8,\;49.9,\;60.3,\;53.7,\;58.2,\;56.8,\;60.5,\;61.5,\;61.4,\;60.7,\;59.4,\;59.2,\;61.0,\;59.3\)</span></p>
-            <p>Find the <b>standard deviation</b> (nearest tenth).</p>
+            <p>A box contains 5 red, 4 blue, and 3 green tokens (12 total).</p>
+            <p>You choose 4 tokens at random <b>without replacement</b>.</p>
+            <p>What is the probability that you get <b>exactly 2 red</b> and <b>exactly 2 blue</b>?</p>
           `,
           choiceWrap: false,
           choices: [
-            String.raw`3.9`,
-            String.raw`3.8`,
-            String.raw`3.6`,
-            String.raw`4.1`,
-            String.raw`5.0`,
-            String.raw`14.2`
+            String.raw`\(\frac{2}{33}\)`,
+            String.raw`\(\frac{4}{33}\)`,
+            String.raw`\(\frac{5}{33}\)`,
+            String.raw`\(\frac{8}{33}\)`,
+            String.raw`\(\frac{4}{11}\)`,
+            String.raw`\(\frac{1}{33}\)`
           ]
         },
 
-        /* 15 */
+        /* 15 — Probability using circular permutations */
         {
           stem: String.raw`
-            <p>Using the same time data, find the <b>z-score</b> for the time <span class="math">\(53.7\)</span> (nearest hundredth).</p>
+            <p>Eight students sit randomly around a round table.</p>
+            <p>Two of them are Aya and Ben.</p>
+            <p>What is the probability that <b>Aya sits next to Ben</b>?</p>
           `,
           choiceWrap: false,
           choices: [
-            String.raw`\(-0.72\)`,
-            String.raw`0.72`,
-            String.raw`\(-1.10\)`,
-            String.raw`1.10`,
-            String.raw`\(-1.64\)`,
-            String.raw`1.64`
+            String.raw`\(\frac{1}{7}\)`,
+            String.raw`\(\frac{1}{4}\)`,
+            String.raw`\(\frac{2}{7}\)`,
+            String.raw`\(\frac{1}{2}\)`,
+            String.raw`\(\frac{3}{7}\)`,
+            String.raw`\(\frac{5}{7}\)`
           ]
         },
 
-        /* 16 */
+        /* 16 — Probability using permutations with repetition */
         {
           stem: String.raw`
-            <p>Find <span class="math">\(P(-1.1\le z\le 0.72)\)</span> in the standard normal distribution.</p>
+            <p>The letters of the word <b>BALLOON</b> are randomly arranged.</p>
+            <p>What is the probability that the arrangement <b>begins with L</b> and <b>ends with N</b>?</p>
           `,
           choiceWrap: false,
           choices: [
-            String.raw`0.7642`,
-            String.raw`0.1357`,
-            String.raw`0.3714`,
-            String.raw`0.6286`,
-            String.raw`0.8999`,
-            String.raw`0.4714`
+            String.raw`\(\frac{1}{42}\)`,
+            String.raw`\(\frac{1}{14}\)`,
+            String.raw`\(\frac{2}{21}\)`,
+            String.raw`\(\frac{1}{21}\)`,
+            String.raw`\(\frac{1}{7}\)`,
+            String.raw`\(\frac{1}{105}\)`
           ]
         }
 
