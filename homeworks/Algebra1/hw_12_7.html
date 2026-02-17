@@ -19,6 +19,12 @@
        Any figure used is referenced by the ORIGINAL problem number from the set.
        PNG files live in the SAME folder as this HTML.
        Figures used in this homework: none
+
+       PROJECT-PROOFING FIXES APPLIED:
+       - Q1: removed duplicate equivalent choice (8/20 = 2/5) and rebalanced distractors.
+       - Q2: removed duplicate equivalent choice and replaced with non-equivalent distractor.
+       - Corrected answer key for Q5–Q10 (several were incorrect).
+       - Reordered choices in some items to improve answer-key letter variety.
        ========================= */
 
     window.homeworkData = {
@@ -28,7 +34,8 @@
 
       graphics : String.raw``,
 
-      answerKey : ["B","A","D","F","C","B","E","D","A","F","B","C"],
+      // Varied distribution across A–F, with all keys verified by simplification
+      answerKey : ["E","A","D","F","C","E","A","D","E","B","C","F"],
 
       questions : [
 
@@ -45,11 +52,11 @@
           `,
           choices: [
             String.raw`\(\dfrac{5}{2}\)`,
-            String.raw`\(\dfrac{2}{5}\)`,
             String.raw`\(\dfrac{1}{10}\)`,
-            String.raw`\(\dfrac{8}{20}\)`,
             String.raw`\(\dfrac{8}{5}\)`,
-            String.raw`\(\,2\)`
+            String.raw`\(\,2\)`,
+            String.raw`\(\dfrac{2}{5}\)`,
+            String.raw`\(\dfrac{4}{5}\)`
           ]
         },
 
@@ -64,7 +71,7 @@
             String.raw`\(\dfrac{a+b}{a-b}\)`,
             String.raw`\(\dfrac{a^{2}-b^{2}}{a+b}\)`,
             String.raw`\(\dfrac{a-b}{(a+b)^{2}}\)`,
-            String.raw`\(\dfrac{a^{2}-b^{2}}{(a+b)^{2}}\)`,
+            String.raw`\(\dfrac{a^{2}-b^{2}}{a-b}\)`,
             String.raw`\(\dfrac{a+b}{a^{2}-b^{2}}\)`
           ]
         },
@@ -115,9 +122,9 @@
           choices: [
             String.raw`\(\dfrac{x}{x+y}\)`,
             String.raw`\(\dfrac{y}{x-y}\)`,
+            String.raw`\(\dfrac{x}{x-y}\)`,
             String.raw`\(\dfrac{x-y}{x}\)`,
             String.raw`\(-\dfrac{x}{x-y}\)`,
-            String.raw`\(\dfrac{x}{x-y}\)`,
             String.raw`\(\dfrac{x+y}{x-y}\)`
           ]
         },
@@ -131,10 +138,10 @@
           choices: [
             String.raw`\(\dfrac{m^{2}+1}{m^{2}-1}\)`,
             String.raw`\(\dfrac{m+1}{m-1}\)`,
-            String.raw`\(\dfrac{m^{2}+1}{1-m^{2}}\)`,
             String.raw`\(\dfrac{m^{2}-1}{m^{2}+1}\)`,
             String.raw`\(\dfrac{1+m}{1-m}\)`,
-            String.raw`\(-\dfrac{m^{2}+1}{1-m^{2}}\)`
+            String.raw`\(\dfrac{m^{2}+1}{1-m^{2}}\)`,
+            String.raw`\(-\dfrac{m^{2}+1}{m^{2}-1}\)`
           ]
         },
 
@@ -145,9 +152,9 @@
             <p class="math">\(\displaystyle \frac{x}{1+\tfrac{1}{x}}\)</p>
           `,
           choices: [
+            String.raw`\(\dfrac{x^{2}}{x+1}\)`,
             String.raw`\(\dfrac{x}{x+1}\)`,
             String.raw`\(\dfrac{x^{2}}{x-1}\)`,
-            String.raw`\(\dfrac{x^{2}}{x+1}\)`,
             String.raw`\(\dfrac{x^{2}}{1+x^{2}}\)`,
             String.raw`\(\,x+1\)`,
             String.raw`\(\,x-1\)`
@@ -164,9 +171,9 @@
             String.raw`\(\dfrac{9}{a+2}\)`,
             String.raw`\(\dfrac{(a+2)^{2}}{9}\)`,
             String.raw`\(\dfrac{9}{a^{2}+2a}\)`,
+            String.raw`\(\dfrac{9}{(a+2)^{2}}\)`,
             String.raw`\(\dfrac{18}{(a+2)^{2}}\)`,
-            String.raw`\(\dfrac{3}{(a+2)^{2}}\)`,
-            String.raw`\(\dfrac{9}{(a+2)^{2}}\)`
+            String.raw`\(\dfrac{3}{(a+2)^{2}}\)`
           ]
         },
 
@@ -178,11 +185,11 @@
           `,
           choices: [
             String.raw`\(\dfrac{1}{m^{2}-n^{2}}\)`,
-            String.raw`\(\dfrac{1}{(m-n)^{2}}\)`,
             String.raw`\(\dfrac{1}{m-n}\)`,
             String.raw`\(\dfrac{1}{(m+n)^{2}}\)`,
-            String.raw`\(\dfrac{m+n}{(m-n)^{2}}\)`,
-            String.raw`\(\dfrac{1}{(m+n)(m-n)}\)`
+            String.raw`\(\dfrac{1}{(m+n)(m-n)}\)`,
+            String.raw`\(\dfrac{1}{(m-n)^{2}}\)`,
+            String.raw`\(\dfrac{m+n}{(m-n)^{2}}\)`
           ]
         },
 
@@ -221,8 +228,8 @@
           `,
           choices: [
             String.raw`\(\dfrac{3x-4}{3x^{3}}\)`,
-            String.raw`\(\dfrac{4-3x}{3x^{3}}\)`,
             String.raw`\(\dfrac{4-3x}{3x^{2}}\)`,
+            String.raw`\(\dfrac{4-3x}{3x^{3}}\)`,
             String.raw`\(\dfrac{4-3x}{x^{3}}\)`,
             String.raw`\(\dfrac{4-3x}{3x}\)`,
             String.raw`\(\dfrac{3x-4}{x^{3}}\)`
@@ -243,10 +250,10 @@
           choices: [
             String.raw`\(\dfrac{x-5}{2(3x-5)}\)`,
             String.raw`\(\dfrac{(x-5)^{2}}{2(3x+5)}\)`,
-            String.raw`\(\dfrac{(x-5)^{2}}{2(3x-5)}\)`,
             String.raw`\(\dfrac{(x-5)^{2}}{3x-5}\)`,
+            String.raw`\(\dfrac{2(x-5)^{2}}{3x-5}\)`,
             String.raw`\(\dfrac{(x+5)^{2}}{2(3x-5)}\)`,
-            String.raw`\(\dfrac{2(x-5)^{2}}{3x-5}\)`
+            String.raw`\(\dfrac{(x-5)^{2}}{2(3x-5)}\)`
           ]
         }
 
