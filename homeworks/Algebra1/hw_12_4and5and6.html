@@ -1,0 +1,500 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Homework 12-4/12-5/12-6 (Algebra 1)</title>
+
+  <script>
+    /* =========================
+       Homework 12-4/12-5/12-6 — Adding & Subtracting Rational Expressions (Algebra 1)
+       Adapted for: /math-homework/assets/core-rich.js
+
+       GOAL:
+       - 24 questions total
+       - Strong emphasis on: finding LCD, rewriting with equivalent denominators,
+         combining, and fully simplifying (including sign traps like (2-x)=-(x-2)).
+       - Difficulty progresses gradually; includes “think carefully” conceptual items.
+
+       SOURCES USED (selected from your provided sets):
+
+       From Homework 12-4 (Adding/Subtracting, same denominators + simplification):
+       - Type A: #2, #4, #10, #15
+       - Type B: #22, #25
+
+       From Homework 12-5 (Different denominators, adding + simplifying):
+       - Type A: #2, #3, #5, #6
+       - Type B: #14, #15, #16, #19, #20
+       - Type C: #22
+
+       From Homework 12-6 (Different denominators, subtracting + sign reasoning):
+       - Type A: #1, #6, #9
+       - Type B: #12, #13, #18
+       - Type C: #23, #24
+
+       IMAGE NAMING RULE (STRICT):
+       Any figure used is referenced by the ORIGINAL problem number from the set.
+       PNG files live in the SAME folder as this HTML.
+       Figures used in this homework: none
+       ========================= */
+
+    window.homeworkData = {
+      classId : "Algebra1",
+      id      : "Homework 12-4and5and6",
+      title   : "Homework 12-4/12-5/12-6 — Adding & Subtracting Rational Expressions",
+
+      graphics : String.raw``,
+
+      answerKey : [
+        "C","D","B","E",
+        "D","D","E","B",
+        "F","A","C","E",
+        "A","C","B","D",
+        "B","F","E","E",
+        "C","F","A","D"
+      ],
+
+      questions : [
+
+        /* =====================================================
+           1) Same-denominator warm-up (combine like terms cleanly)
+           ===================================================== */
+
+        /* (12-4) Source: A. Exercise #2 */
+        {
+          stem: String.raw`
+            <p>Add or subtract and simplify.</p>
+            <p class="math">\(\dfrac{5}{x+2}+\dfrac{7}{x+2}\)</p>
+          `,
+          choices: [
+            String.raw`\(\dfrac{12}{x+4}\)`,
+            String.raw`\(\dfrac{12x}{x+2}\)`,
+            String.raw`\(\dfrac{12}{x+2}\)`,
+            String.raw`\(\dfrac{35}{x+2}\)`,
+            String.raw`\(\dfrac{12x+14}{x+2}\)`,
+            String.raw`\(\dfrac{5+7}{x+2}\)`
+          ]
+        },
+
+        /* (12-4) Source: A. Exercise #4 */
+        {
+          stem: String.raw`
+            <p>Add or subtract and simplify.</p>
+            <p class="math">\(\dfrac{3x}{y^{2}}-\dfrac{5x}{y^{2}}\)</p>
+          `,
+          choices: [
+            String.raw`\(\dfrac{8x}{y^{2}}\)`,
+            String.raw`\(-\dfrac{8x}{y^{2}}\)`,
+            String.raw`\(-\dfrac{2}{y^{2}}\)`,
+            String.raw`\(-\dfrac{2x}{y^{2}}\)`,
+            String.raw`\(\dfrac{2x}{y}\)`,
+            String.raw`\(-\dfrac{2x}{y}\)`
+          ]
+        },
+
+        /* (12-4) Source: A. Exercise #10 */
+        {
+          stem: String.raw`
+            <p>Add or subtract and simplify.</p>
+            <p class="math">\(\dfrac{x+4}{7}-\dfrac{x-3}{7}\)</p>
+          `,
+          choices: [
+            String.raw`\(\dfrac{7}{7}\)` ,
+            String.raw`\(\,1\)` ,
+            String.raw`\(\dfrac{x}{7}\)` ,
+            String.raw`\(\dfrac{2x+1}{7}\)` ,
+            String.raw`\(\dfrac{1}{7}\)` ,
+            String.raw`\(\,7\)`
+          ]
+        },
+
+        /* (12-4) Source: A. Exercise #15 */
+        {
+          stem: String.raw`
+            <p>Add or subtract and simplify.</p>
+            <p class="math">\(\dfrac{3a}{a^{2}-b^{2}}-\dfrac{3b}{a^{2}-b^{2}}\)</p>
+          `,
+          choices: [
+            String.raw`\(\dfrac{3}{a-b}\)` ,
+            String.raw`\(\dfrac{3(a-b)}{a^{2}-b^{2}}\)` ,
+            String.raw`\(\dfrac{3(a+b)}{a^{2}-b^{2}}\)` ,
+            String.raw`\(\dfrac{3a-3b}{a+b}\)` ,
+            String.raw`\(\dfrac{3}{a+b}\)` ,
+            String.raw`\(\dfrac{3(a-b)}{a+b}\)`
+          ]
+        },
+
+        /* =====================================================
+           2) Different denominators (numeric LCDs and simple binomials)
+           ===================================================== */
+
+        /* (12-6) Source: A. Exercise #1 */
+        {
+          stem: String.raw`
+            <p>Perform the indicated operations and simplify.</p>
+            <p class="math">\(\dfrac{x}{9}-\dfrac{4x}{7}\)</p>
+          `,
+          choices: [
+            String.raw`\(\dfrac{29x}{63}\)`,
+            String.raw`\(-\dfrac{29}{63}\)`,
+            String.raw`\(-\dfrac{4x}{63}\)`,
+            String.raw`\(-\dfrac{29x}{63}\)`,
+            String.raw`\(-\dfrac{29x}{16}\)`,
+            String.raw`\(-\dfrac{29x}{9}\)`
+          ]
+        },
+
+        /* (12-5) Source: A. Exercise #2 */
+        {
+          stem: String.raw`
+            <p>Perform the indicated operations and simplify.</p>
+            <p class="math">\(\dfrac{x}{9}+\dfrac{4x}{7}\)</p>
+          `,
+          choices: [
+            String.raw`\(\dfrac{5x}{16}\)`,
+            String.raw`\(\dfrac{5x}{63}\)`,
+            String.raw`\(\dfrac{43x}{16}\)`,
+            String.raw`\(\dfrac{43x}{63}\)`,
+            String.raw`\(\dfrac{4x}{63}\)`,
+            String.raw`\(\dfrac{43}{63}\)`
+          ]
+        },
+
+        /* (12-6) Source: A. Exercise #6 */
+        {
+          stem: String.raw`
+            <p>Perform the indicated operations and simplify.</p>
+            <p class="math">\(\dfrac{3}{x}-\dfrac{4}{x+1}\)</p>
+          `,
+          choices: [
+            String.raw`\(\dfrac{3-x}{x+1}\)`,
+            String.raw`\(\dfrac{3-x}{x^{2}}\)`,
+            String.raw`\(\dfrac{x-3}{x(x+1)}\)`,
+            String.raw`\(\dfrac{3-4x}{x(x+1)}\)`,
+            String.raw`\(\dfrac{3-x}{x(x+1)}\)`,
+            String.raw`\(\dfrac{3}{x(x+1)}\)`
+          ]
+        },
+
+        /* (12-5) Source: A. Exercise #3 */
+        {
+          stem: String.raw`
+            <p>Perform the indicated operations and simplify.</p>
+            <p class="math">\(\dfrac{x-3}{18}+\dfrac{x+7}{4}\)</p>
+          `,
+          choices: [
+            String.raw`\(\dfrac{11x+57}{72}\)`,
+            String.raw`\(\dfrac{11x+57}{36}\)`,
+            String.raw`\(\dfrac{10x+28}{36}\)`,
+            String.raw`\(\dfrac{11x+19}{36}\)`,
+            String.raw`\(\dfrac{11x+57}{22}\)`,
+            String.raw`\(\dfrac{x+4}{22}\)`
+          ]
+        },
+
+        /* =====================================================
+           3) Sign traps and careful equivalences
+           ===================================================== */
+
+        /* (12-6) Source: B. Exercise #12 */
+        {
+          stem: String.raw`
+            <p>Perform the indicated operations and simplify.</p>
+            <p class="math">\(\dfrac{4}{x-2}-\dfrac{10}{2-x}\)</p>
+          `,
+          choices: [
+            String.raw`\(\dfrac{6}{x-2}\)`,
+            String.raw`\(-\dfrac{6}{x-2}\)`,
+            String.raw`\(\dfrac{14}{(x-2)^{2}}\)`,
+            String.raw`\(-\dfrac{14}{x-2}\)`,
+            String.raw`\(\dfrac{14}{x+2}\)`,
+            String.raw`\(\dfrac{14}{x-2}\)`
+          ]
+        },
+
+        /* (12-4) Source: B. Exercise #25 (factored form) */
+        {
+          stem: String.raw`
+            <p>Add or subtract and simplify. Leave your answer in factored form.</p>
+            <p class="math">\(\dfrac{x^{2}-8x+13}{x^{2}-4x-12}-\dfrac{-x^{2}-4x-1}{x^{2}-4x-12}\)</p>
+          `,
+          choices: [
+            String.raw`\(\dfrac{2(x^{2}-2x+7)}{(x-6)(x+2)}\)` ,
+            String.raw`\(\dfrac{2x^{2}-4x+14}{x^{2}-4x-12}\)` ,
+            String.raw`\(\dfrac{2(x-2)(x+7)}{(x-6)(x+2)}\)` ,
+            String.raw`\(\dfrac{2(x^{2}-2x+7)}{x^{2}-4x-12}\)` ,
+            String.raw`\(\dfrac{x^{2}-2x+7}{(x-6)(x+2)}\)` ,
+            String.raw`\(\dfrac{2(x^{2}-2x-7)}{(x-6)(x+2)}\)`
+          ]
+        },
+
+        /* =====================================================
+           4) LCDs with variable powers and factoring
+           ===================================================== */
+
+        /* (12-5) Source: A. Exercise #6 */
+        {
+          stem: String.raw`
+            <p>Perform the indicated operations and simplify.</p>
+            <p class="math">\(\dfrac{4}{3x}+\dfrac{7}{21x^{3}}\)</p>
+          `,
+          choices: [
+            String.raw`\(\dfrac{4x^{2}+7}{21x^{3}}\)`,
+            String.raw`\(\dfrac{4x^{2}+1}{21x^{3}}\)`,
+            String.raw`\(\dfrac{4x^{2}+1}{3x^{3}}\)`,
+            String.raw`\(\dfrac{4x^{2}+7}{3x^{3}}\)`,
+            String.raw`\(\dfrac{4x+1}{3x^{3}}\)`,
+            String.raw`\(\dfrac{4x^{2}+1}{3x}\)`
+          ]
+        },
+
+        /* (12-5) Source: A. Exercise #5 */
+        {
+          stem: String.raw`
+            <p>Perform the indicated operations and simplify.</p>
+            <p class="math">\(\dfrac{a^{2}+3a}{5}+\dfrac{a^{2}-9}{2}\)</p>
+          `,
+          choices: [
+            String.raw`\(\dfrac{(a+3)(7a-15)}{5}\)`,
+            String.raw`\(\dfrac{(a+3)(7a-15)}{20}\)`,
+            String.raw`\(\dfrac{(a+3)(7a+15)}{10}\)`,
+            String.raw`\(\dfrac{(a-3)(7a-15)}{10}\)`,
+            String.raw`\(\dfrac{(a+3)(7a-15)}{10}\)`,
+            String.raw`\(\dfrac{7a^{2}-15}{10}\)`
+          ]
+        },
+
+        /* (12-5) Source: B. Exercise #14 */
+        {
+          stem: String.raw`
+            <p>Perform the indicated operations and simplify.</p>
+            <p class="math">\(\dfrac{x^{2}-4}{x^{2}}+\dfrac{x-y}{x}\)</p>
+          `,
+          choices: [
+            String.raw`\(\dfrac{2x^{2}-xy-4}{x^{2}}\)`,
+            String.raw`\(\dfrac{2x^{2}+xy-4}{x^{2}}\)`,
+            String.raw`\(\dfrac{2x^{2}-xy-4}{x}\)`,
+            String.raw`\(\dfrac{x^{2}-y-4}{x^{2}}\)`,
+            String.raw`\(\dfrac{x^{2}-xy-4}{x^{2}}\)`,
+            String.raw`\(\dfrac{2x^{2}-xy+4}{x^{2}}\)`
+          ]
+        },
+
+        /* (12-6) Source: A. Exercise #9 */
+        {
+          stem: String.raw`
+            <p>Perform the indicated operations and simplify.</p>
+            <p class="math">\(\dfrac{2x+10}{(x+5)^{2}}-\dfrac{3x-5}{x+5}\)</p>
+          `,
+          choices: [
+            String.raw`\(\dfrac{7-3x}{(x+5)^{2}}\)`,
+            String.raw`\(\dfrac{3x-7}{x+5}\)`,
+            String.raw`\(\dfrac{7-3x}{x+5}\)`,
+            String.raw`\(\dfrac{7-3x}{x-5}\)`,
+            String.raw`\(\dfrac{3x+7}{x+5}\)`,
+            String.raw`\(\dfrac{35-3x}{x+5}\)`
+          ]
+        },
+
+        /* =====================================================
+           5) Quadratic factoring in denominators (LCD via factoring)
+           ===================================================== */
+
+        /* (12-5) Source: B. Exercise #16 */
+        {
+          stem: String.raw`
+            <p>Perform the indicated operations and simplify.</p>
+            <p class="math">\(\dfrac{10}{x^{2}-6x-27}+\dfrac{8}{x^{2}-3x-18}\)</p>
+          `,
+          choices: [
+            String.raw`\(\dfrac{6(3x-22)}{(x-9)(x-6)}\)`,
+            String.raw`\(\dfrac{6(3x-22)}{(x-9)(x-6)(x+3)}\)`,
+            String.raw`\(\dfrac{6(3x+22)}{(x-9)(x-6)(x+3)}\)`,
+            String.raw`\(\dfrac{6(3x-22)}{(x-9)(x+6)(x+3)}\)`,
+            String.raw`\(\dfrac{3x-22}{(x-9)(x-6)(x+3)}\)`,
+            String.raw`\(\dfrac{6(3x-22)}{(x-9)(x-6)(x-3)}\)`
+          ]
+        },
+
+        /* (12-6) Source: B. Exercise #13 */
+        {
+          stem: String.raw`
+            <p>Perform the indicated operations and simplify.</p>
+            <p class="math">\(\dfrac{5x}{x-1}-\dfrac{6x^{2}}{x^{2}-1}\)</p>
+          `,
+          choices: [
+            String.raw`\(\dfrac{x(5-x)}{x^{2}-1}\)` ,
+            String.raw`\(\dfrac{x(x-5)}{(x-1)(x+1)}\)` ,
+            String.raw`\(\dfrac{5-x}{(x-1)(x+1)}\)` ,
+            String.raw`\(\dfrac{x(5-x)}{(x-1)(x+1)}\)` ,
+            String.raw`\(\dfrac{x(5-x)}{(x+1)^{2}}\)` ,
+            String.raw`\(\dfrac{5-x}{x+1}\)`
+          ]
+        },
+
+        /* (12-4) Source: B. Exercise #22 (factored form) */
+        {
+          stem: String.raw`
+            <p>Add or subtract and simplify. Leave your answer in factored form.</p>
+            <p class="math">\(\dfrac{a^{3}}{a-b}-\dfrac{a}{a-b}\)</p>
+          `,
+          choices: [
+            String.raw`\(\dfrac{a^{2}-1}{a-b}\)` ,
+            String.raw`\(\dfrac{a(a-1)(a+1)}{a-b}\)` ,
+            String.raw`\(\dfrac{a(a-1)}{a-b}\)` ,
+            String.raw`\(\dfrac{a^{3}-a}{a}\)` ,
+            String.raw`\(\dfrac{a(a+1)}{a-b}\)` ,
+            String.raw`\(\dfrac{a^{3}}{a-b}\)`
+          ]
+        },
+
+        /* =====================================================
+           6) Multi-term sums/differences (three fractions)
+           ===================================================== */
+
+        /* (12-5) Source: B. Exercise #15 */
+        {
+          stem: String.raw`
+            <p>Perform the indicated operations and simplify.</p>
+            <p class="math">\(\dfrac{1}{3x-9}+\dfrac{1}{x}+\dfrac{1}{4x+16}\)</p>
+          `,
+          choices: [
+            String.raw`\(\dfrac{19x^{2}+19x-144}{12x(x+3)(x+4)}\)`,
+            String.raw`\(\dfrac{19x^{2}-19x-144}{12x(x-3)(x+4)}\)`,
+            String.raw`\(\dfrac{19x^{2}+19x-144}{12(x-3)(x+4)}\)`,
+            String.raw`\(\dfrac{19x^{2}+19x+144}{12x(x-3)(x+4)}\)`,
+            String.raw`\(\dfrac{19x^{2}+19x-144}{4x(x-3)(x+4)}\)`,
+            String.raw`\(\dfrac{19x^{2}+19x-144}{12x(x-3)(x+4)}\)`
+          ]
+        },
+
+        /* (12-5) Source: B. Exercise #19 */
+        {
+          stem: String.raw`
+            <p>Perform the indicated operations and simplify.</p>
+            <p class="math">\(\dfrac{x-3}{x+5}+\dfrac{2x-7}{x+3}+\dfrac{26}{x^{2}+8x+15}\)</p>
+          `,
+          choices: [
+            String.raw`\(\dfrac{3(x-2)}{x+3}\)`,
+            String.raw`\(\dfrac{3(x+2)}{x+5}\)`,
+            String.raw`\(\dfrac{x-2}{x+5}\)`,
+            String.raw`\(\dfrac{3(x-2)}{(x+5)(x+3)}\)`,
+            String.raw`\(\dfrac{3(x-2)}{x+5}\)`,
+            String.raw`\(\dfrac{3(x-2)}{x-5}\)`
+          ]
+        },
+
+        /* (12-6) Source: B. Exercise #18 */
+        {
+          stem: String.raw`
+            <p>Perform the indicated operations and simplify.</p>
+            <p class="math">\(\dfrac{a+3}{a+5}-\dfrac{a+2}{a-5}+\dfrac{a}{a^{2}-25}\)</p>
+          `,
+          choices: [
+            String.raw`\(\dfrac{8a+25}{a^{2}-25}\)` ,
+            String.raw`\(-\dfrac{8a+25}{a-25}\)` ,
+            String.raw`\(-\dfrac{8a+25}{a^{2}+25}\)` ,
+            String.raw`\(\dfrac{-8a+25}{a^{2}-25}\)` ,
+            String.raw`\(-\dfrac{8a+25}{a^{2}-25}\)` ,
+            String.raw`\(-\dfrac{8a+25}{a+5}\)`
+          ]
+        },
+
+        /* =====================================================
+           7) Two large rational expressions (full factoring/LCD)
+           ===================================================== */
+
+        /* (12-5) Source: B. Exercise #20 */
+        {
+          stem: String.raw`
+            <p>Perform the indicated operations and simplify.</p>
+            <p class="math">\(\dfrac{x^{2}+3x-5}{x^{2}+6x-16}+\dfrac{x^{2}-4}{x^{2}-6x+8}\)</p>
+          `,
+          choices: [
+            String.raw`\(\dfrac{(2x+1)(x^{2}+3x-12)}{(x-4)(x+2)(x+8)}\)`,
+            String.raw`\(\dfrac{(2x+1)(x^{2}+3x-12)}{(x-4)(x-2)(x+8)}\)`,
+            String.raw`\(\dfrac{(2x+1)(x^{2}+3x-12)}{(x-4)(x-2)}\)`,
+            String.raw`\(\dfrac{(2x-1)(x^{2}+3x-12)}{(x-4)(x-2)(x+8)}\)`,
+            String.raw`\(\dfrac{(2x+1)(x^{2}+3x+12)}{(x-4)(x-2)(x+8)}\)`,
+            String.raw`\(\dfrac{(2x+1)(x^{2}+3x-12)}{(x-4)(x-8)(x+2)}\)`
+          ]
+        },
+
+        /* (12-5) Source: C. Exercise #22 */
+        {
+          stem: String.raw`
+            <p>Perform the indicated operation and simplify.</p>
+            <p class="math">\(\dfrac{4}{x^{2}-3x+2}+\dfrac{2x}{x^{2}-5x+6}+\dfrac{1}{x^{2}-7x+12}\)</p>
+          `,
+          choices: [
+            String.raw`\(\dfrac{2x^{2}-x-25}{(x-4)(x-3)(x+1)}\)`,
+            String.raw`\(\dfrac{2x^{2}+x-25}{(x-4)(x-3)(x-1)}\)`,
+            String.raw`\(\dfrac{2x^{2}-x-25}{(x-4)(x-3)}\)`,
+            String.raw`\(\dfrac{2x^{2}-x+25}{(x-4)(x-3)(x-1)}\)`,
+            String.raw`\(\dfrac{2x^{2}-x-25}{(x-4)(x+3)(x-1)}\)`,
+            String.raw`\(\dfrac{2x^{2}-x-25}{(x-4)(x-3)(x-1)}\)`
+          ]
+        },
+
+        /* =====================================================
+           8) Conceptual sign reasoning + final “all-signs” simplification
+           ===================================================== */
+
+        /* (12-6) Source: C. Exercise #23 */
+        {
+          stem: String.raw`
+            <p>
+              Explain why you cannot work the problem by making the change shown. Then work it another way.
+            </p>
+            <p class="math">
+              \(\displaystyle \frac{3x+5}{(x-2)(x-5)}-\frac{4x+1}{(2-x)(5-x)}
+              \;=\; \frac{3x+5}{(x-2)(x-5)}+\frac{4x+1}{(x-2)(x-5)}\)
+            </p>
+          `,
+          choices: [
+            String.raw`Because \((2-x)=-(x-2)\) and \((5-x)=-(x-5)\), the two negatives cancel, so \(\dfrac{4x+1}{(2-x)(5-x)}=\dfrac{4x+1}{(x-2)(x-5)}\) (no sign change). The subtraction stays subtraction. The simplified result is \(\dfrac{4-x}{(x-2)(x-5)}\).`,
+            String.raw`Because \((2-x)(5-x)=-(x-2)(x-5)\), the second fraction becomes negative, so the subtraction must turn into addition. The result is \(\dfrac{7x+6}{(x-2)(x-5)}\).`,
+            String.raw`Because you are not allowed to rewrite \((2-x)\) as \((x-2)\) when there is a subtraction sign between the fractions.`,
+            String.raw`Because \((2-x)\) and \((5-x)\) are completely different factors from \((x-2)\) and \((x-5)\), so no simplification is possible.`,
+            String.raw`Because only one of the factors changes sign, so the overall denominator changes sign, and you must switch the subtraction to addition.`,
+            String.raw`Because the correct simplification is \(\dfrac{x-4}{(x-2)(x-5)}\).`
+          ],
+          choiceWrap:false
+        },
+
+        /* (12-6) Source: C. Exercise #24 */
+        {
+          stem: String.raw`
+            <p>Simplify.</p>
+            <p class="math">
+              \(\displaystyle
+              \frac{x-1}{(x-3)(x-4)}
+              -\frac{x-9}{(x-3)(4-x)}
+              -\frac{x-3}{(3-x)(4-x)}
+              -\frac{2-x}{(x-3)(x-4)}
+              \)
+            </p>
+          `,
+          choices: [
+            String.raw`\(\dfrac{2x-9}{x-3}\)`,
+            String.raw`\(\dfrac{2x-9}{(x-3)(4-x)}\)`,
+            String.raw`\(\dfrac{2x-9}{(x-4)^{2}}\)`,
+            String.raw`\(\dfrac{2x-9}{(x-3)(x-4)}\)`,
+            String.raw`\(\dfrac{2x+9}{(x-3)(x-4)}\)`,
+            String.raw`\(\dfrac{9-2x}{(x-3)(x-4)}\)`
+          ]
+        }
+
+      ]
+    };
+  </script>
+
+  <link rel="stylesheet" href="/math-homework/assets/core-rich.css" />
+  <script defer src="/math-homework/assets/core-rich.js"></script>
+  <script defer src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+</head>
+
+<body>
+  <div id="hw-root">Loading…</div>
+</body>
+</html>
