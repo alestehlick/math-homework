@@ -32,6 +32,9 @@
        Any figure used is referenced by the ORIGINAL problem number from the set.
        PNG files live in the SAME folder as this HTML.
        Figures used in this homework: none
+
+       NOTE (project-proofing):
+       - Adjusted choice order in Q5, Q8, Q11 ONLY to balance answer-key letters.
        ========================= */
 
     window.homeworkData = {
@@ -42,7 +45,7 @@
       graphics : String.raw``,
 
       answerKey : [
-        "C","C","D","E","B","D","E","B","F","C","A",
+        "C","C","D","E","A","D","E","A","F","C","B",
         "F","B","B","C","E","E","A","B","F","F","D"
       ],
 
@@ -123,8 +126,9 @@
             <p class="math">\(\dfrac{(x-3)(x+4)}{x-1}\cdot\dfrac{x-1}{(x-4)(x-3)}\)</p>
           `,
           choices: [
-            String.raw`\(\dfrac{x-4}{x+4}\)`,
+            /* swapped A and B to balance answer-key letters */
             String.raw`\(\dfrac{x+4}{x-4}\)`,
+            String.raw`\(\dfrac{x-4}{x+4}\)`,
             String.raw`\(\dfrac{x+4}{x-1}\)`,
             String.raw`\(\,1\)`,
             String.raw`\(\dfrac{x+4}{(x-4)(x-3)}\)`,
@@ -175,8 +179,9 @@
             <p class="math">\(\dfrac{(x+y)^{2}}{x-y}\div\dfrac{(x+y)(x-y)}{(x-y)^{2}}\)</p>
           `,
           choices: [
-            String.raw`\(\,x-y\)`,
+            /* swapped A and B to balance answer-key letters */
             String.raw`\(\,x+y\)`,
+            String.raw`\(\,x-y\)`,
             String.raw`\(\dfrac{x+y}{x-y}\)`,
             String.raw`\(\dfrac{x-y}{x+y}\)`,
             String.raw`\(\,(x+y)^{2}\)` ,
@@ -227,8 +232,9 @@
             <p class="math">\(\dfrac{x^2+3x-18}{x^2-x}\cdot\dfrac{x^3y}{xy-3y}\)</p>
           `,
           choices: [
-            String.raw`\(\dfrac{x^2(x+6)}{x-1}\)`,
+            /* swapped A and B to balance answer-key letters */
             String.raw`\(\dfrac{x(x+6)}{x-1}\)`,
+            String.raw`\(\dfrac{x^2(x+6)}{x-1}\)`,
             String.raw`\(\dfrac{x^3(x+6)}{x-1}\)`,
             String.raw`\(\dfrac{x^2(x+6)}{x-3}\)`,
             String.raw`\(\dfrac{x+6}{x-1}\)`,
