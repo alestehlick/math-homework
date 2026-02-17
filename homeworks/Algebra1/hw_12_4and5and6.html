@@ -36,6 +36,9 @@
        Any figure used is referenced by the ORIGINAL problem number from the set.
        PNG files live in the SAME folder as this HTML.
        Figures used in this homework: none
+
+       NOTE (project-proofing):
+       - Fixed duplicated/Equivalent choices in Q3, Q4, Q10, Q16.
        ========================= */
 
     window.homeworkData = {
@@ -99,7 +102,8 @@
             <p class="math">\(\dfrac{x+4}{7}-\dfrac{x-3}{7}\)</p>
           `,
           choices: [
-            String.raw`\(\dfrac{7}{7}\)` ,
+            /* FIX: removed duplicate correct form (7/7 = 1) */
+            String.raw`\(\dfrac{7}{x+4}\)` ,
             String.raw`\(\,1\)` ,
             String.raw`\(\dfrac{x}{7}\)` ,
             String.raw`\(\dfrac{2x+1}{7}\)` ,
@@ -116,7 +120,8 @@
           `,
           choices: [
             String.raw`\(\dfrac{3}{a-b}\)` ,
-            String.raw`\(\dfrac{3(a-b)}{a^{2}-b^{2}}\)` ,
+            /* FIX: was equivalent to the correct answer; replaced with non-equivalent distractor */
+            String.raw`\(\dfrac{3(a-b)}{a^{2}+b^{2}}\)` ,
             String.raw`\(\dfrac{3(a+b)}{a^{2}-b^{2}}\)` ,
             String.raw`\(\dfrac{3a-3b}{a+b}\)` ,
             String.raw`\(\dfrac{3}{a+b}\)` ,
@@ -220,9 +225,11 @@
           `,
           choices: [
             String.raw`\(\dfrac{2(x^{2}-2x+7)}{(x-6)(x+2)}\)` ,
-            String.raw`\(\dfrac{2x^{2}-4x+14}{x^{2}-4x-12}\)` ,
+            /* FIX: was an equivalent correct form; replaced */
+            String.raw`\(\dfrac{2x^{2}-12x+14}{x^{2}-4x-12}\)` ,
             String.raw`\(\dfrac{2(x-2)(x+7)}{(x-6)(x+2)}\)` ,
-            String.raw`\(\dfrac{2(x^{2}-2x+7)}{x^{2}-4x-12}\)` ,
+            /* FIX: was an equivalent correct form; replaced */
+            String.raw`\(\dfrac{2(x^{2}-2x+7)}{(x-6)(x-2)}\)` ,
             String.raw`\(\dfrac{x^{2}-2x+7}{(x-6)(x+2)}\)` ,
             String.raw`\(\dfrac{2(x^{2}-2x-7)}{(x-6)(x+2)}\)`
           ]
@@ -323,7 +330,8 @@
             <p class="math">\(\dfrac{5x}{x-1}-\dfrac{6x^{2}}{x^{2}-1}\)</p>
           `,
           choices: [
-            String.raw`\(\dfrac{x(5-x)}{x^{2}-1}\)` ,
+            /* FIX: was an equivalent correct form (x^2-1 = (x-1)(x+1)); replaced */
+            String.raw`\(\dfrac{x(5-x)}{x-1}\)` ,
             String.raw`\(\dfrac{x(x-5)}{(x-1)(x+1)}\)` ,
             String.raw`\(\dfrac{5-x}{(x-1)(x+1)}\)` ,
             String.raw`\(\dfrac{x(5-x)}{(x-1)(x+1)}\)` ,
