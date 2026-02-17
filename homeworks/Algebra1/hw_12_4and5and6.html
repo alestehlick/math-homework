@@ -39,6 +39,7 @@
 
        NOTE (project-proofing):
        - Fixed duplicated/Equivalent choices in Q3, Q4, Q10, Q16.
+       - FIXED: Q4 had duplicate distractors; Q21 answerKey corrected.
        ========================= */
 
     window.homeworkData = {
@@ -54,7 +55,7 @@
         "F","A","C","E",
         "A","C","B","D",
         "B","F","E","E",
-        "C","F","A","D"
+        "B","F","A","D"
       ],
 
       questions : [
@@ -123,7 +124,8 @@
             /* FIX: was equivalent to the correct answer; replaced with non-equivalent distractor */
             String.raw`\(\dfrac{3(a-b)}{a^{2}+b^{2}}\)` ,
             String.raw`\(\dfrac{3(a+b)}{a^{2}-b^{2}}\)` ,
-            String.raw`\(\dfrac{3a-3b}{a+b}\)` ,
+            /* FIX: removed duplicate-of-F distractor */
+            String.raw`\(\dfrac{3a-3b}{a^{2}+b^{2}}\)` ,
             String.raw`\(\dfrac{3}{a+b}\)` ,
             String.raw`\(\dfrac{3(a-b)}{a+b}\)`
           ]
