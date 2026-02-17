@@ -20,6 +20,10 @@
        Any figure used is referenced by the ORIGINAL problem number from the set.
        PNG files live in the SAME folder as this HTML.
        Figures used in this homework: none
+
+       PROJECT-PROOFING FIXES APPLIED:
+       - Fixed answer key for Q6 and Q10.
+       - Removed equivalent duplicate correct choices in Q15 and Q16.
        ========================= */
 
     window.homeworkData = {
@@ -29,7 +33,8 @@
 
       graphics : String.raw``,
 
-      answerKey : ["C","E","B","D","A","F","B","D","A","E","C","F","B","D","A","E"],
+      // FIXED: Q6 -> D, Q10 -> D, Q16 -> A
+      answerKey : ["C","E","B","D","A","D","B","D","A","D","C","F","B","D","A","A"],
 
       questions : [
 
@@ -268,7 +273,8 @@
             String.raw`\(\dfrac{2x+3}{6x^{2}-x-15}\)` ,
             String.raw`\(\dfrac{2x-3}{3x-5}\)` ,
             String.raw`\(\dfrac{2x+3}{3x+5}\)` ,
-            String.raw`\(\dfrac{(2x+3)^{2}}{(3x-5)(2x+3)}\)` ,
+            /* FIX: was equivalent to choice A; replaced with non-equivalent distractor */
+            String.raw`\(\dfrac{(2x+3)^{2}}{3x-5}\)` ,
             String.raw`\(\dfrac{3x-5}{2x+3}\)`
           ]
         },
@@ -284,7 +290,8 @@
             String.raw`\(\dfrac{x^{2}+2xy+3y^{2}+x-y}{(x+y)^{2}}\)` ,
             String.raw`\(\dfrac{x^{2}+2xy+y^{2}+x-y}{(x+y)(x-y)}\)` ,
             String.raw`\(\dfrac{x^{2}+2xy+3y^{2}-x+y}{(x+y)(x-y)}\)` ,
-            String.raw`\(\dfrac{x^{2}+2xy+3y^{2}+x-y}{x^{2}-y^{2}}\)` ,
+            /* FIX: was equivalent to choice A (since x^2-y^2=(x-y)(x+y)); replaced */
+            String.raw`\(\dfrac{x^{2}+2xy+3y^{2}+x-y}{(x+y)(x-3y)}\)` ,
             String.raw`\(\dfrac{x^{2}+2xy+3y^{2}+x-y}{x-y}\)`
           ]
         }
