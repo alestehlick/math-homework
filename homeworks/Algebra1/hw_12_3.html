@@ -3,17 +3,30 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Homework 12-3 (Algebra 1)</title>
+  <title>Homework 12-2/12-3 (Algebra 1)</title>
 
   <script>
     /* =========================
-       Homework 12-3 — Dividing Rational Expressions (Algebra 1)
+       Homework 12-2/12-3 — Multiplying & Dividing Rational Expressions (Algebra 1)
        Adapted for: /math-homework/assets/core-rich.js
 
-       REQUIRED SOURCE REFERENCES (your provided sets):
-       - Type A uses A. Exercises: #1, #4, #7, #8
-       - Type B uses B. Exercises: #9, #10, #11, #12, #13, #15
-       - Type C uses C. Exercises: #21, #22
+       GOAL:
+       - 22 questions total
+       - Gradual difficulty: numeric → monomials → cancellation → factoring → multi-step/challenge
+       - Strong mix of multiplying and dividing to ensure students internalize
+         “divide by a fraction = multiply by the reciprocal” + factoring/cancellation habits.
+
+       SOURCES USED (selected from your provided sets):
+
+       From Homework 12-2 (Multiplying):
+       - Type A: #2, #5, #7, #10
+       - Type B: #11, #12, #16, #23, #24   (dropped #14)
+       - Type C: #27, #28
+
+       From Homework 12-3 (Dividing):
+       - Type A: #1, #4, #7, #8
+       - Type B: #10, #11, #12, #13, #15  (dropped #9)
+       - Type C: #21, #22
 
        IMAGE NAMING RULE (STRICT):
        Any figure used is referenced by the ORIGINAL problem number from the set.
@@ -23,21 +36,39 @@
 
     window.homeworkData = {
       classId : "Algebra1",
-      id      : "Homework 12-3",
-      title   : "Homework 12-3 — Dividing Rational Expressions",
+      id      : "Homework 12-2-3and4",
+      title   : "Homework 12-2/12-3 — Multiplying & Dividing Rational Expressions",
 
       graphics : String.raw``,
 
-      answerKey : ["C","E","B","D","A","F","C","B","E","A","D","F"],
+      answerKey : [
+        "C","C","D","E","B","D","E","B","F","C","A",
+        "F","B","B","C","E","E","A","B","F","F","D"
+      ],
 
       questions : [
 
-        /* =======================
-           A. Exercises (4)
-           Divide.
-           ======================= */
+        /* =====================================================
+           1) Warm-up: numeric + monomials + easy cancellation
+           ===================================================== */
 
-        /* Source: A. Exercise #1 */
+        /* (Multiply) Source: A. Exercise #2 */
+        {
+          stem: String.raw`
+            <p>Multiply.</p>
+            <p class="math">\(\dfrac{16}{9}\cdot\dfrac{27}{8}\)</p>
+          `,
+          choices: [
+            String.raw`\(\,12\)`,
+            String.raw`\(\,\dfrac{3}{2}\)`,
+            String.raw`\(\,6\)`,
+            String.raw`\(\,\dfrac{1}{6}\)`,
+            String.raw`\(\,\dfrac{2}{3}\)`,
+            String.raw`\(\,\dfrac{54}{72}\)`
+          ]
+        },
+
+        /* (Divide) Source: A. Exercise #1 */
         {
           stem: String.raw`
             <p>Divide.</p>
@@ -53,7 +84,23 @@
           ]
         },
 
-        /* Source: A. Exercise #4 */
+        /* (Multiply) Source: A. Exercise #5 */
+        {
+          stem: String.raw`
+            <p>Multiply and simplify.</p>
+            <p class="math">\(\dfrac{3a^2}{17b}\cdot\dfrac{34b^2}{6ab}\)</p>
+          `,
+          choices: [
+            String.raw`\(\dfrac{a}{b}\)`,
+            String.raw`\(\,a^2\)`,
+            String.raw`\(\,b\)`,
+            String.raw`\(\,a\)`,
+            String.raw`\(\,2a\)`,
+            String.raw`\(\dfrac{1}{a}\)`
+          ]
+        },
+
+        /* (Divide) Source: A. Exercise #4 */
         {
           stem: String.raw`
             <p>Divide.</p>
@@ -69,23 +116,23 @@
           ]
         },
 
-        /* Source: A. Exercise #7 */
+        /* (Multiply) Source: A. Exercise #10 */
         {
           stem: String.raw`
-            <p>Divide.</p>
-            <p class="math">\(\dfrac{(x+y)^{2}}{x-y}\div\dfrac{(x+y)(x-y)}{(x-y)^{2}}\)</p>
+            <p>Multiply and simplify.</p>
+            <p class="math">\(\dfrac{(x-3)(x+4)}{x-1}\cdot\dfrac{x-1}{(x-4)(x-3)}\)</p>
           `,
           choices: [
-            String.raw`\(\,x-y\)`,
-            String.raw`\(\,x+y\)`,
-            String.raw`\(\dfrac{x+y}{x-y}\)`,
-            String.raw`\(\dfrac{x-y}{x+y}\)`,
-            String.raw`\(\,(x+y)^{2}\)` ,
-            String.raw`\(\dfrac{1}{x+y}\)`
+            String.raw`\(\dfrac{x-4}{x+4}\)`,
+            String.raw`\(\dfrac{x+4}{x-4}\)`,
+            String.raw`\(\dfrac{x+4}{x-1}\)`,
+            String.raw`\(\,1\)`,
+            String.raw`\(\dfrac{x+4}{(x-4)(x-3)}\)`,
+            String.raw`\(\dfrac{x+4}{x-3}\)`
           ]
         },
 
-        /* Source: A. Exercise #8 */
+        /* (Divide) Source: A. Exercise #8 */
         {
           stem: String.raw`
             <p>Divide.</p>
@@ -101,44 +148,63 @@
           ]
         },
 
-        /* =======================
-           B. Exercises (6)
-           Divide. Leave answers in factored form.
-           ======================= */
+        /* =====================================================
+           2) Variables & exponent/factor structure
+           ===================================================== */
 
-        /* Source: B. Exercise #9 */
+        /* (Multiply) Source: A. Exercise #7 */
         {
           stem: String.raw`
-            <p>Divide. Leave your answer in factored form.</p>
-            <p class="math">\(\dfrac{x^{2}-y^{2}}{(x-y)^{2}}\div\dfrac{x^{2}-2xy+y^{2}}{x-y}\)</p>
+            <p>Multiply and simplify.</p>
+            <p class="math">\(\dfrac{x^3yz^2}{xy}\cdot\dfrac{x^4y}{x^9y^2z}\)</p>
           `,
           choices: [
-            String.raw`\(\dfrac{x+y}{(x-y)^{2}}\)`,
+            String.raw`\(\dfrac{z^2}{x^3y}\)`,
+            String.raw`\(\dfrac{z}{x^5y}\)`,
+            String.raw`\(\dfrac{z}{x^3y^2}\)`,
+            String.raw`\(\dfrac{x^3y}{z}\)`,
+            String.raw`\(\dfrac{z}{x^3y}\)`,
+            String.raw`\(\dfrac{1}{x^3yz}\)`
+          ]
+        },
+
+        /* (Divide) Source: A. Exercise #7 */
+        {
+          stem: String.raw`
+            <p>Divide.</p>
+            <p class="math">\(\dfrac{(x+y)^{2}}{x-y}\div\dfrac{(x+y)(x-y)}{(x-y)^{2}}\)</p>
+          `,
+          choices: [
+            String.raw`\(\,x-y\)`,
+            String.raw`\(\,x+y\)`,
             String.raw`\(\dfrac{x+y}{x-y}\)`,
-            String.raw`\(\dfrac{1}{x-y}\)`,
             String.raw`\(\dfrac{x-y}{x+y}\)`,
-            String.raw`\(\dfrac{x+y}{(x-y)^{3}}\)`,
-            String.raw`\(\dfrac{(x-y)^{2}}{x+y}\)`
+            String.raw`\(\,(x+y)^{2}\)` ,
+            String.raw`\(\dfrac{1}{x+y}\)`
           ]
         },
 
-        /* Source: B. Exercise #10 */
+        /* =====================================================
+           3) Factoring & cancellation in factored form (B-level)
+           ===================================================== */
+
+        /* (Multiply) Source: B. Exercise #11 */
         {
           stem: String.raw`
-            <p>Divide. Leave your answer in factored form.</p>
-            <p class="math">\(\dfrac{x^{2}+2x}{3x-9}\div\dfrac{x^{3}-9x}{x-3}\)</p>
+            <p>Multiply, leaving your answer in factored form.</p>
+            <p class="math">\(\dfrac{x^2-5x-14}{8}\cdot\dfrac{4}{x-7}\)</p>
           `,
           choices: [
-            String.raw`\(\dfrac{x+2}{3(x-3)}\)`,
-            String.raw`\(\dfrac{x+2}{3(x+3)}\)`,
-            String.raw`\(\dfrac{x+2}{(x-3)(x+3)}\)`,
-            String.raw`\(\dfrac{3(x+2)}{(x-3)(x+3)}\)`,
-            String.raw`\(\dfrac{x+3}{3(x-3)(x+2)}\)`,
-            String.raw`\(\dfrac{x+2}{3(x-3)(x+3)}\)`
+            String.raw`\(\dfrac{x+2}{8}\)`,
+            String.raw`\(\dfrac{x+2}{x-7}\)`,
+            String.raw`\(\dfrac{(x-7)(x+2)}{2}\)`,
+            String.raw`\(\,2(x+2)\)`,
+            String.raw`\(\dfrac{x+2}{2(x-7)}\)`,
+            String.raw`\(\dfrac{x+2}{2}\)`
           ]
         },
 
-        /* Source: B. Exercise #11 */
+        /* (Divide) Source: B. Exercise #11 */
         {
           stem: String.raw`
             <p>Divide. Leave your answer in factored form.</p>
@@ -154,7 +220,55 @@
           ]
         },
 
-        /* Source: B. Exercise #12 */
+        /* (Multiply) Source: B. Exercise #12 */
+        {
+          stem: String.raw`
+            <p>Multiply, leaving your answer in factored form.</p>
+            <p class="math">\(\dfrac{x^2+3x-18}{x^2-x}\cdot\dfrac{x^3y}{xy-3y}\)</p>
+          `,
+          choices: [
+            String.raw`\(\dfrac{x^2(x+6)}{x-1}\)`,
+            String.raw`\(\dfrac{x(x+6)}{x-1}\)`,
+            String.raw`\(\dfrac{x^3(x+6)}{x-1}\)`,
+            String.raw`\(\dfrac{x^2(x+6)}{x-3}\)`,
+            String.raw`\(\dfrac{x+6}{x-1}\)`,
+            String.raw`\(\dfrac{x^2(x-3)(x+6)}{x-1}\)`
+          ]
+        },
+
+        /* (Divide) Source: B. Exercise #10 */
+        {
+          stem: String.raw`
+            <p>Divide. Leave your answer in factored form.</p>
+            <p class="math">\(\dfrac{x^{2}+2x}{3x-9}\div\dfrac{x^{3}-9x}{x-3}\)</p>
+          `,
+          choices: [
+            String.raw`\(\dfrac{x+2}{3(x-3)}\)`,
+            String.raw`\(\dfrac{x+2}{3(x+3)}\)`,
+            String.raw`\(\dfrac{x+2}{(x-3)(x+3)}\)`,
+            String.raw`\(\dfrac{3(x+2)}{(x-3)(x+3)}\)`,
+            String.raw`\(\dfrac{x+3}{3(x-3)(x+2)}\)`,
+            String.raw`\(\dfrac{x+2}{3(x-3)(x+3)}\)`
+          ]
+        },
+
+        /* (Multiply) Source: B. Exercise #16 */
+        {
+          stem: String.raw`
+            <p>Multiply, leaving your answer in factored form.</p>
+            <p class="math">\(\dfrac{x-2}{x^3-5x^2+6x}\cdot\dfrac{xy^2}{xy+4y}\)</p>
+          `,
+          choices: [
+            String.raw`\(\dfrac{xy}{(x-3)(x+4)}\)`,
+            String.raw`\(\dfrac{y}{(x-3)(x+4)}\)`,
+            String.raw`\(\dfrac{y}{x(x-3)(x+4)}\)`,
+            String.raw`\(\dfrac{y^2}{(x-3)(x+4)}\)`,
+            String.raw`\(\dfrac{(x-2)y}{(x-3)(x+4)}\)`,
+            String.raw`\(\dfrac{y}{(x-2)(x+4)}\)`
+          ]
+        },
+
+        /* (Divide) Source: B. Exercise #12 */
         {
           stem: String.raw`
             <p>Divide. Leave your answer in factored form.</p>
@@ -170,7 +284,23 @@
           ]
         },
 
-        /* Source: B. Exercise #13 */
+        /* (Multiply) Source: B. Exercise #24 */
+        {
+          stem: String.raw`
+            <p>Multiply, leaving your answer in factored form.</p>
+            <p class="math">\(\dfrac{x^2-7x-18}{x+4}\cdot\dfrac{x^2-5x+6}{x^2-9}\cdot\dfrac{x+4}{x-3}\)</p>
+          `,
+          choices: [
+            String.raw`\(\dfrac{(x-9)(x+2)(x-2)}{x+3}\)`,
+            String.raw`\(\dfrac{(x+2)(x-2)}{(x-3)(x+3)}\)`,
+            String.raw`\(\dfrac{(x-9)(x+2)(x-2)}{(x-3)(x+3)}\)`,
+            String.raw`\(\dfrac{(x-9)(x+2)}{(x-3)(x+3)}\)`,
+            String.raw`\(\dfrac{(x-9)(x+2)(x-2)}{(x-3)^2(x+3)}\)`,
+            String.raw`\(\dfrac{(x-9)(x+2)(x-2)}{(x+3)(x+4)}\)`
+          ]
+        },
+
+        /* (Divide) Source: B. Exercise #13 */
         {
           stem: String.raw`
             <p>Divide. Leave your answer in factored form.</p>
@@ -186,7 +316,23 @@
           ]
         },
 
-        /* Source: B. Exercise #15 */
+        /* (Multiply) Source: B. Exercise #23 */
+        {
+          stem: String.raw`
+            <p>Multiply, leaving your answer in factored form.</p>
+            <p class="math">\(\dfrac{(x+3)(x-2)}{x^2y}\cdot\dfrac{xy}{(x-2)(x+5)}\cdot\dfrac{x(x+5)}{x+3}\)</p>
+          `,
+          choices: [
+            String.raw`\(\dfrac{x}{x+3}\)`,
+            String.raw`\(\dfrac{x+3}{x}\)`,
+            String.raw`\(\dfrac{1}{x}\)`,
+            String.raw`\(\dfrac{1}{y}\)`,
+            String.raw`\(\,1\)`,
+            String.raw`\(\dfrac{x+5}{x+3}\)`
+          ]
+        },
+
+        /* (Divide) Source: B. Exercise #15 */
         {
           stem: String.raw`
             <p>Divide. Leave your answer in factored form.</p>
@@ -202,30 +348,43 @@
           ]
         },
 
-        /* =======================
-           C. Exercises (2)
-           Simplify.
-           ======================= */
+        /* =====================================================
+           4) Challenge (C-level): multi-factor + multi-step
+           ===================================================== */
 
-        /* Source: C. Exercise #21 */
+        /* (Multiply) Source: C. Exercise #27 */
         {
           stem: String.raw`
-            <p>Simplify.</p>
-            <p class="math">
-              \(\dfrac{x^{2}-3x-18}{x^{2}-2x-48}\div\dfrac{x^{2}-x-12}{x^{3}-12x^{2}+36x}\cdot\dfrac{3x^{2}-6x-144}{x^{2}-4x}\)
-            </p>
+            <p>Multiply, leaving your answer in factored form.</p>
+            <p class="math">\(\dfrac{x^4+x^3-6x^2}{xy^3-2y^3}\cdot\dfrac{x^2+2x-15}{x^2+8x+15}\cdot\dfrac{y^2}{x^3}\)</p>
           `,
           choices: [
-            String.raw`\(\dfrac{3(x-6)^{2}}{(x-4)^{2}}\)`,
-            String.raw`\(\dfrac{3(x-6)^{3}}{x-4}\)`,
-            String.raw`\(\dfrac{(x-6)^{3}}{(x-4)^{2}}\)`,
-            String.raw`\(\dfrac{3(x-6)^{3}}{(x-4)^{2}}\)`,
-            String.raw`\(\dfrac{3(x-6)^{3}}{(x-8)^{2}}\)`,
-            String.raw`\(\dfrac{3(x-6)}{(x-4)^{2}}\)`
+            String.raw`\(\dfrac{x-3}{x^2y}\)`,
+            String.raw`\(\dfrac{x-3}{xy}\)`,
+            String.raw`\(\dfrac{x+3}{xy}\)`,
+            String.raw`\(\dfrac{x-3}{y}\)`,
+            String.raw`\(\dfrac{x-3}{xy^2}\)`,
+            String.raw`\(\dfrac{x-3}{x}\)`
           ]
         },
 
-        /* Source: C. Exercise #22 */
+        /* (Multiply) Source: C. Exercise #28 */
+        {
+          stem: String.raw`
+            <p>Multiply, leaving your answer in factored form.</p>
+            <p class="math">\(\dfrac{a^2+2ab-3b^2}{a^2b^3}\cdot\dfrac{4ab^4}{a^2+8ab+15b^2}\cdot\dfrac{a^2+3ab-10b^2}{a+7b}\)</p>
+          `,
+          choices: [
+            String.raw`\(\dfrac{4b(a-b)(a-2b)}{a+7b}\)`,
+            String.raw`\(\dfrac{4b(a-b)(a-2b)}{a^2(a+7b)}\)`,
+            String.raw`\(\dfrac{4b^2(a-b)(a-2b)}{a(a+7b)}\)`,
+            String.raw`\(\dfrac{4b(a-b)(a+2b)}{a(a+7b)}\)`,
+            String.raw`\(\dfrac{4b(a-b)}{a(a+7b)}\)`,
+            String.raw`\(\dfrac{4b(a-b)(a-2b)}{a(a+7b)}\)`
+          ]
+        },
+
+        /* (Divide) Source: C. Exercise #22 */
         {
           stem: String.raw`
             <p>Simplify.</p>
@@ -240,6 +399,24 @@
             String.raw`\(\dfrac{x-1}{2x-1}\)`,
             String.raw`\(\,2-\dfrac{1}{x-1}\)` ,
             String.raw`\(\dfrac{2x-1}{x-1}\)`
+          ]
+        },
+
+        /* (Divide) Source: C. Exercise #21 */
+        {
+          stem: String.raw`
+            <p>Simplify.</p>
+            <p class="math">
+              \(\dfrac{x^{2}-3x-18}{x^{2}-2x-48}\div\dfrac{x^{2}-x-12}{x^{3}-12x^{2}+36x}\cdot\dfrac{3x^{2}-6x-144}{x^{2}-4x}\)
+            </p>
+          `,
+          choices: [
+            String.raw`\(\dfrac{3(x-6)^{2}}{(x-4)^{2}}\)`,
+            String.raw`\(\dfrac{3(x-6)^{3}}{x-4}\)`,
+            String.raw`\(\dfrac{(x-6)^{3}}{(x-4)^{2}}\)`,
+            String.raw`\(\dfrac{3(x-6)^{3}}{(x-4)^{2}}\)`,
+            String.raw`\(\dfrac{3(x-6)^{3}}{(x-8)^{2}}\)`,
+            String.raw`\(\dfrac{3(x-6)}{(x-4)^{2}}\)`
           ]
         }
 
