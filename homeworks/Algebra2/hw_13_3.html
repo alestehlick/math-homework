@@ -108,7 +108,7 @@
         /* B #14 */
         {
           stem: String.raw`
-            <p>There are 20 driving routes from Ottawa, Canada to Wichita and 11 routes from Wichita to Oaxaca.</p>
+            <p>There are 20 driving routes <b>between Ottawa, Canada and Wichita</b> and 11 routes from Wichita to Oaxaca.</p>
             <p>How many ways can you go from Wichita to either Ottawa or Oaxaca?</p>
             <p>From Ottawa to Oaxaca via Wichita?</p>
             <p>Choose the ordered pair <b>(Wichita → either, Ottawa → Oaxaca via Wichita)</b>.</p>
@@ -127,7 +127,8 @@
         /* B #15 */
         {
           stem: String.raw`
-            <p>How many ways can you arrange the letters of either <b>Hawaii</b> or <b>Alaska</b>?</p>
+            <p>How many ways can you arrange the letters of <b>Hawaii</b>, and how many ways can you arrange the letters of <b>Alaska</b>?</p>
+            <p>Choose the <b>combined total</b> number of arrangements for the two words.</p>
           `,
           choiceWrap: false,
           choices: [
@@ -174,11 +175,12 @@
           ]
         },
 
-        /* B #18 — FIXED to match a correct count + meaningful distractors */
+        /* B #18 */
         {
           stem: String.raw`
-            <p>Nine stock cars will race on Friday evening, and each race involves <b>either 4 cars or 5 cars</b>.</p>
-            <p>In a given race, the cars form a <b>circular order</b> on the oval track (rotations are considered the same arrangement).</p>
+            <p>Nine distinct stock cars will race on Friday evening, and each race involves <b>either 4 cars or 5 cars</b>.</p>
+            <p>Count arrangements by choosing which cars race and then arranging them in a <b>circular order</b> on the oval track.</p>
+            <p><em>(Assume arrangements that differ only by rotation are the same.)</em></p>
             <p>How many different arrangements are possible for a race?</p>
           `,
           choiceWrap: false,
@@ -233,7 +235,7 @@
         /* C #21 */
         {
           stem: String.raw`
-            <p>From a group of 9 people, how many ways are there to seat 6 of them in a circle?</p>
+            <p>From a group of 9 distinct people, how many ways are there to choose 6 of them and seat those 6 in a circle?</p>
             <p><em>(Assume arrangements that differ only by rotation are the same.)</em></p>
           `,
           choiceWrap: false,
