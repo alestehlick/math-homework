@@ -11,7 +11,7 @@
 
        REQUIRED SOURCE REFERENCES (your provided sets):
        - Portuguese set uses: #594(a,b,c), #595(a,b,c), #596(a,b,c),
-                              #597(a,b,c), #598(a,b,c,d), #599(a,b,c,d,e),
+                              #597(a,b,c), #598(a,b,c,d),
                               #600(a,b)
 
        IMAGE NAMING RULE (STRICT):
@@ -36,11 +36,6 @@
          HW-14-1and2-598b.png
          HW-14-1and2-598c.png
          HW-14-1and2-598d.png
-         HW-14-1and2-599a.png
-         HW-14-1and2-599b.png
-         HW-14-1and2-599c.png
-         HW-14-1and2-599d.png
-         HW-14-1and2-599e.png
          HW-14-1and2-600a.png
          HW-14-1and2-600b.png
        ========================= */
@@ -52,8 +47,8 @@
 
       graphics : String.raw``,
 
-      /* Correct answers for Q1–Q23 */
-      answerKey : ["C","E","B","A","D","F","B","C","E","D","A","F","C","B","A","E","D","A","F","B","E","C","A"],
+      /* Correct answers for Q1–Q18 */
+      answerKey : ["C","E","B","A","D","F","B","C","E","D","A","F","C","B","A","E","C","A"],
 
       questions : [
 
@@ -287,8 +282,8 @@
             String.raw`\(\sqrt{10}\)`,
             String.raw`\(\dfrac{20}{\sqrt{3}}\)`,
             String.raw`\(\dfrac{10}{\sqrt{3}}\)`,
-            String.raw`\(\,10\)` ,
-            String.raw`\(\,20\)` ,
+            String.raw`\(\,10\)`,
+            String.raw`\(\,20\)`,
             String.raw`\(\,5\)`
           ]
         },
@@ -306,11 +301,11 @@
             </figure>
           `,
           choices: [
-            String.raw`\(\,3\sqrt{2}\)` ,
-            String.raw`\(\,6\sqrt{2}\)` ,
-            String.raw`\(\,3\)` ,
-            String.raw`\(\,2\sqrt{3}\)` ,
-            String.raw`\(\,\sqrt{18}\)` ,
+            String.raw`\(\,3\sqrt{2}\)`,
+            String.raw`\(\,6\sqrt{2}\)`,
+            String.raw`\(\,3\)`,
+            String.raw`\(\,2\sqrt{3}\)`,
+            String.raw`\(\,\sqrt{18}\)`,
             String.raw`\(\,6\)`
           ]
         },
@@ -328,11 +323,11 @@
             </figure>
           `,
           choices: [
-            String.raw`\(\,5\)` ,
-            String.raw`\(\,10\sqrt{3}\)` ,
-            String.raw`\(\,5\sqrt{3}\)` ,
-            String.raw`\(\,6\sqrt{3}\)` ,
-            String.raw`\(\,20\)` ,
+            String.raw`\(\,5\)`,
+            String.raw`\(\,10\sqrt{3}\)`,
+            String.raw`\(\,5\sqrt{3}\)`,
+            String.raw`\(\,6\sqrt{3}\)`,
+            String.raw`\(\,20\)`,
             String.raw`\(\,10\)`
           ]
         },
@@ -354,11 +349,11 @@
             </figure>
           `,
           choices: [
-            String.raw`\(\,3\sqrt{2}\)` ,
-            String.raw`\(\,6\)` ,
-            String.raw`\(\,6\sqrt{2}\)` ,
-            String.raw`\(\,3\sqrt{6}\)` ,
-            String.raw`\(\,6\sqrt{3}\)` ,
+            String.raw`\(\,3\sqrt{2}\)`,
+            String.raw`\(\,6\)`,
+            String.raw`\(\,6\sqrt{2}\)`,
+            String.raw`\(\,3\sqrt{6}\)`,
+            String.raw`\(\,6\sqrt{3}\)`,
             String.raw`\(\,12\)`
           ]
         },
@@ -376,11 +371,11 @@
             </figure>
           `,
           choices: [
-            String.raw`\(\,\sqrt{3}\)` ,
-            String.raw`\(\,2\sqrt{3}\)` ,
-            String.raw`\(\,3\sqrt{2}\)` ,
-            String.raw`\(\,4\sqrt{3}\)` ,
-            String.raw`\(\,6\)` ,
+            String.raw`\(\,\sqrt{3}\)`,
+            String.raw`\(\,2\sqrt{3}\)`,
+            String.raw`\(\,3\sqrt{2}\)`,
+            String.raw`\(\,4\sqrt{3}\)`,
+            String.raw`\(\,6\)`,
             String.raw`\(\,3\)`
           ]
         },
@@ -398,11 +393,11 @@
             </figure>
           `,
           choices: [
-            String.raw`\(\,36\)` ,
-            String.raw`\(\,24\)` ,
-            String.raw`\(\,18\)` ,
-            String.raw`\(\,12\)` ,
-            String.raw`\(\,18\sqrt{3}\)` ,
+            String.raw`\(\,36\)`,
+            String.raw`\(\,24\)`,
+            String.raw`\(\,18\)`,
+            String.raw`\(\,12\)`,
+            String.raw`\(\,18\sqrt{3}\)`,
             String.raw`\(\,6\sqrt{3}\)`
           ]
         },
@@ -420,126 +415,12 @@
             </figure>
           `,
           choices: [
-            String.raw`\(\,12\sqrt{3}\)` ,
-            String.raw`\(\,24\)` ,
-            String.raw`\(\,8\sqrt{3}\)` ,
-            String.raw`\(\,16\)` ,
-            String.raw`\(\,16\sqrt{3}\)` ,
+            String.raw`\(\,12\sqrt{3}\)`,
+            String.raw`\(\,24\)`,
+            String.raw`\(\,8\sqrt{3}\)`,
+            String.raw`\(\,16\)`,
+            String.raw`\(\,16\sqrt{3}\)`,
             String.raw`\(\,24\sqrt{3}\)`
-          ]
-        },
-
-        /* =======================
-           599. Determine the indicated values (two answers)
-           ======================= */
-
-        {
-          choiceWrap: false,
-          stem: String.raw`
-            <p><b>Refer to Figure 17.</b></p>
-            <p>Find the two indicated values <span class="math">\(x\)</span> and <span class="math">\(y\)</span>. Give exact values.</p>
-          `,
-          media: String.raw`
-            <figure>
-              <img src="HW-14-1and2-599a.png" alt="Diagram for Problem 599a with two unknowns x and y" />
-              <figcaption>Figure 17</figcaption>
-            </figure>
-          `,
-          choices: [
-            String.raw`\((x,y)=\left(6,\,3\sqrt{3}\right)\)` ,
-            String.raw`\((x,y)=\left(3,\,6\sqrt{3}\right)\)` ,
-            String.raw`\((x,y)=\left(6\sqrt{3},\,6\right)\)` ,
-            String.raw`\((x,y)=\left(6,\,6\sqrt{3}\right)\)` ,
-            String.raw`\((x,y)=\left(12,\,6\sqrt{3}\right)\)` ,
-            String.raw`\((x,y)=\left(6,\,\sqrt{3}\right)\)`
-          ]
-        },
-
-        {
-          choiceWrap: false,
-          stem: String.raw`
-            <p><b>Refer to Figure 18.</b></p>
-            <p>Find the two indicated values <span class="math">\(x\)</span> and <span class="math">\(y\)</span>. Give exact values.</p>
-          `,
-          media: String.raw`
-            <figure>
-              <img src="HW-14-1and2-599b.png" alt="Diagram for Problem 599b with two unknowns x and y" />
-              <figcaption>Figure 18</figcaption>
-            </figure>
-          `,
-          choices: [
-            String.raw`\((x,y)=\left(8,\,4\sqrt{3}\right)\)` ,
-            String.raw`\((x,y)=\left(4\sqrt{3},\,8\right)\)` ,
-            String.raw`\((x,y)=\left(8,\,8\sqrt{3}\right)\)` ,
-            String.raw`\((x,y)=\left(4,\,4\sqrt{3}\right)\)` ,
-            String.raw`\((x,y)=\left(12,\,4\sqrt{3}\right)\)` ,
-            String.raw`\((x,y)=\left(8,\,2\sqrt{3}\right)\)`
-          ]
-        },
-
-        {
-          choiceWrap: false,
-          stem: String.raw`
-            <p><b>Refer to Figure 19.</b></p>
-            <p>Find the two indicated values <span class="math">\(x\)</span> and <span class="math">\(y\)</span>. Give exact values.</p>
-          `,
-          media: String.raw`
-            <figure>
-              <img src="HW-14-1and2-599c.png" alt="Diagram for Problem 599c with two unknowns x and y" />
-              <figcaption>Figure 19</figcaption>
-            </figure>
-          `,
-          choices: [
-            String.raw`\((x,y)=\left(6,\,6\sqrt{2}\right)\)` ,
-            String.raw`\((x,y)=\left(6\sqrt{2},\,3\right)\)` ,
-            String.raw`\((x,y)=\left(12,\,6\right)\)` ,
-            String.raw`\((x,y)=\left(3\sqrt{2},\,6\right)\)` ,
-            String.raw`\((x,y)=\left(6,\,3\sqrt{2}\right)\)` ,
-            String.raw`\((x,y)=\left(6\sqrt{2},\,6\right)\)`
-          ]
-        },
-
-        {
-          choiceWrap: false,
-          stem: String.raw`
-            <p><b>Refer to Figure 20.</b></p>
-            <p>Find the two indicated values <span class="math">\(x\)</span> and <span class="math">\(y\)</span>. Give exact values.</p>
-          `,
-          media: String.raw`
-            <figure>
-              <img src="HW-14-1and2-599d.png" alt="Diagram for Problem 599d with two unknowns x and y" />
-              <figcaption>Figure 20</figcaption>
-            </figure>
-          `,
-          choices: [
-            String.raw`\((x,y)=\left(18,\,3\sqrt{5}\right)\)` ,
-            String.raw`\((x,y)=\left(18,\,6\sqrt{5}\right)\)` ,
-            String.raw`\((x,y)=\left(6\sqrt{5},\,18\right)\)` ,
-            String.raw`\((x,y)=\left(9,\,6\sqrt{5}\right)\)` ,
-            String.raw`\((x,y)=\left(18,\,6\right)\)` ,
-            String.raw`\((x,y)=\left(12,\,6\sqrt{5}\right)\)`
-          ]
-        },
-
-        {
-          choiceWrap: false,
-          stem: String.raw`
-            <p><b>Refer to Figure 21.</b></p>
-            <p>Find the two indicated values <span class="math">\(x\)</span> and <span class="math">\(y\)</span>. Give exact values.</p>
-          `,
-          media: String.raw`
-            <figure>
-              <img src="HW-14-1and2-599e.png" alt="Diagram for Problem 599e with two unknowns x and y" />
-              <figcaption>Figure 21</figcaption>
-            </figure>
-          `,
-          choices: [
-            String.raw`\((x,y)=\left(10,\,12\right)\)` ,
-            String.raw`\((x,y)=\left(12,\,8\right)\)` ,
-            String.raw`\((x,y)=\left(6,\,10\right)\)` ,
-            String.raw`\((x,y)=\left(12,\,6\right)\)` ,
-            String.raw`\((x,y)=\left(12,\,10\right)\)` ,
-            String.raw`\((x,y)=\left(14,\,10\right)\)`
           ]
         },
 
@@ -550,21 +431,21 @@
         {
           choiceWrap: false,
           stem: String.raw`
-            <p><b>Refer to Figure 22.</b></p>
+            <p><b>Refer to Figure 17.</b></p>
             <p>Find <span class="math">\(x\)</span>. Give an exact value.</p>
           `,
           media: String.raw`
             <figure>
               <img src="HW-14-1and2-600a.png" alt="Composite triangle/angle diagram with 30 degrees and segments labeled 3 and 3√3 (Problem 600a)" />
-              <figcaption>Figure 22</figcaption>
+              <figcaption>Figure 17</figcaption>
             </figure>
           `,
           choices: [
-            String.raw`\(\,6\sqrt{6}\)` ,
-            String.raw`\(\,3\sqrt{7}\)` ,
-            String.raw`\(\,6\sqrt{7}\)` ,
-            String.raw`\(\,6\sqrt{10}\)` ,
-            String.raw`\(\,12\sqrt{7}\)` ,
+            String.raw`\(\,6\sqrt{6}\)`,
+            String.raw`\(\,3\sqrt{7}\)`,
+            String.raw`\(\,6\sqrt{7}\)`,
+            String.raw`\(\,6\sqrt{10}\)`,
+            String.raw`\(\,12\sqrt{7}\)`,
             String.raw`\(\,2\sqrt{7}\)`
           ]
         },
@@ -572,21 +453,21 @@
         {
           choiceWrap: false,
           stem: String.raw`
-            <p><b>Refer to Figure 23.</b></p>
+            <p><b>Refer to Figure 18.</b></p>
             <p>Find <span class="math">\(x\)</span>. Give an exact value.</p>
           `,
           media: String.raw`
             <figure>
               <img src="HW-14-1and2-600b.png" alt="Diagram for Problem 600b" />
-              <figcaption>Figure 23</figcaption>
+              <figcaption>Figure 18</figcaption>
             </figure>
           `,
           choices: [
-            String.raw`\(\,6\)` ,
-            String.raw`\(\,3\)` ,
-            String.raw`\(\,3\sqrt{3}\)` ,
-            String.raw`\(\,2\sqrt{3}\)` ,
-            String.raw`\(\,6\sqrt{3}\)` ,
+            String.raw`\(\,6\)`,
+            String.raw`\(\,3\)`,
+            String.raw`\(\,3\sqrt{3}\)`,
+            String.raw`\(\,2\sqrt{3}\)`,
+            String.raw`\(\,6\sqrt{3}\)`,
             String.raw`\(\,12\)`
           ]
         }
