@@ -7,7 +7,612 @@
 
   <script>
     /* =========================
+       HW-14-1and2 — Right Triangle Tr<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>HW-14-1and2 (Geometry)</title>
+
+  <script>
+    /* =========================
        HW-14-1and2 — Right Triangle Trigonometry & Special Triangles
+
+       REQUIRED SOURCE REFERENCES (your provided sets):
+       - Portuguese set uses: #594(a,b,c), #595(a,b,c), #596(a,b,c),
+                              #597(a,b,c), #598(a,b,c,d), #599(a,b,c,d,e),
+                              #600(a,b)
+
+       IMAGE NAMING RULE (STRICT):
+       PNG files live in the SAME folder as this HTML.
+       - Filenames use the ORIGINAL exercise number.
+       - If a problem has subparts, include the letter in the filename.
+
+       Required figure files:
+         HW-14-1and2-594a.png
+         HW-14-1and2-594b.png
+         HW-14-1and2-594c.png
+         HW-14-1and2-595a.png
+         HW-14-1and2-595b.png
+         HW-14-1and2-595c.png
+         HW-14-1and2-596a.png
+         HW-14-1and2-596b.png
+         HW-14-1and2-596c.png
+         HW-14-1and2-597a.png
+         HW-14-1and2-597b.png
+         HW-14-1and2-597c.png
+         HW-14-1and2-598a.png
+         HW-14-1and2-598b.png
+         HW-14-1and2-598c.png
+         HW-14-1and2-598d.png
+         HW-14-1and2-599a.png
+         HW-14-1and2-599b.png
+         HW-14-1and2-599c.png
+         HW-14-1and2-599d.png
+         HW-14-1and2-599e.png
+         HW-14-1and2-600a.png
+         HW-14-1and2-600b.png
+       ========================= */
+
+    window.homeworkData = {
+      classId : "Geometry",
+      id      : "HW-14-1and2",
+      title   : "HW-14-1and2 — Right Triangle Trigonometry & Special Triangles",
+
+      graphics : String.raw``,
+
+      /* Correct answers for Q1–Q23 */
+      answerKey : ["C","E","B","A","D","F","B","C","E","D","A","F","C","B","A","E","D","A","F","B","E","C","A"],
+
+      questions : [
+
+        /* =======================
+           594. Determine sin α
+           ======================= */
+
+        {
+          choiceWrap: false,
+          stem: String.raw`
+            <p><b>Refer to Figure 1.</b></p>
+            <p>In the right triangle shown, determine <span class="math">\(\sin\alpha\)</span>.</p>
+          `,
+          media: String.raw`
+            <figure>
+              <img src="HW-14-1and2-594a.png" alt="Right triangle with angle alpha and labeled side lengths (Problem 594a)" />
+              <figcaption>Figure 1</figcaption>
+            </figure>
+          `,
+          choices: [
+            String.raw`\(\dfrac{1}{4}\)`,
+            String.raw`\(\dfrac{2}{3}\)`,
+            String.raw`\(\dfrac{1}{2}\)`,
+            String.raw`\(\dfrac{3}{4}\)`,
+            String.raw`\(\dfrac{\sqrt{3}}{2}\)`,
+            String.raw`\(\dfrac{2}{5}\)`
+          ]
+        },
+
+        {
+          choiceWrap: false,
+          stem: String.raw`
+            <p><b>Refer to Figure 2.</b></p>
+            <p>In the right triangle shown, determine <span class="math">\(\sin\alpha\)</span>.</p>
+          `,
+          media: String.raw`
+            <figure>
+              <img src="HW-14-1and2-594b.png" alt="Right triangle with angle alpha and labeled side lengths (Problem 594b)" />
+              <figcaption>Figure 2</figcaption>
+            </figure>
+          `,
+          choices: [
+            String.raw`\(\dfrac{4}{5}\)`,
+            String.raw`\(\dfrac{5}{3}\)`,
+            String.raw`\(\dfrac{3}{4}\)`,
+            String.raw`\(\dfrac{2}{5}\)`,
+            String.raw`\(\dfrac{3}{5}\)`,
+            String.raw`\(\dfrac{5}{12}\)`
+          ]
+        },
+
+        {
+          choiceWrap: false,
+          stem: String.raw`
+            <p><b>Refer to Figure 3.</b></p>
+            <p>In the right triangle shown, determine <span class="math">\(\sin\alpha\)</span>.</p>
+          `,
+          media: String.raw`
+            <figure>
+              <img src="HW-14-1and2-594c.png" alt="Right triangle with angle alpha and labeled side lengths (Problem 594c)" />
+              <figcaption>Figure 3</figcaption>
+            </figure>
+          `,
+          choices: [
+            String.raw`\(\dfrac{2}{5}\)`,
+            String.raw`\(\dfrac{3}{5}\)`,
+            String.raw`\(\dfrac{5}{3}\)`,
+            String.raw`\(\dfrac{\sqrt{3}}{2}\)`,
+            String.raw`\(\dfrac{1}{2}\)`,
+            String.raw`\(\dfrac{3}{4}\)`
+          ]
+        },
+
+        /* =======================
+           595. Determine cos α
+           ======================= */
+
+        {
+          choiceWrap: false,
+          stem: String.raw`
+            <p><b>Refer to Figure 4.</b></p>
+            <p>In the right triangle shown, determine <span class="math">\(\cos\alpha\)</span>.</p>
+          `,
+          media: String.raw`
+            <figure>
+              <img src="HW-14-1and2-595a.png" alt="Right triangle with angle alpha and labeled side lengths (Problem 595a)" />
+              <figcaption>Figure 4</figcaption>
+            </figure>
+          `,
+          choices: [
+            String.raw`\(\dfrac{3}{4}\)`,
+            String.raw`\(\dfrac{4}{3}\)`,
+            String.raw`\(\dfrac{1}{2}\)`,
+            String.raw`\(\dfrac{3}{8}\)`,
+            String.raw`\(\dfrac{\sqrt{3}}{2}\)`,
+            String.raw`\(\dfrac{2}{3}\)`
+          ]
+        },
+
+        {
+          choiceWrap: false,
+          stem: String.raw`
+            <p><b>Refer to Figure 5.</b></p>
+            <p>In the right triangle shown, determine <span class="math">\(\cos\alpha\)</span>.</p>
+          `,
+          media: String.raw`
+            <figure>
+              <img src="HW-14-1and2-595b.png" alt="Right triangle with a right angle at the top vertex and labeled legs (Problem 595b)" />
+              <figcaption>Figure 5</figcaption>
+            </figure>
+          `,
+          choices: [
+            String.raw`\(\dfrac{\sqrt{3}}{2}\)`,
+            String.raw`\(\dfrac{1}{3}\)`,
+            String.raw`\(\dfrac{2}{3}\)`,
+            String.raw`\(\dfrac{1}{2}\)`,
+            String.raw`\(\dfrac{3}{4}\)`,
+            String.raw`\(\dfrac{4}{5}\)`
+          ]
+        },
+
+        {
+          choiceWrap: false,
+          stem: String.raw`
+            <p><b>Refer to Figure 6.</b></p>
+            <p>In the right triangle shown, determine <span class="math">\(\cos\alpha\)</span>.</p>
+          `,
+          media: String.raw`
+            <figure>
+              <img src="HW-14-1and2-595c.png" alt="Right triangle with angle alpha and labeled side lengths (Problem 595c)" />
+              <figcaption>Figure 6</figcaption>
+            </figure>
+          `,
+          choices: [
+            String.raw`\(\dfrac{\sqrt{11}}{11}\)`,
+            String.raw`\(\dfrac{\sqrt{11}}{3}\)`,
+            String.raw`\(\dfrac{11}{6}\)`,
+            String.raw`\(\dfrac{\sqrt{3}}{2}\)`,
+            String.raw`\(\dfrac{1}{2}\)`,
+            String.raw`\(\dfrac{\sqrt{11}}{6}\)`
+          ]
+        },
+
+        /* =======================
+           596. Determine tan α
+           ======================= */
+
+        {
+          choiceWrap: false,
+          stem: String.raw`
+            <p><b>Refer to Figure 7.</b></p>
+            <p>In the right triangle shown, determine <span class="math">\(\tan\alpha\)</span>.</p>
+          `,
+          media: String.raw`
+            <figure>
+              <img src="HW-14-1and2-596a.png" alt="Right triangle with angle alpha and legs labeled 12 and 15 (Problem 596a)" />
+              <figcaption>Figure 7</figcaption>
+            </figure>
+          `,
+          choices: [
+            String.raw`\(\dfrac{5}{4}\)`,
+            String.raw`\(\dfrac{4}{5}\)`,
+            String.raw`\(\dfrac{3}{4}\)`,
+            String.raw`\(\dfrac{5}{3}\)`,
+            String.raw`\(\dfrac{\sqrt{3}}{3}\)`,
+            String.raw`\(\dfrac{12}{5}\)`
+          ]
+        },
+
+        {
+          choiceWrap: false,
+          stem: String.raw`
+            <p><b>Refer to Figure 8.</b></p>
+            <p>In the right triangle shown, determine <span class="math">\(\tan\alpha\)</span>.</p>
+          `,
+          media: String.raw`
+            <figure>
+              <img src="HW-14-1and2-596b.png" alt="Right triangle with angle alpha and labeled sides including 12 and 6√3 (Problem 596b)" />
+              <figcaption>Figure 8</figcaption>
+            </figure>
+          `,
+          choices: [
+            String.raw`\(\dfrac{1}{\sqrt{3}}\)`,
+            String.raw`\(\dfrac{\sqrt{3}}{3}\)`,
+            String.raw`\(\sqrt{3}\)`,
+            String.raw`\(\dfrac{3}{4}\)`,
+            String.raw`\(\dfrac{4}{3}\)`,
+            String.raw`\(\dfrac{2}{\sqrt{3}}\)`
+          ]
+        },
+
+        {
+          choiceWrap: false,
+          stem: String.raw`
+            <p><b>Refer to Figure 9.</b></p>
+            <p>In the right triangle shown, determine <span class="math">\(\tan\alpha\)</span>.</p>
+          `,
+          media: String.raw`
+            <figure>
+              <img src="HW-14-1and2-596c.png" alt="Right triangle with angle alpha and labeled side lengths (Problem 596c)" />
+              <figcaption>Figure 9</figcaption>
+            </figure>
+          `,
+          choices: [
+            String.raw`\(\dfrac{3}{4}\)`,
+            String.raw`\(\dfrac{4}{5}\)`,
+            String.raw`\(\dfrac{5}{4}\)`,
+            String.raw`\(\dfrac{3}{5}\)`,
+            String.raw`\(\dfrac{4}{3}\)`,
+            String.raw`\(\sqrt{3}\)`
+          ]
+        },
+
+        /* =======================
+           597. Determine x
+           ======================= */
+
+        {
+          choiceWrap: false,
+          stem: String.raw`
+            <p><b>Refer to Figure 10.</b></p>
+            <p>Find <span class="math">\(x\)</span>. Give an exact value.</p>
+          `,
+          media: String.raw`
+            <figure>
+              <img src="HW-14-1and2-597a.png" alt="Right triangle with hypotenuse 20 and a 30-degree angle (Problem 597a)" />
+              <figcaption>Figure 10</figcaption>
+            </figure>
+          `,
+          choices: [
+            String.raw`\(\sqrt{10}\)`,
+            String.raw`\(\dfrac{20}{\sqrt{3}}\)`,
+            String.raw`\(\dfrac{10}{\sqrt{3}}\)`,
+            String.raw`\(\,10\)` ,
+            String.raw`\(\,20\)` ,
+            String.raw`\(\,5\)`
+          ]
+        },
+
+        {
+          choiceWrap: false,
+          stem: String.raw`
+            <p><b>Refer to Figure 11.</b></p>
+            <p>Find <span class="math">\(x\)</span>. Give an exact value.</p>
+          `,
+          media: String.raw`
+            <figure>
+              <img src="HW-14-1and2-597b.png" alt="Right triangle with hypotenuse 6 and a 45-degree angle (Problem 597b)" />
+              <figcaption>Figure 11</figcaption>
+            </figure>
+          `,
+          choices: [
+            String.raw`\(\,3\sqrt{2}\)` ,
+            String.raw`\(\,6\sqrt{2}\)` ,
+            String.raw`\(\,3\)` ,
+            String.raw`\(\,2\sqrt{3}\)` ,
+            String.raw`\(\,\sqrt{18}\)` ,
+            String.raw`\(\,6\)`
+          ]
+        },
+
+        {
+          choiceWrap: false,
+          stem: String.raw`
+            <p><b>Refer to Figure 12.</b></p>
+            <p>Find <span class="math">\(x\)</span>. Give an exact value.</p>
+          `,
+          media: String.raw`
+            <figure>
+              <img src="HW-14-1and2-597c.png" alt="Right triangle with a 60-degree angle and a side labeled 10√3 (Problem 597c)" />
+              <figcaption>Figure 12</figcaption>
+            </figure>
+          `,
+          choices: [
+            String.raw`\(\,5\)` ,
+            String.raw`\(\,10\sqrt{3}\)` ,
+            String.raw`\(\,5\sqrt{3}\)` ,
+            String.raw`\(\,6\sqrt{3}\)` ,
+            String.raw`\(\,20\)` ,
+            String.raw`\(\,10\)`
+          ]
+        },
+
+        /* =======================
+           598. Determine x
+           ======================= */
+
+        {
+          choiceWrap: false,
+          stem: String.raw`
+            <p><b>Refer to Figure 13.</b></p>
+            <p>Find <span class="math">\(x\)</span>. Give an exact value.</p>
+          `,
+          media: String.raw`
+            <figure>
+              <img src="HW-14-1and2-598a.png" alt="Composite right triangle diagram with 45-degree and 30-degree angles (Problem 598a)" />
+              <figcaption>Figure 13</figcaption>
+            </figure>
+          `,
+          choices: [
+            String.raw`\(\,3\sqrt{2}\)` ,
+            String.raw`\(\,6\)` ,
+            String.raw`\(\,6\sqrt{2}\)` ,
+            String.raw`\(\,3\sqrt{6}\)` ,
+            String.raw`\(\,6\sqrt{3}\)` ,
+            String.raw`\(\,12\)`
+          ]
+        },
+
+        {
+          choiceWrap: false,
+          stem: String.raw`
+            <p><b>Refer to Figure 14.</b></p>
+            <p>Find <span class="math">\(x\)</span>. Give an exact value.</p>
+          `,
+          media: String.raw`
+            <figure>
+              <img src="HW-14-1and2-598b.png" alt="Triangle with 30-degree angles and a segment labeled x (Problem 598b)" />
+              <figcaption>Figure 14</figcaption>
+            </figure>
+          `,
+          choices: [
+            String.raw`\(\,\sqrt{3}\)` ,
+            String.raw`\(\,2\sqrt{3}\)` ,
+            String.raw`\(\,3\sqrt{2}\)` ,
+            String.raw`\(\,4\sqrt{3}\)` ,
+            String.raw`\(\,6\)` ,
+            String.raw`\(\,3\)`
+          ]
+        },
+
+        {
+          choiceWrap: false,
+          stem: String.raw`
+            <p><b>Refer to Figure 15.</b></p>
+            <p>Find <span class="math">\(x\)</span>. Give an exact value.</p>
+          `,
+          media: String.raw`
+            <figure>
+              <img src="HW-14-1and2-598c.png" alt="Two right triangles sharing a base with 30-degree and 60-degree angles (Problem 598c)" />
+              <figcaption>Figure 15</figcaption>
+            </figure>
+          `,
+          choices: [
+            String.raw`\(\,36\)` ,
+            String.raw`\(\,24\)` ,
+            String.raw`\(\,18\)` ,
+            String.raw`\(\,12\)` ,
+            String.raw`\(\,18\sqrt{3}\)` ,
+            String.raw`\(\,6\sqrt{3}\)`
+          ]
+        },
+
+        {
+          choiceWrap: false,
+          stem: String.raw`
+            <p><b>Refer to Figure 16.</b></p>
+            <p>Find <span class="math">\(x\)</span>. Give an exact value.</p>
+          `,
+          media: String.raw`
+            <figure>
+              <img src="HW-14-1and2-598d.png" alt="Triangle with a height of 12 and a 30-degree angle, base labeled x (Problem 598d)" />
+              <figcaption>Figure 16</figcaption>
+            </figure>
+          `,
+          choices: [
+            String.raw`\(\,12\sqrt{3}\)` ,
+            String.raw`\(\,24\)` ,
+            String.raw`\(\,8\sqrt{3}\)` ,
+            String.raw`\(\,16\)` ,
+            String.raw`\(\,16\sqrt{3}\)` ,
+            String.raw`\(\,24\sqrt{3}\)`
+          ]
+        },
+
+        /* =======================
+           599. Determine the indicated values (two answers)
+           ======================= */
+
+        {
+          choiceWrap: false,
+          stem: String.raw`
+            <p><b>Refer to Figure 17.</b></p>
+            <p>Find the two indicated values <span class="math">\(x\)</span> and <span class="math">\(y\)</span>. Give exact values.</p>
+          `,
+          media: String.raw`
+            <figure>
+              <img src="HW-14-1and2-599a.png" alt="Diagram for Problem 599a with two unknowns x and y" />
+              <figcaption>Figure 17</figcaption>
+            </figure>
+          `,
+          choices: [
+            String.raw`\((x,y)=\left(6,\,3\sqrt{3}\right)\)` ,
+            String.raw`\((x,y)=\left(3,\,6\sqrt{3}\right)\)` ,
+            String.raw`\((x,y)=\left(6\sqrt{3},\,6\right)\)` ,
+            String.raw`\((x,y)=\left(6,\,6\sqrt{3}\right)\)` ,
+            String.raw`\((x,y)=\left(12,\,6\sqrt{3}\right)\)` ,
+            String.raw`\((x,y)=\left(6,\,\sqrt{3}\right)\)`
+          ]
+        },
+
+        {
+          choiceWrap: false,
+          stem: String.raw`
+            <p><b>Refer to Figure 18.</b></p>
+            <p>Find the two indicated values <span class="math">\(x\)</span> and <span class="math">\(y\)</span>. Give exact values.</p>
+          `,
+          media: String.raw`
+            <figure>
+              <img src="HW-14-1and2-599b.png" alt="Diagram for Problem 599b with two unknowns x and y" />
+              <figcaption>Figure 18</figcaption>
+            </figure>
+          `,
+          choices: [
+            String.raw`\((x,y)=\left(8,\,4\sqrt{3}\right)\)` ,
+            String.raw`\((x,y)=\left(4\sqrt{3},\,8\right)\)` ,
+            String.raw`\((x,y)=\left(8,\,8\sqrt{3}\right)\)` ,
+            String.raw`\((x,y)=\left(4,\,4\sqrt{3}\right)\)` ,
+            String.raw`\((x,y)=\left(12,\,4\sqrt{3}\right)\)` ,
+            String.raw`\((x,y)=\left(8,\,2\sqrt{3}\right)\)`
+          ]
+        },
+
+        {
+          choiceWrap: false,
+          stem: String.raw`
+            <p><b>Refer to Figure 19.</b></p>
+            <p>Find the two indicated values <span class="math">\(x\)</span> and <span class="math">\(y\)</span>. Give exact values.</p>
+          `,
+          media: String.raw`
+            <figure>
+              <img src="HW-14-1and2-599c.png" alt="Diagram for Problem 599c with two unknowns x and y" />
+              <figcaption>Figure 19</figcaption>
+            </figure>
+          `,
+          choices: [
+            String.raw`\((x,y)=\left(6,\,6\sqrt{2}\right)\)` ,
+            String.raw`\((x,y)=\left(6\sqrt{2},\,3\right)\)` ,
+            String.raw`\((x,y)=\left(12,\,6\right)\)` ,
+            String.raw`\((x,y)=\left(3\sqrt{2},\,6\right)\)` ,
+            String.raw`\((x,y)=\left(6,\,3\sqrt{2}\right)\)` ,
+            String.raw`\((x,y)=\left(6\sqrt{2},\,6\right)\)`
+          ]
+        },
+
+        {
+          choiceWrap: false,
+          stem: String.raw`
+            <p><b>Refer to Figure 20.</b></p>
+            <p>Find the two indicated values <span class="math">\(x\)</span> and <span class="math">\(y\)</span>. Give exact values.</p>
+          `,
+          media: String.raw`
+            <figure>
+              <img src="HW-14-1and2-599d.png" alt="Diagram for Problem 599d with two unknowns x and y" />
+              <figcaption>Figure 20</figcaption>
+            </figure>
+          `,
+          choices: [
+            String.raw`\((x,y)=\left(18,\,3\sqrt{5}\right)\)` ,
+            String.raw`\((x,y)=\left(18,\,6\sqrt{5}\right)\)` ,
+            String.raw`\((x,y)=\left(6\sqrt{5},\,18\right)\)` ,
+            String.raw`\((x,y)=\left(9,\,6\sqrt{5}\right)\)` ,
+            String.raw`\((x,y)=\left(18,\,6\right)\)` ,
+            String.raw`\((x,y)=\left(12,\,6\sqrt{5}\right)\)`
+          ]
+        },
+
+        {
+          choiceWrap: false,
+          stem: String.raw`
+            <p><b>Refer to Figure 21.</b></p>
+            <p>Find the two indicated values <span class="math">\(x\)</span> and <span class="math">\(y\)</span>. Give exact values.</p>
+          `,
+          media: String.raw`
+            <figure>
+              <img src="HW-14-1and2-599e.png" alt="Diagram for Problem 599e with two unknowns x and y" />
+              <figcaption>Figure 21</figcaption>
+            </figure>
+          `,
+          choices: [
+            String.raw`\((x,y)=\left(10,\,12\right)\)` ,
+            String.raw`\((x,y)=\left(12,\,8\right)\)` ,
+            String.raw`\((x,y)=\left(6,\,10\right)\)` ,
+            String.raw`\((x,y)=\left(12,\,6\right)\)` ,
+            String.raw`\((x,y)=\left(12,\,10\right)\)` ,
+            String.raw`\((x,y)=\left(14,\,10\right)\)`
+          ]
+        },
+
+        /* =======================
+           600. Determine x
+           ======================= */
+
+        {
+          choiceWrap: false,
+          stem: String.raw`
+            <p><b>Refer to Figure 22.</b></p>
+            <p>Find <span class="math">\(x\)</span>. Give an exact value.</p>
+          `,
+          media: String.raw`
+            <figure>
+              <img src="HW-14-1and2-600a.png" alt="Composite triangle/angle diagram with 30 degrees and segments labeled 3 and 3√3 (Problem 600a)" />
+              <figcaption>Figure 22</figcaption>
+            </figure>
+          `,
+          choices: [
+            String.raw`\(\,6\sqrt{6}\)` ,
+            String.raw`\(\,3\sqrt{7}\)` ,
+            String.raw`\(\,6\sqrt{7}\)` ,
+            String.raw`\(\,6\sqrt{10}\)` ,
+            String.raw`\(\,12\sqrt{7}\)` ,
+            String.raw`\(\,2\sqrt{7}\)`
+          ]
+        },
+
+        {
+          choiceWrap: false,
+          stem: String.raw`
+            <p><b>Refer to Figure 23.</b></p>
+            <p>Find <span class="math">\(x\)</span>. Give an exact value.</p>
+          `,
+          media: String.raw`
+            <figure>
+              <img src="HW-14-1and2-600b.png" alt="Diagram for Problem 600b" />
+              <figcaption>Figure 23</figcaption>
+            </figure>
+          `,
+          choices: [
+            String.raw`\(\,6\)` ,
+            String.raw`\(\,3\)` ,
+            String.raw`\(\,3\sqrt{3}\)` ,
+            String.raw`\(\,2\sqrt{3}\)` ,
+            String.raw`\(\,6\sqrt{3}\)` ,
+            String.raw`\(\,12\)`
+          ]
+        }
+
+      ]
+    };
+  </script>
+
+  <link rel="stylesheet" href="/math-homework/assets/core-rich.css" />
+  <script defer src="/math-homework/assets/core-rich.js"></script>
+  <script defer src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+</head>
+
+<body>
+  <div id="hw-root">Loading…</div>
+</body>
+</html>igonometry & Special Triangles
 
        REQUIRED SOURCE REFERENCES (your provided sets):
        - Portuguese set uses: #594(a,b), #595(a,b), #596(a,b),
