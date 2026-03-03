@@ -8,22 +8,20 @@
   <script>
     /* =========================
        HW-14-3 — Right Triangle Trigonometry & Special Triangles
+       This file currently contains Questions 13–18 (from the pasted source).
+       Append Questions 19–118 from the original big file after these.
 
-       PORTUGUESE SET INCLUDED HERE ONLY:
-       - #599(a,b,c,d,e)
-       - #600(a,b)
+       REQUIRED SOURCE REFERENCES (your provided sets):
+       - Portuguese set uses (in this segment): #598(a,b,c,d), #600(a,b)
 
        IMAGE NAMING RULE (STRICT):
        PNG files live in the SAME folder as this HTML.
-       - Filenames use the ORIGINAL exercise number.
-       - If a problem has subparts, include the letter in the filename.
 
-       Required figure files:
-         HW-14-3-599a.png
-         HW-14-3-599b.png
-         HW-14-3-599c.png
-         HW-14-3-599d.png
-         HW-14-3-599e.png
+       Required figure files for this segment:
+         HW-14-3-598a.png
+         HW-14-3-598b.png
+         HW-14-3-598c.png
+         HW-14-3-598d.png
          HW-14-3-600a.png
          HW-14-3-600b.png
        ========================= */
@@ -35,175 +33,147 @@
 
       graphics : String.raw``,
 
-      /* Correct answers (from attached key): 599(a–e), 600(a–b) */
-      answerKey : ["A","B","C","D","E","C","A"],
+      /* Answers for Q13–Q18 only (from your original answerKey positions 13–18) */
+      answerKey : ["C","B","A","E","C","A"],
 
       questions : [
 
         /* =======================
-           599. (a–e) Two exact lengths
-           Each question expects an ordered pair (first value; second value)
+           598. Determine x
            ======================= */
 
         {
           choiceWrap: false,
           stem: String.raw`
-            <p><b>Refer to Figure 1.</b></p>
-            <p>Determine the two exact values indicated in the diagram.</p>
-            <p>Choose the ordered pair <b>(first value; second value)</b>.</p>
+            <p><b>Refer to Figure 13.</b></p>
+            <p>Find <span class="math">\(x\)</span>. Give an exact value.</p>
           `,
           media: String.raw`
             <figure>
-              <img src="HW-14-3-599a.png" alt="Problem 599a diagram" />
-              <figcaption>Figure 1</figcaption>
+              <img src="HW-14-3-598a.png" alt="Problem 598a" />
+              <figcaption>Figure 13</figcaption>
             </figure>
           `,
           choices: [
-            String.raw`\((6;\,6\sqrt{3})\)`,
-            String.raw`\((8;\,4\sqrt{3})\)`,
-            String.raw`\((6\sqrt{2};\,6)\)`,
-            String.raw`\((18;\,6\sqrt{5})\)`,
-            String.raw`\((12;\,10)\)`,
-            String.raw`\((6;\,3\sqrt{3})\)`
+            String.raw`\(\,3\sqrt{2}\)`,
+            String.raw`\(\,6\)`,
+            String.raw`\(\,6\sqrt{2}\)`,
+            String.raw`\(\,3\sqrt{6}\)`,
+            String.raw`\(\,6\sqrt{3}\)`,
+            String.raw`\(\,12\)`
           ]
         },
 
         {
           choiceWrap: false,
           stem: String.raw`
-            <p><b>Refer to Figure 2.</b></p>
-            <p>Determine the two exact values indicated in the diagram.</p>
-            <p>Choose the ordered pair <b>(first value; second value)</b>.</p>
+            <p><b>Refer to Figure 14.</b></p>
+            <p>Find <span class="math">\(x\)</span>. Give an exact value.</p>
           `,
           media: String.raw`
             <figure>
-              <img src="HW-14-3-599b.png" alt="Problem 599b diagram" />
-              <figcaption>Figure 2</figcaption>
+              <img src="HW-14-3-598b.png" alt="Problem 598b" />
+              <figcaption>Figure 14</figcaption>
             </figure>
           `,
           choices: [
-            String.raw`\((6;\,6\sqrt{3})\)`,
-            String.raw`\((8;\,4\sqrt{3})\)`,
-            String.raw`\((6\sqrt{2};\,6)\)`,
-            String.raw`\((18;\,6\sqrt{5})\)`,
-            String.raw`\((12;\,10)\)`,
-            String.raw`\((8;\,8\sqrt{3})\)`
+            String.raw`\(\,\sqrt{3}\)`,
+            String.raw`\(\,2\sqrt{3}\)`,
+            String.raw`\(\,3\sqrt{2}\)`,
+            String.raw`\(\,4\sqrt{3}\)`,
+            String.raw`\(\,6\)`,
+            String.raw`\(\,3\)`
           ]
         },
 
         {
           choiceWrap: false,
           stem: String.raw`
-            <p><b>Refer to Figure 3.</b></p>
-            <p>Determine the two exact values indicated in the diagram.</p>
-            <p>Choose the ordered pair <b>(first value; second value)</b>.</p>
+            <p><b>Refer to Figure 15.</b></p>
+            <p>Find <span class="math">\(x\)</span>. Give an exact value.</p>
           `,
           media: String.raw`
             <figure>
-              <img src="HW-14-3-599c.png" alt="Problem 599c diagram" />
-              <figcaption>Figure 3</figcaption>
+              <img src="HW-14-3-598c.png" alt="Problem 598c" />
+              <figcaption>Figure 15</figcaption>
             </figure>
           `,
           choices: [
-            String.raw`\((6;\,6\sqrt{3})\)`,
-            String.raw`\((8;\,4\sqrt{3})\)`,
-            String.raw`\((6\sqrt{2};\,6)\)`,
-            String.raw`\((18;\,6\sqrt{5})\)`,
-            String.raw`\((12;\,10)\)`,
-            String.raw`\((6\sqrt{2};\,12)\)`
+            String.raw`\(\,36\)`,
+            String.raw`\(\,24\)`,
+            String.raw`\(\,18\)`,
+            String.raw`\(\,12\)`,
+            String.raw`\(\,18\sqrt{3}\)`,
+            String.raw`\(\,6\sqrt{3}\)`
           ]
         },
 
         {
           choiceWrap: false,
           stem: String.raw`
-            <p><b>Refer to Figure 4.</b></p>
-            <p>Determine the two exact values indicated in the diagram.</p>
-            <p>Choose the ordered pair <b>(first value; second value)</b>.</p>
+            <p><b>Refer to Figure 16.</b></p>
+            <p>Find <span class="math">\(x\)</span>. Give an exact value.</p>
           `,
           media: String.raw`
             <figure>
-              <img src="HW-14-3-599d.png" alt="Problem 599d diagram" />
-              <figcaption>Figure 4</figcaption>
+              <img src="HW-14-3-598d.png" alt="Problem 598d" />
+              <figcaption>Figure 16</figcaption>
             </figure>
           `,
           choices: [
-            String.raw`\((6;\,6\sqrt{3})\)`,
-            String.raw`\((8;\,4\sqrt{3})\)`,
-            String.raw`\((6\sqrt{2};\,6)\)`,
-            String.raw`\((18;\,6\sqrt{5})\)`,
-            String.raw`\((12;\,10)\)`,
-            String.raw`\((18;\,5\sqrt{6})\)`
-          ]
-        },
-
-        {
-          choiceWrap: false,
-          stem: String.raw`
-            <p><b>Refer to Figure 5.</b></p>
-            <p>Determine the two exact values indicated in the diagram.</p>
-            <p>Choose the ordered pair <b>(first value; second value)</b>.</p>
-          `,
-          media: String.raw`
-            <figure>
-              <img src="HW-14-3-599e.png" alt="Problem 599e diagram" />
-              <figcaption>Figure 5</figcaption>
-            </figure>
-          `,
-          choices: [
-            String.raw`\((6;\,6\sqrt{3})\)`,
-            String.raw`\((8;\,4\sqrt{3})\)`,
-            String.raw`\((6\sqrt{2};\,6)\)`,
-            String.raw`\((18;\,6\sqrt{5})\)`,
-            String.raw`\((12;\,10)\)`,
-            String.raw`\((10;\,12)\)`
+            String.raw`\(\,12\sqrt{3}\)`,
+            String.raw`\(\,24\)`,
+            String.raw`\(\,8\sqrt{3}\)`,
+            String.raw`\(\,16\)`,
+            String.raw`\(\,16\sqrt{3}\)`,
+            String.raw`\(\,24\sqrt{3}\)`
           ]
         },
 
         /* =======================
-           600. (a–b) Determine x
+           600. Determine x
            ======================= */
 
         {
           choiceWrap: false,
           stem: String.raw`
-            <p><b>Refer to Figure 6.</b></p>
+            <p><b>Refer to Figure 17.</b></p>
             <p>Find <span class="math">\(x\)</span>. Give an exact value.</p>
           `,
           media: String.raw`
             <figure>
-              <img src="HW-14-3-600a.png" alt="Problem 600a diagram" />
-              <figcaption>Figure 6</figcaption>
+              <img src="HW-14-3-600a.png" alt="Problem 600a" />
+              <figcaption>Figure 17</figcaption>
             </figure>
           `,
           choices: [
-            String.raw`\(\,6\)` ,
-            String.raw`\(\,6\sqrt{6}\)` ,
-            String.raw`\(\,6\sqrt{7}\)` ,
-            String.raw`\(\,3\sqrt{7}\)` ,
-            String.raw`\(\,2\sqrt{7}\)` ,
-            String.raw`\(\,12\sqrt{7}\)`
+            String.raw`\(\,6\sqrt{6}\)`,
+            String.raw`\(\,3\sqrt{7}\)`,
+            String.raw`\(\,6\sqrt{7}\)`,
+            String.raw`\(\,6\sqrt{10}\)`,
+            String.raw`\(\,12\sqrt{7}\)`,
+            String.raw`\(\,2\sqrt{7}\)`
           ]
         },
 
         {
           choiceWrap: false,
           stem: String.raw`
-            <p><b>Refer to Figure 7.</b></p>
+            <p><b>Refer to Figure 18.</b></p>
             <p>Find <span class="math">\(x\)</span>. Give an exact value.</p>
           `,
           media: String.raw`
             <figure>
-              <img src="HW-14-3-600b.png" alt="Problem 600b diagram" />
-              <figcaption>Figure 7</figcaption>
+              <img src="HW-14-3-600b.png" alt="Problem 600b" />
+              <figcaption>Figure 18</figcaption>
             </figure>
           `,
           choices: [
-            String.raw`\(\,6\)` ,
-            String.raw`\(\,3\)` ,
-            String.raw`\(\,3\sqrt{3}\)` ,
-            String.raw`\(\,2\sqrt{3}\)` ,
-            String.raw`\(\,6\sqrt{3}\)` ,
+            String.raw`\(\,6\)`,
+            String.raw`\(\,3\)`,
+            String.raw`\(\,3\sqrt{3}\)`,
+            String.raw`\(\,2\sqrt{3}\)`,
+            String.raw`\(\,6\sqrt{3}\)`,
             String.raw`\(\,12\)`
           ]
         }
