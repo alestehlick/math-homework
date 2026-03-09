@@ -1,0 +1,320 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>HW-Trig-Identities-Polygons (Geometry)</title>
+
+  <script>
+    /* =========================
+       HW-Trig-Identities-Polygons — Trigonometric Identities and Areas of Regular Polygons
+
+       REQUIRED SOURCE REFERENCES (your provided sets):
+       - Original set created for this homework: Q1–Q17
+
+       IMAGE NAMING RULE (STRICT):
+       PNG files live in the SAME folder as this HTML.
+       - No figure files are used in this homework.
+
+       Required figure files:
+         none
+       ========================= */
+
+    window.homeworkData = {
+      classId : "Geometry",
+      id      : "HW-Trig-Identities-Polygons",
+      title   : "HW-Trig-Identities-Polygons — Trigonometric Identities and Areas of Regular Polygons",
+
+      graphics : String.raw``,
+
+      /* Correct answers for Q1–Q17 */
+      answerKey : ["D","B","F","A","C","E","B","F","A","C","D","E","B","F","C","A","D"],
+
+      questions : [
+
+        {
+          choiceWrap: false,
+          stem: String.raw`
+            <p>Let \(\theta\) be an acute angle. Suppose \(\sin\theta=\dfrac{3}{5}\).</p>
+            <p>Determine \(\cos\theta\).</p>
+          `,
+          choices: [
+            String.raw`\(\dfrac{2}{5}\)`,
+            String.raw`\(\dfrac{3}{4}\)`,
+            String.raw`\(\dfrac{5}{4}\)`,
+            String.raw`\(\dfrac{4}{5}\)`,
+            String.raw`\(\dfrac{1}{5}\)`,
+            String.raw`\(\dfrac{\sqrt{3}}{2}\)`
+          ]
+        },
+
+        {
+          choiceWrap: false,
+          stem: String.raw`
+            <p>Let \(\theta\) be an acute angle. Suppose \(\cos\theta=\dfrac{5}{13}\).</p>
+            <p>Determine \(\sin\theta\).</p>
+          `,
+          choices: [
+            String.raw`\(\dfrac{5}{12}\)`,
+            String.raw`\(\dfrac{12}{13}\)`,
+            String.raw`\(\dfrac{13}{12}\)`,
+            String.raw`\(\dfrac{8}{13}\)`,
+            String.raw`\(\dfrac{3}{5}\)`,
+            String.raw`\(\dfrac{5}{13}\)`
+          ]
+        },
+
+        {
+          choiceWrap: false,
+          stem: String.raw`
+            <p>Let \(\theta\) be an acute angle. Suppose \(\sin\theta=\dfrac{8}{17}\).</p>
+            <p>Determine \(\tan\theta\).</p>
+          `,
+          choices: [
+            String.raw`\(\dfrac{15}{17}\)`,
+            String.raw`\(\dfrac{17}{15}\)`,
+            String.raw`\(\dfrac{15}{8}\)`,
+            String.raw`\(\dfrac{17}{8}\)`,
+            String.raw`\(\dfrac{8}{17}\)`,
+            String.raw`\(\dfrac{8}{15}\)`
+          ]
+        },
+
+        {
+          choiceWrap: false,
+          stem: String.raw`
+            <p>Let \(\theta\) be an acute angle. Suppose \(\cos\theta=\dfrac{12}{13}\).</p>
+            <p>Determine \(\tan\theta\).</p>
+          `,
+          choices: [
+            String.raw`\(\dfrac{5}{12}\)`,
+            String.raw`\(\dfrac{12}{5}\)`,
+            String.raw`\(\dfrac{13}{5}\)`,
+            String.raw`\(\dfrac{5}{13}\)`,
+            String.raw`\(\dfrac{12}{13}\)`,
+            String.raw`\(\dfrac{13}{12}\)`
+          ]
+        },
+
+        {
+          choiceWrap: false,
+          stem: String.raw`
+            <p>Let \(\theta\) be an acute angle. Suppose \(\tan\theta=\dfrac{3}{4}\).</p>
+            <p>Determine \(\sin\theta\).</p>
+          `,
+          choices: [
+            String.raw`\(\dfrac{4}{5}\)`,
+            String.raw`\(\dfrac{4}{3}\)`,
+            String.raw`\(\dfrac{3}{5}\)`,
+            String.raw`\(\dfrac{3}{4}\)`,
+            String.raw`\(\dfrac{5}{3}\)`,
+            String.raw`\(\dfrac{5}{4}\)`
+          ]
+        },
+
+        {
+          choiceWrap: false,
+          stem: String.raw`
+            <p>Let \(\theta\) be an acute angle. Suppose \(\tan\theta=\dfrac{5}{12}\).</p>
+            <p>Determine \(\cos\theta\).</p>
+          `,
+          choices: [
+            String.raw`\(\dfrac{5}{13}\)`,
+            String.raw`\(\dfrac{12}{5}\)`,
+            String.raw`\(\dfrac{13}{12}\)`,
+            String.raw`\(\dfrac{5}{12}\)`,
+            String.raw`\(\dfrac{12}{13}\)`,
+            String.raw`\(\dfrac{13}{5}\)`
+          ]
+        },
+
+        {
+          choiceWrap: false,
+          stem: String.raw`
+            <p>Let \(\theta\) be an acute angle. Suppose \(\sin\theta=\dfrac{\sqrt{3}}{2}\).</p>
+            <p>Determine \(\tan\theta\).</p>
+          `,
+          choices: [
+            String.raw`\(\dfrac{1}{\sqrt{3}}\)`,
+            String.raw`\(\sqrt{3}\)`,
+            String.raw`\(\dfrac{\sqrt{2}}{2}\)`,
+            String.raw`\(\dfrac{2}{\sqrt{3}}\)`,
+            String.raw`\(\dfrac{1}{2}\)`,
+            String.raw`\(\sqrt{2}\)`
+          ]
+        },
+
+        {
+          choiceWrap: false,
+          stem: String.raw`
+            <p>Let \(\theta\) be an acute angle. Suppose \(\cos\theta=\dfrac{\sqrt{2}}{2}\).</p>
+            <p>Which ordered pair gives \(\bigl(\sin\theta,\tan\theta\bigr)\)?</p>
+          `,
+          choices: [
+            String.raw`\(\left(\dfrac{1}{2},\dfrac{\sqrt{2}}{2}\right)\)`,
+            String.raw`\(\left(\dfrac{\sqrt{3}}{2},\sqrt{3}\right)\)`,
+            String.raw`\(\left(\dfrac{\sqrt{2}}{2},\dfrac{\sqrt{2}}{2}\right)\)`,
+            String.raw`\(\left(\dfrac{1}{2},1\right)\)`,
+            String.raw`\(\left(\dfrac{\sqrt{2}}{2},\sqrt{2}\right)\)`,
+            String.raw`\(\left(\dfrac{\sqrt{2}}{2},1\right)\)`
+          ]
+        },
+
+        {
+          choiceWrap: false,
+          stem: String.raw`
+            <p>Let \(\theta\) be an acute angle. Suppose \(\tan\theta=\dfrac{\sqrt{3}}{3}\).</p>
+            <p>Which ordered pair gives \(\bigl(\sin\theta,\cos\theta\bigr)\)?</p>
+          `,
+          choices: [
+            String.raw`\(\left(\dfrac{1}{2},\dfrac{\sqrt{3}}{2}\right)\)`,
+            String.raw`\(\left(\dfrac{\sqrt{3}}{2},\dfrac{1}{2}\right)\)`,
+            String.raw`\(\left(\dfrac{\sqrt{2}}{2},\dfrac{\sqrt{2}}{2}\right)\)`,
+            String.raw`\(\left(\dfrac{1}{3},\dfrac{\sqrt{3}}{3}\right)\)`,
+            String.raw`\(\left(\dfrac{\sqrt{3}}{3},1\right)\)`,
+            String.raw`\(\left(\dfrac{1}{2},\dfrac{1}{2}\right)\)`
+          ]
+        },
+
+        {
+          choiceWrap: false,
+          stem: String.raw`
+            <p>Let \(\theta\) be an acute angle.</p>
+            <p>Which expression is equivalent to \(1-\sin^2\theta\)?</p>
+          `,
+          choices: [
+            String.raw`\(\tan^2\theta\)`,
+            String.raw`\(\sin\theta\cos\theta\)`,
+            String.raw`\(\cos^2\theta\)`,
+            String.raw`\(\dfrac{1}{\cos^2\theta}\)`,
+            String.raw`\(\cos\theta\)`,
+            String.raw`\(\dfrac{1}{\tan\theta}\)`
+          ]
+        },
+
+        {
+          choiceWrap: false,
+          stem: String.raw`
+            <p>Let \(\theta\) be an acute angle.</p>
+            <p>Which expression is equivalent to \(\tan^2\theta\cos^2\theta\)?</p>
+          `,
+          choices: [
+            String.raw`\(\cos^2\theta\)`,
+            String.raw`\(\tan\theta\)`,
+            String.raw`\(\dfrac{\sin\theta}{\cos\theta}\)`,
+            String.raw`\(\sin^2\theta\)`,
+            String.raw`\(\dfrac{1}{\cos^2\theta}\)`,
+            String.raw`\(\sin\theta\cos\theta\)`
+          ]
+        },
+
+        {
+          choiceWrap: false,
+          stem: String.raw`
+            <p>Let \(\theta\) be an acute angle.</p>
+            <p>Which expression is equivalent to \(\dfrac{1-\cos^2\theta}{\cos^2\theta}\)?</p>
+          `,
+          choices: [
+            String.raw`\(\sin\theta\cos\theta\)`,
+            String.raw`\(\dfrac{1}{\tan\theta}\)`,
+            String.raw`\(\sin^2\theta\)`,
+            String.raw`\(\cos^2\theta\)`,
+            String.raw`\(\tan^2\theta\)`,
+            String.raw`\(\dfrac{1}{\cos^2\theta}\)`
+          ]
+        },
+
+        {
+          choiceWrap: false,
+          stem: String.raw`
+            <p>Let \(\theta\) be an acute angle. Suppose \(\sin\theta+\cos\theta=\dfrac{7}{5}\).</p>
+            <p>Determine \(\sin\theta\cos\theta\).</p>
+          `,
+          choices: [
+            String.raw`\(\dfrac{7}{25}\)`,
+            String.raw`\(\dfrac{12}{25}\)`,
+            String.raw`\(\dfrac{24}{25}\)`,
+            String.raw`\(\dfrac{1}{2}\)`,
+            String.raw`\(\dfrac{2}{5}\)`,
+            String.raw`\(\dfrac{6}{25}\)`
+          ]
+        },
+
+        {
+          choiceWrap: false,
+          stem: String.raw`
+            <p>A regular hexagon is inscribed in a circle of radius \(8\) cm.</p>
+            <p>Using the sine of the central angle, determine the area of the hexagon.</p>
+          `,
+          choices: [
+            String.raw`\(64\sqrt{3}\) cm<sup>2</sup>`,
+            String.raw`\(48\sqrt{3}\) cm<sup>2</sup>`,
+            String.raw`\(128\sqrt{3}\) cm<sup>2</sup>`,
+            String.raw`\(192\sqrt{3}\) cm<sup>2</sup>`,
+            String.raw`\(72\sqrt{3}\) cm<sup>2</sup>`,
+            String.raw`\(96\sqrt{3}\) cm<sup>2</sup>`
+          ]
+        },
+
+        {
+          choiceWrap: false,
+          stem: String.raw`
+            <p>A regular pentagon is inscribed in a circle of radius \(10\) cm.</p>
+            <p>Which expression gives its area using the sine of the central angle?</p>
+          `,
+          choices: [
+            String.raw`\(\dfrac{5}{2}\cdot 10\cdot \sin 72^\circ\) cm<sup>2</sup>`,
+            String.raw`\(\dfrac{1}{2}\cdot 10^2\cdot \sin 72^\circ\) cm<sup>2</sup>`,
+            String.raw`\(250\sin 72^\circ\) cm<sup>2</sup>`,
+            String.raw`\(500\sin 36^\circ\) cm<sup>2</sup>`,
+            String.raw`\(100\sin 72^\circ\) cm<sup>2</sup>`,
+            String.raw`\(50\sin 72^\circ\) cm<sup>2</sup>`
+          ]
+        },
+
+        {
+          choiceWrap: false,
+          stem: String.raw`
+            <p>A regular decagon is inscribed in a circle of radius \(R\).</p>
+            <p>Its area is \(150\sin 36^\circ\) cm<sup>2</sup>.</p>
+            <p>Determine \(R\).</p>
+          `,
+          choices: [
+            String.raw`\(\sqrt{30}\) cm`,
+            String.raw`\(\sqrt{15}\) cm`,
+            String.raw`\(3\sqrt{5}\) cm`,
+            String.raw`\(5\sqrt{2}\) cm`,
+            String.raw`\(\sqrt{20}\) cm`,
+            String.raw`\(6\) cm`
+          ]
+        },
+
+        {
+          choiceWrap: false,
+          stem: String.raw`
+            <p>A regular hexagon has apothem \(3\sqrt{3}\) cm.</p>
+            <p>Determine its area.</p>
+          `,
+          choices: [
+            String.raw`\(27\sqrt{3}\) cm<sup>2</sup>`,
+            String.raw`\(36\sqrt{3}\) cm<sup>2</sup>`,
+            String.raw`\(72\) cm<sup>2</sup>`,
+            String.raw`\(54\sqrt{3}\) cm<sup>2</sup>`,
+            String.raw`\(108\) cm<sup>2</sup>`,
+            String.raw`\(18\sqrt{3}\) cm<sup>2</sup>`
+          ]
+        }
+
+      ]
+    };
+  </script>
+
+  <link rel="stylesheet" href="/math-homework/assets/core-rich.css" />
+  <script defer src="/math-homework/assets/core-rich.js"></script>
+  <script defer src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+</head>
+
+<body>
+  <div id="hw-root">Loading…</div>
+</body>
+</html>
