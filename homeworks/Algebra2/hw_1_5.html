@@ -1,0 +1,232 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Homework 1-5 (Algebra II)</title>
+
+  <script>
+    /* =========================
+       Homework 1-5 — Factoring Completely (Algebra II)
+       Adapted for: /math-homework/assets/core-rich.js
+
+       REQUIRED SOURCE REFERENCES (your provided sets):
+       - Type A uses A. Exercises: #2, #5, #9, #10, #11
+       - Type B uses B. Exercises: #12, #14, #19, #23, #24
+       - Type C uses C. Exercises: #25, #27
+
+       MODEL REWORK / PEDAGOGICAL EDITING:
+       - All items were rewritten into multiple-choice form.
+       - Distractors were intentionally designed to diagnose common factoring errors:
+         stopping too early, missing a greatest common factor, sign mistakes in special products,
+         and failing to continue factoring after an initial correct step.
+       - No fully model-authored source-free problems were added.
+
+       IMAGE NAMING RULE (STRICT):
+       - No figures are used in this homework.
+       ========================= */
+
+    window.homeworkData = {
+      classId : "Algebra2",
+      id      : "Homework 1-5",
+      title   : "Homework 1-5 — Factoring Completely",
+      graphics: String.raw``,
+
+      answerKey : ["B","A","A","C","B","B","C","B","B","B","B","B"],
+
+      questions : [
+        /* Source: A. Exercise #2 */
+        {
+          stem: String.raw`
+            <p>Which expression is the complete factorization of \(2a^3b^2 - 3a^2b^3\)?</p>
+          `,
+          choices: [
+            String.raw`\(ab^2(2a^2-3ab)\)`,
+            String.raw`\(a^2b^2(2a-3b)\)`,
+            String.raw`\(a^2b(2ab-3b^2)\)`,
+            String.raw`\(a^2b^2(2a+3b)\)`,
+            String.raw`\(ab(2a^2b-3ab^2)\)`,
+            String.raw`\(a^2b^2(2a-3b^2)\)`
+          ]
+        },
+
+        /* Source: A. Exercise #5 */
+        {
+          stem: String.raw`
+            <p>Choose the complete factorization of \(x^2 - 81\).</p>
+          `,
+          choices: [
+            String.raw`\((x-9)(x+9)\)`,
+            String.raw`\((x-81)(x+1)\)`,
+            String.raw`\((x-3)(x+27)\)`,
+            String.raw`\((x-9)^2\)`,
+            String.raw`Prime over the integers`,
+            String.raw`\((x^2-9)(x^2+9)\)`
+          ],
+          choiceWrap: false
+        },
+
+        /* Source: A. Exercise #9 */
+        {
+          stem: String.raw`
+            <p>Which choice gives the complete factorization of \(25x^2 - 4y^2\)?</p>
+          `,
+          choices: [
+            String.raw`\((5x-2y)(5x+2y)\)`,
+            String.raw`\((25x-4y)(x+y)\)`,
+            String.raw`\((5x-2y)^2\)`,
+            String.raw`\((25x^2-2y)(2y+1)\)`,
+            String.raw`\((5x-y)(5x+y)\)`,
+            String.raw`Prime over the integers`
+          ],
+          choiceWrap: false
+        },
+
+        /* Source: A. Exercise #10 */
+        {
+          stem: String.raw`
+            <p>Factor completely: \(3x^2 - 108\).</p>
+          `,
+          choices: [
+            String.raw`\(3(x^2-36)\)`,
+            String.raw`\(3(x-6)^2\)`,
+            String.raw`\(3(x-6)(x+6)\)`,
+            String.raw`\(6(x-3)(x+3)\)`,
+            String.raw`\(3(x-12)(x+9)\)`,
+            String.raw`\(3(x+6)^2\)`
+          ]
+        },
+
+        /* Source: A. Exercise #11 */
+        {
+          stem: String.raw`
+            <p>Which expression is the complete factorization of \(2x^3 - 8x\)?</p>
+          `,
+          choices: [
+            String.raw`\(2x(x^2-4)\)`,
+            String.raw`\(2x(x-2)(x+2)\)`,
+            String.raw`\(2(x^3-4x)\)`,
+            String.raw`\(x(2x-8)\)`,
+            String.raw`\(2(x-2)^2(x+2)\)`,
+            String.raw`\(2x(x-4)(x+1)\)`
+          ]
+        },
+
+        /* Source: B. Exercise #12 */
+        {
+          stem: String.raw`
+            <p>Choose the complete factorization of \(x^3 - 8\).</p>
+          `,
+          choices: [
+            String.raw`\((x-2)(x^2+4)\)`,
+            String.raw`\((x-2)(x^2+2x+4)\)`,
+            String.raw`\((x-2)(x^2-2x+4)\)`,
+            String.raw`\((x+2)(x^2-2x+4)\)`,
+            String.raw`\((x-8)(x^2+1)\)`,
+            String.raw`Prime over the integers`
+          ],
+          choiceWrap: false
+        },
+
+        /* Source: B. Exercise #14 */
+        {
+          stem: String.raw`
+            <p>Factor completely: \(ax^3 + 27a\).</p>
+          `,
+          choices: [
+            String.raw`\(a(x+3)(x^2+3x+9)\)`,
+            String.raw`\(a(x^3+27)\)`,
+            String.raw`\(a(x+3)(x^2-3x+9)\)`,
+            String.raw`\((ax+3)(x^2-3x+9)\)`,
+            String.raw`\(a(x-3)(x^2+3x+9)\)`,
+            String.raw`\(27a(x^3+1)\)`
+          ]
+        },
+
+        /* Source: B. Exercise #19 */
+        {
+          stem: String.raw`
+            <p>Which expression gives the complete factorization of \(x^5 - 64x^2\)?</p>
+          `,
+          choices: [
+            String.raw`\(x^2(x^3-64)\)`,
+            String.raw`\(x^2(x-4)(x^2+4x+16)\)`,
+            String.raw`\(x(x^4-64x)\)`,
+            String.raw`\(x^2(x-4)^3\)`,
+            String.raw`\(x^2(x+4)(x^2-4x+16)\)`,
+            String.raw`\(x^2(x-8)(x^2+8x+64)\)`
+          ]
+        },
+
+        /* Source: B. Exercise #23 */
+        {
+          stem: String.raw`
+            <p>Choose the complete factorization of \(288a^5 - 200a^3\).</p>
+          `,
+          choices: [
+            String.raw`\(8a^3(36a^2-25)\)`,
+            String.raw`\(8a^3(6a-5)(6a+5)\)`,
+            String.raw`\(8a^3(18a-5)(2a+5)\)`,
+            String.raw`\(16a^3(18a^2-25)\)`,
+            String.raw`\(8a(6a-5)(6a+5)\)`,
+            String.raw`\(8a^3(6a^2-5)(6a^2+5)\)`
+          ]
+        },
+
+        /* Source: B. Exercise #24 */
+        {
+          stem: String.raw`
+            <p>Factor completely: \(x^4 - 1\).</p>
+          `,
+          choices: [
+            String.raw`\((x^2-1)(x^2+1)\)`,
+            String.raw`\((x-1)(x+1)(x^2+1)\)`,
+            String.raw`\((x-1)^2(x+1)^2\)`,
+            String.raw`\((x^2+1)^2\)`,
+            String.raw`\((x-1)(x^3+1)\)`,
+            String.raw`Prime over the integers`
+          ],
+          choiceWrap: false
+        },
+
+        /* Source: C. Exercise #25 */
+        {
+          stem: String.raw`
+            <p>Which choice gives the complete factorization of \(x^6 - y^6\)?</p>
+          `,
+          choices: [
+            String.raw`\((x^3-y^3)(x^3+y^3)\)`,
+            String.raw`\((x-y)(x+y)(x^2+xy+y^2)(x^2-xy+y^2)\)`,
+            String.raw`\((x-y)^2(x+y)^2(x^2+y^2)\)`,
+            String.raw`\((x^2-y^2)(x^4+y^4)\)`,
+            String.raw`\((x-y)(x^5+y^5)\)`,
+            String.raw`\((x-y)(x+y)(x^4+x^2y^2+y^4)\)`
+          ]
+        },
+
+        /* Source: C. Exercise #27 */
+        {
+          stem: String.raw`
+            <p>Choose the complete factorization over the integers of \(x^{12} - 1\).</p>
+          `,
+          choices: [
+            String.raw`\((x^6-1)(x^6+1)\)`,
+            String.raw`\((x-1)(x+1)(x^2+x+1)(x^2-x+1)(x^2+1)(x^4-x^2+1)\)`,
+            String.raw`\((x^2-1)(x^4+x^2+1)(x^6+1)\)`,
+            String.raw`\((x-1)(x+1)(x^4+1)(x^6+1)\)`,
+            String.raw`\((x-1)(x+1)(x^2+1)(x^2+x+1)(x^2-x+1)(x^4+x^2+1)\)`,
+            String.raw`\((x^3-1)(x^3+1)(x^6+1)\)`
+          ]
+        }
+      ]
+    };
+  </script>
+
+  <link rel="stylesheet" href="/math-homework/assets/core-rich.css" />
+  <script defer src="/math-homework/assets/core-rich.js"></script>
+  <script defer src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+</head>
+<body>
+  <div id="hw-root">Loading…</div>
+</body>
+</html>

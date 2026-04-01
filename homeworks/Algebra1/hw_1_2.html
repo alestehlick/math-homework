@@ -1,0 +1,212 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Homework 1-2 (Algebra I)</title>
+
+  <script>
+    /* =========================
+       Homework 1-2 — Opposites, Absolute Value, and Integer Operations (Algebra I)
+       Adapted for: /math-homework/assets/core-rich.js
+
+       REQUIRED SOURCE REFERENCES (your provided sets):
+       - Type A uses A. Exercises: #1, #4, #8, #13, #15
+       - Type B uses B. Exercises: #25, #26, #28, #31, #32
+       - Type C uses C. Exercises: #33, #34
+
+       IMAGE NAMING RULE (STRICT):
+       No external PNG files are required for this homework.
+       If external figure files were later added, they would follow the rule:
+       <HW-ID>-<ORIGINAL-PROBLEM-NUMBER>.png
+
+       MODEL REWORK NOTES:
+       - Q3 is a reworked version of A #4, written backward so students must recognize that
+         "opposite of" is a reversible relationship rather than just apply a sign flip mechanically.
+       - Q9 is a re-authored conceptual version of B #31, designed to bring out the invariant
+         relationship between a number and its opposite under absolute value.
+       - Q10 is a generalized version of B #32 using a variable, so students must notice the
+         structural fact instead of relying on a particular numerical example.
+       ========================= */
+
+    window.homeworkData = {
+      classId : "Algebra1",
+      id      : "Homework 1-2",
+      title   : "Homework 1-2 — Opposites, Absolute Value, and Integer Operations",
+      graphics: String.raw``,
+      answerKey : ["A","C","B","D","A","F","B","E","C","A","D","F"],
+      questions : [
+        {
+          stem: String.raw`
+            <p>Find the opposite of the integer \(38\).</p>
+          `,
+          choices: [
+            String.raw`\(-38\)`,
+            String.raw`\(38\)`,
+            String.raw`\(-37\)`,
+            String.raw`\(37\)`,
+            String.raw`\(0\)`,
+            String.raw`\(-76\)`
+          ]
+        },
+        {
+          stem: String.raw`
+            <p>Find the opposite of the integer \(-3247\).</p>
+          `,
+          choices: [
+            String.raw`\(-3247\)`,
+            String.raw`\(0\)`,
+            String.raw`\(3247\)`,
+            String.raw`\(3237\)`,
+            String.raw`\(-3237\)`,
+            String.raw`\(6494\)`
+          ]
+        },
+        {
+          stem: String.raw`
+            <p>The opposite of a number is \(-56\).</p>
+            <p>What is the number?</p>
+          `,
+          choices: [
+            String.raw`\(-56\)`,
+            String.raw`\(56\)`,
+            String.raw`\(0\)`,
+            String.raw`\(112\)`,
+            String.raw`\(-112\)`,
+            String.raw`\(55\)`
+          ]
+        },
+        {
+          stem: String.raw`
+            <p>Find the absolute value of \(-382\).</p>
+          `,
+          choices: [
+            String.raw`\(-382\)`,
+            String.raw`\(0\)`,
+            String.raw`\(38\)`,
+            String.raw`\(382\)`,
+            String.raw`\(384\)`,
+            String.raw`\(-38\)`
+          ]
+        },
+        {
+          stem: String.raw`
+            <p>Find the absolute value of \(0\).</p>
+          `,
+          choices: [
+            String.raw`\(0\)`,
+            String.raw`\(1\)`,
+            String.raw`\(-1\)`,
+            String.raw`\(10\)`,
+            String.raw`\(-10\)`,
+            String.raw`undefined`
+          ],
+          choiceWrap: false
+        },
+        {
+          stem: String.raw`
+            <p>Evaluate \(\lvert -12 \rvert + \lvert 3 \rvert\).</p>
+          `,
+          choices: [
+            String.raw`\(-15\)`,
+            String.raw`\(9\)`,
+            String.raw`\(36\)`,
+            String.raw`\(12\)`,
+            String.raw`\(3\)`,
+            String.raw`\(15\)`
+          ]
+        },
+        {
+          stem: String.raw`
+            <p>Evaluate \(\lvert -9 \rvert + \lvert -4 \rvert\).</p>
+          `,
+          choices: [
+            String.raw`\(5\)`,
+            String.raw`\(13\)`,
+            String.raw`\(-13\)`,
+            String.raw`\(36\)`,
+            String.raw`\(9\)`,
+            String.raw`\(4\)`
+          ]
+        },
+        {
+          stem: String.raw`
+            <p>Evaluate \(\lvert -25 \rvert + \lvert 30 \rvert\).</p>
+          `,
+          choices: [
+            String.raw`\(5\)`,
+            String.raw`\(-55\)`,
+            String.raw`\(750\)`,
+            String.raw`\(30\)`,
+            String.raw`\(55\)`,
+            String.raw`\(25\)`
+          ]
+        },
+        {
+          stem: String.raw`
+            <p>Let \(a\) be any integer.</p>
+            <p>Which statement is always true?</p>
+          `,
+          choices: [
+            String.raw`<span>\(\lvert a \rvert = -\lvert a \rvert\)</span>`,
+            String.raw`<span>\(\lvert a \rvert\) is always greater than \(\lvert -a \rvert\)</span>`,
+            String.raw`<span>The absolute values of \(a\) and \(-a\) are equal.</span>`,
+            String.raw`<span>One of \(\lvert a \rvert\) or \(\lvert -a \rvert\) must be negative.</span>`,
+            String.raw`<span>The absolute values of \(a\) and \(-a\) are opposites.</span>`,
+            String.raw`<span>\(\lvert a \rvert = \lvert -a \rvert\) only when \(a\) is positive.</span>`
+          ],
+          choiceWrap: false
+        },
+        {
+          stem: String.raw`
+            <p>Let \(n\) be any integer.</p>
+            <p>Find the value of \(\lvert n \rvert - \lvert -n \rvert\).</p>
+          `,
+          choices: [
+            String.raw`\(0\)`,
+            String.raw`\(n\)`,
+            String.raw`\(-n\)`,
+            String.raw`\(2\lvert n \rvert\)`,
+            String.raw`\(-2\lvert n \rvert\)`,
+            String.raw`depends on \(n\)`
+          ],
+          choiceWrap: false
+        },
+        {
+          stem: String.raw`
+            <p>Evaluate \(\lvert 18 - 7 \rvert - \lvert -4 \rvert + \lvert 2 - 5 \rvert\).</p>
+          `,
+          choices: [
+            String.raw`\(4\)`,
+            String.raw`\(18\)`,
+            String.raw`\(-10\)`,
+            String.raw`\(10\)`,
+            String.raw`\(14\)`,
+            String.raw`\(2\)`
+          ]
+        },
+        {
+          stem: String.raw`
+            <p>Evaluate \(\lvert -12 - 5 \rvert - \lvert -12 \rvert - \lvert 5 \rvert\).</p>
+          `,
+          choices: [
+            String.raw`\(17\)`,
+            String.raw`\(-17\)`,
+            String.raw`\(10\)`,
+            String.raw`\(-10\)`,
+            String.raw`\(5\)`,
+            String.raw`\(0\)`
+          ]
+        }
+      ]
+    };
+  </script>
+
+  <link rel="stylesheet" href="/math-homework/assets/core-rich.css" />
+  <script defer src="/math-homework/assets/core-rich.js"></script>
+  <script defer src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+</head>
+<body>
+  <div id="hw-root">Loading…</div>
+</body>
+</html>

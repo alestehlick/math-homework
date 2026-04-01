@@ -1,0 +1,230 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Homework 1-4 (Algebra II)</title>
+
+  <script>
+    /* =========================
+       Homework 1-4 — Dividing Monomials and Polynomials
+       Adapted for: /math-homework/assets/core-rich.js
+
+       REQUIRED SOURCE REFERENCES (your provided sets):
+       - Type A uses A. Exercises: #1, #3, #6, #7, #10
+       - Type B uses B. Exercises: #12, #15, #16, #22, #23
+       - Type C uses C. Exercises: #26, #27
+       - No substantially model-authored extension items were added. Source items were selected and lightly reworded
+         to emphasize exponent subtraction, term-by-term division, exact polynomial division, structural recognition
+         of factorable cases, and quotient-plus-remainder form.
+
+       IMAGE NAMING RULE:
+       No figures are required for this homework.
+       If a figure were used, it would be named with the original source problem number:
+       <HW-ID>-<ORIGINAL-PROBLEM-NUMBER>.png
+       ========================= */
+
+    window.homeworkData = {
+      classId : "Algebra2",
+      id      : "Homework 1-4",
+      title   : "Homework 1-4 — Dividing Monomials and Polynomials",
+
+      graphics : String.raw``,
+
+      answerKey : ["D","A","B","E","C","C","A","F","D","B","A","E"],
+
+      questions : [
+
+        {
+          stem: String.raw`
+            <p>Simplify the expression. Write the answer with positive exponents.</p>
+            <p class="math">\(a^3bc^4 \div ab^3c\)</p>
+          `,
+          choices: [
+            String.raw`\(a^2c^4 \div b^2\)`,
+            String.raw`\(a^2c^3 \div b\)`,
+            String.raw`\(a^2b^2c^3\)`,
+            String.raw`\(a^2c^3 \div b^2\)`,
+            String.raw`\(a^3c^3 \div b^2\)`,
+            String.raw`\(c^3 \div b^2\)`
+          ]
+        },
+
+        {
+          stem: String.raw`
+            <p>Simplify the expression. Write the answer with positive exponents.</p>
+            <p class="math">\(8x^2y^5 \div 2x^3y^3\)</p>
+          `,
+          choices: [
+            String.raw`\(4y^2 \div x\)`,
+            String.raw`\(4xy^2\)`,
+            String.raw`\(4x \div y^2\)`,
+            String.raw`\(6y^2 \div x\)`,
+            String.raw`\(4x^{-1}y^2\)`,
+            String.raw`\(4y^3 \div x\)`
+          ]
+        },
+
+        {
+          stem: String.raw`
+            <p>Divide each term by the monomial and simplify.</p>
+            <p class="math">\((7a^3b + 2a^2b^2 - 6ab^3) \div (2ab)\)</p>
+          `,
+          choices: [
+            String.raw`\(7a^2 + ab - 3b^2\)`,
+            String.raw`\(\frac{7a^2}{2} + ab - 3b^2\)`,
+            String.raw`\(\frac{7a^2}{2} + b - 3ab^2\)`,
+            String.raw`\(\frac{7a^2}{2} + ab - 3b^3\)`,
+            String.raw`\(7a^2 + 2ab - 6b^2\)`,
+            String.raw`\(\frac{7a^2}{2} + a - 3b^2\)`
+          ]
+        },
+
+        {
+          stem: String.raw`
+            <p>Divide each term by the monomial and simplify.</p>
+            <p class="math">\((15c^4dk^3 - 5c^2dk + 40c^8dk^3) \div (5cdk)\)</p>
+          `,
+          choices: [
+            String.raw`\(3c^3k^3 - c + 8c^7k^2\)`,
+            String.raw`\(3c^3k^2 - c + 8c^7k^3\)`,
+            String.raw`\(3c^4k^2 - c + 8c^8k^2\)`,
+            String.raw`\(3c^3k^2 - 1 + 8c^7k^2\)`,
+            String.raw`\(3c^3k^2 - c + 8c^7k^2\)`,
+            String.raw`\(3c^3k^2 + c + 8c^7k^2\)`
+          ]
+        },
+
+        {
+          stem: String.raw`
+            <p>Divide each term by the monomial and simplify.</p>
+            <p class="math">\((9x^3yz^4 + 27xyz) \div (3xyz)\)</p>
+          `,
+          choices: [
+            String.raw`\(3x^2z + 9\)`,
+            String.raw`\(3x^3z^3 + 9\)`,
+            String.raw`\(3x^2z^3 + 9\)`,
+            String.raw`\(3x^2z^3 + \frac{9}{z}\)`,
+            String.raw`\(3x^2z^4 + 9\)`,
+            String.raw`\(3x^2z^3 + 9xyz\)`
+          ]
+        },
+
+        {
+          stem: String.raw`
+            <p>Divide and simplify.</p>
+            <p class="math">\((x^2 - 6x - 16) \div (x + 2)\)</p>
+          `,
+          choices: [
+            String.raw`\(x + 8\)`,
+            String.raw`\(x - 4\)`,
+            String.raw`\(x - 8\)`,
+            String.raw`\(x - 10\)`,
+            String.raw`\(x^2 - 8\)`,
+            String.raw`\(x + 10\)`
+          ]
+        },
+
+        {
+          stem: String.raw`
+            <p>Divide and simplify.</p>
+            <p class="math">\((x^2y - 7xy - 30y) \div (x + 3)\)</p>
+          `,
+          choices: [
+            String.raw`\(xy - 10y\)`,
+            String.raw`\(xy + 10y\)`,
+            String.raw`\(y(x - 7)\)`,
+            String.raw`\(x - 10y\)`,
+            String.raw`\(xy - 27y\)`,
+            String.raw`\(x(x - 10)y\)`
+          ]
+        },
+
+        {
+          stem: String.raw`
+            <p>Divide and simplify.</p>
+            <p class="math">\((x^2 - y^2) \div (x + y)\)</p>
+          `,
+          choices: [
+            String.raw`\(x + y\)`,
+            String.raw`\(x^2 - y\)`,
+            String.raw`\(x - y^2\)`,
+            String.raw`\(1\)`,
+            String.raw`\(\frac{x - y}{x + y}\)`,
+            String.raw`\(x - y\)`
+          ]
+        },
+
+        {
+          stem: String.raw`
+            <p>Divide and simplify.</p>
+            <p class="math">\((12y^2 + 26y - 10) \div (2y + 5)\)</p>
+          `,
+          choices: [
+            String.raw`\(6y + 2\)`,
+            String.raw`\(12y - 2\)`,
+            String.raw`\(6y - 5\)`,
+            String.raw`\(6y - 2\)`,
+            String.raw`\(6y - 1\)`,
+            String.raw`\(3y - 2\)`
+          ]
+        },
+
+        {
+          stem: String.raw`
+            <p>Divide and simplify.</p>
+            <p class="math">\((x^2 - 4x - 21) \div (x + 3)\)</p>
+          `,
+          choices: [
+            String.raw`\(x + 7\)`,
+            String.raw`\(x - 7\)`,
+            String.raw`\(x - 3\)`,
+            String.raw`\(x + 3\)`,
+            String.raw`\(x - 21\)`,
+            String.raw`\(x - 1\)`
+          ]
+        },
+
+        {
+          stem: String.raw`
+            <p>Divide. Write any remainder as a fraction.</p>
+            <p class="math">\((3x^3 - 5x^2 + 7x - 9) \div (x^2 - 2)\)</p>
+          `,
+          choices: [
+            String.raw`\(3x - 5 + \frac{13x - 19}{x^2 - 2}\)`,
+            String.raw`\(3x - 5 + \frac{13x + 19}{x^2 - 2}\)`,
+            String.raw`\(3x + 5 + \frac{13x - 19}{x^2 - 2}\)`,
+            String.raw`\(3x - 5 + \frac{13x - 19}{x - 2}\)`,
+            String.raw`\(3x - 5 + \frac{13 - 19x}{x^2 - 2}\)`,
+            String.raw`\(3x - 5 + \frac{13x - 9}{x^2 - 2}\)`
+          ]
+        },
+
+        {
+          stem: String.raw`
+            <p>Divide. Write any remainder as a fraction.</p>
+            <p class="math">\((4x^4 - 2x + 7) \div (2x + 3)\)</p>
+          `,
+          choices: [
+            String.raw`\(2x^3 - 3x^2 + \frac{9}{2}x + \frac{31}{4} + \frac{121}{4(2x + 3)}\)`,
+            String.raw`\(2x^3 - 3x^2 + \frac{9}{2}x - \frac{31}{4} + \frac{121}{2x + 3}\)`,
+            String.raw`\(2x^3 + 3x^2 + \frac{9}{2}x - \frac{31}{4} + \frac{121}{4(2x + 3)}\)`,
+            String.raw`\(2x^3 - 3x^2 + 9x - \frac{31}{4} + \frac{121}{4(2x + 3)}\)`,
+            String.raw`\(2x^3 - 3x^2 + \frac{9}{2}x - \frac{31}{4} + \frac{121}{4(2x + 3)}\)`,
+            String.raw`\(2x^3 - 3x^2 + \frac{9}{2}x - \frac{31}{4}\)`
+          ]
+        }
+
+      ]
+    };
+  </script>
+
+  <link rel="stylesheet" href="/math-homework/assets/core-rich.css" />
+  <script defer src="/math-homework/assets/core-rich.js"></script>
+  <script defer src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+</head>
+
+<body>
+  <div id="hw-root">Loading…</div>
+</body>
+</html>
