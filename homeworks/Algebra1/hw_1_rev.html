@@ -1,0 +1,223 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Homework 1-Review (Algebra 1)</title>
+
+  <script>
+    /* =========================
+       Homework 1-Review — Chapter 1 Review
+       Adapted for: /math-homework/assets/core-rich.js
+
+       REQUIRED SOURCE REFERENCES (your provided sets):
+       - Review uses source items: #4, #6, #7, #12, #15, #19, #21, #24, #26, #30, #37, #39
+       - Model reworking: Q2 combines review items #6 and #7 into one diagnostic question about opposites and absolute value.
+       - Model reworking: Q10 turns the property-matching list into a direct recognition question so students must connect the symbolic statement to the correct property name.
+       - Model-authored extension: the order of questions has been redesigned to move from location and signed-number ideas into operations, exponents, factoring, GCF/LCM, and symbolic translation across the whole chapter.
+
+       IMAGE NAMING RULE (STRICT):
+       - No figures are required for this homework.
+       ========================= */
+
+    window.homeworkData = {
+      classId : "Algebra1",
+      id      : "Homework 1-Review",
+      title   : "Homework 1-Review — Chapter 1 Review",
+
+      graphics : String.raw``,
+
+      answerKey : ["D","C","B","A","B","D","A","D","C","D","B","C"],
+
+      questions : [
+
+        {
+          stem: String.raw`
+            <p>Find the coordinate of the midpoint of the segment joining \(-3\) and \(7\).</p>
+          `,
+          choices: [
+            String.raw`\(-10\)`,
+            String.raw`\(-2\)`,
+            String.raw`\(0\)`,
+            String.raw`\(2\)`,
+            String.raw`\(4\)`,
+            String.raw`\(7\)`
+          ]
+        },
+
+        {
+          stem: String.raw`
+            <p>Which ordered pair gives, in this order, the opposite of \(-10\) and the absolute value of \(-13\)?</p>
+          `,
+          choices: [
+            String.raw`\((-10,-13)\)`,
+            String.raw`\((10,-13)\)`,
+            String.raw`\((10,13)\)`,
+            String.raw`\((-10,13)\)`,
+            String.raw`\((13,10)\)`,
+            String.raw`\((-13,10)\)`
+          ]
+        },
+
+        {
+          stem: String.raw`
+            <p>Simplify.</p>
+            <p class="math">\((-2)^3\)</p>
+          `,
+          choices: [
+            String.raw`\(8\)`,
+            String.raw`\(-8\)`,
+            String.raw`\(6\)`,
+            String.raw`\(-6\)`,
+            String.raw`\(1\)`,
+            String.raw`\(-1\)`
+          ]
+        },
+
+        {
+          stem: String.raw`
+            <p>Simplify.</p>
+            <p class="math">\((-37)(-12)\)</p>
+          `,
+          choices: [
+            String.raw`\(444\)`,
+            String.raw`\(-444\)`,
+            String.raw`\(49\)`,
+            String.raw`\(-49\)`,
+            String.raw`\(324\)`,
+            String.raw`\(-324\)`
+          ]
+        },
+
+        {
+          stem: String.raw`
+            <p>Evaluate.</p>
+            <p class="math">\(15^0\)</p>
+          `,
+          choices: [
+            String.raw`\(0\)`,
+            String.raw`\(1\)`,
+            String.raw`\(15\)`,
+            String.raw`\(15^1\)`,
+            String.raw`\(-1\)`,
+            String.raw`undefined`
+          ],
+          choiceWrap: false
+        },
+
+        {
+          stem: String.raw`
+            <p>Perform the indicated operation and leave the answer in exponential form.</p>
+            <p class="math">\(4^5 \cdot 4^8 \div 4^2\)</p>
+          `,
+          choices: [
+            String.raw`\(4^1\)`,
+            String.raw`\(4^6\)`,
+            String.raw`\(4^{10}\)`,
+            String.raw`\(4^{11}\)`,
+            String.raw`\(4^{15}\)`,
+            String.raw`\(16^{11}\)`
+          ]
+        },
+
+        {
+          stem: String.raw`
+            <p>Give the prime factorization of \(210\).</p>
+          `,
+          choices: [
+            String.raw`\(2 \cdot 3 \cdot 5 \cdot 7\)`,
+            String.raw`\(2^2 \cdot 3 \cdot 5 \cdot 7\)`,
+            String.raw`\(3 \cdot 5 \cdot 14\)`,
+            String.raw`\(2 \cdot 3^2 \cdot 5 \cdot 7\)`,
+            String.raw`\(2 \cdot 5 \cdot 21\)`,
+            String.raw`\(2 \cdot 3 \cdot 35\)`
+          ]
+        },
+
+        {
+          stem: String.raw`
+            <p>Find the least common multiple of the numbers.</p>
+            <p class="math">\(9\) and \(24\)</p>
+          `,
+          choices: [
+            String.raw`\(24\)`,
+            String.raw`\(36\)`,
+            String.raw`\(48\)`,
+            String.raw`\(72\)`,
+            String.raw`\(108\)`,
+            String.raw`\(216\)`
+          ]
+        },
+
+        {
+          stem: String.raw`
+            <p>Find the greatest common factor of the numbers.</p>
+            <p class="math">\(270\) and \(330\)</p>
+          `,
+          choices: [
+            String.raw`\(10\)`,
+            String.raw`\(15\)`,
+            String.raw`\(30\)`,
+            String.raw`\(45\)`,
+            String.raw`\(60\)`,
+            String.raw`\(90\)`
+          ]
+        },
+
+        {
+          stem: String.raw`
+            <p>Which property does the statement \(a + (-a) = 0\) describe?</p>
+          `,
+          choices: [
+            String.raw`associative property of addition`,
+            String.raw`identity property of addition`,
+            String.raw`distributive property`,
+            String.raw`additive inverse property`,
+            String.raw`commutative property of multiplication`,
+            String.raw`zero property of multiplication`
+          ],
+          choiceWrap: false
+        },
+
+        {
+          stem: String.raw`
+            <p>Translate the phrase into symbols. Do not simplify.</p>
+            <p><i>Eight less than five</i></p>
+          `,
+          choices: [
+            String.raw`\(8 - 5\)`,
+            String.raw`\(5 - 8\)`,
+            String.raw`\(5 + 8\)`,
+            String.raw`\(-(8 + 5)\)`,
+            String.raw`\(8 + (-5)\)`,
+            String.raw`\(5 - (-8)\)`
+          ]
+        },
+
+        {
+          stem: String.raw`
+            <p>Translate the phrase into symbols. Do not simplify.</p>
+            <p><i>The sum of four and the square of nine</i></p>
+          `,
+          choices: [
+            String.raw`\((4 + 9)^2\)`,
+            String.raw`\(4^2 + 9\)`,
+            String.raw`\(4 + 9^2\)`,
+            String.raw`\(9(4 + 9)\)`,
+            String.raw`\(4 \cdot 9^2\)`,
+            String.raw`\(4^2 + 9^2\)`
+          ]
+        }
+
+      ]
+    };
+  </script>
+
+  <link rel="stylesheet" href="/math-homework/assets/core-rich.css" />
+  <script defer src="/math-homework/assets/core-rich.js"></script>
+  <script defer src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+</head>
+<body>
+  <div id="hw-root">Loading…</div>
+</body>
+</html>

@@ -1,0 +1,257 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Homework 2-7 (Algebra II)</title>
+
+  <script>
+    /* =========================
+       Homework 2-7 — Compound Inequalities (Algebra II)
+       Adapted for: /math-homework/assets/core-rich.js
+
+       REQUIRED SOURCE REFERENCES (your provided sets):
+       - Type A uses A. Exercises: #1, #2, #6, #7, #8
+       - Type B uses B. Exercises: #11, #13, #14, #15, #17
+       - Type C uses C. Exercises: #18, #19
+
+       MODEL REWORK / PEDAGOGICAL EDITING:
+       - All selected items were rewritten into multiple-choice form.
+       - The sequence is arranged to surface the main logical contrasts of this section:
+         union versus intersection, redundant conditions, impossible conditions,
+         solution sets that produce all real numbers, and chained inequalities.
+       - The final two questions convert the parameter exercise into a structured
+         case-analysis task so students must attend to how the relation between
+         b and c changes the solution set when a > 0.
+       - No figures are used in this homework.
+
+       IMAGE NAMING RULE (STRICT):
+       - No figures are used in this homework.
+       ========================= */
+
+    window.homeworkData = {
+      classId : "Algebra2",
+      id      : "Homework 2-7",
+      title   : "Homework 2-7 — Compound Inequalities",
+      graphics: String.raw``,
+
+      answerKey : ["C","A","E","B","D","F","A","C","E","B","D","F"],
+
+      questions : [
+        /* Source: A. Exercise #1 */
+        {
+          stem: String.raw`
+            <p>Solve the compound inequality below and choose the matching solution set.</p>
+            <p class="math">\(x &lt; -2\) or \(x \ge 4\)</p>
+          `,
+          choices: [
+            `\((-2, 4)\)`,
+            `\(( -\infty, 4 ]\)`,
+            `\(( -\infty, -2 ) \cup [ 4, \infty )\)`,
+            `\([ -2, 4 )\)`,
+            `All real numbers`,
+            `No solution`
+          ],
+          choiceWrap: false
+        },
+
+        /* Source: A. Exercise #2 */
+        {
+          stem: String.raw`
+            <p>Which inequality is equivalent to the compound inequality below?</p>
+            <p class="math">\(x &gt; -2\) or \(x \ge 4\)</p>
+          `,
+          choices: [
+            `\(x &gt; -2\)`,
+            `\(x \ge 4\)`,
+            `\(-2 &lt; x &lt; 4\)`,
+            `\(x \le -2\) or \(x \ge 4\)`,
+            `All real numbers`,
+            `No solution`
+          ],
+          choiceWrap: false
+        },
+
+        /* Source: A. Exercise #6 */
+        {
+          stem: String.raw`
+            <p>Solve the compound inequality below.</p>
+            <p class="math">\(x &lt; -2\) and \(x \ge 4\)</p>
+          `,
+          choices: [
+            `\(( -\infty, -2 )\)`,
+            `\([ 4, \infty )\)`,
+            `\(( -\infty, -2 ) \cup [ 4, \infty )\)`,
+            `All real numbers`,
+            `No solution`,
+            `\((-2, 4)\)`
+          ],
+          choiceWrap: false
+        },
+
+        /* Source: A. Exercise #7 */
+        {
+          stem: String.raw`
+            <p>Solve the compound inequality below.</p>
+            <p class="math">\(x &gt; -2\) or \(x \le 4\)</p>
+          `,
+          choices: [
+            `\(( -2, 4 ]\)`,
+            `All real numbers`,
+            `\(( -\infty, -2 ] \cup ( 4, \infty )\)`,
+            `\([ -2, 4 ]\)`,
+            `\(( -\infty, 4 ]\)`,
+            `No solution`
+          ],
+          choiceWrap: false
+        },
+
+        /* Source: A. Exercise #8 */
+        {
+          stem: String.raw`
+            <p>Solve the compound inequality.</p>
+            <p class="math">\(3 &lt; x + 2 \le 9\)</p>
+          `,
+          choices: [
+            `\(1 \le x &lt; 7\)`,
+            `\(-1 &lt; x \le 11\)`,
+            `\(x &lt; 7\)`,
+            `\(1 &lt; x \le 7\)`,
+            `\(1 \le x \le 7\)`,
+            `\(x &gt; 1\)`
+          ],
+          choiceWrap: false
+        },
+
+        /* Source: B. Exercise #11 */
+        {
+          stem: String.raw`
+            <p>Solve the compound inequality.</p>
+            <p class="math">\(4x - 9 \le 7\) and \(-3x + 4 \le 16\)</p>
+          `,
+          choices: [
+            `\(( -\infty, 4 ]\)`,
+            `\([ -4, \infty )\)`,
+            `\(( -\infty, -4 ] \cup [ 4, \infty )\)`,
+            `\((-4, 4)\)`,
+            `All real numbers`,
+            `\([ -4, 4 ]\)`
+          ],
+          choiceWrap: false
+        },
+
+        /* Source: B. Exercise #13 */
+        {
+          stem: String.raw`
+            <p>Solve the compound inequality.</p>
+            <p class="math">\(9 \le 2(x + 7) + 3x - 9 &lt; 35\)</p>
+          `,
+          choices: [
+            `\(\dfrac{4}{5} \le x &lt; 6\)`,
+            `\(-\dfrac{4}{5} \le x &lt; 6\)`,
+            `\(\dfrac{4}{5} &lt; x \le 6\)`,
+            `\(x &lt; 6\)`,
+            `\(x \ge \dfrac{4}{5}\)`,
+            `\([ -\dfrac{4}{5}, 6 ]\)`
+          ],
+          choiceWrap: false
+        },
+
+        /* Source: B. Exercise #14 */
+        {
+          stem: String.raw`
+            <p>Solve the compound inequality.</p>
+            <p class="math">\(9(z - 2) + 3(z + 1) \le 4z\) or \(5z - 7 &gt; 2\)</p>
+          `,
+          choices: [
+            `\(z \le \dfrac{15}{8}\)`,
+            `\(z &gt; \dfrac{9}{5}\)`,
+            `All real numbers`,
+            `No solution`,
+            `\(\dfrac{9}{5} &lt; z \le \dfrac{15}{8}\)`,
+            `\(z \le \dfrac{9}{5}\) or \(z &gt; \dfrac{15}{8}\)`
+          ],
+          choiceWrap: false
+        },
+
+        /* Source: B. Exercise #15 */
+        {
+          stem: String.raw`
+            <p>Solve the compound inequality.</p>
+            <p class="math">\(-3x + 9 \ge 15\) or \(5x + 7 - 3x \ge 52 - 5x + 2x\)</p>
+          `,
+          choices: [
+            `\(x \le -2\) and \(x \ge 9\)`,
+            `\((-2, 9)\)`,
+            `\(x &lt; -2\) or \(x &gt; 9\)`,
+            `No solution`,
+            `\(( -\infty, -2 ] \cup [ 9, \infty )\)`,
+            `All real numbers`
+          ],
+          choiceWrap: false
+        },
+
+        /* Source: B. Exercise #17 */
+        {
+          stem: String.raw`
+            <p>Solve the compound inequality.</p>
+            <p class="math">\(4z - 9 + 2(z - 6) \ge 5z - 7\) and \(3z + 4(2z - 8) - 6z &gt; 16\)</p>
+          `,
+          choices: [
+            `\(z &gt; \dfrac{48}{5}\)`,
+            `\(z \ge 14\)`,
+            `\(z &gt; 14\)`,
+            `\(z \le 14\)`,
+            `\(z \ge \dfrac{48}{5}\)`,
+            `No solution`
+          ],
+          choiceWrap: false
+        },
+
+        /* Source: C. Exercise #18 */
+        {
+          stem: String.raw`
+            <p>Assume \(a &gt; 0\) and \(c &gt; b\).</p>
+            <p>Solve the compound inequality.</p>
+            <p class="math">\(ax + b &lt; c\) and \(-ax + b \ge c\)</p>
+          `,
+          choices: [
+            `\(x &lt; \dfrac{c-b}{a}\)` ,
+            `\(x \ge \dfrac{b-c}{a}\)` ,
+            `No solution`,
+            `\(x \le \dfrac{b-c}{a}\)` ,
+            `All real numbers`,
+            `\(x &gt; \dfrac{c-b}{a}\)`
+          ],
+          choiceWrap: false
+        },
+
+        /* Source: C. Exercise #19 */
+        {
+          stem: String.raw`
+            <p>Assume \(a &gt; 0\). The compound inequality below has different forms depending on the relationship between \(b\) and \(c\).</p>
+            <p class="math">\(ax + b &lt; c\) and \(-ax + b \ge c\)</p>
+            <p>Which statement correctly describes the solution set in all cases?</p>
+          `,
+          choices: [
+            `If \(c &gt; b\), then \(x &lt; \dfrac{b-c}{a}\); if \(c=b\), then \(x \le 0\); if \(c &lt; b\), then \(x \le \dfrac{c-b}{a}\).`,
+            `If \(c &gt; b\), then there is no solution; if \(c=b\), then \(x=0\); if \(c &lt; b\), then \(x &gt; \dfrac{c-b}{a}\).`,
+            `If \(c &gt; b\), then \(x \le \dfrac{c-b}{a}\); if \(c=b\), then all real numbers; if \(c &lt; b\), then \(x &lt; \dfrac{b-c}{a}\).`,
+            `If \(c &gt; b\), then \(x \le \dfrac{c-b}{a}\); if \(c=b\), then \(x &lt; 0\); if \(c &lt; b\), then \(x &lt; \dfrac{b-c}{a}\).`,
+            `If \(c &gt; b\), then \(x &lt; \dfrac{b-c}{a}\); if \(c=b\), then \(x &lt; 0\); if \(c &lt; b\), then \(x \le \dfrac{c-b}{a}\).`,
+            `If \(c &gt; b\), then \(x \le \dfrac{b-c}{a}\); if \(c=b\), then \(x &lt; 0\); if \(c &lt; b\), then \(x &lt; \dfrac{c-b}{a}\).`
+          ],
+          choiceWrap: false
+        }
+      ]
+    };
+  </script>
+
+  <link rel="stylesheet" href="/math-homework/assets/core-rich.css" />
+  <script defer src="/math-homework/assets/core-rich.js"></script>
+  <script defer src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+</head>
+<body>
+  <div id="hw-root">Loading…</div>
+</body>
+</html>

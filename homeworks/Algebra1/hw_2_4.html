@@ -1,0 +1,228 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Homework 2-4 (Algebra 1)</title>
+
+  <script>
+    /* =========================
+       Homework 2-4 — Order of Operations and Translating Expressions
+       Adapted for: /math-homework/assets/core-rich.js
+
+       REQUIRED SOURCE REFERENCES (your provided sets):
+       - Type A uses A. Exercises: #1, #5, #7, #9, #10
+       - Type B uses B. Exercises: #11, #16, #20, #22, #25
+       - Type C uses C. Exercises: #26, #27
+       - Reworked item: Q9 is a faithful multiple-choice reworking of B #22 so that students must identify the correct symbolic translation before evaluating.
+       - Reworked item: Q10 is a faithful multiple-choice reworking of B #25 so that students must track the role of absolute value and grouping.
+       - Reworked item: Q12 is a faithful multiple-choice reworking of C #27 so that students must parse a layered verbal expression and connect it to its value.
+
+       IMAGE NAMING RULE (STRICT):
+       - No figures are required for this homework.
+       ========================= */
+
+    window.homeworkData = {
+      classId : "Algebra1",
+      id      : "Homework 2-4",
+      title   : "Homework 2-4 — Order of Operations and Translating Expressions",
+
+      graphics : String.raw``,
+
+      answerKey : ["A","D","B","E","C","F","B","D","A","E","C","A"],
+
+      questions : [
+
+        {
+          stem: String.raw`
+            <p>Evaluate the expression.</p>
+            <p class="math">\(3\cdot 4 + 5\)</p>
+          `,
+          choices: [
+            String.raw`\(17\)`,
+            String.raw`\(27\)`,
+            String.raw`\(12\)`,
+            String.raw`\(20\)`,
+            String.raw`\(35\)`,
+            String.raw`\(7\)`
+          ]
+        },
+
+        {
+          stem: String.raw`
+            <p>Evaluate the expression.</p>
+            <p class="math">\(1 + 9\div 3\cdot 2\)</p>
+          `,
+          choices: [
+            String.raw`\(10\)`,
+            String.raw`\(\tfrac{5}{2}\)`,
+            String.raw`\(8\)`,
+            String.raw`\(7\)`,
+            String.raw`\(6\)`,
+            String.raw`\(1\)`
+          ]
+        },
+
+        {
+          stem: String.raw`
+            <p>Evaluate the expression.</p>
+            <p class="math">\(4 + 6\cdot 2\cdot 3\div 9\)</p>
+          `,
+          choices: [
+            String.raw`\(4\)`,
+            String.raw`\(8\)`,
+            String.raw`\(16\)`,
+            String.raw`\(12\)`,
+            String.raw`\(24\)`,
+            String.raw`\(10\)`
+          ]
+        },
+
+        {
+          stem: String.raw`
+            <p>Evaluate the expression.</p>
+            <p class="math">\(2 + 1 - 4\cdot 1\)</p>
+          `,
+          choices: [
+            String.raw`\(3\)`,
+            String.raw`\(-3\)`,
+            String.raw`\(4\)`,
+            String.raw`\(-4\)`,
+            String.raw`\(-1\)`,
+            String.raw`\(2\)`
+          ]
+        },
+
+        {
+          stem: String.raw`
+            <p>Evaluate the expression.</p>
+            <p class="math">\(8 + 2\div 2 + 6\)</p>
+          `,
+          choices: [
+            String.raw`\(11\)`,
+            String.raw`\(21\)`,
+            String.raw`\(15\)`,
+            String.raw`\(8\)`,
+            String.raw`\(9\)`,
+            String.raw`\(7\)`
+          ]
+        },
+
+        {
+          stem: String.raw`
+            <p>Evaluate the expression.</p>
+            <p class="math">\(2^3\div 4 + 7\)</p>
+          `,
+          choices: [
+            String.raw`\(11\)`,
+            String.raw`\(16\)`,
+            String.raw`\(2\)`,
+            String.raw`\(1\)`,
+            String.raw`\(15\)`,
+            String.raw`\(9\)`
+          ]
+        },
+
+        {
+          stem: String.raw`
+            <p>Evaluate the expression.</p>
+            <p class="math">\(-81 - 14\cdot 3\div 1\cdot 2\)</p>
+          `,
+          choices: [
+            String.raw`\(-123\)`,
+            String.raw`\(-165\)`,
+            String.raw`\(165\)`,
+            String.raw`\(-102\)`,
+            String.raw`\(3\)`,
+            String.raw`\(-39\)`
+          ]
+        },
+
+        {
+          stem: String.raw`
+            <p>Evaluate the expression.</p>
+            <p class="math">\(7 - 3^2 - 1 + 4^3\div 2\)</p>
+          `,
+          choices: [
+            String.raw`\(32\)`,
+            String.raw`\(15\)`,
+            String.raw`\(13\)`,
+            String.raw`\(29\)`,
+            String.raw`\(-3\)`,
+            String.raw`\(60\)`
+          ]
+        },
+
+        {
+          stem: String.raw`
+            <p>Which expression correctly translates the phrase below?</p>
+            <p><em>The product of five and six increased by the quotient of twenty and five</em></p>
+          `,
+          choices: [
+            String.raw`\(5\cdot 6 + 20\div 5\)`,
+            String.raw`\((5\cdot 6 + 20)\div 5\)`,
+            String.raw`\(5\cdot (6 + 20)\div 5\)`,
+            String.raw`\(5\cdot (6 + 20\div 5)\)`,
+            String.raw`\(5 + 6\cdot 20\div 5\)`,
+            String.raw`\(5\cdot 6 + 20 - 5\)`
+          ]
+        },
+
+        {
+          stem: String.raw`
+            <p>Which choice correctly translates and evaluates the phrase below?</p>
+            <p><em>Reduce 9 by the absolute value of the sum of two and negative fifteen</em></p>
+          `,
+          choices: [
+            String.raw`\(9 - |2 + (-15)| = 22\)`,
+            String.raw`\(|9 - 2 + (-15)| = 8\)`,
+            String.raw`\(9 - |2| + (-15) = -8\)`,
+            String.raw`\(|9 - (2 + (-15))| = 22\)`,
+            String.raw`\(9 - |2 + (-15)| = -4\)`,
+            String.raw`\(9 - (2 + (-15)) = 22\)`
+          ]
+        },
+
+        {
+          stem: String.raw`
+            <p>Evaluate the expression.</p>
+            <p class="math">\(\frac{5}{6}\div\frac{4}{3} + \frac{1}{3}\cdot\frac{2}{5}\)</p>
+          `,
+          choices: [
+            String.raw`\(\frac{11}{24}\)`,
+            String.raw`\(\frac{17}{24}\)`,
+            String.raw`\(\frac{91}{120}\)`,
+            String.raw`\(\frac{56}{45}\)`,
+            String.raw`\(\frac{31}{60}\)`,
+            String.raw`\(\frac{19}{20}\)`
+          ]
+        },
+
+        {
+          stem: String.raw`
+            <p>Which choice correctly represents the phrase below and gives its value?</p>
+            <p><em>Decrease one-half the square of the absolute value of negative one-third by twice the product of the reciprocals of negative four-thirds and seven.</em></p>
+          `,
+          choices: [
+            String.raw`\(\frac12\left| -\frac13 \right|^2 - 2\left(-\frac34\right)\left(\frac17\right) = \frac{17}{63}\)`,
+            String.raw`\(\frac12\left| -\frac13 \right|^2 - 2\left(-\frac34\right)\left(\frac17\right) = -\frac{5}{63}\)`,
+            String.raw`\(\left(\frac12\left| -\frac13 \right|\right)^2 - 2\left(-\frac34\right)\left(\frac17\right) = \frac{43}{252}\)`,
+            String.raw`\(\frac12\left| -\frac13 \right|^2 + 2\left(-\frac34\right)\left(\frac17\right) = -\frac{5}{63}\)`,
+            String.raw`\(2\left[\frac12\left| -\frac13 \right|^2 - \left(-\frac34\right)\left(\frac17\right)\right] = \frac{17}{63}\)`,
+            String.raw`\(\frac12\left(-\frac13\right)^2 - 2\left(\frac43\right)(7) = -\frac{1127}{18}\)`
+          ]
+        }
+
+      ]
+    };
+  </script>
+
+  <link rel="stylesheet" href="/math-homework/assets/core-rich.css" />
+  <script defer src="/math-homework/assets/core-rich.js"></script>
+  <script defer src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+</head>
+
+<body>
+  <div id="hw-root">Loading…</div>
+</body>
+</html>

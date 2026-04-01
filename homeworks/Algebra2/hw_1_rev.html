@@ -1,0 +1,231 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Homework 1-Review (Algebra II)</title>
+
+  <script>
+    /* =========================
+       Homework 1-Review — Chapter 1 Review (Algebra II)
+       Adapted for: /math-homework/assets/core-rich.js
+
+       REQUIRED SOURCE REFERENCES (your provided review pages):
+       - Review page 1 uses Exercises: #2, #4, #6, #7, #10, #14, #22
+       - Review page 2 uses Exercises: #26, #28, #29, #31, #33
+
+       MODEL REWORK / PEDAGOGICAL EDITING:
+       - Exercise #6 ("Give an example of a trinomial of degree 2") was reworked into a
+         recognition question so that students must distinguish degree from number of terms.
+       - The review was sequenced from rule recognition, to polynomial operations,
+         to exact division, and then to several distinct factoring patterns:
+         GCF + difference of squares, trinomials, difference of cubes, and grouping.
+       - Distractors were designed to reveal common chapter-1 errors: adding exponents
+         incorrectly, multiplying binomials without the middle terms, stopping factoring too early,
+         and confusing a partial factorization with a complete one.
+       - No figures are used.
+
+       IMAGE NAMING RULE (STRICT):
+       - No figures are used in this homework.
+       ========================= */
+
+    window.homeworkData = {
+      classId : "Algebra2",
+      id      : "Homework 1-Review",
+      title   : "Homework 1-Review — Chapter 1 Review",
+      graphics: String.raw``,
+
+      answerKey : ["C","D","B","A","E","F","B","A","D","C","E","F"],
+
+      questions : [
+        {
+          stem: String.raw`
+            <p>Which property is illustrated by \(a(b+c)=ab+ac\)?</p>
+          `,
+          choices: [
+            String.raw`Commutative property of multiplication`,
+            String.raw`Associative property of addition`,
+            String.raw`Distributive property of multiplication over addition`,
+            String.raw`Identity property of multiplication`,
+            String.raw`Zero-exponent property`,
+            String.raw`Quotient of powers property`
+          ],
+          choiceWrap: false
+        },
+
+        {
+          stem: String.raw`
+            <p>The equality \(x^7 \div x^4 = x^3\) illustrates which rule for exponents?</p>
+          `,
+          choices: [
+            String.raw`Product of powers`,
+            String.raw`Power of a power`,
+            String.raw`Power of a product`,
+            String.raw`Quotient of powers`,
+            String.raw`Zero-exponent rule`,
+            String.raw`Distributive property`
+          ],
+          choiceWrap: false
+        },
+
+        {
+          stem: String.raw`
+            <p>Which expression is a <b>trinomial of degree 2</b>?</p>
+          `,
+          choices: [
+            String.raw`\(4x^2\)`,
+            String.raw`\(x^2+3x-5\)`,
+            String.raw`\(x^3+x^2+1\)`,
+            String.raw`\(2x+7+y\)`,
+            String.raw`\(x^2-9\)`,
+            String.raw`\(ab^2+b+c\)`
+          ],
+          choiceWrap: false
+        },
+
+        {
+          stem: String.raw`
+            <p>Simplify: \((5x^2+9)+(2x^2-8x+3)\).</p>
+          `,
+          choices: [
+            String.raw`\(7x^2-8x+12\)`,
+            String.raw`\(7x^2+8x+12\)`,
+            String.raw`\(3x^2-8x+12\)`,
+            String.raw`\(7x^2-8x+3\)`,
+            String.raw`\(7x^2+12x+12\)`,
+            String.raw`\(7x^4-8x+12\)`
+          ],
+          choiceWrap: false
+        },
+
+        {
+          stem: String.raw`
+            <p>Multiply and simplify: \(3a^3b \cdot 7ab^5\).</p>
+          `,
+          choices: [
+            String.raw`\(21a^3b^6\)`,
+            String.raw`\(10a^4b^6\)`,
+            String.raw`\(21a^4b^5\)`,
+            String.raw`\(21a^3b^5\)`,
+            String.raw`\(21a^4b^6\)`,
+            String.raw`\(21a^{12}b^5\)`
+          ],
+          choiceWrap: false
+        },
+
+        {
+          stem: String.raw`
+            <p>Expand and simplify: \((x+3)(x-7)\).</p>
+          `,
+          choices: [
+            String.raw`\(x^2+4x-21\)`,
+            String.raw`\(x^2-10x-21\)`,
+            String.raw`\(x^2-4x+21\)`,
+            String.raw`\(x^2-21\)`,
+            String.raw`\(x^2+10x-21\)`,
+            String.raw`\(x^2-4x-21\)`
+          ],
+          choiceWrap: false
+        },
+
+        {
+          stem: String.raw`
+            <p>What is the quotient when \(x^3-7x-6\) is divided by \(x-3\)?</p>
+          `,
+          choices: [
+            String.raw`\(x^2-3x+2\)`,
+            String.raw`\(x^2+3x+2\)`,
+            String.raw`\(x^2+3x-2\)`,
+            String.raw`\(x^2+2x+3\)`,
+            String.raw`\(x^2-7\)`,
+            String.raw`\(x^2+6x+11\)`
+          ],
+          choiceWrap: false
+        },
+
+        {
+          stem: String.raw`
+            <p>Factor completely: \(a^3-49a\).</p>
+          `,
+          choices: [
+            String.raw`\(a(a-7)(a+7)\)`,
+            String.raw`\((a-7)(a+7)\)`,
+            String.raw`\(a(a^2-49)\)`,
+            String.raw`\(a(a-49)\)`,
+            String.raw`\((a-7)^2(a+7)\)`,
+            String.raw`Prime over the integers`
+          ],
+          choiceWrap: false
+        },
+
+        {
+          stem: String.raw`
+            <p>Which expression is the complete factorization of \(3x^2+16x-12\)?</p>
+          `,
+          choices: [
+            String.raw`\((3x+2)(x-6)\)`,
+            String.raw`\((3x-2)(x-6)\)`,
+            String.raw`\((3x+2)(x+6)\)`,
+            String.raw`\((3x-2)(x+6)\)`,
+            String.raw`\((x+2)(3x-6)\)`,
+            String.raw`Prime over the integers`
+          ],
+          choiceWrap: false
+        },
+
+        {
+          stem: String.raw`
+            <p>Factor completely: \(10x^2-x-3\).</p>
+          `,
+          choices: [
+            String.raw`\((5x+3)(2x-1)\)`,
+            String.raw`\((5x-1)(2x+3)\)`,
+            String.raw`\((5x-3)(2x+1)\)`,
+            String.raw`\((10x+3)(x-1)\)`,
+            String.raw`\((5x+1)(2x-3)\)`,
+            String.raw`Prime over the integers`
+          ],
+          choiceWrap: false
+        },
+
+        {
+          stem: String.raw`
+            <p>Choose the complete factorization of \(x^3-64\).</p>
+          `,
+          choices: [
+            String.raw`\((x-4)(x^2-4x+16)\)`,
+            String.raw`\((x-8)(x^2+8x+64)\)`,
+            String.raw`\((x-4)^3\)`,
+            String.raw`\((x+4)(x^2-4x+16)\)`,
+            String.raw`\((x-4)(x^2+4x+16)\)`,
+            String.raw`Prime over the integers`
+          ],
+          choiceWrap: false
+        },
+
+        {
+          stem: String.raw`
+            <p>Factor completely: \(x^3+2x^2-4x-8\).</p>
+          `,
+          choices: [
+            String.raw`\((x+2)(x-2)\)`,
+            String.raw`\((x+4)(x^2-2)\)`,
+            String.raw`\((x-2)^2(x+2)\)`,
+            String.raw`\((x+2)(x^2+4)\)`,
+            String.raw`\((x+2)(x^2-4)\)`,
+            String.raw`\((x+2)^2(x-2)\)`
+          ],
+          choiceWrap: false
+        }
+      ]
+    };
+  </script>
+
+  <link rel="stylesheet" href="/math-homework/assets/core-rich.css" />
+  <script defer src="/math-homework/assets/core-rich.js"></script>
+  <script defer src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+</head>
+<body>
+  <div id="hw-root">Loading…</div>
+</body>
+</html>

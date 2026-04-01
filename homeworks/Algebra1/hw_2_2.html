@@ -1,0 +1,226 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Homework 2-2 (Algebra 1)</title>
+
+  <script>
+    /* =========================
+       Homework 2-2 — Equivalent Fractions and Adding/Subtracting Rational Numbers
+       Adapted for: /math-homework/assets/core-rich.js
+
+       REQUIRED SOURCE REFERENCES (your provided sets):
+       - Type A uses A. Exercises: #1, #5, #9, #14
+       - Type B uses B. Exercises: #15, #17, #22, #24, #25, #29
+       - Type C uses C. Exercises: #30, #31
+       - Model-authored extension: Q4 is inspired by A #11–#14 and B #22–#24. It asks for the least common denominator directly so students attend to the structure needed before adding or subtracting fractions.
+
+       IMAGE NAMING RULE (STRICT):
+       - No figures are required for this homework.
+       ========================= */
+
+    window.homeworkData = {
+      classId : "Algebra1",
+      id      : "Homework 2-2",
+      title   : "Homework 2-2 — Equivalent Fractions and Adding/Subtracting Rational Numbers",
+
+      graphics : String.raw``,
+
+      answerKey : ["A","C","D","B","C","C","E","D","F","B","F","E"],
+
+      questions : [
+
+        {
+          stem: String.raw`
+            <p>Simplify the fraction and write the answer in lowest terms.</p>
+            <p class="math">\(\frac{10}{14}\)</p>
+          `,
+          choices: [
+            String.raw`\(\frac{5}{7}\)`,
+            String.raw`\(\frac{10}{7}\)`,
+            String.raw`\(\frac{2}{7}\)`,
+            String.raw`\(\frac{7}{5}\)`,
+            String.raw`\(\frac{5}{14}\)`,
+            String.raw`\(\frac{1}{4}\)`
+          ]
+        },
+
+        {
+          stem: String.raw`
+            <p>Rename the rational number as an equivalent fraction with denominator \(81\).</p>
+            <p class="math">\(\frac{4}{9}\)</p>
+          `,
+          choices: [
+            String.raw`\(\frac{4}{81}\)`,
+            String.raw`\(\frac{32}{81}\)`,
+            String.raw`\(\frac{36}{81}\)`,
+            String.raw`\(\frac{40}{81}\)`,
+            String.raw`\(\frac{45}{81}\)`,
+            String.raw`\(\frac{9}{81}\)`
+          ]
+        },
+
+        {
+          stem: String.raw`
+            <p>Rename the fraction so that the denominator is \(48\).</p>
+            <p class="math">\(\frac{11}{16}\)</p>
+          `,
+          choices: [
+            String.raw`\(\frac{22}{48}\)`,
+            String.raw`\(\frac{44}{48}\)`,
+            String.raw`\(\frac{11}{48}\)`,
+            String.raw`\(\frac{33}{48}\)`,
+            String.raw`\(\frac{33}{64}\)`,
+            String.raw`\(\frac{27}{48}\)`
+          ]
+        },
+
+        {
+          stem: String.raw`
+            <p>You want to add \(\frac{3}{8}\) and \(\frac{1}{4}\) by first rewriting them with a common denominator.</p>
+            <p>Which denominator is the <b>least</b> common denominator?</p>
+          `,
+          choices: [
+            String.raw`\(4\)`,
+            String.raw`\(8\)`,
+            String.raw`\(12\)`,
+            String.raw`\(16\)`,
+            String.raw`\(24\)`,
+            String.raw`\(32\)`
+          ]
+        },
+
+        {
+          stem: String.raw`
+            <p>Which fraction is equivalent to \(\frac{2}{5}\) and has denominator \(105\)?</p>
+          `,
+          choices: [
+            String.raw`\(\frac{40}{105}\)`,
+            String.raw`\(\frac{21}{105}\)`,
+            String.raw`\(\frac{42}{105}\)`,
+            String.raw`\(\frac{52}{105}\)`,
+            String.raw`\(\frac{44}{105}\)`,
+            String.raw`\(\frac{35}{105}\)`
+          ]
+        },
+
+        {
+          stem: String.raw`
+            <p>Perform the indicated operation.</p>
+            <p class="math">\(\frac{2}{9}+\frac{5}{9}\)</p>
+          `,
+          choices: [
+            String.raw`\(\frac{7}{18}\)`,
+            String.raw`\(\frac{3}{9}\)`,
+            String.raw`\(\frac{7}{9}\)`,
+            String.raw`\(\frac{9}{14}\)`,
+            String.raw`\(\frac{5}{18}\)`,
+            String.raw`\(\frac{14}{9}\)`
+          ]
+        },
+
+        {
+          stem: String.raw`
+            <p>Perform the indicated operation.</p>
+            <p class="math">\(\frac{3}{4}-\frac{8}{9}\)</p>
+          `,
+          choices: [
+            String.raw`\(\frac{5}{36}\)`,
+            String.raw`\(-\frac{11}{36}\)`,
+            String.raw`\(\frac{11}{36}\)`,
+            String.raw`\(-\frac{5}{13}\)`,
+            String.raw`\(-\frac{5}{36}\)`,
+            String.raw`\(\frac{1}{36}\)`
+          ]
+        },
+
+        {
+          stem: String.raw`
+            <p>Perform the indicated operation.</p>
+            <p class="math">\(\frac{14}{9}+4\)</p>
+          `,
+          choices: [
+            String.raw`\(\frac{18}{9}\)`,
+            String.raw`\(\frac{50}{13}\)`,
+            String.raw`\(\frac{46}{9}\)`,
+            String.raw`\(\frac{50}{9}\)`,
+            String.raw`\(\frac{14}{13}\)`,
+            String.raw`\(\frac{40}{9}\)`
+          ]
+        },
+
+        {
+          stem: String.raw`
+            <p>Perform the indicated operation.</p>
+            <p class="math">\(\frac{4}{27}-\frac{8}{21}\)</p>
+          `,
+          choices: [
+            String.raw`\(\frac{44}{189}\)`,
+            String.raw`\(-\frac{36}{189}\)`,
+            String.raw`\(-\frac{4}{189}\)`,
+            String.raw`\(-\frac{44}{48}\)`,
+            String.raw`\(\frac{100}{189}\)`,
+            String.raw`\(-\frac{44}{189}\)`
+          ]
+        },
+
+        {
+          stem: String.raw`
+            <p>Sue is making a dress for school chorus. She needs \(\frac{3}{8}\) yard of lace for the cuffs and \(\frac{1}{4}\) yard of the same lace for decoration on the front of her dress.</p>
+            <p>How much lace should she buy?</p>
+          `,
+          choices: [
+            String.raw`1/2 yard`,
+            String.raw`5/8 yard`,
+            String.raw`4/12 yard`,
+            String.raw`3/12 yard`,
+            String.raw`7/8 yard`,
+            String.raw`1 1/8 yards`
+          ],
+          choiceWrap: false
+        },
+
+        {
+          stem: String.raw`
+            <p>Perform the indicated operation.</p>
+            <p class="math">\(\frac{3}{7}+\frac{5}{14}-\frac{7}{21}+\frac{9}{28}\)</p>
+          `,
+          choices: [
+            String.raw`\(\frac{55}{84}\)`,
+            String.raw`\(\frac{121}{84}\)`,
+            String.raw`\(\frac{13}{14}\)`,
+            String.raw`\(\frac{86}{84}\)`,
+            String.raw`\(\frac{17}{84}\)`,
+            String.raw`\(\frac{65}{84}\)`
+          ]
+        },
+
+        {
+          stem: String.raw`
+            <p>Perform the indicated operation.</p>
+            <p class="math">\(2.9+13.05-26.472\)</p>
+          `,
+          choices: [
+            String.raw`\(16.322\)`,
+            String.raw`\(-10.022\)`,
+            String.raw`\(10.522\)`,
+            String.raw`\(-8.522\)`,
+            String.raw`\(-10.522\)`,
+            String.raw`\(-105.22\)`
+          ]
+        }
+
+      ]
+    };
+  </script>
+
+  <link rel="stylesheet" href="/math-homework/assets/core-rich.css" />
+  <script defer src="/math-homework/assets/core-rich.js"></script>
+  <script defer src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+</head>
+
+<body>
+  <div id="hw-root">Loading…</div>
+</body>
+</html>

@@ -1,0 +1,243 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Homework 1-7 (Algebra II)</title>
+
+  <script>
+    /* =========================
+       Homework 1-7 — Factoring Completely (Algebra II)
+       Adapted for: /math-homework/assets/core-rich.js
+
+       REQUIRED SOURCE REFERENCES (your provided sets):
+       - Type A uses A. Exercises: #1, #3, #7, #9, #10
+       - Type B uses B. Exercises: #12, #13, #17, #18, #20
+       - Type C uses C. Exercises: #23, #24
+
+       MODEL REWORK / PEDAGOGICAL EDITING:
+       - All items were rewritten into multiple-choice form.
+       - The sequence moves from direct recognition of a common binomial factor,
+         to grouping, to disguised difference-of-squares structure, then to richer
+         complete factorizations that require more than one stage.
+       - Distractors were designed to diagnose common errors: stopping too early,
+         missing a common factor, confusing sum and difference patterns, and failing
+         to factor a resulting trinomial or cubic completely.
+       - No fully source-free model-authored questions were added.
+
+       IMAGE NAMING RULE (STRICT):
+       - No figures are used in this homework.
+       ========================= */
+
+    window.homeworkData = {
+      classId : "Algebra2",
+      id      : "Homework 1-7",
+      title   : "Homework 1-7 — Factoring Completely",
+      graphics: String.raw``,
+
+      answerKey : ["B","E","C","A","D","F","B","E","C","A","D","B"],
+
+      questions : [
+        /* Source: A. Exercise #1 */
+        {
+          stem: String.raw`
+            <p>Factor completely: \(x(x+3) - y(x+3)\).</p>
+          `,
+          choices: [
+            String.raw`\((x+y)(x+3)\)`,
+            String.raw`\((x-y)(x+3)\)`,
+            String.raw`\((x-y)(x-3)\)`,
+            String.raw`\(x - y(x+3)\)`,
+            String.raw`\((x+3)^2(x-y)\)`,
+            String.raw`Prime over the integers`
+          ],
+          choiceWrap: false
+        },
+
+        /* Source: A. Exercise #3 */
+        {
+          stem: String.raw`
+            <p>Which choice is the complete factorization of \((x^3 - x^2y) + (xy - y^2)\)?</p>
+          `,
+          choices: [
+            String.raw`\((x+y)(x^2-y)\)`,
+            String.raw`\((x-y)^2(x+y)\)`,
+            String.raw`\((x-y)(x^2-y)\)`,
+            String.raw`\(x^2(x-y)+y(x-y)\)`,
+            String.raw`\((x-y)(x^2+y)\)`,
+            String.raw`Prime over the integers`
+          ],
+          choiceWrap: false
+        },
+
+        /* Source: A. Exercise #7 */
+        {
+          stem: String.raw`
+            <p>Factor completely: \((x+3)^2 + y(x+3)\).</p>
+          `,
+          choices: [
+            String.raw`\((x+3)(x+y)\)`,
+            String.raw`\((x+3)^2y\)`,
+            String.raw`\((x+3)(x+y+3)\)`,
+            String.raw`\((x+y+6)(x+3)\)`,
+            String.raw`\((x+y)(x+y+3)\)`,
+            String.raw`Prime over the integers`
+          ],
+          choiceWrap: false
+        },
+
+        /* Source: A. Exercise #9 */
+        {
+          stem: String.raw`
+            <p>Which expression gives the complete factorization of \((a-5)^2 - y^2\)?</p>
+          `,
+          choices: [
+            String.raw`\((a-5-y)(a-5+y)\)`,
+            String.raw`\((a-5-y)^2\)`,
+            String.raw`\((a-y+5)(a+y-5)\)`,
+            String.raw`\((a-5)(a-y)(a+y)\)`,
+            String.raw`\((a+y+5)(a-y-5)\)`,
+            String.raw`Prime over the integers`
+          ],
+          choiceWrap: false
+        },
+
+        /* Source: A. Exercise #10 */
+        {
+          stem: String.raw`
+            <p>Factor completely: \((x+y)^2 - 16\).</p>
+          `,
+          choices: [
+            String.raw`\((x+y-4)^2\)`,
+            String.raw`\((x+y-2)(x+y+2)\)`,
+            String.raw`\((x+y-16)(x+y+1)\)`,
+            String.raw`\((x+y-4)(x+y+4)\)`,
+            String.raw`\((x+y)^2(x-4)(x+4)\)`,
+            String.raw`Prime over the integers`
+          ],
+          choiceWrap: false
+        },
+
+        /* Source: B. Exercise #12 */
+        {
+          stem: String.raw`
+            <p>Choose the complete factorization of \(x^2 + xy - 7x - 7y\).</p>
+          `,
+          choices: [
+            String.raw`\((x-y)(x+7)\)`,
+            String.raw`\((x+y)(x+7)\)`,
+            String.raw`\((x-7)(y-1)\)`,
+            String.raw`\((x-y)(x-7)\)`,
+            String.raw`Prime over the integers`,
+            String.raw`\((x+y)(x-7)\)`
+          ],
+          choiceWrap: false
+        },
+
+        /* Source: B. Exercise #13 */
+        {
+          stem: String.raw`
+            <p>Factor completely: \(x^3 + 6x^2 + 2x + 12\).</p>
+          `,
+          choices: [
+            String.raw`\((x+2)(x^2+4x+6)\)`,
+            String.raw`\((x+6)(x^2+2)\)`,
+            String.raw`\((x+6)(x^2-2)\)`,
+            String.raw`\((x+2)(x^2+6)\)`,
+            String.raw`\(x(x^2+6x+2)+12\)`,
+            String.raw`Prime over the integers`
+          ],
+          choiceWrap: false
+        },
+
+        /* Source: B. Exercise #17 */
+        {
+          stem: String.raw`
+            <p>Which choice is the complete factorization of \((x-5)^3 - 1\)?</p>
+          `,
+          choices: [
+            String.raw`\((x-4)(x^2-11x+31)\)`,
+            String.raw`\((x-6)(x^2-10x+25)\)`,
+            String.raw`\((x-5)(x^2-10x+24)\)`,
+            String.raw`\((x-6)(x^2-9x+19)\)`,
+            String.raw`\((x-6)(x^2-9x+21)\)`,
+            String.raw`Prime over the integers`
+          ],
+          choiceWrap: false
+        },
+
+        /* Source: B. Exercise #18 */
+        {
+          stem: String.raw`
+            <p>Factor completely: \(a^2 + 2ab + b^2 - 9\).</p>
+          `,
+          choices: [
+            String.raw`\((a+b-9)(a+b+1)\)`,
+            String.raw`\((a+b-3)^2\)`,
+            String.raw`\((a+b-3)(a+b+3)\)`,
+            String.raw`\((a+b)(a+b-9)\)`,
+            String.raw`\((a-b-3)(a-b+3)\)`,
+            String.raw`Prime over the integers`
+          ],
+          choiceWrap: false
+        },
+
+        /* Source: B. Exercise #20 */
+        {
+          stem: String.raw`
+            <p>Which expression gives the complete factorization of \(c^2 + 6cd + 9d^2 - 16f^2\)?</p>
+          `,
+          choices: [
+            String.raw`\((c+3d-4f)(c+3d+4f)\)`,
+            String.raw`\((c+3d-4f)^2\)`,
+            String.raw`\((c-3d-4f)(c-3d+4f)\)`,
+            String.raw`\((c+3d)^2(1-4f)(1+4f)\)`,
+            String.raw`\((c+3d-16f)(c+1)\)`,
+            String.raw`Prime over the integers`
+          ],
+          choiceWrap: false
+        },
+
+        /* Source: C. Exercise #23 */
+        {
+          stem: String.raw`
+            <p>Factor completely: \(x^{11} + 5x^9 + 9x^7 + 2x^6 + 10x^4 + 18x^2\).</p>
+          `,
+          choices: [
+            String.raw`\(x^2(x^5+1)(x^4+5x^2+18)\)`,
+            String.raw`\(x^2(x+2)(x^4+5x^2+9)\)`,
+            String.raw`\(x^2(x^5+2)(x^2+3)^2\)`,
+            String.raw`\(x^2(x^5+2)(x^4+5x^2+9)\)`,
+            String.raw`\(x^2(x^9+5x^7+9x^5+2x^4+10x^2+18)\)`,
+            String.raw`Prime over the integers`
+          ],
+          choiceWrap: false
+        },
+
+        /* Source: C. Exercise #24 */
+        {
+          stem: String.raw`
+            <p>Choose the complete factorization of \(x^5 + 3x^4 + 2x^3 - 8x^2 - 24x - 16\).</p>
+          `,
+          choices: [
+            String.raw`\((x^3-8)(x+1)(x+2)\)`,
+            String.raw`\((x-2)(x^2+2x+4)(x+1)(x+2)\)`,
+            String.raw`\((x-2)(x^2+2x+4)(x-1)(x+2)\)`,
+            String.raw`\((x-2)^2(x^2+2x+4)(x+1)\)`,
+            String.raw`\((x+2)(x^4+x^3+x^2-4x-8)\)`,
+            String.raw`Prime over the integers`
+          ],
+          choiceWrap: false
+        }
+      ]
+    };
+  </script>
+
+  <link rel="stylesheet" href="/math-homework/assets/core-rich.css" />
+  <script defer src="/math-homework/assets/core-rich.js"></script>
+  <script defer src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+</head>
+<body>
+  <div id="hw-root">Loading…</div>
+</body>
+</html>

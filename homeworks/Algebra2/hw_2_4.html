@@ -1,0 +1,249 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Homework 2-4 (Algebra II)</title>
+
+  <script>
+    /* =========================
+       Homework 2-4 — Distance, Midpoint, and Absolute Value (Algebra II)
+       Adapted for: /math-homework/assets/core-rich.js
+
+       REQUIRED SOURCE REFERENCES (your provided sets):
+       - Type A uses A. Exercises: #1, #5, #7, #8, #9
+       - Type B uses B. Exercises: #11, #15, #16, #20, #21
+       - Type C uses C. Exercises: #23, #25
+
+       MODEL REWORK / PEDAGOGICAL EDITING:
+       - All items were rewritten into multiple-choice form.
+       - The sequence moves from distance and midpoint, to solving absolute-value
+         equations, to translating verbal distance statements, and finally to
+         interpreting number-line graphs as equations.
+       - C. #23 and C. #25 originally used graphs; they were recast as verbal
+         descriptions of the plotted solution points so the same idea is tested
+         without requiring separate figure files.
+       - No fully source-free model-authored questions were added.
+
+       IMAGE NAMING RULE (STRICT):
+       - No figures are used in this homework.
+       ========================= */
+
+    window.homeworkData = {
+      classId : "Algebra2",
+      id      : "Homework 2-4",
+      title   : "Homework 2-4 — Distance, Midpoint, and Absolute Value",
+      graphics: String.raw``,
+
+      answerKey : ["C","A","A","C","C","B","A","A","B","C","A","C"],
+
+      questions : [
+        /* Source: A. Exercise #1 */
+        {
+          stem: String.raw`
+            <p>The two points on a number line are \(8\) and \(-12\).</p>
+            <p>Which choice gives <b>both</b> the distance between the points and the coordinate of their midpoint?</p>
+          `,
+          choices: [
+            String.raw`Distance \(=20\), midpoint \(=2\)` ,
+            String.raw`Distance \(=4\), midpoint \(=-10\)` ,
+            String.raw`Distance \(=20\), midpoint \(=-2\)` ,
+            String.raw`Distance \(=10\), midpoint \(=-2\)` ,
+            String.raw`Distance \(=-20\), midpoint \(=-2\)` ,
+            String.raw`Distance \(=24\), midpoint \(=-2\)`
+          ],
+          choiceWrap: false
+        },
+
+        /* Source: A. Exercise #5 */
+        {
+          stem: String.raw`
+            <p>The two points on a number line are \(\dfrac{2}{3}\) and \(\dfrac{5}{3}\).</p>
+            <p>Which choice gives <b>both</b> the distance between the points and the coordinate of their midpoint?</p>
+          `,
+          choices: [
+            String.raw`Distance \(=1\), midpoint \(=\dfrac{7}{6}\)` ,
+            String.raw`Distance \(=\dfrac{7}{6}\), midpoint \(=1\)` ,
+            String.raw`Distance \(=\dfrac{1}{2}\), midpoint \(=\dfrac{7}{6}\)` ,
+            String.raw`Distance \(=1\), midpoint \(=\dfrac{1}{6}\)` ,
+            String.raw`Distance \(=\dfrac{1}{3}\), midpoint \(=\dfrac{7}{6}\)` ,
+            String.raw`Distance \(=1\), midpoint \(=\dfrac{7}{3}\)`
+          ],
+          choiceWrap: false
+        },
+
+        /* Source: A. Exercise #7 */
+        {
+          stem: String.raw`
+            <p>Solve the equation \(|x-8|=5\).</p>
+          `,
+          choices: [
+            String.raw`\(\{3,\,13\}\)` ,
+            String.raw`\(\{-3,\,13\}\)` ,
+            String.raw`\(\{5,\,13\}\)` ,
+            String.raw`\(\{3,\,8\}\)` ,
+            String.raw`\(\{13\}\)` ,
+            String.raw`No solution.`
+          ],
+          choiceWrap: false
+        },
+
+        /* Source: A. Exercise #8 */
+        {
+          stem: String.raw`
+            <p>What is the solution set of \(|3x-11|=-5\)?</p>
+          `,
+          choices: [
+            String.raw`\(\left\{2\right\}\)` ,
+            String.raw`\(\left\{-2\right\}\)` ,
+            String.raw`No solution, because an absolute value cannot equal a negative number.` ,
+            String.raw`All real numbers.` ,
+            String.raw`\(\left\{\dfrac{11}{3}\right\}\)` ,
+            String.raw`Two solutions, because distance can be positive or negative.`
+          ],
+          choiceWrap: false
+        },
+
+        /* Source: A. Exercise #9 */
+        {
+          stem: String.raw`
+            <p>What is the solution set of \(|8x+3|+7=3\)?</p>
+          `,
+          choices: [
+            String.raw`\(\left\{-\dfrac{1}{2}\right\}\)` ,
+            String.raw`\(\left\{-\dfrac{5}{8}\right\}\)` ,
+            String.raw`No solution.` ,
+            String.raw`\(\left\{0\right\}\)` ,
+            String.raw`All real numbers.` ,
+            String.raw`\(\left\{-\dfrac{3}{8}\right\}\)`
+          ],
+          choiceWrap: false
+        },
+
+        /* Source: B. Exercise #11 */
+        {
+          stem: String.raw`
+            <p>Which equation matches the sentence below?</p>
+            <p><b>The distance between the number \(x\) and \(6\) is \(5\).</b></p>
+          `,
+          choices: [
+            String.raw`\(|x|=11\)` ,
+            String.raw`\(|x-6|=5\)` ,
+            String.raw`\(|x+6|=5\)` ,
+            String.raw`\(x-6=5\)` ,
+            String.raw`\(|6-5|=x\)` ,
+            String.raw`\(|x-5|=6\)`
+          ],
+          choiceWrap: false
+        },
+
+        /* Source: B. Exercise #15 */
+        {
+          stem: String.raw`
+            <p>A number's distance from zero is \(5\).</p>
+            <p>What number or numbers satisfy this condition?</p>
+          `,
+          choices: [
+            String.raw`\(\{-5,\,5\}\)` ,
+            String.raw`\(\{5\}\)` ,
+            String.raw`\(\{-5\}\)` ,
+            String.raw`\(\{0,\,5\}\)` ,
+            String.raw`\(\{-10,\,10\}\)` ,
+            String.raw`No solution.`
+          ],
+          choiceWrap: false
+        },
+
+        /* Source: B. Exercise #16 */
+        {
+          stem: String.raw`
+            <p>If \(5\) is four units from a certain number, what is the number?</p>
+          `,
+          choices: [
+            String.raw`\(\{1,\,9\}\)` ,
+            String.raw`\(\{4,\,5\}\)` ,
+            String.raw`\(\{1\}\)` ,
+            String.raw`\(\{9\}\)` ,
+            String.raw`\(\{-1,\,9\}\)` ,
+            String.raw`\(\{1,\,13\}\)`
+          ],
+          choiceWrap: false
+        },
+
+        /* Source: B. Exercise #20 */
+        {
+          stem: String.raw`
+            <p>Which sentence best matches the equation \(|x+4|=1\)?</p>
+          `,
+          choices: [
+            String.raw`The distance between \(x\) and \(4\) is \(1\).` ,
+            String.raw`The distance between \(x\) and \(-4\) is \(1\).` ,
+            String.raw`The distance between \(x\) and \(1\) is \(4\).` ,
+            String.raw`The midpoint of \(x\) and \(4\) is \(1\).` ,
+            String.raw`\(x\) must be \(-5\) only.` ,
+            String.raw`The distance between \(x\) and \(0\) is \(5\).`
+          ],
+          choiceWrap: false
+        },
+
+        /* Source: B. Exercise #21 */
+        {
+          stem: String.raw`
+            <p>Which sentence best matches the equation \(|x|=3\)?</p>
+          `,
+          choices: [
+            String.raw`The distance between \(x\) and \(3\) is \(0\).` ,
+            String.raw`\(x\) is at least \(3\) units from \(0\).` ,
+            String.raw`The distance between \(x\) and \(0\) is \(3\).` ,
+            String.raw`\(x\) must equal \(3\) and no other value works.` ,
+            String.raw`\(x\) is \(3\) units greater than \(0\).` ,
+            String.raw`The midpoint between \(x\) and \(0\) is \(3\).`
+          ],
+          choiceWrap: false
+        },
+
+        /* Source: C. Exercise #23 */
+        {
+          stem: String.raw`
+            <p>On a number line, the graph shows exactly two solution points: \(-4\) and \(2\).</p>
+            <p>Which absolute value equation has exactly those solutions?</p>
+          `,
+          choices: [
+            String.raw`\(|x+1|=3\)` ,
+            String.raw`\(|x-1|=3\)` ,
+            String.raw`\(|x+4|=2\)` ,
+            String.raw`\(|x-2|=4\)` ,
+            String.raw`\(|x+1|=2\)` ,
+            String.raw`\(|x|=3\)`
+          ],
+          choiceWrap: false
+        },
+
+        /* Source: C. Exercise #25 */
+        {
+          stem: String.raw`
+            <p>On a number line, the graph shows exactly one solution point: \(4\).</p>
+            <p>Which absolute value equation has exactly that solution?</p>
+          `,
+          choices: [
+            String.raw`\(|x|=4\)` ,
+            String.raw`\(|x-4|=4\)` ,
+            String.raw`\(|x-4|=0\)` ,
+            String.raw`\(|x+4|=0\)` ,
+            String.raw`\(|x-2|=2\)` ,
+            String.raw`\(|x+4|=4\)`
+          ],
+          choiceWrap: false
+        }
+      ]
+    };
+  </script>
+
+  <link rel="stylesheet" href="/math-homework/assets/core-rich.css" />
+  <script defer src="/math-homework/assets/core-rich.js"></script>
+  <script defer src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+</head>
+<body>
+  <div id="hw-root">Loading…</div>
+</body>
+</html>

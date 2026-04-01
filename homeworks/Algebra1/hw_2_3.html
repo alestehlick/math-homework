@@ -1,0 +1,229 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Homework 2-3 (Algebra 1)</title>
+
+  <script>
+    /* =========================
+       Homework 2-3 — Multiplying and Dividing Rational Numbers
+       Adapted for: /math-homework/assets/core-rich.js
+
+       REQUIRED SOURCE REFERENCES (your provided sets):
+       - Type A uses A. Exercises: #1, #6, #11, #13, #16
+       - Type B uses B. Exercises: #17, #21, #22, #23, #24
+       - Type C uses C. Exercises: #29, #30
+       - Reworked item: Q10 is a faithful multiple-choice reworking of B #24 so that students must identify both the value of a number times its reciprocal and the property illustrated.
+       - Reworked item: Q11 is a faithful multiple-choice reworking of C #29 so that students must distinguish two similar-looking fraction expressions by structure, not by surface appearance.
+
+       IMAGE NAMING RULE (STRICT):
+       - No figures are required for this homework.
+       ========================= */
+
+    window.homeworkData = {
+      classId : "Algebra1",
+      id      : "Homework 2-3",
+      title   : "Homework 2-3 — Multiplying and Dividing Rational Numbers",
+
+      graphics : String.raw``,
+
+      answerKey : ["C","E","B","A","D","F","B","C","E","D","A","F"],
+
+      questions : [
+
+        {
+          stem: String.raw`
+            <p>Perform the indicated operation.</p>
+            <p class="math">\(\frac{4}{7}\cdot\frac{5}{12}\)</p>
+          `,
+          choices: [
+            String.raw`\(\frac{5}{84}\)`,
+            String.raw`\(\frac{20}{19}\)`,
+            String.raw`\(\frac{5}{21}\)`,
+            String.raw`\(\frac{35}{48}\)`,
+            String.raw`\(\frac{9}{35}\)`,
+            String.raw`\(\frac{20}{21}\)`
+          ]
+        },
+
+        {
+          stem: String.raw`
+            <p>Perform the indicated operation.</p>
+            <p class="math">\(\frac{4}{9}\div\frac{8}{11}\)</p>
+          `,
+          choices: [
+            String.raw`\(\frac{32}{99}\)`,
+            String.raw`\(\frac{18}{11}\)`,
+            String.raw`\(\frac{11}{72}\)`,
+            String.raw`\(\frac{11}{9}\)`,
+            String.raw`\(\frac{11}{18}\)`,
+            String.raw`\(\frac{2}{27}\)`
+          ]
+        },
+
+        {
+          stem: String.raw`
+            <p>Perform the indicated operation.</p>
+            <p class="math">\(56.4\div 0.2\)</p>
+          `,
+          choices: [
+            String.raw`\(28.2\)`,
+            String.raw`\(282\)`,
+            String.raw`\(2.82\)`,
+            String.raw`\(11.28\)`,
+            String.raw`\(56.2\)`,
+            String.raw`\(564\)`
+          ]
+        },
+
+        {
+          stem: String.raw`
+            <p>Give the reciprocals of the three numbers below.</p>
+            <p class="math">\(\frac{5}{6},\; -\frac{7}{3},\; 4\)</p>
+          `,
+          choices: [
+            String.raw`\(\frac{6}{5},\; -\frac{3}{7},\; \frac{1}{4}\)`,
+            String.raw`\(\frac{5}{6},\; -\frac{7}{3},\; 4\)`,
+            String.raw`\(\frac{6}{5},\; \frac{3}{7},\; \frac{1}{4}\)`,
+            String.raw`\(-\frac{6}{5},\; -\frac{3}{7},\; -\frac{1}{4}\)`,
+            String.raw`\(\frac{5}{6},\; -\frac{3}{7},\; 4\)`,
+            String.raw`\(\frac{6}{5},\; -\frac{7}{3},\; 4\)`
+          ]
+        },
+
+        {
+          stem: String.raw`
+            <p>Perform the indicated operation.</p>
+            <p class="math">\(14.1\cdot 5.6\)</p>
+          `,
+          choices: [
+            String.raw`\(7.896\)`,
+            String.raw`\(70.56\)`,
+            String.raw`\(79.56\)`,
+            String.raw`\(78.96\)`,
+            String.raw`\(789.6\)`,
+            String.raw`\(19.7\)`
+          ]
+        },
+
+        {
+          stem: String.raw`
+            <p>Perform the indicated operation.</p>
+            <p class="math">\(-\frac{4}{11}\cdot\frac{7}{12}\)</p>
+          `,
+          choices: [
+            String.raw`\(\frac{7}{33}\)`,
+            String.raw`\(-\frac{28}{23}\)`,
+            String.raw`\(-\frac{7}{132}\)`,
+            String.raw`\(-\frac{11}{21}\)`,
+            String.raw`\(\frac{7}{11}\)`,
+            String.raw`\(-\frac{7}{33}\)`
+          ]
+        },
+
+        {
+          stem: String.raw`
+            <p>Chip's bucket contains \(2\frac{1}{2}\) gallons of water. If he gives his horse \(\frac{2}{3}\) of the water, how much water does the horse get?</p>
+          `,
+          choices: [
+            String.raw`5/6 gallon`,
+            String.raw`1 2/3 gallons`,
+            String.raw`3 1/6 gallons`,
+            String.raw`1 1/4 gallons`,
+            String.raw`4/3 gallon`,
+            String.raw`2 1/6 gallons`
+          ],
+          choiceWrap: false
+        },
+
+        {
+          stem: String.raw`
+            <p>Beth, Brad, and Ben picked \(1\frac{1}{2}\) gallons of blackberries and divided them evenly among themselves.</p>
+            <p>How many gallons of blackberries did each get?</p>
+          `,
+          choices: [
+            String.raw`1/6 gallon`,
+            String.raw`3/2 gallons`,
+            String.raw`1/2 gallon`,
+            String.raw`2/3 gallon`,
+            String.raw`3 gallons`,
+            String.raw`1/3 gallon`
+          ],
+          choiceWrap: false
+        },
+
+        {
+          stem: String.raw`
+            <p>If one side of a square is \(\frac{3}{8}\) inch, what is the perimeter of the square?</p>
+          `,
+          choices: [
+            String.raw`3/8 inch`,
+            String.raw`6/8 inch`,
+            String.raw`9/8 inches`,
+            String.raw`12/8 square inches`,
+            String.raw`1 1/2 inches`,
+            String.raw`3 inches`
+          ],
+          choiceWrap: false
+        },
+
+        {
+          stem: String.raw`
+            <p>For any <b>nonzero</b> rational number \(r\), what is the product \(r\cdot\frac{1}{r}\)?</p>
+            <p>Which property does this illustrate?</p>
+          `,
+          choices: [
+            String.raw`0; zero property of multiplication`,
+            String.raw`r; identity property of addition`,
+            String.raw`-1; additive inverse property`,
+            String.raw`1; multiplicative inverse property`,
+            String.raw`undefined; division by zero property`,
+            String.raw`1/r; commutative property`
+          ],
+          choiceWrap: false
+        },
+
+        {
+          stem: String.raw`
+            <p>Which statement correctly distinguishes the two expressions below?</p>
+            <p class="math">\(\frac{4}{\frac{3}{5}}\qquad\text{and}\qquad\frac{\frac{4}{3}}{5}\)</p>
+          `,
+          choices: [
+            String.raw`\(\frac{4}{\frac{3}{5}}=\frac{20}{3}\) and \(\frac{\frac{4}{3}}{5}=\frac{4}{15}\)`,
+            String.raw`Both expressions equal \(\frac{20}{15}\)`,
+            String.raw`\(\frac{4}{\frac{3}{5}}=\frac{4}{15}\) and \(\frac{\frac{4}{3}}{5}=\frac{20}{3}\)`,
+            String.raw`Both expressions equal \(\frac{20}{3}\)`,
+            String.raw`Both expressions equal \(\frac{4}{15}\)`,
+            String.raw`The first expression equals \(\frac{3}{5}\div 4\) and the second equals \(5\div\frac{4}{3}\)`
+          ]
+        },
+
+        {
+          stem: String.raw`
+            <p>Evaluate the expression.</p>
+            <p class="math">\(-\frac{13}{42}\div -\frac{5}{7}+\frac{1}{15}-0.427\)</p>
+          `,
+          choices: [
+            String.raw`\(0.927\)`,
+            String.raw`\(-0.073\)`,
+            String.raw`\(0.003\)`,
+            String.raw`\(0.73\)`,
+            String.raw`\(73\)`,
+            String.raw`\(0.073\)`
+          ]
+        }
+
+      ]
+    };
+  </script>
+
+  <link rel="stylesheet" href="/math-homework/assets/core-rich.css" />
+  <script defer src="/math-homework/assets/core-rich.js"></script>
+  <script defer src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+</head>
+
+<body>
+  <div id="hw-root">Loading…</div>
+</body>
+</html>

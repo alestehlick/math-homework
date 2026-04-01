@@ -1,0 +1,218 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Homework 2-Review (Algebra I)</title>
+
+  <script>
+    /* =========================
+       Homework 2-Review — Chapter 2 Review
+       Adapted for: /math-homework/assets/core-rich.js
+
+       REQUIRED SOURCE REFERENCES (your provided sets):
+       - Review uses source items: #1, #2, #11, #13, #21, #27, #30, #31, #32, #37, #38, #39
+       - Model reworking: Q3 turns the property-name list into a symbolic recognition question about the multiplicative inverse property.
+       - Model reworking: Q11 sharpens source item #39 into a question about the smallest set that makes a subset statement true.
+       - Model-authored extension: Q12 compresses the finite/infinite analysis from source item #37 into one diagnostic question that compares several set expressions at once.
+
+       IMAGE NAMING RULE (STRICT):
+       - No figures are required for this homework.
+       ========================= */
+
+    window.homeworkData = {
+      classId : "Algebra1",
+      id      : "Homework 2-Review",
+      title   : "Homework 2-Review — Chapter 2 Review",
+      graphics: String.raw``,
+
+      answerKey : ["C","D","C","B","D","A","F","B","E","C","A","D"],
+
+      questions : [
+        {
+          stem: String.raw`
+            <p>Which is the <b>most specific</b> set that contains the number below?</p>
+            <p class="math">\(7.27272727\ldots\)</p>
+          `,
+          choiceWrap: false,
+          choices: [
+            String.raw`Integer`,
+            String.raw`Whole`,
+            String.raw`Rational`,
+            String.raw`Irrational`,
+            String.raw`Natural`,
+            String.raw`Real`
+          ]
+        },
+        {
+          stem: String.raw`
+            <p>Which is the <b>most specific</b> set that contains the number below?</p>
+            <p class="math">\(7.2727727772\ldots\)</p>
+          `,
+          choiceWrap: false,
+          choices: [
+            String.raw`Integer`,
+            String.raw`Whole`,
+            String.raw`Rational`,
+            String.raw`Irrational`,
+            String.raw`Natural`,
+            String.raw`Real`
+          ]
+        },
+        {
+          stem: String.raw`
+            <p>Which equation shows the <b>multiplicative inverse property</b>?</p>
+          `,
+          choices: [
+            String.raw`\(a+0=a\)`,
+            String.raw`\(a\cdot 1=a\)`,
+            String.raw`\(a\cdot \dfrac{1}{a}=1,\ a\neq 0\)`,
+            String.raw`\(\dfrac{a}{b}=\dfrac{ac}{bc},\ c\neq 0\)`,
+            String.raw`\(a+(-a)=0\)`,
+            String.raw`\(a(b+c)=ab+ac\)`
+          ]
+        },
+        {
+          stem: String.raw`
+            <p>Simplify.</p>
+            <p class="math">\(4 + 6\cdot 8 \div 2 - 14\)</p>
+          `,
+          choices: [
+            String.raw`\(10\)`,
+            String.raw`\(14\)`,
+            String.raw`\(18\)`,
+            String.raw`\(24\)`,
+            String.raw`\(-10\)`,
+            String.raw`\(0\)`
+          ]
+        },
+        {
+          stem: String.raw`
+            <p>Simplify.</p>
+            <p class="math">\(\dfrac{5}{8} - \dfrac{7}{9}\)</p>
+          `,
+          choices: [
+            String.raw`\(\dfrac{1}{17}\)`,
+            String.raw`\(-\dfrac{2}{17}\)`,
+            String.raw`\(\dfrac{11}{72}\)`,
+            String.raw`\(-\dfrac{11}{72}\)`,
+            String.raw`\(-\dfrac{1}{72}\)`,
+            String.raw`\(\dfrac{5}{72}\)`
+          ]
+        },
+        {
+          stem: String.raw`
+            <p>Evaluate.</p>
+            <p class="math">\(\sqrt{9}+\lvert -9\rvert(2-6)+4\cdot 5^0\)</p>
+          `,
+          choices: [
+            String.raw`\(-29\)`,
+            String.raw`\(-33\)`,
+            String.raw`\(-5\)`,
+            String.raw`\(29\)`,
+            String.raw`\(35\)`,
+            String.raw`\(-41\)`
+          ]
+        },
+        {
+          stem: String.raw`
+            <p>Evaluate.</p>
+            <p class="math">\(2+\{[3-6(2-9)+4(6+3)]-8\}\cdot 4\)</p>
+          `,
+          choices: [
+            String.raw`\(292\)`,
+            String.raw`\(274\)`,
+            String.raw`\(286\)`,
+            String.raw`\(302\)`,
+            String.raw`\(81\)`,
+            String.raw`\(294\)`
+          ]
+        },
+        {
+          stem: String.raw`
+            <p>Use the sets below.</p>
+            <p class="math">\(A=\{2,4,6,8,10\}\qquad B=\{0,1,2,3,4,5\}\qquad C=\{2,8,14,20,\dots\}\)</p>
+            <p>Which set is \(A\cup C\)?</p>
+          `,
+          choices: [
+            String.raw`\(\{2,8\}\)`,
+            String.raw`\(\{2,4,6,8,10,14,20,\dots\}\)`,
+            String.raw`\(\{0,1,2,3,4,5,6,8,10\}\)`,
+            String.raw`\(\{0,1,2,3,4,5,6,8,10,14,20,\dots\}\)`,
+            String.raw`\(\{2,4,6,8,10\}\)`,
+            String.raw`\(\{2,8,14,20,\dots\}\)`
+          ]
+        },
+        {
+          stem: String.raw`
+            <p>Use the sets below.</p>
+            <p class="math">\(A=\{2,4,6,8,10\}\qquad B=\{0,1,2,3,4,5\}\qquad C=\{2,8,14,20,\dots\}\)</p>
+            <p>Which set is \(B\cap C\)?</p>
+          `,
+          choices: [
+            String.raw`\(\varnothing\)`,
+            String.raw`\(\{0,2\}\)`,
+            String.raw`\(\{2,4\}\)`,
+            String.raw`\(\{2,8\}\)`,
+            String.raw`\(\{2\}\)`,
+            String.raw`\(\{0,1,2,3,4,5\}\)`
+          ]
+        },
+        {
+          stem: String.raw`
+            <p>Use the sets below.</p>
+            <p class="math">\(A=\{2,4,6,8,10\}\qquad B=\{0,1,2,3,4,5\}\qquad C=\{2,8,14,20,\dots\}\)</p>
+            <p>Complete the statement: \(32\in\ ?\)</p>
+          `,
+          choices: [
+            String.raw`\(A\)`,
+            String.raw`\(B\)`,
+            String.raw`\(C\)`,
+            String.raw`\(A\cap B\)`,
+            String.raw`\(A\cup B\)`,
+            String.raw`\(\varnothing\)`
+          ]
+        },
+        {
+          stem: String.raw`
+            <p>Use the same sets \(A\), \(B\), and \(C\) as above.</p>
+            <p>Which is the <b>smallest</b> set listed that makes the statement true?</p>
+            <p class="math">\(\{2,10\}\subseteq\ ?\)</p>
+          `,
+          choices: [
+            String.raw`\(A\)`,
+            String.raw`\(B\)`,
+            String.raw`\(C\)`,
+            String.raw`\(A\cap B\)`,
+            String.raw`\(A\cup B\)`,
+            String.raw`\(\varnothing\)`
+          ]
+        },
+        {
+          stem: String.raw`
+            <p>Using the same sets, exercises 31&ndash;36 considered the sets</p>
+            <p class="math">\(A\cup C,\ B\cap C,\ A\cap B,\ A\cap\varnothing,\ A\cup B,\ B\cup N\)</p>
+            <p>Which pair is infinite?</p>
+          `,
+          choiceWrap: false,
+          choices: [
+            String.raw`\(A\cup C\) and \(B\cap C\)`,
+            String.raw`\(A\cap B\) and \(A\cap\varnothing\)`,
+            String.raw`\(A\cup B\) and \(B\cap C\)`,
+            String.raw`\(A\cup C\) and \(B\cup N\)`,
+            String.raw`\(A\cup B\) and \(A\cap B\)`,
+            String.raw`All six sets are finite.`
+          ]
+        }
+      ]
+    };
+  </script>
+
+  <link rel="stylesheet" href="/math-homework/assets/core-rich.css" />
+  <script defer src="/math-homework/assets/core-rich.js"></script>
+  <script defer src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+</head>
+<body>
+  <div id="hw-root">Loading…</div>
+</body>
+</html>

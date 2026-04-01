@@ -1,0 +1,213 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Homework 2-5 (Algebra I)</title>
+
+  <script>
+    /* =========================
+       Homework 2-5 — Word Problems with Linear and Absolute Value Equations (Algebra I)
+       Adapted for: /math-homework/assets/core-rich.js
+
+       REQUIRED SOURCE REFERENCES (your provided sets):
+       - Type A uses A. Exercises: #1, #2, #5, #6, #7
+       - Type B uses B. Exercises: #11, #12, #14, #15, #16
+       - Type C uses C. Exercises: #17, #19
+       - Model-authored extension: none
+
+       IMAGE NAMING RULE (STRICT):
+       Any figure used is referenced by the ORIGINAL problem number from the set.
+       PNG files live in the SAME folder as this HTML.
+       No figures are required for this homework.
+       ========================= */
+
+    window.homeworkData = {
+      classId : "Algebra1",
+      id      : "Homework 2-5",
+      title   : "Homework 2-5 — Word Problems with Equations",
+      graphics : String.raw``,
+
+      answerKey : ["D","D","C","B","C","A","E","A","C","C","C","B"],
+
+      questions : [
+        {
+          stem: String.raw`
+            <p>The mayors of Clarkston and Blair drive toward each other at <span class="math">\(50\)</span> mph and <span class="math">\(55\)</span> mph. They leave at the same time and meet after <span class="math">\(3\)</span> hours. How far apart are the two cities?</p>
+          `,
+          choices: [
+            String.raw`105 miles`,
+            String.raw`157.5 miles`,
+            String.raw`300 miles`,
+            String.raw`315 miles`,
+            String.raw`330 miles`,
+            String.raw`630 miles`
+          ],
+          choiceWrap: false
+        },
+        {
+          stem: String.raw`
+            <p>Joey has a sack of <span class="math">\(56\)</span> marbles. There are red, yellow, and blue marbles. He has half as many red marbles as blue marbles, and he has <span class="math">\(8\)</span> more yellow marbles than red marbles. Which choice gives the numbers of red, yellow, and blue marbles?</p>
+          `,
+          choices: [
+            String.raw`12 red, 24 yellow, 20 blue`,
+            String.raw`12 red, 20 yellow, 12 blue`,
+            String.raw`24 red, 20 yellow, 12 blue`,
+            String.raw`12 red, 20 yellow, 24 blue`,
+            String.raw`14 red, 22 yellow, 20 blue`,
+            String.raw`16 red, 24 yellow, 16 blue`
+          ],
+          choiceWrap: false
+        },
+        {
+          stem: String.raw`
+            <p>The sum of two numbers is <span class="math">\(-23\)</span>, and the difference of the larger number and the smaller number is <span class="math">\(81\)</span>. What are the two numbers?</p>
+          `,
+          choices: [
+            String.raw`larger \(=-29\), smaller \(=52\)`,
+            String.raw`larger \(=52\), smaller \(=-29\)`,
+            String.raw`larger \(=29\), smaller \(=-52\)`,
+            String.raw`larger \(=-52\), smaller \(=29\)`,
+            String.raw`larger \(=23\), smaller \(=-58\)`,
+            String.raw`larger \(=58\), smaller \(=-23\)`
+          ],
+          choiceWrap: false
+        },
+        {
+          stem: String.raw`
+            <p>Two angles are supplementary. The measure of one angle is one-fourth the measure of the other. Which pair could be the angle measures?</p>
+          `,
+          choices: [
+            String.raw`\(30^\circ\) and \(150^\circ\)`,
+            String.raw`\(36^\circ\) and \(144^\circ\)`,
+            String.raw`\(45^\circ\) and \(135^\circ\)`,
+            String.raw`\(60^\circ\) and \(120^\circ\)`,
+            String.raw`\(72^\circ\) and \(108^\circ\)`,
+            String.raw`\(90^\circ\) and \(90^\circ\)`
+          ],
+          choiceWrap: false
+        },
+        {
+          stem: String.raw`
+            <p>The sum of three consecutive odd integers is <span class="math">\(63\)</span>. Which three integers are they?</p>
+          `,
+          choices: [
+            String.raw`\(17, 19, 21\)`,
+            String.raw`\(18, 20, 22\)`,
+            String.raw`\(19, 21, 23\)`,
+            String.raw`\(20, 21, 22\)`,
+            String.raw`\(21, 23, 25\)`,
+            String.raw`\(15, 21, 27\)`
+          ],
+          choiceWrap: false
+        },
+        {
+          stem: String.raw`
+            <p>Susan bought a combination of peanut candy bars and chocolate bars. Peanut bars cost <span class="math">\(69\)</span> cents, chocolate bars cost <span class="math">\(59\)</span> cents, and she bought <span class="math">\(17\)</span> bars for a total of $10.83. How many of each type did she buy?</p>
+          `,
+          choices: [
+            String.raw`8 peanut bars and 9 chocolate bars`,
+            String.raw`9 peanut bars and 8 chocolate bars`,
+            String.raw`7 peanut bars and 10 chocolate bars`,
+            String.raw`10 peanut bars and 7 chocolate bars`,
+            String.raw`11 peanut bars and 6 chocolate bars`,
+            String.raw`6 peanut bars and 11 chocolate bars`
+          ],
+          choiceWrap: false
+        },
+        {
+          stem: String.raw`
+            <p>Karen has dimes, nickels, and pennies totaling $4.52. She has <span class="math">\(1\)</span> more dime than three times the number of nickels, and she has <span class="math">\(10\)</span> more pennies than nickels. Which choice gives the numbers of dimes, nickels, and pennies?</p>
+          `,
+          choices: [
+            String.raw`35 dimes, 12 nickels, and 22 pennies`,
+            String.raw`37 dimes, 12 nickels, and 12 pennies`,
+            String.raw`37 dimes, 22 nickels, and 12 pennies`,
+            String.raw`12 dimes, 37 nickels, and 22 pennies`,
+            String.raw`37 dimes, 12 nickels, and 22 pennies`,
+            String.raw`31 dimes, 10 nickels, and 20 pennies`
+          ],
+          choiceWrap: false
+        },
+        {
+          stem: String.raw`
+            <p>John and Jim ride to Mill Park at an average of <span class="math">\(8\)</span> mph on a route that is <span class="math">\(4\)</span> miles shorter than the route they use on the return trip. They travel <span class="math">\(7\)</span> mph on the return trip, and the return takes <span class="math">\(1\)</span> hour longer. Which pair gives the distance to Mill Park and the distance on the return trip?</p>
+          `,
+          choices: [
+            String.raw`24 miles to the park and 28 miles on the return trip`,
+            String.raw`28 miles to the park and 24 miles on the return trip`,
+            String.raw`20 miles to the park and 24 miles on the return trip`,
+            String.raw`28 miles to the park and 32 miles on the return trip`,
+            String.raw`21 miles to the park and 28 miles on the return trip`,
+            String.raw`24 miles to the park and 32 miles on the return trip`
+          ],
+          choiceWrap: false
+        },
+        {
+          stem: String.raw`
+            <p>For the first part of a trip to the mountains, Paige and Mary travel at <span class="math">\(52\)</span> mph. For the second part, which takes half as much time as the first part, they travel at <span class="math">\(35\)</span> mph. The total distance is <span class="math">\(104.25\)</span> miles. How long do they travel at each rate?</p>
+          `,
+          choices: [
+            String.raw`0.75 hour at 52 mph and 1.5 hours at 35 mph`,
+            String.raw`1 hour at 52 mph and 2 hours at 35 mph`,
+            String.raw`1.5 hours at 52 mph and 0.75 hour at 35 mph`,
+            String.raw`2 hours at 52 mph and 1 hour at 35 mph`,
+            String.raw`1.25 hours at 52 mph and 0.625 hour at 35 mph`,
+            String.raw`3 hours at 52 mph and 1.5 hours at 35 mph`
+          ],
+          choiceWrap: false
+        },
+        {
+          stem: String.raw`
+            <p>A train leaves Perryville at <span class="math">\(6{:}00\)</span> A.M. and travels east at <span class="math">\(64\)</span> mph. When it reaches Granite City, a westbound train leaves Granite City for Perryville at <span class="math">\(48\)</span> mph. The westbound train reaches Perryville at <span class="math">\(9{:}30\)</span> A.M. How far apart are Perryville and Granite City?</p>
+          `,
+          choices: [
+            String.raw`84 miles`,
+            String.raw`90 miles`,
+            String.raw`96 miles`,
+            String.raw`112 miles`,
+            String.raw`168 miles`,
+            String.raw`224 miles`
+          ],
+          choiceWrap: false
+        },
+        {
+          stem: String.raw`
+            <p>Joe knows that his stalled car is <span class="math">\(7\)</span> miles from milepost <span class="math">\(154\)</span>. Which equation represents <em>all possible</em> milepost numbers <span class="math">\(x\)</span> where Joe could be?</p>
+          `,
+          choices: [
+            String.raw`\(x - 154 = 7\)`,
+            String.raw`\(|x| - 154 = 7\)`,
+            String.raw`\(|x - 154| = 7\)`,
+            String.raw`\(|x + 154| = 7\)`,
+            String.raw`\(|x - 7| = 154\)`,
+            String.raw`\(154 - x = 7\)`
+          ],
+          choiceWrap: false
+        },
+        {
+          stem: String.raw`
+            <p>Kevin is hiking the Appalachian Trail. A sign says that Newfound Gap is <span class="math">\(17\)</span> miles ahead. If Newfound Gap is the <span class="math">\(230\)</span>-mile mark of the trail, at what mile mark is Kevin now?</p>
+          `,
+          choices: [
+            String.raw`197`,
+            String.raw`213`,
+            String.raw`217`,
+            String.raw`230`,
+            String.raw`247`,
+            String.raw`253`
+          ],
+          choiceWrap: false
+        }
+      ]
+    };
+  </script>
+
+  <link rel="stylesheet" href="/math-homework/assets/core-rich.css" />
+  <script defer src="/math-homework/assets/core-rich.js"></script>
+  <script defer src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+</head>
+<body>
+  <div id="hw-root">Loading…</div>
+</body>
+</html>

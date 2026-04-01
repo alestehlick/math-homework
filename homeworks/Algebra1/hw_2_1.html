@@ -1,0 +1,232 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Homework 2-1 (Algebra 1)</title>
+
+  <script>
+    /* =========================
+       Homework 2-1 — Rational and Irrational Numbers
+       Adapted for: /math-homework/assets/core-rich.js
+
+       REQUIRED SOURCE REFERENCES (your provided sets):
+       - Type A uses A. Exercises: #3, #5, #6, #7, #8
+       - Type B uses B. Exercises: #11, #15, #16, #20, #21, #22
+       - Type C uses C. Exercise: #28
+       - Model reworking: Q10 combines source ideas from B #21 and #22 into one number-line placement question so students must locate two real numbers at once.
+       - Model reworking: Q11 reshapes C #28 into a conceptual multiple-choice question about why measured quantities are usually reported with finite decimals.
+       - Model-authored extension: Q12, inspired by C #28 and B #27, tests whether students understand that changing units changes the numerical value but does not usually change a number from irrational to rational.
+
+       IMAGE NAMING RULE (STRICT):
+       - No figures are required for this homework.
+       ========================= */
+
+    window.homeworkData = {
+      classId : "Algebra1",
+      id      : "Homework 2-1",
+      title   : "Homework 2-1 — Rational and Irrational Numbers",
+
+      graphics : String.raw``,
+
+      answerKey : ["B","C","C","A","B","A","D","C","F","B","B","C"],
+
+      questions : [
+
+        {
+          stem: String.raw`
+            <p>Convert the number to a decimal.</p>
+            <p class="math">\(23\%\)</p>
+          `,
+          choices: [
+            String.raw`\(23\)`,
+            String.raw`\(0.23\)`,
+            String.raw`\(2.3\)`,
+            String.raw`\(0.023\)`,
+            String.raw`\(230\)`,
+            String.raw`\(0.0023\)`
+          ]
+        },
+
+        {
+          stem: String.raw`
+            <p>Convert the ratio to a decimal.</p>
+            <p><i>3 out of 6</i></p>
+          `,
+          choices: [
+            String.raw`\(0.06\)`,
+            String.raw`\(0.3\)`,
+            String.raw`\(0.5\)`,
+            String.raw`\(1.5\)`,
+            String.raw`\(2\)`,
+            String.raw`\(0.05\)`
+          ]
+        },
+
+        {
+          stem: String.raw`
+            <p>Convert the number to a fraction in lowest terms.</p>
+            <p class="math">\(82\%\)</p>
+          `,
+          choices: [
+            String.raw`\(\frac{82}{100}\)`,
+            String.raw`\(\frac{41}{100}\)`,
+            String.raw`\(\frac{41}{50}\)`,
+            String.raw`\(\frac{82}{10}\)`,
+            String.raw`\(\frac{21}{25}\)`,
+            String.raw`\(\frac{50}{41}\)`
+          ]
+        },
+
+        {
+          stem: String.raw`
+            <p>Convert the decimal to a fraction in lowest terms.</p>
+            <p class="math">\(4.3\)</p>
+          `,
+          choices: [
+            String.raw`\(\frac{43}{10}\)`,
+            String.raw`\(\frac{43}{100}\)`,
+            String.raw`\(\frac{13}{3}\)`,
+            String.raw`\(\frac{4}{3}\)`,
+            String.raw`\(\frac{7}{10}\)`,
+            String.raw`\(\frac{10}{43}\)`
+          ]
+        },
+
+        {
+          stem: String.raw`
+            <p>Which decimal is equal to the fraction below?</p>
+            <p class="math">\(\frac{5}{7}\)</p>
+          `,
+          choices: [
+            String.raw`\(0.75\)`,
+            String.raw`\(0.714285\ldots\)`,
+            String.raw`\(5.7\)`,
+            String.raw`\(0.57\)`,
+            String.raw`\(7.5\)`,
+            String.raw`\(0.0714285\ldots\)`
+          ]
+        },
+
+        {
+          stem: String.raw`
+            <p>Simplify the number, then decide which is the smallest number system that contains it.</p>
+            <p class="math">\(\sqrt{4}\)</p>
+          `,
+          choices: [
+            String.raw`natural numbers`,
+            String.raw`whole numbers`,
+            String.raw`integers`,
+            String.raw`rational numbers`,
+            String.raw`irrational numbers`,
+            String.raw`real numbers`
+          ],
+          choiceWrap: false
+        },
+
+        {
+          stem: String.raw`
+            <p>Which is the smallest number system that contains the number below?</p>
+            <p class="math">\(-6\)</p>
+          `,
+          choices: [
+            String.raw`whole numbers`,
+            String.raw`natural numbers`,
+            String.raw`rational numbers`,
+            String.raw`integers`,
+            String.raw`irrational numbers`,
+            String.raw`not a real number`
+          ],
+          choiceWrap: false
+        },
+
+        {
+          stem: String.raw`
+            <p>Which number is rational but <b>not</b> an integer?</p>
+          `,
+          choices: [
+            String.raw`\(-6\)`,
+            String.raw`\(0\)`,
+            String.raw`\(-\frac{4}{11}\)`,
+            String.raw`\(\sqrt{4}\)`,
+            String.raw`\(\frac{3}{1}\)`,
+            String.raw`\(\sqrt{5}\)`
+          ],
+          choiceWrap: false
+        },
+
+        {
+          stem: String.raw`
+            <p>Which number is irrational?</p>
+          `,
+          choices: [
+            String.raw`\(0.313131\ldots\)`,
+            String.raw`\(-\frac{4}{11}\)`,
+            String.raw`\(0\)`,
+            String.raw`\(\frac{3}{1}\)`,
+            String.raw`\(\sqrt{4}\)`,
+            String.raw`\(-0.721721172111\ldots\)`
+          ],
+          choiceWrap: false
+        },
+
+        {
+          stem: String.raw`
+            <p>Which statement correctly locates both numbers on the number line?</p>
+            <p class="math">\(\pi\) and \(-\frac{11}{5}\)</p>
+          `,
+          choices: [
+            String.raw`\(\pi\) is between \(2\) and \(3\), and \(-\frac{11}{5}\) is between \(-3\) and \(-2\).`,
+            String.raw`\(\pi\) is between \(3\) and \(4\), and \(-\frac{11}{5}\) is between \(-3\) and \(-2\).`,
+            String.raw`\(\pi\) is between \(3\) and \(4\), and \(-\frac{11}{5}\) is between \(-2\) and \(-1\).`,
+            String.raw`\(\pi\) is between \(4\) and \(5\), and \(-\frac{11}{5}\) is between \(-3\) and \(-2\).`,
+            String.raw`\(\pi\) is between \(2\) and \(3\), and \(-\frac{11}{5}\) is between \(-2\) and \(-1\).`,
+            String.raw`\(\pi\) is between \(3\) and \(4\), and \(-\frac{11}{5}\) is between \(-1\) and \(0\).`
+          ],
+          choiceWrap: false
+        },
+
+        {
+          stem: String.raw`
+            <p>Why is a person’s weight usually reported with a terminating decimal or a fraction, rather than as an irrational number?</p>
+          `,
+          choices: [
+            String.raw`Because every weight is a whole number of pounds or kilograms.`,
+            String.raw`Because measured weights are recorded to finite precision, so the reported value is a rounded decimal or fraction.`,
+            String.raw`Because irrational numbers are not real numbers.`,
+            String.raw`Because changing units always turns an irrational number into a whole number.`,
+            String.raw`Because scales can show only positive integers.`,
+            String.raw`Because every decimal shown on a calculator is irrational.`
+          ],
+          choiceWrap: false
+        },
+
+        {
+          stem: String.raw`
+            <p>A segment has length \(\sqrt{5}\) meters. The same length is then written in centimeters or kilometers.</p>
+            <p>Which statement is true?</p>
+          `,
+          choices: [
+            String.raw`It becomes rational because the unit changes.`,
+            String.raw`It becomes a whole number in centimeters.`,
+            String.raw`The numerical value changes, but it remains irrational.`,
+            String.raw`It is no longer a real number.`,
+            String.raw`The numerical value stays exactly \(\sqrt{5}\).`,
+            String.raw`It becomes negative in kilometers.`
+          ],
+          choiceWrap: false
+        }
+
+      ]
+    };
+  </script>
+
+  <link rel="stylesheet" href="/math-homework/assets/core-rich.css" />
+  <script defer src="/math-homework/assets/core-rich.js"></script>
+  <script defer src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+</head>
+
+<body>
+  <div id="hw-root">Loading…</div>
+</body>
+</html>

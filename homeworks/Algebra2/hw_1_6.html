@@ -1,0 +1,242 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Homework 1-6 (Algebra II)</title>
+
+  <script>
+    /* =========================
+       Homework 1-6 — Factoring Completely (Algebra II)
+       Adapted for: /math-homework/assets/core-rich.js
+
+       REQUIRED SOURCE REFERENCES (your provided sets):
+       - Type A uses A. Exercises: #1, #4, #5, #6, #10
+       - Type B uses B. Exercises: #14, #16, #18, #21, #23
+       - Type C uses C. Exercises: #24, #25
+
+       MODEL REWORK / PEDAGOGICAL EDITING:
+       - All items were rewritten into multiple-choice form.
+       - The final sequence was arranged to move from standard quadratic trinomials,
+         to GCF-plus-trinomial structure, to perfect-square recognition,
+         to quadratic-in-form expressions and higher-degree complete factorization.
+       - Distractors were designed to diagnose common errors: missing the GCF,
+         sign mistakes, stopping too early, and recognizing a pattern without carrying it through.
+       - No fully source-free model-authored questions were added.
+
+       IMAGE NAMING RULE (STRICT):
+       - No figures are used in this homework.
+       ========================= */
+
+    window.homeworkData = {
+      classId : "Algebra2",
+      id      : "Homework 1-6",
+      title   : "Homework 1-6 — Factoring Completely",
+      graphics: String.raw``,
+
+      answerKey : ["B","C","A","D","B","C","A","B","E","D","F","C"],
+
+      questions : [
+        /* Source: A. Exercise #1 */
+        {
+          stem: String.raw`
+            <p>Which choice is the complete factorization of \(x^2 - 2x - 63\)?</p>
+          `,
+          choices: [
+            String.raw`\((x-7)(x+9)\)`,
+            String.raw`\((x-9)(x+7)\)`,
+            String.raw`\((x-3)(x+21)\)`,
+            String.raw`\((x+9)(x+7)\)`,
+            String.raw`\((x-9)^2\)`,
+            String.raw`Prime over the integers`
+          ],
+          choiceWrap: false
+        },
+
+        /* Source: A. Exercise #4 */
+        {
+          stem: String.raw`
+            <p>Factor completely: \(7x^2 - 67x - 30\).</p>
+          `,
+          choices: [
+            String.raw`\((7x-3)(x+10)\)`,
+            String.raw`\((7x+10)(x-3)\)`,
+            String.raw`\((7x+3)(x-10)\)`,
+            String.raw`\((7x-10)(x+3)\)`,
+            String.raw`\((x-10)(x+3)\)`,
+            String.raw`Prime over the integers`
+          ],
+          choiceWrap: false
+        },
+
+        /* Source: A. Exercise #5 */
+        {
+          stem: String.raw`
+            <p>Which expression is the complete factorization of \(10e^2f^3g + 6ef^2g^2 - 8ef^5g\)?</p>
+          `,
+          choices: [
+            String.raw`\(2ef^2g(5ef + 3g - 4f^3)\)`,
+            String.raw`\(2efg(5ef^2 + 3fg - 4f^4)\)`,
+            String.raw`\(2ef^2g(5e + 3g - 4f^2)\)`,
+            String.raw`\(ef^2g(10ef + 6g - 8f^3)\)`,
+            String.raw`\(2ef^2g(5ef - 3g - 4f^3)\)`,
+            String.raw`\(2ef^2g(5ef + 3g - 2f^3)\)`
+          ],
+          choiceWrap: false
+        },
+
+        /* Source: A. Exercise #6 */
+        {
+          stem: String.raw`
+            <p>Choose the complete factorization of \(a^2 + 6a + 9\).</p>
+          `,
+          choices: [
+            String.raw`\((a+9)(a+1)\)`,
+            String.raw`\((a+3)(a-3)\)`,
+            String.raw`\((a+6)(a+3)\)`,
+            String.raw`\((a+3)^2\)`,
+            String.raw`\(a(a+6)+9\)`,
+            String.raw`Prime over the integers`
+          ],
+          choiceWrap: false
+        },
+
+        /* Source: A. Exercise #10 */
+        {
+          stem: String.raw`
+            <p>Which expression gives the complete factorization of \(a^5b^2 + 2a^4b^3 + a^3b^4\)?</p>
+          `,
+          choices: [
+            String.raw`\(a^3b^2(a^2 + 2ab + b^2)\)`,
+            String.raw`\(a^3b^2(a+b)^2\)`,
+            String.raw`\(ab^2(a^4 + 2a^3b + a^2b^2)\)`,
+            String.raw`\(a^3b(a^2b + 2ab^2 + b^3)\)`,
+            String.raw`\((a^2b + ab^2)^2\)`,
+            String.raw`\(a^3b^2(a-b)^2\)`
+          ],
+          choiceWrap: false
+        },
+
+        /* Source: B. Exercise #14 */
+        {
+          stem: String.raw`
+            <p>Factor completely: \(4c^4d - 52c^3d + 168c^2d\).</p>
+          `,
+          choices: [
+            String.raw`\(4c^2d(c^2 - 13c + 42)\)`,
+            String.raw`\(4cd(c^3 - 13c^2 + 42c)\)`,
+            String.raw`\(4c^2d(c-6)(c-7)\)`,
+            String.raw`\(4c^2d(c+6)(c-7)\)`,
+            String.raw`\(2c^2d(2c-7)(2c-6)\)`,
+            String.raw`\(4c^2d(c-14)(c+3)\)`
+          ],
+          choiceWrap: false
+        },
+
+        /* Source: B. Exercise #16 */
+        {
+          stem: String.raw`
+            <p>Choose the complete factorization of \(19x^2 - 114x + 171\).</p>
+          `,
+          choices: [
+            String.raw`\(19(x-3)^2\)`,
+            String.raw`\((19x-3)(x-57)\)`,
+            String.raw`\((19x-57)(x-3)\)`,
+            String.raw`\(19(x-9)(x-1)\)`,
+            String.raw`\((x-3)^2\)`,
+            String.raw`Prime over the integers`
+          ],
+          choiceWrap: false
+        },
+
+        /* Source: B. Exercise #18 */
+        {
+          stem: String.raw`
+            <p>Which expression is the complete factorization of \(4x^2 - 68x + 289\)?</p>
+          `,
+          choices: [
+            String.raw`\((4x-17)^2\)`,
+            String.raw`\((2x-17)^2\)`,
+            String.raw`\((2x+17)^2\)`,
+            String.raw`\((x-17)(4x-17)\)`,
+            String.raw`\((2x-17)(2x+17)\)`,
+            String.raw`Prime over the integers`
+          ],
+          choiceWrap: false
+        },
+
+        /* Source: B. Exercise #21 */
+        {
+          stem: String.raw`
+            <p>Factor completely: \(x^4 + 2x^2 - 15\).</p>
+          `,
+          choices: [
+            String.raw`\((x^2+3)(x^2-5)\)`,
+            String.raw`\((x^2-5)(x^2-3)\)`,
+            String.raw`\((x^2-15)(x^2+1)\)`,
+            String.raw`\((x^2+3)(x^2+5)\)`,
+            String.raw`\((x^2+5)(x^2-3)\)`,
+            String.raw`Prime over the integers`
+          ],
+          choiceWrap: false
+        },
+
+        /* Source: B. Exercise #23 */
+        {
+          stem: String.raw`
+            <p>Which choice gives the complete factorization of \(x^4 - 13x^2 + 36\)?</p>
+          `,
+          choices: [
+            String.raw`\((x^2-9)(x^2-4)\)`,
+            String.raw`\((x-9)(x+4)(x^2-1)\)`,
+            String.raw`\((x-6)^2(x+1)^2\)`,
+            String.raw`\((x-3)(x+3)(x-2)(x+2)\)`,
+            String.raw`\((x^2-12)(x^2-3)\)`,
+            String.raw`Prime over the integers`
+          ],
+          choiceWrap: false
+        },
+
+        /* Source: C. Exercise #24 */
+        {
+          stem: String.raw`
+            <p>Choose the complete factorization of \(8x^5 - 130x^3 + 32x\).</p>
+          `,
+          choices: [
+            String.raw`\(2x(4x^4 - 65x^2 + 16)\)`,
+            String.raw`\(2x(2x-1)(2x+1)(x^2-16)\)`,
+            String.raw`\(2x(4x^2-1)(x^2-16)\)`,
+            String.raw`\(2x(4x^2+1)(x^2-16)\)`,
+            String.raw`\(2x(2x-1)(2x+1)(x-16)(x+1)\)`,
+            String.raw`\(2x(2x-1)(2x+1)(x-4)(x+4)\)`
+          ],
+          choiceWrap: false
+        },
+
+        /* Source: C. Exercise #25 */
+        {
+          stem: String.raw`
+            <p>Factor completely: \(48x^4y - 216x^2y + 243y\).</p>
+          `,
+          choices: [
+            String.raw`\(3y(16x^4 - 72x^2 + 81)\)`,
+            String.raw`\(3y(4x^2-9)^2\)`,
+            String.raw`\(3y(2x-3)^2(2x+3)^2\)`,
+            String.raw`\(3y(4x-9)^2\)`,
+            String.raw`\(y(48x^4 - 216x^2 + 243)\)`,
+            String.raw`\(3y(2x-3)(2x+3)\)`
+          ],
+          choiceWrap: false
+        }
+      ]
+    };
+  </script>
+
+  <link rel="stylesheet" href="/math-homework/assets/core-rich.css" />
+  <script defer src="/math-homework/assets/core-rich.js"></script>
+  <script defer src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+</head>
+<body>
+  <div id="hw-root">Loading…</div>
+</body>
+</html>

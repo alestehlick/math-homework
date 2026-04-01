@@ -1,0 +1,225 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Homework 2-7 (Algebra I)</title>
+
+  <script>
+    /* =========================
+       Homework 2-7 — Sets and Set Notation (Algebra I)
+       Adapted for: /math-homework/assets/core-rich.js
+
+       REQUIRED SOURCE REFERENCES (your provided sets):
+       - Type A uses A. Exercises: #1, #4, #8, #9, #10
+       - Type B uses B. Exercises: #15, #17, #18, #21, #23
+       - Type C uses C. Exercises: #24, #25, #26, #27, #28
+       - Model-reworked item: Q7 reworks B #23 so the Venn-diagram task becomes a precise multiple-choice comparison of intersection and union.
+       - Model-authored extension: Q11 compares two equivalent set expressions to cultivate structural recognition rather than isolated computation.
+       - Model-reworked item: Q12 sharpens the distinction between elementhood and subset language using the sets already introduced in A.
+
+       IMAGE NAMING RULE (STRICT):
+       Any figure used is referenced by the ORIGINAL problem number from the set.
+       Put these PNG files in the SAME folder as this HTML.
+       No external figure files are required for this homework.
+       ========================= */
+
+    window.homeworkData = {
+      classId : "Algebra1",
+      id      : "Homework 2-7",
+      title   : "Homework 2-7 — Sets and Set Notation",
+      graphics: String.raw``,
+
+      answerKey : ["A","C","C","B","A","C","B","A","B","C","A","E"],
+
+      questions : [
+        {
+          stem: String.raw`
+            <p>Let \(A=\{1,3,5,\dots\}\), \(B=\{-2,-1,1,3\}\), and \(C=\{-1,2,5,6\}\).</p>
+            <p>Which set is \(A\cap B\)?</p>
+          `,
+          choices: [
+            String.raw`\(\{1,3\}\)`,
+            String.raw`\(\{-1,1,3\}\)`,
+            String.raw`\(\{1,3,5\}\)`,
+            String.raw`\(\{-2,-1,1,3\}\)`,
+            String.raw`\(\{5\}\)`,
+            String.raw`\(\varnothing\)`
+          ]
+        },
+        {
+          stem: String.raw`
+            <p>Let \(A=\{1,3,5,\dots\}\), \(B=\{-2,-1,1,3\}\), and \(C=\{-1,2,5,6\}\).</p>
+            <p>Which set is \((A\cup B)\cap C\)?</p>
+          `,
+          choices: [
+            String.raw`\(\{1,3\}\)`,
+            String.raw`\(\{2,5,6\}\)`,
+            String.raw`\(\{-1,5\}\)`,
+            String.raw`\(\{-2,-1,1,3,5\}\)`,
+            String.raw`\(\{5\}\)`,
+            String.raw`\(\varnothing\)`
+          ]
+        },
+        {
+          stem: String.raw`
+            <p>Use the same sets \(A\), \(B\), and \(C\) from the previous questions.</p>
+            <p>Which statement is true?</p>
+          `,
+          choices: [
+            String.raw`\(2\in B\)`,
+            String.raw`\(\varnothing\in B\)`,
+            String.raw`\(\{3,5,7\}\subseteq A\)`,
+            String.raw`\(\{2,3\}\subseteq C\)`,
+            String.raw`\(5\notin C\)`,
+            String.raw`\(B\subseteq A\)`
+          ]
+        },
+        {
+          stem: String.raw`
+            <p>Let</p>
+            <ul>
+              <li><b>E</b> = all U.S. states that begin with the letter <b>M</b>,</li>
+              <li><b>H</b> = all U.S. states that have a land border with Canada.</li>
+            </ul>
+            <p>Which set is \(E\cap H\)?</p>
+          `,
+          choiceWrap: false,
+          choices: [
+            String.raw`{Maine, Maryland, Massachusetts, Michigan}`,
+            String.raw`{Maine, Michigan, Minnesota, Montana}`,
+            String.raw`{Michigan, Minnesota, Mississippi, Missouri}`,
+            String.raw`{Maine, Michigan, Montana}`,
+            String.raw`{Maine, Minnesota, Mississippi}`,
+            String.raw`{Montana}`
+          ]
+        },
+        {
+          stem: String.raw`
+            <p>Let</p>
+            <ul>
+              <li><b>D</b> = all U.S. states that border the Mississippi River,</li>
+              <li><b>G</b> = all U.S. states with two words in the name.</li>
+            </ul>
+            <p>Which set is \(D\cap G\)?</p>
+          `,
+          choices: [
+            String.raw`\(\varnothing\)`,
+            String.raw`\(\{\text{Minnesota}\}\)`,
+            String.raw`\(\{\text{Mississippi}\}\)`,
+            String.raw`\(\{\text{New Mexico}\}\)`,
+            String.raw`\(\{\text{Minnesota},\text{ Mississippi}\}\)`,
+            String.raw`\(\{\text{Louisiana},\text{ Mississippi}\}\)`
+          ]
+        },
+        {
+          stem: String.raw`
+            <p>Which set notation correctly names the set of <b>whole numbers</b>?</p>
+          `,
+          choices: [
+            String.raw`\(\{1,2,3,\dots\}\)`,
+            String.raw`\(\{\dots,-2,-1,0,1,2,\dots\}\)`,
+            String.raw`\(\{0,1,2,3,\dots\}\)`,
+            String.raw`\(\{2,4,6,8,\dots\}\)`,
+            String.raw`\(\{-1,0,1,2,3,\dots\}\)`,
+            String.raw`\(\{0,-1,-2,-3,\dots\}\)`
+          ]
+        },
+        {
+          stem: String.raw`
+            <p>Suppose</p>
+            <p class="math">\(A=\{-5,-3,-1,0,1,2,3\}\qquad B=\{0,2,4,6,8,10\}\)</p>
+            <p>Which statement about \(A\cap B\) and \(A\cup B\) is correct?</p>
+          `,
+          choices: [
+            String.raw`\(A\cap B=\{0,1,2\}\) and \(A\cup B=\{-5,-3,-1,0,1,2,3,4,6,8,10\}\)`,
+            String.raw`\(A\cap B=\{0,2\}\) and \(A\cup B=\{-5,-3,-1,0,1,2,3,4,6,8,10\}\)`,
+            String.raw`\(A\cap B=\{0,2,4\}\) and \(A\cup B=\{-5,-3,-1,0,1,2,3,4,6,8,10\}\)`,
+            String.raw`\(A\cap B=\{0,2\}\) and \(A\cup B=\{-5,-3,-1,1,2,3,4,6,8,10\}\)`,
+            String.raw`\(A\cap B=\varnothing\) and \(A\cup B=B\)`,
+            String.raw`\(A\cap B=\{2\}\) and \(A\cup B=A\)`
+          ]
+        },
+        {
+          stem: String.raw`
+            <p>Which symbolic statement matches the sentence below?</p>
+            <p><i>Nine is not an element of the union of sets \(A\) and \(B\).</i></p>
+          `,
+          choices: [
+            String.raw`\(9\notin A\cup B\)`,
+            String.raw`\(9\subseteq A\cup B\)`,
+            String.raw`\(9\in A\cap B\)`,
+            String.raw`\(\{9\}\notin A\cup B\)`,
+            String.raw`\(A\cup B\notin 9\)`,
+            String.raw`\(9=A\cup B\)`
+          ]
+        },
+        {
+          stem: String.raw`
+            <p>Consider the statement</p>
+            <p class="math">\(\{5,7\}\subseteq \{\text{odd positive integers}\}\).</p>
+            <p>Which description is correct?</p>
+          `,
+          choiceWrap: false,
+          choices: [
+            String.raw`Both sets are finite.`,
+            String.raw`The set {5, 7} is finite, and the set of odd positive integers is infinite.`,
+            String.raw`The set {5, 7} is infinite, and the set of odd positive integers is finite.`,
+            String.raw`Both sets are infinite.`,
+            String.raw`The first set is empty, and the second set is infinite.`,
+            String.raw`Neither collection is a set.`
+          ]
+        },
+        {
+          stem: String.raw`
+            <p>Which equation shows the <b>identity element for union</b>?</p>
+          `,
+          choices: [
+            String.raw`\(A\cup A=A\)`,
+            String.raw`\(A\cap\varnothing=\varnothing\)`,
+            String.raw`\(A\cup\varnothing=A\)`,
+            String.raw`\(A\cap U=A\)`,
+            String.raw`\(A\cup U=U\)`,
+            String.raw`\(A\cap\varnothing=A\)`
+          ]
+        },
+        {
+          stem: String.raw`
+            <p>Let \(A=\{1,3,5,\dots\}\), \(B=\{-2,-1,1,3\}\), and \(C=\{-1,2,5,6\}\).</p>
+            <p>Which equality is correct?</p>
+          `,
+          choices: [
+            String.raw`\(A\cap(B\cup C)=\{1,3,5\}=(A\cap B)\cup(A\cap C)\)`,
+            String.raw`\(A\cap(B\cup C)=\{-1,1,3,5\}=A\cup(B\cap C)\)`,
+            String.raw`\(A\cap(B\cup C)=\{1,3\}=A\cap B\)`,
+            String.raw`\(A\cap(B\cup C)=\varnothing\)`,
+            String.raw`\(A\cap(B\cup C)=\{5\}=A\cap C\)`,
+            String.raw`\(A\cap(B\cup C)=\{1,2,3,5,6\}\)`
+          ]
+        },
+        {
+          stem: String.raw`
+            <p>Let \(C=\{-1,2,5,6\}\) and \(Z=\{\dots,-2,-1,0,1,2,\dots\}\).</p>
+            <p>Which statement is false?</p>
+          `,
+          choices: [
+            String.raw`\(-1\in C\)`,
+            String.raw`\(\{2,5\}\subseteq C\)`,
+            String.raw`\(\varnothing\subseteq C\)`,
+            String.raw`\(C\subseteq Z\)`,
+            String.raw`\(\{2,3\}\subseteq C\)`,
+            String.raw`\(5\in Z\)`
+          ]
+        }
+      ]
+    };
+  </script>
+
+  <link rel="stylesheet" href="/math-homework/assets/core-rich.css" />
+  <script defer src="/math-homework/assets/core-rich.js"></script>
+  <script defer src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+</head>
+<body>
+  <div id="hw-root">Loading…</div>
+</body>
+</html>

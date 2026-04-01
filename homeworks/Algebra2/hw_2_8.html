@@ -1,0 +1,252 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Homework 2-8 (Algebra II)</title>
+
+  <script>
+    /* =========================
+       Homework 2-8 — Absolute Value Inequalities (Algebra II)
+       Adapted for: /math-homework/assets/core-rich.js
+
+       REQUIRED SOURCE REFERENCES (your provided sets):
+       - Type A uses A. Exercises: #1, #3, #5, #9, #10
+       - Type B uses B. Exercises: #12, #15, #16, #21, #22
+       - Type C uses C. Exercises: #27, #28
+
+       MODEL REWORK / PEDAGOGICAL EDITING:
+       - All selected items were rewritten into multiple-choice form.
+       - B #21 and B #22 were originally graph-based; they are restated in words so students
+         must connect a verbal graph description or interval to the matching absolute-value form.
+       - The sequence is designed to highlight the main contrasts of this section:
+         “between” versus “outside,” included versus excluded endpoints, and special cases where
+         an absolute-value inequality has either no solution or all real numbers.
+       - No figures are used in this homework.
+
+       IMAGE NAMING RULE (STRICT):
+       - No figures are used in this homework.
+       ========================= */
+
+    window.homeworkData = {
+      classId : "Algebra2",
+      id      : "Homework 2-8",
+      title   : "Homework 2-8 — Absolute Value Inequalities",
+      graphics: String.raw``,
+
+      answerKey : ["B","B","A","C","A","B","C","B","A","C","C","A"],
+
+      questions : [
+        /* Source: A. Exercise #1 */
+        {
+          stem: String.raw`
+            <p>Solve the inequality.</p>
+            <p class="math">\(|x| &lt; 9\)</p>
+          `,
+          choices: [
+            String.raw`\(x &lt; -9\) or \(x &gt; 9\)`,
+            String.raw`\(-9 &lt; x &lt; 9\)`,
+            String.raw`\(-9 \le x \le 9\)`,
+            String.raw`\(x \le -9\) or \(x \ge 9\)`,
+            String.raw`\(x &gt; 9\)`,
+            String.raw`All real numbers`
+          ],
+          choiceWrap: false
+        },
+
+        /* Source: B. Exercise #22 */
+        {
+          stem: String.raw`
+            <p>Which absolute value inequality has the solution set \(1 \le x \le 7\)?</p>
+          `,
+          choices: [
+            String.raw`\(|x - 1| \le 7\)`,
+            String.raw`\(|x - 4| \le 3\)`,
+            String.raw`\(|x - 4| &lt; 3\)`,
+            String.raw`\(|x + 4| \le 3\)`,
+            String.raw`\(|x - 3| \le 4\)`,
+            String.raw`\(|x - 4| \ge 3\)`
+          ],
+          choiceWrap: false
+        },
+
+        /* Source: A. Exercise #3 */
+        {
+          stem: String.raw`
+            <p>Solve the inequality.</p>
+            <p class="math">\(|3x + 4| \le 7\)</p>
+          `,
+          choices: [
+            String.raw`\(-\frac{11}{3} \le x \le 1\)`,
+            String.raw`\(-1 \le x \le \frac{11}{3}\)`,
+            String.raw`\(x \le -\frac{11}{3}\) or \(x \ge 1\)`,
+            String.raw`\(x &lt; -\frac{11}{3}\) or \(x &gt; 1\)`,
+            String.raw`\(-\frac{7}{3} \le x \le 1\)`,
+            String.raw`\(-11 \le x \le 3\)`
+          ],
+          choiceWrap: false
+        },
+
+        /* Source: A. Exercise #5 */
+        {
+          stem: String.raw`
+            <p>Solve the inequality.</p>
+            <p class="math">\(|4y - 8 + 2y| &gt; 8\)</p>
+          `,
+          choices: [
+            String.raw`\(0 &lt; y &lt; \frac{8}{3}\)`,
+            String.raw`\(y \le 0\) or \(y \ge \frac{8}{3}\)`,
+            String.raw`\(y &lt; 0\) or \(y &gt; \frac{8}{3}\)`,
+            String.raw`\(y &lt; -\frac{8}{3}\) or \(y &gt; 0\)`,
+            String.raw`\(0 \le y \le \frac{8}{3}\)`,
+            String.raw`All real numbers`
+          ],
+          choiceWrap: false
+        },
+
+        /* Source: A. Exercise #9 */
+        {
+          stem: String.raw`
+            <p>Solve the inequality.</p>
+            <p class="math">\(\left|\frac{5x}{2} - 5\right| &lt; 1\)</p>
+          `,
+          choices: [
+            String.raw`\(\frac{8}{5} &lt; x &lt; \frac{12}{5}\)`,
+            String.raw`\(\frac{4}{5} &lt; x &lt; \frac{6}{5}\)`,
+            String.raw`\(x &lt; \frac{8}{5}\) or \(x &gt; \frac{12}{5}\)`,
+            String.raw`\(\frac{8}{5} \le x \le \frac{12}{5}\)`,
+            String.raw`\(2 &lt; x &lt; 3\)`,
+            String.raw`\(-\frac{8}{5} &lt; x &lt; \frac{12}{5}\)`
+          ],
+          choiceWrap: false
+        },
+
+        /* Source: A. Exercise #10 */
+        {
+          stem: String.raw`
+            <p>Solve the inequality.</p>
+            <p class="math">\(|6x + 4| + 9 \ge 17\)</p>
+          `,
+          choices: [
+            String.raw`\(-2 \le x \le \frac{2}{3}\)`,
+            String.raw`\(x \le -2\) or \(x \ge \frac{2}{3}\)`,
+            String.raw`\(x &lt; -2\) or \(x &gt; \frac{2}{3}\)`,
+            String.raw`\(x \le -\frac{2}{3}\) or \(x \ge 2\)`,
+            String.raw`All real numbers`,
+            String.raw`No solution`
+          ],
+          choiceWrap: false
+        },
+
+        /* Source: B. Exercise #12 */
+        {
+          stem: String.raw`
+            <p>Solve the inequality.</p>
+            <p class="math">\(|0.09z - 6| \ge 0.3\)</p>
+          `,
+          choices: [
+            String.raw`\(\frac{190}{3} \le z \le 70\)`,
+            String.raw`\(z &lt; \frac{190}{3}\) or \(z &gt; 70\)`,
+            String.raw`\(z \le \frac{190}{3}\) or \(z \ge 70\)`,
+            String.raw`\(\frac{190}{3} &lt; z &lt; 70\)`,
+            String.raw`\(z \le 70\) or \(z \ge \frac{190}{3}\)`,
+            String.raw`All real numbers`
+          ],
+          choiceWrap: false
+        },
+
+        /* Source: B. Exercise #16 */
+        {
+          stem: String.raw`
+            <p>Which statement best describes the solution set of the inequality below?</p>
+            <p class="math">\(|5 - 3x| \le -2\)</p>
+          `,
+          choices: [
+            String.raw`All real numbers`,
+            String.raw`No solution`,
+            String.raw`\(x = 1\)`,
+            String.raw`\(x \le -2\)`,
+            String.raw`\(x \ge 2\)`,
+            String.raw`\(x = -1\) or \(x = 1\)`
+          ],
+          choiceWrap: false
+        },
+
+        /* Source: B. Exercise #15 */
+        {
+          stem: String.raw`
+            <p>Which statement best describes the solution set of the inequality below?</p>
+            <p class="math">\(|2x + 1| \ge -3\)</p>
+          `,
+          choices: [
+            String.raw`All real numbers`,
+            String.raw`No solution`,
+            String.raw`\(x \ge -\frac{1}{2}\)`,
+            String.raw`\(x \le -2\) or \(x \ge 1\)`,
+            String.raw`\(-3 \le 2x + 1 \le 3\)`,
+            String.raw`\(x = -\frac{1}{2}\)`
+          ],
+          choiceWrap: false
+        },
+
+        /* Source: B. Exercise #21 */
+        {
+          stem: String.raw`
+            <p>A graph has open circles at \(-3\) and \(3\), and the shading extends to the left of \(-3\) and to the right of \(3\). Which absolute value inequality does that graph represent?</p>
+          `,
+          choices: [
+            String.raw`\(|x| &lt; 3\)`,
+            String.raw`\(|x| \le 3\)`,
+            String.raw`\(|x| &gt; 3\)`,
+            String.raw`\(|x - 3| &gt; 0\)`,
+            String.raw`\(|x + 3| &gt; 0\)`,
+            String.raw`\(|x| \ge 3\)`
+          ],
+          choiceWrap: false
+        },
+
+        /* Source: C. Exercise #27 */
+        {
+          stem: String.raw`
+            <p>Solve the inequality.</p>
+            <p class="math">\(|3x - 8| &gt; 12 - x\)</p>
+          `,
+          choices: [
+            String.raw`\(-2 &lt; x &lt; 5\)`,
+            String.raw`\(x \le -2\) or \(x \ge 5\)`,
+            String.raw`\(x &lt; -2\) or \(x &gt; 5\)`,
+            String.raw`\(x &gt; -2\) or \(x &lt; 5\)`,
+            String.raw`\(x &lt; 5\)`,
+            String.raw`All real numbers`
+          ],
+          choiceWrap: false
+        },
+
+        /* Source: C. Exercise #28 */
+        {
+          stem: String.raw`
+            <p>Solve the inequality.</p>
+            <p class="math">\(|0.6z - 7 + 0.3z| &lt; 0.4z + 9\)</p>
+          `,
+          choices: [
+            String.raw`\(-\frac{20}{13} &lt; z &lt; 32\)`,
+            String.raw`\(z &lt; -\frac{20}{13}\) or \(z &gt; 32\)`,
+            String.raw`\(-32 &lt; z &lt; \frac{20}{13}\)`,
+            String.raw`\(-\frac{20}{13} \le z \le 32\)`,
+            String.raw`\(-\frac{45}{2} &lt; z &lt; 32\)`,
+            String.raw`All real numbers`
+          ],
+          choiceWrap: false
+        }
+      ]
+    };
+  </script>
+
+  <link rel="stylesheet" href="/math-homework/assets/core-rich.css" />
+  <script defer src="/math-homework/assets/core-rich.js"></script>
+  <script defer src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+</head>
+<body>
+  <div id="hw-root">Loading…</div>
+</body>
+</html>

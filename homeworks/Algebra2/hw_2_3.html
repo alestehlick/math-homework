@@ -1,0 +1,248 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Homework 2-3 (Algebra II)</title>
+
+  <script>
+    /* =========================
+       Homework 2-3 — Absolute Value Equations (Algebra II)
+       Adapted for: /math-homework/assets/core-rich.js
+
+       REQUIRED SOURCE REFERENCES (your provided sets):
+       - Type A uses A. Exercises: #1, #2, #3, #6, #9
+       - Type B uses B. Exercises: #11, #13, #15, #18, #20
+       - Type C uses C. Exercises: #21, #22
+
+       MODEL REWORK / PEDAGOGICAL EDITING:
+       - All items were rewritten into multiple-choice form.
+       - A. #2 originally used a graph; it was recast as a question about the two
+         solution points shown on the number line, so the same idea is tested without
+         requiring a separate figure file.
+       - The sequence moves from meaning and translation, to routine solving, to
+         equations where the expression inside the absolute value must be simplified,
+         and finally to structurally richer equations in which both absolute-value
+         expressions reduce to the same inner quantity or must be compared carefully.
+       - No fully source-free model-authored questions were added.
+
+       IMAGE NAMING RULE (STRICT):
+       - No figures are used in this homework.
+       ========================= */
+
+    window.homeworkData = {
+      classId : "Algebra2",
+      id      : "Homework 2-3",
+      title   : "Homework 2-3 — Absolute Value Equations",
+      graphics: String.raw``,
+
+      answerKey : ["B","A","C","A","C","A","A","A","A","C","A","A"],
+
+      questions : [
+        /* Source: A. Exercise #1 */
+        {
+          stem: String.raw`
+            <p>Which statement best describes what the equation \(|x| = 7\) means?</p>
+          `,
+          choices: [
+            String.raw`The distance between \(x\) and \(7\) is 0.`,
+            String.raw`The distance between \(x\) and 0 is 7.`,
+            String.raw`\(x\) must be greater than 7.`,
+            String.raw`\(x\) must be between \(-7\) and \(7\).`,
+            String.raw`\(x\) is exactly 7 and no other value works.`,
+            String.raw`\(x\) is 7 units to the right of 0 only.`
+          ],
+          choiceWrap: false
+        },
+
+        /* Source: A. Exercise #2 */
+        {
+          stem: String.raw`
+            <p>On a number line, the solutions are the two points \(-4\) and \(4\).</p>
+            <p>Which absolute value equation has exactly those solutions?</p>
+          `,
+          choices: [
+            String.raw`\(|x| = 4\)`,
+            String.raw`\(|x - 4| = 0\)`,
+            String.raw`\(|x + 4| = 4\)`,
+            String.raw`\(|x - 4| = 4\)`,
+            String.raw`\(|x| = -4\)`,
+            String.raw`\(|x + 4| = 0\)`
+          ],
+          choiceWrap: false
+        },
+
+        /* Source: A. Exercise #3 */
+        {
+          stem: String.raw`
+            <p>Which absolute value equation represents the sentence:</p>
+            <p><b>The distance between a number and zero is 15 units.</b></p>
+          `,
+          choices: [
+            String.raw`\(|x - 15| = 0\)`,
+            String.raw`\(x = 15\)`,
+            String.raw`\(|x| = 15\)`,
+            String.raw`\(|x - 15| = 15\)`,
+            String.raw`\(|x + 15| = 0\)`,
+            String.raw`\(|x| = -15\)`
+          ],
+          choiceWrap: false
+        },
+
+        /* Source: A. Exercise #6 */
+        {
+          stem: String.raw`
+            <p>Solve the equation \(|x - 3| = 7\).</p>
+          `,
+          choices: [
+            String.raw`\(\{-4,\,10\}\)`,
+            String.raw`\(\{-10,\,4\}\)`,
+            String.raw`\(\{4,\,10\}\)`,
+            String.raw`\(\{-4,\,-10\}\)`,
+            String.raw`\(\{-7,\,7\}\)`,
+            String.raw`\(\{-7,\,3\}\)`
+          ],
+          choiceWrap: false
+        },
+
+        /* Source: A. Exercise #9 */
+        {
+          stem: String.raw`
+            <p>Solve the equation \(|3x + 9| = 18\).</p>
+          `,
+          choices: [
+            String.raw`\(\{-3,\,3\}\)`,
+            String.raw`\(\{-3,\,9\}\)`,
+            String.raw`\(\{-9,\,3\}\)`,
+            String.raw`\(\{-9,\,-3\}\)`,
+            String.raw`\(\{-12,\,6\}\)`,
+            String.raw`\(\{-9,\,9\}\)`
+          ],
+          choiceWrap: false
+        },
+
+        /* Source: B. Exercise #11 */
+        {
+          stem: String.raw`
+            <p>Solve the equation \(|13y - 23 + y| = 4\).</p>
+          `,
+          choices: [
+            String.raw`\(\left\{\dfrac{19}{14},\,\dfrac{27}{14}\right\}\)`,
+            String.raw`\(\left\{-\dfrac{27}{14},\,\dfrac{19}{14}\right\}\)`,
+            String.raw`\(\left\{\dfrac{23}{14},\,\dfrac{4}{14}\right\}\)`,
+            String.raw`\(\left\{-\dfrac{19}{14},\,\dfrac{27}{14}\right\}\)`,
+            String.raw`\(\{19,\,27\}\)`,
+            String.raw`\(\left\{\dfrac{3}{2},\,2\right\}\)`
+          ],
+          choiceWrap: false
+        },
+
+        /* Source: B. Exercise #13 */
+        {
+          stem: String.raw`
+            <p>Solve the equation \(|4x + 2| - 9 = 3\).</p>
+          `,
+          choices: [
+            String.raw`\(\left\{-\dfrac{7}{2},\,\dfrac{5}{2}\right\}\)`,
+            String.raw`\(\{-2,\,3\}\)`,
+            String.raw`\(\left\{-\dfrac{5}{2},\,\dfrac{7}{2}\right\}\)`,
+            String.raw`\(\left\{\dfrac{5}{2},\,\dfrac{7}{2}\right\}\)`,
+            String.raw`\(\left\{-\dfrac{7}{2},\,-\dfrac{5}{2}\right\}\)`,
+            String.raw`\(\left\{-\dfrac{3}{2},\,\dfrac{1}{2}\right\}\)`
+          ],
+          choiceWrap: false
+        },
+
+        /* Source: B. Exercise #15 */
+        {
+          stem: String.raw`
+            <p>Solve the equation \(|3y - 9| = 2y + 7\).</p>
+          `,
+          choices: [
+            String.raw`\(\left\{\dfrac{2}{5},\,16\right\}\)`,
+            String.raw`\(\left\{-\dfrac{2}{5},\,16\right\}\)`,
+            String.raw`\(\{7,\,9\}\)`,
+            String.raw`\(\left\{\dfrac{2}{5}\right\}\)`,
+            String.raw`\(\{16\}\)`,
+            String.raw`No solution.`
+          ],
+          choiceWrap: false
+        },
+
+        /* Source: B. Exercise #18 */
+        {
+          stem: String.raw`
+            <p>Solve the equation \(|8x + 12 - 7x| + 3x - 2 = 0\).</p>
+          `,
+          choices: [
+            String.raw`\(x = -\dfrac{5}{2}\)`,
+            String.raw`\(x = \dfrac{5}{2}\)`,
+            String.raw`\(x = -12\)`,
+            String.raw`\(x = \dfrac{2}{3}\)`,
+            String.raw`\(x = -\dfrac{5}{2}\) or \(x = 7\)`,
+            String.raw`No solution.`
+          ],
+          choiceWrap: false
+        },
+
+        /* Source: B. Exercise #20 */
+        {
+          stem: String.raw`
+            <p>Which equation matches the sentence below?</p>
+            <p><b>Six less than the distance between zero and a number is 2 units.</b></p>
+          `,
+          choices: [
+            String.raw`\(|x - 6| = 2\)`,
+            String.raw`\(6 - |x| = 2\)`,
+            String.raw`\(|x| - 6 = 2\)`,
+            String.raw`\(|x + 6| = 2\)`,
+            String.raw`\(|x| = -4\)`,
+            String.raw`\(6 - x = 2\)`
+          ],
+          choiceWrap: false
+        },
+
+        /* Source: C. Exercise #21 */
+        {
+          stem: String.raw`
+            <p>Solve the equation</p>
+            <p>\[|3x - 5 - (2x - 3)| - 2\,|(4x - 7) - (3x - 5)| = -8.\]</p>
+          `,
+          choices: [
+            String.raw`\(\{-6,\,10\}\)`,
+            String.raw`\(\{-10,\,6\}\)`,
+            String.raw`\(\{-8,\,8\}\)`,
+            String.raw`\(\{2,\,10\}\)`,
+            String.raw`\(\{-6,\,2\}\)`,
+            String.raw`No solution.`
+          ],
+          choiceWrap: false
+        },
+
+        /* Source: C. Exercise #22 */
+        {
+          stem: String.raw`
+            <p>Solve the equation \(|4x - 7| = |5x - 9|\).</p>
+          `,
+          choices: [
+            String.raw`\(\left\{\dfrac{16}{9},\,2\right\}\)`,
+            String.raw`\(\left\{-\dfrac{16}{9},\,2\right\}\)`,
+            String.raw`\(\left\{\dfrac{7}{4},\,\dfrac{9}{5}\right\}\)`,
+            String.raw`\(\{2\}\)`,
+            String.raw`\(\left\{\dfrac{16}{9}\right\}\)`,
+            String.raw`No solution.`
+          ],
+          choiceWrap: false
+        }
+      ]
+    };
+  </script>
+
+  <link rel="stylesheet" href="/math-homework/assets/core-rich.css" />
+  <script defer src="/math-homework/assets/core-rich.js"></script>
+  <script defer src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+</head>
+<body>
+  <div id="hw-root">Loading…</div>
+</body>
+</html>

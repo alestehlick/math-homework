@@ -1,0 +1,248 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Homework 2-2 (Algebra II)</title>
+
+  <script>
+    /* =========================
+       Homework 2-2 — Solving and Graphing Inequalities (Algebra II)
+       Adapted for: /math-homework/assets/core-rich.js
+
+       REQUIRED SOURCE REFERENCES (your provided sets):
+       - Type A uses A. Exercises: #2, #3, #6, #7, #10
+       - Type B uses B. Exercises: #11, #13, #16, #18, #20
+       - Type C uses C. Exercises: #21, #22
+
+       MODEL REWORK / PEDAGOGICAL EDITING:
+       - All items were rewritten into multiple-choice form.
+       - Because the source asks students to graph many inequalities, the choices
+         often describe the graph in words rather than using separate number-line images.
+       - The sequence moves from reading basic graph descriptions, to solving linear
+         inequalities, to handling special cases such as \(\ne\), reversal of the
+         inequality sign when dividing by a negative, and finally equations with
+         fractions and decimals.
+       - No fully source-free model-authored questions were added.
+
+       IMAGE NAMING RULE (STRICT):
+       - No figures are used in this homework.
+       ========================= */
+
+    window.homeworkData = {
+      classId : "Algebra2",
+      id      : "Homework 2-2",
+      title   : "Homework 2-2 — Solving and Graphing Inequalities",
+      graphics: String.raw``,
+
+      answerKey : ["B","D","C","A","E","B","F","C","A","D","E","B"],
+
+      questions : [
+        /* Source: A. Exercise #2 */
+        {
+          stem: String.raw`
+            <p>Which description correctly graphs the inequality \(x \le -2\)?</p>
+          `,
+          choices: [
+            String.raw`\(x < -2\); open circle at \(-2\), shade left.`,
+            String.raw`\(x \le -2\); closed circle at \(-2\), shade left.`,
+            String.raw`\(x > -2\); open circle at \(-2\), shade right.`,
+            String.raw`\(x \ge -2\); closed circle at \(-2\), shade right.`,
+            String.raw`\(x \le 2\); closed circle at \(2\), shade left.`,
+            String.raw`\(x < 2\); open circle at \(2\), shade left.`
+          ],
+          choiceWrap: false
+        },
+
+        /* Source: A. Exercise #3 */
+        {
+          stem: String.raw`
+            <p>Which description correctly graphs the statement \(x \ne 2\)?</p>
+          `,
+          choices: [
+            String.raw`A closed circle at \(2\) with the line shaded to the right only.`,
+            String.raw`An open circle at \(2\) with the line shaded to the right only.`,
+            String.raw`An open circle at \(2\) with the line shaded to the left only.`,
+            String.raw`An open circle at \(2\) with the rest of the number line shaded on both sides.`,
+            String.raw`A closed circle at \(2\) with the rest of the number line shaded on both sides.`,
+            String.raw`A closed circle at \(2\) and no shading at all.`
+          ],
+          choiceWrap: false
+        },
+
+        /* Source: A. Exercise #6 */
+        {
+          stem: String.raw`
+            <p>Solve the inequality \(x + 7 < -2 + 3x\).</p>
+            <p>Which choice gives the correct solution set and graph description?</p>
+          `,
+          choices: [
+            String.raw`\(x < \dfrac{9}{2}\); open circle at \(\dfrac{9}{2}\), shade left.`,
+            String.raw`\(x \le \dfrac{9}{2}\); closed circle at \(\dfrac{9}{2}\), shade left.`,
+            String.raw`\(x > \dfrac{9}{2}\); open circle at \(\dfrac{9}{2}\), shade right.`,
+            String.raw`\(x \ge \dfrac{9}{2}\); closed circle at \(\dfrac{9}{2}\), shade right.`,
+            String.raw`\(x > -\dfrac{9}{2}\); open circle at \(-\dfrac{9}{2}\), shade right.`,
+            String.raw`\(x < -\dfrac{9}{2}\); open circle at \(-\dfrac{9}{2}\), shade left.`
+          ],
+          choiceWrap: false
+        },
+
+        /* Source: A. Exercise #7 */
+        {
+          stem: String.raw`
+            <p>Solve the inequality \(2x + 3 > 4x - 7\).</p>
+          `,
+          choices: [
+            String.raw`\(x < 5\)`,
+            String.raw`\(x \le 5\)`,
+            String.raw`\(x > 5\)`,
+            String.raw`\(x \ge 5\)`,
+            String.raw`\(x < -5\)`,
+            String.raw`\(x > -5\)`
+          ],
+          choiceWrap: false
+        },
+
+        /* Source: A. Exercise #10 */
+        {
+          stem: String.raw`
+            <p>Solve the inequality \(2x - 6 > 8x + 7\).</p>
+            <p>This one requires dividing by a negative number at the end.</p>
+          `,
+          choices: [
+            String.raw`\(x > -\dfrac{13}{6}\)`,
+            String.raw`\(x \ge -\dfrac{13}{6}\)`,
+            String.raw`\(x < \dfrac{13}{6}\)`,
+            String.raw`\(x > \dfrac{13}{6}\)`,
+            String.raw`\(x < -\dfrac{13}{6}\)`,
+            String.raw`\(x \le -\dfrac{13}{6}\)`
+          ],
+          choiceWrap: false
+        },
+
+        /* Source: B. Exercise #11 */
+        {
+          stem: String.raw`
+            <p>Solve the inequality \(4x + 1 \ge x - \dfrac{1}{2}\).</p>
+          `,
+          choices: [
+            String.raw`\(x > -\dfrac{1}{2}\)`,
+            String.raw`\(x \ge -\dfrac{1}{2}\)`,
+            String.raw`\(x \le -\dfrac{1}{2}\)`,
+            String.raw`\(x < -\dfrac{1}{2}\)`,
+            String.raw`\(x \ge \dfrac{1}{2}\)`,
+            String.raw`\(x \le \dfrac{1}{2}\)`
+          ],
+          choiceWrap: false
+        },
+
+        /* Source: B. Exercise #13 */
+        {
+          stem: String.raw`
+            <p>Solve the inequality \(-7x + 3(2x - 4) < 5x - 36\).</p>
+          `,
+          choices: [
+            String.raw`\(x < 4\)`,
+            String.raw`\(x \le 4\)`,
+            String.raw`\(x > -4\)`,
+            String.raw`\(x \ge 4\)`,
+            String.raw`\(x < -4\)`,
+            String.raw`\(x > 4\)`
+          ],
+          choiceWrap: false
+        },
+
+        /* Source: B. Exercise #16 */
+        {
+          stem: String.raw`
+            <p>Solve the statement \(8x - 3(x + 9) \ne 4x + 12\).</p>
+          `,
+          choices: [
+            String.raw`\(x > 39\)`,
+            String.raw`\(x < 39\)`,
+            String.raw`\(x \ne 39\)`,
+            String.raw`\(x = 39\)`,
+            String.raw`\(x \ge 39\)`,
+            String.raw`\(x \le 39\)`
+          ],
+          choiceWrap: false
+        },
+
+        /* Source: B. Exercise #18 */
+        {
+          stem: String.raw`
+            <p>Solve the inequality \(5y + 3(y - 1) + 19 \ge 12y\).</p>
+          `,
+          choices: [
+            String.raw`\(y \le 4\)`,
+            String.raw`\(y < 4\)`,
+            String.raw`\(y \ge 4\)`,
+            String.raw`\(y > 4\)`,
+            String.raw`\(y \le -4\)`,
+            String.raw`\(y \ge -4\)`
+          ],
+          choiceWrap: false
+        },
+
+        /* Source: B. Exercise #20 */
+        {
+          stem: String.raw`
+            <p>Solve the inequality \(2x - 4(3x + 1) > 5(3x - 1) + 2\).</p>
+          `,
+          choices: [
+            String.raw`\(x > -\dfrac{1}{25}\)`,
+            String.raw`\(x \ge -\dfrac{1}{25}\)`,
+            String.raw`\(x < \dfrac{1}{25}\)`,
+            String.raw`\(x < -\dfrac{1}{25}\)`,
+            String.raw`\(x > \dfrac{1}{25}\)`,
+            String.raw`\(x \le -\dfrac{1}{25}\)`
+          ],
+          choiceWrap: false
+        },
+
+        /* Source: C. Exercise #21 */
+        {
+          stem: String.raw`
+            <p>Solve the inequality</p>
+            <p>\[\frac{2}{3}x - 7 \le \frac{3}{4} - 2\left(\frac{5}{6}x + 7\right).\]</p>
+          `,
+          choices: [
+            String.raw`\(x \ge -\dfrac{75}{28}\)`,
+            String.raw`\(x < -\dfrac{75}{28}\)`,
+            String.raw`\(x > -\dfrac{75}{28}\)`,
+            String.raw`\(x \le -\dfrac{28}{75}\)`,
+            String.raw`\(x \le -\dfrac{75}{28}\)`,
+            String.raw`\(x \ge \dfrac{75}{28}\)`
+          ],
+          choiceWrap: false
+        },
+
+        /* Source: C. Exercise #22 */
+        {
+          stem: String.raw`
+            <p>Solve the decimal inequality</p>
+            <p>\[3.2x + 0.92 \le 0.759 - 1.4(0.5x + 3.42).\]</p>
+            <p>Choose the best answer to the nearest thousandth.</p>
+          `,
+          choices: [
+            String.raw`\(x \le 1.269\)`,
+            String.raw`\(x \le -1.269\)`,
+            String.raw`\(x \ge -1.269\)`,
+            String.raw`\(x < -1.296\)`,
+            String.raw`\(x > -1.269\)`,
+            String.raw`\(x \ge 1.269\)`
+          ],
+          choiceWrap: false
+        }
+      ]
+    };
+  </script>
+
+  <link rel="stylesheet" href="/math-homework/assets/core-rich.css" />
+  <script defer src="/math-homework/assets/core-rich.js"></script>
+  <script defer src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+</head>
+<body>
+  <div id="hw-root">Loading…</div>
+</body>
+</html>

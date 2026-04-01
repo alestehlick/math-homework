@@ -1,0 +1,270 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Homework 2-6 (Algebra II)</title>
+
+  <script>
+    /* =========================
+       Homework 2-6 — Percent, Interest, and Mixture Problems (Algebra II)
+       Adapted for: /math-homework/assets/core-rich.js
+
+       REQUIRED SOURCE REFERENCES (your provided sets):
+       - Type A uses A. Exercises: #2, #3, #4, #7, #9
+       - Type B uses B. Exercises: #12, #14, #15, #18, #19
+       - Type C uses C. Exercises: #20, #21
+
+       MODEL REWORK / PEDAGOGICAL EDITING:
+       - All selected items were rewritten into multiple-choice form.
+       - The sequence moves from direct percent interpretation to two-variable
+         investment and mixture systems, and ends with equation modeling.
+       - Several stems were tightened so students must distinguish amount,
+         percent strength, rate, and total-value equations rather than rely on
+         superficial keyword matching.
+       - No fully source-free questions were added.
+
+       IMAGE NAMING RULE (STRICT):
+       - No figures are used in this homework.
+       ========================= */
+
+    window.homeworkData = {
+      classId : "Algebra2",
+      id      : "Homework 2-6",
+      title   : "Homework 2-6 — Percent, Interest, and Mixture Problems",
+      graphics: String.raw``,
+
+      answerKey : ["C","E","A","D","B","F","C","A","E","B","D","F"],
+
+      questions : [
+        /* Source: A. Exercise #2 */
+        {
+          stem: String.raw`
+            <p>How much salt is contained in 50 gallons of a 3% salt solution?</p>
+          `,
+          choices: [
+            `0.15 gallon`,
+            `3 gallons`,
+            `1.5 gallons`,
+            `15 gallons`,
+            `48.5 gallons`,
+            `5 gallons`
+          ],
+          choiceWrap: false
+        },
+
+        /* Source: A. Exercise #3 */
+        {
+          stem: String.raw`
+            <p>A solution contains 12 gallons of salt and 18 gallons of pure water.</p>
+            <p>What is the strength of the solution?</p>
+          `,
+          choices: [
+            `12%`,
+            `18%`,
+            `30%`,
+            `60%`,
+            `40%`,
+            `66.7%`
+          ],
+          choiceWrap: false
+        },
+
+        /* Source: A. Exercise #4 */
+        {
+          stem: String.raw`
+            <p>How much simple interest is earned in one year from two accounts?</p>
+            <ul>
+              <li>The first contains $3000 at 4%.</li>
+              <li>The second contains $2500 at 6%.</li>
+            </ul>
+          `,
+          choices: [
+            `$270`,
+            `$240`,
+            `$255`,
+            `$280`,
+            `$300`,
+            `$390`
+          ],
+          choiceWrap: false
+        },
+
+        /* Source: A. Exercise #7 */
+        {
+          stem: String.raw`
+            <p>Paul invests $15,250 in two accounts. One account earns 8.5% annually and the other earns 10% annually.</p>
+            <p>If the total annual interest is $1411.75, how much did he invest in each account?</p>
+          `,
+          choices: [
+            `$7700 at 8.5% and $7550 at 10%`,
+            `$8000 at 8.5% and $7250 at 10%`,
+            `$7550 at 8.5% and $7550 at 10%`,
+            `$7550 at 8.5% and $7700 at 10%`,
+            `$7250 at 8.5% and $8000 at 10%`,
+            `$7000 at 8.5% and $8250 at 10%`
+          ],
+          choiceWrap: false
+        },
+
+        /* Source: A. Exercise #9 */
+        {
+          stem: String.raw`
+            <p>Karen needs 3 kilograms of an 8% hydrochloric acid solution.</p>
+            <p>She can mix a 2% solution with an 11% solution. How many kilograms of each should she use?</p>
+          `,
+          choices: [
+            `2 kg of 2% solution and 1 kg of 11% solution`,
+            `1 kg of 2% solution and 2 kg of 11% solution`,
+            `1.5 kg of each solution`,
+            `0.5 kg of 2% solution and 2.5 kg of 11% solution`,
+            `2.5 kg of 2% solution and 0.5 kg of 11% solution`,
+            `2 kg of 11% solution and 2 kg of 2% solution`
+          ],
+          choiceWrap: false
+        },
+
+        /* Source: B. Exercise #12 */
+        {
+          stem: String.raw`
+            <p>Grace borrows $30,000 from one institution and $48,000 from another.</p>
+            <p>The second loan's annual interest rate is 2 percentage points greater than the first, and the total monthly interest charge is $600.</p>
+            <p>What annual interest rate does she pay on each loan?</p>
+          `,
+          choices: [
+            `6% on $30,000 and 8% on $48,000`,
+            `7% on $30,000 and 9% on $48,000`,
+            `8.5% on $30,000 and 10.5% on $48,000`,
+            `9% on $30,000 and 11% on $48,000`,
+            `10% on $30,000 and 12% on $48,000`,
+            `8% on $30,000 and 10% on $48,000`
+          ],
+          choiceWrap: false
+        },
+
+        /* Source: B. Exercise #14 */
+        {
+          stem: String.raw`
+            <p>Rebecca invests $1200 at 8.5% and $2000 at 9%.</p>
+            <p>If the total interest earned is $70.50, what is the term of the investment?</p>
+          `,
+          choices: [
+            `1 month`,
+            `2 months`,
+            `3 months`,
+            `4 months`,
+            `6 months`,
+            `1 year`
+          ],
+          choiceWrap: false
+        },
+
+        /* Source: B. Exercise #15 */
+        {
+          stem: String.raw`
+            <p>Susie has 100 ml of a 2% acetic acid solution. She wants an 8% solution and plans to add pure acetic acid.</p>
+            <p>How many milliliters of pure acetic acid should she add? Round to the nearest tenth.</p>
+          `,
+          choices: [
+            `6.5 ml`,
+            `5.9 ml`,
+            `6.0 ml`,
+            `8.0 ml`,
+            `10.0 ml`,
+            `12.5 ml`
+          ],
+          choiceWrap: false
+        },
+
+        /* Source: B. Exercise #18 */
+        {
+          stem: String.raw`
+            <p>A company mixes 50 liters of a bleach solution with 130 liters of a stronger bleach solution to make 180 liters of bleach that is 5.25% sodium hypochlorite.</p>
+            <p>The weaker solution has 3 percentage points less sodium hypochlorite than the stronger solution.</p>
+            <p>What is the percentage of sodium hypochlorite in each original solution? Round to the nearest tenth of a percent.</p>
+          `,
+          choices: [
+            `Weaker 2.3%, stronger 5.3%`,
+            `Weaker 3.0%, stronger 6.0%`,
+            `Weaker 3.1%, stronger 5.6%`,
+            `Weaker 2.1%, stronger 5.1%`,
+            `Weaker 3.1%, stronger 6.1%`,
+            `Weaker 4.1%, stronger 7.1%`
+          ],
+          choiceWrap: false
+        },
+
+        /* Source: B. Exercise #19 */
+        {
+          stem: String.raw`
+            <p>A mixture of sugar and cinnamon is sold for 50¢ per kilogram.</p>
+            <ul>
+              <li>Sugar costs 52¢ per kilogram.</li>
+              <li>Cinnamon costs 10¢ per kilogram.</li>
+            </ul>
+            <p>How many kilograms of each should be mixed to form 25 kilograms of the product? Round to the nearest tenth.</p>
+          `,
+          choices: [
+            `22.5 kg sugar and 2.5 kg cinnamon`,
+            `23.8 kg sugar and 1.2 kg cinnamon`,
+            `24.0 kg sugar and 1.0 kg cinnamon`,
+            `1.2 kg sugar and 23.8 kg cinnamon`,
+            `20.0 kg sugar and 5.0 kg cinnamon`,
+            `21.9 kg sugar and 3.1 kg cinnamon`
+          ],
+          choiceWrap: false
+        },
+
+        /* Source: C. Exercise #20 */
+        {
+          stem: String.raw`
+            <p>You begin with 50 liters of a 15% acid solution, so the original amount of pure acid is 7.5 liters.</p>
+            <p>Which pair of equations correctly models the two situations below?</p>
+            <ul>
+              <li>Part (a): add <em>x</em> liters of pure acid to obtain a 20% solution.</li>
+              <li>Part (b): add <em>y</em> liters of water to obtain a 10% solution.</li>
+            </ul>
+          `,
+          choices: [
+            String.raw`Part (a): \(\dfrac{7.5+x}{50}=0.20\), &nbsp; Part (b): \(\dfrac{7.5}{50}=0.10\)` ,
+            String.raw`Part (a): \(\dfrac{7.5}{50+x}=0.20\), &nbsp; Part (b): \(\dfrac{7.5+y}{50+y}=0.10\)` ,
+            String.raw`Part (a): \(\dfrac{15+x}{50+x}=0.20\), &nbsp; Part (b): \(\dfrac{15}{50+y}=0.10\)` ,
+            String.raw`Part (a): \(\dfrac{7.5+x}{50+x}=0.20\), &nbsp; Part (b): \(\dfrac{7.5}{50+y}=0.10\)` ,
+            String.raw`Part (a): \(\dfrac{x}{50+x}=0.20\), &nbsp; Part (b): \(\dfrac{7.5}{y}=0.10\)` ,
+            String.raw`Part (a): \(\dfrac{7.5+x}{50}=0.20\), &nbsp; Part (b): \(\dfrac{7.5}{50-y}=0.10\)`
+          ],
+          choiceWrap: false
+        },
+
+        /* Source: C. Exercise #21 */
+        {
+          stem: String.raw`
+            <p>Mr. Briggs makes a package of pens and pencils containing 16 writing instruments and selling for $3.56.</p>
+            <ul>
+              <li>Pens cost 39¢ each.</li>
+              <li>Pencils cost 3 for 50¢.</li>
+            </ul>
+            <p>How many pens and how many pencils are in one package?</p>
+          `,
+          choices: [
+            `6 pens and 10 pencils`,
+            `5 pens and 11 pencils`,
+            `8 pens and 8 pencils`,
+            `3 pens and 13 pencils`,
+            `7 pens and 9 pencils`,
+            `4 pens and 12 pencils`
+          ],
+          choiceWrap: false
+        }
+      ]
+    };
+  </script>
+
+  <link rel="stylesheet" href="/math-homework/assets/core-rich.css" />
+  <script defer src="/math-homework/assets/core-rich.js"></script>
+  <script defer src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+</head>
+<body>
+  <div id="hw-root">Loading…</div>
+</body>
+</html>

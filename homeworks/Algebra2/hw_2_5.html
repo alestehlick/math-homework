@@ -1,0 +1,264 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Homework 2-5 (Algebra II)</title>
+
+  <script>
+    /* =========================
+       Homework 2-5 — Linear and Absolute-Value Applications (Algebra II)
+       Adapted for: /math-homework/assets/core-rich.js
+
+       REQUIRED SOURCE REFERENCES (your provided sets):
+       - Type A uses A. Exercises: #2, #3, #4, #6, #7
+       - Type B uses B. Exercises: #11, #12, #14, #15, #16
+       - Type C uses C. Exercises: #17, #19
+
+       MODEL REWORK / PEDAGOGICAL EDITING:
+       - All items were rewritten into multiple-choice form.
+       - The sequence begins with translating and solving one-step word-problem
+         structures, then moves into systems and rate problems, and ends with
+         real-world absolute-value interpretation.
+       - Some items were rephrased so that students must distinguish between
+         setting up a correct equation and interpreting the context correctly,
+         not merely carry out arithmetic.
+       - No fully source-free model-authored questions were added.
+
+       IMAGE NAMING RULE (STRICT):
+       - No figures are used in this homework.
+       ========================= */
+
+    window.homeworkData = {
+      classId : "Algebra2",
+      id      : "Homework 2-5",
+      title   : "Homework 2-5 — Linear and Absolute-Value Applications",
+      graphics: String.raw``,
+
+      answerKey : ["C","B","E","A","D","B","F","C","A","D","B","E"],
+
+      questions : [
+        /* Source: A. Exercise #2 */
+        {
+          stem: String.raw`
+            <p>Joey has a sack of 56 marbles. There are three colors in the sack: red, yellow, and blue.</p>
+            <ul>
+              <li>He has half as many red marbles as blue marbles.</li>
+              <li>He has 8 more yellow marbles than red marbles.</li>
+            </ul>
+            <p>How many marbles of each color does he have?</p>
+          `,
+          choices: [
+            `10 red, 18 yellow, and 28 blue`,
+            `14 red, 22 yellow, and 20 blue`,
+            `12 red, 20 yellow, and 24 blue`,
+            `16 red, 24 yellow, and 16 blue`,
+            `8 red, 16 yellow, and 32 blue`,
+            `18 red, 26 yellow, and 12 blue`
+          ],
+          choiceWrap: false
+        },
+
+        /* Source: A. Exercise #3 */
+        {
+          stem: String.raw`
+            <p>The same number is added to the numerator of \(\dfrac{12}{13}\) and subtracted from the denominator. The new fraction is \(\dfrac{3}{2}\).</p>
+            <p>What is the number?</p>
+          `,
+          choices: [
+            String.raw`\(1\)`,
+            String.raw`\(3\)`,
+            String.raw`\(2\)`,
+            String.raw`\(4\)`,
+            String.raw`\(5\)`,
+            String.raw`\(6\)`
+          ],
+          choiceWrap: false
+        },
+
+        /* Source: A. Exercise #4 */
+        {
+          stem: String.raw`
+            <p>John uses 114 feet of fencing to enclose a rectangular field. The length is 21 feet longer than the width.</p>
+            <p>Which dimensions fit the situation?</p>
+          `,
+          choices: [
+            `Width 21 ft and length 36 ft`,
+            `Width 19 ft and length 38 ft`,
+            `Width 15 ft and length 42 ft`,
+            `Width 17 ft and length 40 ft`,
+            `Width 18 ft and length 39 ft`,
+            `Width 28.5 ft and length 28.5 ft`
+          ],
+          choiceWrap: false
+        },
+
+        /* Source: A. Exercise #6 */
+        {
+          stem: String.raw`
+            <p>Two angles are supplementary. The measure of one angle is one-fourth the measure of the other.</p>
+            <p>What are the measures of the two angles?</p>
+          `,
+          choices: [
+            `36° and 144°`,
+            `45° and 135°`,
+            `30° and 150°`,
+            `72° and 108°`,
+            `60° and 120°`,
+            `90° and 90°`
+          ],
+          choiceWrap: false
+        },
+
+        /* Source: A. Exercise #7 */
+        {
+          stem: String.raw`
+            <p>The sum of three consecutive odd integers is 63.</p>
+            <p>Which set of integers works?</p>
+          `,
+          choices: [
+            `15, 21, 27`,
+            `11, 21, 31`,
+            `18, 21, 24`,
+            `19, 21, 23`,
+            `20, 21, 22`,
+            `17, 21, 25`
+          ],
+          choiceWrap: false
+        },
+
+        /* Source: B. Exercise #11 */
+        {
+          stem: String.raw`
+            <p>Susan bought a combination of peanut candy bars and chocolate bars. Peanut bars cost 69¢ each and chocolate bars cost 59¢ each.</p>
+            <p>If she bought 17 bars for a total of $10.83, how many of each type did she buy?</p>
+          `,
+          choices: [
+            `7 peanut bars and 10 chocolate bars`,
+            `8 peanut bars and 9 chocolate bars`,
+            `9 peanut bars and 8 chocolate bars`,
+            `6 peanut bars and 11 chocolate bars`,
+            `10 peanut bars and 7 chocolate bars`,
+            `11 peanut bars and 6 chocolate bars`
+          ],
+          choiceWrap: false
+        },
+
+        /* Source: B. Exercise #12 */
+        {
+          stem: String.raw`
+            <p>Karen has dimes, nickels, and pennies totaling $4.52.</p>
+            <ul>
+              <li>There is 1 more dime than three times the number of nickels.</li>
+              <li>There are 10 more pennies than nickels.</li>
+            </ul>
+            <p>How many of each coin does she have?</p>
+          `,
+          choices: [
+            `36 dimes, 12 nickels, and 23 pennies`,
+            `37 dimes, 22 nickels, and 12 pennies`,
+            `31 dimes, 14 nickels, and 27 pennies`,
+            `12 dimes, 37 nickels, and 22 pennies`,
+            `34 dimes, 11 nickels, and 21 pennies`,
+            `37 dimes, 12 nickels, and 22 pennies`
+          ],
+          choiceWrap: false
+        },
+
+        /* Source: B. Exercise #14 */
+        {
+          stem: String.raw`
+            <p>John and Jim ride to Mill Park at an average speed of 8 mph. The route to the park is 4 miles shorter than the route on the return trip.</p>
+            <p>They ride home at 7 mph, and the return trip takes 1 hour longer than the trip to the park.</p>
+            <p>How much total time do they spend riding?</p>
+          `,
+          choices: [
+            `5 hours`,
+            `6 hours`,
+            `7 hours`,
+            `8 hours`,
+            `9 hours`,
+            `10 hours`
+          ],
+          choiceWrap: false
+        },
+
+        /* Source: B. Exercise #15 */
+        {
+          stem: String.raw`
+            <p>Paige and Mary drive to the mountains. On the first part of the trip they travel at 52 mph. On the second part, which takes half as much time as the first part, they travel at 35 mph.</p>
+            <p>If the total distance is 104.25 miles, how long do they travel at each rate?</p>
+          `,
+          choices: [
+            `1.5 hours at 52 mph and 0.75 hour at 35 mph`,
+            `0.75 hour at 52 mph and 1.5 hours at 35 mph`,
+            `1 hour at 52 mph and 2 hours at 35 mph`,
+            `1.25 hours at 52 mph and 0.625 hour at 35 mph`,
+            `2 hours at 52 mph and 1 hour at 35 mph`,
+            `1.75 hours at 52 mph and 0.875 hour at 35 mph`
+          ],
+          choiceWrap: false
+        },
+
+        /* Source: B. Exercise #16 */
+        {
+          stem: String.raw`
+            <p>A train leaves Perryville at 6:00 A.M. and travels east at 64 mph. As it reaches Granite City, a westbound train leaves Granite City for Perryville at 48 mph.</p>
+            <p>If the westbound train reaches Perryville at 9:30 A.M., how far apart are the two cities?</p>
+          `,
+          choices: [
+            `84 miles`,
+            `112 miles`,
+            `128 miles`,
+            `96 miles`,
+            `144 miles`,
+            `160 miles`
+          ],
+          choiceWrap: false
+        },
+
+        /* Source: C. Exercise #17 */
+        {
+          stem: String.raw`
+            <p>Joe's car stalled on Interstate 80 in Nebraska. The only milepost he noticed was milepost 154, and it was 7 miles back.</p>
+            <p>Which absolute-value model fits his location \(x\), and what is his actual milepost?</p>
+          `,
+          choices: [
+            String.raw`\(|x - 154| = 7\), so \(x = 147\)`,
+            String.raw`\(|x - 154| = 7\), so \(x = 161\)`,
+            String.raw`\(|x + 154| = 7\), so \(x = 161\)`,
+            String.raw`\(x - 154 = 7\), so \(x = 147\)`,
+            String.raw`\(|154 - x| = -7\), so \(x = 161\)`,
+            String.raw`\(|x - 7| = 154\), so \(x = 161\)`
+          ],
+          choiceWrap: false
+        },
+
+        /* Source: C. Exercise #19 */
+        {
+          stem: String.raw`
+            <p>Kevin is hiking the Appalachian Trail. A sign says Newfound Gap is 17 miles ahead, and Newfound Gap is at the 230-mile mark of the trail.</p>
+            <p>Which absolute-value model fits Kevin's location \(x\), and where is he now?</p>
+          `,
+          choices: [
+            String.raw`\(|x - 230| = 17\), so \(x = 247\)`,
+            String.raw`\(|x + 230| = 17\), so \(x = 213\)`,
+            String.raw`\(x - 230 = 17\), so \(x = 213\)`,
+            String.raw`\(|230 - x| = -17\), so \(x = 247\)`,
+            String.raw`\(|x - 230| = 17\), so \(x = 213\)`,
+            String.raw`\(|x - 17| = 230\), so \(x = 213\)`
+          ],
+          choiceWrap: false
+        }
+      ]
+    };
+  </script>
+
+  <link rel="stylesheet" href="/math-homework/assets/core-rich.css" />
+  <script defer src="/math-homework/assets/core-rich.js"></script>
+  <script defer src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+</head>
+<body>
+  <div id="hw-root">Loading…</div>
+</body>
+</html>
