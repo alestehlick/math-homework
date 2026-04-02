@@ -1,0 +1,208 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Homework 3-8 (Algebra II)</title>
+
+  <script>
+    /* =========================
+       Homework 3-8 — Distance and Midpoint in the Plane and in Space
+
+       REQUIRED SOURCE REFERENCES:
+       - Type A uses A. Exercises: #1, #3, #5, #8, #10
+       - Type B uses B. Exercises: #11, #15, #16, #18
+       - Type C uses C. Exercises: #23, #24, #25, #26, #27
+
+       MODEL REWORK / PEDAGOGICAL EDITING:
+       - The source set mixes 2D distance, midpoint, 3D distance, and a guided derivation of the
+         distance formula in space. The final homework reorganizes these into a progression from
+         direct computation to structural understanding.
+       - Q8, Q10, and Q12 are model-authored / model-reworked items designed to test transfer:
+         students must recognize that midpoint works coordinatewise in space and that the 3D
+         distance formula comes from applying the Pythagorean Theorem twice.
+
+       IMAGE / FIGURE NOTE:
+       - No external PNG figures are used in this homework.
+       - The source diagram from Part C is converted into text-based multiple-choice questions.
+       ========================= */
+
+    window.homeworkData = {
+      classId : "Algebra2",
+      id      : "Homework 3-8",
+      title   : "Homework 3-8 — Distance and Midpoint in the Plane and in Space",
+      graphics : String.raw``,
+      answerKey : ["A","B","C","D","B","E","C","A","F","D","B","C"],
+      questions : [
+        {
+          stem: String.raw`
+            <p>Find the midpoint of the segment joining the points \((3,7)\) and \((-1,5)\).</p>
+          `,
+          choices: [
+            String.raw`\((1,6)\)`,
+            String.raw`\((2,6)\)`,
+            String.raw`\((1,12)\)`,
+            String.raw`\((-2,1)\)`,
+            String.raw`\((0,6)\)`,
+            String.raw`\((1,5)\)`
+          ]
+        },
+        {
+          stem: String.raw`
+            <p>Find the distance between the points \((4,6)\) and \((8,3)\).</p>
+          `,
+          choices: [
+            String.raw`\(3\)`,
+            String.raw`\(5\)`,
+            String.raw`\(7\)`,
+            String.raw`\(\sqrt{7}\)`,
+            String.raw`\(\sqrt{13}\)`,
+            String.raw`\(25\)`
+          ]
+        },
+        {
+          stem: String.raw`
+            <p>The points \((-2,-1)\) and \((-6,-9)\) determine a segment in the coordinate plane.</p>
+            <p>Which choice gives <i>both</i> the midpoint and the distance of this segment?</p>
+          `,
+          choices: [
+            String.raw`Midpoint: \((-4,-4)\); distance: \(8\)`,
+            String.raw`Midpoint: \((-8,-10)\); distance: \(4\sqrt{5}\)`,
+            String.raw`Midpoint: \((-4,-5)\); distance: \(4\sqrt{5}\)`,
+            String.raw`Midpoint: \((-4,-5)\); distance: \(\sqrt{80}\) is not simplified, so no answer is correct`,
+            String.raw`Midpoint: \((-2,-5)\); distance: \(4\sqrt{5}\)`,
+            String.raw`Midpoint: \((-4,-5)\); distance: \(20\)`
+          ]
+        },
+        {
+          stem: String.raw`
+            <p>Find the distance between the points \((5,1)\) and \((2,-3)\).</p>
+          `,
+          choices: [
+            String.raw`\(4\)`,
+            String.raw`\(\sqrt{13}\)`,
+            String.raw`\(\sqrt{17}\)`,
+            String.raw`\(5\)`,
+            String.raw`\(7\)`,
+            String.raw`\(25\)`
+          ]
+        },
+        {
+          stem: String.raw`
+            <p>Find the midpoint of the segment joining \((2,6)\) and \((-1,2)\).</p>
+          `,
+          choices: [
+            String.raw`\((\tfrac{3}{2},4)\)`,
+            String.raw`\((\tfrac{1}{2},4)\)`,
+            String.raw`\((1,4)\)`,
+            String.raw`\((\tfrac{1}{2},8)\)`,
+            String.raw`\((-\tfrac{1}{2},4)\)`,
+            String.raw`\((\tfrac{1}{2},2)\)`
+          ]
+        },
+        {
+          stem: String.raw`
+            <p>Find the midpoint between the numbers \(-2\) and \(-8\) on the number line.</p>
+          `,
+          choices: [
+            String.raw`\(-4\)`,
+            String.raw`\(-6\)`,
+            String.raw`\(-3\)`,
+            String.raw`\(3\)`,
+            String.raw`\(-5\)`,
+            String.raw`\(5\)`
+          ]
+        },
+        {
+          stem: String.raw`
+            <p>Find the distance between the points \((2,1,4)\) and \((-1,-3,-1)\) in space.</p>
+          `,
+          choices: [
+            String.raw`\(\sqrt{34}\)`,
+            String.raw`\(\sqrt{41}\)`,
+            String.raw`\(5\sqrt{2}\)`,
+            String.raw`\(\sqrt{45}\)`,
+            String.raw`\(10\)`,
+            String.raw`\(\sqrt{50}\)`
+          ]
+        },
+        {
+          stem: String.raw`
+            <p>Find the midpoint of the segment joining the points \((3,2,5)\) and \((-1,4,-3)\).</p>
+          `,
+          choices: [
+            String.raw`\((1,3,1)\)`,
+            String.raw`\((2,3,1)\)`,
+            String.raw`\((1,2,1)\)`,
+            String.raw`\((1,3,4)\)`,
+            String.raw`\((-2,6,2)\)`,
+            String.raw`\((0,3,1)\)`
+          ]
+        },
+        {
+          stem: String.raw`
+            <p>In the standard derivation of the distance formula in space, the horizontal segment \(AP\) has the same length as the distance between the projections \(G(x_1,y_1)\) and \(H(x_2,y_2)\) in the \(xy\)-plane.</p>
+            <p>Which expression gives the length of \(AP\)?</p>
+          `,
+          choices: [
+            String.raw`\(\sqrt{(x_2-x_1)^2-(y_2-y_1)^2}\)`,
+            String.raw`\((x_2-x_1)^2+(y_2-y_1)^2\)`,
+            String.raw`\(\sqrt{(x_2+x_1)^2+(y_2+y_1)^2}\)`,
+            String.raw`\(|x_2-x_1|+|y_2-y_1|\)`,
+            String.raw`\(|z_2-z_1|\)`,
+            String.raw`\(\sqrt{(x_2-x_1)^2+(y_2-y_1)^2}\)`
+          ]
+        },
+        {
+          stem: String.raw`
+            <p>Suppose a right triangle used in the 3D distance derivation has legs of lengths \(6\) and \(8\).</p>
+            <p>What is the length of the hypotenuse?</p>
+          `,
+          choices: [
+            String.raw`\(12\)`,
+            String.raw`\(14\)`,
+            String.raw`\(\sqrt{14}\)`,
+            String.raw`\(10\)`,
+            String.raw`\(48\)`,
+            String.raw`\(\sqrt{100}\) is impossible to simplify`
+          ]
+        },
+        {
+          stem: String.raw`
+            <p>Which formula gives the distance between the points \((x_1,y_1,z_1)\) and \((x_2,y_2,z_2)\) in space?</p>
+          `,
+          choices: [
+            String.raw`\(\sqrt{(x_2-x_1)+(y_2-y_1)+(z_2-z_1)}\)`,
+            String.raw`\(\sqrt{(x_2-x_1)^2+(y_2-y_1)^2+(z_2-z_1)^2}\)`,
+            String.raw`\((x_2-x_1)^2+(y_2-y_1)^2+(z_2-z_1)^2\)`,
+            String.raw`\(\sqrt{(x_2+x_1)^2+(y_2+y_1)^2+(z_2+z_1)^2}\)`,
+            String.raw`\(|x_2-x_1|+|y_2-y_1|+|z_2-z_1|\)`,
+            String.raw`\(\sqrt{x_2^2+y_2^2+z_2^2}\)`
+          ]
+        },
+        {
+          stem: String.raw`
+            <p>Which statement about the midpoint of two points in space is always true?</p>
+          `,
+          choiceWrap: false,
+          choices: [
+            String.raw`<span>You average only the <i>x</i>-coordinates, because the other coordinates do not affect the midpoint.</span>`,
+            String.raw`<span>You average the <i>x</i>- and <i>y</i>-coordinates, but the <i>z</i>-coordinate stays unchanged.</span>`,
+            String.raw`<span>You average each coordinate separately: the midpoint of \((x_1,y_1,z_1)\) and \((x_2,y_2,z_2)\) is \(\left(\frac{x_1+x_2}{2},\frac{y_1+y_2}{2},\frac{z_1+z_2}{2}\right)\).</span>`,
+            String.raw`<span>You add the coordinates of one point to the coordinates of the other and keep the result as the midpoint.</span>`,
+            String.raw`<span>The midpoint formula works only in the plane, not in space.</span>`,
+            String.raw`<span>The midpoint depends on the distance formula, so it cannot be found directly from the coordinates.</span>`
+          ]
+        }
+      ]
+    };
+  </script>
+
+  <link rel="stylesheet" href="/math-homework/assets/core-rich.css" />
+  <script defer src="/math-homework/assets/core-rich.js"></script>
+  <script defer src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+</head>
+<body>
+  <div id="hw-root">Loading…</div>
+</body>
+</html>

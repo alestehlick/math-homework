@@ -1,0 +1,214 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Homework 4-1 (Algebra I)</title>
+
+  <script>
+    /* =========================
+       Homework 4-1 — Solving Equations (Algebra I)
+       Adapted for: /math-homework/assets/core-rich.js
+
+       REQUIRED SOURCE REFERENCES (your provided sets):
+       - Type A uses A. Exercises: #1, #2, #5, #19, #21
+       - Type B uses B. Exercises: #36, #37, #38, #39, #42
+       - Type C uses C. Exercises: #43, #44
+       - Model-reworked note: the source was written as open-response practice.
+         These items preserve the same algebraic targets but convert them into
+         diagnostic multiple-choice questions with distractors based on common
+         inverse-operation and sign errors.
+
+       IMAGE NAMING RULE:
+       No figures are required for this homework.
+       ========================= */
+
+    window.homeworkData = {
+      classId : "Algebra1",
+      id      : "Homework 4-1",
+      title   : "Homework 4-1 — Solving Equations",
+      graphics : String.raw``,
+
+      answerKey : ["B","C","E","A","D","F","B","C","A","E","D","C"],
+
+      questions : [
+        {
+          stem: String.raw`
+            <p>Solve the equation. Check which value of <b>\(x\)</b> makes the equation true.</p>
+            <p class="math">\(\,x+3=12\)</p>
+          `,
+          choices: [
+            String.raw`\(\,15\)`,
+            String.raw`\(\,9\)`,
+            String.raw`\(-9\)`,
+            String.raw`\(\,4\)`,
+            String.raw`\(-15\)`,
+            String.raw`\(\,36\)`
+          ]
+        },
+        {
+          stem: String.raw`
+            <p>Solve the equation for <b>\(x\)</b>.</p>
+            <p class="math">\(\,x-4=-23\)</p>
+          `,
+          choices: [
+            String.raw`\(-27\)`,
+            String.raw`\(\,19\)`,
+            String.raw`\(-19\)`,
+            String.raw`\(-5\)`,
+            String.raw`\(\,27\)`,
+            String.raw`\(-92\)`
+          ]
+        },
+        {
+          stem: String.raw`
+            <p>Solve the equation for <b>\(x\)</b>.</p>
+            <p class="math">\(\,5x=16\)</p>
+          `,
+          choices: [
+            String.raw`\(\,\dfrac{5}{16}\)`,
+            String.raw`\(\,11\)`,
+            String.raw`\(\,80\)`,
+            String.raw`\(\,3\)`,
+            String.raw`\(\,\dfrac{16}{5}\)`,
+            String.raw`\(-\dfrac{16}{5}\)`
+          ]
+        },
+        {
+          stem: String.raw`
+            <p>Solve the equation for <b>\(m\)</b>.</p>
+            <p class="math">\(\,\dfrac{m}{2}=-146\)</p>
+          `,
+          choices: [
+            String.raw`\(-292\)`,
+            String.raw`\(-73\)`,
+            String.raw`\(\,292\)`,
+            String.raw`\(\,144\)`,
+            String.raw`\(-148\)`,
+            String.raw`\(-288\)`
+          ]
+        },
+        {
+          stem: String.raw`
+            <p>Solve the equation for <b>\(x\)</b>.</p>
+            <p class="math">\(\,3+x=9\)</p>
+          `,
+          choices: [
+            String.raw`\(\,12\)`,
+            String.raw`\(\,3\)`,
+            String.raw`\(-6\)`,
+            String.raw`\(\,6\)`,
+            String.raw`\(\,9\)`,
+            String.raw`\(\,2\)`
+          ]
+        },
+        {
+          stem: String.raw`
+            <p>Solve the equation for <b>\(x\)</b>.</p>
+            <p class="math">\(\,\dfrac{x}{13}=1.24\)</p>
+          `,
+          choices: [
+            String.raw`\(\,14.24\)`,
+            String.raw`\(\,1.612\)`,
+            String.raw`\(\,17.12\)`,
+            String.raw`\(\,15.12\)`,
+            String.raw`\(\,4.21\)`,
+            String.raw`\(\,16.12\)`
+          ]
+        },
+        {
+          stem: String.raw`
+            <p>Solve the equation for <b>\(x\)</b>.</p>
+            <p class="math">\(\,102=3x\)</p>
+          `,
+          choices: [
+            String.raw`\(\,99\)`,
+            String.raw`\(\,34\)`,
+            String.raw`\(\,306\)`,
+            String.raw`\(\,105\)`,
+            String.raw`\(\,33\)`,
+            String.raw`\(\,\dfrac{3}{102}\)`
+          ]
+        },
+        {
+          stem: String.raw`
+            <p>Solve the equation for <b>\(x\)</b>.</p>
+            <p class="math">\(\,x+0.7=21.2\)</p>
+          `,
+          choices: [
+            String.raw`\(\,21.9\)`,
+            String.raw`\(\,20.9\)`,
+            String.raw`\(\,20.5\)`,
+            String.raw`\(\,22.6\)`,
+            String.raw`\(\,20.2\)`,
+            String.raw`\(\,21.5\)`
+          ]
+        },
+        {
+          stem: String.raw`
+            <p>Solve the equation for <b>\(x\)</b>.</p>
+            <p class="math">\(\,0.8x=0.24\)</p>
+          `,
+          choices: [
+            String.raw`\(\,0.3\)`,
+            String.raw`\(\,0.192\)`,
+            String.raw`\(\,1.04\)`,
+            String.raw`\(\,3\)`,
+            String.raw`\(\,0.6\)`,
+            String.raw`\(\,0.24\)`
+          ]
+        },
+        {
+          stem: String.raw`
+            <p>Solve the equation for <b>\(x\)</b>.</p>
+            <p class="math">\(\,\dfrac{x}{12}=4.69\)</p>
+          `,
+          choices: [
+            String.raw`\(\,48.97\)`,
+            String.raw`\(\,16.69\)`,
+            String.raw`\(\,4.81\)`,
+            String.raw`\(\,60.28\)`,
+            String.raw`\(\,56.28\)`,
+            String.raw`\(\,4.57\)`
+          ]
+        },
+        {
+          stem: String.raw`
+            <p>Solve the literal equation for <b>\(x\)</b>.</p>
+            <p class="math">\(\,b-x=d\)</p>
+          `,
+          choices: [
+            String.raw`\(\,x=d-b\)`,
+            String.raw`\(\,x=b+d\)`,
+            String.raw`\(\,x=-b-d\)`,
+            String.raw`\(\,x=b-d\)`,
+            String.raw`\(\,x=\dfrac{b}{d}\)`,
+            String.raw`\(\,x=d+b-x\)`
+          ]
+        },
+        {
+          stem: String.raw`
+            <p>Solve the literal equation for <b>\(x\)</b>.</p>
+            <p class="math">\(\,a=bx\)</p>
+          `,
+          choices: [
+            String.raw`\(\,x=ab\)`,
+            String.raw`\(\,x=\dfrac{b}{a}\)`,
+            String.raw`\(\,x=\dfrac{a}{b}\)`,
+            String.raw`\(\,x=a-b\)`,
+            String.raw`\(\,x=b-a\)`,
+            String.raw`\(\,x=\dfrac{1}{ab}\)`
+          ]
+        }
+      ]
+    };
+  </script>
+
+  <link rel="stylesheet" href="/math-homework/assets/core-rich.css" />
+  <script defer src="/math-homework/assets/core-rich.js"></script>
+  <script defer src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+</head>
+<body>
+  <div id="hw-root">Loading…</div>
+</body>
+</html>

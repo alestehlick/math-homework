@@ -1,0 +1,216 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Homework 3-8 (Algebra I)</title>
+
+  <script>
+    /* =========================
+       Homework 3-8 — Equations, Equality, and Translating Sentences (Algebra I)
+       Adapted for: /math-homework/assets/core-rich.js
+
+       REQUIRED SOURCE REFERENCES (your provided sets):
+       - Type A uses A. Exercises: #2, #6, #11, #17, #18
+       - Type B uses B. Exercises: #21, #23, #24, #25, #28
+       - Type C uses C. Exercises: #30
+       - Model-reworked extension: Q11 is a cleaner diagnostic translation item inspired by
+         the same sentence-to-symbols work in B/C, added because source C #29 is unusually ambiguous in wording.
+
+       IMAGE NAMING RULE:
+       No figures are required for this homework.
+       ========================= */
+
+    window.homeworkData = {
+      classId : "Algebra1",
+      id      : "Homework 3-8",
+      title   : "Homework 3-8 — Equations, Equality, and Translating Sentences",
+      graphics : String.raw``,
+
+      answerKey : ["B","C","E","A","F","D","C","B","A","E","B","C"],
+
+      questions : [
+        {
+          stem: String.raw`
+            <p>In the equation \(x+7=15\), the left side is changed to \(x+7-7\).</p>
+            <p>What must the right side become to maintain balance?</p>
+          `,
+          choices: [
+            String.raw`\(15\)`,
+            String.raw`\(15-7\)`,
+            String.raw`\(15+7\)`,
+            String.raw`\(\dfrac{15}{7}\)`,
+            String.raw`\(8\)`,
+            String.raw`\(x\)`
+          ]
+        },
+        {
+          stem: String.raw`
+            <p>In the equation \(8+4=12\), the left side is changed to \(3(8+4)\).</p>
+            <p>What must the right side become to maintain balance?</p>
+          `,
+          choices: [
+            String.raw`\(12+3\)`,
+            String.raw`\(\dfrac{12}{3}\)`,
+            String.raw`\(3(12)\)`,
+            String.raw`\(3+12\)`,
+            String.raw`\(12-3\)`,
+            String.raw`\(36+12\)`
+          ]
+        },
+        {
+          stem: String.raw`
+            <p>Decide whether the equation below is true or false:</p>
+            <p class="math">\(5\cdot6=2+3\cdot6\)</p>
+          `,
+          choices: [
+            String.raw`True, because both sides equal \(18\).`,
+            String.raw`True, because both sides equal \(30\).`,
+            String.raw`True, because multiplication comes before addition.`,
+            String.raw`False, because the left side is \(30\) and the right side is \(18\).`,
+            String.raw`False, because the left side is \(30\) and the right side is \(20\).`,
+            String.raw`False, because \(2+3=5\).`
+          ],
+          choiceWrap: false
+        },
+        {
+          stem: String.raw`
+            <p>Is the given number a solution of the equation?</p>
+            <p class="math">\(6x+5=x\quad\text{if }x=-1\)</p>
+          `,
+          choices: [
+            String.raw`Yes, because substituting \(x=-1\) gives \(-1=-1\).`,
+            String.raw`Yes, because substituting \(x=-1\) gives \(1=1\).`,
+            String.raw`No, because substituting \(x=-1\) gives \(-6=-1\).`,
+            String.raw`No, because substituting \(x=-1\) gives \(-1=1\).`,
+            String.raw`Yes, because \(6(-1)+5=0\).`,
+            String.raw`No, because negative numbers cannot be solutions.`
+          ],
+          choiceWrap: false
+        },
+        {
+          stem: String.raw`
+            <p>Is the given number a solution of the equation?</p>
+            <p class="math">\(10=12-x\quad\text{if }x=2\)</p>
+          `,
+          choices: [
+            String.raw`No, because \(12-2=9\).`,
+            String.raw`No, because \(10\ne12\).`,
+            String.raw`No, because \(2\) must be subtracted from both sides first.`,
+            String.raw`Yes, because \(10=12+2\).`,
+            String.raw`No, because \(12-x=8\) when \(x=2\).`,
+            String.raw`Yes, because substituting \(x=2\) gives \(10=10\).`
+          ],
+          choiceWrap: false
+        },
+        {
+          stem: String.raw`
+            <p>Which property of equality would be used first to solve the equation</p>
+            <p class="math">\(\dfrac{x}{8}=3\ ?\)</p>
+          `,
+          choices: [
+            String.raw`Addition Property of Equality`,
+            String.raw`Subtraction Property of Equality`,
+            String.raw`Division Property of Equality`,
+            String.raw`Multiplication Property of Equality`,
+            String.raw`Reflexive Property of Equality`,
+            String.raw`Distributive Property`
+          ],
+          choiceWrap: false
+        },
+        {
+          stem: String.raw`
+            <p>Use the properties of equality to transform the equation \(x=a+4\).</p>
+            <p>If you <b>multiply both sides by 5</b>, which equation results?</p>
+          `,
+          choices: [
+            String.raw`\(x=5a+20\)`,
+            String.raw`\(5x=a+20\)`,
+            String.raw`\(5x=5a+20\)`,
+            String.raw`\(x=5a+4\)`,
+            String.raw`\(5x=5a+4\)`,
+            String.raw`\(x=a+20\)`
+          ]
+        },
+        {
+          stem: String.raw`
+            <p>Use the properties of equality to transform the equation \(x=a+4\).</p>
+            <p>If you <b>subtract 10 from both sides</b>, which equation results?</p>
+          `,
+          choices: [
+            String.raw`\(x-10=a-10+4\)`,
+            String.raw`\(x-10=a-6\)`,
+            String.raw`\(x=a-6\)`,
+            String.raw`\(x-10=a+14\)`,
+            String.raw`\(x=a-10\)`,
+            String.raw`\(x+10=a+14\)`
+          ]
+        },
+        {
+          stem: String.raw`
+            <p>Which equation correctly translates this sentence?</p>
+            <p><b>Twice the sum of nineteen and twenty is seventy-eight.</b></p>
+          `,
+          choices: [
+            String.raw`\(2(19+20)=78\)`,
+            String.raw`\(2\cdot19+20=78\)`,
+            String.raw`\(19+20\cdot2=78\)`,
+            String.raw`\(2(19)+20=78\)`,
+            String.raw`\(19+20=78\cdot2\)`,
+            String.raw`\(2+19+20=78\)`
+          ]
+        },
+        {
+          stem: String.raw`
+            <p>Which equation correctly translates this sentence?</p>
+            <p><b>The reciprocals of three and five add up to eight-fifteenths.</b></p>
+          `,
+          choices: [
+            String.raw`\(\dfrac13\cdot\dfrac15=\dfrac8{15}\)`,
+            String.raw`\(\dfrac35=\dfrac8{15}\)`,
+            String.raw`\(\dfrac13+\dfrac15=\dfrac8{15}\)`,
+            String.raw`\(\dfrac13+\dfrac15=8-15\)`,
+            String.raw`\(\dfrac13+\dfrac15=\dfrac{15}{8}\)`,
+            String.raw`\(\dfrac13+\dfrac15=8+\dfrac1{15}\)`
+          ]
+        },
+        {
+          stem: String.raw`
+            <p>Which equation correctly translates this sentence?</p>
+            <p><b>Five more than the square root of four hundred is the square of five.</b></p>
+          `,
+          choices: [
+            String.raw`\(\sqrt{400+5}=5^2\)`,
+            String.raw`\(\sqrt{400}+5=5^2\)`,
+            String.raw`\(\sqrt{400}=5^2+5\)`,
+            String.raw`\(5\sqrt{400}=5^2\)`,
+            String.raw`\(\sqrt{400}+5=25^2\)`,
+            String.raw`\(\sqrt{400}+5^2=5\)`
+          ]
+        },
+        {
+          stem: String.raw`
+            <p>Which equation correctly translates this sentence?</p>
+            <p><b>Twice the square of a number increased by five times the product of the number and three more than the number is the opposite of the quotient of six and the number.</b></p>
+          `,
+          choices: [
+            String.raw`\(2x^2+5x+3x=-\dfrac6x\)`,
+            String.raw`\(2x^2+5(x+3)=-\dfrac6x\)`,
+            String.raw`\(2x^2+5x(x+3)=-\dfrac6x\)`,
+            String.raw`\(2x^2+5x(x+3)=\dfrac6x\)`,
+            String.raw`\(2(x^2+5x)(x+3)=-\dfrac6x\)`,
+            String.raw`\(2x^2+5x(x+3)=\dfrac{x}{6}\)`
+          ]
+        }
+      ]
+    };
+  </script>
+
+  <link rel="stylesheet" href="/math-homework/assets/core-rich.css" />
+  <script defer src="/math-homework/assets/core-rich.js"></script>
+  <script defer src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+</head>
+<body>
+  <div id="hw-root">Loading…</div>
+</body>
+</html>

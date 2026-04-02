@@ -1,0 +1,291 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Homework 3-7 (Algebra II)</title>
+
+  <script>
+    /* =========================
+       Homework 3-7 — Graphing Relations, Functions, and Inequalities (Algebra II)
+
+       REQUIRED SOURCE REFERENCES:
+       - Type A uses A. Exercises: #1, #3, #5, #8, #10
+       - Type B uses B. Exercises: #15, #19, #20, #21, #22
+       - Type C uses C. Exercises: #24, #25
+
+       MODEL REWORK / PEDAGOGICAL EDITING:
+       - The source set mixed several nearby ideas: graphing inequalities, identifying relations/functions,
+         and interpreting exponential / absolute-value boundaries. The final homework reorganizes these into
+         a more diagnostic sequence.
+       - Q1, Q2, Q3, Q11, and Q12 use model-authored inline SVG graphs inspired by the source exercises.
+         These were added so students must read a graph, not just manipulate symbols.
+       - Q4 and Q5 were re-authored from source material to target the meaning of dashed vs. solid boundaries
+         and which side of a boundary is included.
+       - Q6–Q10 were reworked from the source classification items so that students must distinguish
+         “relation,” “function,” “both,” and “neither” in cleanly contrasted cases.
+
+       IMAGE / FIGURE NOTE:
+       - No external PNG files are used in this homework.
+       - All figures are embedded inline as SVG in the relevant questions.
+       ========================= */
+
+    const gridSvg = String.raw`
+      <defs>
+        <pattern id="smallGrid" width="20" height="20" patternUnits="userSpaceOnUse">
+          <path d="M 20 0 L 0 0 0 20" fill="none" stroke="#d9d9d9" stroke-width="1"/>
+        </pattern>
+        <marker id="arrow-blue" markerWidth="8" markerHeight="8" refX="7" refY="4" orient="auto">
+          <path d="M0,0 L8,4 L0,8 Z" fill="#1f77b4"></path>
+        </marker>
+        <marker id="arrow-red" markerWidth="8" markerHeight="8" refX="7" refY="4" orient="auto">
+          <path d="M0,0 L8,4 L0,8 Z" fill="#cc3333"></path>
+        </marker>
+      </defs>
+      <rect x="20" y="20" width="160" height="160" fill="url(#smallGrid)" />
+      <line x1="100" y1="20" x2="100" y2="180" stroke="#1f77b4" stroke-width="2" marker-end="url(#arrow-blue)"/>
+      <line x1="20" y1="100" x2="180" y2="100" stroke="#1f77b4" stroke-width="2" marker-end="url(#arrow-blue)"/>
+      <text x="183" y="95" font-size="12" fill="#1f77b4">x</text>
+      <text x="105" y="16" font-size="12" fill="#1f77b4">y</text>
+    `;
+
+    window.homeworkData = {
+      classId : "Algebra2",
+      id      : "Homework 3-7",
+      title   : "Homework 3-7 — Graphing Relations, Functions, and Inequalities",
+      graphics : String.raw``,
+      answerKey : ["B","B","B","A","D","A","C","A","C","D","E","B"],
+      questions : [
+        {
+          stem: String.raw`
+            <p><b>Refer to Figure 1.</b> Which inequality is represented by the graph?</p>
+          `,
+          media: String.raw`
+            <figure>
+              <svg viewBox="0 0 200 200" width="220" height="220" aria-label="Graph of y greater than or equal to x">
+                ${gridSvg}
+                <polygon points="20,20 20,180 180,20" fill="#f5cccc" opacity="0.7"></polygon>
+                <line x1="20" y1="180" x2="180" y2="20" stroke="#cc3333" stroke-width="3" marker-end="url(#arrow-red)"/>
+              </svg>
+              <figcaption>Figure 1</figcaption>
+            </figure>
+          `,
+          choiceWrap: false,
+          choices: [
+            String.raw`<span>\(y > x\)</span>`,
+            String.raw`<span>\(y \ge x\)</span>`,
+            String.raw`<span>\(y \le x\)</span>`,
+            String.raw`<span>\(y < x\)</span>`,
+            String.raw`<span>\(x \ge 0\)</span>`,
+            String.raw`<span>\(x \le 0\)</span>`
+          ]
+        },
+        {
+          stem: String.raw`
+            <p><b>Refer to Figure 2.</b> Which inequality is represented by the graph?</p>
+          `,
+          media: String.raw`
+            <figure>
+              <svg viewBox="0 0 200 200" width="220" height="220" aria-label="Graph of y greater than negative 2x plus 1">
+                ${gridSvg}
+                <polygon points="20,20 20,30 90,170 180,170 180,20" fill="#f5cccc" opacity="0.7"></polygon>
+                <line x1="35" y1="180" x2="115" y2="20" stroke="#cc3333" stroke-width="3" stroke-dasharray="8 6" marker-end="url(#arrow-red)"/>
+              </svg>
+              <figcaption>Figure 2</figcaption>
+            </figure>
+          `,
+          choiceWrap: false,
+          choices: [
+            String.raw`<span>\(y \ge -2x + 1\)</span>`,
+            String.raw`<span>\(y > -2x + 1\)</span>`,
+            String.raw`<span>\(y < -2x + 1\)</span>`,
+            String.raw`<span>\(y \le -2x + 1\)</span>`,
+            String.raw`<span>\(x > -2y + 1\)</span>`,
+            String.raw`<span>\(y > 2x + 1\)</span>`
+          ]
+        },
+        {
+          stem: String.raw`
+            <p><b>Refer to Figure 3.</b> Which inequality is represented by the graph?</p>
+          `,
+          media: String.raw`
+            <figure>
+              <svg viewBox="0 0 200 200" width="220" height="220" aria-label="Graph of x less than or equal to 3">
+                ${gridSvg}
+                <rect x="20" y="20" width="140" height="160" fill="#f5cccc" opacity="0.7"></rect>
+                <line x1="160" y1="20" x2="160" y2="180" stroke="#cc3333" stroke-width="3" marker-end="url(#arrow-red)"/>
+              </svg>
+              <figcaption>Figure 3</figcaption>
+            </figure>
+          `,
+          choiceWrap: false,
+          choices: [
+            String.raw`<span>\(x < 3\)</span>`,
+            String.raw`<span>\(x \le 3\)</span>`,
+            String.raw`<span>\(x \ge 3\)</span>`,
+            String.raw`<span>\(x > 3\)</span>`,
+            String.raw`<span>\(y \le 3\)</span>`,
+            String.raw`<span>\(y = 3\)</span>`
+          ]
+        },
+        {
+          stem: String.raw`
+            <p>Which inequality would be graphed with a <b>dashed horizontal boundary line</b> at \(y=4\) and shading <b>above</b> the line?</p>
+          `,
+          choiceWrap: false,
+          choices: [
+            String.raw`<span>\(y > 4\)</span>`,
+            String.raw`<span>\(y \ge 4\)</span>`,
+            String.raw`<span>\(y < 4\)</span>`,
+            String.raw`<span>\(y \le 4\)</span>`,
+            String.raw`<span>\(x > 4\)</span>`,
+            String.raw`<span>\(x \le 4\)</span>`
+          ]
+        },
+        {
+          stem: String.raw`
+            <p>The inequality \(x+y \le 6\) is graphed using the line \(x+y=6\) as a boundary.</p>
+            <p>Which description is correct?</p>
+          `,
+          choiceWrap: false,
+          choices: [
+            String.raw`<span>The boundary is dashed, and the side not containing \((0,0)\) is shaded.</span>`,
+            String.raw`<span>The boundary is dashed, and the side containing \((0,0)\) is shaded.</span>`,
+            String.raw`<span>The boundary is solid, and the side not containing \((0,0)\) is shaded.</span>`,
+            String.raw`<span>The boundary is solid, and the side containing \((0,0)\) is shaded.</span>`,
+            String.raw`<span>The graph is a vertical line only.</span>`,
+            String.raw`<span>The graph is a horizontal line only.</span>`
+          ]
+        },
+        {
+          stem: String.raw`
+            <p>How should the graph of \(y&lt;2|x|\) be classified?</p>
+          `,
+          choiceWrap: false,
+          choices: [
+            String.raw`<span>It is a relation but not a function.</span>`,
+            String.raw`<span>It is a function but not a relation.</span>`,
+            String.raw`<span>It is both a relation and a function.</span>`,
+            String.raw`<span>It is neither a relation nor a function.</span>`,
+            String.raw`<span>It is a vertical line.</span>`,
+            String.raw`<span>It is a finite set of ordered pairs.</span>`
+          ]
+        },
+        {
+          stem: String.raw`
+            <p>How should the graph of \(y=|x|\) be classified?</p>
+          `,
+          choiceWrap: false,
+          choices: [
+            String.raw`<span>It is a relation but not a function.</span>`,
+            String.raw`<span>It is a function but not a relation.</span>`,
+            String.raw`<span>It is both a relation and a function.</span>`,
+            String.raw`<span>It is neither a relation nor a function.</span>`,
+            String.raw`<span>It is vertical but not horizontal.</span>`,
+            String.raw`<span>Not enough information is given.</span>`
+          ]
+        },
+        {
+          stem: String.raw`
+            <p>How should the graph of \(x=4\) be classified?</p>
+          `,
+          choiceWrap: false,
+          choices: [
+            String.raw`<span>It is a relation but not a function.</span>`,
+            String.raw`<span>It is a function but not a relation.</span>`,
+            String.raw`<span>It is both a relation and a function.</span>`,
+            String.raw`<span>It is neither a relation nor a function.</span>`,
+            String.raw`<span>It is an exponential function.</span>`,
+            String.raw`<span>It is a one-point relation only.</span>`
+          ]
+        },
+        {
+          stem: String.raw`
+            <p>Let \(S=\{(1,6),(3,6),(5,6)\}\).</p>
+            <p>How should \(S\) be classified?</p>
+          `,
+          choiceWrap: false,
+          choices: [
+            String.raw`<span>It is a relation but not a function.</span>`,
+            String.raw`<span>It is a function but not a relation.</span>`,
+            String.raw`<span>It is both a relation and a function.</span>`,
+            String.raw`<span>It is neither a relation nor a function.</span>`,
+            String.raw`<span>It is not a relation because the \(y\)-values repeat.</span>`,
+            String.raw`<span>It is impossible to tell without graphing it.</span>`
+          ]
+        },
+        {
+          stem: String.raw`
+            <p>Let \(T=\{5,3,2,4,7,1\}\).</p>
+            <p>What best describes \(T\)?</p>
+          `,
+          choiceWrap: false,
+          choices: [
+            String.raw`<span>It is a relation but not a function.</span>`,
+            String.raw`<span>It is a function but not a relation.</span>`,
+            String.raw`<span>It is both a relation and a function.</span>`,
+            String.raw`<span>It is neither a relation nor a function.</span>`,
+            String.raw`<span>It is a vertical line.</span>`,
+            String.raw`<span>It is the graph of \(y=x\).</span>`
+          ]
+        },
+        {
+          stem: String.raw`
+            <p><b>Refer to Figure 4.</b> Which inequality is represented by the graph?</p>
+          `,
+          media: String.raw`
+            <figure>
+              <svg viewBox="0 0 200 200" width="220" height="220" aria-label="Graph of y greater than or equal to one fourth to the x power">
+                ${gridSvg}
+                <path d="M20,45 C45,55 70,70 100,100 C125,125 150,145 180,160 L180,20 L20,20 Z" fill="#f5cccc" opacity="0.7"></path>
+                <path d="M20,45 C45,55 70,70 100,100 C125,125 150,145 180,160" fill="none" stroke="#cc3333" stroke-width="3"/>
+              </svg>
+              <figcaption>Figure 4</figcaption>
+            </figure>
+          `,
+          choiceWrap: false,
+          choices: [
+            String.raw`<span>\(y < \left(\tfrac14\right)^x\)</span>`,
+            String.raw`<span>\(y \le \left(\tfrac14\right)^x\)</span>`,
+            String.raw`<span>\(y < \left(\tfrac32\right)^x\)</span>`,
+            String.raw`<span>\(y \ge \left(\tfrac32\right)^x\)</span>`,
+            String.raw`<span>\(y \ge \left(\tfrac14\right)^x\)</span>`,
+            String.raw`<span>\(x \ge \left(\tfrac14\right)^y\)</span>`
+          ]
+        },
+        {
+          stem: String.raw`
+            <p><b>Refer to Figure 5.</b> Which inequality is represented by the graph?</p>
+          `,
+          media: String.raw`
+            <figure>
+              <svg viewBox="0 0 200 200" width="220" height="220" aria-label="Graph of y less than three halves to the x power">
+                ${gridSvg}
+                <path d="M20,165 C55,150 85,130 115,100 C140,72 160,40 180,20" fill="none" stroke="#cc3333" stroke-width="3" stroke-dasharray="8 6"/>
+                <path d="M20,180 L20,165 C55,150 85,130 115,100 C140,72 160,40 180,20 L180,180 Z" fill="#f5cccc" opacity="0.7"></path>
+              </svg>
+              <figcaption>Figure 5</figcaption>
+            </figure>
+          `,
+          choiceWrap: false,
+          choices: [
+            String.raw`<span>\(y \le \left(\tfrac32\right)^x\)</span>`,
+            String.raw`<span>\(y < \left(\tfrac32\right)^x\)</span>`,
+            String.raw`<span>\(y > \left(\tfrac32\right)^x\)</span>`,
+            String.raw`<span>\(y \ge \left(\tfrac32\right)^x\)</span>`,
+            String.raw`<span>\(y < \left(\tfrac14\right)^x\)</span>`,
+            String.raw`<span>\(x < \left(\tfrac32\right)^y\)</span>`
+          ]
+        }
+      ]
+    };
+  </script>
+
+  <link rel="stylesheet" href="/math-homework/assets/core-rich.css" />
+  <script defer src="/math-homework/assets/core-rich.js"></script>
+  <script defer src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+</head>
+<body>
+  <div id="hw-root">Loading…</div>
+</body>
+</html>

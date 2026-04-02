@@ -1,0 +1,211 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Homework 4-3 (Algebra I)</title>
+
+  <script>
+    /* =========================
+       Homework 4-3 — Solving Equations and Word Problems (Algebra I)
+       Adapted for: /math-homework/assets/core-rich.js
+
+       REQUIRED SOURCE REFERENCES (your provided sets):
+       - Type A uses A. Exercises: #1, #5, #7, #10, #13
+       - Type B uses B. Exercises: #16, #17, #18, #19, #21
+       - Type C uses C. Exercises: #23, #24
+       - Model-reworked note: the source set mixes direct equations and word problems.
+         These were reorganized into a progression from symbolic equations to word-problem
+         equations and solutions, while keeping the same curricular level.
+
+       IMAGE NAMING RULE:
+       No figures are required for this homework.
+       ========================= */
+
+    window.homeworkData = {
+      classId : "Algebra1",
+      id      : "Homework 4-3",
+      title   : "Homework 4-3 — Solving Equations and Word Problems",
+      graphics : String.raw``,
+
+      answerKey : ["A","B","C","D","E","F","A","B","C","D","E","F"],
+
+      questions : [
+        {
+          stem: String.raw`
+            <p>Solve for the variable:</p>
+            <p class="math">\(\,3x-10=14\)</p>
+          `,
+          choices: [
+            String.raw`\(\,8\)`,
+            String.raw`\(\,24\)`,
+            String.raw`\(\,2\)`,
+            String.raw`\(-8\)`,
+            String.raw`\(\,14\)`,
+            String.raw`\(-\dfrac{14}{3}\)`
+          ]
+        },
+        {
+          stem: String.raw`
+            <p>Solve for the variable:</p>
+            <p class="math">\(\,4x-8x+9=41\)</p>
+          `,
+          choices: [
+            String.raw`\(\,8\)`,
+            String.raw`\(-8\)`,
+            String.raw`\(-10\)`,
+            String.raw`\(\,10\)`,
+            String.raw`\(-32\)`,
+            String.raw`\(\,32\)`
+          ]
+        },
+        {
+          stem: String.raw`
+            <p>Solve for the variable:</p>
+            <p class="math">\(\,\dfrac{x}{5}-13=-84\)</p>
+          `,
+          choices: [
+            String.raw`\(-71\)`,
+            String.raw`\(-420\)`,
+            String.raw`\(-355\)`,
+            String.raw`\(\,355\)`,
+            String.raw`\(-97\)`,
+            String.raw`\(\,71\)`
+          ]
+        },
+        {
+          stem: String.raw`
+            <p>Solve for the variable:</p>
+            <p class="math">\(\,3x+4-5x+9=15\)</p>
+          `,
+          choices: [
+            String.raw`\(\,1\)`,
+            String.raw`\(-2\)`,
+            String.raw`\(\,2\)`,
+            String.raw`\(-1\)`,
+            String.raw`\(\,13\)`,
+            String.raw`\(-13\)`
+          ]
+        },
+        {
+          stem: String.raw`
+            <p>Solve for the variable:</p>
+            <p class="math">\(\,162=24m-86\)</p>
+          `,
+          choices: [
+            String.raw`\(\,\dfrac{31}{2}\)`,
+            String.raw`\(\,\dfrac{31}{4}\)`,
+            String.raw`\(\,\dfrac{62}{3}\)`,
+            String.raw`\(\,\dfrac{248}{86}\)`,
+            String.raw`\(\,\dfrac{31}{3}\)`,
+            String.raw`\(\,\dfrac{43}{4}\)`
+          ]
+        },
+        {
+          stem: String.raw`
+            <p>If 47 is added to three times a number, the result is 68. What is the number?</p>
+          `,
+          choices: [
+            String.raw`\(\,5\)`,
+            String.raw`\(\,6\)`,
+            String.raw`\(\,8\)`,
+            String.raw`\(\,21\)`,
+            String.raw`\(\,15\)`,
+            String.raw`\(\,7\)`
+          ]
+        },
+        {
+          stem: String.raw`
+            <p>Sue’s weekly pay is \$240 plus a commission of \$13 for every piece of furniture she sells. How many pieces must she sell to make \$500 per week?</p>
+          `,
+          choices: [
+            String.raw`20`,
+            String.raw`18`,
+            String.raw`19`,
+            String.raw`22`,
+            String.raw`17`,
+            String.raw`40`
+          ],
+          choiceWrap: false
+        },
+        {
+          stem: String.raw`
+            <p>One number is 4 more than another, and their sum is 120. Which pair of numbers fits the description?</p>
+          `,
+          choices: [
+            String.raw`56 and 64`,
+            String.raw`58 and 62`,
+            String.raw`57 and 63`,
+            String.raw`59 and 61`,
+            String.raw`54 and 66`,
+            String.raw`60 and 64`
+          ],
+          choiceWrap: false
+        },
+        {
+          stem: String.raw`
+            <p>If Bill’s salary is \$25 and he gets a 20¢ commission on every newspaper he sells, how many must he sell to make \$47?</p>
+          `,
+          choices: [
+            String.raw`95`,
+            String.raw`100`,
+            String.raw`110`,
+            String.raw`120`,
+            String.raw`135`,
+            String.raw`85`
+          ],
+          choiceWrap: false
+        },
+        {
+          stem: String.raw`
+            <p>What number increased by \(1\dfrac12\) is \(5\dfrac14\)?</p>
+          `,
+          choices: [
+            String.raw`\(\,3\dfrac12\)`,
+            String.raw`\(\,3\dfrac14\)`,
+            String.raw`\(\,3\dfrac25\)`,
+            String.raw`\(\,3\dfrac34\)`,
+            String.raw`\(\,4\dfrac14\)`,
+            String.raw`\(\,2\dfrac34\)`
+          ],
+          choiceWrap: false
+        },
+        {
+          stem: String.raw`
+            <p>Which equation correctly represents this statement?</p>
+            <p><b>The sum of twice a number and seven less than four times the number is fifteen.</b></p>
+          `,
+          choices: [
+            String.raw`\(\,2x+4x-7=15\)`,
+            String.raw`\(\,2x+(4x+7)=15\)`,
+            String.raw`\(\,2x+7-4x=15\)`,
+            String.raw`\(\,2(x+4x)-7=15\)`,
+            String.raw`\(\,2x+(4x-7)=15\)`,
+            String.raw`\(\,2x+7(4x)=15\)`
+          ]
+        },
+        {
+          stem: String.raw`
+            <p>Eight more than five times a number is \(\dfrac{20}{3}\). What is the number?</p>
+          `,
+          choices: [
+            String.raw`\(\,\dfrac{4}{15}\)`,
+            String.raw`\(-\dfrac{4}{3}\)`,
+            String.raw`\(-\dfrac{20}{3}\)`,
+            String.raw`\(\,\dfrac{4}{5}\)`,
+            String.raw`\(-\dfrac{8}{15}\)`,
+            String.raw`\(-\dfrac{4}{15}\)`
+          ]
+        }
+      ]
+    };
+  </script>
+
+  <link rel="stylesheet" href="/math-homework/assets/core-rich.css" />
+  <script defer src="/math-homework/assets/core-rich.js"></script>
+  <script defer src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+</head>
+<body>
+  <div id="hw-root">Loading…</div>
+</body>
+</html>

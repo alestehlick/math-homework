@@ -1,0 +1,213 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Homework 3-3 (Algebra II)</title>
+
+  <script>
+    /* =========================
+       Homework 3-3 — Slope and Slope-Intercept Form (Algebra II)
+       Adapted for: /math-homework/assets/core-rich.js
+
+       REQUIRED SOURCE REFERENCES:
+       - Type A uses A. Exercises: #2, #3, #4, #11, #15
+       - Type B uses B. Exercises: #21, #23, #24, #25, #26
+       - Type C uses C. Exercise: #28
+
+       MODEL-REWORKED / MODEL-AUTHORED ITEMS:
+       - Q10 reworks B #19 into a slope-and-intercept diagnostic multiple-choice item.
+       - Q11 is adapted from C #28 to test recognition of equations already written in the form z = f(x,y).
+       - Q12 is a conceptual reworking of C #28 focused on why the graph of z = f(x,y) is a surface rather than a solid.
+
+       IMAGE NAMING RULE:
+       - No external PNG figures are used in this homework.
+       ========================= */
+
+    window.homeworkData = {
+      classId : "Algebra2",
+      id      : "Homework 3-3",
+      title   : "Homework 3-3 — Slope and Slope-Intercept Form",
+      graphics : String.raw``,
+      answerKey : ["B","E","C","A","D","F","B","C","A","E","D","C"],
+      questions : [
+        {
+          stem: String.raw`
+            <p>The equation <span class="math">\(x-2y=6\)</span> can be rewritten in function notation. Which choice is correct?</p>
+          `,
+          choiceWrap: false,
+          choices: [
+            String.raw`<span class="math">\(f(x)=2x-6\)</span>; slope <span class="math">\(2\)</span>; y-intercept <span class="math">\(-6\)</span>`,
+            String.raw`<span class="math">\(f(x)=\tfrac12x-3\)</span>; slope <span class="math">\(\tfrac12\)</span>; y-intercept <span class="math">\(-3\)</span>`,
+            String.raw`<span class="math">\(f(x)=-\tfrac12x+3\)</span>; slope <span class="math">\(-\tfrac12\)</span>; y-intercept <span class="math">\(3\)</span>`,
+            String.raw`<span class="math">\(f(x)=\tfrac12x+3\)</span>; slope <span class="math">\(\tfrac12\)</span>; y-intercept <span class="math">\(3\)</span>`,
+            String.raw`<span class="math">\(f(x)=-2x+6\)</span>; slope <span class="math">\(-2\)</span>; y-intercept <span class="math">\(6\)</span>`,
+            String.raw`<span class="math">\(f(x)=x-6\)</span>; slope <span class="math">\(1\)</span>; y-intercept <span class="math">\(-6\)</span>`
+          ]
+        },
+        {
+          stem: String.raw`
+            <p>Find the slope of the line passing through <span class="math">\((-4,-9)\)</span> and <span class="math">\((3,-6)\)</span>.</p>
+          `,
+          choiceWrap: false,
+          choices: [
+            String.raw`<span class="math">\(-\tfrac37\)</span>`,
+            String.raw`<span class="math">\(\tfrac73\)</span>`,
+            String.raw`<span class="math">\(-\tfrac73\)</span>`,
+            String.raw`<span class="math">\(3\)</span>`,
+            String.raw`<span class="math">\(\tfrac37\)</span>`,
+            String.raw`<span class="math">\(-3\)</span>`
+          ]
+        },
+        {
+          stem: String.raw`
+            <p>Find the slope of the line passing through <span class="math">\((8,-2)\)</span> and <span class="math">\((10,-8)\)</span>.</p>
+          `,
+          choiceWrap: false,
+          choices: [
+            String.raw`<span class="math">\(3\)</span>`,
+            String.raw`<span class="math">\(-\tfrac13\)</span>`,
+            String.raw`<span class="math">\(-3\)</span>`,
+            String.raw`<span class="math">\(\tfrac13\)</span>`,
+            String.raw`<span class="math">\(-6\)</span>`,
+            String.raw`<span class="math">\(6\)</span>`
+          ]
+        },
+        {
+          stem: String.raw`
+            <p>Write <span class="math">\(3x+y=-1\)</span> in slope-intercept form.</p>
+          `,
+          choiceWrap: false,
+          choices: [
+            String.raw`<span class="math">\(y=-3x-1\)</span>`,
+            String.raw`<span class="math">\(y=3x-1\)</span>`,
+            String.raw`<span class="math">\(y=-3x+1\)</span>`,
+            String.raw`<span class="math">\(y=\tfrac13x-1\)</span>`,
+            String.raw`<span class="math">\(y=1-3x\)</span> with y-intercept <span class="math">\(1\)</span>`,
+            String.raw`<span class="math">\(y=-x-3\)</span>`
+          ]
+        },
+        {
+          stem: String.raw`
+            <p>The relation <span class="math">\(x=y\)</span> is written as a function. Which choice gives the correct function, slope, and y-intercept?</p>
+          `,
+          choiceWrap: false,
+          choices: [
+            String.raw`<span class="math">\(f(x)=-x\)</span>; slope <span class="math">\(-1\)</span>; y-intercept <span class="math">\(0\)</span>`,
+            String.raw`<span class="math">\(f(x)=x+1\)</span>; slope <span class="math">\(1\)</span>; y-intercept <span class="math">\(1\)</span>`,
+            String.raw`<span class="math">\(f(x)=1\)</span>; slope <span class="math">\(0\)</span>; y-intercept <span class="math">\(1\)</span>`,
+            String.raw`<span class="math">\(f(x)=x\)</span>; slope <span class="math">\(1\)</span>; y-intercept <span class="math">\(0\)</span>`,
+            String.raw`<span class="math">\(f(x)=\tfrac1x\)</span>; slope <span class="math">\(1\)</span>; y-intercept <span class="math">\(0\)</span>`,
+            String.raw`<span class="math">\(f(x)=x\)</span>; slope <span class="math">\(0\)</span>; y-intercept <span class="math">\(1\)</span>`
+          ]
+        },
+        {
+          stem: String.raw`
+            <p>The points <span class="math">\((3,2)\)</span> and <span class="math">\((5,2)\)</span> are connected by a line. Which statement is correct?</p>
+          `,
+          choiceWrap: false,
+          choices: [
+            String.raw`It is a vertical line with equation <span class="math">\(x=2\)</span>.`,
+            String.raw`It is a line with slope <span class="math">\(2\)</span> and equation <span class="math">\(y=2x\)</span>.`,
+            String.raw`It is not a function because two points are given.`,
+            String.raw`It is a decreasing line with slope <span class="math">\(-2\)</span>.`,
+            String.raw`It is the line <span class="math">\(y=5\)</span> with slope <span class="math">\(0\)</span>.`,
+            String.raw`It is a horizontal line with equation <span class="math">\(y=2\)</span> and slope <span class="math">\(0\)</span>.`
+          ]
+        },
+        {
+          stem: String.raw`
+            <p>The points <span class="math">\((2,8)\)</span> and <span class="math">\((2,-3)\)</span> are connected by a line. Which statement is correct?</p>
+          `,
+          choiceWrap: false,
+          choices: [
+            String.raw`The line is horizontal, so its slope is <span class="math">\(0\)</span>.`,
+            String.raw`The line is vertical with equation <span class="math">\(x=2\)</span>, its slope is undefined, and it is not a function of <span class="math">\(x\)</span>.`,
+            String.raw`The line is <span class="math">\(y=2\)</span>, so it is a function.`,
+            String.raw`The line has slope <span class="math">\(-\tfrac{11}{2}\)</span>.`,
+            String.raw`The line has slope <span class="math">\(\tfrac{11}{2}\)</span> and y-intercept <span class="math">\(8\)</span>.`,
+            String.raw`The line is diagonal because the y-values are different.`
+          ]
+        },
+        {
+          stem: String.raw`
+            <p>Suppose <span class="math">\((p,r)\)</span> and <span class="math">\((q,r)\)</span> have the same y-coordinate, with <span class="math">\(p\ne q\)</span>. Which conclusion must be true?</p>
+          `,
+          choiceWrap: false,
+          choices: [
+            String.raw`The line is vertical, so its equation is <span class="math">\(x=r\)</span>.`,
+            String.raw`The line has slope <span class="math">\(1\)</span> because both points share a coordinate.`,
+            String.raw`The line is horizontal with equation <span class="math">\(y=r\)</span>, its slope is <span class="math">\(0\)</span>, and it is a function of <span class="math">\(x\)</span>.`,
+            String.raw`The line is not determined unless <span class="math">\(p+q=r\)</span>.`,
+            String.raw`The line has undefined slope because one coordinate repeats.`,
+            String.raw`The line passes through the origin.`
+          ]
+        },
+        {
+          stem: String.raw`
+            <p>Which equation is the standard form of the vertical line through <span class="math">\(x=-4\)</span>?</p>
+          `,
+          choiceWrap: false,
+          choices: [
+            String.raw`<span class="math">\(x=-4\)</span>`,
+            String.raw`<span class="math">\(y=-4\)</span>`,
+            String.raw`<span class="math">\(y=0x-4\)</span>`,
+            String.raw`<span class="math">\(x+y=-4\)</span>`,
+            String.raw`<span class="math">\(4x=-1\)</span>`,
+            String.raw`<span class="math">\(y=x-4\)</span>`
+          ]
+        },
+        {
+          stem: String.raw`
+            <p>Which statement about the line <span class="math">\(8x-5y=10\)</span> is correct?</p>
+          `,
+          choiceWrap: false,
+          choices: [
+            String.raw`Its slope is <span class="math">\(-\tfrac85\)</span> and its y-intercept is <span class="math">\(2\)</span>.`,
+            String.raw`Its slope is <span class="math">\(\tfrac58\)</span> and its y-intercept is <span class="math">\(-2\)</span>.`,
+            String.raw`Its slope is <span class="math">\(\tfrac85\)</span> and its y-intercept is <span class="math">\(2\)</span>.`,
+            String.raw`Its slope is <span class="math">\(-\tfrac58\)</span> and its y-intercept is <span class="math">\(-2\)</span>.`,
+            String.raw`Its slope is <span class="math">\(\tfrac85\)</span> and its y-intercept is <span class="math">\(-2\)</span>.`,
+            String.raw`It is a vertical line.`
+          ]
+        },
+        {
+          stem: String.raw`
+            <p>Which equation is already written in the form <span class="math">\(z=f(x,y)\)</span>?</p>
+          `,
+          choiceWrap: false,
+          choices: [
+            String.raw`<span class="math">\(z^2=x+y\)</span>`,
+            String.raw`<span class="math">\(x=2y-z\)</span>`,
+            String.raw`<span class="math">\(x^2+y^2+z^2=1\)</span>`,
+            String.raw`<span class="math">\(z=2x-y\)</span>`,
+            String.raw`<span class="math">\(y=3x-z\)</span>`,
+            String.raw`<span class="math">\(x=z^2+y\)</span>`
+          ]
+        },
+        {
+          stem: String.raw`
+            <p>Why does the graph of an equation of the form <span class="math">\(z=f(x,y)\)</span> represent a surface rather than a solid?</p>
+          `,
+          choiceWrap: false,
+          choices: [
+            String.raw`Because every surface in three dimensions must be flat.`,
+            String.raw`Because the variables <span class="math">\(x\)</span> and <span class="math">\(y\)</span> are restricted to integers.`,
+            String.raw`Because each allowed pair <span class="math">\((x,y)\)</span> gives one height <span class="math">\(z\)</span>, so the graph contains only those points, not all the points underneath them.`,
+            String.raw`Because the graph must always be a plane.`,
+            String.raw`Because three-dimensional graphs cannot show curved objects.`,
+            String.raw`Because a function of two variables always fills an entire box in space.`
+          ]
+        }
+      ]
+    };
+  </script>
+
+  <link rel="stylesheet" href="/math-homework/assets/core-rich.css" />
+  <script defer src="/math-homework/assets/core-rich.js"></script>
+  <script defer src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+</head>
+<body>
+  <div id="hw-root">Loading…</div>
+</body>
+</html>

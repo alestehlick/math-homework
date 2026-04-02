@@ -1,0 +1,283 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Homework 3-5 (Algebra II)</title>
+
+  <script>
+    /* =========================
+       Homework 3-5 — Functions: Identifying, Evaluating, Domain, and Range (Algebra II)
+       Adapted for: /math-homework/assets/core-rich.js
+
+       REQUIRED SOURCE REFERENCES:
+       - Type A uses A. Exercises: #1, #4, #5, #7, #8, #11, #19, #20
+       - Type B uses B. Exercises: #21, #22, #23, #24, #26
+       - Type C uses C. Exercises: #27, #28, #29, #30
+
+       MODEL-REWORKED / MODEL-AUTHORED ITEMS:
+       - Q1–Q3 rework the source graph-identification items into diagnostic multiple-choice questions that test the vertical line test and domain/range understanding.
+       - Q6 combines evaluation ideas from A #11 and A #12 into a single comparison item.
+       - Q11 reshapes C #27 into a cleaner question about whether a piecewise relation is a function and what its domain is.
+       - Q12 condenses C #28–30 into a conceptual question about lines in standard form and when they fail to represent functions.
+
+       IMAGE NAMING RULE (STRICT):
+       - No external PNG files are required for this homework.
+       - All figures are rendered inline in the HTML so the file remains standalone.
+       ========================= */
+
+    window.homeworkData = {
+      classId : "Algebra2",
+      id      : "Homework 3-5",
+      title   : "Homework 3-5 — Functions: Identifying, Evaluating, Domain, and Range",
+
+      graphics : String.raw``,
+
+      answerKey : ["B","C","A","C","D","E","B","C","A","F","D","B"],
+
+      questions : [
+        {
+          stem: String.raw`
+            <p><b>Refer to Figure 1.</b> Which statement best describes the relation?</p>
+          `,
+          media: String.raw`
+            <figure>
+              <svg viewBox="0 0 180 180" width="180" height="180" aria-label="Coordinate grid with a slanted line">
+                <rect x="0" y="0" width="180" height="180" fill="white"/>
+                <g stroke="#d9d9d9" stroke-width="1">
+                  <line x1="20" y1="20" x2="20" y2="160"/><line x1="40" y1="20" x2="40" y2="160"/><line x1="60" y1="20" x2="60" y2="160"/>
+                  <line x1="80" y1="20" x2="80" y2="160"/><line x1="100" y1="20" x2="100" y2="160"/><line x1="120" y1="20" x2="120" y2="160"/>
+                  <line x1="140" y1="20" x2="140" y2="160"/><line x1="160" y1="20" x2="160" y2="160"/>
+                  <line x1="20" y1="20" x2="160" y2="20"/><line x1="20" y1="40" x2="160" y2="40"/><line x1="20" y1="60" x2="160" y2="60"/>
+                  <line x1="20" y1="80" x2="160" y2="80"/><line x1="20" y1="100" x2="160" y2="100"/><line x1="20" y1="120" x2="160" y2="120"/>
+                  <line x1="20" y1="140" x2="160" y2="140"/><line x1="20" y1="160" x2="160" y2="160"/>
+                </g>
+                <g stroke="#1f78b4" stroke-width="2.2">
+                  <line x1="20" y1="90" x2="160" y2="90"/>
+                  <line x1="90" y1="160" x2="90" y2="20"/>
+                </g>
+                <line x1="22" y1="140" x2="158" y2="28" stroke="#d9485f" stroke-width="3"/>
+              </svg>
+              <figcaption>Figure 1</figcaption>
+            </figure>
+          `,
+          choiceWrap: false,
+          choices: [
+            String.raw`It is <em>not</em> a function because the line is slanted rather than horizontal.`,
+            String.raw`It <em>is</em> a function because every x-value on the graph is paired with exactly one y-value.`,
+            String.raw`It is <em>not</em> a function because some y-values repeat.`,
+            String.raw`It is a function only for positive x-values.`,
+            String.raw`It is <em>not</em> a function because it crosses the x-axis.`,
+            String.raw`There is not enough information to decide.`
+          ]
+        },
+        {
+          stem: String.raw`
+            <p><b>Refer to Figure 2.</b> Why is this relation not a function of <span class="math">\(x\)</span>?</p>
+          `,
+          media: String.raw`
+            <figure>
+              <svg viewBox="0 0 180 180" width="180" height="180" aria-label="Coordinate grid with a circle centered at the origin">
+                <rect x="0" y="0" width="180" height="180" fill="white"/>
+                <g stroke="#d9d9d9" stroke-width="1">
+                  <line x1="20" y1="20" x2="20" y2="160"/><line x1="40" y1="20" x2="40" y2="160"/><line x1="60" y1="20" x2="60" y2="160"/>
+                  <line x1="80" y1="20" x2="80" y2="160"/><line x1="100" y1="20" x2="100" y2="160"/><line x1="120" y1="20" x2="120" y2="160"/>
+                  <line x1="140" y1="20" x2="140" y2="160"/><line x1="160" y1="20" x2="160" y2="160"/>
+                  <line x1="20" y1="20" x2="160" y2="20"/><line x1="20" y1="40" x2="160" y2="40"/><line x1="20" y1="60" x2="160" y2="60"/>
+                  <line x1="20" y1="80" x2="160" y2="80"/><line x1="20" y1="100" x2="160" y2="100"/><line x1="20" y1="120" x2="160" y2="120"/>
+                  <line x1="20" y1="140" x2="160" y2="140"/><line x1="20" y1="160" x2="160" y2="160"/>
+                </g>
+                <g stroke="#1f78b4" stroke-width="2.2">
+                  <line x1="20" y1="90" x2="160" y2="90"/>
+                  <line x1="90" y1="160" x2="90" y2="20"/>
+                </g>
+                <circle cx="90" cy="90" r="40" fill="none" stroke="#d9485f" stroke-width="3"/>
+              </svg>
+              <figcaption>Figure 2</figcaption>
+            </figure>
+          `,
+          choiceWrap: false,
+          choices: [
+            String.raw`Because every horizontal line intersects the graph more than once.`,
+            String.raw`Because the graph is curved.`,
+            String.raw`Because some x-values correspond to two different y-values.`,
+            String.raw`Because the graph has no y-intercept.`,
+            String.raw`Because the range is finite.`,
+            String.raw`Because the graph is symmetric about the y-axis.`
+          ]
+        },
+        {
+          stem: String.raw`
+            <p><b>Refer to Figure 3.</b> What are the domain and range of the graphed relation?</p>
+          `,
+          media: String.raw`
+            <figure>
+              <svg viewBox="0 0 180 180" width="180" height="180" aria-label="Coordinate grid with an upward-opening parabola">
+                <rect x="0" y="0" width="180" height="180" fill="white"/>
+                <g stroke="#d9d9d9" stroke-width="1">
+                  <line x1="20" y1="20" x2="20" y2="160"/><line x1="40" y1="20" x2="40" y2="160"/><line x1="60" y1="20" x2="60" y2="160"/>
+                  <line x1="80" y1="20" x2="80" y2="160"/><line x1="100" y1="20" x2="100" y2="160"/><line x1="120" y1="20" x2="120" y2="160"/>
+                  <line x1="140" y1="20" x2="140" y2="160"/><line x1="160" y1="20" x2="160" y2="160"/>
+                  <line x1="20" y1="20" x2="160" y2="20"/><line x1="20" y1="40" x2="160" y2="40"/><line x1="20" y1="60" x2="160" y2="60"/>
+                  <line x1="20" y1="80" x2="160" y2="80"/><line x1="20" y1="100" x2="160" y2="100"/><line x1="20" y1="120" x2="160" y2="120"/>
+                  <line x1="20" y1="140" x2="160" y2="140"/><line x1="20" y1="160" x2="160" y2="160"/>
+                </g>
+                <g stroke="#1f78b4" stroke-width="2.2">
+                  <line x1="20" y1="90" x2="160" y2="90"/>
+                  <line x1="90" y1="160" x2="90" y2="20"/>
+                </g>
+                <path d="M 40 60 Q 90 120 140 60" fill="none" stroke="#d9485f" stroke-width="3"/>
+              </svg>
+              <figcaption>Figure 3</figcaption>
+            </figure>
+          `,
+          choiceWrap: false,
+          choices: [
+            String.raw`Domain: all real numbers; Range: <span class="math">\(y\ge 0\)</span>.`,
+            String.raw`Domain: <span class="math">\(x\ge 0\)</span>; Range: all real numbers.`,
+            String.raw`Domain: all real numbers; Range: all real numbers.`,
+            String.raw`Domain: <span class="math">\(x\le 0\)</span>; Range: <span class="math">\(y\ge 0\)</span>.`,
+            String.raw`Domain: <span class="math">\(|x|\le 2\)</span>; Range: <span class="math">\(y\ge 0\)</span>.`,
+            String.raw`Domain: all real numbers; Range: <span class="math">\(y\le 0\)</span>.`
+          ]
+        },
+        {
+          stem: String.raw`
+            <p>What type of function is <span class="math">\(f(x)=\left(\tfrac13\right)^x\)</span>?</p>
+          `,
+          choiceWrap: false,
+          choices: [
+            String.raw`linear`,
+            String.raw`absolute value`,
+            String.raw`exponential`,
+            String.raw`constant`,
+            String.raw`greatest integer`,
+            String.raw`quadratic`
+          ]
+        },
+        {
+          stem: String.raw`
+            <p>What type of function is <span class="math">\(f(x)=3\)</span>?</p>
+          `,
+          choiceWrap: false,
+          choices: [
+            String.raw`identity`,
+            String.raw`quadratic`,
+            String.raw`exponential`,
+            String.raw`constant`,
+            String.raw`greatest integer`,
+            String.raw`absolute value`
+          ]
+        },
+        {
+          stem: String.raw`
+            <p>Let <span class="math">\(f(x)=4^x\)</span>. What is the value of <span class="math">\(f(3)+f(-1)\)</span>?</p>
+          `,
+          choiceWrap: false,
+          choices: [
+            String.raw`<span class="math">\(64\)</span>`,
+            String.raw`<span class="math">\(64.25\)</span>`,
+            String.raw`<span class="math">\(16.25\)</span>`,
+            String.raw`<span class="math">\(\tfrac{65}{4}\)</span>`,
+            String.raw`<span class="math">\(\tfrac{257}{4}\)</span>`,
+            String.raw`<span class="math">\(\tfrac14\)</span>`
+          ]
+        },
+        {
+          stem: String.raw`
+            <p>Given <span class="math">\(f=\{(4,1),(-3,2),(5,1),(-2,8)\}\)</span>, what are <span class="math">\(f(4)\)</span> and <span class="math">\(f(-2)\)</span>?</p>
+          `,
+          choiceWrap: false,
+          choices: [
+            String.raw`<span class="math">\(f(4)=4\)</span> and <span class="math">\(f(-2)=-2\)</span>`,
+            String.raw`<span class="math">\(f(4)=1\)</span> and <span class="math">\(f(-2)=8\)</span>`,
+            String.raw`<span class="math">\(f(4)=1\)</span> and <span class="math">\(f(-2)=2\)</span>`,
+            String.raw`<span class="math">\(f(4)=5\)</span> and <span class="math">\(f(-2)=8\)</span>`,
+            String.raw`<span class="math">\(f(4)=2\)</span> and <span class="math">\(f(-2)=8\)</span>`,
+            String.raw`The values are undefined because the ordered pairs repeat a y-value.`
+          ]
+        },
+        {
+          stem: String.raw`
+            <p>Consider the discrete relation <span class="math">\(f=\{(x,y)\mid y=2^x\text{ for }x=-1,0,1,2\}\)</span>. What are its domain and range?</p>
+          `,
+          choiceWrap: false,
+          choices: [
+            String.raw`Domain: <span class="math">\(\{-1,0,1,2\}\)</span>; Range: <span class="math">\(\{-2,-1,0,1,2\}\)</span>.`,
+            String.raw`Domain: all real numbers; Range: all positive real numbers.`,
+            String.raw`Domain: <span class="math">\(\{-1,0,1,2\}\)</span>; Range: <span class="math">\(\left\{\tfrac12,1,2,4\right\}\)</span>.`,
+            String.raw`Domain: <span class="math">\(\left\{\tfrac12,1,2,4\right\}\)</span>; Range: <span class="math">\(\{-1,0,1,2\}\)</span>.`,
+            String.raw`Domain: <span class="math">\(\{-1,1,2,4\}\)</span>; Range: <span class="math">\(\{0,1,2,3\}\)</span>.`,
+            String.raw`Domain: all integers; Range: all powers of 2.`
+          ]
+        },
+        {
+          stem: String.raw`
+            <p>For the constant function <span class="math">\(f(x)=2\)</span>, which statement is correct?</p>
+          `,
+          choiceWrap: false,
+          choices: [
+            String.raw`Its domain is all real numbers and its range is <span class="math">\(\{2\}\)</span>.`,
+            String.raw`Its domain is <span class="math">\(\{2\}\)</span> and its range is all real numbers.`,
+            String.raw`Its domain and range are both all real numbers.`,
+            String.raw`Its domain is all nonnegative numbers and its range is <span class="math">\(\{2\}\)</span>.`,
+            String.raw`Its domain is all real numbers and its range is <span class="math">\(\{0,2\}\)</span>.`,
+            String.raw`It is not a function because every input gives the same output.`
+          ]
+        },
+        {
+          stem: String.raw`
+            <p>Consider the relation <span class="math">\(x=4\)</span>. Which statement is true?</p>
+          `,
+          choiceWrap: false,
+          choices: [
+            String.raw`Its domain is all real numbers and its range is <span class="math">\(\{4\}\)</span>.`,
+            String.raw`It is a function because each y-value has one x-value.`,
+            String.raw`Its domain is <span class="math">\(\{4\}\)</span> and its range is <span class="math">\(\{4\}\)</span>.`,
+            String.raw`Its domain is all real numbers and its range is all real numbers.`,
+            String.raw`It is a function with slope <span class="math">\(0\)</span>.`,
+            String.raw`Its domain is <span class="math">\(\{4\}\)</span>, its range is all real numbers, and it is not a function of <span class="math">\(x\)</span>.`
+          ]
+        },
+        {
+          stem: String.raw`
+            <p>Consider the relation</p>
+            <p class="math">\[\{(x,y)\mid y=x^2,\ x\ge 1\}\ \cup\ \{(x,y)\mid y=-x^2,\ x&lt;-1\}.\]</p>
+            <p>Which statement is correct?</p>
+          `,
+          choiceWrap: false,
+          choices: [
+            String.raw`It is not a function because it uses two formulas.`,
+            String.raw`It is a function with domain all real numbers.`,
+            String.raw`It is not a function because some y-values repeat.`,
+            String.raw`It is a function with domain <span class="math">\(({-\infty},-1)\cup[1,\infty)\)</span>.`,
+            String.raw`It is a function with domain <span class="math">\(({-\infty},\infty)\)</span> and range <span class="math">\([0,\infty)\)</span>.`,
+            String.raw`It is not a function because the two pieces are both quadratic.`
+          ]
+        },
+        {
+          stem: String.raw`
+            <p>A line is written in standard form as <span class="math">\(ax+by=c\)</span>. Which statement is correct?</p>
+          `,
+          choiceWrap: false,
+          choices: [
+            String.raw`Every line in standard form is a function because it can always be solved for <span class="math">\(y\)</span>.`,
+            String.raw`A line fails to represent a function exactly when <span class="math">\(b=0\)</span>, because then the line is vertical.`,
+            String.raw`A line is vertical exactly when <span class="math">\(a=0\)</span>.`,
+            String.raw`A line is horizontal exactly when <span class="math">\(b=0\)</span>.`,
+            String.raw`If <span class="math">\(a\neq 0\)</span> and <span class="math">\(b\neq 0\)</span>, the graph cannot be a function.`,
+            String.raw`A vertical line has slope <span class="math">\(0\)</span>, so it is a function.`
+          ]
+        }
+      ]
+    };
+  </script>
+
+  <link rel="stylesheet" href="/math-homework/assets/core-rich.css" />
+  <script defer src="/math-homework/assets/core-rich.js"></script>
+  <script defer src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+</head>
+<body>
+  <div id="hw-root">Loading…</div>
+</body>
+</html>

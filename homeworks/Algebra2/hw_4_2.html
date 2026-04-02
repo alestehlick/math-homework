@@ -1,0 +1,215 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Homework 4-2 (Algebra II)</title>
+
+  <script>
+    /* =========================
+       Homework 4-2 — Solving Quadratic Equations by Completing the Square
+       Adapted for: /math-homework/assets/core-rich.js
+
+       REQUIRED SOURCE REFERENCES (your provided sets):
+       - Type A uses A. Exercises: #1, #4, #7, #9, #10
+       - Type B uses B. Exercises: #11, #16, #17, #19, #20
+       - Type C uses C. Exercises: #21, #22
+
+       MODEL REWORK / PEDAGOGICAL NOTES:
+       - Two items were re-authored to ask for the correctly completed-square form rather than only the final solutions. This is meant to keep attention on the method itself, not only on the answer obtained at the end.
+       - The sequence moves from simpler integer solutions to equations whose solutions are irrational, and ends with exact-form answers involving radicals and \(\pi\).
+
+       IMAGE NAMING RULE (STRICT):
+       - No figure files are required for this homework.
+       ========================= */
+
+    window.homeworkData = {
+      classId : "Algebra2",
+      id      : "Homework 4-2",
+      title   : "Homework 4-2 — Solving Quadratic Equations by Completing the Square",
+
+      graphics : String.raw``,
+
+      answerKey : ["B","C","E","D","A","F","C","B","D","E","A","B"],
+
+      questions : [
+        {
+          stem: String.raw`
+            <p>Solve the equation by completing the square.</p>
+            <p class="math">\(x^2 - 4x = 45\)</p>
+          `,
+          choices: [
+            String.raw`\(x=5\) or \(x=-9\)`,
+            String.raw`\(x=9\) or \(x=-5\)`,
+            String.raw`\(x=7\) or \(x=-7\)`,
+            String.raw`\(x=6\) or \(x=-10\)`,
+            String.raw`\(x=-9\) or \(x=-5\)`,
+            String.raw`\(\text{no real solutions}\)`
+          ]
+        },
+        {
+          stem: String.raw`
+            <p>Which equation is equivalent to the one below <em>after</em> completing the square?</p>
+            <p class="math">\(x^2 - x - 12 = 0\)</p>
+          `,
+          choices: [
+            String.raw`\(\left(x-\frac12\right)^2 = \frac{47}{4}\)`,
+            String.raw`\(\left(x+\frac12\right)^2 = \frac{49}{4}\)`,
+            String.raw`\(\left(x-\frac12\right)^2 = \frac{49}{4}\)`,
+            String.raw`\((x-1)^2 = 13\)`,
+            String.raw`\(\left(x+\frac12\right)^2 = \frac{47}{4}\)`,
+            String.raw`\(\left(x-\frac12\right)^2 = 12\)`
+          ]
+        },
+        {
+          stem: String.raw`
+            <p>Solve the equation by completing the square.</p>
+            <p class="math">\(x^2 - 19x + 84 = 0\)</p>
+          `,
+          choices: [
+            String.raw`\(x=7\) or \(x=-12\)`,
+            String.raw`\(x=-7\) or \(x=12\)`,
+            String.raw`\(x=-7\) or \(x=-12\)`,
+            String.raw`\(x=19\) or \(x=84\)`,
+            String.raw`\(x=7\) or \(x=12\)`,
+            String.raw`\(\text{no real solutions}\)`
+          ]
+        },
+        {
+          stem: String.raw`
+            <p>Solve the equation by completing the square. Leave irrational answers in exact form.</p>
+            <p class="math">\(x^2 + 5x - 8 = 0\)</p>
+          `,
+          choices: [
+            String.raw`\(x=\frac{-5\pm\sqrt{89}}{2}\)`,
+            String.raw`\(x=\frac{5\pm\sqrt{57}}{2}\)`,
+            String.raw`\(x=\frac{-5\pm\sqrt{57}}{4}\)`,
+            String.raw`\(x=\frac{-5\pm\sqrt{57}}{2}\)`,
+            String.raw`\(x=\frac{5\pm\sqrt{89}}{2}\)`,
+            String.raw`\(\text{no real solutions}\)`
+          ]
+        },
+        {
+          stem: String.raw`
+            <p>Solve the equation by completing the square.</p>
+            <p class="math">\(x^2 - 4x = 60\)</p>
+          `,
+          choices: [
+            String.raw`\(x=10\) or \(x=-6\)`,
+            String.raw`\(x=6\) or \(x=-10\)`,
+            String.raw`\(x=8\) or \(x=-8\)`,
+            String.raw`\(x=4\pm\sqrt{60}\)`,
+            String.raw`\(x=2\pm 8\)`,
+            String.raw`\(\text{no real solutions}\)`
+          ]
+        },
+        {
+          stem: String.raw`
+            <p>Which equation is equivalent to the one below <em>after</em> completing the square?</p>
+            <p class="math">\(3x^2 + 6x - 7 = 0\)</p>
+          `,
+          choices: [
+            String.raw`\((x+1)^2 = \frac{7}{3}\)`,
+            String.raw`\((x-1)^2 = \frac{10}{3}\)`,
+            String.raw`\((x+1)^2 = \frac{16}{3}\)`,
+            String.raw`\((x+2)^2 = \frac{19}{3}\)`,
+            String.raw`\((x+1)^2 = \frac{19}{3}\)`,
+            String.raw`\((x+1)^2 = \frac{10}{3}\)`
+          ]
+        },
+        {
+          stem: String.raw`
+            <p>Solve the equation by completing the square.</p>
+            <p class="math">\(2x^2 + 7x - 4 = 0\)</p>
+          `,
+          choices: [
+            String.raw`\(x=4\) or \(x=-\frac12\)`,
+            String.raw`\(x=-\frac12\) or \(x=-4\)`,
+            String.raw`\(x=\frac12\) or \(x=-4\)`,
+            String.raw`\(x=4\) or \(x=\frac12\)`,
+            String.raw`\(x=-\frac12\) or \(x=4\)`,
+            String.raw`\(\text{no real solutions}\)`
+          ]
+        },
+        {
+          stem: String.raw`
+            <p>Solve the equation by completing the square.</p>
+            <p class="math">\(3x^2 - 14x = 5\)</p>
+          `,
+          choices: [
+            String.raw`\(x=5\) or \(x=\frac13\)`,
+            String.raw`\(x=5\) or \(x=-\frac13\)`,
+            String.raw`\(x=-5\) or \(x=\frac13\)`,
+            String.raw`\(x=-5\) or \(x=-\frac13\)`,
+            String.raw`\(x=\frac73\) or \(x=-\frac73\)`,
+            String.raw`\(\text{no real solutions}\)`
+          ]
+        },
+        {
+          stem: String.raw`
+            <p>Solve the equation by completing the square.</p>
+            <p class="math">\(4x^2 + 23x - 6 = 0\)</p>
+          `,
+          choices: [
+            String.raw`\(x=-\frac14\) or \(x=6\)`,
+            String.raw`\(x=\frac14\) or \(x=6\)`,
+            String.raw`\(x=-\frac14\) or \(x=-6\)`,
+            String.raw`\(x=\frac14\) or \(x=-6\)`,
+            String.raw`\(x=2\) or \(x=-\frac34\)`,
+            String.raw`\(\text{no real solutions}\)`
+          ]
+        },
+        {
+          stem: String.raw`
+            <p>Solve the equation by completing the square.</p>
+            <p class="math">\(5x^2 - 2x - 3 = 0\)</p>
+          `,
+          choices: [
+            String.raw`\(x=-1\) or \(x=\frac35\)`,
+            String.raw`\(x=1\) or \(x=\frac35\)`,
+            String.raw`\(x=-1\) or \(x=-\frac35\)`,
+            String.raw`\(x=3\) or \(x=-\frac15\)`,
+            String.raw`\(x=1\) or \(x=-\frac35\)`,
+            String.raw`\(\text{no real solutions}\)`
+          ]
+        },
+        {
+          stem: String.raw`
+            <p>Solve the equation by completing the square. Leave irrational answers in exact form.</p>
+            <p class="math">\(4x^2 - \sqrt{2}\,x - 1 = 0\)</p>
+          `,
+          choices: [
+            String.raw`\(x=\frac{\sqrt2}{2}\) or \(x=-\frac{\sqrt2}{4}\)`,
+            String.raw`\(x=-\frac{\sqrt2}{2}\) or \(x=\frac{\sqrt2}{4}\)`,
+            String.raw`\(x=\frac{\sqrt2}{4}\) or \(x=-\frac{\sqrt2}{2}\)`,
+            String.raw`\(x=\pm\frac{\sqrt2}{2}\)`,
+            String.raw`\(x=\pm\frac{\sqrt2}{4}\)`,
+            String.raw`\(\text{no real solutions}\)`
+          ]
+        },
+        {
+          stem: String.raw`
+            <p>Solve the equation by completing the square. Leave the answers in exact form.</p>
+            <p class="math">\(\pi x^2 + \sqrt{3}\,x - 5 = 0\)</p>
+          `,
+          choices: [
+            String.raw`\(x=\frac{\sqrt3\pm\sqrt{20\pi+3}}{2\pi}\)`,
+            String.raw`\(x=\frac{-\sqrt3\pm\sqrt{20\pi+3}}{2\pi}\)`,
+            String.raw`\(x=\frac{-\sqrt3\pm\sqrt{20\pi-3}}{2\pi}\)`,
+            String.raw`\(x=\frac{\sqrt3\pm\sqrt{20\pi-3}}{2\pi}\)`,
+            String.raw`\(x=\frac{-\pi\pm\sqrt{20\pi+3}}{2\pi}\)`,
+            String.raw`\(\text{no real solutions}\)`
+          ]
+        }
+      ]
+    };
+  </script>
+
+  <link rel="stylesheet" href="/math-homework/assets/core-rich.css" />
+  <script defer src="/math-homework/assets/core-rich.js"></script>
+  <script defer src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+</head>
+<body>
+  <div id="hw-root">Loading…</div>
+</body>
+</html>

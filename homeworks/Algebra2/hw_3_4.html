@@ -1,0 +1,228 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Homework 3-4 (Algebra II)</title>
+
+  <script>
+    /* =========================
+       Homework 3-4 — Writing Linear Equations (Algebra II)
+       Adapted for: /math-homework/assets/core-rich.js
+
+       REQUIRED SOURCE REFERENCES:
+       - Type A uses A. Exercises: #1, #5, #10, #12, #15, #16
+       - Type B uses B. Exercises: #21, #24, #25, #26, #29, #30
+
+       MODEL-REWORKED / MODEL-AUTHORED ITEMS:
+       - Q7 reworks B #21 into a diagnostic question about equal slopes and parallel lines.
+       - Q10 condenses B #26 into a general principle question about two points with the same x-coordinate.
+
+       IMAGE NAMING RULE (STRICT):
+       - Any figure used is referenced by the ORIGINAL problem number from the source set.
+       - Put these PNG files in the SAME folder as this HTML:
+         3-4-15.png, 3-4-16.png
+       ========================= */
+
+    window.homeworkData = {
+      classId : "Algebra2",
+      id      : "Homework 3-4",
+      title   : "Homework 3-4 — Writing Linear Equations",
+
+      graphics : String.raw``,
+
+      answerKey : ["D","C","A","B","D","C","B","E","D","B","F","A"],
+
+      questions : [
+        {
+          stem: String.raw`
+            <p>Change the equation <span class="math">\(y=2x+7\)</span> to standard form.</p>
+          `,
+          choiceWrap: false,
+          choices: [
+            String.raw`<span class="math">\(x-2y=7\)</span>`,
+            String.raw`<span class="math">\(2x+y=7\)</span>`,
+            String.raw`<span class="math">\(y-2x=7\)</span>`,
+            String.raw`<span class="math">\(2x-y=-7\)</span>`,
+            String.raw`<span class="math">\(y=2x-7\)</span>`,
+            String.raw`<span class="math">\(2x-y=7\)</span>`
+          ]
+        },
+        {
+          stem: String.raw`
+            <p>Change the equation <span class="math">\(f(x)=\tfrac12x+\tfrac32\)</span> to standard form.</p>
+          `,
+          choiceWrap: false,
+          choices: [
+            String.raw`<span class="math">\(x+2y=3\)</span>`,
+            String.raw`<span class="math">\(2x-y=3\)</span>`,
+            String.raw`<span class="math">\(x-2y=-3\)</span>`,
+            String.raw`<span class="math">\(x+2y=-3\)</span>`,
+            String.raw`<span class="math">\(2x+y=3\)</span>`,
+            String.raw`<span class="math">\(x-2y=3\)</span>`
+          ]
+        },
+        {
+          stem: String.raw`
+            <p>Write the equation of the line with slope <span class="math">\(-4\)</span> that passes through <span class="math">\((2,7)\)</span>. Express your answer in slope-intercept form.</p>
+          `,
+          choiceWrap: false,
+          choices: [
+            String.raw`<span class="math">\(y=-4x+15\)</span>`,
+            String.raw`<span class="math">\(y=4x-1\)</span>`,
+            String.raw`<span class="math">\(y=-4x-1\)</span>`,
+            String.raw`<span class="math">\(y=4x+15\)</span>`,
+            String.raw`<span class="math">\(y=-\tfrac14x+\tfrac{15}{2}\)</span>`,
+            String.raw`<span class="math">\(y=-4x+7\)</span>`
+          ]
+        },
+        {
+          stem: String.raw`
+            <p>Write the equation of the line passing through <span class="math">\((5,-3)\)</span> and <span class="math">\((1,4)\)</span>. Express your answer in slope-intercept form.</p>
+          `,
+          choiceWrap: false,
+          choices: [
+            String.raw`<span class="math">\(y=\tfrac74x-\tfrac{23}{4}\)</span>`,
+            String.raw`<span class="math">\(y=-\tfrac74x+\tfrac{23}{4}\)</span>`,
+            String.raw`<span class="math">\(y=-\tfrac47x+\tfrac{23}{4}\)</span>`,
+            String.raw`<span class="math">\(y=-\tfrac74x-\tfrac{23}{4}\)</span>`,
+            String.raw`<span class="math">\(y=\tfrac74x+\tfrac{23}{4}\)</span>`,
+            String.raw`<span class="math">\(y=-\tfrac74x+\tfrac{35}{4}\)</span>`
+          ]
+        },
+        {
+          stem: String.raw`
+            <p><b>Refer to Figure 1.</b> Which equation, written in standard form, matches the graphed line?</p>
+          `,
+          media: String.raw`
+            <figure>
+              <img src="3-4-15.png" alt="Graph from original exercise 15" />
+              <figcaption>Figure 1</figcaption>
+            </figure>
+          `,
+          choiceWrap: false,
+          choices: [
+            String.raw`<span class="math">\(x+3y=-6\)</span>`,
+            String.raw`<span class="math">\(3x+y=6\)</span>`,
+            String.raw`<span class="math">\(x-3y=6\)</span>`,
+            String.raw`<span class="math">\(x+3y=6\)</span>`,
+            String.raw`<span class="math">\(3x-y=6\)</span>`,
+            String.raw`<span class="math">\(y=3x+6\)</span>`
+          ]
+        },
+        {
+          stem: String.raw`
+            <p><b>Refer to Figure 2.</b> Which equation, written in standard form, matches the graphed line?</p>
+          `,
+          media: String.raw`
+            <figure>
+              <img src="3-4-16.png" alt="Graph from original exercise 16" />
+              <figcaption>Figure 2</figcaption>
+            </figure>
+          `,
+          choiceWrap: false,
+          choices: [
+            String.raw`<span class="math">\(2x-5y=19\)</span>`,
+            String.raw`<span class="math">\(5x+2y=19\)</span>`,
+            String.raw`<span class="math">\(5x-2y=19\)</span>`,
+            String.raw`<span class="math">\(2x+5y=19\)</span>`,
+            String.raw`<span class="math">\(5x-2y=-19\)</span>`,
+            String.raw`<span class="math">\(5y-2x=19\)</span>`
+          ]
+        },
+        {
+          stem: String.raw`
+            <p>The points <span class="math">\((1,3)\)</span> and <span class="math">\((3,-2)\)</span> are connected, and the points <span class="math">\((-2,1)\)</span> and <span class="math">\((0,-4)\)</span> are connected. Which statement is true about the two lines?</p>
+          `,
+          choiceWrap: false,
+          choices: [
+            String.raw`Their slopes are <span class="math">\(-\tfrac52\)</span> and <span class="math">\(\tfrac52\)</span>, so the lines are perpendicular.`,
+            String.raw`Both slopes are <span class="math">\(-\tfrac52\)</span>, so the lines are parallel.`,
+            String.raw`One line is vertical and the other is horizontal.`,
+            String.raw`Both lines have slope <span class="math">\(0\)</span>.`,
+            String.raw`The lines are the same line because equal slopes always mean same line.`,
+            String.raw`No conclusion is possible because the points were given in different orders.`
+          ]
+        },
+        {
+          stem: String.raw`
+            <p>Find the equation of the line passing through <span class="math">\((0,5)\)</span> and parallel to <span class="math">\(y=3x+2\)</span>.</p>
+          `,
+          choiceWrap: false,
+          choices: [
+            String.raw`<span class="math">\(y=3x+2\)</span>`,
+            String.raw`<span class="math">\(y=-3x+5\)</span>`,
+            String.raw`<span class="math">\(y=3x-5\)</span>`,
+            String.raw`<span class="math">\(y=-3x+2\)</span>`,
+            String.raw`<span class="math">\(y=3x+5\)</span>`,
+            String.raw`<span class="math">\(3x-y=5\)</span>`
+          ]
+        },
+        {
+          stem: String.raw`
+            <p>Find the equation of the line passing through <span class="math">\((1,8)\)</span> and parallel to <span class="math">\(x+y=4\)</span>. Express your answer in standard form.</p>
+          `,
+          choiceWrap: false,
+          choices: [
+            String.raw`<span class="math">\(x+y=7\)</span>`,
+            String.raw`<span class="math">\(y=x+7\)</span>`,
+            String.raw`<span class="math">\(x-y=9\)</span>`,
+            String.raw`<span class="math">\(x+y=9\)</span>`,
+            String.raw`<span class="math">\(y=-x-9\)</span>`,
+            String.raw`<span class="math">\(2x+2y=9\)</span>`
+          ]
+        },
+        {
+          stem: String.raw`
+            <p>Suppose two distinct points have coordinates <span class="math">\((p,q)\)</span> and <span class="math">\((p,r)\)</span>, so they have the same x-coordinate. Which conclusion must be true?</p>
+          `,
+          choiceWrap: false,
+          choices: [
+            String.raw`The line is horizontal with equation <span class="math">\(y=p\)</span> and slope <span class="math">\(0\)</span>.`,
+            String.raw`The line is vertical with equation <span class="math">\(x=p\)</span>, its slope is undefined, and it is not a function of <span class="math">\(x\)</span>.`,
+            String.raw`The line has slope <span class="math">\(1\)</span> because one coordinate repeats.`,
+            String.raw`The line must pass through the origin.`,
+            String.raw`No line is determined unless <span class="math">\(q=r\)</span>.`,
+            String.raw`The equation must be written in slope-intercept form.`
+          ]
+        },
+        {
+          stem: String.raw`
+            <p>Find the equation of the line passing through <span class="math">\((0,4)\)</span> and perpendicular to <span class="math">\(y=-3x+1\)</span>.</p>
+          `,
+          choiceWrap: false,
+          choices: [
+            String.raw`<span class="math">\(y=-\tfrac13x+4\)</span>`,
+            String.raw`<span class="math">\(y=3x+4\)</span>`,
+            String.raw`<span class="math">\(y=-3x+4\)</span>`,
+            String.raw`<span class="math">\(y=\tfrac13x-4\)</span>`,
+            String.raw`<span class="math">\(y=3x-4\)</span>`,
+            String.raw`<span class="math">\(y=\tfrac13x+4\)</span>`
+          ]
+        },
+        {
+          stem: String.raw`
+            <p>Find the equation of the line passing through <span class="math">\((-1,3)\)</span> and perpendicular to <span class="math">\(x+2y=7\)</span>. Express your answer in standard form.</p>
+          `,
+          choiceWrap: false,
+          choices: [
+            String.raw`<span class="math">\(2x-y=-5\)</span>`,
+            String.raw`<span class="math">\(x+2y=5\)</span>`,
+            String.raw`<span class="math">\(2x+y=5\)</span>`,
+            String.raw`<span class="math">\(y=-2x+5\)</span>`,
+            String.raw`<span class="math">\(2x-y=5\)</span>`,
+            String.raw`<span class="math">\(x-2y=-5\)</span>`
+          ]
+        }
+      ]
+    };
+  </script>
+
+  <link rel="stylesheet" href="/math-homework/assets/core-rich.css" />
+  <script defer src="/math-homework/assets/core-rich.js"></script>
+  <script defer src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+</head>
+<body>
+  <div id="hw-root">Loading…</div>
+</body>
+</html>

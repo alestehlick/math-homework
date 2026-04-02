@@ -1,0 +1,218 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Homework 3-Rev (Algebra II)</title>
+
+  <script>
+    /* =========================
+       Homework 3-Rev — Chapter 3 Review (Algebra II)
+
+       REQUIRED SOURCE REFERENCES (review page provided by user):
+       - Type A uses review items: #1, #6, #9, #10, #11, #12, #13, #14
+       - Type B uses review items: #15, #17, #20, #23, #24, #25, #29
+       - Type C uses review items: #30 and the surrounding graph/function review ideas from #7, #8, #12, #13
+
+       MODEL REWORK / PEDAGOGICAL EDITING:
+       - Q1 is a cleaner diagnostic reworking of the function test ideas from review #1 and #6.
+       - Q2 is a synthesized comparison question, inspired by review #7, #8, and the chapter's vertical-line-test ideas, to make students discriminate between function and non-function relations.
+       - Q10 is a re-authored composition question inspired by review #29 and the chapter discussion of operations on functions; it was designed to surface the fact that composition is generally not commutative.
+
+       IMAGE NAMING RULE:
+       - No external figure PNGs are used in this homework.
+       ========================= */
+
+    window.homeworkData = {
+      classId : "Algebra2",
+      id      : "Homework 3-Rev",
+      title   : "Homework 3-Rev — Chapter 3 Review",
+      graphics : String.raw``,
+
+      answerKey : ["A","B","B","D","E","C","A","F","B","B","D","E"],
+
+      questions : [
+        {
+          stem: String.raw`
+            <p>Consider the relation \(R = \{(1,3),(2,3),(1,5)\}\).</p>
+            <p>Which statement is correct?</p>
+          `,
+          choiceWrap: false,
+          choices: [
+            String.raw`It is <b>not</b> a function, because the input <b>1</b> is paired with two different outputs.`,
+            String.raw`It is a function, because repeated outputs are allowed.`,
+            String.raw`It is <b>not</b> a function, because the output <b>3</b> appears twice.`,
+            String.raw`It is a function, because there are three ordered pairs.`,
+            String.raw`It is <b>not</b> a function, because the domain has only two values.`,
+            String.raw`It is a function, because no ordered pair is repeated exactly.`
+          ]
+        },
+        {
+          stem: String.raw`
+            <p>Which relation defines <b>a function of \(x\)</b>?</p>
+          `,
+          choiceWrap: false,
+          choices: [
+            String.raw`\(x = 6\)`,
+            String.raw`\(y = |x|\)`,
+            String.raw`\(x^2 + y^2 = 4\)`,
+            String.raw`\(\{(2,5),(2,-1),(3,4)\}\)`,
+            String.raw`the mapping \(3 \mapsto 1\) and \(3 \mapsto 7\)`,
+            String.raw`\(x = |y|\)`
+          ]
+        },
+        {
+          stem: String.raw`
+            <p>Let \(f = \{(-4,6),(0,1),(2,1),(3,5)\}\).</p>
+            <p>What are the domain and range of \(f\)?</p>
+          `,
+          choices: [
+            String.raw`Domain: \(\{-4,0,2,3\}\), Range: \(\{1,5\}\)` ,
+            String.raw`Domain: \(\{-4,0,2,3\}\), Range: \(\{1,5,6\}\)` ,
+            String.raw`Domain: \(\{-4,0,1,2,3\}\), Range: \(\{1,5,6\}\)` ,
+            String.raw`Domain: \(\{-4,0,2,3,5\}\), Range: \(\{1,6\}\)` ,
+            String.raw`Domain: \(\{1,5,6\}\), Range: \(\{-4,0,2,3\}\)` ,
+            String.raw`Domain: \(\{-4,0,2\}\), Range: \(\{1,5,6\}\)`
+          ]
+        },
+        {
+          stem: String.raw`
+            <p>Suppose</p>
+            <p>\(f(x)=2x-10\), \(g(x)=\dfrac{3}{5}x+3\), and \(h(x)=x^2+4\).</p>
+            <p>Which ordered triple gives \((f(-2),\ g(0),\ h(3))\)?</p>
+          `,
+          choices: [
+            String.raw`\((-12,3,9)\)`,
+            String.raw`\((-14,0,13)\)`,
+            String.raw`\((-14,3,9)\)`,
+            String.raw`\((-14,3,13)\)`,
+            String.raw`\((-6,3,13)\)`,
+            String.raw`\((-14,\tfrac{3}{5},13)\)`
+          ]
+        },
+        {
+          stem: String.raw`
+            <p>The points \((-2,-1)\) and \((-2,7)\) determine a line segment.</p>
+            <p>Which statement is correct?</p>
+          `,
+          choiceWrap: false,
+          choices: [
+            String.raw`The midpoint is \((0,3)\), the distance is \(8\), and the slope is \(0\).`,
+            String.raw`The midpoint is \((-2,4)\), the distance is \(6\), and the slope is undefined.`,
+            String.raw`The midpoint is \((-2,3)\), the distance is \(8\), and the slope is \(0\).`,
+            String.raw`The midpoint is \((3,-2)\), the distance is \(8\), and the slope is undefined.`,
+            String.raw`The midpoint is \((-2,3)\), the distance is \(8\), and the slope is undefined.`,
+            String.raw`The midpoint is \((-2,3)\), the distance is \(4\), and the slope is undefined.`
+          ]
+        },
+        {
+          stem: String.raw`
+            <p>Consider the lines \(3x-y=7\) and \(x+3y=2\).</p>
+            <p>How are these lines related?</p>
+          `,
+          choiceWrap: false,
+          choices: [
+            String.raw`They are parallel, because both have slope \(3\).`,
+            String.raw`They are neither parallel nor perpendicular.`,
+            String.raw`They are perpendicular, because their slopes are negative reciprocals.`,
+            String.raw`They are the same line written in two forms.`,
+            String.raw`They intersect at the origin, so they must be perpendicular.`,
+            String.raw`They are vertical lines.`
+          ]
+        },
+        {
+          stem: String.raw`
+            <p>What is the equation of the line with slope \(3\) that passes through \((2,4)\)?</p>
+          `,
+          choices: [
+            String.raw`\(y=3x-2\)`,
+            String.raw`\(y=3x+2\)`,
+            String.raw`\(y=\dfrac{1}{3}x+\dfrac{10}{3}\)`,
+            String.raw`\(y=-3x+10\)`,
+            String.raw`\(3x+y=10\)`,
+            String.raw`\(y=4x-2\)`
+          ]
+        },
+        {
+          stem: String.raw`
+            <p>The line through \((1,3)\) and \((-7,4)\) is written in <b>standard form</b>.</p>
+            <p>Which equation is correct?</p>
+          `,
+          choices: [
+            String.raw`\(8y-x=25\)`,
+            String.raw`\(x-8y=25\)`,
+            String.raw`\(x+8y=-25\)`,
+            String.raw`\(8x+y=25\)`,
+            String.raw`\(y=-\dfrac{1}{8}x-\dfrac{25}{8}\)`,
+            String.raw`\(x+8y=25\)`
+          ]
+        },
+        {
+          stem: String.raw`
+            <p>Let \(f(x)=3x\) and \(g(x)=x-5\).</p>
+            <p>What is \((f+g)(x)\)?</p>
+          `,
+          choices: [
+            String.raw`\(3x(x-5)\)`,
+            String.raw`\(4x-5\)`,
+            String.raw`\(2x-5\)`,
+            String.raw`\(3x-5\)`,
+            String.raw`\(x-15\)`,
+            String.raw`\(4x\)`
+          ]
+        },
+        {
+          stem: String.raw`
+            <p>Let \(f(x)=3x\) and \(g(x)=x-5\).</p>
+            <p>Which statement about composition is true?</p>
+          `,
+          choiceWrap: false,
+          choices: [
+            String.raw`\((f\circ g)(x)=3x-5\) and \((g\circ f)(x)=3x-15\).`,
+            String.raw`\((f\circ g)(x)=3x-15\) and \((g\circ f)(x)=3x-5\).`,
+            String.raw`Both compositions equal \(3x-5\).`,
+            String.raw`Both compositions equal \(3x-15\).`,
+            String.raw`Composition is undefined for linear functions.`,
+            String.raw`Composition is commutative because both rules are functions.`
+          ]
+        },
+        {
+          stem: String.raw`
+            <p>What are the domain and range of the function \(y=2|x|\)?</p>
+          `,
+          choiceWrap: false,
+          choices: [
+            String.raw`Domain: \(x\ge 0\); Range: \(y\ge 0\).`,
+            String.raw`Domain: all real numbers; Range: all real numbers.`,
+            String.raw`Domain: \(x\le 0\); Range: \(y\le 0\).`,
+            String.raw`Domain: all real numbers; Range: \(y\ge 0\).`,
+            String.raw`Domain: \(x\ne 0\); Range: \(y\ge 2\).`,
+            String.raw`Domain: all real numbers; Range: \(y>0\).`
+          ]
+        },
+        {
+          stem: String.raw`
+            <p>Given \(f=\{(1,7),(5,6),(2,-1)\}\), what are \(f(2)\) and \(f(6)\)?</p>
+          `,
+          choiceWrap: false,
+          choices: [
+            String.raw`\(f(2)=2\) and \(f(6)=6\)`,
+            String.raw`\(f(2)=6\) and \(f(6)=\) undefined`,
+            String.raw`\(f(2)=-1\) and \(f(6)=6\)`,
+            String.raw`\(f(2)=7\) and \(f(6)=\) undefined`,
+            String.raw`\(f(2)=-1\) and \(f(6)=\) undefined`,
+            String.raw`\(f(2)=\) undefined and \(f(6)=-1\)`
+          ]
+        }
+      ]
+    };
+  </script>
+
+  <link rel="stylesheet" href="/math-homework/assets/core-rich.css" />
+  <script defer src="/math-homework/assets/core-rich.js"></script>
+  <script defer src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+</head>
+<body>
+  <div id="hw-root">Loading…</div>
+</body>
+</html>

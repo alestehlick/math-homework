@@ -1,0 +1,213 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Homework 3-9 (Algebra I)</title>
+
+  <script>
+    /* =========================
+       Homework 3-9 — Writing Equations from Word Problems (Algebra I)
+       Adapted for: /math-homework/assets/core-rich.js
+
+       REQUIRED SOURCE REFERENCES (your provided sets):
+       - Type A uses A. Exercises: #1, #4, #6, #9, #11
+       - Type B uses B. Exercises: #13, #15, #16, #17, #19
+       - Type C uses C. Exercises: #20, #21
+       - Model-reworked note: the source asks students to write equations but not solve them.
+         These items keep that focus by asking students to choose the correct equation setup.
+
+       IMAGE NAMING RULE:
+       No figures are required for this homework.
+       ========================= */
+
+    window.homeworkData = {
+      classId : "Algebra1",
+      id      : "Homework 3-9",
+      title   : "Homework 3-9 — Writing Equations from Word Problems",
+      graphics : String.raw``,
+
+      answerKey : ["B","C","E","A","F","D","C","B","A","E","B","D"],
+
+      questions : [
+        {
+          stem: String.raw`
+            <p>The product of a number and 12 is 780.</p>
+            <p>Which equation could be used to find the number?</p>
+          `,
+          choices: [
+            String.raw`\(\dfrac{x}{12}=780\)`,
+            String.raw`\(\,12x=780\)`,
+            String.raw`\(\,x+12=780\)`,
+            String.raw`\(\,780x=12\)`,
+            String.raw`\(\,12+x=780x\)`,
+            String.raw`\(\,12(x+780)=0\)`
+          ]
+        },
+        {
+          stem: String.raw`
+            <p>The absolute value of a number is 5.</p>
+            <p>Which equation matches the statement?</p>
+          `,
+          choices: [
+            String.raw`\(-x=5\)`,
+            String.raw`\(\sqrt{x}=5\)`,
+            String.raw`\(\lvert x\rvert=5\)`,
+            String.raw`\(\,x-5=0\)`,
+            String.raw`\(\,5x=1\)`,
+            String.raw`\(\lvert 5\rvert=x\)`
+          ]
+        },
+        {
+          stem: String.raw`
+            <p>A 5% sales tax comes to $3.32. Let \(x\) be the price of the item before tax.</p>
+            <p>Which equation should be used?</p>
+          `,
+          choices: [
+            String.raw`\(\,5x=3.32\)`,
+            String.raw`\(\,x+0.05=3.32\)`,
+            String.raw`\(\,0.05+x=3.32\)`,
+            String.raw`\(\,3.32x=0.05\)`,
+            String.raw`\(\,0.05x=3.32\)`,
+            String.raw`\(\,\dfrac{x}{0.05}=3.32\)`
+          ]
+        },
+        {
+          stem: String.raw`
+            <p>In a basketball game, the teams combined to score 96 points. The winners scored twice as much as the losers.</p>
+            <p>Let \(x\) be the losers' score. Which equation could be used?</p>
+          `,
+          choices: [
+            String.raw`\(\,x+2x=96\)`,
+            String.raw`\(\,2x-96=x\)`,
+            String.raw`\(\,96x=2x\)`,
+            String.raw`\(\,x+x=96\)`,
+            String.raw`\(\,2(x+96)=x\)`,
+            String.raw`\(\,x+96=2\)`
+          ]
+        },
+        {
+          stem: String.raw`
+            <p>Find two consecutive odd integers whose sum is 178.</p>
+            <p>If \(x\) is the first odd integer, which equation should be used?</p>
+          `,
+          choices: [
+            String.raw`\(\,x+(x+1)=178\)`,
+            String.raw`\(\,2x+1=178\)`,
+            String.raw`\(\,x+(x+4)=178\)`,
+            String.raw`\(\,x+(2x+1)=178\)`,
+            String.raw`\(\,x+x+2=178\)`,
+            String.raw`\(\,x+(x+2)=178\)`
+          ]
+        },
+        {
+          stem: String.raw`
+            <p>The sum of the angles of a triangle is \(180^\circ\). Angle \(A\) is 3 times angle \(B\), and angle \(C\) is \(120^\circ\) more than angle \(B\).</p>
+            <p>Let \(b\) be the measure of angle \(B\). Which equation could be used?</p>
+          `,
+          choices: [
+            String.raw`\(\,3b+b+120=180\)`,
+            String.raw`\(\,3b+b+120b=180\)`,
+            String.raw`\(\,3b+(b+120)=180\)`,
+            String.raw`\(\,3b+b+(b+120)=180\)`,
+            String.raw`\(\,3(b+b)+120=180\)`,
+            String.raw`\(\,b+(b+120)=3\cdot180\)`
+          ]
+        },
+        {
+          stem: String.raw`
+            <p>Jim and Bill share a bookshelf. Jim has 4 more than twice as many books as Bill. There are 22 books altogether.</p>
+            <p>Let \(b\) be the number of Bill's books. Which equation should be used?</p>
+          `,
+          choices: [
+            String.raw`\(\,2b+4=22\)`,
+            String.raw`\(\,b+(2b-4)=22\)`,
+            String.raw`\(\,b+(2b+4)=22\)`,
+            String.raw`\(\,2(b+4)=22\)`,
+            String.raw`\(\,2b+b=26\)`,
+            String.raw`\(\,b+4=22-2b\)`
+          ]
+        },
+        {
+          stem: String.raw`
+            <p>The number of girls in a class is 21 less than 3 times the number of boys. There are 26 students in the class.</p>
+            <p>Let \(b\) be the number of boys. Which equation could be used?</p>
+          `,
+          choices: [
+            String.raw`\(\,3b+21=26\)`,
+            String.raw`\(\,b+(3b-21)=26\)`,
+            String.raw`\(\,3(b-21)=26\)`,
+            String.raw`\(\,b+3b+21=26\)`,
+            String.raw`\(\,26-b=3b-21\)`,
+            String.raw`\(\,b-21=3b+26\)`
+          ]
+        },
+        {
+          stem: String.raw`
+            <p>Kenny is 7 years older than his sister. The sum of their ages is 31.</p>
+            <p>Let \(s\) be the sister's age. Which equation should be used?</p>
+          `,
+          choices: [
+            String.raw`\(\,s+(s+7)=31\)`,
+            String.raw`\(\,7s+s=31\)`,
+            String.raw`\(\,s+7=31\)`,
+            String.raw`\(\,2s+7=38\)`,
+            String.raw`\(\,s+(31-s)=7\)`,
+            String.raw`\(\,s+31=7\)`
+          ]
+        },
+        {
+          stem: String.raw`
+            <p>Find three consecutive odd integers whose sum is 57.</p>
+            <p>If \(x\) is the first odd integer, which equation could be used?</p>
+          `,
+          choices: [
+            String.raw`\(\,x+(x+1)+(x+2)=57\)`,
+            String.raw`\(\,3x+3=57\)`,
+            String.raw`\(\,x+(x+2)=57\)`,
+            String.raw`\(\,x+(x+2)+(x+6)=57\)`,
+            String.raw`\(\,x+(x+2)+(x+4)=57\)`,
+            String.raw`\(\,x+(2x+1)+(2x+3)=57\)`
+          ]
+        },
+        {
+          stem: String.raw`
+            <p>Two numbers have sum 85 and difference 29. Let \(x\) be the smaller number.</p>
+            <p>Which pair of equations correctly models the situation?</p>
+          `,
+          choices: [
+            String.raw`<span>\(x+(x-29)=85\) and \(x-(x-29)=29\)</span>`,
+            String.raw`<span>\(x+(x+29)=85\) and \((x+29)-x=29\)</span>`,
+            String.raw`<span>\(x+29=85\) and \(85-x=29\)</span>`,
+            String.raw`<span>\(2x+29=85\) and \(x-(x+29)=29\)</span>`,
+            String.raw`<span>\(x+x=85\) and \(x+29=29\)</span>`,
+            String.raw`<span>\((x+29)+29=85\) and \(x+x=29\)</span>`
+          ],
+          choiceWrap: false
+        },
+        {
+          stem: String.raw`
+            <p>The sum of the first and twice the third of three consecutive integers is equal to four times the second decreased by 5.</p>
+            <p>Let \(x\) be the first integer. Which equation could be used?</p>
+          `,
+          choices: [
+            String.raw`\(\,x+2(x+1)=4(x+2)-5\)`,
+            String.raw`\(\,x+2x+2=4x+1\)`,
+            String.raw`\(\,x+2(x+2)=4x-5\)`,
+            String.raw`\(\,x+2(x+2)=4(x+1)-5\)`,
+            String.raw`\(\,x+(x+1)+(x+2)=4(x+1)-5\)`,
+            String.raw`\(\,x+2(x+2)=4(x+1)+5\)`
+          ]
+        }
+      ]
+    };
+  </script>
+
+  <link rel="stylesheet" href="/math-homework/assets/core-rich.css" />
+  <script defer src="/math-homework/assets/core-rich.js"></script>
+  <script defer src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+</head>
+<body>
+  <div id="hw-root">Loading…</div>
+</body>
+</html>

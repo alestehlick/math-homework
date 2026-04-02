@@ -1,0 +1,226 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Homework 3-6 (Algebra II)</title>
+
+  <script>
+    /* =========================
+       Homework 3-6 — Operations with Functions
+
+       REQUIRED SOURCE REFERENCES (your provided sets):
+       - Type A uses A. Exercises: #1, #3, #4, #5, #8, #9, #10, #11, #12
+       - Type B uses B. Exercises: #13, #14, #16, #19, #20, #21, #23, #24, #25
+       - Type C uses C. Exercises: #26, #27
+       - Model-reworked item: Q8 was added in its present form to make students compare
+         the two composition orders in a case where both return the identity function.
+       - Model-reworked item: Q12 compresses the table-building task from C #27 into a
+         single diagnostic multiple-choice question.
+
+       IMAGE NAMING RULE:
+       No external PNG figures are required for this homework.
+       ========================= */
+
+    window.homeworkData = {
+      classId : "Algebra2",
+      id      : "Homework 3-6",
+      title   : "Homework 3-6 — Operations with Functions",
+
+      graphics : String.raw``,
+
+      answerKey : ["A","A","C","D","B","E","F","A","C","D","B","E"],
+
+      questions : [
+
+        {
+          stem: String.raw`
+            <p>For Questions 1–4, use the functions \(f(x)=3x-12\), \(g(x)=x^2\), and \(h(x)=\dfrac{x}{9}\).</p>
+            <p>Determine \((g+f)(x)\).</p>
+          `,
+          choices: [
+            String.raw`\(\,x^2+3x-12\,\)`,
+            String.raw`\(\,x^2-3x-12\,\)`,
+            String.raw`\(\,3x^2-12\,\)`,
+            String.raw`\(\,x^2+3x+12\,\)`,
+            String.raw`\(\,\dfrac{x^2+3x}{12}\,\)`,
+            String.raw`\(\,(x+3)^2-12\,\)`
+          ]
+        },
+
+        {
+          stem: String.raw`
+            <p>Using the same functions, determine \(\left(\dfrac{g}{h}\right)(x)\).</p>
+          `,
+          choices: [
+            String.raw`\(\,9x,\;x\neq 0\,\)`,
+            String.raw`\(\,9x\,\)`,
+            String.raw`\(\,\dfrac{x}{9}\,\)`,
+            String.raw`\(\,\dfrac{x}{81}\,\)`,
+            String.raw`\(\,\dfrac{9}{x}\,\)`,
+            String.raw`\(\,x\,\)`
+          ]
+        },
+
+        {
+          stem: String.raw`
+            <p>Using the same functions, determine \((f\circ h)(x)\).</p>
+          `,
+          choices: [
+            String.raw`\(\,\dfrac{x}{27}-12\,\)`,
+            String.raw`\(\,\dfrac{x}{9}-12\,\)`,
+            String.raw`\(\,\dfrac{x}{3}-12\,\)`,
+            String.raw`\(\,\dfrac{x}{3}-4\,\)`,
+            String.raw`\(\,\dfrac{x}{3}+12\,\)`,
+            String.raw`\(\,\dfrac{x}{9}-4\,\)`
+          ]
+        },
+
+        {
+          stem: String.raw`
+            <p>Using the same functions, determine \((h\circ f)(x)\).</p>
+          `,
+          choices: [
+            String.raw`\(\,\dfrac{x}{3}-12\,\)`,
+            String.raw`\(\,\dfrac{x}{9}-12\,\)`,
+            String.raw`\(\,\dfrac{x}{27}-4\,\)`,
+            String.raw`\(\,\dfrac{x}{3}-4\,\)`,
+            String.raw`\(\,\dfrac{x}{3}+4\,\)`,
+            String.raw`\(\,\dfrac{3x-12}{3}\,\)`
+          ]
+        },
+
+        {
+          stem: String.raw`
+            <p>Let \(f=\{(-2,9),(3,-8),(4,0)\}\) and \(g=\{(-2,3),(3,2),(4,7)\}\).</p>
+            <p>Which set represents \(f+g\)?</p>
+          `,
+          choices: [
+            String.raw`\(\{(-2,6),(3,-10),(4,-7)\}\)`,
+            String.raw`\(\{(-2,12),(3,-6),(4,7)\}\)`,
+            String.raw`\(\{(-4,12),(6,-6),(8,7)\}\)`,
+            String.raw`\(\{(-2,12),(3,6),(4,7)\}\)`,
+            String.raw`\(\{(-2,3),(3,2),(4,7)\}\)`,
+            String.raw`\(\{(-2,9),(3,-8),(4,0)\}\)`
+          ]
+        },
+
+        {
+          stem: String.raw`
+            <p>Let \(f(x)=\lfloor x\rfloor\) and \(g(x)=9^x\).</p>
+            <p>Find \((f+g)\!\left(-\dfrac12\right)\).</p>
+          `,
+          choices: [
+            String.raw`\(\,\dfrac23\,\)`,
+            String.raw`\(\,-\dfrac43\,\)`,
+            String.raw`\(\,-\dfrac13\,\)`,
+            String.raw`\(\,0\,\)`,
+            String.raw`\(\,-\dfrac23\,\)`,
+            String.raw`\(\,\dfrac13\,\)`
+          ]
+        },
+
+        {
+          stem: String.raw`
+            <p>Let \(f(x)=2x-1\) and \(g(x)=2^x\).</p>
+            <p>Find \((f\circ g)(3)\).</p>
+          `,
+          choices: [
+            String.raw`\(\,7\,\)`,
+            String.raw`\(\,8\,\)`,
+            String.raw`\(\,9\,\)`,
+            String.raw`\(\,16\,\)`,
+            String.raw`\(\,63\,\)`,
+            String.raw`\(\,15\,\)`
+          ]
+        },
+
+        {
+          stem: String.raw`
+            <p>Let \(f(x)=\dfrac{x}{2}+1\) and \(g(x)=2x-2\).</p>
+            <p>Which statement is true?</p>
+          `,
+          choiceWrap: false,
+          choices: [
+            String.raw`<span>\((f\circ g)(x)=x\) and \((g\circ f)(x)=x\).</span>`,
+            String.raw`<span>\((f\circ g)(x)=x\), but \((g\circ f)(x)\neq x\).</span>`,
+            String.raw`<span>\((g\circ f)(x)=x\), but \((f\circ g)(x)\neq x\).</span>`,
+            String.raw`<span>Both compositions simplify to \(\,2x\).</span>`,
+            String.raw`<span>Both compositions simplify to \(\,x+1\).</span>`,
+            String.raw`<span>The two compositions are never equal.</span>`
+          ]
+        },
+
+        {
+          stem: String.raw`
+            <p>Let \(f(x)=5^x+1\) and \(g(x)=2x-3\).</p>
+            <p>Determine \((f\circ g)(x)\).</p>
+          `,
+          choices: [
+            String.raw`\(\,5^{2x}+1-3\,\)`,
+            String.raw`\(\,5^{x-3}+1\,\)`,
+            String.raw`\(\,5^{2x-3}+1\,\)`,
+            String.raw`\(\,2\cdot 5^x-3\,\)`,
+            String.raw`\(\,(5^x+1)(2x-3)\,\)`,
+            String.raw`\(\,5^{2x}-2\,\)`
+          ]
+        },
+
+        {
+          stem: String.raw`
+            <p>Let \(f(x)=|x|\) and \(g(x)=3x+2\).</p>
+            <p>Which expression is equal to \((g\circ f)(x)\)?</p>
+          `,
+          choices: [
+            String.raw`\(\,|3x+2|\,\)`,
+            String.raw`\(\,3x+|2|\,\)`,
+            String.raw`\(\,|x+2|\,\)`,
+            String.raw`\(\,3|x|+2\,\)`,
+            String.raw`\(\,3|x+2|\,\)`,
+            String.raw`\(\,|3x|+2\,\)`
+          ]
+        },
+
+        {
+          stem: String.raw`
+            <p>Suppose \(f(x)=\dfrac{1}{x^2-4}\) and \(g(x)=2x+1\).</p>
+            <p>What is the domain of \((f+g)(x)\)?</p>
+          `,
+          choices: [
+            String.raw`\(\,\mathbb{R}\setminus\{2\}\,\)`,
+            String.raw`\(\,\mathbb{R}\setminus\{-2,2\}\,\)`,
+            String.raw`\(\,\mathbb{R}\setminus\{-2\}\,\)`,
+            String.raw`\(\,x>-2 \text{ and } x<2\,\)`,
+            String.raw`\(\,\mathbb{R}\,\)`,
+            String.raw`\(\,x\neq 4\,\)`
+          ]
+        },
+
+        {
+          stem: String.raw`
+            <p>Let \(f(x)=2x+1\) and \(g(x)=-\dfrac{x}{2}-3\).</p>
+            <p>Using the input values \(x=-2,0,2\), which set of ordered pairs matches \((f+g)(x)\)?</p>
+          `,
+          choices: [
+            String.raw`\(\{(-2,-3),(0,-2),(2,3)\}\)`,
+            String.raw`\(\{(-2,-5),(0,2),(2,1)\}\)`,
+            String.raw`\(\{(-2,-5),(0,-2),(2,-1)\}\)`,
+            String.raw`\(\{(-2,-1),(0,-2),(2,5)\}\)`,
+            String.raw`\(\{(-2,-5),(0,-2),(2,1)\}\)`,
+            String.raw`\(\{(-2,5),(0,2),(2,-1)\}\)`
+          ]
+        }
+
+      ]
+    };
+  </script>
+
+  <link rel="stylesheet" href="/math-homework/assets/core-rich.css" />
+  <script defer src="/math-homework/assets/core-rich.js"></script>
+  <script defer src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+</head>
+
+<body>
+  <div id="hw-root">Loading…</div>
+</body>
+</html>

@@ -1,0 +1,213 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Homework 3-7 (Algebra I)</title>
+
+  <script>
+    /* =========================
+       Homework 3-7 — Formulas and Mathematical Sentences (Algebra I)
+       Adapted for: /math-homework/assets/core-rich.js
+
+       REQUIRED SOURCE REFERENCES (your provided sets):
+       - Type A uses A. Exercises: #3, #4, #5, #8, #10
+       - Type B uses B. Exercises: #19, #21, #22, #23, #29
+       - Type C uses C. Exercises: #30, #31
+       - Model-reworked note: the source material was reorganized into a more coherent
+         sequence moving from direct substitution, to formula interpretation, to
+         writing and reading symbolic statements, and finally to transfer questions
+         about geometric formulas.
+
+       IMAGE NAMING RULE:
+       No figures are required for this homework.
+       ========================= */
+
+    window.homeworkData = {
+      classId : "Algebra1",
+      id      : "Homework 3-7",
+      title   : "Homework 3-7 — Formulas and Mathematical Sentences",
+      graphics : String.raw``,
+
+      answerKey : ["C","E","B","D","A","F","C","B","A","E","D","C"],
+
+      questions : [
+        {
+          stem: String.raw`
+            <p>John wants to put a fence around a rectangular garden that is 60 feet long and 20 feet wide. How many feet of fencing does he need?</p>
+          `,
+          choices: [
+            String.raw`80 feet`,
+            String.raw`120 feet`,
+            String.raw`160 feet`,
+            String.raw`1,200 feet`,
+            String.raw`180 feet`,
+            String.raw`40 feet`
+          ],
+          choiceWrap: false
+        },
+        {
+          stem: String.raw`
+            <p>A picture is 11 in. by 14 in. It will be framed with wood that is 1 inch wide all around the picture. Which statement is correct?</p>
+          `,
+          choices: [
+            String.raw`The perimeter of the picture is 50 inches, so 50 inches of wood is enough for the frame.`,
+            String.raw`The outer dimensions are 12 in. by 15 in., so 54 inches of wood is enough.`,
+            String.raw`The outer dimensions are 13 in. by 16 in., so 56 inches of wood is enough.`,
+            String.raw`The perimeter of the picture is 50 inches, but the frame needs 52 inches.`,
+            String.raw`The outer dimensions are 13 in. by 16 in., so 58 inches of wood is needed.`,
+            String.raw`The outer dimensions are 15 in. by 18 in., so 66 inches of wood is needed.`
+          ],
+          choiceWrap: false
+        },
+        {
+          stem: String.raw`
+            <p>A carpenter wants Formica to go around the outer edge of a circular table of radius 2 feet. Using \(\pi \approx 3.14\), how long should the Formica be?</p>
+          `,
+          choices: [
+            String.raw`6.28 feet`,
+            String.raw`12.56 feet`,
+            String.raw`3.14 feet`,
+            String.raw`4 feet`,
+            String.raw`25.12 feet`,
+            String.raw`8.28 feet`
+          ],
+          choiceWrap: false
+        },
+        {
+          stem: String.raw`
+            <p>The volume of a rectangular box is given by \(V=lwh\). What is the volume of a box with \(l=8\) in., \(w=7\) in., and \(h=6\) in.?</p>
+          `,
+          choices: [
+            String.raw`56 in<sup>3</sup>`,
+            String.raw`98 in<sup>3</sup>`,
+            String.raw`42 in<sup>3</sup>`,
+            String.raw`336 in<sup>3</sup>`,
+            String.raw`336 in<sup>2</sup>`,
+            String.raw`21 in<sup>3</sup>`
+          ],
+          choiceWrap: false
+        },
+        {
+          stem: String.raw`
+            <p>The formula for normal weight is \(w=\dfrac{11(h-40)}{2}\), where \(h\) is height in inches. If Ben is 5 ft 2 in. tall and weighs 154 lb, which statement is correct?</p>
+          `,
+          choices: [
+            String.raw`His normal weight is 121 lb, so he should lose 33 lb.`,
+            String.raw`His normal weight is 121 lb, so he should gain 33 lb.`,
+            String.raw`His normal weight is 132 lb, so he should lose 22 lb.`,
+            String.raw`His normal weight is 110 lb, so he should lose 44 lb.`,
+            String.raw`His normal weight is 154 lb, so he is already at normal weight.`,
+            String.raw`His normal weight is 124 lb, so he should lose 30 lb.`
+          ],
+          choiceWrap: false
+        },
+        {
+          stem: String.raw`
+            <p>Gross pay is given by \(G=wh+\dfrac12wE\), where \(w\) is hourly wage, \(h\) is the total number of hours worked, and \(E\) is the number of overtime hours. What is the gross pay for 45 hours at $8.50 per hour?</p>
+          `,
+          choices: [
+            String.raw`$361.25`,
+            String.raw`$382.50`,
+            String.raw`$340.00`,
+            String.raw`$425.00`,
+            String.raw`$393.75`,
+            String.raw`$403.75`
+          ],
+          choiceWrap: false
+        },
+        {
+          stem: String.raw`
+            <p>Simple interest is given by \(I=Prt\), where \(P\) is principal, \(r\) is the yearly interest rate, and \(t\) is time in years. If Shanda invests $150 at 5% interest for 1 year, how much interest does she earn?</p>
+          `,
+          choices: [
+            String.raw`$5.00`,
+            String.raw`$6.50`,
+            String.raw`$7.50`,
+            String.raw`$15.00`,
+            String.raw`$75.00`,
+            String.raw`$7.05`
+          ],
+          choiceWrap: false
+        },
+        {
+          stem: String.raw`
+            <p>Which formula correctly represents the sentence <b>“Distance divided by rate equals time”</b>?</p>
+          `,
+          choices: [
+            String.raw`\(d=rt\)`,
+            String.raw`\(t=\dfrac{d}{r}\)`,
+            String.raw`\(r=\dfrac{d}{t}\)`,
+            String.raw`\(d=\dfrac{t}{r}\)`,
+            String.raw`\(t=dr\)`,
+            String.raw`\(\dfrac{r}{d}=t\)`
+          ]
+        },
+        {
+          stem: String.raw`
+            <p>Which formula correctly expresses this sentence?</p>
+            <p><b>The perimeter \(P\) of a triangle is the sum of the lengths of its three sides \(a\), \(b\), and \(c\).</b></p>
+          `,
+          choices: [
+            String.raw`\(P=a+b+c\)`,
+            String.raw`\(P=abc\)`,
+            String.raw`\(P=2a+2b+2c\)`,
+            String.raw`\(P=\dfrac{a+b+c}{3}\)`,
+            String.raw`\(P=a^2+b^2+c^2\)`,
+            String.raw`\(P=ab+bc+ca\)`
+          ]
+        },
+        {
+          stem: String.raw`
+            <p>Which sentence correctly translates the statement <b>\(\pi \ne 3.14\)</b>?</p>
+          `,
+          choices: [
+            String.raw`\(\pi\) is about equal to \(3.14\).`,
+            String.raw`\(\pi\) is greater than \(3.14\).`,
+            String.raw`The value of \(\pi\) rounds to \(3.14\) in every situation.`,
+            String.raw`\(\pi\) is less than \(3.14\).`,
+            String.raw`\(\pi\) is not exactly equal to \(3.14\).`,
+            String.raw`\(\pi\) and \(3.14\) name the same number.`
+          ],
+          choiceWrap: false
+        },
+        {
+          stem: String.raw`
+            <p>The total surface area of a cylinder is given by \(A=2\pi rh+2\pi r^2\). If \(h=5\) ft and \(r=2\) ft, what is the total surface area?</p>
+          `,
+          choices: [
+            String.raw`\(20\pi\) ft<sup>2</sup>`,
+            String.raw`\(24\pi\) ft<sup>2</sup>`,
+            String.raw`\(40\pi\) ft<sup>2</sup>`,
+            String.raw`\(28\pi\) ft<sup>2</sup>`,
+            String.raw`\(14\pi\) ft<sup>2</sup>`,
+            String.raw`\(87.92\pi\) ft<sup>2</sup>`
+          ],
+          choiceWrap: false
+        },
+        {
+          stem: String.raw`
+            <p>A circle has radius \(r\). Suppose the radius is increased by 50%, so the new radius is \(1.5r\). Which statement is correct?</p>
+          `,
+          choices: [
+            String.raw`Both the circumference and the area increase by 50%.`,
+            String.raw`The circumference doubles, and the area increases by 50%.`,
+            String.raw`The circumference increases by 50%, and the area becomes \(2.25\) times the original area.`,
+            String.raw`The circumference becomes \(2.25\) times as large, and the area increases by 50%.`,
+            String.raw`The circumference stays the same, and the area doubles.`,
+            String.raw`The circumference doubles, and the area becomes \(1.5\) times the original area.`
+          ],
+          choiceWrap: false
+        }
+      ]
+    };
+  </script>
+
+  <link rel="stylesheet" href="/math-homework/assets/core-rich.css" />
+  <script defer src="/math-homework/assets/core-rich.js"></script>
+  <script defer src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+</head>
+<body>
+  <div id="hw-root">Loading…</div>
+</body>
+</html>
