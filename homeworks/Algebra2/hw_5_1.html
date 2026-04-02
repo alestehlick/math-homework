@@ -1,0 +1,314 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Homework 5-1 (Algebra II)</title>
+
+  <style>
+    .system-figure { margin: 0.4rem auto 0.2rem; text-align: center; }
+    .system-figure svg { width: 260px; max-width: 100%; height: auto; display: block; margin: 0 auto; }
+    .system-figure figcaption { font-size: 0.92rem; color: #444; margin-top: 0.25rem; }
+    .sys-choice { line-height: 1.35; }
+  </style>
+
+  <script>
+    /* =========================
+       Homework 5-1 — Solving Systems by Graphing (Algebra II)
+       Adapted for: /math-homework/assets/core-rich.js
+
+       REQUIRED SOURCE REFERENCES (your provided sets):
+       - Type A uses A. Exercises: #1, #4, #11
+       - Type B uses B. Exercises: #15, #16, #18, #19, #20
+       - Type C uses C. Exercise: #21
+       - Model-authored graph figures: Q1, Q2, Q3, and Q6 use inline SVG graphs created to strengthen visual interpretation of intersections, parallel lines, and coincident lines.
+       - Model-reworked conceptual items: Q7–Q9 reorganize B-set ideas so students distinguish clearly between one solution, no solution, and infinitely many solutions.
+
+       IMAGE NAMING RULE:
+       No external PNG files are required for this homework.
+       All figures are inline SVG figures embedded directly in this HTML.
+       ========================= */
+
+    function graphFigure(label, lines, points = []) {
+      const min = -4, max = 4, step = 25, cx = 130, cy = 130;
+      const px = x => cx + x * step;
+      const py = y => cy - y * step;
+
+      let svg = `
+        <figure class="system-figure">
+          <svg viewBox="0 0 260 260" role="img" aria-label="${label}">
+            <rect x="0" y="0" width="260" height="260" fill="white"></rect>
+      `;
+
+      for (let i = min; i <= max; i++) {
+        const x = px(i);
+        const y = py(i);
+        svg += `<line x1="${x}" y1="30" x2="${x}" y2="230" stroke="#dddddd" stroke-width="1" />`;
+        svg += `<line x1="30" y1="${y}" x2="230" y2="${y}" stroke="#dddddd" stroke-width="1" />`;
+      }
+
+      svg += `
+        <line x1="30" y1="130" x2="230" y2="130" stroke="#1f2937" stroke-width="2" />
+        <line x1="130" y1="230" x2="130" y2="30" stroke="#1f2937" stroke-width="2" />
+        <polygon points="230,130 222,126 222,134" fill="#1f2937"></polygon>
+        <polygon points="130,30 126,38 134,38" fill="#1f2937"></polygon>
+        <text x="236" y="135" font-size="12" fill="#1f2937">x</text>
+        <text x="136" y="24" font-size="12" fill="#1f2937">y</text>
+      `;
+
+      for (let i = min; i <= max; i++) {
+        if (i !== 0) {
+          svg += `<text x="${px(i) - 4}" y="146" font-size="9" fill="#555">${i}</text>`;
+          svg += `<text x="${113}" y="${py(i) + 3}" font-size="9" fill="#555">${i}</text>`;
+        }
+      }
+      svg += `<text x="113" y="146" font-size="9" fill="#555">0</text>`;
+
+      lines.forEach(line => {
+        svg += `<line x1="${px(line.x1)}" y1="${py(line.y1)}" x2="${px(line.x2)}" y2="${py(line.y2)}" stroke="${line.color || '#2563eb'}" stroke-width="3" ${line.dash ? `stroke-dasharray="${line.dash}"` : ''} />`;
+      });
+
+      points.forEach(pt => {
+        svg += `<circle cx="${px(pt.x)}" cy="${py(pt.y)}" r="4.5" fill="${pt.color || '#111827'}"></circle>`;
+      });
+
+      svg += `</svg><figcaption>${label}</figcaption></figure>`;
+      return svg;
+    }
+
+    const FIG1 = graphFigure(
+      'Figure 1',
+      [
+        { x1: -4, y1: -3, x2: 3, y2: 4, color: '#2563eb' },
+        { x1: -1, y1: 4, x2: 4, y2: -1, color: '#dc2626' }
+      ],
+      [
+        { x: 1, y: 2, color: '#111827' }
+      ]
+    );
+
+    const FIG2 = graphFigure(
+      'Figure 2',
+      [
+        { x1: -4, y1: 0, x2: 4, y2: 4, color: '#2563eb' },
+        { x1: -4, y1: -3, x2: 4, y2: 1, color: '#dc2626' }
+      ]
+    );
+
+    const FIG3 = graphFigure(
+      'Figure 3',
+      [
+        { x1: -2, y1: 4, x2: 4, y2: -2, color: '#2563eb' },
+        { x1: -2, y1: 4, x2: 4, y2: -2, color: '#f97316', dash: '8 6' }
+      ]
+    );
+
+    const FIG4 = graphFigure(
+      'Figure 4',
+      [
+        { x1: -1.5, y1: -4, x2: 2.5, y2: 4, color: '#2563eb' },
+        { x1: -2, y1: 4, x2: 4, y2: -2, color: '#dc2626' }
+      ],
+      [
+        { x: 1, y: 1, color: '#111827' }
+      ]
+    );
+
+    window.homeworkData = {
+      classId : 'Algebra2',
+      id      : 'Homework 5-1',
+      title   : 'Homework 5-1 — Solving Systems by Graphing',
+      graphics : String.raw``,
+      answerKey : ['C','B','E','A','A','A','A','B','D','B','C','B'],
+      questions : [
+        {
+          stem: String.raw`
+            <p><b>Refer to Figure 1.</b> The marked point is the intersection of the two lines. What is the solution of the system?</p>
+          `,
+          media: FIG1,
+          choices: [
+            String.raw`\((-1,4)\)`,
+            String.raw`\((0,3)\)`,
+            String.raw`\((1,2)\)`,
+            String.raw`\((2,1)\)`,
+            String.raw`\((3,0)\)`,
+            String.raw`\((4,-1)\)`
+          ]
+        },
+        {
+          stem: String.raw`
+            <p><b>Refer to Figure 2.</b> Which statement best describes the graph of this system?</p>
+          `,
+          media: FIG2,
+          choiceWrap: false,
+          choices: [
+            String.raw`The lines intersect at exactly one point, so the system has one solution.`,
+            String.raw`The lines are parallel, so the system has no solution.`,
+            String.raw`The lines are the same line, so the system has infinitely many solutions.`,
+            String.raw`The solution is \((0,2)\).`,
+            String.raw`The solution is \((0,-1)\).`,
+            String.raw`The graph does not provide enough information.`
+          ]
+        },
+        {
+          stem: String.raw`
+            <p><b>Refer to Figure 3.</b> Which conclusion is correct?</p>
+          `,
+          media: FIG3,
+          choiceWrap: false,
+          choices: [
+            String.raw`The system has no solution because both lines have negative slope.`,
+            String.raw`The system has exactly two solutions.`,
+            String.raw`The only solution is \((2,0)\).`,
+            String.raw`The graph shows a vertical line, not a system.`,
+            String.raw`The two equations describe the same line, so there are infinitely many solutions.`,
+            String.raw`The system has one solution because the lines meet on the y-axis.`
+          ]
+        },
+        {
+          stem: String.raw`
+            <p>Find the solution of the system. Think of the answer as the point where the two lines would intersect when graphed.</p>
+            <p>\(x+y=4\)</p>
+            <p>\(x-y=-2\)</p>
+          `,
+          choices: [
+            String.raw`\((1,3)\)`,
+            String.raw`\((3,1)\)`,
+            String.raw`\((2,2)\)`,
+            String.raw`\((-1,5)\)`,
+            String.raw`\((0,4)\)`,
+            String.raw`\((4,0)\)`
+          ]
+        },
+        {
+          stem: String.raw`
+            <p>Find the solution of the system.</p>
+            <p>\(2x-y=10\)</p>
+            <p>\(3x+y=0\)</p>
+          `,
+          choices: [
+            String.raw`\((2,-6)\)`,
+            String.raw`\((2,6)\)`,
+            String.raw`\((-2,6)\)`,
+            String.raw`\((-2,-6)\)`,
+            String.raw`\((0,-10)\)`,
+            String.raw`\((5,-5)\)`
+          ]
+        },
+        {
+          stem: String.raw`
+            <p><b>Refer to Figure 4.</b> Which system matches the graph?</p>
+          `,
+          media: FIG4,
+          choiceWrap: false,
+          choices: [
+            String.raw`<div class="sys-choice">\(y=2x-1\)<br>\(y=-x+2\)</div>`,
+            String.raw`<div class="sys-choice">\(y=2x+1\)<br>\(y=-x+2\)</div>`,
+            String.raw`<div class="sys-choice">\(y=-2x-1\)<br>\(y=x+2\)</div>`,
+            String.raw`<div class="sys-choice">\(y=2x-1\)<br>\(y=x+2\)</div>`,
+            String.raw`<div class="sys-choice">\(y=x-1\)<br>\(y=-2x+2\)</div>`,
+            String.raw`<div class="sys-choice">\(y=\tfrac12x-1\)<br>\(y=-x+2\)</div>`
+          ]
+        },
+        {
+          stem: String.raw`
+            <p>Which system would graph as two distinct parallel lines and therefore have <b>no solution</b>?</p>
+          `,
+          choiceWrap: false,
+          choices: [
+            String.raw`<div class="sys-choice">\(y=2x+1\)<br>\(y=2x-3\)</div>`,
+            String.raw`<div class="sys-choice">\(y=-x+4\)<br>\(y=x-2\)</div>`,
+            String.raw`<div class="sys-choice">\(y=3x\)<br>\(y=3x\)</div>`,
+            String.raw`<div class="sys-choice">\(x+y=1\)<br>\(2x+2y=2\)</div>`,
+            String.raw`<div class="sys-choice">\(y=\tfrac12x-4\)<br>\(2y=x-8\)</div>`,
+            String.raw`<div class="sys-choice">\(y=-2x+5\)<br>\(y=2x-5\)</div>`
+          ]
+        },
+        {
+          stem: String.raw`
+            <p>Which system has <b>infinitely many solutions</b>?</p>
+          `,
+          choiceWrap: false,
+          choices: [
+            String.raw`<div class="sys-choice">\(y=3x-1\)<br>\(y=3x+1\)</div>`,
+            String.raw`<div class="sys-choice">\(x+y=4\)<br>\(2x+2y=8\)</div>`,
+            String.raw`<div class="sys-choice">\(2x-y=5\)<br>\(y=2x+1\)</div>`,
+            String.raw`<div class="sys-choice">\(y=-x\)<br>\(x-y=0\)</div>`,
+            String.raw`<div class="sys-choice">\(3x+y=6\)<br>\(6x+2y=5\)</div>`,
+            String.raw`<div class="sys-choice">\(x=4\)<br>\(y=4\)</div>`
+          ]
+        },
+        {
+          stem: String.raw`
+            <p>Which system must have <b>exactly one solution</b>?</p>
+          `,
+          choiceWrap: false,
+          choices: [
+            String.raw`<div class="sys-choice">\(y=4x-2\)<br>\(y=4x+5\)</div>`,
+            String.raw`<div class="sys-choice">\(2x+3y=6\)<br>\(4x+6y=12\)</div>`,
+            String.raw`<div class="sys-choice">\(x=3\)<br>\(2x=6\)</div>`,
+            String.raw`<div class="sys-choice">\(y=-2x+1\)<br>\(y=\tfrac12x-4\)</div>`,
+            String.raw`<div class="sys-choice">\(3x-y=7\)<br>\(6x-2y=14\)</div>`,
+            String.raw`<div class="sys-choice">\(y=5\)<br>\(y=5\)</div>`
+          ]
+        },
+        {
+          stem: String.raw`
+            <p>Which ordered pair solves both equations?</p>
+            <p>\(3x-4y=5\)</p>
+            <p>\(2x+5y=11\)</p>
+          `,
+          choices: [
+            String.raw`\((1,3)\)`,
+            String.raw`\((3,1)\)`,
+            String.raw`\((2,1)\)`,
+            String.raw`\((1,2)\)`,
+            String.raw`\((4,-1)\)`,
+            String.raw`\((0,\tfrac{11}{5})\)`
+          ]
+        },
+        {
+          stem: String.raw`
+            <p>The cost and revenue equations for a company are</p>
+            <p>\(C(x)=119x+750\)</p>
+            <p>\(R(x)=169x\)</p>
+            <p>At how many units does the company break even?</p>
+          `,
+          choices: [
+            String.raw`\(10\) units`,
+            String.raw`\(12\) units`,
+            String.raw`\(15\) units`,
+            String.raw`\(18\) units`,
+            String.raw`\(20\) units`,
+            String.raw`\(25\) units`
+          ]
+        },
+        {
+          stem: String.raw`
+            <p>Using the same equations</p>
+            <p>\(C(x)=119x+750\)</p>
+            <p>\(R(x)=169x\)</p>
+            <p>suppose the company sells \(200\) widgets at regular price and \(300\) widgets at half price. What is the result?</p>
+          `,
+          choiceWrap: false,
+          choices: [
+            String.raw`A profit of \($1{,}100\)`,
+            String.raw`A loss of \($1{,}100\)`,
+            String.raw`A profit of \($750\)`,
+            String.raw`A loss of \($750\)`,
+            String.raw`Break-even`,
+            String.raw`A loss of \($2{,}535\)`
+          ]
+        }
+      ]
+    };
+  </script>
+
+  <link rel="stylesheet" href="/math-homework/assets/core-rich.css" />
+  <script defer src="/math-homework/assets/core-rich.js"></script>
+  <script defer src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+</head>
+<body>
+  <div id="hw-root">Loading…</div>
+</body>
+</html>

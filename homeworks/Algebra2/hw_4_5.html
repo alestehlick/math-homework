@@ -1,0 +1,227 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Homework 4-5 (Algebra II)</title>
+
+  <script>
+    /* =========================
+       Homework 4-5 — Quadratic Word Problems
+
+       REQUIRED SOURCE REFERENCES (your provided sets):
+       - Type A uses A. Exercises: #1, #2, #3, #5, #7
+       - Type B uses B. Exercises: #8, #11, #12, #13, #14
+       - Type C uses C. Exercises: #16
+
+       MODEL REWORK / PEDAGOGICAL ADAPTATION:
+       - The source page mixes integer-product problems, geometric area models,
+         open-box problems, and Pythagorean applications. The homework below
+         reorganizes them into a progression from setting up simple quadratic
+         models to interpreting physically meaningful roots in geometry.
+       - A. Exercise #1 is used twice: first to test equation setup, then to test
+         solving and checking.
+       - Several source questions were rewritten so the distractors diagnose
+         common errors such as using consecutive-even instead of consecutive-integer
+         models, forgetting the factor of \(\tfrac12\) in triangle area,
+         and accepting a negative or impossible dimension.
+
+       IMAGE NAMING RULE:
+       - No external figure files are required for this homework.
+       ========================= */
+
+    window.homeworkData = {
+      classId : "Algebra2",
+      id      : "Homework 4-5",
+      title   : "Homework 4-5 — Quadratic Word Problems",
+      graphics : String.raw``,
+      answerKey : ["A","B","C","D","E","F","A","B","C","D","E","F"],
+      questions : [
+        {
+          stem: String.raw`
+            <p>Let \(n\) represent the smaller of two consecutive integers whose product is \(342\).</p>
+            <p>Which equation models the problem?</p>
+          `,
+          choices: [
+            String.raw`\(n(n+1)=342\)`,
+            String.raw`\(n(n+2)=342\)`,
+            String.raw`\(n(n-1)=342\)`,
+            String.raw`\(2n(n+1)=342\)`,
+            String.raw`\(n+(n+1)=342\)`,
+            String.raw`\(n^2+342=n+1\)`
+          ]
+        },
+        {
+          stem: String.raw`
+            <p>Find two consecutive integers whose product is \(342\).</p>
+          `,
+          choices: [
+            String.raw`17 and 18`,
+            String.raw`18 and 19`,
+            String.raw`18 and 20`,
+            String.raw`19 and 20`,
+            String.raw`9 and 38`,
+            String.raw`There are no such integers`
+          ],
+          choiceWrap: false
+        },
+        {
+          stem: String.raw`
+            <p>Find two positive consecutive odd integers whose product is \(1935\).</p>
+          `,
+          choices: [
+            String.raw`39 and 41`,
+            String.raw`41 and 43`,
+            String.raw`43 and 45`,
+            String.raw`45 and 47`,
+            String.raw`31 and 63`,
+            String.raw`There are no such integers`
+          ],
+          choiceWrap: false
+        },
+        {
+          stem: String.raw`
+            <p>One positive integer is \(18\) more than another. Their product is \(1215\).</p>
+            <p>Which pair of integers fits the description?</p>
+          `,
+          choices: [
+            String.raw`15 and 33`,
+            String.raw`21 and 39`,
+            String.raw`24 and 42`,
+            String.raw`27 and 45`,
+            String.raw`30 and 48`,
+            String.raw`35 and 53`
+          ],
+          choiceWrap: false
+        },
+        {
+          stem: String.raw`
+            <p>Five times the square of a number is \(980\).</p>
+            <p>What are the real solutions?</p>
+          `,
+          choices: [
+            String.raw`\(x=14\) only`,
+            String.raw`\(x=-14\) only`,
+            String.raw`\(x=\pm 196\)`,
+            String.raw`\(x=\pm 7\sqrt{20}\)`,
+            String.raw`\(x=\pm 14\)`,
+            String.raw`There is no real solution`
+          ]
+        },
+        {
+          stem: String.raw`
+            <p>The area of a triangle is \(384\) square feet. Its base is \(8\) feet longer than its altitude.</p>
+            <p>Which pair gives the <em>altitude</em> and the <em>base</em>?</p>
+          `,
+          choices: [
+            String.raw`Altitude \(=16\) ft, base \(=24\) ft`,
+            String.raw`Altitude \(=20\) ft, base \(=28\) ft`,
+            String.raw`Altitude \(=24\) ft, base \(=24\) ft`,
+            String.raw`Altitude \(=28\) ft, base \(=36\) ft`,
+            String.raw`Altitude \(=32\) ft, base \(=40\) ft`,
+            String.raw`Altitude \(=24\) ft, base \(=32\) ft`
+          ],
+          choiceWrap: false
+        },
+        {
+          stem: String.raw`
+            <p>A garden measures \(50\) ft by \(70\) ft. A path of uniform width is built all the way around the outside.</p>
+            <p>If the combined area of the garden and the path is \(4524\) square feet, how wide is the path?</p>
+          `,
+          choices: [
+            String.raw`4 ft`,
+            String.raw`2 ft`,
+            String.raw`3 ft`,
+            String.raw`6 ft`,
+            String.raw`8 ft`,
+            String.raw`10 ft`
+          ],
+          choiceWrap: false
+        },
+        {
+          stem: String.raw`
+            <p>A box is made by cutting \(3\)-inch squares from the corners of a square piece of cardboard and folding up the sides.</p>
+            <p>If the volume of the box is \(243\) cubic inches, what was the side length of the original cardboard square?</p>
+          `,
+          choices: [
+            String.raw`9 in`,
+            String.raw`15 in`,
+            String.raw`18 in`,
+            String.raw`21 in`,
+            String.raw`27 in`,
+            String.raw`33 in`
+          ],
+          choiceWrap: false
+        },
+        {
+          stem: String.raw`
+            <p>A rectangular sheet of metal measures \(13\) in by \(18\) in. Equal squares are cut from the four corners and the sides are folded up to make an open box.</p>
+            <p>If the area of the bottom of the box is \(176\) square inches, how long is each cut-out square?</p>
+          `,
+          choices: [
+            String.raw`\(\tfrac12\) in`,
+            String.raw`2 in`,
+            String.raw`1 in`,
+            String.raw`3 in`,
+            String.raw`\(14.5\) in`,
+            String.raw`5 in`
+          ],
+          choiceWrap: false
+        },
+        {
+          stem: String.raw`
+            <p>The base of a \(20\)-foot ladder rests \(5\) feet from a wall.</p>
+            <p>How high up the wall does the ladder reach?</p>
+          `,
+          choices: [
+            String.raw`15 ft`,
+            String.raw`\(5\sqrt{11}\) ft`,
+            String.raw`\(10\sqrt{3}\) ft`,
+            String.raw`\(5\sqrt{15}\) ft`,
+            String.raw`\(\sqrt{425}\) ft`,
+            String.raw`20 ft`
+          ],
+          choiceWrap: false
+        },
+        {
+          stem: String.raw`
+            <p>A rectangular picture frame contains a \(12\)-inch by \(14\)-inch picture.</p>
+            <p>If the total area of the picture and frame is \(288\) square inches, what is the width of the frame?</p>
+          `,
+          choices: [
+            String.raw`1 in`,
+            String.raw`1.5 in`,
+            String.raw`3 in`,
+            String.raw`4 in`,
+            String.raw`2 in`,
+            String.raw`2.5 in`
+          ],
+          choiceWrap: false
+        },
+        {
+          stem: String.raw`
+            <p>A square print has side length \(15\) cm. It is enlarged so that its area doubles.</p>
+            <p>What is the new side length?</p>
+          `,
+          choices: [
+            String.raw`30 cm`,
+            String.raw`\(15\sqrt{3}\) cm`,
+            String.raw`22.5 cm`,
+            String.raw`\(\sqrt{30}\) cm`,
+            String.raw`15 cm`,
+            String.raw`\(15\sqrt{2}\) cm`
+          ],
+          choiceWrap: false
+        }
+      ]
+    };
+  </script>
+
+  <link rel="stylesheet" href="/math-homework/assets/core-rich.css" />
+  <script defer src="/math-homework/assets/core-rich.js"></script>
+  <script defer src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+</head>
+<body>
+  <div id="hw-root">Loading…</div>
+</body>
+</html>

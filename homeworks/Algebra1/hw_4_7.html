@@ -1,0 +1,212 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Homework 4-7 (Algebra I)</title>
+
+  <script>
+    /* =========================
+       Homework 4-7 — Equations with Fractions, Decimals, and Literal Forms (Algebra I)
+       Adapted for: /math-homework/assets/core-rich.js
+
+       REQUIRED SOURCE REFERENCES (your provided sets):
+       - Type A uses A. Exercises: #1, #2, #4, #9, #12
+       - Type B uses B. Exercises: #16, #18, #20, #21, #23
+       - Type C uses C. Exercises: #26, #27
+       - Model-reworked note: the source was open-response. It was reorganized into a
+         progression from one-step fractional equations, to decimal equations, to literal equations.
+
+       IMAGE NAMING RULE:
+       No figures are required for this homework.
+       ========================= */
+
+    window.homeworkData = {
+      classId : "Algebra1",
+      id      : "Homework 4-7",
+      title   : "Homework 4-7 — Equations with Fractions, Decimals, and Literal Forms",
+      graphics : String.raw``,
+
+      answerKey : ["A","C","B","D","E","F","B","C","A","E","D","B"],
+
+      questions : [
+        {
+          stem: String.raw`
+            <p>Solve the equation:</p>
+            <p class="math">\(\dfrac{x}{4}=\dfrac12\)</p>
+          `,
+          choices: [
+            String.raw`\(\,2\)`,
+            String.raw`\(\,\dfrac18\)`,
+            String.raw`\(\,8\)`,
+            String.raw`\(-2\)`,
+            String.raw`\(\,4\)`,
+            String.raw`\(\,1\)`
+          ]
+        },
+        {
+          stem: String.raw`
+            <p>Solve the equation:</p>
+            <p class="math">\(\dfrac{x}{3}+\dfrac{x}{8}=\dfrac{11}{24}\)</p>
+          `,
+          choices: [
+            String.raw`\(\,\dfrac{11}{24}\)`,
+            String.raw`\(-1\)`,
+            String.raw`\(\,1\)`,
+            String.raw`\(\,\dfrac{24}{11}\)`,
+            String.raw`\(\,\dfrac38\)`,
+            String.raw`\(\,\dfrac{8}{11}\)`
+          ]
+        },
+        {
+          stem: String.raw`
+            <p>Solve the equation:</p>
+            <p class="math">\(\dfrac{x}{6}-\dfrac{3x}{2}=\dfrac{16}{3}\)</p>
+          `,
+          choices: [
+            String.raw`\(\,4\)`,
+            String.raw`\(-4\)`,
+            String.raw`\(-8\)`,
+            String.raw`\(-\dfrac23\)`,
+            String.raw`\(\,\dfrac{16}{3}\)`,
+            String.raw`\(\,32\)`
+          ]
+        },
+        {
+          stem: String.raw`
+            <p>Solve the equation:</p>
+            <p class="math">\(\dfrac{x}{3}-\dfrac{x}{4}=1\)</p>
+          `,
+          choices: [
+            String.raw`\(\,1\)`,
+            String.raw`\(\,4\)`,
+            String.raw`\(\,6\)`,
+            String.raw`\(\,12\)`,
+            String.raw`\(\,24\)`,
+            String.raw`\(\,7\)`
+          ]
+        },
+        {
+          stem: String.raw`
+            <p>Solve the equation:</p>
+            <p class="math">\(0.5x=0.3x+9\)</p>
+          `,
+          choices: [
+            String.raw`\(\,4.5\)`,
+            String.raw`\(\,18\)`,
+            String.raw`\(\,30\)`,
+            String.raw`\(\,90\)`,
+            String.raw`\(\,45\)`,
+            String.raw`\(\,9\)`
+          ]
+        },
+        {
+          stem: String.raw`
+            <p>Solve the equation:</p>
+            <p class="math">\(\dfrac{4y-4}{8}+\dfrac{26}{2}=\dfrac14\)</p>
+          `,
+          choices: [
+            String.raw`\(-\dfrac{47}{2}\)`,
+            String.raw`\(-\dfrac{49}{4}\)`,
+            String.raw`\(\dfrac{49}{2}\)`,
+            String.raw`\(-\dfrac{51}{2}\)`,
+            String.raw`\(-24\)`,
+            String.raw`\(-\dfrac{49}{2}\)`
+          ]
+        },
+        {
+          stem: String.raw`
+            <p>Solve the equation:</p>
+            <p class="math">\(3k+\dfrac{k-4}{9}=\dfrac13\)</p>
+          `,
+          choices: [
+            String.raw`\(-\dfrac14\)`,
+            String.raw`\(\dfrac14\)`,
+            String.raw`\(\dfrac13\)`,
+            String.raw`\(\dfrac49\)`,
+            String.raw`\(\dfrac74\)`,
+            String.raw`\(\,4\)`
+          ]
+        },
+        {
+          stem: String.raw`
+            <p>Solve the equation:</p>
+            <p class="math">\(0.8(x+4)-0.3x=1.7\)</p>
+          `,
+          choices: [
+            String.raw`\(\,3\)`,
+            String.raw`\(-6\)`,
+            String.raw`\(-3\)`,
+            String.raw`\(-1.5\)`,
+            String.raw`\(\,1.5\)`,
+            String.raw`\(\,0.5\)`
+          ]
+        },
+        {
+          stem: String.raw`
+            <p>Solve the literal equation for <b>\(P\)</b>:</p>
+            <p class="math">\(\dfrac{P}{6rn}=\dfrac{7}{9nx}\)</p>
+          `,
+          choices: [
+            String.raw`\(\,P=\dfrac{14r}{3x}\)`,
+            String.raw`\(\,P=\dfrac{7r}{3x}\)`,
+            String.raw`\(\,P=\dfrac{14rn}{3x}\)`,
+            String.raw`\(\,P=\dfrac{2r}{3x}\)`,
+            String.raw`\(\,P=\dfrac{14x}{3r}\)`,
+            String.raw`\(\,P=\dfrac{7}{54rnx}\)`
+          ]
+        },
+        {
+          stem: String.raw`
+            <p>Solve the literal equation for <b>\(P\)</b>:</p>
+            <p class="math">\(\dfrac{2p}{m}-\dfrac{r}{s}=\dfrac{Ps+q}{ms}\)</p>
+          `,
+          choices: [
+            String.raw`\(\,P=\dfrac{2ps-mr+q}{s}\)`,
+            String.raw`\(\,P=\dfrac{2ps+mr-q}{s}\)`,
+            String.raw`\(\,P=\dfrac{2ps-mr-q}{ms}\)`,
+            String.raw`\(\,P=\dfrac{2p-r-q}{s}\)`,
+            String.raw`\(\,P=\dfrac{2ps-mr-q}{s}\)`,
+            String.raw`\(\,P=\dfrac{2ps+q}{mr}\)`
+          ]
+        },
+        {
+          stem: String.raw`
+            <p>Solve for <b>\(x\)</b>:</p>
+            <p class="math">\(ax-\dfrac{2b}{c}=3\)</p>
+          `,
+          choices: [
+            String.raw`\(\,x=\dfrac{3c-2b}{ac}\)`,
+            String.raw`\(\,x=\dfrac{3+2b}{ac}\)`,
+            String.raw`\(\,x=\dfrac{3c+2b}{a}\)`,
+            String.raw`\(\,x=\dfrac{3c+2b}{ac}\)`,
+            String.raw`\(\,x=\dfrac{2b-3c}{ac}\)`,
+            String.raw`\(\,x=\dfrac{3ac+2b}{c}\)`
+          ]
+        },
+        {
+          stem: String.raw`
+            <p>Solve for <b>\(x\)</b>:</p>
+            <p class="math">\(pq+\dfrac{2x}{d}=4b\)</p>
+          `,
+          choices: [
+            String.raw`\(\,x=d(4b-pq)\)`,
+            String.raw`\(\,x=\dfrac{d(4b-pq)}{2}\)`,
+            String.raw`\(\,x=\dfrac{4b-pq}{2d}\)`,
+            String.raw`\(\,x=\dfrac{2d}{4b-pq}\)`,
+            String.raw`\(\,x=\dfrac{d(4b+pq)}{2}\)`,
+            String.raw`\(\,x=\dfrac{4bd-pq}{2}\)`
+          ]
+        }
+      ]
+    };
+  </script>
+
+  <link rel="stylesheet" href="/math-homework/assets/core-rich.css" />
+  <script defer src="/math-homework/assets/core-rich.js"></script>
+  <script defer src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+</head>
+<body>
+  <div id="hw-root">Loading…</div>
+</body>
+</html>

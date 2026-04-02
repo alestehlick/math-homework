@@ -1,0 +1,224 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Homework 4-8 (Algebra I)</title>
+
+  <script>
+    /* =========================
+       Homework 4-8 — Coin and Interest Word Problems (Algebra I)
+       Adapted for: /math-homework/assets/core-rich.js
+
+       REQUIRED SOURCE REFERENCES (your provided sets):
+       - Type A uses A. Exercises: #2, #3, #5, #6, #10
+       - Type B uses B. Exercises: #14, #15, #16, #17, #18
+       - Type C uses C. Exercises: #19, #20
+       - Model-reworked note: the source problems were reorganized into a sequence that
+         moves from coin-counting systems to simple-interest setups and comparisons.
+         Some items now ask for the correct equation or model instead of only the final numbers,
+         so students must attend to structure before calculation.
+
+       IMAGE NAMING RULE:
+       No figures are required for this homework.
+       ========================= */
+
+    window.homeworkData = {
+      classId : "Algebra1",
+      id      : "Homework 4-8",
+      title   : "Homework 4-8 — Coin and Interest Word Problems",
+      graphics : String.raw``,
+
+      answerKey : ["B","C","E","A","D","F","A","D","B","E","C","A"],
+
+      questions : [
+        {
+          stem: String.raw`
+            <p>Bill collected money from his newspaper customers using one-dollar bills, five-dollar bills, and ten-dollar bills.</p>
+            <p>He had <b>twice as many one-dollar bills as five-dollar bills</b> and <b>one less ten-dollar bill than five-dollar bills</b>. The total value was <b>$58</b>.</p>
+            <p>How many of each bill did he have?</p>
+          `,
+          choices: [
+            String.raw`4 one-dollar bills, 8 five-dollar bills, and 3 ten-dollar bills`,
+            String.raw`8 one-dollar bills, 4 five-dollar bills, and 3 ten-dollar bills`,
+            String.raw`8 one-dollar bills, 3 five-dollar bills, and 4 ten-dollar bills`,
+            String.raw`4 one-dollar bills, 3 five-dollar bills, and 8 ten-dollar bills`,
+            String.raw`6 one-dollar bills, 4 five-dollar bills, and 4 ten-dollar bills`,
+            String.raw`2 one-dollar bills, 8 five-dollar bills, and 4 ten-dollar bills`
+          ],
+          choiceWrap: false
+        },
+        {
+          stem: String.raw`
+            <p>Lynn has <b>$8.58</b> in quarters and pennies. She has <b>eight times as many pennies as quarters</b>.</p>
+            <p>How many of each coin does she have?</p>
+          `,
+          choices: [
+            String.raw`208 quarters and 26 pennies`,
+            String.raw`22 quarters and 286 pennies`,
+            String.raw`26 quarters and 208 pennies`,
+            String.raw`24 quarters and 258 pennies`,
+            String.raw`18 quarters and 144 pennies`,
+            String.raw`33 quarters and 264 pennies`
+          ],
+          choiceWrap: false
+        },
+        {
+          stem: String.raw`
+            <p>A bank teller knows that she received <b>34 dimes and nickels</b> from a customer. The total value was <b>$2.05</b>.</p>
+            <p>How many dimes and nickels did she receive?</p>
+          `,
+          choices: [
+            String.raw`5 dimes and 29 nickels`,
+            String.raw`10 dimes and 24 nickels`,
+            String.raw`14 dimes and 20 nickels`,
+            String.raw`27 dimes and 7 nickels`,
+            String.raw`7 dimes and 27 nickels`,
+            String.raw`11 dimes and 23 nickels`
+          ],
+          choiceWrap: false
+        },
+        {
+          stem: String.raw`
+            <p>In his pocket Chip has <b>4 more dimes than quarters</b>. The quarters and dimes total <b>$2.85</b>.</p>
+            <p>How many quarters and dimes does he have?</p>
+          `,
+          choices: [
+            String.raw`7 quarters and 11 dimes`,
+            String.raw`11 quarters and 7 dimes`,
+            String.raw`9 quarters and 13 dimes`,
+            String.raw`5 quarters and 9 dimes`,
+            String.raw`8 quarters and 12 dimes`,
+            String.raw`6 quarters and 10 dimes`
+          ],
+          choiceWrap: false
+        },
+        {
+          stem: String.raw`
+            <p>Josh has <b>seven times as many nickels as quarters</b>. If the coins total <b>$2.40</b>, how many of each coin does he have?</p>
+          `,
+          choices: [
+            String.raw`8 quarters and 14 nickels`,
+            String.raw`6 quarters and 21 nickels`,
+            String.raw`5 quarters and 35 nickels`,
+            String.raw`4 quarters and 28 nickels`,
+            String.raw`3 quarters and 21 nickels`,
+            String.raw`2 quarters and 14 nickels`
+          ],
+          choiceWrap: false
+        },
+        {
+          stem: String.raw`
+            <p>Ruth borrowed <b>$2000</b>, part at <b>6%</b> interest and part at <b>8%</b> interest, for a <b>6-month period</b>. She paid a combined total of <b>$68</b> in interest.</p>
+            <p>Let \(x\) be the amount borrowed at 6%. Which equation correctly models the situation?</p>
+          `,
+          choices: [
+            String.raw`\(.06x+.08(2000-x)=68\)`,
+            String.raw`\(.03x+.08(2000-x)=68\)`,
+            String.raw`\(.06x+.04(2000-x)=68\)`,
+            String.raw`\(.03x+.04(2000-x)=34\)`,
+            String.raw`\(.06x+.08(2000-x)=34\)`,
+            String.raw`\(.03x+.04(2000-x)=68\)`
+          ]
+        },
+        {
+          stem: String.raw`
+            <p>An investor has <b>$7500</b> invested at one rate and <b>$6200</b> invested at a rate <b>2% lower</b>. The combined annual interest is <b>$698</b>.</p>
+            <p>What are the two interest rates?</p>
+          `,
+          choices: [
+            String.raw`6% on $7500 and 4% on $6200`,
+            String.raw`7% on $7500 and 5% on $6200`,
+            String.raw`5% on $7500 and 3% on $6200`,
+            String.raw`8% on $7500 and 6% on $6200`,
+            String.raw`4% on $7500 and 2% on $6200`,
+            String.raw`6% on both investments`
+          ],
+          choiceWrap: false
+        },
+        {
+          stem: String.raw`
+            <p>The Grand Bank loaned out <b>$25,000</b> and also loaned another borrower <b>$50,000</b>. The second interest rate was <b>twice</b> the first. The combined annual interest received by the bank was <b>$7500</b>.</p>
+            <p>What were the two interest rates?</p>
+          `,
+          choices: [
+            String.raw`4% on $25,000 and 8% on $50,000`,
+            String.raw`5% on $25,000 and 10% on $50,000`,
+            String.raw`3% on $25,000 and 6% on $50,000`,
+            String.raw`6% on $25,000 and 12% on $50,000`,
+            String.raw`7% on $25,000 and 14% on $50,000`,
+            String.raw`6% on both loans`
+          ],
+          choiceWrap: false
+        },
+        {
+          stem: String.raw`
+            <p>The Halls borrowed <b>$1800</b> at <b>12%</b> and took out a second loan for <b>$2500</b> at <b>9%</b>. The time period for the second loan was <b>twice as long</b> as for the first, and the total interest for both combined was <b>$499.50</b>.</p>
+            <p>How long was each loan?</p>
+          `,
+          choices: [
+            String.raw`6 months for the first and 12 months for the second`,
+            String.raw`9 months for the first and 18 months for the second`,
+            String.raw`12 months for the first and 24 months for the second`,
+            String.raw`8 months for the first and 16 months for the second`,
+            String.raw`1 year for the first and 2 years for the second`,
+            String.raw`18 months for the first and 36 months for the second`
+          ],
+          choiceWrap: false
+        },
+        {
+          stem: String.raw`
+            <p>An investor placed money in a venture paying <b>7%</b> interest. If she had had <b>another $1500</b>, she would have been able to invest her money at <b>10%</b> and gain an <b>additional $255</b> in annual interest.</p>
+            <p>How much money did she originally invest?</p>
+          `,
+          choices: [
+            String.raw`$3000`,
+            String.raw`$3250`,
+            String.raw`$4000`,
+            String.raw`$4250`,
+            String.raw`$3500`,
+            String.raw`$5000`
+          ],
+          choiceWrap: false
+        },
+        {
+          stem: String.raw`
+            <p>A finance company offers <b>$7000</b> at <b>12%</b> or <b>$10,080</b> at <b>10%</b>. The time for the larger loan is <b>6 months less</b>, but the total interest is the same.</p>
+            <p>Let \(t\) be the time in years for the <b>$7000</b> loan. Which equation correctly models the situation?</p>
+          `,
+          choices: [
+            String.raw`\(7000(0.12)t=10080(0.10)(t+0.5)\)`,
+            String.raw`\(840t=1008t\)`,
+            String.raw`\(7000(0.12)t=10080(0.10)(t-0.5)\)`,
+            String.raw`\(7000(0.10)t=10080(0.12)(t-0.5)\)`,
+            String.raw`\(840(t-0.5)=1008t\)`,
+            String.raw`\(7000(12)t=10080(10)(t-6)\)`
+          ]
+        },
+        {
+          stem: String.raw`
+            <p>A buyer could finance a <b>new car</b> for <b>5 years at 7%</b> or a <b>used car costing $11,500 less</b> for <b>2 years at 11%</b>. The new-car loan would cost <b>$5130 more in interest</b> than the used-car loan.</p>
+            <p>What are the prices of the two cars?</p>
+          `,
+          choices: [
+            String.raw`New car: $20,000; used car: $8,500`,
+            String.raw`New car: $18,500; used car: $7,000`,
+            String.raw`New car: $22,000; used car: $10,500`,
+            String.raw`New car: $19,500; used car: $8,000`,
+            String.raw`New car: $21,500; used car: $10,000`,
+            String.raw`New car: $17,500; used car: $6,000`
+          ],
+          choiceWrap: false
+        }
+      ]
+    };
+  </script>
+
+  <link rel="stylesheet" href="/math-homework/assets/core-rich.css" />
+  <script defer src="/math-homework/assets/core-rich.js"></script>
+  <script defer src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+</head>
+<body>
+  <div id="hw-root">Loading…</div>
+</body>
+</html>

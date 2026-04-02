@@ -1,0 +1,205 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Homework 4-rev (Algebra II)</title>
+
+  <script>
+    /* =========================
+       Homework 4-rev — Quadratic Equations and Inequalities Review
+       Adapted for: /math-homework/assets/core-rich.js
+
+       REQUIRED SOURCE REFERENCES (your provided sets):
+       - Type A uses A. Exercises: #1, #6, #11, #15, #17, #18, #19, #20
+       - Type B uses B. Exercises: #21, #27
+       - Type C uses C. Exercises: #23, #24
+       - Model-reworked Q7 inspired by A #18: the garden-path diagram was converted into a fully verbal stem while preserving the same quadratic structure.
+       - Model-reworked Q10 inspired by C #23 and C #24: students identify the absolute-value form of a quadratic-inequality solution set, emphasizing interval structure.
+       - Model-authored Q11 inspired by A #20: replaces a full proof prompt with a conceptual question about the key structural step in deriving the quadratic formula.
+
+       IMAGE NAMING RULE (STRICT):
+       No figure files are required for this homework.
+       Any figure used would be referenced by the ORIGINAL problem number from the source set
+       and placed in the SAME folder as this HTML.
+       ========================= */
+
+    window.homeworkData = {
+      classId : "Algebra2",
+      id      : "Homework 4-rev",
+      title   : "Homework 4-rev — Quadratic Review",
+      graphics : String.raw``,
+      answerKey : ["B","E","C","C","F","B","B","A","D","B","A","C"],
+      questions : [
+        {
+          stem: String.raw`
+            <p>Solve the quadratic equation \(x^2-4x-32=0\).</p>
+          `,
+          choices: [
+            String.raw`\(x=-8\) or \(x=4\)` ,
+            String.raw`\(x=-4\) or \(x=8\)` ,
+            String.raw`\(x=-2\) or \(x=16\)` ,
+            String.raw`\(x=4\) or \(x=8\)` ,
+            String.raw`\(x=-8\) or \(x=-4\)` ,
+            String.raw`\(x=2\) or \(x=-16\)`
+          ]
+        },
+        {
+          stem: String.raw`
+            <p>When solving \(x^2+12x=-32\) by completing the square, what number must be added to both sides?</p>
+          `,
+          choices: [
+            String.raw`\(6\)` ,
+            String.raw`\(12\)` ,
+            String.raw`\(18\)` ,
+            String.raw`\(24\)` ,
+            String.raw`\(36\)` ,
+            String.raw`\(144\)`
+          ]
+        },
+        {
+          stem: String.raw`
+            <p>Use the quadratic formula to solve \(5a^2+8a-6=0\). Give the exact solutions.</p>
+          `,
+          choices: [
+            String.raw`\(a=\dfrac{4\pm\sqrt{46}}{5}\)` ,
+            String.raw`\(a=\dfrac{-4\pm\sqrt{46}}{10}\)` ,
+            String.raw`\(a=\dfrac{-4\pm\sqrt{46}}{5}\)` ,
+            String.raw`\(a=\dfrac{4\pm\sqrt{46}}{10}\)` ,
+            String.raw`\(a=\dfrac{-8\pm\sqrt{46}}{5}\)` ,
+            String.raw`\(a=\dfrac{-4\pm2\sqrt{46}}{5}\)`
+          ]
+        },
+        {
+          stem: String.raw`
+            <p>Without solving the equation, determine the number and nature of the solutions of \(3x^2-11x-42=0\).</p>
+          `,
+          choiceWrap: false,
+          choices: [
+            String.raw`one real repeated solution`,
+            String.raw`two real irrational solutions`,
+            String.raw`two real rational solutions`,
+            String.raw`two nonreal complex solutions`,
+            String.raw`infinitely many solutions`,
+            String.raw`no solution`
+          ]
+        },
+        {
+          stem: String.raw`
+            <p>Which method is the most direct way to solve \(4x^2=12\)?</p>
+          `,
+          choiceWrap: false,
+          choices: [
+            String.raw`factoring`,
+            String.raw`completing the square`,
+            String.raw`quadratic formula`,
+            String.raw`graphing`,
+            String.raw`using the discriminant`,
+            String.raw`square-root method`
+          ]
+        },
+        {
+          stem: String.raw`
+            <p>Find the positive consecutive even integers whose product is \(728\).</p>
+          `,
+          choices: [
+            String.raw`\(24\) and \(26\)` ,
+            String.raw`\(26\) and \(28\)` ,
+            String.raw`\(18\) and \(20\)` ,
+            String.raw`\(28\) and \(30\)` ,
+            String.raw`\(22\) and \(34\)` ,
+            String.raw`\(14\) and \(52\)`
+          ]
+        },
+        {
+          stem: String.raw`
+            <p>A rectangular garden measures \(120\) ft by \(180\) ft. Two perpendicular paths of equal width \(x\) run all the way across the garden, one parallel to each side, and they cross in the middle. If \(19{,}836\) square feet is left for flowers, what is the width of each path?</p>
+          `,
+          choiceWrap: false,
+          choices: [
+            String.raw`3 ft`,
+            String.raw`6 ft`,
+            String.raw`9 ft`,
+            String.raw`12 ft`,
+            String.raw`18 ft`,
+            String.raw`24 ft`
+          ]
+        },
+        {
+          stem: String.raw`
+            <p>The sides of a right triangle are three consecutive even integers. What are the side lengths?</p>
+          `,
+          choices: [
+            String.raw`\(6,\ 8,\ 10\)` ,
+            String.raw`\(4,\ 6,\ 8\)` ,
+            String.raw`\(8,\ 10,\ 12\)` ,
+            String.raw`\(10,\ 12,\ 14\)` ,
+            String.raw`\(12,\ 14,\ 16\)` ,
+            String.raw`\(2,\ 4,\ 6\)`
+          ]
+        },
+        {
+          stem: String.raw`
+            <p>Solve the quadratic inequality \(x^2-6x-27&gt;0\).</p>
+          `,
+          choices: [
+            String.raw`\(-3&lt;x&lt;9\)` ,
+            String.raw`\(x\le -3\) or \(x\ge 9\)` ,
+            String.raw`\(x&lt;-3\) or \(x\ge 9\)` ,
+            String.raw`\(x&lt;-3\) or \(x&gt;9\)` ,
+            String.raw`\(x\le -3\) or \(x&gt;9\)` ,
+            String.raw`\(-9&lt;x&lt;3\)`
+          ]
+        },
+        {
+          stem: String.raw`
+            <p>Which absolute-value inequality is equivalent to the solution set of \(2x^2+9x-18\le 0\)?</p>
+          `,
+          choices: [
+            String.raw`\(\left|x-\dfrac{9}{4}\right|\le\dfrac{15}{4}\)` ,
+            String.raw`\(\left|x+\dfrac{9}{4}\right|\le\dfrac{15}{4}\)` ,
+            String.raw`\(\left|x+\dfrac{9}{4}\right|&lt;\dfrac{15}{4}\)` ,
+            String.raw`\(\left|x-\dfrac{9}{4}\right|&lt;\dfrac{15}{4}\)` ,
+            String.raw`\(\left|x+\dfrac{15}{4}\right|\le\dfrac{9}{4}\)` ,
+            String.raw`\(\left|2x+9\right|\le 15\)`
+          ]
+        },
+        {
+          stem: String.raw`
+            <p>In the usual derivation of the quadratic formula from \(ax^2+bx+c=0\), why is it important to divide by \(a\) near the beginning?</p>
+          `,
+          choiceWrap: false,
+          choices: [
+            String.raw`It makes the coefficient of the squared term equal to 1, so completing the square works cleanly.`,
+            String.raw`It guarantees the equation will have real solutions.`,
+            String.raw`It removes the constant term completely.`,
+            String.raw`It changes the equation into factored form.`,
+            String.raw`It makes the discriminant positive.`,
+            String.raw`It proves that every quadratic has two different roots.`
+          ]
+        },
+        {
+          stem: String.raw`
+            <p>Which absolute-value inequality is equivalent to \(x^2-21&lt;4x\)?</p>
+          `,
+          choices: [
+            String.raw`\(\lvert x+2\rvert&lt;5\)` ,
+            String.raw`\(\lvert x-2\rvert\le 5\)` ,
+            String.raw`\(\lvert x-2\rvert&lt;5\)` ,
+            String.raw`\(\lvert x+2\rvert\le 5\)` ,
+            String.raw`\(\lvert x-5\rvert&lt;2\)` ,
+            String.raw`\(\lvert x-2\rvert&gt;5\)`
+          ]
+        }
+      ]
+    };
+  </script>
+
+  <link rel="stylesheet" href="/math-homework/assets/core-rich.css" />
+  <script defer src="/math-homework/assets/core-rich.js"></script>
+  <script defer src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+</head>
+<body>
+  <div id="hw-root">Loading…</div>
+</body>
+</html>

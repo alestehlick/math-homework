@@ -1,0 +1,215 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Homework 4-4 (Algebra I)</title>
+
+  <script>
+    /* =========================
+       Homework 4-4 — Solving Equations, Setting Up Equations, and Rational Numbers (Algebra I)
+       Adapted for: /math-homework/assets/core-rich.js
+
+       REQUIRED SOURCE REFERENCES (your provided sets):
+       - Type A uses A. Exercises: #2, #4, #7, #11, #16
+       - Type B uses B. Exercises: #18, #21, #24, #25, #27
+       - Type C uses C. Exercises: #30, #32
+       - Model-reworked note: the source set mixes direct equation solving,
+         equation setup from word problems, terminating/repeating decimals,
+         and literal equations. These were reorganized into a coherent sequence
+         while preserving the same skills and level.
+
+       IMAGE NAMING RULE:
+       No figures are required for this homework.
+       ========================= */
+
+    window.homeworkData = {
+      classId : "Algebra1",
+      id      : "Homework 4-4",
+      title   : "Homework 4-4 — Solving Equations, Equation Setup, and Rational Numbers",
+      graphics : String.raw``,
+
+      answerKey : ["C","A","E","B","D","F","B","C","A","D","E","B"],
+
+      questions : [
+        {
+          stem: String.raw`
+            <p>Solve for <b>\(x\)</b>:</p>
+            <p class="math">\(\,3x+(2+4x)=23\)</p>
+          `,
+          choices: [
+            String.raw`\(\,2\)`,
+            String.raw`\(\,4\)`,
+            String.raw`\(\,3\)`,
+            String.raw`\(-3\)`,
+            String.raw`\(\,\dfrac{21}{7}\)`,
+            String.raw`\(\,5\)`
+          ]
+        },
+        {
+          stem: String.raw`
+            <p>Solve for <b>\(x\)</b>:</p>
+            <p class="math">\(\,5x-(3+2x)=9\)</p>
+          `,
+          choices: [
+            String.raw`\(\,4\)`,
+            String.raw`\(\,2\)`,
+            String.raw`\(-4\)`,
+            String.raw`\(\,6\)`,
+            String.raw`\(\,1\)`,
+            String.raw`\(-2\)`
+          ]
+        },
+        {
+          stem: String.raw`
+            <p>Solve for <b>\(x\)</b>:</p>
+            <p class="math">\(\,3x-4(x+5)=-17\)</p>
+          `,
+          choices: [
+            String.raw`\(\,3\)`,
+            String.raw`\(-17\)`,
+            String.raw`\(-37\)`,
+            String.raw`\(-\dfrac{17}{4}\)`,
+            String.raw`\(-3\)`,
+            String.raw`\(\,37\)`
+          ]
+        },
+        {
+          stem: String.raw`
+            <p>Solve for <b>\(x\)</b>:</p>
+            <p class="math">\(\,2x-4(x-3)=26\)</p>
+          `,
+          choices: [
+            String.raw`\(\,7\)`,
+            String.raw`\(-7\)`,
+            String.raw`\(-19\)`,
+            String.raw`\(\,19\)`,
+            String.raw`\(\,13\)`,
+            String.raw`\(-13\)`
+          ]
+        },
+        {
+          stem: String.raw`
+            <p>Solve for <b>\(x\)</b>:</p>
+            <p class="math">\(\,3.2x+4(x+0.7)=38.8\)</p>
+          `,
+          choices: [
+            String.raw`\(\,4\)`,
+            String.raw`\(\,4.5\)`,
+            String.raw`\(\,6\)`,
+            String.raw`\(\,5.5\)`,
+            String.raw`\(\,5\)`,
+            String.raw`\(\,7.2\)`
+          ]
+        },
+        {
+          stem: String.raw`
+            <p>Solve the literal equation for <b>\(x\)</b>:</p>
+            <p class="math">\(\,3x-(x+n)=m\)</p>
+          `,
+          choices: [
+            String.raw`\(\,x=m+n\)`,
+            String.raw`\(\,x=\dfrac{m-n}{2}\)`,
+            String.raw`\(\,x=\dfrac{m}{2}+n\)`,
+            String.raw`\(\,x=\dfrac{m+n}{3}\)`,
+            String.raw`\(\,x=\dfrac{n-m}{2}\)`,
+            String.raw`\(\,x=\dfrac{m+n}{2}\)`
+          ]
+        },
+        {
+          stem: String.raw`
+            <p>In the freshman class there are 11 more girls than boys, and there are 63 students altogether.</p>
+            <p>How many boys and girls are in the class?</p>
+          `,
+          choices: [
+            String.raw`25 boys and 38 girls`,
+            String.raw`26 boys and 37 girls`,
+            String.raw`27 boys and 36 girls`,
+            String.raw`31 boys and 32 girls`,
+            String.raw`24 boys and 39 girls`,
+            String.raw`28 boys and 35 girls`
+          ],
+          choiceWrap: false
+        },
+        {
+          stem: String.raw`
+            <p>The difference of two numbers is 12, and their sum is 40.</p>
+            <p>Which pair of numbers fits the description?</p>
+          `,
+          choices: [
+            String.raw`18 and 22`,
+            String.raw`12 and 28`,
+            String.raw`14 and 26`,
+            String.raw`10 and 30`,
+            String.raw`16 and 24`,
+            String.raw`8 and 32`
+          ],
+          choiceWrap: false
+        },
+        {
+          stem: String.raw`
+            <p>Stan wants to make a rectangular garden. He has 34 feet of fencing for the perimeter, and the length is 5 feet more than the width.</p>
+            <p>What are the dimensions of the garden?</p>
+          `,
+          choices: [
+            String.raw`width \(=6\) ft, length \(=11\) ft`,
+            String.raw`width \(=7\) ft, length \(=12\) ft`,
+            String.raw`width \(=5\) ft, length \(=10\) ft`,
+            String.raw`width \(=8\) ft, length \(=13\) ft`,
+            String.raw`width \(=4.5\) ft, length \(=9.5\) ft`,
+            String.raw`width \(=9\) ft, length \(=14\) ft`
+          ],
+          choiceWrap: false
+        },
+        {
+          stem: String.raw`
+            <p>Convert the fraction <b>\(\dfrac{371}{99}\)</b> to decimal form.</p>
+          `,
+          choices: [
+            String.raw`\(3.171717\ldots\)`,
+            String.raw`\(3.7373\ldots\)`,
+            String.raw`\(3.741414\ldots\)`,
+            String.raw`\(3.747474\ldots\)`,
+            String.raw`\(37.47474\ldots\)`,
+            String.raw`\(3.074747\ldots\)`
+          ]
+        },
+        {
+          stem: String.raw`
+            <p>Write the repeating decimal <b>\(0.151515\ldots\)</b> as a reduced fraction.</p>
+          `,
+          choices: [
+            String.raw`\(\dfrac{15}{100}\)`,
+            String.raw`\(\dfrac{15}{99}\)`,
+            String.raw`\(\dfrac{3}{22}\)`,
+            String.raw`\(\dfrac{10}{66}\)`,
+            String.raw`\(\dfrac{5}{33}\)`,
+            String.raw`\(\dfrac{1}{6}\)`
+          ]
+        },
+        {
+          stem: String.raw`
+            <p>Write the repeating decimal <b>\(0.63\overline{81}\)</b> as a reduced fraction.</p>
+            <p>That is, the decimal is \(0.6381818\ldots\).</p>
+          `,
+          choices: [
+            String.raw`\(\dfrac{319}{500}\)`,
+            String.raw`\(\dfrac{351}{550}\)`,
+            String.raw`\(\dfrac{63}{99}\)`,
+            String.raw`\(\dfrac{351}{500}\)`,
+            String.raw`\(\dfrac{6381}{9999}\)`,
+            String.raw`\(\dfrac{81}{127}\)`
+          ]
+        }
+      ]
+    };
+  </script>
+
+  <link rel="stylesheet" href="/math-homework/assets/core-rich.css" />
+  <script defer src="/math-homework/assets/core-rich.js"></script>
+  <script defer src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+</head>
+<body>
+  <div id="hw-root">Loading…</div>
+</body>
+</html>

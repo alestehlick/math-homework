@@ -1,0 +1,215 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Homework 4-5 (Algebra I)</title>
+
+  <script>
+    /* =========================
+       Homework 4-5 — Multi-Step Equations and Equation Setup (Algebra I)
+       Adapted for: /math-homework/assets/core-rich.js
+
+       REQUIRED SOURCE REFERENCES (your provided sets):
+       - Type A uses A. Exercises: #2, #3, #7, #9, #12
+       - Type B uses B. Exercises: #16, #19, #21, #26, #28
+       - Type C uses C. Exercises: #29, #30
+       - Model-reworked note: the source mixes direct equation solving, literal equations,
+         and word problems. The final sequence was reorganized so students move from
+         symbolic solving to equation setup and interpretation in context.
+
+       IMAGE NAMING RULE:
+       No figures are required for this homework.
+       ========================= */
+
+    window.homeworkData = {
+      classId : "Algebra1",
+      id      : "Homework 4-5",
+      title   : "Homework 4-5 — Multi-Step Equations and Equation Setup",
+      graphics : String.raw``,
+
+      answerKey : ["B","C","E","A","D","F","B","C","A","E","D","B"],
+
+      questions : [
+        {
+          stem: String.raw`
+            <p>Solve for <b>\(x\)</b>:</p>
+            <p class="math">\(\,7x-20=2x+25\)</p>
+          `,
+          choices: [
+            String.raw`\(\,5\)`,
+            String.raw`\(\,9\)`,
+            String.raw`\(-9\)`,
+            String.raw`\(\,45\)`,
+            String.raw`\(\,13\)`,
+            String.raw`\(-5\)`
+          ]
+        },
+        {
+          stem: String.raw`
+            <p>Solve for <b>\(x\)</b>:</p>
+            <p class="math">\(\,3(x+1)=8x-12\)</p>
+          `,
+          choices: [
+            String.raw`\(-3\)`,
+            String.raw`\(\,5\)`,
+            String.raw`\(\,3\)`,
+            String.raw`\(-5\)`,
+            String.raw`\(\,15\)`,
+            String.raw`\(\,\dfrac35\)`
+          ]
+        },
+        {
+          stem: String.raw`
+            <p>Solve for <b>\(x\)</b>:</p>
+            <p class="math">\(\,4(x-9)=3x-8x\)</p>
+          `,
+          choices: [
+            String.raw`\(-4\)`,
+            String.raw`\(\,9\)`,
+            String.raw`\(-9\)`,
+            String.raw`\(\,36\)`,
+            String.raw`\(\,4\)`,
+            String.raw`\(-36\)`
+          ]
+        },
+        {
+          stem: String.raw`
+            <p>Solve for <b>\(b\)</b>:</p>
+            <p class="math">\(\,82b-3b+7=71b+19\)</p>
+          `,
+          choices: [
+            String.raw`\(\,\dfrac32\)`,
+            String.raw`\(-\dfrac32\)`,
+            String.raw`\(\,\dfrac23\)`,
+            String.raw`\(\,12\)`,
+            String.raw`\(\,8\)`,
+            String.raw`\(\,\dfrac{19}{7}\)`
+          ]
+        },
+        {
+          stem: String.raw`
+            <p>Solve for <b>\(y\)</b>:</p>
+            <p class="math">\(\,y+9=2y-4\)</p>
+          `,
+          choices: [
+            String.raw`\(-13\)`,
+            String.raw`\(\,5\)`,
+            String.raw`\(-5\)`,
+            String.raw`\(\,13\)`,
+            String.raw`\(\,4\)`,
+            String.raw`\(\,9\)`
+          ]
+        },
+        {
+          stem: String.raw`
+            <p>Solve the equation:</p>
+            <p class="math">\(\,4(m-6)-m(3+4)=8m-2\)</p>
+          `,
+          choices: [
+            String.raw`\(\,2\)`,
+            String.raw`\(-22\)`,
+            String.raw`\(-\dfrac{2}{11}\)`,
+            String.raw`\(\,22\)`,
+            String.raw`\(-3\)`,
+            String.raw`\(-2\)`
+          ]
+        },
+        {
+          stem: String.raw`
+            <p>Solve the equation:</p>
+            <p class="math">\(\,0.25z-3.09=0.75z+8\)</p>
+          `,
+          choices: [
+            String.raw`\(-11.09\)`,
+            String.raw`\(-22.18\)`,
+            String.raw`\(\,22.18\)`,
+            String.raw`\(-5.545\)`,
+            String.raw`\(\,11.09\)`,
+            String.raw`\(-16\)`
+          ]
+        },
+        {
+          stem: String.raw`
+            <p>Solve the literal equation for <b>\(x\)</b>:</p>
+            <p class="math">\(\,mx+n=2mx-n\)</p>
+          `,
+          choices: [
+            String.raw`\(\,x=\dfrac{n}{m}\)`,
+            String.raw`\(\,x=\dfrac{m}{2n}\)`,
+            String.raw`\(\,x=\dfrac{2n}{m}\)`,
+            String.raw`\(\,x=\dfrac{m+n}{2}\)`,
+            String.raw`\(\,x=2mn\)`,
+            String.raw`\(\,x=\dfrac{2m}{n}\)`
+          ]
+        },
+        {
+          stem: String.raw`
+            <p>Eight times a number equals the number increased by 504.</p>
+            <p>What is the number?</p>
+          `,
+          choices: [
+            String.raw`\(\,72\)`,
+            String.raw`\(\,63\)`,
+            String.raw`\(\,84\)`,
+            String.raw`\(\,56\)`,
+            String.raw`\(\,504\)`,
+            String.raw`\(\,36\)`
+          ]
+        },
+        {
+          stem: String.raw`
+            <p>If 3 is subtracted from twice a number, the result is equal to 31 more than three times the number.</p>
+            <p>What is the number?</p>
+          `,
+          choices: [
+            String.raw`\(\,34\)`,
+            String.raw`\(-31\)`,
+            String.raw`\(-28\)`,
+            String.raw`\(\,28\)`,
+            String.raw`\(-34\)`,
+            String.raw`\(\,31\)`
+          ]
+        },
+        {
+          stem: String.raw`
+            <p>The length of a rectangle is three times the width. The perimeter of the rectangle equals the perimeter of a triangle that has one side equal to the length of the rectangle, and the other two sides of the triangle sum to 85.</p>
+            <p>What are the width and length of the rectangle?</p>
+          `,
+          choices: [
+            String.raw`width \(=15\), length \(=45\)`,
+            String.raw`width \(=18\), length \(=54\)`,
+            String.raw`width \(=20\), length \(=60\)`,
+            String.raw`width \(=17\), length \(=51\)`,
+            String.raw`width \(=16\), length \(=48\)`,
+            String.raw`width \(=21\), length \(=63\)`
+          ],
+          choiceWrap: false
+        },
+        {
+          stem: String.raw`
+            <p>Find two consecutive even integers such that four times the smaller is equal to four more than three times the larger.</p>
+            <p>Which pair works?</p>
+          `,
+          choices: [
+            String.raw`\(\,8\) and \(\,10\)`,
+            String.raw`\(\,10\) and \(\,12\)`,
+            String.raw`\(\,12\) and \(\,14\)`,
+            String.raw`\(\,6\) and \(\,8\)`,
+            String.raw`\(-10\) and \(-8\)`,
+            String.raw`\(\,14\) and \(\,16\)`
+          ],
+          choiceWrap: false
+        }
+      ]
+    };
+  </script>
+
+  <link rel="stylesheet" href="/math-homework/assets/core-rich.css" />
+  <script defer src="/math-homework/assets/core-rich.js"></script>
+  <script defer src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+</head>
+<body>
+  <div id="hw-root">Loading…</div>
+</body>
+</html>

@@ -1,0 +1,210 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Homework 4-6 (Algebra I)</title>
+
+  <script>
+    /* =========================
+       Homework 4-6 — Absolute Value Equations (Algebra I)
+       Adapted for: /math-homework/assets/core-rich.js
+
+       REQUIRED SOURCE REFERENCES (your provided sets):
+       - Type A uses A. Exercises: #1, #2, #3, #5, #10
+       - Type B uses B. Exercises: #12, #13, #15, #16, #17
+       - Type C uses C. Exercises: #18, #20
+       - Model-reworked note: the graphing prompts in A #1 and A #2 were converted
+         into multiple-choice questions about which points should appear on the number line.
+
+       IMAGE NAMING RULE:
+       No figures are required for this homework.
+       ========================= */
+
+    window.homeworkData = {
+      classId : "Algebra1",
+      id      : "Homework 4-6",
+      title   : "Homework 4-6 — Absolute Value Equations",
+      graphics : String.raw``,
+
+      answerKey : ["A","D","B","E","C","F","A","C","E","B","D","F"],
+
+      questions : [
+        {
+          stem: String.raw`
+            <p>To graph the solution of the equation <b>\(x=\pm 5\)</b> on a number line, which points should be marked?</p>
+          `,
+          choices: [
+            String.raw`\(-5\) and \(5\)`,
+            String.raw`\(-5\) only`,
+            String.raw`\(\,5\) only`,
+            String.raw`\(-10\) and \(10\)`,
+            String.raw`\(-5\) and \(0\)`,
+            String.raw`\(\,0\) and \(5\)`
+          ]
+        },
+        {
+          stem: String.raw`
+            <p>To graph the solution of the equation <b>\(x=3\text{ or }x=12\)</b> on a number line, which points should be marked?</p>
+          `,
+          choices: [
+            String.raw`\(\,3\) only`,
+            String.raw`\(\,12\) only`,
+            String.raw`\(-3\) and \(12\)`,
+            String.raw`\(\,3\) and \(12\)`,
+            String.raw`\(-12\) and \(\,3\)`,
+            String.raw`\(\,9\) and \(15\)`
+          ]
+        },
+        {
+          stem: String.raw`
+            <p>Solve the equation:</p>
+            <p class="math">\(\,|x+5|=7\)</p>
+          `,
+          choices: [
+            String.raw`\(\{-7,\,5\}\)`,
+            String.raw`\(\{-12,\,2\}\)`,
+            String.raw`\(\{-2,\,12\}\)`,
+            String.raw`\(\{-7,\,2\}\)`,
+            String.raw`\(\{5,\,7\}\)`,
+            String.raw`\(\{-5,\,7\}\)`
+          ]
+        },
+        {
+          stem: String.raw`
+            <p>Solve the equation:</p>
+            <p class="math">\(\,|x+1|+2=8\)</p>
+          `,
+          choices: [
+            String.raw`\(\{-1,\,6\}\)`,
+            String.raw`\(\{-5,\,7\}\)`,
+            String.raw`\(\{-6,\,7\}\)`,
+            String.raw`\(\{-8,\,4\}\)`,
+            String.raw`\(\{-7,\,5\}\)`,
+            String.raw`\(\{-1,\,8\}\)`
+          ]
+        },
+        {
+          stem: String.raw`
+            <p>Solve the equation:</p>
+            <p class="math">\(\,3z+4-|z|=16\)</p>
+          `,
+          choices: [
+            String.raw`\(\,z=-6\)`,
+            String.raw`\(\,z=3\)`,
+            String.raw`\(\,z=6\)`,
+            String.raw`\(\,z=-3\)`,
+            String.raw`\(\,z=4\)`,
+            String.raw`\(\,z=\pm 6\)`
+          ]
+        },
+        {
+          stem: String.raw`
+            <p>Solve the equation:</p>
+            <p class="math">\(\,|2x-3|=2\)</p>
+          `,
+          choices: [
+            String.raw`\(\left\{-\dfrac12,\,\dfrac52\right\}\)`,
+            String.raw`\(\left\{\dfrac12,\,\dfrac32\right\}\)`,
+            String.raw`\(\left\{-\dfrac12,\,\dfrac12\right\}\)`,
+            String.raw`\(\left\{-\dfrac52,\,\dfrac12\right\}\)`,
+            String.raw`\(\left\{\dfrac32,\,\dfrac52\right\}\)`,
+            String.raw`\(\left\{\dfrac12,\,\dfrac52\right\}\)`
+          ]
+        },
+        {
+          stem: String.raw`
+            <p>Solve the equation:</p>
+            <p class="math">\(\,|5y+12|=24\)</p>
+          `,
+          choices: [
+            String.raw`\left\{-\dfrac{36}{5},\,\dfrac{12}{5}\right\}`,
+            String.raw`\left\{-\dfrac{12}{5},\,\dfrac{36}{5}\right\}`,
+            String.raw`\left\{-\dfrac{24}{5},\,\dfrac{12}{5}\right\}`,
+            String.raw`\left\{-\dfrac{36}{5},\,\dfrac{24}{5}\right\}`,
+            String.raw`\left\{-\dfrac{12}{5},\,\dfrac{24}{5}\right\}`,
+            String.raw`\left\{-\dfrac{36}{5},\,\dfrac{36}{5}\right\}`
+          ]
+        },
+        {
+          stem: String.raw`
+            <p>Solve the equation:</p>
+            <p class="math">\(\,19=|12x-5|\)</p>
+          `,
+          choices: [
+            String.raw`\left\{-2,\,2\right\}`,
+            String.raw`\left\{-\dfrac76,\,\dfrac76\right\}`,
+            String.raw`\left\{-\dfrac76,\,2\right\}`,
+            String.raw`\left\{-2,\,\dfrac76\right\}`,
+            String.raw`\left\{\dfrac76,\,2\right\}`,
+            String.raw`\left\{-\dfrac{19}{12},\,2\right\}`
+          ]
+        },
+        {
+          stem: String.raw`
+            <p>Solve the equation:</p>
+            <p class="math">\(\,|7x-4|=9\)</p>
+          `,
+          choices: [
+            String.raw`\left\{-\dfrac97,\,\dfrac97\right\}`,
+            String.raw`\left\{-\dfrac57,\,\dfrac57\right\}`,
+            String.raw`\left\{-\dfrac{13}{7},\,\dfrac57\right\}`,
+            String.raw`\left\{\dfrac57,\,\dfrac{13}{7}\right\}`,
+            String.raw`\left\{-\dfrac57,\,\dfrac{13}{7}\right\}`,
+            String.raw`\left\{-\dfrac47,\,\dfrac97\right\}`
+          ]
+        },
+        {
+          stem: String.raw`
+            <p>Solve the equation:</p>
+            <p class="math">\(\,|3z-10+4z|=18\)</p>
+          `,
+          choices: [
+            String.raw`\left\{-\dfrac87,\,\dfrac87\right\}`,
+            String.raw`\left\{-\dfrac87,\,4\right\}`,
+            String.raw`\left\{-4,\,\dfrac87\right\}`,
+            String.raw`\left\{-4,\,4\right\}`,
+            String.raw`\left\{\dfrac87,\,4\right\}`,
+            String.raw`\left\{-\dfrac{10}{7},\,4\right\}`
+          ]
+        },
+        {
+          stem: String.raw`
+            <p>Solve the equation:</p>
+            <p class="math">\(\,26=|3y+4-6y|\)</p>
+          `,
+          choices: [
+            String.raw`\left\{-10,\,\dfrac{22}{3}\right\}`,
+            String.raw`\left\{-\dfrac{10}{3},\,22\right\}`,
+            String.raw`\left\{-\dfrac{22}{3},\,\dfrac{10}{3}\right\}`,
+            String.raw`\left\{-\dfrac{22}{3},\,10\right\}`,
+            String.raw`\left\{-10,\,\dfrac{22}{3}\right\}`,
+            String.raw`\left\{\dfrac{22}{3},\,10\right\}`
+          ]
+        },
+        {
+          stem: String.raw`
+            <p>Solve the equation:</p>
+            <p class="math">\(\,172=|12x-5|+82\)</p>
+          `,
+          choices: [
+            String.raw`\left\{-\dfrac{95}{12},\,\dfrac{85}{12}\right\}`,
+            String.raw`\left\{-\dfrac{85}{12},\,\dfrac{85}{12}\right\}`,
+            String.raw`\left\{-\dfrac{95}{12},\,\dfrac{95}{12}\right\}`,
+            String.raw`\left\{-\dfrac{85}{12},\,\dfrac{75}{12}\right\}`,
+            String.raw`\left\{-\dfrac{75}{12},\,\dfrac{95}{12}\right\}`,
+            String.raw`\left\{-\dfrac{85}{12},\,\dfrac{95}{12}\right\}`
+          ]
+        }
+      ]
+    };
+  </script>
+
+  <link rel="stylesheet" href="/math-homework/assets/core-rich.css" />
+  <script defer src="/math-homework/assets/core-rich.js"></script>
+  <script defer src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+</head>
+<body>
+  <div id="hw-root">Loading…</div>
+</body>
+</html>

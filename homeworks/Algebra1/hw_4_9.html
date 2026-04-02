@@ -1,0 +1,222 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Homework 4-9 (Algebra I)</title>
+
+  <script>
+    /* =========================
+       Homework 4-9 — Rate, Distance, and Formula Problems (Algebra I)
+       Adapted for: /math-homework/assets/core-rich.js
+
+       REQUIRED SOURCE REFERENCES (your provided sets):
+       - Type A uses A. Exercises: #1, #2, #9, #11, #14
+       - Type B uses B. Exercises: #16, #17, #18, #20, #23
+       - Type C uses C. Exercises: #26, #27
+       - Model-reworked note: the source mixes table-completion items with many
+         word problems. The final set was reorganized into a progression from
+         direct formula use to relative-rate problems and then mixed travel problems.
+
+       IMAGE NAMING RULE:
+       No figures are required for this homework.
+       ========================= */
+
+    window.homeworkData = {
+      classId : "Algebra1",
+      id      : "Homework 4-9",
+      title   : "Homework 4-9 — Rate, Distance, and Formula Problems",
+      graphics : String.raw``,
+
+      answerKey : ["C","A","E","B","D","F","C","A","E","B","D","F"],
+
+      questions : [
+        {
+          stem: String.raw`
+            <p>Use the formula <b>\(d=rt\)</b>.</p>
+            <p>If <b>\(r=3\)</b> and <b>\(t=18\)</b>, what is the value of <b>\(d\)</b>?</p>
+          `,
+          choices: [
+            String.raw`\(\,21\)`,
+            String.raw`\(\,6\)`,
+            String.raw`\(\,54\)`,
+            String.raw`\(\,15\)`,
+            String.raw`\(\,36\)`,
+            String.raw`\(\,72\)`
+          ]
+        },
+        {
+          stem: String.raw`
+            <p>Use the formula <b>\(d=rt\)</b>.</p>
+            <p>If <b>\(t=2\)</b> and <b>\(d=132\)</b>, what is the value of <b>\(r\)</b>?</p>
+          `,
+          choices: [
+            String.raw`\(\,66\)`,
+            String.raw`\(\,130\)`,
+            String.raw`\(\,264\)`,
+            String.raw`\(\,134\)`,
+            String.raw`\(\,64\)`,
+            String.raw`\(\,33\)`
+          ]
+        },
+        {
+          stem: String.raw`
+            <p>Use the formula <b>\(d=rt\)</b>.</p>
+            <p>If <b>\(r=a\)</b> and <b>\(t=7b\)</b>, which expression gives <b>\(d\)</b>?</p>
+          `,
+          choices: [
+            String.raw`\(\,a+7b\)`,
+            String.raw`\(\,7(a+b)\)`,
+            String.raw`\(\,\dfrac{a}{7b}\)`,
+            String.raw`\(\,7a+b\)`,
+            String.raw`\(\,7ab\)`,
+            String.raw`\(\,\dfrac{7b}{a}\)`
+          ]
+        },
+        {
+          stem: String.raw`
+            <p>Andy won a race by sailing at <b>20 mph</b> for <b>\(6\dfrac14\)</b> hours.</p>
+            <p>How far did he sail?</p>
+          `,
+          choices: [
+            String.raw`100 miles`,
+            String.raw`125 miles`,
+            String.raw`130 miles`,
+            String.raw`156.25 miles`,
+            String.raw`26.25 miles`,
+            String.raw`312.5 miles`
+          ],
+          choiceWrap: false
+        },
+        {
+          stem: String.raw`
+            <p>Sue leaves Lewiston for Clarksville, which is <b>388 miles</b> away, and drives <b>52 mph</b>. Monica leaves Clarksville for Lewiston at the same time and drives <b>45 mph</b>.</p>
+            <p>How long will it take them to meet?</p>
+          `,
+          choices: [
+            String.raw`3 hours`,
+            String.raw`3.5 hours`,
+            String.raw`4.5 hours`,
+            String.raw`4 hours`,
+            String.raw`4.25 hours`,
+            String.raw`97 hours`
+          ],
+          choiceWrap: false
+        },
+        {
+          stem: String.raw`
+            <p>Brandon and Shanda walk to Grandma’s house at <b>4 mph</b>. They ride their bicycles back home over the same route at <b>8 mph</b>. The total travel time is <b>12 hours</b>.</p>
+            <p>How much longer does the walk take than the bicycle ride?</p>
+          `,
+          choices: [
+            String.raw`2 hours`,
+            String.raw`3 hours`,
+            String.raw`6 hours`,
+            String.raw`8 hours`,
+            String.raw`1 hour`,
+            String.raw`4 hours`
+          ],
+          choiceWrap: false
+        },
+        {
+          stem: String.raw`
+            <p>Steve rides his bicycle at <b>9 mph</b>. Two hours later, his brother leaves the same place on a moped traveling <b>27 mph</b>.</p>
+            <p>How long after the brother leaves will it take him to catch Steve?</p>
+          `,
+          choices: [
+            String.raw`\(\,\dfrac12\) hour`,
+            String.raw`2 hours`,
+            String.raw`1 hour`,
+            String.raw`1.5 hours`,
+            String.raw`3 hours`,
+            String.raw`4 hours`
+          ],
+          choiceWrap: false
+        },
+        {
+          stem: String.raw`
+            <p>Ted runs <b>two thirds as fast</b> as Frank. In <b>2 hours</b>, Frank runs <b>8 miles farther</b> than Ted.</p>
+            <p>What are their running speeds?</p>
+          `,
+          choices: [
+            String.raw`Ted: 8 mph, Frank: 12 mph`,
+            String.raw`Ted: 12 mph, Frank: 8 mph`,
+            String.raw`Ted: 4 mph, Frank: 12 mph`,
+            String.raw`Ted: 8 mph, Frank: 16 mph`,
+            String.raw`Ted: 6 mph, Frank: 9 mph`,
+            String.raw`Ted: 10 mph, Frank: 15 mph`
+          ],
+          choiceWrap: false
+        },
+        {
+          stem: String.raw`
+            <p>A passenger train and a coal train leave Charleston at the same time in opposite directions. The passenger train travels <b>23 mph faster</b> than the coal train. After <b>4 hours</b>, they are <b>412 miles apart</b>.</p>
+            <p>What are their speeds?</p>
+          `,
+          choices: [
+            String.raw`Coal: 23 mph, Passenger: 46 mph`,
+            String.raw`Coal: 41 mph, Passenger: 64 mph`,
+            String.raw`Coal: 46 mph, Passenger: 69 mph`,
+            String.raw`Coal: 52 mph, Passenger: 75 mph`,
+            String.raw`Coal: 40 mph, Passenger: 63 mph`,
+            String.raw`Coal: 39 mph, Passenger: 62 mph`
+          ],
+          choiceWrap: false
+        },
+        {
+          stem: String.raw`
+            <p>A freight train leaves Centralia for Chicago at the same time a passenger train leaves Chicago for Centralia. The freight train travels <b>45 mph</b>, and the passenger train travels <b>64 mph</b>. The cities are <b>218 miles apart</b>.</p>
+            <p>How long will it take the trains to meet?</p>
+          `,
+          choices: [
+            String.raw`1 hour`,
+            String.raw`2 hours`,
+            String.raw`2.5 hours`,
+            String.raw`3 hours`,
+            String.raw`109 hours`,
+            String.raw`4 hours`
+          ],
+          choiceWrap: false
+        },
+        {
+          stem: String.raw`
+            <p>Mr. Thomas drove to the city at <b>40 mph</b> and drove back home at <b>60 mph</b>. The total trip took <b>8 hours</b>.</p>
+            <p>How far is his house from the city?</p>
+          `,
+          choices: [
+            String.raw`160 miles`,
+            String.raw`180 miles`,
+            String.raw`200 miles`,
+            String.raw`192 miles`,
+            String.raw`240 miles`,
+            String.raw`96 miles`
+          ],
+          choiceWrap: false
+        },
+        {
+          stem: String.raw`
+            <p>Joe and Peter bicycled to a lake at <b>12 mph</b> and then canoed across it at <b>4 mph</b>. The entire trip took <b>\(4\dfrac12\)</b> hours. They bicycled <b>6 miles more than 3 times</b> the distance they canoed.</p>
+            <p>How far did they travel by each method?</p>
+          `,
+          choices: [
+            String.raw`24 miles by bicycle and 6 miles by canoe`,
+            String.raw`30 miles by bicycle and 10 miles by canoe`,
+            String.raw`18 miles by bicycle and 4 miles by canoe`,
+            String.raw`36 miles by bicycle and 10 miles by canoe`,
+            String.raw`30 miles by bicycle and 6 miles by canoe`,
+            String.raw`30 miles by bicycle and 8 miles by canoe`
+          ],
+          choiceWrap: false
+        }
+      ]
+    };
+  </script>
+
+  <link rel="stylesheet" href="/math-homework/assets/core-rich.css" />
+  <script defer src="/math-homework/assets/core-rich.js"></script>
+  <script defer src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+</head>
+<body>
+  <div id="hw-root">Loading…</div>
+</body>
+</html>

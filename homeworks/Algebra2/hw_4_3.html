@@ -1,0 +1,218 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Homework 4-3 (Algebra II)</title>
+
+  <script>
+    /* =========================
+       Homework 4-3 — Solving Quadratic Equations with the Quadratic Formula
+
+       REQUIRED SOURCE REFERENCES:
+       - Type A uses A. Exercises: #1, #6, #8, #10, #12
+       - Type B uses B. Exercises: #14, #18, #19, #20
+       - Type C uses C. Exercises: #21, #22, #23
+
+       MODEL REWORK / PEDAGOGICAL ADAPTATION:
+       - Q9 is a reworked version of B #20. Instead of asking directly for the solution,
+         it asks for the correct standard form that must be reached before applying the formula.
+         This targets a common stumbling point: identifying the correct coefficients a, b, and c.
+       - Q10 converts C #21 into a proof-oriented multiple-choice question about the derivation
+         of the quadratic formula, focusing on the key structural reason the condition a ≠ 0 is needed.
+       - Q12 keeps the spirit of C #23 but asks students to reconstruct the original equation
+         from approximate irrational roots, emphasizing reverse use of sum and product of roots.
+
+       IMAGE NAMING RULE:
+       - No external figure files are required for this homework.
+       ========================= */
+
+    window.homeworkData = {
+      classId : "Algebra2",
+      id      : "Homework 4-3",
+      title   : "Homework 4-3 — Solving Quadratic Equations with the Quadratic Formula",
+      graphics : String.raw``,
+
+      answerKey : ["C","E","A","D","B","F","A","D","B","E","C","F"],
+
+      questions : [
+        {
+          stem: String.raw`
+            <p>Solve the quadratic equation by using the quadratic formula.</p>
+            <p>\(x^2 + x - 2 = 0\)</p>
+          `,
+          choices: [
+            String.raw`\(x = -1 \pm \sqrt{3}\)`,
+            String.raw`\(x = 2,\,-1\)`,
+            String.raw`\(x = 1,\,-2\)`,
+            String.raw`\(x = -2,\,-1\)`,
+            String.raw`\(x = \dfrac{-1 \pm \sqrt{7}}{2}\)`,
+            String.raw`\(x = 0,\,-1\)`
+          ]
+        },
+        {
+          stem: String.raw`
+            <p>Solve the quadratic equation by using the quadratic formula.</p>
+            <p>\(x^2 - 2x = 35\)</p>
+          `,
+          choices: [
+            String.raw`\(x = 5,\,-7\)`,
+            String.raw`\(x = 7,\,-1\)`,
+            String.raw`\(x = -7,\,5\)`,
+            String.raw`\(x = 1 \pm \sqrt{35}\)`,
+            String.raw`\(x = 7,\,-5\)`,
+            String.raw`\(x = -7,\,1\)`
+          ]
+        },
+        {
+          stem: String.raw`
+            <p>Solve the quadratic equation by using the quadratic formula.</p>
+            <p>\(5x^2 + x - 2 = 0\)</p>
+          `,
+          choices: [
+            String.raw`\(x = \dfrac{-1 \pm \sqrt{41}}{10}\)`,
+            String.raw`\(x = \dfrac{1 \pm \sqrt{41}}{10}\)`,
+            String.raw`\(x = \dfrac{-1 \pm \sqrt{39}}{10}\)`,
+            String.raw`\(x = \dfrac{1 \pm \sqrt{41}}{5}\)`,
+            String.raw`\(x = \dfrac{-1 \pm \sqrt{41}}{5}\)`,
+            String.raw`\(x = \dfrac{-5 \pm \sqrt{41}}{10}\)`
+          ]
+        },
+        {
+          stem: String.raw`
+            <p>Solve the quadratic equation by using the quadratic formula.</p>
+            <p>\(x^2 - 3x + 1 = 0\)</p>
+          `,
+          choices: [
+            String.raw`\(x = \dfrac{3 \pm \sqrt{13}}{2}\)`,
+            String.raw`\(x = \dfrac{-3 \pm \sqrt{5}}{2}\)`,
+            String.raw`\(x = \dfrac{3 \pm 5}{2}\)`,
+            String.raw`\(x = \dfrac{3 \pm \sqrt{5}}{2}\)`,
+            String.raw`\(x = \dfrac{-3 \pm \sqrt{13}}{2}\)`,
+            String.raw`\(x = 3 \pm \sqrt{5}\)`
+          ]
+        },
+        {
+          stem: String.raw`
+            <p>Solve the quadratic equation by using the quadratic formula.</p>
+            <p>\(x + 7x^2 - 1 = 0\)</p>
+          `,
+          choices: [
+            String.raw`\(x = \dfrac{1 \pm \sqrt{29}}{14}\)`,
+            String.raw`\(x = \dfrac{-1 \pm \sqrt{29}}{14}\)`,
+            String.raw`\(x = \dfrac{-1 \pm \sqrt{21}}{14}\)`,
+            String.raw`\(x = \dfrac{1 \pm \sqrt{29}}{7}\)`,
+            String.raw`\(x = \dfrac{-7 \pm \sqrt{29}}{14}\)`,
+            String.raw`\(x = \dfrac{-1 \pm \sqrt{29}}{7}\)`
+          ]
+        },
+        {
+          stem: String.raw`
+            <p>Solve the quadratic equation by using the quadratic formula.</p>
+            <p>\(4x^2 = 3 - 2x\)</p>
+          `,
+          choices: [
+            String.raw`\(x = \dfrac{1 \pm \sqrt{13}}{4}\)`,
+            String.raw`\(x = \dfrac{-2 \pm \sqrt{13}}{4}\)`,
+            String.raw`\(x = \dfrac{-1 \pm \sqrt{13}}{2}\)`,
+            String.raw`\(x = \dfrac{1 \pm \sqrt{13}}{2}\)`,
+            String.raw`\(x = \dfrac{-1 \pm \sqrt{17}}{4}\)`,
+            String.raw`\(x = \dfrac{-1 \pm \sqrt{13}}{4}\)`
+          ]
+        },
+        {
+          stem: String.raw`
+            <p>Solve the quadratic equation by using the quadratic formula.</p>
+            <p>\(2x^2 + x - 4 = x\)</p>
+          `,
+          choices: [
+            String.raw`\(x = \pm \sqrt{2}\)`,
+            String.raw`\(x = \pm 2\)`,
+            String.raw`\(x = 2,\,-1\)`,
+            String.raw`\(x = \dfrac{\pm \sqrt{2}}{2}\)`,
+            String.raw`\(x = \pm \sqrt{3}\)`,
+            String.raw`\(x = -\sqrt{2},\,0\)`
+          ]
+        },
+        {
+          stem: String.raw`
+            <p>Solve the quadratic equation by using the quadratic formula.</p>
+            <p>\(2x^2 + 3x = x^2 - 5x + 1\)</p>
+          `,
+          choices: [
+            String.raw`\(x = 4 \pm \sqrt{17}\)`,
+            String.raw`\(x = -4 \pm \sqrt{15}\)`,
+            String.raw`\(x = -8 \pm \sqrt{17}\)`,
+            String.raw`\(x = -4 \pm \sqrt{17}\)`,
+            String.raw`\(x = \dfrac{-8 \pm \sqrt{17}}{2}\)`,
+            String.raw`\(x = 4 \pm \sqrt{15}\)`
+          ]
+        },
+        {
+          stem: String.raw`
+            <p>Before using the quadratic formula, which of the following is the correct standard form of</p>
+            <p>\(2x^2 + 8x - 2 = 2x - x^2\,?\)</p>
+          `,
+          choices: [
+            String.raw`\(x^2 + 6x - 2 = 0\)`,
+            String.raw`\(3x^2 + 6x - 2 = 0\)`,
+            String.raw`\(3x^2 + 10x - 2 = 0\)`,
+            String.raw`\(x^2 + 10x - 2 = 0\)`,
+            String.raw`\(3x^2 + 6x + 2 = 0\)`,
+            String.raw`\(2x^2 + 6x - 2 = 0\)`
+          ]
+        },
+        {
+          stem: String.raw`
+            <p>In the standard derivation of the quadratic formula, what is the first step for which the condition \(a \ne 0\) is essential?</p>
+          `,
+          choiceWrap: false,
+          choices: [
+            String.raw`Move the constant term to the other side.`,
+            String.raw`Multiply both sides by 4.`,
+            String.raw`Take the square root of both sides.`,
+            String.raw`Collect the \(x\)-terms on one side.`,
+            String.raw`Divide both sides by \(a\) to make the coefficient of \(x^2\) equal to 1.`,
+            String.raw`Add the same number to both sides.`
+          ]
+        },
+        {
+          stem: String.raw`
+            <p>Solve the quadratic equation by using the quadratic formula.</p>
+            <p>\(3n^2 - 5n + 2 = 0\)</p>
+          `,
+          choices: [
+            String.raw`\(n = -1,\,-\dfrac{2}{3}\)`,
+            String.raw`\(n = 1,\,-\dfrac{2}{3}\)`,
+            String.raw`\(n = 1,\,\dfrac{2}{3}\)`,
+            String.raw`\(n = \dfrac{5 \pm \sqrt{17}}{6}\)`,
+            String.raw`\(n = 2,\,\dfrac{1}{3}\)`,
+            String.raw`\(n = -1,\,\dfrac{2}{3}\)`
+          ]
+        },
+        {
+          stem: String.raw`
+            <p>A quadratic equation has solutions \(3 - \sqrt{2}\) and \(2 - \sqrt{2}\).</p>
+            <p>Which equation is the best approximation to the original equation, with coefficients rounded to three decimal places?</p>
+          `,
+          choices: [
+            String.raw`\(x^2 + 2.172x + 0.929 = 0\)`,
+            String.raw`\(x^2 - 2.172x - 0.929 = 0\)`,
+            String.raw`\(x^2 - 0.929x + 2.172 = 0\)`,
+            String.raw`\(x^2 + 0.929x - 2.172 = 0\)`,
+            String.raw`\(x^2 - 2.929x + 2.172 = 0\)`,
+            String.raw`\(x^2 - 2.172x + 0.929 = 0\)`
+          ]
+        }
+      ]
+    };
+  </script>
+
+  <link rel="stylesheet" href="/math-homework/assets/core-rich.css" />
+  <script defer src="/math-homework/assets/core-rich.js"></script>
+  <script defer src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+</head>
+<body>
+  <div id="hw-root">Loading…</div>
+</body>
+</html>
