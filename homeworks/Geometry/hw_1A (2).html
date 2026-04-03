@@ -1,0 +1,244 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Homework 1A (Geometry)</title>
+
+  <script>
+    /* =========================
+       Homework 1A — Set Language for Geometry: Sets and Belonging
+       Adapted for: /math-homework/assets/core-rich.js
+
+       REQUIRED SOURCE REFERENCES (your provided sets):
+       - Notes, Chapter 1, first exercise section: Ex. S1–S10.
+       - School textbook, Chapter 1 raw material consulted for syllabus alignment: early Chapter 1 pages on sets, set notation, membership language, simple review items, and introductory point-on-line notation.
+
+       MODEL REWORK / EXTENSION NOTES:
+       - The full set has been re-authored in clearer high-school language while staying close to the first exercise section of the notes.
+       - Several questions were added or reshaped to strengthen element-vs-set distinctions, order irrelevance, correct symbolic writing, and the first geometric use of membership notation.
+       - Geometry is woven in lightly so that this homework still covers the opening syllabus of the school Chapter 1 while remaining centered on the first section of the notes.
+
+       IMAGE NAMING RULE (STRICT):
+       - No figure files are required for this homework.
+       - If figures are ever added later, any PNG must be named by the original source problem number and placed in the same folder as this HTML.
+       ========================= */
+
+    window.homeworkData = {
+      classId : "Geometry",
+      id      : "Homework 1A",
+      title   : "Homework 1A — Set Language for Geometry",
+      graphics : String.raw``,
+
+      answerKey : ["C","D","B","A","E","F","B","C","D","A","E","F","B","C"],
+
+      questions : [
+        {
+          stem: String.raw`
+            <p>In mathematics, some very basic ideas are introduced informally instead of being defined with complete precision right away.</p>
+            <p>Why is the idea of a set usually treated this way?</p>
+          `,
+          choices: [
+            String.raw`Because sets are too advanced for beginners.`,
+            String.raw`Because every person gives the word “set” a different meaning.`,
+            String.raw`Because trying to define it exactly would force us to use ideas that are just as basic, so the explanation would go in a circle.`,
+            String.raw`Because sets belong only to geometry, not to the rest of mathematics.`,
+            String.raw`Because the braces <code>{ }</code> already count as a full definition.`,
+            String.raw`Because sets can only be understood after learning algebra.`
+          ],
+          choiceWrap: false
+        },
+        {
+          stem: String.raw`
+            <p>Why do mathematicians introduce symbols such as <span class="math">\(\in\)</span> instead of writing full sentences again and again?</p>
+          `,
+          choices: [
+            String.raw`To make mathematics look harder than it really is.`,
+            String.raw`To replace every English word with a symbol.`,
+            String.raw`To avoid thinking about meaning and focus only on notation.`,
+            String.raw`To express common ideas more clearly and more quickly.`,
+            String.raw`To make ordinary language completely forbidden in mathematics.`,
+            String.raw`To make every statement shorter, even when it becomes less clear.`
+          ],
+          choiceWrap: false
+        },
+        {
+          stem: String.raw`
+            <p>Let <span class="math">\(A = \{a,b,c,d\}\)</span>.</p>
+            <p>Which of the following is <strong>not</strong> another way to write the same set?</p>
+          `,
+          choices: [
+            String.raw`\(\{d,c,b,a\}\)`,
+            String.raw`\(\{b,a,c,d\}\)`,
+            String.raw`\(\{a,b,c\}\)`,
+            String.raw`\(\{c,a,d,b\}\)`,
+            String.raw`\(\{d,b,a,c\}\)`,
+            String.raw`\(\{b,d,c,a\}\)`
+          ]
+        },
+        {
+          stem: String.raw`
+            <p>Suppose <span class="math">\(M = \{2,5,8,9\}\)</span>.</p>
+            <p>What does this statement mean?</p>
+          `,
+          choices: [
+            String.raw`The letter <span class="math">\(M\)</span> is simply a name for the set <span class="math">\(\{2,5,8,9\}\)</span>.`,
+            String.raw`<span class="math">\(M\)</span> is the first element of the set <span class="math">\(\{2,5,8,9\}\)</span>.`,
+            String.raw`The set <span class="math">\(M\)</span> is inside the number 2.`,
+            String.raw`The four numbers are four different names for the object <span class="math">\(M\)</span>.`,
+            String.raw`The order <span class="math">\(2,5,8,9\)</span> must now stay fixed forever.`,
+            String.raw`The symbol <span class="math">\(=\)</span> means “belongs to.”`
+          ],
+          choiceWrap: false
+        },
+        {
+          stem: String.raw`
+            <p>Let <span class="math">\(B = \{x,y,z\}\)</span>.</p>
+            <p>Which line is completely correct?</p>
+          `,
+          choices: [
+            String.raw`\(x \notin B,\ y \in B,\ z \notin B\)`,
+            String.raw`\(x \in B,\ y \notin B,\ z \in B\)`,
+            String.raw`\(x \notin B,\ y \notin B,\ z \in B\)`,
+            String.raw`\(x \in B,\ y \in B,\ B \in z\)`,
+            String.raw`\(x \in B,\ y \in B,\ z \in B\)`,
+            String.raw`\(B \in x,\ B \in y,\ B \in z\)`
+          ]
+        },
+        {
+          stem: String.raw`
+            <p>Let <span class="math">\(C = \{1,3,5,7\}\)</span>.</p>
+            <p>Which statement is false?</p>
+          `,
+          choices: [
+            String.raw`\(1 \in C\)`,
+            String.raw`\(3 \in C\)`,
+            String.raw`\(5 \in C\)`,
+            String.raw`\(2 \notin C\)`,
+            String.raw`\(7 \in C\)`,
+            String.raw`\(7 \notin C\)`
+          ]
+        },
+        {
+          stem: String.raw`
+            <p>A student says, “In the set <span class="math">\(X = \{2,4,6,8\}\)</span>, the number 6 does not really belong to the set because it was written third, not first.”</p>
+            <p>What is the best response?</p>
+          `,
+          choices: [
+            String.raw`The student is correct, because only the first listed element really belongs to a set.`,
+            String.raw`The student is wrong, because the position of an element in the list does not matter. What matters is whether it appears in the set at all.`,
+            String.raw`The student is correct, because even numbers must be listed in order to count.`,
+            String.raw`The student is wrong only because 6 is an even number.`,
+            String.raw`The claim cannot be checked unless the set gets a different name.`,
+            String.raw`The claim is true for sets with four elements, but false for larger ones.`
+          ],
+          choiceWrap: false
+        },
+        {
+          stem: String.raw`
+            <p>Which sentence is written correctly in set language?</p>
+          `,
+          choices: [
+            String.raw`If <span class="math">\(A = \{2,4,6\}\)</span>, then <span class="math">\(A \in 4\)</span>.`,
+            String.raw`If <span class="math">\(R = \{r,s,t\}\)</span>, then <span class="math">\(r = R\)</span>.`,
+            String.raw`If <span class="math">\(T = \{red,blue,green\}\)</span>, then <span class="math">\(blue \in T\)</span>.`,
+            String.raw`If <span class="math">\(K = \{1,2,3\}\)</span>, then <span class="math">\(K \notin 1\)</span>.`,
+            String.raw`If <span class="math">\(P = \{a,b\}\)</span>, then <span class="math">\(P \in a\)</span>.`,
+            String.raw`If <span class="math">\(M = \{dog,cat\}\)</span>, then <span class="math">\(cat = M\)</span>.`
+          ]
+        },
+        {
+          stem: String.raw`
+            <p>Let <span class="math">\(V = \{a,e,i,o,u\}\)</span>.</p>
+            <p>Which statement is correct?</p>
+          `,
+          choices: [
+            String.raw`\(v \in V\)`,
+            String.raw`\(u \notin V\)`,
+            String.raw`\(V \in a\)`,
+            String.raw`\(e \in V\)`,
+            String.raw`\(V = e\)`,
+            String.raw`\(\{a,e\} \in V\)`
+          ]
+        },
+        {
+          stem: String.raw`
+            <p>In geometry, a line can be thought of as a set of points.</p>
+            <p>If points <span class="math">\(A\)</span> and <span class="math">\(B\)</span> lie on line <span class="math">\(r\)</span>, while point <span class="math">\(P\)</span> does not lie on that line, which symbolic description is correct?</p>
+          `,
+          choices: [
+            String.raw`\(A \in r,\ B \in r,\ P \notin r\)`,
+            String.raw`\(r \in A,\ r \in B,\ r \notin P\)`,
+            String.raw`\(A = r,\ B = r,\ P \neq r\)`,
+            String.raw`\(A \subset r,\ B \subset r,\ P \notin r\)`,
+            String.raw`\(A \notin r,\ B \notin r,\ P \in r\)`,
+            String.raw`\(r \subset A,\ r \subset B,\ r \notin P\)`
+          ]
+        },
+        {
+          stem: String.raw`
+            <p>Which statement best explains the difference between an element and the set that contains it?</p>
+          `,
+          choices: [
+            String.raw`There is no real difference. A set and its elements are the same kind of thing.`,
+            String.raw`An element is always bigger than the set that contains it.`,
+            String.raw`A set can only contain numbers, while elements can only be letters.`,
+            String.raw`The name of a set and the elements inside it are interchangeable.`,
+            String.raw`An element is one object inside the collection, while the set is the whole collection.`,
+            String.raw`A set is just the first element written inside the braces.`
+          ],
+          choiceWrap: false
+        },
+        {
+          stem: String.raw`
+            <p>Which student-created example is fully correct?</p>
+          `,
+          choices: [
+            String.raw`<span class="math">\(P = \{1,3,5,7\}\)</span>, so <span class="math">\(2 \in P\)</span>.`,
+            String.raw`<span class="math">\(R = \{a,e,i,o,u\}\)</span>, so <span class="math">\(R = a\)</span>.`,
+            String.raw`<span class="math">\(K = \{red,green,blue\}\)</span>, so <span class="math">\(green \notin K\)</span>.`,
+            String.raw`<span class="math">\(M = \{sun,moon,star\}\)</span>, so <span class="math">\(M \in star\)</span>.`,
+            String.raw`<span class="math">\(T = \{p,q,r,s\}\)</span>, so <span class="math">\(\{p,q,r,s\} \notin T\)</span>.`,
+            String.raw`<span class="math">\(N = \{4,6,8,10\}\)</span>, so <span class="math">\(6 \in N\)</span> and <span class="math">\(5 \notin N\)</span>.`
+          ]
+        },
+        {
+          stem: String.raw`
+            <p>Suppose <span class="math">\(A = \{m,n,p,q\}\)</span>.</p>
+            <p>Why are <span class="math">\(A\)</span> and <span class="math">\(\{q,m,p,n\}\)</span> the same set?</p>
+          `,
+          choices: [
+            String.raw`Because the second list happens to begin with <span class="math">\(q\)</span>.`,
+            String.raw`Because a set is determined by its elements, not by the order in which they are listed.`,
+            String.raw`Because every set with four letters is automatically equal to every other one.`,
+            String.raw`Because once a set is named, its elements stop mattering.`,
+            String.raw`Because the letter <span class="math">\(A\)</span> forces all four letters to stay together.`,
+            String.raw`Because both expressions contain exactly one vowel.`
+          ],
+          choiceWrap: false
+        },
+        {
+          stem: String.raw`
+            <p>Which statement is best read as “<em>x does not belong to A</em>”?</p>
+          `,
+          choices: [
+            String.raw`\(x = A\)`,
+            String.raw`\(x \subset A\)`,
+            String.raw`\(x \notin A\)`,
+            String.raw`\(A \notin x\)`,
+            String.raw`\(A = \{x\}\)`,
+            String.raw`\(x \neq A\)`
+          ]
+        }
+      ]
+    };
+  </script>
+
+  <link rel="stylesheet" href="/math-homework/assets/core-rich.css" />
+  <script defer src="/math-homework/assets/core-rich.js"></script>
+  <script defer src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+</head>
+<body>
+  <div id="hw-root">Loading…</div>
+</body>
+</html>
