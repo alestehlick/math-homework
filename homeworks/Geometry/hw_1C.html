@@ -7,256 +7,416 @@
 
   <script>
     /* =========================
-       Homework 1C — Complements, Intersections, Unions, and Set Thinking in Geometry
+       Homework 1C — Set Language for Geometric Situations
        Adapted for: /math-homework/assets/core-rich.js
 
        REQUIRED SOURCE REFERENCES (your provided sets):
-       - Notes, Chapter 1, third exercise section: Ex. S34–S54.
-       - School textbook, Chapter 1 raw material consulted for syllabus alignment: set operations, Venn-diagram thinking, geometric symbolic statements, and simple counting problems based on overlap.
+       - Primary source spine: Notes, Chapter 1, third exercise section, especially Ex. S45 and the surrounding set-language work on intersection, union, complement, and symbolic geometric statements.
+       - School textbook consulted for syllabus alignment: Chapter 1 incidence language involving points, lines, planes, intersection, inclusion, and plane/line relationships.
 
        MODEL REWORK / EXTENSION NOTES:
-       - The full set has been rewritten in more intuitive high-school language while staying close to the mathematical center of the third exercise section of the notes.
-       - The sequence begins with empty set / complement review, then moves into intersection and union, then into geometric set language, Venn-style reasoning, and finally overlap-counting problems.
-       - Several long or mechanical source exercises were reshaped into shorter multiple-choice questions that still target the same skills.
+       - The earlier counting questions have been removed.
+       - This homework is now built mainly to develop fluency in expressing geometric situations in set language.
+       - Many items are model-authored in the spirit of Ex. S45, with additional figure-based translation, sentence-to-symbol translation, and precision questions.
+       - The sequence moves from reading diagrams, to translating sentences into symbols, to choosing the most precise symbolic description of a geometric situation.
 
        IMAGE NAMING RULE (STRICT):
-       - No external figure files are required for this homework.
-       - One simple Venn diagram is embedded directly in the HTML.
-       - If external PNG figures are ever added later, they must be named by the original source problem number and placed in the same folder as this HTML.
+       - Figures are inspired primarily by Notes Ex. S45.
+       - Figure drawings were prepared in the spirit of Ex. S45 and embedded directly in this HTML, so no companion image files are required to use the homework.
        ========================= */
 
     window.homeworkData = {
       classId : "Geometry",
       id      : "Homework 1C",
-      title   : "Homework 1C — Set Operations in Geometry and Counting",
+      title   : "Homework 1C — Geometric Ideas in Set Language",
       graphics : String.raw``,
 
-      answerKey : ["C","D","B","E","A","C","A","B","F","A","B","F","D","C","B"],
+      answerKey : [
+        "C","C","B","B","C","B","B","A","B",
+        "C","D","A","D","C","B","C","C","C",
+        "B","C","A","D","B","C"
+      ],
 
       questions : [
         {
           stem: String.raw`
-            <p>Let <span class="math">\(A = \{1,2,3,4\}\)</span>.</p>
-            <p>What set is described by <span class="math">\(\{x \in A \mid x &gt; 10\}\)</span>?</p>
-          `,
-          choices: [
-            String.raw`\(\{10\}\)`,
-            String.raw`\(\{1,2,3,4\}\)`,
-            String.raw`\(\varnothing\)`,
-            String.raw`\(\{x \in A \mid x &lt; 10\}\)`,
-            String.raw`\(\{4\}\)`,
-            String.raw`\(\{1,10\}\)`
-          ]
-        },
-        {
-          stem: String.raw`
-            <p>Which statement about the empty set is true?</p>
-          `,
-          choices: [
-            String.raw`It is the same thing as the number zero in every context.`,
-            String.raw`It contains one hidden element that we simply do not write.`,
-            String.raw`It can never be part of geometry.`,
-            String.raw`It is a set with no elements, and it is a subset of every set.`,
-            String.raw`It can only appear inside infinite sets.`,
-            String.raw`It means that the question itself is meaningless.`
-          ],
-          choiceWrap: false
-        },
-        {
-          stem: String.raw`
-            <p>Before talking about the complement of a set, why do we need to know the universal set?</p>
-          `,
-          choices: [
-            String.raw`Because complements only exist for number sets.`,
-            String.raw`Because “outside the set” depends on which larger collection we are working inside.`,
-            String.raw`Because every complement must have the same size as the original set.`,
-            String.raw`Because the universal set tells us the order of the elements.`,
-            String.raw`Because a complement is just another name for an intersection.`,
-            String.raw`Because without a universal set, every complement becomes empty.`
-          ],
-          choiceWrap: false
-        },
-        {
-          stem: String.raw`
-            <p>Let <span class="math">\(U = \{1,2,3,4,5,6,7,8,9,10\}\)</span> and <span class="math">\(A = \{2,4,6,8,10\}\)</span>.</p>
-            <p>What is the complement of <span class="math">\(A\)</span> in <span class="math">\(U\)</span>?</p>
-          `,
-          choices: [
-            String.raw`\(\{2,4,6,8,10\}\)`,
-            String.raw`\(\{0,1,3,5,7,9\}\)`,
-            String.raw`\(\varnothing\)`,
-            String.raw`\(\{1,2,3,4,5\}\)`,
-            String.raw`\(\{1,3,5,7,9\}\)`,
-            String.raw`\(\{11,12,13\}\)`
-          ]
-        },
-        {
-          stem: String.raw`
-            <p>Points <span class="math">\(A\)</span> and <span class="math">\(B\)</span> are distinct.</p>
-            <p>Consider the set of all points that are equally distant from <span class="math">\(A\)</span> and <span class="math">\(B\)</span>.</p>
-            <p>If our universe is only the line through <span class="math">\(A\)</span> and <span class="math">\(B\)</span>, what does that set look like?</p>
-          `,
-          choices: [
-            String.raw`It is just the midpoint of <span class="math">\(AB\)</span>.`,
-            String.raw`It is the whole line through <span class="math">\(A\)</span> and <span class="math">\(B\)</span>.`,
-            String.raw`It is the perpendicular bisector of <span class="math">\(AB\)</span>.`,
-            String.raw`It is a whole plane.`,
-            String.raw`It is empty.`,
-            String.raw`It is the segment <span class="math">\(AB\)</span>.`
-          ],
-          choiceWrap: false
-        },
-        {
-          stem: String.raw`
-            <p>Let <span class="math">\(A = \{1,2,3,4,5,6\}\)</span> and <span class="math">\(B = \{4,5,6,7,8\}\)</span>.</p>
-            <p>What is <span class="math">\(A \cap B\)</span>?</p>
-          `,
-          choices: [
-            String.raw`\(\{1,2,3,4,5,6,7,8\}\)`,
-            String.raw`\(\{1,2,3\}\)`,
-            String.raw`\(\{4,5,6\}\)`,
-            String.raw`\(\{7,8\}\)`,
-            String.raw`\(\{3,4,5,6\}\)`,
-            String.raw`\(\varnothing\)`
-          ]
-        },
-        {
-          stem: String.raw`
-            <p>Using the same sets <span class="math">\(A = \{1,2,3,4,5,6\}\)</span> and <span class="math">\(B = \{4,5,6,7,8\}\)</span>, what is <span class="math">\(A \cup B\)</span>?</p>
-          `,
-          choices: [
-            String.raw`\(\{1,2,3,4,5,6,7,8\}\)`,
-            String.raw`\(\{4,5,6\}\)`,
-            String.raw`\(\{1,2,3\}\)`,
-            String.raw`\(\{7,8\}\)`,
-            String.raw`\(\varnothing\)`,
-            String.raw`\(\{1,2,3,4,5,6,4,5,6,7,8\}\)`
-          ]
-        },
-        {
-          stem: String.raw`
-            <p>If two sets are disjoint, what must be true?</p>
-          `,
-          choices: [
-            String.raw`They must have the same number of elements.`,
-            String.raw`Their intersection is empty.`,
-            String.raw`One of them must be a subset of the other.`,
-            String.raw`Their union must be empty.`,
-            String.raw`They must both be infinite.`,
-            String.raw`Their complements must be equal.`
-          ],
-          choiceWrap: false
-        },
-        {
-          stem: String.raw`
-            <p>Two planes <span class="math">\(\alpha\)</span> and <span class="math">\(\beta\)</span> cross each other along a line <span class="math">\(r\)</span>.</p>
-            <p>Which symbolic statement matches that situation?</p>
-          `,
-          choices: [
-            String.raw`\(\alpha \cup \beta = r\)`,
-            String.raw`\(\alpha \subseteq \beta\)`,
-            String.raw`\(r \cap \alpha = \varnothing\)`,
-            String.raw`\(\alpha \cap \beta = \{r\}\)`,
-            String.raw`\(\alpha \cap \beta = r\)`,
-            String.raw`\(r \subseteq \alpha \cap \beta\)`
-          ]
-        },
-        {
-          stem: String.raw`
-            <p><b>Refer to Figure 1.</b> Which set is shaded?</p>
+            <p><b>Refer to Figure 1.</b> Which symbolic statement best describes the figure?</p>
           `,
           media: String.raw`
             <figure>
-              <svg viewBox="0 0 260 150" width="260" height="150" aria-label="Two overlapping circles labeled A and B with only the overlap shaded">
-                <rect x="5" y="5" width="250" height="140" fill="white" stroke="#444" stroke-width="1.2"></rect>
-                <circle cx="105" cy="75" r="46" fill="none" stroke="#333" stroke-width="2"></circle>
-                <circle cx="155" cy="75" r="46" fill="none" stroke="#333" stroke-width="2"></circle>
-                <path d="M 132.9 38.4 A 46 46 0 0 0 132.9 111.6 A 46 46 0 0 0 132.9 38.4 Z" fill="#b7d4f0" stroke="none"></path>
-                <text x="83" y="38" font-size="18" font-family="serif">A</text>
-                <text x="177" y="38" font-size="18" font-family="serif">B</text>
-                <text x="238" y="23" font-size="16" font-family="serif">U</text>
-              </svg>
+              <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAhsAAADPCAIAAADTdYT6AAAACXBIWXMAACHVAAAh1QEEnLSdAAAHJ0lEQVR42u3dTUhU7x7A8WduJlIqlKkhZNiLQqHZGyIYZossXFSrCAuhTRCGhKuiTS+Uu14wCBcWZRYEYZvCTYkUCm0KjcA0hqzAojdqQiqbu5hLRKlZef8Xrp/P6nDmbOa3+fLMc86cSDweDwDw1/5lBAAoCgCKAoCiAICiAKAoACgKAIoCAIoCgKIAoCgAKAoAKAoAigKAogCAogCgKAAoCgBTQJIRwA+uXLly/PjxcV6YnZqamp+fX1BQUF1dnZGRYWKQEPGeefjBhw8fnjx58ubNm507d/b19WVkZLS1tc2ZMycSiYQQhoeHh4aGbt682dTU9PXr14MHD9bV1RkaKAqMJzc3d3BwsKam5ty5cz9/eu/evdLS0uHh4ZaWlurqauMC+ygwusePHw8ODoYQ1q1bN+oFxcXFJSUlIYT6+nrjAkWBMXV0dCQOysvLx7pmzpw5IYShoaFoNGpioCgwXlHy8vLmz58/1jV9fX2Jg5SUFBMDRYHxilJRUTHWBS9evOjt7Q0hFBUVzZ0718RAUWAU3zZR1q5dO9Y1zc3NiRtbjh49amKgKDDeAmWcokSj0YaGhhDC4cOHq6qqTAwUBcYrysKFC+fNm/fzpzdu3CgrK0tNTW1paTlw4IBxQYJn5mHMoqSnp58+fTpxJh6Pv379OhqNdnV1vXv3bu/evXv27LEhD9/zhCP8aGBgYNGiRSGEmpqa73fmI5HI7NmzFyxYsGTJElMCaxSY6AIlhLBnz56VK1caCEyQfRQYvSjp6enFxcWmAYoCf1uUNWvWTJs2zTRAUeAPDQwMPH36NIz7JAqgKDDRBUoY9++8AEWBiRYlLS1txYoVpgGKAn/u1q1bIYSysjKbKPC73D0M/zEyMnL58uVnz56FEHJycuLxeOKljcAEecIRwvnz52tra0dGRpKTk5OTk+Px+OfPnz99+pScnNzR0bFs2TIjAkUB4J9jHwUARQFAUQBQFABQFPgj0Wj0+vXrX758MQpQFPgTX758uXPnzrJly/Ly8qqqqqZPn37o0KFoNGoyoCjwe3bs2FFWVvb58+e2trbu7u76+vrGxsa8vLyenh7DgVF5HgVGEYvFUlNTGxsbt2zZ8v2qZdWqVdu2bTt58qQRgTUKTMjZs2dDCJWVld+fTEpKqqurO3XqVCwWMyJQFJiQI0eO7Ny5c8aMGT+c37p167feAIoCv5aVldXV1fXz+VevXoUQli9fbkSgKDAhDQ0NDx8+HBwc/OF8U1NTdnZ2SUmJEYGiwISsX78+Ozv72LFjHz9+/Hby7t27zc3Nu3fvTkryGggYhXu9YHStra3V1dUhhE2bNq1evfrkyZMvX74sLCzs6uqaOXOm+YCiwG+IxWLXrl1raGjo6enZtm3bvn37CgsLjQUUBf4qLdYloCgA/EPszAOgKAAoCgCKAgCKAoCiAKAoACgKACgKAIoCgKIAoCgAoCgAKAoAigIAigKAogCgKAAoCgAoCgCKAoCiAKAoAKAoACgKAIoCAIoCgKIAoCgAKAoAKAoAigKAogCgKACgKAAoCgCKAgCKAoCiAKAoACgKACgKAIoCgKIAoCgAoCgAKAoAigIAigKAogCgKAAoCgAoCgCKAoCiAKAoAKAoACgKAIoCAIoCgKIAoCgAKAoAKAoAigKAogCgKACgKAAoCgCKAoCiAICiAKAoACgKACgKAIoCgKIAoCgAoCgAKAoAigKAogCAogCgKAAoCgAoCgCKAoCiAKAoAKAoACgKAIoCgKIAgKIAoCgAKAoAKAoAigKAogCgKACgKAAoCgCKAoCiAICiAPA/Fh9bUVGR+QDwzcWLF8epRiQej5sRAH/Pr14AKAoAigKAogCAogCgKAAoCgCKAgC/I8kIACZRf3//zZs3Fy9eXFFRkTjz9u3bjo6OoaGhsrKypUuXWqMA8Gv379+vra3NysratWtXTU1NCKG1tbWmpub58+c5OTmbN29uaWmxRgHg1/bv33/hwoXMzMz29vYzZ85kZWXFYrG2trZIJLJx48b+/v5Lly5t375dUQAYTzQanTVrVmZmZgjhxYsXIYTbt293dnZGIpF4PH737t1EV6xRAPiFq1evbtiwIXHc3d0dQjhx4sT06dNDCJFIpLe39/3794sXL/4/noD/HgaYHO3t7aWlpenp6Y8ePcrPz8/MzEysVKYOaxSAyVFZWZk46OjoCCGUl5dPtQm41wtgkiWK8u3uYUUB4K+Ksnbt2qn2xe2jAEymvr6+goKCjIyMly9fRiIRaxQA/mqBUl5ePtVyoigA/5WiTMGfvBQFYJJ1dnaGKbktH+yjAEyi4eHhtLS0/Pz8Bw8eTMGv73kUgEmTkpLS1dWVm5s7Nb++NQoAk8M+CgCKAoCiAKAoAKAoACgKAIoCgKIAgKIAoCgAKAoAigIAigKAogCgKACgKAAoCgCKAsBU8G/yRRrdPdcZzAAAAABJRU5ErkJggg==" alt="Point P not on line r" />
               <figcaption>Figure 1</figcaption>
             </figure>
           `,
           choices: [
-            String.raw`\(A \cap B\)`,
-            String.raw`\(A \cup B\)`,
-            String.raw`\(A \cap B'\)`,
-            String.raw`\(A' \cap B\)`,
-            String.raw`\((A \cap B)'\)`,
-            String.raw`\(\varnothing\)`
+            String.raw`\(P \in r\)`,
+            String.raw`\(r \subset \{P\}\)`,
+            String.raw`\(P \notin r\)`,
+            String.raw`\(\{P\} \subset r\)`,
+            String.raw`\(r \cap P = \varnothing\)`,
+            String.raw`\(P = r\)`
           ]
         },
         {
           stem: String.raw`
-            <p>Which expression describes all elements that are in <span class="math">\(A\)</span> or in <span class="math">\(C\)</span>, but <strong>not</strong> in <span class="math">\(B\)</span>?</p>
-            <p>Here <span class="math">\(B'\)</span> means the complement of <span class="math">\(B\)</span> in the universal set.</p>
+            <p><b>Refer to Figure 2.</b> Which symbolic statement best describes the figure?</p>
+          `,
+          media: String.raw`
+            <figure>
+              <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAekAAAC/CAIAAABVDLOeAAAACXBIWXMAACHVAAAh1QEEnLSdAAAFV0lEQVR42u3dTUhUaxjA8UeTiepAi3BROIEQE0UiIq0irKlFWNNCigqFIMJNEBFE0bKFUJvCZYsKqkW0atMikoZWGX1HWSnZwqCPRWQMKDXMXXiR6ELdmHNA4fdbDWfgeYcj/H15z6ANtVotAJhXGt0CAO0GQLsB0G4A7QZAuwHQbgDtBkC7AdBuAO0GQLsB0G4A7QZAuwHQbgC0G2Aea3ILAFL35cuXGzduJElSKpUWLlwYET9+/CiXy2NjY4VCoVgs2ncDzC2VSqWnpydJksuXL69fv35ycvLJkyc7d+4cHh5ubW09c+ZMf39/nUs0+H+VAOk6depUR0dHqVS6du3a3r17+/v7x8bGZrbhp0+fPnHixOLFiyuVin03wFxRq9Vu3769ffv2iPj06VNEXL9+/dKlS0mSRMT9+/cjYubdejjvBkjT48ePC4VCY2NjRNy7dy8ijh8/ns/nZ969cuXKy5cvOzs761zFmQlAml69evX9+/e2traIaGlpef/+/YsXL9auXZvuKtoNkInR0dFCodDc3Pzx48eGhoZ0h//hzCT19QDmr7/a7JbL5YjYtGlTFiH1rBIgE3fu3JlpdxbDm1L8JQPAL/vujRs3ZjHceTdA+t68ebN69eply5Z9/vzZmQnAfNp0d3V1ZfTUULsB0nf37t2I2Lx5c0bztRsgfe/evVu0aFGpVMpovvNugPSNj49PTU2tWbNGuwH4lzMTAO0GQLsB0G4A7QZAuwHQbgDtBkC7AdBuAO0GQLsB0G4A7QZAuwHQbgC0G0C7AdBuALQbQLsB0G4AtBtAuwHQbgC0G0C7AdBuALQbAO0G0G4AtBsA7QbQbgC0GwDtBtBuALQbAO0G0G4AtBsA7QbQbgC0GwDtBkC7AbQbAO0GQLsBtBsA7QZAuwG0GwDtBkC7AbQbAO0GQLsB0G4A7QZAuwHQbgDtBkC7AdBuAO0GQLsB0G4A7QZAuwHQbgDtBkC7AdBuALQbQLsB0G4AtBtAuwHQbgC0G0C7AdBuALQbQLsB0G4AtBsA7QbQbgC0GwDtBtBuALQbAO0G0G4AtBsA7QbQbgC0GwDtBtBuALQbAO0GQLsBtBsA7QZAuwG0GwDtBkC7AbQbAO0GQLsBtBsA7QZAuwHQbgDtBkC7AdBuAO0GQLsB+BtNbgFApqanp8vl8vj4+JIlSzo6OtatW2ffDTCnDQ0Ntbe3Dw8P5/P5JEkuXLhw4MCBarVa59iGWq3m5gJk4ebNm729vY8ePWptbZ25Uq1W9+/fv23btr6+PvtugDmnVqsdPXp0z549s+GOiMOHD1+9erVSqdQ5XLsBMvH27dvXr19//fr154v5fL67u3vXrl11DndmApCJiYmJfD4fEfv27du9e3exWFy6dGlaw7UbICtbt24dGhqaeb1gwYINGzYMDg62t7enMLr2W249wP8M5n99+/bt2LFjK1asmJ2Qy+UePnxYq5t2A2TV7lnPnj0bGBhYvnx5RBw8eFC7AeZcu6empgYGBs6ePfvL9adPn0bEli1b6m930x8/qJ8WwF85d+7cyZMnI6K3t7e5uXn2eltbWy6X6+zsrH8J3xEESNno6GhE9PX1/RzuiLh161Yulzty5Ej9S/h7JgAp6+7urlarFy9e/Pni8+fPDx06NDg4OHPqrd0Ac0tPT8+HDx927NjR1dW1cuXKycnJBw8ejIyMnD9/vlgsprKE73cDZGJ6enpkZGRiYiJJklWrVrW0tKQ4XLsB5h/PKgG0GwDtBkC7AbQbAO0GQLsBtBsA7QZAuwG0GwDtBkC7AbQbAO0GQLsB0G4A7QZAuwH4nX8A25T1kk1koTYAAAAASUVORK5CYII=" alt="Two disjoint lines r and s" />
+              <figcaption>Figure 2</figcaption>
+            </figure>
           `,
           choices: [
-            String.raw`\((A \cap C) \cup B'\)`,
-            String.raw`\((A \cup C) \cap B'\)`,
-            String.raw`\((A \cup B) \cap C'\)`,
-            String.raw`\((A \cap B) \cup C\)`,
-            String.raw`\(A \cap B \cap C\)`,
-            String.raw`\(B \cup (A \cap C)\)`
+            String.raw`\(r \cap s = \{P\}\)`,
+            String.raw`\(r \subset s\)`,
+            String.raw`\(r \cap s = \varnothing\)`,
+            String.raw`\(\{r,s\} \subset P\)`,
+            String.raw`\(r = s\)`,
+            String.raw`\(r \cap s = r\)`
           ]
         },
         {
           stem: String.raw`
-            <p>Which statement is correct?</p>
+            <p><b>Refer to Figure 3.</b> Which symbolic statement best describes the figure?</p>
+          `,
+          media: String.raw`
+            <figure>
+              <img src="data:image/png;base64,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" alt="Two lines intersecting at point P" />
+              <figcaption>Figure 3</figcaption>
+            </figure>
           `,
           choices: [
-            String.raw`\(5 \subseteq \{2,3,4,5,6,7\}\)`,
-            String.raw`\(\varnothing \in \{8\}\)`,
-            String.raw`\(\{7,9\} \in \{1,2,3,4,5,6,\ldots\}\)`,
-            String.raw`\(\{5,7\} \subseteq \{5\}\)`,
-            String.raw`\(\{7\} \subseteq \{6,\{7\}\}\)`,
-            String.raw`\(\{7\} \in \{6,\{7\}\}\)`
+            String.raw`\(r \subset s\)`,
+            String.raw`\(r \cap s = \{P\}\)`,
+            String.raw`\(P \notin r\)`,
+            String.raw`\(r \cap s = \varnothing\)`,
+            String.raw`\(r \subset \alpha\)`,
+            String.raw`\(r \cup s = \{P\}\)`
           ]
         },
         {
           stem: String.raw`
-            <p>Out of 800 boys, 500 like football, 200 like cinema, and 130 like both.</p>
-            <p>How many like <strong>neither</strong> football nor cinema?</p>
+            <p><b>Refer to Figure 4.</b> Which symbolic statement best describes the figure?</p>
+          `,
+          media: String.raw`
+            <figure>
+              <img src="data:image/png;base64,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" alt="Points P and Q on line r" />
+              <figcaption>Figure 4</figcaption>
+            </figure>
           `,
           choices: [
-            String.raw`170`,
-            String.raw`200`,
-            String.raw`300`,
-            String.raw`230`,
-            String.raw`570`,
-            String.raw`630`
+            String.raw`\(P \cap Q = r\)`,
+            String.raw`\(\{P,Q\} \subset r\)`,
+            String.raw`\(r \subset \{P,Q\}\)`,
+            String.raw`\(P \notin r\) and \(Q \notin r\)`,
+            String.raw`\(P = Q\)`,
+            String.raw`\(r = \{P,Q\}\)`
+          ]
+        },
+        {
+          stem: String.raw`
+            <p><b>Refer to Figure 5.</b> Which symbolic statement best describes the figure?</p>
+          `,
+          media: String.raw`
+            <figure>
+              <img src="data:image/png;base64,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" alt="Line r contained in plane alpha" />
+              <figcaption>Figure 5</figcaption>
+            </figure>
+          `,
+          choices: [
+            String.raw`\(r \cap \alpha = \varnothing\)`,
+            String.raw`\(r \not\subset \alpha\)`,
+            String.raw`\(r \subset \alpha\)`,
+            String.raw`\(\alpha \subset r\)`,
+            String.raw`\(r \cap \alpha = \{P\}\)`,
+            String.raw`\(\{r,\alpha\} \subset P\)`
+          ]
+        },
+        {
+          stem: String.raw`
+            <p><b>Refer to Figure 6.</b> Which symbolic statement best describes the figure?</p>
+          `,
+          media: String.raw`
+            <figure>
+              <img src="data:image/png;base64,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" alt="Planes alpha and beta intersecting in line r" />
+              <figcaption>Figure 6</figcaption>
+            </figure>
+          `,
+          choices: [
+            String.raw`\(\alpha \cap \beta = \varnothing\)`,
+            String.raw`\(\alpha \cap \beta = r\)`,
+            String.raw`\(r \subset \beta\) but \(r \not\subset \alpha\)`,
+            String.raw`\(\alpha = \beta\)`,
+            String.raw`\(\alpha \cap \beta = \{P\}\)`,
+            String.raw`\(r \cap \alpha = \varnothing\)`
+          ]
+        },
+        {
+          stem: String.raw`
+            <p><b>Refer to Figure 7.</b> Which symbolic statement best describes the figure?</p>
+          `,
+          media: String.raw`
+            <figure>
+              <img src="data:image/png;base64,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" alt="Line r meeting plane alpha at point P" />
+              <figcaption>Figure 7</figcaption>
+            </figure>
+          `,
+          choices: [
+            String.raw`\(r \subset \alpha\)`,
+            String.raw`\(r \cap \alpha = \{P\}\)`,
+            String.raw`\(\alpha \cap r = \varnothing\)`,
+            String.raw`\(\{P\} \subset r\) but \(P \notin \alpha\)`,
+            String.raw`\(\alpha \subset r\)`,
+            String.raw`\(r = \alpha\)`
+          ]
+        },
+        {
+          stem: String.raw`
+            <p><b>Refer to Figure 8.</b> Which symbolic statement best describes the figure?</p>
+          `,
+          media: String.raw`
+            <figure>
+              <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAekAAAEYCAIAAAD3Ypl8AAAACXBIWXMAACHVAAAh1QEEnLSdAAAZNklEQVR42u3df2wbd/3H8c8ypxt1Nn4sybyRUAfC2m3kRLHaERhKWpyJ2mwN4w/wWQsSVaqCkkzQf/bPqFKJqkIEKXGEKqJIMJYzYipSJs6F2qOltKiMhQ17Q1Xn1rdlpSEuSrfFVVlM8/3jw/zN0jRN4l935+fjr5zTOs2nzjvv+9zL77tlfn5eAAAspYolAABqNwCA2g0AoHYDALUbAEDtBgBQuwGA2g0AoHYDAKjdAEDtBgBQuwEA1G4AoHYDAKjdAABqNwCA2g0AFuZgCQDYWzKZPH369Ntvv71hw4bt27evX7+evhsAzOvKlSvf+ta3nnzyyf/85z+bNm26cOHC448//qc//ckG39ot3K8SgC3Nz88//PDDmzdvHh4ezj2YSCS+8Y1v/OMf/7D6d8eeCQB7CofDf/7znw8fPpx75MKFCx6Pp7a21gbfHXsmAOzpyJEjQoi33357YSe+devWH/7whzb47ui7AdjT7bffLoTYsWPH7t27v/rVrz744IMNDQ0nT560x3fHfjcAa0in03V1dSv/88eOHXvkkUey2aw8rK2t7evre+qpp6qrq22wGuyZADC7bDarqqqiKJlMZuV/a9u2bb/73e/a29tlsb506dIPfvCDQCBA3w0ARZdIJB555JGpqSkhhNfrjUajq32Gd9999+jRo5qm/eY3vxFCTE5ONjQ00HcDQLHa7f379yuKIgu3oigjIyMr+YunT5/+/ve/nwsC3nHHHV//+tcPHz78ta99TQhhGIYNFodrlQDMyDCMnTt3xuNxedjX1zcwMOBw3LxkXb161efzzczMvPfeewuT3UIIj8ej63pLSwu1GwAKT9O0YDAoP3a5XEePHl15wb106dLMzExtbe0TTzyx6FO6rvf29n74wx+2wRKxZwLARNLpdEdHR65wBwKBZDK5qk65oaHh85///PHjxx966KHcg//973+feuqpK1euPP300/ZYKPpuAGYRiUR27dold7dlm+zz+dbwPM8999z3vve9urq6rVu3rlu37s033/z973+/efPmEydO3HnnnfZYK3ImAMovm812dXWFw2F56PV6NU1bVZr7ehcuXEgmk7Ozs3fffbeiKOvWrbPTilG7AZTZ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" alt="Three concurrent lines r s t through point P" />
+              <figcaption>Figure 8</figcaption>
+            </figure>
+          `,
+          choices: [
+            String.raw`\(r \cap s \cap t = \{P\}\)`,
+            String.raw`\(r \cap s = \varnothing\)`,
+            String.raw`\(r \cap s = \{P,Q\}\)`,
+            String.raw`\(r \subset s\)`,
+            String.raw`\(r \cap s \cap t = \varnothing\)`,
+            String.raw`\(P \notin t\)`
+          ]
+        },
+        {
+          stem: String.raw`
+            <p><b>Refer to Figure 9.</b> Which symbolic statement best describes the figure?</p>
+          `,
+          media: String.raw`
+            <figure>
+              <img src="data:image/png;base64,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MWXKlA4dOiiuK4MHDw7ymjZAyebMmeN0OukK1Kht27ZCiEcffTTIz5cu023Xrp0sV1TJ1pW8vDzp8gM2OaEN7dq1GzRoEOsANYqNjRVCXLt2LZhPdrvdWVlZQgi73S7LrLpsXQnmbcEAAI1A2nsvKCio+qTP51uxYsXatWtv3LgReNLv90+ZMsXv97/55ptTp06V5bvL3JVHHnnk2Wef5YcKAE3IbDY/8sgjly5dOnDggPTM8ePHX3311ZiYmJiYmOnTp9+5c0d6ftq0aceOHXv99dffeecd2b69XG/F3K1bNyFEcnIy70oNAE1u6dKlQojRo0dL/zE1NbWoqEh6vHnz5r///e9lZWUzZswQQmRkZMj7rWU4XikvL1+3bt3FixeFEF27dq2U7waUAICHM23atBdeeOHzzz9/66237ty506FDhzZt2kgf6t279yeffDJo0KD169evW7du8eLF8n7rBt2H+OOPP87IyCgvL4+IiIiIiJBuOlZWVhYREZGdnf3MM8/wowWAplJRUfHnP/95wYIFTzzxxK1bt9avX9+qVauvv/561apVu3btmjt3bkZGRmDA5caNG61bt46MjGzirgAAFO727ds7d+48cOBAYWFhixYtevXqFRYWtmDBglu3blWd+X3hhRfee+896UKyBgpn0QFAw9q2bTtu3Lhx48YFnvnnP/95586d48ePBy6z2rJli8/nkyUqIhT39QIAKNn3338vhHjjjTfy8vLy8/MtFsu4ceNmz54t19fneAUA9EWaw8/OzpZuECmESE5OTk1Nlevrs78CAPpy/fr12NjYwAhLv379Dh06FPybvtSJ82AAoC8dOnTYtGnT888/bzKZZs6c6XQ6ZYwKxysAAJlxvAIAoCsAALoCAKArAADQFQAAXQEA0BUAAOgKAICuAADoCgCArgAAQFcAAHQFAEBXAACgKwAAugIAoCsAANAVAABdAQAo1/8D1RhCAgWTMA8AAAAASUVORK5CYII=" alt="Three lines meeting pairwise at three different points" />
+              <figcaption>Figure 9</figcaption>
+            </figure>
+          `,
+          choices: [
+            String.raw`\(r \cap s \cap t = \{P\}\)`,
+            String.raw`\(r \cap s = \{P\},\; r \cap t = \{Q\},\; s \cap t = \{R\}\)`,
+            String.raw`\(r \cap s = r\)`,
+            String.raw`\(r \cap s = \varnothing\)`,
+            String.raw`\(\alpha \cap \beta = r\)`,
+            String.raw`\(P,Q,R \notin r \cup s \cup t\)`
+          ]
+        },
+        {
+          stem: String.raw`
+            <p>Which sentence best matches the symbolic statement <span class="math">\(P \notin r\)</span>?</p>
+          `,
+          choices: [
+            String.raw`Point <span class="math">\(P\)</span> is the same object as line <span class="math">\(r\)</span>.`,
+            String.raw`Point <span class="math">\(P\)</span> lies on line <span class="math">\(r\)</span>.`,
+            String.raw`Point <span class="math">\(P\)</span> does not lie on line <span class="math">\(r\)</span>.`,
+            String.raw`Line <span class="math">\(r\)</span> is inside point <span class="math">\(P\)</span>.`,
+            String.raw`Point <span class="math">\(P\)</span> is the only point of <span class="math">\(r\)</span>.`,
+            String.raw`We do not have enough information.`
           ],
           choiceWrap: false
         },
         {
           stem: String.raw`
-            <p>In a company, 60% of the employees read magazine <span class="math">\(A\)</span>, 80% read magazine <span class="math">\(B\)</span>, and every employee reads at least one of them.</p>
-            <p>What percentage read <strong>both</strong> magazines?</p>
+            <p>Which sentence best matches the symbolic statement <span class="math">\(\{P,Q\} \subset r\)</span>?</p>
           `,
           choices: [
-            String.raw`20%`,
-            String.raw`30%`,
-            String.raw`40%`,
-            String.raw`60%`,
-            String.raw`80%`,
-            String.raw`100%`
+            String.raw`Lines <span class="math">\(P\)</span> and <span class="math">\(Q\)</span> meet at <span class="math">\(r\)</span>.`,
+            String.raw`Point <span class="math">\(P\)</span> lies on <span class="math">\(r\)</span>, but <span class="math">\(Q\)</span> does not.`,
+            String.raw`Points <span class="math">\(P\)</span> and <span class="math">\(Q\)</span> are the only two points on <span class="math">\(r\)</span>.`,
+            String.raw`Both points <span class="math">\(P\)</span> and <span class="math">\(Q\)</span> lie on line <span class="math">\(r\)</span>.`,
+            String.raw`Line <span class="math">\(r\)</span> lies inside the set <span class="math">\(\{P,Q\}\)</span>.`,
+            String.raw`Points <span class="math">\(P\)</span> and <span class="math">\(Q\)</span> are planes inside <span class="math">\(r\)</span>.`
           ],
           choiceWrap: false
         },
         {
           stem: String.raw`
-            <p>Let <span class="math">\(X = \{0,5,10\}\)</span>.</p>
-            <p>How many subsets does <span class="math">\(X\)</span> have in all?</p>
+            <p>Which sentence best matches the symbolic statement <span class="math">\(r \subset \alpha\)</span>?</p>
           `,
           choices: [
-            String.raw`6`,
-            String.raw`8`,
-            String.raw`9`,
-            String.raw`10`,
-            String.raw`12`,
-            String.raw`16`
+            String.raw`Line <span class="math">\(r\)</span> lies entirely in plane <span class="math">\(\alpha\)</span>.`,
+            String.raw`Plane <span class="math">\(\alpha\)</span> lies entirely on line <span class="math">\(r\)</span>.`,
+            String.raw`Line <span class="math">\(r\)</span> meets plane <span class="math">\(\alpha\)</span> in no point.`,
+            String.raw`Point <span class="math">\(r\)</span> lies on plane <span class="math">\(\alpha\)</span>.`,
+            String.raw`Plane <span class="math">\(\alpha\)</span> and line <span class="math">\(r\)</span> are equal.`,
+            String.raw`Line <span class="math">\(r\)</span> and plane <span class="math">\(\alpha\)</span> have exactly one common point.`
+          ],
+          choiceWrap: false
+        },
+        {
+          stem: String.raw`
+            <p>Which sentence best matches the symbolic statement <span class="math">\(\alpha \cap \beta = r\)</span>?</p>
+          `,
+          choices: [
+            String.raw`Planes <span class="math">\(\alpha\)</span> and <span class="math">\(\beta\)</span> do not meet.`,
+            String.raw`Planes <span class="math">\(\alpha\)</span> and <span class="math">\(\beta\)</span> meet in exactly one point.`,
+            String.raw`Plane <span class="math">\(\alpha\)</span> is inside plane <span class="math">\(\beta\)</span>.`,
+            String.raw`Planes <span class="math">\(\alpha\)</span> and <span class="math">\(\beta\)</span> share exactly the line <span class="math">\(r\)</span>.`,
+            String.raw`Line <span class="math">\(r\)</span> is outside both planes.`,
+            String.raw`Planes <span class="math">\(\alpha\)</span> and <span class="math">\(\beta\)</span> are parallel.`
+          ],
+          choiceWrap: false
+        },
+        {
+          stem: String.raw`
+            <p>Which sentence best matches the symbolic statement</p>
+            <p class="math">\(r \cap \alpha \neq \varnothing\)</p>
+            <p>but</p>
+            <p class="math">\(r \not\subset \alpha\)</p>
+          `,
+          choices: [
+            String.raw`Line <span class="math">\(r\)</span> lies entirely in plane <span class="math">\(\alpha\)</span>.`,
+            String.raw`Line <span class="math">\(r\)</span> and plane <span class="math">\(\alpha\)</span> have no point in common.`,
+            String.raw`Line <span class="math">\(r\)</span> crosses plane <span class="math">\(\alpha\)</span>, but it is not contained in the plane.`,
+            String.raw`Plane <span class="math">\(\alpha\)</span> is a point of line <span class="math">\(r\)</span>.`,
+            String.raw`Line <span class="math">\(r\)</span> is parallel to plane <span class="math">\(\alpha\)</span>.`,
+            String.raw`Plane <span class="math">\(\alpha\)</span> is a subset of <span class="math">\(r\)</span>.`
+          ],
+          choiceWrap: false
+        },
+        {
+          stem: String.raw`
+            <p>Which sentence best matches the symbolic statement <span class="math">\(r \cap s \cap t = \{P\}\)</span>?</p>
+          `,
+          choices: [
+            String.raw`The three lines are all the same line.`,
+            String.raw`The three lines all pass through the same point <span class="math">\(P\)</span>.`,
+            String.raw`Only <span class="math">\(r\)</span> and <span class="math">\(s\)</span> pass through <span class="math">\(P\)</span>.`,
+            String.raw`The three lines form a triangle.`,
+            String.raw`The three lines have no common point.`,
+            String.raw`The set <span class="math">\(\{P\}\)</span> is a line.`
+          ],
+          choiceWrap: false
+        },
+        {
+          stem: String.raw`
+            <p>Which symbolic statement is the most precise way to say:</p>
+            <p><i>Point</i> <span class="math">\(P\)</span> <i>is the only common point of lines</i> <span class="math">\(r\)</span> <i>and</i> <span class="math">\(s\)</span>?</p>
+          `,
+          choices: [
+            String.raw`\(P \in r\)`,
+            String.raw`\(r \subset s\)`,
+            String.raw`\(r \cap s = \{P\}\)`,
+            String.raw`\(\{P\} \subset r\)`,
+            String.raw`\(P = r \cap s \cap t\)`,
+            String.raw`\(r \cup s = \{P\}\)`
+          ]
+        },
+        {
+          stem: String.raw`
+            <p>Which symbolic statement is the most precise way to say:</p>
+            <p><i>The three lines meet pairwise, but not all at the same point.</i></p>
+          `,
+          choices: [
+            String.raw`\(r \cap s \cap t = \{P\}\)`,
+            String.raw`\(r \cap s = \varnothing\)`,
+            String.raw`\(r \cap s = \{P\},\; r \cap t = \{Q\},\; s \cap t = \{R\}\) with \(P,Q,R\) distinct`,
+            String.raw`\(r \subset \alpha\)`,
+            String.raw`\(\alpha \cap \beta = r\)`,
+            String.raw`\(r = s = t\)`
+          ],
+          choiceWrap: false
+        },
+        {
+          stem: String.raw`
+            <p>Which of the following situations is impossible in ordinary geometry?</p>
+          `,
+          choices: [
+            String.raw`Two different lines meet in one point.`,
+            String.raw`A line lies in a plane.`,
+            String.raw`Two different lines meet in two different points.`,
+            String.raw`Two planes share a line.`,
+            String.raw`A line meets a plane in one point.`,
+            String.raw`A point does not lie on a given line.`
+          ],
+          choiceWrap: false
+        },
+        {
+          stem: String.raw`
+            <p>Let <span class="math">\(A\)</span> and <span class="math">\(B\)</span> be distinct points of plane <span class="math">\(\alpha\)</span>, and let <span class="math">\(r\)</span> be the line through <span class="math">\(A\)</span> and <span class="math">\(B\)</span>.</p>
+            <p>Which statement must be true?</p>
+          `,
+          choices: [
+            String.raw`\(A \notin \alpha\)`,
+            String.raw`\(r \subset \alpha\)`,
+            String.raw`\(r \cap \alpha = \varnothing\)`,
+            String.raw`\(\alpha \subset r\)`,
+            String.raw`\(A = B\)`,
+            String.raw`\(r \not\subset \alpha\)`
+          ]
+        },
+        {
+          stem: String.raw`
+            <p>Which symbolic statement says that line <span class="math">\(r\)</span> and plane <span class="math">\(\alpha\)</span> have no point in common?</p>
+          `,
+          choices: [
+            String.raw`\(r \cup \alpha = \varnothing\)`,
+            String.raw`\(r \subset \alpha\)`,
+            String.raw`\(r \cap \alpha = \varnothing\)`,
+            String.raw`\(r \cap \alpha = \{P\}\)`,
+            String.raw`\(\alpha \subset r\)`,
+            String.raw`\(r = \alpha\)`
+          ]
+        },
+        {
+          stem: String.raw`
+            <p>Which symbolic statement says that point <span class="math">\(P\)</span> lies on both line <span class="math">\(r\)</span> and plane <span class="math">\(\alpha\)</span>?</p>
+          `,
+          choices: [
+            String.raw`\(P \in \alpha \cap r\)`,
+            String.raw`\(P = \alpha \cap r\)`,
+            String.raw`\(\alpha \subset r\)`,
+            String.raw`\(r \cap \alpha = \varnothing\)`,
+            String.raw`\(P \notin \alpha\)`,
+            String.raw`\(r \subset \alpha\)`
+          ]
+        },
+        {
+          stem: String.raw`
+            <p>Which symbolic statement says that points <span class="math">\(P\)</span>, <span class="math">\(Q\)</span>, and <span class="math">\(R\)</span> all lie on line <span class="math">\(t\)</span>?</p>
+          `,
+          choices: [
+            String.raw`\(t \subset \{P,Q,R\}\)`,
+            String.raw`\(P \cap Q \cap R = t\)`,
+            String.raw`\(\{P,Q\} \subset t\)`,
+            String.raw`\(\{P,Q,R\} \subset t\)`,
+            String.raw`\(P \notin t\)`,
+            String.raw`\(t \cap \{P,Q,R\} = \varnothing\)`
+          ]
+        },
+        {
+          stem: String.raw`
+            <p>What does the statement <span class="math">\(P \in r \cap s\)</span> mean?</p>
+          `,
+          choices: [
+            String.raw`Point <span class="math">\(P\)</span> is the whole intersection of <span class="math">\(r\)</span> and <span class="math">\(s\)</span>.`,
+            String.raw`Point <span class="math">\(P\)</span> lies on both lines <span class="math">\(r\)</span> and <span class="math">\(s\)</span>.`,
+            String.raw`Point <span class="math">\(P\)</span> lies on exactly one of the two lines.`,
+            String.raw`Lines <span class="math">\(r\)</span> and <span class="math">\(s\)</span> are the same line.`,
+            String.raw`Point <span class="math">\(P\)</span> is outside both lines.`,
+            String.raw`The intersection <span class="math">\(r \cap s\)</span> is empty.`
+          ],
+          choiceWrap: false
+        },
+        {
+          stem: String.raw`
+            <p>If <span class="math">\(r \cap s = \varnothing\)</span>, what can you conclude?</p>
+          `,
+          choices: [
+            String.raw`The lines are the same line.`,
+            String.raw`The lines must lie in the same plane.`,
+            String.raw`The lines have no common point.`,
+            String.raw`Each line contains only one point.`,
+            String.raw`The lines must intersect at a hidden point.`,
+            String.raw`The line <span class="math">\(r\)</span> is a subset of <span class="math">\(s\)</span>.`
           ],
           choiceWrap: false
         }
