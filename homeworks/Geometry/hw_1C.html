@@ -1,0 +1,275 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Homework 1C (Geometry)</title>
+
+  <script>
+    /* =========================
+       Homework 1C — Complements, Intersections, Unions, and Set Thinking in Geometry
+       Adapted for: /math-homework/assets/core-rich.js
+
+       REQUIRED SOURCE REFERENCES (your provided sets):
+       - Notes, Chapter 1, third exercise section: Ex. S34–S54.
+       - School textbook, Chapter 1 raw material consulted for syllabus alignment: set operations, Venn-diagram thinking, geometric symbolic statements, and simple counting problems based on overlap.
+
+       MODEL REWORK / EXTENSION NOTES:
+       - The full set has been rewritten in more intuitive high-school language while staying close to the mathematical center of the third exercise section of the notes.
+       - The sequence begins with empty set / complement review, then moves into intersection and union, then into geometric set language, Venn-style reasoning, and finally overlap-counting problems.
+       - Several long or mechanical source exercises were reshaped into shorter multiple-choice questions that still target the same skills.
+
+       IMAGE NAMING RULE (STRICT):
+       - No external figure files are required for this homework.
+       - One simple Venn diagram is embedded directly in the HTML.
+       - If external PNG figures are ever added later, they must be named by the original source problem number and placed in the same folder as this HTML.
+       ========================= */
+
+    window.homeworkData = {
+      classId : "Geometry",
+      id      : "Homework 1C",
+      title   : "Homework 1C — Set Operations in Geometry and Counting",
+      graphics : String.raw``,
+
+      answerKey : ["C","D","B","E","A","C","A","B","F","A","B","F","D","C","B"],
+
+      questions : [
+        {
+          stem: String.raw`
+            <p>Let <span class="math">\(A = \{1,2,3,4\}\)</span>.</p>
+            <p>What set is described by <span class="math">\(\{x \in A \mid x &gt; 10\}\)</span>?</p>
+          `,
+          choices: [
+            String.raw`\(\{10\}\)`,
+            String.raw`\(\{1,2,3,4\}\)`,
+            String.raw`\(\varnothing\)`,
+            String.raw`\(\{x \in A \mid x &lt; 10\}\)`,
+            String.raw`\(\{4\}\)`,
+            String.raw`\(\{1,10\}\)`
+          ]
+        },
+        {
+          stem: String.raw`
+            <p>Which statement about the empty set is true?</p>
+          `,
+          choices: [
+            String.raw`It is the same thing as the number zero in every context.`,
+            String.raw`It contains one hidden element that we simply do not write.`,
+            String.raw`It can never be part of geometry.`,
+            String.raw`It is a set with no elements, and it is a subset of every set.`,
+            String.raw`It can only appear inside infinite sets.`,
+            String.raw`It means that the question itself is meaningless.`
+          ],
+          choiceWrap: false
+        },
+        {
+          stem: String.raw`
+            <p>Before talking about the complement of a set, why do we need to know the universal set?</p>
+          `,
+          choices: [
+            String.raw`Because complements only exist for number sets.`,
+            String.raw`Because “outside the set” depends on which larger collection we are working inside.`,
+            String.raw`Because every complement must have the same size as the original set.`,
+            String.raw`Because the universal set tells us the order of the elements.`,
+            String.raw`Because a complement is just another name for an intersection.`,
+            String.raw`Because without a universal set, every complement becomes empty.`
+          ],
+          choiceWrap: false
+        },
+        {
+          stem: String.raw`
+            <p>Let <span class="math">\(U = \{1,2,3,4,5,6,7,8,9,10\}\)</span> and <span class="math">\(A = \{2,4,6,8,10\}\)</span>.</p>
+            <p>What is the complement of <span class="math">\(A\)</span> in <span class="math">\(U\)</span>?</p>
+          `,
+          choices: [
+            String.raw`\(\{2,4,6,8,10\}\)`,
+            String.raw`\(\{0,1,3,5,7,9\}\)`,
+            String.raw`\(\varnothing\)`,
+            String.raw`\(\{1,2,3,4,5\}\)`,
+            String.raw`\(\{1,3,5,7,9\}\)`,
+            String.raw`\(\{11,12,13\}\)`
+          ]
+        },
+        {
+          stem: String.raw`
+            <p>Points <span class="math">\(A\)</span> and <span class="math">\(B\)</span> are distinct.</p>
+            <p>Consider the set of all points that are equally distant from <span class="math">\(A\)</span> and <span class="math">\(B\)</span>.</p>
+            <p>If our universe is only the line through <span class="math">\(A\)</span> and <span class="math">\(B\)</span>, what does that set look like?</p>
+          `,
+          choices: [
+            String.raw`It is just the midpoint of <span class="math">\(AB\)</span>.`,
+            String.raw`It is the whole line through <span class="math">\(A\)</span> and <span class="math">\(B\)</span>.`,
+            String.raw`It is the perpendicular bisector of <span class="math">\(AB\)</span>.`,
+            String.raw`It is a whole plane.`,
+            String.raw`It is empty.`,
+            String.raw`It is the segment <span class="math">\(AB\)</span>.`
+          ],
+          choiceWrap: false
+        },
+        {
+          stem: String.raw`
+            <p>Let <span class="math">\(A = \{1,2,3,4,5,6\}\)</span> and <span class="math">\(B = \{4,5,6,7,8\}\)</span>.</p>
+            <p>What is <span class="math">\(A \cap B\)</span>?</p>
+          `,
+          choices: [
+            String.raw`\(\{1,2,3,4,5,6,7,8\}\)`,
+            String.raw`\(\{1,2,3\}\)`,
+            String.raw`\(\{4,5,6\}\)`,
+            String.raw`\(\{7,8\}\)`,
+            String.raw`\(\{3,4,5,6\}\)`,
+            String.raw`\(\varnothing\)`
+          ]
+        },
+        {
+          stem: String.raw`
+            <p>Using the same sets <span class="math">\(A = \{1,2,3,4,5,6\}\)</span> and <span class="math">\(B = \{4,5,6,7,8\}\)</span>, what is <span class="math">\(A \cup B\)</span>?</p>
+          `,
+          choices: [
+            String.raw`\(\{1,2,3,4,5,6,7,8\}\)`,
+            String.raw`\(\{4,5,6\}\)`,
+            String.raw`\(\{1,2,3\}\)`,
+            String.raw`\(\{7,8\}\)`,
+            String.raw`\(\varnothing\)`,
+            String.raw`\(\{1,2,3,4,5,6,4,5,6,7,8\}\)`
+          ]
+        },
+        {
+          stem: String.raw`
+            <p>If two sets are disjoint, what must be true?</p>
+          `,
+          choices: [
+            String.raw`They must have the same number of elements.`,
+            String.raw`Their intersection is empty.`,
+            String.raw`One of them must be a subset of the other.`,
+            String.raw`Their union must be empty.`,
+            String.raw`They must both be infinite.`,
+            String.raw`Their complements must be equal.`
+          ],
+          choiceWrap: false
+        },
+        {
+          stem: String.raw`
+            <p>Two planes <span class="math">\(\alpha\)</span> and <span class="math">\(\beta\)</span> cross each other along a line <span class="math">\(r\)</span>.</p>
+            <p>Which symbolic statement matches that situation?</p>
+          `,
+          choices: [
+            String.raw`\(\alpha \cup \beta = r\)`,
+            String.raw`\(\alpha \subseteq \beta\)`,
+            String.raw`\(r \cap \alpha = \varnothing\)`,
+            String.raw`\(\alpha \cap \beta = \{r\}\)`,
+            String.raw`\(\alpha \cap \beta = r\)`,
+            String.raw`\(r \subseteq \alpha \cap \beta\)`
+          ]
+        },
+        {
+          stem: String.raw`
+            <p><b>Refer to Figure 1.</b> Which set is shaded?</p>
+          `,
+          media: String.raw`
+            <figure>
+              <svg viewBox="0 0 260 150" width="260" height="150" aria-label="Two overlapping circles labeled A and B with only the overlap shaded">
+                <rect x="5" y="5" width="250" height="140" fill="white" stroke="#444" stroke-width="1.2"></rect>
+                <circle cx="105" cy="75" r="46" fill="none" stroke="#333" stroke-width="2"></circle>
+                <circle cx="155" cy="75" r="46" fill="none" stroke="#333" stroke-width="2"></circle>
+                <path d="M 132.9 38.4 A 46 46 0 0 0 132.9 111.6 A 46 46 0 0 0 132.9 38.4 Z" fill="#b7d4f0" stroke="none"></path>
+                <text x="83" y="38" font-size="18" font-family="serif">A</text>
+                <text x="177" y="38" font-size="18" font-family="serif">B</text>
+                <text x="238" y="23" font-size="16" font-family="serif">U</text>
+              </svg>
+              <figcaption>Figure 1</figcaption>
+            </figure>
+          `,
+          choices: [
+            String.raw`\(A \cap B\)`,
+            String.raw`\(A \cup B\)`,
+            String.raw`\(A \cap B'\)`,
+            String.raw`\(A' \cap B\)`,
+            String.raw`\((A \cap B)'\)`,
+            String.raw`\(\varnothing\)`
+          ]
+        },
+        {
+          stem: String.raw`
+            <p>Which expression describes all elements that are in <span class="math">\(A\)</span> or in <span class="math">\(C\)</span>, but <strong>not</strong> in <span class="math">\(B\)</span>?</p>
+            <p>Here <span class="math">\(B'\)</span> means the complement of <span class="math">\(B\)</span> in the universal set.</p>
+          `,
+          choices: [
+            String.raw`\((A \cap C) \cup B'\)`,
+            String.raw`\((A \cup C) \cap B'\)`,
+            String.raw`\((A \cup B) \cap C'\)`,
+            String.raw`\((A \cap B) \cup C\)`,
+            String.raw`\(A \cap B \cap C\)`,
+            String.raw`\(B \cup (A \cap C)\)`
+          ]
+        },
+        {
+          stem: String.raw`
+            <p>Which statement is correct?</p>
+          `,
+          choices: [
+            String.raw`\(5 \subseteq \{2,3,4,5,6,7\}\)`,
+            String.raw`\(\varnothing \in \{8\}\)`,
+            String.raw`\(\{7,9\} \in \{1,2,3,4,5,6,\ldots\}\)`,
+            String.raw`\(\{5,7\} \subseteq \{5\}\)`,
+            String.raw`\(\{7\} \subseteq \{6,\{7\}\}\)`,
+            String.raw`\(\{7\} \in \{6,\{7\}\}\)`
+          ]
+        },
+        {
+          stem: String.raw`
+            <p>Out of 800 boys, 500 like football, 200 like cinema, and 130 like both.</p>
+            <p>How many like <strong>neither</strong> football nor cinema?</p>
+          `,
+          choices: [
+            String.raw`170`,
+            String.raw`200`,
+            String.raw`300`,
+            String.raw`230`,
+            String.raw`570`,
+            String.raw`630`
+          ],
+          choiceWrap: false
+        },
+        {
+          stem: String.raw`
+            <p>In a company, 60% of the employees read magazine <span class="math">\(A\)</span>, 80% read magazine <span class="math">\(B\)</span>, and every employee reads at least one of them.</p>
+            <p>What percentage read <strong>both</strong> magazines?</p>
+          `,
+          choices: [
+            String.raw`20%`,
+            String.raw`30%`,
+            String.raw`40%`,
+            String.raw`60%`,
+            String.raw`80%`,
+            String.raw`100%`
+          ],
+          choiceWrap: false
+        },
+        {
+          stem: String.raw`
+            <p>Let <span class="math">\(X = \{0,5,10\}\)</span>.</p>
+            <p>How many subsets does <span class="math">\(X\)</span> have in all?</p>
+          `,
+          choices: [
+            String.raw`6`,
+            String.raw`8`,
+            String.raw`9`,
+            String.raw`10`,
+            String.raw`12`,
+            String.raw`16`
+          ],
+          choiceWrap: false
+        }
+      ]
+    };
+  </script>
+
+  <link rel="stylesheet" href="/math-homework/assets/core-rich.css" />
+  <script defer src="/math-homework/assets/core-rich.js"></script>
+  <script defer src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+</head>
+
+<body>
+  <div id="hw-root">Loading…</div>
+</body>
+</html>

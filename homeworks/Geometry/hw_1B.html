@@ -1,0 +1,275 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Homework 1B (Geometry)</title>
+
+  <script>
+    /* =========================
+       Homework 1B — Subsets and Set Operations
+       Adapted for: /math-homework/assets/core-rich.js
+
+       REQUIRED SOURCE REFERENCES (your provided sets):
+       - Notes, Chapter 1, second exercise section: Ex. S11–S54.
+       - School textbook, Chapter 1 raw material consulted for syllabus alignment: subsets, universal set, complement, intersection, union, Venn-style thinking, and equal-vs-equivalent-set language.
+
+       MODEL REWORK / EXTENSION NOTES:
+       - The set has been rewritten in more intuitive high-school language while staying close to the mathematical center of the second exercise section.
+       - Several long or mechanical source exercises were replaced by shorter multiple-choice questions that still test the same ideas: subset, set-builder notation, empty set, complement, intersection, union, disjointness, and simple geometric interpretations.
+       - One syllabus-alignment question on equivalent sets was added to cover a point emphasized in the school textbook.
+
+       IMAGE NAMING RULE (STRICT):
+       - No figure files are required for this homework.
+       - If figures are ever added later, any PNG must be named by the original source problem number and placed in the same folder as this HTML.
+       ========================= */
+
+    window.homeworkData = {
+      classId : "Geometry",
+      id      : "Homework 1B",
+      title   : "Homework 1B — Subsets and Set Operations",
+      graphics : String.raw``,
+
+      answerKey : ["C","E","D","B","F","A","D","E","B","C","F","D","B","A","C","E"],
+
+      questions : [
+        {
+          stem: String.raw`
+            <p>Suppose <span class="math">\(B \subseteq A\)</span>.</p>
+            <p>What does that mean?</p>
+          `,
+          choices: [
+            String.raw`Every element of <span class="math">\(A\)</span> belongs to <span class="math">\(B\)</span>.`,
+            String.raw`The two sets must have exactly the same number of elements.`,
+            String.raw`Every element of <span class="math">\(B\)</span> belongs to <span class="math">\(A\)</span>.`,
+            String.raw`The set <span class="math">\(B\)</span> must be the first element of <span class="math">\(A\)</span>.`,
+            String.raw`The symbol <span class="math">\(\subseteq\)</span> means “is equal to.”`,
+            String.raw`The set <span class="math">\(A\)</span> must have only one more element than <span class="math">\(B\)</span>.`
+          ],
+          choiceWrap: false
+        },
+        {
+          stem: String.raw`
+            <p>Let <span class="math">\(A = \{1,2,3,4\}\)</span>.</p>
+            <p>Which statement is true?</p>
+          `,
+          choices: [
+            String.raw`\(3 \subseteq A\)`,
+            String.raw`\(\{5\} \subseteq A\)`,
+            String.raw`\(\{1,4\} \in A\)`,
+            String.raw`\(A \in \{1,2,3,4\}\)`,
+            String.raw`\(\{1,4\} \subseteq A\)`,
+            String.raw`\(\{2,3,6\} = A\)`
+          ]
+        },
+        {
+          stem: String.raw`
+            <p>Let <span class="math">\(X = \{a,e,i,o,u\}\)</span>.</p>
+            <p>Which collection is <strong>not</strong> a subset of <span class="math">\(X\)</span>?</p>
+          `,
+          choices: [
+            String.raw`\(\{a,e\}\)`,
+            String.raw`\(\varnothing\)`,
+            String.raw`\(\{u\}\)`,
+            String.raw`\(\{y\}\)`,
+            String.raw`\(\{a,i,o\}\)`,
+            String.raw`\(X\)`
+          ]
+        },
+        {
+          stem: String.raw`
+            <p>Which reading of the notation <span class="math">\(\{x \in A \mid P(x)\}\)</span> is correct?</p>
+          `,
+          choices: [
+            String.raw`The set containing the symbols <span class="math">\(x\)</span>, <span class="math">\(A\)</span>, and <span class="math">\(P\)</span>.`,
+            String.raw`The set of all elements <span class="math">\(x\)</span> in <span class="math">\(A\)</span> such that <span class="math">\(P(x)\)</span> is true.`,
+            String.raw`The only element of <span class="math">\(A\)</span> is <span class="math">\(x\)</span>.`,
+            String.raw`The union of <span class="math">\(A\)</span> and <span class="math">\(P\)</span>.`,
+            String.raw`The complement of <span class="math">\(A\)</span>.`,
+            String.raw`A way of proving that <span class="math">\(x\)</span> is not in <span class="math">\(A\)</span>.`
+          ],
+          choiceWrap: false
+        },
+        {
+          stem: String.raw`
+            <p>Let <span class="math">\(A = \{1,2,3,4,5,6\}\)</span>.</p>
+            <p>What set is described by <span class="math">\(\{x \in A \mid x &gt; 4\}\)</span>?</p>
+          `,
+          choices: [
+            String.raw`\(\{1,2,3,4\}\)`,
+            String.raw`\(\{2,3,4,5,6\}\)`,
+            String.raw`\(\{4,5,6\}\)`,
+            String.raw`\(\{1,6\}\)`,
+            String.raw`\(\varnothing\)`,
+            String.raw`\(\{5,6\}\)`
+          ]
+        },
+        {
+          stem: String.raw`
+            <p>Let <span class="math">\(A = \{1,2,3,4\}\)</span>.</p>
+            <p>What set is described by <span class="math">\(\{x \in A \mid x^2 &gt; 20\}\)</span>?</p>
+          `,
+          choices: [
+            String.raw`\(\varnothing\)`,
+            String.raw`\(\{4\}\)`,
+            String.raw`\(\{3,4\}\)`,
+            String.raw`\(\{1,2,3,4\}\)`,
+            String.raw`\(\{20\}\)`,
+            String.raw`\(\{2,4\}\)`
+          ]
+        },
+        {
+          stem: String.raw`
+            <p>Which statement about the empty set is true?</p>
+          `,
+          choices: [
+            String.raw`It has one hidden element that we simply do not write.`,
+            String.raw`It can never be a subset of any set.`,
+            String.raw`It is only used in algebra, not in geometry.`,
+            String.raw`It is a set with no elements at all.`,
+            String.raw`It means the same thing as the number zero in every context.`,
+            String.raw`It can only appear when the universal set is infinite.`
+          ],
+          choiceWrap: false
+        },
+        {
+          stem: String.raw`
+            <p>Before talking about the complement of a set, why do we first need to choose a universal set?</p>
+          `,
+          choices: [
+            String.raw`Because complements only exist for sets of numbers.`,
+            String.raw`Because otherwise we would not know the name of the original set.`,
+            String.raw`Because a universal set is needed only for Venn diagrams, not for complements.`,
+            String.raw`Because without a universal set, every complement automatically becomes empty.`,
+            String.raw`Because “everything outside the set” depends on what larger collection we are working inside.`,
+            String.raw`Because complements can only be taken after finding an intersection first.`
+          ],
+          choiceWrap: false
+        },
+        {
+          stem: String.raw`
+            <p>Let <span class="math">\(U = \{1,2,3,4,5,6,7,8,9,10\}\)</span> and <span class="math">\(A = \{2,4,6,8,10\}\)</span>.</p>
+            <p>What is the complement of <span class="math">\(A\)</span> in <span class="math">\(U\)</span>?</p>
+          `,
+          choices: [
+            String.raw`\(\{2,4,6,8,10\}\)`,
+            String.raw`\(\{1,3,5,7,9\}\)`,
+            String.raw`\(\{0,1,3,5,7,9\}\)`,
+            String.raw`\(\{1,2,3,4,5\}\)`,
+            String.raw`\(\varnothing\)`,
+            String.raw`\(\{11,12,13,14,15\}\)`
+          ]
+        },
+        {
+          stem: String.raw`
+            <p>Let <span class="math">\(A = \{1,2,3,4,5,6\}\)</span> and <span class="math">\(B = \{4,5,6,7,8\}\)</span>.</p>
+            <p>What is <span class="math">\(A \cap B\)</span>?</p>
+          `,
+          choices: [
+            String.raw`\(\{1,2,3,4,5,6,7,8\}\)`,
+            String.raw`\(\{1,2,3\}\)`,
+            String.raw`\(\{4,5,6\}\)`,
+            String.raw`\(\{7,8\}\)`,
+            String.raw`\(\varnothing\)`,
+            String.raw`\(\{3,4,5,6\}\)`
+          ]
+        },
+        {
+          stem: String.raw`
+            <p>Which sentence best describes the union <span class="math">\(A \cup B\)</span>?</p>
+          `,
+          choices: [
+            String.raw`The set of elements that belong to both <span class="math">\(A\)</span> and <span class="math">\(B\)</span> at the same time.`,
+            String.raw`The set of elements that belong only to <span class="math">\(A\)</span>.`,
+            String.raw`The set of elements that belong only to <span class="math">\(B\)</span>.`,
+            String.raw`The set of elements that are not in either set.`,
+            String.raw`The set of elements that belong to exactly one of the two sets, but not both.`,
+            String.raw`The set of elements that belong to <span class="math">\(A\)</span>, or to <span class="math">\(B\)</span>, or to both.`
+          ],
+          choiceWrap: false
+        },
+        {
+          stem: String.raw`
+            <p>Let <span class="math">\(A = \{1,2,3,4\}\)</span> and <span class="math">\(B = \{3,4,5,6\}\)</span>.</p>
+            <p>What is <span class="math">\(A \cup B\)</span>?</p>
+          `,
+          choices: [
+            String.raw`\(\{3,4\}\)`,
+            String.raw`\(\{1,2,5,6\}\)`,
+            String.raw`\(\{1,2,3,4\}\)`,
+            String.raw`\(\{1,2,3,4,5,6\}\)`,
+            String.raw`\(\varnothing\)`,
+            String.raw`\(\{1,2,3,4,3,4,5,6\}\)`
+          ]
+        },
+        {
+          stem: String.raw`
+            <p>If two sets are disjoint, what must be true?</p>
+          `,
+          choices: [
+            String.raw`They must have the same number of elements.`,
+            String.raw`They have no elements in common.`,
+            String.raw`One must be a subset of the other.`,
+            String.raw`Their union must be empty.`,
+            String.raw`Their complements must be equal.`,
+            String.raw`They must both be infinite.`
+          ],
+          choiceWrap: false
+        },
+        {
+          stem: String.raw`
+            <p>Think of a line <span class="math">\(r\)</span> as the set of all points on that line.</p>
+            <p>Let <span class="math">\(S\)</span> be the set of all points between two fixed points <span class="math">\(P\)</span> and <span class="math">\(Q\)</span> on the same line.</p>
+            <p>Which statement must be true?</p>
+          `,
+          choices: [
+            String.raw`\(S \subseteq r\)`,
+            String.raw`\(r \subseteq S\)`,
+            String.raw`\(P \in S\)` ,
+            String.raw`\(Q \in S\)` ,
+            String.raw`\(S = \varnothing\)`,
+            String.raw`It is still a set, even though it has infinitely many points.`
+          ],
+          choiceWrap: false
+        },
+        {
+          stem: String.raw`
+            <p>Two distinct lines <span class="math">\(r\)</span> and <span class="math">\(s\)</span> meet at exactly one point <span class="math">\(P\)</span>.</p>
+            <p>Which symbolic statement matches that situation?</p>
+          `,
+          choices: [
+            String.raw`\(r \cup s = \{P\}\)`,
+            String.raw`\(r \subseteq s\)`,
+            String.raw`\(r \cap s = \{P\}\)`,
+            String.raw`\(P \subseteq r\)`,
+            String.raw`\(r \cap s = \varnothing\)`,
+            String.raw`\(r = s = \{P\}\)`
+          ]
+        },
+        {
+          stem: String.raw`
+            <p>Set <span class="math">\(B = \{Jack, Fred, Ron\}\)</span> and set <span class="math">\(G = \{Rhonda, Heather, Joy\}\)</span> each have three elements.</p>
+            <p>Which statement is correct?</p>
+          `,
+          choices: [
+            String.raw`The sets are equal because both have three elements.`,
+            String.raw`The sets are disjoint, so they cannot be compared at all.`,
+            String.raw`The sets are equal if the elements are listed in a different order.`,
+            String.raw`The sets are complements of each other.`,
+            String.raw`The sets are equivalent in size, but they are not equal sets.`,
+            String.raw`The sets must be subsets of each other.`
+          ],
+          choiceWrap: false
+        }
+      ]
+    };
+  </script>
+
+  <link rel="stylesheet" href="/math-homework/assets/core-rich.css" />
+  <script defer src="/math-homework/assets/core-rich.js"></script>
+  <script defer src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+</head>
+<body>
+  <div id="hw-root">Loading…</div>
+</body>
+</html>
