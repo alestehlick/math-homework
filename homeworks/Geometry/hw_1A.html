@@ -189,7 +189,7 @@
           ],
           choiceWrap: false
         },
-        {
+{
           stem: String.raw`
             <p>Which student-created example is fully correct?</p>
           `,
@@ -198,10 +198,12 @@
             String.raw`<span class="math">\(R = \{a,e,i,o,u\}\)</span>, so <span class="math">\(R = a\)</span>.`,
             String.raw`<span class="math">\(K = \{red,green,blue\}\)</span>, so <span class="math">\(green \notin K\)</span>.`,
             String.raw`<span class="math">\(M = \{sun,moon,star\}\)</span>, so <span class="math">\(M \in star\)</span>.`,
-            String.raw`<span class="math">\(T = \{p,q,r,s\}\)</span>, so <span class="math">\(\{p,q,r,s\} \notin T\)</span>.`,
+            String.raw`<span class="math">\(T = \{p,q,r,s\}\)</span>, so <span class="math">\(\{p,q,r,s\} \in T\)</span>.`,
             String.raw`<span class="math">\(N = \{4,6,8,10\}\)</span>, so <span class="math">\(6 \in N\)</span> and <span class="math">\(5 \notin N\)</span>.`
           ]
         },
+
+Overall judgment: good set, one real flaw, now fixed.
         {
           stem: String.raw`
             <p>Suppose <span class="math">\(A = \{m,n,p,q\}\)</span>.</p>
