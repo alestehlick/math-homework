@@ -34,7 +34,7 @@
 
       graphics : String.raw``,
 
-      answerKey : ["A","C","B","A","A","B","D","E","C","A","A","C"],
+      answerKey : ["D","B","E","A","C","F","A","E","B","D","C","F"],
 
       questions : [
         {
@@ -46,10 +46,10 @@
             </p>
           `,
           choices: [
-            String.raw`<span>\(97 \in N,\; 0 \in W,\; -7 \in Z,\; \frac{1}{5} \in Q\)</span>`,
             String.raw`<span>\(97 \in W,\; 0 \in N,\; -7 \in Z,\; \frac{1}{5} \in Q\)</span>`,
             String.raw`<span>\(97 \in N,\; 0 \in Z,\; -7 \in Q,\; \frac{1}{5} \in Q\)</span>`,
             String.raw`<span>\(97 \in Q,\; 0 \in W,\; -7 \in Z,\; \frac{1}{5} \in R\)</span>`,
+            String.raw`<span>\(97 \in N,\; 0 \in W,\; -7 \in Z,\; \frac{1}{5} \in Q\)</span>`,
             String.raw`<span>\(97 \in N,\; 0 \in W,\; -7 \in W,\; \frac{1}{5} \in Q\)</span>`,
             String.raw`<span>\(97 \in N,\; 0 \in N,\; -7 \in Z,\; \frac{1}{5} \in Q\)</span>`
           ],
@@ -61,8 +61,8 @@
           `,
           choices: [
             String.raw`<span>\(0.232332333\ldots\) is rational because its digits follow a visible pattern.</span>`,
-            String.raw`<span>\(0.\overline{79}\) is irrational because the decimal does not terminate.</span>`,
             String.raw`<span>\(\sqrt{5}\) is irrational, and \(\frac{22}{7}\) is rational.</span>`,
+            String.raw`<span>\(0.\overline{79}\) is irrational because the decimal does not terminate.</span>`,
             String.raw`<span>\(\frac{22}{7}\) is an integer, and \(\sqrt{5}\) is rational.</span>`,
             String.raw`<span>\(0.\overline{79}\) and \(0.232332333\ldots\) are both rational.</span>`,
             String.raw`<span>\(\sqrt{5}\) and \(\frac{22}{7}\) are both irrational.</span>`
@@ -75,10 +75,10 @@
           `,
           choices: [
             String.raw`<span>\(8 + 0 = 8\)</span>`,
-            String.raw`<span>\(8 + (-8) = 0\)</span>`,
             String.raw`<span>\(8 \cdot 1 = 8\)</span>`,
             String.raw`<span>\(8 + 3 = 3 + 8\)</span>`,
             String.raw`<span>\((8 + 3) + 2 = 8 + (3 + 2)\)</span>`,
+            String.raw`<span>\(8 + (-8) = 0\)</span>`,
             String.raw`<span>\(8(3 + 2) = 8\cdot 3 + 8\cdot 2\)</span>`
           ],
           choiceWrap: false
@@ -102,9 +102,9 @@
             <p>Which equation is an example of the <strong>identity property of multiplication</strong>?</p>
           `,
           choices: [
-            String.raw`<span>\(1\cdot (-12) = -12\)</span>`,
             String.raw`<span>\((-12) + 12 = 0\)</span>`,
             String.raw`<span>\((-12) + 0 = -12\)</span>`,
+            String.raw`<span>\(1\cdot (-12) = -12\)</span>`,
             String.raw`<span>\((-12)\cdot 0 = 0\)</span>`,
             String.raw`<span>\((-12)\cdot 5 = 5\cdot (-12)\)</span>`,
             String.raw`<span>\((-12)\cdot 5\) is an integer.</span>`
@@ -117,11 +117,11 @@
           `,
           choices: [
             String.raw`<span>The set of whole numbers is closed under subtraction, and the set of rational numbers is closed under division.</span>`,
-            String.raw`<span>The set of whole numbers is <em>not</em> closed under subtraction because \(3 - 5 = -2\), which is not a whole number; the set of rational numbers is <em>not</em> closed under division because division by \(0\) is undefined.</span>`,
             String.raw`<span>The set of whole numbers is <em>not</em> closed under subtraction because \(8 - 3 = 5\); the set of rational numbers <em>is</em> closed under division because \(\frac{1}{2} \div \frac{1}{4} = 2\).</span>`,
             String.raw`<span>The set of whole numbers is closed under subtraction because negative numbers are whole numbers; the set of rational numbers is <em>not</em> closed under division because \(\frac{1}{2} \div \frac{1}{4} = 8\).</span>`,
             String.raw`<span>The set of whole numbers is <em>not</em> closed under subtraction because subtraction is commutative; the set of rational numbers is <em>not</em> closed under division because \(\frac{2}{3} \div \frac{4}{9}\) is irrational.</span>`,
-            String.raw`<span>The set of whole numbers is <em>not</em> closed under subtraction because \(0 - 0 = 0\); the set of rational numbers <em>is</em> closed under division because \(a \div b\) is rational for every rational \(a\) and \(b\).</span>`
+            String.raw`<span>The set of whole numbers is <em>not</em> closed under subtraction because \(0 - 0 = 0\); the set of rational numbers <em>is</em> closed under division because \(a \div b\) is rational for every rational \(a\) and \(b\).</span>`,
+            String.raw`<span>The set of whole numbers is <em>not</em> closed under subtraction because \(3 - 5 = -2\), which is not a whole number; the set of rational numbers is <em>not</em> closed under division because a rational divisor can be \(0\), and division by \(0\) is undefined.</span>`
           ],
           choiceWrap: false
         },
@@ -131,10 +131,10 @@
             <p class="math">\[7 + 6\cdot 2 - 10 \div 5\]</p>
           `,
           choices: [
+            String.raw`\(17\)`,
             String.raw`\(3.2\)`,
             String.raw`\(9\)`,
             String.raw`\(15\)`,
-            String.raw`\(17\)`,
             String.raw`\(24\)`,
             String.raw`\(33\)`
           ]
@@ -160,8 +160,8 @@
           `,
           choices: [
             String.raw`\(16\)`,
-            String.raw`\(14\)`,
             String.raw`\(30\)`,
+            String.raw`\(14\)`,
             String.raw`\(46\)`,
             String.raw`\(-14\)`,
             String.raw`\(2\)`
@@ -173,10 +173,10 @@
             <p class="math">\[3^3 - 5\cdot 9 + 6 - 29\]</p>
           `,
           choices: [
-            String.raw`\(-41\)`,
             String.raw`\(-23\)`,
             String.raw`\(-59\)`,
             String.raw`\(17\)`,
+            String.raw`\(-41\)`,
             String.raw`\(76\)`,
             String.raw`\(-12\)`
           ]
@@ -187,9 +187,9 @@
             <p class="math">\[\frac{1}{3} + \frac{5}{6}\cdot \frac{1}{2} - 8 \div 3\]</p>
           `,
           choices: [
-            String.raw`\(-\frac{23}{12}\)`,
             String.raw`\(-\frac{11}{4}\)`,
             String.raw`\(-\frac{5}{4}\)`,
+            String.raw`\(-\frac{23}{12}\)`,
             String.raw`\(\frac{1}{12}\)`,
             String.raw`\(\frac{3}{4}\)`,
             String.raw`\(\frac{23}{12}\)`
@@ -203,10 +203,10 @@
           choices: [
             String.raw`\(0.019\)`,
             String.raw`\(0.19\)`,
-            String.raw`\(0.433\)`,
             String.raw`\(0.533\)`,
             String.raw`\(0.933\)`,
-            String.raw`\(1.433\)`
+            String.raw`\(1.433\)`,
+            String.raw`\(0.433\)`
           ]
         }
       ]
