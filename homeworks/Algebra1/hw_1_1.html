@@ -140,82 +140,9 @@
       id      : "Homework 1-1",
       title   : "Homework 1-1 — Integers on the Number Line and Midpoint",
       graphics : String.raw``,
-      answerKey : ["B","C","D","B","C","D","A","E","C","D","C","B"],
+      answerKey : ["A","E","C","D","C","B"],
       questions : [
-        {
-          stem: String.raw`
-            <p>Each choice shows the same horizontal number line from \(-5\) to \(5\).</p>
-            <p>Choose the diagram that correctly places the point for the integer \(4\).</p>
-          `,
-          choices: [
-            choiceWrap(hLineSvg({ min: -5, max: 5, step: 1, dot: -4, width: 240, height: 74, fontSize: 11 })),
-            choiceWrap(hLineSvg({ min: -5, max: 5, step: 1, dot: 4,  width: 240, height: 74, fontSize: 11 })),
-            choiceWrap(hLineSvg({ min: -5, max: 5, step: 1, dot: 3,  width: 240, height: 74, fontSize: 11 })),
-            choiceWrap(hLineSvg({ min: -5, max: 5, step: 1, dot: 5,  width: 240, height: 74, fontSize: 11 })),
-            choiceWrap(hLineSvg({ min: -5, max: 5, step: 1, dot: 0,  width: 240, height: 74, fontSize: 11 })),
-            choiceWrap(hLineSvg({ min: -5, max: 5, step: 1, dot: -1, width: 240, height: 74, fontSize: 11 }))
-          ],
-          choiceWrap: false
-        },
-        {
-          stem: String.raw`
-            <p>Each choice shows the same horizontal number line from \(-5\) to \(5\).</p>
-            <p>Choose the diagram that correctly places the point for the integer \(-3\).</p>
-          `,
-          choices: [
-            choiceWrap(hLineSvg({ min: -5, max: 5, step: 1, dot: -2, width: 240, height: 74, fontSize: 11 })),
-            choiceWrap(hLineSvg({ min: -5, max: 5, step: 1, dot: 3,  width: 240, height: 74, fontSize: 11 })),
-            choiceWrap(hLineSvg({ min: -5, max: 5, step: 1, dot: -3, width: 240, height: 74, fontSize: 11 })),
-            choiceWrap(hLineSvg({ min: -5, max: 5, step: 1, dot: -4, width: 240, height: 74, fontSize: 11 })),
-            choiceWrap(hLineSvg({ min: -5, max: 5, step: 1, dot: 0,  width: 240, height: 74, fontSize: 11 })),
-            choiceWrap(hLineSvg({ min: -5, max: 5, step: 1, dot: 5,  width: 240, height: 74, fontSize: 11 }))
-          ],
-          choiceWrap: false
-        },
-        {
-          stem: String.raw`
-            <p>Each choice shows the same vertical number line marked every \(50\) units from \(-100\) to \(200\).</p>
-            <p>Choose the diagram that correctly places the point for the integer \(100\).</p>
-          `,
-          choices: [
-            choiceWrap(vLineSvg({ min: -100, max: 200, step: 50, dot: 0,    width: 108, height: 220, fontSize: 11 })),
-            choiceWrap(vLineSvg({ min: -100, max: 200, step: 50, dot: -100, width: 108, height: 220, fontSize: 11 })),
-            choiceWrap(vLineSvg({ min: -100, max: 200, step: 50, dot: 150,  width: 108, height: 220, fontSize: 11 })),
-            choiceWrap(vLineSvg({ min: -100, max: 200, step: 50, dot: 100,  width: 108, height: 220, fontSize: 11 })),
-            choiceWrap(vLineSvg({ min: -100, max: 200, step: 50, dot: 50,   width: 108, height: 220, fontSize: 11 })),
-            choiceWrap(vLineSvg({ min: -100, max: 200, step: 50, dot: 200,  width: 108, height: 220, fontSize: 11 }))
-          ],
-          choiceWrap: false
-        },
-        {
-          stem: String.raw`
-            <p><b>Refer to Figure 1.</b> What integer is represented by the dot on the number line?</p>
-          `,
-          media: figureWrap(hLineSvg({ min: -25, max: 25, step: 5, dot: -15, width: 420, height: 84, fontSize: 14 }), "Figure 1"),
-          choices: [
-            String.raw`\(-20\)`,
-            String.raw`\(-15\)`,
-            String.raw`\(-10\)`,
-            String.raw`\(15\)`,
-            String.raw`\(5\)`,
-            String.raw`\(0\)`
-          ]
-        },
-        {
-          stem: String.raw`
-            <p><b>Refer to Figure 2.</b> What integer is represented by the dot on the vertical number line?</p>
-          `,
-          media: figureWrap(vLineSvg({ min: -15, max: 25, step: 5, dot: 15, width: 120, height: 320, fontSize: 14 }), "Figure 2"),
-          choices: [
-            String.raw`\(10\)`,
-            String.raw`\(-15\)`,
-            String.raw`\(15\)`,
-            String.raw`\(20\)`,
-            String.raw`\(5\)`,
-            String.raw`\(0\)`
-          ]
-        },
-        {
+                {
           stem: String.raw`
             <p>Find the midpoint of the segment with endpoints \(0\) and \(4\).</p>
           `,
