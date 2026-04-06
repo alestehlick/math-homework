@@ -34,7 +34,7 @@
       title   : "Homework 1-6 — Factoring Completely",
       graphics: String.raw``,
 
-      answerKey : ["B","C","A","D","B","C","A","B","E","D","F","C"],
+      answerKey : ["A","B","C","D","E","F","A","B","C","D","E","F"],
 
       questions : [
         /* Source: A. Exercise #1 */
@@ -42,9 +42,8 @@
           stem: String.raw`
             <p>Which choice is the complete factorization of \(x^2 - 2x - 63\)?</p>
           `,
-          choices: [
+          choices: [            String.raw`\((x-9)(x+7)\)`,
             String.raw`\((x-7)(x+9)\)`,
-            String.raw`\((x-9)(x+7)\)`,
             String.raw`\((x-3)(x+21)\)`,
             String.raw`\((x+9)(x+7)\)`,
             String.raw`\((x-9)^2\)`,
@@ -58,10 +57,9 @@
           stem: String.raw`
             <p>Factor completely: \(7x^2 - 67x - 30\).</p>
           `,
-          choices: [
-            String.raw`\((7x-3)(x+10)\)`,
-            String.raw`\((7x+10)(x-3)\)`,
+          choices: [            String.raw`\((7x-3)(x+10)\)`,
             String.raw`\((7x+3)(x-10)\)`,
+            String.raw`\((7x+10)(x-3)\)`,
             String.raw`\((7x-10)(x+3)\)`,
             String.raw`\((x-10)(x+3)\)`,
             String.raw`Prime over the integers`
@@ -74,10 +72,9 @@
           stem: String.raw`
             <p>Which expression is the complete factorization of \(10e^2f^3g + 6ef^2g^2 - 8ef^5g\)?</p>
           `,
-          choices: [
-            String.raw`\(2ef^2g(5ef + 3g - 4f^3)\)`,
-            String.raw`\(2efg(5ef^2 + 3fg - 4f^4)\)`,
+          choices: [            String.raw`\(2efg(5ef^2 + 3fg - 4f^4)\)`,
             String.raw`\(2ef^2g(5e + 3g - 4f^2)\)`,
+            String.raw`\(2ef^2g(5ef + 3g - 4f^3)\)`,
             String.raw`\(ef^2g(10ef + 6g - 8f^3)\)`,
             String.raw`\(2ef^2g(5ef - 3g - 4f^3)\)`,
             String.raw`\(2ef^2g(5ef + 3g - 2f^3)\)`
@@ -90,8 +87,7 @@
           stem: String.raw`
             <p>Choose the complete factorization of \(a^2 + 6a + 9\).</p>
           `,
-          choices: [
-            String.raw`\((a+9)(a+1)\)`,
+          choices: [            String.raw`\((a+9)(a+1)\)`,
             String.raw`\((a+3)(a-3)\)`,
             String.raw`\((a+6)(a+3)\)`,
             String.raw`\((a+3)^2\)`,
@@ -106,12 +102,11 @@
           stem: String.raw`
             <p>Which expression gives the complete factorization of \(a^5b^2 + 2a^4b^3 + a^3b^4\)?</p>
           `,
-          choices: [
-            String.raw`\(a^3b^2(a^2 + 2ab + b^2)\)`,
-            String.raw`\(a^3b^2(a+b)^2\)`,
+          choices: [            String.raw`\(a^3b^2(a^2 + 2ab + b^2)\)`,
             String.raw`\(ab^2(a^4 + 2a^3b + a^2b^2)\)`,
             String.raw`\(a^3b(a^2b + 2ab^2 + b^3)\)`,
             String.raw`\((a^2b + ab^2)^2\)`,
+            String.raw`\(a^3b^2(a+b)^2\)`,
             String.raw`\(a^3b^2(a-b)^2\)`
           ],
           choiceWrap: false
@@ -122,13 +117,12 @@
           stem: String.raw`
             <p>Factor completely: \(4c^4d - 52c^3d + 168c^2d\).</p>
           `,
-          choices: [
-            String.raw`\(4c^2d(c^2 - 13c + 42)\)`,
+          choices: [            String.raw`\(4c^2d(c^2 - 13c + 42)\)`,
             String.raw`\(4cd(c^3 - 13c^2 + 42c)\)`,
-            String.raw`\(4c^2d(c-6)(c-7)\)`,
             String.raw`\(4c^2d(c+6)(c-7)\)`,
             String.raw`\(2c^2d(2c-7)(2c-6)\)`,
-            String.raw`\(4c^2d(c-14)(c+3)\)`
+            String.raw`\(4c^2d(c-14)(c+3)\)`,
+            String.raw`\(4c^2d(c-6)(c-7)\)`
           ],
           choiceWrap: false
         },
@@ -138,8 +132,7 @@
           stem: String.raw`
             <p>Choose the complete factorization of \(19x^2 - 114x + 171\).</p>
           `,
-          choices: [
-            String.raw`\(19(x-3)^2\)`,
+          choices: [            String.raw`\(19(x-3)^2\)`,
             String.raw`\((19x-3)(x-57)\)`,
             String.raw`\((19x-57)(x-3)\)`,
             String.raw`\(19(x-9)(x-1)\)`,
@@ -154,8 +147,7 @@
           stem: String.raw`
             <p>Which expression is the complete factorization of \(4x^2 - 68x + 289\)?</p>
           `,
-          choices: [
-            String.raw`\((4x-17)^2\)`,
+          choices: [            String.raw`\((4x-17)^2\)`,
             String.raw`\((2x-17)^2\)`,
             String.raw`\((2x+17)^2\)`,
             String.raw`\((x-17)(4x-17)\)`,
@@ -170,12 +162,11 @@
           stem: String.raw`
             <p>Factor completely: \(x^4 + 2x^2 - 15\).</p>
           `,
-          choices: [
-            String.raw`\((x^2+3)(x^2-5)\)`,
+          choices: [            String.raw`\((x^2+3)(x^2-5)\)`,
             String.raw`\((x^2-5)(x^2-3)\)`,
+            String.raw`\((x^2+5)(x^2-3)\)`,
             String.raw`\((x^2-15)(x^2+1)\)`,
             String.raw`\((x^2+3)(x^2+5)\)`,
-            String.raw`\((x^2+5)(x^2-3)\)`,
             String.raw`Prime over the integers`
           ],
           choiceWrap: false
@@ -186,8 +177,7 @@
           stem: String.raw`
             <p>Which choice gives the complete factorization of \(x^4 - 13x^2 + 36\)?</p>
           `,
-          choices: [
-            String.raw`\((x^2-9)(x^2-4)\)`,
+          choices: [            String.raw`\((x^2-9)(x^2-4)\)`,
             String.raw`\((x-9)(x+4)(x^2-1)\)`,
             String.raw`\((x-6)^2(x+1)^2\)`,
             String.raw`\((x-3)(x+3)(x-2)(x+2)\)`,
@@ -202,13 +192,12 @@
           stem: String.raw`
             <p>Choose the complete factorization of \(8x^5 - 130x^3 + 32x\).</p>
           `,
-          choices: [
-            String.raw`\(2x(4x^4 - 65x^2 + 16)\)`,
+          choices: [            String.raw`\(2x(4x^4 - 65x^2 + 16)\)`,
             String.raw`\(2x(2x-1)(2x+1)(x^2-16)\)`,
             String.raw`\(2x(4x^2-1)(x^2-16)\)`,
             String.raw`\(2x(4x^2+1)(x^2-16)\)`,
-            String.raw`\(2x(2x-1)(2x+1)(x-16)(x+1)\)`,
-            String.raw`\(2x(2x-1)(2x+1)(x-4)(x+4)\)`
+            String.raw`\(2x(2x-1)(2x+1)(x-4)(x+4)\)`,
+            String.raw`\(2x(2x-1)(2x+1)(x-16)(x+1)\)`
           ],
           choiceWrap: false
         },
@@ -218,13 +207,12 @@
           stem: String.raw`
             <p>Factor completely: \(48x^4y - 216x^2y + 243y\).</p>
           `,
-          choices: [
-            String.raw`\(3y(16x^4 - 72x^2 + 81)\)`,
+          choices: [            String.raw`\(3y(16x^4 - 72x^2 + 81)\)`,
             String.raw`\(3y(4x^2-9)^2\)`,
-            String.raw`\(3y(2x-3)^2(2x+3)^2\)`,
             String.raw`\(3y(4x-9)^2\)`,
             String.raw`\(y(48x^4 - 216x^2 + 243)\)`,
-            String.raw`\(3y(2x-3)(2x+3)\)`
+            String.raw`\(3y(2x-3)(2x+3)\)`,
+            String.raw`\(3y(2x-3)^2(2x+3)^2\)`
           ],
           choiceWrap: false
         }
