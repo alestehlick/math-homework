@@ -31,7 +31,7 @@
 
       graphics : String.raw``,
 
-      answerKey : ["A","A","D","B","C","B","B","B","B","B","A","A"],
+      answerKey : ["A","B","C","D","E","F","A","B","C","D","E","F"],
 
       questions : [
 
@@ -56,8 +56,8 @@
             <p class="math">\((2x^2y^5)^2 + 6x^4y^{10}\)</p>
           `,
           choices: [
-            String.raw`\(10x^4y^{10}\)`,
             String.raw`\(10x^6y^{15}\)`,
+            String.raw`\(10x^4y^{10}\)`,
             String.raw`\(8x^4y^{10}\)`,
             String.raw`\(10x^4y^{20}\)`,
             String.raw`\(4x^4y^{10} + 6x^4y^{10}\)`,
@@ -73,8 +73,8 @@
           choices: [
             String.raw`\(6a^3 + 12ax - 27a^2\)`,
             String.raw`\(6a^3 + 12a^2x - 9\)`,
-            String.raw`\(6a^3 + 7a^2x - 27a^2\)`,
             String.raw`\(6a^3 + 12a^2x - 27a^2\)`,
+            String.raw`\(6a^3 + 7a^2x - 27a^2\)`,
             String.raw`\(6a^3 + 12a^2x + 27a^2\)`,
             String.raw`\(3a^2 + 4x - 9\)`
           ]
@@ -87,9 +87,9 @@
           `,
           choices: [
             String.raw`\(x^2 - 2xy - 2y^2\)`,
-            String.raw`\(x^2 - xy - 2y^2\)`,
             String.raw`\(x^2 + xy - 2y^2\)`,
             String.raw`\(x^2 - 2y^2\)`,
+            String.raw`\(x^2 - xy - 2y^2\)`,
             String.raw`\(x^2 + 3xy - 2y^2\)`,
             String.raw`\(x^2 - xy + 2y^2\)`
           ]
@@ -103,9 +103,9 @@
           choices: [
             String.raw`\(x^2 - 81\)`,
             String.raw`\(x^2 - 18x - 81\)`,
-            String.raw`\(x^2 - 18x + 81\)`,
             String.raw`\(x^2 - 9x + 81\)`,
             String.raw`\(x^2 + 18x + 81\)`,
+            String.raw`\(x^2 - 18x + 81\)`,
             String.raw`\(x^2 - 81x + 18\)`
           ]
         },
@@ -117,11 +117,11 @@
           `,
           choices: [
             String.raw`\(2x^2 - 5xy - 12y^2\)`,
-            String.raw`\(2x^2 + 5xy - 12y^2\)`,
             String.raw`\(2x^2 + 8xy - 3y^2\)`,
             String.raw`\(2x^2 - 12xy - 12y^2\)`,
             String.raw`\(2x^2 + 5xy + 12y^2\)`,
-            String.raw`\(2x^2 - xy - 12y^2\)`
+            String.raw`\(2x^2 - xy - 12y^2\)`,
+            String.raw`\(2x^2 + 5xy - 12y^2\)`
           ]
         },
 
@@ -131,8 +131,8 @@
             <p class="math">\(3(a + b)(a - 2b)\)</p>
           `,
           choices: [
-            String.raw`\(3a^2 - ab - 6b^2\)`,
             String.raw`\(3a^2 - 3ab - 6b^2\)`,
+            String.raw`\(3a^2 - ab - 6b^2\)`,
             String.raw`\(3a^2 + 3ab - 6b^2\)`,
             String.raw`\(3a^2 - 6ab - 6b^2\)`,
             String.raw`\(3a^2 - 3ab + 6b^2\)`,
@@ -162,8 +162,8 @@
           `,
           choices: [
             String.raw`\(x^3 - 3x^2y - 3xy^2 + y^3\)`,
-            String.raw`\(x^3 - 2x^2y - 2xy^2 + y^3\)`,
             String.raw`\(x^3 - 2x^2y + 2xy^2 + y^3\)`,
+            String.raw`\(x^3 - 2x^2y - 2xy^2 + y^3\)`,
             String.raw`\(x^3 - 3xy + y^3\)`,
             String.raw`\(x^3 - x^2y - xy^2 + y^3\)`,
             String.raw`\(x^3 - 2x^2y - 2xy^2 - y^3\)`
@@ -177,9 +177,9 @@
           `,
           choices: [
             String.raw`\(4a^3 + 24a^2 - 8a - 5\)`,
-            String.raw`\(4a^3 + 19a^2 - 38a + 10\)`,
             String.raw`\(4a^3 - 19a^2 - 38a + 10\)`,
             String.raw`\(4a^3 + 19a^2 + 38a + 10\)`,
+            String.raw`\(4a^3 + 19a^2 - 38a + 10\)`,
             String.raw`\(4a^3 + 14a^2 - 38a - 10\)`,
             String.raw`\(4a^3 + 19a^2 - 10a + 10\)`
           ]
@@ -191,11 +191,11 @@
             <p class="math">\((x^2 - 5x + 2)(3x^2 + 7x - 4)\)</p>
           `,
           choices: [
-            String.raw`\(3x^4 - 8x^3 - 33x^2 + 34x - 8\)`,
             String.raw`\(3x^4 + 8x^3 - 33x^2 - 34x - 8\)`,
             String.raw`\(3x^4 - 8x^3 - 5x^2 + 34x - 8\)`,
             String.raw`\(3x^4 - 22x^3 + 33x^2 - 34x - 8\)`,
             String.raw`\(3x^4 - 8x^3 - 33x^2 - 34x + 8\)`,
+            String.raw`\(3x^4 - 8x^3 - 33x^2 + 34x - 8\)`,
             String.raw`\(3x^4 - 8x^3 - 39x^2 + 34x - 8\)`
           ]
         },
@@ -206,12 +206,12 @@
             <p class="math">\((3x^2 - 2x + 1)(2x^3 - x^2 + 5x - 2)\)</p>
           `,
           choices: [
-            String.raw`\(6x^5 - 7x^4 + 19x^3 - 17x^2 + 9x - 2\)`,
             String.raw`\(6x^5 - 7x^4 + 9x^3 - 17x^2 + 9x - 2\)`,
             String.raw`\(6x^5 + 7x^4 + 19x^3 - 17x^2 - 9x - 2\)`,
             String.raw`\(6x^5 - 7x^4 + 19x^3 - 7x^2 + 9x - 2\)`,
             String.raw`\(6x^5 - 5x^4 + 19x^3 - 17x^2 + 9x - 2\)`,
-            String.raw`\(6x^5 - 7x^4 + 19x^3 - 17x^2 - 9x + 2\)`
+            String.raw`\(6x^5 - 7x^4 + 19x^3 - 17x^2 - 9x + 2\)`,
+            String.raw`\(6x^5 - 7x^4 + 19x^3 - 17x^2 + 9x - 2\)`
           ]
         }
 

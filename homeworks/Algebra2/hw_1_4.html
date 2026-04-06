@@ -31,7 +31,7 @@
 
       graphics : String.raw``,
 
-      answerKey : ["D","A","B","E","C","C","A","F","D","B","A","E"],
+      answerKey : ["A","B","C","D","E","F","A","B","C","D","E","F"],
 
       questions : [
 
@@ -41,10 +41,10 @@
             <p class="math">\(a^3bc^4 \div ab^3c\)</p>
           `,
           choices: [
+            String.raw`\(a^2c^3 \div b^2\)`,
             String.raw`\(a^2c^4 \div b^2\)`,
             String.raw`\(a^2c^3 \div b\)`,
             String.raw`\(a^2b^2c^3\)`,
-            String.raw`\(a^2c^3 \div b^2\)`,
             String.raw`\(a^3c^3 \div b^2\)`,
             String.raw`\(c^3 \div b^2\)`
           ]
@@ -56,8 +56,8 @@
             <p class="math">\(8x^2y^5 \div 2x^3y^3\)</p>
           `,
           choices: [
-            String.raw`\(4y^2 \div x\)`,
             String.raw`\(4xy^2\)`,
+            String.raw`\(4y^2 \div x\)`,
             String.raw`\(4x \div y^2\)`,
             String.raw`\(6y^2 \div x\)`,
             String.raw`\(4x^{-1}y^2\)`,
@@ -72,8 +72,8 @@
           `,
           choices: [
             String.raw`\(7a^2 + ab - 3b^2\)`,
-            String.raw`\(\frac{7a^2}{2} + ab - 3b^2\)`,
             String.raw`\(\frac{7a^2}{2} + b - 3ab^2\)`,
+            String.raw`\(\frac{7a^2}{2} + ab - 3b^2\)`,
             String.raw`\(\frac{7a^2}{2} + ab - 3b^3\)`,
             String.raw`\(7a^2 + 2ab - 6b^2\)`,
             String.raw`\(\frac{7a^2}{2} + a - 3b^2\)`
@@ -89,8 +89,8 @@
             String.raw`\(3c^3k^3 - c + 8c^7k^2\)`,
             String.raw`\(3c^3k^2 - c + 8c^7k^3\)`,
             String.raw`\(3c^4k^2 - c + 8c^8k^2\)`,
-            String.raw`\(3c^3k^2 - 1 + 8c^7k^2\)`,
             String.raw`\(3c^3k^2 - c + 8c^7k^2\)`,
+            String.raw`\(3c^3k^2 - 1 + 8c^7k^2\)`,
             String.raw`\(3c^3k^2 + c + 8c^7k^2\)`
           ]
         },
@@ -103,9 +103,9 @@
           choices: [
             String.raw`\(3x^2z + 9\)`,
             String.raw`\(3x^3z^3 + 9\)`,
-            String.raw`\(3x^2z^3 + 9\)`,
             String.raw`\(3x^2z^3 + \frac{9}{z}\)`,
             String.raw`\(3x^2z^4 + 9\)`,
+            String.raw`\(3x^2z^3 + 9\)`,
             String.raw`\(3x^2z^3 + 9xyz\)`
           ]
         },
@@ -118,10 +118,10 @@
           choices: [
             String.raw`\(x + 8\)`,
             String.raw`\(x - 4\)`,
-            String.raw`\(x - 8\)`,
             String.raw`\(x - 10\)`,
             String.raw`\(x^2 - 8\)`,
-            String.raw`\(x + 10\)`
+            String.raw`\(x + 10\)`,
+            String.raw`\(x - 8\)`
           ]
         },
 
@@ -147,11 +147,11 @@
           `,
           choices: [
             String.raw`\(x + y\)`,
+            String.raw`\(x - y\)`,
             String.raw`\(x^2 - y\)`,
             String.raw`\(x - y^2\)`,
             String.raw`\(1\)`,
-            String.raw`\(\frac{x - y}{x + y}\)`,
-            String.raw`\(x - y\)`
+            String.raw`\(\frac{x - y}{x + y}\)`
           ]
         },
 
@@ -163,8 +163,8 @@
           choices: [
             String.raw`\(6y + 2\)`,
             String.raw`\(12y - 2\)`,
-            String.raw`\(6y - 5\)`,
             String.raw`\(6y - 2\)`,
+            String.raw`\(6y - 5\)`,
             String.raw`\(6y - 1\)`,
             String.raw`\(3y - 2\)`
           ]
@@ -177,9 +177,9 @@
           `,
           choices: [
             String.raw`\(x + 7\)`,
-            String.raw`\(x - 7\)`,
             String.raw`\(x - 3\)`,
             String.raw`\(x + 3\)`,
+            String.raw`\(x - 7\)`,
             String.raw`\(x - 21\)`,
             String.raw`\(x - 1\)`
           ]
@@ -191,11 +191,11 @@
             <p class="math">\((3x^3 - 5x^2 + 7x - 9) \div (x^2 - 2)\)</p>
           `,
           choices: [
-            String.raw`\(3x - 5 + \frac{13x - 19}{x^2 - 2}\)`,
             String.raw`\(3x - 5 + \frac{13x + 19}{x^2 - 2}\)`,
             String.raw`\(3x + 5 + \frac{13x - 19}{x^2 - 2}\)`,
             String.raw`\(3x - 5 + \frac{13x - 19}{x - 2}\)`,
             String.raw`\(3x - 5 + \frac{13 - 19x}{x^2 - 2}\)`,
+            String.raw`\(3x - 5 + \frac{13x - 19}{x^2 - 2}\)`,
             String.raw`\(3x - 5 + \frac{13x - 9}{x^2 - 2}\)`
           ]
         },
@@ -210,8 +210,8 @@
             String.raw`\(2x^3 - 3x^2 + \frac{9}{2}x - \frac{31}{4} + \frac{121}{2x + 3}\)`,
             String.raw`\(2x^3 + 3x^2 + \frac{9}{2}x - \frac{31}{4} + \frac{121}{4(2x + 3)}\)`,
             String.raw`\(2x^3 - 3x^2 + 9x - \frac{31}{4} + \frac{121}{4(2x + 3)}\)`,
-            String.raw`\(2x^3 - 3x^2 + \frac{9}{2}x - \frac{31}{4} + \frac{121}{4(2x + 3)}\)`,
-            String.raw`\(2x^3 - 3x^2 + \frac{9}{2}x - \frac{31}{4}\)`
+            String.raw`\(2x^3 - 3x^2 + \frac{9}{2}x - \frac{31}{4}\)`,
+            String.raw`\(2x^3 - 3x^2 + \frac{9}{2}x - \frac{31}{4} + \frac{121}{4(2x + 3)}\)`
           ]
         }
 
