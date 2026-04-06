@@ -6,44 +6,13 @@
   <title>Homework 1-3 (Algebra I)</title>
 
   <script>
-    /* =========================
-       Homework 1-3 — Adding Integers and Midpoint (Algebra I)
-       Adapted for: /math-homework/assets/core-rich.js
-
-       REQUIRED SOURCE REFERENCES (your provided sets):
-       - Type A uses A. Exercises: #3, #5, #11, #12, #13, #15
-       - Type B uses B. Exercises: #16, #23, #32, #33, #34
-       - Type C uses C. Exercises: #37, #38
-
-       IMAGE NAMING RULE (STRICT):
-       No external PNG files are required for this homework.
-       If figure files were later added, they would follow the rule:
-       <HW-ID>-<ORIGINAL-PROBLEM-NUMBER>.png
-
-       MODEL REWORK NOTES:
-       - Q4 merges the structural idea behind A #12 and A #13 into a single recognition question
-         about sums that equal zero, so students must notice additive inverses rather than just compute.
-       - Q5 reworks A #15 into a conceptual question about why adding zero does not change a number.
-       - Q8 reworks B #33 into an equation-and-result diagnostic so students must track signed change
-         across a short real-life situation.
-       - Q9 preserves the mathematical core of B #34 while converting it into a multiple-choice
-         equation-and-solution item about speed against a current.
-       - Q12 reworks C #38 into a strategy question so students must identify the correct way to add
-         integers with different signs, rather than only report the final answer.
-       ========================= */
-
     window.homeworkData = {
       classId : "Algebra1",
       id      : "Homework 1-3",
       title   : "Homework 1-3 — Adding Integers and Midpoint",
       graphics: String.raw``,
-      answerKey : ["B","A","B","A","C","B","C","B","B","C","A","B"],
+      answerKey : ["D","A","F","C","E","B","A","D","F","B","C","E"],
       questions : [
-
-        /* =======================
-           Type A (5 questions)
-           ======================= */
-
         {
           stem: String.raw`
             <p>Find the sum.</p>
@@ -51,9 +20,9 @@
           `,
           choices: [
             String.raw`\(54\)`,
-            String.raw`\(-2\)`,
             String.raw`\(2\)`,
             String.raw`\(-54\)`,
+            String.raw`\(-2\)`,
             String.raw`\(28\)`,
             String.raw`\(-1\)`
           ]
@@ -79,11 +48,11 @@
           `,
           choices: [
             String.raw`\(408\)`,
-            String.raw`\(360\)`,
             String.raw`\(-360\)`,
             String.raw`\(348\)`,
             String.raw`\(336\)`,
-            String.raw`\(380\)`
+            String.raw`\(380\)`,
+            String.raw`\(360\)`
           ]
         },
         {
@@ -92,9 +61,9 @@
             <p>Which one?</p>
           `,
           choices: [
-            String.raw`\((+6) + (-6)\)`,
             String.raw`\((+6) + 0\)`,
             String.raw`\((-10) + (+1)\)`,
+            String.raw`\((+6) + (-6)\)`,
             String.raw`\((+4) + (+4)\)`,
             String.raw`\((-14) + (-14)\)`,
             String.raw`\((+10) + (-1)\)`
@@ -107,18 +76,13 @@
           choices: [
             String.raw`<span>Zero and \(-14\) are opposites.</span>`,
             String.raw`<span>Any sum with zero is zero.</span>`,
-            String.raw`<span>Adding zero does not change a number.</span>`,
             String.raw`<span>A negative number plus zero becomes positive.</span>`,
             String.raw`<span>The absolute value of \(-14\) is \(14\).</span>`,
+            String.raw`<span>Adding zero does not change a number.</span>`,
             String.raw`<span>Same-sign sums are always negative.</span>`
           ],
           choiceWrap: false
         },
-
-        /* =======================
-           Type B (5 questions)
-           ======================= */
-
         {
           stem: String.raw`
             <p>Find the sum.</p>
@@ -138,9 +102,9 @@
             <p>Find the midpoint, \(M\), of the segment whose endpoints are \(-15\) and \(3\).</p>
           `,
           choices: [
+            String.raw`\(-6\)`,
             String.raw`\(-12\)`,
             String.raw`\(-9\)`,
-            String.raw`\(-6\)`,
             String.raw`\(-3\)`,
             String.raw`\(6\)`,
             String.raw`\(9\)`
@@ -154,9 +118,9 @@
           `,
           choices: [
             String.raw`\(0 + 14 + 20 = 34^\circ\mathrm{F}\)`,
-            String.raw`\(0 + 14 + (-20) = -6^\circ\mathrm{F}\)`,
             String.raw`\(0 - 14 - 20 = -34^\circ\mathrm{F}\)`,
             String.raw`\(0 + 20 + (-14) = 6^\circ\mathrm{F}\)`,
+            String.raw`\(0 + 14 + (-20) = -6^\circ\mathrm{F}\)`,
             String.raw`\(14 - 20 = 6^\circ\mathrm{F}\)`,
             String.raw`\(0 + 14 - 20 = 6^\circ\mathrm{F}\)`
           ]
@@ -169,11 +133,11 @@
           `,
           choices: [
             String.raw`\(17 + 5 = 22\), so the speed is \(22\) knots.`,
-            String.raw`\(17 + (-5) = 12\), so the speed is \(12\) knots.`,
             String.raw`\((-17) + 5 = -12\), so the speed is \(-12\) knots.`,
             String.raw`\(17 - (-5) = 12\), so the speed is \(12\) knots.`,
             String.raw`\(5 - 17 = 12\), so the speed is \(12\) knots.`,
-            String.raw`\(17 + (-5) = 22\), so the speed is \(22\) knots.`
+            String.raw`\(17 + (-5) = 22\), so the speed is \(22\) knots.`,
+            String.raw`\(17 + (-5) = 12\), so the speed is \(12\) knots.`
           ],
           choiceWrap: false
         },
@@ -183,28 +147,23 @@
           `,
           choices: [
             String.raw`<span>Commutative property of addition</span>`,
-            String.raw`<span>Associative property of addition</span>`,
             String.raw`<span>Additive inverse property</span>`,
+            String.raw`<span>Associative property of addition</span>`,
             String.raw`<span>Additive identity property</span>`,
             String.raw`<span>Distributive property</span>`,
             String.raw`<span>Closure property</span>`
           ],
           choiceWrap: false
         },
-
-        /* =======================
-           Type C (2 questions)
-           ======================= */
-
         {
           stem: String.raw`
             <p>Perform the following operation.</p>
             <p>\(-8 + \lvert -10 \rvert + (-9) + \lvert 17 \rvert\)</p>
           `,
           choices: [
-            String.raw`\(10\)`,
             String.raw`\(28\)`,
             String.raw`\(-10\)`,
+            String.raw`\(10\)`,
             String.raw`\(0\)`,
             String.raw`\(8\)`,
             String.raw`\(-24\)`
@@ -216,10 +175,10 @@
           `,
           choices: [
             String.raw`<span>Add \(349\) and \(684\), then make the answer negative, so \(-1033\).</span>`,
-            String.raw`<span>Since the signs are different, subtract \(349\) from \(684\) and keep the sign of the larger absolute value, so \(335\).</span>`,
             String.raw`<span>Subtract \(684\) from \(349\) and keep the negative sign, so \(-335\).</span>`,
             String.raw`<span>Because one number is positive and one is negative, the sum must be \(0\).</span>`,
             String.raw`<span>Rewrite the problem as \((-349) + (-684)\), then add to get \(-1033\).</span>`,
+            String.raw`<span>Since the signs are different, subtract \(349\) from \(684\) and keep the sign of the larger absolute value, so \(335\).</span>`,
             String.raw`<span>Add the absolute values and keep the positive sign of the larger number, so \(1033\).</span>`
           ],
           choiceWrap: false
