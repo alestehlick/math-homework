@@ -32,9 +32,7 @@
       graphics : String.raw``,
 
       answerKey : [
-        "C","C","B","B","C","B","B","A","B",
-        "C","D","A","D","C","B","C","C","C",
-        "B","C","A","D","B","C"
+        "C","E","B","D","A","F","D","B","E","C","A","F","D","B","E","A","C","F","B","D","A","E","F","C"
       ],
 
       questions : [
@@ -70,9 +68,9 @@
           choices: [
             String.raw`\(r \cap s = \{P\}\)`,
             String.raw`\(r \subset s\)`,
-            String.raw`\(r \cap s = \varnothing\)`,
             String.raw`\(\{r,s\} \subset P\)`,
             String.raw`\(r = s\)`,
+            String.raw`\(r \cap s = \varnothing\)`,
             String.raw`\(r \cap s = r\)`
           ]
         },
@@ -107,9 +105,9 @@
           `,
           choices: [
             String.raw`\(P \cap Q = r\)`,
-            String.raw`\(\{P,Q\} \subset r\)`,
             String.raw`\(r \subset \{P,Q\}\)`,
             String.raw`\(P \notin r\) and \(Q \notin r\)`,
+            String.raw`\(\{P,Q\} \subset r\)`,
             String.raw`\(P = Q\)`,
             String.raw`\(r = \{P,Q\}\)`
           ]
@@ -125,9 +123,9 @@
             </figure>
           `,
           choices: [
+            String.raw`\(r \subset \alpha\)`,
             String.raw`\(r \cap \alpha = \varnothing\)`,
             String.raw`\(r \not\subset \alpha\)`,
-            String.raw`\(r \subset \alpha\)`,
             String.raw`\(\alpha \subset r\)`,
             String.raw`\(r \cap \alpha = \{P\}\)`,
             String.raw`\(\{r,\alpha\} \subset P\)`
@@ -145,11 +143,11 @@
           `,
           choices: [
             String.raw`\(\alpha \cap \beta = \varnothing\)`,
-            String.raw`\(\alpha \cap \beta = r\)`,
             String.raw`\(r \subset \beta\) but \(r \not\subset \alpha\)`,
             String.raw`\(\alpha = \beta\)`,
             String.raw`\(\alpha \cap \beta = \{P\}\)`,
-            String.raw`\(r \cap \alpha = \varnothing\)`
+            String.raw`\(r \cap \alpha = \varnothing\)`,
+            String.raw`\(\alpha \cap \beta = r\)`
           ]
         },
         {
@@ -164,9 +162,9 @@
           `,
           choices: [
             String.raw`\(r \subset \alpha\)`,
-            String.raw`\(r \cap \alpha = \{P\}\)`,
             String.raw`\(\alpha \cap r = \varnothing\)`,
             String.raw`\(\{P\} \subset r\) but \(P \notin \alpha\)`,
+            String.raw`\(r \cap \alpha = \{P\}\)`,
             String.raw`\(\alpha \subset r\)`,
             String.raw`\(r = \alpha\)`
           ]
@@ -182,8 +180,8 @@
             </figure>
           `,
           choices: [
-            String.raw`\(r \cap s \cap t = \{P\}\)`,
             String.raw`\(r \cap s = \varnothing\)`,
+            String.raw`\(r \cap s \cap t = \{P\}\)`,
             String.raw`\(r \cap s = \{P,Q\}\)`,
             String.raw`\(r \subset s\)`,
             String.raw`\(r \cap s \cap t = \varnothing\)`,
@@ -202,10 +200,10 @@
           `,
           choices: [
             String.raw`\(r \cap s \cap t = \{P\}\)`,
-            String.raw`\(r \cap s = \{P\},\; r \cap t = \{Q\},\; s \cap t = \{R\}\)`,
             String.raw`\(r \cap s = r\)`,
             String.raw`\(r \cap s = \varnothing\)`,
             String.raw`\(\alpha \cap \beta = r\)`,
+            String.raw`\(r \cap s = \{P\},\; r \cap t = \{Q\},\; s \cap t = \{R\}\)`,
             String.raw`\(P,Q,R \notin r \cup s \cup t\)`
           ]
         },
@@ -228,10 +226,10 @@
             <p>Which sentence best matches the symbolic statement <span class="math">\(\{P,Q\} \subset r\)</span>?</p>
           `,
           choices: [
+            String.raw`Both points <span class="math">\(P\)</span> and <span class="math">\(Q\)</span> lie on line <span class="math">\(r\)</span>.`,
             String.raw`Lines <span class="math">\(P\)</span> and <span class="math">\(Q\)</span> meet at <span class="math">\(r\)</span>.`,
             String.raw`Point <span class="math">\(P\)</span> lies on <span class="math">\(r\)</span>, but <span class="math">\(Q\)</span> does not.`,
             String.raw`Points <span class="math">\(P\)</span> and <span class="math">\(Q\)</span> are the only two points on <span class="math">\(r\)</span>.`,
-            String.raw`Both points <span class="math">\(P\)</span> and <span class="math">\(Q\)</span> lie on line <span class="math">\(r\)</span>.`,
             String.raw`Line <span class="math">\(r\)</span> lies inside the set <span class="math">\(\{P,Q\}\)</span>.`,
             String.raw`Points <span class="math">\(P\)</span> and <span class="math">\(Q\)</span> are planes inside <span class="math">\(r\)</span>.`
           ],
@@ -242,12 +240,12 @@
             <p>Which sentence best matches the symbolic statement <span class="math">\(r \subset \alpha\)</span>?</p>
           `,
           choices: [
-            String.raw`Line <span class="math">\(r\)</span> lies entirely in plane <span class="math">\(\alpha\)</span>.`,
             String.raw`Plane <span class="math">\(\alpha\)</span> lies entirely on line <span class="math">\(r\)</span>.`,
             String.raw`Line <span class="math">\(r\)</span> meets plane <span class="math">\(\alpha\)</span> in no point.`,
             String.raw`Point <span class="math">\(r\)</span> lies on plane <span class="math">\(\alpha\)</span>.`,
             String.raw`Plane <span class="math">\(\alpha\)</span> and line <span class="math">\(r\)</span> are equal.`,
-            String.raw`Line <span class="math">\(r\)</span> and plane <span class="math">\(\alpha\)</span> have exactly one common point.`
+            String.raw`Line <span class="math">\(r\)</span> and plane <span class="math">\(\alpha\)</span> have exactly one common point.`,
+            String.raw`Line <span class="math">\(r\)</span> lies entirely in plane <span class="math">\(\alpha\)</span>.`
           ],
           choiceWrap: false
         },
@@ -274,8 +272,8 @@
           `,
           choices: [
             String.raw`Line <span class="math">\(r\)</span> lies entirely in plane <span class="math">\(\alpha\)</span>.`,
-            String.raw`Line <span class="math">\(r\)</span> and plane <span class="math">\(\alpha\)</span> have no point in common.`,
             String.raw`Line <span class="math">\(r\)</span> crosses plane <span class="math">\(\alpha\)</span>, but it is not contained in the plane.`,
+            String.raw`Line <span class="math">\(r\)</span> and plane <span class="math">\(\alpha\)</span> have no point in common.`,
             String.raw`Plane <span class="math">\(\alpha\)</span> is a point of line <span class="math">\(r\)</span>.`,
             String.raw`Line <span class="math">\(r\)</span> is parallel to plane <span class="math">\(\alpha\)</span>.`,
             String.raw`Plane <span class="math">\(\alpha\)</span> is a subset of <span class="math">\(r\)</span>.`
@@ -288,10 +286,10 @@
           `,
           choices: [
             String.raw`The three lines are all the same line.`,
-            String.raw`The three lines all pass through the same point <span class="math">\(P\)</span>.`,
             String.raw`Only <span class="math">\(r\)</span> and <span class="math">\(s\)</span> pass through <span class="math">\(P\)</span>.`,
             String.raw`The three lines form a triangle.`,
             String.raw`The three lines have no common point.`,
+            String.raw`The three lines all pass through the same point <span class="math">\(P\)</span>.`,
             String.raw`The set <span class="math">\(\{P\}\)</span> is a line.`
           ],
           choiceWrap: false
@@ -302,9 +300,9 @@
             <p><i>Point</i> <span class="math">\(P\)</span> <i>is the only common point of lines</i> <span class="math">\(r\)</span> <i>and</i> <span class="math">\(s\)</span>?</p>
           `,
           choices: [
+            String.raw`\(r \cap s = \{P\}\)`,
             String.raw`\(P \in r\)`,
             String.raw`\(r \subset s\)`,
-            String.raw`\(r \cap s = \{P\}\)`,
             String.raw`\(\{P\} \subset r\)`,
             String.raw`\(P = r \cap s \cap t\)`,
             String.raw`\(r \cup s = \{P\}\)`
@@ -332,10 +330,10 @@
           choices: [
             String.raw`Two different lines meet in one point.`,
             String.raw`A line lies in a plane.`,
-            String.raw`Two different lines meet in two different points.`,
             String.raw`Two planes share a line.`,
             String.raw`A line meets a plane in one point.`,
-            String.raw`A point does not lie on a given line.`
+            String.raw`A point does not lie on a given line.`,
+            String.raw`Two different lines meet in two different points.`
           ],
           choiceWrap: false
         },
@@ -360,8 +358,8 @@
           choices: [
             String.raw`\(r \cup \alpha = \varnothing\)`,
             String.raw`\(r \subset \alpha\)`,
-            String.raw`\(r \cap \alpha = \varnothing\)`,
             String.raw`\(r \cap \alpha = \{P\}\)`,
+            String.raw`\(r \cap \alpha = \varnothing\)`,
             String.raw`\(\alpha \subset r\)`,
             String.raw`\(r = \alpha\)`
           ]
@@ -387,8 +385,8 @@
             String.raw`\(t \subset \{P,Q,R\}\)`,
             String.raw`\(P \cap Q \cap R = t\)`,
             String.raw`\(\{P,Q\} \subset t\)`,
-            String.raw`\(\{P,Q,R\} \subset t\)`,
             String.raw`\(P \notin t\)`,
+            String.raw`\(\{P,Q,R\} \subset t\)`,
             String.raw`\(t \cap \{P,Q,R\} = \varnothing\)`
           ]
         },
@@ -398,11 +396,11 @@
           `,
           choices: [
             String.raw`Point <span class="math">\(P\)</span> is the whole intersection of <span class="math">\(r\)</span> and <span class="math">\(s\)</span>.`,
-            String.raw`Point <span class="math">\(P\)</span> lies on both lines <span class="math">\(r\)</span> and <span class="math">\(s\)</span>.`,
             String.raw`Point <span class="math">\(P\)</span> lies on exactly one of the two lines.`,
             String.raw`Lines <span class="math">\(r\)</span> and <span class="math">\(s\)</span> are the same line.`,
             String.raw`Point <span class="math">\(P\)</span> is outside both lines.`,
-            String.raw`The intersection <span class="math">\(r \cap s\)</span> is empty.`
+            String.raw`The intersection <span class="math">\(r \cap s\)</span> is empty.`,
+            String.raw`Point <span class="math">\(P\)</span> lies on both lines <span class="math">\(r\)</span> and <span class="math">\(s\)</span>.`
           ],
           choiceWrap: false
         },
