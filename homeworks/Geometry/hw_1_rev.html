@@ -1,0 +1,404 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Homework 1 Review (Geometry)</title>
+
+  <script>
+    /* =========================
+       Homework 1 Review — Set Language and Incidence Geometry
+       Adapted for: /math-homework/assets/core-rich.js
+
+       REQUIRED SOURCE REFERENCES (your provided sets):
+       - Review built from Homework 1A, Homework 1B, and Homework 1C.
+       - Mathematical source spine behind those homeworks: Chapter 1 of the notes (Exercises S1–S54, especially S1–S10, S14–S16, S21–S31, S34–S45) and Chapter 1 of the school textbook for syllabus alignment.
+
+       MODEL REWORK / EXTENSION NOTES:
+       - Q1–Q22 are newly authored review questions synthesizing the three earlier homeworks.
+       - The set is designed to review fluency with set notation, subset/complement/intersection/union, equal versus equivalent sets, and geometric expression in set language.
+       - Several figure-based questions were added to strengthen translation between diagrams, words, and symbols.
+
+       IMAGE FILES:
+       - User-supplied figure(s): none used.
+       - Model-generated figure(s): 1-rev-13.png, 1-rev-14.png, 1-rev-15.png, 1-rev-16.png,
+         1-rev-17.png, 1-rev-18.png, 1-rev-19.png, 1-rev-20.png
+
+       IMAGE NAMING RULE:
+       - Model-generated figures use final homework question numbering.
+       - PNG files live in the SAME folder as this HTML.
+       ========================= */
+
+    window.homeworkData = {
+      classId : "Geometry",
+      id      : "Homework 1 Review",
+      title   : "Homework 1 Review — Sets and Incidence Geometry",
+      graphics : String.raw``,
+
+      answerKey : [
+        "B","E","C","D","A","E","B","E","C","D","B","F",
+        "A","C","E","B","D","E","A","C","F","B"
+      ],
+
+      questions : [
+        {
+          stem: String.raw`
+            <p>Let <span class="math">\(A = \{2,4,6,8\}\)</span>.</p>
+            <p>Which of the following is another way to write the same set?</p>
+          `,
+          choices: [
+            String.raw`\(\{2,4,6\}\)`,
+            String.raw`\(\{8,6,4,2\}\)`,
+            String.raw`\(\{2,4,6,8,10\}\)`,
+            String.raw`\(\{2,4,8\}\)`,
+            String.raw`\(\{\{2,4,6,8\}\}\)`,
+            String.raw`\(\{2,4,6,9\}\)`
+          ]
+        },
+        {
+          stem: String.raw`
+            <p>Let <span class="math">\(M = \{\text{red},\text{blue},\text{green}\}\)</span>.</p>
+            <p>Which statement is true?</p>
+          `,
+          choices: [
+            String.raw`\(\text{red} \subseteq M\)`,
+            String.raw`\(\{\text{red},\text{blue}\} \in M\)`,
+            String.raw`\(M \in \text{green}\)`,
+            String.raw`\(\text{green} \notin M\)`,
+            String.raw`\(\{\text{red},\text{blue}\} \subseteq M\)`,
+            String.raw`\(M \subseteq \text{red}\)`
+          ]
+        },
+        {
+          stem: String.raw`
+            <p>Which sentence best matches the symbolic statement <span class="math">\(P \in r\)</span>?</p>
+          `,
+          choices: [
+            String.raw`Line <span class="math">\(r\)</span> is inside point <span class="math">\(P\)</span>.`,
+            String.raw`Point <span class="math">\(P\)</span> is the whole line <span class="math">\(r\)</span>.`,
+            String.raw`Point <span class="math">\(P\)</span> lies on line <span class="math">\(r\)</span>.`,
+            String.raw`Point <span class="math">\(P\)</span> does not lie on line <span class="math">\(r\)</span>.`,
+            String.raw`Line <span class="math">\(r\)</span> passes through no points.`,
+            String.raw`Point <span class="math">\(P\)</span> is a subset of line <span class="math">\(r\)</span>.`
+          ],
+          choiceWrap: false
+        },
+        {
+          stem: String.raw`
+            <p>Let <span class="math">\(A = \{1,2,3,4,5,6\}\)</span>.</p>
+            <p>What set is described by <span class="math">\(\{x \in A \mid x \text{ is odd}\}\)</span>?</p>
+          `,
+          choices: [
+            String.raw`\(\{2,4,6\}\)`,
+            String.raw`\(\{1,2,3\}\)`,
+            String.raw`\(\{1,2,3,4,5\}\)`,
+            String.raw`\(\{1,3,5\}\)`,
+            String.raw`\(\{3,5,6\}\)`,
+            String.raw`\(\varnothing\)`
+          ]
+        },
+        {
+          stem: String.raw`
+            <p>Let <span class="math">\(B = \{1,2,3,4\}\)</span>.</p>
+            <p>What is <span class="math">\(\{x \in B \mid x &gt; 10\}\)</span>?</p>
+          `,
+          choices: [
+            String.raw`\(\varnothing\)`,
+            String.raw`\(\{10\}\)`,
+            String.raw`\(\{4\}\)`,
+            String.raw`\(\{1,2,3,4\}\)`,
+            String.raw`\(\{2,4\}\)`,
+            String.raw`\(\{11,12\}\)`
+          ]
+        },
+        {
+          stem: String.raw`
+            <p>Why must a universal set be fixed before talking about the complement of a set?</p>
+          `,
+          choices: [
+            String.raw`Because complements only make sense for number sets.`,
+            String.raw`Because otherwise the original set has no name.`,
+            String.raw`Because every complement must contain infinitely many elements.`,
+            String.raw`Because complements can only be found after intersections.`,
+            String.raw`Because the word “outside” depends on what larger collection we are working in.`,
+            String.raw`Because without a universal set, complements are automatically empty.`
+          ],
+          choiceWrap: false
+        },
+        {
+          stem: String.raw`
+            <p>Let <span class="math">\(U = \{1,2,3,4,5,6,7,8,9\}\)</span> and <span class="math">\(A = \{2,4,6,8\}\)</span>.</p>
+            <p>What is the complement of <span class="math">\(A\)</span> in <span class="math">\(U\)</span>?</p>
+          `,
+          choices: [
+            String.raw`\(\{2,4,6,8\}\)`,
+            String.raw`\(\{1,3,5,7,9\}\)`,
+            String.raw`\(\{1,2,3,4,5\}\)`,
+            String.raw`\(\{0,1,3,5,7,9\}\)`,
+            String.raw`\(\varnothing\)`,
+            String.raw`\(\{9\}\)`
+          ]
+        },
+        {
+          stem: String.raw`
+            <p>Let <span class="math">\(A = \{1,2,3,4\}\)</span> and <span class="math">\(B = \{3,4,5,6\}\)</span>.</p>
+            <p>What is <span class="math">\(A \cap B\)</span>?</p>
+          `,
+          choices: [
+            String.raw`\(\{1,2,3,4,5,6\}\)`,
+            String.raw`\(\{1,2\}\)`,
+            String.raw`\(\{5,6\}\)`,
+            String.raw`\(\varnothing\)`,
+            String.raw`\(\{3,4\}\)`,
+            String.raw`\(\{2,3,4\}\)`
+          ]
+        },
+        {
+          stem: String.raw`
+            <p>With the same sets <span class="math">\(A = \{1,2,3,4\}\)</span> and <span class="math">\(B = \{3,4,5,6\}\)</span>, what is <span class="math">\(A \cup B\)</span>?</p>
+          `,
+          choices: [
+            String.raw`\(\{3,4\}\)`,
+            String.raw`\(\{1,2,5,6\}\)`,
+            String.raw`\(\{1,2,3,4,5,6\}\)`,
+            String.raw`\(\{1,2,3,4\}\)`,
+            String.raw`\(\varnothing\)`,
+            String.raw`\(\{2,3,4,5\}\)`
+          ]
+        },
+        {
+          stem: String.raw`
+            <p>Set <span class="math">\(B = \{\text{Jack},\text{Fred},\text{Ron}\}\)</span> and set <span class="math">\(G = \{\text{Rhonda},\text{Heather},\text{Joy}\}\)</span> each have three elements.</p>
+            <p>Which statement is correct?</p>
+          `,
+          choices: [
+            String.raw`The sets are equal because they have the same number of elements.`,
+            String.raw`The sets are complements of each other.`,
+            String.raw`The sets are disjoint, so they cannot be compared.`,
+            String.raw`The sets are equivalent in size, but they are not equal sets.`,
+            String.raw`The sets must be subsets of each other.`,
+            String.raw`The sets become equal if we change the order of the names.`
+          ],
+          choiceWrap: false
+        },
+        {
+          stem: String.raw`
+            <p>Think of a line <span class="math">\(r\)</span> as the set of all points on that line.</p>
+            <p>Let <span class="math">\(S\)</span> be the set of all points between two fixed points <span class="math">\(P\)</span> and <span class="math">\(Q\)</span> on <span class="math">\(r\)</span>.</p>
+            <p>Which statement must be true?</p>
+          `,
+          choices: [
+            String.raw`\(r \subseteq S\)`,
+            String.raw`\(S \subseteq r\)`,
+            String.raw`\(P \in S\) and \(Q \in S\)`,
+            String.raw`\(S = \varnothing\)`,
+            String.raw`\(r \cap S = \varnothing\)`,
+            String.raw`\(S\) cannot be a set because a line has infinitely many points.`
+          ]
+        },
+        {
+          stem: String.raw`
+            <p>Which symbolic statement is the most precise way to say:</p>
+            <p><i>Point</i> <span class="math">\(P\)</span> <i>is the only common point of lines</i> <span class="math">\(r\)</span> <i>and</i> <span class="math">\(s\)</span>?</p>
+          `,
+          choices: [
+            String.raw`\(P \in r\)`,
+            String.raw`\(\{P\} \subseteq r\)`,
+            String.raw`\(r \subseteq s\)`,
+            String.raw`\(r \cup s = \{P\}\)`,
+            String.raw`\(P \in r \cap s\)`,
+            String.raw`\(r \cap s = \{P\}\)`
+          ]
+        },
+        {
+          stem: String.raw`
+            <p><b>Refer to Figure 1.</b> Which symbolic statement best describes the figure?</p>
+          `,
+          media: String.raw`
+            <figure>
+              <img src="1-rev-13.png" alt="Model-generated figure for Question 13" />
+              <figcaption>Figure 1</figcaption>
+            </figure>
+          `,
+          choices: [
+            String.raw`\(r \cap s = \varnothing\)`,
+            String.raw`\(r = s\)`,
+            String.raw`\(r \cap s = \{P\}\)`,
+            String.raw`\(r \subseteq s\)`,
+            String.raw`\(r \cup s = \varnothing\)`,
+            String.raw`\(\{r,s\} \subseteq P\)`
+          ]
+        },
+        {
+          stem: String.raw`
+            <p><b>Refer to Figure 2.</b> Which symbolic statement best describes the figure?</p>
+          `,
+          media: String.raw`
+            <figure>
+              <img src="1-rev-14.png" alt="Model-generated figure for Question 14" />
+              <figcaption>Figure 2</figcaption>
+            </figure>
+          `,
+          choices: [
+            String.raw`\(r \subseteq s\)`,
+            String.raw`\(r = s\)`,
+            String.raw`\(r \cap s = \{P\}\)`,
+            String.raw`\(r \cap s = \varnothing\)`,
+            String.raw`\(\{P\} \subseteq r \cup s\)`,
+            String.raw`\(P \notin r\)`
+          ]
+        },
+        {
+          stem: String.raw`
+            <p><b>Refer to Figure 3.</b> Which symbolic statement best describes the figure?</p>
+          `,
+          media: String.raw`
+            <figure>
+              <img src="1-rev-15.png" alt="Model-generated figure for Question 15" />
+              <figcaption>Figure 3</figcaption>
+            </figure>
+          `,
+          choices: [
+            String.raw`\(r \subseteq \{P,Q\}\)`,
+            String.raw`\(P \notin r\) and \(Q \notin r\)`,
+            String.raw`\(P = Q\)`,
+            String.raw`\(r \cap \{P,Q\} = \varnothing\)`,
+            String.raw`\(\{P,Q\} \subseteq r\)`,
+            String.raw`\(r = \{P,Q\}\)`
+          ]
+        },
+        {
+          stem: String.raw`
+            <p><b>Refer to Figure 4.</b> Which symbolic statement best describes the figure?</p>
+          `,
+          media: String.raw`
+            <figure>
+              <img src="1-rev-16.png" alt="Model-generated figure for Question 16" />
+              <figcaption>Figure 4</figcaption>
+            </figure>
+          `,
+          choices: [
+            String.raw`\(\alpha \subseteq r\)`,
+            String.raw`\(r \subseteq \alpha\)`,
+            String.raw`\(r \cap \alpha = \varnothing\)`,
+            String.raw`\(r \cap \alpha = \{P\}\)`,
+            String.raw`\(r = \alpha\)`,
+            String.raw`\(\{r,\alpha\} \subseteq P\)`
+          ]
+        },
+        {
+          stem: String.raw`
+            <p><b>Refer to Figure 5.</b> Which symbolic statement best describes the figure?</p>
+          `,
+          media: String.raw`
+            <figure>
+              <img src="1-rev-17.png" alt="Model-generated figure for Question 17" />
+              <figcaption>Figure 5</figcaption>
+            </figure>
+          `,
+          choices: [
+            String.raw`\(\alpha = \beta\)`,
+            String.raw`\(r \subseteq \beta\) but \(r \not\subseteq \alpha\)`,
+            String.raw`\(\alpha \cap \beta = \varnothing\)`,
+            String.raw`\(\alpha \cap \beta = r\)`,
+            String.raw`\(r \cap \alpha = \{P\}\)`,
+            String.raw`\(\alpha \subseteq r\)`
+          ]
+        },
+        {
+          stem: String.raw`
+            <p><b>Refer to Figure 6.</b> Which symbolic description is the most precise?</p>
+          `,
+          media: String.raw`
+            <figure>
+              <img src="1-rev-18.png" alt="Model-generated figure for Question 18" />
+              <figcaption>Figure 6</figcaption>
+            </figure>
+          `,
+          choices: [
+            String.raw`\(r \subseteq \alpha\)`,
+            String.raw`\(\alpha \subseteq r\)`,
+            String.raw`\(r \cap \alpha = \varnothing\)`,
+            String.raw`\(P \notin \alpha\)`,
+            String.raw`\(r \cap \alpha = \{P\}\) and \(r \not\subseteq \alpha\)`,
+            String.raw`\(\alpha \cap \beta = r\)`
+          ]
+        },
+        {
+          stem: String.raw`
+            <p><b>Refer to Figure 7.</b> Which symbolic statement best describes the figure?</p>
+          `,
+          media: String.raw`
+            <figure>
+              <img src="1-rev-19.png" alt="Model-generated figure for Question 19" />
+              <figcaption>Figure 7</figcaption>
+            </figure>
+          `,
+          choices: [
+            String.raw`\(r \cap s \cap t = \{P\}\)`,
+            String.raw`\(r \cap s = \varnothing\)`,
+            String.raw`\(r = s = t\)`,
+            String.raw`\(r \subseteq s\)`,
+            String.raw`\(r \cap s = \{P,Q\}\)`,
+            String.raw`\(P \notin t\)`
+          ]
+        },
+        {
+          stem: String.raw`
+            <p><b>Refer to Figure 8.</b> Which collection of statements best matches the figure?</p>
+          `,
+          media: String.raw`
+            <figure>
+              <img src="1-rev-20.png" alt="Model-generated figure for Question 20" />
+              <figcaption>Figure 8</figcaption>
+            </figure>
+          `,
+          choices: [
+            String.raw`\(r \cap s \cap t = \{P\}\)`,
+            String.raw`\(r \cap s = \varnothing\)`,
+            String.raw`\(r \cap s = \{P\},\; r \cap t = \{Q\},\; s \cap t = \{R\}\)`,
+            String.raw`\(r = s = t\)`,
+            String.raw`\(P,Q,R \notin r \cup s \cup t\)`,
+            String.raw`\(r \subseteq s\)`
+          ]
+        },
+        {
+          stem: String.raw`
+            <p>Which of the following situations is impossible in ordinary geometry?</p>
+          `,
+          choices: [
+            String.raw`Two different lines meet in one point.`,
+            String.raw`A line lies in a plane.`,
+            String.raw`Two planes share a line.`,
+            String.raw`A line meets a plane in one point.`,
+            String.raw`A point does not lie on a given line.`,
+            String.raw`Two different lines meet in two different points.`
+          ],
+          choiceWrap: false
+        },
+        {
+          stem: String.raw`
+            <p>Let <span class="math">\(A\)</span> and <span class="math">\(B\)</span> be distinct points of plane <span class="math">\(\alpha\)</span>, and let <span class="math">\(r\)</span> be the line through <span class="math">\(A\)</span> and <span class="math">\(B\)</span>.</p>
+            <p>Which statement must be true?</p>
+          `,
+          choices: [
+            String.raw`\(A \notin \alpha\)`,
+            String.raw`\(r \subseteq \alpha\)`,
+            String.raw`\(r \cap \alpha = \varnothing\)`,
+            String.raw`\(\alpha \subseteq r\)`,
+            String.raw`\(A = B\)`,
+            String.raw`\(r \not\subseteq \alpha\)`
+          ]
+        }
+      ]
+    };
+  </script>
+
+  <link rel="stylesheet" href="/math-homework/assets/core-rich.css" />
+  <script defer src="/math-homework/assets/core-rich.js"></script>
+  <script defer src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+</head>
+<body>
+  <div id="hw-root">Loading…</div>
+</body>
+</html>
