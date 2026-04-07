@@ -17,7 +17,8 @@
        MODEL REWORK / EXTENSION NOTES:
        - Q1–Q22 are newly authored review questions synthesizing the three earlier homeworks.
        - The set is designed to review fluency with set notation, subset/complement/intersection/union, equal versus equivalent sets, and geometric expression in set language.
-       - Several figure-based questions were added to strengthen translation between diagrams, words, and symbols.
+       - Q13–Q20 use revised model-generated figures, deliberately different in spirit from the figure work in Homework 1C.
+       - The revised figures emphasize richer spatial relations such as parallel lines cut by other lines, parallel planes, a line passing through two planes, and mixed line-plane configurations.
 
        IMAGE FILES:
        - User-supplied figure(s): none used.
@@ -37,7 +38,7 @@
 
       answerKey : [
         "B","E","C","D","A","E","B","E","C","D","B","F",
-        "A","C","E","B","D","E","A","C","F","B"
+        "A","C","C","B","D","C","E","A","F","B"
       ],
 
       questions : [
@@ -212,7 +213,7 @@
         },
         {
           stem: String.raw`
-            <p><b>Refer to Figure 1.</b> Which symbolic statement best describes the figure?</p>
+            <p><b>Refer to Figure 1.</b> Which collection of statements best matches the figure?</p>
           `,
           media: String.raw`
             <figure>
@@ -221,12 +222,12 @@
             </figure>
           `,
           choices: [
-            String.raw`\(r \cap s = \varnothing\)`,
-            String.raw`\(r = s\)`,
-            String.raw`\(r \cap s = \{P\}\)`,
+            String.raw`\(r \cap s = \varnothing\) and \(t \cap u = \{P\}\)`,
+            String.raw`\(r \cap s = \{P\}\) and \(t \cap u = \varnothing\)`,
             String.raw`\(r \subseteq s\)`,
-            String.raw`\(r \cup s = \varnothing\)`,
-            String.raw`\(\{r,s\} \subseteq P\)`
+            String.raw`\(P \in r \cap s\)`,
+            String.raw`\(t \subseteq r\) and \(u \subseteq s\)`,
+            String.raw`\(r \cap t = \varnothing\) and \(s \cap u = \varnothing\)`
           ]
         },
         {
@@ -240,17 +241,17 @@
             </figure>
           `,
           choices: [
-            String.raw`\(r \subseteq s\)`,
-            String.raw`\(r = s\)`,
-            String.raw`\(r \cap s = \{P\}\)`,
-            String.raw`\(r \cap s = \varnothing\)`,
-            String.raw`\(\{P\} \subseteq r \cup s\)`,
-            String.raw`\(P \notin r\)`
+            String.raw`\(\alpha \cap \beta = r\)`,
+            String.raw`\(\alpha \subseteq \beta\)`,
+            String.raw`\(\alpha \cap \beta = \varnothing\)`,
+            String.raw`\(r \subseteq \alpha \cap \beta\)`,
+            String.raw`\(\alpha = \beta\)`,
+            String.raw`There exists a point \(P\) with \(P \in \alpha \cap \beta\)`
           ]
         },
         {
           stem: String.raw`
-            <p><b>Refer to Figure 3.</b> Which symbolic statement best describes the figure?</p>
+            <p><b>Refer to Figure 3.</b> Which collection of statements best matches the figure?</p>
           `,
           media: String.raw`
             <figure>
@@ -259,17 +260,17 @@
             </figure>
           `,
           choices: [
-            String.raw`\(r \subseteq \{P,Q\}\)`,
-            String.raw`\(P \notin r\) and \(Q \notin r\)`,
-            String.raw`\(P = Q\)`,
-            String.raw`\(r \cap \{P,Q\} = \varnothing\)`,
-            String.raw`\(\{P,Q\} \subseteq r\)`,
-            String.raw`\(r = \{P,Q\}\)`
+            String.raw`\(r \subseteq \alpha\) and \(r \subseteq \beta\)`,
+            String.raw`\(\alpha \cap \beta = r\)`,
+            String.raw`\(r \cap \alpha = \{P\},\ r \cap \beta = \{Q\},\ \alpha \cap \beta = \varnothing\)`,
+            String.raw`\(P,Q \notin r\)`,
+            String.raw`\(r \cap \alpha = \varnothing\)`,
+            String.raw`\(P = Q\)`
           ]
         },
         {
           stem: String.raw`
-            <p><b>Refer to Figure 4.</b> Which symbolic statement best describes the figure?</p>
+            <p><b>Refer to Figure 4.</b> Which collection of statements best matches the figure?</p>
           `,
           media: String.raw`
             <figure>
@@ -278,17 +279,17 @@
             </figure>
           `,
           choices: [
-            String.raw`\(\alpha \subseteq r\)`,
-            String.raw`\(r \subseteq \alpha\)`,
-            String.raw`\(r \cap \alpha = \varnothing\)`,
-            String.raw`\(r \cap \alpha = \{P\}\)`,
-            String.raw`\(r = \alpha\)`,
-            String.raw`\(\{r,\alpha\} \subseteq P\)`
+            String.raw`\(r \cap s = \varnothing\)`,
+            String.raw`\(r \subseteq \alpha,\ s \cap \alpha = \{P\},\ s \not\subseteq \alpha\)`,
+            String.raw`\(s \subseteq \alpha\) and \(r \cap s = \{P\}\)`,
+            String.raw`\(\alpha \cap r = \{P\}\)`,
+            String.raw`\(P \notin r\)`,
+            String.raw`\(\alpha \subseteq r\)`
           ]
         },
         {
           stem: String.raw`
-            <p><b>Refer to Figure 5.</b> Which symbolic statement best describes the figure?</p>
+            <p><b>Refer to Figure 5.</b> Which collection of statements best matches the figure?</p>
           `,
           media: String.raw`
             <figure>
@@ -297,17 +298,17 @@
             </figure>
           `,
           choices: [
-            String.raw`\(\alpha = \beta\)`,
-            String.raw`\(r \subseteq \beta\) but \(r \not\subseteq \alpha\)`,
             String.raw`\(\alpha \cap \beta = \varnothing\)`,
-            String.raw`\(\alpha \cap \beta = r\)`,
-            String.raw`\(r \cap \alpha = \{P\}\)`,
-            String.raw`\(\alpha \subseteq r\)`
+            String.raw`\(r \subseteq \beta\)`,
+            String.raw`\(t \cap r = \{P\}\)`,
+            String.raw`\(\alpha \cap \beta = t\) and \(r \subseteq \alpha\)`,
+            String.raw`\(r = t\)`,
+            String.raw`\(t \subseteq \alpha\) but \(t \not\subseteq \beta\)`
           ]
         },
         {
           stem: String.raw`
-            <p><b>Refer to Figure 6.</b> Which symbolic description is the most precise?</p>
+            <p><b>Refer to Figure 6.</b> Which collection of statements best matches the figure?</p>
           `,
           media: String.raw`
             <figure>
@@ -316,17 +317,17 @@
             </figure>
           `,
           choices: [
-            String.raw`\(r \subseteq \alpha\)`,
-            String.raw`\(\alpha \subseteq r\)`,
-            String.raw`\(r \cap \alpha = \varnothing\)`,
-            String.raw`\(P \notin \alpha\)`,
-            String.raw`\(r \cap \alpha = \{P\}\) and \(r \not\subseteq \alpha\)`,
-            String.raw`\(\alpha \cap \beta = r\)`
+            String.raw`\(r \cap s = \{P\}\)`,
+            String.raw`\(t \cap \alpha = \{P\}\)`,
+            String.raw`\(r \cap s = \varnothing,\ t \cap r = \{P\},\ t \cap s = \{Q\}\)`,
+            String.raw`\(t \subseteq r\)`,
+            String.raw`\(P,Q \notin \alpha\)`,
+            String.raw`\(r = s\)`
           ]
         },
         {
           stem: String.raw`
-            <p><b>Refer to Figure 7.</b> Which symbolic statement best describes the figure?</p>
+            <p><b>Refer to Figure 7.</b> Which collection of statements best matches the figure?</p>
           `,
           media: String.raw`
             <figure>
@@ -335,12 +336,12 @@
             </figure>
           `,
           choices: [
-            String.raw`\(r \cap s \cap t = \{P\}\)`,
-            String.raw`\(r \cap s = \varnothing\)`,
-            String.raw`\(r = s = t\)`,
-            String.raw`\(r \subseteq s\)`,
-            String.raw`\(r \cap s = \{P,Q\}\)`,
-            String.raw`\(P \notin t\)`
+            String.raw`\(P \in \alpha\) and \(Q \in \alpha\)`,
+            String.raw`\(r \subseteq \alpha\)`,
+            String.raw`\(r \cap \alpha = \varnothing\)`,
+            String.raw`\(P = Q\)`,
+            String.raw`\(P \notin \alpha\) and \(r \cap \alpha = \{Q\}\)`,
+            String.raw`\(Q \notin r\)`
           ]
         },
         {
@@ -354,12 +355,12 @@
             </figure>
           `,
           choices: [
-            String.raw`\(r \cap s \cap t = \{P\}\)`,
-            String.raw`\(r \cap s = \varnothing\)`,
-            String.raw`\(r \cap s = \{P\},\; r \cap t = \{Q\},\; s \cap t = \{R\}\)`,
+            String.raw`\(r \cap s = \{P\},\ t \cap \alpha = \{P\},\ r \subseteq \alpha,\ s \subseteq \alpha,\ t \not\subseteq \alpha\)`,
+            String.raw`\(r \cap s = \varnothing\) and \(t \subseteq \alpha\)`,
             String.raw`\(r = s = t\)`,
-            String.raw`\(P,Q,R \notin r \cup s \cup t\)`,
-            String.raw`\(r \subseteq s\)`
+            String.raw`\(t \cap \alpha = \varnothing\)`,
+            String.raw`\(\alpha \subseteq t\)`,
+            String.raw`\(P \notin t\)`
           ]
         },
         {

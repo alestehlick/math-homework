@@ -16,46 +16,87 @@ from pypdf import PdfWriter
 # MANUAL SETTINGS
 # ============================================================
 
-START = "hw_1_1"
-END   = "hw_1_rev"
+START = "hw_1A"
+END   = "hw_1C"
 
 OUTPUT_PDF = "stitched_homework.pdf"
-
-# Increase if JS or MathJax needs more time before printing
 VIRTUAL_TIME_BUDGET_MS = 12000
-
-# Repo folder name to detect automatically while climbing upward
 REPO_FOLDER_NAME = "math-homework"
 
 
 # ============================================================
-# NAME PARSING
+# GENERIC NAME PARSING / NATURAL SORT
 # ============================================================
 
-HTML_RE = re.compile(r"^hw_(\d+)_(\d+|rev)\.html$", re.IGNORECASE)
-NAME_RE = re.compile(r"^hw_(\d+)_(\d+|rev)$", re.IGNORECASE)
+def tokenize_natural(text: str):
+    """
+    Split into alternating numeric / alphabetic chunks for natural sort.
+
+    Examples:
+      "10A"   -> [(0, 10), (1, "a")]
+      "A10"   -> [(1, "a"), (0, 10)]
+      "1_2B"  -> [(0, 1), (0, 2), (1, "b")]
+    """
+    parts = re.findall(r'\d+|[A-Za-z]+', text)
+    tokens = []
+    for p in parts:
+        if p.isdigit():
+            tokens.append((0, int(p)))   # numbers first
+        else:
+            tokens.append((1, p.lower()))
+    return tokens
 
 
-def parse_range_name(name: str):
-    m = NAME_RE.fullmatch(name.strip())
+def parse_hw_stem(stem: str):
+    """
+    Accepts stems like:
+      hw_1_1
+      hw_1_10
+      hw_1A
+      hw_1B
+      hw_1_rev
+      hw_2_10A
+      hw_3_part2
+    and returns a sortable key.
+
+    General rule:
+      - chapter number first
+      - 'rev' always last inside that chapter
+      - everything else uses natural sort on the remainder
+    """
+    m = re.fullmatch(r'hw_(\d+)(.*)', stem, re.IGNORECASE)
     if not m:
-        raise ValueError(f"Invalid range name: {name!r}")
+        raise ValueError(f"Invalid homework name: {stem!r}")
 
     chapter = int(m.group(1))
-    second = m.group(2).lower()
-    order = 10**9 if second == "rev" else int(second)
-    return (chapter, order)
+    tail = m.group(2).strip()
+
+    # Remove one leading underscore if present
+    if tail.startswith("_"):
+        tail = tail[1:]
+
+    tail_lower = tail.lower()
+
+    # No tail at all: place before ordinary items
+    if tail == "":
+        return (chapter, 0, [])
+
+    # Force revision to the end of the chapter
+    if tail_lower == "rev":
+        return (chapter, 2, [])
+
+    # Everything else gets natural-sort treatment
+    return (chapter, 1, tokenize_natural(tail))
 
 
 def parse_html_file(path: Path):
-    m = HTML_RE.fullmatch(path.name)
-    if not m:
+    if path.suffix.lower() != ".html":
         return None
 
-    chapter = int(m.group(1))
-    second = m.group(2).lower()
-    order = 10**9 if second == "rev" else int(second)
-    return (chapter, order)
+    try:
+        return parse_hw_stem(path.stem)
+    except ValueError:
+        return None
 
 
 def sort_key(path: Path):
@@ -70,8 +111,8 @@ def sort_key(path: Path):
 # ============================================================
 
 def get_files_in_range(folder: Path, start_name: str, end_name: str):
-    start_key = parse_range_name(start_name)
-    end_key = parse_range_name(end_name)
+    start_key = parse_hw_stem(start_name)
+    end_key = parse_hw_stem(end_name)
 
     if start_key > end_key:
         raise ValueError(f"START ({start_name}) comes after END ({end_name}).")
@@ -158,9 +199,7 @@ def find_browser():
         if found:
             return Path(found)
 
-    raise FileNotFoundError(
-        "Could not find Microsoft Edge or Google Chrome."
-    )
+    raise FileNotFoundError("Could not find Microsoft Edge or Google Chrome.")
 
 
 # ============================================================
