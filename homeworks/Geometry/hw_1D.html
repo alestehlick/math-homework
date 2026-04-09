@@ -1,0 +1,318 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Homework 1D (Geometry)</title>
+
+  <script>
+    /* =========================
+       Homework 1D — Primitive Notions and Basic Postulates in Geometry
+       Adapted for: /math-homework/assets/core-rich.js
+
+       REQUIRED SOURCE REFERENCES (your provided sets):
+       - Primary source: My Chapter 2.pdf, Sections 1.1–2.8 and Exercises 1–15.
+       - Source exercise pool especially consulted: Ex. 1–15.
+
+       IMAGE FILES:
+       - User-supplied figures: none
+       - Model-generated figures: none
+
+       MODEL REWORK / EXTENSION NOTES:
+       - The homework is re-authored into a cleaner high-school review of the chapter's central ideas:
+         primitive notions, notation, point-line incidence, collinearity, uniqueness of line and plane,
+         inclusion of a line in a plane, coplanarity, and concurrency.
+       - Large true/false blocks were reshaped into multiple-choice questions with diagnostic distractors.
+       - Several questions were added to strengthen theorem-sense: what observation is sufficient,
+         what configuration is impossible, and what conclusion really follows from the postulates.
+
+       IMAGE NAMING RULE:
+       - No external figure files are required for this homework.
+       ========================= */
+
+    window.homeworkData = {
+      classId : "Geometry",
+      id      : "Homework 1D",
+      title   : "Homework 1D — Primitive Notions and Basic Postulates",
+      graphics : String.raw``,
+
+      answerKey : ["C","B","E","A","D","C","B","C","A","D","B","B","D","C","D","A","D","B","B"],
+
+      questions : [
+        {
+          stem: String.raw`
+            <p>Why are words such as <i>point</i>, <i>line</i>, and <i>plane</i> treated as primitive notions?</p>
+          `,
+          choices: [
+            String.raw`Because they are too old-fashioned to define carefully.`,
+            String.raw`Because geometry tries to avoid using them.`,
+            String.raw`Because definition must start somewhere, and these ideas are used as basic building blocks.`,
+            String.raw`Because they are understood only through measurement.`,
+            String.raw`Because every student is supposed to invent a personal definition for them.`,
+            String.raw`Because they belong to algebra rather than geometry.`
+          ],
+          choiceWrap: false
+        },
+        {
+          stem: String.raw`
+            <p>Which notation choice is correct?</p>
+          `,
+          choices: [
+            String.raw`Points are usually named with lowercase Greek letters, and planes with uppercase Latin letters.`,
+            String.raw`Points are usually named with uppercase Latin letters, lines with lowercase Latin letters, and planes with lowercase Greek letters.`,
+            String.raw`Lines are usually named with uppercase Latin letters, and points with lowercase Latin letters.`,
+            String.raw`Planes are usually named with numbers, while lines are named with braces.`,
+            String.raw`Points and lines must always be named with the same kind of letter.`,
+            String.raw`Planes are usually named with uppercase Greek letters.`
+          ],
+          choiceWrap: false
+        },
+        {
+          stem: String.raw`
+            <p>Suppose point <span class="math">\(P\)</span> lies on line <span class="math">\(r\)</span>, while point <span class="math">\(Q\)</span> does not.</p>
+            <p>Which symbolic description is correct?</p>
+          `,
+          choices: [
+            String.raw`\(r \in P\) and \(r \notin Q\)`,
+            String.raw`\(P = r\) and \(Q \ne r\)`,
+            String.raw`\(P \subset r\) and \(Q \notin r\)`,
+            String.raw`\(P \in r\) and \(Q \subset r\)`,
+            String.raw`\(P \in r\) and \(Q \notin r\)`,
+            String.raw`\(\{P,Q\} = r\)`
+          ]
+        },
+        {
+          stem: String.raw`
+            <p>Given two points <span class="math">\(A\)</span> and <span class="math">\(B\)</span>, which pair of possibilities covers all cases?</p>
+          `,
+          choices: [
+            String.raw`They are either coincident or distinct.`,
+            String.raw`They are either parallel or perpendicular.`,
+            String.raw`They are either coplanar or concurrent.`,
+            String.raw`They are either on a line or on a plane, but not both.`,
+            String.raw`They are either finite or infinite.`,
+            String.raw`They are either equal sets or disjoint sets.`
+          ],
+          choiceWrap: false
+        },
+        {
+          stem: String.raw`
+            <p>What does it mean for points <span class="math">\(A\)</span>, <span class="math">\(B\)</span>, and <span class="math">\(C\)</span> to be collinear?</p>
+          `,
+          choices: [
+            String.raw`They are all different points.`,
+            String.raw`They lie in the same plane.`,
+            String.raw`They determine three different lines.`,
+            String.raw`There exists a line passing through all three points.`,
+            String.raw`They lie on two intersecting lines.`,
+            String.raw`They form a triangle.`
+          ],
+          choiceWrap: false
+        },
+        {
+          stem: String.raw`
+            <p>Which statement is guaranteed by the line-determination postulate?</p>
+          `,
+          choices: [
+            String.raw`Any two lines determine a unique point.`,
+            String.raw`Any two points determine a unique plane.`,
+            String.raw`Any two distinct points determine a unique line.`,
+            String.raw`Three points always determine a unique line.`,
+            String.raw`A line contains exactly two points.`,
+            String.raw`A point determines infinitely many planes and no line.`
+          ],
+          choiceWrap: false
+        },
+        {
+          stem: String.raw`
+            <p>If <span class="math">\(A \ne B\)</span> and both points lie on line <span class="math">\(r\)</span>, what can you conclude?</p>
+          `,
+          choices: [
+            String.raw`\(A = B\)`,
+            String.raw`\(r = \overleftrightarrow{AB}\)`,
+            String.raw`\(r \subset \{A,B\}\)`,
+            String.raw`\(\overleftrightarrow{AB}\) is a segment, not a line.`,
+            String.raw`No conclusion is possible unless a third point is given.`,
+            String.raw`The line must lie in every plane.`
+          ]
+        },
+        {
+          stem: String.raw`
+            <p>The expression “two coincident lines” means:</p>
+          `,
+          choices: [
+            String.raw`two parallel lines with no common point.`,
+            String.raw`two lines that cross once.`,
+            String.raw`a single line described by two different names.`,
+            String.raw`two lines in the same plane.`,
+            String.raw`two lines that share exactly two points.`,
+            String.raw`two lines that are both horizontal.`
+          ],
+          choiceWrap: false
+        },
+        {
+          stem: String.raw`
+            <p>Which condition is enough to determine a unique plane?</p>
+          `,
+          choices: [
+            String.raw`Three non-collinear points.`,
+            String.raw`Any three points at all.`,
+            String.raw`Two distinct points.`,
+            String.raw`One line and one point on that same line.`,
+            String.raw`Two intersecting lines, but only if a point is labeled.`,
+            String.raw`One point and one plane.`
+          ],
+          choiceWrap: false
+        },
+        {
+          stem: String.raw`
+            <p>Suppose <span class="math">\(A\)</span>, <span class="math">\(B\)</span>, and <span class="math">\(C\)</span> are non-collinear points in plane <span class="math">\(\alpha\)</span>.</p>
+            <p>Which statement must be true?</p>
+          `,
+          choices: [
+            String.raw`Infinitely many different planes pass through all three points.`,
+            String.raw`The three points determine a unique line.`,
+            String.raw`The line \(\overleftrightarrow{AB}\) cannot lie in \(\alpha\).`,
+            String.raw`The plane \(\alpha\) is the only plane passing through \(A\), \(B\), and \(C\).`,
+            String.raw`At least one of the three points must lie outside \(\alpha\).`,
+            String.raw`The three points are concurrent.`
+          ],
+          choiceWrap: false
+        },
+        {
+          stem: String.raw`
+            <p>Which statement expresses the inclusion postulate?</p>
+          `,
+          choices: [
+            String.raw`If a plane contains two distinct lines, then those lines are parallel.`,
+            String.raw`If a line contains two distinct points of a plane, then the entire line lies in that plane.`,
+            String.raw`If a line meets a plane once, then it lies in the plane.`,
+            String.raw`If two planes contain one common point, then they are the same plane.`,
+            String.raw`If a plane contains one point of a line, then the whole line lies in the plane.`,
+            String.raw`If two points lie on a line, then the plane is unique.`
+          ],
+          choiceWrap: false
+        },
+        {
+          stem: String.raw`
+            <p>Let <span class="math">\(A\)</span> and <span class="math">\(B\)</span> be distinct points in plane <span class="math">\(\alpha\)</span>. Let <span class="math">\(r = \overleftrightarrow{AB}\)</span>.</p>
+            <p>Which conclusion is valid?</p>
+          `,
+          choices: [
+            String.raw`\(\alpha \subset r\)`,
+            String.raw`\(r \subset \alpha\)`,
+            String.raw`\(r \cap \alpha = \varnothing\)`,
+            String.raw`\(A \notin r\)`,
+            String.raw`\(B \notin \alpha\)`,
+            String.raw`\(r\) contains only the points \(A\) and \(B\)`
+          ]
+        },
+        {
+          stem: String.raw`
+            <p>Which statement is always true about coplanar points?</p>
+          `,
+          choices: [
+            String.raw`They must all lie on the same line.`,
+            String.raw`They must determine exactly one triangle.`,
+            String.raw`They must be distinct points.`,
+            String.raw`They lie in the same plane.`,
+            String.raw`They cannot belong to a figure.`,
+            String.raw`They must all be intersection points.`
+          ],
+          choiceWrap: false
+        },
+        {
+          stem: String.raw`
+            <p>Which sentence best describes concurrent lines?</p>
+          `,
+          choices: [
+            String.raw`They are lines in the same plane.`,
+            String.raw`They are lines that do not intersect.`,
+            String.raw`They are lines that share exactly one point in common.`,
+            String.raw`They are lines that share more than one point.`,
+            String.raw`They are lines inside the same set.`,
+            String.raw`They are lines with the same label.`
+          ],
+          choiceWrap: false
+        },
+        {
+          stem: String.raw`
+            <p>If <span class="math">\(r \cap s = \{P\}\)</span>, what does that tell you?</p>
+          `,
+          choices: [
+            String.raw`The two lines are coincident.`,
+            String.raw`The two lines are parallel.`,
+            String.raw`The point \(P\) lies on exactly one of the two lines.`,
+            String.raw`The lines meet, and \(P\) is their only common point.`,
+            String.raw`The set \(\{P\}\) is a line.`,
+            String.raw`The two lines have no point in common.`
+          ],
+          choiceWrap: false
+        },
+        {
+          stem: String.raw`
+            <p>To show that the line through points <span class="math">\(P\)</span> and <span class="math">\(Q\)</span> is different from line <span class="math">\(r\)</span>, which observation is enough?</p>
+          `,
+          choices: [
+            String.raw`Point \(Q\) does not lie on \(r\).`,
+            String.raw`Point \(P\) lies on \(r\).`,
+            String.raw`The line through \(P\) and \(Q\) contains two points.`,
+            String.raw`Points \(P\) and \(Q\) are distinct.`,
+            String.raw`Line \(r\) contains infinitely many points.`,
+            String.raw`Point \(Q\) lies in space.`
+          ],
+          choiceWrap: false
+        },
+        {
+          stem: String.raw`
+            <p>Which geometric situation is impossible?</p>
+          `,
+          choices: [
+            String.raw`Two distinct lines intersect in one point.`,
+            String.raw`Three non-collinear points determine a plane.`,
+            String.raw`A point lies outside a given line.`,
+            String.raw`Two distinct lines intersect in two different points.`,
+            String.raw`A line contains at least two distinct points.`,
+            String.raw`A point lies on a line.`
+          ],
+          choiceWrap: false
+        },
+        {
+          stem: String.raw`
+            <p>Using four distinct points, three of which are collinear, how many distinct lines can be formed?</p>
+          `,
+          choices: [
+            String.raw`3`,
+            String.raw`4`,
+            String.raw`5`,
+            String.raw`6`,
+            String.raw`7`,
+            String.raw`8`
+          ],
+          choiceWrap: false
+        },
+        {
+          stem: String.raw`
+            <p>Which statement follows from <span class="math">\(P \in r\)</span> and <span class="math">\(Q \notin r\)</span>?</p>
+          `,
+          choices: [
+            String.raw`\(P = Q\)`,
+            String.raw`\(P \ne Q\)`,
+            String.raw`\(Q \in r\)`,
+            String.raw`\(r = \overleftrightarrow{PQ}\)`,
+            String.raw`\(P \notin r\)`,
+            String.raw`\(Q\) lies on no line at all.`
+          ]
+        }
+      ]
+    };
+  </script>
+
+  <link rel="stylesheet" href="/math-homework/assets/core-rich.css" />
+  <script defer src="/math-homework/assets/core-rich.js"></script>
+  <script defer src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+</head>
+<body>
+  <div id="hw-root">Loading…</div>
+</body>
+</html>
