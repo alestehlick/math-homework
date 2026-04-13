@@ -22,7 +22,7 @@
 
        IMAGE NAMING RULE (STRICT):
        - Figures are inspired primarily by Notes Ex. S45.
-       - Figure drawings were prepared in the spirit of Ex. S45 and embedded directly in this HTML, so no companion image files are required to use the homework.
+       - Figure drawings were prepared in the spirit of Ex. S45 and are referenced by companion PNG files in the same folder as this HTML.
        ========================= */
 
     window.homeworkData = {
@@ -68,7 +68,7 @@
           choices: [
             String.raw`\(r \cap s = \{P\}\)`,
             String.raw`\(r \subset s\)`,
-            String.raw`\(\{r,s\} \subset P\)`,
+            String.raw`\(r \cup s = r\)`,
             String.raw`\(r = s\)`,
             String.raw`\(r \cap s = \varnothing\)`,
             String.raw`\(r \cap s = r\)`
@@ -104,7 +104,7 @@
             </figure>
           `,
           choices: [
-            String.raw`\(P \cap Q = r\)`,
+            String.raw`\(r \cap \{P,Q\} = \{P\}\)`,
             String.raw`\(r \subset \{P,Q\}\)`,
             String.raw`\(P \notin r\) and \(Q \notin r\)`,
             String.raw`\(\{P,Q\} \subset r\)`,
@@ -128,7 +128,7 @@
             String.raw`\(r \not\subset \alpha\)`,
             String.raw`\(\alpha \subset r\)`,
             String.raw`\(r \cap \alpha = \{P\}\)`,
-            String.raw`\(\{r,\alpha\} \subset P\)`
+            String.raw`\(r \cup \alpha = r\)`
           ]
         },
         {
@@ -304,7 +304,7 @@
             String.raw`\(P \in r\)`,
             String.raw`\(r \subset s\)`,
             String.raw`\(\{P\} \subset r\)`,
-            String.raw`\(P = r \cap s \cap t\)`,
+            String.raw`\(P \in r \cap s\)`,
             String.raw`\(r \cup s = \{P\}\)`
           ]
         },
@@ -370,7 +370,7 @@
           `,
           choices: [
             String.raw`\(P \in \alpha \cap r\)`,
-            String.raw`\(P = \alpha \cap r\)`,
+            String.raw`\(P \in \alpha \cup r\)`,
             String.raw`\(\alpha \subset r\)`,
             String.raw`\(r \cap \alpha = \varnothing\)`,
             String.raw`\(P \notin \alpha\)`,
