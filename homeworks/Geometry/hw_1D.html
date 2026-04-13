@@ -36,7 +36,7 @@
       title   : "Homework 1D — Primitive Notions and Basic Postulates",
       graphics : String.raw``,
 
-      answerKey : ["C","B","E","A","D","C","B","C","A","D","B","B","D","C","D","A","D","B","B"],
+      answerKey : ["C","B","E","A","D","F","C","E","A","D","B","F","C","A","E","D","B","F","C"],
 
       questions : [
         {
@@ -116,10 +116,10 @@
           choices: [
             String.raw`Any two lines determine a unique point.`,
             String.raw`Any two points determine a unique plane.`,
-            String.raw`Any two distinct points determine a unique line.`,
             String.raw`Three points always determine a unique line.`,
             String.raw`A line contains exactly two points.`,
-            String.raw`A point determines infinitely many planes and no line.`
+            String.raw`A point determines infinitely many planes and no line.`,
+            String.raw`Any two distinct points determine a unique line.`
           ],
           choiceWrap: false
         },
@@ -129,8 +129,8 @@
           `,
           choices: [
             String.raw`\(A = B\)`,
-            String.raw`\(r = \overleftrightarrow{AB}\)`,
             String.raw`\(r \subset \{A,B\}\)`,
+            String.raw`\(r = \overleftrightarrow{AB}\)`,
             String.raw`\(\overleftrightarrow{AB}\) is a segment, not a line.`,
             String.raw`No conclusion is possible unless a third point is given.`,
             String.raw`The line must lie in every plane.`
@@ -143,9 +143,9 @@
           choices: [
             String.raw`two parallel lines with no common point.`,
             String.raw`two lines that cross once.`,
-            String.raw`a single line described by two different names.`,
             String.raw`two lines in the same plane.`,
             String.raw`two lines that share exactly two points.`,
+            String.raw`a single line described by two different names.`,
             String.raw`two lines that are both horizontal.`
           ],
           choiceWrap: false
@@ -200,11 +200,11 @@
           `,
           choices: [
             String.raw`\(\alpha \subset r\)`,
-            String.raw`\(r \subset \alpha\)`,
             String.raw`\(r \cap \alpha = \varnothing\)`,
             String.raw`\(A \notin r\)`,
             String.raw`\(B \notin \alpha\)`,
-            String.raw`\(r\) contains only the points \(A\) and \(B\)`
+            String.raw`\(r\) contains only the points \(A\) and \(B\)`,
+            String.raw`\(r \subset \alpha\)`
           ]
         },
         {
@@ -214,8 +214,8 @@
           choices: [
             String.raw`They must all lie on the same line.`,
             String.raw`They must determine exactly one triangle.`,
-            String.raw`They must be distinct points.`,
             String.raw`They lie in the same plane.`,
+            String.raw`They must be distinct points.`,
             String.raw`They cannot belong to a figure.`,
             String.raw`They must all be intersection points.`
           ],
@@ -226,9 +226,9 @@
             <p>Which sentence best describes concurrent lines?</p>
           `,
           choices: [
-            String.raw`They are lines in the same plane.`,
+            String.raw`They are lines that all pass through the same point.`,
             String.raw`They are lines that do not intersect.`,
-            String.raw`They are lines that share exactly one point in common.`,
+            String.raw`They are lines in the same plane.`,
             String.raw`They are lines that share more than one point.`,
             String.raw`They are lines inside the same set.`,
             String.raw`They are lines with the same label.`
@@ -243,21 +243,21 @@
             String.raw`The two lines are coincident.`,
             String.raw`The two lines are parallel.`,
             String.raw`The point \(P\) lies on exactly one of the two lines.`,
-            String.raw`The lines meet, and \(P\) is their only common point.`,
             String.raw`The set \(\{P\}\) is a line.`,
+            String.raw`The lines meet, and \(P\) is their only common point.`,
             String.raw`The two lines have no point in common.`
           ],
           choiceWrap: false
         },
         {
           stem: String.raw`
-            <p>To show that the line through points <span class="math">\(P\)</span> and <span class="math">\(Q\)</span> is different from line <span class="math">\(r\)</span>, which observation is enough?</p>
+            <p>Assume <span class="math">\(P\)</span> and <span class="math">\(Q\)</span> are distinct points. To show that the line through them is different from line <span class="math">\(r\)</span>, which observation is enough?</p>
           `,
           choices: [
-            String.raw`Point \(Q\) does not lie on \(r\).`,
             String.raw`Point \(P\) lies on \(r\).`,
             String.raw`The line through \(P\) and \(Q\) contains two points.`,
             String.raw`Points \(P\) and \(Q\) are distinct.`,
+            String.raw`Point \(Q\) does not lie on \(r\).`,
             String.raw`Line \(r\) contains infinitely many points.`,
             String.raw`Point \(Q\) lies in space.`
           ],
@@ -269,9 +269,9 @@
           `,
           choices: [
             String.raw`Two distinct lines intersect in one point.`,
+            String.raw`Two distinct lines intersect in two different points.`,
             String.raw`Three non-collinear points determine a plane.`,
             String.raw`A point lies outside a given line.`,
-            String.raw`Two distinct lines intersect in two different points.`,
             String.raw`A line contains at least two distinct points.`,
             String.raw`A point lies on a line.`
           ],
@@ -283,11 +283,11 @@
           `,
           choices: [
             String.raw`3`,
-            String.raw`4`,
             String.raw`5`,
             String.raw`6`,
             String.raw`7`,
-            String.raw`8`
+            String.raw`8`,
+            String.raw`4`
           ],
           choiceWrap: false
         },
@@ -297,8 +297,8 @@
           `,
           choices: [
             String.raw`\(P = Q\)`,
-            String.raw`\(P \ne Q\)`,
             String.raw`\(Q \in r\)`,
+            String.raw`\(P \ne Q\)`,
             String.raw`\(r = \overleftrightarrow{PQ}\)`,
             String.raw`\(P \notin r\)`,
             String.raw`\(Q\) lies on no line at all.`
