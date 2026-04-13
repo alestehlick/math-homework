@@ -1,0 +1,15 @@
+You will receive an html code containing a math homework in html,
+containing latex code.
+
+Your task is to
+-solve each question and make sure the answer key is correct;
+-make sure the distractors are meaningful, make sense and force
+students to REALLY solve and involve with the questions, instead 
+of guessing it easily and avoiding the intended engaging.
+-make sure there are no repeated, redundant, ambiguous, dubious distractors,
+distractors that simplify to the same result, etc. Sound distractors.
+-make sure the answer key doesnt repeat too much the same letters - make
+the them vary uniformly across A,B,C,D,E,F.
+
+Then if the file needs correction, comment the changes you decided best, and give the whole code of
+the imporved homework set.
