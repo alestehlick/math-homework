@@ -11,10 +11,10 @@
        Adapted for: /math-homework/assets/core-rich.js
 
        NOTES ON REVISION:
-       - The former last question was removed and its main idea was rebuilt more cleanly as a conceptual unit-change question.
-       - Two overly procedural items were replaced with conceptual questions on decimal forms and the meaning of irrational numbers.
-       - Two additional conceptual questions were added so the set now has 14 questions total.
-       - Distractors were tightened to avoid weak guessing.
+       - Checked all questions and verified the answer key.
+       - Removed the concept of "whole number" from the homework, as requested.
+       - Replaced those distractors with alternatives that still fit the classification questions.
+       - Preserved the conceptual emphasis on irrational numbers, decimal forms, and unit changes.
        ========================= */
 
     window.homeworkData = {
@@ -50,7 +50,7 @@
           choices: [
             String.raw`Every nonterminating decimal is irrational.`,
             String.raw`Every terminating decimal can be written as a fraction.`,
-            String.raw`Every rational number is a whole number.`,
+            String.raw`Every rational number is an integer.`,
             String.raw`A repeating decimal is irrational.`,
             String.raw`A terminating decimal is always an integer.`,
             String.raw`Irrational numbers can be written as fractions of integers.`
@@ -111,9 +111,9 @@
           choices: [
             String.raw`rational numbers`,
             String.raw`integers`,
-            String.raw`whole numbers`,
             String.raw`real numbers`,
             String.raw`irrational numbers`,
+            String.raw`not a real number`,
             String.raw`natural numbers`
           ],
           choiceWrap: false
@@ -125,10 +125,10 @@
             <p class="math">\(-6\)</p>
           `,
           choices: [
-            String.raw`whole numbers`,
+            String.raw`natural numbers`,
             String.raw`integers`,
             String.raw`rational numbers`,
-            String.raw`natural numbers`,
+            String.raw`real numbers`,
             String.raw`irrational numbers`,
             String.raw`not a real number`
           ],
@@ -186,11 +186,11 @@
             <p>Why is a person’s weight usually reported with a terminating decimal or a fraction, rather than as an irrational number?</p>
           `,
           choices: [
-            String.raw`Because every weight is a whole number of pounds or kilograms.`,
+            String.raw`Because every weight can be measured exactly.`,
             String.raw`Because irrational numbers are not real numbers.`,
             String.raw`Because measured weights are recorded to finite precision, so the reported value is a rounded decimal or fraction.`,
             String.raw`Because scales can show only positive integers.`,
-            String.raw`Because changing units always turns an irrational number into a whole number.`,
+            String.raw`Because changing units always makes the decimal terminate.`,
             String.raw`Because every decimal shown on a calculator is irrational.`
           ],
           choiceWrap: false
