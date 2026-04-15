@@ -10,16 +10,11 @@
        Homework 2-1 — Rational and Irrational Numbers
        Adapted for: /math-homework/assets/core-rich.js
 
-       REQUIRED SOURCE REFERENCES (your provided sets):
-       - Type A uses A. Exercises: #3, #5, #6, #7, #8
-       - Type B uses B. Exercises: #11, #15, #16, #20, #21, #22
-       - Type C uses C. Exercise: #28
-       - Model reworking: Q10 combines source ideas from B #21 and #22 into one number-line placement question so students must locate two real numbers at once.
-       - Model reworking: Q11 reshapes C #28 into a conceptual multiple-choice question about why measured quantities are usually reported with finite decimals.
-       - Model-authored extension: Q12, inspired by C #28 and B #27, tests whether students understand that changing units changes the numerical value but does not usually change a number from irrational to rational.
-
-       IMAGE NAMING RULE (STRICT):
-       - No figures are required for this homework.
+       NOTES ON REVISION:
+       - The former last question was removed and its main idea was rebuilt more cleanly as a conceptual unit-change question.
+       - Two overly procedural items were replaced with conceptual questions on decimal forms and the meaning of irrational numbers.
+       - Two additional conceptual questions were added so the set now has 14 questions total.
+       - Distractors were tightened to avoid weak guessing.
        ========================= */
 
     window.homeworkData = {
@@ -29,7 +24,7 @@
 
       graphics : String.raw``,
 
-      answerKey : ["B","C","C","A","B","A","D","C","F","B","B","C"],
+      answerKey : ["D","B","E","A","C","F","B","E","A","D","C","F","B","E"],
 
       questions : [
 
@@ -40,9 +35,9 @@
           `,
           choices: [
             String.raw`\(23\)`,
-            String.raw`\(0.23\)`,
             String.raw`\(2.3\)`,
             String.raw`\(0.023\)`,
+            String.raw`\(0.23\)`,
             String.raw`\(230\)`,
             String.raw`\(0.0023\)`
           ]
@@ -50,17 +45,17 @@
 
         {
           stem: String.raw`
-            <p>Convert the ratio to a decimal.</p>
-            <p><i>3 out of 6</i></p>
+            <p>Which statement is true?</p>
           `,
           choices: [
-            String.raw`\(0.06\)`,
-            String.raw`\(0.3\)`,
-            String.raw`\(0.5\)`,
-            String.raw`\(1.5\)`,
-            String.raw`\(2\)`,
-            String.raw`\(0.05\)`
-          ]
+            String.raw`Every nonterminating decimal is irrational.`,
+            String.raw`Every terminating decimal can be written as a fraction.`,
+            String.raw`Every rational number is a whole number.`,
+            String.raw`A repeating decimal is irrational.`,
+            String.raw`A terminating decimal is always an integer.`,
+            String.raw`Irrational numbers can be written as fractions of integers.`
+          ],
+          choiceWrap: false
         },
 
         {
@@ -71,26 +66,26 @@
           choices: [
             String.raw`\(\frac{82}{100}\)`,
             String.raw`\(\frac{41}{100}\)`,
-            String.raw`\(\frac{41}{50}\)`,
             String.raw`\(\frac{82}{10}\)`,
             String.raw`\(\frac{21}{25}\)`,
+            String.raw`\(\frac{41}{50}\)`,
             String.raw`\(\frac{50}{41}\)`
           ]
         },
 
         {
           stem: String.raw`
-            <p>Convert the decimal to a fraction in lowest terms.</p>
-            <p class="math">\(4.3\)</p>
+            <p>Which statement best describes an irrational number?</p>
           `,
           choices: [
-            String.raw`\(\frac{43}{10}\)`,
-            String.raw`\(\frac{43}{100}\)`,
-            String.raw`\(\frac{13}{3}\)`,
-            String.raw`\(\frac{4}{3}\)`,
-            String.raw`\(\frac{7}{10}\)`,
-            String.raw`\(\frac{10}{43}\)`
-          ]
+            String.raw`A number that cannot be written as a fraction of two integers.`,
+            String.raw`A number less than zero.`,
+            String.raw`A number that cannot be placed on the number line.`,
+            String.raw`A decimal that stops.`,
+            String.raw`A number greater than \(1\).`,
+            String.raw`A number that can be written as a ratio of integers.`
+          ],
+          choiceWrap: false
         },
 
         {
@@ -100,9 +95,9 @@
           `,
           choices: [
             String.raw`\(0.75\)`,
+            String.raw`\(0.57\)`,
             String.raw`\(0.714285\ldots\)`,
             String.raw`\(5.7\)`,
-            String.raw`\(0.57\)`,
             String.raw`\(7.5\)`,
             String.raw`\(0.0714285\ldots\)`
           ]
@@ -114,12 +109,12 @@
             <p class="math">\(\sqrt{4}\)</p>
           `,
           choices: [
-            String.raw`natural numbers`,
-            String.raw`whole numbers`,
-            String.raw`integers`,
             String.raw`rational numbers`,
+            String.raw`integers`,
+            String.raw`whole numbers`,
+            String.raw`real numbers`,
             String.raw`irrational numbers`,
-            String.raw`real numbers`
+            String.raw`natural numbers`
           ],
           choiceWrap: false
         },
@@ -131,9 +126,9 @@
           `,
           choices: [
             String.raw`whole numbers`,
-            String.raw`natural numbers`,
-            String.raw`rational numbers`,
             String.raw`integers`,
+            String.raw`rational numbers`,
+            String.raw`natural numbers`,
             String.raw`irrational numbers`,
             String.raw`not a real number`
           ],
@@ -145,12 +140,12 @@
             <p>Which number is rational but <b>not</b> an integer?</p>
           `,
           choices: [
+            String.raw`\(\sqrt{5}\)`,
             String.raw`\(-6\)`,
             String.raw`\(0\)`,
-            String.raw`\(-\frac{4}{11}\)`,
-            String.raw`\(\sqrt{4}\)`,
             String.raw`\(\frac{3}{1}\)`,
-            String.raw`\(\sqrt{5}\)`
+            String.raw`\(-\frac{4}{11}\)`,
+            String.raw`\(\sqrt{4}\)`
           ],
           choiceWrap: false
         },
@@ -160,12 +155,12 @@
             <p>Which number is irrational?</p>
           `,
           choices: [
-            String.raw`\(0.313131\ldots\)`,
+            String.raw`\(0.101001000100001\ldots\)`,
             String.raw`\(-\frac{4}{11}\)`,
             String.raw`\(0\)`,
             String.raw`\(\frac{3}{1}\)`,
             String.raw`\(\sqrt{4}\)`,
-            String.raw`\(-0.721721172111\ldots\)`
+            String.raw`\(0.313131\ldots\)`
           ],
           choiceWrap: false
         },
@@ -176,11 +171,11 @@
             <p class="math">\(\pi\) and \(-\frac{11}{5}\)</p>
           `,
           choices: [
-            String.raw`\(\pi\) is between \(2\) and \(3\), and \(-\frac{11}{5}\) is between \(-3\) and \(-2\).`,
-            String.raw`\(\pi\) is between \(3\) and \(4\), and \(-\frac{11}{5}\) is between \(-3\) and \(-2\).`,
-            String.raw`\(\pi\) is between \(3\) and \(4\), and \(-\frac{11}{5}\) is between \(-2\) and \(-1\).`,
-            String.raw`\(\pi\) is between \(4\) and \(5\), and \(-\frac{11}{5}\) is between \(-3\) and \(-2\).`,
             String.raw`\(\pi\) is between \(2\) and \(3\), and \(-\frac{11}{5}\) is between \(-2\) and \(-1\).`,
+            String.raw`\(\pi\) is between \(4\) and \(5\), and \(-\frac{11}{5}\) is between \(-3\) and \(-2\).`,
+            String.raw`\(\pi\) is between \(3\) and \(4\), and \(-\frac{11}{5}\) is between \(-2\) and \(-1\).`,
+            String.raw`\(\pi\) is between \(3\) and \(4\), and \(-\frac{11}{5}\) is between \(-3\) and \(-2\).`,
+            String.raw`\(\pi\) is between \(2\) and \(3\), and \(-\frac{11}{5}\) is between \(-3\) and \(-2\).`,
             String.raw`\(\pi\) is between \(3\) and \(4\), and \(-\frac{11}{5}\) is between \(-1\) and \(0\).`
           ],
           choiceWrap: false
@@ -192,10 +187,10 @@
           `,
           choices: [
             String.raw`Because every weight is a whole number of pounds or kilograms.`,
-            String.raw`Because measured weights are recorded to finite precision, so the reported value is a rounded decimal or fraction.`,
             String.raw`Because irrational numbers are not real numbers.`,
-            String.raw`Because changing units always turns an irrational number into a whole number.`,
+            String.raw`Because measured weights are recorded to finite precision, so the reported value is a rounded decimal or fraction.`,
             String.raw`Because scales can show only positive integers.`,
+            String.raw`Because changing units always turns an irrational number into a whole number.`,
             String.raw`Because every decimal shown on a calculator is irrational.`
           ],
           choiceWrap: false
@@ -203,16 +198,46 @@
 
         {
           stem: String.raw`
-            <p>A segment has length \(\sqrt{5}\) meters. The same length is then written in centimeters or kilometers.</p>
-            <p>Which statement is true?</p>
+            <p>Which number cannot be written in the form \(\frac{a}{b}\), where \(a\) and \(b\) are integers and \(b\neq 0\)?</p>
+          `,
+          choices: [
+            String.raw`\(0.75\)`,
+            String.raw`\(-\frac{11}{4}\)`,
+            String.raw`\(0.333\ldots\)`,
+            String.raw`\(7\)`,
+            String.raw`\(-2.125\)`,
+            String.raw`\(\sqrt{2}\)`
+          ],
+          choiceWrap: false
+        },
+
+        {
+          stem: String.raw`
+            <p>Which decimal is irrational?</p>
+          `,
+          choices: [
+            String.raw`\(0.272727\ldots\)`,
+            String.raw`\(0.101001000100001\ldots\)`,
+            String.raw`\(-3.125\)`,
+            String.raw`\(1.414141\ldots\)`,
+            String.raw`\(2.6\)`,
+            String.raw`\(-0.444\ldots\)`
+          ],
+          choiceWrap: false
+        },
+
+        {
+          stem: String.raw`
+            <p>A square has side length \(\sqrt{2}\) feet. The same length is then written in inches.</p>
+            <p>Which statement is always true?</p>
           `,
           choices: [
             String.raw`It becomes rational because the unit changes.`,
-            String.raw`It becomes a whole number in centimeters.`,
-            String.raw`The numerical value changes, but it remains irrational.`,
-            String.raw`It is no longer a real number.`,
-            String.raw`The numerical value stays exactly \(\sqrt{5}\).`,
-            String.raw`It becomes negative in kilometers.`
+            String.raw`It becomes an integer because inches are smaller units.`,
+            String.raw`Its decimal representation must terminate.`,
+            String.raw`It is no longer on the real number line.`,
+            String.raw`The numerical value changes, but it is still irrational.`,
+            String.raw`It stays exactly \(\sqrt{2}\).`
           ],
           choiceWrap: false
         }
