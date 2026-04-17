@@ -14,20 +14,16 @@
        - Homework 1A — set language, belonging, element vs. set, order irrelevance.
        - Homework 1B — subsets, set-builder notation, empty set, complement, intersection, union, disjointness.
        - Homework 1C — geometric situations in set language, especially point-line-plane incidence and intersection notation.
-       - Homework 1D — primitive notions, notation, collinearity, determination of line and plane, inclusion, coplanarity, concurrency.
+       - Homework 1D — primitive notions, notation, collinearity, the Postulates of existence for a line and for a plane, the Postulates of determination for a line and a plane, and the Postulate of Inclusion.
 
        IMAGE FILES:
        - User-supplied figure(s): none
-       - Model-generated figure(s): 1-rev-8.png, 1-rev-14.png, 1-rev-19.png
-
-       IMAGE NAMING RULE:
-       - Model-generated figures use final homework question numbering.
-       - PNG files live in the SAME folder as this HTML.
+       - Model-generated figure(s): none
 
        MODEL REWORK / EXTENSION NOTES:
        - This review is newly composed from the four homework sets rather than copied from them.
        - The sequence moves from set language, to set operations, to geometric set language, to primitive notions and postulates.
-       - Several questions were authored specifically to strengthen theorem-sense: what is sufficient to prove two lines are distinct, what really follows from a postulate, and which configurations are impossible.
+       - The set has been expanded to 26 questions, with the additional questions concentrating on the official postulate names and their proper use.
        ========================= */
 
     window.homeworkData = {
@@ -35,7 +31,7 @@
       id      : "Homework 1 Review",
       title   : "Homework 1 Review — Foundations of Geometry Language",
       graphics : String.raw``,
-      answerKey : ["D", "B", "C", "E", "A", "B", "C", "C", "F", "A", "F", "C", "B", "C", "C", "B", "E", "C", "F", "E", "D", "B"],
+      answerKey : ["D", "B", "C", "E", "A", "B", "C", "F", "A", "A", "F", "C", "B", "C", "D", "C", "B", "B", "E", "B", "B", "C", "E", "B", "D", "B"],
       questions : [
     {
       stem: String.raw`<p>Let <span class="math">\(A=\{a,b,c,d\}\)</span>.</p><p>Which statement is false?</p>`,
@@ -63,12 +59,12 @@
     {
       stem: String.raw`<p>If <span class="math">\(B\subseteq A\)</span>, what does that mean?</p>`,
       choices: [
-        String.raw`Every element of \(A\) belongs to \(B\).`,
+        String.raw`Every element of <span class="math">\(A\)</span> belongs to <span class="math">\(B\)</span>.`,
         String.raw`The two sets must be equal.`,
-        String.raw`Every element of \(B\) belongs to \(A\).`,
-        String.raw`\(B\) is the first element of \(A\).`,
-        String.raw`\(A\) belongs to \(B\).`,
-        String.raw`\(B\) must have fewer elements than \(A\).`
+        String.raw`Every element of <span class="math">\(B\)</span> belongs to <span class="math">\(A\)</span>.`,
+        String.raw`<span class="math">\(B\)</span> is the first element of <span class="math">\(A\)</span>.`,
+        String.raw`<span class="math">\(A\)</span> belongs to <span class="math">\(B\)</span>.`,
+        String.raw`<span class="math">\(B\)</span> must have fewer elements than <span class="math">\(A\)</span>.`
       ],
       choiceWrap: false
     },
@@ -89,7 +85,7 @@
         String.raw`It is a set with no elements.`,
         String.raw`It has one hidden element.`,
         String.raw`It cannot be a subset of any set.`,
-        String.raw`It means the same thing as the number zero in every context.`,
+        String.raw`It means exactly the same thing as the number zero.`,
         String.raw`It appears only in algebra, never in geometry.`,
         String.raw`It can exist only inside an infinite universal set.`
       ],
@@ -118,26 +114,26 @@
       ]
     },
     {
-      stem: String.raw`<p><b>Refer to Figure 1.</b> Which statement is correct?</p>`,
-      media: String.raw`<figure><img src="1-rev-8.png" alt="Figure 1" /><figcaption>Figure 1</figcaption></figure>`,
-      choices: [
-        String.raw`\(A\notin r,\ B\notin r,\ P\in r\)`,
-        String.raw`\(A\in r,\ B\in r,\ P\in r\)`,
-        String.raw`\(\{A,B\}\subseteq r,\ P\notin r\)`,
-        String.raw`\(r\subseteq \{A,B\}\)`,
-        String.raw`\(A\in P\)`,
-        String.raw`\(r\cap \{P\}=r\)`
-      ]
-    },
-    {
       stem: String.raw`<p>Which sentence best describes the union <span class="math">\(A\cup B\)</span>?</p>`,
       choices: [
-        String.raw`The set of elements that belong to both A and B at the same time.`,
-        String.raw`The set of elements that belong only to A.`,
-        String.raw`The set of elements that belong only to B.`,
+        String.raw`The set of elements that belong to both <span class="math">\(A\)</span> and <span class="math">\(B\)</span> at the same time.`,
+        String.raw`The set of elements that belong only to <span class="math">\(A\)</span>.`,
+        String.raw`The set of elements that belong only to <span class="math">\(B\)</span>.`,
         String.raw`The set of elements that are not in either set.`,
         String.raw`The set of elements that belong to exactly one of the two sets, but not both.`,
-        String.raw`The set of elements that belong to A, or to B, or to both.`
+        String.raw`The set of elements that belong to <span class="math">\(A\)</span>, or to <span class="math">\(B\)</span>, or to both.`
+      ],
+      choiceWrap: false
+    },
+    {
+      stem: String.raw`<p>In geometry, a line can be thought of as a set of points.</p><p>If <span class="math">\(A\in r\)</span>, <span class="math">\(B\in r\)</span>, and <span class="math">\(P\notin r\)</span>, which sentence is correct?</p>`,
+      choices: [
+        String.raw`Points <span class="math">\(A\)</span> and <span class="math">\(B\)</span> lie on <span class="math">\(r\)</span>, but <span class="math">\(P\)</span> does not.`,
+        String.raw`Point <span class="math">\(P\)</span> is the same object as line <span class="math">\(r\)</span>.`,
+        String.raw`Line <span class="math">\(r\)</span> is an element of point <span class="math">\(A\)</span>.`,
+        String.raw`Point <span class="math">\(A\)</span> is a subset of line <span class="math">\(r\)</span>.`,
+        String.raw`All three points lie on line <span class="math">\(r\)</span>.`,
+        String.raw`The line <span class="math">\(r\)</span> has exactly two points.`
       ],
       choiceWrap: false
     },
@@ -155,12 +151,12 @@
     {
       stem: String.raw`<p>Which sentence best matches the symbolic statement <span class="math">\(r\subseteq \alpha\)</span>?</p>`,
       choices: [
-        String.raw`Plane α lies entirely on line r.`,
-        String.raw`Line r meets plane α in exactly one point.`,
-        String.raw`Line r and plane α have no point in common.`,
-        String.raw`Line r and plane α are equal.`,
-        String.raw`Plane α is a point of line r.`,
-        String.raw`Line r lies entirely in plane α.`
+        String.raw`Plane <span class="math">\(lpha\)</span> lies entirely on line <span class="math">\(r\)</span>.`,
+        String.raw`Line <span class="math">\(r\)</span> meets plane <span class="math">\(lpha\)</span> in exactly one point.`,
+        String.raw`Line <span class="math">\(r\)</span> and plane <span class="math">\(lpha\)</span> have no point in common.`,
+        String.raw`Line <span class="math">\(r\)</span> and plane <span class="math">\(lpha\)</span> are equal.`,
+        String.raw`Plane <span class="math">\(lpha\)</span> is a point of line <span class="math">\(r\)</span>.`,
+        String.raw`Line <span class="math">\(r\)</span> lies entirely in plane <span class="math">\(lpha\)</span>.`
       ],
       choiceWrap: false
     },
@@ -189,6 +185,30 @@
       choiceWrap: false
     },
     {
+      stem: String.raw`<p>Which statement is guaranteed by the <b>Postulates of existence for a line and for a plane</b>?</p>`,
+      choices: [
+        String.raw`Every point lies on exactly one line.`,
+        String.raw`Every two lines intersect.`,
+        String.raw`A line contains infinitely many points, there are points outside a given line, and a plane contains infinitely many points.`,
+        String.raw`Any three points determine a unique plane.`,
+        String.raw`A plane contains exactly three points.`,
+        String.raw`Every line lies in a plane.`
+      ],
+      choiceWrap: false
+    },
+    {
+      stem: String.raw`<p>Which statement does <b>not</b> follow from the Postulates of existence for a line and for a plane?</p>`,
+      choices: [
+        String.raw`A line has infinitely many points.`,
+        String.raw`There are points outside a given line.`,
+        String.raw`A plane has infinitely many points.`,
+        String.raw`Two distinct points determine a unique line.`,
+        String.raw`One may choose as many points on a line as needed.`,
+        String.raw`One may choose as many points in a plane as needed.`
+      ],
+      choiceWrap: false
+    },
+    {
       stem: String.raw`<p>What does it mean for points <span class="math">\(A\)</span>, <span class="math">\(B\)</span>, and <span class="math">\(C\)</span> to be collinear?</p>`,
       choices: [
         String.raw`They lie in the same plane.`,
@@ -201,28 +221,27 @@
       choiceWrap: false
     },
     {
-      stem: String.raw`<p><b>Refer to Figure 2.</b> Which statement best matches the figure?</p>`,
-      media: String.raw`<figure><img src="1-rev-14.png" alt="Figure 2" /><figcaption>Figure 2</figcaption></figure>`,
+      stem: String.raw`<p>Which statement is guaranteed by the <b>Postulates of determination for a line and a plane</b>?</p>`,
       choices: [
-        String.raw`\(r\cap \alpha=\varnothing,\ Q\in r\)`,
-        String.raw`\(r\not\subseteq \alpha,\ Q\notin \alpha\)`,
-        String.raw`\(r\subseteq \alpha,\ A\in r,\ B\in r,\ Q\in \alpha,\ Q\notin r\)`,
-        String.raw`\(\alpha\subseteq r,\ Q\in \alpha\)`,
-        String.raw`\(Q\in r,\ r=\alpha\)`,
-        String.raw`\(Q\notin \alpha,\ A\notin r\)`
-      ]
-    },
-    {
-      stem: String.raw`<p>Which statement is guaranteed by the Line Postulate?</p>`,
-      choices: [
+        String.raw`Every two lines determine a unique point.`,
+        String.raw`Any two distinct points determine a unique line, and any three non-collinear points determine a unique plane.`,
         String.raw`Any two points determine a unique plane.`,
-        String.raw`Any two distinct points determine a unique line.`,
-        String.raw`Three points always determine one line.`,
-        String.raw`A line contains exactly two points.`,
-        String.raw`Any two lines determine a unique point.`,
-        String.raw`A point determines infinitely many planes and no line.`
+        String.raw`Every line contains exactly two points.`,
+        String.raw`Any three points determine a unique line.`,
+        String.raw`Every plane contains exactly one line.`
       ],
       choiceWrap: false
+    },
+    {
+      stem: String.raw`<p>If <span class="math">\(A\ne B\)</span> and both points lie on lines <span class="math">\(r\)</span> and <span class="math">\(s\)</span>, what must follow?</p>`,
+      choices: [
+        String.raw`\(A=B\)`,
+        String.raw`\(r=s\)`,
+        String.raw`\(r\cap s=\varnothing\)`,
+        String.raw`\(r\subseteq s\)`,
+        String.raw`\(\{A,B\}=r\)`,
+        String.raw`\(r\) and \(s\) are parallel`
+      ]
     },
     {
       stem: String.raw`<p>Which condition is enough to determine a unique plane?</p>`,
@@ -237,28 +256,39 @@
       choiceWrap: false
     },
     {
-      stem: String.raw`<p>Let <span class="math">\(P\in r\)</span> and <span class="math">\(Q\notin r\)</span>, and let <span class="math">\(s=\overleftrightarrow{PQ}\)</span>.</p><p>Why must <span class="math">\(s\)</span> be different from <span class="math">\(r\)</span>?</p>`,
+      stem: String.raw`<p>Which statement expresses the <b>Postulate of Inclusion</b>?</p>`,
       choices: [
-        String.raw`Because every line must have a different letter.`,
-        String.raw`Because P lies on both lines.`,
-        String.raw`Because if s=r, then Q would have to lie on r, which it does not.`,
-        String.raw`Because P and Q are in space.`,
-        String.raw`Because two lines can never share a point.`,
-        String.raw`Because the line through P and Q contains only two points.`
+        String.raw`If a plane contains two distinct lines, then those lines are parallel.`,
+        String.raw`If a line contains two distinct points of a plane, then the entire line lies in that plane.`,
+        String.raw`If a line meets a plane once, then it lies in the plane.`,
+        String.raw`If two planes contain one common point, then they are the same plane.`,
+        String.raw`If a plane contains one point of a line, then the whole line lies in the plane.`,
+        String.raw`If two points lie on a line, then the plane is unique.`
       ],
       choiceWrap: false
     },
     {
-      stem: String.raw`<p><b>Refer to Figure 3.</b> Which symbolic statement best describes the figure?</p>`,
-      media: String.raw`<figure><img src="1-rev-19.png" alt="Figure 3" /><figcaption>Figure 3</figcaption></figure>`,
+      stem: String.raw`<p>Let <span class="math">\(A\)</span> and <span class="math">\(B\)</span> be distinct points in plane <span class="math">\(\alpha\)</span>, and let <span class="math">\(r=\overleftrightarrow{AB}\)</span>.</p><p>Which conclusion is justified by the Postulate of Inclusion?</p>`,
       choices: [
-        String.raw`\(\alpha\cap\beta=\varnothing\)`,
-        String.raw`\(r\subseteq \alpha\) but \(r\not\subseteq\beta\)`,
-        String.raw`\(\alpha=\beta\)`,
-        String.raw`\(r\cap\alpha=\varnothing\)`,
-        String.raw`\(r\cap\beta=\varnothing\)`,
-        String.raw`\(\alpha\cap\beta=r\)`
+        String.raw`\(\alpha\subseteq r\)`,
+        String.raw`\(r\subseteq \alpha\)`,
+        String.raw`\(r\cap \alpha=\varnothing\)`,
+        String.raw`\(A\notin r\)`,
+        String.raw`\(B\notin \alpha\)`,
+        String.raw`\(r\) contains only the points \(A\) and \(B\)`
       ]
+    },
+    {
+      stem: String.raw`<p>Let <span class="math">\(P\in r\)</span> and <span class="math">\(Q\notin r\)</span>, and let <span class="math">\(s=\overleftrightarrow{PQ}\)</span>.</p><p>Why must <span class="math">\(s\)</span> be different from <span class="math">\(r\)</span>?</p>`,
+      choices: [
+        String.raw`Because every line must have a different letter.`,
+        String.raw`Because <span class="math">\(P\)</span> lies on both lines.`,
+        String.raw`Because if <span class="math">\(s=r\)</span>, then <span class="math">\(Q\)</span> would have to lie on <span class="math">\(r\)</span>, which it does not.`,
+        String.raw`Because <span class="math">\(P\)</span> and <span class="math">\(Q\)</span> are in space.`,
+        String.raw`Because two lines can never share a point.`,
+        String.raw`Because the line through <span class="math">\(P\)</span> and <span class="math">\(Q\)</span> contains only two points.`
+      ],
+      choiceWrap: false
     },
     {
       stem: String.raw`<p>Which geometric situation is impossible?</p>`,
@@ -273,18 +303,6 @@
       choiceWrap: false
     },
     {
-      stem: String.raw`<p>Let <span class="math">\(A\)</span> and <span class="math">\(B\)</span> be distinct points in plane <span class="math">\(\alpha\)</span>, and let <span class="math">\(r=\overleftrightarrow{AB}\)</span>.</p><p>Which postulate justifies the conclusion <span class="math">\(r\subseteq \alpha\)</span>?</p>`,
-      choices: [
-        String.raw`Expansion Postulate`,
-        String.raw`Line Postulate`,
-        String.raw`Plane Postulate`,
-        String.raw`Flat Plane Postulate`,
-        String.raw`Plane Intersection Postulate`,
-        String.raw`No postulate is needed.`
-      ],
-      choiceWrap: false
-    },
-    {
       stem: String.raw`<p>Which sentence best describes concurrent lines?</p>`,
       choices: [
         String.raw`They are lines that do not intersect.`,
@@ -293,6 +311,30 @@
         String.raw`They are lines that share more than one point.`,
         String.raw`They are lines with the same label.`,
         String.raw`They are lines inside the same set.`
+      ],
+      choiceWrap: false
+    },
+    {
+      stem: String.raw`<p>Which statement is justified specifically by the <b>Postulates of determination for a line and a plane</b>, and not merely by the existence postulates?</p>`,
+      choices: [
+        String.raw`A plane contains infinitely many points.`,
+        String.raw`There are points outside a given line.`,
+        String.raw`A line contains infinitely many points.`,
+        String.raw`Two distinct points determine a unique line.`,
+        String.raw`One may choose as many points in a plane as desired.`,
+        String.raw`There are points in space not on a given line.`
+      ],
+      choiceWrap: false
+    },
+    {
+      stem: String.raw`<p>Which statement uses the three official postulate names correctly?</p>`,
+      choices: [
+        String.raw`Existence tells how to name points, determination tells how many points are on a line, and inclusion defines concurrency.`,
+        String.raw`Existence guarantees abundance of points, determination guarantees uniqueness of certain objects, and inclusion forces a line into a plane when two of its points lie there.`,
+        String.raw`Existence says two points determine a line, determination says planes contain infinitely many points, and inclusion says two lines always intersect.`,
+        String.raw`Existence and determination mean the same thing, while inclusion is just another word for intersection.`,
+        String.raw`Existence applies only to planes, determination only to lines, and inclusion only to sets.`,
+        String.raw`All three names refer to the same single postulate.`
       ],
       choiceWrap: false
     }
