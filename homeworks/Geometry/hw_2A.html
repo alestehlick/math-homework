@@ -1,0 +1,235 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Homework 1-2 (Geometry)</title>
+
+  <script>
+    /* =========================
+       Homework 1-2 — Betweenness, Rays, and Segments
+       Adapted for: /math-homework/assets/core-rich.js
+
+       REQUIRED SOURCE REFERENCES:
+       - User source in current conversation: handwritten note/photo on betweenness, open rays, rays, and line segments.
+       - Model-authored homework: Q1–Q12 were composed from the user's requested concepts and from the note's definitions.
+       - Emphasis added by the model: endpoint inclusion/exclusion, interpretation of betweenness, and set operations with line parts.
+
+       IMAGE FILES:
+       - None.
+
+       IMAGE NAMING RULE:
+       - No figures are used in this homework.
+       ========================= */
+
+    window.homeworkData = {
+      classId : "Geometry",
+      id      : "Homework 1-2",
+      title   : "Homework 1-2 — Betweenness, Rays, and Segments",
+
+      graphics : String.raw``,
+
+      answerKey : ["C","F","E","C","B","D","A","F","C","A","D","B"],
+
+      questions : [
+
+        {
+          stem: String.raw`
+            <p>Let \(A\neq B\). Which description matches <b>the open ray from \(A\) through \(B\)</b>?</p>
+          `,
+          choices: [
+            String.raw`All points of \(\overleftrightarrow{AB}\) on the same side of \(B\) as \(A\), together with \(B\), but not \(A\).`,
+            String.raw`All points of \(\overleftrightarrow{AB}\) on the same side of \(A\) as \(B\), together with \(A\), but not \(B\).`,
+            String.raw`All points of \(\overleftrightarrow{AB}\) on the same side of \(A\) as \(B\), together with \(B\), but not \(A\).`,
+            String.raw`Only the points strictly beyond \(B\), excluding both \(A\) and \(B\).`,
+            String.raw`Only the points between \(A\) and \(B\), excluding both endpoints.`,
+            String.raw`All points of \(\overleftrightarrow{AB}\) except \(A\) and \(B\).`
+          ],
+          choiceWrap: false
+        },
+
+        {
+          stem: String.raw`
+            <p>Let \(A\neq B\). Which description matches the ray \(\overrightarrow{AB}\)?</p>
+          `,
+          choices: [
+            String.raw`Only the points between \(A\) and \(B\), together with \(A\) and \(B\).`,
+            String.raw`All points of \(\overleftrightarrow{AB}\) except \(A\).`,
+            String.raw`All points of \(\overleftrightarrow{AB}\) on the same side of \(B\) as \(A\), together with \(B\), but not \(A\).`,
+            String.raw`All points of \(\overleftrightarrow{AB}\).`,
+            String.raw`All points of \(\overleftrightarrow{AB}\) on the same side of \(A\) as \(B\), together with \(B\), but not \(A\).`,
+            String.raw`All points of \(\overleftrightarrow{AB}\) on the same side of \(A\) as \(B\), together with \(A\) and \(B\).`
+          ],
+          choiceWrap: false
+        },
+
+        {
+          stem: String.raw`
+            <p>Suppose \(B\) is between \(A\) and \(C\). Which statement is <b>false</b>?</p>
+          `,
+          choices: [
+            String.raw`The points \(A,B,C\) are collinear.`,
+            String.raw`\(B\in \overline{AC}\).`,
+            String.raw`\(C\in \overrightarrow{AB}\).`,
+            String.raw`\(A\in \overrightarrow{CB}\).`,
+            String.raw`\(A\) belongs to the open ray from \(A\) through \(C\).`,
+            String.raw`\(B\) belongs to the open ray from \(A\) through \(C\).`
+          ],
+          choiceWrap: false
+        },
+
+        {
+          stem: String.raw`
+            <p>For distinct points \(A\) and \(B\), which equality is always true?</p>
+          `,
+          choices: [
+            String.raw`\(\overline{AB}=\overrightarrow{AB}\cup\overrightarrow{BA}\)`,
+            String.raw`\(\overleftrightarrow{AB}=\overrightarrow{AB}\cap\overrightarrow{BA}\)`,
+            String.raw`\(\overline{AB}=\overrightarrow{AB}\cap\overrightarrow{BA}\)`,
+            String.raw`\(\overrightarrow{AB}=\overline{AB}\cap\overrightarrow{BA}\)`,
+            String.raw`\(\overrightarrow{AB}=\overleftrightarrow{AB}\setminus \overline{AB}\)`,
+            String.raw`\(\overleftrightarrow{AB}=\overline{AB}\)`
+          ],
+          choiceWrap: false
+        },
+
+        {
+          stem: String.raw`
+            <p>Which set describes exactly the points of the segment \(\overline{AB}\) <b>except for the endpoints</b>?</p>
+          `,
+          choices: [
+            String.raw`\(\overrightarrow{AB}\cap \overrightarrow{BA}\)`,
+            String.raw`The intersection of the open ray from \(A\) through \(B\) and the open ray from \(B\) through \(A\).`,
+            String.raw`The union of the open ray from \(A\) through \(B\) and the open ray from \(B\) through \(A\).`,
+            String.raw`\(\overrightarrow{AB}\cup \overrightarrow{BA}\)`,
+            String.raw`The open ray from \(A\) through \(B\).`,
+            String.raw`The open ray from \(B\) through \(A\).`
+          ],
+          choiceWrap: false
+        },
+
+        {
+          stem: String.raw`
+            <p>For Questions 6–12, distinct points \(A,B,C,D\) lie on one line in the order \(A-B-C-D\).</p>
+            <p>Which set equals \(\overrightarrow{AB}\cap\overrightarrow{CD}\)?</p>
+          `,
+          choices: [
+            String.raw`\(\overrightarrow{AB}\)`,
+            String.raw`\(\overrightarrow{BA}\)`,
+            String.raw`\(\overline{CD}\)`,
+            String.raw`\(\overrightarrow{CD}\)`,
+            String.raw`\(\overline{AC}\)`,
+            String.raw`\(\varnothing\)`
+          ],
+          choiceWrap: false
+        },
+
+        {
+          stem: String.raw`
+            <p>Distinct points \(A,B,C,D\) lie on one line in the order \(A-B-C-D\).</p>
+            <p>Which set equals \(\overrightarrow{BA}\cap\overrightarrow{CB}\)?</p>
+          `,
+          choices: [
+            String.raw`\(\overrightarrow{BA}\)`,
+            String.raw`\(\overrightarrow{CB}\)`,
+            String.raw`\(\overline{BC}\)`,
+            String.raw`\(\overline{AB}\)`,
+            String.raw`\(\{B\}\)`,
+            String.raw`\(\varnothing\)`
+          ],
+          choiceWrap: false
+        },
+
+        {
+          stem: String.raw`
+            <p>Distinct points \(A,B,C,D\) lie on one line in the order \(A-B-C-D\).</p>
+            <p>Which set equals \(\overline{AC}\cap\overline{BD}\)?</p>
+          `,
+          choices: [
+            String.raw`\(\overline{AB}\)`,
+            String.raw`\(\overline{CD}\)`,
+            String.raw`\(\{B,C\}\)`,
+            String.raw`\(\overline{AD}\)`,
+            String.raw`\(\varnothing\)`,
+            String.raw`\(\overline{BC}\)`
+          ],
+          choiceWrap: false
+        },
+
+        {
+          stem: String.raw`
+            <p>Distinct points \(A,B,C,D\) lie on one line in the order \(A-B-C-D\).</p>
+            <p>Which set equals \(\overline{AB}\cup\overline{BC}\)?</p>
+          `,
+          choices: [
+            String.raw`\(\overline{AB}\)`,
+            String.raw`\(\overline{BC}\)`,
+            String.raw`\(\overline{AC}\)`,
+            String.raw`\(\overline{AD}\)`,
+            String.raw`\(\overrightarrow{AC}\)`,
+            String.raw`\(\overleftrightarrow{AB}\)`
+          ],
+          choiceWrap: false
+        },
+
+        {
+          stem: String.raw`
+            <p>Distinct points \(A,B,C,D\) lie on one line in the order \(A-B-C-D\).</p>
+            <p>Which set equals the whole line \(\overleftrightarrow{AB}\)?</p>
+          `,
+          choices: [
+            String.raw`\(\overrightarrow{AB}\cup\overrightarrow{BA}\)`,
+            String.raw`\(\overrightarrow{AB}\cap\overrightarrow{BA}\)`,
+            String.raw`\(\overrightarrow{AB}\cup\overline{AB}\)`,
+            String.raw`\(\overrightarrow{BA}\cup\overline{CD}\)`,
+            String.raw`\(\overline{AC}\cup\overline{BD}\)`,
+            String.raw`\(\overline{AB}\cup\overline{CD}\)`
+          ],
+          choiceWrap: false
+        },
+
+        {
+          stem: String.raw`
+            <p>Distinct points \(A,B,C,D\) lie on one line in the order \(A-B-C-D\).</p>
+            <p>Which set is exactly \(\{B\}\)?</p>
+          `,
+          choices: [
+            String.raw`\(\overrightarrow{AB}\cap\overline{BC}\)`,
+            String.raw`\(\overline{BC}\cap\overline{CD}\)`,
+            String.raw`\(\overline{AB}\cap\overline{CD}\)`,
+            String.raw`\(\overrightarrow{BA}\cap\overline{BC}\)`,
+            String.raw`\(\overrightarrow{CB}\cap\overline{AB}\)`,
+            String.raw`\(\overrightarrow{AB}\cap\overline{AB}\)`
+          ],
+          choiceWrap: false
+        },
+
+        {
+          stem: String.raw`
+            <p>Distinct points \(A,B,C,D\) lie on one line in the order \(A-B-C-D\).</p>
+            <p>Which statement is <b>true</b>?</p>
+          `,
+          choices: [
+            String.raw`\(\overline{BC}\subseteq \overline{AB}\)`,
+            String.raw`\(\overline{BC}\subseteq \overrightarrow{AB}\)`,
+            String.raw`\(D\in \overrightarrow{BA}\)`,
+            String.raw`\(\overrightarrow{CB}\subseteq \overrightarrow{AB}\)`,
+            String.raw`\(\overline{CD}\subseteq \overrightarrow{BA}\)`,
+            String.raw`\(A\) belongs to the open ray from \(A\) through \(B\).`
+          ],
+          choiceWrap: false
+        }
+
+      ]
+    };
+  </script>
+
+  <link rel="stylesheet" href="/math-homework/assets/core-rich.css" />
+  <script defer src="/math-homework/assets/core-rich.js"></script>
+  <script defer src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+</head>
+
+<body>
+  <div id="hw-root">Loading…</div>
+</body>
+</html>
