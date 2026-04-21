@@ -6,27 +6,6 @@
   <title>Homework 2-5 (Algebra 1)</title>
 
   <script>
-    /* =========================
-       Homework 2-5 — Order of Operations and Grouping Symbols
-       Adapted for: /math-homework/assets/core-rich.js
-
-       REQUIRED SOURCE REFERENCES (your provided sets):
-       - Type A uses A. Exercises: #1, #6, #7, #12
-       - Type B uses B. Exercises: #19, #20, #21, #23, #24, #25
-       - Type C uses C. Exercises: #26, #27
-       - Model-reworked items:
-         * Q4 and Q5 convert the source “insert grouping symbols” items into conceptual questions about
-           which part of the expression must be grouped first.
-         * Q9 reshapes C #27 into a diagnostic question about which value cannot occur from legal regroupings.
-         * Q12 compares two closely related verbal phrases to force students to attend to structure, not just keywords.
-
-       IMAGE FILES:
-       - No figures required.
-
-       IMAGE NAMING RULE:
-       - No figures required for this homework.
-       ========================= */
-
     window.homeworkData = {
       classId : "Algebra1",
       id      : "Homework 2-5",
@@ -87,32 +66,30 @@
           stem: String.raw`
             <p>You want the expression below to equal \(21\).</p>
             <p class="math">\(2 + 4\cdot 7 \div 2\)</p>
-            <p>Which part must be grouped first?</p>
+            <p>Which grouping does that?</p>
           `,
           choices: [
-            String.raw`\(2 + 4\)`,
-            String.raw`\(4\cdot 7\)`,
-            String.raw`\(7 \div 2\)`,
-            String.raw`\(2 + 4\cdot 7\)`,
-            String.raw`\(4\cdot 7 \div 2\)`,
-            String.raw`No grouping can make the value \(21\).`
-          ]
+            String.raw`\((2 + 4)\cdot 7 \div 2\)`,
+            String.raw`\(2 + 4\cdot (7 \div 2)\)`,
+            String.raw`\((2 + 4\cdot 7) \div 2\)`,
+            String.raw`No legal insertion of grouping symbols makes the value \(21\).`
+          ],
+          choiceWrap: false
         },
 
         {
           stem: String.raw`
             <p>You want the expression below to equal \(-33\).</p>
             <p class="math">\(3 + 9\cdot 2 - 6\)</p>
-            <p>Which part must be grouped first?</p>
+            <p>Which grouping does that?</p>
           `,
           choices: [
-            String.raw`\(3 + 9\)`,
-            String.raw`\(9\cdot 2\)`,
-            String.raw`\(2 - 6\)`,
-            String.raw`\(3 + 9\cdot 2\)`,
-            String.raw`\(9\cdot 2 - 6\)`,
-            String.raw`No grouping can make the value \(-33\).`
-          ]
+            String.raw`\((3 + 9)\cdot 2 - 6\)`,
+            String.raw`\((3 + 9)\cdot (2 - 6)\)`,
+            String.raw`\(3 + 9\cdot (2 - 6)\)`,
+            String.raw`No legal insertion of grouping symbols makes the value \(-33\).`
+          ],
+          choiceWrap: false
         },
 
         {
