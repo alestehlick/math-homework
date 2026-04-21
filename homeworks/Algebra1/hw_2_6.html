@@ -4,343 +4,38 @@
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Homework 2-6 (Algebra 1)</title>
-
   <script>
-    /* =========================
-       Homework 2-6 — Roots and Radicals
-       Adapted for: /math-homework/assets/core-rich.js
-
-       REQUIRED SOURCE REFERENCES (your provided sets):
-       - Type A uses A. Exercises: #1, #6, #11, #15, #16, #17, #20
-       - Type B uses B. Exercises: #21, #22
-       - Type C uses C. Exercise: #31
-       - Model-authored extension: Q11–Q20 substantially extend the homework to force understanding of:
-         (i) positive numbers having two real roots of even order,
-         (ii) negative numbers having no real roots of even order,
-         (iii) zero having only zero as its real root,
-         (iv) every real number having exactly one real root of odd order,
-         and (v) the distinction between a radical symbol such as \(\sqrt{9}\) and the full set of real solutions of an equation such as \(x^2=9\).
-
-       IMAGE FILES:
-       - No figures required.
-
-       IMAGE NAMING RULE:
-       - No figures required for this homework.
-       ========================= */
-
     window.homeworkData = {
       classId : "Algebra1",
       id      : "Homework 2-6",
       title   : "Homework 2-6 — Roots and Radicals",
-
       graphics : String.raw``,
-
-      answerKey : ["B","D","A","C","E","B","F","C","A","D","E","B","C","A","F","D","C","B","E","A"],
-
+      answerKey : ["B","D","A","C","E","B","F","C","A","D","E","B","C","F","A","D","B","E","C","A"],
       questions : [
+        {stem:String.raw`<p>Find the indicated root.</p><p class="math">\(\sqrt{49}\)</p>`,choices:[String.raw`\(\,6\)`,String.raw`\(\,7\)`,String.raw`\(\,8\)`,String.raw`\(-7\)`,String.raw`\(\,49\)`,String.raw`\(\,1\)`]},
+        {stem:String.raw`<p>Find the indicated root.</p><p class="math">\(\sqrt{\dfrac{49}{16}}\)</p>`,choices:[String.raw`\(\dfrac{49}{4}\)`,String.raw`\(\dfrac{4}{7}\)`,String.raw`\(\dfrac{16}{49}\)`,String.raw`\(\dfrac{7}{4}\)`,String.raw`\(-\dfrac{7}{4}\)`,String.raw`\(\dfrac{49}{16}\)`]},
+        {stem:String.raw`<p>Find the indicated root.</p><p class="math">\(-\sqrt{225}\)</p>`,choices:[String.raw`\(-15\)`,String.raw`\(\,15\)`,String.raw`\(-225\)`,String.raw`\(\,225\)`,String.raw`\(-\sqrt{15}\)`,String.raw`\(\,0\)`]},
+        {stem:String.raw`<p>Find the indicated root.</p><p class="math">\(\sqrt[3]{216}\)</p>`,choices:[String.raw`\(-6\)`,String.raw`\(\,3\)`,String.raw`\(\,6\)`,String.raw`\(-3\)`,String.raw`\(\,9\)`,String.raw`\(\,216\)`]},
+        {stem:String.raw`<p>Find the indicated root.</p><p class="math">\(\sqrt[4]{1}\)</p>`,choices:[String.raw`\(\,0\)`,String.raw`\(-1\)`,String.raw`\(\,4\)`,String.raw`\(-4\)`,String.raw`\(\,1\)`,String.raw`\(\,2\)`]},
+        {stem:String.raw`<p>Find the indicated root.</p><p class="math">\(\sqrt[3]{-27}\)</p>`,choices:[String.raw`\(\,3\)`,String.raw`\(-3\)`,String.raw`\(\,9\)`,String.raw`\(-9\)`,String.raw`\(\dfrac{1}{3}\)`,String.raw`\(-\dfrac{1}{3}\)`]},
+        {stem:String.raw`<p>Find the indicated root.</p><p class="math">\(\sqrt[3]{\dfrac{27}{125}}\)</p>`,choices:[String.raw`\(\dfrac{27}{125}\)`,String.raw`\(\dfrac{5}{3}\)`,String.raw`\(\dfrac{3}{25}\)`,String.raw`\(\dfrac{5}{27}\)`,String.raw`\(-\dfrac{3}{5}\)`,String.raw`\(\dfrac{3}{5}\)`]},
+        {stem:String.raw`<p>Write without radicals. Use exponents.</p><p class="math">\(\sqrt{16}=4\)</p>`,choices:[String.raw`\(\,16^2=4\)`,String.raw`\(\,16^{-1/2}=4\)`,String.raw`\(\,16^{1/2}=4\)`,String.raw`\(\,4^2=16\)`,String.raw`\(\,2^4=16\)`,String.raw`\(\,4^{1/2}=16\)`]},
+        {stem:String.raw`<p>Write without radicals. Use exponents.</p><p class="math">\(\sqrt[3]{13.824}=2.4\)</p>`,choices:[String.raw`\(\,13.824^{1/3}=2.4\)`,String.raw`\(\,13.824^{3}=2.4\)`,String.raw`\(\,2.4^{1/3}=13.824\)`,String.raw`\(\,13.824^{-1/3}=2.4\)`,String.raw`\(\,3(13.824)=2.4\)`,String.raw`\(\,2.4^3=13.824\)`]},
+        {stem:String.raw`<p>When is the root of a negative real number itself a real number?</p>`,choices:[`Only when the index is even.`,`Only when the number is a perfect square.`,`Only when the number is zero.`,`When the index is odd.`,`Never.`,`Only for square roots and fourth roots.`],choiceWrap:false},
 
-        {
-          stem: String.raw`
-            <p>Find the indicated root.</p>
-            <p class="math">\(\sqrt{49}\)</p>
-          `,
-          choices: [
-            String.raw`\(\,6\)`,
-            String.raw`\(\,7\)`,
-            String.raw`\(\,8\)`,
-            String.raw`\(-7\)`,
-            String.raw`\(\,49\)`,
-            String.raw`\(\,1\)`
-          ]
-        },
-
-        {
-          stem: String.raw`
-            <p>Find the indicated root.</p>
-            <p class="math">\(\sqrt{\dfrac{49}{16}}\)</p>
-          `,
-          choices: [
-            String.raw`\(\dfrac{49}{4}\)`,
-            String.raw`\(\dfrac{4}{7}\)`,
-            String.raw`\(\dfrac{16}{49}\)`,
-            String.raw`\(\dfrac{7}{4}\)`,
-            String.raw`\(-\dfrac{7}{4}\)`,
-            String.raw`\(\dfrac{49}{16}\)`
-          ]
-        },
-
-        {
-          stem: String.raw`
-            <p>Find the indicated root.</p>
-            <p class="math">\(-\sqrt{225}\)</p>
-          `,
-          choices: [
-            String.raw`\(-15\)`,
-            String.raw`\(\,15\)`,
-            String.raw`\(-225\)`,
-            String.raw`\(\,225\)`,
-            String.raw`\(-\sqrt{15}\)`,
-            String.raw`\(\,0\)`
-          ]
-        },
-
-        {
-          stem: String.raw`
-            <p>Find the indicated root.</p>
-            <p class="math">\(\sqrt[3]{216}\)</p>
-          `,
-          choices: [
-            String.raw`\(-6\)`,
-            String.raw`\(\,3\)`,
-            String.raw`\(\,6\)`,
-            String.raw`\(-3\)`,
-            String.raw`\(\,9\)`,
-            String.raw`\(\,216\)`
-          ]
-        },
-
-        {
-          stem: String.raw`
-            <p>Find the indicated root.</p>
-            <p class="math">\(\sqrt[4]{1}\)</p>
-          `,
-          choices: [
-            String.raw`\(\,0\)`,
-            String.raw`\(-1\)`,
-            String.raw`\(\,4\)`,
-            String.raw`\(-4\)`,
-            String.raw`\(\,1\)`,
-            String.raw`\(\,2\)`
-          ]
-        },
-
-        {
-          stem: String.raw`
-            <p>Find the indicated root.</p>
-            <p class="math">\(\sqrt[3]{-27}\)</p>
-          `,
-          choices: [
-            String.raw`\(\,3\)`,
-            String.raw`\(-3\)`,
-            String.raw`\(\,9\)`,
-            String.raw`\(-9\)`,
-            String.raw`\(\dfrac{1}{3}\)`,
-            String.raw`\(-\dfrac{1}{3}\)`
-          ]
-        },
-
-        {
-          stem: String.raw`
-            <p>Find the indicated root.</p>
-            <p class="math">\(\sqrt[3]{\dfrac{27}{125}}\)</p>
-          `,
-          choices: [
-            String.raw`\(\dfrac{27}{125}\)`,
-            String.raw`\(\dfrac{5}{3}\)`,
-            String.raw`\(\dfrac{3}{25}\)`,
-            String.raw`\(\dfrac{5}{27}\)`,
-            String.raw`\(-\dfrac{3}{5}\)`,
-            String.raw`\(\dfrac{3}{5}\)`
-          ]
-        },
-
-        {
-          stem: String.raw`
-            <p>Write without radicals. Use exponents.</p>
-            <p class="math">\(\sqrt{16}=4\)</p>
-          `,
-          choices: [
-            String.raw`\(\,16^2=4\)`,
-            String.raw`\(\,16^{-1/2}=4\)`,
-            String.raw`\(\,16^{1/2}=4\)`,
-            String.raw`\(\,4^2=16\)`,
-            String.raw`\(\,2^4=16\)`,
-            String.raw`\(\,4^{1/2}=16\)`
-          ]
-        },
-
-        {
-          stem: String.raw`
-            <p>Write without radicals. Use exponents.</p>
-            <p class="math">\(\sqrt[3]{13.824}=2.4\)</p>
-          `,
-          choices: [
-            String.raw`\(\,13.824^{1/3}=2.4\)`,
-            String.raw`\(\,13.824^{3}=2.4\)`,
-            String.raw`\(\,2.4^{1/3}=13.824\)`,
-            String.raw`\(\,13.824^{-1/3}=2.4\)`,
-            String.raw`\(\,3(13.824)=2.4\)`,
-            String.raw`\(\,2.4^3=13.824\)`
-          ]
-        },
-
-        {
-          stem: String.raw`
-            <p>When is the root of a negative real number itself a real number?</p>
-          `,
-          choices: [
-            String.raw`Only when the index is even.`,
-            String.raw`Only when the radicand is a perfect square.`,
-            String.raw`Only when the number is zero.`,
-            String.raw`When the index is odd.`,
-            String.raw`Never.`,
-            String.raw`Only for square roots and fourth roots.`
-          ],
-          choiceWrap: false
-        },
-
-        {
-          stem: String.raw`
-            <p>Which statement is correct?</p>
-          `,
-          choices: [
-            String.raw`\(\sqrt{9}\) has two real values, \(-3\) and \(3\).`,
-            String.raw`\(\sqrt{9}=-3\), and \(x^2=9\) has one real solution.`,
-            String.raw`\(\sqrt{9}\) is undefined, but \(x^2=9\) has two real solutions.`,
-            String.raw`\(\sqrt{9}=\pm 3\), and \(x^2=9\) has one real solution.`,
-            String.raw`\(\sqrt{9}=3\), and \(x^2=9\) has two real solutions, \(-3\) and \(3\).`,
-            String.raw`\(\sqrt{9}=3\), and \(x^2=9\) has only one real solution, \(3\).`
-          ],
-          choiceWrap: false
-        },
-
-        {
-          stem: String.raw`
-            <p>What is the complete set of real solutions of the equation below?</p>
-            <p class="math">\(x^4=16\)</p>
-          `,
-          choices: [
-            String.raw`\(\{-4,4\}\)`,
-            String.raw`\(\{-2,2\}\)`,
-            String.raw`\(\{2\}\)`,
-            String.raw`No real solution`,
-            String.raw`\(\{-8,8\}\)`,
-            String.raw`\(\{-4,-2,2,4\}\)`
-          ]
-        },
-
-        {
-          stem: String.raw`
-            <p>Which equation has <b>no real solution</b>?</p>
-          `,
-          choices: [
-            String.raw`\(\,x^3=-36\)`,
-            String.raw`\(\,x^4=16\)`,
-            String.raw`\(\,x^2=-36\)`,
-            String.raw`\(\,x^5=-1\)`,
-            String.raw`\(\,x^3=0\)`,
-            String.raw`\(\,x^2=36\)`
-          ]
-        },
-
-        {
-          stem: String.raw`
-            <p>What is the complete set of real solutions of the equation below?</p>
-            <p class="math">\(x^4=0\)</p>
-          `,
-          choices: [
-            String.raw`\(\{0\}\)`,
-            String.raw`\(\{-0,0\}\)`,
-            String.raw`No real solution`,
-            String.raw`\(\{-4,4\}\)`,
-            String.raw`\(\{1\}\)`,
-            String.raw`\(\{0,1\}\)`
-          ]
-        },
-
-        {
-          stem: String.raw`
-            <p>What is the complete set of real solutions of the equation below?</p>
-            <p class="math">\(x^3=-64\)</p>
-          `,
-          choices: [
-            String.raw`\(\{4\}\)`,
-            String.raw`\{-64\}`,
-            String.raw`\{-4,4\}`,
-            String.raw`No real solution`,
-            String.raw`\{4,-4\}`,
-            String.raw`\{-4\}`
-          ]
-        },
-
-        {
-          stem: String.raw`
-            <p>If \(a\) is any real number, what can be said about the equation</p>
-            <p class="math">\(x^5=a\ ?\)</p>
-          `,
-          choices: [
-            String.raw`It has no real solution when \(a&lt;0\).`,
-            String.raw`It has exactly two real solutions when \(a&gt;0\).`,
-            String.raw`It has exactly one real solution only when \(a=0\).`,
-            String.raw`It has exactly one real solution for every real value of \(a\).`,
-            String.raw`It has exactly one real solution only when \(a&gt;0\).`,
-            String.raw`It always has five real solutions.`
-          ],
-          choiceWrap: false
-        },
-
-        {
-          stem: String.raw`
-            <p>Which numbers are the real fourth roots of \(81\)?</p>
-          `,
-          choices: [
-            String.raw`\(\,3\) only`,
-            String.raw`\(-3\) only`,
-            String.raw`\(-3\) and \(3\)`,
-            String.raw`\(-81\) and \(81\)`,
-            String.raw`\(-9\) and \(9\)`,
-            String.raw`\(-1\) and \(1\)`
-          ]
-        },
-
-        {
-          stem: String.raw`
-            <p>Which statement about zero is true?</p>
-          `,
-          choices: [
-            String.raw`Zero has two square roots, both equal to \(0\).`,
-            String.raw`Zero has only one real \(n\)th root, namely \(0\).`,
-            String.raw`Zero has no cube root.`,
-            String.raw`Zero has one even root but two odd roots.`,
-            String.raw`Zero has infinitely many real roots.`,
-            String.raw`Whether zero has a root depends on whether \(n\) is even or odd.`
-          ],
-          choiceWrap: false
-        },
-
-        {
-          stem: String.raw`
-            <p>Which list correctly gives the number of real solutions of the four equations below, in order?</p>
-            <p class="math">\(x^2=25,\quad x^3=25,\quad x^4=25,\quad x^4=-25\)</p>
-          `,
-          choices: [
-            String.raw`\(1,\ 1,\ 2,\ 0\)`,
-            String.raw`\(2,\ 2,\ 2,\ 0\)`,
-            String.raw`\(2,\ 1,\ 1,\ 0\)`,
-            String.raw`\(2,\ 1,\ 2,\ 1\)`,
-            String.raw`\(2,\ 1,\ 2,\ 0\)`,
-            String.raw`\(2,\ 0,\ 2,\ 0\)`
-          ]
-        },
-
-        {
-          stem: String.raw`
-            <p>Which equation has <b>exactly two</b> real solutions?</p>
-          `,
-          choices: [
-            String.raw`\(\,x^6=64\)`,
-            String.raw`\(\,x^3=-8\)`,
-            String.raw`\(\,x^4=0\)`,
-            String.raw`\(\,x^5=1\)`,
-            String.raw`\(\,x^3=0\)`,
-            String.raw`\(\,x^4=-16\)`
-          ]
-        }
-
+        {stem:String.raw`<p>Select the <b>only true statement</b>.</p>`,choices:[`Every positive number has only one real square root.`,`A negative number can have two real fourth roots.`,`The symbol \(\sqrt{9}\) means both \(3\) and \(-3\).`,`Zero has two different real square roots.`,`A positive number has two real roots of even order.`,`Every real number has two cube roots.`],choiceWrap:false},
+        {stem:String.raw`<p>Select the <b>only false statement</b>.</p>`,choices:[`Every real number has exactly one real cube root.`,`Every real number has exactly one real fifth root.`,`If a number is negative, then it has no real square root.`,`If a number is zero, then its only real cube root is zero.`,`Every positive number has exactly two real fourth roots.`,`The symbol \(\sqrt[4]{16}\) means both \(2\) and \(-2\).`],choiceWrap:false},
+        {stem:String.raw`<p>Select the <b>only true statement</b>.</p>`,choices:[String.raw`\(\sqrt[4]{16}=\pm2\)`,String.raw`\(\sqrt[4]{16}=-2\)`,String.raw`\(\sqrt[4]{16}=2\)`,`The real fourth roots of \(16\) are \(2\) only.`,`The real fourth roots of \(16\) are \(-4\) and \(4\).`,`The number \(16\) has no real fourth roots.`],choiceWrap:false},
+        {stem:String.raw`<p>Select the <b>only true statement</b>.</p>`,choices:[`\(-16\) has two real fourth roots.`,`\(-16\) has one real square root.`,`\(-16\) has two real square roots.`,`\(-16\) has one real fourth root.`,`\(-16\) has one real cube root and one real square root.`,`\(-16\) has no real roots of even order.`],choiceWrap:false},
+        {stem:String.raw`<p>Select the <b>only true statement</b>.</p>`,choices:[`The only real fourth root of \(0\) is \(0\).`,`Zero has no real square root.`,`Zero has two different real cube roots.`,`Zero has infinitely many real roots of every order.`,`Zero has one real odd root but no real even root.`,`The symbol \(\sqrt{0}\) is undefined.`],choiceWrap:false},
+        {stem:String.raw`<p>Select the <b>only false statement</b>.</p>`,choices:[`A positive number has two real square roots.`,`A positive number has two real sixth roots.`,`A negative number has no real square root.`,`A negative number has one real cube root.`,`Every real number has two real roots when the order is odd.`,`Zero has only one real cube root.`],choiceWrap:false},
+        {stem:String.raw`<p>Select the <b>only true statement</b>.</p>`,choices:[`The real cube roots of \(-8\) are \(-2\) and \(2\).`,`The real cube root of \(-8\) is \(-2\).`,`The real cube root of \(-8\) is \(2\).`,`\(-8\) has no real cube root.`,`Every negative number has two real cube roots.`,`The symbol \(\sqrt[3]{-8}\) means both \(-2\) and \(2\).`],choiceWrap:false},
+        {stem:String.raw`<p>Select the <b>only false statement</b>.</p>`,choices:[`The real square roots of \(25\) are \(-5\) and \(5\).`,`The symbol \(\sqrt{25}\) means \(5\).`,`The phrase “a number has square \(25\)” has two real solutions.`,`The symbol \(-\sqrt{25}\) means \(-5\).`,`The symbol \(\sqrt{25}\) means both \(5\) and \(-5\).`,`The equation \(x^2=25\) has two real solutions.`],choiceWrap:false},
+        {stem:String.raw`<p>Select the <b>only true statement</b>.</p>`,choices:[`Every positive number has exactly two real roots of even order, and every real number has exactly one real root of odd order.`,`Every real number has two real roots of odd order.`,`Every negative number has two real roots of even order.`,`Only positive numbers have real roots of odd order.`,`Zero has no real roots at all.`,`A radical symbol with even index always means two numbers.`],choiceWrap:false},
+        {stem:String.raw`<p>Select the <b>only true statement</b>.</p>`,choices:[`If the index is odd, then every real radicand has exactly one real root.`,`If the index is odd, then only positive radicands have real roots.`,`If the index is even, then every real radicand has exactly one real root.`,`If the index is even, then every positive radicand has only one real root.`,`If the index is even, then every negative radicand has two real roots.`,`If the index is odd, then zero has no root.`],choiceWrap:false}
       ]
     };
   </script>
-
   <link rel="stylesheet" href="/math-homework/assets/core-rich.css" />
   <script defer src="/math-homework/assets/core-rich.js"></script>
   <script defer src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
