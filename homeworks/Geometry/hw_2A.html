@@ -6,26 +6,10 @@
   <title>Homework 1-2 (Geometry)</title>
 
   <script>
-    /* =========================
-       Homework 1-2 — Betweenness, Rays, and Segments
-       Adapted for: /math-homework/assets/core-rich.js
-
-       REQUIRED SOURCE REFERENCES:
-       - User source in current conversation: handwritten note/photo on betweenness, open rays, rays, and line segments.
-       - Model-authored homework: Q1–Q12 were composed from the user's requested concepts and from the note's definitions.
-       - Emphasis added by the model: endpoint inclusion/exclusion, interpretation of betweenness, and set operations with line parts.
-
-       IMAGE FILES:
-       - None.
-
-       IMAGE NAMING RULE:
-       - No figures are used in this homework.
-       ========================= */
-
     window.homeworkData = {
       classId : "Geometry",
       id      : "Homework 1-2",
-      title   : "Homework 1-2 — Betweenness, Rays, and Segments",
+      title   : "Homework 1-2 — Betweenness, Half Lines, and Segments",
 
       graphics : String.raw``,
 
@@ -35,7 +19,7 @@
 
         {
           stem: String.raw`
-            <p>Let \(A\neq B\). Which description matches <b>the open ray from \(A\) through \(B\)</b>?</p>
+            <p>Let \(A\neq B\). Which description matches <b>the half line from \(A\) through \(B\) (excluding \(A\))</b>?</p>
           `,
           choices: [
             String.raw`All points of \(\overleftrightarrow{AB}\) on the same side of \(B\) as \(A\), together with \(B\), but not \(A\).`,
@@ -44,8 +28,7 @@
             String.raw`Only the points strictly beyond \(B\), excluding both \(A\) and \(B\).`,
             String.raw`Only the points between \(A\) and \(B\), excluding both endpoints.`,
             String.raw`All points of \(\overleftrightarrow{AB}\) except \(A\) and \(B\).`
-          ],
-          choiceWrap: false
+          ]
         },
 
         {
@@ -59,8 +42,7 @@
             String.raw`All points of \(\overleftrightarrow{AB}\).`,
             String.raw`All points of \(\overleftrightarrow{AB}\) on the same side of \(A\) as \(B\), together with \(B\), but not \(A\).`,
             String.raw`All points of \(\overleftrightarrow{AB}\) on the same side of \(A\) as \(B\), together with \(A\) and \(B\).`
-          ],
-          choiceWrap: false
+          ]
         },
 
         {
@@ -72,10 +54,9 @@
             String.raw`\(B\in \overline{AC}\).`,
             String.raw`\(C\in \overrightarrow{AB}\).`,
             String.raw`\(A\in \overrightarrow{CB}\).`,
-            String.raw`\(A\) belongs to the open ray from \(A\) through \(C\).`,
-            String.raw`\(B\) belongs to the open ray from \(A\) through \(C\).`
-          ],
-          choiceWrap: false
+            String.raw`\(A\) belongs to the half line from \(A\) through \(C\) (excluding \(A\)).`,
+            String.raw`\(B\) belongs to the half line from \(A\) through \(C\) (excluding \(A\)).`
+          ]
         },
 
         {
@@ -89,8 +70,7 @@
             String.raw`\(\overrightarrow{AB}=\overline{AB}\cap\overrightarrow{BA}\)`,
             String.raw`\(\overrightarrow{AB}=\overleftrightarrow{AB}\setminus \overline{AB}\)`,
             String.raw`\(\overleftrightarrow{AB}=\overline{AB}\)`
-          ],
-          choiceWrap: false
+          ]
         },
 
         {
@@ -99,13 +79,12 @@
           `,
           choices: [
             String.raw`\(\overrightarrow{AB}\cap \overrightarrow{BA}\)`,
-            String.raw`The intersection of the open ray from \(A\) through \(B\) and the open ray from \(B\) through \(A\).`,
-            String.raw`The union of the open ray from \(A\) through \(B\) and the open ray from \(B\) through \(A\).`,
+            String.raw`The intersection of the half line from \(A\) through \(B\) (excluding \(A\)) and the half line from \(B\) through \(A\) (excluding \(B\)).`,
+            String.raw`The union of the half line from \(A\) through \(B\) (excluding \(A\)) and the half line from \(B\) through \(A\) (excluding \(B\)).`,
             String.raw`\(\overrightarrow{AB}\cup \overrightarrow{BA}\)`,
-            String.raw`The open ray from \(A\) through \(B\).`,
-            String.raw`The open ray from \(B\) through \(A\).`
-          ],
-          choiceWrap: false
+            String.raw`The half line from \(A\) through \(B\) (excluding \(A\)).`,
+            String.raw`The half line from \(B\) through \(A\) (excluding \(B\)).`
+          ]
         },
 
         {
@@ -120,8 +99,7 @@
             String.raw`\(\overrightarrow{CD}\)`,
             String.raw`\(\overline{AC}\)`,
             String.raw`\(\varnothing\)`
-          ],
-          choiceWrap: false
+          ]
         },
 
         {
@@ -136,8 +114,7 @@
             String.raw`\(\overline{AB}\)`,
             String.raw`\(\{B\}\)`,
             String.raw`\(\varnothing\)`
-          ],
-          choiceWrap: false
+          ]
         },
 
         {
@@ -152,8 +129,7 @@
             String.raw`\(\overline{AD}\)`,
             String.raw`\(\varnothing\)`,
             String.raw`\(\overline{BC}\)`
-          ],
-          choiceWrap: false
+          ]
         },
 
         {
@@ -168,8 +144,7 @@
             String.raw`\(\overline{AD}\)`,
             String.raw`\(\overrightarrow{AC}\)`,
             String.raw`\(\overleftrightarrow{AB}\)`
-          ],
-          choiceWrap: false
+          ]
         },
 
         {
@@ -184,8 +159,7 @@
             String.raw`\(\overrightarrow{BA}\cup\overline{CD}\)`,
             String.raw`\(\overline{AC}\cup\overline{BD}\)`,
             String.raw`\(\overline{AB}\cup\overline{CD}\)`
-          ],
-          choiceWrap: false
+          ]
         },
 
         {
@@ -200,8 +174,7 @@
             String.raw`\(\overrightarrow{BA}\cap\overline{BC}\)`,
             String.raw`\(\overrightarrow{CB}\cap\overline{AB}\)`,
             String.raw`\(\overrightarrow{AB}\cap\overline{AB}\)`
-          ],
-          choiceWrap: false
+          ]
         },
 
         {
@@ -215,9 +188,8 @@
             String.raw`\(D\in \overrightarrow{BA}\)`,
             String.raw`\(\overrightarrow{CB}\subseteq \overrightarrow{AB}\)`,
             String.raw`\(\overline{CD}\subseteq \overrightarrow{BA}\)`,
-            String.raw`\(A\) belongs to the open ray from \(A\) through \(B\).`
-          ],
-          choiceWrap: false
+            String.raw`\(A\) belongs to the half line from \(A\) through \(B\) (excluding \(A\)).`
+          ]
         }
 
       ]
