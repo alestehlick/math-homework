@@ -1,0 +1,258 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Homework 2-1 (Algebra II)</title>
+
+  <style>
+    .hw-stem p {
+      margin: 0.15rem 0 0.4rem;
+    }
+    .hw-stem .eq {
+      margin: 0.2rem 0 0.35rem;
+    }
+    .hw-stem .note {
+      margin-top: 0.35rem;
+    }
+  </style>
+
+  <script>
+    window.homeworkData = {
+      classId : "Algebra2",
+      id      : "Homework 2-1",
+      title   : "Homework 2-1 — Solving Linear Equations",
+      graphics: String.raw``,
+
+      answerKey : ["A","E","C","D","E","F","A","B","C","D","E","F"],
+
+      questions : [
+        {
+          stem: String.raw`
+            <div class="hw-stem">
+              <p>Compare the equations <span class="math">\(x = 2\)</span> and <span class="math">\(x+b = 2+b\)</span>.</p>
+              <p>Which statement is correct?</p>
+            </div>
+          `,
+          choices: [
+            `They always have the same solutions`,
+            `They always have different solutions`,
+            `The solution set of the first is always larger`,
+            `The solution set of the second is always larger`,
+            `They may have different solution sets depending on the value of <span class="math">\(b\)</span>`,
+            `None of the above alternatives is correct`
+          ],
+          choiceWrap: false
+        },
+
+        {
+          stem: String.raw`
+            <div class="hw-stem">
+              <p>Compare the equations <span class="math">\(x = -3\)</span> and <span class="math">\(ax = -3a\)</span>.</p>
+              <p>Which statement is correct?</p>
+            </div>
+          `,
+          choices: [
+            `They always have the same solutions`,
+            `They always have different solutions`,
+            `The solution set of the first is always larger`,
+            `The solution set of the second is always larger`,
+            `They may have different solution sets depending on the value of <span class="math">\(a\)</span>`,
+            `None of the above alternatives is correct`
+          ],
+          choiceWrap: false
+        },
+
+        {
+          stem: String.raw`
+            <div class="hw-stem">
+              <p>Solve the equation</p>
+              <div class="eq">\[-17x - 13 = -166.\]</div>
+            </div>
+          `,
+          choices: [
+            String.raw`\(7\)`,
+            String.raw`\(8\)`,
+            String.raw`\(9\)`,
+            String.raw`\(10\)`,
+            String.raw`\(-9\)`,
+            String.raw`\(-\dfrac{153}{17}\)`
+          ],
+          choiceWrap: false
+        },
+
+        {
+          stem: String.raw`
+            <div class="hw-stem">
+              <p>Solve the equation</p>
+              <div class="eq">\[5z - 8 + 3(z + 4) = -36.\]</div>
+            </div>
+          `,
+          choices: [
+            String.raw`\(-4\)`,
+            String.raw`\(4\)`,
+            String.raw`\(5\)`,
+            String.raw`\(-5\)`,
+            String.raw`\(-6\)`,
+            String.raw`\(-8\)`
+          ],
+          choiceWrap: false
+        },
+
+        {
+          stem: String.raw`
+            <div class="hw-stem">
+              <p>Find the solution of</p>
+              <div class="eq">\[6(2x-3) + 4(x+9) = -110.\]</div>
+            </div>
+          `,
+          choices: [
+            String.raw`\(-\dfrac{11}{2}\)`,
+            String.raw`\(8\)`,
+            String.raw`\(-\dfrac{55}{8}\)`,
+            String.raw`\(\dfrac{55}{8}\)`,
+            String.raw`\(-8\)`,
+            String.raw`\(-6\)`
+          ],
+          choiceWrap: false
+        },
+
+        {
+          stem: String.raw`
+            <div class="hw-stem">
+              <p>Solve the decimal equation</p>
+              <div class="eq">\[0.6(4x + 12) - 0.8(x - 4) = 26.4.\]</div>
+            </div>
+          `,
+          choices: [
+            String.raw`\(8\)`,
+            String.raw`\(9\)`,
+            String.raw`\(11\)`,
+            String.raw`\(12\)`,
+            String.raw`\(13\)`,
+            String.raw`\(10\)`
+          ],
+          choiceWrap: false
+        },
+
+        {
+          stem: String.raw`
+            <div class="hw-stem">
+              <p>Solve the equation</p>
+              <div class="eq">\[\frac{1}{2}(6x+3) - 8x - (3x-9) = \frac{13}{2}.\]</div>
+            </div>
+          `,
+          choices: [
+            String.raw`\(\dfrac{1}{2}\)`,
+            String.raw`\(-\dfrac{1}{2}\)`,
+            String.raw`\(\dfrac{1}{4}\)`,
+            String.raw`\(\dfrac{3}{4}\)`,
+            String.raw`\(1\)`,
+            String.raw`\(2\)`
+          ],
+          choiceWrap: false
+        },
+
+        {
+          stem: String.raw`
+            <div class="hw-stem">
+              <p>Find the value of <span class="math">\(b\)</span> that satisfies</p>
+              <div class="eq">\[73 - (b+8) - 2(3b+4) = 6b - 2(b-5) + 69.\]</div>
+            </div>
+          `,
+          choices: [
+            String.raw`\(-1\)`,
+            String.raw`\(-2\)`,
+            String.raw`\(2\)`,
+            String.raw`\(1\)`,
+            String.raw`\(-4\)`,
+            String.raw`\(4\)`
+          ],
+          choiceWrap: false
+        },
+
+        {
+          stem: String.raw`
+            <div class="hw-stem">
+              <p>Solve the equation</p>
+              <div class="eq">\[4a + 6(2a-3) - (a+6) = 5(a+7) - 19.\]</div>
+            </div>
+          `,
+          choices: [
+            String.raw`\(3\)`,
+            String.raw`\(5\)`,
+            String.raw`\(4\)`,
+            String.raw`\(-4\)`,
+            String.raw`\(-5\)`,
+            String.raw`\(1\)`
+          ],
+          choiceWrap: false
+        },
+
+        {
+          stem: String.raw`
+            <div class="hw-stem">
+              <p>Which value of <span class="math">\(x\)</span> solves</p>
+              <div class="eq">\[7x + 12(x-9) + 4(3x+6) = 5(3x-2) + 8(x-3)?\]</div>
+            </div>
+          `,
+          choices: [
+            String.raw`\(6\)`,
+            String.raw`\(\dfrac{13}{2}\)`,
+            String.raw`\(-\dfrac{25}{4}\)`,
+            String.raw`\(\dfrac{25}{4}\)`,
+            String.raw`\(\dfrac{17}{4}\)`,
+            String.raw`\(\dfrac{25}{2}\)`
+          ],
+          choiceWrap: false
+        },
+
+        {
+          stem: String.raw`
+            <div class="hw-stem">
+              <p>Solve the equation</p>
+              <div class="eq">\[(x-4)(x^2+4x+16) = x(x^2-2).\]</div>
+              <p class="note">It looks cubic at first, but it simplifies substantially.</p>
+            </div>
+          `,
+          choices: [
+            String.raw`\(16\)`,
+            String.raw`\(24\)`,
+            String.raw`\(28\)`,
+            String.raw`\(30\)`,
+            String.raw`\(32\)`,
+            String.raw`\(34\)`
+          ],
+          choiceWrap: false
+        },
+
+        {
+          stem: String.raw`
+            <div class="hw-stem">
+              <p>Consider the equation</p>
+              <div class="eq">\[y(y-x) - 3xy = 4x(3-y) + y^2 - 3.\]</div>
+              <p>Which statement correctly describes all solutions?</p>
+            </div>
+          `,
+          choices: [
+            `The equation is true for every real value of <span class="math">\(x\)</span> when <span class="math">\(y=\tfrac14\)</span>.`,
+            `The only solution is <span class="math">\(x=y=\tfrac14\)</span>.`,
+            `All real values of <span class="math">\(x\)</span> work, provided <span class="math">\(y=3\)</span>.`,
+            `The solutions are exactly the pairs satisfying <span class="math">\(x+y=\tfrac14\)</span>.`,
+            `The equation has no solution.`,
+            `All real values of <span class="math">\(y\)</span> work, provided <span class="math">\(x=\tfrac14\)</span>.`
+          ],
+          choiceWrap: false
+        }
+      ]
+    };
+  </script>
+
+  <link rel="stylesheet" href="/math-homework/assets/core-rich.css" />
+  <script defer src="/math-homework/assets/core-rich.js"></script>
+  <script defer src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+</head>
+<body>
+  <div id="hw-root">Loading…</div>
+</body>
+</html>
