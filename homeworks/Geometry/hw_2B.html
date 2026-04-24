@@ -7,228 +7,229 @@
 
   <script>
     /* =========================
-       Homework 2B — Line Segments, Rays, and Segment Comparison
+       Homework 2B — Line Segment, Ray, and Segment Comparison (Geometry)
        Adapted for: /math-homework/assets/core-rich.js
 
-       REQUIRED SOURCE REFERENCES (your provided sets):
-       - Primary source: Pasted text.txt (Chapter "Line Segment"), especially:
-         Basic Definitions; Definition of Line Segment; Definition of Ray; Consecutive Segments;
-         Collinear Segments; Adjacent Segments; Segment Congruence; Segment Transport Postulate;
-         Segment Comparison; Midpoint of a Segment; Segment Measurement - Length; Distance Between Two Points.
-       - Source exercise pool consulted directly:
-         #10 (rays on a line with four origins),
-         #11 (distinct segments determined by three points on a line),
-         #13 (true/false relations among consecutive, collinear, and adjacent segments),
-         #15 (relation among \overline{PA}, \overline{PB}, and \overline{AB} when P is between A and B),
-         #16 (\overline{PQ} = 3\overline{QR} with PR = 32 cm),
-         #20 (\overline{AB} = 5\overline{BC} with AC = 42 cm).
-       - Model-authored items: Q1, Q2, Q3, Q4, Q8, Q9, Q10, Q11, Q13, and Q14 were re-authored or added
-         to stabilize the core ideas of betweenness, opposite rays, congruence, transport, midpoint,
-         and the right structural reading of the chapter.
+       REQUIRED SOURCE REFERENCES (your provided set):
+       - Source text: "Line Segment" chapter from the attached TeX code.
+       - Direct source sections used: Basic Definitions of betweenness; Definition of Line Segment; Definition of Ray; Summary notation; Main Types of Segment Relations; Segment Congruence; Segment Transport Postulate; Segment Comparison; Midpoint of a Segment; Segment Measurement - Length; Ruler Postulate.
+       - Source exercise pool consulted: E6, E7, E10, E15, E18, E19.
+       - Topics explicitly removed by user request: theorem on midpoint, geometric addition of segments, multiplication of a segment by a scalar, distance between points.
 
        IMAGE FILES:
        - User-supplied figure(s): none
-       - Model-generated figure(s): 2-B-3.png, 2-B-4.png, 2-B-7.png, 2-B-10.png, 2-B-11.png
+       - Model-generated figure(s): 2-B-3.png, 2-B-5.png, 2-B-8.png, 2-B-10.png, 2-B-14.png
 
        IMAGE NAMING RULE:
        - Model-generated figures use final homework question numbering.
        - PNG files live in the SAME folder as this HTML.
+
+       MODEL REWORK / EXTENSION NOTES:
+       - Replacement questions were added on betweenness, null segment, opposite rays, adjacency, transport, segment comparison, midpoint usage, and measurement properties.
+       - Several source exercises were converted into cleaner multiple-choice questions with diagnostic distractors.
        ========================= */
 
     window.homeworkData = {
       classId : "Geometry",
       id      : "Homework 2B",
-      title   : "Homework 2B — Line Segments, Rays, and Segment Comparison",
+      title   : "Homework 2B — Line Segment and Ray",
       graphics : String.raw``,
-      answerKey : ["A", "C", "B", "D", "E", "A", "F", "D", "B", "C", "A", "F", "B", "C", "D", "E"],
+      answerKey : ["C", "E", "C", "D", "E", "A", "C", "F", "B", "B", "A", "B", "C", "C", "C", "B"],
       questions : [
     {
-      stem: String.raw`<p>Which statement must be true if point <span class="math">\(P\)</span> is between points <span class="math">\(A\)</span> and <span class="math">\(B\)</span>?</p>`,
+      stem: String.raw`<p>The notion of <i>being between</i> is primitive, but some basic facts about it are taken as postulates.</p>
+<p>Which statement must be true if point <span class="math">\(P\)</span> is between <span class="math">\(A\)</span> and <span class="math">\(B\)</span>?</p>`,
       choices: [
-        String.raw`\(A\), \(P\), and \(B\) are collinear, they are pairwise distinct, and neither \(A\) nor \(B\) is between the other two.`,
-        String.raw`\(A\), \(P\), and \(B\) determine a triangle.`,
-        String.raw`\(P\) must coincide with one endpoint of the segment.`,
+        String.raw`\(A,P,B\) may fail to be collinear.`,
+        String.raw`\(A=B\)`,
+        String.raw`\(A,P,B\) are collinear and pairwise distinct.`,
         String.raw`\(A\) is between \(P\) and \(B\).`,
         String.raw`\(B\) is between \(A\) and \(P\).`,
-        String.raw`\(A\), \(P\), and \(B\) need not be collinear.`
-      ]
-    },
-    {
-      stem: String.raw`<p>Let <span class="math">\(A\)</span> and <span class="math">\(B\)</span> be distinct points.</p><p>What is guaranteed by the primitive postulates about <i>being between</i>?</p>`,
-      choices: [
-        String.raw`There exists a unique line through \(A\) and \(B\).`,
-        String.raw`There exists a unique midpoint of \(\overline{AB}\).`,
-        String.raw`There exists at least one point \(P\) between \(A\) and \(B\).`,
-        String.raw`Either \(A\) is between \(B\) and \(P\), or \(B\) is between \(A\) and \(P\).`,
-        String.raw`The distance between \(A\) and \(B\) is zero.`,
-        String.raw`The ray \(\overrightarrow{AB}\) equals the line through \(A\) and \(B\).`
+        String.raw`There is no point between \(A\) and \(B\).`
       ],
       choiceWrap: false
     },
     {
-      stem: String.raw`<p><b>Refer to Figure 1.</b> Which statement is correct?</p>`,
-      media: String.raw`<figure><img src="2-B-3.png" alt="Model-generated figure for Question 3" /><figcaption>Figure 1</figcaption></figure>`,
+      stem: String.raw`<p>Which statement is <strong>not</strong> guaranteed by the basic postulates about betweenness?</p>`,
       choices: [
-        String.raw`\(A\) is an internal point of \(\overline{PB}\).`,
-        String.raw`\(P\) is an internal point of \(\overline{AB}\).`,
-        String.raw`\(A\) is between \(P\) and \(B\).`,
-        String.raw`\(\overline{AB}\) is a null segment.`,
-        String.raw`\(P\) is outside line \(\overleftrightarrow{AB}\).`,
-        String.raw`\(\overrightarrow{AP}\) and \(\overrightarrow{PB}\) are opposite rays.`
+        String.raw`If \(P\) is between \(A\) and \(B\), then \(A,P,B\) are collinear.`,
+        String.raw`If \(P\) is between \(A\) and \(B\), then the three points are pairwise distinct.`,
+        String.raw`If \(P\) is between \(A\) and \(B\), then \(A\) is not between \(P\) and \(B\).`,
+        String.raw`If \(A\neq B\), then there exists a point between \(A\) and \(B\).`,
+        String.raw`If \(A\neq B\), then there are exactly two points between \(A\) and \(B\).`,
+        String.raw`If \(P\) is between \(A\) and \(B\), then \(B\) is not between \(A\) and \(P\).`
+      ],
+      choiceWrap: false
+    },
+    {
+      stem: String.raw`<p><b>Refer to Figure 1.</b> Which statement best matches the figure?</p>`,
+      media: String.raw`<figure><img src="2-B-3.png" alt="Figure 1" /><figcaption>Figure 1</figcaption></figure>`,
+      choices: [
+        String.raw`\(A\) is between \(P\) and \(B\)`,
+        String.raw`\(B\) is between \(A\) and \(P\)`,
+        String.raw`\(P\) is between \(A\) and \(B\)`,
+        String.raw`\(A=P\)`,
+        String.raw`\(A\) and \(B\) are not collinear with \(P\)`,
+        String.raw`\(\overline{AP}=\overline{PB}\)`
+      ]
+    },
+    {
+      stem: String.raw`<p>Which sentence gives the correct definition of the segment <span class="math">\(\overline{AB}\)</span>, with <span class="math">\(A\neq B\)</span>?</p>`,
+      choices: [
+        String.raw`It is only the set \(\{A,B\}\).`,
+        String.raw`It is the set of all points on the line through \(A\) and \(B\).`,
+        String.raw`It is the set of all points \(X\) such that \(B\) is between \(A\) and \(X\).`,
+        String.raw`It is the union of \(\{A,B\}\) with the set of all points between \(A\) and \(B\).`,
+        String.raw`It is the same thing as the ray \(\overrightarrow{AB}\).`,
+        String.raw`It is defined only when \(A=B\).`
       ]
     },
     {
       stem: String.raw`<p><b>Refer to Figure 2.</b> Which pair of rays are opposite rays?</p>`,
-      media: String.raw`<figure><img src="2-B-4.png" alt="Model-generated figure for Question 4" /><figcaption>Figure 2</figcaption></figure>`,
+      media: String.raw`<figure><img src="2-B-5.png" alt="Figure 2" /><figcaption>Figure 2</figcaption></figure>`,
       choices: [
         String.raw`\(\overrightarrow{BA}\) and \(\overrightarrow{BC}\)`,
-        String.raw`\(\overrightarrow{AB}\) and \(\overrightarrow{CB}\)`,
+        String.raw`\(\overrightarrow{AB}\) and \(\overrightarrow{BC}\)`,
         String.raw`\(\overrightarrow{CA}\) and \(\overrightarrow{CB}\)`,
+        String.raw`\(\overrightarrow{AB}\) and \(\overrightarrow{CB}\)`,
         String.raw`\(\overrightarrow{AB}\) and \(\overrightarrow{AC}\)`,
-        String.raw`\(\overrightarrow{BA}\) and \(\overrightarrow{AC}\)`,
-        String.raw`\(\overrightarrow{BC}\) and \(\overrightarrow{CA}\)`
+        String.raw`\(\overrightarrow{BA}\) and \(\overrightarrow{AC}\)`
       ]
     },
     {
-      stem: String.raw`<p>How many distinct rays are there on a line if the origins are four distinct points \(A\), \(B\), \(C\), and \(D\) on that line?</p>`,
+      stem: String.raw`<p>What is true about a null segment?</p>`,
       choices: [
-        String.raw`\(4\)`,
+        String.raw`It occurs when the endpoints coincide.`,
+        String.raw`It is a ray with no internal points.`,
+        String.raw`It is any segment of length 1.`,
+        String.raw`It is a segment with infinitely many internal points.`,
+        String.raw`It is impossible in geometry.`,
+        String.raw`It is always congruent only to itself and nothing else.`
+      ],
+      choiceWrap: false
+    },
+    {
+      stem: String.raw`<p>Which description of <strong>adjacent segments</strong> is correct?</p>`,
+      choices: [
+        String.raw`Two segments are adjacent whenever they are consecutive.`,
+        String.raw`Two segments are adjacent whenever they are collinear.`,
+        String.raw`Two segments are adjacent exactly when they are consecutive, collinear, and have only one common endpoint.`,
+        String.raw`Two segments are adjacent whenever they are congruent.`,
+        String.raw`Two segments are adjacent whenever they lie on different lines.`,
+        String.raw`Two segments are adjacent whenever they have one internal point in common.`
+      ],
+      choiceWrap: false
+    },
+    {
+      stem: String.raw`<p><b>Refer to Figure 3.</b> Segments <span class="math">\(\overline{AB}\)</span> and <span class="math">\(\overline{BC}\)</span> are shown.</p>
+<p>Which classification is the most accurate?</p>`,
+      media: String.raw`<figure><img src="2-B-8.png" alt="Figure 3" /><figcaption>Figure 3</figcaption></figure>`,
+      choices: [
+        String.raw`They are consecutive only.`,
+        String.raw`They are collinear only.`,
+        String.raw`They are congruent only.`,
+        String.raw`They are opposite rays.`,
+        String.raw`They are neither consecutive nor collinear.`,
+        String.raw`They are consecutive, collinear, and adjacent.`
+      ],
+      choiceWrap: false
+    },
+    {
+      stem: String.raw`<p>Suppose <span class="math">\(\overline{AB}\cong\overline{CD}\)</span> and <span class="math">\(\overline{CD}\cong\overline{EF}\)</span>.</p>
+<p>What must follow?</p>`,
+      choices: [
+        String.raw`\(\overline{AB}\prec\overline{EF}\)`,
+        String.raw`\(\overline{AB}\cong\overline{EF}\)`,
+        String.raw`\(\overline{AB}\succ\overline{EF}\)`,
+        String.raw`\(\overline{CD}\prec\overline{AB}\)`,
+        String.raw`\(\overline{AB}\) and \(\overline{EF}\) cannot be compared.`,
+        String.raw`\(\overline{AB}=\overline{CD}=\overline{EF}\) as sets.`
+      ]
+    },
+    {
+      stem: String.raw`<p><b>Refer to Figure 4.</b> Which statement best expresses the segment transport postulate?</p>`,
+      media: String.raw`<figure><img src="2-B-10.png" alt="Figure 4" /><figcaption>Figure 4</figcaption></figure>`,
+      choices: [
+        String.raw`For every segment and every line, there are infinitely many points making a congruent copy.`,
+        String.raw`Given segment \(\overline{AB}\) and a ray with origin \(A'\), there exists a unique point \(B'\) on that ray such that \(\overline{A'B'}\cong\overline{AB}\).`,
+        String.raw`Every ray contains exactly one segment.`,
+        String.raw`Any two congruent segments must lie on the same line.`,
+        String.raw`If \(\overline{A'B'}\cong\overline{AB}\), then \(A'=A\) and \(B'=B\).`,
+        String.raw`Any point on a ray determines a congruent segment to every given segment.`
+      ],
+      choiceWrap: false
+    },
+    {
+      stem: String.raw`<p>In the comparison of two segments, a copy of <span class="math">\(\overline{CD}\)</span> is transported onto the ray from <span class="math">\(A\)</span> through <span class="math">\(B\)</span>, producing a point <span class="math">\(P\)</span>.</p>
+<p>If <span class="math">\(P\)</span> is between <span class="math">\(A\)</span> and <span class="math">\(B\)</span>, what can you conclude?</p>`,
+      choices: [
+        String.raw`\(\overline{AB}\succ\overline{CD}\)`,
+        String.raw`\(\overline{AB}\cong\overline{CD}\)`,
+        String.raw`\(\overline{AB}\prec\overline{CD}\)`,
+        String.raw`\(\overline{CD}\) is a null segment.`,
+        String.raw`\(\overline{AB}\) and \(\overline{CD}\) are not comparable.`,
+        String.raw`\(\overline{CD}\) must contain \(\overline{AB}\).`
+      ]
+    },
+    {
+      stem: String.raw`<p>Segment <span class="math">\(\overline{AB}\)</span> measures 17 cm, and point <span class="math">\(P\)</span> is between <span class="math">\(A\)</span> and <span class="math">\(B\)</span>.</p>
+<p>If <span class="math">\(AP=x+2\)</span> and <span class="math">\(PB=2x\)</span>, what is <span class="math">\(x\)</span>?</p>`,
+      choices: [
+        String.raw`\(3\)`,
         String.raw`\(5\)`,
         String.raw`\(6\)`,
         String.raw`\(7\)`,
         String.raw`\(8\)`,
-        String.raw`\(12\)`
+        String.raw`\(10\)`
       ]
     },
     {
-      stem: String.raw`<p>How many distinct segments can be determined by three distinct points on a line?</p>`,
+      stem: String.raw`<p>If <span class="math">\(M\)</span> is the midpoint of <span class="math">\(\overline{AB}\)</span>, and <span class="math">\(AM=3x-1\)</span> while <span class="math">\(MB=2x+4\)</span>, what is <span class="math">\(x\)</span>?</p>`,
       choices: [
         String.raw`\(3\)`,
         String.raw`\(4\)`,
         String.raw`\(5\)`,
         String.raw`\(6\)`,
-        String.raw`\(2\)`,
-        String.raw`\(1\)`
+        String.raw`\(7\)`,
+        String.raw`\(8\)`
       ]
     },
     {
-      stem: String.raw`<p><b>Refer to Figure 3.</b> Which description best matches the two segments shown?</p>`,
-      media: String.raw`<figure><img src="2-B-7.png" alt="Model-generated figure for Question 7" /><figcaption>Figure 3</figcaption></figure>`,
+      stem: String.raw`<p><b>Refer to Figure 5.</b> Point <span class="math">\(M\)</span> is the midpoint of <span class="math">\(\overline{AB}\)</span>.</p>
+<p>If <span class="math">\(AB=26\)</span>, what is <span class="math">\(MB\)</span>?</p>`,
+      media: String.raw`<figure><img src="2-B-14.png" alt="Figure 5" /><figcaption>Figure 5</figcaption></figure>`,
       choices: [
-        String.raw`The segments are consecutive but not collinear.`,
-        String.raw`The segments are collinear but not consecutive.`,
-        String.raw`The segments are neither collinear nor consecutive.`,
-        String.raw`The segments are opposite rays.`,
-        String.raw`The segments have a common internal point.`,
-        String.raw`The segments are adjacent, so they are also consecutive and collinear.`
-      ],
-      choiceWrap: false
-    },
-    {
-      stem: String.raw`<p>Which statement expresses the transitive property of segment congruence?</p>`,
-      choices: [
-        String.raw`If \(\overline{AB} \cong \overline{AB}\), then every segment is congruent to \(\overline{AB}\).`,
-        String.raw`If \(\overline{AB} \cong \overline{CD}\), then \(\overline{AB}\) and \(\overline{CD}\) have the same midpoint.`,
-        String.raw`If \(\overline{AB} \cong \overline{CD}\), then \(\overline{AB}\) and \(\overline{CD}\) lie on the same line.`,
-        String.raw`If \(\overline{AB} \cong \overline{CD}\) and \(\overline{CD} \cong \overline{EF}\), then \(\overline{AB} \cong \overline{EF}\).`,
-        String.raw`If \(\overline{AB} \cong \overline{CD}\), then \(A=C\) and \(B=D\).`,
-        String.raw`If \(\overline{AB} \cong \overline{CD}\), then \(\overline{AB}\) is longer than \(\overline{CD}\).`
-      ],
-      choiceWrap: false
-    },
-    {
-      stem: String.raw`<p>What does the Segment Transport Postulate guarantee?</p>`,
-      choices: [
-        String.raw`Every ray contains exactly one point.`,
-        String.raw`Given a segment \(\overline{AB}\) and a ray with origin \(A'\), there exists a unique point \(B'\) on that ray such that \(\overline{A'B'} \cong \overline{AB}\).`,
-        String.raw`Any two congruent segments must lie on the same line.`,
-        String.raw`Every segment has a midpoint.`,
-        String.raw`Every point of a ray is an endpoint of a segment congruent to \(\overline{AB}\).`,
-        String.raw`Given two segments, one must be greater than the other.`
-      ],
-      choiceWrap: false
-    },
-    {
-      stem: String.raw`<p><b>Refer to Figure 4.</b> Suppose \(\overline{AP} \cong \overline{CD}\). What conclusion follows from the position of \(P\)?</p>`,
-      media: String.raw`<figure><img src="2-B-10.png" alt="Model-generated figure for Question 10" /><figcaption>Figure 4</figcaption></figure>`,
-      choices: [
-        String.raw`\(\overline{AB} \cong \overline{CD}\)`,
-        String.raw`\(\overline{AB} \prec \overline{CD}\)`,
-        String.raw`\(\overline{AB} \succ \overline{CD}\)`,
-        String.raw`\(\overline{CD}\) is a null segment.`,
-        String.raw`\(B\) is between \(A\) and \(P\).`,
-        String.raw`\(\overline{AP} = \overrightarrow{AB}\)`
+        String.raw`\(10\)`,
+        String.raw`\(11\)`,
+        String.raw`\(13\)`,
+        String.raw`\(14\)`,
+        String.raw`\(15\)`,
+        String.raw`\(26\)`
       ]
     },
     {
-      stem: String.raw`<p><b>Refer to Figure 5.</b> Which condition defines point \(M\) as the midpoint of \(\overline{AB}\)?</p>`,
-      media: String.raw`<figure><img src="2-B-11.png" alt="Model-generated figure for Question 11" /><figcaption>Figure 5</figcaption></figure>`,
+      stem: String.raw`<p>Which statement is one of the key properties of segment measurement?</p>`,
       choices: [
-        String.raw`\(M\) is between \(A\) and \(B\), and \(\overline{AM} \cong \overline{MB}\).`,
-        String.raw`\(A\) is between \(M\) and \(B\), and \(\overline{AM} \cong \overline{AB}\).`,
-        String.raw`\(B\) is between \(A\) and \(M\), and \(\overline{AB} \cong \overline{MB}\).`,
-        String.raw`\(M\) lies on the line through \(A\) and \(B\), and \(\overline{AB} \cong \overline{MB}\).`,
-        String.raw`\(\overline{AM}\) and \(\overline{MB}\) are adjacent, and \(A=M\).`,
-        String.raw`\(\overline{AM}\) and \(\overline{MB}\) are merely consecutive.`
-      ]
-    },
-    {
-      stem: String.raw`<p>If \(P\) is a point of the segment \(\overline{AB}\), what relation must hold among the measures of the segments?</p>`,
-      choices: [
-        String.raw`\(m(\overline{AB}) = m(\overline{AP}) - m(\overline{PB})\)`,
-        String.raw`\(m(\overline{AP}) = m(\overline{AB}) + m(\overline{PB})\)`,
-        String.raw`\(m(\overline{PB}) = m(\overline{AB}) + m(\overline{AP})\)`,
-        String.raw`\(m(\overline{AB}) = m(\overline{AP})\cdot m(\overline{PB})\)`,
-        String.raw`\(m(\overline{AP}) = m(\overline{PB})\) always`,
-        String.raw`\(m(\overline{AB}) = m(\overline{AP}) + m(\overline{PB})\)`
-      ]
-    },
-    {
-      stem: String.raw`<p>If two points \(A\) and \(B\) coincide, what is the distance between them?</p>`,
-      choices: [
-        String.raw`\(1\)`,
-        String.raw`\(0\)`,
-        String.raw`It is undefined.`,
-        String.raw`It equals the length of the line through them.`,
-        String.raw`It must be positive.`,
-        String.raw`It depends on the unit chosen.`
-      ]
-    },
-    {
-      stem: String.raw`<p>Which observation is the right starting point for proving that a segment has at most one midpoint?</p>`,
-      choices: [
-        String.raw`Assume the segment lies on two different lines.`,
-        String.raw`Assume the segment has no endpoints.`,
-        String.raw`Assume two distinct points are both midpoints, and use the equalities \(\overline{AX}\cong\overline{XB}\) and \(\overline{AY}\cong\overline{YB}\) to derive a contradiction.`,
-        String.raw`Assume the segment is congruent to itself.`,
-        String.raw`Assume every internal point is a midpoint.`,
-        String.raw`Assume the midpoint is outside the segment.`
+        String.raw`Congruent segments may have different measures depending on their position.`,
+        String.raw`If one segment is longer than another, their measures must still be equal.`,
+        String.raw`If point \(P\) lies on \(\overline{AB}\), then \(m(\overline{AB})=m(\overline{AP})+m(\overline{PB})\).`,
+        String.raw`The measure of a segment can be negative.`,
+        String.raw`Only horizontal segments can be measured.`,
+        String.raw`Segment measure is unique in the sense that there is only one possible unit system.`
       ],
       choiceWrap: false
     },
     {
-      stem: String.raw`<p>Let \(P\), \(Q\), and \(R\) be collinear points with \(Q\) between \(P\) and \(R\). If \(\overline{PQ}\) is three times \(\overline{QR}\) and \(PR = 32\text{ cm}\), what are the lengths of \(\overline{PQ}\) and \(\overline{QR}\)?</p>`,
+      stem: String.raw`<p>Segments <span class="math">\(\overline{AB}\)</span> and <span class="math">\(\overline{BC}\)</span> are adjacent, and <span class="math">\(AB\)</span> is twice <span class="math">\(BC\)</span>.</p>
+<p>If <span class="math">\(AC=27\)</span>, what are the lengths of <span class="math">\(AB\)</span> and <span class="math">\(BC\)</span>?</p>`,
       choices: [
-        String.raw`\(PQ=8\text{ cm},\ QR=24\text{ cm}\)`,
-        String.raw`\(PQ=16\text{ cm},\ QR=16\text{ cm}\)`,
-        String.raw`\(PQ=20\text{ cm},\ QR=12\text{ cm}\)`,
-        String.raw`\(PQ=24\text{ cm},\ QR=8\text{ cm}\)`,
-        String.raw`\(PQ=28\text{ cm},\ QR=4\text{ cm}\)`,
-        String.raw`\(PQ=12\text{ cm},\ QR=20\text{ cm}\)`
-      ],
-      choiceWrap: false
-    },
-    {
-      stem: String.raw`<p>Segments \(\overline{AB}\) and \(\overline{BC}\) are adjacent, \(\overline{AB} = 5\overline{BC}\), and \(AC = 42\text{ cm}\). Determine \(AB\) and \(BC\).</p>`,
-      choices: [
-        String.raw`\(AB=30\text{ cm},\ BC=12\text{ cm}\)`,
-        String.raw`\(AB=28\text{ cm},\ BC=14\text{ cm}\)`,
-        String.raw`\(AB=24\text{ cm},\ BC=18\text{ cm}\)`,
-        String.raw`\(AB=36\text{ cm},\ BC=6\text{ cm}\)`,
-        String.raw`\(AB=35\text{ cm},\ BC=7\text{ cm}\)`,
-        String.raw`\(AB=32\text{ cm},\ BC=10\text{ cm}\)`
-      ],
-      choiceWrap: false
+        String.raw`\(AB=9,\ BC=18\)`,
+        String.raw`\(AB=18,\ BC=9\)`,
+        String.raw`\(AB=12,\ BC=15\)`,
+        String.raw`\(AB=15,\ BC=12\)`,
+        String.raw`\(AB=21,\ BC=6\)`,
+        String.raw`\(AB=24,\ BC=3\)`
+      ]
     }
       ]
     };
