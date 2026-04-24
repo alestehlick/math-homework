@@ -18,15 +18,18 @@
 
        IMAGE FILES:
        - User-supplied figure(s): none
-       - Model-generated figure(s): 2-B-3.png, 2-B-5.png, 2-B-8.png, 2-B-10.png, 2-B-14.png
+       - Model-generated figure(s): 2-B-3.png, 2-B-5.png, 2-B-8.png, 2-B-10.png
 
        IMAGE NAMING RULE:
        - Model-generated figures use final homework question numbering.
        - PNG files live in the SAME folder as this HTML.
 
        MODEL REWORK / EXTENSION NOTES:
-       - Replacement questions were added on betweenness, null segment, opposite rays, adjacency, transport, segment comparison, midpoint usage, and measurement properties.
-       - Several source exercises were converted into cleaner multiple-choice questions with diagnostic distractors.
+       - Kept the user's wording preference for the opening two questions.
+       - Added one notation question from the summary section.
+       - Replaced the plain adjacency-definition item with a sharper contrast question on segment relations.
+       - Added one fuller question on the full three-case segment comparison scheme.
+       - No added question was made about null segment.
        ========================= */
 
     window.homeworkData = {
@@ -34,7 +37,7 @@
       id      : "Homework 2B",
       title   : "Homework 2B — Line Segment and Ray",
       graphics : String.raw``,
-      answerKey : ["C", "E", "C", "D", "E", "C", "F", "B", "B", "A", "B", "C", "C", "C", "B"],
+      answerKey : ["C", "E", "C", "D", "E", "B", "C", "F", "A", "B", "B", "B", "B", "C", "C", "B"],
       questions : [
     {
       stem: String.raw`<p>The notion of <i>being between</i> is primitive, and some basic facts about it are taken without further explication.</p>
@@ -82,7 +85,8 @@
         String.raw`It is the union of \(\{A,B\}\) with the set of all points between \(A\) and \(B\).`,
         String.raw`It is the same thing as the ray \(\overrightarrow{AB}\).`,
         String.raw`It is defined only when \(A=B\).`
-      ]
+      ],
+      choiceWrap: false
     },
     {
       stem: String.raw`<p><b>Refer to Figure 2.</b> Which pair of rays are opposite rays?</p>`,
@@ -97,7 +101,19 @@
       ]
     },
     {
-      stem: String.raw`<p>Which description of <strong>adjacent segments</strong> is correct?</p>`,
+      stem: String.raw`<p>Which statement uses the standard notation correctly?</p>`,
+      choices: [
+        String.raw`The line through \(A\) and \(B\) is \(\overline{AB}\), the segment is \(\overrightarrow{AB}\), and the ray is \(\overleftrightarrow{AB}\).`,
+        String.raw`The line through \(A\) and \(B\) is \(\overleftrightarrow{AB}\), the segment is \(\overline{AB}\), and the ray from \(A\) through \(B\) is \(\overrightarrow{AB}\).`,
+        String.raw`The line through \(A\) and \(B\) is \(\overrightarrow{AB}\), and the segment is \(\overleftrightarrow{AB}\).`,
+        String.raw`The segment \(\overline{AB}\) and the ray \(\overrightarrow{AB}\) are always the same set.`,
+        String.raw`The ray \(\overrightarrow{AB}\) starts at \(B\) and passes through \(A\).`,
+        String.raw`\(\overline{AB}=\overleftrightarrow{AB}\cap\overrightarrow{BA}\).`
+      ],
+      choiceWrap: false
+    },
+    {
+      stem: String.raw`<p>Which description is the most accurate?</p>`,
       choices: [
         String.raw`Two segments are adjacent whenever they are consecutive.`,
         String.raw`Two segments are adjacent whenever they are collinear.`,
@@ -119,6 +135,18 @@
         String.raw`They are opposite rays.`,
         String.raw`They are neither consecutive nor collinear.`,
         String.raw`They are consecutive, collinear, and adjacent.`
+      ],
+      choiceWrap: false
+    },
+    {
+      stem: String.raw`<p>Which pair of segment relations is possible?</p>`,
+      choices: [
+        String.raw`collinear but not consecutive`,
+        String.raw`adjacent but not consecutive`,
+        String.raw`adjacent but not collinear`,
+        String.raw`consecutive but not sharing an endpoint`,
+        String.raw`collinear but belonging to different lines`,
+        String.raw`adjacent with a common internal point`
       ],
       choiceWrap: false
     },
@@ -149,15 +177,16 @@
     },
     {
       stem: String.raw`<p>In the comparison of two segments, a copy of <span class="math">\(\overline{CD}\)</span> is transported onto the ray from <span class="math">\(A\)</span> through <span class="math">\(B\)</span>, producing a point <span class="math">\(P\)</span>.</p>
-<p>If <span class="math">\(P\)</span> is between <span class="math">\(A\)</span> and <span class="math">\(B\)</span>, what can you conclude?</p>`,
+<p>Which three-case description is correct?</p>`,
       choices: [
-        String.raw`\(\overline{AB}\succ\overline{CD}\)`,
-        String.raw`\(\overline{AB}\cong\overline{CD}\)`,
-        String.raw`\(\overline{AB}\prec\overline{CD}\)`,
-        String.raw`\(\overline{CD}\) is a null segment.`,
-        String.raw`\(\overline{AB}\) and \(\overline{CD}\) are not comparable.`,
-        String.raw`\(\overline{CD}\) must contain \(\overline{AB}\).`
-      ]
+        String.raw`If \(P\) is between \(A\) and \(B\), then \(\overline{AB}\prec\overline{CD}\); if \(P=B\), then \(\overline{AB}\succ\overline{CD}\); if \(B\) is between \(A\) and \(P\), then \(\overline{AB}\cong\overline{CD}\).`,
+        String.raw`If \(P\) is between \(A\) and \(B\), then \(\overline{AB}\succ\overline{CD}\); if \(P=B\), then \(\overline{AB}\cong\overline{CD}\); if \(B\) is between \(A\) and \(P\), then \(\overline{AB}\prec\overline{CD}\).`,
+        String.raw`If \(P\) is between \(A\) and \(B\), then the two segments are incomparable; if \(P=B\), then \(\overline{AB}\prec\overline{CD}\).`,
+        String.raw`If \(P=B\), then \(\overline{AB}\succ\overline{CD}\) always.`,
+        String.raw`If \(B\) is between \(A\) and \(P\), then \(\overline{AB}\succ\overline{CD}\).`,
+        String.raw`If \(P\) is between \(A\) and \(B\), then \(\overline{AB}\cong\overline{CD}\) always.`
+      ],
+      choiceWrap: false
     },
     {
       stem: String.raw`<p>Segment <span class="math">\(\overline{AB}\)</span> measures 17 cm, and point <span class="math">\(P\)</span> is between <span class="math">\(A\)</span> and <span class="math">\(B\)</span>.</p>
@@ -180,19 +209,6 @@
         String.raw`\(6\)`,
         String.raw`\(7\)`,
         String.raw`\(8\)`
-      ]
-    },
-    {
-      stem: String.raw`<p><b>Refer to Figure 5.</b> Point <span class="math">\(M\)</span> is the midpoint of <span class="math">\(\overline{AB}\)</span>.</p>
-<p>If <span class="math">\(AB=26\)</span>, what is <span class="math">\(MB\)</span>?</p>`,
-      media: String.raw`<figure><img src="2-B-14.png" alt="Figure 5" /><figcaption>Figure 5</figcaption></figure>`,
-      choices: [
-        String.raw`\(10\)`,
-        String.raw`\(11\)`,
-        String.raw`\(13\)`,
-        String.raw`\(14\)`,
-        String.raw`\(15\)`,
-        String.raw`\(26\)`
       ]
     },
     {
