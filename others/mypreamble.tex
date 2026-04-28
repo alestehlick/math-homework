@@ -1,0 +1,281 @@
+\ProvidesPackage{pre}
+
+
+% -----------------------------------------------------------
+% PAGE GEOMETRY AND FONTS
+% -----------------------------------------------------------
+
+
+\usepackage{times} % Serif font
+\usepackage[lite,subscriptcorrection,slantedGreek,nofontinfo]{mtpro2}
+\pdfmapfile{=mtpro2.map}
+
+% -----------------------------------------------------------
+% ESSENTIAL PACKAGES
+% -----------------------------------------------------------
+\usepackage[english]{babel}
+\usepackage{amsmath, amssymb, amsthm, mathtools, yhmath}
+\usepackage{graphicx}
+\usepackage{tikz}
+\usetikzlibrary{calc, patterns}
+\usepackage{pgfplots}
+\pgfplotsset{compat=newest}
+\usepgfplotslibrary{fillbetween}
+\usepackage{hyperref}
+\usepackage{color, xcolor}
+\usepackage{titlesec}
+\usepackage{setspace}
+\usepackage{fancyhdr}
+\pagestyle{fancy}
+\usepackage{enumitem}
+\usepackage{float}
+\usepackage{caption}
+\usepackage{subcaption}
+\usepackage{multicol}
+\usepackage{afterpage}
+\usepackage{verbatim}
+\usepackage{makecell}
+\usepackage{varwidth}
+\usepackage{ifthen}
+\usepackage{cancel}
+\usepackage{needspace}
+\usepackage{etoolbox}
+\usepackage{xparse}
+\usepackage{xstring}
+\usepackage{framed}
+\usepackage{todonotes}
+\usepackage[table]{xcolor}
+\usepackage{fontawesome}
+\usepackage{soul}
+
+
+\fancyhf{} % Clear all header/footer fields
+
+% Book-style headers: odd pages right, even pages left
+\fancyhead[RO]{\rightmark} % Section name on odd pages
+\fancyhead[LE]{\leftmark}  % Chapter name on even pages
+\fancyfoot[C]{\thepage}    % Page number in center
+
+
+
+
+
+% -----------------------------------------------------------
+% MATHEMATICS & SYMBOLS
+% -----------------------------------------------------------
+\usepackage{mathrsfs}
+\usepackage{polynom}
+\usepackage{tkz-euclide}
+
+% -----------------------------------------------------------
+% STRUCTURE AND THEOREMS
+% -----------------------------------------------------------
+\newtheorem{theorem}{Theorem}[section]
+\newtheorem{definition}[theorem]{Definition}
+\newtheorem{example}[theorem]{Example}
+\newtheorem{prop}[theorem]{Proposition}
+\newtheorem{lemma}[theorem]{Lemma}
+\newtheorem{axiom}[theorem]{Axiom}
+\newtheorem{coro}[theorem]{Corollary}
+\newtheorem{remark}[theorem]{Remark}
+\renewcommand{\theequation}{\thesection.\arabic{equation}}
+
+% -----------------------------------------------------------
+% CUSTOM FORMATTING
+% -----------------------------------------------------------
+\titleformat{\chapter}[display]
+{\normalfont\Large\bfseries\centering}
+{\vspace{-2em}\textsc{Chapter \thechapter}}
+{1ex}
+{\Huge}
+[\vspace{0.5ex}\rule{\textwidth}{0.4pt}]
+
+\definecolor{winered}{RGB}{190, 47, 55}
+\titleformat{\section}
+{\color{winered}\LARGE}
+{\thesection}{1em}{}
+\renewcommand{\thesection}{\arabic{section}}
+
+\titleformat{\subsection}
+{\large\bfseries\itshape}
+{\thesubsection}{1em}{}
+\renewcommand{\thesubsection}{\thesection.\arabic{subsection}}
+
+\pretocmd{\section}{\needspace{3\baselineskip}}{}{}
+\pretocmd{\subsection}{\needspace{2\baselineskip}}{}{}
+
+% -----------------------------------------------------------
+% CUSTOM BOXES AND COLORS
+% -----------------------------------------------------------
+\usepackage[most]{tcolorbox}
+\tcbuselibrary{skins, breakable}
+
+
+\newtcolorbox{fancyhighlightorange}[1][]{
+	enhanced,
+	breakable,
+	colback=white,
+	boxrule=0pt,
+	frame hidden,
+	interior hidden,
+	sharp corners,
+	left=5pt, right=5pt, top=5pt, bottom=5pt,
+	before skip=10pt, after skip=10pt,
+	overlay={
+		\path [left color=white, right color=white, middle color=orange!10]
+		([xshift=-5pt]frame.south west) rectangle ([xshift=5pt]frame.north east);
+		\draw [line width=0.4pt, left color=white, right color=white, middle color=orange!60!brown!60]
+		([xshift=-5pt]frame.north west) -- ([xshift=5pt]frame.north east);
+		\draw [line width=0.4pt, left color=white, right color=white, middle color=orange!60!brown!60]
+		([xshift=-5pt]frame.south west) -- ([xshift=5pt]frame.south east);
+	},
+	#1
+}
+
+\newcommand{\highlightbox}[1]{%
+	\begin{fancyhighlightorange}#1\end{fancyhighlightorange}%
+}
+
+% -----------------------------------------------------------
+% DIAGRAM SCALED PLACEMENT
+% -----------------------------------------------------------
+\providecommand{\myscalebelow}{0.7}
+\providecommand{\myscaleright}{0.55}
+
+% Required in the preamble
+\usepackage{xcolor}
+\usepackage{ifthen}
+
+\newif\ifPlacePNGmissing
+
+\newcommand{\PlacePNG}[4]{%
+	\PlacePNGmissingfalse
+	%
+	% Check whether any argument is empty
+	\if\relax\detokenize{#1}\relax\PlacePNGmissingtrue\fi
+	\if\relax\detokenize{#2}\relax\PlacePNGmissingtrue\fi
+	\if\relax\detokenize{#3}\relax\PlacePNGmissingtrue\fi
+	\if\relax\detokenize{#4}\relax\PlacePNGmissingtrue\fi
+	%
+	\ifPlacePNGmissing
+	\par\noindent
+	{\color{orange}\bfseries A FIGURE COMES HERE}
+	\par\vspace{1em}
+	\else
+	\ifthenelse{\equal{#3}{below}}%
+	{\def\myscale{\myscalebelow}}%
+	{\def\myscale{\myscaleright}}%
+	%
+	\ifthenelse{\equal{#3}{below}}{%
+		\par\noindent
+		\begin{minipage}{\linewidth}
+			\centering
+			\includegraphics[width=\myscale\linewidth]{#2}
+		\end{minipage}
+		\par\vspace{1em}
+	}{%
+		\ifthenelse{\equal{#3}{right}}{%
+			\noindent
+			\begin{minipage}[t]{0.57\linewidth}
+				\vspace{0pt}#4
+			\end{minipage}
+			\hfill
+			\begin{minipage}[t]{0.4\linewidth}
+				\vspace{0pt}
+				\includegraphics[width=\myscale\linewidth]{#2}
+			\end{minipage}
+		}{%
+			\textbf{Error: position must be "below" or "right".}
+		}%
+	}%
+	\fi
+}
+
+
+
+
+% Define the HypThmBox command.
+% This command takes two arguments: the Hypothesis text and the Thesis text.
+\newcommand{\HypThmBox}[2]{%
+	\begin{tcolorbox}[
+		enhanced,
+		colback=gray!4!white,
+		colframe=black,
+		boxrule=0.8pt,
+		arc=4pt,
+		left=2mm,right=2mm,top=2mm,bottom=2mm,
+		width=\textwidth,
+		sidebyside,
+		sidebyside gap=4mm,
+		lefthand width=.48\textwidth,
+		righthand width=.48\textwidth,
+		separator sign={\MySeparator},
+		before upper={\textit{\textbf{Hypothesis}}\\[8pt]},
+		before lower={\textit{\textbf{Thesis}}\\[8pt]}
+		]
+		#1
+		\tcblower
+		#2
+	\end{tcolorbox}%
+}
+
+
+% -----------------------------------------------------------
+% EXERCISE AND TASKS
+% -----------------------------------------------------------
+\usepackage{exercise}
+\usepackage{tasks}
+\setlength{\columnsep}{0.7cm}
+
+% -----------------------------------------------------------
+% CUSTOM COMMANDS
+% -----------------------------------------------------------
+\newcommand{\overbar}[1]{\mkern 1.5mu\overline{\mkern-1.5mu#1\mkern-1.5mu}\mkern 1.5mu}
+\newcommand{\norm}[1]{\left\lVert#1\right\rVert}
+\newcommand{\vect}[1]{\underline{#1}}
+\newcommand{\binary}[2]{$#1$-$#2$}
+\newcommand{\dom}{{\rm dom\ }}
+\newcommand{\ran}{{\rm ran\ }}
+\newcommand{\LCM}{{\rm LCM\ }}
+\newcommand{\HCF}{{\rm HCF\ }}
+\newcommand{\ep}{\epsilon}
+\newcommand{\un}{\mathscr{U}}
+\newcommand{\sm}{\backslash}
+\newcommand{\lb}{\vspace{0.1cm}}
+\newcommand{\Lb}{\vspace{0.2cm}}
+\newcommand{\Bb}{\vspace{0.4cm}}
+\newcommand{\HRule}[1]{\rule{\linewidth}{#1}}
+\newcommand{\und}[1]{\underline{\smash{#1}}}
+\newcommand{\der}{\text{d}}
+\newcommand{\naturals}{\mathbb{N}}
+\newcommand{\integer}{\mathbb{Z}}
+\newcommand{\rational}{\mathbb{Q}}
+\newcommand{\real}{\mathbb{R}}
+\newcommand{\complex}{\mathbb{C}}
+\newcommand{\blankpage}{\newpage\thispagestyle{empty}\mbox{}\newpage}
+\newcommand{\divides}{\bigm|}
+\newcommand{\ndivides}{%
+	\mathrel{\mkern.5mu\ooalign{\hidewidth$\big|$\hidewidth\cr$\nmid$\cr}}%
+}
+
+% -----------------------------------------------------------
+% TIKZ PICTURE SCALING
+% -----------------------------------------------------------
+\makeatletter
+\usepackage{environ}
+\newsavebox{\measure@tikzpicture}
+\NewEnviron{scaletikzpicturetowidth}[1]{%
+	\def\tikz@width{#1}%
+	\def\tikzscale{1}\begin{lrbox}{\measure@tikzpicture}%
+		\BODY
+	\end{lrbox}%
+	\pgfmathparse{#1/\wd\measure@tikzpicture}%
+	\edef\tikzscale{\pgfmathresult}%
+	\BODY
+}
+\makeatother
+
+
+
+
+
