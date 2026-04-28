@@ -1,110 +1,97 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Homework 2C (Geometry)</title>
+<!DOCTYPE html><html lang="en"><head><meta charset="utf-8" /><meta name="viewport" content="width=device-width, initial-scale=1" /><title>Homework 2C (Geometry)</title><script>
+/* =========================
+   Homework 2C — Angles up to Adjacent Angles (Geometry)
+   Adapted for: /math-homework/assets/core-rich.js
 
-  <script>
-    /* =========================
-       Homework 2C — Angles up to Adjacent Angles (Geometry)
-       Adapted for: /math-homework/assets/core-rich.js
+   REQUIRED SOURCE REFERENCES (your provided set):
+   - Source text: handwritten notes in pdf.pdf.
+   - Direct source sections used:
+     convexity and half-planes;
+     definition of angle, sides, and vertex;
+     interior and exterior of an angle;
+     adjacent angles.
+   - Later sections intentionally excluded:
+     vertically opposite angles and everything after that.
 
-       REQUIRED SOURCE REFERENCES (your provided set):
-       - Source text: handwritten notes in pdf.pdf.
-       - Direct source sections used:
-         page 1: convexity examples, half-planes, definition of angle, sides and vertex;
-         page 2: interior and exterior of an angle, adjacent angles.
-       - Later sections intentionally excluded by user request:
-         vertically opposite angles; angle congruence; transport of angles; angle comparison; supplementary adjacent angles; right/acute/obtuse angles; angle measure; complementary/supplementary angles; null and straight angle; later exercises.
+   IMAGE FILES:
+   - User-supplied figure(s): none
+   - Model-generated figure(s): 2-C-6.png, 2-C-8.png, 2-C-11.png, 2-C-13.png
 
-       IMAGE FILES:
-       - User-supplied figure(s): none
-       - Model-generated figure(s): 2-C-6.png, 2-C-10.png, 2-C-12.png, 2-C-13.png
+   IMAGE NAMING RULE:
+   - Model-generated figures use final homework question numbering.
+   - PNG files live in the SAME folder as this HTML.
 
-       IMAGE NAMING RULE:
-       - Model-generated figures use final homework question numbering.
-       - PNG files live in the SAME folder as this HTML.
-
-       MODEL REWORK / EXTENSION NOTES:
-       - The set was rebuilt so that it stops exactly at the section on adjacent angles.
-       - Numerical angle-measure work and all later angle-congruence/comparison material were removed.
-       - Several questions were authored to stabilize the meanings of convexity, opposite half-planes, interior, exterior, and adjacency.
-       ========================= */
-
-    window.homeworkData = {
-      classId : "Geometry",
-      id      : "Homework 2C",
-      title   : "Homework 2C — Angles up to Adjacent Angles",
-      graphics : String.raw``,
-      answerKey : ["B", "C", "A", "C", "B", "B", "C", "B", "C", "B", "B", "C", "B", "D", "B"],
-      questions : [
+   MODEL REWORK / EXTENSION NOTES:
+   - Reworked to strengthen the conceptual core rather than repeat definitions too mechanically.
+   - Added explicit emphasis on opposite half-planes and the separating role of the line.
+   - Added a dedicated non-adjacent case where two angles share a side but overlap internally.
+   ========================= */
+window.homeworkData = {classId : "Geometry",id : "Homework 2C",title : "Homework 2C — Angles up to Adjacent Angles",graphics : String.raw``,answerKey : ["B", "A", "C", "B", "C", "B", "D", "F", "C", "C", "B", "C", "C", "D", "B", "A"],questions : [
     {
-      stem: String.raw`<p>Which description gives the correct definition of an angle?</p>`,
-      choices: [
-        String.raw`Any two segments in the same plane form an angle.`,
-        String.raw`The union of two half-lines with the same origin, not contained in the same straight line, is an angle.`,
-        String.raw`Any two intersecting lines form exactly one angle.`,
-        String.raw`The intersection of two half-planes is always an angle.`,
-        String.raw`An angle is the same thing as its interior only.`,
-        String.raw`An angle is any convex figure with three points.`
-      ],
-      choiceWrap: false
-    },
-    {
-      stem: String.raw`<p>Which statement best describes a convex set?</p>`,
+      stem: String.raw`<p>Which statement best describes a <strong>convex set</strong>?</p>`,
       choices: [
         String.raw`A set is convex when every line meets it in exactly two points.`,
-        String.raw`A set is convex when every point of the plane belongs to it.`,
-        String.raw`A set is convex when, for any two of its points, the segment joining them stays entirely in the set.`,
+        String.raw`A set is convex when, for any two of its points, the whole segment joining them stays in the set.`,
         String.raw`A set is convex whenever its boundary is curved.`,
         String.raw`A set is convex only if it is a polygon.`,
-        String.raw`A set is convex whenever it contains no line segment.`
+        String.raw`A set is convex when it contains no segment.`,
+        String.raw`A set is convex whenever it has at least three points.`
       ],
       choiceWrap: false
     },
     {
-      stem: String.raw`<p>If points <span class="math">\(A\)</span> and <span class="math">\(B\)</span> lie in a convex set <span class="math">\(\Sigma\)</span>, what must be true?</p>`,
+      stem: String.raw`<p>If points <span class="math">\(A\)</span> and <span class="math">\(B\)</span> belong to a convex set <span class="math">\(\Sigma\)</span>, what must be true?</p>`,
       choices: [
         String.raw`\(\overline{AB}\subseteq \Sigma\)`,
         String.raw`\(\overline{AB}\cap \Sigma=\varnothing\)`,
-        String.raw`\(\overline{AB}\) is a ray.`,
-        String.raw`\(A\) must be between \(B\) and every point of \(\Sigma\).`,
+        String.raw`\(\overline{AB}\) must be a ray.`,
+        String.raw`Point \(A\) must be the midpoint of \(\overline{AB}\).`,
         String.raw`\(\Sigma\) must be a triangle.`,
-        String.raw`\(A\) and \(B\) must be endpoints of the same angle.`
+        String.raw`The set \(\Sigma\) must be a plane.`
       ]
     },
     {
-      stem: String.raw`<p>Which condition is necessary in the definition of an angle?</p>`,
+      stem: String.raw`<p>Which condition is essential in the definition of an angle?</p>`,
       choices: [
-        String.raw`The two sides must have different lengths.`,
-        String.raw`The two sides must lie in different planes.`,
-        String.raw`The two half-lines must have the same origin and must not lie on the same straight line.`,
-        String.raw`The two sides must be perpendicular.`,
-        String.raw`The two sides must determine a convex polygon.`,
-        String.raw`The origin must be the midpoint of a segment.`
+        String.raw`Its sides must have equal length.`,
+        String.raw`Its sides must be perpendicular.`,
+        String.raw`Its sides are two half-lines with the same origin, not lying on the same straight line.`,
+        String.raw`Its sides are always two segments.`,
+        String.raw`Its sides must determine a triangle.`,
+        String.raw`Its vertex must lie on a line.`
       ],
       choiceWrap: false
     },
     {
-      stem: String.raw`<p>In angle <span class="math">\(\angle AOB\)</span>, which statement is correct?</p>`,
+      stem: String.raw`<p>In <span class="math">\(\angle AOB\)</span>, which statement is correct?</p>`,
       choices: [
-        String.raw`\(A\) and \(B\) are the vertices, and \(O\) is one side.`,
-        String.raw`\(\overrightarrow{OA}\) and \(\overrightarrow{OB}\) are the sides, and \(O\) is the vertex.`,
-        String.raw`\(\overline{OA}\) and \(\overline{OB}\) are the sides, and \(A\) is the vertex.`,
-        String.raw`The angle is the same thing as the line \(AB\).`,
+        String.raw`Points \(A\) and \(B\) are the vertices and \(O\) is one side.`,
+        String.raw`The sides are \(\overrightarrow{OA}\) and \(\overrightarrow{OB}\), and the vertex is \(O\).`,
+        String.raw`The sides are \(\overline{OA}\) and \(\overline{OB}\), and the vertex is \(A\).`,
+        String.raw`The angle is the same thing as line \(AB\).`,
         String.raw`The vertex is the midpoint of \(\overline{AB}\).`,
-        String.raw`The sides are the half-planes containing the angle.`
+        String.raw`The sides are the two half-planes containing the angle.`
       ],
       choiceWrap: false
     },
     {
-      stem: String.raw`<p><b>Refer to Figure 1.</b> Points <span class="math">\(A\)</span> and <span class="math">\(B\)</span> lie in opposite half-planes determined by line <span class="math">\(r\)</span>.</p>
-<p>Which statement must be true?</p>`,
+      stem: String.raw`<p>Which statement best describes the <strong>interior</strong> of an angle?</p>`,
+      choices: [
+        String.raw`It is the union of the two sides of the angle.`,
+        String.raw`It is the whole plane except the two sides.`,
+        String.raw`It is the intersection of the two relevant half-planes determined by the sides.`,
+        String.raw`It is always a line segment.`,
+        String.raw`It is the same thing as the exterior.`,
+        String.raw`It is defined only for acute angles.`
+      ],
+      choiceWrap: false
+    },
+    {
+      stem: String.raw`<p><b>Refer to Figure 1.</b> Points <span class="math">\(A\)</span> and <span class="math">\(B\)</span> lie in opposite half-planes determined by line <span class="math">\(r\)</span>. Which statement must be true?</p>`,
       media: String.raw`<figure><img src="2-C-6.png" alt="Figure 1" /><figcaption>Figure 1</figcaption></figure>`,
       choices: [
         String.raw`\(\overline{AB}\subseteq r\)`,
-        String.raw`\(\overline{AB}\cap r\neq\varnothing\)`,
+        String.raw`\(\overline{AB}\cap r\neq \varnothing\)`,
         String.raw`\(\overline{AB}\cap r=\varnothing\)`,
         String.raw`Point \(A\) lies on \(r\).`,
         String.raw`Point \(B\) lies on \(r\).`,
@@ -112,104 +99,103 @@
       ]
     },
     {
-      stem: String.raw`<p>Which statement best describes the <strong>interior</strong> of an angle?</p>`,
+      stem: String.raw`<p>Suppose a line <span class="math">\(r\)</span> determines two opposite half-planes. If points <span class="math">\(P\)</span> and <span class="math">\(Q\)</span> are in the <em>same</em> half-plane, which statement is guaranteed?</p>`,
       choices: [
-        String.raw`It is the union of the two sides of the angle.`,
-        String.raw`It is the whole plane except the sides.`,
-        String.raw`It is the intersection of the two relevant half-planes determined by the sides.`,
-        String.raw`It is the same thing as the exterior.`,
-        String.raw`It is always a line segment.`,
-        String.raw`It is defined only for acute angles.`
+        String.raw`The whole segment \(\overline{PQ}\) lies on \(r\).`,
+        String.raw`The segment \(\overline{PQ}\) must meet \(r\).`,
+        String.raw`The segment \(\overline{PQ}\) must cross to the opposite half-plane.`,
+        String.raw`The segment \(\overline{PQ}\) need not meet \(r\).`,
+        String.raw`Points \(P\) and \(Q\) must be equal.`,
+        String.raw`The segment \(\overline{PQ}\) is perpendicular to \(r\).`
       ],
       choiceWrap: false
     },
     {
-      stem: String.raw`<p>Which statement best describes the <strong>exterior</strong> of an angle?</p>`,
+      stem: String.raw`<p><b>Refer to Figure 2.</b> Which statement matches the figure?</p>`,
+      media: String.raw`<figure><img src="2-C-8.png" alt="Figure 2" /><figcaption>Figure 2</figcaption></figure>`,
       choices: [
-        String.raw`It is the intersection of the angle with one side.`,
-        String.raw`It is the union of the two half-planes opposite to those used to define the interior.`,
-        String.raw`It is the same thing as the interior.`,
-        String.raw`It is always convex.`,
-        String.raw`It consists only of the vertex and the sides.`,
-        String.raw`It is undefined unless the angle is obtuse.`
-      ],
-      choiceWrap: false
+        String.raw`Point \(P\) is exterior, point \(Q\) is interior, and point \(R\) lies on a side.`,
+        String.raw`Point \(P\) is interior, point \(Q\) is exterior, and point \(R\) lies on side \(\overrightarrow{OA}\).`,
+        String.raw`Points \(P\), \(Q\), and \(R\) are all interior points.`,
+        String.raw`Point \(R\) is the vertex of the angle.`,
+        String.raw`Point \(Q\) lies on side \(\overrightarrow{OB}\).`,
+        String.raw`No point in the figure lies in the exterior.`
+      ]
     },
     {
       stem: String.raw`<p>If a point lies in the interior of <span class="math">\(\angle AOB\)</span>, what must be true?</p>`,
       choices: [
         String.raw`It lies on both sides of the angle.`,
         String.raw`It lies on exactly one side of the angle.`,
-        String.raw`It lies in the relevant half-plane of \(\overrightarrow{OA}\) containing \(B\), and also in the relevant half-plane of \(\overrightarrow{OB}\) containing \(A\).`,
-        String.raw`It lies outside the angle.`,
+        String.raw`It lies in the half-plane of side \(\overrightarrow{OA}\) that contains \(B\), and also in the half-plane of side \(\overrightarrow{OB}\) that contains \(A\).`,
+        String.raw`It lies in the exterior of the angle.`,
         String.raw`It must be the midpoint of \(\overline{AB}\).`,
         String.raw`It must determine a right angle with one side.`
       ],
       choiceWrap: false
     },
     {
-      stem: String.raw`<p><b>Refer to Figure 2.</b> Which statement best matches the figure?</p>`,
-      media: String.raw`<figure><img src="2-C-10.png" alt="Figure 2" /><figcaption>Figure 2</figcaption></figure>`,
+      stem: String.raw`<p>Which statement best describes the <strong>exterior</strong> of an angle?</p>`,
       choices: [
-        String.raw`\(P\) is exterior, \(Q\) is interior, and \(R\) lies on a side.`,
-        String.raw`\(P\) is interior, \(Q\) is exterior, and \(R\) lies on side \(\overrightarrow{OA}\).`,
-        String.raw`\(P\), \(Q\), and \(R\) are all interior points.`,
-        String.raw`\(R\) is the vertex of the angle.`,
-        String.raw`\(Q\) lies on side \(\overrightarrow{OB}\).`,
-        String.raw`No point of the figure lies in the exterior.`
-      ]
+        String.raw`It is the union of the two sides of the angle.`,
+        String.raw`It is the intersection of the two half-planes used to define the interior.`,
+        String.raw`It is the part of the plane that does not belong to the angle or to its interior.`,
+        String.raw`It is always convex.`,
+        String.raw`It consists only of the vertex.`,
+        String.raw`It is undefined unless the angle is obtuse.`
+      ],
+      choiceWrap: false
     },
     {
-      stem: String.raw`<p>Which condition is required for two angles to be adjacent?</p>`,
+      stem: String.raw`<p>Which condition is required for two angles to be <strong>adjacent</strong>?</p>`,
       choices: [
         String.raw`They must be congruent.`,
-        String.raw`They must have a common side and no internal points in common.`,
+        String.raw`They must share a common side and have no interior points in common.`,
         String.raw`They must be supplementary.`,
-        String.raw`They must be vertically opposite.`,
-        String.raw`They must have equal measures.`,
-        String.raw`They must lie in different planes.`
+        String.raw`They must have equal measure.`,
+        String.raw`They must lie in different planes.`,
+        String.raw`They must be determined by the same two rays.`
       ],
       choiceWrap: false
     },
     {
       stem: String.raw`<p><b>Refer to Figure 3.</b> Which pair of angles is adjacent?</p>`,
-      media: String.raw`<figure><img src="2-C-12.png" alt="Figure 3" /><figcaption>Figure 3</figcaption></figure>`,
+      media: String.raw`<figure><img src="2-C-11.png" alt="Figure 3" /><figcaption>Figure 3</figcaption></figure>`,
       choices: [
         String.raw`\(\angle AOC\) and \(\angle AOB\)`,
         String.raw`\(\angle AOC\) and \(\angle BOC\)`,
         String.raw`\(\angle AOB\) and \(\angle BOC\)`,
         String.raw`\(\angle AOC\) and itself`,
         String.raw`No pair is adjacent.`,
-        String.raw`\(\angle AOB\) and \(\angle AOC\) are vertically opposite.`
+        String.raw`\(\angle AOB\) and \(\angle AOC\) are opposite angles.`
       ]
     },
     {
-      stem: String.raw`<p><b>Refer to Figure 4.</b> Which pair of angles is <strong>not</strong> adjacent?</p>`,
+      stem: String.raw`<p><b>Refer to Figure 4.</b> Angles <span class="math">\(\angle AOB\)</span> and <span class="math">\(\angle AOC\)</span> share the side <span class="math">\(\overrightarrow{OA}\)</span>. Why are they <strong>not</strong> adjacent?</p>`,
       media: String.raw`<figure><img src="2-C-13.png" alt="Figure 4" /><figcaption>Figure 4</figcaption></figure>`,
       choices: [
-        String.raw`\(\angle AOB\) and \(\angle BOC\)`,
-        String.raw`\(\angle AOC\) and \(\angle AOB\)`,
-        String.raw`\(\angle BOC\) and \(\angle AOB\)`,
-        String.raw`\(\angle AOB\) and \(\angle BOC\) with common side \(\overrightarrow{OB}\)`,
-        String.raw`\(\angle BOC\) and \(\angle COA\)`,
-        String.raw`Any pair sharing only one common side and no interior overlap`
+        String.raw`They do not have the same vertex.`,
+        String.raw`They do not have a common side.`,
+        String.raw`Their interiors overlap.`,
+        String.raw`They lie in different planes.`,
+        String.raw`They are equal angles.`,
+        String.raw`One of them is not an angle.`
       ]
     },
     {
       stem: String.raw`<p>Which statement about adjacent angles is false?</p>`,
       choices: [
         String.raw`Adjacent angles have the same vertex.`,
-        String.raw`Adjacent angles share a common side.`,
+        String.raw`Adjacent angles share one side.`,
         String.raw`Adjacent angles have no interior points in common.`,
-        String.raw`Any two angles with a common side are automatically adjacent.`,
-        String.raw`Adjacent angles may together form a larger angle.`,
-        String.raw`Two adjacent angles need not be congruent.`
+        String.raw`Any two angles that share a side are automatically adjacent.`,
+        String.raw`Adjacent angles may fit together to form a larger angle.`,
+        String.raw`Two adjacent angles do not need to be congruent.`
       ],
       choiceWrap: false
     },
     {
-      stem: String.raw`<p>Two angles share the same vertex and one common side. One angle lies completely inside the other, so they have internal points in common.</p>
-<p>What can you conclude?</p>`,
+      stem: String.raw`<p>Two angles share a vertex and a common side. One angle lies partly inside the other, so they also share interior points. What can you conclude?</p>`,
       choices: [
         String.raw`They are adjacent.`,
         String.raw`They are not adjacent.`,
@@ -219,16 +205,18 @@
         String.raw`They must lie in different planes.`
       ],
       choiceWrap: false
+    },
+    {
+      stem: String.raw`<p>Suppose <span class="math">\(\angle AOB\)</span> and <span class="math">\(\angle BOC\)</span> are adjacent. Which statement must be true?</p>`,
+      choices: [
+        String.raw`The common side is \(\overrightarrow{OB}\).`,
+        String.raw`The interiors of the two angles are exactly the same.`,
+        String.raw`Points \(A\), \(B\), and \(C\) must lie on one line.`,
+        String.raw`The two angles must have the same measure.`,
+        String.raw`The union of their sides is just one ray.`,
+        String.raw`One of the two angles cannot have an interior.`
+      ],
+      choiceWrap: false
     }
-      ]
-    };
-  </script>
-
-  <link rel="stylesheet" href="/math-homework/assets/core-rich.css" />
-  <script defer src="/math-homework/assets/core-rich.js"></script>
-  <script defer src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
-</head>
-<body>
-  <div id="hw-root">Loading…</div>
-</body>
-</html>
+]};
+</script><link rel="stylesheet" href="/math-homework/assets/core-rich.css" /><script defer src="/math-homework/assets/core-rich.js"></script><script defer src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script></head><body><div id="hw-root">Loading…</div></body></html>
