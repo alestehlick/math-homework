@@ -21,12 +21,13 @@
    - Model-generated figures use final homework question numbering.
    - PNG files live in the SAME folder as this HTML.
 
-   MODEL REWORK / EXTENSION NOTES:
-   - Reworked to strengthen the conceptual core rather than repeat definitions too mechanically.
-   - Added explicit emphasis on opposite half-planes and the separating role of the line.
-   - Added a dedicated non-adjacent case where two angles share a side but overlap internally.
+   REVIEW / CORRECTION NOTES:
+   - Checked all non-figure questions for mathematical soundness.
+   - Strengthened Question 7: if two points lie in the same half-plane, the segment does not meet the separating line.
+   - Slightly sharpened the angle-interior wording: the relevant half-planes are determined by the lines containing the sides.
+   - Redistributed correct-answer letters to avoid a B/C-heavy answer key.
    ========================= */
-window.homeworkData = {classId : "Geometry",id : "Homework 2C",title : "Homework 2C — Angles up to Adjacent Angles",graphics : String.raw``,answerKey : ["B", "A", "C", "B", "C", "B", "D", "F", "C", "C", "B", "C", "C", "D", "B", "A"],questions : [
+window.homeworkData = {classId : "Geometry",id : "Homework 2C",title : "Homework 2C — Angles up to Adjacent Angles",graphics : String.raw``,answerKey : ["B", "A", "E", "C", "D", "F", "A", "C", "E", "B", "D", "F", "A", "D", "B", "C"],questions : [
     {
       stem: String.raw`<p>Which statement best describes a <strong>convex set</strong>?</p>`,
       choices: [
@@ -55,9 +56,9 @@ window.homeworkData = {classId : "Geometry",id : "Homework 2C",title : "Homework
       choices: [
         String.raw`Its sides must have equal length.`,
         String.raw`Its sides must be perpendicular.`,
-        String.raw`Its sides are two half-lines with the same origin, not lying on the same straight line.`,
-        String.raw`Its sides are always two segments.`,
         String.raw`Its sides must determine a triangle.`,
+        String.raw`Its sides are always two segments.`,
+        String.raw`Its sides are two rays with the same origin.`,
         String.raw`Its vertex must lie on a line.`
       ],
       choiceWrap: false
@@ -66,8 +67,8 @@ window.homeworkData = {classId : "Geometry",id : "Homework 2C",title : "Homework
       stem: String.raw`<p>In <span class="math">\(\angle AOB\)</span>, which statement is correct?</p>`,
       choices: [
         String.raw`Points \(A\) and \(B\) are the vertices and \(O\) is one side.`,
-        String.raw`The sides are \(\overrightarrow{OA}\) and \(\overrightarrow{OB}\), and the vertex is \(O\).`,
         String.raw`The sides are \(\overline{OA}\) and \(\overline{OB}\), and the vertex is \(A\).`,
+        String.raw`The sides are \(\overrightarrow{OA}\) and \(\overrightarrow{OB}\), and the vertex is \(O\).`,
         String.raw`The angle is the same thing as line \(AB\).`,
         String.raw`The vertex is the midpoint of \(\overline{AB}\).`,
         String.raw`The sides are the two half-planes containing the angle.`
@@ -79,8 +80,8 @@ window.homeworkData = {classId : "Geometry",id : "Homework 2C",title : "Homework
       choices: [
         String.raw`It is the union of the two sides of the angle.`,
         String.raw`It is the whole plane except the two sides.`,
-        String.raw`It is the intersection of the two relevant half-planes determined by the sides.`,
         String.raw`It is always a line segment.`,
+        String.raw`It is the intersection of the two relevant half-planes determined by the lines containing the sides.`,
         String.raw`It is the same thing as the exterior.`,
         String.raw`It is defined only for acute angles.`
       ],
@@ -91,20 +92,20 @@ window.homeworkData = {classId : "Geometry",id : "Homework 2C",title : "Homework
       media: String.raw`<figure><img src="2-C-6.png" alt="Figure 1" /><figcaption>Figure 1</figcaption></figure>`,
       choices: [
         String.raw`\(\overline{AB}\subseteq r\)`,
-        String.raw`\(\overline{AB}\cap r\neq \varnothing\)`,
         String.raw`\(\overline{AB}\cap r=\varnothing\)`,
         String.raw`Point \(A\) lies on \(r\).`,
         String.raw`Point \(B\) lies on \(r\).`,
-        String.raw`The two half-planes are equal.`
+        String.raw`The two half-planes are equal.`,
+        String.raw`\(\overline{AB}\cap r\neq \varnothing\)`
       ]
     },
     {
-      stem: String.raw`<p>Suppose a line <span class="math">\(r\)</span> determines two opposite half-planes. If points <span class="math">\(P\)</span> and <span class="math">\(Q\)</span> are in the <em>same</em> half-plane, which statement is guaranteed?</p>`,
+      stem: String.raw`<p>Suppose a line <span class="math">\(r\)</span> determines two opposite half-planes. If points <span class="math">\(P\)</span> and <span class="math">\(Q\)</span> lie in the <em>same</em> half-plane, which statement is guaranteed?</p>`,
       choices: [
+        String.raw`The segment \(\overline{PQ}\) does not meet \(r\).`,
         String.raw`The whole segment \(\overline{PQ}\) lies on \(r\).`,
         String.raw`The segment \(\overline{PQ}\) must meet \(r\).`,
         String.raw`The segment \(\overline{PQ}\) must cross to the opposite half-plane.`,
-        String.raw`The segment \(\overline{PQ}\) need not meet \(r\).`,
         String.raw`Points \(P\) and \(Q\) must be equal.`,
         String.raw`The segment \(\overline{PQ}\) is perpendicular to \(r\).`
       ],
@@ -116,10 +117,10 @@ window.homeworkData = {classId : "Geometry",id : "Homework 2C",title : "Homework
       choices: [
         String.raw`Point \(P\) is exterior, point \(Q\) is interior, and point \(R\) lies on a side.`,
         String.raw`Point \(P\) is interior, point \(Q\) is exterior, and point \(R\) lies on side \(\overrightarrow{OA}\).`,
+        String.raw`No point in the figure lies in the exterior.`,
         String.raw`Points \(P\), \(Q\), and \(R\) are all interior points.`,
         String.raw`Point \(R\) is the vertex of the angle.`,
-        String.raw`Point \(Q\) lies on side \(\overrightarrow{OB}\).`,
-        String.raw`No point in the figure lies in the exterior.`
+        String.raw`Point \(Q\) lies on side \(\overrightarrow{OB}\).`
       ]
     },
     {
@@ -127,9 +128,9 @@ window.homeworkData = {classId : "Geometry",id : "Homework 2C",title : "Homework
       choices: [
         String.raw`It lies on both sides of the angle.`,
         String.raw`It lies on exactly one side of the angle.`,
-        String.raw`It lies in the half-plane of side \(\overrightarrow{OA}\) that contains \(B\), and also in the half-plane of side \(\overrightarrow{OB}\) that contains \(A\).`,
         String.raw`It lies in the exterior of the angle.`,
         String.raw`It must be the midpoint of \(\overline{AB}\).`,
+        String.raw`It lies in the half-plane of side \(\overrightarrow{OA}\) that contains \(B\), and also in the half-plane of side \(\overrightarrow{OB}\) that contains \(A\).`,
         String.raw`It must determine a right angle with one side.`
       ],
       choiceWrap: false
@@ -138,8 +139,8 @@ window.homeworkData = {classId : "Geometry",id : "Homework 2C",title : "Homework
       stem: String.raw`<p>Which statement best describes the <strong>exterior</strong> of an angle?</p>`,
       choices: [
         String.raw`It is the union of the two sides of the angle.`,
-        String.raw`It is the intersection of the two half-planes used to define the interior.`,
         String.raw`It is the part of the plane that does not belong to the angle or to its interior.`,
+        String.raw`It is the intersection of the two half-planes used to define the interior.`,
         String.raw`It is always convex.`,
         String.raw`It consists only of the vertex.`,
         String.raw`It is undefined unless the angle is obtuse.`
@@ -150,9 +151,9 @@ window.homeworkData = {classId : "Geometry",id : "Homework 2C",title : "Homework
       stem: String.raw`<p>Which condition is required for two angles to be <strong>adjacent</strong>?</p>`,
       choices: [
         String.raw`They must be congruent.`,
-        String.raw`They must share a common side and have no interior points in common.`,
         String.raw`They must be supplementary.`,
         String.raw`They must have equal measure.`,
+        String.raw`They must share a common side and have no interior points in common.`,
         String.raw`They must lie in different planes.`,
         String.raw`They must be determined by the same two rays.`
       ],
@@ -164,19 +165,19 @@ window.homeworkData = {classId : "Geometry",id : "Homework 2C",title : "Homework
       choices: [
         String.raw`\(\angle AOC\) and \(\angle AOB\)`,
         String.raw`\(\angle AOC\) and \(\angle BOC\)`,
-        String.raw`\(\angle AOB\) and \(\angle BOC\)`,
         String.raw`\(\angle AOC\) and itself`,
         String.raw`No pair is adjacent.`,
-        String.raw`\(\angle AOB\) and \(\angle AOC\) are opposite angles.`
+        String.raw`\(\angle AOB\) and \(\angle AOC\) are opposite angles.`,
+        String.raw`\(\angle AOB\) and \(\angle BOC\)`
       ]
     },
     {
       stem: String.raw`<p><b>Refer to Figure 4.</b> Angles <span class="math">\(\angle AOB\)</span> and <span class="math">\(\angle AOC\)</span> share the side <span class="math">\(\overrightarrow{OA}\)</span>. Why are they <strong>not</strong> adjacent?</p>`,
       media: String.raw`<figure><img src="2-C-13.png" alt="Figure 4" /><figcaption>Figure 4</figcaption></figure>`,
       choices: [
+        String.raw`Their interiors overlap.`,
         String.raw`They do not have the same vertex.`,
         String.raw`They do not have a common side.`,
-        String.raw`Their interiors overlap.`,
         String.raw`They lie in different planes.`,
         String.raw`They are equal angles.`,
         String.raw`One of them is not an angle.`
@@ -209,9 +210,9 @@ window.homeworkData = {classId : "Geometry",id : "Homework 2C",title : "Homework
     {
       stem: String.raw`<p>Suppose <span class="math">\(\angle AOB\)</span> and <span class="math">\(\angle BOC\)</span> are adjacent. Which statement must be true?</p>`,
       choices: [
-        String.raw`The common side is \(\overrightarrow{OB}\).`,
         String.raw`The interiors of the two angles are exactly the same.`,
         String.raw`Points \(A\), \(B\), and \(C\) must lie on one line.`,
+        String.raw`The common side is \(\overrightarrow{OB}\).`,
         String.raw`The two angles must have the same measure.`,
         String.raw`The union of their sides is just one ray.`,
         String.raw`One of the two angles cannot have an interior.`
