@@ -1,0 +1,309 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Homework 2D (Geometry)</title>
+
+  <script>
+    /* =========================
+       Homework 2D — Vertical Angles, Linear Pairs, and Angle Measure (Geometry)
+       Adapted for: /math-homework/assets/core-rich.js
+
+       REQUIRED SOURCE REFERENCES (your provided set):
+       - Source text: Pages from Notes Geom.pdf.
+       - Direct source sections used:
+         page 1: vertical angles / opposite angles;
+         page 2: angle congruence, angle transport postulate, comparison of angles;
+         page 3: linear pair, right angles, angle measure;
+         page 4: degrees, complementary and supplementary angles, null and straight angles;
+         pages 6–7: algebraic and numerical angle exercises.
+       - User terminology requirements:
+         use "vertical angles" or "opposite angles" instead of "vertically opposite";
+         use "linear pair" instead of "supplementary adjacent."
+       - Topics intentionally skipped by user request:
+         acute angles, obtuse angles, and angle bisector.
+
+       IMAGE FILES:
+       - User-supplied figure(s): none
+       - Model-generated figure(s):
+         2-D-2.png, 2-D-5.png, 2-D-7.png, 2-D-11.png,
+         2-D-13.png, 2-D-15.png, 2-D-17.png
+
+       IMAGE NAMING RULE:
+       - Model-generated figures use final homework question numbering.
+       - PNG files live in the SAME folder as this HTML.
+
+       MODEL REWORK / EXTENSION NOTES:
+       - Q9 was sharpened to mention the chosen half-plane in the angle transport postulate.
+       - Q11 was reworked into a figure-based angle-comparison question.
+       - Q14 was added to interrupt the numerical section with a structural equation-choice question about vertical angles.
+       - The sequence now has 21 questions, still "around 20," to improve conceptual pacing.
+       ========================= */
+
+    window.homeworkData = {
+      classId : "Geometry",
+      id      : "Homework 2D",
+      title   : "Homework 2D — Vertical Angles, Linear Pairs, and Angle Measure",
+      graphics : String.raw``,
+      answerKey : ["B", "C", "A", "C", "A", "C", "C", "B", "A", "A", "C", "C", "D", "C", "D", "C", "C", "B", "D", "D", "B"],
+      questions : [
+    {
+      stem: String.raw`<p>Which description correctly defines <strong>vertical angles</strong>?</p>`,
+      choices: [
+        String.raw`Two angles are vertical angles whenever they share one side.`,
+        String.raw`Two angles are vertical angles when the sides of one angle are opposite rays to the sides of the other angle.`,
+        String.raw`Two angles are vertical angles whenever their measures add to \(180^\circ\).`,
+        String.raw`Two angles are vertical angles whenever they are adjacent.`,
+        String.raw`Two angles are vertical angles only when each is a right angle.`,
+        String.raw`Two angles are vertical angles whenever they lie in different planes.`
+      ],
+      choiceWrap: false
+    },
+    {
+      stem: String.raw`<p><b>Refer to Figure 1.</b> Which pair of angles is a pair of vertical angles?</p>`,
+      media: String.raw`<figure><img src="2-D-2.png" alt="Figure 1" /><figcaption>Figure 1</figcaption></figure>`,
+      choices: [
+        String.raw`\(\angle AOB\) and \(\angle BOC\)`,
+        String.raw`\(\angle AOD\) and \(\angle AOB\)`,
+        String.raw`\(\angle AOB\) and \(\angle COD\)`,
+        String.raw`\(\angle AOC\) and \(\angle BOD\)`,
+        String.raw`\(\angle AOD\) and \(\angle COD\)`,
+        String.raw`\(\angle BOC\) and \(\angle COD\)`
+      ]
+    },
+    {
+      stem: String.raw`<p>Which statement about vertical angles is true?</p>`,
+      choices: [
+        String.raw`Vertical angles are always congruent.`,
+        String.raw`Vertical angles are always adjacent.`,
+        String.raw`Vertical angles always form a linear pair.`,
+        String.raw`Vertical angles always add to \(180^\circ\).`,
+        String.raw`Vertical angles are never equal.`,
+        String.raw`Vertical angles exist only when the lines are perpendicular.`
+      ],
+      choiceWrap: false
+    },
+    {
+      stem: String.raw`<p>Which observation best explains why vertical angles are congruent?</p>`,
+      choices: [
+        String.raw`They share a common side.`,
+        String.raw`They are both parts of the same ray.`,
+        String.raw`Each forms a linear pair with the same neighboring angle, so their measures must be equal.`,
+        String.raw`They are both exterior angles.`,
+        String.raw`They are always right angles.`,
+        String.raw`They have no common vertex.`
+      ],
+      choiceWrap: false
+    },
+    {
+      stem: String.raw`<p><b>Refer to Figure 2.</b> Which pair forms a <strong>linear pair</strong>?</p>`,
+      media: String.raw`<figure><img src="2-D-5.png" alt="Figure 2" /><figcaption>Figure 2</figcaption></figure>`,
+      choices: [
+        String.raw`\(\angle AOB\) and \(\angle BOC\)`,
+        String.raw`\(\angle AOB\) and \(\angle AOC\)`,
+        String.raw`\(\angle AOC\) and \(\angle BOC\)`,
+        String.raw`\(\angle BOA\) and \(\angle AOC\)`,
+        String.raw`\(\angle AOB\) and itself`,
+        String.raw`No pair in the figure forms a linear pair.`
+      ]
+    },
+    {
+      stem: String.raw`<p>Which statement best describes a <strong>linear pair</strong>?</p>`,
+      choices: [
+        String.raw`Two angles with the same measure.`,
+        String.raw`Two non-adjacent angles formed by crossing lines.`,
+        String.raw`Two adjacent angles whose non-common sides are opposite rays.`,
+        String.raw`Two angles whose interiors overlap.`,
+        String.raw`Two angles that are both right angles.`,
+        String.raw`Two angles whose measures add to \(90^\circ\).`
+      ],
+      choiceWrap: false
+    },
+    {
+      stem: String.raw`<p><b>Refer to Figure 3.</b> The whole angle <span class="math">\(\angle AOB\)</span> is a right angle. Find <span class="math">\(x\)</span>.</p>`,
+      media: String.raw`<figure><img src="2-D-7.png" alt="Figure 3" /><figcaption>Figure 3</figcaption></figure>`,
+      choices: [
+        String.raw`\(12^\circ\)`,
+        String.raw`\(15^\circ\)`,
+        String.raw`\(18^\circ\)`,
+        String.raw`\(20^\circ\)`,
+        String.raw`\(24^\circ\)`,
+        String.raw`\(30^\circ\)`
+      ]
+    },
+    {
+      stem: String.raw`<p>Which statement about right angles is correct?</p>`,
+      choices: [
+        String.raw`Every right angle measures \(45^\circ\).`,
+        String.raw`Every right angle is congruent to every other right angle.`,
+        String.raw`A right angle is any angle in a linear pair.`,
+        String.raw`A right angle is the same thing as a straight angle.`,
+        String.raw`A right angle has measure \(180^\circ\).`,
+        String.raw`Only one right angle can exist at a point.`
+      ],
+      choiceWrap: false
+    },
+    {
+      stem: String.raw`<p>Which statement best expresses the angle transport postulate?</p>`,
+      choices: [
+        String.raw`Given an angle, a starting ray, and one chosen half-plane determined by that ray, there is exactly one ray in that half-plane forming a congruent copy of the given angle.`,
+        String.raw`Given an angle and a ray, every ray from the same origin forms a congruent angle.`,
+        String.raw`Given an angle, it can be transported only if it is a right angle.`,
+        String.raw`Given two angles, they are congruent if they have the same vertex.`,
+        String.raw`Given a ray, it determines exactly one angle.`,
+        String.raw`Given an angle, its two sides may be transported independently to different origins.`
+      ],
+      choiceWrap: false
+    },
+    {
+      stem: String.raw`<p>Which statement about angle congruence is correct?</p>`,
+      choices: [
+        String.raw`Angle congruence is reflexive, symmetric, and transitive.`,
+        String.raw`Two congruent angles must share a side.`,
+        String.raw`Two congruent angles must be adjacent.`,
+        String.raw`Angle congruence applies only to right angles.`,
+        String.raw`Two angles with equal measure may still fail to be congruent.`,
+        String.raw`Two congruent angles must have the same vertex.`
+      ],
+      choiceWrap: false
+    },
+    {
+      stem: String.raw`<p><b>Refer to Figure 4.</b> A copy of <span class="math">\(\angle CPD\)</span> has been transported so that one side lies on <span class="math">\(\overrightarrow{OA}\)</span>. The transported second side is <span class="math">\(\overrightarrow{OD'}\)</span>.</p>
+<p>What follows from the position shown?</p>`,
+      media: String.raw`<figure><img src="2-D-11.png" alt="Figure 4" /><figcaption>Figure 4</figcaption></figure>`,
+      choices: [
+        String.raw`\(\angle AOB\cong\angle CPD\)`,
+        String.raw`\(\angle AOB<\angle CPD\)`,
+        String.raw`\(\angle AOB>\angle CPD\)`,
+        String.raw`The two angles form a linear pair.`,
+        String.raw`The two angles are complementary.`,
+        String.raw`No comparison can be made.`
+      ]
+    },
+    {
+      stem: String.raw`<p>Which pair correctly gives the measures of a null angle and a straight angle?</p>`,
+      choices: [
+        String.raw`\(0^\circ\) and \(90^\circ\)`,
+        String.raw`\(90^\circ\) and \(180^\circ\)`,
+        String.raw`\(0^\circ\) and \(180^\circ\)`,
+        String.raw`\(180^\circ\) and \(360^\circ\)`,
+        String.raw`\(1^\circ\) and \(180^\circ\)`,
+        String.raw`\(0^\circ\) and \(360^\circ\)`
+      ]
+    },
+    {
+      stem: String.raw`<p><b>Refer to Figure 5.</b> The labeled angles are vertical angles. Find <span class="math">\(x\)</span>.</p>`,
+      media: String.raw`<figure><img src="2-D-13.png" alt="Figure 5" /><figcaption>Figure 5</figcaption></figure>`,
+      choices: [
+        String.raw`\(18\)`,
+        String.raw`\(20\)`,
+        String.raw`\(22\)`,
+        String.raw`\(24\)`,
+        String.raw`\(26\)`,
+        String.raw`\(28\)`
+      ]
+    },
+    {
+      stem: String.raw`<p>The measures of two vertical angles are given by <span class="math">\(7x-14\)</span> and <span class="math">\(4x+34\)</span>.</p>
+<p>Which equation is justified before solving for <span class="math">\(x\)</span>?</p>`,
+      choices: [
+        String.raw`\((7x-14)+(4x+34)=90\)`,
+        String.raw`\((7x-14)+(4x+34)=180\)`,
+        String.raw`\(7x-14=4x+34\)`,
+        String.raw`\(7x-14=180-(4x+34)\)`,
+        String.raw`\(7x-14=90\)`,
+        String.raw`\(4x+34=180\)`
+      ]
+    },
+    {
+      stem: String.raw`<p><b>Refer to Figure 6.</b> The two labeled angles form a linear pair. Find <span class="math">\(x\)</span>.</p>`,
+      media: String.raw`<figure><img src="2-D-15.png" alt="Figure 6" /><figcaption>Figure 6</figcaption></figure>`,
+      choices: [
+        String.raw`\(20\)`,
+        String.raw`\(24\)`,
+        String.raw`\(28\)`,
+        String.raw`\(30\)`,
+        String.raw`\(32\)`,
+        String.raw`\(35\)`
+      ]
+    },
+    {
+      stem: String.raw`<p>If two angles are complementary and one of them measures <span class="math">\(37^\circ\)</span>, what is the measure of the other?</p>`,
+      choices: [
+        String.raw`\(43^\circ\)`,
+        String.raw`\(47^\circ\)`,
+        String.raw`\(53^\circ\)`,
+        String.raw`\(57^\circ\)`,
+        String.raw`\(63^\circ\)`,
+        String.raw`\(143^\circ\)`
+      ]
+    },
+    {
+      stem: String.raw`<p><b>Refer to Figure 7.</b> The whole angle <span class="math">\(\angle AOB\)</span> is a right angle. Find <span class="math">\(x\)</span>.</p>`,
+      media: String.raw`<figure><img src="2-D-17.png" alt="Figure 7" /><figcaption>Figure 7</figcaption></figure>`,
+      choices: [
+        String.raw`\(15^\circ\)`,
+        String.raw`\(20^\circ\)`,
+        String.raw`\(25^\circ\)`,
+        String.raw`\(30^\circ\)`,
+        String.raw`\(35^\circ\)`,
+        String.raw`\(40^\circ\)`
+      ]
+    },
+    {
+      stem: String.raw`<p>If two angles are supplementary and one of them measures <span class="math">\(124^\circ\)</span>, what is the measure of the other?</p>`,
+      choices: [
+        String.raw`\(46^\circ\)`,
+        String.raw`\(56^\circ\)`,
+        String.raw`\(66^\circ\)`,
+        String.raw`\(76^\circ\)`,
+        String.raw`\(86^\circ\)`,
+        String.raw`\(124^\circ\)`
+      ]
+    },
+    {
+      stem: String.raw`<p>An angle exceeds its complement by <span class="math">\(48^\circ\)</span>. What is the measure of the angle?</p>`,
+      choices: [
+        String.raw`\(59^\circ\)`,
+        String.raw`\(63^\circ\)`,
+        String.raw`\(66^\circ\)`,
+        String.raw`\(69^\circ\)`,
+        String.raw`\(72^\circ\)`,
+        String.raw`\(78^\circ\)`
+      ]
+    },
+    {
+      stem: String.raw`<p>An angle exceeds its supplement by <span class="math">\(66^\circ\)</span>. What is the measure of the angle?</p>`,
+      choices: [
+        String.raw`\(102^\circ\)`,
+        String.raw`\(108^\circ\)`,
+        String.raw`\(114^\circ\)`,
+        String.raw`\(123^\circ\)`,
+        String.raw`\(132^\circ\)`,
+        String.raw`\(156^\circ\)`
+      ]
+    },
+    {
+      stem: String.raw`<p>Two angles form a linear pair. One angle is four times the other. What are their measures?</p>`,
+      choices: [
+        String.raw`\(30^\circ\) and \(120^\circ\)`,
+        String.raw`\(36^\circ\) and \(144^\circ\)`,
+        String.raw`\(40^\circ\) and \(160^\circ\)`,
+        String.raw`\(45^\circ\) and \(135^\circ\)`,
+        String.raw`\(60^\circ\) and \(120^\circ\)`,
+        String.raw`\(72^\circ\) and \(108^\circ\)`
+      ]
+    }
+      ]
+    };
+  </script>
+
+  <link rel="stylesheet" href="/math-homework/assets/core-rich.css" />
+  <script defer src="/math-homework/assets/core-rich.js"></script>
+  <script defer src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+</head>
+<body>
+  <div id="hw-root">Loading…</div>
+</body>
+</html>
