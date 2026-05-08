@@ -1,0 +1,410 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Homework 2-Review (Algebra II)</title>
+
+  <script>
+    /* =========================
+       Homework 2-Review — Equations, Inequalities, Absolute Value, and Applications
+       Adapted for: /math-homework/assets/core-rich.js
+
+       SOURCE HOMEWORKS USED (attached homework files only):
+       - Homework 2-1 used: Q1, Q2, Q8, and related linear-equation forms.
+       - Homework 2-2 used: Q3, Q7, and related linear-inequality forms.
+       - Homework 2-3 used: Q8, Q13, Q14, and related absolute-value equation forms.
+       - Homework 2-4 used: Q1, Q6, Q8, Q9, and related distance / midpoint / absolute-value interpretations.
+       - Homework 2-5 used: Q8, Q9, Q10, and related distance-time application structures.
+       - Homework 2-8 used: Q1, Q2, Q3, Q6, Q7, Q9, Q10, Q11, Q12, and related absolute-value inequality structures.
+
+       MODEL REWORK / PEDAGOGICAL EDITING:
+       - This review is not a mechanical merge of the attached homeworks. It reorganizes their material into
+         a 22-question review with strong emphasis on absolute-value inequalities, distance-time applications,
+         and the interpretation of absolute value as distance.
+       - Model-authored / model-reworked absolute-value inequality items: Q15, Q16, and Q17 are the three
+         requested inequalities: 2-|x| >= x/2, 1-|x| < |x|-1, and |x-1|-|2x-3| < 1.
+       - Model-authored / model-reworked application items: Q21 and Q22 connect absolute-value inequalities
+         with tolerance and distance-over-time contexts.
+
+       IMAGE FILES:
+       - No figures are used in this homework.
+
+       IMAGE NAMING RULE:
+       - If figures were used, user-supplied figures would follow the source-based naming rule.
+       - Model-generated figures would use final homework question numbering.
+       - PNG files would live in the SAME folder as this HTML.
+       ========================= */
+
+    window.homeworkData = {
+      classId : "Algebra2",
+      id      : "Homework 2-Review",
+      title   : "Homework 2-Review — Equations, Inequalities, Absolute Value, and Applications",
+      graphics: String.raw``,
+
+      answerKey : ["E","B","D","C","F","A","B","E","C","D","B","A","F","C","E","D","A","C","E","F","D","A"],
+
+      questions : [
+        {
+          stem: String.raw`
+            <p>Compare the equations \(x=-3\) and \(ax=-3a\).</p>
+            <p>Which statement is correct?</p>
+          `,
+          choices: [
+            String.raw`They always have the same solution set.`,
+            String.raw`They always have different solution sets.`,
+            String.raw`The solution set of \(x=-3\) is always larger.`,
+            String.raw`The solution set of \(ax=-3a\) is always larger.`,
+            String.raw`They may have different solution sets depending on the value of \(a\).`,
+            String.raw`Neither equation has a solution.`
+          ],
+          choiceWrap: false
+        },
+
+        {
+          stem: String.raw`
+            <p>Find the value of \(b\) that satisfies the equation.</p>
+            <p class="math">\[73-(b+8)-2(3b+4)=6b-2(b-5)+69\]</p>
+          `,
+          choices: [
+            String.raw`\(-1\)`,
+            String.raw`\(-2\)`,
+            String.raw`\(2\)`,
+            String.raw`\(1\)`,
+            String.raw`\(-4\)`,
+            String.raw`\(4\)`
+          ],
+          choiceWrap: false
+        },
+
+        {
+          stem: String.raw`
+            <p>Solve the inequality.</p>
+            <p class="math">\[-7x+3(2x-4)&lt;5x-36\]</p>
+          `,
+          choices: [
+            String.raw`\(x&lt;4\)`,
+            String.raw`\(x\le 4\)`,
+            String.raw`\(x\ge 4\)`,
+            String.raw`\(x&gt;4\)`,
+            String.raw`\(x&gt;-4\)`,
+            String.raw`\(x&lt;-4\)`
+          ],
+          choiceWrap: false
+        },
+
+        {
+          stem: String.raw`
+            <p>Which equation represents the sentence below?</p>
+            <p><b>The distance between the number \(x\) and \(-4\) is \(1\).</b></p>
+          `,
+          choices: [
+            String.raw`\(|x-4|=1\)`,
+            String.raw`\(|x+1|=4\)`,
+            String.raw`\(|x+4|=1\)`,
+            String.raw`\(|x-1|=4\)`,
+            String.raw`\(|x|=5\)`,
+            String.raw`\(|x+4|=-1\)`
+          ],
+          choiceWrap: false
+        },
+
+        {
+          stem: String.raw`
+            <p>Solve the equation.</p>
+            <p class="math">\[|3y-9|=2y+7\]</p>
+          `,
+          choices: [
+            String.raw`\(\left\{-\dfrac{2}{5},\,16\right\}\)`,
+            String.raw`\(\{7,\,9\}\)`,
+            String.raw`\(\{16\}\)`,
+            String.raw`No solution.`,
+            String.raw`\(\left\{\dfrac{2}{5}\right\}\)`,
+            String.raw`\(\left\{\dfrac{2}{5},\,16\right\}\)`
+          ],
+          choiceWrap: false
+        },
+
+        {
+          stem: String.raw`
+            <p>The two points on a number line are \(8\) and \(-12\).</p>
+            <p>Which choice gives <b>both</b> the distance between the points and the coordinate of their midpoint?</p>
+          `,
+          choices: [
+            String.raw`Distance \(=20\), midpoint \(=-2\).`,
+            String.raw`Distance \(=20\), midpoint \(=2\).`,
+            String.raw`Distance \(=4\), midpoint \(=-10\).`,
+            String.raw`Distance \(=10\), midpoint \(=-2\).`,
+            String.raw`Distance \(=-20\), midpoint \(=-2\).`,
+            String.raw`Distance \(=24\), midpoint \(=-2\).`
+          ],
+          choiceWrap: false
+        },
+
+        {
+          stem: String.raw`
+            <p>If \(5\) is four units from a certain number, what is the number?</p>
+          `,
+          choices: [
+            String.raw`\(\{4,\,5\}\)`,
+            String.raw`\(\{1,\,9\}\)`,
+            String.raw`\(\{1\}\)`,
+            String.raw`\(\{9\}\)`,
+            String.raw`\(\{-1,\,9\}\)`,
+            String.raw`\(\{1,\,13\}\)`
+          ],
+          choiceWrap: false
+        },
+
+        {
+          stem: String.raw`
+            <p>Paige and Mary drive to the mountains. On the first part of the trip they travel at 52 mph.</p>
+            <p>On the second part, which takes half as much time as the first part, they travel at 35 mph.</p>
+            <p>If the total distance is 104.25 miles, how long do they travel at each rate?</p>
+          `,
+          choices: [
+            String.raw`0.75 hour at 52 mph and 1.5 hours at 35 mph`,
+            String.raw`1 hour at 52 mph and 2 hours at 35 mph`,
+            String.raw`1.25 hours at 52 mph and 0.625 hour at 35 mph`,
+            String.raw`2 hours at 52 mph and 1 hour at 35 mph`,
+            String.raw`1.5 hours at 52 mph and 0.75 hour at 35 mph`,
+            String.raw`1.75 hours at 52 mph and 0.875 hour at 35 mph`
+          ],
+          choiceWrap: false
+        },
+
+        {
+          stem: String.raw`
+            <p>John and Jim ride to Mill Park at an average speed of 8 mph. The route to the park is 4 miles shorter than the route on the return trip.</p>
+            <p>They ride home at 7 mph, and the return trip takes 1 hour longer than the trip to the park.</p>
+            <p>How much total time do they spend riding?</p>
+          `,
+          choices: [
+            String.raw`5 hours`,
+            String.raw`6 hours`,
+            String.raw`7 hours`,
+            String.raw`8 hours`,
+            String.raw`9 hours`,
+            String.raw`10 hours`
+          ],
+          choiceWrap: false
+        },
+
+        {
+          stem: String.raw`
+            <p>A train leaves Perryville at 6:00 A.M. and travels east at 64 mph. When it reaches Granite City, a westbound train leaves Granite City for Perryville at 48 mph.</p>
+            <p>If the westbound train reaches Perryville at 9:30 A.M., how far apart are the two cities?</p>
+          `,
+          choices: [
+            String.raw`84 miles`,
+            String.raw`112 miles`,
+            String.raw`128 miles`,
+            String.raw`96 miles`,
+            String.raw`144 miles`,
+            String.raw`160 miles`
+          ],
+          choiceWrap: false
+        },
+
+        {
+          stem: String.raw`
+            <p>Solve the inequality.</p>
+            <p class="math">\[|x|&lt;9\]</p>
+          `,
+          choices: [
+            String.raw`\(x&lt;-9\) or \(x&gt;9\)`,
+            String.raw`\(-9&lt;x&lt;9\)`,
+            String.raw`\(-9\le x\le 9\)`,
+            String.raw`\(x\le -9\) or \(x\ge 9\)`,
+            String.raw`\(x&gt;9\)`,
+            String.raw`All real numbers.`
+          ],
+          choiceWrap: false
+        },
+
+        {
+          stem: String.raw`
+            <p>Solve the inequality.</p>
+            <p class="math">\[|3x+4|\le 7\]</p>
+          `,
+          choices: [
+            String.raw`\(-\dfrac{11}{3}\le x\le 1\)`,
+            String.raw`\(-1\le x\le \dfrac{11}{3}\)`,
+            String.raw`\(x\le -\dfrac{11}{3}\) or \(x\ge 1\)`,
+            String.raw`\(x&lt;-\dfrac{11}{3}\) or \(x&gt;1\)`,
+            String.raw`\(-\dfrac{7}{3}\le x\le 1\)`,
+            String.raw`\(-11\le x\le 3\)`
+          ],
+          choiceWrap: false
+        },
+
+        {
+          stem: String.raw`
+            <p>Solve the inequality.</p>
+            <p class="math">\[|6x+4|+9\ge 17\]</p>
+          `,
+          choices: [
+            String.raw`\(-2\le x\le \dfrac{2}{3}\)`,
+            String.raw`\(x&lt;-2\) or \(x&gt;\dfrac{2}{3}\)`,
+            String.raw`\(x\le -\dfrac{2}{3}\) or \(x\ge 2\)`,
+            String.raw`All real numbers.`,
+            String.raw`No solution.`,
+            String.raw`\(x\le -2\) or \(x\ge \dfrac{2}{3}\)`
+          ],
+          choiceWrap: false
+        },
+
+        {
+          stem: String.raw`
+            <p>Solve the inequality.</p>
+            <p class="math">\[|0.09z-6|\ge 0.3\]</p>
+          `,
+          choices: [
+            String.raw`\(\dfrac{190}{3}\le z\le 70\)`,
+            String.raw`\(z&lt;\dfrac{190}{3}\) or \(z&gt;70\)`,
+            String.raw`\(z\le \dfrac{190}{3}\) or \(z\ge 70\)`,
+            String.raw`\(\dfrac{190}{3}&lt;z&lt;70\)`,
+            String.raw`\(z\le 70\) or \(z\ge \dfrac{190}{3}\)`,
+            String.raw`All real numbers.`
+          ],
+          choiceWrap: false
+        },
+
+        {
+          stem: String.raw`
+            <p>Solve the inequality.</p>
+            <p class="math">\[2-|x|\ge \dfrac{x}{2}\]</p>
+          `,
+          choices: [
+            String.raw`\(-4&lt;x&lt;\dfrac{4}{3}\)`,
+            String.raw`\(x\le -4\) or \(x\ge \dfrac{4}{3}\)`,
+            String.raw`\(-4&lt;x\le \dfrac{4}{3}\)`,
+            String.raw`\(x&lt;-4\) or \(x&gt;\dfrac{4}{3}\)`,
+            String.raw`\(-4\le x\le \dfrac{4}{3}\)`,
+            String.raw`All real numbers.`
+          ],
+          choiceWrap: false
+        },
+
+        {
+          stem: String.raw`
+            <p>Solve the inequality.</p>
+            <p class="math">\[1-|x|&lt;|x|-1\]</p>
+          `,
+          choices: [
+            String.raw`\(-1&lt;x&lt;1\)`,
+            String.raw`\(-1\le x\le 1\)`,
+            String.raw`\(x\le -1\) or \(x\ge 1\)`,
+            String.raw`\(x&lt;-1\) or \(x&gt;1\)`,
+            String.raw`No solution.`,
+            String.raw`All real numbers.`
+          ],
+          choiceWrap: false
+        },
+
+        {
+          stem: String.raw`
+            <p>Solve the inequality.</p>
+            <p class="math">\[|x-1|-|2x-3|&lt;1\]</p>
+          `,
+          choices: [
+            String.raw`All real numbers.`,
+            String.raw`No solution.`,
+            String.raw`\(x&lt;1\)`,
+            String.raw`\(x&gt;\dfrac{3}{2}\)`,
+            String.raw`\(x&lt;1\) or \(x&gt;\dfrac{3}{2}\)`,
+            String.raw`\(x&lt;\dfrac{5}{3}\)`
+          ],
+          choiceWrap: false
+        },
+
+        {
+          stem: String.raw`
+            <p>Solve the inequality.</p>
+            <p class="math">\[|3x-8|&gt;12-x\]</p>
+          `,
+          choices: [
+            String.raw`\(-2&lt;x&lt;5\)`,
+            String.raw`\(x\le -2\) or \(x\ge 5\)`,
+            String.raw`\(x&lt;-2\) or \(x&gt;5\)`,
+            String.raw`\(x&gt;-2\) or \(x&lt;5\)`,
+            String.raw`\(x&lt;5\)`,
+            String.raw`All real numbers.`
+          ],
+          choiceWrap: false
+        },
+
+        {
+          stem: String.raw`
+            <p>Which statement best describes the solution set of the inequality?</p>
+            <p class="math">\[|2x+1|\ge -3\]</p>
+          `,
+          choices: [
+            String.raw`No solution.`,
+            String.raw`\(x\ge -\dfrac{1}{2}\)`,
+            String.raw`\(x\le -\dfrac{1}{2}\)`,
+            String.raw`\(x\le -2\) or \(x\ge 1\)`,
+            String.raw`All real numbers.`,
+            String.raw`\(x=-\dfrac{1}{2}\)`
+          ],
+          choiceWrap: false
+        },
+
+        {
+          stem: String.raw`
+            <p>Which absolute value inequality has the solution set \(1\le x\le 7\)?</p>
+          `,
+          choices: [
+            String.raw`\(|x-1|\le 7\)`,
+            String.raw`\(|x-4|&lt;3\)`,
+            String.raw`\(|x+4|\le 3\)`,
+            String.raw`\(|x-3|\le 4\)`,
+            String.raw`\(|x-4|\ge 3\)`,
+            String.raw`\(|x-4|\le 3\)`
+          ],
+          choiceWrap: false
+        },
+
+        {
+          stem: String.raw`
+            <p>A machine fills bottles with juice. A bottle is acceptable if its amount \(x\), in milliliters, is within 12 mL of 500 mL.</p>
+            <p>Which choice gives both the correct absolute-value inequality and the correct interval of acceptable amounts?</p>
+          `,
+          choices: [
+            String.raw`\(|x-500|&lt;12\), so \(488&lt;x&lt;512\)`,
+            String.raw`\(|x-12|\le 500\), so \(-488\le x\le 512\)`,
+            String.raw`\(|x-500|\ge 12\), so \(x\le 488\) or \(x\ge 512\)`,
+            String.raw`\(|x-500|\le 12\), so \(488\le x\le 512\)`,
+            String.raw`\(|x-512|\le 12\), so \(500\le x\le 524\)`,
+            String.raw`\(|x+500|\le 12\), so \(-512\le x\le -488\)`
+          ],
+          choiceWrap: false
+        },
+
+        {
+          stem: String.raw`
+            <p>Two cyclists start 66 miles apart and ride toward each other. One rides at 12 mph and the other rides at 10 mph.</p>
+            <p>After \(t\) hours, their distance apart is \(|66-22t|\). For what times are they within 11 miles of each other?</p>
+          `,
+          choices: [
+            String.raw`\(\dfrac{5}{2}\le t\le \dfrac{7}{2}\)`,
+            String.raw`\(t\le \dfrac{5}{2}\) or \(t\ge \dfrac{7}{2}\)`,
+            String.raw`\(\dfrac{5}{2}&lt;t&lt;\dfrac{7}{2}\)`,
+            String.raw`\(0\le t\le 3\)`,
+            String.raw`\(t=3\) only`,
+            String.raw`\(\dfrac{55}{22}\le t\le \dfrac{66}{22}\)`
+          ],
+          choiceWrap: false
+        }
+      ]
+    };
+  </script>
+
+  <link rel="stylesheet" href="/math-homework/assets/core-rich.css" />
+  <script defer src="/math-homework/assets/core-rich.js"></script>
+  <script defer src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+</head>
+<body>
+  <div id="hw-root">Loading…</div>
+</body>
+</html>
