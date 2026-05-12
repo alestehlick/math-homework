@@ -16,8 +16,8 @@ from pypdf import PdfWriter
 # MANUAL SETTINGS
 # ============================================================
 
-START = "hw_1_1"
-END   = "hw_1_rev"
+START = "hw_3_1"
+END   = "hw_3_rev"
 
 OUTPUT_PDF = "stitched_homework.pdf"
 
