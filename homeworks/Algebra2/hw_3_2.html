@@ -6,26 +6,7 @@
   <title>Homework 3-2 (Algebra 2)</title>
 
   <script>
-    /* =========================
-       Homework 3-2 — Functions and the Vertical Line Test (Algebra 2)
-
-       REQUIRED SOURCE REFERENCES (user-provided source HTML):
-       - Adapted from Homework 6-3 — Relations & Functions (Vertical Line Test)
-       - Source graphs used as pedagogical raw material: G1, G2, G3, G4, G5, G6, G7, G8, G10
-       - Source conceptual content used: deciding whether a relation is or is not a function
-
-       MODEL REWORK / AUTHORING NOTES:
-       - All questions were rewritten into the current core-rich format.
-       - The original two-choice items were redesigned into six-choice diagnostic items.
-       - Q11 was added as a symbolic relation to transfer the graph idea into ordered-pair form.
-       - Q12 was added to test understanding of the vertical line test itself, not only recognition by sight.
-
-       IMAGE NAMING RULE:
-       - No external PNG figures are required for this homework.
-       - All graphs are embedded directly in per-question SVG media.
-       ========================= */
-
-    function xPx(x) { return 100 + 20 * x; }
+function xPx(x) { return 100 + 20 * x; }
     function yPx(y) { return 100 - 20 * y; }
 
     function gridAndAxes() {
@@ -51,11 +32,6 @@
       return `<line x1="${xPx(x1)}" y1="${yPx(y1)}" x2="${xPx(x2)}" y2="${yPx(y2)}" stroke="#2563eb" stroke-width="3" stroke-linecap="round" />`;
     }
 
-    function polyline(coords) {
-      const pts = coords.map(([x, y]) => `${xPx(x)},${yPx(y)}`).join(' ');
-      return `<polyline points="${pts}" fill="none" stroke="#2563eb" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" />`;
-    }
-
     function pathD(points) {
       return points.map((p, i) => `${i === 0 ? 'M' : 'L'} ${xPx(p[0])} ${yPx(p[1])}`).join(' ');
     }
@@ -71,15 +47,21 @@
       </figure>`;
     }
 
-    function functionChoices() {
-      return [
-        String.raw`It is a function because no vertical line hits the graph more than once.`,
-        String.raw`It is not a function because some x-values are paired with more than one y-value.`,
+    function functionChoices(kind, correctIndex) {
+      const yes = String.raw`It is a function because no vertical line hits the graph more than once.`;
+      const no  = String.raw`It is not a function because some x-values are paired with more than one y-value.`;
+      const choices = [
+        yes,
+        no,
         String.raw`It is not a function because some y-values repeat.`,
         String.raw`It is a function because it passes the horizontal line test.`,
         String.raw`It is not a function because the graph is not a straight line.`,
         String.raw`It is a function because every plotted point lies on the grid.`
       ];
+      const currentIndex = kind === "function" ? 0 : 1;
+      const item = choices.splice(currentIndex, 1)[0];
+      choices.splice(correctIndex, 0, item);
+      return choices;
     }
 
     const G1 = svgFigure('G1',
@@ -145,83 +127,83 @@
       id      : "Homework 3-2",
       title   : "Homework 3-2 — Functions and the Vertical Line Test",
       graphics : String.raw``,
-      answerKey : ["B","A","B","A","B","B","A","A","A","B","B","A"],
+      answerKey : ["D", "A", "F", "C", "E", "B", "A", "F", "D", "C", "E", "B"],
       questions : [
         {
           stem: String.raw`<p><b>Refer to Graph G1.</b> Decide whether the relation is a function, and choose the best reason.</p>`,
           media: G1,
-          choices: functionChoices(),
+          choices: functionChoices("not", 3),
           choiceWrap: false
         },
         {
           stem: String.raw`<p><b>Refer to Graph G2.</b> Decide whether the relation is a function, and choose the best reason.</p>`,
           media: G2,
-          choices: functionChoices(),
+          choices: functionChoices("function", 0),
           choiceWrap: false
         },
         {
           stem: String.raw`<p><b>Refer to Graph G3.</b> Decide whether the relation is a function, and choose the best reason.</p>`,
           media: G3,
-          choices: functionChoices(),
+          choices: functionChoices("not", 5),
           choiceWrap: false
         },
         {
           stem: String.raw`<p><b>Refer to Graph G4.</b> Decide whether the relation is a function, and choose the best reason.</p>`,
           media: G4,
-          choices: functionChoices(),
+          choices: functionChoices("function", 2),
           choiceWrap: false
         },
         {
           stem: String.raw`<p><b>Refer to Graph G5.</b> Decide whether the relation is a function, and choose the best reason.</p>`,
           media: G5,
-          choices: functionChoices(),
+          choices: functionChoices("not", 4),
           choiceWrap: false
         },
         {
           stem: String.raw`<p><b>Refer to Graph G6.</b> Decide whether the relation is a function, and choose the best reason.</p>`,
           media: G6,
-          choices: functionChoices(),
+          choices: functionChoices("not", 1),
           choiceWrap: false
         },
         {
           stem: String.raw`<p><b>Refer to Graph G7.</b> Decide whether the relation is a function, and choose the best reason.</p>`,
           media: G7,
-          choices: functionChoices(),
+          choices: functionChoices("function", 0),
           choiceWrap: false
         },
         {
           stem: String.raw`<p><b>Refer to Graph G8.</b> Decide whether the relation is a function, and choose the best reason.</p>`,
           media: G8,
-          choices: functionChoices(),
+          choices: functionChoices("function", 5),
           choiceWrap: false
         },
         {
           stem: String.raw`<p><b>Refer to Graph G9.</b> Decide whether the relation is a function, and choose the best reason.</p>`,
           media: G9,
-          choices: functionChoices(),
+          choices: functionChoices("function", 3),
           choiceWrap: false
         },
         {
           stem: String.raw`<p><b>Refer to Graph G10.</b> Decide whether the relation is a function, and choose the best reason.</p>`,
           media: G10,
-          choices: functionChoices(),
+          choices: functionChoices("not", 2),
           choiceWrap: false
         },
         {
           stem: String.raw`<p>Consider the relation \(\{(-1,2),(0,0),(2,-3),(2,1)\}\). Which statement is correct?</p>`,
-          choices: functionChoices(),
+          choices: functionChoices("not", 4),
           choiceWrap: false
         },
         {
           stem: String.raw`<p>Which statement correctly describes the vertical line test?</p>`,
           choices: [
-            String.raw`A relation is a function exactly when every vertical line intersects its graph at most once.`,
-            String.raw`A relation is a function exactly when every horizontal line intersects its graph at most once.`,
-            String.raw`A relation is a function exactly when it crosses the x-axis only once.`,
-            String.raw`A relation is a function exactly when its graph is a straight line.`,
-            String.raw`A relation is a function exactly when no y-value repeats.`,
-            String.raw`A relation is a function exactly when its graph stays above the x-axis.`
-          ],
+          String.raw`A relation is a function exactly when every horizontal line intersects its graph at most once.`,
+          String.raw`A relation is a function exactly when every vertical line intersects its graph at most once.`,
+          String.raw`A relation is a function exactly when it crosses the x-axis only once.`,
+          String.raw`A relation is a function exactly when its graph is a straight line.`,
+          String.raw`A relation is a function exactly when no y-value repeats.`,
+          String.raw`A relation is a function exactly when its graph stays above the x-axis.`
+      ],
           choiceWrap: false
         }
       ]
