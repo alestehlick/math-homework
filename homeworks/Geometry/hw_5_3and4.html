@@ -1,0 +1,237 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Homework 4-3 and 4-4 (Geometry)</title>
+
+  <script>
+    /* =========================
+       Homework 4-3/4-4 — Angle Measure and Angle Relationships (Geometry)
+       Adapted for: /math-homework/assets/core-rich.js
+
+       REQUIRED SOURCE REFERENCES (your provided sets):
+       - Source set: screenshots of textbook Sections 4-3 and 4-4.
+       - 4-3 A Exercises consulted/reworked: #1-14.
+       - 4-3 B/C Exercises consulted/reworked: #15-25.
+       - 4-4 A Exercises consulted/reworked: #1-11.
+       - 4-4 C Exercise consulted/reworked: #40.
+       - Model-authored/reworked items:
+         Q1-Q4 target angle addition/subtraction and rewriting sums or differences as a single angle.
+         Q5 reworks the square-diagonal angle question to test structural invariance.
+         Q6-Q8 target vertical-angle recognition and naming.
+         Q9-Q12 target complementary, right, and linear-pair relations from multi-ray diagrams.
+         Q13 reworks the angle-bisectors-of-a-linear-pair idea into a conceptual invariant question.
+         Q14-Q15 add algebraic checks for linear pairs and vertical angles.
+
+       IMAGE FILES:
+       - User-supplied figure(s): none used directly.
+       - Model-generated figure(s):
+         4-3-2.png, 4-3-3.png, 4-3-4.png, 4-3-7.png, 4-3-8.png,
+         4-3-9.png, 4-3-10.png, 4-3-11.png, 4-3-13.png,
+         4-3-14.png, 4-3-15.png
+
+       IMAGE NAMING RULE:
+       - Model-generated figures use final homework question numbering.
+       - PNG files live in the SAME folder as this HTML.
+       ========================= */
+
+    window.homeworkData = {
+      classId : "Geometry",
+      id      : "Homework 4-3/4-4",
+      title   : "Homework 4-3/4-4 — Angle Measure and Angle Relationships",
+      graphics : String.raw``,
+      answerKey : ["B", "D", "A", "B", "B", "B", "B", "A", "C", "A", "D", "C", "C", "C", "C"],
+      questions : [
+    {
+      stem: String.raw`<p>Ray <span class="math">\(\overrightarrow{BD}\)</span> lies inside <span class="math">\(\angle ABC\)</span>.</p><p>If <span class="math">\(m\angle ABD=32^\circ\)</span> and <span class="math">\(m\angle DBC=47^\circ\)</span>, find <span class="math">\(m\angle ABC\)</span>.</p>`,
+      choices: [
+        String.raw`\(15^\circ\)`,
+        String.raw`\(79^\circ\)`,
+        String.raw`\(74^\circ\)`,
+        String.raw`\(89^\circ\)`,
+        String.raw`\(64^\circ\)`,
+        String.raw`\(32^\circ\)`
+      ]
+    },
+    {
+      stem: String.raw`<p><b>Refer to Figure 1.</b> Find <span class="math">\(m\angle ABC\)</span>.</p>`,
+      media: String.raw`<figure><img src="4-3-2.png" alt="Model-generated angle-addition figure" /><figcaption>Figure 1</figcaption></figure>`,
+      choices: [
+        String.raw`\(53^\circ\)`,
+        String.raw`\(60^\circ\)`,
+        String.raw`\(77^\circ\)`,
+        String.raw`\(95^\circ\)`,
+        String.raw`\(113^\circ\)`,
+        String.raw`\(137^\circ\)`
+      ]
+    },
+    {
+      stem: String.raw`<p><b>Refer to Figure 2.</b> Rewrite the sum as the measure of a single angle:</p><p><span class="math">\(m\angle NRM+m\angle MRL\)</span></p>`,
+      media: String.raw`<figure><img src="4-3-3.png" alt="Model-generated angle-sum figure" /><figcaption>Figure 2</figcaption></figure>`,
+      choices: [
+        String.raw`\(m\angle NRL\)`,
+        String.raw`\(m\angle ORL\)`,
+        String.raw`\(m\angle NRO\)`,
+        String.raw`\(m\angle MRO\)`,
+        String.raw`\(m\angle LRM\)`,
+        String.raw`\(m\angle NRM\)`
+      ]
+    },
+    {
+      stem: String.raw`<p><b>Refer to Figure 3.</b> Rewrite the difference as the measure of a single angle:</p><p><span class="math">\(m\angle NRL-m\angle MRL\)</span></p>`,
+      media: String.raw`<figure><img src="4-3-4.png" alt="Model-generated angle-difference figure" /><figcaption>Figure 3</figcaption></figure>`,
+      choices: [
+        String.raw`\(m\angle NRL\)`,
+        String.raw`\(m\angle NRM\)`,
+        String.raw`\(m\angle MRL\)`,
+        String.raw`\(m\angle ORL\)`,
+        String.raw`\(m\angle MRO\)`,
+        String.raw`\(m\angle LRN\)`
+      ]
+    },
+    {
+      stem: String.raw`<p>A diagonal is drawn from one vertex of a square to the opposite vertex.</p><p>What is the measure of the angle between the diagonal and one side of the square, and why is it always the same?</p>`,
+      choices: [
+        String.raw`\(30^\circ\), because every square has three equal angles at a vertex.`,
+        String.raw`\(45^\circ\), because the diagonal divides a right angle into two congruent angles.`,
+        String.raw`\(60^\circ\), because the diagonal forms an equilateral triangle.`,
+        String.raw`\(90^\circ\), because the diagonal is perpendicular to each side.`,
+        String.raw`\(120^\circ\), because a square has four sides.`,
+        String.raw`It depends on the size of the square.`
+      ],
+      choiceWrap: false
+    },
+    {
+      stem: String.raw`<p>Which statement correctly describes vertical angles?</p>`,
+      choices: [
+        String.raw`Vertical angles are adjacent angles whose measures add to \(180^\circ\).`,
+        String.raw`Vertical angles are angles whose sides are opposite rays to the sides of the other angle.`,
+        String.raw`Vertical angles are angles that share exactly one side.`,
+        String.raw`Vertical angles are always right angles.`,
+        String.raw`Vertical angles are angles whose measures add to \(90^\circ\).`,
+        String.raw`Vertical angles are any two angles drawn above a horizontal line.`
+      ],
+      choiceWrap: false
+    },
+    {
+      stem: String.raw`<p><b>Refer to Figure 4.</b> Given that <span class="math">\(m\angle JKI=55^\circ\)</span>, find <span class="math">\(m\angle GKH\)</span>.</p>`,
+      media: String.raw`<figure><img src="4-3-7.png" alt="Model-generated vertical-angle figure" /><figcaption>Figure 4</figcaption></figure>`,
+      choices: [
+        String.raw`\(35^\circ\)`,
+        String.raw`\(55^\circ\)`,
+        String.raw`\(70^\circ\)`,
+        String.raw`\(90^\circ\)`,
+        String.raw`\(125^\circ\)`,
+        String.raw`\(145^\circ\)`
+      ]
+    },
+    {
+      stem: String.raw`<p><b>Refer to Figure 5.</b> Which statement correctly names both pairs of vertical angles?</p>`,
+      media: String.raw`<figure><img src="4-3-8.png" alt="Model-generated vertical-angle naming figure" /><figcaption>Figure 5</figcaption></figure>`,
+      choices: [
+        String.raw`\(\angle GKH\cong\angle JKI\) and \(\angle GKJ\cong\angle HKI\)`,
+        String.raw`\(\angle GKH\cong\angle GKJ\) and \(\angle JKI\cong\angle HKI\)`,
+        String.raw`\(\angle GKI\cong\angle HKJ\) and \(\angle GKH\cong\angle JKI\)`,
+        String.raw`\(\angle GKJ\cong\angle JKI\) and \(\angle GKH\cong\angle HKI\)`,
+        String.raw`\(\angle HKJ\cong\angle GKI\) and \(\angle HKI\cong\angle JKI\)`,
+        String.raw`No two angles in the figure are vertical angles.`
+      ]
+    },
+    {
+      stem: String.raw`<p><b>Refer to Figure 6.</b> Use the given measures to find <span class="math">\(m\angle FGE\)</span>.</p>`,
+      media: String.raw`<figure><img src="4-3-9.png" alt="Model-generated multi-line angle figure" /><figcaption>Figure 6</figcaption></figure>`,
+      choices: [
+        String.raw`\(30^\circ\)`,
+        String.raw`\(40^\circ\)`,
+        String.raw`\(50^\circ\)`,
+        String.raw`\(60^\circ\)`,
+        String.raw`\(90^\circ\)`,
+        String.raw`\(130^\circ\)`
+      ]
+    },
+    {
+      stem: String.raw`<p><b>Refer to Figure 7.</b> Which pair of angles is complementary?</p>`,
+      media: String.raw`<figure><img src="4-3-10.png" alt="Model-generated complementary-angle figure" /><figcaption>Figure 7</figcaption></figure>`,
+      choices: [
+        String.raw`\(\angle AGF\) and \(\angle FGE\)`,
+        String.raw`\(\angle AGE\) and \(\angle EGD\)`,
+        String.raw`\(\angle BGC\) and \(\angle CGD\)`,
+        String.raw`\(\angle AGF\) and \(\angle BGC\)`,
+        String.raw`\(\angle EGD\) and \(\angle DGB\)`,
+        String.raw`\(\angle AGE\) and \(\angle BGC\)`
+      ]
+    },
+    {
+      stem: String.raw`<p><b>Refer to Figure 8.</b> Find <span class="math">\(m\angle BGD\)</span>.</p>`,
+      media: String.raw`<figure><img src="4-3-11.png" alt="Model-generated right-angle figure" /><figcaption>Figure 8</figcaption></figure>`,
+      choices: [
+        String.raw`\(40^\circ\)`,
+        String.raw`\(50^\circ\)`,
+        String.raw`\(80^\circ\)`,
+        String.raw`\(90^\circ\)`,
+        String.raw`\(100^\circ\)`,
+        String.raw`\(130^\circ\)`
+      ]
+    },
+    {
+      stem: String.raw`<p>Two angles form a linear pair and are congruent. What must be true?</p>`,
+      choices: [
+        String.raw`Each angle measures \(45^\circ\).`,
+        String.raw`Each angle measures \(60^\circ\).`,
+        String.raw`Each angle measures \(90^\circ\).`,
+        String.raw`One angle is twice the other.`,
+        String.raw`The angles are complementary.`,
+        String.raw`The angles cannot exist.`
+      ],
+      choiceWrap: false
+    },
+    {
+      stem: String.raw`<p><b>Refer to Figure 9.</b> The dashed rays bisect the two angles of a linear pair. What is always true about the angle between the dashed rays?</p>`,
+      media: String.raw`<figure><img src="4-3-13.png" alt="Model-generated bisectors of a linear pair figure" /><figcaption>Figure 9</figcaption></figure>`,
+      choices: [
+        String.raw`It always measures \(45^\circ\).`,
+        String.raw`It always measures \(60^\circ\).`,
+        String.raw`It always measures \(90^\circ\).`,
+        String.raw`It always equals the smaller angle of the linear pair.`,
+        String.raw`It always equals the larger angle of the linear pair.`,
+        String.raw`It depends on the size of the original angles.`
+      ],
+      choiceWrap: false
+    },
+    {
+      stem: String.raw`<p><b>Refer to Figure 10.</b> The two labeled angles form a linear pair. Find <span class="math">\(x\)</span>.</p>`,
+      media: String.raw`<figure><img src="4-3-14.png" alt="Model-generated algebraic linear-pair figure" /><figcaption>Figure 10</figcaption></figure>`,
+      choices: [
+        String.raw`\(18\)`,
+        String.raw`\(20\)`,
+        String.raw`\(22\)`,
+        String.raw`\(24\)`,
+        String.raw`\(26\)`,
+        String.raw`\(28\)`
+      ]
+    },
+    {
+      stem: String.raw`<p><b>Refer to Figure 11.</b> The labeled angles are vertical angles. Find <span class="math">\(x\)</span>.</p>`,
+      media: String.raw`<figure><img src="4-3-15.png" alt="Model-generated algebraic vertical-angle figure" /><figcaption>Figure 11</figcaption></figure>`,
+      choices: [
+        String.raw`\(16\)`,
+        String.raw`\(18\)`,
+        String.raw`\(20\)`,
+        String.raw`\(22\)`,
+        String.raw`\(24\)`,
+        String.raw`\(26\)`
+      ]
+    }
+      ]
+    };
+  </script>
+
+  <link rel="stylesheet" href="/math-homework/assets/core-rich.css" />
+  <script defer src="/math-homework/assets/core-rich.js"></script>
+  <script defer src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+</head>
+<body>
+  <div id="hw-root">Loading…</div>
+</body>
+</html>
