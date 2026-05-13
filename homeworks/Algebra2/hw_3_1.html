@@ -25,7 +25,7 @@
       id      : "Homework 3-1",
       title   : "Homework 3-1 — Relations and Functions",
       graphics : String.raw``,
-      answerKey : ['D', 'B', 'F', 'A', 'E', 'C', 'B', 'E', 'A', 'D', 'F', 'C'],
+      answerKey : ["A", "B", "B", "C", "C", "C", "A", "E", "A", "F", "E", "B", "C"],
       questions : [
 {
       stem: String.raw`<p><b>Refer to Figure 1.</b> What is the domain of the relation shown?</p>`,
@@ -96,10 +96,10 @@
 <line x1='168' y1='216' x2='168' y2='24' stroke='#2563eb' stroke-width='3'/>
 </svg><figcaption>Figure 1</figcaption></figure>`,
       choices: [
+        String.raw`\(\{2\}\)`,
         String.raw`\(\{-2\}\)`,
         String.raw`\(\mathbb{R}\)`,
         String.raw`\(\{\,x\mid x\ge 2\,\}\)`,
-        String.raw`\(\{2\}\)`,
         String.raw`\(\{\,x\mid x\le 2\,\}\)`,
         String.raw`\(\{-4,4\}\)`,
       ],
@@ -176,7 +176,7 @@
         String.raw`\(\mathbb{R}\)`,
         String.raw`\(\{-1\}\)`,
         String.raw`\(\{1\}\)`,
-        String.raw`\(\{\, (x,-1)\mid x\in\mathbb{R}\,\}\)`,
+        String.raw`\(\{\,x\mid x=-1\,\}\)`,
         String.raw`\(\{\,y\mid y\ge -1\,\}\)`,
         String.raw`\(\{\,y\mid y\le -1\,\}\)`,
       ],
@@ -253,11 +253,11 @@
 </svg><figcaption>Figure 3</figcaption></figure>`,
       choices: [
         String.raw`\(\{-3,2\}\)`,
+        String.raw`\(\{-3,0,2\}\)`,
         String.raw`\(\{2\}\)`,
         String.raw`\(\{-3,0,2,4\}\)`,
-        String.raw`\(\{\,x\mid -3\le x\le 2\,\}\)`,
+        String.raw`\(\{\,y\mid y=2\,\}\)`,
         String.raw`\(\mathbb{R}\)`,
-        String.raw`\(\{-3,0,2\}\)`,
       ],
     },
 {
@@ -329,9 +329,9 @@
 <polyline points='24,24 120,120 216,24' fill='none' stroke='#2563eb' stroke-width='3' stroke-linecap='round' stroke-linejoin='round'/>
 </svg><figcaption>Figure 4</figcaption></figure>`,
       choices: [
-        String.raw`\(\{\,y\mid 0\le y\le 4\,\}\)`,
         String.raw`\(\{\,y\mid y>0\,\}\)`,
         String.raw`\(\{\,y\mid y<0\,\}\)`,
+        String.raw`\(\{\,y\mid y\ge 0\,\}\)`,
         String.raw`\(\{\,x\mid x\ge 0\,\}\)`,
         String.raw`\(\{0\}\)`,
         String.raw`\(\mathbb{R}\)`,
@@ -408,9 +408,9 @@
       choices: [
         String.raw`\(y=x-1\)`,
         String.raw`\(y=-x+1\)`,
-        String.raw`\(y=-x-1\)`,
-        String.raw`\(y=2x+1\)`,
         String.raw`\(y=x+1\)`,
+        String.raw`\(y=-x-1\)`,
+        String.raw`\(x=y+1\)`,
         String.raw`\(y=\lvert x\rvert+1\)`,
       ],
     },
@@ -492,161 +492,30 @@
       ],
     },
 {
-      stem: String.raw`<p><b>Refer to Figure 7.</b> Does this relation define a function?</p>`,
-      media: String.raw`<figure><svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 240 240' width='220' height='220' role='img' aria-label='coordinate graph'>
-
-    <defs>
-      <marker id='arrow' markerWidth='8' markerHeight='8' refX='6' refY='4' orient='auto' markerUnits='strokeWidth'>
-        <path d='M0,0 L8,4 L0,8 z' fill='#333'/>
-      </marker>
-    </defs>
-    
-<rect x='0' y='0' width='240' height='240' fill='white'/>
-<line x1='24' y1='24' x2='24' y2='216' stroke='#ddd' stroke-width='1'/>
-<line x1='24' y1='216' x2='216' y2='216' stroke='#ddd' stroke-width='1'/>
-<line x1='48' y1='24' x2='48' y2='216' stroke='#ddd' stroke-width='1'/>
-<line x1='24' y1='192' x2='216' y2='192' stroke='#ddd' stroke-width='1'/>
-<line x1='72' y1='24' x2='72' y2='216' stroke='#ddd' stroke-width='1'/>
-<line x1='24' y1='168' x2='216' y2='168' stroke='#ddd' stroke-width='1'/>
-<line x1='96' y1='24' x2='96' y2='216' stroke='#ddd' stroke-width='1'/>
-<line x1='24' y1='144' x2='216' y2='144' stroke='#ddd' stroke-width='1'/>
-<line x1='120' y1='24' x2='120' y2='216' stroke='#ddd' stroke-width='1'/>
-<line x1='24' y1='120' x2='216' y2='120' stroke='#ddd' stroke-width='1'/>
-<line x1='144' y1='24' x2='144' y2='216' stroke='#ddd' stroke-width='1'/>
-<line x1='24' y1='96' x2='216' y2='96' stroke='#ddd' stroke-width='1'/>
-<line x1='168' y1='24' x2='168' y2='216' stroke='#ddd' stroke-width='1'/>
-<line x1='24' y1='72' x2='216' y2='72' stroke='#ddd' stroke-width='1'/>
-<line x1='192' y1='24' x2='192' y2='216' stroke='#ddd' stroke-width='1'/>
-<line x1='24' y1='48' x2='216' y2='48' stroke='#ddd' stroke-width='1'/>
-<line x1='216' y1='24' x2='216' y2='216' stroke='#ddd' stroke-width='1'/>
-<line x1='24' y1='24' x2='216' y2='24' stroke='#ddd' stroke-width='1'/>
-<line x1='24' y1='120' x2='224' y2='120' stroke='#333' stroke-width='2' marker-end='url(#arrow)'/>
-<line x1='120' y1='224' x2='120' y2='16' stroke='#333' stroke-width='2' marker-end='url(#arrow)'/>
-<line x1='24' y1='116' x2='24' y2='124' stroke='#333' stroke-width='1.5'/>
-<text x='24' y='136' font-size='10' text-anchor='middle' fill='#555'>-4</text>
-<line x1='116' y1='216' x2='124' y2='216' stroke='#333' stroke-width='1.5'/>
-<text x='110' y='219' font-size='10' text-anchor='end' fill='#555'>-4</text>
-<line x1='48' y1='116' x2='48' y2='124' stroke='#333' stroke-width='1.5'/>
-<text x='48' y='136' font-size='10' text-anchor='middle' fill='#555'>-3</text>
-<line x1='116' y1='192' x2='124' y2='192' stroke='#333' stroke-width='1.5'/>
-<text x='110' y='195' font-size='10' text-anchor='end' fill='#555'>-3</text>
-<line x1='72' y1='116' x2='72' y2='124' stroke='#333' stroke-width='1.5'/>
-<text x='72' y='136' font-size='10' text-anchor='middle' fill='#555'>-2</text>
-<line x1='116' y1='168' x2='124' y2='168' stroke='#333' stroke-width='1.5'/>
-<text x='110' y='171' font-size='10' text-anchor='end' fill='#555'>-2</text>
-<line x1='96' y1='116' x2='96' y2='124' stroke='#333' stroke-width='1.5'/>
-<text x='96' y='136' font-size='10' text-anchor='middle' fill='#555'>-1</text>
-<line x1='116' y1='144' x2='124' y2='144' stroke='#333' stroke-width='1.5'/>
-<text x='110' y='147' font-size='10' text-anchor='end' fill='#555'>-1</text>
-<line x1='120' y1='116' x2='120' y2='124' stroke='#333' stroke-width='1.5'/>
-<line x1='116' y1='120' x2='124' y2='120' stroke='#333' stroke-width='1.5'/>
-<line x1='144' y1='116' x2='144' y2='124' stroke='#333' stroke-width='1.5'/>
-<text x='144' y='136' font-size='10' text-anchor='middle' fill='#555'>1</text>
-<line x1='116' y1='96' x2='124' y2='96' stroke='#333' stroke-width='1.5'/>
-<text x='110' y='99' font-size='10' text-anchor='end' fill='#555'>1</text>
-<line x1='168' y1='116' x2='168' y2='124' stroke='#333' stroke-width='1.5'/>
-<text x='168' y='136' font-size='10' text-anchor='middle' fill='#555'>2</text>
-<line x1='116' y1='72' x2='124' y2='72' stroke='#333' stroke-width='1.5'/>
-<text x='110' y='75' font-size='10' text-anchor='end' fill='#555'>2</text>
-<line x1='192' y1='116' x2='192' y2='124' stroke='#333' stroke-width='1.5'/>
-<text x='192' y='136' font-size='10' text-anchor='middle' fill='#555'>3</text>
-<line x1='116' y1='48' x2='124' y2='48' stroke='#333' stroke-width='1.5'/>
-<text x='110' y='51' font-size='10' text-anchor='end' fill='#555'>3</text>
-<line x1='216' y1='116' x2='216' y2='124' stroke='#333' stroke-width='1.5'/>
-<text x='216' y='136' font-size='10' text-anchor='middle' fill='#555'>4</text>
-<line x1='116' y1='24' x2='124' y2='24' stroke='#333' stroke-width='1.5'/>
-<text x='110' y='27' font-size='10' text-anchor='end' fill='#555'>4</text>
-<text x='124' y='136' font-size='10' fill='#555'>0</text>
-<circle cx='48' cy='72' r='4' fill='#2563eb'/>
-<circle cx='144' cy='144' r='4' fill='#2563eb'/>
-</svg><figcaption>Figure 7</figcaption></figure>`,
+      stem: String.raw`
+        <p>When can a relation be represented clearly by an arrow diagram between two finite sets?</p>
+      `,
       choices: [
-        String.raw`Yes. The graph contains exactly two points.`,
-        String.raw`Yes. Each x-value in the graph is paired with only one y-value.`,
-        String.raw`Yes. Any discrete relation is automatically a function.`,
-        String.raw`No. One of the y-values is negative.`,
-        String.raw`No. Two points can never determine a function.`,
-        String.raw`No. The points do not lie on a line.`,
+          String.raw`When the relation has a finite number of ordered pairs, so the inputs and outputs can be listed.`,
+          String.raw`Only when the relation is a function.`,
+          String.raw`Only when the relation can be graphed as a straight line.`,
+          String.raw`Only when the domain and the range are exactly the same set.`,
+          String.raw`When the relation contains infinitely many points on the coordinate plane.`,
+          String.raw`Only when no two ordered pairs have the same second coordinate.`
       ],
       choiceWrap: false,
     },
 {
-      stem: String.raw`<p><b>Refer to Figure 8.</b> Why does this relation fail to be a function?</p>`,
-      media: String.raw`<figure><svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 240 240' width='220' height='220' role='img' aria-label='coordinate graph'>
-
-    <defs>
-      <marker id='arrow' markerWidth='8' markerHeight='8' refX='6' refY='4' orient='auto' markerUnits='strokeWidth'>
-        <path d='M0,0 L8,4 L0,8 z' fill='#333'/>
-      </marker>
-    </defs>
-    
-<rect x='0' y='0' width='240' height='240' fill='white'/>
-<line x1='24' y1='24' x2='24' y2='216' stroke='#ddd' stroke-width='1'/>
-<line x1='24' y1='216' x2='216' y2='216' stroke='#ddd' stroke-width='1'/>
-<line x1='48' y1='24' x2='48' y2='216' stroke='#ddd' stroke-width='1'/>
-<line x1='24' y1='192' x2='216' y2='192' stroke='#ddd' stroke-width='1'/>
-<line x1='72' y1='24' x2='72' y2='216' stroke='#ddd' stroke-width='1'/>
-<line x1='24' y1='168' x2='216' y2='168' stroke='#ddd' stroke-width='1'/>
-<line x1='96' y1='24' x2='96' y2='216' stroke='#ddd' stroke-width='1'/>
-<line x1='24' y1='144' x2='216' y2='144' stroke='#ddd' stroke-width='1'/>
-<line x1='120' y1='24' x2='120' y2='216' stroke='#ddd' stroke-width='1'/>
-<line x1='24' y1='120' x2='216' y2='120' stroke='#ddd' stroke-width='1'/>
-<line x1='144' y1='24' x2='144' y2='216' stroke='#ddd' stroke-width='1'/>
-<line x1='24' y1='96' x2='216' y2='96' stroke='#ddd' stroke-width='1'/>
-<line x1='168' y1='24' x2='168' y2='216' stroke='#ddd' stroke-width='1'/>
-<line x1='24' y1='72' x2='216' y2='72' stroke='#ddd' stroke-width='1'/>
-<line x1='192' y1='24' x2='192' y2='216' stroke='#ddd' stroke-width='1'/>
-<line x1='24' y1='48' x2='216' y2='48' stroke='#ddd' stroke-width='1'/>
-<line x1='216' y1='24' x2='216' y2='216' stroke='#ddd' stroke-width='1'/>
-<line x1='24' y1='24' x2='216' y2='24' stroke='#ddd' stroke-width='1'/>
-<line x1='24' y1='120' x2='224' y2='120' stroke='#333' stroke-width='2' marker-end='url(#arrow)'/>
-<line x1='120' y1='224' x2='120' y2='16' stroke='#333' stroke-width='2' marker-end='url(#arrow)'/>
-<line x1='24' y1='116' x2='24' y2='124' stroke='#333' stroke-width='1.5'/>
-<text x='24' y='136' font-size='10' text-anchor='middle' fill='#555'>-4</text>
-<line x1='116' y1='216' x2='124' y2='216' stroke='#333' stroke-width='1.5'/>
-<text x='110' y='219' font-size='10' text-anchor='end' fill='#555'>-4</text>
-<line x1='48' y1='116' x2='48' y2='124' stroke='#333' stroke-width='1.5'/>
-<text x='48' y='136' font-size='10' text-anchor='middle' fill='#555'>-3</text>
-<line x1='116' y1='192' x2='124' y2='192' stroke='#333' stroke-width='1.5'/>
-<text x='110' y='195' font-size='10' text-anchor='end' fill='#555'>-3</text>
-<line x1='72' y1='116' x2='72' y2='124' stroke='#333' stroke-width='1.5'/>
-<text x='72' y='136' font-size='10' text-anchor='middle' fill='#555'>-2</text>
-<line x1='116' y1='168' x2='124' y2='168' stroke='#333' stroke-width='1.5'/>
-<text x='110' y='171' font-size='10' text-anchor='end' fill='#555'>-2</text>
-<line x1='96' y1='116' x2='96' y2='124' stroke='#333' stroke-width='1.5'/>
-<text x='96' y='136' font-size='10' text-anchor='middle' fill='#555'>-1</text>
-<line x1='116' y1='144' x2='124' y2='144' stroke='#333' stroke-width='1.5'/>
-<text x='110' y='147' font-size='10' text-anchor='end' fill='#555'>-1</text>
-<line x1='120' y1='116' x2='120' y2='124' stroke='#333' stroke-width='1.5'/>
-<line x1='116' y1='120' x2='124' y2='120' stroke='#333' stroke-width='1.5'/>
-<line x1='144' y1='116' x2='144' y2='124' stroke='#333' stroke-width='1.5'/>
-<text x='144' y='136' font-size='10' text-anchor='middle' fill='#555'>1</text>
-<line x1='116' y1='96' x2='124' y2='96' stroke='#333' stroke-width='1.5'/>
-<text x='110' y='99' font-size='10' text-anchor='end' fill='#555'>1</text>
-<line x1='168' y1='116' x2='168' y2='124' stroke='#333' stroke-width='1.5'/>
-<text x='168' y='136' font-size='10' text-anchor='middle' fill='#555'>2</text>
-<line x1='116' y1='72' x2='124' y2='72' stroke='#333' stroke-width='1.5'/>
-<text x='110' y='75' font-size='10' text-anchor='end' fill='#555'>2</text>
-<line x1='192' y1='116' x2='192' y2='124' stroke='#333' stroke-width='1.5'/>
-<text x='192' y='136' font-size='10' text-anchor='middle' fill='#555'>3</text>
-<line x1='116' y1='48' x2='124' y2='48' stroke='#333' stroke-width='1.5'/>
-<text x='110' y='51' font-size='10' text-anchor='end' fill='#555'>3</text>
-<line x1='216' y1='116' x2='216' y2='124' stroke='#333' stroke-width='1.5'/>
-<text x='216' y='136' font-size='10' text-anchor='middle' fill='#555'>4</text>
-<line x1='116' y1='24' x2='124' y2='24' stroke='#333' stroke-width='1.5'/>
-<text x='110' y='27' font-size='10' text-anchor='end' fill='#555'>4</text>
-<text x='124' y='136' font-size='10' fill='#555'>0</text>
-<circle cx='144' cy='168' r='4' fill='#2563eb'/>
-<circle cx='144' cy='120' r='4' fill='#2563eb'/>
-<circle cx='144' cy='48' r='4' fill='#2563eb'/>
-</svg><figcaption>Figure 8</figcaption></figure>`,
+      stem: String.raw`
+        <p>Which statement gives the best definition of a relation in this section?</p>
+      `,
       choices: [
-        String.raw`Because the graph is made of isolated points instead of a curve.`,
-        String.raw`Because its range has three values.`,
-        String.raw`Because one point lies on the x-axis.`,
-        String.raw`Because the graph does not cross the y-axis.`,
-        String.raw`Because the same x-value is paired with more than one y-value.`,
-        String.raw`Because vertical graphs are never relations.`,
+          String.raw`A relation is a rule that gives exactly one output for each input.`,
+          String.raw`A relation is any graph that passes the vertical line test.`,
+          String.raw`A relation is just the set of all possible input values.`,
+          String.raw`A relation is any equation that has been solved for \(y\).`,
+          String.raw`A relation is a set of ordered pairs, connecting first coordinates to second coordinates.`,
+          String.raw`A relation is any list of numbers, whether or not the numbers are paired.`
       ],
       choiceWrap: false,
     },
@@ -728,7 +597,7 @@
       ],
     },
 {
-      stem: String.raw`<p><b>Refer to Figure 10.</b> Which statement best explains why the graph is <em>not</em> a function?</p>`,
+      stem: String.raw`<p><b>Refer to Figure 10.</b> The graph is a circle. Which choice gives both its domain and its range?</p>`,
       media: String.raw`<figure><svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 240 240' width='220' height='220' role='img' aria-label='coordinate graph'>
 
     <defs>
@@ -796,12 +665,12 @@
 <circle cx='120' cy='120' r='48' fill='none' stroke='#2563eb' stroke-width='3'/>
 </svg><figcaption>Figure 10</figcaption></figure>`,
       choices: [
-        String.raw`Some y-values are repeated.`,
-        String.raw`The graph is symmetric about both axes.`,
-        String.raw`Its domain is finite.`,
-        String.raw`A vertical line can intersect the graph in two points.`,
-        String.raw`It is not a line.`,
-        String.raw`The graph is drawn with a curve instead of points.`,
+          String.raw`Domain: \(\{x\mid -2\le x\le 2\}\); range: \(\mathbb{R}\)`,
+          String.raw`Domain: \(\mathbb{R}\); range: \(\{y\mid -2\le y\le 2\}\)`,
+          String.raw`Domain: \(\{-2,2\}\); range: \(\{-2,2\}\)`,
+          String.raw`Domain: \(\{2\}\); range: \(\{2\}\)`,
+          String.raw`Domain: \(\{x\mid -4\le x\le 4\}\); range: \(\{y\mid -4\le y\le 4\}\)`,
+          String.raw`Domain: \(\{x\mid -2\le x\le 2\}\); range: \(\{y\mid -2\le y\le 2\}\)`
       ],
       choiceWrap: false,
     },
@@ -881,8 +750,8 @@
         String.raw`\(\{\, (x,y)\mid x=-2,-1,0,1,\ y=-2x+1 \,\}\)`,
         String.raw`\(\{\, (x,y)\mid x=2y+1 \,\}\)`,
         String.raw`\(\{\, (x,y)\mid x\in\mathbb{Z},\ y=2x+1,\ x\ge -2 \,\}\)`,
-        String.raw`\(\{\, (x,y)\mid x\in\mathbb{Z},\ -2\le y\le 3,\ y=2x+1 \,\}\)`,
         String.raw`\(\{\, (x,y)\mid x\in\mathbb{Z},\ -2\le x\le 1,\ y=2x+1 \,\}\)`,
+        String.raw`\(\{\, (x,y)\mid x\in\mathbb{Z},\ -2\le y\le 3,\ y=2x+1 \,\}\)`,
       ],
     },
 {
@@ -961,12 +830,26 @@
 </svg><figcaption>Figure 12</figcaption></figure>`,
       choices: [
         String.raw`\(\{-1\}\)`,
-        String.raw`\(\mathbb{R}\)`,
         String.raw`\(\{-3,-2,-1,0,1,2,3\}\)`,
-        String.raw`\(\{\,(-1,y)\mid y=-3,-2,-1,0,1,2,3\,\}\)`,
+        String.raw`\(\mathbb{R}\)`,
+        String.raw`\(\{\,x\mid x=-1\,\}\)`,
         String.raw`\(\{-3,-2,-1,0,1,2\}\)`,
         String.raw`\(\{\,x\mid -3\le x\le 3\,\}\)`,
       ],
+    },
+{
+      stem: String.raw`
+        <p>Which choice lists only objects that are <em>not</em> relations?</p>
+      `,
+      choices: [
+          String.raw`\(\{(1,2),(3,4)\}\)`,
+          String.raw`\(\{1,2,3\}\) and \(\{(1,2),(2,3)\}\)`,
+          String.raw`\(\{1,2,3\}\) and \(\{(1,2,3),(4,5,6)\}\)`,
+          String.raw`\(\{(2,1),(2,4)\}\))`,
+          String.raw`\(\{(x,y)\mid y=x^2\}\) and \(\{(0,0),(1,1)\}\)`,
+          String.raw`\(\{(1,2,3)\}\) and \(\{(x,y)\mid x+y=1\}\)`
+      ],
+      choiceWrap: false,
     }
       ]
     };
