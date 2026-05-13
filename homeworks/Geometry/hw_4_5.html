@@ -1,0 +1,294 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Homework 4-5 (Geometry)</title>
+
+  <script>
+    /* =========================
+       Homework 4-5 — Classifying Triangles and Quadrilaterals
+       Adapted for: /math-homework/assets/core-rich.js
+
+       REQUIRED SOURCE REFERENCES (your provided sets):
+       - Source set: screenshots of textbook exercises on classifying triangles and quadrilaterals.
+       - A Exercises consulted/reworked: #1-15.
+       - B Exercises consulted/reworked: #16-23.
+       - C Exercises consulted/reworked: #24-25.
+       - Model-authored/reworked items:
+         Q1-Q6 sharpen triangle classification by angle measure and side lengths, including traps about equilateral/equiangular/right/obtuse.
+         Q7-Q12 sharpen quadrilateral language: opposite/consecutive sides and angles, bases/legs, equiangular/equilateral/regular classifications.
+         Q13-Q16 rework right-triangle, isosceles-triangle, and Pythagorean items.
+         Q17-Q20 add diagnostic traps: isosceles trapezoid condition, rhombus vs square, triangle inequality, and isosceles right triangle.
+
+       IMAGE FILES:
+       - User-supplied figure(s): none used directly.
+       - Model-generated figure(s):
+         4-5-2.png, 4-5-3.png, 4-5-4.png, 4-5-7.png, 4-5-8.png,
+         4-5-13.png, 4-5-14.png, 4-5-16.png
+
+       IMAGE NAMING RULE:
+       - Model-generated figures use final homework question numbering.
+       - PNG files live in the SAME folder as this HTML.
+       ========================= */
+
+    window.homeworkData = {
+      classId : "Geometry",
+      id      : "Homework 4-5",
+      title   : "Homework 4-5 — Classifying Triangles and Quadrilaterals",
+      graphics : String.raw``,
+      answerKey : ["C", "A", "B", "B", "B", "D", "B", "A", "A", "C", "B", "E", "A", "B", "B", "D", "B", "C", "E", "B"],
+      questions : [
+    {
+      stem: String.raw`<p>Which classification is possible for the same triangle?</p>`,
+      choices: [
+        String.raw`right and equilateral`,
+        String.raw`obtuse and equilateral`,
+        String.raw`acute and equilateral`,
+        String.raw`right and obtuse`,
+        String.raw`scalene and equilateral`,
+        String.raw`isosceles and scalene`
+      ]
+    },
+    {
+      stem: String.raw`<p><b>Refer to Figure 1.</b> Classify <span class="math">\(\triangle ABC\)</span> by angle measure and by side lengths.</p>`,
+      media: String.raw`<figure><img src="4-5-2.png" alt="Right scalene triangle" /><figcaption>Figure 1</figcaption></figure>`,
+      choices: [
+        String.raw`right scalene`,
+        String.raw`right isosceles`,
+        String.raw`acute scalene`,
+        String.raw`obtuse scalene`,
+        String.raw`acute equilateral`,
+        String.raw`equiangular scalene`
+      ],
+      choiceWrap: false
+    },
+    {
+      stem: String.raw`<p><b>Refer to Figure 2.</b> The two marked sides are congruent. Classify the triangle as precisely as possible.</p>`,
+      media: String.raw`<figure><img src="4-5-3.png" alt="Acute isosceles triangle" /><figcaption>Figure 2</figcaption></figure>`,
+      choices: [
+        String.raw`acute scalene`,
+        String.raw`acute isosceles`,
+        String.raw`right isosceles`,
+        String.raw`obtuse isosceles`,
+        String.raw`equiangular scalene`,
+        String.raw`right scalene`
+      ],
+      choiceWrap: false
+    },
+    {
+      stem: String.raw`<p><b>Refer to Figure 3.</b> Classify the triangle by angle measure and by side lengths.</p>`,
+      media: String.raw`<figure><img src="4-5-4.png" alt="Obtuse isosceles triangle" /><figcaption>Figure 3</figcaption></figure>`,
+      choices: [
+        String.raw`acute isosceles`,
+        String.raw`obtuse isosceles`,
+        String.raw`right isosceles`,
+        String.raw`obtuse scalene`,
+        String.raw`equiangular isosceles`,
+        String.raw`right scalene`
+      ],
+      choiceWrap: false
+    },
+    {
+      stem: String.raw`<p>A triangle has side lengths <span class="math">\(6,8,10\)</span>.</p><p>Classify it by angle measure and by side lengths.</p>`,
+      choices: [
+        String.raw`acute scalene`,
+        String.raw`right scalene`,
+        String.raw`obtuse scalene`,
+        String.raw`right isosceles`,
+        String.raw`acute isosceles`,
+        String.raw`not a triangle`
+      ],
+      choiceWrap: false
+    },
+    {
+      stem: String.raw`<p>Which statement is the strongest conclusion from the fact that a triangle is equiangular?</p>`,
+      choices: [
+        String.raw`It is right.`,
+        String.raw`It is obtuse.`,
+        String.raw`It is scalene.`,
+        String.raw`It is equilateral.`,
+        String.raw`It has exactly two congruent sides.`,
+        String.raw`It has no congruent sides.`
+      ],
+      choiceWrap: false
+    },
+    {
+      stem: String.raw`<p><b>Refer to Figure 4.</b> Which pair is a pair of opposite sides in quadrilateral <span class="math">\(PQRS\)</span>?</p>`,
+      media: String.raw`<figure><img src="4-5-7.png" alt="Quadrilateral PQRS" /><figcaption>Figure 4</figcaption></figure>`,
+      choices: [
+        String.raw`\(\overline{PQ}\) and \(\overline{PS}\)`,
+        String.raw`\(\overline{PS}\) and \(\overline{QR}\)`,
+        String.raw`\(\overline{QR}\) and \(\overline{RS}\)`,
+        String.raw`\(\overline{PQ}\) and \(\overline{QR}\)`,
+        String.raw`\(\overline{PS}\) and \(\overline{SR}\)`,
+        String.raw`\(\overline{PR}\) and \(\overline{QS}\)`
+      ]
+    },
+    {
+      stem: String.raw`<p><b>Refer to Figure 5.</b> In trapezoid <span class="math">\(HIJK\)</span>, identify the bases and the legs.</p>`,
+      media: String.raw`<figure><img src="4-5-8.png" alt="Trapezoid HIJK" /><figcaption>Figure 5</figcaption></figure>`,
+      choices: [
+        String.raw`bases: \(\overline{HI},\overline{KJ}\); legs: \(\overline{HK},\overline{IJ}\)`,
+        String.raw`bases: \(\overline{HK},\overline{IJ}\); legs: \(\overline{HI},\overline{KJ}\)`,
+        String.raw`bases: \(\overline{HI},\overline{HK}\); legs: \(\overline{IJ},\overline{KJ}\)`,
+        String.raw`bases: \(\overline{HJ},\overline{KI}\); legs: \(\overline{HI},\overline{KJ}\)`,
+        String.raw`bases: \(\overline{HI},\overline{IJ}\); legs: \(\overline{KJ},\overline{HK}\)`,
+        String.raw`there are no bases because this is not a trapezoid`
+      ]
+    },
+    {
+      stem: String.raw`<p>Quadrilateral <span class="math">\(ABCD\)</span> is named in order around the figure.</p><p>Which pair of angles must be consecutive angles?</p>`,
+      choices: [
+        String.raw`\(\angle A\) and \(\angle B\)`,
+        String.raw`\(\angle A\) and \(\angle C\)`,
+        String.raw`\(\angle B\) and \(\angle D\)`,
+        String.raw`\(\angle A\) and \(\angle D\) are never consecutive`,
+        String.raw`\(\angle A\) and \(\angle C\) are consecutive because they face each other`,
+        String.raw`only angles with equal measures can be consecutive`
+      ],
+      choiceWrap: false
+    },
+    {
+      stem: String.raw`<p>Which classification is guaranteed by the phrase “equiangular quadrilateral”?</p>`,
+      choices: [
+        String.raw`rhombus`,
+        String.raw`trapezoid`,
+        String.raw`rectangle`,
+        String.raw`kite`,
+        String.raw`scalene quadrilateral`,
+        String.raw`isosceles trapezoid`
+      ],
+      choiceWrap: false
+    },
+    {
+      stem: String.raw`<p>Which classification is guaranteed by the phrase “equilateral parallelogram”?</p>`,
+      choices: [
+        String.raw`rectangle`,
+        String.raw`rhombus`,
+        String.raw`trapezoid`,
+        String.raw`isosceles trapezoid`,
+        String.raw`scalene quadrilateral`,
+        String.raw`right triangle`
+      ],
+      choiceWrap: false
+    },
+    {
+      stem: String.raw`<p>Which classification is guaranteed by the phrase “regular quadrilateral”?</p>`,
+      choices: [
+        String.raw`rectangle only, but not necessarily square`,
+        String.raw`rhombus only, but not necessarily square`,
+        String.raw`trapezoid`,
+        String.raw`parallelogram with no equal sides`,
+        String.raw`square`,
+        String.raw`kite`
+      ],
+      choiceWrap: false
+    },
+    {
+      stem: String.raw`<p><b>Refer to Figure 6.</b> Name the hypotenuse and the legs of <span class="math">\(\triangle XYZ\)</span>.</p>`,
+      media: String.raw`<figure><img src="4-5-13.png" alt="3-4-5 right triangle" /><figcaption>Figure 6</figcaption></figure>`,
+      choices: [
+        String.raw`hypotenuse: \(\overline{XZ}\); legs: \(\overline{XY},\overline{YZ}\)`,
+        String.raw`hypotenuse: \(\overline{XY}\); legs: \(\overline{XZ},\overline{YZ}\)`,
+        String.raw`hypotenuse: \(\overline{YZ}\); legs: \(\overline{XY},\overline{XZ}\)`,
+        String.raw`hypotenuse: \(\overline{XY}\); legs: \(\overline{XY},\overline{YZ}\)`,
+        String.raw`hypotenuse: \(\overline{XZ}\); legs: \(\overline{XZ},\overline{YZ}\)`,
+        String.raw`there is no hypotenuse because the triangle is not right`
+      ]
+    },
+    {
+      stem: String.raw`<p><b>Refer to Figure 7.</b> Which statement correctly describes <span class="math">\(\triangle MTS\)</span>?</p>`,
+      media: String.raw`<figure><img src="4-5-14.png" alt="Isosceles triangle with base angles" /><figcaption>Figure 7</figcaption></figure>`,
+      choices: [
+        String.raw`The base is \(\overline{MS}\), and the base angles are \(\angle M\) and \(\angle S\).`,
+        String.raw`The base is \(\overline{MT}\), and the base angles are \(\angle M\) and \(\angle T\).`,
+        String.raw`The vertex angle is \(\angle M\).`,
+        String.raw`The base angles are not congruent.`,
+        String.raw`The triangle is scalene because the top angle is different.`,
+        String.raw`The sum of the base angles is \(40^\circ\).`
+      ],
+      choiceWrap: false
+    },
+    {
+      stem: String.raw`<p>An isosceles triangle has vertex angle ten degrees less than three times one base angle.</p><p>Find the measures of the angles.</p>`,
+      choices: [
+        String.raw`base angles \(35^\circ,35^\circ\); vertex angle \(110^\circ\)`,
+        String.raw`base angles \(38^\circ,38^\circ\); vertex angle \(104^\circ\)`,
+        String.raw`base angles \(40^\circ,40^\circ\); vertex angle \(100^\circ\)`,
+        String.raw`base angles \(42^\circ,42^\circ\); vertex angle \(96^\circ\)`,
+        String.raw`base angles \(52^\circ,52^\circ\); vertex angle \(76^\circ\)`,
+        String.raw`base angles \(70^\circ,70^\circ\); vertex angle \(40^\circ\)`
+      ]
+    },
+    {
+      stem: String.raw`<p><b>Refer to Figure 8.</b> Express <span class="math">\(QR\)</span> in terms of <span class="math">\(x\)</span>.</p>`,
+      media: String.raw`<figure><img src="4-5-16.png" alt="Right triangle with legs 4 and x" /><figcaption>Figure 8</figcaption></figure>`,
+      choices: [
+        String.raw`\(x+4\)`,
+        String.raw`\(\sqrt{x+4}\)`,
+        String.raw`\(\sqrt{x^2+4}\)`,
+        String.raw`\(\sqrt{x^2+16}\)`,
+        String.raw`\(\sqrt{16-x^2}\)`,
+        String.raw`\(x^2+16\)`
+      ]
+    },
+    {
+      stem: String.raw`<p>Which condition guarantees that a trapezoid is an isosceles trapezoid?</p>`,
+      choices: [
+        String.raw`The bases are parallel.`,
+        String.raw`The legs are congruent.`,
+        String.raw`The bases are congruent.`,
+        String.raw`All four sides are congruent.`,
+        String.raw`One diagonal is a base.`,
+        String.raw`Exactly one angle is right.`
+      ],
+      choiceWrap: false
+    },
+    {
+      stem: String.raw`<p>A quadrilateral has four congruent sides, but its angles are not all right angles.</p><p>Which classification is the best guaranteed classification?</p>`,
+      choices: [
+        String.raw`square`,
+        String.raw`rectangle`,
+        String.raw`rhombus`,
+        String.raw`isosceles trapezoid`,
+        String.raw`right triangle`,
+        String.raw`scalene quadrilateral`
+      ],
+      choiceWrap: false
+    },
+    {
+      stem: String.raw`<p>Which set of side lengths cannot form a triangle?</p>`,
+      choices: [
+        String.raw`\(4,4,4\)`,
+        String.raw`\(5,5,8\)`,
+        String.raw`\(6,8,10\)`,
+        String.raw`\(3,4,6\)`,
+        String.raw`\(4,4,9\)`,
+        String.raw`\(7,8,9\)`
+      ]
+    },
+    {
+      stem: String.raw`<p>A triangle is known to be isosceles and right.</p><p>Which statement must be true?</p>`,
+      choices: [
+        String.raw`It is also equilateral.`,
+        String.raw`Its two acute angles are congruent.`,
+        String.raw`Its hypotenuse is one of the congruent legs.`,
+        String.raw`It has one obtuse angle.`,
+        String.raw`All three side lengths are different.`,
+        String.raw`Each angle measures \(60^\circ\).`
+      ],
+      choiceWrap: false
+    }
+      ]
+    };
+  </script>
+
+  <link rel="stylesheet" href="/math-homework/assets/core-rich.css" />
+  <script defer src="/math-homework/assets/core-rich.js"></script>
+  <script defer src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+</head>
+<body>
+  <div id="hw-root">Loading…</div>
+</body>
+</html>
