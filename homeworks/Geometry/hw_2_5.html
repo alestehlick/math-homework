@@ -29,7 +29,7 @@
        - PNG files live in the SAME folder as this HTML.
 
        MODEL-REWORKED / MODEL-AUTHORED ITEMS:
-       - Q1–Q4 rework A #1–#8 into classification questions using the class definitions of simple curve, self-intersection point, boundary point, closed curve, polygon, convexity, and concavity.
+       - Q1–Q4 are strengthened to force explicit use of the class definitions of simple curve, self-intersection point, boundary point, closed curve, and polygon before moving to convexity and diagonals.
        - Q5–Q7 extend the source material to stabilize polygon naming and the definition of diagonal before the octagon problems.
        - Q11–Q13 rework B #20–#23 and C #24 into generalization and reverse-use questions about diagonal formulas.
        - Q14 reworks B #11–#14 into a possibility/impossibility question about equilateral, equiangular, regular, and convex polygons.
@@ -50,7 +50,7 @@
         /* Q1 — Model-generated figure: 2-5-1.png */
         {
           stem: String.raw`
-            <p><b>Refer to Figure 1.</b> Use the class definitions: a simple curve has no self-intersection point, and a closed curve has no boundary point. Which statement correctly classifies all four figures?</p>
+            <p><b>Refer to Figure 1.</b> Use the class definitions carefully. Which statement is correct?</p>
           `,
           media: String.raw`
             <figure>
@@ -59,12 +59,12 @@
             </figure>
           `,
           choices: [
-            String.raw`I is a simple closed convex hexagon; II is a simple closed concave quadrilateral; III is a simple closed polygon; IV is a simple closed convex pentagon.`,
-            String.raw`I is a simple closed concave hexagon; II is not closed because it has boundary points; III is a simple closed curve but not a polygon; IV is a simple closed convex pentagon.`,
-            String.raw`I is a simple closed concave pentagon; II is simple but not closed; III is a convex polygon; IV is a regular pentagon.`,
-            String.raw`I is not a simple curve because it bends inward; II is not a simple curve; III is not a closed curve; IV is a regular pentagon.`,
-            String.raw`I is a convex pentagon; II is a concave quadrilateral; III is not a curve; IV is a concave pentagon.`,
-            String.raw`I is a simple closed concave hexagon; II is a simple closed convex quadrilateral; III is not closed; IV is a convex quadrilateral.`
+            String.raw`Figure I is not simple because it bends inward; Figure II is not closed because it has a corner; Figure III is not a curve because it is round; Figure IV is a simple closed polygon.`,
+            String.raw`Figure I has no boundary points and no self-intersection points, so it is a simple closed polygon; Figure II has boundary points, so it is not closed; Figure III is a simple closed curve but not a polygon; Figure IV is a simple closed polygon.`,
+            String.raw`Figure I is not a polygon because a concave figure cannot be a polygon; Figure II is closed; Figure III has boundary points; Figure IV is not simple.`,
+            String.raw`Figure I and Figure IV are polygons, but neither one is closed because each has vertices; Figure II is a polygon because it uses only line segments; Figure III is not simple.`,
+            String.raw`Figure II and Figure III are both polygons because neither one has a self-intersection point; Figure I is not closed; Figure IV is not a curve.`,
+            String.raw`Only Figure IV is a polygon; Figure I is disqualified by concavity, Figure II by having endpoints, and Figure III by being curved.`
           ],
           choiceWrap: false
         },
@@ -72,15 +72,15 @@
         /* Q2 — Model-reworked from A #1–#8 */
         {
           stem: String.raw`
-            <p>Which description gives a sufficient definition of a polygon in this lesson?</p>
+            <p><b>Refer to Figure 1.</b> Which statement about boundary points is correct?</p>
           `,
           choices: [
-            String.raw`Any closed curve that has no boundary points.`,
-            String.raw`Any simple curve made only from straight segments, even if the curve has boundary points.`,
-            String.raw`Any simple closed curve, whether it is made from straight segments or curved arcs.`,
-            String.raw`Any finite set of points that can be connected by straight segments.`,
-            String.raw`A simple closed curve formed by a finite chain of line segments.`,
-            String.raw`Any closed curve with an interior, even if it has a self-intersection point.`
+            String.raw`Every vertex of Figure I is a boundary point, because a small circle around a vertex meets the curve at only one point.`,
+            String.raw`Every point of Figure III is a boundary point, because a circle has no vertices.`,
+            String.raw`Figure IV has boundary points, but Figure II does not, because Figure IV is closed.`,
+            String.raw`Figures I and IV each have exactly one boundary point, while Figure II has none.`,
+            String.raw`Figure II has exactly two boundary points, one at each endpoint; Figures I, III, and IV have no boundary points.`,
+            String.raw`All four figures have boundary points, because each figure has visible ends or corners.`
           ],
           choiceWrap: false
         },
@@ -88,15 +88,15 @@
         /* Q3 — Model-reworked from A #2, #3, #8 */
         {
           stem: String.raw`
-            <p>A circle and an open chain of line segments both fail to be polygons. Which explanation uses the definitions correctly?</p>
+            <p>A point \(P\) on a curve has the following property: for every small enough circle centered at \(P\), the circle crosses the curve in more than two points. What must be true?</p>
           `,
           choices: [
-            String.raw`The circle has boundary points, and the open chain has a self-intersection point.`,
-            String.raw`The circle is convex, while the open chain is concave; therefore neither one can be a polygon.`,
-            String.raw`The circle is a simple closed curve but is not made from straight sides; the open chain has boundary points, so it is not closed.`,
-            String.raw`The circle has infinitely many sides, and the open chain has fewer than three sides.`,
-            String.raw`The circle has no interior, and the open chain has too many sides.`,
-            String.raw`The circle is not regular, and the open chain has no equal sides.`
+            String.raw`\(P\) is a boundary point, so the curve is open.`,
+            String.raw`\(P\) is an interior point of the curve, so the curve is closed.`,
+            String.raw`\(P\) is a self-intersection point, so the curve is not simple.`,
+            String.raw`\(P\) is a vertex, so the curve is a polygon.`,
+            String.raw`\(P\) is on a circle, so the curve is not closed.`,
+            String.raw`Nothing can be concluded, because a small circle does not tell us anything about the whole curve.`
           ],
           choiceWrap: false
         },
@@ -104,15 +104,15 @@
         /* Q4 — Model-reworked from A #1–#8 */
         {
           stem: String.raw`
-            <p>Which statement correctly describes when a simple polygon is concave?</p>
+            <p>Which statement gives the correct definition of a polygon in this lesson?</p>
           `,
           choices: [
-            String.raw`A polygon is concave whenever at least two of its sides are not congruent.`,
-            String.raw`A polygon is concave whenever it has more than four sides.`,
-            String.raw`A polygon is concave whenever it is not regular.`,
-            String.raw`A polygon is concave whenever it has at least one pair of parallel sides.`,
-            String.raw`A polygon is concave whenever one of its sides is longer than all the others.`,
-            String.raw`A polygon is concave whenever at least one part of it bends inward, so that a segment joining two points of the polygon can pass outside the polygon.`
+            String.raw`A polygon is any closed curve.`,
+            String.raw`A polygon is any simple curve made of line segments, even if it has two endpoints.`,
+            String.raw`A polygon is any simple closed curve, even if part of it is curved.`,
+            String.raw`A polygon is any curve with finitely many vertices.`,
+            String.raw`A polygon is any closed figure whose interior is nonempty.`,
+            String.raw`A polygon is a simple closed curve formed by a finite chain of line segments.`
           ],
           choiceWrap: false
         },
