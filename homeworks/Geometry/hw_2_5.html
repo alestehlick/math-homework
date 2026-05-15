@@ -7,7 +7,7 @@
 
   <script>
     /* =========================
-       Homework 2-5 — Polygons and Diagonals (Geometry)
+       Homework 2-5 — Simple Curves, Polygons, and Diagonals (Geometry)
        Adapted for: /math-homework/assets/core-rich.js
 
        REQUIRED SOURCE REFERENCES (provided textbook images):
@@ -29,7 +29,7 @@
        - PNG files live in the SAME folder as this HTML.
 
        MODEL-REWORKED / MODEL-AUTHORED ITEMS:
-       - Q1–Q4 rework A #1–#8 into classification questions with distractors for open figures, curved figures, concavity, and the definition of polygon.
+       - Q1–Q4 rework A #1–#8 into classification questions using the class definitions of simple curve, self-intersection point, boundary point, closed curve, polygon, convexity, and concavity.
        - Q5–Q7 extend the source material to stabilize polygon naming and the definition of diagonal before the octagon problems.
        - Q11–Q13 rework B #20–#23 and C #24 into generalization and reverse-use questions about diagonal formulas.
        - Q14 reworks B #11–#14 into a possibility/impossibility question about equilateral, equiangular, regular, and convex polygons.
@@ -39,7 +39,7 @@
     window.homeworkData = {
       classId : "Geometry",
       id      : "Homework 2-5",
-      title   : "Homework 2-5 — Polygons and Diagonals",
+      title   : "Homework 2-5 — Simple Curves, Polygons, and Diagonals",
 
       graphics : String.raw``,
 
@@ -50,7 +50,7 @@
         /* Q1 — Model-generated figure: 2-5-1.png */
         {
           stem: String.raw`
-            <p><b>Refer to Figure 1.</b> Each figure is considered together with its interior only when it is actually bounded by a closed curve. Which statement correctly classifies all four figures?</p>
+            <p><b>Refer to Figure 1.</b> Use the class definitions: a simple curve has no self-intersection point, and a closed curve has no boundary point. Which statement correctly classifies all four figures?</p>
           `,
           media: String.raw`
             <figure>
@@ -59,12 +59,12 @@
             </figure>
           `,
           choices: [
-            String.raw`I is a convex hexagon; II is a concave quadrilateral; III is not a polygon; IV is a convex pentagon.`,
-            String.raw`I is a concave hexagon; II is not a polygon; III is not a polygon; IV is a convex pentagon.`,
-            String.raw`I is a concave pentagon; II is not a polygon; III is a convex polygon; IV is a convex pentagon.`,
-            String.raw`I is not a polygon because it bends inward; II is not a polygon; III is not a polygon; IV is a regular pentagon.`,
-            String.raw`I is a convex pentagon; II is a concave quadrilateral; III is not a polygon; IV is a concave pentagon.`,
-            String.raw`I is a concave hexagon; II is a convex quadrilateral; III is not a polygon; IV is a convex quadrilateral.`
+            String.raw`I is a simple closed convex hexagon; II is a simple closed concave quadrilateral; III is a simple closed polygon; IV is a simple closed convex pentagon.`,
+            String.raw`I is a simple closed concave hexagon; II is not closed because it has boundary points; III is a simple closed curve but not a polygon; IV is a simple closed convex pentagon.`,
+            String.raw`I is a simple closed concave pentagon; II is simple but not closed; III is a convex polygon; IV is a regular pentagon.`,
+            String.raw`I is not a simple curve because it bends inward; II is not a simple curve; III is not a closed curve; IV is a regular pentagon.`,
+            String.raw`I is a convex pentagon; II is a concave quadrilateral; III is not a curve; IV is a concave pentagon.`,
+            String.raw`I is a simple closed concave hexagon; II is a simple closed convex quadrilateral; III is not closed; IV is a convex quadrilateral.`
           ],
           choiceWrap: false
         },
@@ -75,12 +75,12 @@
             <p>Which description gives a sufficient definition of a polygon in this lesson?</p>
           `,
           choices: [
-            String.raw`Any closed curve that has an interior.`,
-            String.raw`Any figure made only from straight segments, even if the figure is open.`,
-            String.raw`Any closed plane figure made from curves and line segments.`,
+            String.raw`Any closed curve that has no boundary points.`,
+            String.raw`Any simple curve made only from straight segments, even if the curve has boundary points.`,
+            String.raw`Any simple closed curve, whether it is made from straight segments or curved arcs.`,
             String.raw`Any finite set of points that can be connected by straight segments.`,
-            String.raw`A closed plane figure formed by a finite chain of line segments, where the segments meet only at endpoints.`,
-            String.raw`Any convex figure that has an interior.`
+            String.raw`A simple closed curve formed by a finite chain of line segments.`,
+            String.raw`Any closed curve with an interior, even if it has a self-intersection point.`
           ],
           choiceWrap: false
         },
@@ -88,14 +88,14 @@
         /* Q3 — Model-reworked from A #2, #3, #8 */
         {
           stem: String.raw`
-            <p>A circle and an open chain of line segments both fail to be polygons. Which explanation gives the correct reason in each case?</p>
+            <p>A circle and an open chain of line segments both fail to be polygons. Which explanation uses the definitions correctly?</p>
           `,
           choices: [
-            String.raw`The circle has no vertices, and the open chain has no interior; therefore both are polygons only if vertices are added.`,
+            String.raw`The circle has boundary points, and the open chain has a self-intersection point.`,
             String.raw`The circle is convex, while the open chain is concave; therefore neither one can be a polygon.`,
-            String.raw`The circle is not made from straight sides, and the open chain is not closed.`,
+            String.raw`The circle is a simple closed curve but is not made from straight sides; the open chain has boundary points, so it is not closed.`,
             String.raw`The circle has infinitely many sides, and the open chain has fewer than three sides.`,
-            String.raw`The circle has no sides, and the open chain has too many sides.`,
+            String.raw`The circle has no interior, and the open chain has too many sides.`,
             String.raw`The circle is not regular, and the open chain has no equal sides.`
           ],
           choiceWrap: false
@@ -104,7 +104,7 @@
         /* Q4 — Model-reworked from A #1–#8 */
         {
           stem: String.raw`
-            <p>Which statement correctly describes when a polygon is concave?</p>
+            <p>Which statement correctly describes when a simple polygon is concave?</p>
           `,
           choices: [
             String.raw`A polygon is concave whenever at least two of its sides are not congruent.`,
@@ -120,7 +120,7 @@
         /* Q5 — Model-authored extension from polygon naming */
         {
           stem: String.raw`
-            <p>A closed polygon has seven sides. It is neither equilateral nor equiangular. Which statement is correct?</p>
+            <p>A simple closed polygon has seven sides. It is neither equilateral nor equiangular. Which statement is correct?</p>
           `,
           choices: [
             String.raw`It is a heptagon, but it is not a regular heptagon.`,
@@ -270,7 +270,7 @@
         /* Q14 — Reworked from B #11–#14 */
         {
           stem: String.raw`
-            <p>Under the usual definition of a simple polygon used in this homework, which requested drawing cannot be made?</p>
+            <p>Under the definition that a polygon is a simple closed curve made from line segments, which requested drawing cannot be made?</p>
           `,
           choices: [
             String.raw`A regular quadrilateral.`,
