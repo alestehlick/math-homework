@@ -1,0 +1,367 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Homework 2-5 (Geometry)</title>
+
+  <script>
+    /* =========================
+       Homework 2-5 — Polygons and Diagonals (Geometry)
+       Adapted for: /math-homework/assets/core-rich.js
+
+       REQUIRED SOURCE REFERENCES (provided textbook images):
+       - Type A uses A. Exercises: #1–#8 for polygon / non-polygon / convex / concave classification.
+       - Type A uses A. Exercises: #9–#10 for polygon sides, polygon name, and diagonals from a named vertex.
+       - Type B uses B. Exercises: #11–#14 for drawing/classifying regular, equilateral, equiangular, convex, and non-convex polygons.
+       - Type B uses B. Exercises: #15–#19 for triangle interiors, angle interiors, and convexity of angle interiors.
+       - Type B uses B. Exercises: #20–#23 for polygon names, vertices, diagonals from each vertex, and total diagonals.
+       - Type C uses C. Exercises: #24–#25 for generalizing the diagonal count and using half-plane conditions to identify an angle interior.
+
+       IMAGE FILES:
+       - User-supplied figure(s): none used directly as separate homework figures. The attached textbook-page images were used only as source material.
+       - Model-generated figure(s): 2-5-1.png, 2-5-8.png, 2-5-15.png.
+
+       IMAGE NAMING RULE:
+       - Model-generated figures use final homework question numbering.
+       - Figure 2 (2-5-8.png) is attached at Q8 and reused by Q9–Q10.
+       - Figure 3 (2-5-15.png) is attached at Q15 and reused by Q16.
+       - PNG files live in the SAME folder as this HTML.
+
+       MODEL-REWORKED / MODEL-AUTHORED ITEMS:
+       - Q1–Q4 rework A #1–#8 into classification questions with distractors for open figures, curved figures, concavity, and the definition of polygon.
+       - Q5–Q7 extend the source material to stabilize polygon naming and the definition of diagonal before the octagon problems.
+       - Q11–Q13 rework B #20–#23 and C #24 into generalization and reverse-use questions about diagonal formulas.
+       - Q14 reworks B #11–#14 into a possibility/impossibility question about equilateral, equiangular, regular, and convex polygons.
+       - Q17–Q18 rework B #19 and C #25 into proof-oriented judgment about convex sets and angle interiors.
+       ========================= */
+
+    window.homeworkData = {
+      classId : "Geometry",
+      id      : "Homework 2-5",
+      title   : "Homework 2-5 — Polygons and Diagonals",
+
+      graphics : String.raw``,
+
+      answerKey : ["B","E","C","F","A","D","B","E","C","F","D","A","E","C","B","F","D","A"],
+
+      questions : [
+
+        /* Q1 — Model-generated figure: 2-5-1.png */
+        {
+          stem: String.raw`
+            <p><b>Refer to Figure 1.</b> Each figure is considered together with its interior only when it is actually bounded by a closed curve. Which statement correctly classifies all four figures?</p>
+          `,
+          media: String.raw`
+            <figure>
+              <img src="2-5-1.png" alt="Four figures labeled I, II, III, and IV" />
+              <figcaption>Figure 1</figcaption>
+            </figure>
+          `,
+          choices: [
+            String.raw`I is a convex hexagon; II is a concave quadrilateral; III is not a polygon; IV is a convex pentagon.`,
+            String.raw`I is a concave hexagon; II is not a polygon; III is not a polygon; IV is a convex pentagon.`,
+            String.raw`I is a concave pentagon; II is not a polygon; III is a convex polygon; IV is a convex pentagon.`,
+            String.raw`I is not a polygon because it bends inward; II is not a polygon; III is not a polygon; IV is a regular pentagon.`,
+            String.raw`I is a convex pentagon; II is a concave quadrilateral; III is not a polygon; IV is a concave pentagon.`,
+            String.raw`I is a concave hexagon; II is a convex quadrilateral; III is not a polygon; IV is a convex quadrilateral.`
+          ],
+          choiceWrap: false
+        },
+
+        /* Q2 — Model-reworked from A #1–#8 */
+        {
+          stem: String.raw`
+            <p>Which description gives a sufficient definition of a polygon in this lesson?</p>
+          `,
+          choices: [
+            String.raw`Any closed curve that has an interior.`,
+            String.raw`Any figure made only from straight segments, even if the figure is open.`,
+            String.raw`Any closed plane figure made from curves and line segments.`,
+            String.raw`Any finite set of points that can be connected by straight segments.`,
+            String.raw`A closed plane figure formed by a finite chain of line segments, where the segments meet only at endpoints.`,
+            String.raw`Any convex figure that has an interior.`
+          ],
+          choiceWrap: false
+        },
+
+        /* Q3 — Model-reworked from A #2, #3, #8 */
+        {
+          stem: String.raw`
+            <p>A circle and an open chain of line segments both fail to be polygons. Which explanation gives the correct reason in each case?</p>
+          `,
+          choices: [
+            String.raw`The circle has no vertices, and the open chain has no interior; therefore both are polygons only if vertices are added.`,
+            String.raw`The circle is convex, while the open chain is concave; therefore neither one can be a polygon.`,
+            String.raw`The circle is not made from straight sides, and the open chain is not closed.`,
+            String.raw`The circle has infinitely many sides, and the open chain has fewer than three sides.`,
+            String.raw`The circle has no sides, and the open chain has too many sides.`,
+            String.raw`The circle is not regular, and the open chain has no equal sides.`
+          ],
+          choiceWrap: false
+        },
+
+        /* Q4 — Model-reworked from A #1–#8 */
+        {
+          stem: String.raw`
+            <p>Which statement correctly describes when a polygon is concave?</p>
+          `,
+          choices: [
+            String.raw`A polygon is concave whenever at least two of its sides are not congruent.`,
+            String.raw`A polygon is concave whenever it has more than four sides.`,
+            String.raw`A polygon is concave whenever it is not regular.`,
+            String.raw`A polygon is concave whenever it has at least one pair of parallel sides.`,
+            String.raw`A polygon is concave whenever one of its sides is longer than all the others.`,
+            String.raw`A polygon is concave whenever at least one part of it bends inward, so that a segment joining two points of the polygon can pass outside the polygon.`
+          ],
+          choiceWrap: false
+        },
+
+        /* Q5 — Model-authored extension from polygon naming */
+        {
+          stem: String.raw`
+            <p>A closed polygon has seven sides. It is neither equilateral nor equiangular. Which statement is correct?</p>
+          `,
+          choices: [
+            String.raw`It is a heptagon, but it is not a regular heptagon.`,
+            String.raw`It is a hexagon, but it is not a regular hexagon.`,
+            String.raw`It is a heptagon, and every heptagon is regular.`,
+            String.raw`It is not a polygon because it is not equilateral.`,
+            String.raw`It is not a polygon because it is not equiangular.`,
+            String.raw`It is a regular heptagon because it is closed and has seven sides.`
+          ],
+          choiceWrap: false
+        },
+
+        /* Q6 — Model-authored extension preparing A #10 */
+        {
+          stem: String.raw`
+            <p>Suppose the vertices of pentagon \(ABCDE\) are named in order around the polygon. Which segment is a diagonal of the pentagon?</p>
+          `,
+          choices: [
+            String.raw`\(\overline{AB}\)`,
+            String.raw`\(\overline{BC}\)`,
+            String.raw`\(\overline{EA}\)`,
+            String.raw`\(\overline{AC}\)`,
+            String.raw`\(\overline{CD}\)`,
+            String.raw`\(\overline{DE}\)`
+          ],
+          choiceWrap: false
+        },
+
+        /* Q7 — Model-authored extension preparing C #24 */
+        {
+          stem: String.raw`
+            <p>In an \(n\)-gon, how many diagonals can be drawn from one fixed vertex?</p>
+          `,
+          choices: [
+            String.raw`\(n-1\)`,
+            String.raw`\(n-3\)`,
+            String.raw`\(n-2\)`,
+            String.raw`\(n\)`,
+            String.raw`\(\dfrac{n}{2}\)`,
+            String.raw`\(n-4\)`
+          ],
+          choiceWrap: false
+        },
+
+        /* Q8 — Model-generated figure: 2-5-8.png; reworked from A #9 */
+        {
+          stem: String.raw`
+            <p><b>Refer to Figure 2.</b> Which choice gives the sides of the polygon and its special name?</p>
+          `,
+          media: String.raw`
+            <figure>
+              <img src="2-5-8.png" alt="An octagon with vertices A, B, C, D, E, F, G, and H" />
+              <figcaption>Figure 2</figcaption>
+            </figure>
+          `,
+          choices: [
+            String.raw`Sides: \(\overline{AB}, \overline{AC}, \overline{AD}, \overline{AE}, \overline{AF}, \overline{AG}, \overline{AH}\). Name: octagon.`,
+            String.raw`Sides: \(\overline{AB}, \overline{BC}, \overline{CD}, \overline{DE}, \overline{EF}, \overline{FG}, \overline{GH}, \overline{HA}\). Name: hexagon.`,
+            String.raw`Sides: \(\overline{AB}, \overline{BC}, \overline{CD}, \overline{DE}, \overline{EF}, \overline{FG}, \overline{GH}, \overline{GA}\). Name: octagon.`,
+            String.raw`Sides: \(\overline{AB}, \overline{BC}, \overline{CD}, \overline{DE}, \overline{EF}, \overline{FG}, \overline{GH}, \overline{HA}\). Name: regular octagon.`,
+            String.raw`Sides: \(\overline{AB}, \overline{BC}, \overline{CD}, \overline{DE}, \overline{EF}, \overline{FG}, \overline{GH}, \overline{HA}\). Name: octagon.`,
+            String.raw`Sides: \(A,B,C,D,E,F,G,H\). Name: octagon.`
+          ],
+          choiceWrap: false
+        },
+
+        /* Q9 — Reworked from A #10; uses Figure 2 */
+        {
+          stem: String.raw`
+            <p><b>Refer to Figure 2.</b> Using \(C\) as one endpoint, which list names all the diagonals of the polygon?</p>
+          `,
+          choices: [
+            String.raw`\(\overline{CB}, \overline{CD}, \overline{CE}, \overline{CF}, \overline{CG}\)`,
+            String.raw`\(\overline{CA}, \overline{CB}, \overline{CD}, \overline{CE}, \overline{CF}\)`,
+            String.raw`\(\overline{CA}, \overline{CE}, \overline{CF}, \overline{CG}, \overline{CH}\)`,
+            String.raw`\(\overline{CE}, \overline{CF}, \overline{CG}\)`,
+            String.raw`\(\overline{CA}, \overline{CB}, \overline{CD}, \overline{CE}, \overline{CF}, \overline{CG}, \overline{CH}\)`,
+            String.raw`\(\overline{CD}, \overline{CE}, \overline{CF}, \overline{CG}, \overline{CH}\)`
+          ],
+          choiceWrap: false
+        },
+
+        /* Q10 — Reworked from B #20–#23 */
+        {
+          stem: String.raw`
+            <p><b>Refer to Figure 2.</b> How many diagonals can be drawn from each vertex of this polygon, and how many diagonals does the polygon have in total?</p>
+          `,
+          choices: [
+            String.raw`From each vertex: \(5\). Total: \(40\).`,
+            String.raw`From each vertex: \(6\). Total: \(24\).`,
+            String.raw`From each vertex: \(4\). Total: \(16\).`,
+            String.raw`From each vertex: \(5\). Total: \(16\).`,
+            String.raw`From each vertex: \(8\). Total: \(20\).`,
+            String.raw`From each vertex: \(5\). Total: \(20\).`
+          ],
+          choiceWrap: false
+        },
+
+        /* Q11 — Reworked from B #20–#23 and C #24 */
+        {
+          stem: String.raw`
+            <p>Complete the row of the polygon table for a polygon with \(9\) sides. Which choice gives the name, number of vertices, number of diagonals from each vertex, and total number of diagonals?</p>
+          `,
+          choices: [
+            String.raw`Octagon; \(8\) vertices; \(5\) from each vertex; \(20\) total.`,
+            String.raw`Nonagon; \(9\) vertices; \(5\) from each vertex; \(45\) total.`,
+            String.raw`Nonagon; \(9\) vertices; \(6\) from each vertex; \(54\) total.`,
+            String.raw`Nonagon; \(9\) vertices; \(6\) from each vertex; \(27\) total.`,
+            String.raw`Decagon; \(10\) vertices; \(7\) from each vertex; \(35\) total.`,
+            String.raw`Nonagon; \(8\) vertices; \(6\) from each vertex; \(24\) total.`
+          ],
+          choiceWrap: false
+        },
+
+        /* Q12 — Model-authored diagnostic extension from B #20–#23 */
+        {
+          stem: String.raw`
+            <p>A student says, “A hexagon has \(6\) vertices. From each vertex, \(3\) diagonals can be drawn. Therefore a hexagon has \(6\cdot 3=18\) diagonals.” What is the mistake?</p>
+          `,
+          choices: [
+            String.raw`Each diagonal has been counted twice; the correct total is \(9\).`,
+            String.raw`A hexagon has only \(5\) vertices; the correct total is \(5\).`,
+            String.raw`Only regular hexagons have diagonals; the statement gives no information about regularity.`,
+            String.raw`From each vertex of a hexagon, only \(2\) diagonals can be drawn; the correct total is \(6\).`,
+            String.raw`The student should add instead of multiply; the correct total is \(6+3=9\).`,
+            String.raw`The student counted the sides, not the diagonals; the correct total is \(18-6=12\).`
+          ],
+          choiceWrap: false
+        },
+
+        /* Q13 — Model-authored reverse-use of diagonal formula */
+        {
+          stem: String.raw`
+            <p>Which polygon has exactly \(20\) diagonals in total?</p>
+          `,
+          choices: [
+            String.raw`Pentagon`,
+            String.raw`Hexagon`,
+            String.raw`Heptagon`,
+            String.raw`Nonagon`,
+            String.raw`Octagon`,
+            String.raw`Decagon`
+          ],
+          choiceWrap: false
+        },
+
+        /* Q14 — Reworked from B #11–#14 */
+        {
+          stem: String.raw`
+            <p>Under the usual definition of a simple polygon used in this homework, which requested drawing cannot be made?</p>
+          `,
+          choices: [
+            String.raw`A regular quadrilateral.`,
+            String.raw`An equilateral pentagon that is not convex.`,
+            String.raw`An equiangular pentagon that is not convex.`,
+            String.raw`An equiangular hexagon that is not equilateral.`,
+            String.raw`A convex heptagon that is neither equilateral nor equiangular.`,
+            String.raw`A regular triangle.`
+          ],
+          choiceWrap: false
+        },
+
+        /* Q15 — Model-generated figure: 2-5-15.png; reworked from B #15–#18 */
+        {
+          stem: String.raw`
+            <p><b>Refer to Figure 3.</b> Which statement is true?</p>
+          `,
+          media: String.raw`
+            <figure>
+              <img src="2-5-15.png" alt="Triangle EFG with points H and J on side EG and point I inside the triangle" />
+              <figcaption>Figure 3</figcaption>
+            </figure>
+          `,
+          choices: [
+            String.raw`Points \(H\) and \(J\) are exterior to \(\triangle EFG\) because they are not vertices of the triangle.`,
+            String.raw`Points \(H\) and \(J\) lie on side \(\overline{EG}\), and point \(I\) lies in the interior of \(\triangle EFG\).`,
+            String.raw`Point \(I\) lies on \(\overline{EF}\), and point \(G\) lies in the interior of \(\triangle EFJ\).`,
+            String.raw`Point \(H\) is an interior point of \(\triangle EFJ\).`,
+            String.raw`Point \(E\) is in the interior of \(\angle EFG\).`,
+            String.raw`Points \(J\) and \(G\) are both interior points of \(\triangle EFJ\).`
+          ],
+          choiceWrap: false
+        },
+
+        /* Q16 — Reworked from B #16–#17; uses Figure 3 */
+        {
+          stem: String.raw`
+            <p><b>Refer to Figure 3.</b> Which list gives exactly the labeled points in the interior of \(\angle EFG\)?</p>
+          `,
+          choices: [
+            String.raw`\(E, H, I, J, G\)`,
+            String.raw`\(H, J\) only`,
+            String.raw`\(I\) only`,
+            String.raw`\(E, G\) only`,
+            String.raw`\(F, H, I, J\)`,
+            String.raw`\(H, I, J\)`
+          ],
+          choiceWrap: false
+        },
+
+        /* Q17 — Reworked from B #19 */
+        {
+          stem: String.raw`
+            <p>Is the interior of an angle a convex set?</p>
+          `,
+          choices: [
+            String.raw`No. An angle has two rays, and a set with rays cannot be convex.`,
+            String.raw`No. Two points inside an angle can always be joined by a segment that leaves the angle.`,
+            String.raw`No, unless the angle is a right angle.`,
+            String.raw`Yes. The interior of an angle is the intersection of two half-planes, and the segment joining two interior points stays inside that intersection.`,
+            String.raw`Yes, but only because every angle is a polygon.`,
+            String.raw`There is not enough information; some angle interiors are convex and some are not.`
+          ],
+          choiceWrap: false
+        },
+
+        /* Q18 — Reworked from C #25 */
+        {
+          stem: String.raw`
+            <p>Let \(L\), \(M\), and \(N\) be noncollinear points. Point \(P\) is not on \(\triangle LMN\). Suppose \(P\) is on the same side of line \(LM\) as \(N\), and on the same side of line \(MN\) as \(L\). What can be concluded?</p>
+          `,
+          choices: [
+            String.raw`Point \(P\) must be in the interior of \(\angle LMN\), but it does not have to be in the interior of \(\triangle LMN\).`,
+            String.raw`Point \(P\) must be in the interior of \(\triangle LMN\).`,
+            String.raw`Point \(P\) must be in the exterior of \(\angle LMN\).`,
+            String.raw`Point \(P\) must lie on \(\overline{LN}\).`,
+            String.raw`Point \(P\) must lie on ray \(\overrightarrow{ML}\).`,
+            String.raw`No conclusion about \(\angle LMN\) can be made from the two half-plane conditions.`
+          ],
+          choiceWrap: false
+        }
+      ]
+    };
+  </script>
+
+  <link rel="stylesheet" href="/math-homework/assets/core-rich.css" />
+  <script defer src="/math-homework/assets/core-rich.js"></script>
+  <script defer src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+</head>
+
+<body>
+  <div id="hw-root">Loading…</div>
+</body>
+</html>
