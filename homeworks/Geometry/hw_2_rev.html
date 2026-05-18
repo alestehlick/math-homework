@@ -1,0 +1,556 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Geometry Review Homework</title>
+
+  <script>
+    /* =========================
+       Geometry Review Homework — Chapters 2 and 4
+       Adapted for: /math-homework/assets/core-rich.js
+
+       REQUIRED SOURCE REFERENCES (attached homework files):
+       - Homework 2-5: Simple Curves, Polygons, and Diagonals.
+       - Homework 2A: Betweenness, Rays, Half Lines, Segments, and Set Operations.
+       - Homework 2B: Line Segment, Ray, Segment Relations, Segment Comparison, Midpoint, and Measurement.
+       - Homework 2C: Convexity, Half-Planes, Angles, Interior/Exterior of Angles, and Adjacent Angles.
+       - Homework 2D: Vertical Angles, Linear Pairs, Angle Measure, Complementary and Supplementary Angles.
+       - Homework 4-3 and 4-4: Angle Bisectors, Perpendicular Lines, Complementary and Supplementary Angles.
+       - Homework 4-5: Classifying Triangles and Quadrilaterals.
+
+       IMAGE FILES:
+       - User-supplied figure(s): none used directly.
+       - Model-generated figure(s): none.
+
+       MODEL-REWORKED / MODEL-AUTHORED ITEMS:
+       - This is a 30-question review set. All items are model-authored or model-reworked to cover the attached homework while forcing students to compare definitions, distinguish near cases, use set language carefully, and apply angle/polygon/classification ideas without relying on memorized patterns.
+       - Q1-Q7 review betweenness, rays, half lines, segments, segment relations, segment comparison, and midpoint.
+       - Q8-Q11 review simple/closed curves, polygons, convexity, and half-planes.
+       - Q12-Q20 review angle interiors, adjacent angles, vertical angles, linear pairs, complements/supplements, perpendicular lines, and angle bisectors.
+       - Q21-Q24 review polygon diagonals and the diagonal-count formulas.
+       - Q25-Q30 review triangle and quadrilateral classification, including the hierarchy of parallelograms, rectangles, and rhombi.
+       ========================= */
+
+    window.homeworkData = {
+      classId : "Geometry",
+      id      : "Review Homework",
+      title   : "Review Homework — Geometry Chapters 2 and 4",
+      graphics : String.raw``,
+      answerKey : ['C', 'C', 'E', 'D', 'B', 'D', 'C', 'D', 'B', 'D', 'D', 'B', 'C', 'D', 'D', 'C', 'D', 'C', 'A', 'C', 'C', 'A', 'B', 'D', 'C', 'B', 'B', 'A', 'C', 'B'],
+      questions : [
+
+        /* Q1 */
+        {
+          stem: String.raw`
+            <p>Let \(A\neq B\). Compare the ray \(\overrightarrow{AB}\) with the half line from \(A\) through \(B\), excluding \(A\).</p>
+<p>Which statement is correct?</p>
+          `,
+          choices: [
+            String.raw`The ray and the half line are the same set, because both start at \(A\).`,
+        String.raw`The half line includes \(A\), but the ray excludes \(A\).`,
+        String.raw`The ray \(\overrightarrow{AB}\) includes \(A\); the half line is the same direction but with \(A\) removed.`,
+        String.raw`The half line contains only the points between \(A\) and \(B\).`,
+        String.raw`The ray excludes both \(A\) and \(B\), while the half line includes both.`,
+        String.raw`The ray contains the whole line \(\overleftrightarrow{AB}\), while the half line contains only one point.`
+          ],
+          choiceWrap: false
+        },
+
+        /* Q2 */
+        {
+          stem: String.raw`
+            <p>Distinct points \(A,B,C,D\) lie on one line in the order \(A-B-C-D\).</p>
+<p>Which statement is <b>false</b>?</p>
+          `,
+          choices: [
+            String.raw`\(B\) is between \(A\) and \(C\).`,
+        String.raw`\(C\in\overrightarrow{AB}\).`,
+        String.raw`\(A\) belongs to the half line from \(A\) through \(D\), excluding \(A\).`,
+        String.raw`\(B\in\overline{AD}\).`,
+        String.raw`\(A\in\overrightarrow{CB}\).`,
+        String.raw`\(D\in\overrightarrow{AB}\).`
+          ],
+          choiceWrap: false
+        },
+
+        /* Q3 */
+        {
+          stem: String.raw`
+            <p>Distinct points \(A,B,C,D\) lie on one line in the order \(A-B-C-D\).</p>
+<p>Which set equals \(\overline{AC}\cap\overline{BD}\)?</p>
+          `,
+          choices: [
+            String.raw`\(\overline{AB}\)`,
+        String.raw`\(\overline{CD}\)`,
+        String.raw`\(\{B,C\}\)`,
+        String.raw`\(\overline{AD}\)`,
+        String.raw`\(\overline{BC}\)`,
+        String.raw`\(\varnothing\)`
+          ],
+          choiceWrap: false
+        },
+
+        /* Q4 */
+        {
+          stem: String.raw`
+            <p>Which statement gives the correct definition of the segment \(\overline{AB}\), assuming \(A\neq B\)?</p>
+          `,
+          choices: [
+            String.raw`Only the two endpoints \(A\) and \(B\).`,
+        String.raw`All points of the line \(\overleftrightarrow{AB}\).`,
+        String.raw`All points on the same side of \(A\) as \(B\), including \(A\).`,
+        String.raw`The endpoints \(A,B\), together with every point between \(A\) and \(B\).`,
+        String.raw`All points beyond \(B\), but not the points between \(A\) and \(B\).`,
+        String.raw`The union of two opposite rays with different origins.`
+          ],
+          choiceWrap: false
+        },
+
+        /* Q5 */
+        {
+          stem: String.raw`
+            <p>Two segments are called adjacent in this course when the correct three conditions are all satisfied.</p>
+<p>Which description is correct?</p>
+          `,
+          choices: [
+            String.raw`They are congruent and have no point in common.`,
+        String.raw`They are consecutive, collinear, and have only one common endpoint.`,
+        String.raw`They are collinear, even if they overlap in many points.`,
+        String.raw`They have equal length and lie on the same line.`,
+        String.raw`They share an endpoint, even if they are not collinear.`,
+        String.raw`They are two segments drawn in the same plane.`
+          ],
+          choiceWrap: false
+        },
+
+        /* Q6 */
+        {
+          stem: String.raw`
+            <p>A copy of \(\overline{CD}\) is transported onto the ray \(\overrightarrow{AB}\), starting at \(A\). The endpoint of the copy is \(P\).</p>
+<p>Which comparison is correct?</p>
+          `,
+          choices: [
+            String.raw`If \(P\) is between \(A\) and \(B\), then \(\overline{AB}\prec\overline{CD}\).`,
+        String.raw`If \(P=B\), then \(\overline{AB}\succ\overline{CD}\).`,
+        String.raw`If \(B\) is between \(A\) and \(P\), then \(\overline{AB}\cong\overline{CD}\).`,
+        String.raw`If \(P\) is between \(A\) and \(B\), then \(\overline{AB}\succ\overline{CD}\).`,
+        String.raw`No comparison can be made after transporting one segment onto a ray.`,
+        String.raw`If \(P\neq B\), the two segments must be congruent.`
+          ],
+          choiceWrap: false
+        },
+
+        /* Q7 */
+        {
+          stem: String.raw`
+            <p>Point \(M\) is the midpoint of \(\overline{AB}\). Suppose \(AM=4x-7\) and \(MB=2x+9\).</p>
+<p>Find \(x\).</p>
+          `,
+          choices: [
+            String.raw`\(6\)`,
+        String.raw`\(7\)`,
+        String.raw`\(8\)`,
+        String.raw`\(9\)`,
+        String.raw`\(10\)`,
+        String.raw`\(16\)`
+          ],
+          choiceWrap: false
+        },
+
+        /* Q8 */
+        {
+          stem: String.raw`
+            <p>Which statement correctly connects the definitions of simple curve, closed curve, and polygon?</p>
+          `,
+          choices: [
+            String.raw`A curve is simple exactly when it has no boundary points.`,
+        String.raw`A closed curve must be made only of line segments.`,
+        String.raw`A polygon is any curve with at least three corners, even if it has endpoints.`,
+        String.raw`A polygon is a simple closed curve formed by a finite chain of line segments.`,
+        String.raw`A concave figure cannot be a polygon.`,
+        String.raw`A circle is a polygon because it is simple and closed.`
+          ],
+          choiceWrap: false
+        },
+
+        /* Q9 */
+        {
+          stem: String.raw`
+            <p>A point \(P\) on a curve has the following local property: if a small enough circle is drawn around \(P\), the curve crosses that circle in more than two points.</p>
+<p>What does this show?</p>
+          `,
+          choices: [
+            String.raw`\(P\) is a boundary point.`,
+        String.raw`\(P\) is a self-intersection point, so the curve is not simple.`,
+        String.raw`\(P\) is the vertex of a polygon.`,
+        String.raw`\(P\) is in the exterior of the curve.`,
+        String.raw`The curve must be convex.`,
+        String.raw`The curve must be closed.`
+          ],
+          choiceWrap: false
+        },
+
+        /* Q10 */
+        {
+          stem: String.raw`
+            <p>Which set is <b>not necessarily</b> convex?</p>
+          `,
+          choices: [
+            String.raw`A line segment.`,
+        String.raw`A half-plane.`,
+        String.raw`The interior of an angle.`,
+        String.raw`The interior of a concave polygon.`,
+        String.raw`A line.`,
+        String.raw`A ray.`
+          ],
+          choiceWrap: false
+        },
+
+        /* Q11 */
+        {
+          stem: String.raw`
+            <p>Line \(r\) separates the plane into two half-planes. Points \(P\) and \(Q\) lie in the same half-plane determined by \(r\), and neither point lies on \(r\).</p>
+<p>Which statement is guaranteed?</p>
+          `,
+          choices: [
+            String.raw`\(\overline{PQ}\) must meet \(r\).`,
+        String.raw`\(\overline{PQ}\) lies entirely on \(r\).`,
+        String.raw`\(P\) and \(Q\) are on opposite sides of \(r\).`,
+        String.raw`\(\overline{PQ}\) does not meet \(r\).`,
+        String.raw`\(\overline{PQ}\) is perpendicular to \(r\).`,
+        String.raw`\(P=Q\).`
+          ],
+          choiceWrap: false
+        },
+
+        /* Q12 */
+        {
+          stem: String.raw`
+            <p>Which statement best describes a point in the interior of \(\angle AOB\)?</p>
+          `,
+          choices: [
+            String.raw`It lies on both sides \(\overrightarrow{OA}\) and \(\overrightarrow{OB}\).`,
+        String.raw`It lies on the same side of line \(OA\) as \(B\), and on the same side of line \(OB\) as \(A\).`,
+        String.raw`It lies outside both half-planes determined by the sides of the angle.`,
+        String.raw`It must lie on segment \(\overline{AB}\).`,
+        String.raw`It must be closer to \(O\) than to \(A\) or \(B\).`,
+        String.raw`It lies on exactly one side of the angle.`
+          ],
+          choiceWrap: false
+        },
+
+        /* Q13 */
+        {
+          stem: String.raw`
+            <p>Which pair of angles is adjacent?</p>
+          `,
+          choices: [
+            String.raw`Two angles with the same vertex and one common side, but with overlapping interiors.`,
+        String.raw`Two angles with equal measures but different vertices.`,
+        String.raw`Two angles that share one side and have no interior points in common.`,
+        String.raw`Two angles whose measures add to \(180^\circ\), even if they are far apart.`,
+        String.raw`Two vertical angles formed by two intersecting lines.`,
+        String.raw`Two angles that have the same vertex but no common side.`
+          ],
+          choiceWrap: false
+        },
+
+        /* Q14 */
+        {
+          stem: String.raw`
+            <p>Which statement is always true?</p>
+          `,
+          choices: [
+            String.raw`Vertical angles are always adjacent.`,
+        String.raw`Every pair of supplementary angles is a linear pair.`,
+        String.raw`Every linear pair consists of two vertical angles.`,
+        String.raw`Vertical angles are always congruent, and every linear pair is supplementary.`,
+        String.raw`Every pair of congruent angles is vertical.`,
+        String.raw`Every pair of adjacent angles is complementary.`
+          ],
+          choiceWrap: false
+        },
+
+        /* Q15 */
+        {
+          stem: String.raw`
+            <p>Two lines intersect. A pair of vertical angles have measures \((3x+20)^\circ\) and \((5x-16)^\circ\).</p>
+<p>Find \(x\).</p>
+          `,
+          choices: [
+            String.raw`\(8\)`,
+        String.raw`\(12\)`,
+        String.raw`\(16\)`,
+        String.raw`\(18\)`,
+        String.raw`\(24\)`,
+        String.raw`\(36\)`
+          ],
+          choiceWrap: false
+        },
+
+        /* Q16 */
+        {
+          stem: String.raw`
+            <p>Two angles form a linear pair. Their measures are \((2x+15)^\circ\) and \((5x-3)^\circ\).</p>
+<p>Find \(x\).</p>
+          `,
+          choices: [
+            String.raw`\(18\)`,
+        String.raw`\(21\)`,
+        String.raw`\(24\)`,
+        String.raw`\(27\)`,
+        String.raw`\(30\)`,
+        String.raw`\(36\)`
+          ],
+          choiceWrap: false
+        },
+
+        /* Q17 */
+        {
+          stem: String.raw`
+            <p>An angle exceeds its complement by \(28^\circ\).</p>
+<p>What is the measure of the angle?</p>
+          `,
+          choices: [
+            String.raw`\(31^\circ\)`,
+        String.raw`\(45^\circ\)`,
+        String.raw`\(56^\circ\)`,
+        String.raw`\(59^\circ\)`,
+        String.raw`\(62^\circ\)`,
+        String.raw`\(118^\circ\)`
+          ],
+          choiceWrap: false
+        },
+
+        /* Q18 */
+        {
+          stem: String.raw`
+            <p>Two lines intersect, and one of the four angles formed is a right angle.</p>
+<p>Which conclusion is justified?</p>
+          `,
+          choices: [
+            String.raw`Only the marked angle is right; nothing follows about the other three angles.`,
+        String.raw`Exactly two of the four angles are right.`,
+        String.raw`All four angles are right, and the two lines are perpendicular.`,
+        String.raw`The two lines form no linear pairs.`,
+        String.raw`The two lines are parallel.`,
+        String.raw`The two lines may or may not intersect.`
+          ],
+          choiceWrap: false
+        },
+
+        /* Q19 */
+        {
+          stem: String.raw`
+            <p>Point \(C\) lies in the interior of \(\angle AOB\), and \(m\angle AOC=m\angle COB\).</p>
+<p>Which conclusion is justified by definition?</p>
+          `,
+          choices: [
+            String.raw`\(\overrightarrow{OC}\) bisects \(\angle AOB\).`,
+        String.raw`\(\overrightarrow{OA}\) bisects \(\angle COB\).`,
+        String.raw`\(\overrightarrow{OB}\) bisects \(\angle AOC\).`,
+        String.raw`\(\angle AOB\) is a straight angle.`,
+        String.raw`\(\angle AOC\) and \(\angle COB\) are vertical angles.`,
+        String.raw`\(\overrightarrow{OC}\) is perpendicular to both sides of the angle.`
+          ],
+          choiceWrap: false
+        },
+
+        /* Q20 */
+        {
+          stem: String.raw`
+            <p>Ray \(\overrightarrow{OC}\) bisects \(\angle AOB\). Suppose \(m\angle AOC=(4x-9)^\circ\) and \(m\angle COB=(2x+17)^\circ\).</p>
+<p>Find \(x\).</p>
+          `,
+          choices: [
+            String.raw`\(9\)`,
+        String.raw`\(11\)`,
+        String.raw`\(13\)`,
+        String.raw`\(15\)`,
+        String.raw`\(17\)`,
+        String.raw`\(26\)`
+          ],
+          choiceWrap: false
+        },
+
+        /* Q21 */
+        {
+          stem: String.raw`
+            <p>Two angles form a linear pair. One ray bisects the first angle, and another ray bisects the second angle.</p>
+<p>What is the measure of the angle between the two bisectors?</p>
+          `,
+          choices: [
+            String.raw`It is always \(45^\circ\).`,
+        String.raw`It is always \(60^\circ\).`,
+        String.raw`It is always \(90^\circ\).`,
+        String.raw`It is always \(120^\circ\).`,
+        String.raw`It equals the smaller angle in the original linear pair.`,
+        String.raw`It cannot be determined without the original angle measures.`
+          ],
+          choiceWrap: false
+        },
+
+        /* Q22 */
+        {
+          stem: String.raw`
+            <p>A decagon has \(10\) sides.</p>
+<p>How many diagonals can be drawn from one fixed vertex, and how many diagonals does the decagon have in total?</p>
+          `,
+          choices: [
+            String.raw`From one vertex: \(7\). Total: \(35\).`,
+        String.raw`From one vertex: \(8\). Total: \(40\).`,
+        String.raw`From one vertex: \(7\). Total: \(70\).`,
+        String.raw`From one vertex: \(10\). Total: \(35\).`,
+        String.raw`From one vertex: \(6\). Total: \(30\).`,
+        String.raw`From one vertex: \(5\). Total: \(25\).`
+          ],
+          choiceWrap: false
+        },
+
+        /* Q23 */
+        {
+          stem: String.raw`
+            <p>A student says, “An \(n\)-gon has \(n-3\) diagonals from each vertex, so the total number of diagonals is \(n(n-3)\).”</p>
+<p>What is the mistake?</p>
+          `,
+          choices: [
+            String.raw`The value \(n-3\) should be \(n-2\), because only one adjacent vertex is excluded.`,
+        String.raw`The formula counts each diagonal twice, once from each endpoint; the total should be \(\dfrac{n(n-3)}{2}\).`,
+        String.raw`The formula works only for triangles.`,
+        String.raw`The student counted the sides, not the diagonals; the total should be \(n\).`,
+        String.raw`The formula should use \(n+3\), because a diagonal connects nonconsecutive vertices.`,
+        String.raw`There is no mistake; \(n(n-3)\) is the total number of diagonals.`
+          ],
+          choiceWrap: false
+        },
+
+        /* Q24 */
+        {
+          stem: String.raw`
+            <p>Which polygon has exactly \(27\) diagonals in total?</p>
+          `,
+          choices: [
+            String.raw`Hexagon`,
+        String.raw`Heptagon`,
+        String.raw`Octagon`,
+        String.raw`Nonagon`,
+        String.raw`Decagon`,
+        String.raw`Dodecagon`
+          ],
+          choiceWrap: false
+        },
+
+        /* Q25 */
+        {
+          stem: String.raw`
+            <p>A triangle has one angle measuring \(110^\circ\), and exactly two of its sides are congruent.</p>
+<p>Which classification is most precise?</p>
+          `,
+          choices: [
+            String.raw`acute scalene`,
+        String.raw`right isosceles`,
+        String.raw`obtuse isosceles`,
+        String.raw`obtuse equilateral`,
+        String.raw`equiangular isosceles`,
+        String.raw`right scalene`
+          ],
+          choiceWrap: false
+        },
+
+        /* Q26 */
+        {
+          stem: String.raw`
+            <p>In this course, suppose “isosceles triangle” is used in the inclusive sense, meaning “at least two congruent sides.”</p>
+<p>Which statement is true?</p>
+          `,
+          choices: [
+            String.raw`No equilateral triangle is isosceles.`,
+        String.raw`Every equilateral triangle is also isosceles.`,
+        String.raw`Every isosceles triangle is equilateral.`,
+        String.raw`Every scalene triangle is isosceles.`,
+        String.raw`Isosceles describes angle measure, not side lengths.`,
+        String.raw`A triangle cannot be both equilateral and equiangular.`
+          ],
+          choiceWrap: false
+        },
+
+        /* Q27 */
+        {
+          stem: String.raw`
+            <p>Quadrilateral \(ABCD\) is named in order around the figure.</p>
+<p>Which choice correctly gives one pair of opposite sides and one pair of consecutive angles?</p>
+          `,
+          choices: [
+            String.raw`Opposite sides: \(\overline{AB}\) and \(\overline{BC}\); consecutive angles: \(\angle A\) and \(\angle C\).`,
+        String.raw`Opposite sides: \(\overline{AB}\) and \(\overline{CD}\); consecutive angles: \(\angle A\) and \(\angle B\).`,
+        String.raw`Opposite sides: \(\overline{AD}\) and \(\overline{AB}\); consecutive angles: \(\angle B\) and \(\angle D\).`,
+        String.raw`Opposite sides: \(\overline{AC}\) and \(\overline{BD}\); consecutive angles: \(\angle A\) and \(\angle D\).`,
+        String.raw`Opposite sides: \(\overline{BC}\) and \(\overline{CD}\); consecutive angles: \(\angle A\) and \(\angle C\).`,
+        String.raw`Opposite sides: \(\overline{AB}\) and \(\overline{AD}\); consecutive angles: \(\angle C\) and \(\angle A\).`
+          ],
+          choiceWrap: false
+        },
+
+        /* Q28 */
+        {
+          stem: String.raw`
+            <p>In quadrilateral \(ABCD\), suppose \(\overline{AB}\parallel\overline{CD}\), and the other pair of opposite sides is not parallel.</p>
+<p>Using the trapezoid vocabulary from the homework, which statement is correct?</p>
+          `,
+          choices: [
+            String.raw`\(\overline{AB}\) and \(\overline{CD}\) are the bases; \(\overline{AD}\) and \(\overline{BC}\) are the legs.`,
+        String.raw`\(\overline{AD}\) and \(\overline{BC}\) are the bases; \(\overline{AB}\) and \(\overline{CD}\) are the legs.`,
+        String.raw`All four sides are bases.`,
+        String.raw`The diagonals \(\overline{AC}\) and \(\overline{BD}\) are the bases.`,
+        String.raw`There are no legs because a trapezoid has no nonparallel sides.`,
+        String.raw`The bases must be congruent, so no conclusion can be made.`
+          ],
+          choiceWrap: false
+        },
+
+        /* Q29 */
+        {
+          stem: String.raw`
+            <p>Which requested drawing cannot be made, using the definitions from the classification homework?</p>
+          `,
+          choices: [
+            String.raw`A regular quadrilateral.`,
+        String.raw`An equilateral pentagon that is not convex.`,
+        String.raw`An equiangular pentagon that is not convex.`,
+        String.raw`An equiangular hexagon that is not equilateral.`,
+        String.raw`A convex heptagon that is neither equilateral nor equiangular.`,
+        String.raw`A regular triangle.`
+          ],
+          choiceWrap: false
+        },
+
+        /* Q30 */
+        {
+          stem: String.raw`
+            <p>A quadrilateral is both a rectangle and a rhombus.</p>
+<p>Using only the definitions from the homework, which description is justified?</p>
+          `,
+          choices: [
+            String.raw`It is a trapezoid with exactly one pair of parallel sides.`,
+        String.raw`It is a parallelogram with four right angles and four congruent sides.`,
+        String.raw`It cannot exist, because rectangles and rhombi are disjoint classes.`,
+        String.raw`It is a triangle with four sides.`,
+        String.raw`It must be scalene.`,
+        String.raw`It is a quadrilateral with no parallel sides.`
+          ],
+          choiceWrap: false
+        }
+
+      ]
+    };
+  </script>
+
+  <link rel="stylesheet" href="/math-homework/assets/core-rich.css" />
+  <script defer src="/math-homework/assets/core-rich.js"></script>
+  <script defer src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+</head>
+<body>
+  <div id="hw-root">Loading…</div>
+</body>
+</html>
