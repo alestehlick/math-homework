@@ -7,7 +7,7 @@
 
   <script>
     /* =========================
-       Homework 3-3 — Slope and Slope-Intercept Form (Algebra II)
+       Homework 3-3 — Slope, Slope-Intercept Form, and Intercept-Intercept Form (Algebra II)
        Adapted for: /math-homework/assets/core-rich.js
 
        REQUIRED SOURCE REFERENCES:
@@ -19,6 +19,7 @@
        - Q10 reworks B #19 into a slope-and-intercept diagnostic multiple-choice item.
        - Q11 is adapted from C #28 to test recognition of equations already written in the form z = f(x,y).
        - Q12 is a conceptual reworking of C #28 focused on why the graph of z = f(x,y) is a surface rather than a solid.
+       - Q13-Q16 are model-authored items on intercept-intercept form x/a + y/b = 1, including intercepts, conversion, slope, and a conceptual justification.
 
        IMAGE NAMING RULE:
        - No external PNG figures are used in this homework.
@@ -27,9 +28,9 @@
     window.homeworkData = {
       classId : "Algebra2",
       id      : "Homework 3-3",
-      title   : "Homework 3-3 — Slope and Slope-Intercept Form",
+      title   : "Homework 3-3 — Slope, Slope-Intercept Form, and Intercept-Intercept Form",
       graphics : String.raw``,
-      answerKey : ["B","E","C","A","D","F","B","C","A","E","D","C"],
+      answerKey : ["B","E","C","A","D","F","B","C","A","E","D","C","D","F","A","E"],
       questions : [
         {
           stem: String.raw`
@@ -197,6 +198,62 @@
             String.raw`Because the graph must always be a plane.`,
             String.raw`Because three-dimensional graphs cannot show curved objects.`,
             String.raw`Because a function of two variables always fills an entire box in space.`
+          ]
+        },
+        {
+          stem: String.raw`
+            <p>A line has x-intercept <span class="math">\(6\)</span> and y-intercept <span class="math">\(-3\)</span>. Which equation writes the line in intercept-intercept form?</p>
+          `,
+          choiceWrap: false,
+          choices: [
+            String.raw`<span class="math">\(\dfrac{x}{3}+\dfrac{y}{6}=1\)</span>`,
+            String.raw`<span class="math">\(\dfrac{x}{6}+\dfrac{y}{3}=1\)</span>`,
+            String.raw`<span class="math">\(\dfrac{x}{-3}+\dfrac{y}{6}=1\)</span>`,
+            String.raw`<span class="math">\(\dfrac{x}{6}-\dfrac{y}{3}=1\)</span>`,
+            String.raw`<span class="math">\(\dfrac{x}{3}-\dfrac{y}{6}=1\)</span>`,
+            String.raw`<span class="math">\(\dfrac{x}{-6}+\dfrac{y}{3}=1\)</span>`
+          ]
+        },
+        {
+          stem: String.raw`
+            <p>For the line <span class="math">\(\dfrac{x}{4}+\dfrac{y}{-2}=1\)</span>, which statement gives the intercepts and the slope correctly?</p>
+          `,
+          choiceWrap: false,
+          choices: [
+            String.raw`x-intercept <span class="math">\(-2\)</span>; y-intercept <span class="math">\(4\)</span>; slope <span class="math">\(2\)</span>`,
+            String.raw`x-intercept <span class="math">\(4\)</span>; y-intercept <span class="math">\(2\)</span>; slope <span class="math">\(-\tfrac12\)</span>`,
+            String.raw`x-intercept <span class="math">\(-4\)</span>; y-intercept <span class="math">\(2\)</span>; slope <span class="math">\(\tfrac12\)</span>`,
+            String.raw`x-intercept <span class="math">\(4\)</span>; y-intercept <span class="math">\(-2\)</span>; slope <span class="math">\(-2\)</span>`,
+            String.raw`x-intercept <span class="math">\(-4\)</span>; y-intercept <span class="math">\(-2\)</span>; slope <span class="math">\(-\tfrac12\)</span>`,
+            String.raw`x-intercept <span class="math">\(4\)</span>; y-intercept <span class="math">\(-2\)</span>; slope <span class="math">\(\tfrac12\)</span>`
+          ]
+        },
+        {
+          stem: String.raw`
+            <p>Why does the equation <span class="math">\(\dfrac{x}{a}+\dfrac{y}{b}=1\)</span> show the intercepts of the line, assuming <span class="math">\(a\ne0\)</span> and <span class="math">\(b\ne0\)</span>?</p>
+          `,
+          choiceWrap: false,
+          choices: [
+            String.raw`When <span class="math">\(y=0\)</span>, the equation forces <span class="math">\(x=a\)</span>; when <span class="math">\(x=0\)</span>, it forces <span class="math">\(y=b\)</span>.`,
+            String.raw`The denominators are always the reciprocals of the intercepts, so the intercepts are <span class="math">\(\tfrac1a\)</span> and <span class="math">\(\tfrac1b\)</span>.`,
+            String.raw`The numbers <span class="math">\(a\)</span> and <span class="math">\(b\)</span> are the slope and y-intercept because all linear equations have the form <span class="math">\(y=mx+b\)</span>.`,
+            String.raw`The form works only when <span class="math">\(a=b\)</span>, because otherwise the graph is not a line.`,
+            String.raw`It shows the intercepts because the two fractions must each equal <span class="math">\(1\)</span>.`,
+            String.raw`It shows only the x-intercept; the y-intercept must be found from the slope-intercept form.`
+          ]
+        },
+        {
+          stem: String.raw`
+            <p>Rewrite <span class="math">\(3x-2y=12\)</span> in intercept-intercept form.</p>
+          `,
+          choiceWrap: false,
+          choices: [
+            String.raw`<span class="math">\(\dfrac{x}{3}+\dfrac{y}{-2}=1\)</span>`,
+            String.raw`<span class="math">\(\dfrac{x}{4}+\dfrac{y}{6}=1\)</span>`,
+            String.raw`<span class="math">\(\dfrac{x}{12}-\dfrac{y}{12}=1\)</span>`,
+            String.raw`<span class="math">\(\dfrac{x}{-4}+\dfrac{y}{6}=1\)</span>`,
+            String.raw`<span class="math">\(\dfrac{x}{4}+\dfrac{y}{-6}=1\)</span>`,
+            String.raw`<span class="math">\(\dfrac{x}{6}+\dfrac{y}{-4}=1\)</span>`
           ]
         }
       ]
