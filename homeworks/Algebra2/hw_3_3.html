@@ -17,9 +17,8 @@
 
        MODEL-REWORKED / MODEL-AUTHORED ITEMS:
        - Q10 reworks B #19 into a slope-and-intercept diagnostic multiple-choice item.
-       - Q11 is adapted from C #28 to test recognition of equations already written in the form z = f(x,y).
-       - Q12 is a conceptual reworking of C #28 focused on why the graph of z = f(x,y) is a surface rather than a solid.
-       - Q13-Q16 are model-authored items on intercept-intercept form x/a + y/b = 1, including intercepts, conversion, slope, and a conceptual justification.
+       - Q11 is model-authored to test whether students can read slope and intercepts from a relation written in y = mx + b form.
+       - Q12-Q15 are model-authored items on intercept-intercept form x/a + y/b = 1, including intercepts, conversion, slope, and a conceptual justification.
 
        IMAGE NAMING RULE:
        - No external PNG figures are used in this homework.
@@ -34,16 +33,16 @@
       questions : [
         {
           stem: String.raw`
-            <p>The equation <span class="math">\(x-2y=6\)</span> can be rewritten in function notation. Which choice is correct?</p>
+            <p>Rewrite <span class="math">\(x-2y=6\)</span> in slope-intercept form. Which choice also gives the correct slope and y-intercept?</p>
           `,
           choiceWrap: false,
           choices: [
-            String.raw`<span class="math">\(f(x)=2x-6\)</span>; slope <span class="math">\(2\)</span>; y-intercept <span class="math">\(-6\)</span>`,
-            String.raw`<span class="math">\(f(x)=\tfrac12x-3\)</span>; slope <span class="math">\(\tfrac12\)</span>; y-intercept <span class="math">\(-3\)</span>`,
-            String.raw`<span class="math">\(f(x)=-\tfrac12x+3\)</span>; slope <span class="math">\(-\tfrac12\)</span>; y-intercept <span class="math">\(3\)</span>`,
-            String.raw`<span class="math">\(f(x)=\tfrac12x+3\)</span>; slope <span class="math">\(\tfrac12\)</span>; y-intercept <span class="math">\(3\)</span>`,
-            String.raw`<span class="math">\(f(x)=-2x+6\)</span>; slope <span class="math">\(-2\)</span>; y-intercept <span class="math">\(6\)</span>`,
-            String.raw`<span class="math">\(f(x)=x-6\)</span>; slope <span class="math">\(1\)</span>; y-intercept <span class="math">\(-6\)</span>`
+            String.raw`<span class="math">\(y=2x-6\)</span>; slope <span class="math">\(2\)</span>; y-intercept <span class="math">\(-6\)</span>`,
+            String.raw`<span class="math">\(y=\tfrac12x-3\)</span>; slope <span class="math">\(\tfrac12\)</span>; y-intercept <span class="math">\(-3\)</span>`,
+            String.raw`<span class="math">\(y=-\tfrac12x+3\)</span>; slope <span class="math">\(-\tfrac12\)</span>; y-intercept <span class="math">\(3\)</span>`,
+            String.raw`<span class="math">\(y=\tfrac12x+3\)</span>; slope <span class="math">\(\tfrac12\)</span>; y-intercept <span class="math">\(3\)</span>`,
+            String.raw`<span class="math">\(y=-2x+6\)</span>; slope <span class="math">\(-2\)</span>; y-intercept <span class="math">\(6\)</span>`,
+            String.raw`<span class="math">\(y=x-6\)</span>; slope <span class="math">\(1\)</span>; y-intercept <span class="math">\(-6\)</span>`
           ]
         },
         {
@@ -90,16 +89,16 @@
         },
         {
           stem: String.raw`
-            <p>The relation <span class="math">\(x=y\)</span> is written as a function. Which choice gives the correct function, slope, and y-intercept?</p>
+            <p>Rewrite the relation <span class="math">\(x=y\)</span> in slope-intercept form. Which choice gives the correct equation, slope, and y-intercept?</p>
           `,
           choiceWrap: false,
           choices: [
-            String.raw`<span class="math">\(f(x)=-x\)</span>; slope <span class="math">\(-1\)</span>; y-intercept <span class="math">\(0\)</span>`,
-            String.raw`<span class="math">\(f(x)=x+1\)</span>; slope <span class="math">\(1\)</span>; y-intercept <span class="math">\(1\)</span>`,
-            String.raw`<span class="math">\(f(x)=1\)</span>; slope <span class="math">\(0\)</span>; y-intercept <span class="math">\(1\)</span>`,
-            String.raw`<span class="math">\(f(x)=x\)</span>; slope <span class="math">\(1\)</span>; y-intercept <span class="math">\(0\)</span>`,
-            String.raw`<span class="math">\(f(x)=\tfrac1x\)</span>; slope <span class="math">\(1\)</span>; y-intercept <span class="math">\(0\)</span>`,
-            String.raw`<span class="math">\(f(x)=x\)</span>; slope <span class="math">\(0\)</span>; y-intercept <span class="math">\(1\)</span>`
+            String.raw`<span class="math">\(y=-x\)</span>; slope <span class="math">\(-1\)</span>; y-intercept <span class="math">\(0\)</span>`,
+            String.raw`<span class="math">\(y=x+1\)</span>; slope <span class="math">\(1\)</span>; y-intercept <span class="math">\(1\)</span>`,
+            String.raw`<span class="math">\(y=1\)</span>; slope <span class="math">\(0\)</span>; y-intercept <span class="math">\(1\)</span>`,
+            String.raw`<span class="math">\(y=x\)</span>; slope <span class="math">\(1\)</span>; y-intercept <span class="math">\(0\)</span>`,
+            String.raw`<span class="math">\(y=\tfrac1x\)</span>; slope <span class="math">\(1\)</span>; y-intercept <span class="math">\(0\)</span>`,
+            String.raw`<span class="math">\(y=x\)</span>; slope <span class="math">\(0\)</span>; y-intercept <span class="math">\(1\)</span>`
           ]
         },
         {
@@ -174,16 +173,16 @@
         },
         {
           stem: String.raw`
-            <p>Why does the graph of an equation of the form <span class="math">\(z=f(x,y)\)</span> represent a surface rather than a solid?</p>
+            <p>Which statement about the line <span class="math">\(y=-\tfrac34x+6\)</span> is correct?</p>
           `,
           choiceWrap: false,
           choices: [
-            String.raw`Because every surface in three dimensions must be flat.`,
-            String.raw`Because the variables <span class="math">\(x\)</span> and <span class="math">\(y\)</span> are restricted to integers.`,
-            String.raw`Because each allowed pair <span class="math">\((x,y)\)</span> gives one height <span class="math">\(z\)</span>, so the graph contains only those points, not all the points underneath them.`,
-            String.raw`Because the graph must always be a plane.`,
-            String.raw`Because three-dimensional graphs cannot show curved objects.`,
-            String.raw`Because a function of two variables always fills an entire box in space.`
+            String.raw`Its slope is <span class="math">\(\tfrac34\)</span>, and its y-intercept is <span class="math">\(-6\)</span>.`,
+            String.raw`Its slope is <span class="math">\(-\tfrac43\)</span>, and its y-intercept is <span class="math">\(6\)</span>.`,
+            String.raw`Its slope is <span class="math">\(-\tfrac34\)</span>, and its y-intercept is <span class="math">\(6\)</span>.`,
+            String.raw`Its slope is <span class="math">\(6\)</span>, and its y-intercept is <span class="math">\(-\tfrac34\)</span>.`,
+            String.raw`Its x-intercept is <span class="math">\(6\)</span>, so its y-intercept must be <span class="math">\(-\tfrac34\)</span>.`,
+            String.raw`It is a vertical line, so the slope is undefined.`
           ]
         },
         {
