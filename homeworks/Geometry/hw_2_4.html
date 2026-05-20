@@ -1,0 +1,469 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Homework 2-4 (Geometry)</title>
+
+  <script>
+    /* =========================
+       Homework 2-4 — Circles, Curves, Triangles, and Regions (Geometry)
+       Adapted for: /math-homework/assets/core-rich.js
+
+       REQUIRED SOURCE REFERENCES (provided source pages):
+       - Type A uses A. Exercises: #1–10 and #11–17.
+       - Type B uses B. Exercises: #18–24 and #25–29.
+       - Type C uses C. Exercise: #30.
+
+       IMAGE FILES:
+       - User-supplied figure files used directly: none.
+       - Model-generated figure files, redrawn in LaTeX/TikZ from the user-supplied source diagrams:
+         2-4-1.png  — based on A. Exercises #1–5.
+         2-4-5.png  — based on A. Exercises #6–10.
+         2-4-13.png — based on B. Exercises #18–22.
+         2-4-18.png — based on B. Exercises #25–29.
+
+       IMAGE NAMING RULE:
+       - Model-generated figures use final homework question numbering.
+       - PNG files live in the SAME folder as this HTML.
+
+       MODEL-AUTHORED / MODEL-REWORKED ITEMS:
+       - Q9 reworks the chord/diameter/radius material into a conceptual comparison.
+       - Q10–Q12 rework A. Exercises #11–17 into diagnostic classification questions about curves.
+       - Q13–Q17 rework B. Exercises #18–24 to test triangle naming, intersections, and the role of noncollinearity.
+       - Q21 reworks B. Exercise #29 to test why adding an already-contained boundary segment does not change a union.
+       - Q22 reworks C. Exercise #30 as proof-oriented judgment about why a triangle lies in exactly one plane.
+       ========================= */
+
+    window.homeworkData = {
+      classId : "Geometry",
+      id      : "Homework 2-4",
+      title   : "Homework 2-4 — Circles, Curves, Triangles, and Regions",
+
+      graphics : String.raw``,
+
+      answerKey : ["A","E","D","F","B","A","C","D","F","B","E","D","A","F","A","B","C","E","C","B","D","F"],
+
+      questions : [
+
+        {
+          stem: String.raw`
+            <p><b>Refer to Figure 1.</b> In the circle, point \(X\) is the center. Which description is the most precise name for \(\overline{XD}\)?</p>
+          `,
+          media: String.raw`
+            <figure>
+              <img src="2-4-1.png" alt="Circle with center X and points A, B, C, D" />
+              <figcaption>Figure 1</figcaption>
+            </figure>
+          `,
+          choices: [
+            String.raw`A radius`,
+            String.raw`A diameter`,
+            String.raw`A chord that is not a diameter`,
+            String.raw`An arc`,
+            String.raw`A tangent line`,
+            String.raw`A secant line`
+          ],
+          choiceWrap: false
+        },
+
+        {
+          stem: String.raw`
+            <p><b>Refer to Figure 1.</b> Which description is the most precise name for \(\overline{AB}\)?</p>
+          `,
+          media: String.raw`
+            <figure>
+              <img src="2-4-1.png" alt="Circle with center X and points A, B, C, D" />
+              <figcaption>Figure 1</figcaption>
+            </figure>
+          `,
+          choices: [
+            String.raw`A radius, because it touches the circle at one point`,
+            String.raw`A diameter, because its endpoints are on the circle`,
+            String.raw`An arc, because it is part of the circumference`,
+            String.raw`The exterior of the circle`,
+            String.raw`A chord, because both endpoints are on the circle`,
+            String.raw`The center of the circle`
+          ],
+          choiceWrap: false
+        },
+
+        {
+          stem: String.raw`
+            <p><b>Refer to Figure 1.</b> Which notation names the arc from \(C\) to \(A\) along the circle?</p>
+          `,
+          media: String.raw`
+            <figure>
+              <img src="2-4-1.png" alt="Circle with center X and points A, B, C, D" />
+              <figcaption>Figure 1</figcaption>
+            </figure>
+          `,
+          choices: [
+            String.raw`\(\overline{CA}\)`,
+            String.raw`\(\overrightarrow{CA}\)`,
+            String.raw`\(\angle CA\)`,
+            String.raw`\(\widehat{CA}\)`,
+            String.raw`\(\odot CA\)`,
+            String.raw`\(\triangle CA\)`
+          ],
+          choiceWrap: false
+        },
+
+        {
+          stem: String.raw`
+            <p>The <b>interior</b> of a circle is the set of points inside the circle. The <b>exterior</b> is the set of points outside the circle. What is the intersection of the interior and the exterior of the same circle?</p>
+          `,
+          choices: [
+            String.raw`The center of the circle`,
+            String.raw`The boundary of the circle`,
+            String.raw`The whole plane`,
+            String.raw`All radii of the circle`,
+            String.raw`All chords of the circle`,
+            String.raw`The empty set, \(\varnothing\)`
+          ],
+          choiceWrap: false
+        },
+
+        {
+          stem: String.raw`
+            <p><b>Refer to Figure 2.</b> What is the correct name of the circle?</p>
+          `,
+          media: String.raw`
+            <figure>
+              <img src="2-4-5.png" alt="Circle with center S and points L, A, M, X, Y, T, P" />
+              <figcaption>Figure 2</figcaption>
+            </figure>
+          `,
+          choices: [
+            String.raw`\(\odot A\)`,
+            String.raw`\(\odot S\)`,
+            String.raw`\(\overline{XY}\)`,
+            String.raw`\(\widehat{AT}\)`,
+            String.raw`\(\triangle LMP\)`,
+            String.raw`Circle \(ATP\), because those points are on the circle`
+          ],
+          choiceWrap: false
+        },
+
+        {
+          stem: String.raw`
+            <p><b>Refer to Figure 2.</b> Which list contains only radii of the circle?</p>
+          `,
+          media: String.raw`
+            <figure>
+              <img src="2-4-5.png" alt="Circle with center S and points L, A, M, X, Y, T, P" />
+              <figcaption>Figure 2</figcaption>
+            </figure>
+          `,
+          choices: [
+            String.raw`\(\overline{SA},\ \overline{SY},\ \overline{ST},\ \overline{SP}\)`,
+            String.raw`\(\overline{XY},\ \overline{AT},\ \overline{LM}\)`,
+            String.raw`\(\overline{LM},\ \overline{MP},\ \overline{LP}\)`,
+            String.raw`\(\overline{SA},\ \overline{AB},\ \overline{ST}\)`,
+            String.raw`\(\overline{SL},\ \overline{SM},\ \overline{XY}\)`,
+            String.raw`\(\widehat{LA},\ \widehat{AM},\ \widehat{MP}\)`
+          ],
+          choiceWrap: false
+        },
+
+        {
+          stem: String.raw`
+            <p><b>Refer to Figure 2.</b> Which segment or segments are diameters of the circle?</p>
+          `,
+          media: String.raw`
+            <figure>
+              <img src="2-4-5.png" alt="Circle with center S and points L, A, M, X, Y, T, P" />
+              <figcaption>Figure 2</figcaption>
+            </figure>
+          `,
+          choices: [
+            String.raw`\(\overline{AT}\) only`,
+            String.raw`\(\overline{XY}\) only`,
+            String.raw`\(\overline{AT}\) and \(\overline{XY}\)`,
+            String.raw`\(\overline{LM}\) and \(\overline{SP}\)`,
+            String.raw`\(\overline{SA},\ \overline{ST},\ \overline{SP}\)`,
+            String.raw`None of the drawn segments`
+          ],
+          choiceWrap: false
+        },
+
+        {
+          stem: String.raw`
+            <p>If the length of a radius of a circle is \(x\), what is the length of a diameter? Also, how many diameters does a circle have?</p>
+          `,
+          choices: [
+            String.raw`Diameter \(=x\); the circle has exactly one diameter.`,
+            String.raw`Diameter \(=2x\); the circle has exactly one diameter.`,
+            String.raw`Diameter \(=\dfrac{x}{2}\); the circle has infinitely many diameters.`,
+            String.raw`Diameter \(=2x\); the circle has infinitely many diameters.`,
+            String.raw`Diameter \(=x^2\); the circle has exactly two diameters.`,
+            String.raw`Diameter \(=2\pi x\); the circle has infinitely many diameters.`
+          ],
+          choiceWrap: false
+        },
+
+        {
+          stem: String.raw`
+            <p>Which statement correctly compares chords and diameters?</p>
+          `,
+          choices: [
+            String.raw`Every chord is a radius, but not every radius is a chord.`,
+            String.raw`Every chord is a diameter, because every chord has endpoints on the circle.`,
+            String.raw`A diameter is never a chord, because it passes through the center.`,
+            String.raw`A radius is a chord if it is drawn clearly in the diagram.`,
+            String.raw`A chord must pass through the center of the circle.`,
+            String.raw`Every diameter is a chord, but not every chord is a diameter.`
+          ],
+          choiceWrap: false
+        },
+
+        {
+          stem: String.raw`
+            <p>A curve begins and ends at the same point, but it crosses itself once, like a figure-eight. Which is the most specific correct classification?</p>
+          `,
+          choices: [
+            String.raw`A simple closed curve`,
+            String.raw`A closed curve, but not a simple closed curve`,
+            String.raw`A simple curve, but not a closed curve`,
+            String.raw`Not a curve`,
+            String.raw`A line segment`,
+            String.raw`A ray`
+          ],
+          choiceWrap: false
+        },
+
+        {
+          stem: String.raw`
+            <p>Which object is <b>not</b> a curve in the sense used in this lesson?</p>
+          `,
+          choices: [
+            String.raw`The boundary of a square`,
+            String.raw`A smooth open arc`,
+            String.raw`A loop that crosses itself`,
+            String.raw`The boundary of a circle`,
+            String.raw`Four isolated points with no connecting path`,
+            String.raw`A wavy path drawn without lifting the pencil`
+          ],
+          choiceWrap: false
+        },
+
+        {
+          stem: String.raw`
+            <p>Which description gives a simple closed curve?</p>
+          `,
+          choices: [
+            String.raw`A path that has two arrowheads and does not return to its starting point`,
+            String.raw`A figure-eight curve that returns to its starting point`,
+            String.raw`Several separated points arranged like the corners of a square`,
+            String.raw`The boundary of a square`,
+            String.raw`A ray beginning at a point and continuing forever`,
+            String.raw`Two separate circles drawn side by side`
+          ],
+          choiceWrap: false
+        },
+
+        {
+          stem: String.raw`
+            <p><b>Refer to Figure 3.</b> Points \(B,C,D,E\) are collinear in that order, and \(A\) is not on that line. Which list gives all six triangles determined by choosing \(A\) and two of the four base points?</p>
+          `,
+          media: String.raw`
+            <figure>
+              <img src="2-4-13.png" alt="Triangle fan with vertex A and base points B, C, D, E" />
+              <figcaption>Figure 3</figcaption>
+            </figure>
+          `,
+          choices: [
+            String.raw`\(\triangle ABC,\ \triangle ABD,\ \triangle ABE,\ \triangle ACD,\ \triangle ACE,\ \triangle ADE\)`,
+            String.raw`\(\triangle ABC,\ \triangle ACD,\ \triangle ADE,\ \triangle BCD,\ \triangle CDE,\ \triangle BCE\)`,
+            String.raw`\(\triangle ABC,\ \triangle ACD,\ \triangle ADE\) only`,
+            String.raw`\(\triangle ABD,\ \triangle ACE,\ \triangle BDE,\ \triangle CDE,\ \triangle ABC,\ \triangle ADE\)`,
+            String.raw`\(\triangle ABC,\ \triangle ABD,\ \triangle ACD,\ \triangle BCD,\ \triangle BCE,\ \triangle CDE\)`,
+            String.raw`\(\triangle ABE,\ \triangle ACE,\ \triangle ADE\) only`
+          ],
+          choiceWrap: false
+        },
+
+        {
+          stem: String.raw`
+            <p><b>Refer to Figure 3.</b> Treat each triangle as the region bounded by its three sides. What is \(\triangle ABC \cap \triangle ADE\)?</p>
+          `,
+          media: String.raw`
+            <figure>
+              <img src="2-4-13.png" alt="Triangle fan with vertex A and base points B, C, D, E" />
+              <figcaption>Figure 3</figcaption>
+            </figure>
+          `,
+          choices: [
+            String.raw`\(\overline{AD}\)`,
+            String.raw`\(\overline{AC}\)`,
+            String.raw`\(\varnothing\)`,
+            String.raw`\(\triangle ACD\)`,
+            String.raw`\(\overline{CD}\)`,
+            String.raw`\(\{A\}\)`
+          ],
+          choiceWrap: false
+        },
+
+        {
+          stem: String.raw`
+            <p><b>Refer to Figure 3.</b> What is \(\angle BAD \cap \triangle ADE\)?</p>
+          `,
+          media: String.raw`
+            <figure>
+              <img src="2-4-13.png" alt="Triangle fan with vertex A and base points B, C, D, E" />
+              <figcaption>Figure 3</figcaption>
+            </figure>
+          `,
+          choices: [
+            String.raw`\(\overline{AD}\)`,
+            String.raw`\(\angle DAE\)`,
+            String.raw`\(\triangle ADE\)`,
+            String.raw`\(\{A\}\)`,
+            String.raw`\(\overline{BD}\)`,
+            String.raw`\(\varnothing\)`
+          ],
+          choiceWrap: false
+        },
+
+        {
+          stem: String.raw`
+            <p>Suppose \(X,Y,Z\) are noncollinear. What is \(\overleftrightarrow{XY} \cup \overleftrightarrow{YZ}\)?</p>
+          `,
+          choices: [
+            String.raw`The single line \(\overleftrightarrow{XZ}\)`,
+            String.raw`Two distinct lines that meet at \(Y\)`,
+            String.raw`The triangle \(\triangle XYZ\)`,
+            String.raw`The segment \(\overline{XZ}\)`,
+            String.raw`The empty set, because the points are noncollinear`,
+            String.raw`The whole plane determined by \(X,Y,Z\)`
+          ],
+          choiceWrap: false
+        },
+
+        {
+          stem: String.raw`
+            <p>Why does the definition of a triangle require the three vertices to be noncollinear?</p>
+          `,
+          choices: [
+            String.raw`Because collinear points cannot be labeled with capital letters.`,
+            String.raw`Because a triangle must always have one horizontal side.`,
+            String.raw`Because three collinear points make a collapsed figure on one line, not a triangular region.`,
+            String.raw`Because noncollinear points guarantee that all three side lengths are equal.`,
+            String.raw`Because a triangle must contain exactly one diameter.`,
+            String.raw`Because collinear points always form two different planes.`
+          ],
+          choiceWrap: false
+        },
+
+        {
+          stem: String.raw`
+            <p><b>Refer to Figure 4.</b> Let \(S\) be the region bounded by rectangle \(AHFC\). What is region \(CDEF \cap S\)?</p>
+          `,
+          media: String.raw`
+            <figure>
+              <img src="2-4-18.png" alt="Rectangular regions labeled A, B, C, D on top and H, G, F, E on bottom" />
+              <figcaption>Figure 4</figcaption>
+            </figure>
+          `,
+          choices: [
+            String.raw`\(\varnothing\)`,
+            String.raw`region \(CDEF\)`,
+            String.raw`region \(BGFC\)`,
+            String.raw`\(\{F\}\)`,
+            String.raw`\(\overline{CF}\)`,
+            String.raw`all of \(S\)`
+          ],
+          choiceWrap: false
+        },
+
+        {
+          stem: String.raw`
+            <p><b>Refer to Figure 4.</b> Let \(S\) be the region bounded by rectangle \(AHFC\). What is \(S \cap\) region \(BGED\)?</p>
+          `,
+          media: String.raw`
+            <figure>
+              <img src="2-4-18.png" alt="Rectangular regions labeled A, B, C, D on top and H, G, F, E on bottom" />
+              <figcaption>Figure 4</figcaption>
+            </figure>
+          `,
+          choices: [
+            String.raw`region \(ABGH\)`,
+            String.raw`region \(CDEF\)`,
+            String.raw`region \(BGFC\)`,
+            String.raw`\(\overline{CF}\) only`,
+            String.raw`\(\overline{BG}\) only`,
+            String.raw`region \(AHED\)`
+          ],
+          choiceWrap: false
+        },
+
+        {
+          stem: String.raw`
+            <p><b>Refer to Figure 4.</b> In rectangle \(BGFC\), the diagonals meet at \(I\). What is \(\triangle BGF \cap \triangle BCF\)?</p>
+          `,
+          media: String.raw`
+            <figure>
+              <img src="2-4-18.png" alt="Rectangular regions labeled A, B, C, D on top and H, G, F, E on bottom" />
+              <figcaption>Figure 4</figcaption>
+            </figure>
+          `,
+          choices: [
+            String.raw`\(\{I\}\)`,
+            String.raw`\(\overline{BF}\)`,
+            String.raw`\(\overline{CG}\)`,
+            String.raw`\(\triangle BIF\)`,
+            String.raw`\(\varnothing\)`,
+            String.raw`all of \(S\)`
+          ],
+          choiceWrap: false
+        },
+
+        {
+          stem: String.raw`
+            <p><b>Refer to Figure 4.</b> Which explanation best supports the statement</p>
+            <p class="math">\(\text{region }ABGH \cup \text{region }BGFC = \text{region }ACFH \cup \overline{BG}\)?</p>
+          `,
+          media: String.raw`
+            <figure>
+              <img src="2-4-18.png" alt="Rectangular regions labeled A, B, C, D on top and H, G, F, E on bottom" />
+              <figcaption>Figure 4</figcaption>
+            </figure>
+          `,
+          choices: [
+            String.raw`The two rectangles do not touch, so their union must add a new segment.`,
+            String.raw`\(\overline{BG}\) is outside both rectangles, so it must be added separately.`,
+            String.raw`The union of two rectangles is always the whole plane.`,
+            String.raw`\(\overline{BG}\) is already part of the two rectangle regions, so adding it does not change the union.`,
+            String.raw`The statement is true only because \(I\) is the center of the whole figure.`,
+            String.raw`The statement is false because a segment can never be part of a region.`
+          ],
+          choiceWrap: false
+        },
+
+        {
+          stem: String.raw`
+            <p>Which reason best explains why every triangle is contained in one and only one plane?</p>
+          `,
+          choices: [
+            String.raw`Any two points determine exactly one plane, and a triangle has at least two points.`,
+            String.raw`A triangle is flat only when it is drawn on paper.`,
+            String.raw`Every closed curve determines exactly one plane.`,
+            String.raw`The sides of a triangle are always perpendicular to one another.`,
+            String.raw`A triangle has three angles, and every angle lies in a different plane.`,
+            String.raw`Three noncollinear points determine exactly one plane, and the triangle is made from those three points and the segments between them.`
+          ],
+          choiceWrap: false
+        }
+      ]
+    };
+  </script>
+
+  <link rel="stylesheet" href="/math-homework/assets/core-rich.css" />
+  <script defer src="/math-homework/assets/core-rich.js"></script>
+  <script defer src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+</head>
+
+<body>
+  <div id="hw-root">Loading…</div>
+</body>
+</html>
