@@ -7,7 +7,7 @@
 
   <script>
     /* =========================
-       Homework 2-4 — Circles, Curves, Triangles, and Regions (Geometry)
+       Homework 2-4 — Circles, Curves, Triangles, and Rectangular Regions (Geometry)
        Adapted for: /math-homework/assets/core-rich.js
 
        REQUIRED SOURCE REFERENCES (provided source pages):
@@ -28,9 +28,10 @@
        - PNG files live in the SAME folder as this HTML.
 
        MODEL-AUTHORED / MODEL-REWORKED ITEMS:
+       - Q1-Q9 use the course definition that a circle is only the set of points equidistant from its center; its interior and exterior are separate regions determined by the circle.
        - Q9 reworks the chord/diameter/radius material into a conceptual comparison.
        - Q10–Q12 rework A. Exercises #11–17 into diagnostic classification questions about curves.
-       - Q13–Q17 rework B. Exercises #18–24 to test triangle naming, intersections, and the role of noncollinearity.
+       - Q13–Q17 rework B. Exercises #18–24 to test triangle naming, intersections, and the role of noncollinearity, using the course definition that a triangle is the union of the three segments determined by three noncollinear points.
        - Q21 reworks B. Exercise #29 to test why adding an already-contained boundary segment does not change a union.
        - Q22 reworks C. Exercise #30 as proof-oriented judgment about why a triangle lies in exactly one plane.
        ========================= */
@@ -38,7 +39,7 @@
     window.homeworkData = {
       classId : "Geometry",
       id      : "Homework 2-4",
-      title   : "Homework 2-4 — Circles, Curves, Triangles, and Regions",
+      title   : "Homework 2-4 — Circles, Curves, Triangles, and Rectangular Regions",
 
       graphics : String.raw``,
 
@@ -111,7 +112,7 @@
 
         {
           stem: String.raw`
-            <p>The <b>interior</b> of a circle is the set of points inside the circle. The <b>exterior</b> is the set of points outside the circle. What is the intersection of the interior and the exterior of the same circle?</p>
+            <p>A circle is the set of points equidistant from its center. The <b>interior determined by the circle</b> is the set of points closer to the center than the radius, and the <b>exterior determined by the circle</b> is the set of points farther from the center than the radius. What is the intersection of these two regions?</p>
           `,
           choices: [
             String.raw`The center of the circle`,
@@ -126,7 +127,7 @@
 
         {
           stem: String.raw`
-            <p><b>Refer to Figure 2.</b> What is the correct name of the circle?</p>
+            <p><b>Refer to Figure 2.</b> The circle is the set of all points at the same distance from its center. What is the correct name of the circle?</p>
           `,
           media: String.raw`
             <figure>
@@ -140,7 +141,7 @@
             String.raw`\(\overline{XY}\)`,
             String.raw`\(\widehat{AT}\)`,
             String.raw`\(\triangle LMP\)`,
-            String.raw`Circle \(ATP\), because those points are on the circle`
+            String.raw`Circle \(ATP\), because any three named points can be used as the center`
           ],
           choiceWrap: false
         },
@@ -189,7 +190,7 @@
 
         {
           stem: String.raw`
-            <p>If the length of a radius of a circle is \(x\), what is the length of a diameter? Also, how many diameters does a circle have?</p>
+            <p>If the length of a radius of a circle is \(x\), what is the length of a diameter whose endpoints lie on the circle? Also, how many diameters does a circle have?</p>
           `,
           choices: [
             String.raw`Diameter \(=x\); the circle has exactly one diameter.`,
@@ -204,7 +205,7 @@
 
         {
           stem: String.raw`
-            <p>Which statement correctly compares chords and diameters?</p>
+            <p>A chord is a segment whose endpoints lie on the circle. Which statement correctly compares chords and diameters?</p>
           `,
           choices: [
             String.raw`Every chord is a radius, but not every radius is a chord.`,
@@ -240,7 +241,7 @@
             String.raw`The boundary of a square`,
             String.raw`A smooth open arc`,
             String.raw`A loop that crosses itself`,
-            String.raw`The boundary of a circle`,
+            String.raw`A circle`,
             String.raw`Four isolated points with no connecting path`,
             String.raw`A wavy path drawn without lifting the pencil`
           ],
@@ -285,7 +286,7 @@
 
         {
           stem: String.raw`
-            <p><b>Refer to Figure 3.</b> Treat each triangle as the region bounded by its three sides. What is \(\triangle ABC \cap \triangle ADE\)?</p>
+            <p><b>Refer to Figure 3.</b> In this course, a triangle is the union of the three segments determined by its three noncollinear vertices. What is \(\triangle ABC \cap \triangle ADE\)?</p>
           `,
           media: String.raw`
             <figure>
@@ -347,7 +348,7 @@
           choices: [
             String.raw`Because collinear points cannot be labeled with capital letters.`,
             String.raw`Because a triangle must always have one horizontal side.`,
-            String.raw`Because three collinear points make a collapsed figure on one line, not a triangular region.`,
+            String.raw`Because three collinear points make a collapsed figure on one line, not a triangle with three genuine sides.`,
             String.raw`Because noncollinear points guarantee that all three side lengths are equal.`,
             String.raw`Because a triangle must contain exactly one diameter.`,
             String.raw`Because collinear points always form two different planes.`
@@ -450,7 +451,7 @@
             String.raw`Every closed curve determines exactly one plane.`,
             String.raw`The sides of a triangle are always perpendicular to one another.`,
             String.raw`A triangle has three angles, and every angle lies in a different plane.`,
-            String.raw`Three noncollinear points determine exactly one plane, and the triangle is made from those three points and the segments between them.`
+            String.raw`Three noncollinear points determine exactly one plane, and the three segments determined by those points all lie in that same plane.`
           ],
           choiceWrap: false
         }
