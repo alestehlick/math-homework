@@ -1,0 +1,300 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Homework 2-4 (Geometry)</title>
+
+  <script>
+    /* =========================
+       Homework 2-4 — Circles, Curves, and Triangles (Geometry)
+       Adapted for: /math-homework/assets/core-rich.js
+
+       COURSE DEFINITIONS USED:
+       - A circle is the set of points equidistant from its center.
+       - The interior and exterior determined by a circle are regions, not the circle itself.
+       - A triangle is the union of the three segments determined by three noncollinear points.
+       - A curve, simple curve, closed curve, chord, radius, diameter, arc, angle, and plane are used according to the definitions developed in class.
+
+       EDITING NOTE:
+       - The rectangular-region questions from the previous version were removed.
+       - The homework has been reduced to 14 questions.
+       - Several questions were combined or rewritten to force students to compare definitions rather than merely identify labels.
+
+       IMAGE FILES:
+       - 2-4-1.png  — circle with center X and points A, B, C, D.
+       - 2-4-5.png  — circle with center S and points L, A, M, X, Y, T, P.
+       - 2-4-13.png — triangle fan with vertex A and base points B, C, D, E.
+
+       PNG files must remain in the same folder as this HTML.
+       ========================= */
+
+    window.homeworkData = {
+      classId : "Geometry",
+      id      : "Homework 2-4",
+      title   : "Homework 2-4 — Circles, Curves, and Triangles",
+
+      graphics : String.raw``,
+
+      answerKey : ["C","F","B","D","A","E","B","D","A","F","C","E","B","D"],
+
+      questions : [
+
+        {
+          stem: String.raw`
+            <p><b>Refer to Figure 1.</b> Remember that the circle itself is the set of points equidistant from its center. Which statement correctly names the drawn objects?</p>
+          `,
+          media: String.raw`
+            <figure>
+              <img src="2-4-1.png" alt="Circle with center X and points A, B, C, D" />
+              <figcaption>Figure 1</figcaption>
+            </figure>
+          `,
+          choices: [
+            String.raw`\(\overline{XD}\) is a diameter; \(\overline{AB}\) is a radius; \(\widehat{CA}\) is a chord.`,
+            String.raw`\(\overline{XD}\) is a chord, because \(D\) lies on the circle; \(\overline{AB}\) is an arc.`,
+            String.raw`\(\overline{XD}\) is a radius; \(\overline{AB}\) and \(\overline{CD}\) are chords; \(\widehat{CA}\) is an arc.`,
+            String.raw`\(\overline{AB}\) is a diameter, because both endpoints lie on the circle; \(\overline{XD}\) is a chord.`,
+            String.raw`\(\overline{XD}\), \(\overline{AB}\), and \(\overline{CD}\) are all radii, because they touch the circle.`,
+            String.raw`\(\widehat{CA}\) is a segment, and \(\overline{CD}\) is the exterior of the circle.`
+          ],
+          choiceWrap: false
+        },
+
+        {
+          stem: String.raw`
+            <p>A circle has center \(X\), and \(D\) is a point on the circle. Which description gives the circle itself?</p>
+          `,
+          choices: [
+            String.raw`All points inside the curve.`,
+            String.raw`All points outside the curve.`,
+            String.raw`The center point \(X\) alone.`,
+            String.raw`The segment \(\overline{XD}\).`,
+            String.raw`All points whose distance from \(X\) is less than \(XD\).`,
+            String.raw`All points \(P\) such that \(XP=XD\).`
+          ],
+          choiceWrap: false
+        },
+
+        {
+          stem: String.raw`
+            <p><b>Refer to Figure 2.</b> Which choice correctly names the circle and lists only radii?</p>
+          `,
+          media: String.raw`
+            <figure>
+              <img src="2-4-5.png" alt="Circle with center S and points L, A, M, X, Y, T, P" />
+              <figcaption>Figure 2</figcaption>
+            </figure>
+          `,
+          choices: [
+            String.raw`Circle: \(\odot A\). Radii: \(\overline{AT},\overline{XY}\).`,
+            String.raw`Circle: \(\odot S\). Radii: \(\overline{SA},\overline{SY},\overline{ST},\overline{SP}\).`,
+            String.raw`Circle: \(\odot S\). Radii: \(\overline{XY},\overline{AT},\overline{LM}\).`,
+            String.raw`Circle: \(\odot X\). Radii: \(\overline{XS},\overline{XY},\overline{XT}\).`,
+            String.raw`Circle: \(\odot P\). Radii: \(\overline{SP},\overline{MP},\overline{LP}\).`,
+            String.raw`Circle: \(\odot S\). Radii: \(\widehat{LA},\widehat{AM},\widehat{MP}\).`
+          ],
+          choiceWrap: false
+        },
+
+        {
+          stem: String.raw`
+            <p><b>Refer to Figure 2.</b> Which statement correctly distinguishes diameters, chords, and radii?</p>
+          `,
+          media: String.raw`
+            <figure>
+              <img src="2-4-5.png" alt="Circle with center S and points L, A, M, X, Y, T, P" />
+              <figcaption>Figure 2</figcaption>
+            </figure>
+          `,
+          choices: [
+            String.raw`\(\overline{SP}\) is a diameter because it starts at the center.`,
+            String.raw`\(\overline{LM}\) is a diameter because its endpoints lie on the circle.`,
+            String.raw`\(\overline{XY}\) is a radius because it passes through the center.`,
+            String.raw`\(\overline{AT}\) and \(\overline{XY}\) are diameters; \(\overline{LM}\) is a chord that is not a diameter; \(\overline{SP}\) is a radius.`,
+            String.raw`\(\overline{AT}\), \(\overline{XY}\), and \(\overline{LM}\) are all diameters.`,
+            String.raw`\(\overline{SA}\), \(\overline{SY}\), and \(\overline{ST}\) are chords because they are drawn inside the circle.`
+          ],
+          choiceWrap: false
+        },
+
+        {
+          stem: String.raw`
+            <p>If the length of a radius of a circle is \(x\), what is the length of a diameter whose endpoints lie on the circle? Also, how many diameters does a circle have?</p>
+          `,
+          choices: [
+            String.raw`Diameter \(=2x\); the circle has infinitely many diameters.`,
+            String.raw`Diameter \(=x\); the circle has exactly one diameter.`,
+            String.raw`Diameter \(=2x\); the circle has exactly one diameter.`,
+            String.raw`Diameter \(=\dfrac{x}{2}\); the circle has infinitely many diameters.`,
+            String.raw`Diameter \(=x^2\); the circle has exactly two diameters.`,
+            String.raw`Diameter \(=2\pi x\); the circle has infinitely many diameters.`
+          ],
+          choiceWrap: false
+        },
+
+        {
+          stem: String.raw`
+            <p>A chord is a segment whose endpoints lie on the circle. Which statement correctly compares radii, chords, and diameters?</p>
+          `,
+          choices: [
+            String.raw`Every radius is a chord, because a radius touches the circle at one point.`,
+            String.raw`Every chord is a diameter, because every chord has endpoints on the circle.`,
+            String.raw`A diameter is never a chord, because it passes through the center.`,
+            String.raw`A chord must pass through the center of the circle.`,
+            String.raw`Every diameter is a chord, but not every chord is a diameter.`,
+            String.raw`A radius and a diameter are the same object whenever they are drawn in the same circle.`
+          ],
+          choiceWrap: false
+        },
+
+        {
+          stem: String.raw`
+            <p>Which description gives a simple closed curve?</p>
+          `,
+          choices: [
+            String.raw`A figure-eight curve that returns to its starting point.`,
+            String.raw`The boundary of a square.`,
+            String.raw`A path with two arrowheads that never returns to its starting point.`,
+            String.raw`Several separated points arranged like the corners of a square.`,
+            String.raw`A ray beginning at a point and continuing forever.`,
+            String.raw`Two separate circles drawn side by side.`
+          ],
+          choiceWrap: false
+        },
+
+        {
+          stem: String.raw`
+            <p>A curve begins and ends at the same point, but it crosses itself once, like a figure-eight. Which is the most specific correct classification?</p>
+          `,
+          choices: [
+            String.raw`A simple closed curve.`,
+            String.raw`A simple curve, but not a closed curve.`,
+            String.raw`Not a curve.`,
+            String.raw`A closed curve, but not a simple closed curve.`,
+            String.raw`A line segment.`,
+            String.raw`A ray.`
+          ],
+          choiceWrap: false
+        },
+
+        {
+          stem: String.raw`
+            <p><b>Refer to Figure 3.</b> Points \(B,C,D,E\) are collinear in that order, and \(A\) is not on that line. Which list gives all six triangles determined by choosing \(A\) and two of the four base points?</p>
+          `,
+          media: String.raw`
+            <figure>
+              <img src="2-4-13.png" alt="Triangle fan with vertex A and base points B, C, D, E" />
+              <figcaption>Figure 3</figcaption>
+            </figure>
+          `,
+          choices: [
+            String.raw`\(\triangle ABC,\ \triangle ABD,\ \triangle ABE,\ \triangle ACD,\ \triangle ACE,\ \triangle ADE\)`,
+            String.raw`\(\triangle ABC,\ \triangle ACD,\ \triangle ADE\) only`,
+            String.raw`\(\triangle ABC,\ \triangle ACD,\ \triangle ADE,\ \triangle BCD,\ \triangle CDE,\ \triangle BCE\)`,
+            String.raw`\(\triangle ABD,\ \triangle ACE,\ \triangle BDE,\ \triangle CDE,\ \triangle ABC,\ \triangle ADE\)`,
+            String.raw`\(\triangle ABC,\ \triangle ABD,\ \triangle ACD,\ \triangle BCD,\ \triangle BCE,\ \triangle CDE\)`,
+            String.raw`\(\triangle ABE,\ \triangle ACE,\ \triangle ADE\) only`
+          ],
+          choiceWrap: false
+        },
+
+        {
+          stem: String.raw`
+            <p><b>Refer to Figure 3.</b> What is \(\triangle ABC\cap\triangle ADE\)?</p>
+          `,
+          media: String.raw`
+            <figure>
+              <img src="2-4-13.png" alt="Triangle fan with vertex A and base points B, C, D, E" />
+              <figcaption>Figure 3</figcaption>
+            </figure>
+          `,
+          choices: [
+            String.raw`\(\overline{AD}\)`,
+            String.raw`\(\overline{AC}\)`,
+            String.raw`\(\varnothing\)`,
+            String.raw`\(\triangle ACD\)`,
+            String.raw`\(\overline{CD}\)`,
+            String.raw`\(\{A\}\)`
+          ],
+          choiceWrap: false
+        },
+
+        {
+          stem: String.raw`
+            <p><b>Refer to Figure 3.</b> What is \(\angle BAD\cap\triangle ADE\)?</p>
+          `,
+          media: String.raw`
+            <figure>
+              <img src="2-4-13.png" alt="Triangle fan with vertex A and base points B, C, D, E" />
+              <figcaption>Figure 3</figcaption>
+            </figure>
+          `,
+          choices: [
+            String.raw`\(\{A\}\)`,
+            String.raw`\(\triangle ADE\)`,
+            String.raw`\(\overline{AD}\)`,
+            String.raw`\(\angle DAE\)`,
+            String.raw`\(\overline{BD}\)`,
+            String.raw`\(\varnothing\)`
+          ],
+          choiceWrap: false
+        },
+
+        {
+          stem: String.raw`
+            <p>Why does the definition of a triangle require the three vertices to be noncollinear?</p>
+          `,
+          choices: [
+            String.raw`Because collinear points cannot be labeled with capital letters.`,
+            String.raw`Because a triangle must always have one horizontal side.`,
+            String.raw`Because noncollinear points guarantee that all three side lengths are equal.`,
+            String.raw`Because a triangle must contain exactly one diameter.`,
+            String.raw`Because three collinear points make a collapsed figure on one line, not a triangle with three genuine sides.`,
+            String.raw`Because collinear points always form two different planes.`
+          ],
+          choiceWrap: false
+        },
+
+        {
+          stem: String.raw`
+            <p>Suppose \(X,Y,Z\) are noncollinear. What is \(\overleftrightarrow{XY}\cup\overleftrightarrow{YZ}\)?</p>
+          `,
+          choices: [
+            String.raw`The single line \(\overleftrightarrow{XZ}\).`,
+            String.raw`Two distinct lines that meet at \(Y\).`,
+            String.raw`The triangle \(\triangle XYZ\).`,
+            String.raw`The segment \(\overline{XZ}\).`,
+            String.raw`The empty set, because the points are noncollinear.`,
+            String.raw`The whole plane determined by \(X,Y,Z\).`
+          ],
+          choiceWrap: false
+        },
+
+        {
+          stem: String.raw`
+            <p>Which reason best explains why every triangle is contained in one and only one plane?</p>
+          `,
+          choices: [
+            String.raw`Any two points determine exactly one plane, and a triangle has at least two points.`,
+            String.raw`A triangle is flat only when it is drawn on paper.`,
+            String.raw`Every closed curve determines exactly one plane.`,
+            String.raw`Three noncollinear points determine exactly one plane, and the three segments determined by those points all lie in that same plane.`,
+            String.raw`The sides of a triangle are always perpendicular to one another.`,
+            String.raw`A triangle has three angles, and every angle lies in a different plane.`
+          ],
+          choiceWrap: false
+        }
+      ]
+    };
+  </script>
+
+  <link rel="stylesheet" href="/math-homework/assets/core-rich.css" />
+  <script defer src="/math-homework/assets/core-rich.js"></script>
+  <script defer src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+</head>
+
+<body>
+  <div id="hw-root">Loading…</div>
+</body>
+</html>
