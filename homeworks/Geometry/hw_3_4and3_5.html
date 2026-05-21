@@ -1,0 +1,368 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Homework 3-4 and 3-5 (Geometry)</title>
+
+  <script>
+    /* =========================
+       Homework 3-4/3-5 — Perimeter, Circumference, and Inscribed/Circumscribed Figures (Geometry)
+       Adapted for: /math-homework/assets/core-rich.js
+
+       REQUIRED SOURCE REFERENCES (provided source pages):
+       - Section 3-4, A. Exercises: #1–10, especially perimeter of polygons and regular polygons.
+       - Section 3-4, B. Exercises: #11–14, especially writing equations from perimeter situations.
+       - Section 3-4, table Exercises: #15–20, especially radius, diameter, and circumference.
+       - Section 3-4, C. Exercises: #21–25, especially circumference applications.
+       - Section 3-5, A. Exercises: #1–16, especially inscribed/circumscribed figures, tangents, tangent points, and inscribed angles.
+       - Section 3-5, B. Exercises: #17–19 and C. Exercise #20, reworked into multiple-choice conceptual and construction-judgment items.
+
+       IMAGE FILES:
+       - User-supplied figure files used directly: none.
+       - Model-generated figure files, redrawn from the user-supplied source diagrams:
+         3-4-1.png  — used in Q1, perimeter of a labeled polygon.
+         3-4-13.png — used in Q13, classification of inscribed/circumscribed/neither.
+         3-4-15.png — used in Q15–Q16, circumscribed pentagon and tangent points.
+         3-4-17.png — used in Q17–Q18, inscribed triangle and tangent/chord judgment.
+
+       IMAGE NAMING RULE:
+       - This is a combined homework for Sections 3-4 and 3-5. The file follows the project's single-section filename convention by using the first section number: hw_3_4.html.
+       - Model-generated figures use final homework question numbering.
+       - PNG files live in the SAME folder as this HTML.
+
+       MODEL-AUTHORED / MODEL-REWORKED ITEMS:
+       - Q1–Q7 rework the perimeter material to emphasize side-counting, symbolic perimeter, and equation writing rather than mere copying of labels.
+       - Q8–Q12 rework the circle-measurement table and applications into diagnostic radius/diameter/circumference questions.
+       - Q13–Q18 rework Section 3-5 to test the actual distinctions among inscribed figures, circumscribed figures, tangent points, radii, chords, and inscribed angles.
+       ========================= */
+
+    window.homeworkData = {
+      classId : "Geometry",
+      id      : "Homework 3-4/3-5",
+      title   : "Homework 3-4/3-5 — Perimeter, Circumference, and Inscribed/Circumscribed Figures",
+
+      graphics : String.raw``,
+
+      answerKey : ["C","B","D","C","B","E","A","D","B","F","C","E","A","D","C","B","A","E"],
+
+      questions : [
+
+        {
+          stem: String.raw`
+            <p><b>Refer to Figure 1.</b> Find the perimeter of the polygon. Be careful not to skip a side just because the shape is irregular.</p>
+          `,
+          media: String.raw`
+            <figure>
+              <img src="3-4-1.png" alt="Irregular polygon with five side lengths labeled" />
+              <figcaption>Figure 1</figcaption>
+            </figure>
+          `,
+          choices: [
+            String.raw`29 units`,
+            String.raw`31 units`,
+            String.raw`35 units`,
+            String.raw`36 units`,
+            String.raw`42 units`,
+            String.raw`45 units`
+          ],
+          choiceWrap: false
+        },
+
+        {
+          stem: String.raw`
+            <p>A square has side length \(\dfrac{1}{4}\) unit. What is its perimeter?</p>
+          `,
+          choices: [
+            String.raw`\(\dfrac{1}{4}\) unit`,
+            String.raw`1 unit`,
+            String.raw`\(\dfrac{1}{2}\) unit`,
+            String.raw`\(\dfrac{1}{16}\) unit`,
+            String.raw`4 units`,
+            String.raw`\(\dfrac{4}{16}\) unit`
+          ],
+          choiceWrap: false
+        },
+
+        {
+          stem: String.raw`
+            <p>A quadrilateral has two sides of length \(a\) and two sides of length \(b\). Which expression gives its perimeter?</p>
+          `,
+          choices: [
+            String.raw`\(ab\)`,
+            String.raw`\(a+b\)`,
+            String.raw`\(a^2+b^2\)`,
+            String.raw`\(2a+2b\)`,
+            String.raw`\(4ab\)`,
+            String.raw`\(2(a-b)\)`
+          ],
+          choiceWrap: false
+        },
+
+        {
+          stem: String.raw`
+            <p>A regular hexagon has side length 28 millimeters. What is its perimeter?</p>
+          `,
+          choices: [
+            String.raw`34 mm`,
+            String.raw`84 mm`,
+            String.raw`168 mm`,
+            String.raw`196 mm`,
+            String.raw`112 mm`,
+            String.raw`28 mm`
+          ],
+          choiceWrap: false
+        },
+
+        {
+          stem: String.raw`
+            <p>An equilateral triangle has perimeter 78 centimeters. What is the length of each side?</p>
+          `,
+          choices: [
+            String.raw`13 cm`,
+            String.raw`26 cm`,
+            String.raw`39 cm`,
+            String.raw`75 cm`,
+            String.raw`81 cm`,
+            String.raw`234 cm`
+          ],
+          choiceWrap: false
+        },
+
+        {
+          stem: String.raw`
+            <p>A triangle has side lengths \(b\), \(2b\), and \(2b+2\) inches. Its perimeter is 22 inches. Which equation and side lengths are correct?</p>
+          `,
+          choices: [
+            String.raw`\(b+2b+2=22\); the sides are 6 in, 12 in, and 14 in.`,
+            String.raw`\(b+2b+(2b+2)=22\); the sides are 5 in, 10 in, and 12 in.`,
+            String.raw`\(b+2b+(b+2)=22\); the sides are 5 in, 10 in, and 7 in.`,
+            String.raw`\(2b+(2b+2)=22\); the sides are 5 in, 10 in, and 12 in.`,
+            String.raw`\(b+2b+(2b+2)=22\); the sides are 4 in, 8 in, and 10 in.`,
+            String.raw`\(b+2b+(2b+2)=22\); the sides are 4 in, 8 in, and 6 in.`
+          ],
+          choiceWrap: false
+        },
+
+        {
+          stem: String.raw`
+            <p>A quadrilateral has two pairs of opposite sides with the same length. The longer sides are twice as long as the shorter sides. The perimeter is 36 inches. What are the side lengths?</p>
+          `,
+          choices: [
+            String.raw`6 in, 12 in, 6 in, 12 in`,
+            String.raw`9 in, 9 in, 9 in, 9 in`,
+            String.raw`4 in, 8 in, 4 in, 8 in`,
+            String.raw`6 in, 6 in, 12 in, 18 in`,
+            String.raw`12 in, 24 in, 12 in, 24 in`,
+            String.raw`3 in, 6 in, 9 in, 18 in`
+          ],
+          choiceWrap: false
+        },
+
+        {
+          stem: String.raw`
+            <p>A circle has radius 6 centimeters. Complete the circle measurements using \(\pi \approx 3.14\).</p>
+          `,
+          choices: [
+            String.raw`\(d=6\) cm and \(C=6\pi\) cm \(\approx 18.8\) cm`,
+            String.raw`\(d=3\) cm and \(C=12\pi\) cm \(\approx 37.7\) cm`,
+            String.raw`\(d=12\) cm and \(C=6\pi\) cm \(\approx 18.8\) cm`,
+            String.raw`\(d=12\) cm and \(C=12\pi\) cm \(\approx 37.7\) cm`,
+            String.raw`\(d=36\) cm and \(C=36\pi\) cm \(\approx 113.0\) cm`,
+            String.raw`\(d=6\) cm and \(C=12\pi\) cm \(\approx 37.7\) cm`
+          ],
+          choiceWrap: false
+        },
+
+        {
+          stem: String.raw`
+            <p>The circumference of a circle is \(28\pi\) meters. What are the diameter and radius?</p>
+          `,
+          choices: [
+            String.raw`Diameter 14 m; radius 7 m`,
+            String.raw`Diameter 28 m; radius 14 m`,
+            String.raw`Diameter 56 m; radius 28 m`,
+            String.raw`Diameter \(28\pi\) m; radius \(14\pi\) m`,
+            String.raw`Diameter 28 m; radius 56 m`,
+            String.raw`Diameter 14 m; radius 28 m`
+          ],
+          choiceWrap: false
+        },
+
+        {
+          stem: String.raw`
+            <p>The circumference of a circle is 28.26 centimeters. Use \(\pi \approx 3.14\). What are the diameter and radius?</p>
+          `,
+          choices: [
+            String.raw`Diameter 4.5 cm; radius 9 cm`,
+            String.raw`Diameter 9 cm; radius 18 cm`,
+            String.raw`Diameter 14.13 cm; radius 7.065 cm`,
+            String.raw`Diameter 18 cm; radius 9 cm`,
+            String.raw`Diameter 28.26 cm; radius 14.13 cm`,
+            String.raw`Diameter 9 cm; radius 4.5 cm`
+          ],
+          choiceWrap: false
+        },
+
+        {
+          stem: String.raw`
+            <p>A bicycle tire has diameter 26 inches. About how far does the bicycle travel in one complete revolution of the tire? Give the answer to the nearest tenth of a foot.</p>
+          `,
+          choices: [
+            String.raw`2.2 ft`,
+            String.raw`4.1 ft`,
+            String.raw`6.8 ft`,
+            String.raw`8.2 ft`,
+            String.raw`13.6 ft`,
+            String.raw`81.6 ft`
+          ],
+          choiceWrap: false
+        },
+
+        {
+          stem: String.raw`
+            <p>A circular track has radius 200 feet. What is its circumference in yards, to the nearest tenth? Use \(\pi \approx 3.14\).</p>
+          `,
+          choices: [
+            String.raw`133.3 yd`,
+            String.raw`209.3 yd`,
+            String.raw`314.0 yd`,
+            String.raw`400.0 yd`,
+            String.raw`418.7 yd`,
+            String.raw`1256.0 yd`
+          ],
+          choiceWrap: false
+        },
+
+        {
+          stem: String.raw`
+            <p><b>Refer to Figure 2.</b> Classify the polygon in each small diagram as circumscribed about a circle, inscribed in a circle, or neither.</p>
+          `,
+          media: String.raw`
+            <figure>
+              <img src="3-4-13.png" alt="Four small diagrams involving polygons and circles" />
+              <figcaption>Figure 2</figcaption>
+            </figure>
+          `,
+          choices: [
+            String.raw`I circumscribed; II inscribed; III neither; IV inscribed`,
+            String.raw`I inscribed; II circumscribed; III neither; IV circumscribed`,
+            String.raw`I circumscribed; II neither; III inscribed; IV inscribed`,
+            String.raw`I neither; II inscribed; III circumscribed; IV inscribed`,
+            String.raw`I circumscribed; II inscribed; III circumscribed; IV neither`,
+            String.raw`I inscribed; II inscribed; III neither; IV circumscribed`
+          ],
+          choiceWrap: false
+        },
+
+        {
+          stem: String.raw`
+            <p>Which statement correctly says when a polygon is <b>inscribed in a circle</b>?</p>
+          `,
+          choices: [
+            String.raw`Every side of the polygon is tangent to the circle.`,
+            String.raw`The circle lies somewhere inside the polygon.`,
+            String.raw`The center of the circle is one of the vertices of the polygon.`,
+            String.raw`Every vertex of the polygon lies on the circle.`,
+            String.raw`At least one side of the polygon crosses the circle.`,
+            String.raw`The polygon and the circle have the same area.`
+          ],
+          choiceWrap: false
+        },
+
+        {
+          stem: String.raw`
+            <p><b>Refer to Figure 3.</b> The pentagon is circumscribed about circle \(S\). Which list contains only points of tangency?</p>
+          `,
+          media: String.raw`
+            <figure>
+              <img src="3-4-15.png" alt="Pentagon circumscribed about a circle with tangent points labeled" />
+              <figcaption>Figure 3</figcaption>
+            </figure>
+          `,
+          choices: [
+            String.raw`\(A, B, C, D, E\)`,
+            String.raw`\(S, A, C\)`,
+            String.raw`\(M, N, O, P, L\)`,
+            String.raw`\(A, M, B, N\)`,
+            String.raw`\(S, M, N, O, P, L\)`,
+            String.raw`\(AB, BC, CD, DE, EA\)`
+          ],
+          choiceWrap: false
+        },
+
+        {
+          stem: String.raw`
+            <p><b>Refer to Figure 3.</b> Why must \(\overline{SP}=\overline{SL}\)?</p>
+          `,
+          media: String.raw`
+            <figure>
+              <img src="3-4-15.png" alt="Pentagon circumscribed about a circle with radii to tangent points" />
+              <figcaption>Figure 3</figcaption>
+            </figure>
+          `,
+          choices: [
+            String.raw`Because \(P\) and \(L\) are vertices of the pentagon.`,
+            String.raw`Because both segments are radii of the same circle.`,
+            String.raw`Because tangent segments are always parallel.`,
+            String.raw`Because all sides of a pentagon have the same length.`,
+            String.raw`Because \(P\) and \(L\) are endpoints of a diameter.`,
+            String.raw`Because the circle and the pentagon have the same perimeter.`
+          ],
+          choiceWrap: false
+        },
+
+        {
+          stem: String.raw`
+            <p><b>Refer to Figure 4.</b> Which list contains three inscribed angles of the circle?</p>
+          `,
+          media: String.raw`
+            <figure>
+              <img src="3-4-17.png" alt="Circle with center L and inscribed triangle NMO" />
+              <figcaption>Figure 4</figcaption>
+            </figure>
+          `,
+          choices: [
+            String.raw`\(\angle NMO,\ \angle MNO,\ \angle NOM\)`,
+            String.raw`\(\angle NLM,\ \angle MLO,\ \angle NLO\)`,
+            String.raw`\(\angle LMO,\ \angle LOM,\ \angle MLO\)`,
+            String.raw`\(\angle NMO\) only`,
+            String.raw`\(\angle NLM\) only`,
+            String.raw`No angle in the diagram is inscribed.`
+          ],
+          choiceWrap: false
+        },
+
+        {
+          stem: String.raw`
+            <p><b>Refer to Figure 4.</b> Is \(\overline{MO}\) tangent to circle \(L\)? Choose the best explanation.</p>
+          `,
+          media: String.raw`
+            <figure>
+              <img src="3-4-17.png" alt="Circle with center L and segment MO drawn between two points on the circle" />
+              <figcaption>Figure 4</figcaption>
+            </figure>
+          `,
+          choices: [
+            String.raw`Yes, because \(\overline{MO}\) touches the circle at \(M\).`,
+            String.raw`Yes, because \(\overline{MO}\) is drawn on the outside of the circle.`,
+            String.raw`Yes, because every segment with endpoints on a circle is tangent to the circle.`,
+            String.raw`No, because a tangent line must pass through the center of the circle.`,
+            String.raw`No, because \(M\) and \(O\) are both on the circle, so \(\overline{MO}\) is a chord and meets the circle at two points.`,
+            String.raw`No, because a tangent segment must have both endpoints outside the circle.`
+          ],
+          choiceWrap: false
+        }
+      ]
+    };
+  </script>
+
+  <link rel="stylesheet" href="/math-homework/assets/core-rich.css" />
+  <script defer src="/math-homework/assets/core-rich.js"></script>
+  <script defer src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+</head>
+
+<body>
+  <div id="hw-root">Loading…</div>
+</body>
+</html>
