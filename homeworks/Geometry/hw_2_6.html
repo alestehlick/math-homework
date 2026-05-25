@@ -7,21 +7,27 @@
 
   <script>
     /* =========================
-       Homework 2-6 — Solid Figures and Surfaces (Geometry)
+       Homework 2-6 — Subsets of Space: Spheres, Cones, Cylinders, Prisms, and Pyramids (Geometry)
        Adapted for: /math-homework/assets/core-rich.js
 
        REQUIRED SOURCE REFERENCES (your provided sets):
-       - Source A uses A. Exercises: #1–#17 as inspiration for identifying cylinders, spheres, cones,
-         prisms, pyramids, closed surfaces, bases, vertices, and lateral faces.
-       - Source B uses B. Exercises: #18–#25 as inspiration for prism/cylinder, cone/pyramid,
-         right/regular, and true/false definition traps.
-       - Source C uses C. Exercises: #28–#30 as inspiration for plane intersections with cones
+       - Textbook definitions supplied in 20260525160903029.pdf, pp. 68-70:
+         sphere, center of a sphere, radius of a sphere; cone, vertex; cylinder;
+         circular cone/cylinder; prism; pyramid; base, lateral face, lateral edge;
+         right and oblique.
+       - Source A uses A. Exercises: #1-#17 as inspiration for identifying cylinders, spheres,
+         cones, prisms, pyramids, bases, vertices, and lateral faces.
+       - Source B uses B. Exercises: #18-#25 as inspiration for prism/cylinder, cone/pyramid,
+         right/oblique distinctions and true/false definition traps.
+       - Source C uses C. Exercises: #28-#30 as inspiration for plane intersections with cones
          and radius/sphere distinctions.
        - Source items explicitly disregarded, as requested: #26 and #27.
+       - Revision note: No final question asks students to state or analyze the general definition
+         of a surface. The questions instead use the later definitions from the section.
        - Model-reworked items: All final questions were re-authored as multiple-choice questions
-         with definition-based distractors. Q10–Q11 were split to force the distinction between
-         intersecting a surface and intersecting a solid. Q12–Q13 were added/reworked to stabilize
-         the distinction between a sphere, a radius segment, and the solid ball.
+         with definition-based distractors. Q10-Q11 target the distinction between right and
+         oblique figures without using later classifications not yet taught. Q12-Q14 target
+         the cone cross-section and sphere/radius distinctions.
 
        IMAGE FILES:
        - User-supplied figure(s): none used in the final homework.
@@ -34,181 +40,196 @@
     window.homeworkData = {
       classId : "Geometry",
       id      : "Homework 2-6",
-      title   : "Homework 2-6 — Solid Figures and Surfaces",
+      title   : "Homework 2-6 — Subsets of Space",
 
       graphics : String.raw``,
 
-      answerKey : ["C","E","B","D","A","F","C","B","E","A","D","C","F","B"],
+      answerKey : ["B","A","D","E","C","F","B","D","A","C","E","D","B","F"],
 
       questions : [
-        {
-          stem: String.raw`
-            <p>A surface has two congruent square regions in parallel planes as its bases. Its lateral faces are parallelogram regions.</p>
-            <p>Identify the figure with the most specific designation possible.</p>
-          `,
-          choices: [
-            String.raw`Cylinder`,
-            String.raw`Quadrilateral pyramid`,
-            String.raw`Square prism`,
-            String.raw`Square pyramid`,
-            String.raw`Sphere`,
-            String.raw`Right circular cylinder`
-          ],
-          choiceWrap: false
-        },
-
-        {
-          stem: String.raw`
-            <p>A surface has one circular region as its base and one vertex not in the plane of the base. The vertex is not on the perpendicular line through the center of the base.</p>
-            <p>Which designation is most precise?</p>
-          `,
-          choices: [
-            String.raw`Right circular cone`,
-            String.raw`Right circular cylinder`,
-            String.raw`Triangular pyramid`,
-            String.raw`Sphere`,
-            String.raw`Oblique circular cone`,
-            String.raw`Circular prism`
-          ],
-          choiceWrap: false
-        },
-
         {
           stem: String.raw`
             <p>Which description correctly identifies a sphere?</p>
           `,
           choices: [
-            String.raw`A solid region whose points are all no farther than a fixed distance from a center`,
-            String.raw`The set of all points in space at a fixed distance from a center`,
-            String.raw`A circular region together with all segments joining it to a vertex`,
-            String.raw`A surface with two congruent circular bases in parallel planes`,
-            String.raw`A closed surface made only of polygonal regions`,
-            String.raw`Any closed surface that has no vertices`
+            String.raw`The set of all points in space whose distance from a center is less than or equal to a fixed number`,
+            String.raw`The set of all points in space at a fixed distance from a given point`,
+            String.raw`The union of two congruent circular regions (disks) in parallel planes`,
+            String.raw`The union of a polygonal region and all segments from its boundary to one point`,
+            String.raw`A closed curve in a plane together with its interior`,
+            String.raw`Any round three-dimensional object`
           ],
           choiceWrap: false
         },
 
         {
           stem: String.raw`
-            <p>A triangular prism has triangular regions as its two bases.</p>
-            <p>How many lateral faces does it have, and what kind of regions are they?</p>
+            <p>Let a sphere have center \(C\). Which object is a radius of the sphere?</p>
           `,
           choices: [
-            String.raw`2 lateral faces, both triangular regions`,
-            String.raw`3 lateral faces, all triangular regions`,
-            String.raw`4 lateral faces, all rectangular regions`,
-            String.raw`3 lateral faces, all parallelogram regions`,
-            String.raw`6 lateral faces, all parallelogram regions`,
-            String.raw`It has no lateral faces because the bases are triangles`
+            String.raw`A segment from \(C\) to a point on the sphere`,
+            String.raw`Any segment with endpoint \(C\)`,
+            String.raw`Any segment whose endpoints are both on the sphere`,
+            String.raw`A segment joining two opposite points of the sphere`,
+            String.raw`The fixed distance alone, not a segment`,
+            String.raw`The point \(C\) itself`
           ],
           choiceWrap: false
         },
 
         {
           stem: String.raw`
-            <p>A pyramid has a pentagonal region as its base.</p>
-            <p>How many lateral faces does it have, and what kind of regions are they?</p>
+            <p>A figure is made from a region in a plane and a point not in that plane. Every point on the boundary of the region is connected to the noncoplanar point by a segment.</p>
+            <p>Which definition is being described?</p>
           `,
           choices: [
-            String.raw`5 lateral faces, all triangular regions`,
-            String.raw`5 lateral faces, all parallelogram regions`,
-            String.raw`2 lateral faces, both pentagonal regions`,
-            String.raw`3 lateral faces, all triangular regions`,
-            String.raw`6 lateral faces, all triangular regions`,
-            String.raw`The number cannot be determined from the base`
+            String.raw`Sphere`,
+            String.raw`Cylinder`,
+            String.raw`Prism`,
+            String.raw`Cone`,
+            String.raw`Circle`,
+            String.raw`Plane`
           ],
           choiceWrap: false
         },
 
         {
           stem: String.raw`
-            <p>Which statement is always true under the definitions in this section?</p>
+            <p>A figure is made from two regions of the same size and shape lying in different parallel planes. Corresponding points on the boundaries of the regions are joined by segments.</p>
+            <p>Which definition is being described?</p>
           `,
           choices: [
-            String.raw`Every cylinder is a prism.`,
-            String.raw`Every cone has a circular region as its base.`,
-            String.raw`Every pyramid has exactly three lateral faces.`,
-            String.raw`Every sphere is a solid.`,
-            String.raw`Every right pyramid is regular.`,
-            String.raw`Every prism is a cylinder.`
+            String.raw`Sphere`,
+            String.raw`Pyramid`,
+            String.raw`Cone`,
+            String.raw`Triangle`,
+            String.raw`Cylinder`,
+            String.raw`Ray`
           ],
           choiceWrap: false
         },
 
         {
           stem: String.raw`
-            <p>A cone has a triangular region as its base.</p>
-            <p>Which more specific name may be used for this figure?</p>
+            <p>Under the definitions in this section, when is a cone or cylinder called <b>circular</b>?</p>
           `,
           choices: [
+            String.raw`When its lateral faces are circles`,
+            String.raw`When all of its edges are curved`,
+            String.raw`When each base is a circle`,
+            String.raw`When it has exactly one base`,
+            String.raw`When its vertex lies above the center of the base`,
+            String.raw`When it has no polygonal regions`
+          ],
+          choiceWrap: false
+        },
+
+        {
+          stem: String.raw`
+            <p>Which statement correctly defines a prism in this section?</p>
+          `,
+          choices: [
+            String.raw`A prism is a cone with a polygonal region as its base.`,
+            String.raw`A prism is a cylinder with circular regions (disks) as bases.`,
+            String.raw`A prism is a pyramid with two congruent bases.`,
+            String.raw`A prism is any figure whose lateral faces are triangles.`,
+            String.raw`A prism is a sphere with a polygonal cross-section.`,
+            String.raw`A prism is a cylinder with polygonal regions as bases.`
+          ],
+          choiceWrap: false
+        },
+
+        {
+          stem: String.raw`
+            <p>Which statement correctly defines a pyramid in this section?</p>
+          `,
+          choices: [
+            String.raw`A pyramid is a cylinder with polygonal regions as bases.`,
+            String.raw`A pyramid is a cone with a polygonal region as its base.`,
+            String.raw`A pyramid is a prism whose bases are triangles.`,
+            String.raw`A pyramid is a cone whose base must be a circle.`,
+            String.raw`A pyramid is a figure with two parallel polygonal bases.`,
+            String.raw`A pyramid is any solid with triangular faces.`
+          ],
+          choiceWrap: false
+        },
+
+        {
+          stem: String.raw`
+            <p>A figure has one pentagonal region as its base and one vertex not in the plane of the base. Its lateral faces are triangular regions.</p>
+            <p>Identify the figure with the most specific designation possible.</p>
+          `,
+          choices: [
+            String.raw`Pentagonal prism`,
             String.raw`Circular cone`,
             String.raw`Triangular prism`,
-            String.raw`Triangular pyramid`,
-            String.raw`Cylinder`,
-            String.raw`Sphere`,
-            String.raw`Rectangular pyramid`
+            String.raw`Pentagonal pyramid`,
+            String.raw`Right circular cylinder`,
+            String.raw`Sphere`
           ],
           choiceWrap: false
         },
 
         {
           stem: String.raw`
-            <p>What distinguishes a right circular cylinder from an oblique circular cylinder?</p>
+            <p>A prism has a hexagonal region as its base.</p>
+            <p>Which description must be correct?</p>
           `,
           choices: [
-            String.raw`A right circular cylinder has only one circular base; an oblique circular cylinder has two.`,
-            String.raw`In a right circular cylinder, the connecting segments are perpendicular to the base planes; in an oblique circular cylinder, they are not.`,
-            String.raw`A right circular cylinder has polygonal bases; an oblique circular cylinder has circular bases.`,
-            String.raw`A right circular cylinder is a solid; an oblique circular cylinder is only a surface.`,
-            String.raw`A right circular cylinder has triangular lateral faces; an oblique circular cylinder has rectangular lateral faces.`,
-            String.raw`There is no difference; the two terms name the same figure.`
+            String.raw`It has two congruent hexagonal bases in parallel planes and six parallelogram lateral faces.`,
+            String.raw`It has one hexagonal base and six triangular lateral faces.`,
+            String.raw`It has two circular bases and a curved lateral part.`,
+            String.raw`It has one hexagonal base and one vertex.`,
+            String.raw`It has two congruent hexagonal bases and five lateral faces.`,
+            String.raw`It has six bases and two lateral faces.`
           ],
           choiceWrap: false
         },
 
         {
           stem: String.raw`
-            <p>Why is the statement “All right pyramids are regular” false?</p>
+            <p>A prism is right. Its base is a rectangle that is not a square.</p>
+            <p>Which statement must be correct?</p>
           `,
           choices: [
-            String.raw`Because a right pyramid cannot have a polygonal base.`,
-            String.raw`Because every right pyramid is a cone, not a pyramid.`,
-            String.raw`Because a pyramid with triangular lateral faces cannot be right.`,
-            String.raw`Because regular means the vertex is outside the base plane.`,
-            String.raw`Because right describes the position of the vertex, while regular also requires the base to be a regular polygon.`,
-            String.raw`Because a regular pyramid must have a circular base.`
+            String.raw`It cannot be a prism, because a rectangular region is not a polygonal region.`,
+            String.raw`It must be oblique, because its base is not a square.`,
+            String.raw`Its lateral edges are perpendicular to the planes containing the bases.`,
+            String.raw`It has one rectangular base and one vertex.`,
+            String.raw`Its lateral faces must be triangular regions.`,
+            String.raw`It must have circular regions (disks) as bases.`
           ],
           choiceWrap: false
         },
 
         {
           stem: String.raw`
-            <p>A plane cuts the <b>surface</b> of a right circular cone. The plane is parallel to the base and lies between the base and the vertex.</p>
+            <p>A cone has a circular base. Its vertex is not on the perpendicular line through the center of the base.</p>
+            <p>Which designation is most precise?</p>
+          `,
+          choices: [
+            String.raw`Right circular cone`,
+            String.raw`Pyramid`,
+            String.raw`Right circular cylinder`,
+            String.raw`Circular prism`,
+            String.raw`Oblique circular cone`,
+            String.raw`Sphere`
+          ],
+          choiceWrap: false
+        },
+
+        {
+          stem: String.raw`
+            <p>A plane intersects a right circular cone. The plane is parallel to the base and lies between the base and the vertex.</p>
             <p>What is the intersection?</p>
           `,
           choices: [
-            String.raw`A circle`,
-            String.raw`A circular region`,
-            String.raw`An ellipse`,
-            String.raw`A line segment`,
-            String.raw`Two points`,
-            String.raw`No intersection is possible`
-          ],
-          choiceWrap: false
-        },
-
-        {
-          stem: String.raw`
-            <p>A plane cuts the <b>solid region</b> inside a right circular cone. The plane is parallel to the base and lies between the base and the vertex.</p>
-            <p>What is the intersection?</p>
-          `,
-          choices: [
-            String.raw`A circle only, with no interior`,
+            String.raw`A circular region (disk)`,
             String.raw`A triangular region`,
             String.raw`A line segment`,
-            String.raw`A circular region`,
-            String.raw`A rectangular region`,
-            String.raw`Exactly two points`
+            String.raw`A circle`,
+            String.raw`Exactly two points`,
+            String.raw`No intersection is possible`
           ],
           choiceWrap: false
         },
@@ -220,8 +241,8 @@
           `,
           choices: [
             String.raw`All points of \(\overline{CP}\)`,
-            String.raw`Two points, \(C\) and \(P\)`,
             String.raw`Exactly one point, \(P\)`,
+            String.raw`Two points, \(C\) and \(P\)`,
             String.raw`Infinitely many points, but not all of them`,
             String.raw`No points`,
             String.raw`It cannot be determined without knowing the radius`
@@ -231,31 +252,15 @@
 
         {
           stem: String.raw`
-            <p>Which statement best describes the relation between a sphere and a ball?</p>
+            <p>Do all radii of a sphere have equal lengths?</p>
           `,
           choices: [
-            String.raw`They are two names for exactly the same object.`,
-            String.raw`A sphere contains its center and all its interior points.`,
-            String.raw`A ball is only the boundary surface; a sphere is the whole solid.`,
-            String.raw`Every radius segment of a sphere lies entirely on the sphere.`,
-            String.raw`A sphere is not a closed surface.`,
-            String.raw`A sphere is the surface; a ball is the solid region enclosed by that surface.`
-          ],
-          choiceWrap: false
-        },
-
-        {
-          stem: String.raw`
-            <p>A prism has a hexagonal region as its base.</p>
-            <p>Which description must be correct?</p>
-          `,
-          choices: [
-            String.raw`It has one hexagonal base and six triangular lateral faces.`,
-            String.raw`It has two congruent hexagonal bases in parallel planes and six parallelogram lateral faces.`,
-            String.raw`It has two circular bases and a curved lateral surface.`,
-            String.raw`It has one hexagonal base and one vertex.`,
-            String.raw`It has two congruent hexagonal bases and five lateral faces.`,
-            String.raw`It has six bases and two lateral faces.`
+            String.raw`No. A radius can have any length as long as it starts at the center.`,
+            String.raw`No. Radii are equal only if they lie in the same plane.`,
+            String.raw`No. Only diameters of a sphere have equal lengths.`,
+            String.raw`Yes, but only for right spheres.`,
+            String.raw`Yes, because all segments drawn inside a sphere are radii.`,
+            String.raw`Yes, because every point on the sphere is at the same fixed distance from the center.`
           ],
           choiceWrap: false
         }
