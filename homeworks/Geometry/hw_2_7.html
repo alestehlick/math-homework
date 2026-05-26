@@ -1,0 +1,294 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Homework 2-7 (Geometry)</title>
+
+  <script>
+    /* =========================
+       Homework 2-7 — Polyhedra (Geometry)
+       Adapted for: /math-homework/assets/core-rich.js
+
+       REQUIRED SOURCE REFERENCES (your provided sets):
+       - Source A uses A. Exercises: #1–#10 as inspiration for true/false definition traps
+         about cones, prisms, pyramids, polyhedra, and classification by number of faces.
+       - Source A uses A. Exercises: #11–#20 as inspiration for classifying polyhedra,
+         naming faces/vertices/edges, and distinguishing face-count names from base names.
+       - Source B uses B. Exercises: #21–#24 as inspiration for alternate names of prisms
+         and pyramids, formulas for faces in prisms and pyramids, and prism diagonals.
+       - Source C uses C. Exercise #25 as inspiration for the general diagonal count in an
+         n-gonal prism.
+       - Model-reworked items: All final questions were re-authored as multiple-choice questions
+         with diagnostic distractors. Q8–Q11 were paired to force the distinction between
+         prism face counts and pyramid face counts. Q14–Q15 were added/reworked to stabilize
+         the definition of a prism diagonal and the general counting pattern.
+
+       IMAGE FILES:
+       - User-supplied figure(s): none used in the final homework.
+       - Model-generated figure(s): none.
+
+       IMAGE NAMING RULE:
+       - No image files are required for this homework.
+       ========================= */
+
+    window.homeworkData = {
+      classId : "Geometry",
+      id      : "Homework 2-7",
+      title   : "Homework 2-7 — Polyhedra",
+
+      graphics : String.raw``,
+
+      /* Correct answers for Q1–Q15 */
+      answerKey : ["C","D","B","E","C","A","F","B","E","D","C","A","E","B","D"],
+
+      questions : [
+        {
+          stem: String.raw`
+            <p>Which description best matches a <b>polyhedron</b>?</p>
+          `,
+          choices: [
+            String.raw`A solid with a circular base and one vertex`,
+            String.raw`Any three-dimensional figure with a curved surface`,
+            String.raw`A closed surface made up of polygonal regions`,
+            String.raw`A surface whose points are all the same distance from a center`,
+            String.raw`Any figure that has at least one base`,
+            String.raw`Any solid figure, whether its boundary is curved or flat`
+          ],
+          choiceWrap: false
+        },
+
+        {
+          stem: String.raw`
+            <p>Which statement is always true?</p>
+          `,
+          choices: [
+            String.raw`Every polyhedron is a cone.`,
+            String.raw`Every cone is a polyhedron.`,
+            String.raw`Every circular cone is a polyhedron.`,
+            String.raw`Every prism is a polyhedron.`,
+            String.raw`Every sphere is a polyhedron.`,
+            String.raw`Every cylinder is a prism.`
+          ],
+          choiceWrap: false
+        },
+
+        {
+          stem: String.raw`
+            <p>Why is a <b>circular cone</b> not a polyhedron?</p>
+          `,
+          choices: [
+            String.raw`Because it has only one base.`,
+            String.raw`Because its lateral surface is not made of polygonal regions.`,
+            String.raw`Because it has a vertex.`,
+            String.raw`Because its base is a plane figure.`,
+            String.raw`Because a cone can never have a closed surface.`,
+            String.raw`Because it has infinitely many vertices.`
+          ],
+          choiceWrap: false
+        },
+
+        {
+          stem: String.raw`
+            <p>A pyramid has a quadrilateral region as its base.</p>
+            <p>Classify the polyhedron according to the number of faces.</p>
+          `,
+          choices: [
+            String.raw`Tetrahedron`,
+            String.raw`Hexahedron`,
+            String.raw`Octahedron`,
+            String.raw`Quadrilateral prism`,
+            String.raw`Pentahedron`,
+            String.raw`Dodecahedron`
+          ],
+          choiceWrap: false
+        },
+
+        {
+          stem: String.raw`
+            <p>A prism has triangular regions as its bases.</p>
+            <p>Classify the polyhedron according to the number of faces.</p>
+          `,
+          choices: [
+            String.raw`Tetrahedron`,
+            String.raw`Trihedron`,
+            String.raw`Pentahedron`,
+            String.raw`Hexahedron`,
+            String.raw`Octahedron`,
+            String.raw`Triangular pyramid`
+          ],
+          choiceWrap: false
+        },
+
+        {
+          stem: String.raw`
+            <p>A cone has a heptagonal region as its base.</p>
+            <p>Classify the resulting polyhedron according to the number of faces.</p>
+          `,
+          choices: [
+            String.raw`Octahedron`,
+            String.raw`Heptagon`,
+            String.raw`Heptahedron`,
+            String.raw`Hexahedron`,
+            String.raw`Decahedron`,
+            String.raw`It is not a polyhedron because it is called a cone.`
+          ],
+          choiceWrap: false
+        },
+
+        {
+          stem: String.raw`
+            <p>A prism has decagonal regions as its bases.</p>
+            <p>Give another name for the polyhedron, using the number of faces.</p>
+          `,
+          choices: [
+            String.raw`Decahedron`,
+            String.raw`Octahedron`,
+            String.raw`Icosahedron`,
+            String.raw`Hexahedron`,
+            String.raw`Pentagonal prism`,
+            String.raw`Dodecahedron`
+          ],
+          choiceWrap: false
+        },
+
+        {
+          stem: String.raw`
+            <p>A pyramid has an \(n\)-gon as its base.</p>
+            <p>How many faces does the pyramid have?</p>
+          `,
+          choices: [
+            String.raw`\(n\)`,
+            String.raw`\(n+1\)`,
+            String.raw`\(n+2\)`,
+            String.raw`\(2n\)`,
+            String.raw`\(3n\)`,
+            String.raw`The number cannot be determined from \(n\)`
+          ],
+          choiceWrap: false
+        },
+
+        {
+          stem: String.raw`
+            <p>A prism has an \(n\)-gon as each base.</p>
+            <p>How many faces does the prism have?</p>
+          `,
+          choices: [
+            String.raw`\(n\)`,
+            String.raw`\(n+1\)`,
+            String.raw`\(2n\)`,
+            String.raw`\(3n\)`,
+            String.raw`\(n+2\)`,
+            String.raw`The number cannot be determined from \(n\)`
+          ],
+          choiceWrap: false
+        },
+
+        {
+          stem: String.raw`
+            <p>A polyhedron is known to be a prism and has 11 faces.</p>
+            <p>How many sides does each base have?</p>
+          `,
+          choices: [
+            String.raw`7`,
+            String.raw`8`,
+            String.raw`10`,
+            String.raw`9`,
+            String.raw`11`,
+            String.raw`22`
+          ],
+          choiceWrap: false
+        },
+
+        {
+          stem: String.raw`
+            <p>A polyhedron is known to be a pyramid and has 11 faces.</p>
+            <p>How many sides does its base have?</p>
+          `,
+          choices: [
+            String.raw`8`,
+            String.raw`9`,
+            String.raw`10`,
+            String.raw`11`,
+            String.raw`12`,
+            String.raw`22`
+          ],
+          choiceWrap: false
+        },
+
+        {
+          stem: String.raw`
+            <p>A prism has pentagonal regions as its bases.</p>
+            <p>Which list gives the correct number of faces, vertices, and edges?</p>
+          `,
+          choices: [
+            String.raw`7 faces, 10 vertices, 15 edges`,
+            String.raw`6 faces, 6 vertices, 10 edges`,
+            String.raw`5 faces, 10 vertices, 15 edges`,
+            String.raw`7 faces, 5 vertices, 10 edges`,
+            String.raw`10 faces, 7 vertices, 15 edges`,
+            String.raw`12 faces, 10 vertices, 20 edges`
+          ],
+          choiceWrap: false
+        },
+
+        {
+          stem: String.raw`
+            <p>A pyramid has pentagonal region as its base.</p>
+            <p>Which list gives the correct number of faces, vertices, and edges?</p>
+          `,
+          choices: [
+            String.raw`5 faces, 5 vertices, 5 edges`,
+            String.raw`5 faces, 6 vertices, 10 edges`,
+            String.raw`7 faces, 10 vertices, 15 edges`,
+            String.raw`6 faces, 5 vertices, 10 edges`,
+            String.raw`6 faces, 6 vertices, 10 edges`,
+            String.raw`10 faces, 6 vertices, 15 edges`
+          ],
+          choiceWrap: false
+        },
+
+        {
+          stem: String.raw`
+            <p>A diagonal of a prism joins two vertices that do not lie in the same face.</p>
+            <p>In a hexagonal prism, how many diagonals can be drawn from one chosen vertex?</p>
+          `,
+          choices: [
+            String.raw`2`,
+            String.raw`3`,
+            String.raw`4`,
+            String.raw`5`,
+            String.raw`6`,
+            String.raw`9`
+          ],
+          choiceWrap: false
+        },
+
+        {
+          stem: String.raw`
+            <p>A prism has octagonal regions as its bases.</p>
+            <p>How many diagonals does the prism have in total, using the definition from this section?</p>
+          `,
+          choices: [
+            String.raw`16`,
+            String.raw`24`,
+            String.raw`32`,
+            String.raw`40`,
+            String.raw`48`,
+            String.raw`56`
+          ],
+          choiceWrap: false
+        }
+      ]
+    };
+  </script>
+
+  <link rel="stylesheet" href="/math-homework/assets/core-rich.css" />
+  <script defer src="/math-homework/assets/core-rich.js"></script>
+  <script defer src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+</head>
+
+<body>
+  <div id="hw-root">Loading…</div>
+</body>
+</html>
