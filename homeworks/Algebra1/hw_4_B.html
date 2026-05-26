@@ -1,0 +1,199 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Homework 4B (Algebra I)</title>
+
+  <script>
+    /* =========================
+       Homework 4B — Solving Literal Linear Equations (Algebra I)
+       Adapted for: /math-homework/assets/core-rich.js
+
+       REQUIRED SOURCE REFERENCES:
+       - No external source set was used.
+       - Model-authored Q1–Q10: created as a natural continuation of Homework 4A, moving from ordinary one-variable linear equations to literal linear equations where one variable must be isolated in terms of the others.
+       - Q1–Q6 target basic inverse operations and transposition with several symbols.
+       - Q7–Q8 add bracket/formula structure while remaining first-degree in the requested variable.
+       - Q9–Q10 add the requested simple factorization step, such as ax + bx = (a + b)x and 3p - tp = (3 - t)p.
+
+       IMAGE FILES:
+       - User-supplied figures: none used in the homework.
+       - Model-generated figures: none.
+
+       IMAGE NAMING RULE:
+       - No image files are required for this homework.
+       ========================= */
+
+    window.homeworkData = {
+      classId : "Algebra1",
+      id      : "Homework 4B",
+      title   : "Homework 4B — Solving Literal Linear Equations",
+
+      graphics : String.raw``,
+
+      answerKey : ["C","B","D","F","A","E","C","D","A","F"],
+
+      questions : [
+        {
+          stem: String.raw`
+            <p>Solve for \(x\).</p>
+            <p class="math">\(x+a=b\)</p>
+          `,
+          choices: [
+            String.raw`\(a-b\)`,
+            String.raw`\(a+b\)`,
+            String.raw`\(b-a\)`,
+            String.raw`\(ab\)`,
+            String.raw`\(\frac{b}{a}\)`,
+            String.raw`\(\frac{a}{b}\)`
+          ]
+        },
+
+        {
+          stem: String.raw`
+            <p>Solve for \(y\).</p>
+            <p class="math">\(4y=m\)</p>
+          `,
+          choices: [
+            String.raw`\(4m\)`,
+            String.raw`\(\frac{m}{4}\)`,
+            String.raw`\(\frac{4}{m}\)`,
+            String.raw`\(m-4\)`,
+            String.raw`\(m+4\)`,
+            String.raw`\(\frac{m}{2}\)`
+          ]
+        },
+
+        {
+          stem: String.raw`
+            <p>Solve for \(p\).</p>
+            <p class="math">\(p-q=r\)</p>
+          `,
+          choices: [
+            String.raw`\(r-q\)`,
+            String.raw`\(q-r\)`,
+            String.raw`\(qr\)`,
+            String.raw`\(q+r\)`,
+            String.raw`\(\frac{r}{q}\)`,
+            String.raw`\(\frac{q}{r}\)`
+          ]
+        },
+
+        {
+          stem: String.raw`
+            <p>Solve for \(x\). Assume \(a\ne 0\).</p>
+            <p class="math">\(ax=b\)</p>
+          `,
+          choices: [
+            String.raw`\(\frac{a}{b}\)`,
+            String.raw`\(ab\)`,
+            String.raw`\(b-a\)`,
+            String.raw`\(a-b\)`,
+            String.raw`\(a+b\)`,
+            String.raw`\(\frac{b}{a}\)`
+          ]
+        },
+
+        {
+          stem: String.raw`
+            <p>Solve for \(x\). Assume \(a\ne 0\).</p>
+            <p class="math">\(ax+b=c\)</p>
+          `,
+          choices: [
+            String.raw`\(\frac{c-b}{a}\)`,
+            String.raw`\(\frac{c+b}{a}\)`,
+            String.raw`\(\frac{c}{a}-b\)`,
+            String.raw`\(\frac{b-c}{a}\)`,
+            String.raw`\(a(c-b)\)`,
+            String.raw`\(\frac{a}{c-b}\)`
+          ]
+        },
+
+        {
+          stem: String.raw`
+            <p>Solve for \(y\).</p>
+            <p class="math">\(2y-m=n\)</p>
+          `,
+          choices: [
+            String.raw`\(\frac{n-m}{2}\)`,
+            String.raw`\(2(n+m)\)`,
+            String.raw`\(\frac{m-n}{2}\)`,
+            String.raw`\(\frac{n}{2}-m\)`,
+            String.raw`\(\frac{m+n}{2}\)`,
+            String.raw`\(m+\frac{n}{2}\)`
+          ]
+        },
+
+        {
+          stem: String.raw`
+            <p>Solve for \(x\). Assume \(a\ne 0\).</p>
+            <p class="math">\(a(x+b)=c\)</p>
+          `,
+          choices: [
+            String.raw`\(\frac{c}{a}+b\)`,
+            String.raw`\(\frac{c}{a+b}\)`,
+            String.raw`\(\frac{c}{a}-b\)`,
+            String.raw`\(\frac{c-b}{a}\)`,
+            String.raw`\(\frac{a}{c}-b\)`,
+            String.raw`\(c-b\)`
+          ]
+        },
+
+        {
+          stem: String.raw`
+            <p>Solve for \(w\).</p>
+            <p class="math">\(P=2l+2w\)</p>
+          `,
+          choices: [
+            String.raw`\(P-l\)`,
+            String.raw`\(\frac{P+2l}{2}\)`,
+            String.raw`\(\frac{P}{2}+2l\)`,
+            String.raw`\(\frac{P-2l}{2}\)`,
+            String.raw`\(\frac{2l-P}{2}\)`,
+            String.raw`\(P-2l\)`
+          ]
+        },
+
+        {
+          stem: String.raw`
+            <p>Solve for \(x\). First collect the terms containing \(x\). Assume \(a+b\ne 0\).</p>
+            <p class="math">\(ax+bx=c\)</p>
+          `,
+          choices: [
+            String.raw`\(\frac{c}{a+b}\)`,
+            String.raw`\(\frac{c}{a}+\frac{c}{b}\)`,
+            String.raw`\(\frac{c}{ab}\)`,
+            String.raw`\(\frac{c}{a-b}\)`,
+            String.raw`\(\frac{a+b}{c}\)`,
+            String.raw`\((a+b)c\)`
+          ]
+        },
+
+        {
+          stem: String.raw`
+            <p>Solve for \(p\). First factor the terms containing \(p\). Assume \(3-t\ne 0\).</p>
+            <p class="math">\(3p-tp=q+5\)</p>
+          `,
+          choices: [
+            String.raw`\(\frac{q+5}{3+t}\)`,
+            String.raw`\(\frac{q+5}{t-3}\)`,
+            String.raw`\(q+5-3+t\)`,
+            String.raw`\(\frac{q+5}{3}-t\)`,
+            String.raw`\(\frac{3-t}{q+5}\)`,
+            String.raw`\(\frac{q+5}{3-t}\)`
+          ]
+        }
+      ]
+    };
+  </script>
+
+  <link rel="stylesheet" href="/math-homework/assets/core-rich.css" />
+  <script defer src="/math-homework/assets/core-rich.js"></script>
+  <script defer src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+</head>
+
+<body>
+  <div id="hw-root">Loading…</div>
+</body>
+</html>
