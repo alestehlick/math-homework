@@ -16,6 +16,8 @@
        - Type C uses C. Exercises: #18, #20
        - Model-reworked note: the graphing prompts in A #1 and A #2 were converted
          into multiple-choice questions about which points should appear on the number line.
+       - Q13-Q15 were added to test special absolute-value cases: no solution after isolating
+         a negative absolute value, and the single-solution case |x|=0.
 
        IMAGE NAMING RULE:
        No figures are required for this homework.
@@ -27,7 +29,7 @@
       title   : "Homework 4-6 — Absolute Value Equations",
       graphics : String.raw``,
 
-      answerKey : ["A","D","B","E","C","F","A","C","E","B","D","F"],
+      answerKey : ["A","D","B","E","C","F","A","C","E","B","D","F","C","E","B"],
 
       questions : [
         {
@@ -194,6 +196,51 @@
             String.raw`\(\left\{-\dfrac{85}{12},\,\dfrac{75}{12}\right\}\)`,
             String.raw`\(\left\{-\dfrac{75}{12},\,\dfrac{95}{12}\right\}\)`,
             String.raw`\(\left\{-\dfrac{85}{12},\,\dfrac{95}{12}\right\}\)`
+          ]
+        },
+
+        {
+          stem: String.raw`
+            <p>Solve the equation:</p>
+            <p class="math">\(\,|x|+3=2\)</p>
+          `,
+          choices: [
+            String.raw`\(\{-1,\,1\}\)`,
+            String.raw`\(\{-5,\,5\}\)`,
+            String.raw`\(\varnothing\)`,
+            String.raw`\(\{-1\}\)`,
+            String.raw`\(\{1\}\)`,
+            String.raw`\(\{0\}\)`
+          ]
+        },
+
+        {
+          stem: String.raw`
+            <p>Solve the equation:</p>
+            <p class="math">\(\,2(|x|+3)=6\)</p>
+          `,
+          choices: [
+            String.raw`\(\{-3,\,3\}\)`,
+            String.raw`\(\{-6,\,6\}\)`,
+            String.raw`\(\varnothing\)`,
+            String.raw`\(\{-1,\,1\}\)`,
+            String.raw`\(\{0\}\)`,
+            String.raw`\(\{3\}\)`
+          ]
+        },
+
+        {
+          stem: String.raw`
+            <p>Solve the equation:</p>
+            <p class="math">\(\,3|x-2|+1=0\)</p>
+          `,
+          choices: [
+            String.raw`\(\left\{\dfrac{5}{3},\,\dfrac{7}{3}\right\}\)`,
+            String.raw`\(\varnothing\)`,
+            String.raw`\(\{-2,\,2\}\)`,
+            String.raw`\(\left\{-\dfrac{1}{3},\,\dfrac{1}{3}\right\}\)`,
+            String.raw`\(\{2\}\)`,
+            String.raw`\(\left\{\dfrac{1}{3},\,\dfrac{5}{3}\right\}\)`
           ]
         }
       ]
