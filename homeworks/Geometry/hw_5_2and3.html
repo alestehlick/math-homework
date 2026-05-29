@@ -1,0 +1,346 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Homework 5-2 and 5-3 (Geometry)</title>
+
+  <script>
+    /* =========================
+       Homework 5-2 and 5-3 — Logic and Conditional Statements (Geometry)
+       Adapted for: /math-homework/assets/core-rich.js
+
+       REQUIRED SOURCE REFERENCES:
+       - Source set: Last year's "HW1 - Chap. 5" logic homework.
+       - Original exercises used as inspiration: #1, #2, #3, #4(a), #4(b), #4(c), #4(d).
+       - Exercise #1 inspired Q1-Q5: truth values of conjunctions, disjunctions, negations, and nested compound propositions.
+       - Exercise #2 inspired Q6-Q9: conditionals and the special false case of an implication.
+       - Exercise #3 inspired Q10-Q11: variable-dependent implications and counterexamples.
+       - Exercise #4 inspired Q12-Q18: truth tables, tautologies, logical equivalence, and implication chaining.
+
+       IMAGE FILES:
+       - User-supplied figure(s): none.
+       - Model-generated figure(s): none.
+
+       IMAGE NAMING RULE:
+       - No image files are required for this homework.
+
+       MODEL-AUTHORED / MODEL-REWORKED ITEMS:
+       - All questions were re-authored into the current multiple-choice format, with exactly six choices per question.
+       - Q6 and Q12 use geometric language to connect symbolic logic to the Geometry course.
+       - Q13 was added to test the structure of truth tables before the later tautology questions.
+       - Q17-Q18 were added to test proof-oriented judgment about tautologies without requiring formal two-column proof routines.
+       ========================= */
+
+    window.homeworkData = {
+      classId : "Geometry",
+      id      : "Homework 5-2 and 5-3",
+      title   : "Homework 5-2 and 5-3 — Logic and Conditional Statements",
+
+      graphics : String.raw``,
+
+      /* Correct answers for Q1-Q18 */
+      answerKey : ["A","B","C","B","B","D","A","E","C","D","A","F","D","B","B","A","E","D"],
+
+      questions : [
+
+        {
+          stem: String.raw`
+            <p>Determine the truth value of the compound proposition.</p>
+            <p class="math">\((5>2) \land (3+4=7)\)</p>
+          `,
+          choices: [
+            String.raw`True, because both parts of the conjunction are true.`,
+            String.raw`False, because at least one part of the conjunction is false.`,
+            String.raw`True, because at least one part of the conjunction is true.`,
+            String.raw`False, because a conjunction is true only when the two parts are identical.`,
+            String.raw`False, because the second part contains an equality.`,
+            String.raw`It cannot be determined without making a full truth table.`
+          ],
+          choiceWrap: false
+        },
+
+        {
+          stem: String.raw`
+            <p>Determine the truth value of the compound proposition.</p>
+            <p class="math">\((2^3=8) \lor (9<4)\)</p>
+          `,
+          choices: [
+            String.raw`False, because the second part is false.`,
+            String.raw`True, because at least one part of the disjunction is true.`,
+            String.raw`False, because a disjunction is true only when both parts are true.`,
+            String.raw`True, because both parts of the disjunction are true.`,
+            String.raw`False, because the first part is an equation, not an inequality.`,
+            String.raw`It cannot be determined because the two parts have different forms.`
+          ],
+          choiceWrap: false
+        },
+
+        {
+          stem: String.raw`
+            <p>Determine the truth value of the compound proposition.</p>
+            <p class="math">\((6>1) \land [(2+5=9) \lor (10\div 2=5)]\)</p>
+          `,
+          choices: [
+            String.raw`False, because \(2+5=9\) is false.`,
+            String.raw`False, because one part inside the disjunction is false.`,
+            String.raw`True, because the bracketed disjunction is true and \(6>1\) is true.`,
+            String.raw`True only if both statements inside the brackets are true.`,
+            String.raw`False, because conjunction must be evaluated before the bracketed expression.`,
+            String.raw`It cannot be determined unless values are assigned to \(p\) and \(q\).`
+          ],
+          choiceWrap: false
+        },
+
+        {
+          stem: String.raw`
+            <p>For the following three propositions, choose the correct ordered list of truth values.</p>
+            <p>I. \((7<3) \lor (4^2=16)\)</p>
+            <p>II. \((8-3=5) \land (\sqrt{25}=4)\)</p>
+            <p>III. \(\left(\frac{1}{2}<\frac{2}{3}\right) \lor (\operatorname{GCF}(6,10)=1)\)</p>
+          `,
+          choices: [
+            String.raw`True, True, True`,
+            String.raw`True, False, True`,
+            String.raw`False, False, True`,
+            String.raw`True, False, False`,
+            String.raw`False, True, False`,
+            String.raw`False, False, False`
+          ],
+          choiceWrap: false
+        },
+
+        {
+          stem: String.raw`
+            <p>Which proposition is the correct negation of \(p \land q\)?</p>
+          `,
+          choices: [
+            String.raw`\(\neg p \land \neg q\)`,
+            String.raw`\(\neg p \lor \neg q\)`,
+            String.raw`\(p \lor q\)`,
+            String.raw`\(\neg(p \lor q)\)`,
+            String.raw`\(p \to q\)`,
+            String.raw`\(q \to p\)`
+          ],
+          choiceWrap: false
+        },
+
+        {
+          stem: String.raw`
+            <p>Let \(p\) mean “the figure is a rectangle,” and let \(q\) mean “the figure has four right angles.”</p>
+            <p>Which symbolic statement represents the sentence: “If the figure is a rectangle, then the figure has four right angles”?</p>
+          `,
+          choices: [
+            String.raw`\(q \to p\)`,
+            String.raw`\(p \land q\)`,
+            String.raw`\(p \lor q\)`,
+            String.raw`\(p \to q\)`,
+            String.raw`\(\neg p \to q\)`,
+            String.raw`\(p \to \neg q\)`
+          ],
+          choiceWrap: false
+        },
+
+        {
+          stem: String.raw`
+            <p>Determine the truth value of the conditional statement.</p>
+            <p class="math">\((4+2=6) \to (7<3)\)</p>
+          `,
+          choices: [
+            String.raw`False, because the hypothesis is true and the conclusion is false.`,
+            String.raw`True, because the hypothesis is true.`,
+            String.raw`True, because the conclusion is false.`,
+            String.raw`False, because every conditional statement about numbers is false.`,
+            String.raw`True, because every if-then statement is true.`,
+            String.raw`It cannot be determined unless the statement is written in words.`
+          ],
+          choiceWrap: false
+        },
+
+        {
+          stem: String.raw`
+            <p>Determine the truth value of the conditional statement.</p>
+            <p class="math">\((2^2=5) \to (100>1)\)</p>
+          `,
+          choices: [
+            String.raw`False, because the hypothesis is false.`,
+            String.raw`False, because \(2^2=5\) is false.`,
+            String.raw`True only if both the hypothesis and the conclusion are true.`,
+            String.raw`False, because the conclusion is irrelevant when the hypothesis is false.`,
+            String.raw`True, because a conditional is false only when a true hypothesis leads to a false conclusion.`,
+            String.raw`It cannot be determined without knowing whether the statement is useful.`
+          ],
+          choiceWrap: false
+        },
+
+        {
+          stem: String.raw`
+            <p>For which truth values of \(p\) and \(q\) is the conditional \(p \to q\) false?</p>
+          `,
+          choices: [
+            String.raw`\(p\) is true and \(q\) is true.`,
+            String.raw`\(p\) is false and \(q\) is true.`,
+            String.raw`\(p\) is true and \(q\) is false.`,
+            String.raw`\(p\) is false and \(q\) is false.`,
+            String.raw`It is never false.`,
+            String.raw`It is false whenever \(q\) is false.`
+          ],
+          choiceWrap: false
+        },
+
+        {
+          stem: String.raw`
+            <p>Suppose \(x\) is a real number. Can the proposition below be false?</p>
+            <p class="math">\((x=3) \to (2x=6)\)</p>
+          `,
+          choices: [
+            String.raw`Yes. It is false when \(x=0\).`,
+            String.raw`Yes. It is false when \(x=6\).`,
+            String.raw`Yes. It is false when \(x=-3\).`,
+            String.raw`No. If \(x=3\), then \(2x=6\); if \(x\ne 3\), the hypothesis is false.`,
+            String.raw`No. Every equation involving a real number is automatically true.`,
+            String.raw`It cannot be decided because \(x\) has not been chosen.`
+          ],
+          choiceWrap: false
+        },
+
+        {
+          stem: String.raw`
+            <p>Suppose \(x\) is a real number. Can the proposition below be false?</p>
+            <p class="math">\((x^2=4) \to (x=2)\)</p>
+          `,
+          choices: [
+            String.raw`Yes. It is false when \(x=-2\), because the hypothesis is true and the conclusion is false.`,
+            String.raw`Yes. It is false when \(x=2\), because both statements are true.`,
+            String.raw`No. The equation \(x^2=4\) means only \(x=2\).`,
+            String.raw`No. A false hypothesis always makes the conditional false.`,
+            String.raw`Yes. It is false for every value of \(x\) except \(2\).`,
+            String.raw`It cannot be decided for real numbers.`
+          ],
+          choiceWrap: false
+        },
+
+        {
+          stem: String.raw`
+            <p>The statement \(\neg q \to \neg p\) is the contrapositive of \(p \to q\).</p>
+            <p>Which statement below is logically equivalent to \(p \to q\)?</p>
+          `,
+          choices: [
+            String.raw`\(q \to p\)`,
+            String.raw`\(\neg p \to \neg q\)`,
+            String.raw`\(p \land q\)`,
+            String.raw`\(\neg q \to p\)`,
+            String.raw`\(q \lor p\)`,
+            String.raw`\(\neg q \to \neg p\)`
+          ],
+          choiceWrap: false
+        },
+
+        {
+          stem: String.raw`
+            <p>A truth table is made for a proposition involving exactly three simple propositions: \(p\), \(q\), and \(r\).</p>
+            <p>How many rows of truth values are needed?</p>
+          `,
+          choices: [
+            String.raw`\(3\)`,
+            String.raw`\(4\)`,
+            String.raw`\(6\)`,
+            String.raw`\(8\)`,
+            String.raw`\(9\)`,
+            String.raw`\(16\)`
+          ],
+          choiceWrap: false
+        },
+
+        {
+          stem: String.raw`
+            <p>Which proposition is a tautology?</p>
+          `,
+          choices: [
+            String.raw`\(p \land \neg p\)`,
+            String.raw`\(p \lor \neg p\)`,
+            String.raw`\(p \to \neg p\)`,
+            String.raw`\((p \land q) \lor (\neg p \land q)\)`,
+            String.raw`\(p \land q\)`,
+            String.raw`\((p \lor q) \to p\)`
+          ],
+          choiceWrap: false
+        },
+
+        {
+          stem: String.raw`
+            <p>Consider the proposition below.</p>
+            <p class="math">\((p \to q) \lor (q \to p)\)</p>
+            <p>Which classification is correct?</p>
+          `,
+          choices: [
+            String.raw`It is a contradiction.`,
+            String.raw`It is a tautology.`,
+            String.raw`It is true only when both \(p\) and \(q\) are false.`,
+            String.raw`It is true only when \(p\) and \(q\) have the same truth value.`,
+            String.raw`It is equivalent to \(p \land q\).`,
+            String.raw`It is not a proposition.`
+          ],
+          choiceWrap: false
+        },
+
+        {
+          stem: String.raw`
+            <p>For which truth values of \(p\) and \(q\) is the following proposition true?</p>
+            <p class="math">\((p \lor q) \land (\neg p \lor q) \land (p \lor \neg q)\)</p>
+          `,
+          choices: [
+            String.raw`Only when \(p\) is true and \(q\) is true.`,
+            String.raw`Only when \(p\) is true and \(q\) is false.`,
+            String.raw`Only when \(p\) is false and \(q\) is true.`,
+            String.raw`Only when \(p\) is false and \(q\) is false.`,
+            String.raw`It is true in every row, so it is a tautology.`,
+            String.raw`It is false in every row, so it is a contradiction.`
+          ],
+          choiceWrap: false
+        },
+
+        {
+          stem: String.raw`
+            <p>Consider the proposition below.</p>
+            <p class="math">\([(p \to q) \land (q \to r)] \to (p \to r)\)</p>
+            <p>Which explanation best shows why it is a tautology?</p>
+          `,
+          choices: [
+            String.raw`It is not a tautology, because \(p\) and \(r\) are unrelated simple propositions.`,
+            String.raw`It is not a tautology when \(p\) is true, \(q\) is false, and \(r\) is false.`,
+            String.raw`It is a tautology only in the row where \(p\), \(q\), and \(r\) are all true.`,
+            String.raw`It is a tautology because every proposition containing the symbol \(\to\) is automatically true.`,
+            String.raw`It is a tautology: if both \(p\to q\) and \(q\to r\) are true, then a true \(p\) forces \(q\), then \(r\); and if \(p\) is false, \(p\to r\) is already true.`,
+            String.raw`It is a contradiction because the conclusion repeats neither \(q\) nor \(\neg q\).`
+          ],
+          choiceWrap: false
+        },
+
+        {
+          stem: String.raw`
+            <p>Which proposition below is <em>not</em> a tautology?</p>
+          `,
+          choices: [
+            String.raw`\((p \land q) \to p\)`,
+            String.raw`\(p \to (p \lor q)\)`,
+            String.raw`\([(p \to q) \land p] \to q\)`,
+            String.raw`\((p \to q) \to (q \to p)\)`,
+            String.raw`\((p \land q) \to (q \land p)\)`,
+            String.raw`\(\neg\neg p \to p\)`
+          ],
+          choiceWrap: false
+        }
+      ]
+    };
+  </script>
+
+  <link rel="stylesheet" href="/math-homework/assets/core-rich.css" />
+  <script defer src="/math-homework/assets/core-rich.js"></script>
+  <script defer src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+</head>
+
+<body>
+  <div id="hw-root">Loading…</div>
+</body>
+</html>
