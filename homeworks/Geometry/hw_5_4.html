@@ -9,7 +9,7 @@
     /* =========================
        Homework 5-4 — Logic: Conditional Statements and Biconditionals (Geometry)
 
-       REQUIRED SOURCE REFERENCES (your provided sets):
+       REQUIRED SOURCE REFERENCES:
        - Source set A: HW1 - Chap. 5. Exercises used as content record: Ex. 2, Ex. 3, Ex. 4(b,d).
        - Source set B: HW2 - Chap. 5. Exercises used as content record: Ex. 1, Ex. 2, Ex. 3.
        - Reference homework: hw_5_2and3.html, used to avoid repeating the earlier focus on negation, AND, OR,
@@ -20,18 +20,17 @@
        - Model-generated figure(s): none.
 
        IMAGE NAMING RULE:
-       - No figures are required for this homework.
+       - No image files are required for this homework.
 
        MODEL REWORK / PEDAGOGICAL DESIGN:
-       - The earlier 5-2/5-3 homework already covered negation, AND, OR, logical equivalence,
-         double negation, De Morgan's law, and the distributive law.
-       - This new homework is therefore concentrated on the remaining Chap. 5 material:
-         conditional statements, truth values of conditionals, converse reasoning, valid and invalid
-         conditional arguments, chains of conditionals, biconditionals through same-truth-value language,
-         and selected tautology checks involving conditionals.
-       - Biconditionals are included, but the later classroom phrases requested to be avoided are not used.
-       - All questions are model-authored or substantially reworked from the source ideas in order to create
-         a coherent 90-minute progression rather than a direct copy of the PDFs.
+       - This 25-question version was rebuilt rather than merely shortened.
+       - The sequence concentrates on the remaining Chap. 5 material: conditional statements, hypotheses,
+         conclusions, truth values of conditionals, converse mistakes, valid and invalid conditional arguments,
+         chains of conditionals, biconditionals through symbol and same-truth-value language, and one final
+         tautology check involving conditionals.
+       - Certain later classroom phrases are intentionally avoided in the student-facing text.
+       - All questions are model-authored or substantially reworked from the source ideas to force comparison,
+         discrimination of similar cases, and attention to common reasoning traps.
        ========================= */
 
     window.homeworkData = {
@@ -41,17 +40,16 @@
 
       graphics : String.raw``,
 
-      /* Correct answers for Q1-Q34 */
-      answerKey : ["B", "C", "D", "A", "D", "B", "E", "A", "C", "D", "A", "B", "F", "C", "A", "B", "C", "D", "E", "A", "C", "D", "A", "E", "B", "A", "D", "C", "F", "A", "B", "C", "D", "C"],
+      /* Correct answers for Q1-Q25 */
+      answerKey : ["B", "C", "D", "A", "D", "B", "E", "A", "C", "D", "A", "B", "F", "C", "A", "B", "C", "D", "B", "A", "B", "C", "D", "B", "D"],
 
       questions : [
-
         /* Q1: model-authored or model-reworked item focused on conditional/biconditional reasoning */
         {
           stem: String.raw`<p>Which sentence is a conditional statement?</p>`,
           choices: [
             String.raw`The angle is acute.`,
-            String.raw`If an angle is right, then its measure is \\(90^\\circ\\).`,
+            String.raw`If an angle is right, then its measure is \(90^\circ\).`,
             String.raw`Is this polygon a triangle?`,
             String.raw`Draw a quadrilateral.`,
             String.raw`The number 8 is even and greater than 5.`,
@@ -124,7 +122,7 @@
 <p class="math">\(P\to Q\)</p>`,
           choices: [
             String.raw`True, because \(P\) is true.`,
-            String.raw`False, because a conditional is false when a true hypothesis leads to a false conclusion.`,
+            String.raw`False, because this is the one case where a conditional fails.`,
             String.raw`True, because \(Q\) is false.`,
             String.raw`False, because every conditional with a false conclusion is false.`,
             String.raw`True, because conditionals are always true.`,
@@ -258,12 +256,12 @@
 <p class="indent">If it rains, then the ground gets wet.<br>It rained.<br>Therefore, the ground got wet.</p>
 <p>Which judgment is correct?</p>`,
           choices: [
-            String.raw`The reasoning is valid: it uses the hypothesis to reach the conclusion.`,
-            String.raw`The reasoning is invalid: it switches the hypothesis and conclusion.`,
-            String.raw`The reasoning is invalid: it denies the hypothesis.`,
-            String.raw`The reasoning is invalid: it uses an OR statement.`,
-            String.raw`The reasoning is valid just in the case that it rains every day.`,
-            String.raw`The reasoning cannot be judged logically.`
+            String.raw`The reasoning is valid: it uses the conditional in the forward direction.`,
+            String.raw`The reasoning is invalid because the ground might get wet in other ways.`,
+            String.raw`The reasoning is invalid because it switches the two parts.`,
+            String.raw`The reasoning is valid only if rain is the only cause of wet ground.`,
+            String.raw`The reasoning is invalid because the conclusion is about the ground.`,
+            String.raw`The reasoning cannot be judged without a truth table for weather.`
           ],
           choiceWrap: false
         },
@@ -271,15 +269,15 @@
         /* Q16: model-authored or model-reworked item focused on conditional/biconditional reasoning */
         {
           stem: String.raw`<p>Consider the reasoning below.</p>
-<p class="indent">If it rains, then the ground gets wet.<br>The ground is wet.<br>Therefore, it rained.</p>
+<p class="indent">If the alarm is on, then the red light is blinking.<br>The red light is blinking.<br>Therefore, the alarm is on.</p>
 <p>Which judgment is correct?</p>`,
           choices: [
-            String.raw`The reasoning is valid, because the conclusion of the first statement happened.`,
-            String.raw`The reasoning is invalid: the ground could be wet for another reason.`,
-            String.raw`The reasoning is valid, because wet ground always means rain.`,
-            String.raw`The reasoning is invalid only because rain was not measured.`,
-            String.raw`The reasoning is valid only in geometry.`,
-            String.raw`The reasoning is invalid because the first statement is false.`
+            String.raw`The reasoning is valid because the conclusion repeats the hypothesis.`,
+            String.raw`The reasoning is invalid: the red light might blink for another reason.`,
+            String.raw`The reasoning is valid because the second line is the conclusion of the conditional.`,
+            String.raw`The reasoning is invalid only when the red light is not blinking.`,
+            String.raw`The reasoning is valid because all conditional statements can be reversed.`,
+            String.raw`The reasoning cannot be judged because it is not about geometry.`
           ],
           choiceWrap: false
         },
@@ -287,15 +285,15 @@
         /* Q17: model-authored or model-reworked item focused on conditional/biconditional reasoning */
         {
           stem: String.raw`<p>Consider the reasoning below.</p>
-<p class="indent">If it rains, then the ground gets wet.<br>The ground is not wet.<br>Therefore, it did not rain.</p>
+<p class="indent">If a figure is a square, then it has four sides.<br>This figure does not have four sides.<br>Therefore, this figure is not a square.</p>
 <p>Which judgment is correct?</p>`,
           choices: [
-            String.raw`The reasoning is invalid, because it uses a negative statement.`,
-            String.raw`The reasoning is invalid, because the ground might still be dry after rain.`,
-            String.raw`The reasoning is valid: if rain would make the ground wet, dry ground rules out rain.`,
-            String.raw`The reasoning is valid just in the case that the ground is made of concrete.`,
-            String.raw`The reasoning is invalid, because it switches the hypothesis and conclusion.`,
-            String.raw`The reasoning cannot be judged logically.`
+            String.raw`The reasoning is invalid because not all four-sided figures are squares.`,
+            String.raw`The reasoning is invalid because the conditional only works forward.`,
+            String.raw`The reasoning is valid: a square cannot fail to have four sides.`,
+            String.raw`The reasoning is valid only if the figure has three sides.`,
+            String.raw`The reasoning is invalid because the word “not” appears twice.`,
+            String.raw`The reasoning cannot be judged without a drawing.`
           ],
           choiceWrap: false
         },
@@ -303,258 +301,127 @@
         /* Q18: model-authored or model-reworked item focused on conditional/biconditional reasoning */
         {
           stem: String.raw`<p>Consider the reasoning below.</p>
-<p class="indent">If I eat chocolate, then I get a headache.<br>I did not eat chocolate today.<br>Therefore, I will not get a headache.</p>
+<p class="indent">If a student practices carefully, then the student improves.<br>The student did not practice carefully.<br>Therefore, the student did not improve.</p>
 <p>Which judgment is correct?</p>`,
           choices: [
-            String.raw`The reasoning is valid, because the hypothesis did not happen.`,
-            String.raw`The reasoning is valid, because headaches only come from chocolate.`,
-            String.raw`The reasoning is invalid, because the first statement is not a proposition.`,
-            String.raw`The reasoning is invalid: a headache could come from some other cause.`,
-            String.raw`The reasoning is valid just in the case that the person dislikes chocolate.`,
-            String.raw`The reasoning cannot be judged because it is about daily life.`
+            String.raw`The reasoning is valid because the hypothesis is denied.`,
+            String.raw`The reasoning is valid because improvement is impossible without practice.`,
+            String.raw`The reasoning is invalid because the conclusion should be “the student improved.”`,
+            String.raw`The reasoning is invalid: the student might improve for another reason.`,
+            String.raw`The reasoning is valid because both final statements are negative.`,
+            String.raw`The reasoning cannot be judged because it is about a student.`
           ],
           choiceWrap: false
         },
 
         /* Q19: model-authored or model-reworked item focused on conditional/biconditional reasoning */
         {
-          stem: String.raw`<p>Suppose the following two conditional statements are true.</p>
-<p class="indent">If \(P\), then \(Q\).<br>If \(Q\), then \(R\).</p>
-<p>Also suppose \(P\) is true. What must follow?</p>`,
+          stem: String.raw`<p>Consider the reasoning below.</p>
+<p class="indent">If a car is red, then it is fast.<br>This car is fast.<br>Therefore, this car is red.</p>
+<p>What is the main mistake?</p>`,
           choices: [
-            String.raw`Only \(Q\) must be false.`,
-            String.raw`Only \(R\) must be false.`,
-            String.raw`Nothing follows, because there are two conditionals.`,
-            String.raw`\(P\) must be false.`,
-            String.raw`\(Q\) and \(R\) must both be true.`,
-            String.raw`\(Q\) must be true, but \(R\) cannot be known.`
+            String.raw`It assumes that all red cars are slow.`,
+            String.raw`It treats the conclusion of the conditional as if it forced the hypothesis.`,
+            String.raw`It forgets that a car cannot be both red and fast.`,
+            String.raw`It uses a conditional statement with no hypothesis.`,
+            String.raw`It changes a conditional into an AND statement.`,
+            String.raw`There is no mistake.`
           ],
           choiceWrap: false
         },
 
         /* Q20: model-authored or model-reworked item focused on conditional/biconditional reasoning */
         {
-          stem: String.raw`<p>Which argument has the same logical form as this pattern?</p>
-<p class="math">P\to Q,\qquad Q\to R,\qquad P\qquad\therefore R</p>`,
+          stem: String.raw`<p>Consider the reasoning below.</p>
+<p class="indent">If I eat chocolate, then I get a headache.<br>I did not eat chocolate today.<br>Therefore, I will not get a headache.</p>
+<p>What is the main mistake?</p>`,
           choices: [
-            String.raw`If a figure is a square, then it is a rectangle. If a figure is a rectangle, then it is a quadrilateral. The figure is a square. Therefore, it is a quadrilateral.`,
-            String.raw`If a figure is a square, then it is a rectangle. The figure is a rectangle. Therefore, it is a square.`,
-            String.raw`If a figure is a square, then it is a rectangle. The figure is not a square. Therefore, it is not a rectangle.`,
-            String.raw`If a figure is a rectangle, then it is a quadrilateral. The figure is a quadrilateral. Therefore, it is a rectangle.`,
-            String.raw`If a figure is a square, then it is a rectangle. The figure is not a rectangle. Therefore, it is a square.`,
-            String.raw`If a figure is a square, then it is a rectangle. The figure is a square or a rectangle. Therefore, it is neither.`
+            String.raw`It forgets that something else might cause a headache.`,
+            String.raw`It proves that chocolate never causes headaches.`,
+            String.raw`It correctly uses the conditional in the forward direction.`,
+            String.raw`It treats headache as the hypothesis.`,
+            String.raw`It changes OR into AND.`,
+            String.raw`There is no mistake.`
           ],
           choiceWrap: false
         },
 
         /* Q21: model-authored or model-reworked item focused on conditional/biconditional reasoning */
         {
-          stem: String.raw`<p>A biconditional \(P\leftrightarrow Q\) is true exactly when \(P\) and \(Q\) have the same truth value.</p>
-<p>Which case makes \(P\leftrightarrow Q\) true?</p>`,
+          stem: String.raw`<p>Consider the chain of conditional statements.</p>
+<p class="indent">If \(P\), then \(Q\).<br>If \(Q\), then \(R\).<br>\(P\) is true.</p>
+<p>What can be concluded with certainty?</p>`,
           choices: [
-            String.raw`\(P\) true, \(Q\) false.`,
-            String.raw`\(P\) false, \(Q\) true.`,
-            String.raw`\(P\) true, \(Q\) true.`,
-            String.raw`\(P\) true, \(Q\) unknown.`,
-            String.raw`\(P\) false, \(Q\) unknown.`,
-            String.raw`A biconditional is never true.`
+            String.raw`Only \(Q\) is true; nothing can be said about \(R\).`,
+            String.raw`Both \(Q\) and \(R\) are true.`,
+            String.raw`Only \(R\) is true; nothing can be said about \(Q\).`,
+            String.raw`\(Q\) is false and \(R\) is true.`,
+            String.raw`Both \(Q\) and \(R\) are false.`,
+            String.raw`No conclusion can be drawn.`
           ],
           choiceWrap: false
         },
 
         /* Q22: model-authored or model-reworked item focused on conditional/biconditional reasoning */
         {
-          stem: String.raw`<p>Suppose \(P\) is true and \(Q\) is false. Determine the truth value of:</p>
-<p class="math">\(P\leftrightarrow Q\)</p>`,
+          stem: String.raw`<p>Consider the information below.</p>
+<p class="indent">If \(P\), then \(Q\).<br>If \(R\), then \(Q\).<br>\(P\) is true.</p>
+<p>Which conclusion is forced?</p>`,
           choices: [
-            String.raw`True, because \(P\) is true.`,
-            String.raw`True, because \(Q\) is false.`,
-            String.raw`True, because at least one part is true.`,
-            String.raw`False, because \(P\) and \(Q\) have different truth values.`,
-            String.raw`False, because biconditionals are always false.`,
-            String.raw`It cannot be determined without knowing the meanings of \(P\) and \(Q\).`
+            String.raw`\(R\) is true.`,
+            String.raw`\(R\) is false.`,
+            String.raw`\(Q\) is true.`,
+            String.raw`\(Q\) is false.`,
+            String.raw`Both \(Q\) and \(R\) are true.`,
+            String.raw`No conclusion at all is forced.`
           ],
           choiceWrap: false
         },
 
         /* Q23: model-authored or model-reworked item focused on conditional/biconditional reasoning */
         {
-          stem: String.raw`<p>Suppose \(P\) is false and \(Q\) is false. Determine the truth value of:</p>
-<p class="math">\(P\leftrightarrow Q\)</p>`,
+          stem: String.raw`<p>A biconditional \(P\leftrightarrow Q\) is true exactly when \(P\) and \(Q\) have the same truth value.</p>
+<p>In which case is \(P\leftrightarrow Q\) false?</p>`,
           choices: [
-            String.raw`True, because \(P\) and \(Q\) have the same truth value.`,
-            String.raw`False, because both statements are false.`,
-            String.raw`False, because \(P\) is false.`,
-            String.raw`True, because biconditionals ignore false statements.`,
-            String.raw`False, because \(Q\) is false.`,
-            String.raw`It cannot be determined.`
+            String.raw`\(P\) true, \(Q\) true.`,
+            String.raw`\(P\) false, \(Q\) false.`,
+            String.raw`\(P\) true, \(Q\) true again.`,
+            String.raw`\(P\) true, \(Q\) false.`,
+            String.raw`Only when \(P\) is not a proposition.`,
+            String.raw`Never; a biconditional is always true.`
           ],
           choiceWrap: false
         },
 
         /* Q24: model-authored or model-reworked item focused on conditional/biconditional reasoning */
         {
-          stem: String.raw`<p>Which expression has the same truth table as \(P\leftrightarrow Q\)?</p>`,
+          stem: String.raw`<p>Which expression says that the two conditional directions are both being claimed?</p>`,
           choices: [
-            String.raw`\(P\to Q\)`,
-            String.raw`\(Q\to P\)`,
             String.raw`\((P\to Q)\lor(Q\to P)\)`,
-            String.raw`\((P\land Q)\to P\)`,
             String.raw`\((P\to Q)\land(Q\to P)\)`,
-            String.raw`\(\neg(P\to Q)\)`
+            String.raw`\((P\land Q)\to(P\lor Q)\)`,
+            String.raw`\((P\lor Q)\land(\neg P\lor\neg Q)\)`,
+            String.raw`\((P\to Q)\land(P\to\neg Q)\)`,
+            String.raw`\(\neg(P\leftrightarrow Q)\)`
           ],
           choiceWrap: false
         },
 
         /* Q25: model-authored or model-reworked item focused on conditional/biconditional reasoning */
         {
-          stem: String.raw`<p>Determine whether the biconditional statement is true or false.</p>
-<p class="math">\(\text{An integer is divisible by }10\;\leftrightarrow\;\text{it is even.}\)</p>`,
+          stem: String.raw`<p>A tautology is true in every row of a truth table.</p>
+<p>Which proposition is a tautology?</p>`,
           choices: [
-            String.raw`True, because every integer divisible by 10 is even.`,
-            String.raw`False, because some even integers, such as 12, are not divisible by 10.`,
-            String.raw`True, because every even integer is divisible by 10.`,
-            String.raw`False, because no integer divisible by 10 is even.`,
-            String.raw`True, because both sides mention divisibility.`,
-            String.raw`It cannot be determined without choosing one integer first.`
-          ],
-          choiceWrap: false
-        },
-
-        /* Q26: model-authored or model-reworked item focused on conditional/biconditional reasoning */
-        {
-          stem: String.raw`<p>Determine whether the biconditional statement is true or false.</p>
-<p class="math">\(\text{An integer is even}\;\leftrightarrow\;\text{it is divisible by }2.\)</p>`,
-          choices: [
-            String.raw`True, because the two sides always have the same truth value for integers.`,
-            String.raw`False, because some even integers are not divisible by 2.`,
-            String.raw`False, because some integers divisible by 2 are odd.`,
-            String.raw`True only for positive integers less than 10.`,
-            String.raw`False, because the two sides use different words.`,
-            String.raw`It cannot be determined without a picture.`
-          ],
-          choiceWrap: false
-        },
-
-        /* Q27: model-authored or model-reworked item focused on conditional/biconditional reasoning */
-        {
-          stem: String.raw`<p>Determine whether the biconditional statement is true or false.</p>
-<p class="math">\(\text{A quadrilateral is a square}\;\leftrightarrow\;\text{it is a rectangle.}\)</p>`,
-          choices: [
-            String.raw`True, because every rectangle is a square.`,
-            String.raw`True, because every quadrilateral is a rectangle.`,
-            String.raw`False, because no square is a rectangle.`,
-            String.raw`False, because a rectangle can fail to be a square.`,
-            String.raw`True, because both figures have four sides.`,
-            String.raw`It cannot be determined without knowing the size of the quadrilateral.`
-          ],
-          choiceWrap: false
-        },
-
-        /* Q28: model-authored or model-reworked item focused on conditional/biconditional reasoning */
-        {
-          stem: String.raw`<p>Determine whether the biconditional statement is true or false.</p>
-<p class="math">\(\text{A triangle is equilateral}\;\leftrightarrow\;\text{all three of its sides are congruent.}\)</p>`,
-          choices: [
-            String.raw`False, because an equilateral triangle has only two congruent sides.`,
-            String.raw`False, because congruent sides do not matter in triangles.`,
-            String.raw`True, because the two sides always have the same truth value for triangles.`,
-            String.raw`True only for right triangles.`,
-            String.raw`False, because a triangle cannot have three congruent sides.`,
-            String.raw`It cannot be determined without measuring angles.`
-          ],
-          choiceWrap: false
-        },
-
-        /* Q29: model-authored or model-reworked item focused on conditional/biconditional reasoning */
-        {
-          stem: String.raw`<p>Which statement best describes \(P\leftrightarrow Q\)?</p>`,
-          choices: [
-            String.raw`It is true whenever \(P\) is true.`,
-            String.raw`It is true whenever \(Q\) is true.`,
-            String.raw`It is the same as \(P\lor Q\).`,
-            String.raw`It is the same as \(P\land Q\).`,
-            String.raw`It is false whenever both \(P\) and \(Q\) are false.`,
-            String.raw`It is true exactly when \(P\) and \(Q\) match in truth value.`
-          ],
-          choiceWrap: false
-        },
-
-        /* Q30: model-authored or model-reworked item focused on conditional/biconditional reasoning */
-        {
-          stem: String.raw`<p>A tautology is a compound proposition that is true in every row of its truth table.</p>
-<p>Which judgment is correct?</p>
-<p class="math">\((P\to Q)\to(\neg Q\to\neg P)\)</p>`,
-          choices: [
-            String.raw`It is a tautology.`,
-            String.raw`It is not a tautology; it is false when \(P\) and \(Q\) are both true.`,
-            String.raw`It is not a tautology; it is false when \(P\) is false and \(Q\) is false.`,
-            String.raw`It is not a proposition.`,
-            String.raw`It is always false.`,
-            String.raw`It has no truth table.`
-          ],
-          choiceWrap: false
-        },
-
-        /* Q31: model-authored or model-reworked item focused on conditional/biconditional reasoning */
-        {
-          stem: String.raw`<p>A tautology is a compound proposition that is true in every row of its truth table.</p>
-<p>Which judgment is correct?</p>
-<p class="math">\((P\to Q)\to(Q\to P)\)</p>`,
-          choices: [
-            String.raw`It is a tautology.`,
-            String.raw`It is not a tautology; when \(P\) is false and \(Q\) is true, the whole proposition is false.`,
-            String.raw`It is not a tautology; when \(P\) is true and \(Q\) is true, the whole proposition is false.`,
-            String.raw`It is always false.`,
-            String.raw`It cannot be checked with a truth table.`,
-            String.raw`It is the same as \(P\leftrightarrow Q\).`
-          ],
-          choiceWrap: false
-        },
-
-        /* Q32: model-authored or model-reworked item focused on conditional/biconditional reasoning */
-        {
-          stem: String.raw`<p>A tautology is a compound proposition that is true in every row of its truth table.</p>
-<p>Which judgment is correct?</p>
-<p class="math">\(((P\to Q)\land(Q\to R))\to(P\to R)\)</p>`,
-          choices: [
-            String.raw`It is not a tautology; it is false whenever \(P\) is true.`,
-            String.raw`It is not a tautology; it is false whenever \(R\) is false.`,
-            String.raw`It is a tautology.`,
-            String.raw`It is always false.`,
-            String.raw`It has no conclusion.`,
-            String.raw`It is the same as \(P\leftrightarrow R\).`
-          ],
-          choiceWrap: false
-        },
-
-        /* Q33: model-authored or model-reworked item focused on conditional/biconditional reasoning */
-        {
-          stem: String.raw`<p>Which pair of expressions has the same truth table?</p>`,
-          choices: [
-            String.raw`\(P\to Q\) and \(Q\to P\)`,
-            String.raw`\(P\to Q\) and \(\neg P\to\neg Q\)`,
-            String.raw`\(P\leftrightarrow Q\) and \(P\lor Q\)`,
-            String.raw`\(P\leftrightarrow Q\) and \(\neg P\leftrightarrow\neg Q\)`,
-            String.raw`\(P\to Q\) and \(P\land Q\)`,
-            String.raw`\(P\leftrightarrow Q\) and \(P\land Q\)`
-          ],
-          choiceWrap: false
-        },
-
-        /* Q34: model-authored or model-reworked item focused on conditional/biconditional reasoning */
-        {
-          stem: String.raw`<p>Suppose \(P\to Q\) is true and \(Q\to P\) is also true. Which conclusion is correct?</p>`,
-          choices: [
-            String.raw`\(P\) must be true.`,
-            String.raw`\(Q\) must be true.`,
-            String.raw`\(P\leftrightarrow Q\) is true.`,
-            String.raw`\(P\leftrightarrow Q\) is false.`,
-            String.raw`Both \(P\) and \(Q\) must be false.`,
-            String.raw`No statement involving \(P\) and \(Q\) can be made.`
+            String.raw`\((P\to Q)\land(Q\to P)\)`,
+            String.raw`\((P\to Q)\land(P\land\neg Q)\)`,
+            String.raw`\((P\leftrightarrow Q)\land(P\leftrightarrow\neg Q)\)`,
+            String.raw`\((P\to Q)\to(\neg Q\to\neg P)\)`,
+            String.raw`\((P\to Q)\land(Q\to\neg P)\)`,
+            String.raw`\((P\land Q)\land\neg(P\land Q)\)`
           ],
           choiceWrap: false
         }
+
       ]
     };
   </script>
