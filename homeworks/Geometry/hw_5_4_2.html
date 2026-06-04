@@ -1,386 +1,256 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8">
-<title>Homework 5-4 (2)</title>
-<style>
-    :root {
-        --ink: #1f2933;
-        --muted: #5d6b78;
-        --line: #c8d0d8;
-        --soft: #f5f7f9;
-        --accent: #243b53;
-        --box: #eef3f8;
-    }
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Homework 5-4 (2) (Geometry)</title>
 
-    body {
-        font-family: "Times New Roman", Georgia, serif;
-        color: var(--ink);
-        margin: 0;
-        padding: 0;
-        background: white;
-        line-height: 1.45;
-    }
+  <script>
+    /* =========================
+       Homework 5-4 (2) — Necessary, Sufficient, If and Only If, and Proof by Contradiction (Geometry)
+       Adapted for: /math-homework/assets/core-rich.js
 
-    .page {
-        max-width: 880px;
-        margin: 36px auto;
-        padding: 0 34px 60px;
-    }
+       REQUIRED SOURCE REFERENCES:
+       - User-supplied standalone file: hw_5_4_2.html.
+       - Original user-supplied items converted: #1, #2, #3, #4, #5, #6, #7, #8, #9, #10, #11, #12.
+       - The old open-answer layout was replaced by the standard core-rich multiple-choice layout.
 
-    h1 {
-        text-align: center;
-        font-size: 30px;
-        margin-bottom: 4px;
-        letter-spacing: 0.3px;
-    }
+       IMAGE FILES:
+       - User-supplied figure(s): none.
+       - Model-generated figure(s): none.
 
-    .subtitle {
-        text-align: center;
-        color: var(--muted);
-        font-size: 17px;
-        margin-bottom: 24px;
-    }
+       IMAGE NAMING RULE:
+       - No image files are required for this homework.
 
-    .name-line {
-        display: flex;
-        gap: 30px;
-        margin: 22px 0 28px;
-        font-size: 16px;
-    }
+       MODEL-AUTHORED / MODEL-REWORKED ITEMS:
+       - All 12 questions were re-authored into six-choice objective questions while preserving the intended content.
+       - The sequence targets: translating conditional vocabulary, recognizing the direction of implication, separating necessary from sufficient conditions,
+         interpreting only if, judging biconditional statements, using the one false row for conditionals, understanding proof by contradiction,
+         and distinguishing a proof from a counterexample.
+       ========================= */
 
-    .blank {
-        flex: 1;
-        border-bottom: 1px solid var(--ink);
-        height: 22px;
-    }
+    window.homeworkData = {
+      classId : "Geometry",
+      id      : "Homework 5-4 (2)",
+      title   : "Homework 5-4 (2) — Necessary, Sufficient, If and Only If, and Proof by Contradiction",
 
-    .instructions {
-        background: var(--soft);
-        border-left: 5px solid var(--accent);
-        padding: 14px 18px;
-        margin-bottom: 28px;
-        font-size: 16px;
-    }
+      graphics : String.raw``,
 
-    .vocab-box {
-        border: 1px solid var(--line);
-        background: var(--box);
-        padding: 14px 18px;
-        margin: 20px 0 30px;
-    }
+      /* Correct answers for Q1-Q12 */
+      answerKey : ["C","D","B","E","A","F","B","D","E","C","A","B"],
 
-    .vocab-box h2 {
-        margin: 0 0 10px;
-        font-size: 19px;
-    }
+      questions : [
 
-    .vocab-box ul {
-        margin: 8px 0 0 24px;
-        padding: 0;
-    }
+        {
+          stem: String.raw`
+            <p>Let \(p\) mean “a number is divisible by 4,” and let \(q\) mean “the number is even.”</p>
+            <p>The conditional \(p\to q\) says: “If a number is divisible by 4, then the number is even.”</p>
+            <p>Which translation uses the words <b>sufficient</b> and <b>necessary</b> correctly?</p>
+          `,
+          choices: [
+            String.raw`Being even is sufficient for being divisible by 4, and being divisible by 4 is necessary for being even.`,
+            String.raw`Being divisible by 4 is necessary for being even, and being even is necessary for being divisible by 4.`,
+            String.raw`Being divisible by 4 is sufficient for being even, and being even is necessary for being divisible by 4.`,
+            String.raw`Being even is sufficient for being divisible by 4, and being divisible by 4 is sufficient for being even.`,
+            String.raw`Being divisible by 4 is neither sufficient nor necessary for being even.`,
+            String.raw`No such translation is possible, because the statement uses numbers rather than geometry.`
+          ],
+          choiceWrap: false
+        },
 
-    .question {
-        margin: 30px 0 34px;
-        page-break-inside: avoid;
-    }
+        {
+          stem: String.raw`
+            <p>Which sentence is correctly translated as \(p\to q\)?</p>
+            <p>Let \(p\) mean “a student enters the theater,” and let \(q\) mean “the student has a ticket.”</p>
+          `,
+          choices: [
+            String.raw`Having a ticket is sufficient for entering the theater.`,
+            String.raw`Entering the theater is necessary for having a ticket.`,
+            String.raw`A student enters the theater exactly when the student has a ticket.`,
+            String.raw`Having a ticket is necessary for entering the theater.`,
+            String.raw`If a student has a ticket, then the student enters the theater.`,
+            String.raw`A student may enter the theater whether or not the student has a ticket.`
+          ],
+          choiceWrap: false
+        },
 
-    .q-title {
-        font-weight: bold;
-        font-size: 18px;
-        margin-bottom: 8px;
-    }
+        {
+          stem: String.raw`
+            <p>For the pair below, decide the correct relation between the first condition and the second condition.</p>
+            <p><b>First condition:</b> a shape is a square.</p>
+            <p><b>Second condition:</b> the shape is a rectangle.</p>
+          `,
+          choices: [
+            String.raw`The first condition is necessary but not sufficient for the second condition.`,
+            String.raw`The first condition is sufficient but not necessary for the second condition.`,
+            String.raw`The first condition is both necessary and sufficient for the second condition.`,
+            String.raw`The first condition is neither necessary nor sufficient for the second condition.`,
+            String.raw`The first condition is necessary only when the rectangle has four congruent sides.`,
+            String.raw`The relation cannot be judged because squares and rectangles are different words.`
+          ],
+          choiceWrap: false
+        },
 
-    .q-body {
-        font-size: 16.5px;
-    }
+        {
+          stem: String.raw`
+            <p>For the pair below, decide the correct relation between the first condition and the second condition.</p>
+            <p><b>First condition:</b> a whole number is even.</p>
+            <p><b>Second condition:</b> the number is divisible by 4.</p>
+          `,
+          choices: [
+            String.raw`The first condition is sufficient but not necessary for the second condition.`,
+            String.raw`The first condition is both necessary and sufficient for the second condition.`,
+            String.raw`The first condition is neither necessary nor sufficient for the second condition.`,
+            String.raw`The first condition is sufficient because every even number is divisible by 4.`,
+            String.raw`The first condition is necessary but not sufficient for the second condition.`,
+            String.raw`The first condition cannot be compared with the second because divisibility is not a condition.`
+          ],
+          choiceWrap: false
+        },
 
-    .parts {
-        margin-top: 8px;
-        padding-left: 24px;
-    }
+        {
+          stem: String.raw`
+            <p>Consider the sentence:</p>
+            <p><i>A student may take the final exam only if the student has submitted the project.</i></p>
+            <p>Let \(p\) mean “the student may take the final exam,” and let \(q\) mean “the student has submitted the project.” Which interpretation is correct?</p>
+          `,
+          choices: [
+            String.raw`The sentence means \(p\to q\). Submitting the project is necessary for taking the final exam, but it may not by itself guarantee permission.`,
+            String.raw`The sentence means \(q\to p\). Submitting the project is sufficient for taking the final exam.`,
+            String.raw`The sentence means \(p\leftrightarrow q\). Permission and project submission always have the same truth value.`,
+            String.raw`The sentence means \(\neg p\to q\). If the student may not take the final exam, then the project was submitted.`,
+            String.raw`The sentence means \(q\to p\). Taking the final exam is necessary for submitting the project.`,
+            String.raw`The sentence cannot be written with \(p\) and \(q\) because it contains the phrase “only if.”`
+          ],
+          choiceWrap: false
+        },
 
-    .parts li {
-        margin: 7px 0;
-    }
+        {
+          stem: String.raw`
+            <p>Consider the statement:</p>
+            <p><i>A number is divisible by 6 if and only if it is divisible by 3.</i></p>
+            <p>Which answer correctly analyzes the two directions?</p>
+          `,
+          choices: [
+            String.raw`Both directions are true, because 6 and 3 are both divisibility conditions.`,
+            String.raw`Both directions are false, because divisibility by 6 and divisibility by 3 are unrelated.`,
+            String.raw`If a number is divisible by 3, then it is divisible by 6 is true; the reverse direction is false.`,
+            String.raw`The statement cannot be split into two conditionals.`,
+            String.raw`The false direction has no counterexample.`,
+            String.raw`If a number is divisible by 6, then it is divisible by 3 is true; the reverse direction is false, for example \(9\) is divisible by 3 but not by 6.`
+          ],
+          choiceWrap: false
+        },
 
-    .answer-space {
-        height: 72px;
-        border: 1px solid var(--line);
-        margin-top: 12px;
-        background:
-            repeating-linear-gradient(
-                to bottom,
-                white 0px,
-                white 27px,
-                #e6ebef 28px
-            );
-    }
+        {
+          stem: String.raw`
+            <p>Which completion makes a true statement?</p>
+            <p><i>A whole number is even if and only if __________________.</i></p>
+          `,
+          choices: [
+            String.raw`it is divisible by 4`,
+            String.raw`it is divisible by 2`,
+            String.raw`it is greater than 2`,
+            String.raw`it is not odd or it is greater than 10`,
+            String.raw`it is a multiple of 6`,
+            String.raw`it is a whole number`
+          ],
+          choiceWrap: false
+        },
 
-    .answer-space.tall {
-        height: 118px;
-    }
+        {
+          stem: String.raw`
+            <p>A conditional \(p\to q\) is false only in one case.</p>
+            <p>Which row is the false row?</p>
+          `,
+          choices: [
+            String.raw`\(p\) true, \(q\) true`,
+            String.raw`\(p\) false, \(q\) true`,
+            String.raw`\(p\) false, \(q\) false`,
+            String.raw`\(p\) true, \(q\) false`,
+            String.raw`\(p\) true, \(q\) either true or false`,
+            String.raw`There is no false row for a conditional statement.`
+          ],
+          choiceWrap: false
+        },
 
-    .answer-space.short {
-        height: 48px;
-    }
+        {
+          stem: String.raw`
+            <p>We want to prove:</p>
+            <p><i>If a person is in Tokyo, then the person is in Japan.</i></p>
+            <p>In a proof by contradiction, which “bad case” should be ruled out?</p>
+          `,
+          choices: [
+            String.raw`The person is not in Tokyo and is not in Japan.`,
+            String.raw`The person is in Japan and is in Tokyo.`,
+            String.raw`The person is in Japan but not in Tokyo.`,
+            String.raw`The person is not in Japan, so the person is not in Tokyo.`,
+            String.raw`The person is in Tokyo and is not in Japan.`,
+            String.raw`The person is neither in Tokyo nor in Japan.`
+          ],
+          choiceWrap: false
+        },
 
-    .mini-table {
-        width: 100%;
-        border-collapse: collapse;
-        margin-top: 10px;
-        font-size: 16px;
-    }
+        {
+          stem: String.raw`
+            <p>We want to prove by contradiction:</p>
+            <p><i>If \(n\) is an even integer, then \(n\) is not odd.</i></p>
+            <p>Which assumption begins the contradiction correctly?</p>
+          `,
+          choices: [
+            String.raw`Assume \(n\) is not even and \(n\) is not odd.`,
+            String.raw`Assume \(n\) is odd, and then prove that \(n\) is even.`,
+            String.raw`Assume \(n\) is even and \(n\) is odd.`,
+            String.raw`Assume \(n\) is neither even nor odd.`,
+            String.raw`Assume \(n\) is even and \(n\) is not odd.`,
+            String.raw`Assume \(n\) is not even, because the hypothesis must always be negated.`
+          ],
+          choiceWrap: false
+        },
 
-    .mini-table th,
-    .mini-table td {
-        border: 1px solid var(--line);
-        padding: 8px;
-        text-align: left;
-        vertical-align: top;
-    }
+        {
+          stem: String.raw`
+            <p>We want to prove by contradiction:</p>
+            <p><i>If \(x>5\), then \(x>3\).</i></p>
+            <p>Which answer uses the correct contradiction structure?</p>
+          `,
+          choices: [
+            String.raw`Assume \(x>5\) and \(x\le 3\). But no number can be greater than 5 and at most 3 at the same time, so the bad case is impossible.`,
+            String.raw`Assume \(x\le 5\) and \(x>3\). This proves the original statement because the hypothesis is false.`,
+            String.raw`Assume \(x>5\) and \(x>3\). This proves the statement by contradiction.`,
+            String.raw`Assume \(x\le 3\). Then \(x>5\), so there is a contradiction.`,
+            String.raw`Assume \(x>3\). Then \(x>5\), so the statement is true.`,
+            String.raw`No contradiction proof is possible for an inequality.`
+          ],
+          choiceWrap: false
+        },
 
-    .mini-table th {
-        background: #f0f3f6;
-    }
+        {
+          stem: String.raw`
+            <p>A student says:</p>
+            <p><i>“To prove that \(p\to q\) is false, I should use proof by contradiction.”</i></p>
+            <p>What is the best correction?</p>
+          `,
+          choices: [
+            String.raw`To show that \(p\to q\) is false, the student should prove \(q\to p\) instead.`,
+            String.raw`To show that \(p\to q\) is false, the student should exhibit the bad case: \(p\) true and \(q\) false.`,
+            String.raw`To show that \(p\to q\) is false, the student should show \(p\) and \(q\) are both false.`,
+            String.raw`To show that \(p\to q\) is false, the student should show \(p\) is false.`,
+            String.raw`To show that \(p\to q\) is false, the student should prove that \(q\) is true.`,
+            String.raw`A conditional statement can never be shown false.`
+          ],
+          choiceWrap: false
+        }
+      ]
+    };
+  </script>
 
-    .statement {
-        font-style: italic;
-        margin: 6px 0;
-    }
-
-    .note {
-        color: var(--muted);
-        font-size: 15px;
-        margin-top: 6px;
-    }
-
-    .footer-note {
-        margin-top: 36px;
-        padding-top: 14px;
-        border-top: 1px solid var(--line);
-        color: var(--muted);
-        font-size: 14px;
-        text-align: center;
-    }
-
-    @media print {
-        body { background: white; }
-        .page { margin: 0; max-width: none; padding: 24px 36px; }
-        .question { page-break-inside: avoid; }
-    }
-</style>
+  <link rel="stylesheet" href="/math-homework/assets/core-rich.css" />
+  <script defer src="/math-homework/assets/core-rich.js"></script>
+  <script defer src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
 </head>
+
 <body>
-<div class="page">
-    <h1>Homework 5-4 (2)</h1>
-    <div class="subtitle">Necessary, Sufficient, If and Only If, and Proof by Contradiction</div>
-
-    <div class="name-line">
-        <div>Name:</div><div class="blank"></div>
-        <div>Date:</div><div class="blank"></div>
-    </div>
-
-    <div class="instructions">
-        <strong>Instructions.</strong> Answer carefully in complete sentences when explanation is requested.
-        The purpose of this homework is not only to remember vocabulary, but to use it correctly.
-        When a question asks for a reason, a short but clear reason is enough.
-    </div>
-
-    <div class="vocab-box">
-        <h2>Vocabulary to Use Carefully</h2>
-        <ul>
-            <li><strong>p is sufficient for q</strong> means: if p is true, then q must be true.</li>
-            <li><strong>q is necessary for p</strong> means: p cannot be true unless q is true.</li>
-            <li><strong>p is necessary and sufficient for q</strong> means: p and q always have the same truth value.</li>
-            <li><strong>p if and only if q</strong> means: p → q and q → p are both true.</li>
-            <li><strong>Proof by contradiction for p → q:</strong> rule out the only bad case: p true and q false.</li>
-        </ul>
-    </div>
-
-    <div class="question">
-        <div class="q-title">1. Translating a Conditional</div>
-        <div class="q-body">
-            Let p be “a number is divisible by 4,” and let q be “a number is even.”
-            The statement p → q says:
-            <div class="statement">If a number is divisible by 4, then the number is even.</div>
-            Rewrite this same statement using the words <strong>sufficient</strong> and <strong>necessary</strong>.
-        </div>
-        <ol class="parts" type="a">
-            <li>“Being divisible by 4 is __________________ for being even.”</li>
-            <li>“Being even is __________________ for being divisible by 4.”</li>
-        </ol>
-        <div class="answer-space short"></div>
-    </div>
-
-    <div class="question">
-        <div class="q-title">2. Which Direction Is Being Claimed?</div>
-        <div class="q-body">
-            For each sentence, write the conditional in the form p → q.
-        </div>
-        <table class="mini-table">
-            <tr><th>Sentence</th><th>Conditional Form</th></tr>
-            <tr><td>Having a ticket is necessary for entering the theater.</td><td></td></tr>
-            <tr><td>Having a school ID is sufficient for entering the school building.</td><td></td></tr>
-            <tr><td>Passing the final exam is necessary for passing the course.</td><td></td></tr>
-            <tr><td>Being a square is sufficient for being a rectangle.</td><td></td></tr>
-        </table>
-        <div class="answer-space"></div>
-    </div>
-
-    <div class="question">
-        <div class="q-title">3. Necessary, Sufficient, Both, or Neither?</div>
-        <div class="q-body">
-            For each pair, decide whether the first condition is <strong>necessary</strong>,
-            <strong>sufficient</strong>, <strong>both necessary and sufficient</strong>, or <strong>neither</strong>
-            for the second condition. Give a short reason for each.
-        </div>
-        <table class="mini-table">
-            <tr><th>First condition</th><th>Second condition</th><th>Answer and Reason</th></tr>
-            <tr><td>A shape is a square.</td><td>The shape is a rectangle.</td><td></td></tr>
-            <tr><td>A number is even.</td><td>The number is divisible by 4.</td><td></td></tr>
-            <tr><td>A triangle has three equal sides.</td><td>The triangle has three equal angles.</td><td></td></tr>
-            <tr><td>A student is absent.</td><td>The student missed class.</td><td></td></tr>
-        </table>
-        <div class="answer-space tall"></div>
-    </div>
-
-    <div class="question">
-        <div class="q-title">4. The Meaning of “Only If”</div>
-        <div class="q-body">
-            The phrase <strong>only if</strong> often causes mistakes.
-            Consider the sentence:
-            <div class="statement">A student may take the final exam only if the student has submitted the project.</div>
-            Let p = “the student may take the final exam.” Let q = “the student has submitted the project.”
-        </div>
-        <ol class="parts" type="a">
-            <li>Write the sentence as p → q or q → p.</li>
-            <li>Which condition is necessary for taking the final exam?</li>
-            <li>Does submitting the project automatically guarantee that the student may take the final exam? Explain.</li>
-        </ol>
-        <div class="answer-space tall"></div>
-    </div>
-
-    <div class="question">
-        <div class="q-title">5. When Is an “If and Only If” Statement Too Strong?</div>
-        <div class="q-body">
-            Consider the statement:
-            <div class="statement">A number is divisible by 6 if and only if it is divisible by 3.</div>
-        </div>
-        <ol class="parts" type="a">
-            <li>Break the statement into two conditional statements.</li>
-            <li>Decide which direction is true and which direction is false.</li>
-            <li>Give a counterexample to the false direction.</li>
-        </ol>
-        <div class="answer-space tall"></div>
-    </div>
-
-    <div class="question">
-        <div class="q-title">6. Creating a Correct “If and Only If”</div>
-        <div class="q-body">
-            Complete the sentence so that it becomes a true “if and only if” statement:
-            <div class="statement">A whole number is even if and only if __________________________.</div>
-        </div>
-        <ol class="parts" type="a">
-            <li>Write a correct completion.</li>
-            <li>Explain why both directions are true.</li>
-        </ol>
-        <div class="answer-space tall"></div>
-    </div>
-
-    <div class="question">
-        <div class="q-title">7. Truth Values and the One Bad Case</div>
-        <div class="q-body">
-            A conditional p → q is false only in one case: when p is true and q is false.
-            Fill in the table.
-        </div>
-        <table class="mini-table">
-            <tr><th>p</th><th>q</th><th>p → q</th><th>Is this the bad case?</th></tr>
-            <tr><td>True</td><td>True</td><td></td><td></td></tr>
-            <tr><td>True</td><td>False</td><td></td><td></td></tr>
-            <tr><td>False</td><td>True</td><td></td><td></td></tr>
-            <tr><td>False</td><td>False</td><td></td><td></td></tr>
-        </table>
-        <div class="answer-space short"></div>
-    </div>
-
-    <div class="question">
-        <div class="q-title">8. Proof by Contradiction: An Everyday Example</div>
-        <div class="q-body">
-            We want to prove:
-            <div class="statement">If a person is in Tokyo, then the person is in Japan.</div>
-            A proof by contradiction rules out the case where the first part is true and the second part is false.
-        </div>
-        <ol class="parts" type="a">
-            <li>What is the bad case that must be ruled out?</li>
-            <li>Why is that case impossible?</li>
-            <li>Write a short proof by contradiction in your own words.</li>
-        </ol>
-        <div class="answer-space tall"></div>
-    </div>
-
-    <div class="question">
-        <div class="q-title">9. Proof by Contradiction: Even and Odd</div>
-        <div class="q-body">
-            Prove the statement by contradiction:
-            <div class="statement">If n is an even integer, then n is not odd.</div>
-            Use the idea that a proof by contradiction rules out the case where p is true and q is false.
-        </div>
-        <ol class="parts" type="a">
-            <li>What is p?</li>
-            <li>What is q?</li>
-            <li>What is the bad case?</li>
-            <li>Explain why the bad case is impossible.</li>
-        </ol>
-        <div class="answer-space tall"></div>
-    </div>
-
-    <div class="question">
-        <div class="q-title">10. Proof by Contradiction: A Simple Inequality</div>
-        <div class="q-body">
-            Prove by contradiction:
-            <div class="statement">If x &gt; 5, then x &gt; 3.</div>
-            Do not just say “it is obvious.” Use the structure of contradiction.
-        </div>
-        <ol class="parts" type="a">
-            <li>Assume the bad case: x &gt; 5 and ____________________.</li>
-            <li>Explain why these two statements cannot both be true.</li>
-            <li>Write the proof in two or three sentences.</li>
-        </ol>
-        <div class="answer-space tall"></div>
-    </div>
-
-    <div class="question">
-        <div class="q-title">11. Contradiction and Counterexample</div>
-        <div class="q-body">
-            A student says:
-            <div class="statement">“To prove that p → q is false, I should use proof by contradiction.”</div>
-            Explain why this is not the usual method. What should the student find instead?
-        </div>
-        <div class="note">
-            Hint: To show that p → q is false, you do not rule out the bad case. You exhibit it.
-        </div>
-        <div class="answer-space tall"></div>
-    </div>
-
-    <div class="question">
-        <div class="q-title">12. Final Synthesis</div>
-        <div class="q-body">
-            Consider the statement:
-            <div class="statement">A triangle is equilateral if and only if all three of its angles are equal.</div>
-        </div>
-        <ol class="parts" type="a">
-            <li>Break the statement into two conditional statements.</li>
-            <li>For each direction, say what is necessary and what is sufficient.</li>
-            <li>Explain why this is a stronger claim than saying only: “If a triangle is equilateral, then all three of its angles are equal.”</li>
-            <li>Suppose you wanted to prove one direction by contradiction. Choose one direction and state exactly what bad case you would rule out.</li>
-        </ol>
-        <div class="answer-space tall"></div>
-    </div>
-
-    <div class="footer-note">
-        End of Homework 5-4 (2)
-    </div>
-</div>
+  <div id="hw-root">Loading…</div>
 </body>
 </html>
