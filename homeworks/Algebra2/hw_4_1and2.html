@@ -1,0 +1,284 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Homework 4-1 and 4-2 (Algebra II)</title>
+
+  <script>
+    /* =========================
+       Homework 4-1 and 4-2 — Solving Quadratic Equations (Algebra II)
+       Adapted for: /math-homework/assets/core-rich.js
+
+       REQUIRED SOURCE REFERENCES (your provided sets):
+       - Source homework 4-1: Solving quadratic equations by factoring.
+       - Source homework 4-2: Solving quadratic equations by completing the square.
+       - The two source sets were merged and substantially re-authored into one 15-question homework.
+
+       MODEL REWORK / PEDAGOGICAL NOTES:
+       - Routine Algebra I-style factoring-by-guessing was sharply reduced.
+       - Q1-Q2 target the special case b = 0, including the possibility of no real solutions.
+       - Q3-Q5 and Q15 target the special case c = 0, especially the common error of dividing by x and losing x = 0.
+       - Q6 asks for a b = 0 case that first requires moving all terms correctly.
+       - Q7-Q14 focus on completing the square: correct completed-square form, correct added term, exact radical answers,
+         equations with a leading coefficient other than 1, and a no-shortcut progression from form to solution.
+       - All questions are model-reworked or model-authored to fit the teacher's request for 15 focused questions.
+
+       IMAGE FILES:
+       - User-supplied figure(s): none.
+       - Model-generated figure(s): none.
+
+       IMAGE NAMING RULE:
+       - No image files are required for this homework.
+       ========================= */
+
+    window.homeworkData = {
+      classId : "Algebra2",
+      id      : "Homework 4-1 and 4-2",
+      title   : "Homework 4-1 and 4-2 — Solving Quadratic Equations",
+
+      graphics : String.raw``,
+
+      /* Correct answers for Q1-Q15 */
+      answerKey : ["B","C","D","A","E","F","A","B","C","D","E","F","A","C","E"],
+
+      questions : [
+
+        {
+          stem: String.raw`
+            <p>Solve the equation. Notice that the linear term is missing.</p>
+            <p class="math">\(5x^2-80=0\)</p>
+          `,
+          choices: [
+            String.raw`\(x=\pm 16\)`,
+            String.raw`\(x=\pm 4\)`,
+            String.raw`\(x=4\)`,
+            String.raw`\(x=-4\)`,
+            String.raw`\(x=0\) or \(x=4\)`,
+            String.raw`\(\text{no real solutions}\)`
+          ]
+        },
+
+        {
+          stem: String.raw`
+            <p>Solve the equation over the real numbers. Do not ignore the sign of the constant term.</p>
+            <p class="math">\(7x^2+21=0\)</p>
+          `,
+          choices: [
+            String.raw`\(x=\pm\sqrt{3}\)`,
+            String.raw`\(x=\pm 3\)`,
+            String.raw`\(\text{no real solutions}\)`,
+            String.raw`\(x=\pm\sqrt{21}\)`,
+            String.raw`\(x=0\)`,
+            String.raw`\(x=3\)`
+          ]
+        },
+
+        {
+          stem: String.raw`
+            <p>Solve the equation. Be careful not to lose a solution by dividing by \(x\) too early.</p>
+            <p class="math">\(3x^2=12x\)</p>
+          `,
+          choices: [
+            String.raw`\(x=4\)`,
+            String.raw`\(x=-4\)`,
+            String.raw`\(x=0\)`,
+            String.raw`\(x=0\) or \(x=4\)`,
+            String.raw`\(x=0\) or \(x=-4\)`,
+            String.raw`\(\text{no real solutions}\)`
+          ]
+        },
+
+        {
+          stem: String.raw`
+            <p>Solve the equation by factoring out the common factor.</p>
+            <p class="math">\(2x^2+9x=0\)</p>
+          `,
+          choices: [
+            String.raw`\(x=0\) or \(x=-\frac{9}{2}\)`,
+            String.raw`\(x=\frac{9}{2}\)`,
+            String.raw`\(x=-\frac{9}{2}\)`,
+            String.raw`\(x=0\) or \(x=\frac{9}{2}\)`,
+            String.raw`\(x=-2\) or \(x=9\)`,
+            String.raw`\(\text{no real solutions}\)`
+          ]
+        },
+
+        {
+          stem: String.raw`
+            <p>First rewrite the equation in standard form. Then solve.</p>
+            <p class="math">\(4x^2-5x=2x\)</p>
+          `,
+          choices: [
+            String.raw`\(x=\frac{7}{4}\)`,
+            String.raw`\(x=0\) or \(x=-\frac{7}{4}\)`,
+            String.raw`\(x=0\) or \(x=\frac{5}{4}\)`,
+            String.raw`\(x=0\) or \(x=-\frac{5}{4}\)`,
+            String.raw`\(x=0\) or \(x=\frac{7}{4}\)`,
+            String.raw`\(x=\frac{5}{2}\) or \(x=-2\)`
+          ]
+        },
+
+        {
+          stem: String.raw`
+            <p>First move all terms to one side. Then solve the resulting equation.</p>
+            <p class="math">\(9x^2+2=3x^2+50\)</p>
+          `,
+          choices: [
+            String.raw`\(x=\pm 8\)`,
+            String.raw`\(x=\pm\sqrt{8}\)`,
+            String.raw`\(x=\pm 4\)`,
+            String.raw`\(x=\pm\frac{4}{3}\)`,
+            String.raw`\(\text{no real solutions}\)`,
+            String.raw`\(x=\pm 2\sqrt{2}\)`
+          ]
+        },
+
+        {
+          stem: String.raw`
+            <p>Which equation is equivalent to the one below after completing the square?</p>
+            <p class="math">\(x^2-6x+5=0\)</p>
+          `,
+          choices: [
+            String.raw`\((x-3)^2=4\)`,
+            String.raw`\((x+3)^2=4\)`,
+            String.raw`\((x-6)^2=31\)`,
+            String.raw`\((x-3)^2=14\)`,
+            String.raw`\((x+3)^2=14\)`,
+            String.raw`\((x-6)^2=5\)`
+          ]
+        },
+
+        {
+          stem: String.raw`
+            <p>Solve the equation by completing the square. Leave the answers in exact radical form.</p>
+            <p class="math">\(x^2+8x=11\)</p>
+          `,
+          choices: [
+            String.raw`\(x=4\pm 3\sqrt{3}\)`,
+            String.raw`\(x=-4\pm 3\sqrt{3}\)`,
+            String.raw`\(x=-8\pm\sqrt{75}\)`,
+            String.raw`\(x=-4\pm\sqrt{11}\)`,
+            String.raw`\(x=4\pm\sqrt{27}\)`,
+            String.raw`\(\text{no real solutions}\)`
+          ]
+        },
+
+        {
+          stem: String.raw`
+            <p>To complete the square, what number must be added to both sides?</p>
+            <p class="math">\(x^2-7x=10\)</p>
+          `,
+          choices: [
+            String.raw`\(7\)`,
+            String.raw`\(\frac{7}{2}\)`,
+            String.raw`\(\frac{49}{4}\)`,
+            String.raw`\(49\)`,
+            String.raw`\(-\frac{49}{4}\)`,
+            String.raw`\(\frac{89}{4}\)`
+          ]
+        },
+
+        {
+          stem: String.raw`
+            <p>Solve the equation by completing the square. Leave the answers in exact radical form.</p>
+            <p class="math">\(x^2-5x-2=0\)</p>
+          `,
+          choices: [
+            String.raw`\(x=\frac{-5\pm\sqrt{33}}{2}\)`,
+            String.raw`\(x=\frac{5\pm\sqrt{17}}{2}\)`,
+            String.raw`\(x=\frac{-5\pm\sqrt{17}}{2}\)`,
+            String.raw`\(x=\frac{5\pm\sqrt{33}}{2}\)`,
+            String.raw`\(x=\frac{5\pm\sqrt{33}}{4}\)`,
+            String.raw`\(\text{no real solutions}\)`
+          ]
+        },
+
+        {
+          stem: String.raw`
+            <p>Solve the equation by completing the square. First divide by the leading coefficient.</p>
+            <p class="math">\(2x^2+12x-7=0\)</p>
+          `,
+          choices: [
+            String.raw`\(x=3\pm\frac{5\sqrt{2}}{2}\)`,
+            String.raw`\(x=-3\pm\frac{\sqrt{50}}{4}\)`,
+            String.raw`\(x=-6\pm\sqrt{43}\)`,
+            String.raw`\(x=\frac{-12\pm\sqrt{200}}{2}\)`,
+            String.raw`\(x=-3\pm\frac{5\sqrt{2}}{2}\)`,
+            String.raw`\(\text{no real solutions}\)`
+          ]
+        },
+
+        {
+          stem: String.raw`
+            <p>Which equation is equivalent to the one below after completing the square?</p>
+            <p class="math">\(3x^2-12x+5=0\)</p>
+          `,
+          choices: [
+            String.raw`\((x-2)^2=\frac{5}{3}\)`,
+            String.raw`\((x+2)^2=\frac{7}{3}\)`,
+            String.raw`\((x-4)^2=\frac{43}{3}\)`,
+            String.raw`\((x-2)^2=\frac{19}{3}\)`,
+            String.raw`\((x+2)^2=\frac{19}{3}\)`,
+            String.raw`\((x-2)^2=\frac{7}{3}\)`
+          ]
+        },
+
+        {
+          stem: String.raw`
+            <p>Solve the equation by completing the square. Leave the answers in exact radical form.</p>
+            <p class="math">\(4x^2+4x-7=0\)</p>
+          `,
+          choices: [
+            String.raw`\(x=-\frac{1}{2}\pm\sqrt{2}\)`,
+            String.raw`\(x=\frac{1}{2}\pm\sqrt{2}\)`,
+            String.raw`\(x=-\frac{1}{2}\pm\frac{\sqrt{2}}{2}\)`,
+            String.raw`\(x=\frac{-4\pm\sqrt{7}}{8}\)`,
+            String.raw`\(x=-1\pm 2\sqrt{2}\)`,
+            String.raw`\(\text{no real solutions}\)`
+          ]
+        },
+
+        {
+          stem: String.raw`
+            <p>Solve the equation by completing the square. Leave the answers in exact radical form.</p>
+            <p class="math">\(3x^2-6x=10\)</p>
+          `,
+          choices: [
+            String.raw`\(x=1\pm\sqrt{13}\)`,
+            String.raw`\(x=-1\pm\frac{\sqrt{39}}{3}\)`,
+            String.raw`\(x=1\pm\frac{\sqrt{39}}{3}\)`,
+            String.raw`\(x=3\pm\sqrt{39}\)`,
+            String.raw`\(x=1\pm\frac{\sqrt{13}}{3}\)`,
+            String.raw`\(\text{no real solutions}\)`
+          ]
+        },
+
+        {
+          stem: String.raw`
+            <p>A student solves the equation below by dividing both sides by \(x\), and gets only \(x=3\).</p>
+            <p class="math">\(5x^2=15x\)</p>
+            <p>Which statement best describes the mistake and the correct solution?</p>
+          `,
+          choices: [
+            String.raw`The student is correct; the only solution is \(x=3\).`,
+            String.raw`The student should divide by \(5\) first; the only solution is \(x=\frac{3}{5}\).`,
+            String.raw`The student should take square roots; the solutions are \(x=\pm\sqrt{3}\).`,
+            String.raw`The equation has no real solutions because both sides contain \(x\).`,
+            String.raw`The student lost the solution \(x=0\); the solutions are \(x=0\) or \(x=3\).`,
+            String.raw`The student changed the sign; the solutions are \(x=0\) or \(x=-3\).`
+          ],
+          choiceWrap: false
+        }
+      ]
+    };
+  </script>
+
+  <link rel="stylesheet" href="/math-homework/assets/core-rich.css" />
+  <script defer src="/math-homework/assets/core-rich.js"></script>
+  <script defer src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+</head>
+<body>
+  <div id="hw-root">Loading…</div>
+</body>
+</html>
