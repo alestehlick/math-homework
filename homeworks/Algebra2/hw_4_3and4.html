@@ -14,7 +14,7 @@
        - Homework 4-3 source themes used: quadratic formula practice, standard form before applying
          the formula, and reverse reasoning from roots.
        - Homework 4-4 source themes used: choosing an efficient solving method, using the discriminant
-         to determine the number and nature of solutions, repeated roots, and equations in x^4 using
+         to determine the number of real solutions, repeated roots, and equations in x^4 using
          the substitution y = x^2.
 
        MODEL REWORK / PEDAGOGICAL ADAPTATION:
@@ -22,7 +22,7 @@
        - Repetition was reduced so the assignment does not become a long list of similar quadratic-formula
          computations.
        - The sequence moves progressively: method recognition, standard form, controlled solving,
-         discriminant classification, repeated roots, parameter questions for exactly one real solution,
+         real-solution classification, repeated roots, parameter questions for exactly one real solution,
          biquadratic equations, and a final reverse-roots question.
        - Q10 and Q11 are model-authored parameter questions requested by the teacher. Q10 deliberately
          tests the hidden linear case when k = 0; Q11 tests the ordinary discriminant-zero condition.
@@ -42,7 +42,7 @@
       title   : "Homework 4-3 and 4-4 — Quadratic Formula, Methods, and Discriminants",
       graphics : String.raw``,
 
-      answerKey : ["B","C","C","D","A","E","D","B","F","E","A","C","B","D"],
+      answerKey : ["B","C","C","D","A","E","C","A","F","E","A","C","B","D"],
 
       questions : [
         {
@@ -134,31 +134,25 @@
         },
         {
           stem: String.raw`
-            <p>Without solving the equation, determine the number and nature of its solutions.</p>
+            <p>Without solving the equation, determine how many real solutions it has.</p>
             <p>\(x^2 + 6x + 10 = 0\)</p>
           `,
           choices: [
-            String.raw`One repeated real solution`,
-            String.raw`Two distinct real rational solutions`,
-            String.raw`Two distinct real irrational solutions`,
-            String.raw`Two nonreal complex solutions`,
-            String.raw`Exactly one real solution and one nonreal solution`,
-            String.raw`No solutions of any kind`
+            String.raw`2 real solutions`,
+            String.raw`1 real solution`,
+            String.raw`no real solution`
           ],
           choiceWrap: false
         },
         {
           stem: String.raw`
-            <p>Without solving the equation, determine the number and nature of its solutions.</p>
+            <p>Without solving the equation, determine how many real solutions it has.</p>
             <p>\(3x^2 - 5x - 1 = 0\)</p>
           `,
           choices: [
-            String.raw`One repeated real solution`,
-            String.raw`Two distinct real irrational solutions`,
-            String.raw`Two distinct real rational solutions`,
-            String.raw`Two nonreal complex solutions`,
-            String.raw`No real solutions because \(a \ne 1\)`,
-            String.raw`The discriminant cannot be used here`
+            String.raw`2 real solutions`,
+            String.raw`1 real solution`,
+            String.raw`no real solution`
           ],
           choiceWrap: false
         },
