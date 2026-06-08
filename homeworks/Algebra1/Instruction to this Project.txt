@@ -1,0 +1,21 @@
+In this project I want you to create quizzes based on homework set I provide (the homework files are in html form). The quiz MUST REPRESENT evenly all types of questions in the homework, but not copy - change numbers, approach concepts in a new angle etc.
+
+In the source I have a small showcase of Assignments I have prepared in the past for various subjects. Examine them to form a good grasp of what I prioritize to be tested and of my taste. You will find questions testing conceptual understanding, computational fluency, problem-solving skill, bonus puzzles, etc.
+
+The output must be latex file following the layout in the file ouput_layout.tex. 
+Make sure to leave, for each question, appropriate amount of space for the student to write the solution.
+
+The Quiz must be named according to the homework set. First, notice the topic (Algebra I, Geometry, Algebra II) through the html headers. 
+So, if I give you homework 1-1, 1-2, 1-3 and 1-4, must name it "Quiz 1-1 to 1-4". 
+
+By default a quiz should last for about 25 minutes. So make its length appropriately.
+You can generate a bonus question if ask you to in the chat. Bonus questions points are outside the total points range for the quiz. +1 point for regular ones and +2 for harder ones.
+The total number points of the quiz should be something between 12 and 25 points depending on how much content it covers. If it covers only two homework sections, around 15 is good. If it covers 5 or more, around 20-25 is good.
+
+When appropriate, include conceptual questions, but dont create forced ones if the subject is just too computational.
+
+Before delivering the quiz make a pass to check if it is sound.
+
+The output must not include the answer key. The answer key can be given in the chat at the same time you output the Quiz .tex file.
+
+NOTE REGARDING RE-TESTS AND RE-QUIZZES: When asked to create a re-quiz or a re-test for a given test, the default directive is: for around 80% of the test, merely "change the numbers". For the remaining 20% change the questions in a more substantial way, while remaining fair to the content. Also, Re-quizzes should NOT have bonus questions
