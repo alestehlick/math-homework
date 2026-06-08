@@ -17,6 +17,10 @@
        - Reworked for multiple-choice format: all items were adapted from the
          source problems to test equation setup, percentage reasoning, and
          interpretation of mixture contexts.
+       - Model-reworked replacements: Q3, Q5, Q6, Q9, Q10, and Q12 were
+         rewritten to remove money, price, food, and feed contexts. They now
+         test the same mixture-equation structure using only liquid mixtures
+         and alloy mixtures.
 
        IMAGE NAMING RULE:
        No figures are required for this homework.
@@ -63,16 +67,16 @@
         },
         {
           stem: String.raw`
-            <p>Mr. Harper is making a candy mix that sells for <b>$3.00 per pound</b>. Butterscotch candies sell for <b>$3.40 per pound</b>, and cinnamon candies sell for <b>$2.90 per pound</b>.</p>
-            <p>How many pounds of each should he use to make <b>20 pounds</b> of mix?</p>
+            <p>A laboratory assistant mixes a <b>15%</b> acid solution with a <b>45%</b> acid solution.</p>
+            <p>How many gallons of each solution are needed to make <b>20 gallons</b> of a <b>21%</b> acid solution?</p>
           `,
           choices: [
-            String.raw`16 lb butterscotch and 4 lb cinnamon`,
-            String.raw`10 lb butterscotch and 10 lb cinnamon`,
-            String.raw`8 lb butterscotch and 12 lb cinnamon`,
-            String.raw`6 lb butterscotch and 14 lb cinnamon`,
-            String.raw`12 lb butterscotch and 8 lb cinnamon`,
-            String.raw`4 lb butterscotch and 16 lb cinnamon`
+            String.raw`16 gallons of 45% solution and 4 gallons of 15% solution`,
+            String.raw`10 gallons of each solution`,
+            String.raw`8 gallons of 45% solution and 12 gallons of 15% solution`,
+            String.raw`6 gallons of 45% solution and 14 gallons of 15% solution`,
+            String.raw`12 gallons of 45% solution and 8 gallons of 15% solution`,
+            String.raw`4 gallons of 45% solution and 16 gallons of 15% solution`
           ],
           choiceWrap: false
         },
@@ -92,31 +96,31 @@
         },
         {
           stem: String.raw`
-            <p>A tea seller wants to mix <b>35 pounds</b> of tea that will sell for <b>$3.70 per pound</b>. One tea costs <b>$3.25 per pound</b>, and the other costs <b>$4.00 per pound</b>.</p>
-            <p>How many pounds of each tea should be used?</p>
+            <p>A metalworker mixes an alloy that is <b>55%</b> copper with another alloy that is <b>80%</b> copper.</p>
+            <p>How many pounds of each alloy should be used to make <b>35 pounds</b> of an alloy that is <b>70%</b> copper?</p>
           `,
           choices: [
-            String.raw`21 lb of the $3.25 tea and 14 lb of the $4.00 tea`,
-            String.raw`17.5 lb of each tea`,
-            String.raw`10 lb of the $3.25 tea and 25 lb of the $4.00 tea`,
-            String.raw`14 lb of the $3.25 tea and 21 lb of the $4.00 tea`,
-            String.raw`20 lb of the $3.25 tea and 15 lb of the $4.00 tea`,
-            String.raw`28 lb of the $3.25 tea and 7 lb of the $4.00 tea`
+            String.raw`21 lb of the 55% alloy and 14 lb of the 80% alloy`,
+            String.raw`17.5 lb of each alloy`,
+            String.raw`10 lb of the 55% alloy and 25 lb of the 80% alloy`,
+            String.raw`14 lb of the 55% alloy and 21 lb of the 80% alloy`,
+            String.raw`20 lb of the 55% alloy and 15 lb of the 80% alloy`,
+            String.raw`28 lb of the 55% alloy and 7 lb of the 80% alloy`
           ],
           choiceWrap: false
         },
         {
           stem: String.raw`
-            <p>Kim mixes a pistachio blend that is <b>80%</b> pistachios with another blend that is <b>30%</b> pistachios.</p>
-            <p>How many pounds of the <b>80%</b> blend should she use to make <b>12 pounds</b> of a new mix that is <b>40%</b> pistachios?</p>
+            <p>A technician mixes a solution that is <b>80%</b> alcohol with another solution that is <b>30%</b> alcohol.</p>
+            <p>How many liters of the <b>80%</b> solution should be used to make <b>12 liters</b> of a new solution that is <b>40%</b> alcohol?</p>
           `,
           choices: [
-            String.raw`1.2 pounds`,
-            String.raw`2 pounds`,
-            String.raw`4.8 pounds`,
-            String.raw`9.6 pounds`,
-            String.raw`2.4 pounds`,
-            String.raw`6 pounds`
+            String.raw`1.2 liters`,
+            String.raw`2 liters`,
+            String.raw`4.8 liters`,
+            String.raw`9.6 liters`,
+            String.raw`2.4 liters`,
+            String.raw`6 liters`
           ],
           choiceWrap: false
         },
@@ -150,31 +154,31 @@
         },
         {
           stem: String.raw`
-            <p>A butcher mixes hamburger costing <b>$1.89 per pound</b> with sausage costing <b>$2.99 per pound</b> to make <b>30 pounds</b> of a mixture that sells for <b>$2.33 per pound</b>.</p>
-            <p>How many pounds of each meat are in the mix?</p>
+            <p>An alloy that is <b>30%</b> silver is mixed with another alloy that is <b>85%</b> silver.</p>
+            <p>How many ounces of each alloy are needed to make <b>30 ounces</b> of an alloy that is <b>52%</b> silver?</p>
           `,
           choices: [
-            String.raw`12 lb hamburger and 18 lb sausage`,
-            String.raw`15 lb hamburger and 15 lb sausage`,
-            String.raw`18 lb hamburger and 12 lb sausage`,
-            String.raw`20 lb hamburger and 10 lb sausage`,
-            String.raw`10 lb hamburger and 20 lb sausage`,
-            String.raw`22 lb hamburger and 8 lb sausage`
+            String.raw`12 oz of the 30% alloy and 18 oz of the 85% alloy`,
+            String.raw`15 oz of each alloy`,
+            String.raw`18 oz of the 30% alloy and 12 oz of the 85% alloy`,
+            String.raw`20 oz of the 30% alloy and 10 oz of the 85% alloy`,
+            String.raw`10 oz of the 30% alloy and 20 oz of the 85% alloy`,
+            String.raw`22 oz of the 30% alloy and 8 oz of the 85% alloy`
           ],
           choiceWrap: false
         },
         {
           stem: String.raw`
-            <p>A fruit salad is made with grapefruit and pineapple. Grapefruit costs <b>$1.25</b> per 12-ounce can, and pineapple costs <b>$0.83</b> per 12-ounce can.</p>
-            <p>How many cans of each should be mixed to make <b>84 ounces</b> of salad costing <b>$1.01 for every 12 ounces</b>?</p>
+            <p>A chemist mixes a <b>15%</b> salt solution with a <b>35%</b> salt solution.</p>
+            <p>How many gallons of each solution should be mixed to make <b>25 gallons</b> of a <b>27%</b> salt solution?</p>
           `,
           choices: [
-            String.raw`1 can grapefruit and 6 cans pineapple`,
-            String.raw`2 cans grapefruit and 5 cans pineapple`,
-            String.raw`4 cans grapefruit and 3 cans pineapple`,
-            String.raw`5 cans grapefruit and 2 cans pineapple`,
-            String.raw`3 cans grapefruit and 4 cans pineapple`,
-            String.raw`6 cans grapefruit and 1 can pineapple`
+            String.raw`5 gallons of 15% solution and 20 gallons of 35% solution`,
+            String.raw`8 gallons of 15% solution and 17 gallons of 35% solution`,
+            String.raw`15 gallons of 15% solution and 10 gallons of 35% solution`,
+            String.raw`12.5 gallons of each solution`,
+            String.raw`10 gallons of 15% solution and 15 gallons of 35% solution`,
+            String.raw`20 gallons of 15% solution and 5 gallons of 35% solution`
           ],
           choiceWrap: false
         },
@@ -194,8 +198,8 @@
         },
         {
           stem: String.raw`
-            <p>A <b>1700-pound</b> load of feed mixture contains <b>25%</b> corn, <b>40%</b> bran, and the rest roughage.</p>
-            <p>How many pounds of corn should be added so that the new mixture is <b>40%</b> corn?</p>
+            <p>An alloy weighing <b>1700 pounds</b> contains <b>25%</b> nickel.</p>
+            <p>How many pounds of pure nickel should be added so that the new alloy is <b>40%</b> nickel?</p>
           `,
           choices: [
             String.raw`255 pounds`,
