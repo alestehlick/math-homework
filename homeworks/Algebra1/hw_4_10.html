@@ -11,12 +11,12 @@
        Adapted for: /math-homework/assets/core-rich.js
 
        REVISION NOTES:
-       - All 12 problem contexts were rewritten.
-       - All numerical data were changed.
-       - The homework now uses only liquid-mixture and alloy-mixture contexts.
-       - The mathematical structure remains focused on mixture equations, dilution,
-         concentration by evaporation, adding a pure substance, and alloy composition.
-       - All choices and the answer key were recalculated after the rewrite.
+       - Checked and revised the mathematical soundness of all 12 questions.
+       - Reordered the homework into a clearer increasing difficulty curve.
+       - Varied the requested unknowns: final concentration, water added, pure substance added,
+         one component volume, both component amounts, evaporated amount, and a three-part mixture.
+       - The homework uses only liquid-mixture and alloy-mixture contexts.
+       - All choices and the answer key were recalculated after the revision.
 
        IMAGE NAMING RULE:
        No figures are required for this homework.
@@ -33,179 +33,181 @@
       questions : [
         {
           stem: String.raw`
-            <p>A pool technician has <b>24 liters</b> of a <b>35%</b> chlorine solution. He adds <b>6 liters</b> of water.</p>
-            <p>What is the percent chlorine in the final mixture?</p>
+            <p>A gardener has <b>20 liters</b> of a plant food solution that is <b>30%</b> concentrate. She adds <b>10 liters</b> of water.</p>
+            <p>What is the percent concentrate in the final mixture?</p>
           `,
           choices: [
-            String.raw`24%`,
-            String.raw`35%`,
+            String.raw`15%`,
+            String.raw`25%`,
             String.raw`30%`,
-            String.raw`28%`,
             String.raw`20%`,
-            String.raw`41.25%`
+            String.raw`18%`,
+            String.raw`28%`
           ],
           choiceWrap: false
         },
         {
           stem: String.raw`
-            <p>A dye solution begins with <b>18 gallons</b> of liquid that is <b>12%</b> dye.</p>
+            <p>A dye solution begins with <b>15 gallons</b> of liquid that is <b>8%</b> dye.</p>
             <p>After some water evaporates, only <b>12 gallons</b> remain. What percent dye is the final solution?</p>
           `,
           choices: [
+            String.raw`8%`,
+            String.raw`10%`,
             String.raw`12%`,
+            String.raw`15%`,
             String.raw`18%`,
-            String.raw`16%`,
-            String.raw`20%`,
-            String.raw`24%`,
-            String.raw`30%`
+            String.raw`20%`
           ],
           choiceWrap: false
         },
         {
           stem: String.raw`
-            <p>A laboratory assistant mixes a <b>20%</b> acid solution with a <b>50%</b> acid solution.</p>
-            <p>How many gallons of each solution are needed to make <b>30 gallons</b> of a <b>32%</b> acid solution?</p>
+            <p>A cleaner has <b>12 liters</b> of a solution that is <b>40%</b> concentrate.</p>
+            <p>How many liters of water must be added to make the solution <b>30%</b> concentrate?</p>
           `,
           choices: [
-            String.raw`12 gallons of 20% solution and 18 gallons of 50% solution`,
-            String.raw`15 gallons of each solution`,
-            String.raw`20 gallons of 20% solution and 10 gallons of 50% solution`,
-            String.raw`10 gallons of 20% solution and 20 gallons of 50% solution`,
-            String.raw`18 gallons of 20% solution and 12 gallons of 50% solution`,
-            String.raw`24 gallons of 20% solution and 6 gallons of 50% solution`
+            String.raw`2 liters`,
+            String.raw`3 liters`,
+            String.raw`5 liters`,
+            String.raw`6 liters`,
+            String.raw`4 liters`,
+            String.raw`8 liters`
           ],
           choiceWrap: false
         },
         {
           stem: String.raw`
-            <p>A custodian mixes a cleaning liquid that is <b>25%</b> concentrate with another cleaning liquid that is <b>5%</b> concentrate.</p>
-            <p>How many liters of the <b>25%</b> liquid are needed to make <b>40 liters</b> of a <b>10%</b> cleaning liquid?</p>
+            <p>A chemist has <b>9 liters</b> of a solution that is <b>20%</b> acid. She wants to make it <b>25%</b> acid by adding pure acid.</p>
+            <p>How much pure acid must she add?</p>
           `,
           choices: [
+            String.raw`\(\dfrac{3}{5}\) liter`,
+            String.raw`\(\dfrac{1}{5}\) liter`,
+            String.raw`\(\dfrac{2}{5}\) liter`,
+            String.raw`\(\dfrac{4}{5}\) liter`,
+            String.raw`1 liter`,
+            String.raw`\(\dfrac{6}{5}\) liters`
+          ]
+        },
+        {
+          stem: String.raw`
+            <p>A laboratory assistant mixes a <b>10%</b> salt solution with a <b>30%</b> salt solution to make <b>20 liters</b> of an <b>18%</b> salt solution.</p>
+            <p>How many liters of the <b>30%</b> salt solution are needed?</p>
+          `,
+          choices: [
+            String.raw`4 liters`,
+            String.raw`5 liters`,
+            String.raw`6 liters`,
+            String.raw`7 liters`,
             String.raw`10 liters`,
-            String.raw`8 liters`,
+            String.raw`8 liters`
+          ],
+          choiceWrap: false
+        },
+        {
+          stem: String.raw`
+            <p>A custodian mixes a cleaning liquid that is <b>5%</b> concentrate with another cleaning liquid that is <b>25%</b> concentrate.</p>
+            <p>How many liters of the <b>5%</b> liquid are needed to make <b>16 liters</b> of a <b>20%</b> cleaning liquid?</p>
+          `,
+          choices: [
+            String.raw`2 liters`,
+            String.raw`3 liters`,
+            String.raw`4 liters`,
+            String.raw`5 liters`,
+            String.raw`6 liters`,
+            String.raw`8 liters`
+          ],
+          choiceWrap: false
+        },
+        {
+          stem: String.raw`
+            <p>A metalworker mixes an alloy that is <b>30%</b> zinc with another alloy that is <b>60%</b> zinc.</p>
+            <p>How many kilograms of each alloy should be used to make <b>24 kilograms</b> of an alloy that is <b>50%</b> zinc?</p>
+          `,
+          choices: [
+            String.raw`12 kg of the 30% alloy and 12 kg of the 60% alloy`,
+            String.raw`8 kg of the 30% alloy and 16 kg of the 60% alloy`,
+            String.raw`16 kg of the 30% alloy and 8 kg of the 60% alloy`,
+            String.raw`6 kg of the 30% alloy and 18 kg of the 60% alloy`,
+            String.raw`18 kg of the 30% alloy and 6 kg of the 60% alloy`,
+            String.raw`10 kg of the 30% alloy and 14 kg of the 60% alloy`
+          ],
+          choiceWrap: false
+        },
+        {
+          stem: String.raw`
+            <p>A chemist has <b>12 liters</b> of a <b>15%</b> acid solution.</p>
+            <p>How many liters of a <b>45%</b> acid solution must be added to make a <b>35%</b> acid solution?</p>
+          `,
+          choices: [
             String.raw`12 liters`,
-            String.raw`15 liters`,
+            String.raw`16 liters`,
+            String.raw`18 liters`,
             String.raw`20 liters`,
+            String.raw`24 liters`,
             String.raw`30 liters`
           ],
           choiceWrap: false
         },
         {
           stem: String.raw`
-            <p>A metalworker mixes an alloy that is <b>40%</b> zinc with another alloy that is <b>75%</b> zinc.</p>
-            <p>How many kilograms of each alloy should be used to make <b>28 kilograms</b> of an alloy that is <b>55%</b> zinc?</p>
+            <p>A dye solution begins with <b>30 gallons</b> of liquid that is <b>12%</b> dye.</p>
+            <p>How many gallons of water must evaporate so that the remaining solution is <b>20%</b> dye?</p>
           `,
           choices: [
-            String.raw`12 kg of the 40% alloy and 16 kg of the 75% alloy`,
-            String.raw`14 kg of each alloy`,
-            String.raw`20 kg of the 40% alloy and 8 kg of the 75% alloy`,
-            String.raw`8 kg of the 40% alloy and 20 kg of the 75% alloy`,
-            String.raw`10 kg of the 40% alloy and 18 kg of the 75% alloy`,
-            String.raw`16 kg of the 40% alloy and 12 kg of the 75% alloy`
+            String.raw`12 gallons`,
+            String.raw`10 gallons`,
+            String.raw`8 gallons`,
+            String.raw`15 gallons`,
+            String.raw`18 gallons`,
+            String.raw`20 gallons`
           ],
           choiceWrap: false
         },
         {
           stem: String.raw`
-            <p>A technician mixes a solution that is <b>70%</b> alcohol with another solution that is <b>25%</b> alcohol.</p>
-            <p>How many liters of the <b>70%</b> solution should be used to make <b>18 liters</b> of a <b>40%</b> alcohol solution?</p>
+            <p>A technician has <b>10 liters</b> of a solution that is <b>25%</b> alcohol.</p>
+            <p>How many liters of a <b>70%</b> alcohol solution must be added to make a solution that is <b>50%</b> alcohol?</p>
           `,
           choices: [
-            String.raw`4 liters`,
-            String.raw`5 liters`,
-            String.raw`6 liters`,
             String.raw`8 liters`,
             String.raw`10 liters`,
-            String.raw`12 liters`
+            String.raw`11.5 liters`,
+            String.raw`12.5 liters`,
+            String.raw`14 liters`,
+            String.raw`15 liters`
           ],
           choiceWrap: false
         },
         {
           stem: String.raw`
-            <p>A chemist has <b>4 liters</b> of a solution that is <b>20%</b> acid. She wants a solution that is <b>25%</b> acid by adding pure acid.</p>
-            <p>How much pure acid must she add?</p>
+            <p>An alloy weighing <b>18 ounces</b> contains <b>40%</b> silver.</p>
+            <p>How many ounces of pure silver must be added so that the new alloy is <b>64%</b> silver?</p>
           `,
           choices: [
-            String.raw`\(\dfrac{1}{5}\) liter`,
-            String.raw`\(\dfrac{4}{15}\) liter`,
-            String.raw`\(\dfrac{1}{3}\) liter`,
-            String.raw`\(\dfrac{2}{5}\) liter`,
-            String.raw`\(\dfrac{3}{5}\) liter`,
-            String.raw`1 liter`
-          ]
-        },
-        {
-          stem: String.raw`
-            <p>How many gallons of pure alcohol must be added to <b>16 gallons</b> of a <b>30%</b> alcohol solution to obtain a solution that is <b>50%</b> alcohol?</p>
-          `,
-          choices: [
-            String.raw`4 gallons`,
-            String.raw`5 gallons`,
-            String.raw`6 gallons`,
-            String.raw`8 gallons`,
-            String.raw`6.4 gallons`,
-            String.raw`10 gallons`
+            String.raw`8 ounces`,
+            String.raw`10 ounces`,
+            String.raw`12 ounces`,
+            String.raw`14 ounces`,
+            String.raw`16 ounces`,
+            String.raw`18 ounces`
           ],
           choiceWrap: false
         },
         {
           stem: String.raw`
-            <p>An alloy that is <b>25%</b> silver is mixed with another alloy that is <b>70%</b> silver.</p>
-            <p>How many ounces of each alloy are needed to make <b>45 ounces</b> of an alloy that is <b>40%</b> silver?</p>
+            <p>A metalworker wants to make <b>30 kilograms</b> of an alloy that is <b>55%</b> copper.</p>
+            <p>He will use some <b>30%</b> copper alloy, some <b>70%</b> copper alloy, and <b>5 kilograms</b> of pure copper.</p>
+            <p>How many kilograms of the <b>70%</b> copper alloy should he use?</p>
           `,
           choices: [
-            String.raw`30 oz of the 25% alloy and 15 oz of the 70% alloy`,
-            String.raw`15 oz of the 25% alloy and 30 oz of the 70% alloy`,
-            String.raw`20 oz of the 25% alloy and 25 oz of the 70% alloy`,
-            String.raw`25 oz of the 25% alloy and 20 oz of the 70% alloy`,
-            String.raw`35 oz of the 25% alloy and 10 oz of the 70% alloy`,
-            String.raw`22.5 oz of each alloy`
-          ],
-          choiceWrap: false
-        },
-        {
-          stem: String.raw`
-            <p>A chemist mixes a <b>10%</b> salt solution with a <b>40%</b> salt solution.</p>
-            <p>How many liters of each solution should be mixed to make <b>36 liters</b> of a <b>25%</b> salt solution?</p>
-          `,
-          choices: [
-            String.raw`12 liters of 10% solution and 24 liters of 40% solution`,
-            String.raw`24 liters of 10% solution and 12 liters of 40% solution`,
-            String.raw`20 liters of 10% solution and 16 liters of 40% solution`,
-            String.raw`18 liters of each solution`,
-            String.raw`30 liters of 10% solution and 6 liters of 40% solution`,
-            String.raw`6 liters of 10% solution and 30 liters of 40% solution`
-          ],
-          choiceWrap: false
-        },
-        {
-          stem: String.raw`
-            <p>An alloy weighing <b>8 ounces</b> contains <b>88%</b> tin.</p>
-            <p>How many ounces of pure tin must be added so that the new alloy is <b>92%</b> tin?</p>
-          `,
-          choices: [
-            String.raw`2 ounces`,
-            String.raw`3 ounces`,
-            String.raw`4 ounces`,
-            String.raw`5 ounces`,
-            String.raw`6 ounces`,
-            String.raw`0.32 ounce`
-          ],
-          choiceWrap: false
-        },
-        {
-          stem: String.raw`
-            <p>An alloy weighing <b>1000 pounds</b> contains <b>20%</b> nickel.</p>
-            <p>How many pounds of pure nickel should be added so that the new alloy is <b>36%</b> nickel?</p>
-          `,
-          choices: [
-            String.raw`160 pounds`,
-            String.raw`200 pounds`,
-            String.raw`225 pounds`,
-            String.raw`300 pounds`,
-            String.raw`400 pounds`,
-            String.raw`250 pounds`
+            String.raw`6 kilograms`,
+            String.raw`7.5 kilograms`,
+            String.raw`8 kilograms`,
+            String.raw`9 kilograms`,
+            String.raw`12 kilograms`,
+            String.raw`10 kilograms`
           ],
           choiceWrap: false
         }
