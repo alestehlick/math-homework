@@ -1,0 +1,603 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Geometry Review Homework</title>
+
+  <script>
+    /* =========================
+   Geometry Review Homework — Sections 2-4, 2-6, 2-7, 3-4/3-5, and 5-2 to 5-4
+   Adapted for: /math-homework/assets/core-rich.js
+
+   REQUIRED SOURCE REFERENCES (your provided homework files):
+   - Homework 2-4 uses the prior questions on circles, circular regions, chords, radii, diameters, simple/closed curves, triangle definition, intersections, and planes.
+   - Homework 2-6 uses the prior questions on spheres, centers/radii of spheres, cones, cylinders, prisms, pyramids, circular bases as circular regions (disks), and right/oblique distinctions.
+   - Homework 2-7 uses the prior questions on polyhedra, prism/pyramid face counts, vertices, edges, face-count names, and polyhedron diagonals.
+   - Homework 3-4/3-5 uses the prior questions on perimeter, regular polygons, circumference, radius/diameter conversion, revolutions, inscribed figures, circumscribed figures, tangents, chords, and inscribed angles.
+   - Homework 5-2/5-3 uses the prior questions on negation, AND, OR, logical equivalence, De Morgan's law, and distributive law.
+   - Homework 5-4 uses the prior questions on conditional statements, hypothesis/conclusion, converses, valid and invalid reasoning, and biconditionals.
+   - Homework 5-4 (2) uses the prior questions on necessary/sufficient conditions, only if, proof by contradiction, and counterexamples.
+
+   IMAGE FILES:
+   - User-supplied figure(s): none used in this review file.
+   - Model-generated figure(s): none.
+
+   IMAGE NAMING RULE:
+   - No image files are required for this homework.
+
+   MODEL-AUTHORED / MODEL-REWORKED ITEMS:
+   - Q1-Q6 synthesize and rework the Section 2-4 circle, curve, triangle, and plane material without requiring the missing PNG figures.
+   - Q7-Q10 synthesize and rework the Section 2-6 sphere/cone/prism material.
+   - Q11-Q15 synthesize and rework the Section 2-7 polyhedron-counting and classification material.
+   - Q16-Q23 synthesize and rework the Section 3-4/3-5 perimeter, circumference, tangent, chord, inscribed, and circumscribed material.
+   - Q24-Q32 synthesize and rework the logic sections, emphasizing truth-value judgment, equivalence, conditionals, converse errors, biconditionals, necessary/sufficient language, and proof/counterexample judgment.
+   - The final set has 32 questions, each with six choices, and is designed as a longer review assignment of approximately 1 hour 40 minutes.
+   ========================= */
+
+    window.homeworkData = {
+      classId : "Geometry",
+      id      : "Geometry Review Homework for Test 3",
+      title   : "Geometry Review — Sections 2-4, 2-6, 2-7, 3-4/3-5, and 5-2 to 5-4",
+
+      graphics : String.raw``,
+
+      /* Correct answers for Q1-Q32 */
+      answerKey : ['B', 'B', 'D', 'B', 'B', 'C', 'A', 'A', 'E', 'D', 'B', 'C', 'A', 'D', 'B', 'C', 'B', 'E', 'A', 'D', 'C', 'F', 'D', 'E', 'B', 'D', 'D', 'C', 'B', 'C', 'C', 'E'],
+
+      questions : [
+
+        /* Q1 */
+        {
+          stem: String.raw`
+<p>A circle has center \(O\), and \(R\) is a point on the circle. Which description gives the <b>circle itself</b>, not the interior region and not the circular region (disk)?</p>
+          `,
+          choices: [
+            String.raw`All points \(P\) such that \(OP<OR\).`,
+            String.raw`All points \(P\) such that \(OP=OR\).`,
+            String.raw`All points \(P\) such that \(OP\le OR\).`,
+            String.raw`The segment \(\overline{OR}\) only.`,
+            String.raw`The center \(O\) together with all points inside the curve.`,
+            String.raw`All points \(P\) such that \(OP>OR\).`
+          ],
+          choiceWrap: false
+        },
+
+        /* Q2 */
+        {
+          stem: String.raw`
+<p>A circle has center \(S\). Points \(A,B,C,D,T\) lie on the circle. Segment \(\overline{AB}\) passes through \(S\), segment \(\overline{CD}\) does not pass through \(S\), and segment \(\overline{ST}\) is drawn.</p>
+<p>Which statement correctly names the objects?</p>
+          `,
+          choices: [
+            String.raw`\(\overline{AB}\) is a radius; \(\overline{CD}\) is a diameter; \(\overline{ST}\) is a chord.`,
+            String.raw`\(\overline{AB}\) is both a diameter and a chord; \(\overline{CD}\) is a chord that is not a diameter; \(\overline{ST}\) is a radius.`,
+            String.raw`\(\overline{AB}\) is a chord but not a diameter, because its endpoints lie on the circle.`,
+            String.raw`\(\overline{AB}\) is an arc; \(\overline{CD}\) is a diameter; \(\overline{ST}\) is outside the circle.`,
+            String.raw`All three segments are radii, because each one touches the circle.`,
+            String.raw`\(\overline{CD}\) is not a chord, because it does not pass through the center.`
+          ],
+          choiceWrap: false
+        },
+
+        /* Q3 */
+        {
+          stem: String.raw`
+<p>Which statement correctly compares a circle, a circular region (disk), chords, diameters, and radii?</p>
+          `,
+          choices: [
+            String.raw`A circle includes all points inside the boundary, so it is the same object as the disk.`,
+            String.raw`A circular region (disk) is only the boundary, while the circle includes the interior.`,
+            String.raw`A radius is a segment whose endpoints both lie on the circle.`,
+            String.raw`A chord has endpoints on the circle; a diameter is a chord through the center; a radius joins the center to a point on the circle.`,
+            String.raw`Every chord is a radius whenever the chord is drawn inside the circle.`,
+            String.raw`A diameter and a radius are the same object, but they may be named in two different ways.`
+          ],
+          choiceWrap: false
+        },
+
+        /* Q4 */
+        {
+          stem: String.raw`
+<p>A curve returns to its starting point and crosses itself exactly once, like a figure-eight. The boundary of a triangle returns to its starting point and does not cross itself.</p>
+<p>Which classification is correct?</p>
+          `,
+          choices: [
+            String.raw`Both are simple closed curves.`,
+            String.raw`The figure-eight is closed but not simple; the boundary of the triangle is a simple closed curve.`,
+            String.raw`The figure-eight is simple but not closed; the boundary of the triangle is not a curve.`,
+            String.raw`The figure-eight is not a curve; the boundary of the triangle is closed but not simple.`,
+            String.raw`The figure-eight is a simple closed curve; the boundary of the triangle is simple but not closed.`,
+            String.raw`Neither curve is closed, because each has more than one point.`
+          ],
+          choiceWrap: false
+        },
+
+        /* Q5 */
+        {
+          stem: String.raw`
+<p>Points \(A,B,C\) are noncollinear. Which statement correctly describes \(\triangle ABC\) and its relation to planes?</p>
+          `,
+          choices: [
+            String.raw`\(\triangle ABC\) is the union of the three lines \(\overleftrightarrow{AB}\), \(\overleftrightarrow{BC}\), and \(\overleftrightarrow{CA}\), and it lies in many different planes.`,
+            String.raw`\(\triangle ABC\) is the union of \(\overline{AB}\), \(\overline{BC}\), and \(\overline{CA}\), and it is contained in exactly one plane.`,
+            String.raw`\(\triangle ABC\) is only the region inside the boundary, not the three side segments.`,
+            String.raw`\(\triangle ABC\) is made from three rays starting at \(A\), and it can be placed in any plane through \(A\).`,
+            String.raw`\(\triangle ABC\) is the circular region (disk) determined by the three vertices.`,
+            String.raw`\(\triangle ABC\) includes the three side segments and every point in the plane between them.`
+          ],
+          choiceWrap: false
+        },
+
+        /* Q6 */
+        {
+          stem: String.raw`
+<p>Points \(A,B,C,D\) are collinear in that order, and \(P\) is not on that line. Using the class definition that a triangle is the union of its three side segments, determine</p>
+<p class="math">\(\triangle PAB\cap \triangle PCD\).</p>
+          `,
+          choices: [
+            String.raw`\(\overline{PC}\)`,
+            String.raw`\(\overline{AB}\)`,
+            String.raw`\(\{P\}\)`,
+            String.raw`\(\varnothing\)`,
+            String.raw`\(\overline{BC}\)`,
+            String.raw`\(\triangle PBC\)`
+          ],
+          choiceWrap: false
+        },
+
+        /* Q7 */
+        {
+          stem: String.raw`
+<p>A sphere has center \(C\) and radius \(7\). Points \(P,Q,R,S\) satisfy \(CP=7\), \(CQ<7\), \(CR=12\), and \(CS=0\).</p>
+<p>Which statement is correct?</p>
+          `,
+          choices: [
+            String.raw`\(P\) lies on the sphere; \(Q\) is inside the sphere; \(R\) is outside the sphere; \(S\) does not lie on the sphere.`,
+            String.raw`\(Q\) lies on the sphere because it is closer to the center than \(P\).`,
+            String.raw`\(S\) lies on the sphere because it is the center.`,
+            String.raw`\(P,Q,R,S\) all lie on the sphere because each point has a distance from \(C\).`,
+            String.raw`\(R\) lies on the sphere because it is farther from the center than \(P\).`,
+            String.raw`No listed point lies on the sphere.`
+          ],
+          choiceWrap: false
+        },
+
+        /* Q8 */
+        {
+          stem: String.raw`
+<p>A figure is made from two congruent hexagonal regions lying in different parallel planes. Corresponding points on the boundaries of the regions are joined by segments.</p>
+<p>What is the most specific name for the figure?</p>
+          `,
+          choices: [
+            String.raw`Hexagonal prism`,
+            String.raw`Hexagonal pyramid`,
+            String.raw`Circular cylinder`,
+            String.raw`Sphere`,
+            String.raw`Circular cone`,
+            String.raw`Hexagonal cone`
+          ],
+          choiceWrap: false
+        },
+
+        /* Q9 */
+        {
+          stem: String.raw`
+<p>A cone has a circular region (disk) as its base. Its vertex is not on the perpendicular line through the center of the base.</p>
+<p>Which designation is most precise?</p>
+          `,
+          choices: [
+            String.raw`Right circular cone`,
+            String.raw`Pyramid`,
+            String.raw`Right circular cylinder`,
+            String.raw`Circular prism`,
+            String.raw`Oblique circular cone`,
+            String.raw`Sphere`
+          ],
+          choiceWrap: false
+        },
+
+        /* Q10 */
+        {
+          stem: String.raw`
+<p>A plane intersects the surface of a right circular cone. The plane is parallel to the base and lies between the base and the vertex.</p>
+<p>What is the intersection?</p>
+          `,
+          choices: [
+            String.raw`A triangular region`,
+            String.raw`A line segment`,
+            String.raw`A circular region (disk)`,
+            String.raw`A circle`,
+            String.raw`Exactly two points`,
+            String.raw`No intersection is possible`
+          ],
+          choiceWrap: false
+        },
+
+        /* Q11 */
+        {
+          stem: String.raw`
+<p>Which pair consists only of polyhedra?</p>
+          `,
+          choices: [
+            String.raw`A sphere and a circular cylinder`,
+            String.raw`A rectangular prism and a triangular pyramid`,
+            String.raw`A circular cone and a cube`,
+            String.raw`A sphere and a rectangular prism`,
+            String.raw`A circular cylinder and a circular cone`,
+            String.raw`A circle and a triangle`
+          ],
+          choiceWrap: false
+        },
+
+        /* Q12 */
+        {
+          stem: String.raw`
+<p>A pyramid has an octagonal region as its base. A prism has octagonal regions as its bases.</p>
+<p>Which ordered pair gives the number of faces of the pyramid first and the number of faces of the prism second?</p>
+          `,
+          choices: [
+            String.raw`\(8,8\)`,
+            String.raw`\(8,9\)`,
+            String.raw`\(9,10\)`,
+            String.raw`\(10,9\)`,
+            String.raw`\(16,10\)`,
+            String.raw`The number of faces cannot be determined from the base.`
+          ],
+          choiceWrap: false
+        },
+
+        /* Q13 */
+        {
+          stem: String.raw`
+<p>A prism has pentagonal regions as its bases.</p>
+<p>Which list gives the correct number of faces, vertices, and edges?</p>
+          `,
+          choices: [
+            String.raw`7 faces, 10 vertices, 15 edges`,
+            String.raw`5 faces, 10 vertices, 15 edges`,
+            String.raw`7 faces, 5 vertices, 10 edges`,
+            String.raw`6 faces, 6 vertices, 10 edges`,
+            String.raw`10 faces, 7 vertices, 15 edges`,
+            String.raw`12 faces, 10 vertices, 20 edges`
+          ],
+          choiceWrap: false
+        },
+
+        /* Q14 */
+        {
+          stem: String.raw`
+<p>A prism has 12 faces. A diagonal of a polyhedron is a segment joining two vertices that do not lie in the same face.</p>
+<p>How many sides does each base have, and how many diagonals does the prism have in total?</p>
+          `,
+          choices: [
+            String.raw`Each base has 10 sides; the prism has 35 diagonals.`,
+            String.raw`Each base has 12 sides; the prism has 108 diagonals.`,
+            String.raw`Each base has 9 sides; the prism has 54 diagonals.`,
+            String.raw`Each base has 10 sides; the prism has 70 diagonals.`,
+            String.raw`Each base has 14 sides; the prism has 154 diagonals.`,
+            String.raw`The base size and the number of diagonals cannot be determined from the number of faces.`
+          ],
+          choiceWrap: false
+        },
+
+        /* Q15 */
+        {
+          stem: String.raw`
+<p>A cone has a heptagonal region as its base. Classify the resulting polyhedron according to the number of faces.</p>
+          `,
+          choices: [
+            String.raw`Heptahedron`,
+            String.raw`Octahedron`,
+            String.raw`Dodecahedron`,
+            String.raw`Heptagon`,
+            String.raw`Hexahedron`,
+            String.raw`It is not a polyhedron because it is called a cone.`
+          ],
+          choiceWrap: false
+        },
+
+        /* Q16 */
+        {
+          stem: String.raw`
+<p>A hexagon has consecutive side lengths \(5\), \(x\), \(8\), \(x+2\), \(7\), and \(2x\) units. Its perimeter is \(54\) units.</p>
+<p>Find \(x\) and the longest side length.</p>
+          `,
+          choices: [
+            String.raw`\(x=6\); longest side \(12\) units`,
+            String.raw`\(x=7\); longest side \(14\) units`,
+            String.raw`\(x=8\); longest side \(16\) units`,
+            String.raw`\(x=9\); longest side \(18\) units`,
+            String.raw`\(x=8\); longest side \(10\) units`,
+            String.raw`No listed value is possible.`
+          ],
+          choiceWrap: false
+        },
+
+        /* Q17 */
+        {
+          stem: String.raw`
+<p>A regular nonagon has perimeter \(126\) cm. A regular hexagon has the same side length as the nonagon.</p>
+<p>What is the perimeter of the regular hexagon?</p>
+          `,
+          choices: [
+            String.raw`72 cm`,
+            String.raw`84 cm`,
+            String.raw`90 cm`,
+            String.raw`108 cm`,
+            String.raw`126 cm`,
+            String.raw`756 cm`
+          ],
+          choiceWrap: false
+        },
+
+        /* Q18 */
+        {
+          stem: String.raw`
+<p>A quadrilateral has two opposite sides of length \(a\) and two opposite sides of length \(a+3\). Its perimeter is \(42\) inches.</p>
+<p>What is the length of each longer side?</p>
+          `,
+          choices: [
+            String.raw`6 in.`,
+            String.raw`9 in.`,
+            String.raw`10.5 in.`,
+            String.raw`11 in.`,
+            String.raw`12 in.`,
+            String.raw`15 in.`
+          ],
+          choiceWrap: false
+        },
+
+        /* Q19 */
+        {
+          stem: String.raw`
+<p>A circle has radius \(9\) cm. Use \(\pi\approx 3.14\).</p>
+<p>Which pair gives the diameter and circumference?</p>
+          `,
+          choices: [
+            String.raw`Diameter \(18\) cm; circumference about \(56.52\) cm`,
+            String.raw`Diameter \(9\) cm; circumference about \(28.26\) cm`,
+            String.raw`Diameter \(18\) cm; circumference about \(28.26\) cm`,
+            String.raw`Diameter \(81\) cm; circumference about \(254.34\) cm`,
+            String.raw`Diameter \(9\) cm; circumference about \(56.52\) cm`,
+            String.raw`Diameter \(3.14\) cm; circumference about \(18\) cm`
+          ],
+          choiceWrap: false
+        },
+
+        /* Q20 */
+        {
+          stem: String.raw`
+<p>The circumference of a circle is \(31.4\) ft. Use \(\pi\approx 3.14\).</p>
+<p>What are the diameter and radius?</p>
+          `,
+          choices: [
+            String.raw`Diameter \(5\) ft; radius \(2.5\) ft`,
+            String.raw`Diameter \(31.4\) ft; radius \(15.7\) ft`,
+            String.raw`Diameter \(20\) ft; radius \(10\) ft`,
+            String.raw`Diameter \(10\) ft; radius \(5\) ft`,
+            String.raw`Diameter \(15.7\) ft; radius \(7.85\) ft`,
+            String.raw`Diameter \(62.8\) ft; radius \(31.4\) ft`
+          ],
+          choiceWrap: false
+        },
+
+        /* Q21 */
+        {
+          stem: String.raw`
+<p>A wheel has diameter \(30\) inches. It makes \(8\) complete revolutions without slipping. Use \(\pi\approx 3.14\).</p>
+<p>About how far does it travel, in feet?</p>
+          `,
+          choices: [
+            String.raw`20.0 ft`,
+            String.raw`31.4 ft`,
+            String.raw`62.8 ft`,
+            String.raw`75.4 ft`,
+            String.raw`94.2 ft`,
+            String.raw`753.6 ft`
+          ],
+          choiceWrap: false
+        },
+
+        /* Q22 */
+        {
+          stem: String.raw`
+<p>A square has all four vertices on a circle. A pentagon has each side tangent to another circle. A line meets a third circle at exactly one point.</p>
+<p>Which description is correct?</p>
+          `,
+          choices: [
+            String.raw`The square is circumscribed about the circle; the pentagon is inscribed in the circle; the line is a chord.`,
+            String.raw`The square is inscribed in the circle; the pentagon is inscribed in the circle; the line is a radius.`,
+            String.raw`The square is tangent to the circle; the pentagon is circumscribed about the circle; the line is a diameter.`,
+            String.raw`The square is neither inscribed nor circumscribed; the pentagon is tangent to the circle; the line is an arc.`,
+            String.raw`The square is circumscribed about the circle; the pentagon is neither inscribed nor circumscribed; the line is tangent.`,
+            String.raw`The square is inscribed in the circle; the pentagon is circumscribed about the circle; the line is tangent to the circle.`
+          ],
+          choiceWrap: false
+        },
+
+        /* Q23 */
+        {
+          stem: String.raw`
+<p>In circle \(O\), points \(A,B,C\) lie on the circle. Segment \(\overline{AB}\) is drawn. A line \(\ell\) touches the circle only at \(C\). The angle \(\angle ABC\) is also drawn.</p>
+<p>Which statement is correct?</p>
+          `,
+          choices: [
+            String.raw`\(\overline{AB}\) is a tangent segment; \(\ell\) is a chord; \(\angle ABC\) is a central angle.`,
+            String.raw`\(\overline{AB}\) is a radius; \(\ell\) is a diameter; \(\angle ABC\) is outside the circle.`,
+            String.raw`\(\overline{AB}\) is an arc; \(\ell\) is a tangent line; \(\angle ABC\) is not an angle of the circle.`,
+            String.raw`\(\overline{AB}\) is a chord; \(\ell\) is a tangent line; \(\angle ABC\) is an inscribed angle.`,
+            String.raw`\(\overline{AB}\) is a diameter; \(\ell\) is a secant line; \(\angle ABC\) is a right angle.`,
+            String.raw`No listed statement is correct.`
+          ],
+          choiceWrap: false
+        },
+
+        /* Q24 */
+        {
+          stem: String.raw`
+<p>Suppose \(p\) is true, \(q\) is false, and \(r\) is false. Choose the correct ordered list of truth values.</p>
+<p>I. \(p\lor q\)</p>
+<p>II. \(\neg(p\lor q)\)</p>
+<p>III. \(\neg p\land \neg q\)</p>
+<p>IV. \(p\land(q\lor r)\)</p>
+          `,
+          choices: [
+            String.raw`True, True, False, False`,
+            String.raw`True, False, True, False`,
+            String.raw`False, True, True, False`,
+            String.raw`False, False, False, True`,
+            String.raw`True, False, False, False`,
+            String.raw`True, False, False, True`
+          ],
+          choiceWrap: false
+        },
+
+        /* Q25 */
+        {
+          stem: String.raw`
+<p>Which line gives the correct logical equivalences?</p>
+          `,
+          choices: [
+            String.raw`\(\neg(p\lor q)\equiv \neg p\lor\neg q\), and \(p\land(r\lor s)\equiv(p\land r)\land(p\land s)\).`,
+            String.raw`\(\neg(p\lor q)\equiv \neg p\land\neg q\), and \(p\land(r\lor s)\equiv(p\land r)\lor(p\land s)\).`,
+            String.raw`\(\neg(p\lor q)\equiv p\land q\), and \(p\land(r\lor s)\equiv(p\lor r)\land(p\lor s)\).`,
+            String.raw`\(\neg(p\lor q)\equiv \neg(p\land q)\), and \(p\land(r\lor s)\equiv(p\land r)\lor s\).`,
+            String.raw`\(\neg(p\lor q)\equiv \neg p\land q\), and \(p\land(r\lor s)\equiv p\lor(r\land s)\).`,
+            String.raw`None of the statements above is correct.`
+          ],
+          choiceWrap: false
+        },
+
+        /* Q26 */
+        {
+          stem: String.raw`
+<p>For a conditional statement \(P\to Q\), in which case is the whole conditional false?</p>
+          `,
+          choices: [
+            String.raw`When \(P\) is true and \(Q\) is true.`,
+            String.raw`When \(P\) is false and \(Q\) is true.`,
+            String.raw`When \(P\) is false and \(Q\) is false.`,
+            String.raw`When \(P\) is true and \(Q\) is false.`,
+            String.raw`Whenever \(Q\) is true.`,
+            String.raw`Whenever \(P\) is false.`
+          ],
+          choiceWrap: false
+        },
+
+        /* Q27 */
+        {
+          stem: String.raw`
+<p>Consider the conditional statement:</p>
+<p><i>If a quadrilateral is a square, then it has four congruent sides.</i></p>
+<p>Which statement is its converse?</p>
+          `,
+          choices: [
+            String.raw`If a quadrilateral is not a square, then it does not have four congruent sides.`,
+            String.raw`If a quadrilateral does not have four congruent sides, then it is not a square.`,
+            String.raw`If a quadrilateral has four right angles, then it has four congruent sides.`,
+            String.raw`If a quadrilateral has four congruent sides, then it is a square.`,
+            String.raw`A quadrilateral is a square and has four congruent sides.`,
+            String.raw`A quadrilateral is a square exactly when it has four congruent sides.`
+          ],
+          choiceWrap: false
+        },
+
+        /* Q28 */
+        {
+          stem: String.raw`
+<p>Consider the reasoning below.</p>
+<p class="indent">If a figure is a square, then it is a rectangle.<br>A figure is not a rectangle.<br>Therefore, the figure is not a square.</p>
+<p>Which judgment is correct?</p>
+          `,
+          choices: [
+            String.raw`The reasoning is invalid because not every rectangle is a square.`,
+            String.raw`The reasoning is invalid because the conditional can only be used in the forward direction.`,
+            String.raw`The reasoning is valid: a square cannot fail to be a rectangle.`,
+            String.raw`The reasoning is valid only when the figure is a quadrilateral.`,
+            String.raw`The reasoning is invalid because it uses a negative statement.`,
+            String.raw`No judgment can be made without a drawing.`
+          ],
+          choiceWrap: false
+        },
+
+        /* Q29 */
+        {
+          stem: String.raw`
+<p>Consider the reasoning below.</p>
+<p class="indent">If a figure is a square, then it has four sides.<br>The figure has four sides.<br>Therefore, the figure is a square.</p>
+<p>What is the main mistake?</p>
+          `,
+          choices: [
+            String.raw`It denies the hypothesis and then denies the conclusion.`,
+            String.raw`It treats the conclusion of the conditional as if it forced the hypothesis.`,
+            String.raw`It uses a conditional statement that has no conclusion.`,
+            String.raw`It proves the statement by contradiction, but contradiction is not allowed here.`,
+            String.raw`It changes an OR statement into an AND statement.`,
+            String.raw`There is no mistake; the reasoning is valid.`
+          ],
+          choiceWrap: false
+        },
+
+        /* Q30 */
+        {
+          stem: String.raw`
+<p>A biconditional \(P\leftrightarrow Q\) is true exactly when \(P\) and \(Q\) have the same truth value.</p>
+<p>Which choice gives exactly the cases where \(P\leftrightarrow Q\) is false?</p>
+          `,
+          choices: [
+            String.raw`Only when \(P\) is true and \(Q\) is true.`,
+            String.raw`Only when \(P\) is false and \(Q\) is false.`,
+            String.raw`When \(P\) and \(Q\) have different truth values.`,
+            String.raw`When \(P\) and \(Q\) have the same truth value.`,
+            String.raw`Only when \(P\to Q\) is true.`,
+            String.raw`Never; a biconditional is always true.`
+          ],
+          choiceWrap: false
+        },
+
+        /* Q31 */
+        {
+          stem: String.raw`
+<p>A student may enter the laboratory only if the student is wearing safety goggles.</p>
+<p>Let \(p\) mean “the student may enter the laboratory,” and let \(q\) mean “the student is wearing safety goggles.” Which interpretation is correct?</p>
+          `,
+          choices: [
+            String.raw`The sentence means \(q\to p\). Wearing goggles is sufficient for entering the laboratory.`,
+            String.raw`The sentence means \(p\leftrightarrow q\). Entering and wearing goggles always have the same truth value.`,
+            String.raw`The sentence means \(p\to q\). Wearing goggles is necessary for entering, but may not by itself guarantee permission.`,
+            String.raw`The sentence means \(\neg p\to q\). If the student may not enter, then the student is wearing goggles.`,
+            String.raw`The sentence means \(p\to\neg q\). Entering the laboratory prevents wearing goggles.`,
+            String.raw`The sentence cannot be written with \(p\) and \(q\) because it contains the phrase “only if.”`
+          ],
+          choiceWrap: false
+        },
+
+        /* Q32 */
+        {
+          stem: String.raw`
+<p>Which line correctly contrasts proving a conditional with disproving a conditional?</p>
+          `,
+          choices: [
+            String.raw`To prove \(p\to q\), prove \(q\to p\). To disprove \(p\to q\), prove \(p\) and \(q\) are both false.`,
+            String.raw`To prove \(p\to q\), show that \(p\) is false. To disprove \(p\to q\), show that \(q\) is true.`,
+            String.raw`To prove \(p\to q\), show one example where \(p\) and \(q\) are true. To disprove it, show one example where \(p\) is false.`,
+            String.raw`To prove \(p\to q\), assume \(q\) first and derive \(p\). To disprove it, assume \(p\) and derive \(q\).`,
+            String.raw`To prove \(p\to q\), rule out the bad case \(p\) true and \(q\) false. To disprove it, exhibit the bad case \(p\) true and \(q\) false.`,
+            String.raw`A conditional cannot be proved or disproved; only biconditionals can be judged.`
+          ],
+          choiceWrap: false
+        }
+      ]
+    };
+  </script>
+
+  <link rel="stylesheet" href="/math-homework/assets/core-rich.css" />
+  <script defer src="/math-homework/assets/core-rich.js"></script>
+  <script defer src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+</head>
+
+<body>
+  <div id="hw-root">Loading…</div>
+</body>
+</html>
