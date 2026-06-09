@@ -7,24 +7,24 @@
 
   <script>
     /* =========================
-       Homework 4-4 — Choosing a Method and Analyzing Quadratic Solutions
+       Homework 4-4 — Quadratic Equations and Inequalities of Several Types
+       Adapted for: /math-homework/assets/core-rich.js
 
-       REQUIRED SOURCE REFERENCES (your provided sets):
-       - Type A uses A. Exercises: #1, #2, #3, #4, #5, #6, #7, #8, #9, #10
-       - Type B uses B. Exercises: #11, #12, #13, #14, #18, #21, #23
-       - Type C uses C. Exercises: #27
+       SOURCE REFERENCE:
+       - Remade from the uploaded Homework 4-4 file.
 
-       MODEL REWORK / PEDAGOGICAL ADAPTATION:
-       - The source set mixes three related goals: choosing an efficient solving method,
-         predicting the number and type of solutions from the discriminant, and extending
-         that reasoning to equations in x^4 by substituting y = x^2.
-       - The homework below reorganizes those goals into a more coherent progression:
-         (1) choose the best method, (2) analyze the nature of solutions, (3) apply the idea
-         to repeated-root and biquadratic cases.
-       - Several source exercises that originally asked students to "describe and solve"
-         were converted into multiple-choice questions whose distractors reflect common
-         errors: wrong discriminant sign, confusing repeated with distinct roots, and
-         forgetting to place the equation in standard form first.
+       REVISION NOTES:
+       - The homework was rebuilt to include several different cases rather than only
+         method choice and discriminant classification.
+       - The new sequence includes:
+         (1) quadratic inequalities solved by factoring and examining the signs of each factor,
+         (2) equations and inequalities whose real boundary values are not found by ordinary
+             integer factoring, so completing the square is the natural method,
+         (3) equations and inequalities with no real solution,
+         (4) equations and inequalities with exactly one real solution,
+         (5) one biquadratic inequality using the substitution y = x^2.
+       - Student-facing classification uses only: 2 real solutions, 1 real solution, or no real solution.
+       - No interval notation is used in the answer choices.
 
        IMAGE NAMING RULE:
        - No external figure files are required for this homework.
@@ -33,176 +33,188 @@
     window.homeworkData = {
       classId : "Algebra2",
       id      : "Homework 4-4",
-      title   : "Homework 4-4 — Methods and Nature of Quadratic Solutions",
+      title   : "Homework 4-4 — Quadratic Equations and Inequalities",
       graphics : String.raw``,
-      answerKey : ["C","B","C","D","E","B","F","A","C","D","A","F"],
+
+      answerKey : ["C","E","B","F","A","D","C","E","B","F","D","A"],
+
       questions : [
         {
           stem: String.raw`
-            <p>Which method is the most efficient first choice for solving \(5x^2 - x - 2 = 0\)?</p>
+            <p>Solve the inequality by factoring and examining the signs of the factors.</p>
+            <p>\(x^2 - x - 12 > 0\)</p>
           `,
           choices: [
-            String.raw`Factoring`,
-            String.raw`Completing the square`,
-            String.raw`Using the quadratic formula`,
-            String.raw`Using square roots immediately`,
-            String.raw`Graphing and estimating`,
-            String.raw`No standard algebraic method applies`
+            String.raw`\(x<-3\) only`,
+            String.raw`\(-3<x<4\)`,
+            String.raw`\(x<-3\) or \(x>4\)`,
+            String.raw`\(x>4\) only`,
+            String.raw`\(x\le -3\) or \(x\ge 4\)`,
+            String.raw`All real numbers`
           ],
           choiceWrap: false
         },
         {
           stem: String.raw`
-            <p>Which method is the most efficient first choice for solving \(x^2 + 1 = 7\)?</p>
+            <p>Solve the inequality by factoring and examining the signs of the factors.</p>
+            <p>\(2x^2 + 7x + 3 \le 0\)</p>
           `,
           choices: [
-            String.raw`Factoring`,
-            String.raw`Using square roots after isolating \(x^2\)`,
-            String.raw`Using the quadratic formula only`,
-            String.raw`Synthetic division`,
-            String.raw`Substituting \(y = x^2\)`,
-            String.raw`There is no real solution, so no method is possible`
+            String.raw`\(x\le -3\) or \(x\ge -\dfrac12\)`,
+            String.raw`\(-3<x<-\dfrac12\)`,
+            String.raw`\(x\le -\dfrac12\) only`,
+            String.raw`\(x\ge -3\)`,
+            String.raw`\(-3\le x\le -\dfrac12\)`,
+            String.raw`No real solution`
           ],
           choiceWrap: false
         },
         {
           stem: String.raw`
-            <p>For \(3x^2 + 19x - 14 = 0\), which solving method is most efficient?</p>
+            <p>First move all terms to one side. Then solve the inequality by factoring and examining signs.</p>
+            <p>\(x^2 + 2x < 15\)</p>
           `,
           choices: [
-            String.raw`Square-root method`,
-            String.raw`Completing the square`,
-            String.raw`Factoring`,
-            String.raw`Graphing only`,
-            String.raw`Substituting \(y = x^2\)`,
-            String.raw`No method works because the middle term is odd`
+            String.raw`\(x<-5\) or \(x>3\)`,
+            String.raw`\(-5<x<3\)`,
+            String.raw`\(-3<x<5\)`,
+            String.raw`\(x\le -5\) or \(x\ge 3\)`,
+            String.raw`\(-5\le x\le 3\)`,
+            String.raw`All real numbers`
           ],
           choiceWrap: false
         },
         {
           stem: String.raw`
-            <p>After writing \(3x^2 + 5x + 7 = x + 7\) in standard form, which method is the most efficient?</p>
+            <p>Solve by completing the square. The answer is not found by ordinary integer factoring.</p>
+            <p>\(x^2 - 6x + 2 = 0\)</p>
           `,
           choices: [
-            String.raw`Completing the square`,
-            String.raw`Quadratic formula`,
-            String.raw`Graphing`,
-            String.raw`Factoring`,
-            String.raw`Square-root method`,
-            String.raw`Substituting \(y = x^2\)`
-          ],
-          choiceWrap: false
-        },
-        {
-          stem: String.raw`
-            <p>Without solving the equation, determine the number and nature of the solutions of \(x^2 + 4x - 32 = 0\).</p>
-          `,
-          choices: [
-            String.raw`One repeated real solution`,
-            String.raw`Two distinct real irrational solutions`,
-            String.raw`Two nonreal complex solutions`,
-            String.raw`No solutions of any kind`,
-            String.raw`Two distinct real rational solutions`,
-            String.raw`Exactly one real and one nonreal solution`
-          ],
-          choiceWrap: false
-        },
-        {
-          stem: String.raw`
-            <p>Without solving, what can you conclude about \(4x^2 - 5x - 2 = 0\)?</p>
-          `,
-          choices: [
-            String.raw`It has two distinct real rational solutions.`,
-            String.raw`It has two distinct real irrational solutions.`,
-            String.raw`It has one repeated real solution.`,
-            String.raw`It has two nonreal complex solutions.`,
-            String.raw`It has no solutions because \(a \ne 1\).`,
-            String.raw`It cannot be classified from the discriminant.`
-          ],
-          choiceWrap: false
-        },
-        {
-          stem: String.raw`
-            <p>What is true of the solutions of \(x^2 + 16x + 64 = 0\)?</p>
-          `,
-          choices: [
-            String.raw`It has two distinct real rational solutions.`,
-            String.raw`It has two distinct real irrational solutions.`,
-            String.raw`It has no real solutions.`,
-            String.raw`It has one real solution and one nonreal solution.`,
-            String.raw`It has two opposite solutions.`,
-            String.raw`It has one repeated real solution.`
-          ],
-          choiceWrap: false
-        },
-        {
-          stem: String.raw`
-            <p>Which statement correctly describes the solutions of \(5x^2 + 2x + 8 = 0\)?</p>
-          `,
-          choices: [
-            String.raw`It has two nonreal complex solutions.`,
-            String.raw`It has one repeated real solution.`,
-            String.raw`It has two distinct real rational solutions.`,
-            String.raw`It has two distinct real irrational solutions.`,
-            String.raw`It has exactly one real solution.`,
-            String.raw`It factors over the integers.`
-          ],
-          choiceWrap: false
-        },
-        {
-          stem: String.raw`
-            <p>Solve \(x^2 - 14x + 49 = 0\).</p>
-          `,
-          choices: [
-            String.raw`\(x = -7\) only`,
-            String.raw`\(x = 7\) or \(x = -7\)`,
-            String.raw`\(x = 7\) only`,
-            String.raw`\(x = 14\) only`,
-            String.raw`\(x = 0\) or \(x = 14\)`,
-            String.raw`There is no real solution`
+            String.raw`\(x=6\pm\sqrt{34}\)`,
+            String.raw`\(x=3\pm\sqrt{11}\)`,
+            String.raw`\(x=-3\pm\sqrt{7}\)`,
+            String.raw`\(x=3\pm 7\)`,
+            String.raw`\(x=6\pm\sqrt{7}\)`,
+            String.raw`\(x=3\pm\sqrt{7}\)`
           ]
         },
         {
           stem: String.raw`
-            <p>Write \(49c^2 + 4 = -28c\) in standard form and solve.</p>
-            <p>Which answer is correct?</p>
+            <p>Solve by first completing the square. Then use the boundary values to decide the sign.</p>
+            <p>\(x^2 - 4x - 3 < 0\)</p>
           `,
           choices: [
-            String.raw`\(c = \dfrac{2}{7}\) only`,
-            String.raw`\(c = -2\) only`,
-            String.raw`\(c = \pm \dfrac{2}{7}\)`,
-            String.raw`\(c = -\dfrac{2}{7}\) only`,
-            String.raw`\(c = \dfrac{7}{2}\) only`,
-            String.raw`There is no real solution`
-          ]
-        },
-        {
-          stem: String.raw`
-            <p>Use the substitution \(y = x^2\) to solve \(x^4 - 10x^2 + 9 = 0\).</p>
-            <p>Which is the complete real solution set?</p>
-          `,
-          choices: [
-            String.raw`\(\{-3,-1,1,3\}\)`,
-            String.raw`\(\{-3,3\}\)`,
-            String.raw`\(\{-1,1\}\)`,
-            String.raw`\(\{-9,-1,1,9\}\)`,
-            String.raw`\(\{-\sqrt{10},\sqrt{10}\}\)`,
-            String.raw`There are no real solutions.`
+            String.raw`\(2-\sqrt7<x<2+\sqrt7\)`,
+            String.raw`\(x<2-\sqrt7\) or \(x>2+\sqrt7\)`,
+            String.raw`\(2-\sqrt3<x<2+\sqrt3\)`,
+            String.raw`\(x\le 2-\sqrt7\) or \(x\ge 2+\sqrt7\)`,
+            String.raw`\(-2-\sqrt7<x<-2+\sqrt7\)`,
+            String.raw`No real solution`
           ],
           choiceWrap: false
         },
         {
           stem: String.raw`
-            <p>Consider the equation \(x^4 - 2x^2 - 6 = 0\).</p>
-            <p>After substituting \(y = x^2\), what can you conclude about the real solutions in \(x\)?</p>
+            <p>Solve by first completing the square. Then use the boundary values to decide the sign.</p>
+            <p>\(x^2 + 2x - 5 \ge 0\)</p>
           `,
           choices: [
-            String.raw`There are four real solutions: \(x = \pm\sqrt{1+\sqrt{7}}\) and \(x = \pm\sqrt{1-\sqrt{7}}\).`,
-            String.raw`There are no real solutions.`,
-            String.raw`There is one repeated real solution.`,
-            String.raw`The only real solutions are \(x = \pm(1+\sqrt{7})\).`,
-            String.raw`The real solutions are \(x = \pm\sqrt{1-\sqrt{7}}\).`,
-            String.raw`There are exactly two real solutions, \(x = \pm\sqrt{1+\sqrt{7}}\).`
+            String.raw`\(-1-\sqrt6\le x\le -1+\sqrt6\)`,
+            String.raw`\(x<-1-\sqrt6\) or \(x>-1+\sqrt6\)`,
+            String.raw`\(-1-\sqrt5\le x\le -1+\sqrt5\)`,
+            String.raw`\(x\le -1-\sqrt6\) or \(x\ge -1+\sqrt6\)`,
+            String.raw`\(x\le 1-\sqrt6\) or \(x\ge 1+\sqrt6\)`,
+            String.raw`All real numbers`
+          ],
+          choiceWrap: false
+        },
+        {
+          stem: String.raw`
+            <p>Solve the equation over the real numbers.</p>
+            <p>\(x^2 - 10x + 28 = 0\)</p>
+          `,
+          choices: [
+            String.raw`\(x=5\pm\sqrt3\)`,
+            String.raw`\(x=-5\pm\sqrt3\)`,
+            String.raw`No real solution`,
+            String.raw`\(x=5\) only`,
+            String.raw`\(x=5\pm 3\)`,
+            String.raw`\(x=-5\) only`
+          ],
+          choiceWrap: false
+        },
+        {
+          stem: String.raw`
+            <p>Solve the inequality over the real numbers.</p>
+            <p>\(x^2 + 4x + 9 < 0\)</p>
+          `,
+          choices: [
+            String.raw`\(x<-2-\sqrt5\) or \(x>-2+\sqrt5\)`,
+            String.raw`\(-2-\sqrt5<x<-2+\sqrt5\)`,
+            String.raw`\(x=-2\) only`,
+            String.raw`All real numbers`,
+            String.raw`No real solution`,
+            String.raw`\(x<-2\) or \(x>2\)`
+          ],
+          choiceWrap: false
+        },
+        {
+          stem: String.raw`
+            <p>Solve the equation. Notice that it has exactly one real solution.</p>
+            <p>\(4x^2 + 20x + 25 = 0\)</p>
+          `,
+          choices: [
+            String.raw`\(x=\dfrac52\) only`,
+            String.raw`\(x=-\dfrac52\) only`,
+            String.raw`\(x=-\dfrac52\) or \(x=\dfrac52\)`,
+            String.raw`No real solution`,
+            String.raw`\(x=-5\) only`,
+            String.raw`\(x=0\) or \(x=-\dfrac52\)`
+          ],
+          choiceWrap: false
+        },
+        {
+          stem: String.raw`
+            <p>Solve the inequality. Be careful: a square can be equal to zero in exactly one case.</p>
+            <p>\(x^2 - 8x + 16 \le 0\)</p>
+          `,
+          choices: [
+            String.raw`\(x\le 4\)`,
+            String.raw`\(x\ge 4\)`,
+            String.raw`\(x<4\) or \(x>4\)`,
+            String.raw`\(0\le x\le 8\)`,
+            String.raw`No real solution`,
+            String.raw`\(x=4\) only`
+          ],
+          choiceWrap: false
+        },
+        {
+          stem: String.raw`
+            <p>Without solving fully, determine the number of real solutions.</p>
+            <p>\(2x^2 - 12x + 18 = 0\)</p>
+          `,
+          choices: [
+            String.raw`2 real solutions, because the discriminant is positive.`,
+            String.raw`No real solution, because the discriminant is negative.`,
+            String.raw`2 real solutions, because the constant term is positive.`,
+            String.raw`1 real solution, because the discriminant is zero.`,
+            String.raw`No real solution, because the leading coefficient is positive.`,
+            String.raw`1 real solution, because \(x=0\) is a solution.`
+          ],
+          choiceWrap: false
+        },
+        {
+          stem: String.raw`
+            <p>Use the substitution \(y=x^2\). Then solve the inequality by factoring and examining signs.</p>
+            <p>\(x^4 - 5x^2 + 4 \le 0\)</p>
+          `,
+          choices: [
+            String.raw`\(-2\le x\le -1\) or \(1\le x\le 2\)`,
+            String.raw`\(-1\le x\le 1\)`,
+            String.raw`\(x\le -2\) or \(x\ge 2\)`,
+            String.raw`\(-2<x<-1\) or \(1<x<2\)`,
+            String.raw`\(-4\le x\le -1\) or \(1\le x\le 4\)`,
+            String.raw`No real solution`
           ],
           choiceWrap: false
         }
