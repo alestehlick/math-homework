@@ -7,199 +7,297 @@
 
   <script>
     /* =========================
-       Homework 4-Review — Chapter 4 Review (Algebra I)
+       Homework 4-Review — Equations and Word-Problem Models (Algebra I)
        Adapted for: /math-homework/assets/core-rich.js
 
        REQUIRED SOURCE REFERENCES (your provided sets):
-       - Type A uses Chapter 4 Review: #11, #14, #20, #22, #24
-       - Type B uses Chapter 4 Review: #26, #27, #31, #33, #34
-       - Type C uses Chapter 4 Review: #35, #36
-       - Model-reworked note: the chapter review was reorganized into a tighter mixed set.
-         Several open-response items were converted into diagnostic multiple-choice questions
-         so students must choose the correct solution, setup, or interpretation.
+       - Homework 4-6 — Absolute Value Equations: used as source for absolute-value equation types,
+         including two-solution cases and isolated absolute-value equations.
+       - Homework 4-7 — Equations with Fractions, Decimals, and Literal Forms: used as source for
+         equations with fractional coefficients and clearing denominators.
+       - Homework 4-8 — Coin and Interest Word Problems: used as source for coin-value equations and
+         simple-interest equations where unknown rates must be modeled.
+       - Homework 4-9 — Rate, Distance, and Formula Problems: used as source for meeting from opposite
+         directions and catching-up motion models.
+       - Homework 4-10 — Mixture Problems: used as source for concentration mixture models where the
+         unknown is the amount of one ingredient.
+
+       IMAGE FILES:
+       - User-supplied figure(s): none.
+       - Model-generated figure(s): none.
 
        IMAGE NAMING RULE:
-       No figures are required for this homework.
+       - No image files are required for this homework.
+
+       MODEL-AUTHORED / MODEL-REWORKED ITEMS:
+       - All 15 questions were re-authored as a compact review.
+       - Q1-Q4 ask students to solve direct equations, preserving fluency with absolute value and fractions.
+       - Q5-Q15 ask only for the correct equation/model, not the final numerical solution, so that the
+         emphasis falls on translating the situation into algebra.
+       - Extra emphasis was placed on word problems that naturally require more thought: coin-value models,
+         two-account interest-rate models, meeting/catching-up motion models, and concentration mixture models.
        ========================= */
 
     window.homeworkData = {
       classId : "Algebra1",
       id      : "Homework 4-Review",
-      title   : "Homework 4-Review — Chapter 4 Review",
+      title   : "Homework 4-Review — Equations and Word-Problem Models",
+
       graphics : String.raw``,
 
-      answerKey : ["B","E","C","A","D","F","B","C","A","E","D","B"],
+      /* Correct answers for Q1-Q15 */
+      answerKey : ["D","B","E","C","B","E","F","C","A","D","E","B","C","F","A"],
 
       questions : [
+
         {
           stem: String.raw`
             <p>Solve the equation:</p>
-            <p class="math">\(\,3x+9=10x+16\)</p>
+            <p class="math">\(|2x-5|=13\)</p>
           `,
           choices: [
-            String.raw`\(\,1\)`,
-            String.raw`\(-1\)`,
-            String.raw`\(\,7\)`,
-            String.raw`\(-7\)`,
-            String.raw`\(\,\dfrac{7}{3}\)`,
-            String.raw`\(-\dfrac{7}{3}\)`
-          ]
-        },
-        {
-          stem: String.raw`
-            <p>Solve the equation:</p>
-            <p class="math">\(\,3(x+2)=4(x-6)+2(x+5)\)</p>
-          `,
-          choices: [
-            String.raw`\(\,6\)`,
-            String.raw`\(-\dfrac{20}{3}\)`,
-            String.raw`\(\,\dfrac{14}{3}\)`,
-            String.raw`\(-6\)`,
-            String.raw`\(\,\dfrac{20}{3}\)`,
-            String.raw`\(\,20\)`
-          ]
-        },
-        {
-          stem: String.raw`
-            <p>Solve the equation:</p>
-            <p class="math">\(\,4c-2(c+9)+10=-14\)</p>
-          `,
-          choices: [
-            String.raw`\(\,3\)`,
-            String.raw`\(-6\)`,
-            String.raw`\(-3\)`,
-            String.raw`\(\,6\)`,
-            String.raw`\(-1\)`,
-            String.raw`\(\,1\)`
-          ]
-        },
-        {
-          stem: String.raw`
-            <p>Solve the equation:</p>
-            <p class="math">\(\,|5x+9|=9\)</p>
-          `,
-          choices: [
-            String.raw`\(\left\{-\dfrac{18}{5},\,0\right\}\)`,
-            String.raw`\(\left\{-\dfrac{9}{5},\,0\right\}\)`,
-            String.raw`\(\{-9,\,9\}\)`,
-            String.raw`\(\left\{-\dfrac{18}{5},\,\dfrac{18}{5}\right\}\)`,
-            String.raw`\(\left\{0,\,\dfrac{18}{5}\right\}\)`,
-            String.raw`\(\{0,\,9\}\)`
-          ]
-        },
-        {
-          stem: String.raw`
-            <p>Solve the equation:</p>
-            <p class="math">\(\,\dfrac{x}{2}+\dfrac{4x}{3}=\dfrac{22}{3}\)</p>
-          `,
-          choices: [
-            String.raw`\(\,\dfrac{11}{6}\)`,
-            String.raw`\(\,\dfrac{22}{5}\)`,
-            String.raw`\(\,\dfrac{44}{3}\)`,
-            String.raw`\(\,4\)`,
-            String.raw`\(\,3\)`,
-            String.raw`\(\,\dfrac{5}{4}\)`
-          ]
-        },
-        {
-          stem: String.raw`
-            <p>Solve the literal equation for <b>\(x\)</b>:</p>
-            <p class="math">\(\,x+b=3c\)</p>
-          `,
-          choices: [
-            String.raw`\(\,x=3bc\)`,
-            String.raw`\(\,x=3c+b\)`,
-            String.raw`\(\,x=\dfrac{3c}{b}\)`,
-            String.raw`\(\,x=b-3c\)`,
-            String.raw`\(\,x=\dfrac{b}{3c}\)`,
-            String.raw`\(\,x=3c-b\)`
-          ]
-        },
-        {
-          stem: String.raw`
-            <p>Solve the literal equation for <b>\(x\)</b>:</p>
-            <p class="math">\(\,\dfrac{ab}{x}=b\)</p>
-          `,
-          choices: [
-            String.raw`\(\,x=b\)`,
-            String.raw`\(\,x=a\)`,
-            String.raw`\(\,x=ab\)`,
-            String.raw`\(\,x=\dfrac{a}{b}\)`,
-            String.raw`\(\,x=\dfrac{b}{a}\)`,
-            String.raw`\(\,x=\dfrac{1}{a}\)`
-          ]
-        },
-        {
-          stem: String.raw`
-            <p>Bill has 9 more baseball cards than Jim. Together they have 3 more than 3 times the number of Jim’s cards.</p>
-            <p>How many cards does each have?</p>
-          `,
-          choices: [
-            String.raw`Jim: 9, Bill: 18`,
-            String.raw`Jim: 12, Bill: 21`,
-            String.raw`Jim: 6, Bill: 15`,
-            String.raw`Jim: 15, Bill: 24`,
-            String.raw`Jim: 3, Bill: 12`,
-            String.raw`Jim: 8, Bill: 17`
+            String.raw`\(\{-9,4\}\)`,
+            String.raw`\(\{-4,4\}\)`,
+            String.raw`\(\{4,9\}\)`,
+            String.raw`\(\{-4,9\}\)`,
+            String.raw`\(\{-9,-4\}\)`,
+            String.raw`\(\varnothing\)`
           ],
           choiceWrap: false
         },
+
         {
           stem: String.raw`
-            <p>The sum of two numbers is 111, and their difference is 63.</p>
-            <p>What are the two numbers?</p>
+            <p>Solve the equation:</p>
+            <p class="math">\(3|x+4|-5=10\)</p>
           `,
           choices: [
-            String.raw`87 and 24`,
-            String.raw`74 and 37`,
-            String.raw`63 and 48`,
-            String.raw`90 and 21`,
-            String.raw`96 and 15`,
-            String.raw`72 and 39`
+            String.raw`\(\{-1,9\}\)`,
+            String.raw`\(\{-9,1\}\)`,
+            String.raw`\(\{-4,5\}\)`,
+            String.raw`\(\{1,9\}\)`,
+            String.raw`\(\{-9,-1\}\)`,
+            String.raw`\(\varnothing\)`
           ],
           choiceWrap: false
         },
+
         {
           stem: String.raw`
-            <p>Find two consecutive integers such that the sum of 5 times the smaller and 3 times the larger is 67.</p>
+            <p>Solve the equation:</p>
+            <p class="math">\(\dfrac{x}{3}+\dfrac{x}{5}=16\)</p>
           `,
           choices: [
-            String.raw`7 and 8`,
-            String.raw`9 and 10`,
-            String.raw`6 and 7`,
-            String.raw`10 and 11`,
-            String.raw`8 and 9`,
-            String.raw`5 and 6`
+            String.raw`\(8\)`,
+            String.raw`\(15\)`,
+            String.raw`\(24\)`,
+            String.raw`\(28\)`,
+            String.raw`\(30\)`,
+            String.raw`\(48\)`
           ],
           choiceWrap: false
         },
+
         {
           stem: String.raw`
-            <p>Julie drives from Greenup to Newton at 46 mph, and Beth drives from Newton to Greenup at 34 mph. The towns are 120 miles apart, and they leave at the same time.</p>
-            <p>How long will it take them to meet?</p>
+            <p>Solve the equation:</p>
+            <p class="math">\(\dfrac{x-2}{4}+\dfrac{x+6}{3}=5\)</p>
           `,
           choices: [
-            String.raw`1 hour`,
-            String.raw`2 hours`,
-            String.raw`2.5 hours`,
-            String.raw`1.5 hours`,
-            String.raw`3 hours`,
-            String.raw`80 minutes`
+            String.raw`\(3\)`,
+            String.raw`\(4\)`,
+            String.raw`\(6\)`,
+            String.raw`\(7\)`,
+            String.raw`\(10\)`,
+            String.raw`\(14\)`
           ],
           choiceWrap: false
         },
+
         {
           stem: String.raw`
-            <p>A coffee merchant wants to make 50 pounds of a mixture that costs $3.19 per pound. One coffee sells for $3.35 per pound, and the other sells for $2.95 per pound.</p>
-            <p>How many pounds of each coffee should be mixed?</p>
+            <p>Martina has quarters and nickels worth a total of $3.25.</p>
+            <p>She has <b>17 more nickels than quarters</b>. Let \(q\) be the number of quarters.</p>
+            <p>Which equation correctly models the situation?</p>
           `,
           choices: [
-            String.raw`20 lb of the $3.35 coffee and 30 lb of the $2.95 coffee`,
-            String.raw`30 lb of the $3.35 coffee and 20 lb of the $2.95 coffee`,
-            String.raw`25 lb of each`,
-            String.raw`35 lb of the $3.35 coffee and 15 lb of the $2.95 coffee`,
-            String.raw`15 lb of the $3.35 coffee and 35 lb of the $2.95 coffee`,
-            String.raw`40 lb of the $3.35 coffee and 10 lb of the $2.95 coffee`
+            String.raw`\(0.25(q+17)+0.05q=3.25\)`,
+            String.raw`\(0.25q+0.05(q+17)=3.25\)`,
+            String.raw`\(25q+5(q+17)=3.25\)`,
+            String.raw`\(0.25q+0.05(q-17)=3.25\)`,
+            String.raw`\(q+(q+17)=3.25\)`,
+            String.raw`\(0.05q+0.25(q+17)=3.25\)`
+          ],
+          choiceWrap: false
+        },
+
+        {
+          stem: String.raw`
+            <p>A student has dimes and quarters worth a total of $7.50.</p>
+            <p>The number of quarters is <b>6 fewer than twice</b> the number of dimes. Let \(d\) be the number of dimes.</p>
+            <p>Which equation correctly models the situation?</p>
+          `,
+          choices: [
+            String.raw`\(0.10d+0.25(d-6)=7.50\)`,
+            String.raw`\(0.25d+0.10(2d-6)=7.50\)`,
+            String.raw`\(0.10d+0.25(2d+6)=7.50\)`,
+            String.raw`\(0.10(2d-6)+0.25d=7.50\)`,
+            String.raw`\(0.10d+0.25(2d-6)=7.50\)`,
+            String.raw`\(d+(2d-6)=7.50\)`
+          ],
+          choiceWrap: false
+        },
+
+        {
+          stem: String.raw`
+            <p>An investor puts $3000 into one account and $5000 into a second account.</p>
+            <p>The second account has an annual interest rate <b>2 percentage points higher</b> than the first account. Together, the accounts earn $360 in one year.</p>
+            <p>Let \(r\) be the annual interest rate of the first account, written as a decimal. Which equation correctly determines the rates?</p>
+          `,
+          choices: [
+            String.raw`\(3000r+5000(r+2)=360\)`,
+            String.raw`\(3000(r+0.02)+5000r=360\)`,
+            String.raw`\(3000r+5000(0.02r)=360\)`,
+            String.raw`\(3000(0.02)+5000r=360\)`,
+            String.raw`\(3000r+5000(r-0.02)=360\)`,
+            String.raw`\(3000r+5000(r+0.02)=360\)`
+          ],
+          choiceWrap: false
+        },
+
+        {
+          stem: String.raw`
+            <p>A bank lends $6000 at one annual interest rate and $8000 at a rate <b>1 percentage point lower</b>.</p>
+            <p>The combined interest for one year is $690.</p>
+            <p>Let \(r\) be the higher annual interest rate, written as a decimal. Which equation correctly determines the rates?</p>
+          `,
+          choices: [
+            String.raw`\(6000(r-0.01)+8000r=690\)`,
+            String.raw`\(6000r+8000(r+0.01)=690\)`,
+            String.raw`\(6000r+8000(r-0.01)=690\)`,
+            String.raw`\(6000r+8000(0.01r)=690\)`,
+            String.raw`\(6000(r+1)+8000r=690\)`,
+            String.raw`\(6000r+8000r-0.01=690\)`
+          ],
+          choiceWrap: false
+        },
+
+        {
+          stem: String.raw`
+            <p>Two cyclists leave from opposite towns at the same time and ride toward each other.</p>
+            <p>The towns are 275 miles apart. One cyclist rides 52 mph, and the other rides 58 mph.</p>
+            <p>Let \(t\) be the number of hours until they meet. Which equation correctly models the situation?</p>
+          `,
+          choices: [
+            String.raw`\(52t+58t=275\)`,
+            String.raw`\(58t-52t=275\)`,
+            String.raw`\(52+58t=275\)`,
+            String.raw`\(52t=58t+275\)`,
+            String.raw`\((52+58)t=2(275)\)`,
+            String.raw`\(\dfrac{275}{52}+\dfrac{275}{58}=t\)`
+          ],
+          choiceWrap: false
+        },
+
+        {
+          stem: String.raw`
+            <p>A bus leaves Harbor City and travels toward Ridge Town at 48 mph.</p>
+            <p>One hour later, a car leaves Ridge Town and travels toward Harbor City at 57 mph. The two towns are 315 miles apart.</p>
+            <p>Let \(t\) be the number of hours the car travels before they meet. Which equation correctly models the situation?</p>
+          `,
+          choices: [
+            String.raw`\(48t+57(t+1)=315\)`,
+            String.raw`\(48t+57t=315\)`,
+            String.raw`\(57t-48(t+1)=315\)`,
+            String.raw`\(48(t+1)+57t=315\)`,
+            String.raw`\(48(t-1)+57t=315\)`,
+            String.raw`\(48+57t=315\)`
+          ],
+          choiceWrap: false
+        },
+
+        {
+          stem: String.raw`
+            <p>A runner leaves a park traveling 6 mph.</p>
+            <p>A cyclist leaves the same park <b>1.5 hours later</b>, follows the same route, and travels 18 mph.</p>
+            <p>Let \(t\) be the number of hours the cyclist travels until catching the runner. Which equation correctly models the situation?</p>
+          `,
+          choices: [
+            String.raw`\(18(t+1.5)=6t\)`,
+            String.raw`\(18t+6(t+1.5)=0\)`,
+            String.raw`\(18t=6(t-1.5)\)`,
+            String.raw`\(18(t-1.5)=6t\)`,
+            String.raw`\(18t=6(t+1.5)\)`,
+            String.raw`\(18t-6t=1.5\)`
+          ],
+          choiceWrap: false
+        },
+
+        {
+          stem: String.raw`
+            <p>A truck leaves a warehouse traveling 45 mph.</p>
+            <p>A car leaves the same warehouse <b>40 minutes later</b>, follows the same route, and travels 60 mph.</p>
+            <p>Let \(t\) be the number of hours the car travels until catching the truck. Which equation correctly models the situation?</p>
+          `,
+          choices: [
+            String.raw`\(45t=60\left(t+\dfrac{2}{3}\right)\)`,
+            String.raw`\(60t=45\left(t+\dfrac{2}{3}\right)\)`,
+            String.raw`\(60\left(t+\dfrac{2}{3}\right)=45t\)`,
+            String.raw`\(60t=45\left(t-\dfrac{2}{3}\right)\)`,
+            String.raw`\(60t-45t=40\)`,
+            String.raw`\(60\left(t-\dfrac{2}{3}\right)=45t\)`
+          ],
+          choiceWrap: false
+        },
+
+        {
+          stem: String.raw`
+            <p>A laboratory assistant mixes a 20% salt solution with a 50% salt solution.</p>
+            <p>She wants to make 30 liters of a 38% salt solution.</p>
+            <p>Let \(x\) be the number of liters of the 20% solution. Which equation correctly determines the amount of each solution?</p>
+          `,
+          choices: [
+            String.raw`\(0.20x+0.50x=0.38(30)\)`,
+            String.raw`\(0.50x+0.20(30-x)=0.38(30)\)`,
+            String.raw`\(0.20x+0.50(30-x)=0.38(30)\)`,
+            String.raw`\(20x+50(30-x)=38\)`,
+            String.raw`\(0.20(30-x)+0.50(30-x)=0.38(30)\)`,
+            String.raw`\(0.38x+0.50(30-x)=0.20(30)\)`
+          ],
+          choiceWrap: false
+        },
+
+        {
+          stem: String.raw`
+            <p>A cleaner is made by mixing a 10% concentrate solution with a 40% concentrate solution.</p>
+            <p>The goal is to make 25 liters of a 28% concentrate solution.</p>
+            <p>Let \(x\) be the number of liters of the 40% solution. Which equation correctly determines the amount of each solution?</p>
+          `,
+          choices: [
+            String.raw`\(0.10x+0.40(25-x)=0.28(25)\)`,
+            String.raw`\(0.40x+0.10(25+x)=0.28(25)\)`,
+            String.raw`\(0.40x+0.10(25-x)=28\)`,
+            String.raw`\(0.28x+0.10(25-x)=0.40(25)\)`,
+            String.raw`\(0.40x+0.10x=0.28(25)\)`,
+            String.raw`\(0.40x+0.10(25-x)=0.28(25)\)`
+          ],
+          choiceWrap: false
+        },
+
+        {
+          stem: String.raw`
+            <p>A chemist has 6 liters of a 70% acid solution.</p>
+            <p>She wants to make 20 liters of a 25% acid solution by adding some 10% acid solution and some water.</p>
+            <p>Let \(x\) be the number of liters of 10% acid solution added. Since the final volume is 20 liters, the amount of water added is \(14-x\) liters.</p>
+            <p>Which equation correctly determines how much 10% solution should be added?</p>
+          `,
+          choices: [
+            String.raw`\(0.70(6)+0.10x+0(14-x)=0.25(20)\)`,
+            String.raw`\(0.70(6)+0.10(14-x)=0.25(20)\)`,
+            String.raw`\(0.70x+0.10(20-x)=0.25(20)\)`,
+            String.raw`\(0.70(6)+0.10x=0.25(14)\)`,
+            String.raw`\(0.70(14-x)+0.10x=0.25(20)\)`,
+            String.raw`\(0.70(6)+0.10x+0(14-x)=0.25(14)\)`
           ],
           choiceWrap: false
         }
@@ -211,6 +309,7 @@
   <script defer src="/math-homework/assets/core-rich.js"></script>
   <script defer src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
 </head>
+
 <body>
   <div id="hw-root">Loading…</div>
 </body>
