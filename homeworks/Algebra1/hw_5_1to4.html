@@ -1,0 +1,270 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Homework 5-1 to 5-4 (Algebra I)</title>
+
+  <script>
+    /* =========================
+       Homework 5-1 to 5-4 — Solving Linear Inequalities (Algebra I)
+       Adapted for: /math-homework/assets/core-rich.js
+
+       REQUIRED SOURCE REFERENCES:
+       - No external source set was provided for this homework.
+       - Model-authored set based on the teacher's stated scope: Algebra I, Sections 5-1 to 5-4,
+         solving linear inequalities from basic cases through inequalities with parentheses and brackets.
+
+       PEDAGOGICAL NOTES:
+       - Q1-Q2 orient students around one-step inequalities and the meaning of isolating the variable.
+       - Q3-Q6 target the main procedural distinction: operations that do not reverse the inequality symbol
+         versus multiplication/division by a negative number, including fractional coefficients.
+       - Q7-Q8 test the special cases where variable terms cancel, producing all real numbers or no solution.
+       - Q9-Q10 require collecting variable terms from both sides, including a negative-variable trap.
+       - Q11-Q14 use parentheses, fractions, and brackets to force attention to distribution, clearing denominators,
+         and simplification before solving.
+       - All questions are model-authored to serve the stated progression and to avoid over-spending time on
+         very basic cases.
+
+       IMAGE FILES:
+       - User-supplied figure(s): none.
+       - Model-generated figure(s): none.
+
+       IMAGE NAMING RULE:
+       - No image files are required for this homework.
+       ========================= */
+
+    window.homeworkData = {
+      classId : "Algebra1",
+      id      : "Homework 5-1 to 5-4",
+      title   : "Homework 5-1 to 5-4 — Solving Linear Inequalities",
+
+      graphics : String.raw``,
+
+      /* Correct answers for Q1-Q14 */
+      answerKey : ["A","D","B","E","C","A","F","B","D","C","E","A","C","B"],
+
+      questions : [
+        {
+          stem: String.raw`
+            <p>Solve the inequality.</p>
+            <p class="math">\(x-8\le 13\)</p>
+          `,
+          choices: [
+            String.raw`\(x\le 21\)`,
+            String.raw`\(x\ge 21\)`,
+            String.raw`\(x\le 5\)`,
+            String.raw`\(x\ge 5\)`,
+            String.raw`\(x<21\)`,
+            String.raw`\(x>21\)`
+          ]
+        },
+
+        {
+          stem: String.raw`
+            <p>Solve the inequality. Be careful about which expression contains the variable.</p>
+            <p class="math">\(6-y>14\)</p>
+          `,
+          choices: [
+            String.raw`\(y>-8\)`,
+            String.raw`\(y<8\)`,
+            String.raw`\(y>8\)`,
+            String.raw`\(y<-8\)`,
+            String.raw`\(y<-20\)`,
+            String.raw`\(y>20\)`
+          ]
+        },
+
+        {
+          stem: String.raw`
+            <p>Solve the inequality.</p>
+            <p class="math">\(4m-9\ge 15\)</p>
+          `,
+          choices: [
+            String.raw`\(m\le 6\)`,
+            String.raw`\(m\ge 6\)`,
+            String.raw`\(m\ge \frac{3}{2}\)`,
+            String.raw`\(m\le \frac{3}{2}\)`,
+            String.raw`\(m\ge 24\)`,
+            String.raw`\(m\le 24\)`
+          ]
+        },
+
+        {
+          stem: String.raw`
+            <p>Solve the inequality. Notice the negative coefficient of the variable.</p>
+            <p class="math">\(-3a+7<22\)</p>
+          `,
+          choices: [
+            String.raw`\(a<-5\)`,
+            String.raw`\(a>5\)`,
+            String.raw`\(a<5\)`,
+            String.raw`\(a>-15\)`,
+            String.raw`\(a>-5\)`,
+            String.raw`\(a<15\)`
+          ]
+        },
+
+        {
+          stem: String.raw`
+            <p>Solve the inequality.</p>
+            <p class="math">\(\frac{2}{5}p-3\le 9\)</p>
+          `,
+          choices: [
+            String.raw`\(p\ge 30\)`,
+            String.raw`\(p\le \frac{12}{5}\)`,
+            String.raw`\(p\le 30\)`,
+            String.raw`\(p\ge \frac{12}{5}\)`,
+            String.raw`\(p\le 15\)`,
+            String.raw`\(p\ge 15\)`
+          ]
+        },
+
+        {
+          stem: String.raw`
+            <p>Solve the inequality. This problem has both a fraction and a negative coefficient.</p>
+            <p class="math">\(-\frac{3}{4}r+5\ge -7\)</p>
+          `,
+          choices: [
+            String.raw`\(r\le 16\)`,
+            String.raw`\(r\ge 16\)`,
+            String.raw`\(r\le -16\)`,
+            String.raw`\(r\ge -16\)`,
+            String.raw`\(r\le 9\)`,
+            String.raw`\(r\ge 9\)`
+          ]
+        },
+
+        {
+          stem: String.raw`
+            <p>Solve the inequality. Do not assume that every linear inequality has a boundary number.</p>
+            <p class="math">\(2x+5<13+2x\)</p>
+          `,
+          choices: [
+            String.raw`\(x<4\)`,
+            String.raw`\(x>4\)`,
+            String.raw`\(x<8\)`,
+            String.raw`\(x>8\)`,
+            String.raw`No solution`,
+            String.raw`All real numbers`
+          ],
+          choiceWrap: false
+        },
+
+        {
+          stem: String.raw`
+            <p>Solve the inequality. First simplify by comparing the variable terms on both sides.</p>
+            <p class="math">\(5w+10<5w+6\)</p>
+          `,
+          choices: [
+            String.raw`All real numbers`,
+            String.raw`No solution`,
+            String.raw`\(w<4\)`,
+            String.raw`\(w>4\)`,
+            String.raw`\(w<-4\)`,
+            String.raw`\(w>-4\)`
+          ],
+          choiceWrap: false
+        },
+
+        {
+          stem: String.raw`
+            <p>Solve the inequality.</p>
+            <p class="math">\(5n-4\ge 2n+11\)</p>
+          `,
+          choices: [
+            String.raw`\(n\le 5\)`,
+            String.raw`\(n\ge \frac{7}{3}\)`,
+            String.raw`\(n\le \frac{7}{3}\)`,
+            String.raw`\(n\ge 5\)`,
+            String.raw`\(n\ge 15\)`,
+            String.raw`\(n\le 15\)`
+          ]
+        },
+
+        {
+          stem: String.raw`
+            <p>Solve the inequality. This time, moving the variable terms together produces a negative coefficient.</p>
+            <p class="math">\(7-2t<3t+22\)</p>
+          `,
+          choices: [
+            String.raw`\(t<-3\)`,
+            String.raw`\(t>3\)`,
+            String.raw`\(t>-3\)`,
+            String.raw`\(t<3\)`,
+            String.raw`\(t>-15\)`,
+            String.raw`\(t<15\)`
+          ]
+        },
+
+        {
+          stem: String.raw`
+            <p>Solve the inequality. Distribute first, then collect like terms.</p>
+            <p class="math">\(3(2x-5)\le 4x+7\)</p>
+          `,
+          choices: [
+            String.raw`\(x\ge 11\)`,
+            String.raw`\(x\le -11\)`,
+            String.raw`\(x\ge -11\)`,
+            String.raw`\(x<11\)`,
+            String.raw`\(x\le 11\)`,
+            String.raw`\(x\le 1\)`
+          ]
+        },
+
+        {
+          stem: String.raw`
+            <p>Solve the inequality. Watch both the negative sign outside the parentheses and the inequality direction at the end.</p>
+            <p class="math">\(-2(3y-4)>5y+19\)</p>
+          `,
+          choices: [
+            String.raw`\(y<-1\)`,
+            String.raw`\(y>-1\)`,
+            String.raw`\(y<1\)`,
+            String.raw`\(y>1\)`,
+            String.raw`\(y<-\frac{11}{19}\)`,
+            String.raw`\(y>\frac{11}{19}\)`
+          ]
+        },
+
+        {
+          stem: String.raw`
+            <p>Solve the inequality. A good first step is to clear the denominators.</p>
+            <p class="math">\(\frac{x-3}{4}+2<\frac{x+5}{2}\)</p>
+          `,
+          choices: [
+            String.raw`\(x<-5\)`,
+            String.raw`\(x>5\)`,
+            String.raw`\(x>-5\)`,
+            String.raw`\(x<5\)`,
+            String.raw`\(x>-13\)`,
+            String.raw`\(x<13\)`
+          ]
+        },
+
+        {
+          stem: String.raw`
+            <p>Solve the inequality. Simplify the bracketed expression before isolating the variable.</p>
+            <p class="math">\(2(3q-1)-[q+4(q-2)]\le 7\)</p>
+          `,
+          choices: [
+            String.raw`\(q\ge 1\)`,
+            String.raw`\(q\le 1\)`,
+            String.raw`\(q\le -1\)`,
+            String.raw`\(q\ge -1\)`,
+            String.raw`\(q\le 7\)`,
+            String.raw`\(q\ge 7\)`
+          ]
+        }
+      ]
+    };
+  </script>
+
+  <link rel="stylesheet" href="/math-homework/assets/core-rich.css" />
+  <script defer src="/math-homework/assets/core-rich.js"></script>
+  <script defer src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+</head>
+<body>
+  <div id="hw-root">Loading…</div>
+</body>
+</html>
