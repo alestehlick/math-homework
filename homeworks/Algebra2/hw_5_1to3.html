@@ -1,0 +1,294 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Homework 5-1 to 5-3 (Algebra II)</title>
+
+  <script>
+    /* =========================
+       Homework 5-1 to 5-3 — Quadratic Functions (Algebra II)
+       Adapted for: /math-homework/assets/core-rich.js
+
+       REQUIRED SOURCE REFERENCES:
+       - No external textbook exercise set was supplied for this request.
+       - The set is model-authored from the teacher's stated classroom development:
+         y = ax^2 as the simplest case; the roles of a, b, c in y = ax^2 + bx + c;
+         the interpretation of c as the y-intercept; the interpretation of b as the
+         slope of the tangent line at the y-intercept; and the way horizontal/vertical
+         shifts of a vertex-at-origin parabola generate b and c in expanded form.
+
+       MODEL-AUTHORED / MODEL-REWORKED ITEMS:
+       - Q1-Q3 build the simplest case y = ax^2: sign, upward/downward opening,
+         and curvature/width as controlled by |a|.
+       - Q4-Q6 stabilize c and b in concrete formulas, including a shifted parabola.
+       - Q7-Q9 use sketches to force students to read signs of a, b, and c from the graph.
+       - Q10 formalizes the tangent-at-y-intercept argument using the one-intersection condition.
+       - Q11-Q15 synthesize shifted form, comparison of coefficients, reconstruction from
+         tangent/intercept data, and a final conceptual separation of the roles of a, b, c.
+
+       IMAGE FILES:
+       - User-supplied figure(s): none.
+       - Model-generated figure(s): 5-1to3-3.png, 5-1to3-7.png, 5-1to3-8.png, 5-1to3-9.png
+
+       IMAGE NAMING RULE:
+       - Since this homework covers a section range, model-generated figures use the
+         homework prefix 5-1to3 followed by final homework question numbering.
+       - PNG files live in the SAME folder as this HTML.
+       ========================= */
+
+    window.homeworkData = {
+      classId : "Algebra2",
+      id      : "Homework 5-1 to 5-3",
+      title   : "Homework 5-1 to 5-3 — Quadratic Functions",
+
+      graphics : String.raw``,
+
+      answerKey : ["A","C","A","E","C","D","A","E","C","B","A","A","A","A","A"],
+
+      questions : [
+        {
+          stem: String.raw`
+            <p>A parabola of the form \(y=ax^2\) has vertex \((0,0)\), opens downward, and passes through the point \((3,-18)\). Determine \(a\), and compare its curvature with the graph of \(y=-x^2\).</p>
+          `,
+          choices: [
+            String.raw`\(a=-2\); it is more curved, or narrower, than \(y=-x^2\).`,
+            String.raw`\(a=2\); it is more curved, or narrower, than \(y=-x^2\).`,
+            String.raw`\(a=-2\); it is less curved, or wider, than \(y=-x^2\).`,
+            String.raw`\(a=-\tfrac12\); it is less curved, or wider, than \(y=-x^2\).`,
+            String.raw`\(a=-18\); it is more curved, or narrower, than \(y=-x^2\).`,
+            String.raw`\(a=-6\); it has the same curvature as \(y=-x^2\).`
+          ],
+          choiceWrap: false
+        },
+        {
+          stem: String.raw`
+            <p>Which equation has a graph that opens downward and is less curved, or wider, than the graph of \(y=-x^2\)?</p>
+          `,
+          choices: [
+            String.raw`\(y=-4x^2\)`,
+            String.raw`\(y=4x^2\)`,
+            String.raw`\(y=-\tfrac14x^2\)`,
+            String.raw`\(y=\tfrac14x^2\)`,
+            String.raw`\(y=-\tfrac32x^2\)`,
+            String.raw`\(y=\tfrac32x^2\)`
+          ]
+        },
+        {
+          stem: String.raw`
+            <p><b>Refer to Figure 1.</b> The four curves have equations of the form \(y=ax^2\). Which statement correctly compares the signs and curvatures of the four graphs?</p>
+          `,
+          media: String.raw`
+            <figure>
+              <img src="5-1to3-3.png" alt="Four parabolas with vertex at the origin, labeled P, Q, R, and S" style="max-width: 420px;" />
+              <figcaption>Figure 1</figcaption>
+            </figure>
+          `,
+          choices: [
+            String.raw`\(P,Q,R\) have positive \(a\), \(S\) has negative \(a\), and \(|a_P|<|a_Q|<|a_S|<|a_R|\).`,
+            String.raw`\(P,Q,R\) have positive \(a\), \(S\) has negative \(a\), and \(|a_P|<|a_Q|<|a_R|<|a_S|\).`,
+            String.raw`All four curves have positive \(a\), because all four have vertex at the origin.`,
+            String.raw`Curve \(S\) must have the largest \(|a|\), because it opens downward.`,
+            String.raw`Curve \(P\) has negative \(a\), because it is the widest graph.`,
+            String.raw`The sign of \(a\) cannot be determined from the sketch. It requires the equation.`
+          ],
+          choiceWrap: false
+        },
+        {
+          stem: String.raw`
+            <p>For the quadratic function \(y=-2x^2+5x-3\), determine the \(y\)-intercept and the slope of the tangent line at the \(y\)-intercept.</p>
+          `,
+          choices: [
+            String.raw`The \(y\)-intercept is \((0,-2)\), and the tangent slope is \(5\).`,
+            String.raw`The \(y\)-intercept is \((0,5)\), and the tangent slope is \(-3\).`,
+            String.raw`The \(y\)-intercept is \((0,-3)\), and the tangent slope is \(-2\).`,
+            String.raw`The \(y\)-intercept is \((0,5)\), and the tangent slope is \(-2\).`,
+            String.raw`The \(y\)-intercept is \((0,-3)\), and the tangent slope is \(5\).`,
+            String.raw`The \(y\)-intercept is \((0,3)\), and the tangent slope is \(-5\).`
+          ],
+          choiceWrap: false
+        },
+        {
+          stem: String.raw`
+            <p>A quadratic function has the form \(y=ax^2+bx+c\). Its graph crosses the \(y\)-axis at \((0,7)\), and the tangent line at that point is \(y=-4x+7\). Which coefficients are forced by this information?</p>
+          `,
+          choices: [
+            String.raw`\(a=-4\) and \(c=7\); \(b\) is not forced.`,
+            String.raw`\(b=7\) and \(c=-4\); \(a\) is not forced.`,
+            String.raw`\(b=-4\) and \(c=7\); \(a\) is not forced.`,
+            String.raw`Only \(c=7\) is forced. The slope of the tangent does not determine a coefficient.`,
+            String.raw`\(a=-4\) and \(b=7\); \(c\) is not forced.`,
+            String.raw`\(a=-4\), \(b=-4\), and \(c=7\) are all forced.`
+          ],
+          choiceWrap: false
+        },
+        {
+          stem: String.raw`
+            <p>The graph of \(y=2x^2\) is shifted right \(3\) units and up \(1\) unit. Which expanded equation and tangent line at the \(y\)-intercept are correct?</p>
+          `,
+          choices: [
+            String.raw`\(y=2x^2+12x+19\); tangent line \(y=12x+19\)`,
+            String.raw`\(y=2x^2-6x+7\); tangent line \(y=-6x+7\)`,
+            String.raw`\(y=2x^2-12x+19\); tangent line \(y=19x-12\)`,
+            String.raw`\(y=2x^2-12x+19\); tangent line \(y=-12x+19\)`,
+            String.raw`\(y=2x^2+12x+19\); tangent line \(y=-12x+19\)`,
+            String.raw`\(y=2x^2-12x+17\); tangent line \(y=-12x+17\)`
+          ],
+          choiceWrap: false
+        },
+        {
+          stem: String.raw`
+            <p><b>Refer to Figure 2.</b> The graph is a quadratic function \(y=ax^2+bx+c\). Determine the signs of \(a\), \(b\), and \(c\).</p>
+          `,
+          media: String.raw`
+            <figure>
+              <img src="5-1to3-7.png" alt="Upward-opening parabola with positive y-intercept and decreasing tangent at the y-intercept" style="max-width: 420px;" />
+              <figcaption>Figure 2</figcaption>
+            </figure>
+          `,
+          choices: [
+            String.raw`\(a>0,\ b<0,\ c>0\)`,
+            String.raw`\(a>0,\ b>0,\ c>0\)`,
+            String.raw`\(a<0,\ b<0,\ c>0\)`,
+            String.raw`\(a>0,\ b<0,\ c<0\)`,
+            String.raw`\(a<0,\ b>0,\ c>0\)`,
+            String.raw`\(a>0,\ b=0,\ c>0\)`
+          ]
+        },
+        {
+          stem: String.raw`
+            <p><b>Refer to Figure 3.</b> The graph is a quadratic function \(y=ax^2+bx+c\). Determine the signs of \(a\), \(b\), and \(c\).</p>
+          `,
+          media: String.raw`
+            <figure>
+              <img src="5-1to3-8.png" alt="Downward-opening parabola with negative y-intercept and increasing tangent at the y-intercept" style="max-width: 420px;" />
+              <figcaption>Figure 3</figcaption>
+            </figure>
+          `,
+          choices: [
+            String.raw`\(a<0,\ b<0,\ c<0\)`,
+            String.raw`\(a>0,\ b>0,\ c<0\)`,
+            String.raw`\(a<0,\ b>0,\ c>0\)`,
+            String.raw`\(a>0,\ b<0,\ c<0\)`,
+            String.raw`\(a<0,\ b>0,\ c<0\)`,
+            String.raw`\(a<0,\ b=0,\ c<0\)`
+          ]
+        },
+        {
+          stem: String.raw`
+            <p><b>Refer to Figure 4.</b> Which equation has the opening direction, curvature, \(y\)-intercept, and tangent line shown in the sketch?</p>
+          `,
+          media: String.raw`
+            <figure>
+              <img src="5-1to3-9.png" alt="Downward-opening parabola with y-intercept 2 and tangent line y equals negative x plus 2" style="max-width: 420px;" />
+              <figcaption>Figure 4</figcaption>
+            </figure>
+          `,
+          choices: [
+            String.raw`\(y=\tfrac12x^2-x+2\)`,
+            String.raw`\(y=-\tfrac12x^2+x+2\)`,
+            String.raw`\(y=-\tfrac12x^2-x+2\)`,
+            String.raw`\(y=-2x^2-x+2\)`,
+            String.raw`\(y=-\tfrac12x^2-x-2\)`,
+            String.raw`\(y=-\tfrac12x^2-2x+1\)`
+          ]
+        },
+        {
+          stem: String.raw`
+            <p>A line through the \(y\)-intercept of \(y=ax^2+bx+c\) with slope \(m\) has equation \(y=mx+c\). Solving the system gives</p>
+            <p class="math">\[ax^2+bx+c=mx+c,\quad \text{so}\quad ax^2+(b-m)x=0.\]</p>
+            <p>Which conclusion correctly explains the slope of the tangent line at the \(y\)-intercept?</p>
+          `,
+          choices: [
+            String.raw`The tangent slope is \(a\), because \(a\) controls the curvature of the parabola.`,
+            String.raw`The tangent slope is \(b\), because when \(m=b\), the intersection equation becomes \(ax^2=0\), giving only \(x=0\).`,
+            String.raw`The tangent slope is \(c\), because \(c\) is the \(y\)-intercept.`,
+            String.raw`The tangent slope is \(-b\), because the tangent line must cancel the middle term of the quadratic.`,
+            String.raw`Every value of \(m\) works, because every line through the \(y\)-intercept touches the graph there.`,
+            String.raw`No such tangent line exists unless \(c=0\), because otherwise the graph does not pass through the origin.`
+          ],
+          choiceWrap: false
+        },
+        {
+          stem: String.raw`
+            <p>The equation \(y=3(x+2)^2-5\) comes from shifting the parabola \(y=3x^2\) left \(2\) units and down \(5\) units. In expanded form, it is \(y=3x^2+12x+7\). Which statement correctly interprets the coefficients in the expanded form?</p>
+          `,
+          choices: [
+            String.raw`\(a=3\) means the graph opens upward with the same curvature as \(y=3x^2\); \(b=12\) is the tangent slope at the \(y\)-intercept; \(c=7\) is the \(y\)-intercept.`,
+            String.raw`\(b=12\) means the vertex has \(x\)-coordinate \(12\), and \(c=7\) means the graph was shifted up \(7\) units.`,
+            String.raw`\(c=7\) means the original graph was shifted down \(7\) units.`,
+            String.raw`\(a=3\) gives the \(y\)-intercept, \(b=12\) gives the opening direction, and \(c=7\) gives the curvature.`,
+            String.raw`\(b=12\) means the whole parabola has constant slope \(12\).`,
+            String.raw`The expanded form should still have \(c=-5\), because the graph was shifted down \(5\) units.`
+          ],
+          choiceWrap: false
+        },
+        {
+          stem: String.raw`
+            <p>Compare the two quadratic functions</p>
+            <p class="math">\[P: y=2x^2+7x-5,\qquad Q: y=2x^2-7x-5.\]</p>
+            <p>Which statement is correct?</p>
+          `,
+          choices: [
+            String.raw`They have the same \(y\)-intercept and the same opening direction and curvature, but the tangent slopes at the \(y\)-intercept are opposite.`,
+            String.raw`They have the same tangent slope at the \(y\)-intercept, but different \(y\)-intercepts.`,
+            String.raw`They have the same \(y\)-intercept, but one opens upward and the other opens downward.`,
+            String.raw`They must have the same vertex, because they have the same \(a\) and \(c\).`,
+            String.raw`They have different curvatures, because the sign of \(b\) is different.`,
+            String.raw`They are the same graph shifted vertically, because only the middle term changed.`
+          ],
+          choiceWrap: false
+        },
+        {
+          stem: String.raw`
+            <p>A quadratic function \(y=ax^2+bx+c\) has \(y\)-intercept \((0,2)\). The tangent line at the \(y\)-intercept is \(y=-3x+2\). The graph also passes through \((2,0)\). Determine the equation of the quadratic.</p>
+          `,
+          choices: [
+            String.raw`\(y=x^2-3x+2\)`,
+            String.raw`\(y=x^2+3x+2\)`,
+            String.raw`\(y=-x^2-3x+2\)`,
+            String.raw`\(y=x^2-3x-2\)`,
+            String.raw`\(y=2x^2-3x+2\)`,
+            String.raw`\(y=-3x^2+x+2\)`
+          ]
+        },
+        {
+          stem: String.raw`
+            <p>A parabola \(y=ax^2+bx+c\) opens upward, crosses the \(y\)-axis below the \(x\)-axis, and is rising at the point where it crosses the \(y\)-axis. Which equation could describe such a graph?</p>
+          `,
+          choices: [
+            String.raw`\(y=3x^2+2x-5\)`,
+            String.raw`\(y=3x^2-2x-5\)`,
+            String.raw`\(y=-3x^2+2x-5\)`,
+            String.raw`\(y=3x^2+2x+5\)`,
+            String.raw`\(y=-3x^2-2x-5\)`,
+            String.raw`\(y=3x^2-5\)`
+          ]
+        },
+        {
+          stem: String.raw`
+            <p>Which description correctly separates the roles of the coefficients in \(y=ax^2+bx+c\) at the level studied in this homework?</p>
+          `,
+          choices: [
+            String.raw`\(a\) controls the opening direction and curvature; \(b\) gives the tangent slope at the \(y\)-intercept; \(c\) gives the \(y\)-intercept.`,
+            String.raw`\(a\) gives the \(y\)-intercept; \(b\) controls the opening direction and curvature; \(c\) gives the tangent slope at the \(y\)-intercept.`,
+            String.raw`\(a\) only tells where the vertex is; \(b\) gives the \(y\)-intercept; \(c\) controls the opening direction.`,
+            String.raw`\(b\) gives the \(x\)-coordinate of the vertex, \(c\) gives the vertical shift from the vertex, and \(a\) gives the \(y\)-intercept.`,
+            String.raw`\(c\) tells where the graph crosses the \(x\)-axis; the sign of \(b\) tells whether the graph opens upward or downward; \(a\) gives the tangent slope.`,
+            String.raw`None of the coefficients can be read meaningfully from the graph without first solving for the \(x\)-intercepts.`
+          ],
+          choiceWrap: false
+        }
+      ]
+    };
+  </script>
+
+  <link rel="stylesheet" href="/math-homework/assets/core-rich.css" />
+  <script defer src="/math-homework/assets/core-rich.js"></script>
+  <script defer src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+</head>
+
+<body>
+  <div id="hw-root">Loading…</div>
+</body>
+</html>
