@@ -30,6 +30,10 @@
 
        IMAGE NAMING RULE:
        - No image files are required for this homework.
+
+       DISPLAY FIX:
+       - Inline MathJax delimiters were removed from the visible choices and stems in this copy.
+       - Inequality symbols are written directly as HTML-safe text to prevent raw code from displaying.
        ========================= */
 
     window.homeworkData = {
@@ -47,13 +51,13 @@
         {
           stem: String.raw`
             <p>Choose the simplest statement equivalent to the compound inequality.</p>
-            <p class="math">\(x>4\ \text{ and }\ x\ge 7\)</p>
+            <p class="math"><span class="math">x &gt; 4 and x ≥ 7</span></p>
           `,
           choices: [
-            String.raw`\(x>4\)`,
-            String.raw`\(x\ge 7\)`,
-            String.raw`\(4<x<7\)`,
-            String.raw`\(x=7\)`,
+            String.raw`<span class="math">x &gt; 4</span>`,
+            String.raw`<span class="math">x ≥ 7</span>`,
+            String.raw`<span class="math">4 &lt; x &lt; 7</span>`,
+            String.raw`<span class="math">x = 7</span>`,
             String.raw`All real numbers`,
             String.raw`No solution`
           ],
@@ -63,13 +67,13 @@
         {
           stem: String.raw`
             <p>Choose the simplest statement equivalent to the compound inequality.</p>
-            <p class="math">\(x<2\ \text{ or }\ x\le 5\)</p>
+            <p class="math"><span class="math">x &lt; 2 or x ≤ 5</span></p>
           `,
           choices: [
-            String.raw`\(x<2\)`,
-            String.raw`\(x\le 5\)`,
-            String.raw`\(2\le x\le 5\)`,
-            String.raw`\(x>5\)`,
+            String.raw`<span class="math">x &lt; 2</span>`,
+            String.raw`<span class="math">x ≤ 5</span>`,
+            String.raw`<span class="math">2 ≤ x ≤ 5</span>`,
+            String.raw`<span class="math">x &gt; 5</span>`,
             String.raw`All real numbers`,
             String.raw`No solution`
           ],
@@ -79,13 +83,13 @@
         {
           stem: String.raw`
             <p>Choose the simplest statement equivalent to the compound inequality.</p>
-            <p class="math">\(x\le -1\ \text{ and }\ x>4\)</p>
+            <p class="math"><span class="math">x ≤ -1 and x &gt; 4</span></p>
           `,
           choices: [
-            String.raw`\(x\le -1\)`,
-            String.raw`\(x>4\)`,
-            String.raw`\(-1<x\le 4\)`,
-            String.raw`\(x\le 4\)`,
+            String.raw`<span class="math">x ≤ -1</span>`,
+            String.raw`<span class="math">x &gt; 4</span>`,
+            String.raw`<span class="math">-1 &lt; x ≤ 4</span>`,
+            String.raw`<span class="math">x ≤ 4</span>`,
             String.raw`All real numbers`,
             String.raw`No solution`
           ],
@@ -95,13 +99,13 @@
         {
           stem: String.raw`
             <p>Choose the simplest statement equivalent to the compound inequality.</p>
-            <p class="math">\(x<3\ \text{ or }\ x\ge 3\)</p>
+            <p class="math"><span class="math">x &lt; 3 or x ≥ 3</span></p>
           `,
           choices: [
-            String.raw`\(x<3\)`,
-            String.raw`\(x\ge 3\)`,
-            String.raw`\(x=3\)`,
-            String.raw`\(x\ne 3\)`,
+            String.raw`<span class="math">x &lt; 3</span>`,
+            String.raw`<span class="math">x ≥ 3</span>`,
+            String.raw`<span class="math">x = 3</span>`,
+            String.raw`<span class="math">x ≠ 3</span>`,
             String.raw`All real numbers`,
             String.raw`No solution`
           ],
@@ -111,14 +115,14 @@
         {
           stem: String.raw`
             <p>Solve each inequality, then combine the results.</p>
-            <p class="math">\(2x-1<9\ \text{ and }\ x+3\ge 6\)</p>
+            <p class="math"><span class="math">2x-1 &lt; 9 and x+3 ≥ 6</span></p>
           `,
           choices: [
-            String.raw`\(x<5\)`,
-            String.raw`\(x\ge 3\)`,
-            String.raw`\(3\le x<5\)`,
-            String.raw`\(3<x\le 5\)`,
-            String.raw`\(x<3\ \text{ or }\ x\ge 5\)`,
+            String.raw`<span class="math">x &lt; 5</span>`,
+            String.raw`<span class="math">x ≥ 3</span>`,
+            String.raw`<span class="math">3 ≤ x &lt; 5</span>`,
+            String.raw`<span class="math">3 &lt; x ≤ 5</span>`,
+            String.raw`<span class="math">x &lt; 3 or x ≥ 5</span>`,
             String.raw`No solution`
           ],
           choiceWrap: false
@@ -127,14 +131,14 @@
         {
           stem: String.raw`
             <p>Solve each inequality, then combine the results.</p>
-            <p class="math">\(-3x+2>11\ \text{ or }\ 2x-7\ge 5\)</p>
+            <p class="math"><span class="math">-3x+2 &gt; 11 or 2x-7 ≥ 5</span></p>
           `,
           choices: [
-            String.raw`\(x<-3\ \text{ or }\ x\ge 6\)`,
-            String.raw`\(-3<x<6\)`,
-            String.raw`\(x>-3\ \text{ or }\ x\ge 6\)`,
-            String.raw`\(x\le -3\ \text{ or }\ x>6\)`,
-            String.raw`\(x<-3\ \text{ and }\ x\ge 6\)`,
+            String.raw`<span class="math">x &lt; -3 or x ≥ 6</span>`,
+            String.raw`<span class="math">-3 &lt; x &lt; 6</span>`,
+            String.raw`<span class="math">x &gt; -3 or x ≥ 6</span>`,
+            String.raw`<span class="math">x ≤ -3 or x &gt; 6</span>`,
+            String.raw`<span class="math">x &lt; -3 and x ≥ 6</span>`,
             String.raw`No solution`
           ],
           choiceWrap: false
@@ -143,13 +147,13 @@
         {
           stem: String.raw`
             <p>Solve each inequality, then combine the results.</p>
-            <p class="math">\(5-2x\le 13\ \text{ and }\ 4x+1>-7\)</p>
+            <p class="math"><span class="math">5-2x ≤ 13 and 4x+1 &gt; -7</span></p>
           `,
           choices: [
-            String.raw`\(x\ge -4\)`,
-            String.raw`\(x>-2\)`,
-            String.raw`\(-4\le x<-2\)`,
-            String.raw`\(x<-2\)`,
+            String.raw`<span class="math">x ≥ -4</span>`,
+            String.raw`<span class="math">x &gt; -2</span>`,
+            String.raw`<span class="math">-4 ≤ x &lt; -2</span>`,
+            String.raw`<span class="math">x &lt; -2</span>`,
             String.raw`All real numbers`,
             String.raw`No solution`
           ],
@@ -159,13 +163,13 @@
         {
           stem: String.raw`
             <p>Solve each inequality, then combine the results.</p>
-            <p class="math">\(3x-5\le 10\ \text{ or }\ -2x+1\le -9\)</p>
+            <p class="math"><span class="math">3x-5 ≤ 10 or -2x+1 ≤ -9</span></p>
           `,
           choices: [
-            String.raw`\(x\le 5\)`,
-            String.raw`\(x\ge 5\)`,
-            String.raw`\(x<5\ \text{ or }\ x>5\)`,
-            String.raw`\(x=5\)`,
+            String.raw`<span class="math">x ≤ 5</span>`,
+            String.raw`<span class="math">x ≥ 5</span>`,
+            String.raw`<span class="math">x &lt; 5 or x &gt; 5</span>`,
+            String.raw`<span class="math">x = 5</span>`,
             String.raw`All real numbers`,
             String.raw`No solution`
           ],
@@ -175,14 +179,14 @@
         {
           stem: String.raw`
             <p>Solve the compound inequality.</p>
-            <p class="math">\(-4\le 2x+6<12\)</p>
+            <p class="math"><span class="math">-4 ≤ 2x+6 &lt; 12</span></p>
           `,
           choices: [
-            String.raw`\(-4\le x<12\)`,
-            String.raw`\(-2\le x<6\)`,
-            String.raw`\(x\le -5\ \text{ or }\ x>3\)`,
-            String.raw`\(-5\le x<3\)`,
-            String.raw`\(-5<x\le 3\)`,
+            String.raw`<span class="math">-4 ≤ x &lt; 12</span>`,
+            String.raw`<span class="math">-2 ≤ x &lt; 6</span>`,
+            String.raw`<span class="math">x ≤ -5 or x &gt; 3</span>`,
+            String.raw`<span class="math">-5 ≤ x &lt; 3</span>`,
+            String.raw`<span class="math">-5 &lt; x ≤ 3</span>`,
             String.raw`All real numbers`
           ],
           choiceWrap: false
@@ -191,15 +195,15 @@
         {
           stem: String.raw`
             <p>Solve the compound inequality. Be careful when the middle expression has a negative coefficient.</p>
-            <p class="math">\(1<7-3x\le 16\)</p>
+            <p class="math"><span class="math">1 &lt; 7-3x ≤ 16</span></p>
           `,
           choices: [
-            String.raw`\(x<2\)`,
-            String.raw`\(x\ge -3\)`,
-            String.raw`\(-3<x\le 2\)`,
-            String.raw`\(x\le -3\ \text{ or }\ x>2\)`,
+            String.raw`<span class="math">x &lt; 2</span>`,
+            String.raw`<span class="math">x ≥ -3</span>`,
+            String.raw`<span class="math">-3 &lt; x ≤ 2</span>`,
+            String.raw`<span class="math">x ≤ -3 or x &gt; 2</span>`,
             String.raw`No solution`,
-            String.raw`\(-3\le x<2\)`
+            String.raw`<span class="math">-3 ≤ x &lt; 2</span>`
           ],
           choiceWrap: false
         },
@@ -207,14 +211,14 @@
         {
           stem: String.raw`
             <p>Solve each inequality, then combine the results. Pay attention to the parentheses and brackets.</p>
-            <p class="math">\(3(x-2)+4\le 2x+5\ \text{ and }\ 2[x-(3-x)]>6\)</p>
+            <p class="math"><span class="math">3(x-2)+4 ≤ 2x+5 and 2[x-(3-x)] &gt; 6</span></p>
           `,
           choices: [
-            String.raw`\(x\le 7\)`,
-            String.raw`\(x>3\)`,
-            String.raw`\(3\le x<7\)`,
-            String.raw`\(3<x\le 7\)`,
-            String.raw`\(x<3\ \text{ or }\ x\ge 7\)`,
+            String.raw`<span class="math">x ≤ 7</span>`,
+            String.raw`<span class="math">x &gt; 3</span>`,
+            String.raw`<span class="math">3 ≤ x &lt; 7</span>`,
+            String.raw`<span class="math">3 &lt; x ≤ 7</span>`,
+            String.raw`<span class="math">x &lt; 3 or x ≥ 7</span>`,
             String.raw`No solution`
           ],
           choiceWrap: false
@@ -223,14 +227,14 @@
         {
           stem: String.raw`
             <p>Solve each inequality, then combine the results. Notice whether the second inequality actually changes the final OR statement.</p>
-            <p class="math">\(2(3x-4)<4x+10\ \text{ or }\ 5-(x+2)\ge 2x-6\)</p>
+            <p class="math"><span class="math">2(3x-4) &lt; 4x+10 or 5-(x+2) ≥ 2x-6</span></p>
           `,
           choices: [
-            String.raw`\(x<9\)`,
-            String.raw`\(x\le 3\)`,
-            String.raw`\(x\le 9\)`,
-            String.raw`\(x<3\)`,
-            String.raw`\(3\le x<9\)`,
+            String.raw`<span class="math">x &lt; 9</span>`,
+            String.raw`<span class="math">x ≤ 3</span>`,
+            String.raw`<span class="math">x ≤ 9</span>`,
+            String.raw`<span class="math">x &lt; 3</span>`,
+            String.raw`<span class="math">3 ≤ x &lt; 9</span>`,
             String.raw`All real numbers`
           ],
           choiceWrap: false
@@ -239,14 +243,14 @@
         {
           stem: String.raw`
             <p>Solve the absolute value inequality by rewriting it as a compound inequality.</p>
-            <p class="math">\(|x-4|\le 6\)</p>
+            <p class="math"><span class="math">|x-4| ≤ 6</span></p>
           `,
           choices: [
-            String.raw`\(x\le -2\ \text{ or }\ x\ge 10\)`,
-            String.raw`\(-10\le x\le 2\)`,
-            String.raw`\(-2\le x\le 10\)`,
-            String.raw`\(-6\le x\le 6\)`,
-            String.raw`\(x<-2\ \text{ or }\ x>10\)`,
+            String.raw`<span class="math">x ≤ -2 or x ≥ 10</span>`,
+            String.raw`<span class="math">-10 ≤ x ≤ 2</span>`,
+            String.raw`<span class="math">-2 ≤ x ≤ 10</span>`,
+            String.raw`<span class="math">-6 ≤ x ≤ 6</span>`,
+            String.raw`<span class="math">x &lt; -2 or x &gt; 10</span>`,
             String.raw`No solution`
           ],
           choiceWrap: false
@@ -255,14 +259,14 @@
         {
           stem: String.raw`
             <p>Solve the absolute value inequality by rewriting it as an OR statement.</p>
-            <p class="math">\(|2x+3|>7\)</p>
+            <p class="math"><span class="math">|2x+3| &gt; 7</span></p>
           `,
           choices: [
-            String.raw`\(x<-5\ \text{ or }\ x>2\)`,
-            String.raw`\(x\le -5\ \text{ or }\ x\ge 2\)`,
-            String.raw`\(-5<x<2\)`,
-            String.raw`\(x<-2\ \text{ or }\ x>5\)`,
-            String.raw`\(x>-5\ \text{ or }\ x<2\)`,
+            String.raw`<span class="math">x &lt; -5 or x &gt; 2</span>`,
+            String.raw`<span class="math">x ≤ -5 or x ≥ 2</span>`,
+            String.raw`<span class="math">-5 &lt; x &lt; 2</span>`,
+            String.raw`<span class="math">x &lt; -2 or x &gt; 5</span>`,
+            String.raw`<span class="math">x &gt; -5 or x &lt; 2</span>`,
             String.raw`No solution`
           ],
           choiceWrap: false
@@ -271,14 +275,14 @@
         {
           stem: String.raw`
             <p>Choose the absolute value inequality equivalent to the compound statement.</p>
-            <p class="math">\(x<-4\ \text{ or }\ x>10\)</p>
+            <p class="math"><span class="math">x &lt; -4 or x &gt; 10</span></p>
           `,
           choices: [
-            String.raw`\(|x-4|>10\)`,
-            String.raw`\(|x-3|<7\)`,
-            String.raw`\(|x+3|>7\)`,
-            String.raw`\(|x-3|>7\)`,
-            String.raw`\(|x-7|>3\)`,
+            String.raw`<span class="math">|x-4| &gt; 10</span>`,
+            String.raw`<span class="math">|x-3| &lt; 7</span>`,
+            String.raw`<span class="math">|x+3| &gt; 7</span>`,
+            String.raw`<span class="math">|x-3| &gt; 7</span>`,
+            String.raw`<span class="math">|x-7| &gt; 3</span>`,
             String.raw`None of the statements above is correct.`
           ],
           choiceWrap: false
