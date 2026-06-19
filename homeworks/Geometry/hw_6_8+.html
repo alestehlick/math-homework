@@ -1,0 +1,371 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Homework 4-1 (Geometry, colored tkz-euclide figures)</title>
+
+  <script>
+    /* =========================
+       Homework 4-1 — Triangle Congruence Criteria and Proof Strategy (Geometry)
+
+       REQUIRED SOURCE REFERENCES:
+       - User-supplied source set: Pages from Notes Geom.pdf, pp. 1–5.
+       - Page 1 used for the general discussion of triangle congruence, the role of SAS as primitive case,
+         and the isosceles triangle theorem.
+       - Page 2 used for the ASA proof strategy.
+       - Page 3 used for the SSS proof strategy.
+       - Page 4 used for the Exterior Angle Theorem and the SAA proof strategy.
+       - Page 5 used for the contradiction flavor used to rule out SSA as a congruence criterion.
+
+       SOURCE EXERCISES:
+       - The notes are expository rather than numbered exercise sets, so no original exercise numbers exist.
+       - Q2, Q4, Q6, and Q8 are model-authored multiple-choice reconstructions of the main proof outlines
+         appearing in the notes.
+       - Q3, Q5, Q7, and Q9 are model-authored conceptual questions designed to test what each proof is really using.
+       - Q10–Q15 are model-authored extensions based on the same local theory, added to strengthen transfer,
+         structural understanding, and proof-oriented judgment.
+
+       IMAGE FILES:
+       - User-supplied figure(s): none.
+       - Model-generated figure(s): 4-1-tkz-color-2.png, 4-1-tkz-color-4.png, 4-1-tkz-color-6.png, 4-1-tkz-color-8.png,
+         4-1-tkz-color-10.png, 4-1-tkz-color-11.png, 4-1-tkz-color-12.png, 4-1-tkz-color-13.png, 4-1-tkz-color-14.png.
+
+       IMAGE NAMING RULE:
+       - All figures are model-generated and use final homework numbering.
+       - PNG files live in the SAME folder as this HTML.
+       ========================= */
+
+    window.homeworkData = {
+      classId : "Geometry",
+      id      : "Homework 4-1",
+      title   : "Homework 4-1 — Triangle Congruence Criteria and Proof Strategy",
+      graphics : String.raw``,
+      answerKey : ["B","C","A","D","E","B","C","F","D","A","B","C","E","A","D"],
+      questions : [
+        {
+          stem: String.raw`
+            <p>The definition of congruent triangles gives all six equalities of corresponding sides and angles. In your notes, however, the later congruence criteria are built from one primitive case.</p>
+            <p>Which criterion is taken as the primitive congruence axiom?</p>
+          `,
+          choices: [
+            String.raw`ASA`,
+            String.raw`SAS`,
+            String.raw`SSS`,
+            String.raw`SAA`,
+            String.raw`SSA`,
+            String.raw`AAA`
+          ],
+          choiceWrap: false
+        },
+        {
+          stem: String.raw`
+            <p>Refer to Figure 1. Suppose \\(\angle B \cong \angle B'\\), \\(BC \cong B'C'\\), and \\(\angle C \cong \angle C'\\).</p>
+            <p>In the proof of ASA, the auxiliary point \\(X\\) is placed on the ray from \\(B'\\) through \\(A'\\). Which ordering gives the correct main outline of the proof?</p>
+            <ol type="I">
+              <li>Use SAS to prove \\(\triangle ABC \cong \triangle XB'C'\\).</li>
+              <li>Construct \\(X\\) on the ray \\(B'A'\\) so that \\(B'X \cong BA\\).</li>
+              <li>Use the given angle equality at \\(C'\\), together with the congruence just obtained, to conclude that \\(\angle B'C'A' \cong \angle B'C'X\\).</li>
+              <li>Since \\(A'\\) and \\(X\\) lie on the same ray from \\(B'\\) and determine the same ray from \\(C'\\), conclude \\(X=A'\\).</li>
+              <li>Replace \\(X\\) by \\(A'\\) and conclude \\(\triangle ABC \cong \triangle A'B'C'\\).</li>
+            </ol>
+          `,
+          media: String.raw`
+            <figure>
+              <img src="4-1-tkz-color-2.png" alt="Two triangles for the ASA proof, with point X on the ray from B' through A'." />
+              <figcaption>Figure 1</figcaption>
+            </figure>
+          `,
+          choices: [
+            String.raw`I &rarr; II &rarr; III &rarr; IV &rarr; V`,
+            String.raw`II &rarr; III &rarr; I &rarr; IV &rarr; V`,
+            String.raw`II &rarr; I &rarr; III &rarr; IV &rarr; V`,
+            String.raw`II &rarr; I &rarr; IV &rarr; III &rarr; V`,
+            String.raw`III &rarr; II &rarr; I &rarr; IV &rarr; V`,
+            String.raw`II &rarr; III &rarr; IV &rarr; I &rarr; V`
+          ],
+          choiceWrap: false
+        },
+        {
+          stem: String.raw`
+            <p>In the ASA proof, what is the real purpose of constructing the point \\(X\\)?</p>
+          `,
+          choices: [
+            String.raw`It creates a comparison triangle so that SAS can be used first.`,
+            String.raw`It shows that \\(BC\\) is perpendicular to \\(B'C'\\).`,
+            String.raw`It lets us use the theorem that the angles of a triangle add to \\(180^\circ\\).`,
+            String.raw`It proves that \\(A'\\) is the midpoint of \\(BX\\).`,
+            String.raw`It forces both triangles to be right triangles.`,
+            String.raw`It makes \\(\triangle A'B'C'\\) isosceles.`
+          ],
+          choiceWrap: false
+        },
+        {
+          stem: String.raw`
+            <p>Refer to Figure 2. Suppose \\(AB \cong A'B'\\), \\(AC \cong A'C'\\), and \\(BC \cong B'C'\\).</p>
+            <p>Which ordering gives the correct main outline of the proof of SSS in your notes?</p>
+            <ol type="I">
+              <li>Construct a ray \\(A'Y\\) so that \\(\angle B'A'Y \cong \angle BAC\\), and on that ray choose \\(X\\) so that \\(A'X \cong AC\\).</li>
+              <li>Use SAS to prove \\(\triangle ABC \cong \triangle A'B'X\\).</li>
+              <li>Deduce \\(A'X \cong A'C'\\) and \\(B'X \cong B'C'\\), so \\(\triangle A'C'X\\) and \\(\triangle B'C'X\\) are isosceles.</li>
+              <li>Use those isosceles triangles to obtain angle equalities at \\(C'\\) and at \\(X\\).</li>
+              <li>Use those angle equalities, together with \\(A'C' \cong A'X\\) and \\(B'C' \cong B'X\\), to prove \\(\triangle A'C'B' \cong \triangle A'XB'\\).</li>
+              <li>Conclude \\(X=C'\\), and therefore \\(\triangle ABC \cong \triangle A'B'C'\\).</li>
+            </ol>
+          `,
+          media: String.raw`
+            <figure>
+              <img src="4-1-tkz-color-4.png" alt="Two triangles for the SSS proof, with an auxiliary ray from A' and a point X on it." />
+              <figcaption>Figure 2</figcaption>
+            </figure>
+          `,
+          choices: [
+            String.raw`II &rarr; I &rarr; III &rarr; IV &rarr; V &rarr; VI`,
+            String.raw`I &rarr; III &rarr; II &rarr; IV &rarr; V &rarr; VI`,
+            String.raw`I &rarr; II &rarr; IV &rarr; III &rarr; V &rarr; VI`,
+            String.raw`I &rarr; II &rarr; III &rarr; IV &rarr; V &rarr; VI`,
+            String.raw`I &rarr; II &rarr; III &rarr; V &rarr; IV &rarr; VI`,
+            String.raw`III &rarr; I &rarr; II &rarr; IV &rarr; V &rarr; VI`
+          ],
+          choiceWrap: false
+        },
+        {
+          stem: String.raw`
+            <p>In the proof of SSS, why do the isosceles triangles matter?</p>
+          `,
+          choices: [
+            String.raw`They show that \\(\triangle ABC\\) and \\(\triangle A'B'C'\\) are right triangles.`,
+            String.raw`They produce a midpoint needed for the Exterior Angle Theorem.`,
+            String.raw`They show that \\(A'B'\\) is the longest side, so the triangles must be congruent.`,
+            String.raw`They allow the use of the theorem that the angles of a triangle add to \\(180^\circ\\).`,
+            String.raw`They create angle equalities that ultimately force \\(X\\) to coincide with \\(C'\\).`,
+            String.raw`They show that \\(B'C'\\) must be perpendicular to \\(A'X\\).`
+          ],
+          choiceWrap: false
+        },
+        {
+          stem: String.raw`
+            <p>Refer to Figure 3. Let \\(e\\) be the exterior angle at \\(C\\).</p>
+            <p>Which ordering gives the correct main outline of the proof that an exterior angle is larger than either non-adjacent interior angle?</p>
+            <ol type="I">
+              <li>Let \\(M\\) be the midpoint of \\(AC\\).</li>
+              <li>Choose \\(P\\) on the ray \\(BM\\) so that \\(BM \cong MP\\).</li>
+              <li>Use SAS to prove \\(\triangle AMB \cong \triangle CMP\\).</li>
+              <li>Conclude that \\(\angle A \cong \angle ACP\\).</li>
+              <li>Since \\(\angle ACP\\) is only a part of the exterior angle \\(e\\), conclude that \\(e > \angle A\\).</li>
+              <li>Repeat the same idea symmetrically to obtain \\(e > \angle B\\).</li>
+            </ol>
+          `,
+          media: String.raw`
+            <figure>
+              <img src="4-1-tkz-color-6.png" alt="Triangle ABC with an exterior angle at C, midpoint M on AC, and point P on ray BM." />
+              <figcaption>Figure 3</figcaption>
+            </figure>
+          `,
+          choices: [
+            String.raw`II &rarr; I &rarr; III &rarr; IV &rarr; V &rarr; VI`,
+            String.raw`I &rarr; II &rarr; III &rarr; IV &rarr; V &rarr; VI`,
+            String.raw`I &rarr; III &rarr; II &rarr; IV &rarr; V &rarr; VI`,
+            String.raw`I &rarr; II &rarr; IV &rarr; III &rarr; V &rarr; VI`,
+            String.raw`I &rarr; II &rarr; III &rarr; V &rarr; IV &rarr; VI`,
+            String.raw`III &rarr; I &rarr; II &rarr; IV &rarr; V &rarr; VI`
+          ],
+          choiceWrap: false
+        },
+        {
+          stem: String.raw`
+            <p>After the proof has established \\(\angle A \cong \angle ACP\\), which observation is the one that finally yields \\(e > \angle A\\)?</p>
+          `,
+          choices: [
+            String.raw`Point \\(M\\) is the midpoint of \\(AC\\).`,
+            String.raw`The triangles \\(\triangle AMB\\) and \\(\triangle CMP\\) are similar.`,
+            String.raw`
+              \\(\angle ACP\\) is only a part of the exterior angle \\(e\\), so \\(e\\) is larger than \\(\angle ACP\\).
+            `,
+            String.raw`The segment \\(AC\\) must be congruent to \\(CP\\).`,
+            String.raw`The exterior angle equals \\(180^\circ-\angle C\\).`,
+            String.raw`The line \\(BM\\) is perpendicular to \\(AC\\).`
+          ],
+          choiceWrap: false
+        },
+        {
+          stem: String.raw`
+            <p>Refer to Figure 4. Suppose \\(BC \cong B'C'\\), \\(\angle B \cong \angle B'\\), and \\(\angle A \cong \angle A'\\).</p>
+            <p>Which ordering gives the correct main outline of the proof of SAA?</p>
+            <ol type="I">
+              <li>Assume first that \\(AB < A'B'\\), and choose \\(P\\) on the ray \\(BA\\) so that \\(BP \cong B'A'\\).</li>
+              <li>Use SAS to prove \\(\triangle PBC \cong \triangle A'B'C'\\).</li>
+              <li>Conclude that \\(\angle BPC \cong \angle A'\\), hence \\(\angle BPC \cong \angle A\\).</li>
+              <li>But \\(\angle BPC\\) is an exterior angle of \\(\triangle APC\\), so by the Exterior Angle Theorem it must be larger than \\(\angle A\\), a contradiction.</li>
+              <li>Argue similarly that \\(AB > A'B'\\) is also impossible.</li>
+              <li>Therefore \\(AB \cong A'B'\\), and now SAS gives \\(\triangle ABC \cong \triangle A'B'C'\\).</li>
+            </ol>
+          `,
+          media: String.raw`
+            <figure>
+              <img src="4-1-tkz-color-8.png" alt="Two triangles for the SAA proof, with an auxiliary point P on the ray from B through A." />
+              <figcaption>Figure 4</figcaption>
+            </figure>
+          `,
+          choices: [
+            String.raw`II &rarr; I &rarr; III &rarr; IV &rarr; V &rarr; VI`,
+            String.raw`I &rarr; III &rarr; II &rarr; IV &rarr; V &rarr; VI`,
+            String.raw`I &rarr; II &rarr; IV &rarr; III &rarr; V &rarr; VI`,
+            String.raw`I &rarr; II &rarr; III &rarr; V &rarr; IV &rarr; VI`,
+            String.raw`I &rarr; II &rarr; III &rarr; IV &rarr; VI &rarr; V`,
+            String.raw`I &rarr; II &rarr; III &rarr; IV &rarr; V &rarr; VI`
+          ],
+          choiceWrap: false
+        },
+        {
+          stem: String.raw`
+            <p>Which previously established result is indispensable in the proof of SAA just described?</p>
+          `,
+          choices: [
+            String.raw`SAS`,
+            String.raw`The isosceles triangle theorem`,
+            String.raw`The vertical angles theorem`,
+            String.raw`The Exterior Angle Theorem`,
+            String.raw`The theorem that the angles of a triangle add to \\(180^\circ\\)`,
+            String.raw`HL for right triangles`
+          ],
+          choiceWrap: false
+        },
+        {
+          stem: String.raw`
+            <p>Refer to Figure 5. To prove the isosceles triangle theorem, “if \\(AB \cong AC\\), then \\(\angle B \cong \angle C\\),” which pair of triangles should be compared?</p>
+          `,
+          media: String.raw`
+            <figure>
+              <img src="4-1-tkz-color-10.png" alt="Isosceles triangle ABC with AB and AC marked congruent." />
+              <figcaption>Figure 5</figcaption>
+            </figure>
+          `,
+          choices: [
+            String.raw`
+              \\(\triangle ABC\\) and \\(\triangle ACB\\), using SAS.
+            `,
+            String.raw`
+              \\(\triangle ABC\\) and \\(\triangle BAC\\), using ASA.
+            `,
+            String.raw`
+              \\(\triangle ABC\\) and \\(\triangle CAB\\), using SAA.
+            `,
+            String.raw`
+              \\(\triangle ABC\\) and a new triangle constructed outside it, using SSS.
+            `,
+            String.raw`No comparison is needed; the result follows immediately from the definition of isosceles triangle.`,
+            String.raw`The statement cannot be proved without the angle-sum theorem.`
+          ],
+          choiceWrap: false
+        },
+        {
+          stem: String.raw`
+            <p>Refer to Figure 6. To prove the converse isosceles triangle theorem, “if \\(\angle B \cong \angle C\\), then \\(AB \cong AC\\),” which justification is correct?</p>
+          `,
+          media: String.raw`
+            <figure>
+              <img src="4-1-tkz-color-11.png" alt="Triangle ABC with the base angles at B and C marked congruent." />
+              <figcaption>Figure 6</figcaption>
+            </figure>
+          `,
+          choices: [
+            String.raw`Compare \\(\triangle ABC\\) and \\(\triangle ACB\\) by SAS.`,
+            String.raw`Compare \\(\triangle ABC\\) and \\(\triangle ACB\\) by ASA.`,
+            String.raw`Compare \\(\triangle BAC\\) and \\(\triangle CAB\\) by SAA.`,
+            String.raw`Use the Exterior Angle Theorem at \\(A\\).`,
+            String.raw`No conclusion can be drawn without the theorem that the angles of a triangle add to \\(180^\circ\\).`,
+            String.raw`Compare \\(\triangle ABC\\) and \\(\triangle ACB\\) by AAA.`
+          ],
+          choiceWrap: false
+        },
+        {
+          stem: String.raw`
+            <p>Refer to Figure 7. Point \\(M\\) is the midpoint of \\(AB\\), and \\(PM \perp AB\\).</p>
+            <p>Which argument proves that \\(PA \cong PB\\)?</p>
+          `,
+          media: String.raw`
+            <figure>
+              <img src="4-1-tkz-color-12.png" alt="Segment AB with midpoint M, a perpendicular through M, and point P above the segment." />
+              <figcaption>Figure 7</figcaption>
+            </figure>
+          `,
+          choices: [
+            String.raw`\(\triangle PAB\) and \(\triangle PMB\) are congruent by SAA.`,
+            String.raw`\(\triangle PMA\) and \(\triangle PMB\) are similar by AA.`,
+            String.raw`\(\triangle PMA\) and \(\triangle PMB\) are congruent by SAS.`,
+            String.raw`The conclusion follows directly from the definition of midpoint.`,
+            String.raw`\(\triangle PAM\) and \(\triangle ABM\) are congruent by ASA.`,
+            String.raw`No congruence theorem applies here.`
+          ],
+          choiceWrap: false
+        },
+        {
+          stem: String.raw`
+            <p>Refer to Figure 8. Suppose \\(AB \cong AD\\) and \\(CB \cong CD\\).</p>
+            <p>Which pair of triangles should be compared first to show that \\(AC\\) bisects the angles at \\(A\\) and \\(C\\)?</p>
+          `,
+          media: String.raw`
+            <figure>
+              <img src="4-1-tkz-color-13.png" alt="Kite ABCD with diagonal AC drawn." />
+              <figcaption>Figure 8</figcaption>
+            </figure>
+          `,
+          choices: [
+            String.raw`Compare \\(\triangle ABC\\) and \\(\triangle BCD\\) by SSS.`,
+            String.raw`Compare \\(\triangle ABD\\) and \\(\triangle ACD\\) by SAS.`,
+            String.raw`Compare \\(\triangle ABC\\) and \\(\triangle ADC\\) by ASA.`,
+            String.raw`Compare \\(\triangle ACB\\) and \\(\triangle CAD\\) by SAA.`,
+            String.raw`Compare \\(\triangle ABC\\) and \\(\triangle ADC\\) by SSS.`,
+            String.raw`Compare \\(\triangle ABD\\) and \\(\triangle CBD\\) by SSS.`
+          ],
+          choiceWrap: false
+        },
+        {
+          stem: String.raw`
+            <p>Refer to Figure 9. The segment \\(AB\\) is fixed, the angle at \\(B\\) is fixed, and the segment from \\(A\\) to the third vertex has fixed length. The figure shows two different points, \\(C\\) and \\(D\\), both satisfying those conditions.</p>
+            <p>What does the figure show?</p>
+          `,
+          media: String.raw`
+            <figure>
+              <img src="4-1-tkz-color-14.png" alt="A fixed base AB with two possible third vertices C and D, showing the ambiguity of SSA." />
+              <figcaption>Figure 9</figcaption>
+            </figure>
+          `,
+          choices: [
+            String.raw`SSA does not determine a unique triangle, so it is not a congruence criterion.`,
+            String.raw`SAS is not a valid congruence criterion.`,
+            String.raw`No triangle can satisfy the given conditions.`,
+            String.raw`Whenever two sides are fixed, the third vertex is unique.`,
+            String.raw`The figure shows that AAA implies congruence.`,
+            String.raw`The Exterior Angle Theorem fails for one of the triangles.`
+          ],
+          choiceWrap: false
+        },
+        {
+          stem: String.raw`
+            <p>A student writes the following argument:</p>
+            <p>“We know that \\(AB \cong A'B'\\), \\(AC \cong A'C'\\), and \\(\angle B \cong \angle B'\\). Therefore the triangles are congruent by SAS.”</p>
+            <p>Which statement best identifies the flaw?</p>
+          `,
+          choices: [
+            String.raw`The student should have used SSS instead.`,
+            String.raw`The two known sides must be parallel.`,
+            String.raw`The given angle should be opposite both known sides.`,
+            String.raw`The known angle is not the included angle between the two known sides, so this is really SSA, not SAS.`,
+            String.raw`The argument fails because vertical angles were not used.`,
+            String.raw`The conclusion would be correct only for right triangles.`
+          ],
+          choiceWrap: false
+        }
+      ]
+    };
+  </script>
+
+  <link rel="stylesheet" href="/math-homework/assets/core-rich.css" />
+  <script defer src="/math-homework/assets/core-rich.js"></script>
+  <script defer src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+</head>
+<body>
+</body>
+</html>
