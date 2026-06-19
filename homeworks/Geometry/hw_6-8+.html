@@ -3,7 +3,7 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Homework 4-1 FINAL v3 no-conflict</title>
+  <title>Homework 4-1 (Geometry, colored tkz-euclide figures)</title>
 
   <script>
     /* =========================
@@ -28,8 +28,8 @@
 
        IMAGE FILES:
        - User-supplied figure(s): none.
-       - Model-generated figure(s): geom41-v3-fig1-ASA.png, geom41-v3-fig2-SSS.png, geom41-v3-fig3-exterior-angle.png, geom41-v3-fig4-SAA-corrected.png,
-         geom41-v3-fig5-isosceles.png, geom41-v3-fig6-converse-isosceles.png, geom41-v3-fig7-perpendicular-bisector.png, geom41-v3-fig8-kite.png, geom41-v3-fig9-SSA-ambiguity-corrected.png.
+       - Model-generated figure(s): 4-1-tkz-color-2.png, 4-1-tkz-color-4.png, 4-1-tkz-color-6.png, 4-1-tkz-color-8.png,
+         4-1-tkz-color-10.png, 4-1-tkz-color-11.png, 4-1-tkz-color-12.png, 4-1-tkz-color-13.png, 4-1-tkz-color-14.png.
 
        IMAGE NAMING RULE:
        - All figures are model-generated and use final homework numbering.
@@ -72,7 +72,7 @@
           `,
           media: String.raw`
             <figure>
-              <img src="geom41-v3-fig1-ASA.png" alt="Two triangles for the ASA proof, with point X on the ray from B' through A'." />
+              <img src="4-1-tkz-color-2.png" alt="Two triangles for the ASA proof, with point X on the ray from B' through A'." />
               <figcaption>Figure 1</figcaption>
             </figure>
           `,
@@ -108,14 +108,14 @@
               <li>Construct a ray \(A'Y\) so that \(\angle B'A'Y \cong \angle BAC\), and on that ray choose \(X\) so that \(A'X \cong AC\).</li>
               <li>Use SAS to prove \(\triangle ABC \cong \triangle A'B'X\).</li>
               <li>Deduce \(A'X \cong A'C'\) and \(B'X \cong B'C'\), so \(\triangle A'C'X\) and \(\triangle B'C'X\) are isosceles.</li>
-              <li>Use those isosceles triangles to obtain angle equalities that imply \(\angle A'C'B' \cong \angle A'XB'\).</li>
-              <li>Use that angle equality, together with \(A'C' \cong A'X\) and \(B'C' \cong B'X\), to prove \(\triangle A'C'B' \cong \triangle A'XB'\) by SAS.</li>
+              <li>Use those isosceles triangles to obtain angle equalities at \(C'\) and at \(X\).</li>
+              <li>Use those angle equalities, together with \(A'C' \cong A'X\) and \(B'C' \cong B'X\), to prove \(\triangle A'C'B' \cong \triangle A'XB'\).</li>
               <li>Since \(\triangle ABC \cong \triangle A'B'X\) and \(\triangle A'B'X \cong \triangle A'B'C'\), conclude \(\triangle ABC \cong \triangle A'B'C'\).</li>
             </ol>
           `,
           media: String.raw`
             <figure>
-              <img src="geom41-v3-fig2-SSS.png" alt="Two triangles for the SSS proof, with an auxiliary ray from A' and a point X on it." />
+              <img src="4-1-tkz-color-4.png" alt="Two triangles for the SSS proof, with an auxiliary ray from A' and a point X on it." />
               <figcaption>Figure 2</figcaption>
             </figure>
           `,
@@ -138,7 +138,7 @@
             String.raw`They produce a midpoint needed for the Exterior Angle Theorem.`,
             String.raw`They show that \(A'B'\) is the longest side, so the triangles must be congruent.`,
             String.raw`They allow the use of the theorem that the angles of a triangle add to \(180^\circ\).`,
-            String.raw`They create angle equalities that allow SAS to identify the auxiliary triangle with the target triangle.`,
+            String.raw`They create angle equalities that ultimately force \(X\) to coincide with \(C'\).`,
             String.raw`They show that \(B'C'\) must be perpendicular to \(A'X\).`
           ],
           choiceWrap: false
@@ -153,12 +153,12 @@
               <li>Use SAS to prove \(\triangle AMB \cong \triangle CMP\).</li>
               <li>Conclude that \(\angle A \cong \angle ACP\).</li>
               <li>Since \(\angle ACP\) is only a part of the exterior angle \(e\), conclude that \(e > \angle A\).</li>
-              <li>Repeat the same idea with the corresponding construction on the other side to obtain \(e > \angle B\).</li>
+              <li>Repeat the same idea with a corresponding construction for the other side to obtain \(e > \angle B\).</li>
             </ol>
           `,
           media: String.raw`
             <figure>
-              <img src="geom41-v3-fig3-exterior-angle.png" alt="Triangle ABC with an exterior angle at C, midpoint M on AC, and point P on ray BM." />
+              <img src="4-1-tkz-color-6.png" alt="Triangle ABC with an exterior angle at C, midpoint M on AC, and point P on ray BM." />
               <figcaption>Figure 3</figcaption>
             </figure>
           `,
@@ -203,7 +203,7 @@
           `,
           media: String.raw`
             <figure>
-              <img src="geom41-v3-fig4-SAA-corrected.png" alt="Two triangles for the SAA proof, with an auxiliary point P chosen on segment BA." />
+              <img src="4-1-tkz-color-8.png" alt="Two triangles for the SAA proof, with an auxiliary point P chosen on segment BA." />
               <figcaption>Figure 4</figcaption>
             </figure>
           `,
@@ -237,7 +237,7 @@
           `,
           media: String.raw`
             <figure>
-              <img src="geom41-v3-fig5-isosceles.png" alt="Isosceles triangle ABC with AB and AC marked congruent." />
+              <img src="4-1-tkz-color-10.png" alt="Isosceles triangle ABC with AB and AC marked congruent." />
               <figcaption>Figure 5</figcaption>
             </figure>
           `,
@@ -265,7 +265,7 @@
           `,
           media: String.raw`
             <figure>
-              <img src="geom41-v3-fig6-converse-isosceles.png" alt="Triangle ABC with the base angles at B and C marked congruent." />
+              <img src="4-1-tkz-color-11.png" alt="Triangle ABC with the base angles at B and C marked congruent." />
               <figcaption>Figure 6</figcaption>
             </figure>
           `,
@@ -286,7 +286,7 @@
           `,
           media: String.raw`
             <figure>
-              <img src="geom41-v3-fig7-perpendicular-bisector.png" alt="Segment AB with midpoint M, a perpendicular through M, and point P above the segment." />
+              <img src="4-1-tkz-color-12.png" alt="Segment AB with midpoint M, a perpendicular through M, and point P above the segment." />
               <figcaption>Figure 7</figcaption>
             </figure>
           `,
@@ -307,7 +307,7 @@
           `,
           media: String.raw`
             <figure>
-              <img src="geom41-v3-fig8-kite.png" alt="Kite ABCD with diagonal AC drawn." />
+              <img src="4-1-tkz-color-13.png" alt="Kite ABCD with diagonal AC drawn." />
               <figcaption>Figure 8</figcaption>
             </figure>
           `,
@@ -328,7 +328,7 @@
           `,
           media: String.raw`
             <figure>
-              <img src="geom41-v3-fig9-SSA-ambiguity-corrected.png" alt="A fixed base AB with two possible third vertices C and D on the same ray from B, showing the ambiguity of SSA." />
+              <img src="4-1-tkz-color-14.png" alt="A fixed base AB with two possible third vertices C and D on the same ray from B, showing the ambiguity of SSA." />
               <figcaption>Figure 9</figcaption>
             </figure>
           `,
