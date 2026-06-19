@@ -3,7 +3,7 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Homework 4-1 (Geometry, colored tkz-euclide figures)</title>
+  <title>Homework 4-1 FINAL v4 no-conflict</title>
 
   <script>
     /* =========================
@@ -28,8 +28,8 @@
 
        IMAGE FILES:
        - User-supplied figure(s): none.
-       - Model-generated figure(s): 4-1-tkz-color-2.png, 4-1-tkz-color-4.png, 4-1-tkz-color-6.png, 4-1-tkz-color-8.png,
-         4-1-tkz-color-10.png, 4-1-tkz-color-11.png, 4-1-tkz-color-12.png, 4-1-tkz-color-13.png, 4-1-tkz-color-14.png.
+       - Model-generated figure(s): geom41-v3-fig1-ASA.png, geom41-v3-fig2-SSS.png, geom41-v3-fig3-exterior-angle.png, geom41-v3-fig4-SAA-corrected.png,
+         geom41-v3-fig5-isosceles.png, geom41-v3-fig6-converse-isosceles.png, geom41-v3-fig7-perpendicular-bisector.png, geom41-v3-fig8-kite.png, geom41-v3-fig9-SSA-ambiguity-corrected.png.
 
        IMAGE NAMING RULE:
        - All figures are model-generated and use final homework numbering.
@@ -60,19 +60,19 @@
         },
         {
           stem: String.raw`
-            <p>Refer to Figure 1. Suppose \(\angle B \cong \angle B'\), \(BC \cong B'C'\), and \(\angle C \cong \angle C'\).</p>
+            <p>Refer to Figure 1. Suppose \(\angle B \cong \angle B'\), \(\overline{BC} \cong \overline{B'C'}\), and \(\angle C \cong \angle C'\).</p>
             <p>In the proof of ASA, the auxiliary point \(X\) is placed on the ray from \(B'\) through \(A'\). Which ordering gives the correct main outline of the proof?</p>
             <ol type="I">
               <li>Use SAS to prove \(\triangle ABC \cong \triangle XB'C'\).</li>
-              <li>Construct \(X\) on the ray \(B'A'\) so that \(B'X \cong BA\).</li>
+              <li>Construct \(X\) on the ray \(\overrightarrow{B'A'}\) so that \(\overline{B'X} \cong \overline{BA}\).</li>
               <li>Use the given angle equality at \(C'\), together with the congruence just obtained, to conclude that \(\angle B'C'A' \cong \angle B'C'X\).</li>
-              <li>Since \(X\) and \(A'\) lie on the same ray from \(B'\), and the rays \(C'X\) and \(C'A'\) make the same angle with \(C'B'\) on the same side, conclude that those rays coincide and hence \(X=A'\).</li>
+              <li>Since \(X\) and \(A'\) lie on the same ray \(\overrightarrow{B'A'}\), and the rays \(\overrightarrow{C'X}\) and \(\overrightarrow{C'A'}\) make the same angle with the ray \(\overrightarrow{C'B'}\) on the same side, conclude that those rays coincide and hence \(X=A'\).</li>
               <li>Replace \(X\) by \(A'\) and conclude \(\triangle ABC \cong \triangle A'B'C'\).</li>
             </ol>
           `,
           media: String.raw`
             <figure>
-              <img src="4-1-tkz-color-2.png" alt="Two triangles for the ASA proof, with point X on the ray from B' through A'." />
+              <img src="geom41-v4-fig1-ASA.png" alt="Two triangles for the ASA proof, with point X on the ray from B' through A'." />
               <figcaption>Figure 1</figcaption>
             </figure>
           `,
@@ -92,7 +92,7 @@
           `,
           choices: [
             String.raw`It creates a comparison triangle so that SAS can be used first.`,
-            String.raw`It shows that \(BC\) is perpendicular to \(B'C'\).`,
+            String.raw`It shows that \(\overline{BC}\) is perpendicular to \(\overline{B'C'}\).`,
             String.raw`It lets us use the theorem that the angles of a triangle add to \(180^\circ\).`,
             String.raw`It proves that \(A'\) is the midpoint of \(BX\).`,
             String.raw`It forces both triangles to be right triangles.`,
@@ -102,20 +102,20 @@
         },
         {
           stem: String.raw`
-            <p>Refer to Figure 2. Suppose \(AB \cong A'B'\), \(AC \cong A'C'\), and \(BC \cong B'C'\).</p>
+            <p>Refer to Figure 2. Suppose \(\overline{AB} \cong \overline{A'B'}\), \(\overline{AC} \cong \overline{A'C'}\), and \(\overline{BC} \cong \overline{B'C'}\).</p>
             <p>Which ordering gives the correct main outline of the proof of SSS in your notes?</p>
             <ol type="I">
-              <li>Construct a ray \(A'Y\) so that \(\angle B'A'Y \cong \angle BAC\), and on that ray choose \(X\) so that \(A'X \cong AC\).</li>
+              <li>Construct a ray \(\overrightarrow{A'Y}\) so that \(\angle B'A'Y \cong \angle BAC\), and on that ray choose \(X\) so that \(\overline{A'X} \cong \overline{AC}\).</li>
               <li>Use SAS to prove \(\triangle ABC \cong \triangle A'B'X\).</li>
-              <li>Deduce \(A'X \cong A'C'\) and \(B'X \cong B'C'\), so \(\triangle A'C'X\) and \(\triangle B'C'X\) are isosceles.</li>
-              <li>Use those isosceles triangles to obtain angle equalities at \(C'\) and at \(X\).</li>
-              <li>Use those angle equalities, together with \(A'C' \cong A'X\) and \(B'C' \cong B'X\), to prove \(\triangle A'C'B' \cong \triangle A'XB'\).</li>
+              <li>Deduce \(\overline{A'X} \cong \overline{A'C'}\) and \(\overline{B'X} \cong \overline{B'C'}\), so \(\triangle A'C'X\) and \(\triangle B'C'X\) are isosceles.</li>
+              <li>Use those isosceles triangles to obtain angle equalities that imply \(\angle A'C'B' \cong \angle A'XB'\).</li>
+              <li>Use that angle equality, together with \(\overline{A'C'} \cong \overline{A'X}\) and \(\overline{B'C'} \cong \overline{B'X}\), to prove \(\triangle A'C'B' \cong \triangle A'XB'\) by SAS.</li>
               <li>Since \(\triangle ABC \cong \triangle A'B'X\) and \(\triangle A'B'X \cong \triangle A'B'C'\), conclude \(\triangle ABC \cong \triangle A'B'C'\).</li>
             </ol>
           `,
           media: String.raw`
             <figure>
-              <img src="4-1-tkz-color-4.png" alt="Two triangles for the SSS proof, with an auxiliary ray from A' and a point X on it." />
+              <img src="geom41-v4-fig2-SSS.png" alt="Two triangles for the SSS proof, with an auxiliary ray from A' and a point X on it." />
               <figcaption>Figure 2</figcaption>
             </figure>
           `,
@@ -136,10 +136,10 @@
           choices: [
             String.raw`They show that \(\triangle ABC\) and \(\triangle A'B'C'\) are right triangles.`,
             String.raw`They produce a midpoint needed for the Exterior Angle Theorem.`,
-            String.raw`They show that \(A'B'\) is the longest side, so the triangles must be congruent.`,
+            String.raw`They show that \(\overline{A'B'}\) is the longest side, so the triangles must be congruent.`,
             String.raw`They allow the use of the theorem that the angles of a triangle add to \(180^\circ\).`,
-            String.raw`They create angle equalities that ultimately force \(X\) to coincide with \(C'\).`,
-            String.raw`They show that \(B'C'\) must be perpendicular to \(A'X\).`
+            String.raw`They create angle equalities that allow SAS to identify the auxiliary triangle with the target triangle.`,
+            String.raw`They show that \(\overline{B'C'}\) must be perpendicular to \(\overline{A'X}\).`
           ],
           choiceWrap: false
         },
@@ -148,17 +148,17 @@
             <p>Refer to Figure 3. Let \(e\) be the exterior angle at \(C\).</p>
             <p>Which ordering gives the correct main outline of the proof that an exterior angle is larger than either non-adjacent interior angle?</p>
             <ol type="I">
-              <li>Let \(M\) be the midpoint of \(AC\).</li>
-              <li>Choose \(P\) on the ray \(BM\) so that \(BM \cong MP\).</li>
+              <li>Let \(M\) be the midpoint of \(\overline{AC}\).</li>
+              <li>Choose \(P\) on the ray \(\overrightarrow{BM}\) so that \(\overline{BM} \cong \overline{MP}\).</li>
               <li>Use SAS to prove \(\triangle AMB \cong \triangle CMP\).</li>
               <li>Conclude that \(\angle A \cong \angle ACP\).</li>
               <li>Since \(\angle ACP\) is only a part of the exterior angle \(e\), conclude that \(e > \angle A\).</li>
-              <li>Repeat the same idea with a corresponding construction for the other side to obtain \(e > \angle B\).</li>
+              <li>Repeat the same idea with the corresponding construction on the other side to obtain \(e > \angle B\).</li>
             </ol>
           `,
           media: String.raw`
             <figure>
-              <img src="4-1-tkz-color-6.png" alt="Triangle ABC with an exterior angle at C, midpoint M on AC, and point P on ray BM." />
+              <img src="geom41-v4-fig3-exterior-angle.png" alt="Triangle ABC with an exterior angle at C, midpoint M on AC, and point P on ray BM." />
               <figcaption>Figure 3</figcaption>
             </figure>
           `,
@@ -177,33 +177,33 @@
             <p>After the proof has established \(\angle A \cong \angle ACP\), which observation is the one that finally yields \(e > \angle A\)?</p>
           `,
           choices: [
-            String.raw`Point \(M\) is the midpoint of \(AC\).`,
+            String.raw`Point \(M\) is the midpoint of \(\overline{AC}\).`,
             String.raw`The triangles \(\triangle AMB\) and \(\triangle CMP\) are similar.`,
             String.raw`
               \(\angle ACP\) is only a part of the exterior angle \(e\), so \(e\) is larger than \(\angle ACP\).
             `,
-            String.raw`The segment \(AC\) must be congruent to \(CP\).`,
+            String.raw`The segment \(\overline{AC}\) must be congruent to \(\overline{CP}\).`,
             String.raw`The exterior angle equals \(180^\circ-\angle C\).`,
-            String.raw`The line \(BM\) is perpendicular to \(AC\).`
+            String.raw`The line \(\overleftrightarrow{BM}\) is perpendicular to \(\overleftrightarrow{AC}\).`
           ],
           choiceWrap: false
         },
         {
           stem: String.raw`
-            <p>Refer to Figure 4. Suppose \(BC \cong B'C'\), \(\angle B \cong \angle B'\), and \(\angle A \cong \angle A'\).</p>
+            <p>Refer to Figure 4. Suppose \(\overline{BC} \cong \overline{B'C'}\), \(\angle B \cong \angle B'\), and \(\angle A \cong \angle A'\).</p>
             <p>Which ordering gives the correct main outline of the proof of SAA?</p>
             <ol type="I">
-              <li>Assume first that \(AB > A'B'\), and choose \(P\) on the segment \(BA\) so that \(BP \cong B'A'\).</li>
+              <li>Assume first that \(AB > A'B'\), and choose \(P\) on the segment \(\overline{BA}\) so that \(\overline{BP} \cong \overline{B'A'}\).</li>
               <li>Use SAS to prove \(\triangle PBC \cong \triangle A'B'C'\).</li>
               <li>Conclude that \(\angle BPC \cong \angle A'\), hence \(\angle BPC \cong \angle A\).</li>
               <li>But \(\angle BPC\) is an exterior angle of \(\triangle APC\), so by the Exterior Angle Theorem it must be larger than \(\angle A\), a contradiction.</li>
               <li>Argue similarly that \(AB < A'B'\) is also impossible.</li>
-              <li>Therefore \(AB \cong A'B'\), and now SAS gives \(\triangle ABC \cong \triangle A'B'C'\).</li>
+              <li>Therefore \(\overline{AB} \cong \overline{A'B'}\), and now SAS gives \(\triangle ABC \cong \triangle A'B'C'\).</li>
             </ol>
           `,
           media: String.raw`
             <figure>
-              <img src="4-1-tkz-color-8.png" alt="Two triangles for the SAA proof, with an auxiliary point P chosen on segment BA." />
+              <img src="geom41-v4-fig4-SAA-corrected.png" alt="Two triangles for the SAA proof, with an auxiliary point P chosen on segment BA." />
               <figcaption>Figure 4</figcaption>
             </figure>
           `,
@@ -233,11 +233,11 @@
         },
         {
           stem: String.raw`
-            <p>Refer to Figure 5. To prove the isosceles triangle theorem, “if \(AB \cong AC\), then \(\angle B \cong \angle C\),” which pair of triangles should be compared?</p>
+            <p>Refer to Figure 5. To prove the isosceles triangle theorem, “if \(\overline{AB} \cong \overline{AC}\), then \(\angle B \cong \angle C\),” which pair of triangles should be compared?</p>
           `,
           media: String.raw`
             <figure>
-              <img src="4-1-tkz-color-10.png" alt="Isosceles triangle ABC with AB and AC marked congruent." />
+              <img src="geom41-v4-fig5-isosceles.png" alt="Isosceles triangle ABC with AB and AC marked congruent." />
               <figcaption>Figure 5</figcaption>
             </figure>
           `,
@@ -261,11 +261,11 @@
         },
         {
           stem: String.raw`
-            <p>Refer to Figure 6. To prove the converse isosceles triangle theorem, “if \(\angle B \cong \angle C\), then \(AB \cong AC\),” which justification is correct?</p>
+            <p>Refer to Figure 6. To prove the converse isosceles triangle theorem, “if \(\angle B \cong \angle C\), then \(\overline{AB} \cong \overline{AC}\),” which justification is correct?</p>
           `,
           media: String.raw`
             <figure>
-              <img src="4-1-tkz-color-11.png" alt="Triangle ABC with the base angles at B and C marked congruent." />
+              <img src="geom41-v4-fig6-converse-isosceles.png" alt="Triangle ABC with the base angles at B and C marked congruent." />
               <figcaption>Figure 6</figcaption>
             </figure>
           `,
@@ -281,12 +281,12 @@
         },
         {
           stem: String.raw`
-            <p>Refer to Figure 7. Point \(M\) is the midpoint of \(AB\), and \(PM \perp AB\).</p>
-            <p>Which argument proves that \(PA \cong PB\)?</p>
+            <p>Refer to Figure 7. Point \(M\) is the midpoint of \(\overline{AB}\), and \(\overline{PM} \perp \overline{AB}\).</p>
+            <p>Which argument proves that \(\overline{PA} \cong \overline{PB}\)?</p>
           `,
           media: String.raw`
             <figure>
-              <img src="4-1-tkz-color-12.png" alt="Segment AB with midpoint M, a perpendicular through M, and point P above the segment." />
+              <img src="geom41-v4-fig7-perpendicular-bisector.png" alt="Segment AB with midpoint M, a perpendicular through M, and point P above the segment." />
               <figcaption>Figure 7</figcaption>
             </figure>
           `,
@@ -302,12 +302,12 @@
         },
         {
           stem: String.raw`
-            <p>Refer to Figure 8. Suppose \(AB \cong AD\) and \(CB \cong CD\).</p>
-            <p>Which pair of triangles should be compared first to show that \(AC\) bisects the angles at \(A\) and \(C\)?</p>
+            <p>Refer to Figure 8. Suppose \(\overline{AB} \cong \overline{AD}\) and \(\overline{CB} \cong \overline{CD}\).</p>
+            <p>Which pair of triangles should be compared first to show that \(\overline{AC}\) bisects the angles at \(A\) and \(C\)?</p>
           `,
           media: String.raw`
             <figure>
-              <img src="4-1-tkz-color-13.png" alt="Kite ABCD with diagonal AC drawn." />
+              <img src="geom41-v4-fig8-kite.png" alt="Kite ABCD with diagonal AC drawn." />
               <figcaption>Figure 8</figcaption>
             </figure>
           `,
@@ -323,12 +323,12 @@
         },
         {
           stem: String.raw`
-            <p>Refer to Figure 9. The segment \(AB\) is fixed, the angle at \(B\) is fixed, and the segment from \(A\) to the third vertex has fixed length. The points \(C\) and \(D\) lie on the same ray from \(B\), and both satisfy those conditions.</p>
+            <p>Refer to Figure 9. The segment \(\overline{AB}\) is fixed, the angle at \(B\) is fixed, and the segment from \(A\) to the third vertex has fixed length. The points \(C\) and \(D\) lie on the same ray from \(B\), and both satisfy those conditions.</p>
             <p>What does the figure show?</p>
           `,
           media: String.raw`
             <figure>
-              <img src="4-1-tkz-color-14.png" alt="A fixed base AB with two possible third vertices C and D on the same ray from B, showing the ambiguity of SSA." />
+              <img src="geom41-v4-fig9-SSA-ambiguity-corrected.png" alt="A fixed base AB with two possible third vertices C and D on the same ray from B, showing the ambiguity of SSA." />
               <figcaption>Figure 9</figcaption>
             </figure>
           `,
@@ -345,7 +345,7 @@
         {
           stem: String.raw`
             <p>A student writes the following argument:</p>
-            <p>“We know that \(AB \cong A'B'\), \(AC \cong A'C'\), and \(\angle B \cong \angle B'\). Therefore the triangles are congruent by SAS.”</p>
+            <p>“We know that \(\overline{AB} \cong \overline{A'B'}\), \(\overline{AC} \cong \overline{A'C'}\), and \(\angle B \cong \angle B'\). Therefore the triangles are congruent by SAS.”</p>
             <p>Which statement best identifies the flaw?</p>
           `,
           choices: [
