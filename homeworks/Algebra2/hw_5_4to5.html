@@ -1,0 +1,367 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Homework 5-4 to 5-5 (Algebra II) — Clean Figures</title>
+
+  <script>
+    /* =========================
+       Homework 5-4 to 5-5 — Quadratic Functions (Algebra II)
+       Adapted for: /math-homework/assets/core-rich.js
+
+       REQUIRED SOURCE REFERENCES:
+       - User-provided Portuguese graph example #284 was used only as broad inspiration for graph-to-equation items.
+       - No textbook exercise was copied directly. The set was model-authored to cover the stated Algebra II goals:
+         general form to vertex, standard/vertex form, graph to general form using vertex information,
+         signs of a, b, c and discriminant from graphs, and quadratic optimization.
+
+       IMAGE FILES:
+       - User-supplied figure(s): none used directly in the homework.
+       - Model-generated figure(s): qf_5_4to5_fig1_clean_red.png, qf_5_4to5_fig2_clean_red.png, qf_5_4to5_fig3_clean_red.png,
+         qf_5_4to5_fig4_clean_red.png, qf_5_4to5_fig5_clean_red.png.
+
+       IMAGE NAMING RULE:
+       - Model-generated figures use final homework question numbering.
+       - PNG files live in the SAME folder as this HTML.
+
+       MODEL-AUTHORED / MODEL-REWORKED ITEMS:
+       - Q1-Q2 are diagnostic full-feature readings from general form.
+       - Q3-Q9 develop vertex, standard form, and conversion between forms.
+       - Q10-Q12 require graph-to-equation reasoning using vertex form only, without factored form.
+       - Q13-Q15 develop sign and discriminant interpretation from graphs, including equality cases.
+       - Q16-Q17 are optimization applications requiring modeling and interpretation of the vertex.
+       ========================= */
+
+    window.homeworkData = {
+      classId : "Algebra2",
+      id      : "Homework 5-4 to 5-5",
+      title   : "Homework 5-4 to 5-5 — Quadratic Functions",
+
+      graphics : String.raw``,
+
+      /* Correct answers for Q1-Q17 */
+      answerKey : ["A","C","D","B","E","A","C","F","B","D","B","A","E","C","B","D","A"],
+
+      questions : [
+
+        {
+          stem: String.raw`
+            <p>Consider the quadratic function in general form.</p>
+            <p class="math">\(y=x^2-6x+8\)</p>
+            <p>Which alternative correctly gives the vertex, the y-intercept, and the x-intercepts?</p>
+          `,
+          choices: [
+            String.raw`Vertex \((3,-1)\); y-intercept \((0,8)\); x-intercepts \((2,0)\) and \((4,0)\).`,
+            String.raw`Vertex \((-3,-1)\); y-intercept \((0,8)\); x-intercepts \((2,0)\) and \((4,0)\).`,
+            String.raw`Vertex \((3,1)\); y-intercept \((0,8)\); x-intercepts \((2,0)\) and \((4,0)\).`,
+            String.raw`Vertex \((3,-1)\); y-intercept \((0,-8)\); x-intercepts \((2,0)\) and \((4,0)\).`,
+            String.raw`Vertex \((3,-1)\); y-intercept \((0,8)\); x-intercepts \((-2,0)\) and \((-4,0)\).`,
+            String.raw`Vertex \((3,-1)\); y-intercept \((0,8)\); no x-intercepts.`
+          ],
+          choiceWrap: false
+        },
+
+        {
+          stem: String.raw`
+            <p>Consider the quadratic function in general form.</p>
+            <p class="math">\(y=2x^2+4x+5\)</p>
+            <p>Which alternative correctly gives the vertex, the y-intercept, and the x-intercepts, if any?</p>
+          `,
+          choices: [
+            String.raw`Vertex \((1,3)\); y-intercept \((0,5)\); no x-intercepts.`,
+            String.raw`Vertex \((-1,-3)\); y-intercept \((0,5)\); x-intercepts \((-1,0)\) and \((3,0)\).`,
+            String.raw`Vertex \((-1,3)\); y-intercept \((0,5)\); no x-intercepts.`,
+            String.raw`Vertex \((-1,3)\); y-intercept \((0,-5)\); no x-intercepts.`,
+            String.raw`Vertex \((-1,5)\); y-intercept \((0,3)\); no x-intercepts.`,
+            String.raw`Vertex \((-1,3)\); y-intercept \((0,5)\); x-intercepts \((-1,0)\) and \((1,0)\).`
+          ],
+          choiceWrap: false
+        },
+
+        {
+          stem: String.raw`
+            <p>Find the vertex of the quadratic function and decide whether it gives a maximum or a minimum.</p>
+            <p class="math">\(y=-x^2+10x-21\)</p>
+          `,
+          choices: [
+            String.raw`Vertex \((-5,-96)\); maximum.`,
+            String.raw`Vertex \((5,-4)\); minimum.`,
+            String.raw`Vertex \((-5,4)\); maximum.`,
+            String.raw`Vertex \((5,4)\); maximum.`,
+            String.raw`Vertex \((10,-21)\); maximum.`,
+            String.raw`Vertex \((5,4)\); minimum.`
+          ],
+          choiceWrap: false
+        },
+
+        {
+          stem: String.raw`
+            <p>Find the vertex of the quadratic function and decide whether it gives a maximum or a minimum.</p>
+            <p class="math">\(y=3x^2-12x+11\)</p>
+          `,
+          choices: [
+            String.raw`Vertex \((-2,-1)\); minimum.`,
+            String.raw`Vertex \((2,-1)\); minimum.`,
+            String.raw`Vertex \((2,1)\); maximum.`,
+            String.raw`Vertex \((-2,47)\); minimum.`,
+            String.raw`Vertex \((2,-1)\); maximum.`,
+            String.raw`Vertex \((4,11)\); minimum.`
+          ],
+          choiceWrap: false
+        },
+
+        {
+          stem: String.raw`
+            <p>Rewrite the quadratic function in standard form.</p>
+            <p class="math">\(y=x^2+8x+10\)</p>
+            <p>Use the form \(y-y_V=a(x-x_V)^2\).</p>
+          `,
+          choices: [
+            String.raw`\(y-6=(x+4)^2\)`,
+            String.raw`\(y+10=(x+4)^2\)`,
+            String.raw`\(y+6=(x-4)^2\)`,
+            String.raw`\(y-26=(x+4)^2\)`,
+            String.raw`\(y+6=(x+4)^2\)`,
+            String.raw`\(y-10=(x+8)^2\)`
+          ],
+          choiceWrap: false
+        },
+
+        {
+          stem: String.raw`
+            <p>Rewrite the quadratic function in standard form.</p>
+            <p class="math">\(y=2x^2-12x+13\)</p>
+            <p>Use the form \(y-y_V=a(x-x_V)^2\).</p>
+          `,
+          choices: [
+            String.raw`\(y+5=2(x-3)^2\)`,
+            String.raw`\(y-5=2(x-3)^2\)`,
+            String.raw`\(y+5=2(x+3)^2\)`,
+            String.raw`\(y-13=2(x-3)^2\)`,
+            String.raw`\(y+18=2(x-3)^2\)`,
+            String.raw`\(y+5=(2x-3)^2\)`
+          ],
+          choiceWrap: false
+        },
+
+        {
+          stem: String.raw`
+            <p>A student tries to rewrite the function by completing the square.</p>
+            <p class="math">\(y=3x^2+18x+4\)</p>
+            <p>The student writes:</p>
+            <p class="math">\(y=3(x+3)^2+4\)</p>
+            <p>Which explanation best describes the mistake?</p>
+          `,
+          choices: [
+            String.raw`The student used \(x+3\), but the correct factor should be \(x-3\).`,
+            String.raw`The student should not factor out \(3\) before completing the square.`,
+            String.raw`The student added \(9\) inside the parentheses, which changes the outside constant by \(27\); the constant cannot remain \(4\).`,
+            String.raw`The student forgot that the graph must open downward because \(18x\) is positive.`,
+            String.raw`The student should divide the whole equation by \(3\) and leave the answer as \(y=x^2+6x+\frac43\).`,
+            String.raw`There is no mistake; the two forms are equivalent.`
+          ],
+          choiceWrap: false
+        },
+
+        {
+          stem: String.raw`
+            <p>Rewrite the quadratic function in general form.</p>
+            <p class="math">\(y-4=-2(x+1)^2\)</p>
+          `,
+          choices: [
+            String.raw`\(y=-2x^2+4x+2\)`,
+            String.raw`\(y=-2x^2-4x-6\)`,
+            String.raw`\(y=2x^2+4x+6\)`,
+            String.raw`\(y=-2x^2-2x+4\)`,
+            String.raw`\(y=-2x^2-4x+6\)`,
+            String.raw`\(y=-2x^2-4x+2\)`
+          ],
+          choiceWrap: false
+        },
+
+        {
+          stem: String.raw`
+            <p>Read the important graph information from the standard form.</p>
+            <p class="math">\(y+7=\frac12(x-6)^2\)</p>
+            <p>Which alternative correctly gives the vertex, axis of symmetry, opening direction, and extreme value?</p>
+          `,
+          choices: [
+            String.raw`Vertex \((-6,-7)\); axis \(x=-6\); opens upward; minimum value \(-7\).`,
+            String.raw`Vertex \((6,-7)\); axis \(x=6\); opens upward; minimum value \(-7\).`,
+            String.raw`Vertex \((6,7)\); axis \(x=6\); opens upward; minimum value \(7\).`,
+            String.raw`Vertex \((-6,7)\); axis \(x=-6\); opens downward; maximum value \(7\).`,
+            String.raw`Vertex \((6,-7)\); axis \(y=-7\); opens upward; minimum value \(6\).`,
+            String.raw`Vertex \((6,-7)\); axis \(x=6\); opens downward; maximum value \(-7\).`
+          ],
+          choiceWrap: false
+        },
+
+        {
+          stem: String.raw`
+            <p>Refer to Figure 1. The graph shows a parabola with vertex \((2,3)\) and y-intercept \((0,-1)\).</p>
+            <p>Determine the general form of the quadratic function.</p>
+          `,
+          media: String.raw`
+            <figure>
+              <img src="qf_5_4to5_fig1_clean_red.png" alt="A parabola with vertex (2,3) and y-intercept (0,-1)." />
+              <figcaption>Figure 1</figcaption>
+            </figure>
+          `,
+          choices: [
+            String.raw`\(y=x^2-4x-1\)`,
+            String.raw`\(y=-x^2-4x-1\)`,
+            String.raw`\(y=-x^2+4x+1\)`,
+            String.raw`\(y=-x^2+4x-1\)`,
+            String.raw`\(y=x^2-4x+7\)`,
+            String.raw`\(y=-2x^2+8x-1\)`
+          ],
+          choiceWrap: false
+        },
+
+        {
+          stem: String.raw`
+            <p>Refer to Figure 2. The graph shows a parabola with vertex \((2,3)\) and one marked x-intercept \((-1,0)\).</p>
+            <p>Determine the general form of the quadratic function.</p>
+          `,
+          media: String.raw`
+            <figure>
+              <img src="qf_5_4to5_fig2_clean_red.png" alt="A downward-opening parabola with vertex (2,3) and marked x-intercept (-1,0)." />
+              <figcaption>Figure 2</figcaption>
+            </figure>
+          `,
+          choices: [
+            String.raw`\(y=-\frac13x^2-\frac43x+\frac53\)`,
+            String.raw`\(y=-\frac13x^2+\frac43x+\frac53\)`,
+            String.raw`\(y=\frac13x^2-\frac43x+\frac53\)`,
+            String.raw`\(y=-3x^2+12x-9\)`,
+            String.raw`\(y=-\frac13x^2+\frac43x+3\)`,
+            String.raw`\(y=\frac13x^2+\frac43x+\frac53\)`
+          ],
+          choiceWrap: false
+        },
+
+        {
+          stem: String.raw`
+            <p>Refer to Figure 3. The graph shows a parabola with vertex \((0,-4)\) and one marked x-intercept \((2,0)\).</p>
+            <p>Determine the general form of the quadratic function.</p>
+          `,
+          media: String.raw`
+            <figure>
+              <img src="qf_5_4to5_fig3_clean_red.png" alt="An upward-opening parabola with vertex (0,-4) and marked x-intercept (2,0)." />
+              <figcaption>Figure 3</figcaption>
+            </figure>
+          `,
+          choices: [
+            String.raw`\(y=x^2-4\)`,
+            String.raw`\(y=(x-2)^2-4\)`,
+            String.raw`\(y=-x^2+4\)`,
+            String.raw`\(y=2x^2-4\)`,
+            String.raw`\(y=x^2+4\)`,
+            String.raw`\(y=\frac12x^2-4\)`
+          ],
+          choiceWrap: false
+        },
+
+        {
+          stem: String.raw`
+            <p>Refer to Figure 4. Determine the signs of \(a\), \(b\), \(c\), and \(\Delta\) for the quadratic function \(y=ax^2+bx+c\).</p>
+          `,
+          media: String.raw`
+            <figure>
+              <img src="qf_5_4to5_fig4_clean_red.png" alt="A downward-opening parabola crossing the x-axis twice, with positive y-intercept and vertex to the right of the y-axis." />
+              <figcaption>Figure 4</figcaption>
+            </figure>
+          `,
+          choices: [
+            String.raw`\(a<0,\ b<0,\ c>0,\ \Delta>0\)`,
+            String.raw`\(a<0,\ b>0,\ c<0,\ \Delta>0\)`,
+            String.raw`\(a>0,\ b>0,\ c>0,\ \Delta<0\)`,
+            String.raw`\(a<0,\ b>0,\ c>0,\ \Delta<0\)`,
+            String.raw`\(a<0,\ b>0,\ c>0,\ \Delta>0\)`,
+            String.raw`\(a>0,\ b<0,\ c>0,\ \Delta>0\)`
+          ],
+          choiceWrap: false
+        },
+
+        {
+          stem: String.raw`
+            <p>Refer to Figure 5. Determine the signs of \(a\), \(b\), \(c\), and \(\Delta\) for the quadratic function \(y=ax^2+bx+c\).</p>
+          `,
+          media: String.raw`
+            <figure>
+              <img src="qf_5_4to5_fig5_clean_red.png" alt="An upward-opening parabola with vertex at the origin, touching the x-axis at the origin." />
+              <figcaption>Figure 5</figcaption>
+            </figure>
+          `,
+          choices: [
+            String.raw`\(a>0,\ b>0,\ c=0,\ \Delta=0\)`,
+            String.raw`\(a>0,\ b=0,\ c>0,\ \Delta<0\)`,
+            String.raw`\(a>0,\ b=0,\ c=0,\ \Delta=0\)`,
+            String.raw`\(a<0,\ b=0,\ c=0,\ \Delta=0\)`,
+            String.raw`\(a>0,\ b=0,\ c=0,\ \Delta>0\)`,
+            String.raw`\(a=0,\ b=0,\ c=0,\ \Delta=0\)`
+          ],
+          choiceWrap: false
+        },
+
+        {
+          stem: String.raw`
+            <p>A quadratic function \(y=ax^2+bx+c\) has the following sign information:</p>
+            <p class="math">\(a>0,\qquad c<0,\qquad \Delta<0\)</p>
+            <p>Is this possible?</p>
+          `,
+          choices: [
+            String.raw`Yes. Since \(a>0\), the parabola opens upward, so it can avoid the x-axis.`,
+            String.raw`No. If \(a>0\) and \(c<0\), the graph is below the x-axis at \(x=0\) but rises upward on both sides, so it must cross the x-axis twice; therefore \(\Delta>0\).`,
+            String.raw`Yes. Since \(c<0\), the discriminant must be negative.`,
+            String.raw`No. The value of \(c\) must always have the same sign as \(a\).`,
+            String.raw`Yes, but only if the vertex is on the y-axis.`,
+            String.raw`It cannot be decided without knowing the value of \(b\).`
+          ],
+          choiceWrap: false
+        },
+
+        {
+          stem: String.raw`
+            <p>A rectangular garden is built with 48 meters of fencing. Let \(x\) be the width of the garden, in meters.</p>
+            <p>Which alternative correctly gives the length in terms of \(x\), the area function, and the maximum area?</p>
+          `,
+          choices: [
+            String.raw`Length \(=48-x\); \(A=x(48-x)\); maximum area \(576\) m<sup>2</sup>.`,
+            String.raw`Length \(=24-2x\); \(A=x(24-2x)\); maximum area \(72\) m<sup>2</sup>.`,
+            String.raw`Length \(=24-x\); \(A=x(24-x)\); maximum area \(96\) m<sup>2</sup>.`,
+            String.raw`Length \(=24-x\); \(A=x(24-x)\); maximum area \(144\) m<sup>2</sup>.`,
+            String.raw`Length \(=48-2x\); \(A=x(48-2x)\); maximum area \(288\) m<sup>2</sup>.`,
+            String.raw`Length \(=x-24\); \(A=x(x-24)\); maximum area \(144\) m<sup>2</sup>.`
+          ],
+          choiceWrap: false
+        },
+
+        {
+          stem: String.raw`
+            <p>A school play currently charges 600 yen per ticket and sells 120 tickets. For each 50-yen increase in price, 5 fewer tickets are sold.</p>
+            <p>Let \(x\) be the number of 50-yen increases. Which alternative correctly gives the revenue function and the price that gives maximum revenue?</p>
+          `,
+          choices: [
+            String.raw`\(R=(600+50x)(120-5x)\). Maximum revenue occurs at \(x=6\), so the best ticket price is 900 yen and the maximum revenue is 81,000 yen.`,
+            String.raw`\(R=(600+50x)(120-5x)\). Maximum revenue occurs at \(x=6\), so the best ticket price is 600 yen and the maximum revenue is 81,000 yen.`,
+            String.raw`\(R=(600-50x)(120+5x)\). Maximum revenue occurs at \(x=6\), so the best ticket price is 300 yen and the maximum revenue is 81,000 yen.`,
+            String.raw`\(R=(600+50x)(120-5x)\). Maximum revenue occurs at \(x=12\), so the best ticket price is 1,200 yen and the maximum revenue is 72,000 yen.`,
+            String.raw`\(R=(600+5x)(120-50x)\). Maximum revenue occurs at \(x=6\), so the best ticket price is 630 yen and the maximum revenue is 81,000 yen.`,
+            String.raw`\(R=(600+50x)(120+5x)\). The revenue has no maximum because both factors increase.`
+          ],
+          choiceWrap: false
+        }
+      ]
+    };
+  </script>
+
+  <link rel="stylesheet" href="/math-homework/assets/core-rich.css" />
+  <script defer src="/math-homework/assets/core-rich.js"></script>
+  <script defer src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+</head>
+<body>
+  <div id="hw-root">Loading…</div>
+</body>
+</html>
