@@ -66,7 +66,7 @@
               <li>Use SAS to prove \(\triangle ABC \cong \triangle XB'C'\).</li>
               <li>Construct \(X\) on the ray \(B'A'\) so that \(B'X \cong BA\).</li>
               <li>Use the given angle equality at \(C'\), together with the congruence just obtained, to conclude that \(\angle B'C'A' \cong \angle B'C'X\).</li>
-              <li>Since \(A'\) and \(X\) lie on the same ray from \(B'\) and determine the same ray from \(C'\), conclude \(X=A'\).</li>
+              <li>Since \(X\) and \(A'\) lie on the same ray from \(B'\), and the rays \(C'X\) and \(C'A'\) make the same angle with \(C'B'\) on the same side, conclude that those rays coincide and hence \(X=A'\).</li>
               <li>Replace \(X\) by \(A'\) and conclude \(\triangle ABC \cong \triangle A'B'C'\).</li>
             </ol>
           `,
@@ -110,7 +110,7 @@
               <li>Deduce \(A'X \cong A'C'\) and \(B'X \cong B'C'\), so \(\triangle A'C'X\) and \(\triangle B'C'X\) are isosceles.</li>
               <li>Use those isosceles triangles to obtain angle equalities at \(C'\) and at \(X\).</li>
               <li>Use those angle equalities, together with \(A'C' \cong A'X\) and \(B'C' \cong B'X\), to prove \(\triangle A'C'B' \cong \triangle A'XB'\).</li>
-              <li>Conclude \(X=C'\), and therefore \(\triangle ABC \cong \triangle A'B'C'\).</li>
+              <li>Since \(\triangle ABC \cong \triangle A'B'X\) and \(\triangle A'B'X \cong \triangle A'B'C'\), conclude \(\triangle ABC \cong \triangle A'B'C'\).</li>
             </ol>
           `,
           media: String.raw`
@@ -153,7 +153,7 @@
               <li>Use SAS to prove \(\triangle AMB \cong \triangle CMP\).</li>
               <li>Conclude that \(\angle A \cong \angle ACP\).</li>
               <li>Since \(\angle ACP\) is only a part of the exterior angle \(e\), conclude that \(e > \angle A\).</li>
-              <li>Repeat the same idea symmetrically to obtain \(e > \angle B\).</li>
+              <li>Repeat the same idea with a corresponding construction for the other side to obtain \(e > \angle B\).</li>
             </ol>
           `,
           media: String.raw`
@@ -193,17 +193,17 @@
             <p>Refer to Figure 4. Suppose \(BC \cong B'C'\), \(\angle B \cong \angle B'\), and \(\angle A \cong \angle A'\).</p>
             <p>Which ordering gives the correct main outline of the proof of SAA?</p>
             <ol type="I">
-              <li>Assume first that \(AB < A'B'\), and choose \(P\) on the ray \(BA\) so that \(BP \cong B'A'\).</li>
+              <li>Assume first that \(AB > A'B'\), and choose \(P\) on the segment \(BA\) so that \(BP \cong B'A'\).</li>
               <li>Use SAS to prove \(\triangle PBC \cong \triangle A'B'C'\).</li>
               <li>Conclude that \(\angle BPC \cong \angle A'\), hence \(\angle BPC \cong \angle A\).</li>
               <li>But \(\angle BPC\) is an exterior angle of \(\triangle APC\), so by the Exterior Angle Theorem it must be larger than \(\angle A\), a contradiction.</li>
-              <li>Argue similarly that \(AB > A'B'\) is also impossible.</li>
+              <li>Argue similarly that \(AB < A'B'\) is also impossible.</li>
               <li>Therefore \(AB \cong A'B'\), and now SAS gives \(\triangle ABC \cong \triangle A'B'C'\).</li>
             </ol>
           `,
           media: String.raw`
             <figure>
-              <img src="4-1-tkz-color-8.png" alt="Two triangles for the SAA proof, with an auxiliary point P on the ray from B through A." />
+              <img src="4-1-tkz-color-8.png" alt="Two triangles for the SAA proof, with an auxiliary point P chosen on segment BA." />
               <figcaption>Figure 4</figcaption>
             </figure>
           `,
@@ -219,7 +219,7 @@
         },
         {
           stem: String.raw`
-            <p>Which previously established result is indispensable in the proof of SAA just described?</p>
+            <p>Besides SAS, which previously established result creates the contradiction in the proof of SAA just described?</p>
           `,
           choices: [
             String.raw`SAS`,
@@ -272,7 +272,7 @@
           choices: [
             String.raw`Compare \(\triangle ABC\) and \(\triangle ACB\) by SAS.`,
             String.raw`Compare \(\triangle ABC\) and \(\triangle ACB\) by ASA.`,
-            String.raw`Compare \(\triangle BAC\) and \(\triangle CAB\) by SAA.`,
+            String.raw`Compare \(\triangle BAC\) and \(\triangle CAB\) by SSA.`,
             String.raw`Use the Exterior Angle Theorem at \(A\).`,
             String.raw`No conclusion can be drawn without the theorem that the angles of a triangle add to \(180^\circ\).`,
             String.raw`Compare \(\triangle ABC\) and \(\triangle ACB\) by AAA.`
@@ -323,12 +323,12 @@
         },
         {
           stem: String.raw`
-            <p>Refer to Figure 9. The segment \(AB\) is fixed, the angle at \(B\) is fixed, and the segment from \(A\) to the third vertex has fixed length. The figure shows two different points, \(C\) and \(D\), both satisfying those conditions.</p>
+            <p>Refer to Figure 9. The segment \(AB\) is fixed, the angle at \(B\) is fixed, and the segment from \(A\) to the third vertex has fixed length. The points \(C\) and \(D\) lie on the same ray from \(B\), and both satisfy those conditions.</p>
             <p>What does the figure show?</p>
           `,
           media: String.raw`
             <figure>
-              <img src="4-1-tkz-color-14.png" alt="A fixed base AB with two possible third vertices C and D, showing the ambiguity of SSA." />
+              <img src="4-1-tkz-color-14.png" alt="A fixed base AB with two possible third vertices C and D on the same ray from B, showing the ambiguity of SSA." />
               <figcaption>Figure 9</figcaption>
             </figure>
           `,
