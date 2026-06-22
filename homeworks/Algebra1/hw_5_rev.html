@@ -1,0 +1,317 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Review Homework 5-1 to 5-7 (Algebra 1)</title>
+
+  <script>
+    /* =========================
+       Review Homework 5-1 to 5-7 — Linear, Compound, and Absolute Value Inequalities (Algebra 1)
+       Adapted for: /math-homework/assets/core-rich.js
+
+       REQUIRED SOURCE REFERENCES (user-provided homework sets):
+       - Homework 5-1 to 5-4: solving linear inequalities, including one-step and two-step inequalities,
+         negative coefficients, variables on both sides, parentheses, fractions, brackets, all-real-number cases,
+         and no-solution cases. Original homework used Q1-Q14 as the source set.
+       - Homework 5-5 to 5-7: compound inequalities with AND/OR, chained inequalities, absolute value inequalities,
+         and recognizing absolute value inequalities from compound statements. Original homework used Q1-Q15 as the source set.
+
+       MODEL REWORK / PEDAGOGICAL NOTES:
+       - This is a 16-question review, model-authored from the two attached homework sets rather than copied directly.
+       - Q1-Q6 review ordinary linear inequalities, with attention to sign reversal, variables on both sides,
+         parentheses/brackets, all-real-number cases, and no-solution cases.
+       - Q7-Q11 review the meaning of AND as intersection and OR as union, including redundancy,
+         contradiction, separated solution regions, and overlapping/non-overlapping solution regions.
+       - Q12-Q13 review chained inequalities, including a middle expression with a negative coefficient.
+       - Q14-Q16 review absolute value inequalities and their hidden compound forms, including reverse recognition.
+       - The alternatives are designed to diagnose common errors: failing to reverse the inequality sign, confusing AND with OR,
+         keeping an impossible middle interval, losing endpoints, and treating all-real/no-solution cases as ordinary inequalities.
+
+       IMAGE FILES:
+       - User-supplied figure(s): none.
+       - Model-generated figure(s): none.
+
+       IMAGE NAMING RULE:
+       - No image files are required for this homework.
+       ========================= */
+
+    window.homeworkData = {
+      classId : "Algebra1",
+      id      : "Review Homework 5-1 to 5-7",
+      title   : "Review Homework 5-1 to 5-7 — Inequalities",
+
+      graphics : String.raw``,
+
+      /* Correct answers for Q1-Q16 */
+      answerKey : ["C","D","A","E","F","B","C","F","D","A","E","B","C","A","E","D"],
+
+      questions : [
+
+        {
+          stem: String.raw`
+            <p>Solve the inequality.</p>
+            <p class="math">\(3x-7\le 11\)</p>
+          `,
+          choices: [
+            String.raw`\(x\ge 6\)`,
+            String.raw`\(x\le 4\)`,
+            String.raw`\(x\le 6\)`,
+            String.raw`\(x&lt;6\)`,
+            String.raw`\(x\ge 18\)`,
+            String.raw`\(x\le 18\)`
+          ],
+          choiceWrap: false
+        },
+
+        {
+          stem: String.raw`
+            <p>Solve the inequality.</p>
+            <p class="math">\(5-\frac{2}{3}y&gt;9\)</p>
+          `,
+          choices: [
+            String.raw`\(y&gt;-6\)`,
+            String.raw`\(y&lt;6\)`,
+            String.raw`\(y&gt;6\)`,
+            String.raw`\(y&lt;-6\)`,
+            String.raw`\(y\le -6\)`,
+            String.raw`\(y&lt;-\frac{8}{3}\)`
+          ],
+          choiceWrap: false
+        },
+
+        {
+          stem: String.raw`
+            <p>Solve the inequality.</p>
+            <p class="math">\(4x+9&gt;7x-6\)</p>
+          `,
+          choices: [
+            String.raw`\(x&lt;5\)`,
+            String.raw`\(x&gt;5\)`,
+            String.raw`\(x&lt;-5\)`,
+            String.raw`\(x&gt;-5\)`,
+            String.raw`\(x&lt;\frac{15}{11}\)`,
+            String.raw`All real numbers`
+          ],
+          choiceWrap: false
+        },
+
+        {
+          stem: String.raw`
+            <p>Solve the inequality. Pay attention to the brackets.</p>
+            <p class="math">\(-2[3-(x-4)]\ge x+5\)</p>
+          `,
+          choices: [
+            String.raw`\(x\le 19\)`,
+            String.raw`\(x\ge -19\)`,
+            String.raw`\(x\le -19\)`,
+            String.raw`\(x&gt;19\)`,
+            String.raw`\(x\ge 19\)`,
+            String.raw`No solution`
+          ],
+          choiceWrap: false
+        },
+
+        {
+          stem: String.raw`
+            <p>Solve the inequality.</p>
+            <p class="math">\(\frac{1}{2}(6x-4)&lt;3x+1\)</p>
+          `,
+          choices: [
+            String.raw`\(x&lt;3\)`,
+            String.raw`\(x&gt;3\)`,
+            String.raw`\(x&lt;-3\)`,
+            String.raw`\(x&gt;-3\)`,
+            String.raw`No solution`,
+            String.raw`All real numbers`
+          ],
+          choiceWrap: false
+        },
+
+        {
+          stem: String.raw`
+            <p>Solve the inequality.</p>
+            <p class="math">\(4(x+2)-3\ge 2(2x+5)\)</p>
+          `,
+          choices: [
+            String.raw`All real numbers`,
+            String.raw`No solution`,
+            String.raw`\(x\ge 5\)`,
+            String.raw`\(x\le 5\)`,
+            String.raw`\(x\ge -5\)`,
+            String.raw`\(x\le -5\)`
+          ],
+          choiceWrap: false
+        },
+
+        {
+          stem: String.raw`
+            <p>Choose the simplest statement equivalent to the compound inequality.</p>
+            <p class="math">\(x&gt;-2\ \text{ and }\ x\ge 5\)</p>
+          `,
+          choices: [
+            String.raw`\(x&gt;-2\)`,
+            String.raw`\(-2&lt;x&lt;5\)`,
+            String.raw`\(x\ge 5\)`,
+            String.raw`\(x&gt;5\)`,
+            String.raw`All real numbers`,
+            String.raw`No solution`
+          ],
+          choiceWrap: false
+        },
+
+        {
+          stem: String.raw`
+            <p>Choose the simplest statement equivalent to the compound inequality.</p>
+            <p class="math">\(x&lt;1\ \text{ and }\ x\ge 4\)</p>
+          `,
+          choices: [
+            String.raw`\(x&lt;1\)`,
+            String.raw`\(x\ge 4\)`,
+            String.raw`\(1\le x&lt;4\)`,
+            String.raw`\(x&lt;1\ \text{ or }\ x\ge 4\)`,
+            String.raw`All real numbers`,
+            String.raw`No solution`
+          ],
+          choiceWrap: false
+        },
+
+        {
+          stem: String.raw`
+            <p>Solve each inequality, then combine the results.</p>
+            <p class="math">\(3x+2\le 17\ \text{ and }\ 5-2x&lt;11\)</p>
+          `,
+          choices: [
+            String.raw`\(x\le 5\)`,
+            String.raw`\(x&gt;-3\)`,
+            String.raw`\(-3\le x&lt;5\)`,
+            String.raw`\(-3&lt;x\le 5\)`,
+            String.raw`\(x&lt;-3\ \text{ or }\ x\ge 5\)`,
+            String.raw`No solution`
+          ],
+          choiceWrap: false
+        },
+
+        {
+          stem: String.raw`
+            <p>Solve each inequality, then combine the results.</p>
+            <p class="math">\(-4x+1\ge 13\ \text{ or }\ 2x-5&gt;7\)</p>
+          `,
+          choices: [
+            String.raw`\(x\le -3\ \text{ or }\ x&gt;6\)`,
+            String.raw`\(x&lt;-3\ \text{ or }\ x\ge 6\)`,
+            String.raw`\(-3\le x&lt;6\)`,
+            String.raw`\(-3&lt;x\le 6\)`,
+            String.raw`All real numbers`,
+            String.raw`No solution`
+          ],
+          choiceWrap: false
+        },
+
+        {
+          stem: String.raw`
+            <p>Solve each inequality, then combine the results.</p>
+            <p class="math">\(5x-2&lt;13\ \text{ or }\ -2x+7\le -3\)</p>
+          `,
+          choices: [
+            String.raw`\(x&lt;3\)`,
+            String.raw`\(x\ge 5\)`,
+            String.raw`\(3\le x&lt;5\)`,
+            String.raw`\(x&lt;3\ \text{ and }\ x\ge 5\)`,
+            String.raw`\(x&lt;3\ \text{ or }\ x\ge 5\)`,
+            String.raw`All real numbers`
+          ],
+          choiceWrap: false
+        },
+
+        {
+          stem: String.raw`
+            <p>Solve the compound inequality.</p>
+            <p class="math">\(-3\le 2x-1&lt;9\)</p>
+          `,
+          choices: [
+            String.raw`\(-3\le x&lt;9\)`,
+            String.raw`\(-1\le x&lt;5\)`,
+            String.raw`\(-1&lt;x\le 5\)`,
+            String.raw`\(x\le -1\ \text{ or }\ x&gt;5\)`,
+            String.raw`\(-2\le x&lt;10\)`,
+            String.raw`No solution`
+          ],
+          choiceWrap: false
+        },
+
+        {
+          stem: String.raw`
+            <p>Solve the compound inequality.</p>
+            <p class="math">\(4&lt;10-2x\le 18\)</p>
+          `,
+          choices: [
+            String.raw`\(x&lt;-4\ \text{ or }\ x\ge 3\)`,
+            String.raw`\(-4&lt;x\le 3\)`,
+            String.raw`\(-4\le x&lt;3\)`,
+            String.raw`\(-3\le x&lt;4\)`,
+            String.raw`\(x\le -4\ \text{ or }\ x&gt;3\)`,
+            String.raw`All real numbers`
+          ],
+          choiceWrap: false
+        },
+
+        {
+          stem: String.raw`
+            <p>Solve the absolute value inequality by rewriting it as a compound inequality.</p>
+            <p class="math">\(|x+5|&lt;8\)</p>
+          `,
+          choices: [
+            String.raw`\(-13&lt;x&lt;3\)`,
+            String.raw`\(-13\le x\le 3\)`,
+            String.raw`\(x&lt;-13\ \text{ or }\ x&gt;3\)`,
+            String.raw`\(x\le -13\ \text{ or }\ x\ge 3\)`,
+            String.raw`\(-3&lt;x&lt;13\)`,
+            String.raw`No solution`
+          ],
+          choiceWrap: false
+        },
+
+        {
+          stem: String.raw`
+            <p>Solve the absolute value inequality by rewriting it as an OR statement.</p>
+            <p class="math">\(|3x-2|\ge 10\)</p>
+          `,
+          choices: [
+            String.raw`\(-\frac{8}{3}\le x\le 4\)`,
+            String.raw`\(-4\le x\le \frac{8}{3}\)`,
+            String.raw`\(x\le -4\ \text{ or }\ x\ge \frac{8}{3}\)`,
+            String.raw`\(x&lt;-\frac{8}{3}\ \text{ or }\ x&gt;4\)`,
+            String.raw`\(x\le -\frac{8}{3}\ \text{ or }\ x\ge 4\)`,
+            String.raw`No solution`
+          ],
+          choiceWrap: false
+        },
+
+        {
+          stem: String.raw`
+            <p>Choose the absolute value inequality equivalent to the compound statement.</p>
+            <p class="math">\(-6\le x\le 10\)</p>
+          `,
+          choices: [
+            String.raw`\(|x-2|\ge 8\)`,
+            String.raw`\(|x+2|\le 8\)`,
+            String.raw`\(|x-8|\le 2\)`,
+            String.raw`\(|x-2|\le 8\)`,
+            String.raw`\(|x+6|\le 10\)`,
+            String.raw`None of the statements above is correct.`
+          ],
+          choiceWrap: false
+        }
+      ]
+    };
+  </script>
+
+  <link rel="stylesheet" href="/math-homework/assets/core-rich.css" />
+  <script defer src="/math-homework/assets/core-rich.js"></script>
+  <script defer src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+</head>
+<body>
+  <div id="hw-root">Loading…</div>
+</body>
+</html>
