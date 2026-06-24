@@ -7,154 +7,313 @@
 
   <script>
     /* =========================
-       Homework 6-1 — Points, Quadrants, and Relations
+       Homework 6-1 — The Coordinate Plane (Algebra 1)
+       Adapted for: /math-homework/assets/core-rich.js
+
+       REQUIRED SOURCE REFERENCES:
+       - Original old homework used as raw source: Homework 6-1 — Points, Quadrants, and Relations.
+       - Original questions #1–#11 informed the coordinate-reading, quadrant, axis, and origin items.
+       - Original question #12 on Cartesian product was intentionally removed because domain/range, relations,
+         and Cartesian products were not part of the present class coverage.
+
+       MODEL-AUTHORED / MODEL-REWORKED ITEMS:
+       - Q1–Q4 rework the old coordinate-reading items into a cleaner shared colored plane.
+       - Q5–Q9 were composed to match the class coverage: quadrant signs, axis names, axis forms,
+         and the origin.
+       - Q10–Q16 were model-authored pattern-recognition questions: students inspect displayed points
+         or a curve and choose the coordinate constraint all displayed points seem to obey.
+
+       IMAGE FILES:
+       - User-supplied figures: none.
+       - Model-generated figures: 6-1-1.png, 6-1-10.png, 6-1-11.png, 6-1-12.png,
+         6-1-13.png, 6-1-14.png, 6-1-15.png, 6-1-16.png.
+
+       IMAGE NAMING RULE:
+       - Model-generated figures use final homework question numbering.
+       - PNG files live in the SAME folder as this HTML.
        ========================= */
+
     window.homeworkData = {
       classId : "Algebra1",
       id      : "Homework 6-1",
-      title   : "Homework 6-1 — Points, Quadrants, and Relations",
+      title   : "Homework 6-1 — The Coordinate Plane",
 
-      graphics : String.raw`
-\begin{tikzpicture}[scale=0.6]
-  \tikzset{grid/.style={very thin,color=gray!30}}
-  \tikzset{axes/.style={->,thick}}
+      graphics : String.raw``,
 
-  % axes
-  \draw[grid] (-7,-7) grid (7,7);
-  \draw[axes] (-7,0)--(7,0) node[right]{$x$};
-  \draw[axes] (0,-7)--(0,7) node[above]{$y$};
-
-  % points
-  \foreach \p/\name in {
-    (-1,-2)/A, (6,-4)/B, (2,5)/C, (2,-2)/D,
-    (-4,2)/E, (0,3)/F, (-5,-3)/G, (6,0)/H,
-    (4,1)/I, (-3,0)/J
-  }{
-    \fill[blue] \p circle (3pt);
-    \node[above right,font=\small] at \p {\name};
-  }
-\end{tikzpicture}
-`,
-
-      answerKey : ["A","C","C","A","B","F","C","E","A","E","B","A"],
+      answerKey : ["A","D","C","E","B","D","A","C","B","C","A","D","C","A","F","E"],
 
       questions : [
-        { latex: String.raw`\text{What are the coordinates of point A?}`,
+        {
+          stem: String.raw`
+            <p>Refer to Figure 1. Find the coordinates of point \(A\).</p>
+          `,
+          media: String.raw`
+            <figure>
+              <img src="6-1-1.png" alt="Coordinate plane with labeled points A through H" style="max-width:640px;width:100%;height:auto;" />
+              <figcaption>Figure 1</figcaption>
+            </figure>
+          `,
           choices: [
-            String.raw`(-1,-2)`,
-            String.raw`(1,-2)`,
-            String.raw`(-2,-1)`,
-            String.raw`(2,1)`,
-            String.raw`(-3,-2)`,
-            String.raw`(0,-2)`
-          ]},
-        { latex: String.raw`\text{What are the coordinates of point B?}`,
+            String.raw`\((-4,3)\)`,
+            String.raw`\((4,-3)\)`,
+            String.raw`\((3,-4)\)`,
+            String.raw`\((-3,4)\)`,
+            String.raw`\((-4,-3)\)`,
+            String.raw`\((0,4)\)`
+          ]
+        },
+        {
+          stem: String.raw`
+            <p>Refer to Figure 1. Which labeled point is located at \((4,-3)\)?</p>
+          `,
           choices: [
-            String.raw`(6,4)`,
-            String.raw`(-6,4)`,
-            String.raw`(6,-4)`,
-            String.raw`(-4,6)`,
-            String.raw`(4,6)`,
-            String.raw`(-6,-4)`
-          ]},
-        { latex: String.raw`\text{What are the coordinates of point C?}`,
+            String.raw`Point \(A\)`,
+            String.raw`Point \(B\)`,
+            String.raw`Point \(C\)`,
+            String.raw`Point \(D\)`,
+            String.raw`Point \(E\)`,
+            String.raw`Point \(H\)`
+          ],
+          choiceWrap: false
+        },
+        {
+          stem: String.raw`
+            <p>Starting from the origin, which movement correctly marks the point \((-3,2)\)?</p>
+          `,
           choices: [
-            String.raw`(-2,5)`,
-            String.raw`(2,-5)`,
-            String.raw`(2,5)`,
-            String.raw`(5,2)`,
-            String.raw`(-5,2)`,
-            String.raw`(-2,-5)`
-          ]},
-        { latex: String.raw`\text{What are the coordinates of point D?}`,
+            String.raw`Move right 3 units and up 2 units.`,
+            String.raw`Move left 2 units and up 3 units.`,
+            String.raw`Move left 3 units and up 2 units.`,
+            String.raw`Move right 3 units and down 2 units.`,
+            String.raw`Move left 3 units and down 2 units.`,
+            String.raw`Move up 3 units and left 2 units.`
+          ],
+          choiceWrap: false
+        },
+        {
+          stem: String.raw`
+            <p>Refer to Figure 1. Which labeled point has the form \((0,b)\) with \(b>0\)?</p>
+          `,
           choices: [
-            String.raw`(2,-2)`,
-            String.raw`(-2,2)`,
-            String.raw`(-2,-2)`,
-            String.raw`(2,2)`,
-            String.raw`(0,-2)`,
-            String.raw`(-2,0)`
-          ]},
-        { latex: String.raw`\text{Which axis or quadrant is point E(-4,2) on?}`,
+            String.raw`Point \(A\)`,
+            String.raw`Point \(C\)`,
+            String.raw`Point \(D\)`,
+            String.raw`Point \(F\)`,
+            String.raw`Point \(E\)`,
+            String.raw`Point \(H\)`
+          ],
+          choiceWrap: false
+        },
+        {
+          stem: String.raw`
+            <p>A point is in Quadrant II. Which sign pattern must its coordinates have?</p>
+          `,
           choices: [
-            String.raw`\text{Quadrant I}`,
-            String.raw`\text{Quadrant II}`,
-            String.raw`\text{Quadrant III}`,
-            String.raw`\text{Quadrant IV}`,
-            String.raw`\text{$x$-axis}`,
-            String.raw`\text{$y$-axis}`
-          ]},
-        { latex: String.raw`\text{Which axis or quadrant is point F(0,3) on?}`,
+            String.raw`\((+,+)\)`,
+            String.raw`\((-,+)\)`,
+            String.raw`\((-,-)\)`,
+            String.raw`\((+,-)\)`,
+            String.raw`\((a,0)\)`,
+            String.raw`\((0,b)\)`
+          ]
+        },
+        {
+          stem: String.raw`
+            <p>Determine the quadrant or axis of the point \((5,-2)\).</p>
+          `,
           choices: [
-            String.raw`\text{Quadrant I}`,
-            String.raw`\text{Quadrant II}`,
-            String.raw`\text{Quadrant III}`,
-            String.raw`\text{Quadrant IV}`,
-            String.raw`\text{$x$-axis}`,
-            String.raw`\text{$y$-axis}`
-          ]},
-        { latex: String.raw`\text{Which axis or quadrant is point G(-5,-3) on?}`,
+            String.raw`Quadrant I`,
+            String.raw`Quadrant II`,
+            String.raw`Quadrant III`,
+            String.raw`Quadrant IV`,
+            String.raw`\(x\)-axis`,
+            String.raw`\(y\)-axis`
+          ],
+          choiceWrap: false
+        },
+        {
+          stem: String.raw`
+            <p>Which statement is true for every point on the \(x\)-axis?</p>
+          `,
           choices: [
-            String.raw`\text{Quadrant I}`,
-            String.raw`\text{Quadrant II}`,
-            String.raw`\text{Quadrant III}`,
-            String.raw`\text{Quadrant IV}`,
-            String.raw`\text{$x$-axis}`,
-            String.raw`\text{$y$-axis}`
-          ]},
-        { latex: String.raw`\text{Which axis or quadrant is point H(6,0) on?}`,
+            String.raw`The \(y\)-coordinate is \(0\).`,
+            String.raw`The \(x\)-coordinate is \(0\).`,
+            String.raw`Both coordinates must be positive.`,
+            String.raw`The two coordinates must be equal.`,
+            String.raw`The point must be in Quadrant I.`,
+            String.raw`The point must be the origin.`
+          ],
+          choiceWrap: false
+        },
+        {
+          stem: String.raw`
+            <p>Which statement correctly names the axes of the coordinate plane?</p>
+          `,
           choices: [
-            String.raw`\text{Quadrant I}`,
-            String.raw`\text{Quadrant II}`,
-            String.raw`\text{Quadrant III}`,
-            String.raw`\text{Quadrant IV}`,
-            String.raw`\text{$x$-axis}`,
-            String.raw`\text{$y$-axis}`
-          ]},
-        { latex: String.raw`\text{Which axis or quadrant is point I(4,1) on?}`,
+            String.raw`The horizontal axis is the \(y\)-axis, and the vertical axis is the \(x\)-axis.`,
+            String.raw`The horizontal axis is the origin, and the vertical axis is the quadrant axis.`,
+            String.raw`The horizontal axis is the \(x\)-axis, and the vertical axis is the \(y\)-axis.`,
+            String.raw`Both axes are called the \(x\)-axis.`,
+            String.raw`Both axes are called the \(y\)-axis.`,
+            String.raw`The axes are the four quadrants.`
+          ],
+          choiceWrap: false
+        },
+        {
+          stem: String.raw`
+            <p>Which point lies on both the \(x\)-axis and the \(y\)-axis?</p>
+          `,
           choices: [
-            String.raw`\text{Quadrant I}`,
-            String.raw`\text{Quadrant II}`,
-            String.raw`\text{Quadrant III}`,
-            String.raw`\text{Quadrant IV}`,
-            String.raw`\text{$x$-axis}`,
-            String.raw`\text{$y$-axis}`
-          ]},
-        { latex: String.raw`\text{Which axis or quadrant is point J(-3,0) on?}`,
+            String.raw`\((1,1)\)`,
+            String.raw`\((0,0)\)`,
+            String.raw`\((0,4)\)`,
+            String.raw`\((-3,0)\)`,
+            String.raw`\((4,0)\)`,
+            String.raw`\((-1,-1)\)`
+          ]
+        },
+        {
+          stem: String.raw`
+            <p>Refer to Figure 2. What pattern do all the displayed points obey?</p>
+          `,
+          media: String.raw`
+            <figure>
+              <img src="6-1-10.png" alt="Points lying on the x-axis" style="max-width:560px;width:100%;height:auto;" />
+              <figcaption>Figure 2</figcaption>
+            </figure>
+          `,
           choices: [
-            String.raw`\text{Quadrant I}`,
-            String.raw`\text{Quadrant II}`,
-            String.raw`\text{Quadrant III}`,
-            String.raw`\text{Quadrant IV}`,
-            String.raw`\text{$x$-axis}`,
-            String.raw`\text{$y$-axis}`
-          ]},
-        { latex: String.raw`\text{What are the coordinates of the origin?}`,
+            String.raw`\(x=0\)`,
+            String.raw`\(x=y\)`,
+            String.raw`\(y=0\)`,
+            String.raw`\(y=3\)`,
+            String.raw`\(x=3\)`,
+            String.raw`\(y=-x\)`
+          ]
+        },
+        {
+          stem: String.raw`
+            <p>Refer to Figure 3. What pattern do all the displayed points obey?</p>
+          `,
+          media: String.raw`
+            <figure>
+              <img src="6-1-11.png" alt="Points lying on the y-axis" style="max-width:560px;width:100%;height:auto;" />
+              <figcaption>Figure 3</figcaption>
+            </figure>
+          `,
           choices: [
-            String.raw`(1,1)`,
-            String.raw`(0,0)`,
-            String.raw`(-1,0)`,
-            String.raw`(0,-1)`,
-            String.raw`(1,0)`,
-            String.raw`(-1,-1)`
-          ]},
-        { latex: String.raw`\text{Which of the following sets is the Cartesian product }A\times B,\ A=\{a,b,c\},\ B=\{0,1\}?`,
+            String.raw`\(x=0\)`,
+            String.raw`\(y=0\)`,
+            String.raw`\(x=y\)`,
+            String.raw`\(y=3\)`,
+            String.raw`\(x=-2\)`,
+            String.raw`\(y=x+3\)`
+          ]
+        },
+        {
+          stem: String.raw`
+            <p>Refer to Figure 4. What pattern do all the displayed points obey?</p>
+          `,
+          media: String.raw`
+            <figure>
+              <img src="6-1-12.png" alt="Points lying on the horizontal line y equals 3" style="max-width:560px;width:100%;height:auto;" />
+              <figcaption>Figure 4</figcaption>
+            </figure>
+          `,
           choices: [
-            String.raw`\{(a,0),(a,1),(b,0),(b,1),(c,0),(c,1)\}`,
-            String.raw`\{(0,a),(1,a),(0,b),(1,b),(0,c),(1,c)\}`,
-            String.raw`\{(a,a),(b,b),(c,c)\}`,
-            String.raw`\{(0,0),(1,1)\}`,
-            String.raw`\{(a,b),(b,c),(c,a)\}`,
-            String.raw`\{(0,1),(1,0)\}`
-          ]}
+            String.raw`\(x=3\)`,
+            String.raw`\(y=0\)`,
+            String.raw`\(x=0\)`,
+            String.raw`\(y=3\)`,
+            String.raw`\(x=y\)`,
+            String.raw`\(x=-3\)`
+          ]
+        },
+        {
+          stem: String.raw`
+            <p>Refer to Figure 5. What pattern do all the displayed points obey?</p>
+          `,
+          media: String.raw`
+            <figure>
+              <img src="6-1-13.png" alt="Points lying on the vertical line x equals negative 2" style="max-width:560px;width:100%;height:auto;" />
+              <figcaption>Figure 5</figcaption>
+            </figure>
+          `,
+          choices: [
+            String.raw`\(y=-2\)`,
+            String.raw`\(x=0\)`,
+            String.raw`\(x=-2\)`,
+            String.raw`\(y=2\)`,
+            String.raw`\(x=y\)`,
+            String.raw`\(y=x+2\)`
+          ]
+        },
+        {
+          stem: String.raw`
+            <p>Refer to Figure 6. What pattern do all the displayed points obey?</p>
+          `,
+          media: String.raw`
+            <figure>
+              <img src="6-1-14.png" alt="Points lying on the diagonal line y equals x" style="max-width:560px;width:100%;height:auto;" />
+              <figcaption>Figure 6</figcaption>
+            </figure>
+          `,
+          choices: [
+            String.raw`The two coordinates are equal: \(y=x\).`,
+            String.raw`The second coordinate is always \(0\).`,
+            String.raw`The first coordinate is always \(0\).`,
+            String.raw`The second coordinate is \(3\) more than the first.`,
+            String.raw`The second coordinate is the square of the first.`,
+            String.raw`The two coordinates have opposite signs.`
+          ],
+          choiceWrap: false
+        },
+        {
+          stem: String.raw`
+            <p>Refer to Figure 7. What pattern do all the displayed points obey?</p>
+          `,
+          media: String.raw`
+            <figure>
+              <img src="6-1-15.png" alt="Points lying on the line y equals x plus 3" style="max-width:560px;width:100%;height:auto;" />
+              <figcaption>Figure 7</figcaption>
+            </figure>
+          `,
+          choices: [
+            String.raw`The first coordinate is \(3\) more than the second: \(x=y+3\).`,
+            String.raw`The second coordinate is always \(3\): \(y=3\).`,
+            String.raw`The first coordinate is always \(3\): \(x=3\).`,
+            String.raw`The two coordinates are equal: \(y=x\).`,
+            String.raw`The second coordinate is \(3\) less than the first: \(y=x-3\).`,
+            String.raw`The second coordinate is \(3\) more than the first: \(y=x+3\).`
+          ],
+          choiceWrap: false
+        },
+        {
+          stem: String.raw`
+            <p>Refer to Figure 8. What pattern do all the displayed points on the curve seem to obey?</p>
+          `,
+          media: String.raw`
+            <figure>
+              <img src="6-1-16.png" alt="Points on a curve where the second coordinate is the square of the first" style="max-width:520px;width:100%;height:auto;" />
+              <figcaption>Figure 8</figcaption>
+            </figure>
+          `,
+          choices: [
+            String.raw`The first coordinate is the square of the second: \(x=y^2\).`,
+            String.raw`The second coordinate is twice the first: \(y=2x\).`,
+            String.raw`The second coordinate is \(2\) more than the first: \(y=x+2\).`,
+            String.raw`The two coordinates always add to \(4\): \(x+y=4\).`,
+            String.raw`The second coordinate is the square of the first: \(y=x^2\).`,
+            String.raw`The two coordinates are opposites: \(y=-x\).`
+          ],
+          choiceWrap: false
+        }
       ]
     };
   </script>
 
-  <link rel="stylesheet" href="/math-homework/assets/core.css" />
-  <link rel="stylesheet" href="https://tikzjax.com/v1/fonts.css" />
-  <script defer src="/math-homework/assets/core.js"></script>
-  <script defer src="https://tikzjax.com/v1/tikzjax.js"></script>
+  <link rel="stylesheet" href="/math-homework/assets/core-rich.css" />
+  <script defer src="/math-homework/assets/core-rich.js"></script>
   <script defer src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
 </head>
 <body>
