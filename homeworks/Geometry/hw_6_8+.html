@@ -77,12 +77,12 @@
             </figure>
           `,
           choices: [
-            String.raw`I &rarr; II &rarr; III &rarr; IV &rarr; V`,
+            String.raw`II &rarr; I &rarr; IV &rarr; III &rarr; V`,
             String.raw`II &rarr; III &rarr; I &rarr; IV &rarr; V`,
             String.raw`II &rarr; I &rarr; III &rarr; IV &rarr; V`,
-            String.raw`II &rarr; I &rarr; IV &rarr; III &rarr; V`,
-            String.raw`III &rarr; II &rarr; I &rarr; IV &rarr; V`,
-            String.raw`II &rarr; III &rarr; IV &rarr; I &rarr; V`
+            String.raw`II &rarr; I &rarr; III &rarr; V &rarr; IV`,
+            String.raw`II &rarr; I &rarr; V &rarr; III &rarr; IV`,
+            String.raw`II &rarr; I &rarr; IV &rarr; V &rarr; III`
           ],
           choiceWrap: false
         },
@@ -92,11 +92,11 @@
           `,
           choices: [
             String.raw`It creates a comparison triangle so that SAS can be used first.`,
-            String.raw`It shows that \(\overline{BC} \perp \overline{B'C'}\).`,
-            String.raw`It lets us use the theorem that the angle measures of a triangle add to \(180^\circ\).`,
-            String.raw`It proves that \(A'\) is the midpoint of \(\overline{BX}\).`,
-            String.raw`It forces both triangles to be right triangles.`,
-            String.raw`It makes \(\triangle A'B'C'\) isosceles.`
+            String.raw`It proves immediately that \(X=A'\), since both points lie on \(\overrightarrow{B'A'}\).`,
+            String.raw`It lets the proof use ASA directly on \(\triangle ABC\) and \(\triangle XB'C'\), without first proving a congruence by SAS.`,
+            String.raw`It replaces the missing side \(\overline{B'A'}\) with an arbitrary side, so the exact position of \(A'\) no longer matters.`,
+            String.raw`It reduces the proof to angle-angle information, so the side \(\overline{BC}\cong\overline{B'C'}\) is no longer needed.`,
+            String.raw`It is introduced so that the Exterior Angle Theorem can force \(X\) and \(A'\) to coincide.`
           ],
           choiceWrap: false
         },
@@ -120,12 +120,12 @@
             </figure>
           `,
           choices: [
-            String.raw`II &rarr; I &rarr; III &rarr; IV &rarr; V &rarr; VI`,
-            String.raw`I &rarr; III &rarr; II &rarr; IV &rarr; V &rarr; VI`,
-            String.raw`I &rarr; II &rarr; IV &rarr; III &rarr; V &rarr; VI`,
-            String.raw`I &rarr; II &rarr; III &rarr; IV &rarr; V &rarr; VI`,
             String.raw`I &rarr; II &rarr; III &rarr; V &rarr; IV &rarr; VI`,
-            String.raw`III &rarr; I &rarr; II &rarr; IV &rarr; V &rarr; VI`
+            String.raw`I &rarr; II &rarr; IV &rarr; III &rarr; V &rarr; VI`,
+            String.raw`I &rarr; III &rarr; II &rarr; IV &rarr; V &rarr; VI`,
+            String.raw`I &rarr; II &rarr; III &rarr; IV &rarr; V &rarr; VI`,
+            String.raw`I &rarr; II &rarr; III &rarr; IV &rarr; VI &rarr; V`,
+            String.raw`I &rarr; III &rarr; IV &rarr; II &rarr; V &rarr; VI`
           ],
           choiceWrap: false
         },
@@ -134,12 +134,12 @@
             <p>In the proof of SSS, why do the isosceles triangles matter?</p>
           `,
           choices: [
-            String.raw`They show that \(\triangle ABC\) and \(\triangle A'B'C'\) are right triangles.`,
-            String.raw`They produce a midpoint needed for the Exterior Angle Theorem.`,
-            String.raw`They show that \(\overline{A'B'}\) is the longest side, so the triangles must be congruent.`,
-            String.raw`They allow the use of the theorem that the angle measures of a triangle add to \(180^\circ\).`,
-            String.raw`They create angle equalities that ultimately force \(X\) to coincide with \(C'\).`,
-            String.raw`They show that \(\overline{B'C'} \perp \overline{A'X}\).`
+            String.raw`They justify applying SAS immediately to \(\triangle A'C'B'\) and \(\triangle A'XB'\), before any angle information is known.`,
+            String.raw`They show that \(\overline{A'B'}\) is a perpendicular bisector, so no comparison with \(X\) is needed.`,
+            String.raw`They turn the SSS situation into an AAA situation, and AAA is enough to prove congruence here.`,
+            String.raw`They show the two constructed triangles have the same perimeter, so their corresponding angles must be equal.`,
+            String.raw`They create the needed base-angle equalities so the constructed point \(X\) can be compared seriously with \(C'\).`,
+            String.raw`They are used only to prove the shared side \(\overline{A'B'}\cong\overline{A'B'}\).`
           ],
           choiceWrap: false
         },
@@ -163,12 +163,12 @@
             </figure>
           `,
           choices: [
-            String.raw`II &rarr; I &rarr; III &rarr; IV &rarr; V &rarr; VI`,
+            String.raw`I &rarr; II &rarr; IV &rarr; III &rarr; V &rarr; VI`,
             String.raw`I &rarr; II &rarr; III &rarr; IV &rarr; V &rarr; VI`,
             String.raw`I &rarr; III &rarr; II &rarr; IV &rarr; V &rarr; VI`,
-            String.raw`I &rarr; II &rarr; IV &rarr; III &rarr; V &rarr; VI`,
             String.raw`I &rarr; II &rarr; III &rarr; V &rarr; IV &rarr; VI`,
-            String.raw`III &rarr; I &rarr; II &rarr; IV &rarr; V &rarr; VI`
+            String.raw`I &rarr; II &rarr; III &rarr; IV &rarr; VI &rarr; V`,
+            String.raw`I &rarr; II &rarr; IV &rarr; V &rarr; III &rarr; VI`
           ],
           choiceWrap: false
         },
@@ -177,14 +177,14 @@
             <p>After the proof has established \(\angle A \cong \angle ACP\), which observation is the one that finally yields \(m\angle e > m\angle A\)?</p>
           `,
           choices: [
-            String.raw`Point \(M\) is the midpoint of \(\overline{AC}\).`,
-            String.raw`The triangles \(\triangle AMB\) and \(\triangle CMP\) are similar.`,
+            String.raw`Since \(M\) is the midpoint, \(\angle ACP\) and \(\angle e\) must be congruent.`,
+            String.raw`Since \(\triangle AMB\cong\triangle CMP\), the whole exterior angle \(\angle e\) is congruent to \(\angle A\).`,
             String.raw`
               \(\angle ACP\) is only a part of the exterior angle \(\angle e\), so \(m\angle e\) is larger than \(m\angle ACP\).
             `,
-            String.raw`\(\overline{AC}\) must be congruent to \(\overline{CP}\).`,
-            String.raw`The exterior angle measure equals \(180^\circ - m\angle C\).`,
-            String.raw`\(\overleftrightarrow{BM} \perp \overline{AC}\).`
+            String.raw`Since \(\angle e\) is adjacent to \(\angle C\), it is automatically larger than every interior angle of \(\triangle ABC\).`,
+            String.raw`Since \(\angle A\cong\angle ACP\), the remaining part of \(\angle e\) must be congruent to \(\angle B\).`,
+            String.raw`Since \(P\) lies on \(\overrightarrow{BM}\), the ray \(\overrightarrow{CP}\) bisects the exterior angle \(\angle e\).`
           ],
           choiceWrap: false
         },
@@ -208,11 +208,11 @@
             </figure>
           `,
           choices: [
-            String.raw`II &rarr; I &rarr; III &rarr; IV &rarr; V &rarr; VI`,
+            String.raw`I &rarr; II &rarr; III &rarr; V &rarr; IV &rarr; VI`,
             String.raw`I &rarr; III &rarr; II &rarr; IV &rarr; V &rarr; VI`,
             String.raw`I &rarr; II &rarr; IV &rarr; III &rarr; V &rarr; VI`,
-            String.raw`I &rarr; II &rarr; III &rarr; V &rarr; IV &rarr; VI`,
             String.raw`I &rarr; II &rarr; III &rarr; IV &rarr; VI &rarr; V`,
+            String.raw`I &rarr; II &rarr; V &rarr; III &rarr; IV &rarr; VI`,
             String.raw`I &rarr; II &rarr; III &rarr; IV &rarr; V &rarr; VI`
           ],
           choiceWrap: false
@@ -222,12 +222,12 @@
             <p>Besides SAS, which previously established result creates the contradiction in the proof of SAA just described?</p>
           `,
           choices: [
-            String.raw`SAS`,
-            String.raw`The isosceles triangle theorem`,
-            String.raw`The vertical angles theorem`,
+            String.raw`The definition of congruent triangles, after \(\triangle PBC\cong\triangle A'B'C'\) has been proved.`,
+            String.raw`The converse of the isosceles triangle theorem.`,
+            String.raw`The uniqueness of a ray making a given angle on a given side of a line.`,
             String.raw`The Exterior Angle Theorem`,
-            String.raw`The theorem that the angle measures of a triangle add to \(180^\circ\)`,
-            String.raw`HL for right triangles`
+            String.raw`The theorem that two angles supplementary to the same angle are congruent.`,
+            String.raw`The fact that a point chosen on \(\overline{BA}\) makes a shorter segment than \(\overline{BA}\).`
           ],
           choiceWrap: false
         },
@@ -243,19 +243,19 @@
           `,
           choices: [
             String.raw`
-              \(\triangle ABC\) and \(\triangle ACB\), using SAS.
+              Compare \(\triangle ABC\) and \(\triangle ACB\): \(\overline{AB}\cong\overline{AC}\), \(\overline{AC}\cong\overline{AB}\), and the included angle at \(A\) is common, so SAS applies.
             `,
             String.raw`
-              \(\triangle ABC\) and \(\triangle BAC\), using ASA.
+              Compare \(\triangle ABC\) and \(\triangle BAC\): the shared side \(\overline{AB}\) gives the included side for ASA.
             `,
             String.raw`
-              \(\triangle ABC\) and \(\triangle CAB\), using SAA.
+              Compare \(\triangle ABC\) and \(\triangle CAB\): the two equal sides alone already determine the base angles.
             `,
             String.raw`
-              \(\triangle ABC\) and a new triangle constructed outside it, using SSS.
+              Drop a perpendicular from \(A\) to \(\overline{BC}\) and compare the two smaller triangles; the perpendicular automatically bisects \(\overline{BC}\).
             `,
-            String.raw`No comparison is needed; the result follows immediately from the definition of isosceles triangle.`,
-            String.raw`The statement cannot be proved without the angle-measure sum theorem.`
+            String.raw`No comparison is needed; the base angles are congruent by the definition of isosceles triangle.`,
+            String.raw`Compare \(\triangle ABC\) and \(\triangle ACB\) by ASA, using the base angles as the given angles.`
           ],
           choiceWrap: false
         },
@@ -270,12 +270,12 @@
             </figure>
           `,
           choices: [
-            String.raw`Compare \(\triangle ABC\) and \(\triangle ACB\) by SAS.`,
+            String.raw`Compare \(\triangle ABC\) and \(\triangle ACB\) by SAS; the given angle equality can replace the missing side equality.`,
             String.raw`Compare \(\triangle ABC\) and \(\triangle ACB\) by ASA.`,
-            String.raw`Compare \(\triangle BAC\) and \(\triangle CAB\) by SSA.`,
-            String.raw`Use the Exterior Angle Theorem at \(A\).`,
-            String.raw`No conclusion can be drawn without the theorem that the angle measures of a triangle add to \(180^\circ\).`,
-            String.raw`Compare \(\triangle ABC\) and \(\triangle ACB\) by AAA.`
+            String.raw`Use the isosceles triangle theorem directly, since this converse is the same statement written backward.`,
+            String.raw`Use the Exterior Angle Theorem at \(A\) to show that the sides opposite \(\angle B\) and \(\angle C\) must be equal.`,
+            String.raw`Conclude \(\overline{AB}\cong\overline{AC}\) from the drawing; the angle marks only confirm what the picture suggests.`,
+            String.raw`Compare \(\triangle ABC\) and \(\triangle ACB\) by AAA; congruent corresponding angles force congruent corresponding sides.`
           ],
           choiceWrap: false
         },
@@ -291,12 +291,12 @@
             </figure>
           `,
           choices: [
-            String.raw`\(\triangle PAB\) and \(\triangle PMB\) are congruent by SAA.`,
-            String.raw`\(\triangle PMA\) and \(\triangle PMB\) are similar by AA.`,
-            String.raw`\(\triangle PMA\) and \(\triangle PMB\) are congruent by SAS.`,
-            String.raw`The conclusion follows directly from the definition of midpoint.`,
-            String.raw`\(\triangle PAM\) and \(\triangle ABM\) are congruent by ASA.`,
-            String.raw`No congruence theorem applies here.`
+            String.raw`\(\triangle PMA\) and \(\triangle PMB\) are congruent by ASA, because the right angle at \(M\) and the side \(PM\) are common information.`,
+            String.raw`\(\triangle PMA\) and \(\triangle PMB\) are similar by AA, and similarity alone is enough to conclude \(PA=PB\).`,
+            String.raw`\(\triangle PMA\) and \(\triangle PMB\) are congruent by SAS: \(PM\) is common, \(AM\cong MB\), and the included angles at \(M\) are right angles.`,
+            String.raw`The conclusion follows from the midpoint condition alone, because \(M\) is equally far from \(A\) and \(B\).`,
+            String.raw`\(\triangle PAM\) and \(\triangle PBM\) are congruent by SSS, since \(PM\) is common and \(AM\cong MB\).`,
+            String.raw`The perpendicular condition alone is enough; any point on a perpendicular to \(\overline{AB}\) is equally far from \(A\) and \(B\).`
           ],
           choiceWrap: false
         },
@@ -312,12 +312,12 @@
             </figure>
           `,
           choices: [
-            String.raw`Compare \(\triangle ABC\) and \(\triangle BCD\) by SSS.`,
-            String.raw`Compare \(\triangle ABD\) and \(\triangle ACD\) by SAS.`,
-            String.raw`Compare \(\triangle ABC\) and \(\triangle ADC\) by ASA.`,
-            String.raw`Compare \(\triangle ACB\) and \(\triangle CAD\) by SAA.`,
+            String.raw`Compare \(\triangle ABC\) and \(\triangle ADC\) by SAS; the two marked side pairs and the shared side \(\overline{AC}\) give the needed information.`,
+            String.raw`Compare \(\triangle ABD\) and \(\triangle CBD\) by SSS; each triangle contains one side from each marked pair.`,
+            String.raw`Compare \(\triangle ABC\) and \(\triangle ADC\) by ASA; the diagonal \(\overline{AC}\) already gives the two angle bisectors.`,
+            String.raw`Compare \(\triangle ACB\) and \(\triangle CAD\) by SAA; the common vertex \(C\) supplies one pair of equal angles.`,
             String.raw`Compare \(\triangle ABC\) and \(\triangle ADC\) by SSS.`,
-            String.raw`Compare \(\triangle ABD\) and \(\triangle CBD\) by SSS.`
+            String.raw`Compare \(\triangle ABD\) and \(\triangle ACD\) by SAS; the equal sides meet at \(D\).`
           ],
           choiceWrap: false
         },
@@ -334,11 +334,11 @@
           `,
           choices: [
             String.raw`SSA does not determine a unique triangle, so it is not a congruence criterion.`,
-            String.raw`SAS is not a valid congruence criterion.`,
-            String.raw`No triangle can satisfy the given conditions.`,
-            String.raw`Whenever two sides are fixed, the third vertex is unique.`,
-            String.raw`The figure shows that AAA implies congruence.`,
-            String.raw`The Exterior Angle Theorem fails for one of the triangles.`
+            String.raw`The figure shows SAS being used: \(\overline{AB}\) is common, the angle at \(B\) is fixed, and \(\overline{AC}\cong\overline{AD}\).`,
+            String.raw`The figure shows that one side, one adjacent angle, and the opposite side always fix the third vertex.`,
+            String.raw`The two possible triangles must still be congruent because \(C\) and \(D\) lie on the same ray from \(B\).`,
+            String.raw`The example would become a valid proof of congruence if we only added that \(C\) and \(D\) are on the same side of \(\overline{AB}\).`,
+            String.raw`The failure comes from the fact that \(\angle ABC\) and \(\angle ABD\) are adjacent rather than equal.`
           ],
           choiceWrap: false
         },
@@ -349,12 +349,12 @@
             <p>Which statement best identifies the flaw?</p>
           `,
           choices: [
-            String.raw`The student should have used SSS instead.`,
-            String.raw`The two known sides must be parallel.`,
-            String.raw`The given angle should be opposite both known sides.`,
+            String.raw`The student has enough information for SSS, but used the wrong name for the criterion.`,
+            String.raw`SAS requires the two known sides to be parallel to the two corresponding sides in the other triangle.`,
+            String.raw`The argument is valid by SSA; the flaw is only that the student called the criterion SAS.`,
             String.raw`The known angle is not the included angle between the two known sides, so this is really SSA, not SAS.`,
-            String.raw`The argument fails because vertical angles were not used.`,
-            String.raw`The conclusion would be correct only for right triangles.`
+            String.raw`The student should first prove that \(\angle C\cong\angle C'\), because SAS always requires two angle equalities.`,
+            String.raw`The conclusion would follow only if the two triangles were first known to be similar.`
           ],
           choiceWrap: false
         }
