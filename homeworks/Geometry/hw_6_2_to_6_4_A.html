@@ -7,7 +7,7 @@
 
   <script>
     /* =========================
-       Homework 6-2 to 6-4 A — Congruence, Parallelism, and Flatness (Geometry), clean colored figure revision
+       Homework 6-2 to 6-4 A — Congruence, Parallelism, and Flatness (Geometry), clean colored figure revision with strengthened distractors
        Adapted for: /math-homework/assets/core-rich.js
 
        REQUIRED SOURCE REFERENCES:
@@ -55,12 +55,12 @@
 <p>The HL theorem is a special congruence theorem for right triangles. Which information is exactly the HL information?</p>
           `,
           choices: [
-            String.raw`Two legs of one triangle are congruent to two legs of another triangle.`,
-            String.raw`Two hypotenuses are congruent and one pair of acute angles is congruent.`,
-            String.raw`One leg and one acute angle are congruent in two right triangles.`,
+            String.raw`Both legs of one right triangle are congruent to both legs of another right triangle.`,
+            String.raw`The hypotenuse and one acute angle of one right triangle are congruent to the corresponding parts of another right triangle.`,
+            String.raw`One leg and one acute angle of one right triangle are congruent to the corresponding parts of another right triangle.`,
             String.raw`The hypotenuse and one leg of one right triangle are congruent to the hypotenuse and one leg of another right triangle.`,
-            String.raw`The right angles and the hypotenuses are congruent, with no leg information.`,
-            String.raw`The two acute angles of one right triangle are congruent to the two acute angles of another right triangle.`
+            String.raw`The hypotenuses are congruent, and both triangles are known to have right angles, but no leg pair is given.`,
+            String.raw`A hypotenuse and a leg are marked in each right triangle, but the marked legs are not corresponding parts.`
           ],
           choiceWrap: false
         },
@@ -71,12 +71,12 @@
 <p>Ordinary SSA is not a congruence theorem. Why is HL not merely ordinary SSA with a new name?</p>
           `,
           choices: [
-            String.raw`Because HL secretly assumes that all triangles with one equal side are congruent.`,
+            String.raw`Because the marked leg in HL must be adjacent to the same acute angle in both triangles.`,
             String.raw`Because the right angle fixes the hypotenuse as the side opposite the right angle, and the situation can be reduced to earlier congruence ideas by a construction.`,
-            String.raw`Because a hypotenuse is allowed to be any side of a triangle, so there is no ambiguity.`,
-            String.raw`Because in right triangles, every pair of acute angles is automatically congruent.`,
-            String.raw`Because HL works for obtuse triangles as well as right triangles.`,
-            String.raw`Because SSA becomes valid whenever the diagram looks symmetric.`
+            String.raw`Because the right angle is the included angle between the hypotenuse and the marked leg.`,
+            String.raw`Because HL uses only the fact that both triangles have right angles, after which the side information is unnecessary.`,
+            String.raw`Because the hypotenuse can be matched with either leg after relabeling a right triangle.`,
+            String.raw`Because in a right triangle, any two sides and any one angle form a valid congruence pattern.`
           ],
           choiceWrap: false
         },
@@ -96,9 +96,9 @@
             String.raw`\(\triangle ABC \cong \triangle DEF\) by SAS.`,
             String.raw`\(\triangle ABC \cong \triangle DEF\) by ASA.`,
             String.raw`\(\triangle ABC \cong \triangle DEF\) by HL.`,
-            String.raw`The triangles are only similar; congruence cannot be concluded.`,
-            String.raw`No conclusion is possible because the second leg is not marked.`,
-            String.raw`No conclusion is possible because no right angles are marked.`
+            String.raw`The markings give a leg and the hypotenuse, but this is still ordinary SSA and cannot prove congruence.`,
+            String.raw`No conclusion is possible because the second pair of legs is not marked congruent.`,
+            String.raw`The triangles can be proved congruent only after first proving the remaining acute angles congruent.`
           ],
           choiceWrap: false
         },
@@ -138,11 +138,11 @@
           `,
           choices: [
             String.raw`It turns the difficult part into a known fact: equal sides give equal base angles, so the right-triangle situation can be connected back to earlier congruence reasoning.`,
-            String.raw`It proves that every triangle with a right angle is automatically congruent to every other right triangle.`,
-            String.raw`It changes the hypotenuse into a leg, so the word hypotenuse is no longer needed.`,
-            String.raw`It assumes the two right triangles are already congruent and then redraws them more neatly.`,
-            String.raw`It proves that the two horizontal sides must be parallel.`,
-            String.raw`It is only decorative; the proof of HL does not use it.`
+            String.raw`It creates a second shared side, so the proof becomes SSS without needing the right angles.`,
+            String.raw`It shows that the two hypotenuses are parallel, which then gives the needed angle congruences.`,
+            String.raw`It changes the given HL information into ordinary SSA and then treats SSA as a congruence theorem.`,
+            String.raw`It supplies the missing leg congruence by subtracting equal segments from equal segments.`,
+            String.raw`It lets the proof use only the marked hypotenuses, with the right-angle information no longer needed.`
           ],
           choiceWrap: false
         },
@@ -153,12 +153,12 @@
 <p>A student says, “HL works because the triangles have a right angle, and a right angle is very strong.” What is missing from this explanation?</p>
           `,
           choices: [
-            String.raw`The student forgot that right angles are not congruent to each other.`,
-            String.raw`The student should have said that every right triangle is isosceles.`,
+            String.raw`The student should have explained why the two acute angles are congruent before using HL.`,
+            String.raw`The student should have identified a pair of legs that are both perpendicular to the hypotenuse.`,
             String.raw`The student did not mention the required side information: a congruent hypotenuse and a congruent leg are still needed.`,
-            String.raw`The student should have used only angle information, since sides are not important in right triangles.`,
-            String.raw`The student forgot that the hypotenuse is adjacent to the right angle.`,
-            String.raw`The student should have said that HL applies to all triangles, not only right triangles.`
+            String.raw`The student should have used only the right angles, since HL is an angle theorem.`,
+            String.raw`The student confused the hypotenuse with a side adjacent to the right angle.`,
+            String.raw`The student should have checked the order of the vertices only after congruence was already proved.`
           ],
           choiceWrap: false
         },
@@ -175,12 +175,12 @@
 </figure>
           `,
           choices: [
-            String.raw`At least one line through \(P\) meets \(\ell\).`,
+            String.raw`At least two different lines through \(P\) do not meet \(\ell\).`,
             String.raw`Exactly one line through \(P\) is parallel to \(\ell\).`,
-            String.raw`Every line through \(P\) is parallel to \(\ell\).`,
-            String.raw`No line through \(P\) can be parallel to \(\ell\).`,
-            String.raw`Exactly one point on \(\ell\) is closest to \(P\).`,
-            String.raw`Any two lines through \(P\) must eventually meet \(\ell\).`
+            String.raw`For each direction through \(P\), there is a different line parallel to \(\ell\).`,
+            String.raw`The line through \(P\) perpendicular to \(\ell\) is the line parallel to \(\ell\).`,
+            String.raw`A line through \(P\) is parallel to \(\ell\) only if it is drawn horizontally on the page.`,
+            String.raw`Two lines through \(P\) can both be parallel to \(\ell\) if they are very close together.`
           ],
           choiceWrap: false
         },
@@ -191,12 +191,12 @@
 <p>The Euclidean Postulate is not just a small technical rule. Which sentence best describes its role in this part of geometry?</p>
           `,
           choices: [
-            String.raw`It says that all triangles are equilateral unless a diagram says otherwise.`,
-            String.raw`It says that the word “parallel” only applies to horizontal lines.`,
-            String.raw`It says that every line has a midpoint.`,
-            String.raw`It says that curved drawings are not allowed in a geometry notebook.`,
+            String.raw`It is mainly a drawing convention for showing parallel lines with the same visual slope on the page.`,
+            String.raw`It says that parallel lines never meet, but it does not control how many parallels pass through an outside point.`,
+            String.raw`It lets us assume corresponding angles are congruent before proving any result about transversals.`,
+            String.raw`It replaces the need to draw an auxiliary parallel line in the proof of the triangle angle-sum theorem.`,
             String.raw`It expresses a flat-plane behavior: through an outside point, parallel direction is unique, unlike in geometries where straightest paths may behave differently.`,
-            String.raw`It replaces the need to prove any theorem about angles.`
+            String.raw`It gives the triangle angle-sum theorem directly, so the parallel-line angle theorem becomes only a notation shortcut.`
           ],
           choiceWrap: false
         },
@@ -207,12 +207,12 @@
 <p>Which chain of ideas best matches the order of the results in this homework?</p>
           `,
           choices: [
-            String.raw`HL gives triangle angle sum; triangle angle sum gives the Euclidean Postulate; the Euclidean Postulate gives SAS.`,
-            String.raw`Angle names give HL; HL gives alternate interior angles; alternate interior angles give line segments.`,
-            String.raw`Corresponding angles are defined; therefore all triangles have equal sides.`,
+            String.raw`First define angle-pair names; then use the Euclidean Postulate to prove HL; then use HL to prove the triangle angle-sum theorem.`,
+            String.raw`HL proves right-triangle congruence; from that we get the parallel-line angle theorem; then the triangle angle-sum theorem follows.`,
+            String.raw`The parallel-line angle theorem is assumed first; then the Euclidean Postulate is proved from the triangle angle-sum theorem.`,
             String.raw`The Euclidean Postulate supports the parallel-line angle theorem; that theorem supports the proof that the angles of a triangle add to \(180^\circ\).`,
-            String.raw`Triangle angle sum is assumed first; then parallel lines are defined from it.`,
-            String.raw`Curved geometry proves that the Euclidean Postulate is unnecessary.`
+            String.raw`The triangle angle-sum theorem is first accepted from measurement; then alternate interior angles are introduced as a vocabulary topic.`,
+            String.raw`The Euclidean Postulate and the triangle angle-sum theorem are separate facts here, so no proof connection is intended.`
           ],
           choiceWrap: false
         },
@@ -299,12 +299,12 @@
 </figure>
           `,
           choices: [
-            String.raw`\(m\angle \alpha + m\angle \beta = 180^\circ\) because they are same-side interior angles.`,
+            String.raw`\(m\angle \alpha + m\angle \beta = 180^\circ\), confusing alternate interior angles with same-side interior angles.`,
             String.raw`\(\angle \alpha \cong \angle \beta\) because parallel lines form congruent alternate interior angles.`,
-            String.raw`\(\ell\) and \(m\) must intersect because the transversal intersects both.`,
-            String.raw`\(\angle \alpha\) and \(\angle \beta\) are vertical angles.`,
-            String.raw`\(\angle \alpha\) and \(\angle \beta\) are right angles.`,
-            String.raw`No angle conclusion follows from parallel lines.`
+            String.raw`\(\angle \alpha\) and \(\angle \beta\) are congruent only if they are first shown to be corresponding angles.`,
+            String.raw`\(\angle \alpha\) and \(\angle \beta\) are supplementary because both lie between the parallel lines.`,
+            String.raw`The statement \(\angle \alpha \cong \angle \beta\) would be useful only for proving the lines parallel, not after the lines are already known parallel.`,
+            String.raw`The diagram may suggest equal-looking angles, but parallel lines alone do not justify an angle statement.`
           ],
           choiceWrap: false
         },
@@ -317,10 +317,10 @@
           choices: [
             String.raw`The transversal is parallel to \(\ell\).`,
             String.raw`The transversal is parallel to \(m\).`,
-            String.raw`The two lines must be perpendicular.`,
-            String.raw`The two lines are congruent segments.`,
+            String.raw`\(\angle \alpha\) and \(\angle \beta\) must also be same-side interior angles.`,
+            String.raw`The two original lines are perpendicular to the transversal.`,
             String.raw`\(\ell \parallel m\).`,
-            String.raw`The two lines form a triangle.`
+            String.raw`The conclusion would require corresponding angles, not alternate interior angles.`
           ],
           choiceWrap: false
         },
@@ -332,11 +332,11 @@
           `,
           choices: [
             String.raw`Two lines cut by a transversal are parallel if and only if they form a pair of congruent alternate interior angles.`,
-            String.raw`If two lines are parallel, then every angle in the diagram is congruent to every other angle.`,
-            String.raw`If two angles are congruent, then the lines that form them must be parallel.`,
-            String.raw`Two lines are parallel if and only if they have the same length.`,
-            String.raw`Alternate interior angles are congruent only when the transversal is perpendicular to both lines.`,
-            String.raw`Corresponding angles are never useful for proving lines parallel.`
+            String.raw`If two lines are parallel, then alternate interior angles are congruent, but the converse is not part of the theorem.`,
+            String.raw`If two angles in a transversal diagram are congruent, then the two lines cut by the transversal must be parallel.`,
+            String.raw`Two lines cut by a transversal are parallel if and only if same-side interior angles are congruent.`,
+            String.raw`Two lines cut by a transversal are parallel if and only if alternate interior angles are supplementary.`,
+            String.raw`The theorem works only when the transversal is perpendicular to one of the two lines.`
           ],
           choiceWrap: false
         },
@@ -353,12 +353,12 @@
 </figure>
           `,
           choices: [
-            String.raw`Because all angles touching a parallel line are congruent.`,
-            String.raw`Because \(\angle \alpha\) and \(\angle B\) are vertical angles.`,
+            String.raw`Because the angle made by \(r\) and \(\overleftrightarrow{AB}\) should be treated as corresponding to \(\angle B\).`,
+            String.raw`Because \(\angle \alpha\) and \(\angle B\) form a pair of same-side interior angles.`,
             String.raw`Because \(r \parallel \overleftrightarrow{BC}\), and \(\overleftrightarrow{AB}\) acts as a transversal, making them alternate interior angles.`,
-            String.raw`Because \(A\) is the midpoint of the top line.`,
-            String.raw`Because \(\triangle ABC\) is necessarily isosceles.`,
-            String.raw`Because the Euclidean Postulate says every angle is \(60^\circ\).`
+            String.raw`Because the line \(r\) was drawn through \(A\), so it bisects the angle at \(A\).`,
+            String.raw`Because \(\angle \alpha\) is first congruent to \(\angle C\), and then \(\angle C\) is congruent to \(\angle B\).`,
+            String.raw`Because the triangle angle-sum theorem must be used before drawing the parallel line.`
           ],
           choiceWrap: false
         },
@@ -369,12 +369,12 @@
 <p>Which proof outline best explains why the angle measures of a triangle add to \(180^\circ\) in Euclidean plane geometry?</p>
           `,
           choices: [
-            String.raw`Measure many triangles with a protractor; since the answers look close to \(180^\circ\), accept it as true.`,
-            String.raw`Assume all triangles are equilateral; then each angle is \(60^\circ\), so the sum is \(180^\circ\).`,
-            String.raw`Use HL to prove all three sides of the triangle are congruent; then add the angles.`,
+            String.raw`Draw a line through one vertex parallel to the opposite side, then assume the three angles at that vertex are congruent.`,
+            String.raw`Use HL to copy the two remote angles onto the line through the chosen vertex.`,
+            String.raw`Draw the three angle bisectors; since they meet at one point, the three original angles must add to \(180^\circ\).`,
             String.raw`Draw a line through one vertex parallel to the opposite side; use alternate interior angles to move the two remote angles to that line; the three angles then form a straight angle.`,
-            String.raw`Draw a circle around the triangle and use the radius as a transversal.`,
-            String.raw`Use the fact that corresponding angles are supplementary, then subtract \(90^\circ\).`
+            String.raw`Draw a line through the midpoint of one side and use corresponding angles to move all three angles to that line.`,
+            String.raw`Use the fact that same-side interior angles are congruent for parallel lines; then the three angles form a straight angle.`
           ],
           choiceWrap: false
         },
@@ -385,12 +385,12 @@
 <p>Suppose we were working in a geometry where the Euclidean Postulate is not valid. Which familiar school-geometry conclusion would no longer be guaranteed in the same way?</p>
           `,
           choices: [
-            String.raw`That a segment has two endpoints.`,
             String.raw`That vertical angles are congruent.`,
+            String.raw`That SAS can be used as a triangle-congruence postulate.`,
             String.raw`That every triangle has angle sum exactly \(180^\circ\).`,
-            String.raw`That a right angle is congruent to another right angle.`,
-            String.raw`That a triangle has three sides.`,
-            String.raw`That a point can be named with a capital letter.`
+            String.raw`That an isosceles triangle has congruent base angles.`,
+            String.raw`That a straight angle has measure \(180^\circ\).`,
+            String.raw`That a segment can be copied onto a ray from a chosen endpoint.`
           ],
           choiceWrap: false
         }
