@@ -1,0 +1,199 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Homework 6-2 to 6-4 (Part 2) — Geometry</title>
+
+  <link rel="stylesheet" href="/math-homework/assets/core-rich.css" />
+  <script defer src="/math-homework/assets/core-rich.js"></script>
+  <script defer src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+
+  <script>
+    /* =========================
+       Homework 6-2 to 6-4 (Part 2) — Geometry
+
+       REQUIRED SOURCE REFERENCES (Portuguese screenshots provided by the user):
+       - Portuguese set uses: #3 (Covest-2004), #7 (UFPB-99), #12 (FGV-2004),
+         #13 (Fuvest-81), #34 (AFA-2001), #41 (right isosceles / isosceles composite).
+       - Model-authored items: Q1, Q3, Q7, Q9.
+         * Q1 was added as a clean warm-up on base angles in an isosceles triangle.
+         * Q3 was added to test the same idea through an exterior angle.
+         * Q7 was added to reinforce nested isosceles-triangle reasoning.
+         * Q9 was added as a synthesis question combining isosceles structure and angle chase.
+
+       IMAGE FILES:
+       - User-supplied figure(s): source screenshots were used only as reference material.
+       - Model-generated figure(s): 6-2to4p2-2.png, 6-2to4p2-4.png, 6-2to4p2-5.png,
+         6-2to4p2-6.png, 6-2to4p2-7.png, 6-2to4p2-8.png, 6-2to4p2-9.png,
+         6-2to4p2-10.png.
+
+       IMAGE NAMING RULE:
+       - Model-generated figures use final homework question numbering.
+       - PNG files live in the SAME folder as this HTML.
+       ========================= */
+
+    window.homeworkData = {
+      classId : "Geometry",
+      id      : "Homework 6-2 to 6-4 (Part 2)",
+      title   : "Homework 6-2 to 6-4 (Part 2) — Angle Relationships and Isosceles Triangles",
+      graphics : String.raw``,
+      answerKey : ["B","C","B","C","B","D","D","E","D","C"],
+      questions : [
+        {
+          stem: String.raw`<p>Triangle \(ABC\) is isosceles with \(AB=AC\). If \(\angle ABC=47^\circ\), find \(\angle BAC\).</p>`,
+          choices: [
+            String.raw`\(84^\circ\)`,
+            String.raw`\(86^\circ\)`,
+            String.raw`\(88^\circ\)`,
+            String.raw`\(94^\circ\)`,
+            String.raw`\(96^\circ\)`,
+            String.raw`\(133^\circ\)`
+          ]
+        },
+        {
+          stem: String.raw`
+            <p>In Figure 2, lines \(r\) and \(s\) are parallel. Find \(\alpha\).</p>
+            <figure style="margin:0.75rem auto; text-align:center;">
+              <img src="6-2to4p2-2.png" alt="Parallel lines with a broken transversal; 30 degrees at the top intersection, 40 degrees at point B, and alpha at point A." style="max-width:560px; width:100%; height:auto;" />
+            </figure>
+          `,
+          choices: [
+            String.raw`\(50^\circ\)`,
+            String.raw`\(60^\circ\)`,
+            String.raw`\(70^\circ\)`,
+            String.raw`\(75^\circ\)`,
+            String.raw`\(80^\circ\)`,
+            String.raw`\(90^\circ\)`
+          ]
+        },
+        {
+          stem: String.raw`<p>Triangle \(ABC\) is isosceles with \(AB=AC\). The exterior angle at \(C\) is \(124^\circ\). Find \(\angle BAC\).</p>`,
+          choices: [
+            String.raw`\(56^\circ\)`,
+            String.raw`\(68^\circ\)`,
+            String.raw`\(62^\circ\)`,
+            String.raw`\(72^\circ\)`,
+            String.raw`\(76^\circ\)`,
+            String.raw`\(84^\circ\)`
+          ]
+        },
+        {
+          stem: String.raw`
+            <p>In Figure 4, lines \(r\) and \(s\) are parallel. Find \(\alpha\).</p>
+            <figure style="margin:0.75rem auto; text-align:center;">
+              <img src="6-2to4p2-4.png" alt="Two parallel lines r and s with intersecting transversals on the left and another transversal on the right; given 50 degrees, 40 degrees, y, alpha minus y, and alpha." style="max-width:640px; width:100%; height:auto;" />
+            </figure>
+          `,
+          choices: [
+            String.raw`\(115^\circ\)`,
+            String.raw`\(125^\circ\)`,
+            String.raw`\(135^\circ\)`,
+            String.raw`\(145^\circ\)`,
+            String.raw`\(155^\circ\)`,
+            String.raw`\(165^\circ\)`
+          ]
+        },
+        {
+          stem: String.raw`
+            <p>In Figure 5, \(AB=BD=CD\). Which relation must be true?</p>
+            <figure style="margin:0.75rem auto; text-align:center;">
+              <img src="6-2to4p2-5.png" alt="Points A, B, C are collinear; D is above the line; AD is extended beyond D; AB, BD, and CD are marked congruent; angle x is at A and angle y is exterior at D." style="max-width:420px; width:100%; height:auto;" />
+            </figure>
+          `,
+          choiceWrap: false,
+          choices: [
+            String.raw`\(y=2x\)`,
+            String.raw`\(y=3x\)`,
+            String.raw`\(x=3y\)`,
+            String.raw`\(3x=2y\)`,
+            String.raw`\(x+y=180^\circ\)`,
+            String.raw`\(x=y\)`
+          ]
+        },
+        {
+          stem: String.raw`
+            <p>In Figure 6, \(ABC\) is a right isosceles triangle, and \(ACD\) is an isosceles triangle with base \(CD\). Find \(x\).</p>
+            <figure style="margin:0.75rem auto; text-align:center;">
+              <img src="6-2to4p2-6.png" alt="Right isosceles triangle ABC with right angle at B, and isosceles triangle ACD with AC equal to AD; the exterior angle at C is 61 degrees and x is at A." style="max-width:430px; width:100%; height:auto;" />
+            </figure>
+          `,
+          choices: [
+            String.raw`\(29^\circ\)`,
+            String.raw`\(30^\circ\)`,
+            String.raw`\(31^\circ\)`,
+            String.raw`\(32^\circ\)`,
+            String.raw`\(33^\circ\)`,
+            String.raw`\(34^\circ\)`
+          ]
+        },
+        {
+          stem: String.raw`
+            <p>In Figure 7, \(AB=AC\), point \(D\) lies on \(AC\), \(BD=BA\), and \(\angle ABC=52^\circ\). Find \(x\).</p>
+            <figure style="margin:0.75rem auto; text-align:center;">
+              <img src="6-2to4p2-7.png" alt="Isosceles triangle ABC with D on AC, AB equal to AC, and BD equal to BA; angle x is at B between BC and BD." style="max-width:460px; width:100%; height:auto;" />
+            </figure>
+          `,
+          choices: [
+            String.raw`\(18^\circ\)`,
+            String.raw`\(20^\circ\)`,
+            String.raw`\(22^\circ\)`,
+            String.raw`\(24^\circ\)`,
+            String.raw`\(26^\circ\)`,
+            String.raw`\(28^\circ\)`
+          ]
+        },
+        {
+          stem: String.raw`
+            <p>In Figure 8, find the value of \(A+B+C+D+E+F+G+H\).</p>
+            <figure style="margin:0.75rem auto; text-align:center;">
+              <img src="6-2to4p2-8.png" alt="A quadrilateral with one triangle attached externally to each side; the outer triangle angles are labeled A and B, C and D, E and F, G and H." style="max-width:520px; width:100%; height:auto;" />
+            </figure>
+          `,
+          choices: [
+            String.raw`\(180^\circ\)`,
+            String.raw`\(240^\circ\)`,
+            String.raw`\(300^\circ\)`,
+            String.raw`\(320^\circ\)`,
+            String.raw`\(360^\circ\)`,
+            String.raw`\(400^\circ\)`
+          ]
+        },
+        {
+          stem: String.raw`
+            <p>In Figure 9, \(AB=AC\), point \(D\) lies on \(BC\), \(\angle BAD=30^\circ\), and \(\angle ADC=100^\circ\). Find \(x\).</p>
+            <figure style="margin:0.75rem auto; text-align:center;">
+              <img src="6-2to4p2-9.png" alt="Isosceles triangle ABC with D on base BC, segment AD drawn, angle BAD equal to 30 degrees, angle ADC equal to 100 degrees, and x at B." style="max-width:430px; width:100%; height:auto;" />
+            </figure>
+          `,
+          choices: [
+            String.raw`\(55^\circ\)`,
+            String.raw`\(60^\circ\)`,
+            String.raw`\(65^\circ\)`,
+            String.raw`\(70^\circ\)`,
+            String.raw`\(75^\circ\)`,
+            String.raw`\(80^\circ\)`
+          ]
+        },
+        {
+          stem: String.raw`
+            <p>In Figure 10, \(AB=BC=CD=DE=EA\). Find \(x=\angle CAD\).</p>
+            <figure style="margin:0.75rem auto; text-align:center;">
+              <img src="6-2to4p2-10.png" alt="Triangle ADC with points B on AD and E on AC; segments BC and DE cross; AB, BC, CD, DE, and EA are marked congruent; x is at A." style="max-width:420px; width:100%; height:auto;" />
+            </figure>
+          `,
+          choices: [
+            String.raw`\(24^\circ\)`,
+            String.raw`\(30^\circ\)`,
+            String.raw`\(36^\circ\)`,
+            String.raw`\(40^\circ\)`,
+            String.raw`\(45^\circ\)`,
+            String.raw`\(54^\circ\)`
+          ]
+        }
+      ]
+    };
+  </script>
+</head>
+<body></body>
+</html>
