@@ -225,7 +225,7 @@
           choices: [
             String.raw`\(y\ge x^2-4\)`,
             String.raw`\(y>x^2-4\)`,
-            String.raw`\(y<x^2-4\)`,
+            String.raw`\(y\lt x^2-4\)`,
             String.raw`\(y\le x^2-4\)`,
             String.raw`\(y>-x^2-4\)`,
             String.raw`\(y>x^2+4\)`
@@ -240,7 +240,7 @@
             </figure>
           `,
           choices: [
-            String.raw`\(y<-x^2+2x+3\)`,
+            String.raw`\(y\lt -x^2+2x+3\)`,
             String.raw`\(y\ge -x^2+2x+3\)`,
             String.raw`\(y\le -x^2-2x+3\)`,
             String.raw`\(y>-x^2+2x+3\)`,
@@ -259,10 +259,10 @@
           choices: [
             String.raw`\(x^2+y\le 4\)`,
             String.raw`\(x^2+y>4\)`,
-            String.raw`\(x^2+y<4\)`,
+            String.raw`\(x^2+y\lt 4\)`,
             String.raw`\(y\ge 4-x^2\)`,
             String.raw`\(x^2-y<4\)`,
-            String.raw`\(y<x^2+4\)`
+            String.raw`\(y\lt x^2+4\)`
           ]
         },
         {
@@ -274,12 +274,12 @@
             </figure>
           `,
           choices: [
-            String.raw`\(\left\{\begin{array}{l} y\ge x^2-1 \\ y<2x+3 \end{array}\right.\)`,
-            String.raw`\(\left\{\begin{array}{l} y>x^2-1 \\ y\le 2x+3 \end{array}\right.\)`,
-            String.raw`\(\left\{\begin{array}{l} y\le x^2-1 \\ y<2x+3 \end{array}\right.\)`,
-            String.raw`\(\left\{\begin{array}{l} y\ge x^2-1 \\ y>2x+3 \end{array}\right.\)`,
-            String.raw`\(\left\{\begin{array}{l} y\le 2x+3 \\ y\le x^2-1 \end{array}\right.\)`,
-            String.raw`\(\left\{\begin{array}{l} y\ge 2x+3 \\ y<x^2-1 \end{array}\right.\)`
+            String.raw`\(\begin{cases} y\ge x^2-1 \\ y\lt 2x+3 \end{cases}\)`,
+            String.raw`\(\begin{cases} y>x^2-1 \\ y\le 2x+3 \end{cases}\)`,
+            String.raw`\(\begin{cases} y\le x^2-1 \\ y\lt 2x+3 \end{cases}\)`,
+            String.raw`\(\begin{cases} y\ge x^2-1 \\ y>2x+3 \end{cases}\)`,
+            String.raw`\(\begin{cases} y\le 2x+3 \\ y\le x^2-1 \end{cases}\)`,
+            String.raw`\(\begin{cases} y\ge 2x+3 \\ y\lt x^2-1 \end{cases}\)`
           ]
         },
         {
@@ -291,12 +291,12 @@
             </figure>
           `,
           choices: [
-            String.raw`\(\left\{\begin{array}{l} y\ge x^2-1 \\ y<3-(x-1)^2 \end{array}\right.\)`,
-            String.raw`\(\left\{\begin{array}{l} y>x^2-1 \\ y\le 3-(x-1)^2 \end{array}\right.\)`,
-            String.raw`\(\left\{\begin{array}{l} y<x^2-1 \\ y\le 3-(x-1)^2 \end{array}\right.\)`,
-            String.raw`\(\left\{\begin{array}{l} y>x^2-1 \\ y\ge 3-(x-1)^2 \end{array}\right.\)`,
-            String.raw`\(\left\{\begin{array}{l} y\le x^2+1 \\ y>3-(x-1)^2 \end{array}\right.\)`,
-            String.raw`\(\left\{\begin{array}{l} y\le x^2-1 \\ y>3-(x-1)^2 \end{array}\right.\)`
+            String.raw`\(\begin{cases} y\ge x^2-1 \\ y\lt 3-(x-1)^2 \end{cases}\)`,
+            String.raw`\(\begin{cases} y>x^2-1 \\ y\le 3-(x-1)^2 \end{cases}\)`,
+            String.raw`\(\begin{cases} y\lt x^2-1 \\ y\le 3-(x-1)^2 \end{cases}\)`,
+            String.raw`\(\begin{cases} y>x^2-1 \\ y\ge 3-(x-1)^2 \end{cases}\)`,
+            String.raw`\(\begin{cases} y\le x^2+1 \\ y>3-(x-1)^2 \end{cases}\)`,
+            String.raw`\(\begin{cases} y\le x^2-1 \\ y>3-(x-1)^2 \end{cases}\)`
           ]
         },
         {
@@ -308,12 +308,12 @@
             </figure>
           `,
           choices: [
-            String.raw`\(\left\{\begin{array}{l} y\le -x^2+4 \\ y>x-2 \end{array}\right.\)`,
-            String.raw`\(\left\{\begin{array}{l} y<-x^2+4 \\ y\ge x-2 \end{array}\right.\)`,
-            String.raw`\(\left\{\begin{array}{l} y>-x^2+4 \\ y\ge x-2 \end{array}\right.\)`,
-            String.raw`\(\left\{\begin{array}{l} y<-x^2+4 \\ y\le x-2 \end{array}\right.\)`,
-            String.raw`\(\left\{\begin{array}{l} y\ge -x^2+4 \\ y<x-2 \end{array}\right.\)`,
-            String.raw`\(\left\{\begin{array}{l} y\le -x^2-4 \\ y\ge x-2 \end{array}\right.\)`
+            String.raw`\(\begin{cases} y\le -x^2+4 \\ y>x-2 \end{cases}\)`,
+            String.raw`\(\begin{cases} y\lt -x^2+4 \\ y\ge x-2 \end{cases}\)`,
+            String.raw`\(\begin{cases} y>-x^2+4 \\ y\ge x-2 \end{cases}\)`,
+            String.raw`\(\begin{cases} y\lt -x^2+4 \\ y\le x-2 \end{cases}\)`,
+            String.raw`\(\begin{cases} y\ge -x^2+4 \\ y\lt x-2 \end{cases}\)`,
+            String.raw`\(\begin{cases} y\le -x^2-4 \\ y\ge x-2 \end{cases}\)`
           ]
         }
       ]
