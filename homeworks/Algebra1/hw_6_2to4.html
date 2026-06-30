@@ -1,0 +1,313 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Homework 6-2 to 6-4 (Algebra 1)</title>
+
+  <script>
+    /* =========================
+       Homework 6-2 to 6-4 — Relations, Functions, Linear Functions, and Intercepts (Algebra 1)
+       Adapted for: /math-homework/assets/core-rich.js
+
+       REQUIRED SOURCE REFERENCES (uploaded source homeworks):
+       - Homework 6-2 — Relations: reviewed Q1–Q12. Ideas reworked from the graph/domain/range and relation-description questions.
+       - Homework 6-3 — Is the Relation a Function?: reviewed Q1–Q12. Ideas reworked from vertical-line-test graph questions and equation-based function questions.
+       - Homework 6-4 — Intercepts of Linear Equations: reviewed Q1–Q12. Intercept questions condensed and rebalanced into Q13–Q18.
+       - Model-authored extension: Q9–Q12 added to test recognizing linear functions directly from the defining relation or from a table.
+
+       IMAGE FILES:
+       - User-supplied figure(s): none
+       - Model-generated figure(s): 6-2to4-2.png, 6-2to4-3.png, 6-2to4-6.png, 6-2to4-7.png
+
+       IMAGE NAMING RULE:
+       - Model-generated figures use final homework question numbering.
+       - PNG files live in the SAME folder as this HTML.
+       ========================= */
+
+    window.homeworkData = {
+      classId : "Algebra1",
+      id      : "Homework 6-2 to 6-4",
+      title   : "Homework 6-2 to 6-4 — Relations, Functions, Linear Functions, and Intercepts",
+      graphics : String.raw``,
+      answerKey : ["B","E","A","C","D","B","C","C","F","D","E","A","A","C","D","E","B","C"],
+      questions : [
+        {
+          stem: String.raw`
+            <p>Let \(R=\{(-3,2),(-1,2),(0,-4),(3,1)\}\). Which statement gives the domain and range of \(R\)?</p>
+          `,
+          choiceWrap: false,
+          choices: [
+            String.raw`Domain: \(\{-4,1,2\}\); Range: \(\{-3,-1,0,3\}\)`,
+            String.raw`Domain: \(\{-3,-1,0,3\}\); Range: \(\{-4,1,2\}\)`,
+            String.raw`Domain: \(\{-3,-1,0,1,2,3\}\); Range: \(\{-4,-3,-1,0,1,2,3\}\)`,
+            String.raw`Domain: \(\{-3,-1,0,3\}\); Range: \(\{-4,1,2,3\}\)`,
+            String.raw`Domain: \(\{-4,1,2\}\); Range: \(\{-4,1,2\}\)`,
+            String.raw`Domain: \(\{-3,-1,0\}\); Range: \(\{-4,1,2\}\)`
+          ]
+        },
+        {
+          stem: String.raw`
+            <p><b>Refer to Figure 1.</b> What is the range of the relation?</p>
+          `,
+          media: String.raw`
+            <figure>
+              <img src="6-2to4-2.png" alt="Four plotted points for Question 2" />
+              <figcaption>Figure 1</figcaption>
+            </figure>
+          `,
+          choices: [
+            String.raw`\(\{-3,-1,1,3\}\)`,
+            String.raw`\(\mathbb{R}\)`,
+            String.raw`\(\{-3,-1,1,2,3\}\)`,
+            String.raw`\(\{(-3,2),(-1,-1),(1,-1),(3,3)\}\)`,
+            String.raw`\(\{-1,2,3\}\)`,
+            String.raw`\(\{-1,1,2,3\}\)`
+          ]
+        },
+        {
+          stem: String.raw`
+            <p><b>Refer to Figure 2.</b> The graph continues in both directions. Which statement gives its domain and range?</p>
+          `,
+          media: String.raw`
+            <figure>
+              <img src="6-2to4-3.png" alt="V-shaped graph for Question 3" />
+              <figcaption>Figure 2</figcaption>
+            </figure>
+          `,
+          choiceWrap: false,
+          choices: [
+            String.raw`Domain: all real numbers; Range: \(y\ge -1\)`,
+            String.raw`Domain: \(x\ge -1\); Range: all real numbers`,
+            String.raw`Domain: all real numbers; Range: \(y>-1\)`,
+            String.raw`Domain: \(x\ge 0\); Range: \(y\ge -1\)`,
+            String.raw`Domain: all real numbers; Range: \(y\le -1\)`,
+            String.raw`Domain: \(\{-1\}\); Range: all real numbers`
+          ]
+        },
+        {
+          stem: String.raw`
+            <p>The relation is defined by \(x=2\). Which statement correctly describes its domain and range?</p>
+          `,
+          choiceWrap: false,
+          choices: [
+            String.raw`Domain: all real numbers; Range: \(\{2\}\)`,
+            String.raw`Domain: \(\{2\}\); Range: \(\{2\}\)`,
+            String.raw`Domain: \(\{2\}\); Range: all real numbers`,
+            String.raw`Domain: \(x\ge 2\); Range: all real numbers`,
+            String.raw`Domain: all real numbers; Range: all real numbers`,
+            String.raw`Domain: \(\{0\}\); Range: \(\{2\}\)`
+          ]
+        },
+        {
+          stem: String.raw`
+            <p>Consider the relation \(S=\{(-2,3),(0,4),(0,1),(5,-1)\}\). Which statement correctly decides whether \(S\) is a function?</p>
+          `,
+          choiceWrap: false,
+          choices: [
+            String.raw`It is a function because each ordered pair has one first coordinate and one second coordinate.`,
+            String.raw`It is a function because the outputs \(4\) and \(1\) are different.`,
+            String.raw`It is a function because no two ordered pairs are exactly the same.`,
+            String.raw`It is not a function because \(x=0\) is paired with both \(4\) and \(1\).`,
+            String.raw`It is not a function because one output is negative.`,
+            String.raw`It is not a function because the ordered pairs are not written in increasing order.`
+          ]
+        },
+        {
+          stem: String.raw`
+            <p><b>Refer to Figure 3.</b> Which statement is true?</p>
+          `,
+          media: String.raw`
+            <figure>
+              <img src="6-2to4-6.png" alt="Horizontal line for Question 6" />
+              <figcaption>Figure 3</figcaption>
+            </figure>
+          `,
+          choiceWrap: false,
+          choices: [
+            String.raw`It is not a function because infinitely many \(x\)-values are used.`,
+            String.raw`It is a function. Its domain is all real numbers, and its range is \(\{-2\}\).`,
+            String.raw`It is a function. Its domain is \(\{-2\}\), and its range is all real numbers.`,
+            String.raw`It is a linear relation, but it is not a function.`,
+            String.raw`It is a function, but it is not linear.`,
+            String.raw`It is not a relation because it contains infinitely many points.`
+          ]
+        },
+        {
+          stem: String.raw`
+            <p><b>Refer to Figure 4.</b> Which statement correctly decides whether the relation is a function?</p>
+          `,
+          media: String.raw`
+            <figure>
+              <img src="6-2to4-7.png" alt="Circle centered at the origin for Question 7" />
+              <figcaption>Figure 4</figcaption>
+            </figure>
+          `,
+          choiceWrap: false,
+          choices: [
+            String.raw`It is a function because the graph is one unbroken curve.`,
+            String.raw`It is a function because every point on the graph satisfies the same equation.`,
+            String.raw`It is not a function because some \(x\)-values are paired with two different \(y\)-values.`,
+            String.raw`It is not a function because some \(y\)-values are repeated.`,
+            String.raw`It is a linear function because the graph is symmetric.`,
+            String.raw`It is a function because it passes through the points \((3,0)\) and \((-3,0)\).`
+          ]
+        },
+        {
+          stem: String.raw`
+            <p>The relation is defined by \(x=y^2-1\). Which statement is true?</p>
+          `,
+          choiceWrap: false,
+          choices: [
+            String.raw`It is a linear function.`,
+            String.raw`It is a function, but it is not linear.`,
+            String.raw`It is not a function because \(x=3\) is paired with both \(y=2\) and \(y=-2\).`,
+            String.raw`It is a linear relation, but it is not a function.`,
+            String.raw`It is not a relation because \(y\) is squared.`,
+            String.raw`It is a function because replacing \(y\) by \(2\) gives exactly one value of \(x\).`
+          ]
+        },
+        {
+          stem: String.raw`
+            <p>Which relation defines a linear function of \(x\)?</p>
+          `,
+          choices: [
+            String.raw`\(x=4\)`,
+            String.raw`\(y=x^2+1\)`,
+            String.raw`\(y=|x|\)`,
+            String.raw`\(x^2+y^2=9\)`,
+            String.raw`\(y=\dfrac{3}{x}\)`,
+            String.raw`\(y=3x-2\)`
+          ]
+        },
+        {
+          stem: String.raw`
+            <p>Which relation is a function, but not a linear function?</p>
+          `,
+          choices: [
+            String.raw`\(y=2x+1\)`,
+            String.raw`\(x=3\)`,
+            String.raw`\(y=-4\)`,
+            String.raw`\(y=x^2\)`,
+            String.raw`\(x^2+y^2=4\)`,
+            String.raw`\(x=y^2\)`
+          ]
+        },
+        {
+          stem: String.raw`
+            <p>Which relation is linear, but is not a function of \(x\)?</p>
+          `,
+          choices: [
+            String.raw`\(y=-2\)`,
+            String.raw`\(y=2x-3\)`,
+            String.raw`\(y=x^2\)`,
+            String.raw`\(x^2+y^2=4\)`,
+            String.raw`\(x=-2\)`,
+            String.raw`\(y=|x|\)`
+          ]
+        },
+        {
+          stem: String.raw`
+            <p>Which set of ordered pairs represents a linear function?</p>
+          `,
+          choices: [
+            String.raw`\(\{(0,1),(1,3),(2,5),(4,9)\}\)`,
+            String.raw`\(\{(0,1),(1,3),(3,5),(6,7)\}\)`,
+            String.raw`\(\{(-2,4),(-1,1),(0,0),(1,1)\}\)`,
+            String.raw`\(\{(-1,3),(0,1),(1,-1),(2,-4)\}\)`,
+            String.raw`\(\{(1,2),(1,4),(2,6),(3,8)\}\)`,
+            String.raw`\(\{(0,0),(2,3),(4,6),(5,8)\}\)`
+          ]
+        },
+        {
+          stem: String.raw`
+            <p>Find the \(x\)- and \(y\)-intercepts of \(2x+y=5\). Give the answer in the order \((x\text{-intercept}), (y\text{-intercept})\).</p>
+          `,
+          choices: [
+            String.raw`\(\left(\dfrac52,0\right),(0,5)\)`,
+            String.raw`\((0,5),\left(\dfrac52,0\right)\)`,
+            String.raw`\((2,0),(0,5)\)`,
+            String.raw`\((5,0),\left(0,\dfrac52\right)\)`,
+            String.raw`\(\left(-\dfrac52,0\right),(0,-5)\)`,
+            String.raw`\(\left(0,\dfrac52\right),(5,0)\)`
+          ]
+        },
+        {
+          stem: String.raw`
+            <p>Find the \(x\)- and \(y\)-intercepts of \(4x-3y=12\). Give the answer in the order \((x\text{-intercept}), (y\text{-intercept})\).</p>
+          `,
+          choices: [
+            String.raw`\((4,0),(0,-3)\)`,
+            String.raw`\((3,0),(0,4)\)`,
+            String.raw`\((3,0),(0,-4)\)`,
+            String.raw`\((-3,0),(0,4)\)`,
+            String.raw`\((0,3),(-4,0)\)`,
+            String.raw`\((12,0),(0,12)\)`
+          ]
+        },
+        {
+          stem: String.raw`
+            <p>Find the \(x\)- and \(y\)-intercepts of \(x=6y\). Give the answer in the order \((x\text{-intercept}), (y\text{-intercept})\).</p>
+          `,
+          choices: [
+            String.raw`\((6,0),(0,0)\)`,
+            String.raw`\((0,6),(0,0)\)`,
+            String.raw`\((0,0),(6,0)\)`,
+            String.raw`\((0,0),(0,0)\)`,
+            String.raw`No \(x\)-intercept and no \(y\)-intercept`,
+            String.raw`Every point on the line is both an \(x\)-intercept and a \(y\)-intercept`
+          ]
+        },
+        {
+          stem: String.raw`
+            <p>Compare the lines \(y=-3\) and \(x=4\). Which statement is true?</p>
+          `,
+          choiceWrap: false,
+          choices: [
+            String.raw`Both lines are functions of \(x\).`,
+            String.raw`Neither line is a function of \(x\).`,
+            String.raw`The line \(y=-3\) is not a function, but the line \(x=4\) is a function.`,
+            String.raw`The line \(y=-3\) has \(x\)-intercept \((-3,0)\) and \(y\)-intercept \((0,-3)\).`,
+            String.raw`The line \(y=-3\) is a function with \(y\)-intercept \((0,-3)\) and no \(x\)-intercept; the line \(x=4\) is not a function and has \(x\)-intercept \((4,0)\).`,
+            String.raw`The line \(x=4\) has no \(x\)-intercept because it is vertical.`
+          ]
+        },
+        {
+          stem: String.raw`
+            <p>Which equation has \(x\)-intercept \((4,0)\) and \(y\)-intercept \((0,-2)\)?</p>
+          `,
+          choices: [
+            String.raw`\(x+2y=4\)`,
+            String.raw`\(x-2y=4\)`,
+            String.raw`\(2x-y=4\)`,
+            String.raw`\(x-2y=-4\)`,
+            String.raw`\(2x+y=4\)`,
+            String.raw`\(y=2x-4\)`
+          ]
+        },
+        {
+          stem: String.raw`
+            <p>Which statement is true about the relation \(3x+2y=6\)?</p>
+          `,
+          choiceWrap: false,
+          choices: [
+            String.raw`It is a linear relation but not a function of \(x\); its intercepts are \((2,0)\) and \((0,3)\).`,
+            String.raw`It is a function, but not a linear function; its intercepts are \((2,0)\) and \((0,3)\).`,
+            String.raw`It is a linear function; its \(x\)-intercept is \((2,0)\), and its \(y\)-intercept is \((0,3)\).`,
+            String.raw`It is a linear function; its \(x\)-intercept is \((3,0)\), and its \(y\)-intercept is \((0,2)\).`,
+            String.raw`It is not a function because each \(y\)-value can be repeated.`,
+            String.raw`It is a linear function with no \(y\)-intercept.`
+          ]
+        }
+      ]
+    };
+  </script>
+
+  <link rel="stylesheet" href="/math-homework/assets/core-rich.css" />
+  <script defer src="/math-homework/assets/core-rich.js"></script>
+  <script defer src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+</head>
+<body>
+  <div id="hw-root">Loading…</div>
+</body>
+</html>
