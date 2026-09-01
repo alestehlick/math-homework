@@ -3,30 +3,25 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Homework 6-1 (Algebra 1)</title>
+  <title>Homework 6-1 (Algebra 2)</title>
 
   <script>
     /* =========================
-       Homework 6-1 — The Coordinate Plane (Algebra 1)
+       Homework 6-1 — Solving Systems by Graphing (Algebra 2)
        Adapted for: /math-homework/assets/core-rich.js
 
-       REQUIRED SOURCE REFERENCES:
-       - Original old homework used as raw source: Homework 6-1 — Points, Quadrants, and Relations.
-       - Original questions #1–#11 informed the coordinate-reading, quadrant, axis, and origin items.
-       - Original question #12 on Cartesian product was intentionally removed because domain/range, relations,
-         and Cartesian products were not part of the present class coverage.
-
-       MODEL-AUTHORED / MODEL-REWORKED ITEMS:
-       - Q1–Q4 rework the old coordinate-reading items into a cleaner shared colored plane.
-       - Q5–Q9 were composed to match the class coverage: quadrant signs, axis names, axis forms,
-         and the origin.
-       - Q10–Q16 were model-authored pattern-recognition questions: students inspect displayed points
-         or a curve and choose the coordinate constraint all displayed points seem to obey.
+       REQUIRED SOURCE REFERENCES (provided source):
+       - Original Homework 6-1 graph set: G1, G2, G3, G4.
+       - Q2 adapts original G1 (x+y=4 and x-y=-2).
+       - Q4 adapts original G2 (2x+y=2 and 3x-y=-2).
+       - Q5 adapts original G3 (x=2 and y=-x+4), preserving the vertical-line case.
+       - Q6 adapts original G4 (y=-2 and 3x+y=1), preserving the horizontal-line case.
+       - Q1 and Q3 are model-authored to establish the meaning of a common solution and require actual graphing rather than graph matching.
+       - Q7-Q12 are model-authored/reworked extensions targeting: parallel lines/no solution, coincident lines/infinitely many solutions, structural classification, algebraic verification of a graphical solution, equivalent equations, and error diagnosis.
 
        IMAGE FILES:
-       - User-supplied figures: none.
-       - Model-generated figures: 6-1-1.png, 6-1-10.png, 6-1-11.png, 6-1-12.png,
-         6-1-13.png, 6-1-14.png, 6-1-15.png, 6-1-16.png.
+       - User-supplied figure(s): none.
+       - Model-generated figure(s): 6-1-2.png, 6-1-7.png.
 
        IMAGE NAMING RULE:
        - Model-generated figures use final homework question numbering.
@@ -34,277 +29,202 @@
        ========================= */
 
     window.homeworkData = {
-      classId : "Algebra1",
-      id      : "Homework 6-1",
-      title   : "Homework 6-1 — The Coordinate Plane",
+      classId   : "Algebra2",
+      id        : "Homework 6-1",
+      title     : "Homework 6-1 — Solving Systems by Graphing",
+      graphics  : String.raw``,
 
-      graphics : String.raw``,
-
-      answerKey : ["A","D","C","E","B","D","A","C","B","C","A","D","C","A","F","E"],
+      answerKey : ["C","E","A","D","B","F","C","B","D","A","E","C"],
 
       questions : [
         {
           stem: String.raw`
-            <p>Refer to Figure 1. Find the coordinates of point \(A\).</p>
+            <p>Suppose two equations in <em>x</em> and <em>y</em> are graphed in the same coordinate plane. Why does an intersection point represent a solution of the system?</p>
+          `,
+          choices: [
+            String.raw`The point satisfies the first equation, whether or not it satisfies the second.`,
+            String.raw`The point satisfies the second equation, whether or not it satisfies the first.`,
+            String.raw`The point satisfies both equations at the same time.`,
+            String.raw`The point lies between the two graphs for the same value of \(x\).`,
+            String.raw`Its \(x\)-coordinate occurs somewhere on both graphs.`,
+            String.raw`It is a point where at least one of the graphs meets an axis.`
+          ],
+          choiceWrap: false
+        },
+
+        {
+          stem: String.raw`
+            <p><b>Refer to Figure 1.</b> The two lines are the graphs of a system of equations. Determine the solution of the system.</p>
           `,
           media: String.raw`
             <figure>
-              <img src="6-1-1.png" alt="Coordinate plane with labeled points A through H" style="max-width:640px;width:100%;height:auto;" />
+              <img src="6-1-2.png" alt="Two lines intersecting at the point (1,3)" style="max-width:520px;width:100%;height:auto;" />
               <figcaption>Figure 1</figcaption>
             </figure>
           `,
           choices: [
-            String.raw`\((-4,3)\)`,
-            String.raw`\((4,-3)\)`,
-            String.raw`\((3,-4)\)`,
-            String.raw`\((-3,4)\)`,
-            String.raw`\((-4,-3)\)`,
-            String.raw`\((0,4)\)`
-          ]
-        },
-        {
-          stem: String.raw`
-            <p>Refer to Figure 1. Which labeled point is located at \((4,-3)\)?</p>
-          `,
-          choices: [
-            String.raw`Point \(A\)`,
-            String.raw`Point \(B\)`,
-            String.raw`Point \(C\)`,
-            String.raw`Point \(D\)`,
-            String.raw`Point \(E\)`,
-            String.raw`Point \(H\)`
-          ],
-          choiceWrap: false
-        },
-        {
-          stem: String.raw`
-            <p>Starting from the origin, which movement correctly marks the point \((-3,2)\)?</p>
-          `,
-          choices: [
-            String.raw`Move right 3 units and up 2 units.`,
-            String.raw`Move left 2 units and up 3 units.`,
-            String.raw`Move left 3 units and up 2 units.`,
-            String.raw`Move right 3 units and down 2 units.`,
-            String.raw`Move left 3 units and down 2 units.`,
-            String.raw`Move left 2 units and down 3 units.`
-          ],
-          choiceWrap: false
-        },
-        {
-          stem: String.raw`
-            <p>Refer to Figure 1. Which labeled point has the form \((0,b)\) with \(b>0\)?</p>
-          `,
-          choices: [
-            String.raw`Point \(A\)`,
-            String.raw`Point \(C\)`,
-            String.raw`Point \(D\)`,
-            String.raw`Point \(F\)`,
-            String.raw`Point \(E\)`,
-            String.raw`Point \(H\)`
-          ],
-          choiceWrap: false
-        },
-        {
-          stem: String.raw`
-            <p>A point is in Quadrant II. Which sign pattern must its coordinates have?</p>
-          `,
-          choices: [
-            String.raw`\((+,+)\)`,
-            String.raw`\((-,+)\)`,
-            String.raw`\((-,-)\)`,
-            String.raw`\((+,-)\)`,
-            String.raw`\((a,0)\)`,
-            String.raw`\((0,b)\)`
-          ]
-        },
-        {
-          stem: String.raw`
-            <p>Determine the quadrant or axis of the point \((5,-2)\).</p>
-          `,
-          choices: [
-            String.raw`Quadrant I`,
-            String.raw`Quadrant II`,
-            String.raw`Quadrant III`,
-            String.raw`Quadrant IV`,
-            String.raw`\(x\)-axis`,
-            String.raw`\(y\)-axis`
-          ],
-          choiceWrap: false
-        },
-        {
-          stem: String.raw`
-            <p>Which statement is true for every point on the \(x\)-axis?</p>
-          `,
-          choices: [
-            String.raw`The \(y\)-coordinate is \(0\).`,
-            String.raw`The \(x\)-coordinate is \(0\).`,
-            String.raw`Both coordinates must be positive.`,
-            String.raw`The two coordinates must be equal.`,
-            String.raw`The point must be in Quadrant I.`,
-            String.raw`The point must be the origin.`
-          ],
-          choiceWrap: false
-        },
-        {
-          stem: String.raw`
-            <p>Which statement correctly names the axes of the coordinate plane?</p>
-          `,
-          choices: [
-            String.raw`The horizontal axis is the \(y\)-axis, and the vertical axis is the \(x\)-axis.`,
-            String.raw`The horizontal axis is the origin, and the vertical axis is the quadrant axis.`,
-            String.raw`The horizontal axis is the \(x\)-axis, and the vertical axis is the \(y\)-axis.`,
-            String.raw`Both axes are called the \(x\)-axis.`,
-            String.raw`Both axes are called the \(y\)-axis.`,
-            String.raw`The axes are the four quadrants.`
-          ],
-          choiceWrap: false
-        },
-        {
-          stem: String.raw`
-            <p>Which point lies on both the \(x\)-axis and the \(y\)-axis?</p>
-          `,
-          choices: [
-            String.raw`\((1,1)\)`,
-            String.raw`\((0,0)\)`,
+            String.raw`\((3,1)\)`,
+            String.raw`\((2,2)\)`,
             String.raw`\((0,4)\)`,
-            String.raw`\((-3,0)\)`,
-            String.raw`\((4,0)\)`,
-            String.raw`\((-1,-1)\)`
+            String.raw`\((-1,5)\)`,
+            String.raw`\((1,3)\)`,
+            String.raw`\((1,-3)\)`
           ]
         },
+
         {
           stem: String.raw`
-            <p>Refer to Figure 2. What pattern do all the displayed points obey?</p>
+            <p>Graph both equations on the same coordinate plane. Determine the ordered pair at which the two graphs intersect.</p>
+            <p>\(y=2x-3\) and \(y=-x+3\)</p>
+          `,
+          choices: [
+            String.raw`\((2,1)\)`,
+            String.raw`\((1,2)\)`,
+            String.raw`\((0,3)\)`,
+            String.raw`\((0,-3)\)`,
+            String.raw`\((3,3)\)`,
+            String.raw`\((-2,-7)\)`
+          ]
+        },
+
+        {
+          stem: String.raw`
+            <p>Graph the system. Which ordered pair is the common point of the two lines?</p>
+            <p>\(2x+y=2\) and \(3x-y=-2\)</p>
+          `,
+          choices: [
+            String.raw`\((2,0)\)`,
+            String.raw`\((0,-2)\)`,
+            String.raw`\((1,0)\)`,
+            String.raw`\((0,2)\)`,
+            String.raw`\((-1,4)\)`,
+            String.raw`\((1,2)\)`
+          ]
+        },
+
+        {
+          stem: String.raw`
+            <p>Graph the system. Remember that one of the equations represents a vertical line.</p>
+            <p>\(x=2\) and \(y=-x+4\)</p>
+          `,
+          choices: [
+            String.raw`\((2,4)\)`,
+            String.raw`\((2,2)\)`,
+            String.raw`\((-2,6)\)`,
+            String.raw`\((4,2)\)`,
+            String.raw`\((0,4)\)`,
+            String.raw`\((-2,2)\)`
+          ]
+        },
+
+        {
+          stem: String.raw`
+            <p>Graph the system. Remember that one of the equations represents a horizontal line.</p>
+            <p>\(y=-2\) and \(3x+y=1\)</p>
+          `,
+          choices: [
+            String.raw`\((-1,-2)\)`,
+            String.raw`\((1,2)\)`,
+            String.raw`\((0,-2)\)`,
+            String.raw`\((1,1)\)`,
+            String.raw`\((3,-2)\)`,
+            String.raw`\((1,-2)\)`
+          ]
+        },
+
+        {
+          stem: String.raw`
+            <p><b>Refer to Figure 2.</b> The two lines are the graphs of a system. What can you conclude about the system?</p>
           `,
           media: String.raw`
             <figure>
-              <img src="6-1-10.png" alt="Points lying on the x-axis" style="max-width:560px;width:100%;height:auto;" />
+              <img src="6-1-7.png" alt="Two distinct parallel lines" style="max-width:520px;width:100%;height:auto;" />
               <figcaption>Figure 2</figcaption>
             </figure>
           `,
           choices: [
-            String.raw`\(x=0\)`,
-            String.raw`\(x=y\)`,
-            String.raw`\(y=0\)`,
-            String.raw`\(y=3\)`,
-            String.raw`\(x=3\)`,
-            String.raw`\(y=-x\)`
-          ]
-        },
-        {
-          stem: String.raw`
-            <p>Refer to Figure 3. What pattern do all the displayed points obey?</p>
-          `,
-          media: String.raw`
-            <figure>
-              <img src="6-1-11.png" alt="Points lying on the y-axis" style="max-width:560px;width:100%;height:auto;" />
-              <figcaption>Figure 3</figcaption>
-            </figure>
-          `,
-          choices: [
-            String.raw`\(x=0\)`,
-            String.raw`\(y=0\)`,
-            String.raw`\(x=y\)`,
-            String.raw`\(y=3\)`,
-            String.raw`\(x=-2\)`,
-            String.raw`\(y=x+3\)`
-          ]
-        },
-        {
-          stem: String.raw`
-            <p>Refer to Figure 4. What pattern do all the displayed points obey?</p>
-          `,
-          media: String.raw`
-            <figure>
-              <img src="6-1-12.png" alt="Points lying on the horizontal line y equals 3" style="max-width:560px;width:100%;height:auto;" />
-              <figcaption>Figure 4</figcaption>
-            </figure>
-          `,
-          choices: [
-            String.raw`\(x=3\)`,
-            String.raw`\(y=0\)`,
-            String.raw`\(x=0\)`,
-            String.raw`\(y=3\)`,
-            String.raw`\(x=y\)`,
-            String.raw`\(x=-3\)`
-          ]
-        },
-        {
-          stem: String.raw`
-            <p>Refer to Figure 5. What pattern do all the displayed points obey?</p>
-          `,
-          media: String.raw`
-            <figure>
-              <img src="6-1-13.png" alt="Points lying on the vertical line x equals negative 2" style="max-width:560px;width:100%;height:auto;" />
-              <figcaption>Figure 5</figcaption>
-            </figure>
-          `,
-          choices: [
-            String.raw`\(y=-2\)`,
-            String.raw`\(x=0\)`,
-            String.raw`\(x=-2\)`,
-            String.raw`\(y=2\)`,
-            String.raw`\(x=y\)`,
-            String.raw`\(y=x+2\)`
-          ]
-        },
-        {
-          stem: String.raw`
-            <p>Refer to Figure 6. What pattern do all the displayed points obey?</p>
-          `,
-          media: String.raw`
-            <figure>
-              <img src="6-1-14.png" alt="Points lying on the diagonal line y equals x" style="max-width:560px;width:100%;height:auto;" />
-              <figcaption>Figure 6</figcaption>
-            </figure>
-          `,
-          choices: [
-            String.raw`The two coordinates are equal: \(y=x\).`,
-            String.raw`The second coordinate is always \(0\).`,
-            String.raw`The first coordinate is always \(0\).`,
-            String.raw`The second coordinate is \(3\) more than the first.`,
-            String.raw`The second coordinate is the square of the first.`,
-            String.raw`The two coordinates have opposite signs.`
+            String.raw`The system has exactly one solution because distinct lines eventually meet if extended far enough.`,
+            String.raw`The system has exactly one solution because each line crosses the \(y\)-axis.`,
+            String.raw`The system has no solution because the lines are distinct and parallel.`,
+            String.raw`The system has infinitely many solutions because the lines have the same slope.`,
+            String.raw`The system has no solution because neither line passes through the origin.`,
+            String.raw`The system has infinitely many solutions because both lines continue indefinitely.`
           ],
           choiceWrap: false
         },
+
         {
           stem: String.raw`
-            <p>Refer to Figure 7. What pattern do all the displayed points obey?</p>
-          `,
-          media: String.raw`
-            <figure>
-              <img src="6-1-15.png" alt="Points lying on the line y equals x plus 3" style="max-width:560px;width:100%;height:auto;" />
-              <figcaption>Figure 7</figcaption>
-            </figure>
+            <p>Consider the system below. Before drawing a complete graph, determine what the two graphs must look like and what that implies about the number of solutions.</p>
+            <p>\(2x+y=4\) and \(4x+2y=8\)</p>
           `,
           choices: [
-            String.raw`The second coordinate is three times the first: \(y=3x\).`,
-            String.raw`The second coordinate is always \(3\): \(y=3\).`,
-            String.raw`The first coordinate is always \(3\): \(x=3\).`,
-            String.raw`The two coordinates are equal: \(y=x\).`,
-            String.raw`The second coordinate is \(3\) less than the first: \(y=x-3\).`,
-            String.raw`The second coordinate is \(3\) more than the first: \(y=x+3\).`
+            String.raw`They are distinct parallel lines, so there is no solution.`,
+            String.raw`They are the same line, so every point on that line satisfies both equations and there are infinitely many solutions.`,
+            String.raw`They intersect only at \((2,0)\).`,
+            String.raw`They intersect only at \((0,4)\).`,
+            String.raw`They are perpendicular lines, so there is exactly one solution.`,
+            String.raw`They have the same \(y\)-intercept but different slopes, so there is exactly one solution.`
           ],
           choiceWrap: false
         },
+
         {
           stem: String.raw`
-            <p>Refer to Figure 8. What pattern do all the displayed points on the curve seem to obey?</p>
-          `,
-          media: String.raw`
-            <figure>
-              <img src="6-1-16.png" alt="Points on a curve where the second coordinate is the square of the first" style="max-width:520px;width:100%;height:auto;" />
-              <figcaption>Figure 8</figcaption>
-            </figure>
+            <p>Which system has <b>no solution</b>?</p>
           `,
           choices: [
-            String.raw`The first coordinate is the square of the second: \(x=y^2\).`,
-            String.raw`The second coordinate is twice the first: \(y=2x\).`,
-            String.raw`The second coordinate is \(2\) more than the first: \(y=x+2\).`,
-            String.raw`The two coordinates always add to \(4\): \(x+y=4\).`,
-            String.raw`The second coordinate is the square of the first: \(y=x^2\).`,
-            String.raw`The two coordinates are opposites: \(y=-x\).`
+            String.raw`\(\begin{cases}y=x+2\\y=-x+2\end{cases}\)`,
+            String.raw`\(\begin{cases}y=2x+1\\2y=4x+2\end{cases}\)`,
+            String.raw`\(\begin{cases}x=2\\y=2\end{cases}\)`,
+            String.raw`\(\begin{cases}y=-3x+4\\3x+y=1\end{cases}\)`,
+            String.raw`\(\begin{cases}x+y=5\\x-y=1\end{cases}\)`,
+            String.raw`\(\begin{cases}2x+y=6\\4x+2y=12\end{cases}\)`
+          ]
+        },
+
+        {
+          stem: String.raw`
+            <p>A graph suggests that the two lines intersect at \((2,5)\). Which ordered pair actually satisfies <em>both</em> equations in the system?</p>
+            <p>\(y=3x-1\) and \(x+y=7\)</p>
+          `,
+          choices: [
+            String.raw`\((2,5)\)`,
+            String.raw`\((2,6)\)`,
+            String.raw`\((1,2)\)`,
+            String.raw`\((3,4)\)`,
+            String.raw`\((0,-1)\)`,
+            String.raw`\((7,0)\)`
+          ]
+        },
+
+        {
+          stem: String.raw`
+            <p>Mara graphs \(y=-x+4\) and \(x+y=4\) as if they were two different lines and reports one intersection point. Which diagnosis is correct?</p>
+          `,
+          choices: [
+            String.raw`The lines are perpendicular, so there is exactly one solution.`,
+            String.raw`The lines are distinct and parallel, so there is no solution.`,
+            String.raw`The only solution is \((0,4)\).`,
+            String.raw`The only solution is \((4,0)\).`,
+            String.raw`The equations describe the same line, so the system has infinitely many solutions.`,
+            String.raw`There is not enough information to know without drawing both graphs.`
+          ],
+          choiceWrap: false
+        },
+
+        {
+          stem: String.raw`
+            <p>Noah says the equations below “look different,” so he expects their graphs to intersect once. Which analysis is correct?</p>
+            <p>\(2x+y=5\) and \(y=-2x+1\)</p>
+          `,
+          choices: [
+            String.raw`The equations describe the same line because both contain the term \(-2x\), so there are infinitely many solutions.`,
+            String.raw`The slopes are \(2\) and \(-2\), so the lines intersect exactly once.`,
+            String.raw`The first equation becomes \(y=-2x+5\); the lines have the same slope but different \(y\)-intercepts, so there is no solution.`,
+            String.raw`The lines intersect at \((1,3)\).`,
+            String.raw`The lines intersect at \((0,1)\).`,
+            String.raw`The number of solutions cannot be determined unless the lines are drawn.`
           ],
           choiceWrap: false
         }
