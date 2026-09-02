@@ -1,0 +1,327 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Homework 6-2 and 6-3 (Algebra 2)</title>
+
+  <script>
+    /* =========================
+       Homework 6-2 and 6-3 — Solving Systems Algebraically (Algebra 2)
+       Covers Sections 6-2 and 6-3: Substitution and Elimination
+       Adapted for: /math-homework/assets/core-rich.js
+
+       REQUIRED SOURCE REFERENCES:
+       - Source hw_6_2.html: original Q1, Q2, Q3, Q4, Q6, Q8, Q12
+       - Source hw_6_3.html: original Q1, Q2, Q4, Q5, Q6, Q10
+
+       MODEL-REWORKED / MODEL-AUTHORED ITEMS:
+       - Q1: method-choice comparison; targets recognition of when substitution is efficient.
+       - Q4: valid substitution setup; targets equivalence and replacement rather than arithmetic.
+       - Q7: error diagnosis; targets a common invalid substitution move.
+       - Q8: method-choice comparison; targets recognition of when elimination is efficient.
+       - Q11: contradiction/identity contrast; targets no-solution vs infinitely-many-solutions.
+       - Q13: strategic comparison of substitution and elimination.
+       - Q14: coefficient-structure generalization; targets dependent vs inconsistent systems.
+
+       IMAGE FILES:
+       - None.
+       ========================= */
+
+    window.homeworkData = {
+      classId : "Algebra2",
+      id      : "Homework 6-2 and 6-3",
+      title   : "Homework 6-2 and 6-3 — Solving Systems Algebraically",
+
+      graphics : String.raw``,
+
+      answerKey : [
+        "B","D","C","E","A","F","C",
+        "B","D","A","E","F","C","D"
+      ],
+
+      questions : [
+
+        /* Q1 */
+        {
+          stem: String.raw`
+            <p>Consider the system</p>
+            <p>\(\begin{cases}
+              3x+4y=-36\\
+              y=2x-9
+            \end{cases}\)</p>
+            <p>Which method is the most direct choice, and why?</p>
+          `,
+          choices: [
+            String.raw`Elimination, because the \(y\)-coefficients are already opposites.`,
+            String.raw`Substitution, because one equation already gives \(y\) in terms of \(x\).`,
+            String.raw`Elimination, because multiplying the second equation by \(4\) immediately eliminates \(x\).`,
+            String.raw`Substitution, because the first equation already gives \(x\) in terms of \(y\).`,
+            String.raw`Either method is impossible unless both equations are first written in slope-intercept form.`,
+            String.raw`The system cannot be solved algebraically because the equations have different forms.`
+          ],
+          choiceWrap: false
+        },
+
+        /* Q2 */
+        {
+          stem: String.raw`
+            <p>Solve the system.</p>
+            <p>\(\begin{cases}
+              3x+4y=-36\\
+              y=2x-9
+            \end{cases}\)</p>
+          `,
+          choices: [
+            String.raw`\((2,-5)\)`,
+            String.raw`\((-3,-9)\)`,
+            String.raw`\((3,-6)\)`,
+            String.raw`\((0,-9)\)`,
+            String.raw`\((-6,-3)\)`,
+            String.raw`No solution`
+          ]
+        },
+
+        /* Q3 */
+        {
+          stem: String.raw`
+            <p>Solve the system.</p>
+            <p>\(\begin{cases}
+              -4x+y=26\\
+              x=5y+3
+            \end{cases}\)</p>
+          `,
+          choices: [
+            String.raw`\((-7,2)\)`,
+            String.raw`\((-2,-7)\)`,
+            String.raw`\((-7,-2)\)`,
+            String.raw`\((-6,-3)\)`,
+            String.raw`\((1,-5)\)`,
+            String.raw`No solution`
+          ]
+        },
+
+        /* Q4 */
+        {
+          stem: String.raw`
+            <p>For the system</p>
+            <p>\(\begin{cases}
+              3x+5y=18\\
+              x-6y=-17
+            \end{cases}\)</p>
+            <p>Which equation correctly results from solving the second equation for \(x\) and substituting into the first?</p>
+          `,
+          choices: [
+            String.raw`\(3(-17-6y)+5y=18\)`,
+            String.raw`\(3(17+6y)+5y=18\)`,
+            String.raw`\(3x+5(x+17)=18\)`,
+            String.raw`\(3(-17+6y)-5y=18\)`,
+            String.raw`\(3(6y-17)+5y=18\)`,
+            String.raw`\(3(17-6y)+5y=18\)`
+          ]
+        },
+
+        /* Q5 */
+        {
+          stem: String.raw`
+            <p>Solve the system.</p>
+            <p>\(\begin{cases}
+              5x=9\\
+              x-3y=6
+            \end{cases}\)</p>
+          `,
+          choices: [
+            String.raw`\(\left(\frac95,-\frac75\right)\)`,
+            String.raw`\(\left(\frac95,\frac65\right)\)`,
+            String.raw`\(\left(\frac95,-\frac95\right)\)`,
+            String.raw`\((9,-7)\)`,
+            String.raw`\(\left(-\frac95,-\frac75\right)\)`,
+            String.raw`No solution`
+          ]
+        },
+
+        /* Q6 */
+        {
+          stem: String.raw`
+            <p>Classify the system.</p>
+            <p>\(\begin{cases}
+              x+y=8\\
+              x+y=-2
+            \end{cases}\)</p>
+          `,
+          choices: [
+            String.raw`Exactly one solution at \((5,3)\)`,
+            String.raw`Exactly one solution at \((4,4)\)`,
+            String.raw`Infinitely many solutions because the left sides are identical`,
+            String.raw`Exactly one solution at \((0,-2)\)`,
+            String.raw`All ordered pairs are solutions`,
+            String.raw`No solution because the same expression cannot equal both \(8\) and \(-2\)`
+          ],
+          choiceWrap: false
+        },
+
+        /* Q7 */
+        {
+          stem: String.raw`
+            <p>A student solves</p>
+            <p>\(\begin{cases}
+              2x+y=7\\
+              y=3x-8
+            \end{cases}\)</p>
+            <p>and writes \(2x+3x=7-8\). What is the error?</p>
+          `,
+          choices: [
+            String.raw`The student should have multiplied the first equation by \(3\) before substituting.`,
+            String.raw`The student should have replaced \(x\), not \(y\).`,
+            String.raw`The student substituted \(3x-8\) for \(y\) incorrectly; the correct equation is \(2x+(3x-8)=7\).`,
+            String.raw`The substitution is valid, but the equations have no solution.`,
+            String.raw`The student was required to use elimination instead of substitution.`,
+            String.raw`There is no error; \(2x+3x=7-8\) is equivalent to the system.`
+          ],
+          choiceWrap: false
+        },
+
+        /* Q8 */
+        {
+          stem: String.raw`
+            <p>Consider the system</p>
+            <p>\(\begin{cases}
+              4x+3y=-2\\
+              5x-3y=38
+            \end{cases}\)</p>
+            <p>Which method is the most direct choice?</p>
+          `,
+          choices: [
+            String.raw`Substitution, because both equations already isolate \(y\).`,
+            String.raw`Elimination, because adding the equations immediately eliminates \(y\).`,
+            String.raw`Substitution, because \(x\) has coefficient \(1\) in both equations.`,
+            String.raw`Elimination, but only after multiplying both equations by \(3\).`,
+            String.raw`Graphing is required because neither equation is solved for a variable.`,
+            String.raw`Neither substitution nor elimination can be used.`
+          ],
+          choiceWrap: false
+        },
+
+        /* Q9 */
+        {
+          stem: String.raw`
+            <p>Solve the system.</p>
+            <p>\(\begin{cases}
+              4x+3y=-2\\
+              5x-3y=38
+            \end{cases}\)</p>
+          `,
+          choices: [
+            String.raw`\((4,6)\)`,
+            String.raw`\((-4,6)\)`,
+            String.raw`\((6,-4)\)`,
+            String.raw`\((4,-6)\)`,
+            String.raw`\((0,-2)\)`,
+            String.raw`No solution`
+          ]
+        },
+
+        /* Q10 */
+        {
+          stem: String.raw`
+            <p>Solve the system.</p>
+            <p>\(\begin{cases}
+              4x+3y=11\\
+              2x-5y=25
+            \end{cases}\)</p>
+          `,
+          choices: [
+            String.raw`\((5,-3)\)`,
+            String.raw`\((3,-2)\)`,
+            String.raw`\((4,-1)\)`,
+            String.raw`\((-5,3)\)`,
+            String.raw`\((5,3)\)`,
+            String.raw`\((4,-3)\)`
+          ]
+        },
+
+        /* Q11 */
+        {
+          stem: String.raw`
+            <p>When eliminating a variable, one system simplifies to \(0=0\), while another simplifies to \(0=7\).</p>
+            <p>What do these outcomes mean?</p>
+          `,
+          choices: [
+            String.raw`Both systems have exactly one solution.`,
+            String.raw`Both systems have no solution.`,
+            String.raw`The first has no solution; the second has infinitely many solutions.`,
+            String.raw`The first has exactly one solution; the second has no solution.`,
+            String.raw`The first has infinitely many solutions; the second has no solution.`,
+            String.raw`The first has infinitely many solutions; the second has exactly one solution.`
+          ],
+          choiceWrap: false
+        },
+
+        /* Q12 */
+        {
+          stem: String.raw`
+            <p>Classify the system.</p>
+            <p>\(\begin{cases}
+              2x+3y=5\\
+              3y=5-2x
+            \end{cases}\)</p>
+          `,
+          choices: [
+            String.raw`Exactly one solution at \((2,0)\)`,
+            String.raw`No solution because the equations have different forms`,
+            String.raw`Exactly one solution at \((0,\frac53)\)`,
+            String.raw`No solution because the lines are parallel`,
+            String.raw`Exactly one solution at \((1,1)\)`,
+            String.raw`Infinitely many solutions because the equations are equivalent`
+          ],
+          choiceWrap: false
+        },
+
+        /* Q13 */
+        {
+          stem: String.raw`
+            <p>For which system is <b>substitution</b> clearly more efficient than elimination as written?</p>
+          `,
+          choices: [
+            String.raw`\(\begin{cases}3x+2y=7\\5x-2y=9\end{cases}\)`,
+            String.raw`\(\begin{cases}4x+5y=3\\8x-5y=11\end{cases}\)`,
+            String.raw`\(\begin{cases}y=4x-1\\3x+2y=12\end{cases}\)`,
+            String.raw`\(\begin{cases}6x+7y=2\\3x-7y=5\end{cases}\)`,
+            String.raw`\(\begin{cases}2x+3y=4\\-2x+5y=10\end{cases}\)`,
+            String.raw`\(\begin{cases}5x-4y=1\\10x+4y=9\end{cases}\)`
+          ]
+        },
+
+        /* Q14 */
+        {
+          stem: String.raw`
+            <p>Consider the system</p>
+            <p>\(\begin{cases}
+              ax+by=c\\
+              kax+kby=d
+            \end{cases}\)</p>
+            <p>Assume \(a\) and \(b\) are not both zero and \(k\neq0\). Which statement is always true?</p>
+          `,
+          choices: [
+            String.raw`The system always has exactly one solution.`,
+            String.raw`The system has no solution whenever \(d=kc\).`,
+            String.raw`The system has infinitely many solutions whenever \(d\neq kc\).`,
+            String.raw`If \(d=kc\), the equations represent the same line; if \(d\neq kc\), they represent distinct parallel lines.`,
+            String.raw`If \(d=kc\), the lines are perpendicular.`,
+            String.raw`The system can be classified only after solving for \(x\) and \(y\).`
+          ],
+          choiceWrap: false
+        }
+      ]
+    };
+  </script>
+
+  <link rel="stylesheet" href="/math-homework/assets/core-rich.css" />
+  <script defer src="/math-homework/assets/core-rich.js"></script>
+  <script defer src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+</head>
+
+<body>
+  <div id="hw-root">Loading…</div>
+</body>
+</html>
