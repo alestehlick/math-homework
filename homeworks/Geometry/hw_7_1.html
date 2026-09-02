@@ -1,0 +1,289 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Homework 7-1 (Geometry)</title>
+
+  <script>
+    /* =========================
+       Homework 7-1 — Right Triangles: HL and Congruence (Geometry)
+       Adapted for: /math-homework/assets/core-rich.js
+
+       REQUIRED SOURCE REFERENCES (user-provided textbook Section 7.1):
+       - Theorem 7.1 (HL Congruence Theorem)
+       - A Exercises: #2, #3, #4, #5, #6, #7, #8, #9
+       - B Exercises: #13
+       - C / shared-diagram material: #20
+
+       PEDAGOGICAL REWORK:
+       - Q1, Q3–Q7, Q11–Q12 are model-authored/reworked to emphasize that
+         HL is the genuinely distinctive right-triangle congruence criterion.
+       - LL is treated as an immediate SAS application.
+       - HA is treated as an immediate AAS application.
+       - LA is treated as ASA or AAS depending on which leg is given.
+       - Q4 explicitly contrasts HL with the general failure of SSA.
+       - Q8 reworks source Exercise #9 to ask for the ordinary ASA argument
+         rather than invoking a special “LA” label.
+       - Q9 reworks source Exercise #13 into a proof-strategy question using HL.
+       - Q10 reworks source Exercise #20 into an ordinary ASA proof judgment.
+
+       IMAGE FILES:
+       - User-supplied figures used directly: none.
+       - Model-generated figures: 7-1-2.png, 7-1-8.png, 7-1-9.png, 7-1-10.png
+
+       IMAGE NAMING RULE:
+       - Model-generated figures use final homework question numbering.
+       - PNG files live in the SAME folder as this HTML.
+       ========================= */
+
+    window.homeworkData = {
+      classId : "Geometry",
+      id      : "Homework 7-1",
+      title   : "Homework 7-1 — Right Triangles: HL and Congruence",
+
+      graphics : String.raw``,
+
+      answerKey : ["A","B","F","C","B","E","D","C","D","B","E","A"],
+
+      questions : [
+
+        /* Q1 */
+        {
+          stem: String.raw`
+            <p>In this section, several congruence facts are sometimes given special right-triangle names.</p>
+            <p>Which one is <b>not</b> merely an immediate application of the ordinary triangle congruence criteria once we remember that all right angles are congruent?</p>
+          `,
+          choices: [
+            String.raw`HL: a congruent hypotenuse and one congruent leg`,
+            String.raw`LL: two congruent legs`,
+            String.raw`HA: a congruent hypotenuse and one congruent acute angle`,
+            String.raw`LA, with the given leg adjacent to the given acute angle`,
+            String.raw`LA, with the given leg opposite the given acute angle`,
+            String.raw`All five are equally new right-triangle theorems`
+          ],
+          choiceWrap: false
+        },
+
+        /* Q2 */
+        {
+          stem: String.raw`
+            <p><b>Refer to Figure 1.</b> The marked sides are congruent, and both triangles are right triangles.</p>
+            <p>Which justification proves \(\triangle ABC \cong \triangle DEF\)?</p>
+          `,
+          media: String.raw`
+            <figure>
+              <img src="7-1-2.png" alt="Two right triangles with congruent hypotenuses and one pair of congruent legs" />
+              <figcaption>Figure 1</figcaption>
+            </figure>
+          `,
+          choices: [
+            String.raw`SSA, because two sides and a nonincluded angle are marked`,
+            String.raw`HL, because the hypotenuse and one corresponding leg are congruent`,
+            String.raw`SAS, because the marked leg is included between two known sides`,
+            String.raw`SSS, because all three side pairs are already known congruent`,
+            String.raw`ASA, because two acute angles are marked congruent`,
+            String.raw`There is not enough information to prove the triangles congruent`
+          ],
+          choiceWrap: false
+        },
+
+        /* Q3 */
+        {
+          stem: String.raw`
+            <p>Suppose two triangles are known to be right triangles. Which additional information is <b>not sufficient</b>, by itself, to guarantee that the triangles are congruent?</p>
+          `,
+          choices: [
+            String.raw`A pair of corresponding hypotenuses and a pair of corresponding legs are congruent`,
+            String.raw`Both pairs of corresponding legs are congruent`,
+            String.raw`A pair of corresponding hypotenuses and a pair of corresponding acute angles are congruent`,
+            String.raw`A pair of corresponding legs and a pair of corresponding acute angles are congruent`,
+            String.raw`A pair of corresponding hypotenuses and both pairs of corresponding acute angles are congruent`,
+            String.raw`Both pairs of corresponding acute angles are congruent, with no side information`
+          ],
+          choiceWrap: false
+        },
+
+        /* Q4 */
+        {
+          stem: String.raw`
+            <p>A student objects: “HL cannot be valid. It looks like SSA, and SSA does not prove congruence in general.”</p>
+            <p>Which response best identifies what is special about HL?</p>
+          `,
+          choices: [
+            String.raw`The student is correct; HL works only in drawings that happen to look congruent.`,
+            String.raw`SSA is actually valid for every triangle, so there is no special issue.`,
+            String.raw`The right-angle condition removes the usual SSA ambiguity: once the hypotenuse and one leg are fixed in a right triangle, the triangle is fixed up to congruence.`,
+            String.raw`HL works because every pair of right triangles is automatically congruent.`,
+            String.raw`A right angle counts as an additional side, turning SSA into SSS.`,
+            String.raw`HL works only when the two acute angles have also been given congruent.`
+          ],
+          choiceWrap: false
+        },
+
+        /* Q5 */
+        {
+          stem: String.raw`
+            <p>Two right triangles have both pairs of corresponding legs congruent.</p>
+            <p>Which ordinary congruence theorem already proves that the triangles are congruent?</p>
+          `,
+          choices: [
+            String.raw`SSS`,
+            String.raw`SAS`,
+            String.raw`ASA`,
+            String.raw`AAS`,
+            String.raw`HL`,
+            String.raw`SSA`
+          ],
+          choiceWrap: false
+        },
+
+        /* Q6 */
+        {
+          stem: String.raw`
+            <p>Two right triangles have congruent hypotenuses and one pair of corresponding acute angles congruent.</p>
+            <p>Which ordinary congruence theorem already proves that the triangles are congruent?</p>
+          `,
+          choices: [
+            String.raw`SAS`,
+            String.raw`SSS`,
+            String.raw`ASA`,
+            String.raw`HL`,
+            String.raw`AAS`,
+            String.raw`SSA`
+          ],
+          choiceWrap: false
+        },
+
+        /* Q7 */
+        {
+          stem: String.raw`
+            <p>Two right triangles have one pair of corresponding legs congruent and one pair of corresponding acute angles congruent.</p>
+            <p>Why is there no real need for a separate “LA theorem”?</p>
+          `,
+          choices: [
+            String.raw`Because a leg and an acute angle are never sufficient to prove congruence.`,
+            String.raw`Because the triangles are congruent by SSS in every case.`,
+            String.raw`Because the right angle may be ignored and the data are ordinary SSA.`,
+            String.raw`Because the right angles provide a second angle: the argument is ASA when the given leg lies between the two known angles, and AAS otherwise.`,
+            String.raw`Because every right triangle with one equal acute angle has the same size.`,
+            String.raw`Because “LA” is simply another name for HL.`
+          ],
+          choiceWrap: false
+        },
+
+        /* Q8 */
+        {
+          stem: String.raw`
+            <p><b>Refer to Figure 2.</b> \(\angle N\) and \(\angle P\) are right angles, and \(\overline{NH}\cong\overline{HP}\).</p>
+            <p>Since \(\angle MHN\) and \(\angle QHP\) are vertical angles, which <b>ordinary</b> congruence theorem proves \(\triangle MNH\cong\triangle QPH\)?</p>
+          `,
+          media: String.raw`
+            <figure>
+              <img src="7-1-8.png" alt="Two right triangles meeting at H with equal horizontal legs and vertical angles at H" />
+              <figcaption>Figure 2</figcaption>
+            </figure>
+          `,
+          choices: [
+            String.raw`AAS`,
+            String.raw`HL`,
+            String.raw`ASA`,
+            String.raw`SAS`,
+            String.raw`SSS`,
+            String.raw`The information is insufficient`
+          ],
+          choiceWrap: false
+        },
+
+        /* Q9 */
+        {
+          stem: String.raw`
+            <p><b>Refer to Figure 3.</b> \(\angle Q\) and \(\angle P\) are right angles, and \(\overline{QR}\cong\overline{PR}\).</p>
+            <p>Which proof route correctly establishes \(\overline{QT}\cong\overline{PT}\)?</p>
+          `,
+          media: String.raw`
+            <figure>
+              <img src="7-1-9.png" alt="Two right triangles QRT and PRT sharing hypotenuse RT, with QR congruent to PR" />
+              <figcaption>Figure 3</figcaption>
+            </figure>
+          `,
+          choices: [
+            String.raw`Use SSA directly on \(\triangle QRT\) and \(\triangle PRT\), then use CPCTC.`,
+            String.raw`Use SAS because \(\angle Q\cong\angle P\), then use CPCTC.`,
+            String.raw`Use LL because \(\overline{QR}\cong\overline{PR}\), then use CPCTC.`,
+            String.raw`Use \(\overline{RT}\cong\overline{RT}\) by reflexivity; then HL gives \(\triangle QRT\cong\triangle PRT\), so \(\overline{QT}\cong\overline{PT}\) by CPCTC.`,
+            String.raw`Use HA because the triangles share the acute angle at \(T\).`,
+            String.raw`No congruence proof is possible without first proving \(\overline{QT}\cong\overline{PT}\).`
+          ],
+          choiceWrap: false
+        },
+
+        /* Q10 */
+        {
+          stem: String.raw`
+            <p><b>Refer to Figure 4.</b> \(\overline{WY}\perp\overline{XZ}\), and \(\overline{WY}\) bisects \(\angle XWZ\).</p>
+            <p>Which ordinary congruence theorem proves \(\triangle WXY\cong\triangle WZY\)?</p>
+          `,
+          media: String.raw`
+            <figure>
+              <img src="7-1-10.png" alt="Triangle XWZ with perpendicular angle bisector WY from W to XZ" />
+              <figcaption>Figure 4</figcaption>
+            </figure>
+          `,
+          choices: [
+            String.raw`HL`,
+            String.raw`ASA`,
+            String.raw`AAS`,
+            String.raw`SAS`,
+            String.raw`SSS`,
+            String.raw`The information is insufficient`
+          ],
+          choiceWrap: false
+        },
+
+        /* Q11 */
+        {
+          stem: String.raw`
+            <p>Two right triangles each have an acute angle measuring \(35^\circ\). No side lengths are given.</p>
+            <p>What can you conclude?</p>
+          `,
+          choices: [
+            String.raw`The triangles are congruent by HA.`,
+            String.raw`The triangles are congruent by LA.`,
+            String.raw`The triangles are congruent by ASA because both also contain a right angle.`,
+            String.raw`The triangles are congruent by AAS because their third angles must also agree.`,
+            String.raw`The triangles have the same angle measures, but they need not be congruent because their sizes may differ.`,
+            String.raw`Nothing at all can be concluded about their angles or shape.`
+          ],
+          choiceWrap: false
+        },
+
+        /* Q12 */
+        {
+          stem: String.raw`
+            <p>Two right triangles have congruent hypotenuses and one pair of corresponding acute angles congruent.</p>
+            <p>A student concludes that the triangles are congruent “by HL.” Which evaluation is best?</p>
+          `,
+          choices: [
+            String.raw`The conclusion is correct, but HL is the wrong justification; the right angles give a second angle, so AAS applies.`,
+            String.raw`The conclusion and the justification are both correct because the acute angle counts as a leg in HL.`,
+            String.raw`The conclusion is false because hypotenuse and angle information can never prove congruence.`,
+            String.raw`The conclusion is correct only if both legs are also given congruent.`,
+            String.raw`The correct justification is SSA, not HL.`,
+            String.raw`The correct justification is SSS because the two acute angles determine all three sides.`
+          ],
+          choiceWrap: false
+        }
+      ]
+    };
+  </script>
+
+  <link rel="stylesheet" href="/math-homework/assets/core-rich.css" />
+  <script defer src="/math-homework/assets/core-rich.js"></script>
+  <script defer src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+</head>
+
+<body>
+  <div id="hw-root">Loading…</div>
+</body>
+</html>
