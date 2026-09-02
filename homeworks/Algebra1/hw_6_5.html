@@ -7,20 +7,25 @@
 
   <script>
     /* =========================
-       Homework 6-5 — Slope and y-Intercept (Algebra 1)
+       Homework 6-5 — Slope, x-Intercept, and y-Intercept (Algebra 1)
        Adapted for: /math-homework/assets/core-rich.js
 
        REQUIRED SOURCE REFERENCES:
-       - Original hw_6_5.html: graph ideas G1–G4 and original Q9–Q12.
+       - Original hw_6_5.html:
+         graph ideas G1–G4; original Q1–Q10; road-grade context from Q11–Q12.
 
-       SOURCE / REWORK NOTES:
-       - Original graph-reading material was substantially reworked to avoid
-         splitting one graph into repetitive slope/intercept questions.
-       - Original Q9–Q10 informed Q6 and Q7 (slope from two points).
-       - Original Q11–Q12 informed Q11 (road grade).
-       - Q1–Q5 and Q8–Q10, Q12 are model-authored or model-reworked to add
-         equation/graph/table/context translation, horizontal-vs-vertical
-         contrast, strategic comparison of m and b, and error diagnosis.
+       MODEL-REWORKED / MODEL-AUTHORED ITEMS:
+       - Q1–Q3: consolidate repetitive graph reading into richer questions
+         about slope, x-intercept, and y-intercept.
+       - Q5: error diagnosis for slope computation.
+       - Q6: table representation integrating slope and both intercepts.
+       - Q7: conceptual distinction between x-intercept and y-intercept.
+       - Q8: coordinate-data synthesis of slope and both intercepts.
+       - Q9: comparison of two lines from point data, emphasizing that
+         equal slopes do not imply equal intercepts.
+       - Q10: contextual interpretation of slope and both intercepts.
+       - Q12: intercept-based comparison of two lines.
+       - No slope-intercept-form equation writing or identification is tested.
 
        IMAGE FILES:
        - User-supplied figures: none.
@@ -34,54 +39,56 @@
     window.homeworkData = {
       classId : "Algebra1",
       id      : "Homework 6-5",
-      title   : "Homework 6-5 — Slope and y-Intercept",
+      title   : "Homework 6-5 — Slope, x-Intercept, and y-Intercept",
 
       graphics : String.raw``,
 
-      answerKey : ["C","B","D","A","E","B","C","F","A","D","C","E"],
+      answerKey : ["C","B","D","B","C","E","A","F","C","D","C","B"],
 
       questions : [
 
         /* Q1 */
         {
           stem: String.raw`
-            <p><b>Refer to Figure 1.</b> Which equation represents the line?</p>
+            <p><b>Refer to Figure 1.</b> Which statement correctly describes the line?</p>
           `,
           media: String.raw`
             <figure>
-              <img src="6-5-1.png" alt="Coordinate graph of a line with slope negative one and y-intercept three" />
+              <img src="6-5-1.png" alt="Coordinate graph of a descending line crossing the y-axis at 3 and the x-axis at 3" />
               <figcaption>Figure 1</figcaption>
             </figure>
           `,
           choices: [
-            String.raw`\(y=x+3\)`,
-            String.raw`\(y=-x-3\)`,
-            String.raw`\(y=-x+3\)`,
-            String.raw`\(y=3x-1\)`,
-            String.raw`\(y=\frac13x+3\)`,
-            String.raw`\(x=-y-3\)`
-          ]
+            String.raw`The slope is \(1\), the \(x\)-intercept is \((3,0)\), and the \(y\)-intercept is \((0,3)\).`,
+            String.raw`The slope is \(-1\), the \(x\)-intercept is \((-3,0)\), and the \(y\)-intercept is \((0,3)\).`,
+            String.raw`The slope is \(-1\), the \(x\)-intercept is \((3,0)\), and the \(y\)-intercept is \((0,3)\).`,
+            String.raw`The slope is \(-1\), the \(x\)-intercept is \((0,3)\), and the \(y\)-intercept is \((3,0)\).`,
+            String.raw`The slope is \(3\), the \(x\)-intercept is \((3,0)\), and the \(y\)-intercept is \((0,-1)\).`,
+            String.raw`The slope is \(0\), the \(x\)-intercept is \((3,0)\), and the \(y\)-intercept is \((0,3)\).`
+          ],
+          choiceWrap: false
         },
 
         /* Q2 */
         {
           stem: String.raw`
-            <p><b>Refer to Figure 2.</b> Which pair gives the slope \(m\) and \(y\)-intercept \(b\) of the line?</p>
+            <p><b>Refer to Figure 2.</b> Which statement correctly describes the line?</p>
           `,
           media: String.raw`
             <figure>
-              <img src="6-5-2.png" alt="Coordinate graph of a line with slope two and y-intercept negative one" />
+              <img src="6-5-2.png" alt="Coordinate graph of a rising line crossing the y-axis at negative 1" />
               <figcaption>Figure 2</figcaption>
             </figure>
           `,
           choices: [
-            String.raw`\(m=-2,\ b=-1\)`,
-            String.raw`\(m=2,\ b=-1\)`,
-            String.raw`\(m=\frac12,\ b=-1\)`,
-            String.raw`\(m=2,\ b=1\)`,
-            String.raw`\(m=-\frac12,\ b=1\)`,
-            String.raw`\(m=-1,\ b=2\)`
-          ]
+            String.raw`The slope is \(-2\), the \(x\)-intercept is \(\left(\frac12,0\right)\), and the \(y\)-intercept is \((0,-1)\).`,
+            String.raw`The slope is \(2\), the \(x\)-intercept is \(\left(\frac12,0\right)\), and the \(y\)-intercept is \((0,-1)\).`,
+            String.raw`The slope is \(\frac12\), the \(x\)-intercept is \((2,0)\), and the \(y\)-intercept is \((0,-1)\).`,
+            String.raw`The slope is \(2\), the \(x\)-intercept is \((0,-1)\), and the \(y\)-intercept is \(\left(\frac12,0\right)\).`,
+            String.raw`The slope is \(-\frac12\), the \(x\)-intercept is \((-2,0)\), and the \(y\)-intercept is \((0,1)\).`,
+            String.raw`The slope is \(1\), the \(x\)-intercept is \((1,0)\), and the \(y\)-intercept is \((0,-1)\).`
+          ],
+          choiceWrap: false
         },
 
         /* Q3 */
@@ -91,52 +98,22 @@
           `,
           media: String.raw`
             <figure>
-              <img src="6-5-3.png" alt="Line A is horizontal at y equals two; Line B is vertical at x equals negative one" />
+              <img src="6-5-3.png" alt="Line A is horizontal at y equals 2; Line B is vertical at x equals negative 1" />
               <figcaption>Figure 3</figcaption>
             </figure>
           `,
           choices: [
-            String.raw`Both lines have slope \(0\).`,
-            String.raw`Both lines have undefined slope.`,
-            String.raw`Line A has undefined slope and Line B has slope \(0\).`,
-            String.raw`Line A has slope \(0\) and Line B has undefined slope.`,
-            String.raw`Line A has slope \(2\) and Line B has slope \(-1\).`,
-            String.raw`Line A has slope \(1\) and Line B has slope \(-1\).`
+            String.raw`Both lines have slope \(0\), and both have both an \(x\)- and a \(y\)-intercept.`,
+            String.raw`Both lines have undefined slope, and neither has an intercept.`,
+            String.raw`Line A has undefined slope and an \(x\)-intercept; Line B has slope \(0\) and a \(y\)-intercept.`,
+            String.raw`Line A has slope \(0\), has \(y\)-intercept \((0,2)\), and has no \(x\)-intercept. Line B has undefined slope, has \(x\)-intercept \((-1,0)\), and has no \(y\)-intercept.`,
+            String.raw`Line A has slope \(2\), while Line B has slope \(-1\).`,
+            String.raw`Line A and Line B both pass through the origin.`
           ],
           choiceWrap: false
         },
 
         /* Q4 */
-        {
-          stem: String.raw`
-            <p>For the equation \(y=-\frac32x+4\), identify the slope and the \(y\)-intercept.</p>
-          `,
-          choices: [
-            String.raw`\(m=-\frac32,\quad b=4\)`,
-            String.raw`\(m=\frac32,\quad b=4\)`,
-            String.raw`\(m=-\frac32,\quad b=-4\)`,
-            String.raw`\(m=4,\quad b=-\frac32\)`,
-            String.raw`\(m=-4,\quad b=\frac32\)`,
-            String.raw`\(m=\frac23,\quad b=4\)`
-          ]
-        },
-
-        /* Q5 */
-        {
-          stem: String.raw`
-            <p>The line is given by \(2x+4y=12\). What are its slope and \(y\)-intercept?</p>
-          `,
-          choices: [
-            String.raw`\(m=2,\quad b=12\)`,
-            String.raw`\(m=-2,\quad b=3\)`,
-            String.raw`\(m=\frac12,\quad b=3\)`,
-            String.raw`\(m=-\frac12,\quad b=12\)`,
-            String.raw`\(m=-\frac12,\quad b=3\)`,
-            String.raw`\(m=\frac12,\quad b=-3\)`
-          ]
-        },
-
-        /* Q6 */
         {
           stem: String.raw`
             <p>Find the slope of the line through \((-1,8)\) and \((3,4)\).</p>
@@ -151,7 +128,7 @@
           ]
         },
 
-        /* Q7 */
+        /* Q5 */
         {
           stem: String.raw`
             <p>A student finds the slope between \((2,5)\) and \((5,11)\) by writing</p>
@@ -162,9 +139,51 @@
             String.raw`The student should add the \(y\)-coordinates instead of subtracting them.`,
             String.raw`The student should divide the change in \(x\) by the change in \(y\).`,
             String.raw`The student reversed the order of the \(y\)-coordinates but not the \(x\)-coordinates; both differences must use the same point order.`,
-            String.raw`The student should use the \(y\)-intercept formula instead of the slope formula.`,
+            String.raw`The line has undefined slope because both \(x\)-coordinates are positive.`,
             String.raw`The computation is correct because slope can be either \(2\) or \(-2\), depending on point order.`,
-            String.raw`The line has undefined slope because both points have positive coordinates.`
+            String.raw`The student should use one of the intercepts instead of the two given points.`
+          ],
+          choiceWrap: false
+        },
+
+        /* Q6 */
+        {
+          stem: String.raw`
+            <p>The table shows four points on the same line.</p>
+            <table>
+              <thead><tr><th>\(x\)</th><th>\(y\)</th></tr></thead>
+              <tbody>
+                <tr><td>\(-2\)</td><td>\(6\)</td></tr>
+                <tr><td>\(0\)</td><td>\(2\)</td></tr>
+                <tr><td>\(1\)</td><td>\(0\)</td></tr>
+                <tr><td>\(3\)</td><td>\(-4\)</td></tr>
+              </tbody>
+            </table>
+            <p>Which statement correctly gives the slope and both intercepts?</p>
+          `,
+          choices: [
+            String.raw`Slope \(2\); \(x\)-intercept \((1,0)\); \(y\)-intercept \((0,2)\)`,
+            String.raw`Slope \(-2\); \(x\)-intercept \((0,2)\); \(y\)-intercept \((1,0)\)`,
+            String.raw`Slope \(-\frac12\); \(x\)-intercept \((1,0)\); \(y\)-intercept \((0,2)\)`,
+            String.raw`Slope \(-2\); \(x\)-intercept \((-1,0)\); \(y\)-intercept \((0,2)\)`,
+            String.raw`Slope \(-2\); \(x\)-intercept \((1,0)\); \(y\)-intercept \((0,2)\)`,
+            String.raw`Slope \(0\); \(x\)-intercept \((1,0)\); \(y\)-intercept \((0,2)\)`
+          ],
+          choiceWrap: false
+        },
+
+        /* Q7 */
+        {
+          stem: String.raw`
+            <p>Which statement is always true for a nonvertical line that crosses both coordinate axes?</p>
+          `,
+          choices: [
+            String.raw`At the \(x\)-intercept, \(y=0\); at the \(y\)-intercept, \(x=0\).`,
+            String.raw`At the \(x\)-intercept, \(x=0\); at the \(y\)-intercept, \(y=0\).`,
+            String.raw`Both intercepts must have positive coordinates.`,
+            String.raw`The \(x\)-intercept and \(y\)-intercept must be the same point.`,
+            String.raw`The slope is equal to the \(x\)-coordinate of the \(x\)-intercept.`,
+            String.raw`The line must pass through the origin.`
           ],
           choiceWrap: false
         },
@@ -172,59 +191,51 @@
         /* Q8 */
         {
           stem: String.raw`
-            <p>The table shows points on a line.</p>
-            <table>
-              <thead><tr><th>\(x\)</th><th>\(y\)</th></tr></thead>
-              <tbody>
-                <tr><td>\(-1\)</td><td>\(5\)</td></tr>
-                <tr><td>\(0\)</td><td>\(2\)</td></tr>
-                <tr><td>\(1\)</td><td>\(-1\)</td></tr>
-                <tr><td>\(2\)</td><td>\(-4\)</td></tr>
-              </tbody>
-            </table>
-            <p>Which equation represents the line?</p>
+            <p>A line passes through its \(y\)-intercept \((0,-4)\) and its \(x\)-intercept \((6,0)\).</p>
+            <p>Which statement correctly describes the line?</p>
           `,
           choices: [
-            String.raw`\(y=3x+2\)`,
-            String.raw`\(y=-3x-2\)`,
-            String.raw`\(y=-\frac13x+2\)`,
-            String.raw`\(y=2x-3\)`,
-            String.raw`\(y=3x-2\)`,
-            String.raw`\(y=-3x+2\)`
-          ]
+            String.raw`Slope \(-\frac23\); \(x\)-intercept \((6,0)\); \(y\)-intercept \((0,-4)\)`,
+            String.raw`Slope \(\frac32\); \(x\)-intercept \((0,-4)\); \(y\)-intercept \((6,0)\)`,
+            String.raw`Slope \(-\frac32\); \(x\)-intercept \((6,0)\); \(y\)-intercept \((0,-4)\)`,
+            String.raw`Slope \(\frac23\); \(x\)-intercept \((0,-4)\); \(y\)-intercept \((6,0)\)`,
+            String.raw`Slope \(6\); \(x\)-intercept \((6,0)\); \(y\)-intercept \((0,-4)\)`,
+            String.raw`Slope \(\frac23\); \(x\)-intercept \((6,0)\); \(y\)-intercept \((0,-4)\)`
+          ],
+          choiceWrap: false
         },
 
         /* Q9 */
         {
           stem: String.raw`
-            <p>Consider the three lines:</p>
-            <p>\(L_1:y=2x+1\)</p>
-            <p>\(L_2:y=2x-4\)</p>
-            <p>\(L_3:y=-2x+1\)</p>
-            <p>Which pair has the same slope but different \(y\)-intercepts?</p>
+            <p>Line P passes through \((-2,0)\) and \((0,3)\). Line Q passes through \((0,-4)\) and \((2,-1)\).</p>
+            <p>Which statement is correct?</p>
           `,
           choices: [
-            String.raw`\(L_1\) and \(L_2\)`,
-            String.raw`\(L_1\) and \(L_3\)`,
-            String.raw`\(L_2\) and \(L_3\)`,
-            String.raw`All three lines`,
-            String.raw`No pair`,
-            String.raw`Only \(L_2\) and a horizontal line`
-          ]
+            String.raw`The lines have different slopes but the same \(y\)-intercept.`,
+            String.raw`The lines have the same slope and the same \(y\)-intercept.`,
+            String.raw`The lines have the same slope but different \(y\)-intercepts.`,
+            String.raw`Line P has slope \(-\frac32\) and Line Q has slope \(\frac32\).`,
+            String.raw`Line P has slope \(0\) and Line Q has undefined slope.`,
+            String.raw`The slopes cannot be compared unless both \(x\)-intercepts are known.`
+          ],
+          choiceWrap: false
         },
 
         /* Q10 */
         {
           stem: String.raw`
-            <p>The equation \(y=3x-2\) is changed to \(y=3x+4\). What happens to the graph?</p>
+            <p>A water tank initially contains \(120\) liters of water and drains at a constant rate of \(8\) liters per minute.</p>
+            <p>Let \(x\) represent time in minutes and \(y\) represent the amount of water remaining.</p>
+            <p>Which statement correctly interprets the slope and both intercepts?</p>
           `,
           choices: [
-            String.raw`The slope changes from \(3\) to \(4\), so the line becomes steeper.`,
-            String.raw`The slope changes sign, so the line begins to fall from left to right.`,
-            String.raw`The line shifts \(6\) units to the right while keeping the same slope.`,
-            String.raw`The slope stays \(3\), and the line shifts upward \(6\) units.`,
-            String.raw`The \(y\)-intercept stays the same, but the slope increases by \(6\).`,
-            String.raw`The graph becomes horizontal because only the constant term changed.`
+            String.raw`Slope \(8\): the tank gains \(8\) liters per minute; \(y\)-intercept \((0,120)\); \(x\)-intercept \((15,0)\).`,
+            String.raw`Slope \(-8\): the tank loses \(8\) liters per minute; \(y\)-intercept \((120,0)\); \(x\)-intercept \((0,15)\).`,
+            String.raw`Slope \(-120\): the tank begins with \(120\) liters; \(y\)-intercept \((0,8)\); \(x\)-intercept \((15,0)\).`,
+            String.raw`Slope \(-8\): the tank loses \(8\) liters per minute; \(y\)-intercept \((0,120)\) gives the initial amount; \(x\)-intercept \((15,0)\) gives the time when the tank is empty.`,
+            String.raw`Slope \(0\): the initial amount is fixed; \(y\)-intercept \((0,120)\); there is no \(x\)-intercept.`,
+            String.raw`Slope \(-8\): the tank loses \(8\) liters per minute; both intercepts represent the initial amount.`
           ],
           choiceWrap: false
         },
@@ -233,7 +244,8 @@
         {
           stem: String.raw`
             <p>A road loses \(800\) ft of elevation over a horizontal distance of \(2\) miles.</p>
-            <p>Road grade is \(100\%\times\dfrac{\text{vertical change}}{\text{horizontal change}}\). Using \(1\text{ mile}=5280\text{ ft}\), what is the magnitude of the grade, to the nearest tenth of a percent?</p>
+            <p>The magnitude of the road's grade is \(100\%\times\dfrac{\text{vertical change}}{\text{horizontal change}}\).</p>
+            <p>Using \(1\text{ mile}=5280\text{ ft}\), what is the magnitude of the slope as a percent, to the nearest tenth?</p>
           `,
           choices: [
             String.raw`\(6.7\%\)`,
@@ -248,16 +260,17 @@
         /* Q12 */
         {
           stem: String.raw`
-            <p>A water tank initially contains \(120\) liters of water. It drains at a constant rate of \(8\) liters per minute.</p>
-            <p>If \(y\) is the amount of water remaining after \(x\) minutes, which statement correctly interprets the model?</p>
+            <p>Line R has \(x\)-intercept \((4,0)\) and \(y\)-intercept \((0,5)\).</p>
+            <p>Line S has \(x\)-intercept \((8,0)\) and \(y\)-intercept \((0,10)\).</p>
+            <p>Which statement correctly compares their slopes?</p>
           `,
           choices: [
-            String.raw`The slope is \(120\), because that is the initial amount of water, and the \(y\)-intercept is \(-8\).`,
-            String.raw`The slope is \(8\), because \(8\) liters are removed each minute, and the \(y\)-intercept is \(120\).`,
-            String.raw`The slope is \(-120\), and the \(y\)-intercept is \(8\).`,
-            String.raw`The slope is \(0\), because the tank starts with a fixed amount of water.`,
-            String.raw`The slope is \(-8\), meaning the amount decreases by \(8\) liters each minute, and the \(y\)-intercept is \(120\), the initial amount.`,
-            String.raw`The slope is \(120\), and the \(y\)-intercept is \(8\), because both quantities are positive at the start.`
+            String.raw`Line S has twice the slope of Line R because both intercept coordinates are doubled.`,
+            String.raw`The lines have the same slope because the vertical change and horizontal change are both doubled.`,
+            String.raw`Line R has twice the slope of Line S because its intercepts are smaller.`,
+            String.raw`The slopes have the same magnitude but opposite signs.`,
+            String.raw`Line R has slope \(0\) and Line S has undefined slope.`,
+            String.raw`The slopes cannot be compared from intercepts alone.`
           ],
           choiceWrap: false
         }
