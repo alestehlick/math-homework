@@ -25,7 +25,7 @@
        - Q7: vertical-line boundary case; identifies the limit of y=mx+b.
        - Q8: standard-form conversion plus interpretation.
        - Q9: error diagnosis for isolating y.
-       - Q10: equal-slope / different-intercept comparison.
+       - Q10: equal-slope / different-intercept comparison without assuming the later parallel-lines theorem.
        - Q11: equal-intercept / different-slope comparison.
        - Q12: contextual synthesis of rate, initial value, and equation.
 
@@ -202,15 +202,15 @@
         {
           stem: String.raw`
             <p>Consider the lines \(y=2x+1\) and \(y=2x-4\).</p>
-            <p>What must be true about their graphs?</p>
+            <p>Which statement correctly compares their slopes and \(y\)-intercepts?</p>
           `,
           choices: [
-            String.raw`They are distinct parallel lines because they have the same slope but different \(y\)-intercepts.`,
-            String.raw`They are the same line because their slopes are equal.`,
-            String.raw`They intersect on the \(y\)-axis because their \(y\)-intercepts are different.`,
-            String.raw`They are perpendicular because their \(y\)-intercepts have opposite signs.`,
-            String.raw`One is horizontal and the other is vertical.`,
-            String.raw`They must intersect at \((0,2)\).`
+            String.raw`They have the same slope but different \(y\)-intercepts.`,
+            String.raw`They have different slopes but the same \(y\)-intercept.`,
+            String.raw`They have the same slope and the same \(y\)-intercept.`,
+            String.raw`Their slopes have opposite signs, and their \(y\)-intercepts are different.`,
+            String.raw`The first line has slope \(2\), while the second has slope \(-2\).`,
+            String.raw`Both lines have \(y\)-intercept \(2\), but different slopes.`
           ],
           choiceWrap: false
         },
