@@ -3,263 +3,298 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Homework 6-5 (Algebra 1)</title>
+  <title>Homework 6-5 (Algebra 2)</title>
 
   <script>
     /* =========================
-       Homework 6-5 — Slope and y-Intercept (Algebra 1)
+       Homework 6-5 — Quadratic Systems (Algebra 2)
        Adapted for: /math-homework/assets/core-rich.js
 
-       REQUIRED SOURCE REFERENCES:
-       - Original hw_6_5.html: graph ideas G1–G4 and original Q9–Q12.
+       REQUIRED SOURCE REFERENCES (user-provided Section 6-5 page):
+       - A Exercises used: #1, #2, #5, #6, #10
+       - B Exercises used: #11, #12, #16, #17, #18
+       - C Exercises used: #19, #20
 
-       SOURCE / REWORK NOTES:
-       - Original graph-reading material was substantially reworked to avoid
-         splitting one graph into repetitive slope/intercept questions.
-       - Original Q9–Q10 informed Q6 and Q7 (slope from two points).
-       - Original Q11–Q12 informed Q11 (road grade).
-       - Q1–Q5 and Q8–Q10, Q12 are model-authored or model-reworked to add
-         equation/graph/table/context translation, horizontal-vs-vertical
-         contrast, strategic comparison of m and b, and error diagnosis.
+       MODEL-AUTHORED / MODEL-REWORKED ITEMS:
+       - Q1 is model-authored from the section's central interpretation:
+         a solution of a nonlinear system must satisfy both equations, and
+         a system may have zero, one, or several real ordered-pair solutions.
+       - Q2–Q13 substantially rework the listed source exercises into a
+         progression that tests not only computation but also structural
+         recognition: symmetry, independent ± branches, repeated roots,
+         no-real-solution cases, and efficient elimination/substitution.
+       - Q8 reworks B #12 as a solution-count question after elimination,
+         emphasizing why x^2=a and y^2=b can create four ordered pairs.
+       - Q9 reworks B #16 to diagnose a no-real-solution system through the
+         discriminant of the resulting quadratic.
+       - Q10 reworks B #17 to distinguish a repeated root from two distinct
+         intersection points.
 
        IMAGE FILES:
-       - User-supplied figures: none.
-       - Model-generated figures: 6-5-1.png, 6-5-2.png, 6-5-3.png
-
-       IMAGE NAMING RULE:
-       - Model-generated figures use final homework question numbering.
-       - PNG files live in the SAME folder as this HTML.
+       - User-supplied figures used directly: none.
+       - Model-generated figures: none.
        ========================= */
 
     window.homeworkData = {
-      classId : "Algebra1",
+      classId : "Algebra2",
       id      : "Homework 6-5",
-      title   : "Homework 6-5 — Slope and y-Intercept",
+      title   : "Homework 6-5 — Quadratic Systems",
 
       graphics : String.raw``,
 
-      answerKey : ["C","B","D","A","E","B","C","F","A","D","C","E"],
+      answerKey : ["D","C","B","E","C","A","A","E","D","F","A","B","A"],
 
       questions : [
 
-        /* Q1 */
+        /* Q1 — conceptual orientation */
         {
           stem: String.raw`
-            <p><b>Refer to Figure 1.</b> Which equation represents the line?</p>
-          `,
-          media: String.raw`
-            <figure>
-              <img src="6-5-1.png" alt="Coordinate graph of a line with slope negative one and y-intercept three" />
-              <figcaption>Figure 1</figcaption>
-            </figure>
+            <p>When solving a system that contains quadratic equations, what does a <b>solution of the system</b> mean?</p>
           `,
           choices: [
-            String.raw`\(y=x+3\)`,
-            String.raw`\(y=-x-3\)`,
-            String.raw`\(y=-x+3\)`,
-            String.raw`\(y=3x-1\)`,
-            String.raw`\(y=\frac13x+3\)`,
-            String.raw`\(x=-y-3\)`
-          ]
-        },
-
-        /* Q2 */
-        {
-          stem: String.raw`
-            <p><b>Refer to Figure 2.</b> Which pair gives the slope \(m\) and \(y\)-intercept \(b\) of the line?</p>
-          `,
-          media: String.raw`
-            <figure>
-              <img src="6-5-2.png" alt="Coordinate graph of a line with slope two and y-intercept negative one" />
-              <figcaption>Figure 2</figcaption>
-            </figure>
-          `,
-          choices: [
-            String.raw`\(m=-2,\ b=-1\)`,
-            String.raw`\(m=2,\ b=-1\)`,
-            String.raw`\(m=\frac12,\ b=-1\)`,
-            String.raw`\(m=2,\ b=1\)`,
-            String.raw`\(m=-\frac12,\ b=1\)`,
-            String.raw`\(m=-1,\ b=2\)`
-          ]
-        },
-
-        /* Q3 */
-        {
-          stem: String.raw`
-            <p><b>Refer to Figure 3.</b> Which statement correctly compares Line A and Line B?</p>
-          `,
-          media: String.raw`
-            <figure>
-              <img src="6-5-3.png" alt="Line A is horizontal at y equals two; Line B is vertical at x equals negative one" />
-              <figcaption>Figure 3</figcaption>
-            </figure>
-          `,
-          choices: [
-            String.raw`Both lines have slope \(0\).`,
-            String.raw`Both lines have undefined slope.`,
-            String.raw`Line A has undefined slope and Line B has slope \(0\).`,
-            String.raw`Line A has slope \(0\) and Line B has undefined slope.`,
-            String.raw`Line A has slope \(2\) and Line B has slope \(-1\).`,
-            String.raw`Line A has slope \(1\) and Line B has slope \(-1\).`
+            String.raw`Any ordered pair that satisfies at least one of the equations is a solution.`,
+            String.raw`A quadratic system must always have exactly two real solutions.`,
+            String.raw`Solve each equation separately; any \(x\)-value from one equation may be paired with any \(y\)-value from the other.`,
+            String.raw`A solution is an ordered pair that satisfies both equations simultaneously; depending on the system, there may be zero, one, or several real solutions.`,
+            String.raw`Only the \(x\)-coordinates common to the two equations matter; the corresponding \(y\)-coordinates need not agree.`,
+            String.raw`If one equation is quadratic, every solution must have both coordinates positive.`
           ],
           choiceWrap: false
         },
 
-        /* Q4 */
+        /* Q2 — Source A #1 */
         {
           stem: String.raw`
-            <p>For the equation \(y=-\frac32x+4\), identify the slope and the \(y\)-intercept.</p>
+            <p>Solve the system.</p>
+            <p>\(\begin{cases}
+              x+y=4\\
+              x^2=3y-8
+            \end{cases}\)</p>
           `,
           choices: [
-            String.raw`\(m=-\frac32,\quad b=4\)`,
-            String.raw`\(m=\frac32,\quad b=4\)`,
-            String.raw`\(m=-\frac32,\quad b=-4\)`,
-            String.raw`\(m=4,\quad b=-\frac32\)`,
-            String.raw`\(m=-4,\quad b=\frac32\)`,
-            String.raw`\(m=\frac23,\quad b=4\)`
+            String.raw`\(\{(1,3),(4,0)\}\)`,
+            String.raw`\(\{(-1,5),(-4,8)\}\)`,
+            String.raw`\(\{(1,3),(-4,8)\}\)`,
+            String.raw`\(\{(1,3)\}\)`,
+            String.raw`\(\{(-4,-8),(1,-3)\}\)`,
+            String.raw`No real solutions`
           ]
         },
 
-        /* Q5 */
+        /* Q3 — Source A #2 */
         {
           stem: String.raw`
-            <p>The line is given by \(2x+4y=12\). What are its slope and \(y\)-intercept?</p>
+            <p>Solve the system.</p>
+            <p>\(\begin{cases}
+              xy=14\\
+              x+y=9
+            \end{cases}\)</p>
           `,
           choices: [
-            String.raw`\(m=2,\quad b=12\)`,
-            String.raw`\(m=-2,\quad b=3\)`,
-            String.raw`\(m=\frac12,\quad b=3\)`,
-            String.raw`\(m=-\frac12,\quad b=12\)`,
-            String.raw`\(m=-\frac12,\quad b=3\)`,
-            String.raw`\(m=\frac12,\quad b=-3\)`
+            String.raw`\(\{(2,7)\}\)`,
+            String.raw`\(\{(2,7),(7,2)\}\)`,
+            String.raw`\(\{(-2,-7),(-7,-2)\}\)`,
+            String.raw`\(\{(1,14),(14,1)\}\)`,
+            String.raw`\(\{(7,-2),(-2,7)\}\)`,
+            String.raw`No real solutions`
           ]
         },
 
-        /* Q6 */
+        /* Q4 — Source A #5 */
         {
           stem: String.raw`
-            <p>Find the slope of the line through \((-1,8)\) and \((3,4)\).</p>
+            <p>Solve the system.</p>
+            <p>\(\begin{cases}
+              x^2+y^2=20\\
+              x+y=6
+            \end{cases}\)</p>
+            <p><i>Hint:</i> Squaring \(x+y=6\) gives a useful relation involving \(xy\).</p>
           `,
           choices: [
-            String.raw`\(1\)`,
-            String.raw`\(-1\)`,
-            String.raw`\(2\)`,
-            String.raw`\(-2\)`,
+            String.raw`\(\{(3,3)\}\)`,
+            String.raw`\(\{(0,6),(6,0)\}\)`,
+            String.raw`\(\{(-2,-4),(-4,-2)\}\)`,
+            String.raw`\(\{(\sqrt{10},\sqrt{10}),(-\sqrt{10},-\sqrt{10})\}\)`,
+            String.raw`\(\{(2,4),(4,2)\}\)`,
+            String.raw`No real solutions`
+          ]
+        },
+
+        /* Q5 — Source A #6 */
+        {
+          stem: String.raw`
+            <p>Solve the system.</p>
+            <p>\(\begin{cases}
+              x^2+y^2=8\\
+              2x^2+y^2=12
+            \end{cases}\)</p>
+          `,
+          choices: [
+            String.raw`\(\{(2,2),(-2,-2)\}\)`,
+            String.raw`\(\{(2,-2),(-2,2)\}\)`,
+            String.raw`\(\{(2,2),(2,-2),(-2,2),(-2,-2)\}\)`,
+            String.raw`\(\{(4,4),(4,-4),(-4,4),(-4,-4)\}\)`,
+            String.raw`\(\{(2,2)\}\)`,
+            String.raw`No real solutions`
+          ]
+        },
+
+        /* Q6 — Source A #10 */
+        {
+          stem: String.raw`
+            <p>Solve the system.</p>
+            <p>\(\begin{cases}
+              y=x^2\\
+              1+y=2x
+            \end{cases}\)</p>
+          `,
+          choices: [
+            String.raw`\(\{(1,1)\}\)`,
+            String.raw`\(\{(1,-1)\}\)`,
+            String.raw`\(\{(-1,1)\}\)`,
+            String.raw`\(\{(1,1),(-1,1)\}\)`,
+            String.raw`\(\{(0,0),(2,4)\}\)`,
+            String.raw`No real solutions`
+          ]
+        },
+
+        /* Q7 — Source B #11 */
+        {
+          stem: String.raw`
+            <p>Solve the system.</p>
+            <p>\(\begin{cases}
+              x-y=4\\
+              y=x^2-34
+            \end{cases}\)</p>
+          `,
+          choices: [
+            String.raw`\(\{(6,2),(-5,-9)\}\)`,
+            String.raw`\(\{(6,-2),(-5,9)\}\)`,
+            String.raw`\(\{(5,1),(-6,-10)\}\)`,
+            String.raw`\(\{(6,2)\}\)`,
+            String.raw`\(\{(-6,2),(5,-9)\}\)`,
+            String.raw`No real solutions`
+          ]
+        },
+
+        /* Q8 — Source B #12 */
+        {
+          stem: String.raw`
+            <p>Consider the system</p>
+            <p>\(\begin{cases}
+              x^2+y^2=16\\
+              x^2+2y^2=25
+            \end{cases}\)</p>
+            <p>Subtracting the first equation from the second gives \(y^2=9\), and then \(x^2=7\). How many distinct real ordered-pair solutions does the system have?</p>
+          `,
+          choices: [
             String.raw`\(0\)`,
-            String.raw`undefined`
+            String.raw`\(1\)`,
+            String.raw`\(2\)`,
+            String.raw`\(3\)`,
+            String.raw`\(4\)`,
+            String.raw`\(8\)`
           ]
         },
 
-        /* Q7 */
+        /* Q9 — Source B #16 */
         {
           stem: String.raw`
-            <p>A student finds the slope between \((2,5)\) and \((5,11)\) by writing</p>
-            <p>\(m=\dfrac{5-11}{5-2}=-2\).</p>
-            <p>What is the student's error?</p>
+            <p>Consider the system</p>
+            <p>\(\begin{cases}
+              x+y=-4\\
+              y=x^2-3
+            \end{cases}\)</p>
+            <p>Substitution leads to \(x^2+x+1=0\). Which conclusion is correct?</p>
           `,
           choices: [
-            String.raw`The student should add the \(y\)-coordinates instead of subtracting them.`,
-            String.raw`The student should divide the change in \(x\) by the change in \(y\).`,
-            String.raw`The student reversed the order of the \(y\)-coordinates but not the \(x\)-coordinates; both differences must use the same point order.`,
-            String.raw`The student should use the \(y\)-intercept formula instead of the slope formula.`,
-            String.raw`The computation is correct because slope can be either \(2\) or \(-2\), depending on point order.`,
-            String.raw`The line has undefined slope because both points have positive coordinates.`
+            String.raw`The system has exactly one real solution because every quadratic has at least one real root.`,
+            String.raw`The system has two real solutions because the equation has degree \(2\).`,
+            String.raw`The system has infinitely many solutions because the equations share the variable \(y\).`,
+            String.raw`The system has no real solutions because the discriminant \(1-4=-3\) is negative.`,
+            String.raw`The system has four real solutions because both \(x\) and \(y\) may take positive or negative values.`,
+            String.raw`The system has no real solutions because quadratic equations can never intersect lines.`
           ],
           choiceWrap: false
         },
 
-        /* Q8 */
+        /* Q10 — Source B #17 */
         {
           stem: String.raw`
-            <p>The table shows points on a line.</p>
-            <table>
-              <thead><tr><th>\(x\)</th><th>\(y\)</th></tr></thead>
-              <tbody>
-                <tr><td>\(-1\)</td><td>\(5\)</td></tr>
-                <tr><td>\(0\)</td><td>\(2\)</td></tr>
-                <tr><td>\(1\)</td><td>\(-1\)</td></tr>
-                <tr><td>\(2\)</td><td>\(-4\)</td></tr>
-              </tbody>
-            </table>
-            <p>Which equation represents the line?</p>
+            <p>For the system</p>
+            <p>\(\begin{cases}
+              y=2x^2-3x+5\\
+              3+y=5x
+            \end{cases}\)</p>
+            <p>equating the two expressions for \(y\) gives \(2(x-2)^2=0\).</p>
+            <p>A student says, “It is a quadratic equation, so there must be two different solutions.” Which response is correct?</p>
           `,
           choices: [
-            String.raw`\(y=3x+2\)`,
-            String.raw`\(y=-3x-2\)`,
-            String.raw`\(y=-\frac13x+2\)`,
-            String.raw`\(y=2x-3\)`,
-            String.raw`\(y=3x-2\)`,
-            String.raw`\(y=-3x+2\)`
-          ]
-        },
-
-        /* Q9 */
-        {
-          stem: String.raw`
-            <p>Consider the three lines:</p>
-            <p>\(L_1:y=2x+1\)</p>
-            <p>\(L_2:y=2x-4\)</p>
-            <p>\(L_3:y=-2x+1\)</p>
-            <p>Which pair has the same slope but different \(y\)-intercepts?</p>
-          `,
-          choices: [
-            String.raw`\(L_1\) and \(L_2\)`,
-            String.raw`\(L_1\) and \(L_3\)`,
-            String.raw`\(L_2\) and \(L_3\)`,
-            String.raw`All three lines`,
-            String.raw`No pair`,
-            String.raw`Only \(L_2\) and a horizontal line`
-          ]
-        },
-
-        /* Q10 */
-        {
-          stem: String.raw`
-            <p>The equation \(y=3x-2\) is changed to \(y=3x+4\). What happens to the graph?</p>
-          `,
-          choices: [
-            String.raw`The slope changes from \(3\) to \(4\), so the line becomes steeper.`,
-            String.raw`The slope changes sign, so the line begins to fall from left to right.`,
-            String.raw`The line shifts \(6\) units to the right while keeping the same slope.`,
-            String.raw`The slope stays \(3\), and the line shifts upward \(6\) units.`,
-            String.raw`The \(y\)-intercept stays the same, but the slope increases by \(6\).`,
-            String.raw`The graph becomes horizontal because only the constant term changed.`
+            String.raw`The student is correct: every quadratic produces two distinct real \(x\)-values.`,
+            String.raw`The student is correct, but the two solutions have the same \(y\)-coordinate.`,
+            String.raw`There are no solutions because a square cannot equal \(0\).`,
+            String.raw`There are four solutions because both coordinates can take either sign.`,
+            String.raw`There are infinitely many solutions because the factor \(x-2\) is repeated.`,
+            String.raw`There is only one distinct solution, \((2,7)\), because \(x=2\) is a repeated root rather than two different \(x\)-values.`
           ],
           choiceWrap: false
         },
 
-        /* Q11 */
+        /* Q11 — Source B #18 */
         {
           stem: String.raw`
-            <p>A road loses \(800\) ft of elevation over a horizontal distance of \(2\) miles.</p>
-            <p>Road grade is \(100\%\times\dfrac{\text{vertical change}}{\text{horizontal change}}\). Using \(1\text{ mile}=5280\text{ ft}\), what is the magnitude of the grade, to the nearest tenth of a percent?</p>
+            <p>Solve the system.</p>
+            <p>\(\begin{cases}
+              y=x^2\\
+              x^2+y^2-4y=0
+            \end{cases}\)</p>
           `,
           choices: [
-            String.raw`\(6.7\%\)`,
-            String.raw`\(7.5\%\)`,
-            String.raw`\(7.6\%\)`,
-            String.raw`\(8.0\%\)`,
-            String.raw`\(7.0\%\)`,
-            String.raw`\(5.0\%\)`
+            String.raw`\(\{(0,0),(\sqrt3,3),(-\sqrt3,3)\}\)`,
+            String.raw`\(\{(0,0),(3,\sqrt3),(3,-\sqrt3)\}\)`,
+            String.raw`\(\{(\sqrt3,3),(-\sqrt3,3)\}\)`,
+            String.raw`\(\{(0,0),(3,3),(-3,3)\}\)`,
+            String.raw`\(\{(0,0)\}\)`,
+            String.raw`\(\{(0,0),(\sqrt3,-3),(-\sqrt3,-3)\}\)`
           ]
         },
 
-        /* Q12 */
+        /* Q12 — Source C #19 */
         {
           stem: String.raw`
-            <p>A water tank initially contains \(120\) liters of water. It drains at a constant rate of \(8\) liters per minute.</p>
-            <p>If \(y\) is the amount of water remaining after \(x\) minutes, which statement correctly interprets the model?</p>
+            <p>Solve the system.</p>
+            <p>\(\begin{cases}
+              x^2+y^2=5\\
+              x^2+2y^2+x=8
+            \end{cases}\)</p>
           `,
           choices: [
-            String.raw`The slope is \(120\), because that is the initial amount of water, and the \(y\)-intercept is \(-8\).`,
-            String.raw`The slope is \(8\), because \(8\) liters are removed each minute, and the \(y\)-intercept is \(120\).`,
-            String.raw`The slope is \(-120\), and the \(y\)-intercept is \(8\).`,
-            String.raw`The slope is \(0\), because the tank starts with a fixed amount of water.`,
-            String.raw`The slope is \(-8\), meaning the amount decreases by \(8\) liters each minute, and the \(y\)-intercept is \(120\), the initial amount.`,
-            String.raw`The slope is \(120\), and the \(y\)-intercept is \(8\), because both quantities are positive at the start.`
-          ],
-          choiceWrap: false
+            String.raw`\(\{(2,1),(-1,2)\}\)`,
+            String.raw`\(\{(2,1),(2,-1),(-1,2),(-1,-2)\}\)`,
+            String.raw`\(\{(2,1),(-2,1),(1,2),(-1,2)\}\)`,
+            String.raw`\(\{(2,2),(2,-2),(-1,1),(-1,-1)\}\)`,
+            String.raw`\(\{(2,1),(2,-1),(-1,2)\}\)`,
+            String.raw`No real solutions`
+          ]
+        },
+
+        /* Q13 — Source C #20 */
+        {
+          stem: String.raw`
+            <p>Solve the system.</p>
+            <p>\(\begin{cases}
+              3x^2+y^2=15\\
+              x^2-y^2+y=5
+            \end{cases}\)</p>
+          `,
+          choices: [
+            String.raw`\(\left\{(\sqrt5,0),(-\sqrt5,0),\left(\frac{\sqrt{77}}4,\frac34\right),\left(-\frac{\sqrt{77}}4,\frac34\right)\right\}\)`,
+            String.raw`\(\left\{(\sqrt5,0),(-\sqrt5,0),\left(\frac{\sqrt{77}}4,-\frac34\right),\left(-\frac{\sqrt{77}}4,-\frac34\right)\right\}\)`,
+            String.raw`\(\left\{(\sqrt5,0),\left(\frac{\sqrt{77}}4,\frac34\right)\right\}\)`,
+            String.raw`\(\left\{(5,0),(-5,0),\left(\frac{77}4,\frac34\right),\left(-\frac{77}4,\frac34\right)\right\}\)`,
+            String.raw`\(\left\{(0,\sqrt5),(0,-\sqrt5),\left(\frac34,\frac{\sqrt{77}}4\right),\left(\frac34,-\frac{\sqrt{77}}4\right)\right\}\)`,
+            String.raw`No real solutions`
+          ]
         }
       ]
     };
