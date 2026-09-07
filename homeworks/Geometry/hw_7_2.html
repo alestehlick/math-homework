@@ -1,0 +1,333 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Homework 7-2 (Geometry)</title>
+
+  <script>
+    /* =========================
+       Homework 7-2 — Triangle Centers and Perpendicular Bisectors (Geometry)
+       Adapted for: /math-homework/assets/core-rich.js
+
+       REQUIRED SOURCE REFERENCES (user-provided Section 7.2):
+       - Theorem 7.5: Perpendicular Bisector Theorem and its converse.
+       - Theorem 7.6: Circumcenter Theorem.
+       - Theorem 7.7: Incenter Theorem.
+       - Definitions: altitude and median.
+       - Theorem 7.8: Orthocenter Theorem.
+       - Theorem 7.9: Centroid Theorem.
+       - Type A uses Exercises: #5, #6, #7, #8, #9, #10, #11, #12, #13.
+       - Type B uses Exercises: #14, #15, #16, #18.
+       - Type C uses Exercises: #19, #20.
+
+       MODEL-AUTHORED / MODEL-REWORKED ITEMS:
+       - Q1 and Q3 isolate the biconditional logic and definition-level
+         sufficiency behind the perpendicular-bisector theorem.
+       - Q4 combines A #8–#10 into a single circumcenter/radius interpretation.
+       - Q5 synthesizes A #5–#7 by comparing center locations in special triangles.
+       - Q6 and Q8 contrast circumcenter and incenter conceptually rather than
+         asking only for vocabulary recall.
+       - Q9 reworks B #15 into an ordinary SAS proof-strategy question.
+       - Q10 combines B #16 and #18 to make students recognize why a median of
+         an equilateral triangle acquires additional roles.
+       - Q11 is a model-authored deduction from the definition of orthocenter.
+       - Q13 reworks C #19 as a synthesis of all four centers.
+       - Q14 reworks C #20 into a proof-strategy judgment rather than a formal
+         step-by-step proof.
+
+       IMAGE FILES:
+       - User-supplied figures used directly: none.
+       - Model-generated figures:
+         7-2-2.png, 7-2-4.png, 7-2-7.png, 7-2-9.png, 7-2-14.png
+
+       IMAGE NAMING RULE:
+       - Model-generated figures use final homework question numbering.
+       - PNG files live in the SAME folder as this HTML.
+       ========================= */
+
+    window.homeworkData = {
+      classId : "Geometry",
+      id      : "Homework 7-2",
+      title   : "Homework 7-2 — Triangle Centers and Perpendicular Bisectors",
+
+      graphics : String.raw``,
+
+      answerKey : ["C","B","D","A","E","C","F","B","D","A","E","C","B","F"],
+
+      questions : [
+
+        /* Q1 */
+        {
+          stem: String.raw`
+            <p>Let \(P\) be any point and let \(\overline{AB}\) be a segment.</p>
+            <p>Which statement correctly expresses the Perpendicular Bisector Theorem together with its converse?</p>
+          `,
+          choices: [
+            String.raw`If \(P\) lies on the perpendicular bisector of \(\overline{AB}\), then \(PA=PB\), but the converse is never true.`,
+            String.raw`If \(PA=PB\), then \(P\) must be the midpoint of \(\overline{AB}\).`,
+            String.raw`\(P\) lies on the perpendicular bisector of \(\overline{AB}\) if and only if \(PA=PB\).`,
+            String.raw`\(P\) lies on the perpendicular bisector of \(\overline{AB}\) if and only if \(\angle APB\) is a right angle.`,
+            String.raw`\(P\) lies on \(\overline{AB}\) if and only if \(PA=PB\).`,
+            String.raw`Only the midpoint of \(\overline{AB}\) can be equidistant from \(A\) and \(B\).`
+          ],
+          choiceWrap: false
+        },
+
+        /* Q2 */
+        {
+          stem: String.raw`
+            <p><b>Refer to Figure 1.</b> Line \(\ell\) is the perpendicular bisector of \(\overline{AB}\), and \(P\) lies on \(\ell\).</p>
+            <p>Which equality is guaranteed by Theorem 7.5?</p>
+          `,
+          media: String.raw`
+            <figure>
+              <img src="7-2-2.png" alt="Point P on the perpendicular bisector of segment AB" />
+              <figcaption>Figure 1</figcaption>
+            </figure>
+          `,
+          choices: [
+            String.raw`\(PM=PA\)`,
+            String.raw`\(PA=PB\)`,
+            String.raw`\(AM=AP\)`,
+            String.raw`\(AB=PB\)`,
+            String.raw`\(\angle PAB=90^\circ\)`,
+            String.raw`\(P\) is the midpoint of \(\overline{AB}\)`
+          ]
+        },
+
+        /* Q3 */
+        {
+          stem: String.raw`
+            <p>\(M\) is the midpoint of \(\overline{AB}\), and a line through \(P\) and \(M\) is drawn.</p>
+            <p>A student says, “The line passes through the midpoint, so it is the perpendicular bisector of \(\overline{AB}\).” Which required condition has not yet been established?</p>
+          `,
+          choices: [
+            String.raw`\(P\) is also the midpoint of \(\overline{AB}\).`,
+            String.raw`\(PA=AM\).`,
+            String.raw`\(PB=BM\).`,
+            String.raw`\(\overline{PM}\perp\overline{AB}\).`,
+            String.raw`\(\overline{AB}\perp\overline{AP}\).`,
+            String.raw`\(PA=PB=AB\).`
+          ],
+          choiceWrap: false
+        },
+
+        /* Q4 */
+        {
+          stem: String.raw`
+            <p><b>Refer to Figure 2.</b> The three perpendicular bisectors of the sides of \(\triangle ABC\) meet at \(P\). Suppose \(PB=10\).</p>
+            <p>Which statement is correct?</p>
+          `,
+          media: String.raw`
+            <figure>
+              <img src="7-2-4.png" alt="Triangle ABC with its perpendicular bisectors concurrent at P" />
+              <figcaption>Figure 2</figcaption>
+            </figure>
+          `,
+          choices: [
+            String.raw`\(P\) is the circumcenter, and \(PA=PB=PC=10\).`,
+            String.raw`\(P\) is the incenter, and its perpendicular distance to every side is \(10\).`,
+            String.raw`\(P\) is the centroid, and \(PA=PC=5\).`,
+            String.raw`\(P\) is the orthocenter, so \(PA\perp PB\).`,
+            String.raw`Only \(PB\) is known; no relation to \(PA\) or \(PC\) follows.`,
+            String.raw`\(P\) must lie on one of the sides of \(\triangle ABC\).`
+          ],
+          choiceWrap: false
+        },
+
+        /* Q5 */
+        {
+          stem: String.raw`
+            <p>Which statement about the locations of triangle centers is correct?</p>
+          `,
+          choices: [
+            String.raw`The circumcenter is inside every triangle.`,
+            String.raw`The centroid can lie outside an obtuse triangle.`,
+            String.raw`The incenter lies outside every obtuse triangle.`,
+            String.raw`In a right triangle, the orthocenter is the midpoint of the hypotenuse and the circumcenter is the right-angle vertex.`,
+            String.raw`In a right triangle, the circumcenter is the midpoint of the hypotenuse and the orthocenter is the right-angle vertex.`,
+            String.raw`In an obtuse triangle, the circumcenter, incenter, centroid, and orthocenter all lie outside the triangle.`
+          ],
+          choiceWrap: false
+        },
+
+        /* Q6 */
+        {
+          stem: String.raw`
+            <p>The three angle bisectors of a triangle meet at \(Q\).</p>
+            <p>Which property is guaranteed by the Incenter Theorem?</p>
+          `,
+          choices: [
+            String.raw`\(Q\) is equidistant from the three vertices.`,
+            String.raw`\(Q\) is the midpoint of each median.`,
+            String.raw`The perpendicular distances from \(Q\) to the three sides are equal.`,
+            String.raw`Every segment from \(Q\) to a vertex is perpendicular to the opposite side.`,
+            String.raw`\(Q\) lies outside the triangle unless the triangle is equilateral.`,
+            String.raw`The three sides of the triangle must be congruent.`
+          ],
+          choiceWrap: false
+        },
+
+        /* Q7 */
+        {
+          stem: String.raw`
+            <p><b>Refer to Figure 3.</b> \(Q\) is the incenter of \(\triangle ABC\), and \(QU\), \(QV\), and \(QT\) are perpendicular to the three sides.</p>
+            <p>If \(QT=8\), what are \(QU\) and \(QV\)?</p>
+          `,
+          media: String.raw`
+            <figure>
+              <img src="7-2-7.png" alt="Triangle ABC with incenter Q and perpendicular segments QU QV QT to the sides" />
+              <figcaption>Figure 3</figcaption>
+            </figure>
+          `,
+          choices: [
+            String.raw`\(QU=4,\ QV=4\)`,
+            String.raw`\(QU=8,\ QV=4\)`,
+            String.raw`\(QU=16,\ QV=16\)`,
+            String.raw`\(QU=8,\ QV=16\)`,
+            String.raw`The values cannot be determined from the incenter.`,
+            String.raw`\(QU=8,\ QV=8\)`
+          ]
+        },
+
+        /* Q8 */
+        {
+          stem: String.raw`
+            <p>Which statement correctly distinguishes the circumcenter from the incenter?</p>
+          `,
+          choices: [
+            String.raw`Both are intersections of medians; the circumcenter is closer to the vertices.`,
+            String.raw`The circumcenter is the intersection of perpendicular bisectors and is equidistant from the vertices; the incenter is the intersection of angle bisectors and is equidistant from the sides.`,
+            String.raw`The circumcenter is the intersection of altitudes; the incenter is the intersection of medians.`,
+            String.raw`The circumcenter is equidistant from the sides, while the incenter is equidistant from the vertices.`,
+            String.raw`Both centers are defined only for acute triangles.`,
+            String.raw`The circumcenter and incenter are always the same point.`
+          ],
+          choiceWrap: false
+        },
+
+        /* Q9 */
+        {
+          stem: String.raw`
+            <p><b>Refer to Figure 4.</b> In \(\triangle XMN\), \(L\) is the midpoint of \(\overline{MN}\) and \(\overline{XL}\perp\overline{MN}\).</p>
+            <p>Which <b>ordinary</b> triangle congruence theorem directly proves \(\triangle XML\cong\triangle XNL\)?</p>
+          `,
+          media: String.raw`
+            <figure>
+              <img src="7-2-9.png" alt="Triangle XMN with XL perpendicular to MN at its midpoint L" />
+              <figcaption>Figure 4</figcaption>
+            </figure>
+          `,
+          choices: [
+            String.raw`SSS, because all three side pairs are already known congruent.`,
+            String.raw`ASA, because two acute-angle pairs are given.`,
+            String.raw`AAS, because the midpoint supplies two angle pairs.`,
+            String.raw`SAS: \(ML=LN\), \(XL\) is common, and the included angles at \(L\) are both right angles.`,
+            String.raw`SSA, because the right angle may be used as a side.`,
+            String.raw`There is not enough information to prove the triangles congruent.`
+          ],
+          choiceWrap: false
+        },
+
+        /* Q10 */
+        {
+          stem: String.raw`
+            <p>\(\triangle ABC\) is equilateral. Point \(P\) is the midpoint of \(\overline{AC}\), so \(\overline{BP}\) is a median.</p>
+            <p>Which proof strategy shows that \(\overline{BP}\) also bisects \(\angle ABC\)?</p>
+          `,
+          choices: [
+            String.raw`Compare \(\triangle ABP\) and \(\triangle CBP\): \(AB=CB\), \(AP=PC\), and \(BP\) is common, so SSS gives congruence and then the two angles at \(B\) are congruent.`,
+            String.raw`Use the Perpendicular Bisector Theorem directly because every median is a perpendicular bisector.`,
+            String.raw`Use AAA to prove the two smaller triangles congruent.`,
+            String.raw`Use HL because every equilateral triangle is a right triangle.`,
+            String.raw`Assume the two angles at \(B\) are congruent; then the result follows by definition.`,
+            String.raw`No proof is possible without knowing the numerical side length.`
+          ],
+          choiceWrap: false
+        },
+
+        /* Q11 */
+        {
+          stem: String.raw`
+            <p>\(\triangle ABC\) is a right triangle with right angle at \(C\).</p>
+            <p>Where is its orthocenter?</p>
+          `,
+          choices: [
+            String.raw`At the midpoint of the hypotenuse \(\overline{AB}\).`,
+            String.raw`At the incenter.`,
+            String.raw`Outside the triangle on the side opposite \(C\).`,
+            String.raw`At the centroid.`,
+            String.raw`At \(C\), because \(\overline{AC}\) and \(\overline{BC}\) themselves are two altitudes.`,
+            String.raw`It cannot be determined without side lengths.`
+          ],
+          choiceWrap: false
+        },
+
+        /* Q12 */
+        {
+          stem: String.raw`
+            <p>Which construction is sufficient to locate the centroid of a triangle?</p>
+          `,
+          choices: [
+            String.raw`Intersect any two perpendicular bisectors.`,
+            String.raw`Intersect any two angle bisectors.`,
+            String.raw`Intersect any two medians, where each median joins a vertex to the midpoint of the opposite side.`,
+            String.raw`Intersect any two altitudes.`,
+            String.raw`Join the midpoints of two sides and intersect that segment with the third side.`,
+            String.raw`Draw a circle through the three vertices and use its center.`
+          ],
+          choiceWrap: false
+        },
+
+        /* Q13 */
+        {
+          stem: String.raw`
+            <p>Why do the circumcenter, incenter, orthocenter, and centroid coincide in an equilateral triangle?</p>
+          `,
+          choices: [
+            String.raw`Because every point inside an equilateral triangle is equidistant from both the sides and the vertices.`,
+            String.raw`Because each median is also an altitude, an angle bisector, and a perpendicular bisector, so the same concurrent lines determine all four centers.`,
+            String.raw`Because an equilateral triangle has four axes of symmetry.`,
+            String.raw`Because all four centers are defined as intersections of the same pair of sides.`,
+            String.raw`Because the perpendicular-bisector theorem says every triangle has only one center.`,
+            String.raw`Because the four centers coincide in every isosceles triangle.`
+          ],
+          choiceWrap: false
+        },
+
+        /* Q14 */
+        {
+          stem: String.raw`
+            <p><b>Refer to Figure 5.</b> \(\triangle ABC\) is isosceles with \(AB=AC\). Point \(M\) is the midpoint of \(\overline{AC}\), and point \(N\) is the midpoint of \(\overline{AB}\).</p>
+            <p>Which proof route best establishes that the medians \(\overline{BM}\) and \(\overline{CN}\) are congruent?</p>
+          `,
+          media: String.raw`
+            <figure>
+              <img src="7-2-14.png" alt="Isosceles triangle ABC with medians BM and CN from the base vertices" />
+              <figcaption>Figure 5</figcaption>
+            </figure>
+          `,
+          choices: [
+            String.raw`Use HL on \(\triangle ABM\) and \(\triangle ACN\); medians are always perpendicular to the opposite side.`,
+            String.raw`Use ASA because \(\angle ABM\) and \(\angle ACN\) are automatically right angles.`,
+            String.raw`Use the Centroid Theorem; all medians in every triangle have equal length.`,
+            String.raw`Use SSS by assuming \(BM=CN\) as one of the three required side pairs.`,
+            String.raw`Use the Perpendicular Bisector Theorem because \(M\) and \(N\) are midpoints.`,
+            String.raw`Compare \(\triangle ABM\) and \(\triangle ACN\): \(AB=AC\); \(AM=AN\) because they are halves of congruent sides; and the included angle at \(A\) is the same apex angle. Thus SAS gives congruence, and then \(BM=CN\).`
+          ],
+          choiceWrap: false
+        }
+      ]
+    };
+  </script>
+
+  <link rel="stylesheet" href="/math-homework/assets/core-rich.css" />
+  <script defer src="/math-homework/assets/core-rich.js"></script>
+  <script defer src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+</head>
+
+<body>
+  <div id="hw-root">Loading…</div>
+</body>
+</html>
