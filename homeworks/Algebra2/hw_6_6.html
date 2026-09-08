@@ -1,0 +1,321 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Homework 6-6 (Algebra 2)</title>
+
+  <script>
+    /* =========================
+       Homework 6-6 — Systems of Inequalities (Algebra 2)
+       Adapted for: /math-homework/assets/core-rich.js
+
+       REQUIRED SOURCE REFERENCES (user-provided Section 6-6):
+       - Type A uses Exercises: #1, #2, #4, #5, #6, #7, #9, #10
+       - Type B uses Exercises: #11, #14, #16, #19
+       - Type C uses Exercise: #21
+
+       MODEL-AUTHORED / MODEL-REWORKED ITEMS:
+       - Q1 introduces the central meaning of a solution to a system of inequalities.
+       - Q2 reworks A #4 into graph-to-system recognition.
+       - Q3 reworks A #2 to focus on strict versus inclusive boundaries and
+         the interval of x-values for which the two half-planes overlap.
+       - Q4 reworks A #5 into a feasible-region question requiring comparison
+         of the two boundary lines.
+       - Q5 reworks A #6 to stabilize coordinate-axis constraints.
+       - Q6 reworks A #7 into a nonlinear-overlap question.
+       - Q7 reworks A #9 to test boundary inclusion for two parabolic inequalities.
+       - Q8 reworks A #10 as a redundancy question.
+       - Q9 reworks B #11 to ask where a nonempty strip between two lines exists.
+       - Q10 reworks B #14 into graph-to-system recognition with three inequalities.
+       - Q11 reworks B #16 to analyze where two shifted parabolas admit overlap.
+       - Q12 reworks B #19 as a redundancy comparison between parallel parabolas.
+       - Q13 reworks C #21 into a synthesis problem involving a vertical
+         restriction, a strict linear boundary, and a quadratic lower boundary.
+
+       IMAGE FILES:
+       - User-supplied figures used directly: none.
+       - Model-generated figures: 6-6-2.png, 6-6-6.png, 6-6-10.png
+
+       IMAGE NAMING RULE:
+       - Model-generated figures use final homework question numbering.
+       - PNG files live in the SAME folder as this HTML.
+       ========================= */
+
+    window.homeworkData = {
+      classId : "Algebra2",
+      id      : "Homework 6-6",
+      title   : "Homework 6-6 — Systems of Inequalities",
+
+      graphics : String.raw``,
+
+      answerKey : ["D","B","C","E","A","F","C","B","D","A","E","F","C"],
+
+      questions : [
+
+        {
+          stem: String.raw`
+            <p>What does it mean for an ordered pair \((x,y)\) to be a solution of a system of inequalities?</p>
+          `,
+          choices: [
+            String.raw`It must make at least one inequality true.`,
+            String.raw`It must lie on every boundary line or curve.`,
+            String.raw`It must make exactly one inequality true and the others false.`,
+            String.raw`It must satisfy every inequality in the system simultaneously.`,
+            String.raw`Its \(x\)-coordinate must satisfy every inequality, but its \(y\)-coordinate may be arbitrary.`,
+            String.raw`Every system of inequalities has exactly one solution point.`
+          ],
+          choiceWrap: false
+        },
+
+        {
+          stem: String.raw`
+            <p><b>Refer to Figure 1.</b> The shaded region lies between two solid parallel boundary lines.</p>
+            <p>Which system is represented?</p>
+          `,
+          media: String.raw`
+            <figure>
+              <img src="6-6-2.png" alt="Shaded strip between the parallel lines y equals 2x minus 4 and y equals 2x plus 3" />
+              <figcaption>Figure 1</figcaption>
+            </figure>
+          `,
+          choices: [
+            String.raw`\(\begin{cases}y\ge 2x+3\\y\le 2x-4\end{cases}\)`,
+            String.raw`\(\begin{cases}y\le 2x+3\\y\ge 2x-4\end{cases}\)`,
+            String.raw`\(\begin{cases}y<2x+3\\y>2x-4\end{cases}\)`,
+            String.raw`\(\begin{cases}y\ge -2x+3\\y\le -2x-4\end{cases}\)`,
+            String.raw`\(\begin{cases}y\le 2x-3\\y\ge 2x+4\end{cases}\)`,
+            String.raw`\(\begin{cases}y\le x+3\\y\ge x-4\end{cases}\)`
+          ]
+        },
+
+        {
+          stem: String.raw`
+            <p>Consider the system</p>
+            <p>\(\begin{cases}
+              x+4y>4\\
+              x-2y\ge -6
+            \end{cases}\)</p>
+            <p>After solving each inequality for \(y\), which description of the solution region is correct?</p>
+          `,
+          choices: [
+            String.raw`Below both boundary lines, with both boundaries included.`,
+            String.raw`Above both boundary lines, with both boundaries excluded.`,
+            String.raw`Above the dashed line \(y=1-\frac14x\) and at or below the solid line \(y=\frac12x+3\); overlap occurs for \(x>-\frac83\).`,
+            String.raw`At or above \(y=\frac12x+3\) and below \(y=1-\frac14x\); overlap occurs for \(x<-\frac83\).`,
+            String.raw`Between the two lines for every real \(x\).`,
+            String.raw`There is no solution because one inequality is strict and the other is inclusive.`
+          ],
+          choiceWrap: false
+        },
+
+        {
+          stem: String.raw`
+            <p>Consider the system</p>
+            <p>\(\begin{cases}
+              2x-3y<-12\\
+              x+2y<10
+            \end{cases}\)</p>
+            <p>Which statement correctly describes the overlap?</p>
+          `,
+          choices: [
+            String.raw`The solution is above both dashed boundary lines for every real \(x\).`,
+            String.raw`The solution is below both dashed boundary lines for every real \(x\).`,
+            String.raw`The solution is between \(y=4+\frac23x\) and \(y=5-\frac12x\), and overlap occurs only for \(x>\frac67\).`,
+            String.raw`The solution is between two solid boundary lines and includes their intersection.`,
+            String.raw`The solution is above \(y=4+\frac23x\) and below \(y=5-\frac12x\), with overlap only for \(x<\frac67\).`,
+            String.raw`The inequalities describe two parallel half-planes, so there is no overlap.`
+          ],
+          choiceWrap: false
+        },
+
+        {
+          stem: String.raw`
+            <p>Which region is described by</p>
+            <p>\(\begin{cases}x\ge0\\y\le0\end{cases}\)?</p>
+          `,
+          choices: [
+            String.raw`The fourth quadrant together with the nonnegative \(x\)-axis and nonpositive \(y\)-axis.`,
+            String.raw`The first quadrant only, with neither axis included.`,
+            String.raw`The second quadrant together with both axes.`,
+            String.raw`The third quadrant only.`,
+            String.raw`The half-plane above the \(x\)-axis and to the right of the \(y\)-axis.`,
+            String.raw`Only the origin.`
+          ],
+          choiceWrap: false
+        },
+
+        {
+          stem: String.raw`
+            <p><b>Refer to Figure 2.</b> The shaded region represents</p>
+            <p>\(\begin{cases}y\le x^2\\y\ge2x^2-3\end{cases}\).</p>
+            <p>For which \(x\)-values does the system have at least one corresponding \(y\)-value?</p>
+          `,
+          media: String.raw`
+            <figure>
+              <img src="6-6-6.png" alt="Region between y equals x squared and y equals two x squared minus three" />
+              <figcaption>Figure 2</figcaption>
+            </figure>
+          `,
+          choices: [
+            String.raw`\(x\le-\sqrt3\)`,
+            String.raw`\(x\ge\sqrt3\)`,
+            String.raw`\(|x|\ge\sqrt3\)`,
+            String.raw`\(-3\le x\le3\)`,
+            String.raw`All real \(x\)`,
+            String.raw`\(-\sqrt3\le x\le\sqrt3\)`
+          ]
+        },
+
+        {
+          stem: String.raw`
+            <p>Consider the system</p>
+            <p>\(\begin{cases}
+              y\ge x^2\\
+              y>(x-1)^2
+            \end{cases}\)</p>
+            <p>Which graphing instruction is correct?</p>
+          `,
+          choices: [
+            String.raw`Draw both parabolas dashed and shade below both.`,
+            String.raw`Draw both parabolas solid and shade between them.`,
+            String.raw`Draw \(y=x^2\) solid and \(y=(x-1)^2\) dashed; shade the region above both curves.`,
+            String.raw`Draw \(y=x^2\) dashed and \(y=(x-1)^2\) solid; shade below both curves.`,
+            String.raw`Draw both parabolas solid and shade above only \(y=x^2\).`,
+            String.raw`No graph is possible because the inequalities point in different directions.`
+          ],
+          choiceWrap: false
+        },
+
+        {
+          stem: String.raw`
+            <p>Consider the system</p>
+            <p>\(\begin{cases}
+              y>x^2-3\\
+              y\ge x^2
+            \end{cases}\)</p>
+            <p>Which observation simplifies the graph most?</p>
+          `,
+          choices: [
+            String.raw`The first inequality is stronger, so the second can be ignored.`,
+            String.raw`Every point satisfying \(y\ge x^2\) automatically satisfies \(y>x^2-3\), so the solution is simply the region \(y\ge x^2\).`,
+            String.raw`The two inequalities are contradictory because one is strict and one is inclusive.`,
+            String.raw`The system has solutions only where \(x^2-3=x^2\).`,
+            String.raw`The solution is the region between the two parabolas.`,
+            String.raw`The system has no real solutions.`
+          ],
+          choiceWrap: false
+        },
+
+        {
+          stem: String.raw`
+            <p>For the system</p>
+            <p>\(\begin{cases}
+              5x-3y>6\\
+              x+3y>9
+            \end{cases}\)</p>
+            <p>the solution lies below one dashed line and above the other. For which \(x\)-values does this overlap exist?</p>
+          `,
+          choices: [
+            String.raw`\(x<-\frac52\)`,
+            String.raw`\(x<\frac52\)`,
+            String.raw`\(x\ge\frac52\)`,
+            String.raw`\(x>\frac52\)`,
+            String.raw`All real \(x\)`,
+            String.raw`There is no overlap.`
+          ]
+        },
+
+        {
+          stem: String.raw`
+            <p><b>Refer to Figure 3.</b> Which system produces the shaded region?</p>
+          `,
+          media: String.raw`
+            <figure>
+              <img src="6-6-10.png" alt="Triangular shaded region above the x-axis, below a descending solid line, and below a rising dashed line" />
+              <figcaption>Figure 3</figcaption>
+            </figure>
+          `,
+          choices: [
+            String.raw`\(\begin{cases}x+2y\le6\\x-y>2\\y\ge0\end{cases}\)`,
+            String.raw`\(\begin{cases}x+2y\ge6\\x-y>2\\y\ge0\end{cases}\)`,
+            String.raw`\(\begin{cases}x+2y\le6\\x-y<2\\y\le0\end{cases}\)`,
+            String.raw`\(\begin{cases}x+2y<6\\x-y\ge2\\y>0\end{cases}\)`,
+            String.raw`\(\begin{cases}x+2y\le6\\x-y>2\\y\le0\end{cases}\)`,
+            String.raw`\(\begin{cases}x+2y\le6\\x-y<2\\y\ge0\end{cases}\)`
+          ]
+        },
+
+        {
+          stem: String.raw`
+            <p>Consider the system</p>
+            <p>\(\begin{cases}
+              y\ge(x-2)^2\\
+              y<(x+2)^2
+            \end{cases}\)</p>
+            <p>Which statement correctly describes where solutions are possible?</p>
+          `,
+          choices: [
+            String.raw`For \(x<0\), between the two parabolas.`,
+            String.raw`For all real \(x\), because one parabola opens upward and the other downward.`,
+            String.raw`Only at \(x=0\).`,
+            String.raw`For \(x\le0\), including the point where the parabolas meet.`,
+            String.raw`For \(x>0\), at or above \(y=(x-2)^2\) and strictly below \(y=(x+2)^2\).`,
+            String.raw`For \(x\ge0\), including the common boundary point at \(x=0\).`
+          ],
+          choiceWrap: false
+        },
+
+        {
+          stem: String.raw`
+            <p>Consider the system</p>
+            <p>\(\begin{cases}
+              y>x^2-10x+25\\
+              y>x^2-10x+28
+            \end{cases}\)</p>
+            <p>Which statement is correct?</p>
+          `,
+          choices: [
+            String.raw`The first inequality is stronger, so the second is unnecessary.`,
+            String.raw`The system has no solution because the parabolas never intersect.`,
+            String.raw`The solution is the region strictly between the two parabolas.`,
+            String.raw`The solution is below both parabolas.`,
+            String.raw`Both inequalities are equally restrictive.`,
+            String.raw`The second inequality is stronger; satisfying \(y>x^2-10x+28\) automatically satisfies the first.`
+          ],
+          choiceWrap: false
+        },
+
+        {
+          stem: String.raw`
+            <p>Consider the system</p>
+            <p>\(\begin{cases}
+              y\le x+2\\
+              y<x-1\\
+              x\ge1\\
+              y\ge x^2-2x-4
+            \end{cases}\)</p>
+            <p>Which description of the feasible region is correct?</p>
+          `,
+          choices: [
+            String.raw`Because \(y\le x+2\) is stronger than \(y<x-1\), the second inequality can be ignored.`,
+            String.raw`Solutions exist for every \(x\ge1\), between the parabola and \(y=x+2\).`,
+            String.raw`Since \(y<x-1\) is the stronger upper bound, solutions satisfy \(x\ge1\), lie at or above \(y=x^2-2x-4\), and lie strictly below \(y=x-1\); this is possible for \(1\le x<\frac{3+\sqrt{21}}2\).`,
+            String.raw`Solutions exist only for \(x>\frac{3+\sqrt{21}}2\).`,
+            String.raw`The system has no solution because \(x\ge1\) conflicts with the parabola.`,
+            String.raw`The feasible region consists only of the point \((1,0)\).`
+          ],
+          choiceWrap: false
+        }
+      ]
+    };
+  </script>
+
+  <link rel="stylesheet" href="/math-homework/assets/core-rich.css" />
+  <script defer src="/math-homework/assets/core-rich.js"></script>
+  <script defer src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+</head>
+<body>
+  <div id="hw-root">Loading…</div>
+</body>
+</html>
