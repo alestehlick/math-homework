@@ -10,6 +10,7 @@ html, body { height: 100%; }
 body{
   margin:0;
   font-family:"EB Garamond",serif;
+  font-size:1.07rem;
   font-weight:500;
   color:#25282c;
   line-height:1.5;
