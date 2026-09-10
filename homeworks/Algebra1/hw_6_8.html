@@ -7,161 +7,233 @@
 
   <script>
     /* =========================
-       Homework 6-8 — Lines from Points & Parallel Lines
+       Homework 6-8 — Writing Linear Equations from Two Points & Parallel Lines
+       Adapted for: /math-homework/assets/core-rich.js
+
+       REQUIRED SOURCE REFERENCES:
+       - Uploaded source homework hw_6_8.html
+       - Two-point equation work drawn from original Q1–Q6, Q9–Q10
+       - Slope-and-point review drawn from original Q8
+       - Parallel-line / standard-form work drawn from original Q11–Q12
+
+       MODEL-AUTHORED / MODEL-REWORKED ITEMS:
+       - Q1: conceptual strategy for determining a line from two points.
+       - Q2: reworks original Q2 to exploit the special role of a point with x=0.
+       - Q3: reworks original Q1 as direct two-point equation practice.
+       - Q4: error diagnosis for inconsistent subtraction order in the slope formula.
+       - Q5: reworks original Q5 as straightforward two-point fluency.
+       - Q6: reworks original Q10 with fractional slope and intercept.
+       - Q7: reworks original Q8 as slope-plus-point review tied to the current skill.
+       - Q8: conceptual recognition of the y-intercept from two-point data.
+       - Q9: reworks original Q12 to extract slope from standard form.
+       - Q10: reworks original Q11 to construct a parallel line through a point.
+       - Q11: conceptual parallel-line question distinguishing same slope from same line.
+       - Q12: synthesis problem combining slope from two points with a new parallel line.
+
+       IMAGE FILES:
+       - User-supplied figures: none.
+       - Model-generated figures: none.
        ========================= */
+
     window.homeworkData = {
       classId : "Algebra1",
       id      : "Homework 6-8",
-      title   : "Homework 6-8 — Writing Linear Equations from Data",
+      title   : "Homework 6-8 — Lines from Two Points & Parallel Lines",
 
-      graphics : "",
+      graphics : String.raw``,
 
-      /* A–F letters only, length 12 */
-      answerKey : ["A","A","A","A","A","C","A","A","A","A","B","A"],
+      answerKey : ["C","F","A","D","B","E","C","F","A","B","D","E"],
 
       questions : [
+
         {
-          latex   : String.raw`\text{Find the slope-intercept form of the line through }(4,2)\text{ and }(-3,9)\text{.}`,
-          choices : [
-            String.raw`y=-x+6`,
-            String.raw`y=x+6`,
-            String.raw`y=-x-6`,
-            String.raw`y=x-6`,
-            String.raw`y=-6x+1`,
-            String.raw`y=6x-1`
+          stem: String.raw`
+            <p>You are given two different points on a nonvertical line and must write its equation in slope-intercept form.</p>
+            <p>Which plan is mathematically sufficient?</p>
+          `,
+          choices: [
+            String.raw`Use either point's \(y\)-coordinate as \(b\), then use the other point to find \(m\).`,
+            String.raw`Add the two \(x\)-coordinates to get \(m\), then subtract the \(y\)-coordinates to get \(b\).`,
+            String.raw`Find the slope from the two points, then substitute either point into \(y=mx+b\) to determine \(b\).`,
+            String.raw`Find the distance between the two points, then use that distance as the slope.`,
+            String.raw`Find the midpoint of the two points; its coordinates are \(m\) and \(b\).`,
+            String.raw`Two points determine the slope, but not the \(y\)-intercept.`
+          ],
+          choiceWrap: false
+        },
+
+        {
+          stem: String.raw`
+            <p>Find the equation of the line through \((0,4)\) and \((2,7)\).</p>
+          `,
+          choices: [
+            String.raw`\(y=\frac23x+4\)`,
+            String.raw`\(y=\frac32x-4\)`,
+            String.raw`\(y=-\frac32x+4\)`,
+            String.raw`\(y=3x+4\)`,
+            String.raw`\(y=\frac32x\)`,
+            String.raw`\(y=\frac32x+4\)`
           ]
         },
+
         {
-          latex   : String.raw`\text{Find the equation of the line through }(0,4)\text{ and }(2,7)\text{.}`,
-          choices : [
-            String.raw`y=\tfrac{3}{2}x+4`,
-            String.raw`y=\tfrac{3}{2}x-4`,
-            String.raw`y=\tfrac{2}{3}x+4`,
-            String.raw`y=-\tfrac{3}{2}x+4`,
-            String.raw`y=\tfrac{3}{2}x`,
-            String.raw`y=3x+4`
+          stem: String.raw`
+            <p>Find the slope-intercept form of the line through \((4,2)\) and \((-3,9)\).</p>
+          `,
+          choices: [
+            String.raw`\(y=-x+6\)`,
+            String.raw`\(y=x+6\)`,
+            String.raw`\(y=-x-6\)`,
+            String.raw`\(y=x-6\)`,
+            String.raw`\(y=-6x+1\)`,
+            String.raw`\(y=6x-1\)`
           ]
         },
+
         {
-          latex   : String.raw`\text{Find the equation of the line through }(2,7)\text{ and }(1,8)\text{.}`,
-          choices : [
-            String.raw`y=-x+9`,
-            String.raw`y=x-9`,
-            String.raw`y=-x-9`,
-            String.raw`y=x+9`,
-            String.raw`y=-\tfrac{1}{2}x+9`,
-            String.raw`y=-x+7`
+          stem: String.raw`
+            <p>A student tries to find the slope through \((1,3)\) and \((-3,6)\):</p>
+            <p>\[
+              m=\frac{6-3}{\,1-(-3)\,}=\frac34.
+            \]</p>
+            <p>What is the error?</p>
+          `,
+          choices: [
+            String.raw`The slope formula should use addition rather than subtraction.`,
+            String.raw`The \(x\)-coordinates should be placed in the numerator.`,
+            String.raw`The student should take the reciprocal, so the slope is \(\frac43\).`,
+            String.raw`The subtraction order is inconsistent: the numerator goes from the first point to the second, while the denominator goes from the second to the first. The correct slope is \(-\frac34\).`,
+            String.raw`The work is correct because slope is always positive when both points have positive \(y\)-coordinates.`,
+            String.raw`The points determine the \(y\)-intercept but not the slope.`
+          ],
+          choiceWrap: false
+        },
+
+        {
+          stem: String.raw`
+            <p>Find the equation of the line through \((1,3)\) and \((2,5)\).</p>
+          `,
+          choices: [
+            String.raw`\(y=2x-1\)`,
+            String.raw`\(y=2x+1\)`,
+            String.raw`\(y=-2x+1\)`,
+            String.raw`\(y=\frac12x+1\)`,
+            String.raw`\(y=2x+3\)`,
+            String.raw`\(y=x+2\)`
           ]
         },
+
         {
-          latex   : String.raw`\text{Find the equation of the line through }(1,4)\text{ and }(0,0)\text{.}`,
-          choices : [
-            String.raw`y=4x`,
-            String.raw`y=\tfrac{1}{4}x`,
-            String.raw`y=4x+1`,
-            String.raw`y=-4x`,
-            String.raw`y=4`,
-            String.raw`y=x+4`
+          stem: String.raw`
+            <p>Find the equation of the line through \((2,0)\) and \((6,-5)\).</p>
+          `,
+          choices: [
+            String.raw`\(y=\frac54x+\frac52\)`,
+            String.raw`\(y=-\frac54x-\frac52\)`,
+            String.raw`\(y=-\frac45x+\frac52\)`,
+            String.raw`\(y=-\frac54x+\frac25\)`,
+            String.raw`\(y=-\frac54x+\frac52\)`,
+            String.raw`\(y=\frac52x-\frac54\)`
           ]
         },
+
         {
-          latex   : String.raw`\text{Find the equation of the line through }(1,3)\text{ and }(2,5)\text{.}`,
-          choices : [
-            String.raw`y=2x+1`,
-            String.raw`y=2x-1`,
-            String.raw`y=-2x+1`,
-            String.raw`y=\tfrac{1}{2}x+1`,
-            String.raw`y=2x+3`,
-            String.raw`y=x+2`
+          stem: String.raw`
+            <p>A line has slope \(\frac25\) and passes through \((-1,-3)\).</p>
+            <p>Which equation represents the line?</p>
+          `,
+          choices: [
+            String.raw`\(y=\frac25x+\frac{13}{5}\)`,
+            String.raw`\(y=-\frac25x-\frac{13}{5}\)`,
+            String.raw`\(y=\frac25x-\frac{13}{5}\)`,
+            String.raw`\(y=\frac52x-\frac{13}{5}\)`,
+            String.raw`\(y=\frac25x-\frac{5}{13}\)`,
+            String.raw`\(y=\frac25x-\frac35\)`
           ]
         },
+
         {
-          latex   : String.raw`\text{Find the equation of the line through }(1,3)\text{ and }(-3,6)\text{.}`,
-          choices : [
-            String.raw`y=-\tfrac{3}{4}x-\tfrac{15}{4}`,
-            String.raw`y=\tfrac{3}{4}x+\tfrac{15}{4}`,
-            String.raw`y=-\tfrac{3}{4}x+\tfrac{15}{4}`,
-            String.raw`y=\tfrac{3}{4}x-\tfrac{15}{4}`,
-            String.raw`y=-\tfrac{4}{3}x+\tfrac{15}{4}`,
-            String.raw`y=-\tfrac{3}{4}x+\tfrac{5}{4}`
+          stem: String.raw`
+            <p>Before calculating any slope, what can you conclude immediately from the fact that a line passes through \((0,4)\)?</p>
+          `,
+          choices: [
+            String.raw`Its slope is \(4\).`,
+            String.raw`Its \(x\)-intercept is \(4\).`,
+            String.raw`It must be horizontal.`,
+            String.raw`It must be vertical.`,
+            String.raw`Its slope is \(0\).`,
+            String.raw`Its \(y\)-intercept is \(4\).`
+          ],
+          choiceWrap: false
+        },
+
+        {
+          stem: String.raw`
+            <p>What is the slope of the line \(3x+2y=7\)?</p>
+          `,
+          choices: [
+            String.raw`\(-\frac32\)`,
+            String.raw`\(\frac32\)`,
+            String.raw`\(-\frac23\)`,
+            String.raw`\(\frac23\)`,
+            String.raw`\(3\)`,
+            String.raw`\(-2\)`
           ]
         },
+
         {
-          latex   : String.raw`\text{Write the equation with }m=\tfrac{3}{2}\text{ and }b=8\text{.}`,
-          choices : [
-            String.raw`y=\tfrac{3}{2}x+8`,
-            String.raw`y=\tfrac{2}{3}x+8`,
-            String.raw`y=\tfrac{3}{2}x-8`,
-            String.raw`y=-\tfrac{3}{2}x+8`,
-            String.raw`y=3x+8`,
-            String.raw`y=\tfrac{3}{2}x+4`
+          stem: String.raw`
+            <p>Find the equation of the line through \((-1,2)\) that is parallel to \(3x+2y=7\).</p>
+          `,
+          choices: [
+            String.raw`\(y=-\frac23x+\frac12\)`,
+            String.raw`\(y=-\frac32x+\frac12\)`,
+            String.raw`\(y=-\frac32x-\frac12\)`,
+            String.raw`\(y=\frac32x+\frac12\)`,
+            String.raw`\(y=-\frac32x+\frac72\)`,
+            String.raw`\(y=\frac23x+\frac12\)`
           ]
         },
+
         {
-          latex   : String.raw`\text{Write the equation of the line with slope }\tfrac{2}{5}\text{ through }(-1,-3)\text{.}`,
-          choices : [
-            String.raw`y=\tfrac{2}{5}x-\tfrac{13}{5}`,
-            String.raw`y=\tfrac{2}{5}x+\tfrac{13}{5}`,
-            String.raw`y=-\tfrac{2}{5}x-\tfrac{13}{5}`,
-            String.raw`y=\tfrac{5}{2}x-\tfrac{13}{5}`,
-            String.raw`y=\tfrac{2}{5}x-\tfrac{5}{13}`,
-            String.raw`y=\tfrac{2}{5}x-\tfrac{3}{5}`
-          ]
+          stem: String.raw`
+            <p>The line \(3x+2y=7\) can be written as \(y=-\frac32x+\frac72\).</p>
+            <p>Which statement about a <b>different</b> line parallel to it is correct?</p>
+          `,
+          choices: [
+            String.raw`It must have the same \(y\)-intercept \(\frac72\), but may have a different slope.`,
+            String.raw`It must have slope \(\frac32\), the opposite sign of the original slope.`,
+            String.raw`It must have slope \(-\frac23\), the reciprocal of the original slope.`,
+            String.raw`It must have slope \(-\frac32\), but its \(y\)-intercept must be different from \(\frac72\).`,
+            String.raw`It must pass through the same points as the original line.`,
+            String.raw`Any line with a negative slope is parallel to it.`
+          ],
+          choiceWrap: false
         },
+
         {
-          latex   : String.raw`\text{Find the equation of the line through }(1,3)\text{ and }(-4,-9)\text{.}`,
-          choices : [
-            String.raw`y=\tfrac{12}{5}x+\tfrac{3}{5}`,
-            String.raw`y=\tfrac{12}{5}x-\tfrac{3}{5}`,
-            String.raw`y=-\tfrac{12}{5}x+\tfrac{3}{5}`,
-            String.raw`y=\tfrac{5}{12}x+\tfrac{3}{5}`,
-            String.raw`y=\tfrac{12}{5}x+3`,
-            String.raw`y=12x+\tfrac{3}{5}`
-          ]
-        },
-        {
-          latex   : String.raw`\text{Find the equation of the line through }(2,0)\text{ and }(6,-5)\text{.}`,
-          choices : [
-            String.raw`y=-\tfrac{5}{4}x+\tfrac{5}{2}`,
-            String.raw`y=\tfrac{5}{4}x+\tfrac{5}{2}`,
-            String.raw`y=-\tfrac{5}{4}x-\tfrac{5}{2}`,
-            String.raw`y=-\tfrac{4}{5}x+\tfrac{5}{2}`,
-            String.raw`y=-\tfrac{5}{4}x+\tfrac{2}{5}`,
-            String.raw`y=\tfrac{5}{2}x-\tfrac{5}{4}`
-          ]
-        },
-        {
-          latex   : String.raw`\text{Find the equation of the line through }(-1,2)\text{ parallel to }3x+2y=7\text{.}`,
-          choices : [
-            String.raw`y=-\tfrac{2}{3}x+\tfrac{1}{2}`,
-            String.raw`y=-\tfrac{3}{2}x+\tfrac{1}{2}`,
-            String.raw`y=-\tfrac{3}{2}x-\tfrac{1}{2}`,
-            String.raw`y=\tfrac{3}{2}x+\tfrac{1}{2}`,
-            String.raw`y=-\tfrac{3}{2}x+\tfrac{7}{2}`,
-            String.raw`y=\tfrac{2}{3}x+\tfrac{1}{2}`
-          ]
-        },
-        {
-          latex   : String.raw`\text{What is the slope of the line }3x+2y=7\text{?}`,
-          choices : [
-            String.raw`-\tfrac{3}{2}`,
-            String.raw`\tfrac{3}{2}`,
-            String.raw`-\tfrac{2}{3}`,
-            String.raw`\tfrac{2}{3}`,
-            String.raw`3`,
-            String.raw`-2`
+          stem: String.raw`
+            <p>Line \(\ell\) passes through \((1,3)\) and \((-3,6)\).</p>
+            <p>Line \(k\) is parallel to \(\ell\) and passes through \((2,-1)\). Which equation represents line \(k\)?</p>
+          `,
+          choices: [
+            String.raw`\(y=\frac34x+\frac12\)`,
+            String.raw`\(y=-\frac43x+\frac53\)`,
+            String.raw`\(y=-\frac34x-\frac12\)`,
+            String.raw`\(y=\frac43x-\frac{11}{3}\)`,
+            String.raw`\(y=-\frac34x+\frac12\)`,
+            String.raw`\(y=-\frac34x+\frac52\)`
           ]
         }
       ]
     };
   </script>
 
-  <link rel="stylesheet" href="/math-homework/assets/core.css" />
-  <link rel="stylesheet" href="https://tikzjax.com/v1/fonts.css" />
-  <script defer src="/math-homework/assets/core.js"></script>
-  <script defer src="https://tikzjax.com/v1/tikzjax.js"></script>
+  <link rel="stylesheet" href="/math-homework/assets/core-rich.css" />
+  <script defer src="/math-homework/assets/core-rich.js"></script>
   <script defer src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
 </head>
+
 <body>
   <div id="hw-root">Loading…</div>
 </body>
