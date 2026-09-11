@@ -7,168 +7,245 @@
 
   <script>
     /* =========================
-       Homework 6-9 — Direct Variation
+       Homework 6-9 — Direct Variation (Algebra 1)
+       Adapted for: /math-homework/assets/core-rich.js
+
+       REQUIRED SOURCE REFERENCES:
+       - Uploaded source homework hw_6_9.html
+       - Original Q1–Q4: tables leading to equations of the form y = kx
+       - Original Q5: underwater-pressure direct-variation model
+       - Original Q6: circumference C = pi d and constant of variation
+       - Original Q7–Q10: finding k and y = kx from one ordered pair
+       - Original Q11: application of variation language
+       - Original Q12: classification of equations as direct variation
+
+       MODEL-AUTHORED / MODEL-REWORKED ITEMS:
+       - Q1: reworks original Q12 to establish the defining form y = kx.
+       - Q2: reworks original Q1–Q4 into a constant-ratio table without
+         the giveaway x = 1 row.
+       - Q3: model-authored contrast between a linear relationship and
+         a direct variation; targets the role of the origin / constant ratio.
+       - Q4: reworks original Q8 to find k and the equation from one point.
+       - Q5: model-authored graph interpretation linking direct variation
+         to a line through the origin and to slope k.
+       - Q6: model-authored proportional-scaling consequence of y = kx.
+       - Q7: reworks original Q6 to interpret k in C = pi d.
+       - Q8: model-authored contextual non-example with a nonzero initial fee.
+       - Q9: model-authored synthesis problem: determine k from one pair,
+         then use the model to predict another value.
+
+       IMAGE FILES:
+       - User-supplied figures: none.
+       - Model-generated figures: 6-9-5.png
+
+       IMAGE NAMING RULE:
+       - Model-generated figures use final homework question numbering.
+       - PNG files live in the SAME folder as this HTML.
        ========================= */
+
     window.homeworkData = {
       classId : "Algebra1",
       id      : "Homework 6-9",
-      title   : "Homework 6-9 — Direct Variation (y = kx)",
+      title   : "Homework 6-9 — Direct Variation",
 
-      graphics : "",
+      graphics : String.raw``,
 
-      /* Answer letters (A–F), one per question (12 total) */
-      answerKey : ["A","A","A","A","A","B","A","C","B","B","A","A"],
+      answerKey : ["B","E","C","A","F","D","B","E","C"],
 
       questions : [
-        /* Tables → find the equation (k) */
+
+        /* Q1 */
         {
-          latex   : String.raw`\text{From the table }(0,0),(1,6),(2,12),(3,18)\text{, write the direct-variation equation.}`,
-          choices : [
-            String.raw`y=6x`,
-            String.raw`y=\tfrac{1}{6}x`,
-            String.raw`y=\tfrac{6}{x}`,
-            String.raw`y=6x+1`,
-            String.raw`y=-6x`,
-            String.raw`y=x+6`
-          ]
-        },
-        {
-          latex   : String.raw`\text{From the table }(0,0),(1,10),(2,20),(3,30)\text{, write the direct-variation equation.}`,
-          choices : [
-            String.raw`y=10x`,
-            String.raw`y=\tfrac{1}{10}x`,
-            String.raw`y=10x+3`,
-            String.raw`y=\tfrac{10}{x}`,
-            String.raw`y=-10x`,
-            String.raw`y=x+10`
-          ]
-        },
-        {
-          latex   : String.raw`\text{From the table }(0,0),(1,2),(2,4),(3,6)\text{, write the direct-variation equation.}`,
-          choices : [
-            String.raw`y=2x`,
-            String.raw`y=\tfrac{1}{2}x`,
-            String.raw`y=2x+1`,
-            String.raw`y=\tfrac{2}{x}`,
-            String.raw`y=-2x`,
-            String.raw`y=x+2`
-          ]
-        },
-        {
-          latex   : String.raw`\text{From the table }(0,0),(1,0.5),(2,1),(3,1.5)\text{, write the direct-variation equation.}`,
-          choices : [
-            String.raw`y=\tfrac{1}{2}x`,
-            String.raw`y=2x`,
-            String.raw`y=\tfrac{1}{2}x+1`,
-            String.raw`y=\tfrac{x}{2}+0.5`,
-            String.raw`y=\tfrac{1}{x}`,
-            String.raw`y=-\tfrac{1}{2}x`
+          stem: String.raw`
+            <p>Which equation represents a direct variation of \(y\) with \(x\)?</p>
+          `,
+          choices: [
+            String.raw`\(y=4x+1\)`,
+            String.raw`\(y=-3x\)`,
+            String.raw`\(y=\frac{3}{x}\)`,
+            String.raw`\(y=x^2\)`,
+            String.raw`\(y=7\)`,
+            String.raw`\(x=3\)`
           ]
         },
 
-        /* Constants of variation & modeling */
+        /* Q2 */
         {
-          latex   : String.raw`\text{Underwater pressure: }p=0.433h\text{ (}p\text{ in psi, }h\text{ in ft). Is this a direct variation, and what is }k\text{?}`,
-          choices : [
-            String.raw`\text{Yes; }k=0.433`,
-            String.raw`\text{No; not direct}`,
-            String.raw`\text{Yes; }k=433`,
-            String.raw`\text{Yes; }k=\tfrac{1}{0.433}`,
-            String.raw`\text{No; }k=0`,
-            String.raw`\text{Yes; }k=\tfrac{h}{p}`
-          ]
+          stem: String.raw`
+            <p>Consider the table.</p>
+            <table style="border-collapse:collapse; margin:.5rem 0;">
+              <tr>
+                <th style="border:1px solid #aaa; padding:.3rem .7rem;">\(x\)</th>
+                <td style="border:1px solid #aaa; padding:.3rem .7rem;">\(2\)</td>
+                <td style="border:1px solid #aaa; padding:.3rem .7rem;">\(5\)</td>
+                <td style="border:1px solid #aaa; padding:.3rem .7rem;">\(8\)</td>
+              </tr>
+              <tr>
+                <th style="border:1px solid #aaa; padding:.3rem .7rem;">\(y\)</th>
+                <td style="border:1px solid #aaa; padding:.3rem .7rem;">\(7\)</td>
+                <td style="border:1px solid #aaa; padding:.3rem .7rem;">\(\frac{35}{2}\)</td>
+                <td style="border:1px solid #aaa; padding:.3rem .7rem;">\(28\)</td>
+              </tr>
+            </table>
+            <p>Which statement is correct?</p>
+          `,
+          choices: [
+            String.raw`The table is not a direct variation because the \(x\)-values are not equally spaced.`,
+            String.raw`The table is a direct variation with \(k=\frac27\).`,
+            String.raw`The table is linear, but its constant of variation cannot be determined.`,
+            String.raw`The table is a direct variation with \(k=7\).`,
+            String.raw`The table is a direct variation with \(k=\frac72\), so \(y=\frac72x\).`,
+            String.raw`The table represents \(y=\frac72x+2\).`
+          ],
+          choiceWrap: false
         },
+
+        /* Q3 */
         {
-          latex   : String.raw`\text{Circumference }C=\pi d\text{ varies directly with diameter }d\text{. What is the constant of variation }k\text{?}`,
-          choices : [
-            String.raw`2\pi`,
-            String.raw`\pi`,
-            String.raw`\tfrac{1}{\pi}`,
-            String.raw`\pi r^2`,
-            String.raw`d`,
-            String.raw`1`
+          stem: String.raw`
+            <p>Consider the table.</p>
+            <table style="border-collapse:collapse; margin:.5rem 0;">
+              <tr>
+                <th style="border:1px solid #aaa; padding:.3rem .7rem;">\(x\)</th>
+                <td style="border:1px solid #aaa; padding:.3rem .7rem;">\(0\)</td>
+                <td style="border:1px solid #aaa; padding:.3rem .7rem;">\(2\)</td>
+                <td style="border:1px solid #aaa; padding:.3rem .7rem;">\(4\)</td>
+                <td style="border:1px solid #aaa; padding:.3rem .7rem;">\(6\)</td>
+              </tr>
+              <tr>
+                <th style="border:1px solid #aaa; padding:.3rem .7rem;">\(y\)</th>
+                <td style="border:1px solid #aaa; padding:.3rem .7rem;">\(3\)</td>
+                <td style="border:1px solid #aaa; padding:.3rem .7rem;">\(7\)</td>
+                <td style="border:1px solid #aaa; padding:.3rem .7rem;">\(11\)</td>
+                <td style="border:1px solid #aaa; padding:.3rem .7rem;">\(15\)</td>
+              </tr>
+            </table>
+            <p>Why is this <b>not</b> a direct variation?</p>
+          `,
+          choices: [
+            String.raw`Because \(y\) increases as \(x\) increases.`,
+            String.raw`Because the relationship is linear.`,
+            String.raw`Because a direct variation must satisfy \(y=0\) when \(x=0\); here the relationship has a nonzero starting value.`,
+            String.raw`Because direct variation cannot contain positive numbers.`,
+            String.raw`Because the \(x\)-values differ by \(2\).`,
+            String.raw`Because a direct variation must always have negative slope.`
+          ],
+          choiceWrap: false
+        },
+
+        /* Q4 */
+        {
+          stem: String.raw`
+            <p>\(y\) varies directly with \(x\), and \((x,y)=\left(5,-\frac12\right)\).</p>
+            <p>Which equation represents the variation?</p>
+          `,
+          choices: [
+            String.raw`\(y=-\frac{1}{10}x\)`,
+            String.raw`\(y=-\frac12x\)`,
+            String.raw`\(y=-10x\)`,
+            String.raw`\(y=\frac{1}{10}x\)`,
+            String.raw`\(y=-\frac{1}{10}x-\frac12\)`,
+            String.raw`\(y=\frac12x-5\)`
           ]
         },
 
-        /* Find k and the equation from one (x,y) value */
+        /* Q5 */
         {
-          latex   : String.raw`\text{If }y\text{ varies directly with }x\text{ and }(x,y)=(9,18)\text{, choose the correct }k\text{ and equation.}`,
-          choices : [
-            String.raw`k=2,\ y=2x`,
-            String.raw`k=\tfrac{1}{2},\ y=\tfrac{1}{2}x`,
-            String.raw`k=-2,\ y=-2x`,
-            String.raw`k=2,\ y=2x+9`,
-            String.raw`k=9,\ y=9x`,
-            String.raw`k=2,\ y=x+2`
-          ]
-        },
-        {
-          latex   : String.raw`\text{If }y\text{ varies directly with }x\text{ and }(x,y)=(5,-\tfrac{1}{2})\text{, choose the correct }k\text{ and equation.}`,
-          choices : [
-            String.raw`k=-\tfrac{1}{2},\ y=-\tfrac{1}{2}x`,
-            String.raw`k=-5,\ y=-5x`,
-            String.raw`k=-\tfrac{1}{10},\ y=-\tfrac{1}{10}x`,
-            String.raw`k=\tfrac{1}{10},\ y=\tfrac{1}{10}x`,
-            String.raw`k=-\tfrac{1}{10},\ y=-\tfrac{1}{10}x-\tfrac{1}{2}`,
-            String.raw`k=\tfrac{1}{2},\ y=\tfrac{1}{2}x-5`
-          ]
-        },
-        {
-          latex   : String.raw`\text{If }y\text{ varies directly with }x\text{ and }(x,y)=(7,4)\text{, choose the correct }k\text{ and equation.}`,
-          choices : [
-            String.raw`k=\tfrac{7}{4},\ y=\tfrac{7}{4}x`,
-            String.raw`k=\tfrac{4}{7},\ y=\tfrac{4}{7}x`,
-            String.raw`k=-\tfrac{4}{7},\ y=-\tfrac{4}{7}x`,
-            String.raw`k=\tfrac{4}{7},\ y=\tfrac{4}{7}x+4`,
-            String.raw`k=4,\ y=4x`,
-            String.raw`k=\tfrac{1}{7},\ y=\tfrac{1}{7}x`
-          ]
-        },
-        {
-          latex   : String.raw`\text{If }y\text{ varies directly with }x\text{ and }(x,y)=(12,2)\text{, choose the correct }k\text{ and equation.}`,
-          choices : [
-            String.raw`k=\tfrac{1}{12},\ y=\tfrac{1}{12}x`,
-            String.raw`k=\tfrac{1}{6},\ y=\tfrac{1}{6}x`,
-            String.raw`k=6,\ y=6x`,
-            String.raw`k=\tfrac{1}{6},\ y=\tfrac{1}{6}x+2`,
-            String.raw`k=-\tfrac{1}{6},\ y=-\tfrac{1}{6}x`,
-            String.raw`k=2,\ y=2x`
+          stem: String.raw`
+            <p><b>Refer to Figure 1.</b> The graph shows a direct variation passing through the origin and the point \((4,6)\).</p>
+            <p>Which equation represents the graph?</p>
+          `,
+          media: String.raw`
+            <figure>
+              <img src="6-9-5.png" alt="Line through the origin and the point (4,6)" />
+              <figcaption>Figure 1</figcaption>
+            </figure>
+          `,
+          choices: [
+            String.raw`\(y=4x+6\)`,
+            String.raw`\(y=\frac23x\)`,
+            String.raw`\(y=\frac32x+6\)`,
+            String.raw`\(y=-\frac32x\)`,
+            String.raw`\(y=\frac43x\)`,
+            String.raw`\(y=\frac32x\)`
           ]
         },
 
-        /* Applications / classification */
+        /* Q6 */
         {
-          latex   : String.raw`\text{A falling object’s speed varies directly with the square of the time: }v=kt^{2}.\ \text{If }v=256\text{ ft/s when }t=4\text{ s, what is }v\text{ when }t=3\text{ s?}`,
-          choices : [
-            String.raw`144\ \text{ft/s}`,
-            String.raw`192\ \text{ft/s}`,
-            String.raw`64\ \text{ft/s}`,
-            String.raw`128\ \text{ft/s}`,
-            String.raw`90\ \text{ft/s}`,
-            String.raw`256\ \text{ft/s}`
-          ]
+          stem: String.raw`
+            <p>Suppose \(y\) varies directly with \(x\). If \(x\) is multiplied by \(3\), what must happen to \(y\)?</p>
+          `,
+          choices: [
+            String.raw`\(y\) increases by \(3\).`,
+            String.raw`\(y\) is divided by \(3\).`,
+            String.raw`Nothing can be concluded without knowing \(k\).`,
+            String.raw`\(y\) is multiplied by \(3\).`,
+            String.raw`\(y\) is multiplied by \(9\).`,
+            String.raw`\(y\) becomes \(k+3\).`
+          ],
+          choiceWrap: false
         },
+
+        /* Q7 */
         {
-          latex   : String.raw`\text{Which equation represents a direct variation?}`,
-          choices : [
-            String.raw`y=-3x`,
-            String.raw`y=3x+2`,
-            String.raw`y=\dfrac{2}{x}`,
-            String.raw`y=3x^{2}`,
-            String.raw`x=2`,
-            String.raw`y=7`
+          stem: String.raw`
+            <p>The circumference \(C\) of a circle varies directly with its diameter \(d\):</p>
+            <p>\(C=\pi d\).</p>
+            <p>What is the constant of variation, and what does it mean?</p>
+          `,
+          choices: [
+            String.raw`\(k=2\pi\); every diameter is \(2\pi\) times its circumference.`,
+            String.raw`\(k=\pi\); the circumference is always \(\pi\) times the diameter.`,
+            String.raw`\(k=\frac1\pi\); the circumference is always \(\frac1\pi\) times the diameter.`,
+            String.raw`\(k=d\); the constant changes with the circle.`,
+            String.raw`\(k=\pi d\); the constant is the circumference itself.`,
+            String.raw`There is no constant of variation because \(\pi\) is irrational.`
+          ],
+          choiceWrap: false
+        },
+
+        /* Q8 */
+        {
+          stem: String.raw`
+            <p>A parking garage charges a fixed entrance fee of ¥500 plus ¥200 for each hour parked.</p>
+            <p>Let \(h\) be the number of hours and \(C\) the total cost. Which statement is correct?</p>
+          `,
+          choices: [
+            String.raw`This is a direct variation because the cost increases at a constant rate.`,
+            String.raw`This is a direct variation with \(k=500\).`,
+            String.raw`This is a direct variation with \(k=200\).`,
+            String.raw`This is not linear because there is an entrance fee.`,
+            String.raw`This is linear but not a direct variation because \(C=200h+500\) does not pass through \((0,0)\).`,
+            String.raw`This is not a direct variation because \(200\) is not a fraction.`
+          ],
+          choiceWrap: false
+        },
+
+        /* Q9 */
+        {
+          stem: String.raw`
+            <p>\(y\) varies directly with \(x\). When \(x=12\), \(y=18\).</p>
+            <p>What is \(y\) when \(x=5\)?</p>
+          `,
+          choices: [
+            String.raw`\(3\)`,
+            String.raw`\(6\)`,
+            String.raw`\(\frac{15}{2}\)`,
+            String.raw`\(10\)`,
+            String.raw`\(\frac{18}{5}\)`,
+            String.raw`\(\frac{24}{5}\)`
           ]
         }
       ]
     };
   </script>
 
-  <link rel="stylesheet" href="/math-homework/assets/core.css" />
-  <link rel="stylesheet" href="https://tikzjax.com/v1/fonts.css" />
-  <script defer src="/math-homework/assets/core.js"></script>
-  <script defer src="https://tikzjax.com/v1/tikzjax.js"></script>
+  <link rel="stylesheet" href="/math-homework/assets/core-rich.css" />
+  <script defer src="/math-homework/assets/core-rich.js"></script>
   <script defer src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
 </head>
+
 <body>
   <div id="hw-root">Loading…</div>
 </body>
