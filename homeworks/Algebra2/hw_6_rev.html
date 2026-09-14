@@ -39,7 +39,8 @@
        - Q10: reworks source Q11, asking for a derived quantity rather than
          exposing solution tuples as easy substitution targets.
        - Q11: replaces the visually ambiguous G5–G7 overlay with three
-         equation systems and asks for their classification triple.
+         equation systems and asks whether each is possible or impossible,
+         together with its number of solutions.
 
        IMAGE FILES:
        - User-supplied figures: none.
@@ -281,18 +282,18 @@
         /* Q11 */
         {
           stem: String.raw`
-            <p>Classify the following systems in order.</p>
+            <p>For each system, decide whether it is <b>possible</b> or <b>impossible</b>, and state whether it has <b>one solution</b>, <b>no solution</b>, or <b>infinitely many solutions</b>.</p>
             <p><b>I.</b> \(\begin{cases}y=x\\y=x+2\end{cases}\)</p>
             <p><b>II.</b> \(\begin{cases}y=\frac12x+1\\y=-x+3\end{cases}\)</p>
             <p><b>III.</b> \(\begin{cases}2x-y=1\\4x-2y=2\end{cases}\)</p>
           `,
           choices: [
-            String.raw`Independent & consistent; inconsistent; dependent`,
-            String.raw`Dependent; independent & consistent; inconsistent`,
-            String.raw`Independent & consistent; dependent; inconsistent`,
-            String.raw`Dependent; inconsistent; independent & consistent`,
-            String.raw`Inconsistent; dependent; independent & consistent`,
-            String.raw`Inconsistent; independent & consistent; dependent`
+            String.raw`I: possible, one solution; II: impossible, no solution; III: possible, infinitely many solutions`,
+            String.raw`I: possible, infinitely many solutions; II: possible, one solution; III: impossible, no solution`,
+            String.raw`I: possible, one solution; II: possible, infinitely many solutions; III: impossible, no solution`,
+            String.raw`I: possible, infinitely many solutions; II: impossible, no solution; III: possible, one solution`,
+            String.raw`I: impossible, no solution; II: possible, infinitely many solutions; III: possible, one solution`,
+            String.raw`I: impossible, no solution; II: possible, one solution; III: possible, infinitely many solutions`
           ],
           choiceWrap: false
         }
