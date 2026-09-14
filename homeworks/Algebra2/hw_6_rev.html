@@ -31,11 +31,15 @@
          boundary type together with the inequality directions.
        - Q7: reworks source Q8/G4 into a feasible-point question from the
          system itself, avoiding a second large graph.
-       - Q8: reworks source Q9 (nonlinear product/sum system).
-       - Q9: reworks source Q10 (nonlinear quadratic system).
-       - Q10: reworks source Q11, asking for a derived quantity rather than
+       - Q8: model-authored nonlinear-inequality synthesis. Students must
+         first rewrite a quadratic boundary in vertex standard form
+         y - y_V = a(x - x_V)^2, then identify the region between the
+         parabola and a line and locate the intersection interval.
+       - Q9: reworks source Q9 (nonlinear product/sum system).
+       - Q10: reworks source Q10 (nonlinear quadratic system).
+       - Q11: reworks source Q11, asking for a derived quantity rather than
          exposing solution tuples as easy substitution targets.
-       - Q11: replaces the visually ambiguous G5–G7 overlay with three
+       - Q12: replaces the visually ambiguous G5–G7 overlay with three
          equation systems and asks for their classification triple.
 
        IMAGE FILES:
@@ -54,7 +58,7 @@
 
       graphics : String.raw``,
 
-      answerKey : ["B","E","C","A","F","D","B","E","C","A","F"],
+      answerKey : ["B","E","C","A","F","D","B","D","E","C","A","F"],
 
       questions : [
 
@@ -171,10 +175,10 @@
           `,
           choices: [
             String.raw`\(\begin{cases}x-2y\ge-6\\4x+y>-2\end{cases}\)`,
-            String.raw`\(\begin{cases}x-2y\le-6\\4x+y<-2\end{cases}\)`,
-            String.raw`\(\begin{cases}x-2y\ge-6\\4x+y<-2\end{cases}\)`,
+            String.raw`\(\begin{cases}x-2y\le-6\\4x+y&lt;-2\end{cases}\)`,
+            String.raw`\(\begin{cases}x-2y\ge-6\\4x+y&lt;-2\end{cases}\)`,
             String.raw`\(\begin{cases}x-2y\le-6\\4x+y>-2\end{cases}\)`,
-            String.raw`\(\begin{cases}x-2y<-6\\4x+y\ge-2\end{cases}\)`,
+            String.raw`\(\begin{cases}x-2y&lt;-6\\4x+y\ge-2\end{cases}\)`,
             String.raw`\(\begin{cases}x-2y>-6\\4x+y\le-2\end{cases}\)`
           ]
         },
@@ -205,6 +209,31 @@
         /* Q8 */
         {
           stem: String.raw`
+            <p>Consider the system of inequalities</p>
+            <p>\[
+              \begin{cases}
+              y\ge x^2-4x+1\\
+              y\le x+1
+              \end{cases}
+            \]</p>
+            <p>Before graphing, rewrite the parabola in the standard form
+            \(y-y_V=a(x-x_V)^2\). Which description correctly places the parabola
+            and identifies the solution region?</p>
+          `,
+          choices: [
+            String.raw`\(y-3=(x-2)^2\), so the vertex is \((2,3)\); shade above the parabola and below the line for \(0\le x\le5\).`,
+            String.raw`\(y+3=(x+2)^2\), so the vertex is \((-2,-3)\); shade above the parabola and below the line for \(0\le x\le5\).`,
+            String.raw`\(y+3=(x-2)^2\), so the vertex is \((2,-3)\); shade below the parabola and above the line for \(0\le x\le5\).`,
+            String.raw`\(y+3=(x-2)^2\), so the vertex is \((2,-3)\); shade above the parabola and below the line between the intersections \(x=0\) and \(x=5\).`,
+            String.raw`\(y+3=(x-2)^2\), so the vertex is \((2,-3)\); shade above the parabola and below the line for \(-5\le x\le0\).`,
+            String.raw`\(y+3=(x-2)^2\), so the vertex is \((2,-3)\); shade above the parabola and below the line only for \(x\le0\) or \(x\ge5\).`
+          ],
+          choiceWrap: false
+        },
+
+        /* Q9 */
+        {
+          stem: String.raw`
             <p>Solve the nonlinear system. Give the complete real solution set.</p>
             <p>\[
               \begin{cases}
@@ -223,7 +252,7 @@
           ]
         },
 
-        /* Q9 */
+        /* Q10 */
         {
           stem: String.raw`
             <p>Solve the nonlinear system. Choose the complete set of real solutions.</p>
@@ -244,7 +273,7 @@
           ]
         },
 
-        /* Q10 */
+        /* Q11 */
         {
           stem: String.raw`
             <p>Solve the three-variable system.</p>
@@ -267,7 +296,7 @@
           ]
         },
 
-        /* Q11 */
+        /* Q12 */
         {
           stem: String.raw`
             <p>Classify the following systems in order.</p>
