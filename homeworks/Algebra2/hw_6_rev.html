@@ -13,7 +13,7 @@
        REQUIRED SOURCE REFERENCES:
        - Uploaded source review hw_6_rev.html.
        - Linear-system graphing/classification: source Q1–Q4 and G1–G2, G5–G7.
-       - Applications of linear systems: source Q5–Q6.
+       - Application of linear systems: source Q5.
        - Systems of inequalities: source Q7–Q8 and G3–G4.
        - Nonlinear systems: source Q9–Q10.
        - Three-variable systems: source Q11.
@@ -26,25 +26,24 @@
        - Q3: model-authored elimination-strategy question to review method
          structure without adding another full computation.
        - Q4: reworks source Q5 (two-digit reversal application).
-       - Q5: reworks source Q6 (investment-rate application).
-       - Q6: reworks source Q7/G3 using a cleaner single graph and tests
+       - Q5: reworks source Q7/G3 using a cleaner single graph and tests
          boundary type together with the inequality directions.
-       - Q7: reworks source Q8/G4 into a feasible-point question from the
+       - Q6: reworks source Q8/G4 into a feasible-point question from the
          system itself, avoiding a second large graph.
-       - Q8: model-authored nonlinear-inequality synthesis. Students must
+       - Q7: model-authored nonlinear-inequality synthesis. Students must
          first rewrite a quadratic boundary in vertex standard form
          y - y_V = a(x - x_V)^2, then identify the region between the
          parabola and a line and locate the intersection interval.
-       - Q9: reworks source Q9 (nonlinear product/sum system).
-       - Q10: reworks source Q10 (nonlinear quadratic system).
-       - Q11: reworks source Q11, asking for a derived quantity rather than
+       - Q8: reworks source Q9 (nonlinear product/sum system).
+       - Q9: reworks source Q10 (nonlinear quadratic system).
+       - Q10: reworks source Q11, asking for a derived quantity rather than
          exposing solution tuples as easy substitution targets.
-       - Q12: replaces the visually ambiguous G5–G7 overlay with three
+       - Q11: replaces the visually ambiguous G5–G7 overlay with three
          equation systems and asks for their classification triple.
 
        IMAGE FILES:
        - User-supplied figures: none.
-       - Model-generated figures: 6-rev-1.png, 6-rev-6.png
+       - Model-generated figures: 6-rev-1.png, 6-rev-5.png
 
        IMAGE NAMING RULE:
        - Model-generated figures use final homework question numbering.
@@ -58,7 +57,7 @@
 
       graphics : String.raw``,
 
-      answerKey : ["B","E","C","A","F","D","B","D","E","C","A","F"],
+      answerKey : ["B","E","C","A","D","B","D","E","C","A","F"],
 
       questions : [
 
@@ -147,29 +146,12 @@
         /* Q5 */
         {
           stem: String.raw`
-            <p>Evelyn invests \$8400 in a certificate and \$9600 in a money-market account.</p>
-            <p>The certificate rate is \(2.5\%\) higher than the money-market rate, and the total yearly interest is \$1830. What are the two annual rates?</p>
-          `,
-          choices: [
-            String.raw`Money market \(7\%\), certificate \(9.5\%\)`,
-            String.raw`Money market \(8\%\), certificate \(10.5\%\)`,
-            String.raw`Money market \(8.5\%\), certificate \(11\%\)`,
-            String.raw`Money market \(10\%\), certificate \(12.5\%\)`,
-            String.raw`Money market \(11\%\), certificate \(13.5\%\)`,
-            String.raw`Money market \(9\%\), certificate \(11.5\%\)`
-          ],
-          choiceWrap: false
-        },
-
-        /* Q6 */
-        {
-          stem: String.raw`
             <p><b>Refer to Figure 2.</b> The solid boundary is \(x-2y=-6\), and the dashed boundary is \(4x+y=-2\).</p>
             <p>Which system describes the shaded region?</p>
           `,
           media: String.raw`
             <figure>
-              <img src="6-rev-6.png" alt="Region above a solid line and above a dashed steep line" />
+              <img src="6-rev-5.png" alt="Region above a solid line and above a dashed steep line" />
               <figcaption>Figure 2</figcaption>
             </figure>
           `,
@@ -183,7 +165,7 @@
           ]
         },
 
-        /* Q7 */
+        /* Q6 */
         {
           stem: String.raw`
             <p>Which point satisfies <b>all</b> inequalities in the system?</p>
@@ -206,7 +188,7 @@
           ]
         },
 
-        /* Q8 */
+        /* Q7 */
         {
           stem: String.raw`
             <p>Consider the system of inequalities</p>
@@ -231,7 +213,7 @@
           choiceWrap: false
         },
 
-        /* Q9 */
+        /* Q8 */
         {
           stem: String.raw`
             <p>Solve the nonlinear system. Give the complete real solution set.</p>
@@ -252,7 +234,7 @@
           ]
         },
 
-        /* Q10 */
+        /* Q9 */
         {
           stem: String.raw`
             <p>Solve the nonlinear system. Choose the complete set of real solutions.</p>
@@ -273,7 +255,7 @@
           ]
         },
 
-        /* Q11 */
+        /* Q10 */
         {
           stem: String.raw`
             <p>Solve the three-variable system.</p>
@@ -296,7 +278,7 @@
           ]
         },
 
-        /* Q12 */
+        /* Q11 */
         {
           stem: String.raw`
             <p>Classify the following systems in order.</p>
