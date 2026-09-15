@@ -3,222 +3,309 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Chapter 6 Review</title>
+  <title>Chapter 6 Review (Algebra 2)</title>
 
   <script>
     /* =========================
-       Chapter 6 — Review (12 Qs)
-       7 graphs: 3 per row (two rows) + one centered.
-       Original separation restored.
+       Chapter 6 Review — Algebra 2
+       Adapted for: /math-homework/assets/core-rich.js
+
+       REQUIRED SOURCE REFERENCES:
+       - Uploaded source review hw_6_rev.html.
+       - Linear-system graphing/classification: source Q1–Q4 and G1–G2, G5–G7.
+       - Application of linear systems: source Q5.
+       - Systems of inequalities: source Q7–Q8 and G3–G4.
+       - Nonlinear systems: source Q9–Q10.
+       - Three-variable systems: source Q11.
+       - Classification of systems: source Q12 and G5–G7.
+
+       MODEL-AUTHORED / MODEL-REWORKED ITEMS:
+       - Q1: replaces the flawed G1/G2 pair with one correctly framed graph
+         whose intersection is visible; tests both equations and solution.
+       - Q2: reworks source Q3 as an algebraic solve-and-classify question.
+       - Q3: model-authored elimination-strategy question to review method
+         structure without adding another full computation.
+       - Q4: reworks source Q5 (two-digit reversal application).
+       - Q5: reworks source Q7/G3 using a cleaner single graph and tests
+         boundary type together with the inequality directions.
+       - Q6: reworks source Q8/G4 into a feasible-point question from the
+         system itself, avoiding a second large graph.
+       - Q7: model-authored nonlinear-inequality synthesis. Students must
+         first rewrite a quadratic boundary in vertex standard form
+         y - y_V = a(x - x_V)^2, then identify the region between the
+         parabola and a line and locate the intersection interval.
+       - Q8: reworks source Q9 (nonlinear product/sum system).
+       - Q9: reworks source Q10 (nonlinear quadratic system).
+       - Q10: reworks source Q11, asking for a derived quantity rather than
+         exposing solution tuples as easy substitution targets.
+       - Q11: replaces the visually ambiguous G5–G7 overlay with three
+         equation systems and asks whether each is possible or impossible,
+         together with its number of solutions.
+
+       IMAGE FILES:
+       - User-supplied figures: none.
+       - Model-generated figures: 6-rev-1.png, 6-rev-5.png
+
+       IMAGE NAMING RULE:
+       - Model-generated figures use final homework question numbering.
+       - PNG files live in the SAME folder as this HTML.
        ========================= */
+
     window.homeworkData = {
       classId : "Algebra2",
       id      : "Chapter 6 - Review",
       title   : "Chapter 6 — Review",
 
-      graphics : String.raw`
-\begin{tikzpicture}[scale=0.4]
-  \tikzset{grid/.style={very thin,color=gray!28}}
-  \tikzset{axes/.style={->,thick}}
-  \tikzset{L1/.style={blue,thick}}
-  \tikzset{L2/.style={red,thick,dashed}}
-  \colorlet{sol}{blue!50!red!35}
+      graphics : String.raw``,
 
-  \def\frameA{
-    \clip (-4,-4) rectangle (7,7);
-    \draw[grid] (-4,-4) grid (7,7);
-    \draw[axes] (-4,0)--(7,0);
-    \draw[axes] (0,-4)--(0,7);
-  }
-
-  \begin{scope}[xshift=-12.5cm,yshift=10cm]
-    \frameA
-    \draw[L1,domain=-4:7] plot(\x,{-2*\x+14});
-    \draw[L1,domain=-4:7] plot(\x,{\x+5});
-    \node[anchor=south east,font=\small,fill=white,inner sep=1pt] at (6.6,6) {G1};
-  \end{scope}
-
-  \begin{scope}[xshift=0cm,yshift=10cm]
-    \frameA
-    \draw[L1,domain=-4:7] plot(\x,{\x+8});
-    \draw[L1,domain=-4:7] plot(\x,{-3*\x});
-    \node[anchor=south east,font=\small,fill=white,inner sep=1pt] at (6.6,6) {G2};
-  \end{scope}
-
-  \begin{scope}[xshift=12.5cm,yshift=10cm]
-    \frameA
-    \begin{scope}
-      \clip (-1,{(-1+6)/2}) -- (7,{(7+6)/2}) -- (7,7) -- ({-9/4},7) -- cycle;
-      \path[fill=sol,opacity=.35] (-1,{-4*(-1)-2}) -- (10,{-4*(10)-2}) -- (7,7) -- (-4,7) -- cycle;
-    \end{scope}
-    \draw[L1,domain=-4:7] plot(\x,{(\x+6)/2});
-    \draw[L2,domain=-4:7] plot(\x,{-4*\x-2});
-    \node[anchor=south east,font=\small,fill=white,inner sep=1pt] at (6.6,6) {G3};
-  \end{scope}
-
-  \begin{scope}[xshift=-12.5cm,yshift=-2cm]
-    \frameA
-    \path[fill=sol,opacity=.35] (0,0) -- (0,4) -- (4,2) -- ({14/3},0) -- cycle;
-    \draw[L1,domain=0:7] plot(\x,{-3*\x+14});
-    \draw[L1,domain=0:7] plot(\x,{-0.5*\x+4});
-    \node[anchor=south east,font=\small,fill=white,inner sep=1pt] at (6.6,6) {G4};
-  \end{scope}
-
-  \begin{scope}[xshift=0cm,yshift=-2cm]
-    \frameA
-    \draw[L1,domain=-4:7] plot(\x,{\x});
-    \draw[L1,domain=-4:7] plot(\x,{\x+2});
-    \node[anchor=south east,font=\small,fill=white,inner sep=1pt] at (6.6,6) {G5};
-  \end{scope}
-
-  \begin{scope}[xshift=12.5cm,yshift=-2cm]
-    \frameA
-    \draw[L1,domain=-4:7] plot(\x,{0.5*\x+1});
-    \draw[L1,domain=-4:7] plot(\x,{-1*\x+3});
-    \node[anchor=south east,font=\small,fill=white,inner sep=1pt] at (6.6,6) {G6};
-  \end{scope}
-
-  \begin{scope}[xshift=0cm,yshift=-14cm]
-    \frameA
-    \draw[L1,domain=-4:7] plot(\x,{2*\x-1});
-    \draw[L2,domain=-4:7] plot(\x,{2*\x-1});
-    \node[anchor=south east,font=\small,fill=white,inner sep=1pt] at (6.6,6) {G7};
-  \end{scope}
-\end{tikzpicture}
-`,
-
-      answerKey : ["A","A","C","D","B","E","C","B","A","D","C","F"],
+      answerKey : ["B","E","C","A","D","B","D","E","C","A","F"],
 
       questions : [
-        { latex: String.raw`\text{Refer to G1. Mark the system and its solution that matches the graph.}`,
-          choices: [
-            String.raw`\begin{cases}2x+y=14\\ x-y=-5\end{cases}\ \text{; solution }(3,\,8)`,
-            String.raw`\begin{cases}2x+y=14\\ x+y=-5\end{cases}\ \text{; solution }(3,\,8)`,
-            String.raw`\begin{cases}2x-y=14\\ x-y=-5\end{cases}\ \text{; solution }(8,\,3)`,
-            String.raw`\begin{cases}2x+y=14\\ y-x=-5\end{cases}\ \text{; solution }(8,\,3)`,
-            String.raw`\begin{cases}x+y=14\\ x-y=-5\end{cases}\ \text{; solution }(3,\,11)`,
-            String.raw`\begin{cases}2x+y=14\\ x-y=-5\end{cases}\ \text{; solution }(0,\,14)`
-          ]},
 
-        { latex: String.raw`\text{Refer to G2. Mark the system and its solution that matches the graph.}`,
+        /* Q1 */
+        {
+          stem: String.raw`
+            <p><b>Refer to Figure 1.</b> Which system matches the two lines, and what is their solution?</p>
+          `,
+          media: String.raw`
+            <figure>
+              <img src="6-rev-1.png" alt="Two lines intersecting at the point (2,3)" />
+              <figcaption>Figure 1</figcaption>
+            </figure>
+          `,
           choices: [
-            String.raw`\begin{cases}x-y=-8\\ 3x+y=0\end{cases}\ \text{; solution }(-2,\,6)`,
-            String.raw`\begin{cases}x+y=-8\\ 3x+y=0\end{cases}\ \text{; solution }(2,\,-6)`,
-            String.raw`\begin{cases}x-y=8\\ 3x-y=0\end{cases}\ \text{; solution }(-2,\,6)`,
-            String.raw`\begin{cases}x-y=-8\\ 3x-y=0\end{cases}\ \text{; solution }(2,\,-6)`,
-            String.raw`\begin{cases}y-x=-8\\ 3x+y=0\end{cases}\ \text{; solution }(-6,\,2)`,
-            String.raw`\begin{cases}x-y=-8\\ 3x+y=0\end{cases}\ \text{; solution }(0,\,0)`
-          ]},
+            String.raw`\(\begin{cases}x+y=5\\2x-y=1\end{cases}\), solution \((3,2)\)`,
+            String.raw`\(\begin{cases}x+y=5\\2x-y=1\end{cases}\), solution \((2,3)\)`,
+            String.raw`\(\begin{cases}x-y=5\\2x+y=1\end{cases}\), solution \((2,3)\)`,
+            String.raw`\(\begin{cases}x+y=-5\\2x-y=1\end{cases}\), solution \((-2,-3)\)`,
+            String.raw`\(\begin{cases}x+y=5\\x-2y=1\end{cases}\), solution \((2,3)\)`,
+            String.raw`\(\begin{cases}x+y=5\\2x-y=-1\end{cases}\), solution \((2,3)\)`
+          ]
+        },
 
-        { latex: String.raw`\text{Solve algebraically and classify. } \begin{cases}y=3x+9\\ 2x+5y=28\end{cases}`,
+        /* Q2 */
+        {
+          stem: String.raw`
+            <p>Solve and classify the system.</p>
+            <p>\[
+              \begin{cases}
+              y=3x+9\\
+              2x+5y=28
+              \end{cases}
+            \]</p>
+          `,
           choices: [
-            String.raw`\text{Dependent (same line)}`,
-            String.raw`\text{Inconsistent (parallel)} `,
-            String.raw`\text{Consistent independent; solution }(-1,\,6)`,
-            String.raw`\text{Consistent independent; solution }(1,\,-6)`,
-            String.raw`\text{Inconsistent; solution }(-1,\,6)`,
-            String.raw`\text{Dependent; solution set is all real pairs}`
-          ]},
+            String.raw`Dependent; infinitely many solutions`,
+            String.raw`Inconsistent; no solution`,
+            String.raw`Consistent independent; solution \((1,-6)\)`,
+            String.raw`Dependent; solution \((-1,6)\)`,
+            String.raw`Consistent independent; solution \((-1,6)\)`,
+            String.raw`Inconsistent; the lines intersect at \((-1,6)\)`
+          ],
+          choiceWrap: false
+        },
 
-        { latex: String.raw`\text{Solve algebraically and classify. } \begin{cases}y=2x+8\\ 2x-y=3\end{cases}`,
+        /* Q3 */
+        {
+          stem: String.raw`
+            <p>For the system</p>
+            <p>\[
+              \begin{cases}
+              3x+2y=7\\
+              6x-y=4
+              \end{cases}
+            \]</p>
+            <p>Which first elimination step removes \(x\) with the least extra work?</p>
+          `,
           choices: [
-            String.raw`\text{Consistent independent; solution }(0,\,3)`,
-            String.raw`\text{Dependent (infinitely many solutions)}`,
-            String.raw`\text{Consistent independent; solution }(1,\,10)`,
-            String.raw`\text{Inconsistent (parallel lines); no solution}`,
-            String.raw`\text{Consistent independent; solution }(-1,\,6)`,
-            String.raw`\text{Cannot be determined}`
-          ]},
+            String.raw`Add the equations as written.`,
+            String.raw`Multiply the second equation by \(2\), then add.`,
+            String.raw`Multiply the first equation by \(-2\), then add it to the second equation.`,
+            String.raw`Multiply the first equation by \(3\), then subtract the second.`,
+            String.raw`Solve both equations for \(y\) before doing anything else.`,
+            String.raw`Multiply both equations by \(-1\), then add.`
+          ],
+          choiceWrap: false
+        },
 
-        { latex: String.raw`\text{A two-digit number has digit sum 11. Adding 45 yields the number with its digits reversed. What is the original number?}`,
+        /* Q4 */
+        {
+          stem: String.raw`
+            <p>A two-digit number has digit sum \(11\). Adding \(45\) gives the number with its digits reversed.</p>
+            <p>What is the original number?</p>
+          `,
           choices: [
-            String.raw`\text{83}`,
-            String.raw`\text{38}`,
-            String.raw`\text{29}`,
-            String.raw`\text{74}`,
-            String.raw`\text{47}`,
-            String.raw`\text{56}`
-          ]},
+            String.raw`\(38\)`,
+            String.raw`\(83\)`,
+            String.raw`\(47\)`,
+            String.raw`\(74\)`,
+            String.raw`\(29\)`,
+            String.raw`\(56\)`
+          ]
+        },
 
-        { latex: String.raw`\text{Evelyn invests \$8400 in a certificate and \$9600 in a money market. The certificate rate is 2.5% more than the money market rate. If the total yearly interest is \$1830, what are the rates?}`,
+        /* Q5 */
+        {
+          stem: String.raw`
+            <p><b>Refer to Figure 2.</b> The solid boundary is \(x-2y=-6\), and the dashed boundary is \(4x+y=-2\).</p>
+            <p>Which system describes the shaded region?</p>
+          `,
+          media: String.raw`
+            <figure>
+              <img src="6-rev-5.png" alt="Region above a solid line and above a dashed steep line" />
+              <figcaption>Figure 2</figcaption>
+            </figure>
+          `,
           choices: [
-            String.raw`\text{Money: 7%, Certificate: 9.5%}`,
-            String.raw`\text{Money: 8%, Certificate: 10.5%}`,
-            String.raw`\text{Money: 8.5%, Certificate: 11%}`,
-            String.raw`\text{Money: 10%, Certificate: 12.5%}`,
-            String.raw`\text{Money: 9%, Certificate: 11.5%}`,
-            String.raw`\text{Money: 11%, Certificate: 13.5%}`
-          ]},
+            String.raw`\(\begin{cases}x-2y\ge-6\\4x+y>-2\end{cases}\)`,
+            String.raw`\(\begin{cases}x-2y\le-6\\4x+y&lt;-2\end{cases}\)`,
+            String.raw`\(\begin{cases}x-2y\ge-6\\4x+y&lt;-2\end{cases}\)`,
+            String.raw`\(\begin{cases}x-2y\le-6\\4x+y>-2\end{cases}\)`,
+            String.raw`\(\begin{cases}x-2y&lt;-6\\4x+y\ge-2\end{cases}\)`,
+            String.raw`\(\begin{cases}x-2y>-6\\4x+y\le-2\end{cases}\)`
+          ]
+        },
 
-        { latex: String.raw`\text{Refer to G3. Mark the system and a point that lies in the shaded solution region.}`,
+        /* Q6 */
+        {
+          stem: String.raw`
+            <p>Which point satisfies <b>all</b> inequalities in the system?</p>
+            <p>\[
+              \begin{cases}
+              x\ge0\\
+              y\ge0\\
+              y\le-3x+14\\
+              y\le-\frac12x+4
+              \end{cases}
+            \]</p>
+          `,
           choices: [
-            String.raw`\begin{cases}x-2y\ge -6\\ 4x+y<-2\end{cases}\ \text{; point }(0,\,1)`,
-            String.raw`\begin{cases}x-2y\le -6\\ 4x+y>-2\end{cases}\ \text{; point }(-3,\,2)`,
-            String.raw`\begin{cases}x-2y\le -6\\ 4x+y>-2\end{cases}\ \text{; point }(-1,\,4)`,
-            String.raw`\begin{cases}x-2y\ge -6\\ 4x+y>-2\end{cases}\ \text{; point }(2,\,-1)`,
-            String.raw`\begin{cases}x-2y\le -6\\ 4x+y\le -2\end{cases}\ \text{; point }(3,\,0)`,
-            String.raw`\begin{cases}x-2y\ge -6\\ 4x+y\le -2\end{cases}\ \text{; point }(-4,\,-4)`
-          ]},
+            String.raw`\((-1,2)\)`,
+            String.raw`\((2,2)\)`,
+            String.raw`\((0,5)\)`,
+            String.raw`\((4,3)\)`,
+            String.raw`\((5,0)\)`,
+            String.raw`\((3,3)\)`
+          ]
+        },
 
-        { latex: String.raw`\text{Refer to G4. Which system of inequalities matches the shaded region?}`,
+        /* Q7 */
+        {
+          stem: String.raw`
+            <p>Consider the system of inequalities</p>
+            <p>\[
+              \begin{cases}
+              y\le -x^2+4x+1\\
+              y\ge x+1
+              \end{cases}
+            \]</p>
+            <p>Before graphing, rewrite the parabola in the standard form
+            \(y-y_V=a(x-x_V)^2\). Which description correctly places the parabola
+            and identifies the solution region?</p>
+          `,
           choices: [
-            String.raw`\begin{cases}x\ge 0\\ y\ge 0\\ y\ge -3x+14\\ y\le -\tfrac12 x+4\end{cases}`,
-            String.raw`\begin{cases}x\ge 0\\ y\ge 0\\ y\le -3x+14\\ y\le -\tfrac12 x+4\end{cases}`,
-            String.raw`\begin{cases}x\le 0\\ y\ge 0\\ y\le -3x+14\\ y\le -\tfrac12 x+4\end{cases}`,
-            String.raw`\begin{cases}x\ge 0\\ y\ge 0\\ y\ge -3x+14\\ y\ge -\tfrac12 x+4\end{cases}`,
-            String.raw`\begin{cases}x\ge 0\\ y\ge 0\\ y\le 3x-14\\ y\le -\tfrac12 x+4\end{cases}`,
-            String.raw`\begin{cases}x\ge 0\\ y\ge 0\\ y\ge 3x-14\\ y\le \tfrac12 x+4\end{cases}`
-          ]},
+            String.raw`\(y-5=(x-2)^2\), so the vertex is \((2,5)\); shade above the line and below the parabola for \(0\le x\le3\).`,
+            String.raw`\(y+5=-(x+2)^2\), so the vertex is \((-2,-5)\); shade above the line and below the parabola for \(0\le x\le3\).`,
+            String.raw`\(y-5=-(x-2)^2\), so the vertex is \((2,5)\); shade below the line and above the parabola for \(0\le x\le3\).`,
+            String.raw`\(y-5=-(x-2)^2\), so the vertex is \((2,5)\); shade above the line and below the parabola between the intersections \(x=0\) and \(x=3\).`,
+            String.raw`\(y-5=-(x-2)^2\), so the vertex is \((2,5)\); shade above the line and below the parabola only for \(x\le0\) or \(x\ge3\).`,
+            String.raw`\(y+5=-(x-2)^2\), so the vertex is \((2,-5)\); shade above the line and below the parabola between the intersections \(x=0\) and \(x=3\).`
+          ],
+          choiceWrap: false
+        },
 
-        { latex: String.raw`\text{Solve } \begin{cases}xy=-12\\ x+y=1\end{cases}\text{. (Give the full solution set.)}`,
+        /* Q8 */
+        {
+          stem: String.raw`
+            <p>Solve the nonlinear system. Give the complete real solution set.</p>
+            <p>\[
+              \begin{cases}
+              xy=-12\\
+              x+y=1
+              \end{cases}
+            \]</p>
+          `,
           choices: [
-            String.raw`\text{ }\{(4,\,-3),\,(-3,\,4)\}`,
-            String.raw`\text{ }\{(3,\,-4),\,(-4,\,3)\}`,
-            String.raw`\text{ }\{(1,\,-12),\,(-1,\,12)\}`,
-            String.raw`\text{ }(1,\,-12)\text{ only}`,
-            String.raw`\text{ }(0,\,1)\text{ only}`,
-            String.raw`\text{No real solution}`
-          ]},
+            String.raw`\(\{(3,-4),(-4,3)\}\)`,
+            String.raw`\(\{(1,-12),(-1,12)\}\)`,
+            String.raw`\(\{(4,-3)\}\)`,
+            String.raw`No real solution`,
+            String.raw`\(\{(4,-3),(-3,4)\}\)`,
+            String.raw`\(\{(0,1),(1,0)\}\)`
+          ]
+        },
 
-        { latex: String.raw`\text{Solve } \begin{cases}x^2+y=34\\ x^2+y^2=106\end{cases}\text{. (Choose the complete set of real solutions.)}`,
+        /* Q9 */
+        {
+          stem: String.raw`
+            <p>Solve the nonlinear system. Choose the complete set of real solutions.</p>
+            <p>\[
+              \begin{cases}
+              x^2+y=34\\
+              x^2+y^2=106
+              \end{cases}
+            \]</p>
+          `,
           choices: [
-            String.raw`\text{ }\{(5,\,9),\,(-5,\,9)\}`,
-            String.raw`\text{ }\{(\sqrt{42},\,-8),\,(-\sqrt{42},\,-8)\}`,
-            String.raw`\text{ }\{(5,\,9),\,(\sqrt{42},\,-8)\}`,
-            String.raw`\text{ }\{(5,\,9),\,(-5,\,9),\,(\sqrt{42},\,-8),\,(-\sqrt{42},\,-8)\}`,
-            String.raw`\text{ }\{(5,\,-9),\,(-5,\,-9),\,(\sqrt{42},\,8),\,(-\sqrt{42},\,8)\}`,
-            String.raw`\text{No real solution}`
-          ]},
+            String.raw`\(\{(5,9),(-5,9)\}\)`,
+            String.raw`\(\{(\sqrt{42},-8),(-\sqrt{42},-8)\}\)`,
+            String.raw`\(\{(5,9),(-5,9),(\sqrt{42},-8),(-\sqrt{42},-8)\}\)`,
+            String.raw`\(\{(5,-9),(-5,-9),(\sqrt{42},8),(-\sqrt{42},8)\}\)`,
+            String.raw`\(\{(5,9),(\sqrt{42},-8)\}\)`,
+            String.raw`No real solution`
+          ]
+        },
 
-        { latex: String.raw`\text{Solve the 3-variable system } \begin{cases}x+2y+z=7\\ 2x-y+z=6\\ 3x+2y-4z=58\end{cases}`,
+        /* Q10 */
+        {
+          stem: String.raw`
+            <p>Solve the three-variable system.</p>
+            <p>\[
+              \begin{cases}
+              x+2y+z=7\\
+              2x-y+z=6\\
+              3x+2y-4z=58
+              \end{cases}
+            \]</p>
+            <p>What is \(x+y+z\)?</p>
+          `,
           choices: [
-            String.raw`\text{ }(7,\,2,\,-5)`,
-            String.raw`\text{ }(6,\,1,\,-4)`,
-            String.raw`\text{ }(8,\,3,\,-7)`,
-            String.raw`\text{ }(8,\,3,\,7)`,
-            String.raw`\text{ }(3,\,8,\,-7)`,
-            String.raw`\text{ }(-8,\,-3,\,7)`
-          ]},
+            String.raw`\(4\)`,
+            String.raw`\(18\)`,
+            String.raw`\(-4\)`,
+            String.raw`\(12\)`,
+            String.raw`\(8\)`,
+            String.raw`\(0\)`
+          ]
+        },
 
-        { latex: String.raw`\text{Using G5–G7, choose the correct classification triple (G5, G6, G7). Options: Inconsistent; Independent & consistent; Dependent}`,
+        /* Q11 */
+        {
+          stem: String.raw`
+            <p>For each system, decide whether it is <b>possible</b> or <b>impossible</b>, and state whether it has <b>one solution</b>, <b>no solution</b>, or <b>infinitely many solutions</b>.</p>
+            <p><b>I.</b> \(\begin{cases}y=x\\y=x+2\end{cases}\)</p>
+            <p><b>II.</b> \(\begin{cases}y=\frac12x+1\\y=-x+3\end{cases}\)</p>
+            <p><b>III.</b> \(\begin{cases}2x-y=1\\4x-2y=2\end{cases}\)</p>
+          `,
           choices: [
-            String.raw`\text{Independent & consistent; Inconsistent; Dependent}`,
-            String.raw`\text{Dependent; Independent & consistent; Inconsistent}`,
-            String.raw`\text{Independent & consistent; Dependent; Inconsistent}`,
-            String.raw`\text{Inconsistent; Dependent; Independent & consistent}`,
-            String.raw`\text{Dependent; Inconsistent; Independent & consistent}`,
-            String.raw`\text{Inconsistent; Independent & consistent; Dependent}`
-          ]}
+            String.raw`I: possible, one solution; II: impossible, no solution; III: possible, infinitely many solutions`,
+            String.raw`I: possible, infinitely many solutions; II: possible, one solution; III: impossible, no solution`,
+            String.raw`I: possible, one solution; II: possible, infinitely many solutions; III: impossible, no solution`,
+            String.raw`I: possible, infinitely many solutions; II: impossible, no solution; III: possible, one solution`,
+            String.raw`I: impossible, no solution; II: possible, infinitely many solutions; III: possible, one solution`,
+            String.raw`I: impossible, no solution; II: possible, one solution; III: possible, infinitely many solutions`
+          ],
+          choiceWrap: false
+        }
       ]
     };
   </script>
 
-  <link rel="stylesheet" href="/math-homework/assets/core.css" />
-  <link rel="stylesheet" href="https://tikzjax.com/v1/fonts.css" />
-  <script defer src="/math-homework/assets/core.js"></script>
-  <script defer src="https://tikzjax.com/v1/tikzjax.js"></script>
+  <link rel="stylesheet" href="/math-homework/assets/core-rich.css" />
+  <script defer src="/math-homework/assets/core-rich.js"></script>
   <script defer src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
 </head>
+
 <body>
   <div id="hw-root">Loading…</div>
 </body>
