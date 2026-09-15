@@ -34,18 +34,23 @@
        - Q6: direct Hinge Theorem comparison (source A #8).
        - Q7: converse Hinge comparison inspired by source A #9.
        - Q8: hypothesis/sufficiency check for when the Hinge Theorem applies.
-       - Q9: triangle-existence judgment using the Triangle Inequality.
-       - Q10: allowable range of a third side.
-       - Q11: proof-structure question reproducing the user's construction
+       - Q9: proof-architecture question based on the user's lecture proof of
+         the Hinge Theorem and its transported comparison triangle.
+       - Q10: triangle-existence judgment using the Triangle Inequality.
+       - Q11: allowable range of a third side.
+       - Q12: structural question showing why, after ordering three positive
+         side lengths, only the sum of the two shorter sides versus the longest
+         can fail.
+       - Q13: proof-structure question reproducing the user's construction
          for the Triangle Inequality.
-       - Q12: synthesis proof using the Triangle Inequality twice
+       - Q14: synthesis proof using the Triangle Inequality twice
          (source B #19).
 
        IMAGE FILES:
        - User-supplied figures: none used directly.
        - Model-generated figures:
          7-3-1.png, 7-3-5.png, 7-3-6.png,
-         7-3-7.png, 7-3-11.png, 7-3-12.png
+         7-3-7.png, 7-3-13.png, 7-3-14.png
 
        IMAGE NAMING RULE:
        - Model-generated figures use final homework question numbering.
@@ -59,7 +64,7 @@
 
       graphics : String.raw``,
 
-      answerKey : ["C","A","E","B","F","D","C","A","D","E","B","F"],
+      answerKey : ["C","A","E","B","F","D","C","A","E","D","E","C","B","F"],
 
       questions : [
 
@@ -138,7 +143,7 @@
         {
           stem: String.raw`
             <p><b>Refer to Figure 2.</b> Suppose \(BC>BA\). In the proof of the Longer Side Inequality, choose \(X\) on \(\overline{BC}\) so that \(BX=BA\).</p>
-            <p>Which reasoning is the heart of the proof that \(m\angle A>m\angle C\)?</p>
+            <p>Which chain of angle comparisons correctly completes the proof that \(m\angle A>m\angle C\)?</p>
           `,
           media: String.raw`
             <figure>
@@ -147,14 +152,13 @@
             </figure>
           `,
           choices: [
-            String.raw`\(\angle BXA=\angle C\) because \(X\) lies on \(\overline{BC}\), and \(\angle A=\angle BAX\).`,
-            String.raw`\(\angle BXA&lt;\angle C\) by the Exterior Angle Inequality, and \(\angle BAX&lt;\angle A\).`,
-            String.raw`\(\angle BXA=\angle BAC\) because \(BA=BX\), and \(\angle C>\angle BXA\).`,
-            String.raw`\(\angle BXA=\angle BAX\) because \(\triangle ABX\) is equilateral, and \(\angle C=\angle BXA\).`,
-            String.raw`\(\angle BXA>\angle BAX\) because \(BC>BA\), and \(\angle BAX=\angle C\).`,
-            String.raw`\(\angle BXA=\angle BAX\) because \(\triangle ABX\) is isosceles; \(\angle BXA>\angle C\) because it is an exterior angle of \(\triangle AXC\); and \(\angle A>\angle BAX\).`
-          ],
-          choiceWrap: false
+            String.raw`\(m\angle C&lt;m\angle BAX&lt;m\angle BXA&lt;m\angle A\)`,
+            String.raw`\(m\angle BXA&lt;m\angle C=m\angle BAX&lt;m\angle A\)`,
+            String.raw`\(m\angle C=m\angle BXA=m\angle BAX&lt;m\angle A\)`,
+            String.raw`\(m\angle A&lt;m\angle BAX=m\angle BXA&lt;m\angle C\)`,
+            String.raw`\(m\angle C&lt;m\angle BXA&lt;m\angle BAX=m\angle A\)`,
+            String.raw`\(m\angle C&lt;m\angle BXA=m\angle BAX&lt;m\angle A\)`
+          ]
         },
 
         /* Q6 */
@@ -221,6 +225,23 @@
         /* Q9 */
         {
           stem: String.raw`
+            <p>In the proof of the Hinge Theorem, suppose \(AB=XY\), \(AC=XZ\), and \(\angle A>\angle X\).</p>
+            <p>A point \(Z'\) is constructed inside \(\angle A\) so that \(AZ'=XZ\) and \(\angle BAZ'=\angle X\). What is the main purpose of this construction?</p>
+          `,
+          choices: [
+            String.raw`It makes \(\triangle ABC\) and \(\triangle XYZ\) congruent by ASA, so \(BC=YZ\).`,
+            String.raw`It makes \(BZ'=BC\), so the desired inequality is already proved.`,
+            String.raw`It creates an isosceles triangle \(BCZ'\), so \(BC=BZ'\).`,
+            String.raw`It proves \(\angle A=\angle X\), contradicting the hypothesis and finishing the proof.`,
+            String.raw`It gives \(\triangle ABZ'\cong\triangle XYZ\) by SAS, hence \(BZ'=YZ\); the problem is then reduced to comparing \(BC\) and \(BZ'\) in one diagram.`,
+            String.raw`It allows the Triangle Inequality to give \(BC>YZ\) directly.`
+          ],
+          choiceWrap: false
+        },
+
+        /* Q10 */
+        {
+          stem: String.raw`
             <p>Which set of side lengths can form a triangle?</p>
           `,
           choices: [
@@ -233,7 +254,7 @@
           ]
         },
 
-        /* Q10 */
+        /* Q11 */
         {
           stem: String.raw`
             <p>Two sides of a triangle have lengths \(8\) and \(13\). If the third side has length \(x\), which condition is necessary and sufficient?</p>
@@ -248,7 +269,24 @@
           ]
         },
 
-        /* Q11 */
+        /* Q12 */
+        {
+          stem: String.raw`
+            <p>Suppose three positive lengths are ordered \(0&lt;a\le b\le c\).</p>
+            <p>Why is checking \(a+b>c\) enough to decide whether the three lengths can form a triangle?</p>
+          `,
+          choices: [
+            String.raw`Because \(a+b>c\) forces \(a=b=c\).`,
+            String.raw`Because the Triangle Inequality applies only to the longest side.`,
+            String.raw`Because \(a+c>b\) and \(b+c>a\) are automatic from positivity and \(a\le b\le c\); only the sum of the two shorter sides versus the longest side can fail.`,
+            String.raw`Because every set of positive lengths satisfying \(a\le b\le c\) forms a triangle.`,
+            String.raw`Because \(a+b>c\) is equivalent to \(a+c=b\) and \(b+c=a\).`,
+            String.raw`Because the other two inequalities are needed only for right triangles.`
+          ],
+          choiceWrap: false
+        },
+
+        /* Q13 */
         {
           stem: String.raw`
             <p><b>Refer to Figure 5.</b> In the proof of the Triangle Inequality, extend \(\overline{CA}\) to \(X\) so that \(AX=AB\).</p>
@@ -256,22 +294,22 @@
           `,
           media: String.raw`
             <figure>
-              <img src="7-3-11.png" alt="Triangle BCX with A on CX and AX equal to AB" />
+              <img src="7-3-13.png" alt="Triangle BCX with A on CX and AX equal to AB" />
               <figcaption>Figure 5</figcaption>
             </figure>
           `,
           choices: [
-            String.raw`Since \(AX=AB\), \(BX=BC\); therefore \(BC=CA+AB\).`,
-            String.raw`Since \(AX=AB\), \(\angle AXB=\angle ABX\). Because \(\angle CBX>\angle ABX=\angle CXB\), the Longer Side Inequality in \(\triangle BCX\) gives \(CX>BC\). Since \(CX=CA+AX=CA+AB\), \(BC&lt;CA+AB\).`,
-            String.raw`Since \(AX=AB\), \(\triangle BCX\) is isosceles, so \(BC=CX\).`,
-            String.raw`Because \(A\) lies on \(\overline{CX}\), \(\angle CBX=\angle CXB\), hence \(BC=CX\).`,
-            String.raw`The Exterior Angle Inequality gives \(BC&lt;CX\) directly because \(X\) is outside \(\triangle ABC\).`,
-            String.raw`Since \(AX=AB\), \(CA=CB\), so \(BC&lt;CA+AB\) follows immediately.`
+            String.raw`\(AX=AB\Rightarrow \angle AXB=\angle ABX\); then \(\angle CBX&lt;\angle CXB\Rightarrow CX&lt;BC\), so \(CA+AB&lt;BC\).`,
+            String.raw`\(AX=AB\Rightarrow \angle AXB=\angle ABX\); since \(\angle CBX>\angle ABX=\angle CXB\), the Longer Side Inequality gives \(CX>BC\); and \(CX=CA+AX=CA+AB\).`,
+            String.raw`\(AX=AB\Rightarrow \angle AXB=\angle ABX\); since \(\angle CBX=\angle CXB\), the opposite sides satisfy \(CX=BC\).`,
+            String.raw`\(AX=AB\Rightarrow BX=BC\); therefore \(CX=CA+AB=BC\).`,
+            String.raw`\(A\) lies on \(\overline{CX}\Rightarrow \angle AXB>\angle ABX\); therefore \(AB>AX\), contradicting the construction.`,
+            String.raw`\(AX=AB\Rightarrow \angle AXB=\angle ABX\); then \(\angle CBX>\angle CXB\Rightarrow BC>CX\), so \(BC>CA+AB\).`
           ],
           choiceWrap: false
         },
 
-        /* Q12 */
+        /* Q14 */
         {
           stem: String.raw`
             <p><b>Refer to Figure 6.</b> Point \(P\) lies inside \(\triangle DEF\), and ray \(DP\) meets \(\overline{FE}\) at \(G\).</p>
@@ -279,7 +317,7 @@
           `,
           media: String.raw`
             <figure>
-              <img src="7-3-12.png" alt="Triangle DEF with interior point P and ray DP meeting FE at G" />
+              <img src="7-3-14.png" alt="Triangle DEF with interior point P and ray DP meeting FE at G" />
               <figcaption>Figure 6</figcaption>
             </figure>
           `,
