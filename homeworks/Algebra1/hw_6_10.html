@@ -7,262 +7,225 @@
 
   <script>
     /* =========================
-       Homework 6-10 — Graphing Linear Inequalities
-       Update: Added G11 (horizontal boundary) and G12 (vertical boundary).
+       Homework 6-10 — Graphing & Reading Linear Inequalities (Algebra 1)
+       Adapted for: /math-homework/assets/core-rich.js
+
+       REQUIRED SOURCE REFERENCES:
+       - Uploaded source homework hw_6_10.html.
+       - Source graphs G1–G10: oblique linear-inequality boundaries with
+         solid/dashed lines and opposite shaded half-planes.
+       - Source graph G11: horizontal boundary y >= 2.
+       - Source graph G12: vertical boundary x > -1.
+       - Source exercises #1–#12 were used as raw material for the graph-reading
+         conventions, standard-form boundaries, and horizontal/vertical cases.
+
+       MODEL-AUTHORED / MODEL-REWORKED ITEMS:
+       - Q1: model-reworked conceptual decomposition of an inequality graph
+         into boundary equation, boundary inclusion, and shaded half-plane.
+       - Q2: reworks source G3/G8 ideas into one clean graph-reading item.
+       - Q3: reworks source G2/G9 ideas to require reading a graph in
+         standard form rather than only slope-intercept form.
+       - Q4: model-authored reverse-direction task: graph the given inequality
+         by choosing among six plausible graphs.
+       - Q5: model-authored diagnosis of the common inequality-reversal error
+         when isolating y.
+       - Q6: model-authored test-point reasoning question.
+       - Q7: model-authored point-membership question linking algebraic
+         satisfaction to geometric membership in the shaded half-plane.
+       - Q8: merges the source G11/G12 cases into one comparison of
+         horizontal and vertical boundary inequalities.
+       - Q9: model-authored synthesis requiring boundary, line type,
+         slope-intercept conversion, and shaded side.
+
+       IMAGE FILES:
+       - User-supplied figures: none.
+       - Model-generated figures: 6-10-2.png, 6-10-3.png, 6-10-4.png
+
+       IMAGE NAMING RULE:
+       - Model-generated figures use final homework question numbering.
+       - PNG files live in the SAME folder as this HTML.
        ========================= */
+
     window.homeworkData = {
       classId : "Algebra1",
       id      : "Homework 6-10",
       title   : "Homework 6-10 — Graphing & Reading Linear Inequalities",
 
-      graphics : String.raw`
-\begin{tikzpicture}[scale=0.55]
-  \tikzset{grid/.style={very thin,color=gray!30}}
-  \tikzset{axes/.style={->,thick}}
+      graphics : String.raw``,
 
-  % ---------- G1: y > 3x + 2 (dashed, shade above)
-  \begin{scope}[xshift=-12cm,yshift=6cm]
-    \clip (-4.2,-4.2) rectangle (4.2,4.2);
-    \draw[grid] (-4,-4) grid (4,4);
-    \draw[axes] (-4,0)--(4,0); \draw[axes] (0,-4)--(0,4);
-    \path[fill=blue!20,opacity=.35] (-4, -10) -- (4, 14) -- (4,4) -- (-4,4) -- cycle;
-    \draw[blue,thick,dashed,domain=-4:4] plot(\x,{3*\x+2});
-    \node[anchor=south east,font=\small] at (3.7,3.7) {G1};
-  \end{scope}
-
-  % ---------- G2: y <= -x + 2 (solid, shade below)
-  \begin{scope}[xshift=-2cm,yshift=6cm]
-    \clip (-4.2,-4.2) rectangle (4.2,4.2);
-    \draw[grid] (-4,-4) grid (4,4);
-    \draw[axes] (-4,0)--(4,0); \draw[axes] (0,-4)--(0,4);
-    \path[fill=blue!20,opacity=.35] (-4,-4) -- (4,-4) -- (4, {-1*4+2}) -- (-4, {-1*(-4)+2}) -- cycle;
-    \draw[blue,thick,domain=-4:4] plot(\x,{-1*\x+2});
-    \node[anchor=south east,font=\small] at (3.7,3.7) {G2};
-  \end{scope}
-
-  % ---------- G3: y >= 2x - 1 (solid, shade above)
-  \begin{scope}[xshift=8cm,yshift=6cm]
-    \clip (-4.2,-4.2) rectangle (4.2,4.2);
-    \draw[grid] (-4,-4) grid (4,4);
-    \draw[axes] (-4,0)--(4,0); \draw[axes] (0,-4)--(0,4);
-    \path[fill=blue!20,opacity=.35] (-4, {2*(-4)-1}) -- (4, {2*(4)-1}) -- (4,4) -- (-4,4) -- cycle;
-    \draw[blue,thick,domain=-4:4] plot(\x,{2*\x-1});
-    \node[anchor=south east,font=\small] at (3.7,3.7) {G3};
-  \end{scope}
-
-  % ---------- G4: 3x + y > 2 (dashed, shade above y=-3x+2)
-  \begin{scope}[xshift=-12cm,yshift=-3cm]
-    \clip (-4.2,-4.2) rectangle (4.2,4.2);
-    \draw[grid] (-4,-4) grid (4,4);
-    \draw[axes] (-4,0)--(4,0); \draw[axes] (0,-4)--(0,4);
-    \path[fill=blue!20,opacity=.35] (-4, {-3*(-4)+2}) -- (4, {-3*(4)+2}) -- (4,4) -- (-4,4) -- cycle;
-    \draw[blue,thick,dashed,domain=-4:4] plot(\x,{-3*\x+2});
-    \node[anchor=south east,font=\small] at (3.7,3.7) {G4};
-  \end{scope}
-
-  % ---------- G5: 2x - y <= 3  => y >= 2x - 3 (solid, shade above)
-  \begin{scope}[xshift=-2cm,yshift=-3cm]
-    \clip (-4.2,-4.2) rectangle (4.2,4.2);
-    \draw[grid] (-4,-4) grid (4,4);
-    \draw[axes] (-4,0)--(4,0); \draw[axes] (0,-4)--(0,4);
-    \path[fill=blue!20,opacity=.35] (-4, {2*(-4)-3}) -- (4, {2*(4)-3}) -- (4,4) -- (-4,4) -- cycle;
-    \draw[blue,thick,domain=-4:4] plot(\x,{2*\x-3});
-    \node[anchor=south east,font=\small] at (3.7,3.7) {G5};
-  \end{scope}
-
-  % ---------- G6: 3x - 2y >= 0  => y <= (3/2)x (solid, shade below)
-  \begin{scope}[xshift=8cm,yshift=-3cm]
-    \clip (-4.2,-4.2) rectangle (4.2,4.2);
-    \draw[grid] (-4,-4) grid (4,4);
-    \draw[axes] (-4,0)--(4,0); \draw[axes] (0,-4)--(0,4);
-    \path[fill=blue!20,opacity=.35] (-4,-4) -- (4,-4) -- (4, {1.5*4}) -- (-4, {1.5*(-4)}) -- cycle;
-    \draw[blue,thick,domain=-4:4] plot(\x,{1.5*\x});
-    \node[anchor=south east,font=\small] at (3.7,3.7) {G6};
-  \end{scope}
-
-  % ---------- G7: x + y > -2 (dashed, shade above)
-  \begin{scope}[xshift=-12cm,yshift=-12cm]
-    \clip (-4.2,-4.2) rectangle (4.2,4.2);
-    \draw[grid] (-4,-4) grid (4,4);
-    \draw[axes] (-4,0)--(4,0); \draw[axes] (0,-4)--(0,4);
-    \path[fill=blue!20,opacity=.35] (-4, {-(-4)-2}) -- (4, {-(4)-2}) -- (4,4) -- (-4,4) -- cycle;
-    \draw[blue,thick,dashed,domain=-4:4] plot(\x,{-1*\x-2});
-    \node[anchor=south east,font=\small] at (3.7,3.7) {G7};
-  \end{scope}
-
-  % ---------- G8: 2x - y > -1  => y < 2x + 1 (dashed, shade below)
-  \begin{scope}[xshift=-2cm,yshift=-12cm]
-    \clip (-4.2,-4.2) rectangle (4.2,4.2);
-    \draw[grid] (-4,-4) grid (4,4);
-    \draw[axes] (-4,0)--(4,0); \draw[axes] (0,-4)--(0,4);
-    \path[fill=blue!20,opacity=.35] (-4,-4) -- (4,-4) -- (4, {2*(4)+1}) -- (-4, {2*(-4)+1}) -- cycle;
-    \draw[blue,thick,dashed,domain=-4:4] plot(\x,{2*\x+1});
-    \node[anchor=south east,font=\small] at (3.7,3.7) {G8};
-  \end{scope}
-
-  % ---------- G9: x + 3y <= 3  => y <= (-1/3)x + 1 (solid, shade below)
-  \begin{scope}[xshift=8cm,yshift=-12cm]
-    \clip (-4.2,-4.2) rectangle (4.2,4.2);
-    \draw[grid] (-4,-4) grid (4,4);
-    \draw[axes] (-4,0)--(4,0); \draw[axes] (0,-4)--(0,4);
-    \path[fill=blue!20,opacity=.35] (-4,-4) -- (4,-4) -- (4, {-1/3*4+1}) -- (-4, {-1/3*(-4)+1}) -- cycle;
-    \draw[blue,thick,domain=-4:4] plot(\x,{(-1/3)*\x+1});
-    \node[anchor=south east,font=\small] at (3.7,3.7) {G9};
-  \end{scope}
-
-  % ---------- G10: x - 4y >= 0  => y <= (1/4)x (solid, shade below)
-  \begin{scope}[xshift=-12cm,yshift=-21cm]
-    \clip (-4.2,-4.2) rectangle (4.2,4.2);
-    \draw[grid] (-4,-4) grid (4,4);
-    \draw[axes] (-4,0)--(4,0); \draw[axes] (0,-4)--(0,4);
-    \path[fill=blue!20,opacity=.35] (-4,-4) -- (4,-4) -- (4, {0.25*4}) -- (-4, {0.25*(-4)}) -- cycle;
-    \draw[blue,thick,domain=-4:4] plot(\x,{0.25*\x});
-    \node[anchor=south east,font=\small] at (3.7,3.7) {G10};
-  \end{scope}
-
-  % ---------- NEW G11: y >= 2 (solid horizontal line, shade above)
-  \begin{scope}[xshift=-2cm,yshift=-21cm]
-    \clip (-4.2,-4.2) rectangle (4.2,4.2);
-    \draw[grid] (-4,-4) grid (4,4);
-    \draw[axes] (-4,0)--(4,0); \draw[axes] (0,-4)--(0,4);
-    \path[fill=blue!20,opacity=.35] (-4,2) -- (4,2) -- (4,4) -- (-4,4) -- cycle;
-    \draw[blue,thick] (-4,2)--(4,2);
-    \node[anchor=south east,font=\small] at (3.7,3.7) {G11};
-  \end{scope}
-
-  % ---------- NEW G12: x > -1 (dashed vertical line, shade right)
-  \begin{scope}[xshift=8cm,yshift=-21cm]
-    \clip (-4.2,-4.2) rectangle (4.2,4.2);
-    \draw[grid] (-4,-4) grid (4,4);
-    \draw[axes] (-4,0)--(4,0); \draw[axes] (0,-4)--(0,4);
-    \path[fill=blue!20,opacity=.35] (-1,-4) -- (4,-4) -- (4,4) -- (-1,4) -- cycle;
-    \draw[blue,thick,dashed] (-1,-4)--(-1,4);
-    \node[anchor=south east,font=\small] at (3.7,3.7) {G12};
-  \end{scope}
-\end{tikzpicture}`,
-
-      /* Answers A–F for 12 questions */
-      answerKey : ["A","C","B","D","E","A","B","D","C","E","A","B"],
+      answerKey : ["C","E","B","D","A","F","B","E","C"],
 
       questions : [
-        { latex: String.raw`\text{Refer to Graph G1. Which inequality is graphed?}`,
+
+        /* Q1 */
+        {
+          stem: String.raw`
+            <p>Which description correctly graphs the inequality \(y\le -2x+5\)?</p>
+          `,
           choices: [
-            String.raw`y>3x+2`,
-            String.raw`y\ge 3x+2`,
-            String.raw`y<3x+2`,
-            String.raw`y>-3x+2`,
-            String.raw`3x+y>2`,
-            String.raw`y>3x-2`
-          ]},
-        { latex: String.raw`\text{Refer to Graph G2. Which inequality is graphed?}`,
+            String.raw`Use a dashed boundary \(y=-2x+5\) and shade below it.`,
+            String.raw`Use a solid boundary \(y=-2x+5\) and shade above it.`,
+            String.raw`Use a solid boundary \(y=-2x+5\) and shade below it.`,
+            String.raw`Use a dashed boundary \(y=2x+5\) and shade below it.`,
+            String.raw`Use a solid boundary \(y=-2x-5\) and shade below it.`,
+            String.raw`Use the vertical boundary \(x=5\) and shade to the left.`
+          ],
+          choiceWrap: false
+        },
+
+        /* Q2 */
+        {
+          stem: String.raw`
+            <p><b>Refer to Figure 1.</b> Which inequality is represented by the graph?</p>
+          `,
+          media: String.raw`
+            <figure>
+              <img src="6-10-2.png" alt="Dashed line y equals 2x minus 1 with the region above the line shaded" />
+              <figcaption>Figure 1</figcaption>
+            </figure>
+          `,
           choices: [
-            String.raw`y<-x+2`,
-            String.raw`y>-x+2`,
-            String.raw`y\le -x+2`,
-            String.raw`y\ge -x+2`,
-            String.raw`x+y\le 2`,
-            String.raw`x-y\ge 2`
-          ]},
-        { latex: String.raw`\text{Refer to Graph G3. Which inequality is graphed?}`,
+            String.raw`\(y\ge 2x-1\)`,
+            String.raw`\(y&lt;2x-1\)`,
+            String.raw`\(y>-2x-1\)`,
+            String.raw`\(y&lt;-2x+1\)`,
+            String.raw`\(y>2x-1\)`,
+            String.raw`\(y>2x+1\)`
+          ]
+        },
+
+        /* Q3 */
+        {
+          stem: String.raw`
+            <p><b>Refer to Figure 2.</b> Which inequality, written in standard form, is represented by the graph?</p>
+          `,
+          media: String.raw`
+            <figure>
+              <img src="6-10-3.png" alt="Solid line through (0,3) and (2,0), with the region below the line shaded" />
+              <figcaption>Figure 2</figcaption>
+            </figure>
+          `,
           choices: [
-            String.raw`y\le 2x-1`,
-            String.raw`y\ge 2x-1`,
-            String.raw`y>2x-1`,
-            String.raw`y<2x-1`,
-            String.raw`2x-y\ge -1`,
-            String.raw`2x-y\le -1`
-          ]},
-        { latex: String.raw`\text{Refer to Graph G4. Which inequality is graphed?}`,
+            String.raw`\(3x+2y\ge6\)`,
+            String.raw`\(3x+2y\le6\)`,
+            String.raw`\(2x+3y\le6\)`,
+            String.raw`\(3x-2y\le6\)`,
+            String.raw`\(3x+2y&lt;6\)`,
+            String.raw`\(x+2y\le3\)`
+          ]
+        },
+
+        /* Q4 */
+        {
+          stem: String.raw`
+            <p><b>Refer to Figure 3.</b> Which graph represents \(2x-y>2\)?</p>
+          `,
+          media: String.raw`
+            <figure>
+              <img src="6-10-4.png" alt="Six candidate graphs labeled A through F" />
+              <figcaption>Figure 3</figcaption>
+            </figure>
+          `,
           choices: [
-            String.raw`3x+y\le 2`,
-            String.raw`3x+y\ge 2`,
-            String.raw`3x+y<2`,
-            String.raw`3x+y>2`,
-            String.raw`y<-3x+2`,
-            String.raw`y\ge -3x+2`
-          ]},
-        { latex: String.raw`\text{Refer to Graph G5. Which inequality is graphed?}`,
+            String.raw`Graph A`,
+            String.raw`Graph B`,
+            String.raw`Graph C`,
+            String.raw`Graph D`,
+            String.raw`Graph E`,
+            String.raw`Graph F`
+          ],
+          choiceWrap: false
+        },
+
+        /* Q5 */
+        {
+          stem: String.raw`
+            <p>A student starts with \(2x-y>5\) and writes \(y>2x-5\).</p>
+            <p>What is the error?</p>
+          `,
           choices: [
-            String.raw`2x-y>3`,
-            String.raw`2x-y\ge 3`,
-            String.raw`2x-y<3`,
-            String.raw`y\le 2x-3`,
-            String.raw`2x-y\le 3`,
-            String.raw`y<2x-3`
-          ]},
-        { latex: String.raw`\text{Refer to Graph G6. Which inequality is graphed?}`,
+            String.raw`When multiplying or dividing by \(-1\), the inequality must reverse. The correct result is \(y&lt;2x-5\).`,
+            String.raw`The inequality sign should reverse whenever a term is moved across the equals sign. The correct result is \(y&lt;5-2x\).`,
+            String.raw`The student should divide every term by \(2\), giving \(y>x-\frac52\).`,
+            String.raw`The algebra is correct; only the boundary should be solid.`,
+            String.raw`The student changed the sign of \(y\); the correct result is \(y>-2x+5\).`,
+            String.raw`The inequality cannot be solved for \(y\) because \(y\) has a negative coefficient.`
+          ],
+          choiceWrap: false
+        },
+
+        /* Q6 */
+        {
+          stem: String.raw`
+            <p>You want to graph \(x+2y&lt;6\) using a test point. Which reasoning is correct?</p>
+          `,
           choices: [
-            String.raw`3x-2y\ge 0`,
-            String.raw`3x-2y\le 0`,
-            String.raw`2y-3x\ge 0`,
-            String.raw`y\ge \tfrac{3}{2}x`,
-            String.raw`y> \tfrac{3}{2}x`,
-            String.raw`y< -\tfrac{3}{2}x`
-          ]},
-        { latex: String.raw`\text{Refer to Graph G7. Which inequality is graphed?}`,
+            String.raw`The origin lies on the boundary, so it cannot be used as a test point.`,
+            String.raw`Substituting \((0,0)\) gives \(0>6\), so shade the side opposite the origin.`,
+            String.raw`A test point determines whether the boundary is solid or dashed.`,
+            String.raw`Because the coefficient of \(y\) is positive, always shade below the boundary without testing.`,
+            String.raw`The point \((0,0)\) cannot be used because both coordinates are zero.`,
+            String.raw`Substituting \((0,0)\) gives \(0&lt;6\), so shade the side containing the origin; the boundary is dashed.`
+          ],
+          choiceWrap: false
+        },
+
+        /* Q7 */
+        {
+          stem: String.raw`
+            <p>Which point belongs to the solution region of \(2x+3y\le12\)?</p>
+          `,
           choices: [
-            String.raw`x+y\le -2`,
-            String.raw`x+y>-2`,
-            String.raw`x+y\ge -2`,
-            String.raw`x+y<-2`,
-            String.raw`y\ge -x-2`,
-            String.raw`y< -x-2`
-          ]},
-        { latex: String.raw`\text{Refer to Graph G8. Which inequality is graphed?}`,
+            String.raw`\((3,3)\)`,
+            String.raw`\((3,2)\)`,
+            String.raw`\((0,5)\)`,
+            String.raw`\((4,2)\)`,
+            String.raw`\((6,1)\)`,
+            String.raw`\((2,3)\)`
+          ]
+        },
+
+        /* Q8 */
+        {
+          stem: String.raw`
+            <p>Which description correctly compares the graphs of \(y&lt;-2\) and \(x\ge3\)?</p>
+          `,
           choices: [
-            String.raw`2x-y\le -1`,
-            String.raw`2x-y\ge -1`,
-            String.raw`y\ge 2x+1`,
-            String.raw`2x-y>-1`,
-            String.raw`y>2x+1`,
-            String.raw`y\le 2x+1`
-          ]},
-        { latex: String.raw`\text{Refer to Graph G9. Which inequality is graphed?}`,
+            String.raw`\(y&lt;-2\): solid horizontal boundary, shade below. \(x\ge3\): solid vertical boundary, shade right.`,
+            String.raw`\(y&lt;-2\): dashed vertical boundary, shade below. \(x\ge3\): solid horizontal boundary, shade right.`,
+            String.raw`\(y&lt;-2\): dashed horizontal boundary, shade above. \(x\ge3\): solid vertical boundary, shade right.`,
+            String.raw`\(y&lt;-2\): dashed horizontal boundary, shade below. \(x\ge3\): dashed vertical boundary, shade right.`,
+            String.raw`\(y&lt;-2\): dashed horizontal boundary, shade below. \(x\ge3\): solid vertical boundary, shade right.`,
+            String.raw`\(y&lt;-2\): dashed horizontal boundary, shade below. \(x\ge3\): solid vertical boundary, shade left.`
+          ],
+          choiceWrap: false
+        },
+
+        /* Q9 */
+        {
+          stem: String.raw`
+            <p>Consider the inequality \(3x-2y\ge6\).</p>
+            <p>Which description gives the complete graphing information?</p>
+          `,
           choices: [
-            String.raw`x+3y\ge 3`,
-            String.raw`x+3y> 3`,
-            String.raw`x+3y\le 3`,
-            String.raw`x+3y< 3`,
-            String.raw`y\ge -\tfrac{1}{3}x+1`,
-            String.raw`y> -\tfrac{1}{3}x+1`
-          ]},
-        { latex: String.raw`\text{Refer to Graph G10. Which inequality is graphed?}`,
-          choices: [
-            String.raw`x-4y\le 0`,
-            String.raw`x-4y>0`,
-            String.raw`y\ge \tfrac{1}{4}x`,
-            String.raw`y> \tfrac{1}{4}x`,
-            String.raw`x-4y\ge 0`,
-            String.raw`y< \tfrac{1}{4}x`
-          ]},
-        { latex: String.raw`\text{Refer to Graph G11 (horizontal boundary). Which inequality is graphed?}`,
-          choices: [
-            String.raw`y\ge 2`,
-            String.raw`y>2`,
-            String.raw`y\le 2`,
-            String.raw`y<2`,
-            String.raw`x\ge 2`,
-            String.raw`x>2`
-          ]},
-        { latex: String.raw`\text{Refer to Graph G12 (vertical boundary). Which inequality is graphed?}`,
-          choices: [
-            String.raw`x\ge -1`,
-            String.raw`x>-1`,
-            String.raw`x<-1`,
-            String.raw`y>-1`,
-            String.raw`x\ge 1`,
-            String.raw`y\ge -1`
-          ]}
+            String.raw`Boundary \(y=\frac32x-3\); dashed line; shade below.`,
+            String.raw`Boundary \(y=-\frac32x+3\); solid line; shade above.`,
+            String.raw`Boundary \(y=\frac32x-3\); solid line; shade below.`,
+            String.raw`Boundary \(y=\frac32x+3\); solid line; shade above.`,
+            String.raw`Boundary \(y=-\frac32x-3\); dashed line; shade below.`,
+            String.raw`Boundary \(x=\frac32y+6\); solid vertical line; shade right.`
+          ],
+          choiceWrap: false
+        }
       ]
     };
   </script>
 
-  <link rel="stylesheet" href="/math-homework/assets/core.css" />
-  <link rel="stylesheet" href="https://tikzjax.com/v1/fonts.css" />
-  <script defer src="/math-homework/assets/core.js"></script>
-  <script defer src="https://tikzjax.com/v1/tikzjax.js"></script>
+  <link rel="stylesheet" href="/math-homework/assets/core-rich.css" />
+  <script defer src="/math-homework/assets/core-rich.js"></script>
   <script defer src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
 </head>
+
 <body>
   <div id="hw-root">Loading…</div>
 </body>
