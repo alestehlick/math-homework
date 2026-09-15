@@ -1,0 +1,308 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Homework 7-3 to 7-5 (Geometry)</title>
+
+  <script>
+    /* =========================
+       Homework 7-3 to 7-5 — Triangle Inequalities (Geometry)
+       Exterior Angle Inequality, Longer Side Inequality,
+       Hinge Theorem, and Triangle Inequality
+       Adapted for: /math-homework/assets/core-rich.js
+
+       REQUIRED SOURCE REFERENCES (user-provided textbook pages and lecture notes):
+       - Exterior-angle set, B. Exercises: #13, #16–#20 used as raw material.
+       - Side/angle comparison set, A. Exercises: #1–#7.
+         Q3 is reworked from A #4; Q4 is reworked from A #6.
+       - Hinge set, A. Exercises: #8–#12.
+         Q6 is reworked from A #8; Q7 is reworked from A #9.
+       - Proof/application set, B. Exercises: #13–#20.
+         Q12 is reworked from B #19.
+       - User lecture notes (no exercise numbers): proof construction for the
+         Longer Side Inequality; proof of the Hinge Theorem; proof of the
+         Triangle Inequality.
+
+       MODEL-AUTHORED / MODEL-REWORKED ITEMS:
+       - Q1: exterior-angle inequality theorem recognition.
+       - Q2: numerical consequence of the exterior-angle inequality.
+       - Q3: side ordering from angle ordering (source A #4).
+       - Q4: angle ordering from side ordering (source A #6).
+       - Q5: proof-structure question reproducing the construction used in
+         the user's lecture proof of the Longer Side Inequality.
+       - Q6: direct Hinge Theorem comparison (source A #8).
+       - Q7: converse Hinge comparison inspired by source A #9.
+       - Q8: hypothesis/sufficiency check for when the Hinge Theorem applies.
+       - Q9: triangle-existence judgment using the Triangle Inequality.
+       - Q10: allowable range of a third side.
+       - Q11: proof-structure question reproducing the user's construction
+         for the Triangle Inequality.
+       - Q12: synthesis proof using the Triangle Inequality twice
+         (source B #19).
+
+       IMAGE FILES:
+       - User-supplied figures: none used directly.
+       - Model-generated figures:
+         7-3-1.png, 7-3-5.png, 7-3-6.png,
+         7-3-7.png, 7-3-11.png, 7-3-12.png
+
+       IMAGE NAMING RULE:
+       - Model-generated figures use final homework question numbering.
+       - PNG files live in the SAME folder as this HTML.
+       ========================= */
+
+    window.homeworkData = {
+      classId : "Geometry",
+      id      : "Homework 7-3 to 7-5",
+      title   : "Homework 7-3 to 7-5 — Triangle Inequalities",
+
+      graphics : String.raw``,
+
+      answerKey : ["C","A","E","B","F","D","C","A","D","E","B","F"],
+
+      questions : [
+
+        /* Q1 */
+        {
+          stem: String.raw`
+            <p><b>Refer to Figure 1.</b> In \(\triangle ABC\), side \(BC\) is extended through \(C\) to \(D\).</p>
+            <p>Which statement must be true?</p>
+          `,
+          media: String.raw`
+            <figure>
+              <img src="7-3-1.png" alt="Triangle ABC with BC extended through C to D, forming an exterior angle at C" />
+              <figcaption>Figure 1</figcaption>
+            </figure>
+          `,
+          choices: [
+            String.raw`\(m\angle ACD&lt;m\angle A\) only.`,
+            String.raw`The exterior angle must equal one of the remote interior angles.`,
+            String.raw`\(m\angle ACD>m\angle A\) and \(m\angle ACD>m\angle B\).`,
+            String.raw`\(m\angle ACD&lt;m\angle A\) and \(m\angle ACD&lt;m\angle B\).`,
+            String.raw`\(m\angle ACD=m\angle A\) and \(m\angle ACD=m\angle B\).`,
+            String.raw`The comparison depends on the side lengths, so nothing must be true.`
+          ],
+          choiceWrap: false
+        },
+
+        /* Q2 */
+        {
+          stem: String.raw`
+            <p>An exterior angle of a triangle measures \(67^\circ\).</p>
+            <p>Which of the following could be the measure of either remote interior angle?</p>
+          `,
+          choices: [
+            String.raw`\(54^\circ\)`,
+            String.raw`\(67^\circ\)`,
+            String.raw`\(68^\circ\)`,
+            String.raw`\(72^\circ\)`,
+            String.raw`\(90^\circ\)`,
+            String.raw`\(112^\circ\)`
+          ]
+        },
+
+        /* Q3 */
+        {
+          stem: String.raw`
+            <p>In \(\triangle PQR\), \(m\angle P=43^\circ\), \(m\angle Q=95^\circ\), and \(m\angle R=42^\circ\).</p>
+            <p>Order the sides from shortest to longest.</p>
+          `,
+          choices: [
+            String.raw`\(PR&lt;PQ&lt;QR\)`,
+            String.raw`\(QR&lt;PQ&lt;PR\)`,
+            String.raw`\(PQ&lt;PR&lt;QR\)`,
+            String.raw`\(QR&lt;PR&lt;PQ\)`,
+            String.raw`\(PQ&lt;QR&lt;PR\)`,
+            String.raw`\(PR&lt;QR&lt;PQ\)`
+          ]
+        },
+
+        /* Q4 */
+        {
+          stem: String.raw`
+            <p>In \(\triangle EFD\), \(EF=3\), \(FD=7\), and \(DE=9\).</p>
+            <p>Order the angles from smallest to largest.</p>
+          `,
+          choices: [
+            String.raw`\(\angle E&lt;\angle D&lt;\angle F\)`,
+            String.raw`\(\angle D&lt;\angle E&lt;\angle F\)`,
+            String.raw`\(\angle F&lt;\angle E&lt;\angle D\)`,
+            String.raw`\(\angle D&lt;\angle F&lt;\angle E\)`,
+            String.raw`\(\angle E&lt;\angle F&lt;\angle D\)`,
+            String.raw`\(\angle F&lt;\angle D&lt;\angle E\)`
+          ]
+        },
+
+        /* Q5 */
+        {
+          stem: String.raw`
+            <p><b>Refer to Figure 2.</b> Suppose \(BC>BA\). In the proof of the Longer Side Inequality, choose \(X\) on \(\overline{BC}\) so that \(BX=BA\).</p>
+            <p>Which reasoning is the heart of the proof that \(m\angle A>m\angle C\)?</p>
+          `,
+          media: String.raw`
+            <figure>
+              <img src="7-3-5.png" alt="Triangle ABC with X on BC and segment AX drawn, with BA equal to BX" />
+              <figcaption>Figure 2</figcaption>
+            </figure>
+          `,
+          choices: [
+            String.raw`\(\angle BXA=\angle C\) because \(X\) lies on \(\overline{BC}\), and \(\angle A=\angle BAX\).`,
+            String.raw`\(\angle BXA&lt;\angle C\) by the Exterior Angle Inequality, and \(\angle BAX&lt;\angle A\).`,
+            String.raw`\(\angle BXA=\angle BAC\) because \(BA=BX\), and \(\angle C>\angle BXA\).`,
+            String.raw`\(\angle BXA=\angle BAX\) because \(\triangle ABX\) is equilateral, and \(\angle C=\angle BXA\).`,
+            String.raw`\(\angle BXA>\angle BAX\) because \(BC>BA\), and \(\angle BAX=\angle C\).`,
+            String.raw`\(\angle BXA=\angle BAX\) because \(\triangle ABX\) is isosceles; \(\angle BXA>\angle C\) because it is an exterior angle of \(\triangle AXC\); and \(\angle A>\angle BAX\).`
+          ],
+          choiceWrap: false
+        },
+
+        /* Q6 */
+        {
+          stem: String.raw`
+            <p><b>Refer to Figure 3.</b> The two triangles have corresponding side lengths \(4\) and \(7\). Their included angles are \(50^\circ\) and \(30^\circ\).</p>
+            <p>Compare the third sides.</p>
+          `,
+          media: String.raw`
+            <figure>
+              <img src="7-3-6.png" alt="Two triangles with side lengths 4 and 7 and included angles 50 degrees and 30 degrees" />
+              <figcaption>Figure 3</figcaption>
+            </figure>
+          `,
+          choices: [
+            String.raw`\(WJ=BE\)`,
+            String.raw`\(WJ&lt;BE\)`,
+            String.raw`The Hinge Theorem cannot be used because the triangles are not congruent.`,
+            String.raw`\(WJ>BE\)`,
+            String.raw`The side of length \(7\) alone determines which third side is longer.`,
+            String.raw`There is not enough information to compare \(WJ\) and \(BE\).`
+          ]
+        },
+
+        /* Q7 */
+        {
+          stem: String.raw`
+            <p><b>Refer to Figure 4.</b> Each triangle has two corresponding sides of lengths \(5\) and \(6\). The remaining sides have lengths \(7\) and \(8\).</p>
+            <p>Compare the included angles \(\angle F\) and \(\angle Z\).</p>
+          `,
+          media: String.raw`
+            <figure>
+              <img src="7-3-7.png" alt="Two triangles with corresponding sides 5 and 6 and third sides 7 and 8" />
+              <figcaption>Figure 4</figcaption>
+            </figure>
+          `,
+          choices: [
+            String.raw`\(\angle F=\angle Z\)`,
+            String.raw`\(\angle F>\angle Z\)`,
+            String.raw`\(\angle F&lt;\angle Z\)`,
+            String.raw`Both angles must be right angles.`,
+            String.raw`The comparison depends only on whether \(5+6>8\).`,
+            String.raw`There is not enough information because the third sides are unequal.`
+          ]
+        },
+
+        /* Q8 */
+        {
+          stem: String.raw`
+            <p>Suppose \(\triangle ABC\) and \(\triangle XYZ\) satisfy \(AB=XY\) and \(AC=XZ\).</p>
+            <p>You are also told that \(\angle B>\angle Y\). Can the Hinge Theorem be used directly to conclude \(BC>YZ\)?</p>
+          `,
+          choices: [
+            String.raw`No. The compared angles must be the included angles between the two pairs of corresponding equal sides; here those are \(\angle A\) and \(\angle X\).`,
+            String.raw`Yes. Any larger angle in one triangle guarantees a longer third side in the other triangle.`,
+            String.raw`Yes, because two pairs of corresponding sides are equal, so every angle comparison can be used.`,
+            String.raw`No, because the Hinge Theorem applies only to right triangles.`,
+            String.raw`Yes, but only if \(\angle B\) and \(\angle Y\) are acute.`,
+            String.raw`No, because the Hinge Theorem requires all three pairs of sides to be equal.`
+          ],
+          choiceWrap: false
+        },
+
+        /* Q9 */
+        {
+          stem: String.raw`
+            <p>Which set of side lengths can form a triangle?</p>
+          `,
+          choices: [
+            String.raw`\(3,5,8\)`,
+            String.raw`\(4,6,11\)`,
+            String.raw`\(2,7,10\)`,
+            String.raw`\(5,7,11\)`,
+            String.raw`\(1,4,5\)`,
+            String.raw`\(6,6,12\)`
+          ]
+        },
+
+        /* Q10 */
+        {
+          stem: String.raw`
+            <p>Two sides of a triangle have lengths \(8\) and \(13\). If the third side has length \(x\), which condition is necessary and sufficient?</p>
+          `,
+          choices: [
+            String.raw`\(0&lt;x&lt;21\)`,
+            String.raw`\(5\le x\le21\)`,
+            String.raw`\(8&lt;x&lt;13\)`,
+            String.raw`\(x>5\)`,
+            String.raw`\(5&lt;x&lt;21\)`,
+            String.raw`\(x&lt;21\)`
+          ]
+        },
+
+        /* Q11 */
+        {
+          stem: String.raw`
+            <p><b>Refer to Figure 5.</b> In the proof of the Triangle Inequality, extend \(\overline{CA}\) to \(X\) so that \(AX=AB\).</p>
+            <p>Which reasoning correctly proves \(BC&lt;CA+AB\)?</p>
+          `,
+          media: String.raw`
+            <figure>
+              <img src="7-3-11.png" alt="Triangle BCX with A on CX and AX equal to AB" />
+              <figcaption>Figure 5</figcaption>
+            </figure>
+          `,
+          choices: [
+            String.raw`Since \(AX=AB\), \(BX=BC\); therefore \(BC=CA+AB\).`,
+            String.raw`Since \(AX=AB\), \(\angle AXB=\angle ABX\). Because \(\angle CBX>\angle ABX=\angle CXB\), the Longer Side Inequality in \(\triangle BCX\) gives \(CX>BC\). Since \(CX=CA+AX=CA+AB\), \(BC&lt;CA+AB\).`,
+            String.raw`Since \(AX=AB\), \(\triangle BCX\) is isosceles, so \(BC=CX\).`,
+            String.raw`Because \(A\) lies on \(\overline{CX}\), \(\angle CBX=\angle CXB\), hence \(BC=CX\).`,
+            String.raw`The Exterior Angle Inequality gives \(BC&lt;CX\) directly because \(X\) is outside \(\triangle ABC\).`,
+            String.raw`Since \(AX=AB\), \(CA=CB\), so \(BC&lt;CA+AB\) follows immediately.`
+          ],
+          choiceWrap: false
+        },
+
+        /* Q12 */
+        {
+          stem: String.raw`
+            <p><b>Refer to Figure 6.</b> Point \(P\) lies inside \(\triangle DEF\), and ray \(DP\) meets \(\overline{FE}\) at \(G\).</p>
+            <p>Which chain of reasoning proves \(DF+FE>DP+PE\)?</p>
+          `,
+          media: String.raw`
+            <figure>
+              <img src="7-3-12.png" alt="Triangle DEF with interior point P and ray DP meeting FE at G" />
+              <figcaption>Figure 6</figcaption>
+            </figure>
+          `,
+          choices: [
+            String.raw`From \(\triangle DPE\), \(DP+PE>DE\); therefore \(DF+FE>DP+PE\).`,
+            String.raw`From \(\triangle DFG\), \(DF+FG&lt;DG\), and from \(\triangle PGE\), \(PG+GE&lt;PE\); adding gives the result.`,
+            String.raw`Since \(P\) is inside the triangle, \(DP&lt;DF\) and \(PE&lt;FE\) automatically.`,
+            String.raw`Use the Hinge Theorem twice to get \(DF>DP\) and \(FE>PE\).`,
+            String.raw`Because \(DG=DP+PG\) and \(FE=FG+GE\), equality already gives \(DF+FE=DP+PE\).`,
+            String.raw`Triangle Inequality gives \(DF+FG>DG=DP+PG\) and \(PG+GE>PE\). Adding and cancelling \(PG\), while using \(FG+GE=FE\), yields \(DF+FE>DP+PE\).`
+          ],
+          choiceWrap: false
+        }
+      ]
+    };
+  </script>
+
+  <link rel="stylesheet" href="/math-homework/assets/core-rich.css" />
+  &lt;script defer src="/math-homework/assets/core-rich.js"></script>
+  &lt;script defer src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+</head>
+
+<body>
+  <div id="hw-root">Loading…</div>
+</body>
+</html>
