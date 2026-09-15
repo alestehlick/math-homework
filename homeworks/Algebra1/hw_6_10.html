@@ -20,8 +20,9 @@
          conventions, standard-form boundaries, and horizontal/vertical cases.
 
        MODEL-AUTHORED / MODEL-REWORKED ITEMS:
-       - Q1: model-reworked conceptual decomposition of an inequality graph
-         into boundary equation, boundary inclusion, and shaded half-plane.
+       - Q1: model-authored recall of the taught graphing procedure:
+         isolate y, graph the corresponding boundary line, decide solid/dashed,
+         then use y > / y < to shade above/below.
        - Q2: reworks source G3/G8 ideas into one clean graph-reading item.
        - Q3: reworks source G2/G9 ideas to require reading a graph in
          standard form rather than only slope-intercept form.
@@ -29,9 +30,10 @@
          by choosing among six plausible graphs.
        - Q5: model-authored diagnosis of the common inequality-reversal error
          when isolating y.
-       - Q6: model-authored test-point reasoning question.
-       - Q7: model-authored point-membership question linking algebraic
-         satisfaction to geometric membership in the shaded half-plane.
+       - Q6: model-authored conceptual explanation of why y > f(x) means
+         points above the boundary and y < f(x) means points below it.
+       - Q7: model-authored procedural application requiring isolation of y
+         from standard form and then correct boundary/shading decisions.
        - Q8: merges the source G11/G12 cases into one comparison of
          horizontal and vertical boundary inequalities.
        - Q9: model-authored synthesis requiring boundary, line type,
@@ -60,15 +62,15 @@
         /* Q1 */
         {
           stem: String.raw`
-            <p>Which description correctly graphs the inequality \(y\le -2x+5\)?</p>
+            <p>For a linear inequality that can be solved for \(y\), which sequence best describes the graphing procedure used in class?</p>
           `,
           choices: [
-            String.raw`Use a dashed boundary \(y=-2x+5\) and shade below it.`,
-            String.raw`Use a solid boundary \(y=-2x+5\) and shade above it.`,
-            String.raw`Use a solid boundary \(y=-2x+5\) and shade below it.`,
-            String.raw`Use a dashed boundary \(y=2x+5\) and shade below it.`,
-            String.raw`Use a solid boundary \(y=-2x-5\) and shade below it.`,
-            String.raw`Use the vertical boundary \(x=5\) and shade to the left.`
+            String.raw`Graph the original expression first, then choose any side to shade, and finally solve for \(y\).`,
+            String.raw`Isolate \(x\), graph a vertical line, and shade right for \(>\) or left for \(<\).`,
+            String.raw`Isolate \(y\); graph the corresponding equality as the boundary; use a solid line for \(\le\) or \(\ge\) and a dashed line for \(<\) or \(>\); then shade above for \(y>\cdots\) and below for \(y<\cdots\).`,
+            String.raw`Isolate \(y\); always use a solid boundary; shade above when the slope is positive and below when the slope is negative.`,
+            String.raw`Graph only the boundary line. The inequality sign does not affect the graph.`,
+            String.raw`Isolate \(y\); shade above whenever the constant term is positive and below whenever it is negative.`
           ],
           choiceWrap: false
         },
@@ -157,15 +159,15 @@
         /* Q6 */
         {
           stem: String.raw`
-            <p>You want to graph \(x+2y&lt;6\) using a test point. Which reasoning is correct?</p>
+            <p>Why does an inequality such as \(y>2x-1\) tell us to shade <b>above</b> the boundary line \(y=2x-1\)?</p>
           `,
           choices: [
-            String.raw`The origin lies on the boundary, so it cannot be used as a test point.`,
-            String.raw`Substituting \((0,0)\) gives \(0>6\), so shade the side opposite the origin.`,
-            String.raw`A test point determines whether the boundary is solid or dashed.`,
-            String.raw`Because the coefficient of \(y\) is positive, always shade below the boundary without testing.`,
-            String.raw`The point \((0,0)\) cannot be used because both coordinates are zero.`,
-            String.raw`Substituting \((0,0)\) gives \(0&lt;6\), so shade the side containing the origin; the boundary is dashed.`
+            String.raw`Because the slope \(2\) is positive, and positive slopes always require shading above.`,
+            String.raw`Because the symbol \(>\) means the boundary must be solid.`,
+            String.raw`Because all points above any line automatically have positive \(y\)-coordinates.`,
+            String.raw`Because the \(y\)-intercept is \(-1\), so the upper half of the plane is the solution.`,
+            String.raw`Because \(2x-1\) gives the \(x\)-coordinate of the boundary at each height.`,
+            String.raw`For each fixed \(x\), the line has height \(2x-1\). The inequality requires a \(y\)-value greater than that height, so the solution points lie above the line.`
           ],
           choiceWrap: false
         },
@@ -173,16 +175,17 @@
         /* Q7 */
         {
           stem: String.raw`
-            <p>Which point belongs to the solution region of \(2x+3y\le12\)?</p>
+            <p>To graph \(2x+3y\le12\), first isolate \(y\). Which description is correct?</p>
           `,
           choices: [
-            String.raw`\((3,3)\)`,
-            String.raw`\((3,2)\)`,
-            String.raw`\((0,5)\)`,
-            String.raw`\((4,2)\)`,
-            String.raw`\((6,1)\)`,
-            String.raw`\((2,3)\)`
-          ]
+            String.raw`\(y\ge-\frac23x+4\); solid boundary; shade above.`,
+            String.raw`\(y\le-\frac23x+4\); solid boundary; shade below.`,
+            String.raw`\(y<-\frac23x+4\); dashed boundary; shade below.`,
+            String.raw`\(y\le\frac23x+4\); solid boundary; shade below.`,
+            String.raw`\(y\ge\frac23x-4\); solid boundary; shade above.`,
+            String.raw`\(y\le-\frac32x+4\); dashed boundary; shade below.`
+          ],
+          choiceWrap: false
         },
 
         /* Q8 */
@@ -205,7 +208,7 @@
         {
           stem: String.raw`
             <p>Consider the inequality \(3x-2y\ge6\).</p>
-            <p>Which description gives the complete graphing information?</p>
+            <p>Using the class procedure—first isolate \(y\), then decide the boundary and the shaded side—which description is correct?</p>
           `,
           choices: [
             String.raw`Boundary \(y=\frac32x-3\); dashed line; shade below.`,
