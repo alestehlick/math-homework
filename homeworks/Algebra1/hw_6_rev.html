@@ -7,163 +7,380 @@
 
   <script>
     /* =========================
-       Chapter 6 Review — Essential Skills
-       Focus on: slope, intercepts, functions/relations, direct variation,
-       equations of lines, and inequalities (skip trivial quadrant ID).
+       Chapter 6 Review — Algebra 1
+       Adapted for: /math-homework/assets/core-rich.js
+
+       REQUIRED SOURCE REFERENCES:
+       - Existing Chapter 6 review hw_6_rev(6).html:
+         original Q1–Q12 used as raw material for functions/relations,
+         slope, equations of lines, direct variation, and inequalities.
+       - Upcoming Algebra 1 Test 6:
+         #1–#6 coordinate plotting / quadrant-or-axis location;
+         #7–#18 relations, functions, domain/range, tables, mappings, and graphs;
+         #19–#22 direct variation from a table and from context;
+         #23 x- and y-intercepts;
+         #24–#25 slope from two points, including a vertical line;
+         #26–#29 equations of lines from slope/intercept, slope/point,
+         and two points;
+         #30–#33 graphing lines, a restricted relation, and a linear inequality.
+       - Test bonus #34–#35 deliberately not included in this ordinary review.
+
+       MODEL-AUTHORED / MODEL-REWORKED ITEMS:
+       - Q1: coordinate-plane reading plus quadrant/axis classification.
+       - Q2: integrates relation/function/domain/range into one item.
+       - Q3–Q5: contrast function recognition across table, mapping diagram,
+         and graph representations.
+       - Q6: integrates all three direct-variation tasks from Test #19–#21.
+       - Q7: direct-variation application parallel to Test #22.
+       - Q8: x- and y-intercepts from standard form, matching Test #23.
+       - Q9–Q10: ordinary and vertical-line slope cases, matching Test #24–#25.
+       - Q11–Q13: equations of lines from the three information types in Test #26–#29.
+       - Q14: graph selection for a line initially given in standard form.
+       - Q15: restricted-domain relation, preparing for Test #32.
+       - Q16: graphing a linear inequality using the taught method:
+         isolate y, use dashed/solid boundary, and shade above/below.
+
+       IMAGE FILES:
+       - User-supplied figures: none used directly.
+       - Model-generated figures:
+         6-rev-1.png, 6-rev-4.png, 6-rev-5.png,
+         6-rev-14.png, 6-rev-16.png
+
+       IMAGE NAMING RULE:
+       - Model-generated figures use final homework question numbering.
+       - PNG files live in the SAME folder as this HTML.
        ========================= */
+
     window.homeworkData = {
       classId : "Algebra1",
       id      : "Chapter 6 Review",
-      title   : "Chapter 6 Review — Slope, Intercepts, Functions, Direct Variation",
+      title   : "Chapter 6 Review — Relations, Variation, Slope & Lines",
 
-      graphics : "",
+      graphics : String.raw``,
 
-      /* Updated answer key (unique & correct) */
-      answerKey : ["B","B","A","B","B","C","B","B","B","C","A","A"],
+      answerKey : ["C","E","B","F","A","D","B","E","C","A","F","D","B","E","C","A"],
 
       questions : [
+
+        /* Q1 */
         {
-          latex   : String.raw`\text{Answer whether the following relation a funtion: }R=\{(3,7),(-2,4),(1,8)\}`,
-          choices : [
-            String.raw`\text{No; not a relation}`,
-            String.raw`\text{Yes; function, domain } \{-2,1,3\},\ \text{range }\{4,7,8\}`,
-            String.raw`\text{Yes; but not a function}`,
-            String.raw`\text{No; repeated input}`,
-            String.raw`\text{Yes; domain } \{-2,1,3\},\ \text{range }\{7,8\}`,
-            String.raw`\text{Cannot determine}`
+          stem: String.raw`
+            <p><b>Refer to Figure 1.</b> Which choice correctly gives the coordinates and location of all three points?</p>
+          `,
+          media: String.raw`
+            <figure>
+              <img src="6-rev-1.png" alt="Coordinate plane with points A, B, and C" />
+              <figcaption>Figure 1</figcaption>
+            </figure>
+          `,
+          choices: [
+            String.raw`\(A=(4,3)\), Quadrant I; \(B=(-5,0)\), x-axis; \(C=(0,6)\), y-axis`,
+            String.raw`\(A=(-4,-3)\), Quadrant III; \(B=(0,5)\), y-axis; \(C=(-6,0)\), x-axis`,
+            String.raw`\(A=(-4,3)\), Quadrant II; \(B=(0,-5)\), y-axis; \(C=(6,0)\), x-axis`,
+            String.raw`\(A=(3,-4)\), Quadrant IV; \(B=(-5,0)\), x-axis; \(C=(0,6)\), y-axis`,
+            String.raw`\(A=(-4,3)\), Quadrant II; \(B=(-5,0)\), x-axis; \(C=(0,6)\), y-axis`,
+            String.raw`\(A=(4,-3)\), Quadrant IV; \(B=(0,-5)\), x-axis; \(C=(6,0)\), y-axis`
+          ],
+          choiceWrap: false
+        },
+
+        /* Q2 */
+        {
+          stem: String.raw`
+            <p>Consider \(R=\{(-3,4),(0,7),(5,4)\}\).</p>
+            <p>Which statement is correct?</p>
+          `,
+          choices: [
+            String.raw`It is not a relation because the output \(4\) is repeated.`,
+            String.raw`It is a relation but not a function because two inputs have output \(4\).`,
+            String.raw`It is a function with domain \(\{4,7\}\) and range \(\{-3,0,5\}\).`,
+            String.raw`It is not a function because a function cannot have three ordered pairs.`,
+            String.raw`It is a function with domain \(\{-3,0,5\}\) and range \(\{4,7\}\).`,
+            String.raw`It is a function only if all outputs are different.`
+          ],
+          choiceWrap: false
+        },
+
+        /* Q3 */
+        {
+          stem: String.raw`
+            <p>Does the table represent a function?</p>
+            <table style="border-collapse:collapse; margin:.5rem 0;">
+              <tr><th style="border:1px solid #aaa;padding:.25rem .7rem;">\(x\)</th>
+                  <th style="border:1px solid #aaa;padding:.25rem .7rem;">\(y\)</th></tr>
+              <tr><td style="border:1px solid #aaa;padding:.25rem .7rem;">\(1\)</td>
+                  <td style="border:1px solid #aaa;padding:.25rem .7rem;">\(3\)</td></tr>
+              <tr><td style="border:1px solid #aaa;padding:.25rem .7rem;">\(2\)</td>
+                  <td style="border:1px solid #aaa;padding:.25rem .7rem;">\(5\)</td></tr>
+              <tr><td style="border:1px solid #aaa;padding:.25rem .7rem;">\(2\)</td>
+                  <td style="border:1px solid #aaa;padding:.25rem .7rem;">\(8\)</td></tr>
+            </table>
+          `,
+          choices: [
+            String.raw`Yes, because every output is different.`,
+            String.raw`No, because the input \(2\) is paired with two different outputs.`,
+            String.raw`Yes, because repeated inputs are always allowed.`,
+            String.raw`No, because \(5\) and \(8\) are positive.`,
+            String.raw`Yes, because there are only three rows.`,
+            String.raw`No, because the input \(1\) appears only once.`
+          ],
+          choiceWrap: false
+        },
+
+        /* Q4 */
+        {
+          stem: String.raw`
+            <p><b>Refer to Figure 2.</b> Does the mapping diagram represent a function?</p>
+          `,
+          media: String.raw`
+            <figure>
+              <img src="6-rev-4.png" alt="Mapping diagram from domain 1, 3, 5 to range 2, 4" />
+              <figcaption>Figure 2</figcaption>
+            </figure>
+          `,
+          choices: [
+            String.raw`No, because the output \(4\) receives two arrows.`,
+            String.raw`No, because the domain and range contain different numbers of elements.`,
+            String.raw`No, because \(3\) and \(5\) have the same output.`,
+            String.raw`Yes, but only because all values are positive.`,
+            String.raw`No, because a function must use every possible output exactly once.`,
+            String.raw`Yes. Each input has exactly one output; different inputs may share an output.`
+          ],
+          choiceWrap: false
+        },
+
+        /* Q5 */
+        {
+          stem: String.raw`
+            <p><b>Refer to Figure 3.</b> Does the graph represent \(y\) as a function of \(x\)?</p>
+          `,
+          media: String.raw`
+            <figure>
+              <img src="6-rev-5.png" alt="Smooth curve that gives one y-value for each x-value" />
+              <figcaption>Figure 3</figcaption>
+            </figure>
+          `,
+          choices: [
+            String.raw`Yes. Every vertical line meets the graph at most once.`,
+            String.raw`No. The graph changes direction.`,
+            String.raw`No. Some \(y\)-values occur more than once.`,
+            String.raw`Yes, but only because the graph is curved.`,
+            String.raw`No. A function must be a straight line.`,
+            String.raw`Yes, because every horizontal line meets the graph once.`
+          ],
+          choiceWrap: false
+        },
+
+        /* Q6 */
+        {
+          stem: String.raw`
+            <p>The table represents a direct variation.</p>
+            <table style="border-collapse:collapse; margin:.5rem 0;">
+              <tr>
+                <th style="border:1px solid #aaa;padding:.25rem .7rem;">\(x\)</th>
+                <td style="border:1px solid #aaa;padding:.25rem .7rem;">\(0\)</td>
+                <td style="border:1px solid #aaa;padding:.25rem .7rem;">\(2\)</td>
+                <td style="border:1px solid #aaa;padding:.25rem .7rem;">\(4\)</td>
+                <td style="border:1px solid #aaa;padding:.25rem .7rem;">\(6\)</td>
+              </tr>
+              <tr>
+                <th style="border:1px solid #aaa;padding:.25rem .7rem;">\(y\)</th>
+                <td style="border:1px solid #aaa;padding:.25rem .7rem;">\(0\)</td>
+                <td style="border:1px solid #aaa;padding:.25rem .7rem;">\(5\)</td>
+                <td style="border:1px solid #aaa;padding:.25rem .7rem;">\(10\)</td>
+                <td style="border:1px solid #aaa;padding:.25rem .7rem;">\(15\)</td>
+              </tr>
+            </table>
+            <p>Which choice gives the equation, the constant of variation, and the value of \(y\) when \(x=10\)?</p>
+          `,
+          choices: [
+            String.raw`\(y=2x,\ k=2,\ y=20\)`,
+            String.raw`\(y=5x,\ k=5,\ y=50\)`,
+            String.raw`\(y=\frac25x,\ k=\frac25,\ y=4\)`,
+            String.raw`\(y=\frac52x,\ k=\frac52,\ y=25\)`,
+            String.raw`\(y=\frac52x+5,\ k=\frac52,\ y=30\)`,
+            String.raw`\(y=\frac25x+5,\ k=\frac25,\ y=9\)`
           ]
         },
+
+        /* Q7 */
         {
-          latex   : String.raw`\text{Given the line of equation }y=x+4,\ \text{what is the slope and }y\text{-intercept?}`,
-          choices : [
-            String.raw`m=4,\ b=1`,
-            String.raw`m=1,\ b=4`,
-            String.raw`m=4,\ b=-1`,
-            String.raw`m=-1,\ b=4`,
-            String.raw`m=0,\ b=4`,
-            String.raw`m=1,\ b=-4`
+          stem: String.raw`
+            <p>The potential energy \(E\) of an object varies directly with its height \(h\).</p>
+            <p>If \(E=4\) J when \(h=6\) m, what is \(E\) when \(h=21\) m?</p>
+          `,
+          choices: [
+            String.raw`\(9\) J`,
+            String.raw`\(14\) J`,
+            String.raw`\(18\) J`,
+            String.raw`\(24\) J`,
+            String.raw`\(31.5\) J`,
+            String.raw`\(42\) J`
+          ],
+          choiceWrap: false
+        },
+
+        /* Q8 */
+        {
+          stem: String.raw`
+            <p>Without graphing, find the \(x\)- and \(y\)-intercepts of \(4x-3y=12\).</p>
+          `,
+          choices: [
+            String.raw`x-intercept \((4,0)\); y-intercept \((0,-3)\)`,
+            String.raw`x-intercept \((-3,0)\); y-intercept \((0,4)\)`,
+            String.raw`x-intercept \((12,0)\); y-intercept \((0,12)\)`,
+            String.raw`x-intercept \((0,3)\); y-intercept \((-4,0)\)`,
+            String.raw`x-intercept \((3,0)\); y-intercept \((0,-4)\)`,
+            String.raw`x-intercept \((-4,0)\); y-intercept \((0,3)\)`
+          ],
+          choiceWrap: false
+        },
+
+        /* Q9 */
+        {
+          stem: String.raw`
+            <p>Find the slope of the line through \((-2,5)\) and \((4,-7)\).</p>
+          `,
+          choices: [
+            String.raw`\(2\)`,
+            String.raw`\(-\frac12\)`,
+            String.raw`\(-2\)`,
+            String.raw`\(\frac12\)`,
+            String.raw`\(-12\)`,
+            String.raw`Undefined`
           ]
         },
+
+        /* Q10 */
         {
-          latex   : String.raw`\text{Find the slope of the line through }(2,5)\text{ and }(3,-7).`,
-          choices : [
-            String.raw`-12`,
-            String.raw`\tfrac{-6}{1}`,
-            String.raw`\tfrac{12}{1}`,
-            String.raw`\tfrac{7}{2}`,
-            String.raw`-5`,
-            String.raw`\tfrac{-7}{2}`
+          stem: String.raw`
+            <p>Find the slope of the line through \((3,-1)\) and \((3,8)\).</p>
+          `,
+          choices: [
+            String.raw`Undefined`,
+            String.raw`\(0\)`,
+            String.raw`\(3\)`,
+            String.raw`\(9\)`,
+            String.raw`\(-3\)`,
+            String.raw`\(\frac19\)`
           ]
         },
+
+        /* Q11 */
         {
-          latex   : String.raw`\text{Place the equation }5x+y=9\text{ in slope-intercept form and state the slope.}`,
-          choices : [
-            String.raw`y=5x+9,\ m=5`,
-            String.raw`y=-5x+9,\ m=-5`,
-            String.raw`y=9x+5,\ m=9`,
-            String.raw`y=-5x-9,\ m=-5`,
-            String.raw`y=5x-9,\ m=5`,
-            String.raw`y=-\tfrac{1}{5}x+9,\ m=-\tfrac{1}{5}`
+          stem: String.raw`
+            <p>Write the equation of the line with slope \(-4\) and \(y\)-intercept \(7\).</p>
+          `,
+          choices: [
+            String.raw`\(y=4x+7\)`,
+            String.raw`\(y=-7x+4\)`,
+            String.raw`\(y=-4x-7\)`,
+            String.raw`\(y=7x-4\)`,
+            String.raw`\(y=\frac14x+7\)`,
+            String.raw`\(y=-4x+7\)`
           ]
         },
+
+        /* Q12 */
         {
-          latex   : String.raw`\text{Give the equation of line with slope } 3\text{ and y-intercept }-\tfrac{1}{5}.`,
-          choices : [
-            String.raw`y=-3x+\tfrac{1}{5}`,
-            String.raw`y=3x-\tfrac{1}{5}`,
-            String.raw`y=\tfrac{1}{5}x-3`,
-            String.raw`y=-\tfrac{1}{5}x+3`,
-            String.raw`y=3x+\tfrac{1}{5}`,
-            String.raw`y=-\tfrac{1}{5}x-3`
+          stem: String.raw`
+            <p>Write the equation of the line with slope \(3\) that passes through \((2,-5)\).</p>
+          `,
+          choices: [
+            String.raw`\(y=3x+1\)`,
+            String.raw`\(y=-3x+1\)`,
+            String.raw`\(y=3x-5\)`,
+            String.raw`\(y=3x-11\)`,
+            String.raw`\(y=-3x-11\)`,
+            String.raw`\(y=\frac13x-\frac{17}{3}\)`
           ]
         },
+
+        /* Q13 */
         {
-          latex   : String.raw`\text{Find the equation of the line through }(2,9)\text{ and }(-1,4).`,
-          choices : [
-            String.raw`y=2x+5`,
-            String.raw`y=\tfrac{5}{3}x+\tfrac{13}{3}`,
-            String.raw`y=\tfrac{5}{3}x+\tfrac{17}{3}`,
-            String.raw`y=-\tfrac{5}{3}x+9`,
-            String.raw`y=5x-1`,
-            String.raw`y=3x+4`
+          stem: String.raw`
+            <p>Write the equation of the line through \((-1,4)\) and \((3,-8)\).</p>
+          `,
+          choices: [
+            String.raw`\(y=3x+1\)`,
+            String.raw`\(y=-3x+1\)`,
+            String.raw`\(y=-3x-1\)`,
+            String.raw`\(y=3x+7\)`,
+            String.raw`\(y=-\frac13x+\frac{11}{3}\)`,
+            String.raw`\(y=-4x\)`
           ]
         },
+
+        /* Q14 */
         {
-          latex   : String.raw`\text{If }y\text{ varies directly with }x\text{ and }y=12\text{ when }x=3,\ \text{find }y\text{ when }x=15.`,
-          choices : [
-            String.raw`y=36`,
-            String.raw`y=60`,
-            String.raw`y=15`,
-            String.raw`y=9`,
-            String.raw`y=6`,
-            String.raw`y=20`
+          stem: String.raw`
+            <p><b>Refer to Figure 4.</b> Which graph represents \(4x+2y=-4\)?</p>
+          `,
+          media: String.raw`
+            <figure>
+              <img src="6-rev-14.png" alt="Six candidate line graphs labeled A through F" />
+              <figcaption>Figure 4</figcaption>
+            </figure>
+          `,
+          choices: [
+            String.raw`Graph A`,
+            String.raw`Graph B`,
+            String.raw`Graph C`,
+            String.raw`Graph D`,
+            String.raw`Graph E`,
+            String.raw`Graph F`
+          ],
+          choiceWrap: false
+        },
+
+        /* Q15 */
+        {
+          stem: String.raw`
+            <p>Consider the relation</p>
+            <p>\(\{(x,y)\mid y=-2x+3;\ x=-2,1,4\}\).</p>
+            <p>Which set of points should be plotted?</p>
+          `,
+          choices: [
+            String.raw`\(\{(-2,-1),(1,5),(4,11)\}\)`,
+            String.raw`\(\{(-2,7),(1,5),(4,1)\}\)`,
+            String.raw`\(\{(-2,7),(1,1),(4,-5)\}\)`,
+            String.raw`\(\{(-2,-7),(1,-1),(4,5)\}\)`,
+            String.raw`\(\{(7,-2),(1,1),(-5,4)\}\)`,
+            String.raw`\(\{(-2,3),(1,3),(4,3)\}\)`
           ]
         },
+
+        /* Q16 */
         {
-          latex   : String.raw`\text{A city has } \$3 \text{ tax on } \$42.87 \text{. How much tax on a } \$5 \text{ item (direct variation)?}`,
-          choices : [
-            String.raw`\$0.25`,
-            String.raw`\$0.35`,
-            String.raw`\$0.50`,
-            String.raw`\$0.75`,
-            String.raw`\$1.00`,
-            String.raw`\$1.25`
-          ]
-        },
-        {
-          latex   : String.raw`\text{Rewrite }3x+y=6\text{ in slope-intercept form and give the (slope, intercept) pair.}`,
-          choices : [
-            String.raw`y=3x+6,\ (m=3,b=6)`,
-            String.raw`y=-3x+6,\ (m=-3,b=6)`,
-            String.raw`y=\tfrac{1}{3}x+6,\ (m=\tfrac{1}{3},b=6)`,
-            String.raw`y=6x+3,\ (m=6,b=3)`,
-            String.raw`y=-\tfrac{1}{3}x+6,\ (m=-\tfrac{1}{3},b=6)`,
-            String.raw`y=-3x-6,\ (m=-3,b=-6)`
-          ]
-        },
-        {
-          latex   : String.raw`\text{Graphically, which inequality describes the shaded half-plane strictly above the line }y=x+7\text{?}`,
-          choices : [
-            String.raw`y\le x+7`,
-            String.raw`y\ge x+7`,
-            String.raw`y > x+7`,
-            String.raw`y < x+7`,
-            String.raw`x\le y+7`,
-            String.raw`x\ge y+7`
-          ]
-        },
-        {
-          latex   : String.raw`\text{Graph }6x+2y<18.\ \text{Which point lies in the solution region?}`,
-          choices : [
-            String.raw`(0,0)`,
-            String.raw`(3,5)`,
-            String.raw`(6,6)`,
-            String.raw`(-3,18)`,
-            String.raw`(0,9)`,
-            String.raw`(10,0)`
-          ]
-        },
-        {
-          latex   : String.raw`\text{Find the slope of the line parallel to }5x+y=8\text{.}`,
-          choices : [
-            String.raw`-5`,
-            String.raw`\tfrac{1}{5}`,
-            String.raw`5`,
-            String.raw`8`,
-            String.raw`0`,
-            String.raw`-1`
-          ]
+          stem: String.raw`
+            <p><b>Refer to Figure 5.</b> Which graph represents \(2x-4y&lt;8\)?</p>
+            <p>Use the class procedure: first isolate \(y\), then decide the boundary type and whether to shade above or below.</p>
+          `,
+          media: String.raw`
+            <figure>
+              <img src="6-rev-16.png" alt="Six candidate graphs of a linear inequality labeled A through F" />
+              <figcaption>Figure 5</figcaption>
+            </figure>
+          `,
+          choices: [
+            String.raw`Graph A`,
+            String.raw`Graph B`,
+            String.raw`Graph C`,
+            String.raw`Graph D`,
+            String.raw`Graph E`,
+            String.raw`Graph F`
+          ],
+          choiceWrap: false
         }
       ]
     };
   </script>
 
-  <link rel="stylesheet" href="/math-homework/assets/core.css" />
-  <link rel="stylesheet" href="https://tikzjax.com/v1/fonts.css" />
-  <script defer src="/math-homework/assets/core.js"></script>
-  <script defer src="https://tikzjax.com/v1/tikzjax.js"></script>
+  <link rel="stylesheet" href="/math-homework/assets/core-rich.css" />
+  <script defer src="/math-homework/assets/core-rich.js"></script>
   <script defer src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
 </head>
+
 <body>
   <div id="hw-root">Loading…</div>
 </body>
