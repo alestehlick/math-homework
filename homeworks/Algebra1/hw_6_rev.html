@@ -12,39 +12,40 @@
 
        REQUIRED SOURCE REFERENCES:
        - Existing Chapter 6 review hw_6_rev(6).html:
-         original Q1–Q12 used as raw material for functions/relations,
+         original Q1–Q12 used as raw material for functions,
          slope, equations of lines, direct variation, and inequalities.
-       - Upcoming Algebra 1 Test 6:
-         #1–#6 coordinate plotting / quadrant-or-axis location;
-         #7–#18 relations, functions, domain/range, tables, mappings, and graphs;
-         #19–#22 direct variation from a table and from context;
-         #23 x- and y-intercepts;
-         #24–#25 slope from two points, including a vertical line;
-         #26–#29 equations of lines from slope/intercept, slope/point,
-         and two points;
-         #30–#33 graphing lines, a restricted relation, and a linear inequality.
-       - Test bonus #34–#35 deliberately not included in this ordinary review.
+       - Upcoming Algebra 1 Test 6, revised according to the user's update:
+         coordinate plotting / quadrant-or-axis location;
+         function recognition from tables, mappings, and graphs;
+         direct variation from a table and from context;
+         x- and y-intercepts;
+         slope from two points, including a vertical line;
+         equations of lines from slope/intercept, slope/point, and two points;
+         graphing linear equations and a linear inequality.
+       - Ordered-pair relation / domain / range material and the restricted
+         relation-as-points item were removed because the user will remove
+         that material from the test.
+       - Test bonus problems deliberately not included in this ordinary review.
 
        MODEL-AUTHORED / MODEL-REWORKED ITEMS:
        - Q1: coordinate-plane reading plus quadrant/axis classification.
-       - Q2: integrates relation/function/domain/range into one item.
-       - Q3–Q5: contrast function recognition across table, mapping diagram,
+       - Q2–Q4: contrast function recognition across table, mapping diagram,
          and graph representations.
-       - Q6: integrates all three direct-variation tasks from Test #19–#21.
-       - Q7: direct-variation application parallel to Test #22.
-       - Q8: x- and y-intercepts from standard form, matching Test #23.
-       - Q9–Q10: ordinary and vertical-line slope cases, matching Test #24–#25.
-       - Q11–Q13: equations of lines from the three information types in Test #26–#29.
-       - Q14: graph selection for a line initially given in standard form.
-       - Q15: restricted-domain relation, preparing for Test #32.
-       - Q16: graphing a linear inequality using the taught method:
+       - Q5: integrates equation, constant, and prediction for direct variation.
+       - Q6: direct-variation application.
+       - Q7: x- and y-intercepts from standard form.
+       - Q8–Q9: ordinary and vertical-line slope cases.
+       - Q10–Q12: equations of lines from slope/intercept, slope/point,
+         and two points.
+       - Q13: graph selection for a line initially given in standard form.
+       - Q14: graphing a linear inequality using the taught method:
          isolate y, use dashed/solid boundary, and shade above/below.
 
        IMAGE FILES:
        - User-supplied figures: none used directly.
        - Model-generated figures:
-         6-rev-1.png, 6-rev-4.png, 6-rev-5.png,
-         6-rev-14.png, 6-rev-16.png
+         6-rev-1.png, 6-rev-3.png, 6-rev-4.png,
+         6-rev-13.png, 6-rev-14.png
 
        IMAGE NAMING RULE:
        - Model-generated figures use final homework question numbering.
@@ -58,7 +59,7 @@
 
       graphics : String.raw``,
 
-      answerKey : ["C","E","B","F","A","D","B","E","C","A","F","D","B","E","C","A"],
+      answerKey : ["C","B","F","A","D","B","E","C","A","F","D","B","E","A"],
 
       questions : [
 
@@ -87,23 +88,6 @@
         /* Q2 */
         {
           stem: String.raw`
-            <p>Consider \(R=\{(-3,4),(0,7),(5,4)\}\).</p>
-            <p>Which statement is correct?</p>
-          `,
-          choices: [
-            String.raw`It is not a relation because the output \(4\) is repeated.`,
-            String.raw`It is a relation but not a function because two inputs have output \(4\).`,
-            String.raw`It is a function with domain \(\{4,7\}\) and range \(\{-3,0,5\}\).`,
-            String.raw`It is not a function because a function cannot have three ordered pairs.`,
-            String.raw`It is a function with domain \(\{-3,0,5\}\) and range \(\{4,7\}\).`,
-            String.raw`It is a function only if all outputs are different.`
-          ],
-          choiceWrap: false
-        },
-
-        /* Q3 */
-        {
-          stem: String.raw`
             <p>Does the table represent a function?</p>
             <table style="border-collapse:collapse; margin:.5rem 0;">
               <tr><th style="border:1px solid #aaa;padding:.25rem .7rem;">\(x\)</th>
@@ -127,14 +111,14 @@
           choiceWrap: false
         },
 
-        /* Q4 */
+        /* Q3 */
         {
           stem: String.raw`
             <p><b>Refer to Figure 2.</b> Does the mapping diagram represent a function?</p>
           `,
           media: String.raw`
             <figure>
-              <img src="6-rev-4.png" alt="Mapping diagram from domain 1, 3, 5 to range 2, 4" />
+              <img src="6-rev-3.png" alt="Mapping diagram from domain 1, 3, 5 to range 2, 4" />
               <figcaption>Figure 2</figcaption>
             </figure>
           `,
@@ -149,14 +133,14 @@
           choiceWrap: false
         },
 
-        /* Q5 */
+        /* Q4 */
         {
           stem: String.raw`
             <p><b>Refer to Figure 3.</b> Does the graph represent \(y\) as a function of \(x\)?</p>
           `,
           media: String.raw`
             <figure>
-              <img src="6-rev-5.png" alt="Smooth curve that gives one y-value for each x-value" />
+              <img src="6-rev-4.png" alt="Smooth curve that gives one y-value for each x-value" />
               <figcaption>Figure 3</figcaption>
             </figure>
           `,
@@ -171,7 +155,7 @@
           choiceWrap: false
         },
 
-        /* Q6 */
+        /* Q5 */
         {
           stem: String.raw`
             <p>The table represents a direct variation.</p>
@@ -203,7 +187,7 @@
           ]
         },
 
-        /* Q7 */
+        /* Q6 */
         {
           stem: String.raw`
             <p>The potential energy \(E\) of an object varies directly with its height \(h\).</p>
@@ -220,7 +204,7 @@
           choiceWrap: false
         },
 
-        /* Q8 */
+        /* Q7 */
         {
           stem: String.raw`
             <p>Without graphing, find the \(x\)- and \(y\)-intercepts of \(4x-3y=12\).</p>
@@ -236,7 +220,7 @@
           choiceWrap: false
         },
 
-        /* Q9 */
+        /* Q8 */
         {
           stem: String.raw`
             <p>Find the slope of the line through \((-2,5)\) and \((4,-7)\).</p>
@@ -251,7 +235,7 @@
           ]
         },
 
-        /* Q10 */
+        /* Q9 */
         {
           stem: String.raw`
             <p>Find the slope of the line through \((3,-1)\) and \((3,8)\).</p>
@@ -266,7 +250,7 @@
           ]
         },
 
-        /* Q11 */
+        /* Q10 */
         {
           stem: String.raw`
             <p>Write the equation of the line with slope \(-4\) and \(y\)-intercept \(7\).</p>
@@ -281,7 +265,7 @@
           ]
         },
 
-        /* Q12 */
+        /* Q11 */
         {
           stem: String.raw`
             <p>Write the equation of the line with slope \(3\) that passes through \((2,-5)\).</p>
@@ -296,7 +280,7 @@
           ]
         },
 
-        /* Q13 */
+        /* Q12 */
         {
           stem: String.raw`
             <p>Write the equation of the line through \((-1,4)\) and \((3,-8)\).</p>
@@ -311,14 +295,14 @@
           ]
         },
 
-        /* Q14 */
+        /* Q13 */
         {
           stem: String.raw`
             <p><b>Refer to Figure 4.</b> Which graph represents \(4x+2y=-4\)?</p>
           `,
           media: String.raw`
             <figure>
-              <img src="6-rev-14.png" alt="Six candidate line graphs labeled A through F" />
+              <img src="6-rev-13.png" alt="Six candidate line graphs labeled A through F" />
               <figcaption>Figure 4</figcaption>
             </figure>
           `,
@@ -333,24 +317,7 @@
           choiceWrap: false
         },
 
-        /* Q15 */
-        {
-          stem: String.raw`
-            <p>Consider the relation</p>
-            <p>\(\{(x,y)\mid y=-2x+3;\ x=-2,1,4\}\).</p>
-            <p>Which set of points should be plotted?</p>
-          `,
-          choices: [
-            String.raw`\(\{(-2,-1),(1,5),(4,11)\}\)`,
-            String.raw`\(\{(-2,7),(1,5),(4,1)\}\)`,
-            String.raw`\(\{(-2,7),(1,1),(4,-5)\}\)`,
-            String.raw`\(\{(-2,-7),(1,-1),(4,5)\}\)`,
-            String.raw`\(\{(7,-2),(1,1),(-5,4)\}\)`,
-            String.raw`\(\{(-2,3),(1,3),(4,3)\}\)`
-          ]
-        },
-
-        /* Q16 */
+        /* Q14 */
         {
           stem: String.raw`
             <p><b>Refer to Figure 5.</b> Which graph represents \(2x-4y&lt;8\)?</p>
@@ -358,7 +325,7 @@
           `,
           media: String.raw`
             <figure>
-              <img src="6-rev-16.png" alt="Six candidate graphs of a linear inequality labeled A through F" />
+              <img src="6-rev-14.png" alt="Six candidate graphs of a linear inequality labeled A through F" />
               <figcaption>Figure 5</figcaption>
             </figure>
           `,
