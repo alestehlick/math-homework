@@ -16,26 +16,27 @@
          No item was copied literally; the model-authored opening mirrors its
          gradual move from direct exponent arithmetic to mixed structure.
        - Textbook A. Exercises used/adapted:
-         #3 -> Q43, #4 -> Q44, #11 -> Q45, #12 -> Q46.
+         #3 -> Q46, #4 -> Q47, #11 -> Q48, #12 -> Q49.
        - Textbook B. Exercises used/adapted:
-         #16 -> Q53, #17 -> Q67, #18 -> Q55, #21 -> Q56,
-         #22 -> Q40, #23 -> Q57,
-         #25 -> Q70, #26 -> Q71, #27 -> Q72, #28 -> Q73,
-         #29 -> Q74, #30 -> Q75, #31 -> Q76, #32 -> Q77,
-         #33 -> Q78, #34 -> Q79.
+         #16 -> Q63, #17 -> Q77, #18 -> Q65, #21 -> Q66,
+         #22 -> Q43, #23 -> Q67,
+         #25 -> Q50, #26 -> Q51, #27 -> Q35, #28 -> Q36,
+         #29 -> Q37, #30 -> Q52, #31 -> Q53, #32 -> Q54,
+         #33 -> Q55, #34 -> Q56.
        - Textbook C. Exercises used/adapted:
          #35 -> Q80, #36 -> Q81.
 
        MODEL-AUTHORED / MODEL-REWORKED ITEMS:
        - Q1–Q24 build the laws first where they are visible for natural exponents,
          then force zero and negative exponents by preserving those laws.
-       - Q25–Q42 develop fractional powers from the power-of-a-power law,
-         then stabilize radical/exponent translation and negative fractional powers.
-       - Q47–Q52 explicitly connect rational powers to the extension to real
+       - Q25–Q56 develop fractional powers from the power-of-a-power law,
+         stabilize radical/exponent translation, and weave in progressively richer
+         textbook conversion and evaluation problems without breaking the ascent.
+       - Q57–Q62 explicitly connect rational powers to the extension to real
          exponents, including one irrational-exponent simplification.
-       - Q49–Q51 revisit the early "missing exponent" pattern with fractions.
-       - Q54 and Q58–Q69 interleave all six laws, contrast multiplication with
-         addition, and diagnose false "distribution" or exponent-combination rules.
+       - Q59–Q61 revisit the early "missing exponent" pattern with fractions.
+       - Q63–Q79 interleave all six laws, contrast multiplication with addition,
+         and diagnose false "distribution" or exponent-combination rules.
        - Q82–Q91 form the final synthesis: several laws appear in the same
          expression, but each problem is designed to collapse through structure
          rather than through ugly arithmetic.
@@ -57,7 +58,7 @@
       title     : "Homework 7-1 — Powers and Rational Exponents",
       graphics  : String.raw``,
 
-      answerKey : ["B", "C", "D", "A", "E", "F", "B", "C", "D", "A", "E", "C", "B", "D", "F", "A", "E", "C", "D", "B", "F", "C", "A", "E", "C", "F", "B", "D", "A", "E", "B", "F", "C", "A", "E", "D", "F", "B", "C", "A", "D", "F", "C", "B", "E", "A", "D", "F", "F", "B", "E", "A", "B", "E", "C", "A", "F", "D", "B", "A", "C", "F", "A", "D", "B", "E", "C", "A", "E", "D", "B", "F", "C", "A", "E", "D", "B", "F", "C", "A", "E", "B", "D", "F", "C", "A", "E", "B", "D", "F", "C", "A"],
+      answerKey : ["B", "C", "D", "A", "E", "F", "B", "C", "D", "A", "E", "C", "B", "D", "F", "A", "E", "C", "D", "B", "F", "C", "A", "E", "C", "F", "B", "D", "A", "E", "B", "F", "C", "A", "F", "C", "A", "E", "D", "F", "B", "C", "A", "D", "F", "C", "B", "E", "A", "D", "B", "E", "D", "B", "F", "C", "D", "F", "F", "B", "E", "A", "B", "E", "C", "A", "F", "D", "B", "A", "C", "F", "A", "D", "B", "E", "C", "A", "E", "A", "E", "B", "D", "F", "C", "A", "E", "B", "D", "F", "C", "A"],
 
       questions : [
         /* Q1: model-authored */
@@ -363,14 +364,14 @@
 
         /* Q24: model-authored */
         {
-          stem: String.raw`<p>Why does the rule \(a^{-x}=\dfrac1{a^x}\) fit naturally with the product law?</p>`,
+          stem: String.raw`<p>Which argument best explains why the rule \(a^{-x}=\dfrac1{a^x}\) fits naturally with the product law?</p>`,
           choices: [
-            String.raw`Because a negative exponent means that the base itself must be negative.`,
-            String.raw`Because exponents always become reciprocals when they are multiplied.`,
-            String.raw`Because \(a^{-x}\) is defined to mean \(-a^x\).`,
-            String.raw`Because \(a^x+a^{-x}=a^0=1\).`,
+            String.raw`Because \(a^x\cdot a^{-x}=a^{x(-x)}=a^{-x^2}\), so a negative exponent reverses the power.`,
+            String.raw`Because \(a^x+a^{-x}=a^{x-x}=a^0=1\), so the two powers must be reciprocals.`,
+            String.raw`Because \(\dfrac{a^x}{a^{-x}}=a^{x-x}=a^0=1\), so \(a^{-x}\) must equal \(a^x\).`,
+            String.raw`Because \(a^{-x}=(-a)^x\), and changing the sign of the base makes the result a reciprocal.`,
             String.raw`Because \(a^x\cdot a^{-x}=a^{x-x}=a^0=1\), so \(a^{-x}\) must be the reciprocal of \(a^x\).`,
-            String.raw`Because \(a^x/a^{-x}=1\) for every \(x\).`
+            String.raw`Because \(a^x\cdot a^{-x}=a^{-2x}\), and every product with a negative exponent equals \(1\).`
           ],
           choiceWrap: false
         },
@@ -505,7 +506,46 @@
           ]
         },
 
-        /* Q35: model-authored */
+        /* Q35: Textbook B #27 adapted */
+        {
+          stem: String.raw`<p>Evaluate \(\sqrt{196}\).</p>`,
+          choices: [
+            String.raw`\(7\)`,
+            String.raw`\(12\)`,
+            String.raw`\(98\)`,
+            String.raw`\(28\)`,
+            String.raw`\(196\)`,
+            String.raw`\(14\)`
+          ]
+        },
+
+        /* Q36: Textbook B #28 adapted */
+        {
+          stem: String.raw`<p>Evaluate \(\sqrt[3]{512}\).</p>`,
+          choices: [
+            String.raw`\(4\)`,
+            String.raw`\(16\)`,
+            String.raw`\(8\)`,
+            String.raw`\(32\)`,
+            String.raw`\(6\)`,
+            String.raw`\(64\)`
+          ]
+        },
+
+        /* Q37: Textbook B #29 adapted */
+        {
+          stem: String.raw`<p>Evaluate \(\sqrt[3]{27{,}000}\).</p>`,
+          choices: [
+            String.raw`\(30\)`,
+            String.raw`\(300\)`,
+            String.raw`\(90\)`,
+            String.raw`\(27\)`,
+            String.raw`\(3{,}000\)`,
+            String.raw`\(9\)`
+          ]
+        },
+
+        /* Q38: model-authored */
         {
           stem: String.raw`<p>Evaluate \(16^{3/4}\).</p>`,
           choices: [
@@ -518,7 +558,7 @@
           ]
         },
 
-        /* Q36: model-authored */
+        /* Q39: model-authored */
         {
           stem: String.raw`<p>Evaluate \(32^{2/5}\).</p>`,
           choices: [
@@ -531,7 +571,7 @@
           ]
         },
 
-        /* Q37: model-authored */
+        /* Q40: model-authored */
         {
           stem: String.raw`<p>Evaluate \(81^{-3/4}\).</p>`,
           choices: [
@@ -544,7 +584,7 @@
           ]
         },
 
-        /* Q38: model-authored */
+        /* Q41: model-authored */
         {
           stem: String.raw`<p>Evaluate \(\left(\dfrac1{64}\right)^{-1/3}\).</p>`,
           choices: [
@@ -557,7 +597,7 @@
           ]
         },
 
-        /* Q39: model-authored */
+        /* Q42: model-authored */
         {
           stem: String.raw`<p>Rewrite \(a^{-2/3}\) using a radical and no negative exponent.</p>`,
           choices: [
@@ -570,7 +610,7 @@
           ]
         },
 
-        /* Q40: Textbook B #22 adapted */
+        /* Q43: Textbook B #22 adapted */
         {
           stem: String.raw`<p>Rewrite \(a^{-1/2}\) in radical form using no negative exponent.</p>`,
           choices: [
@@ -583,7 +623,7 @@
           ]
         },
 
-        /* Q41: model-authored */
+        /* Q44: model-authored */
         {
           stem: String.raw`<p>In the expression \(a^{p/q}\), what roles do \(p\) and \(q\) play in the corresponding radical form?</p>`,
           choices: [
@@ -597,7 +637,7 @@
           choiceWrap: false
         },
 
-        /* Q42: model-authored */
+        /* Q45: model-authored */
         {
           stem: String.raw`<p>Which expression is the radical form of \(a^{3/4}\) with root index \(4\)?</p>`,
           choices: [
@@ -610,7 +650,7 @@
           ]
         },
 
-        /* Q43: Textbook A #3 adapted */
+        /* Q46: Textbook A #3 adapted */
         {
           stem: String.raw`<p>Write \(\sqrt[3]{12a^2b}\) in rational-exponent form.</p>`,
           choices: [
@@ -623,7 +663,7 @@
           ]
         },
 
-        /* Q44: Textbook A #4 adapted */
+        /* Q47: Textbook A #4 adapted */
         {
           stem: String.raw`<p>Write \(\sqrt[5]{7x^4yz^2}\) in rational-exponent form.</p>`,
           choices: [
@@ -636,7 +676,7 @@
           ]
         },
 
-        /* Q45: Textbook A #11 adapted */
+        /* Q48: Textbook A #11 adapted */
         {
           stem: String.raw`<p>Write \(3^{3/8}x^{1/3}\) in radical form.</p>`,
           choices: [
@@ -649,7 +689,7 @@
           ]
         },
 
-        /* Q46: Textbook A #12 adapted */
+        /* Q49: Textbook A #12 adapted */
         {
           stem: String.raw`<p>Write \(5^{1/5}x^{3/10}\) in radical form.</p>`,
           choices: [
@@ -662,7 +702,98 @@
           ]
         },
 
-        /* Q47: model-authored */
+        /* Q50: Textbook B #25 adapted */
+        {
+          stem: String.raw`<p>Evaluate and simplify \(\sqrt[5]{32a^{10}}\).</p>`,
+          choices: [
+            String.raw`\(2a^5\)`,
+            String.raw`\(32a^2\)`,
+            String.raw`\(4a^2\)`,
+            String.raw`\(2a^2\)`,
+            String.raw`\(2a^{10}\)`,
+            String.raw`\(a^2\sqrt[5]{2}\)`
+          ]
+        },
+
+        /* Q51: Textbook B #26 adapted */
+        {
+          stem: String.raw`<p>Evaluate and simplify \(\sqrt[3]{\dfrac1{8x^9}}\).</p>`,
+          choices: [
+            String.raw`\(\dfrac1{8x^3}\)`,
+            String.raw`\(\dfrac1{2x^3}\)`,
+            String.raw`\(\dfrac1{2x^9}\)`,
+            String.raw`\(\dfrac1{4x^3}\)`,
+            String.raw`\(\dfrac{x^3}{2}\)`,
+            String.raw`\(\dfrac1{2x^6}\)`
+          ]
+        },
+
+        /* Q52: Textbook B #30 adapted */
+        {
+          stem: String.raw`<p>Evaluate and simplify \(\sqrt[4]{16a^8b^{16}}\).</p>`,
+          choices: [
+            String.raw`\(4a^2b^4\)`,
+            String.raw`\(2a^4b^4\)`,
+            String.raw`\(2a^2b^8\)`,
+            String.raw`\(4a^4b^8\)`,
+            String.raw`\(2a^2b^4\)`,
+            String.raw`\(8a^2b^4\)`
+          ]
+        },
+
+        /* Q53: Textbook B #31 adapted */
+        {
+          stem: String.raw`<p>Evaluate and simplify \(\sqrt[4]{6561x^8}\).</p>`,
+          choices: [
+            String.raw`\(81x^2\)`,
+            String.raw`\(9x^4\)`,
+            String.raw`\(3x^2\)`,
+            String.raw`\(9x^2\)`,
+            String.raw`\(27x^2\)`,
+            String.raw`\(9x^8\)`
+          ]
+        },
+
+        /* Q54: Textbook B #32 adapted */
+        {
+          stem: String.raw`<p>Evaluate \(\left(\dfrac{343}{8}\right)^{1/3}\).</p>`,
+          choices: [
+            String.raw`\(\dfrac37\)`,
+            String.raw`\(\dfrac72\)`,
+            String.raw`\(\dfrac{49}{4}\)`,
+            String.raw`\(\dfrac78\)`,
+            String.raw`\(\dfrac{21}{2}\)`,
+            String.raw`\(\dfrac27\)`
+          ]
+        },
+
+        /* Q55: Textbook B #33 adapted */
+        {
+          stem: String.raw`<p>Simplify \((256a^2b^{10})^{1/2}\).</p>`,
+          choices: [
+            String.raw`\(8ab^5\)`,
+            String.raw`\(16a^2b^5\)`,
+            String.raw`\(16ab^{10}\)`,
+            String.raw`\(128ab^5\)`,
+            String.raw`\(16ab^2\)`,
+            String.raw`\(16ab^5\)`
+          ]
+        },
+
+        /* Q56: Textbook B #34 adapted */
+        {
+          stem: String.raw`<p>Evaluate and simplify \(\left(\dfrac{1728x^{12}}{125}\right)^{1/3}\).</p>`,
+          choices: [
+            String.raw`\(\dfrac{12x^3}{5}\)`,
+            String.raw`\(\dfrac{6x^4}{5}\)`,
+            String.raw`\(\dfrac{12x^4}{5}\)`,
+            String.raw`\(\dfrac{12x^4}{25}\)`,
+            String.raw`\(\dfrac{24x^4}{5}\)`,
+            String.raw`\(\dfrac{576x^4}{125}\)`
+          ]
+        },
+
+        /* Q57: model-authored */
         {
           stem: String.raw`<p>Which identity correctly shows the two standard routes for interpreting \(a^{p/q}\)?</p>`,
           choices: [
@@ -675,21 +806,21 @@
           ]
         },
 
-        /* Q48: model-authored */
+        /* Q58: model-authored */
         {
           stem: String.raw`<p>For an irrational exponent such as \(\sqrt2\), the expression \(a^{\sqrt2}\) is not repeated multiplication a non-integer number of times. Which description is mathematically appropriate for the usual real power?</p>`,
           choices: [
-            String.raw`It means multiplying \(a\) by itself exactly \(\sqrt2\) times.`,
-            String.raw`It is defined to be \(\sqrt[\sqrt2]{a}\), using an irrational root index as an elementary radical.`,
-            String.raw`It always equals \(a\sqrt2\).`,
-            String.raw`It is defined by rounding \(\sqrt2\) to the nearest rational exponent.`,
-            String.raw`It has no meaning as a real number, even when \(a>0\).`,
-            String.raw`It is obtained as the continuous extension of rational powers, preserving the exponent laws such as \(a^x a^y=a^{x+y}\).`
+            String.raw`It is obtained by truncating the decimal expansion of \(\sqrt2\) and treating that finite decimal exponent as exact.`,
+            String.raw`It means multiplying \(a\) by itself exactly \(\sqrt2\) times, extending repeated multiplication literally.`,
+            String.raw`It is defined as the elementary radical \(\sqrt[\sqrt2]{a}\), with \(\sqrt2\) used directly as a root index.`,
+            String.raw`It may be replaced by any rational power \(a^r\) with \(r\) close enough to \(\sqrt2\); no limiting process is needed.`,
+            String.raw`It has no real meaning when the exponent is irrational, even if the base \(a\) is positive.`,
+            String.raw`It is obtained by continuously extending rational powers to real exponents, consistently with laws such as \(a^x a^y=a^{x+y}\).`
           ],
           choiceWrap: false
         },
 
-        /* Q49: model-authored */
+        /* Q59: model-authored */
         {
           stem: String.raw`<p>Find \(r\).</p><p>\(a^{2/3}\cdot a^r=a^{7/6}\)</p>`,
           choices: [
@@ -702,7 +833,7 @@
           ]
         },
 
-        /* Q50: model-authored */
+        /* Q60: model-authored */
         {
           stem: String.raw`<p>Find \(r\).</p><p>\((a^{3/5})^r=a^{9/10}\)</p>`,
           choices: [
@@ -715,7 +846,7 @@
           ]
         },
 
-        /* Q51: model-authored */
+        /* Q61: model-authored */
         {
           stem: String.raw`<p>Find \(r\).</p><p>\(\dfrac{a^r}{a^{-1/4}}=a^{5/4}\)</p>`,
           choices: [
@@ -728,7 +859,7 @@
           ]
         },
 
-        /* Q52: model-authored */
+        /* Q62: model-authored */
         {
           stem: String.raw`<p>Simplify without trying to evaluate \(a^{\sqrt2}\) separately:</p>
 <p>\(a^{\sqrt2}\cdot a^{\,1-\sqrt2}\)</p>`,
@@ -742,7 +873,7 @@
           ]
         },
 
-        /* Q53: Textbook B #16 adapted */
+        /* Q63: Textbook B #16 adapted */
         {
           stem: String.raw`<p>Evaluate \(3^{1/2}\cdot 3^{3/2}\).</p>`,
           choices: [
@@ -755,7 +886,7 @@
           ]
         },
 
-        /* Q54: model-authored */
+        /* Q64: model-authored */
         {
           stem: String.raw`<p>Simplify \(\dfrac{a^{5/3}}{a^{2/3}}\).</p>`,
           choices: [
@@ -768,7 +899,7 @@
           ]
         },
 
-        /* Q55: Textbook B #18 adapted */
+        /* Q65: Textbook B #18 adapted */
         {
           stem: String.raw`<p>Evaluate \((5^{3/4})^4\).</p>`,
           choices: [
@@ -781,7 +912,7 @@
           ]
         },
 
-        /* Q56: Textbook B #21 adapted */
+        /* Q66: Textbook B #21 adapted */
         {
           stem: String.raw`<p>Simplify \((3x^2y)^{1/2}\).</p>`,
           choices: [
@@ -794,7 +925,7 @@
           ]
         },
 
-        /* Q57: Textbook B #23 adapted */
+        /* Q67: Textbook B #23 adapted */
         {
           stem: String.raw`<p>Simplify \((7^3a^2b^3)^{1/3}\).</p>`,
           choices: [
@@ -807,7 +938,7 @@
           ]
         },
 
-        /* Q58: model-authored */
+        /* Q68: model-authored */
         {
           stem: String.raw`<p>Simplify \((ab)^{2/3}\).</p>`,
           choices: [
@@ -820,7 +951,7 @@
           ]
         },
 
-        /* Q59: model-authored */
+        /* Q69: model-authored */
         {
           stem: String.raw`<p>Rewrite \(a^{1/2}b^{1/2}\) as one power.</p>`,
           choices: [
@@ -833,7 +964,7 @@
           ]
         },
 
-        /* Q60: model-authored */
+        /* Q70: model-authored */
         {
           stem: String.raw`<p>Simplify \((a^{2/3}b^{-1/2})^6\) using only positive exponents.</p>`,
           choices: [
@@ -846,7 +977,7 @@
           ]
         },
 
-        /* Q61: model-authored */
+        /* Q71: model-authored */
         {
           stem: String.raw`<p>Simplify \(\dfrac{(ab)^{3/2}}{a^{1/2}b}\).</p>`,
           choices: [
@@ -859,7 +990,7 @@
           ]
         },
 
-        /* Q62: model-authored */
+        /* Q72: model-authored */
         {
           stem: String.raw`<p>Simplify \(\dfrac{a^{5/4}a^{-1/2}}{a^{1/4}}\).</p>`,
           choices: [
@@ -872,7 +1003,7 @@
           ]
         },
 
-        /* Q63: model-authored */
+        /* Q73: model-authored */
         {
           stem: String.raw`<p>Simplify \((a^{1/3})^{-6}\) using only positive exponents.</p>`,
           choices: [
@@ -885,7 +1016,7 @@
           ]
         },
 
-        /* Q64: model-authored */
+        /* Q74: model-authored */
         {
           stem: String.raw`<p>Simplify \((a^{-2/3}b^{1/4})^{-3}\) using only positive exponents.</p>`,
           choices: [
@@ -898,7 +1029,7 @@
           ]
         },
 
-        /* Q65: model-authored */
+        /* Q75: model-authored */
         {
           stem: String.raw`<p>Simplify \(\dfrac{x^{-1/2}y^{3/2}}{x^{-3/2}y^{1/2}}\).</p>`,
           choices: [
@@ -911,7 +1042,7 @@
           ]
         },
 
-        /* Q66: model-authored */
+        /* Q76: model-authored */
         {
           stem: String.raw`<p>Which simplification is valid for all positive \(a\) and \(b\)?</p>`,
           choices: [
@@ -924,7 +1055,7 @@
           ]
         },
 
-        /* Q67: Textbook B #17 adapted */
+        /* Q77: Textbook B #17 adapted */
         {
           stem: String.raw`<p>Simplify \(2^{5/2}+2^{3/2}\).</p>`,
           choices: [
@@ -937,9 +1068,9 @@
           ]
         },
 
-        /* Q68: model-authored */
+        /* Q78: model-authored */
         {
-          stem: String.raw`<p>Which is the simplest correct form obtainable from the exponent laws alone for \(a^{1/2}+a^{1/3}\)?</p>`,
+          stem: String.raw`<p>Which of the following is equivalent to \(a^{1/2}+a^{1/3}\) for every positive \(a\)?</p>`,
           choices: [
             String.raw`\(a^{1/2}+a^{1/3}\)`,
             String.raw`\(a^{5/6}\)`,
@@ -950,7 +1081,7 @@
           ]
         },
 
-        /* Q69: model-authored */
+        /* Q79: model-authored */
         {
           stem: String.raw`<p>Which statement is <b>not</b> an identity for all positive \(a,b\) and real exponents for which the expressions are defined?</p>`,
           choices: [
@@ -960,136 +1091,6 @@
             String.raw`\((a^x)^y=a^{xy}\)`,
             String.raw`\((a+b)^x=a^x+b^x\)`,
             String.raw`\(a^{-x}=\dfrac1{a^x}\)`
-          ]
-        },
-
-        /* Q70: Textbook B #25 adapted */
-        {
-          stem: String.raw`<p>Evaluate and simplify \(\sqrt[5]{32a^{10}}\).</p>`,
-          choices: [
-            String.raw`\(2a^5\)`,
-            String.raw`\(32a^2\)`,
-            String.raw`\(4a^2\)`,
-            String.raw`\(2a^2\)`,
-            String.raw`\(2a^{10}\)`,
-            String.raw`\(a^2\sqrt[5]{2}\)`
-          ]
-        },
-
-        /* Q71: Textbook B #26 adapted */
-        {
-          stem: String.raw`<p>Evaluate and simplify \(\sqrt[3]{\dfrac1{8x^9}}\).</p>`,
-          choices: [
-            String.raw`\(\dfrac1{8x^3}\)`,
-            String.raw`\(\dfrac1{2x^3}\)`,
-            String.raw`\(\dfrac1{2x^9}\)`,
-            String.raw`\(\dfrac1{4x^3}\)`,
-            String.raw`\(\dfrac{x^3}{2}\)`,
-            String.raw`\(\dfrac1{2x^6}\)`
-          ]
-        },
-
-        /* Q72: Textbook B #27 adapted */
-        {
-          stem: String.raw`<p>Evaluate \(\sqrt{196}\).</p>`,
-          choices: [
-            String.raw`\(7\)`,
-            String.raw`\(12\)`,
-            String.raw`\(98\)`,
-            String.raw`\(28\)`,
-            String.raw`\(196\)`,
-            String.raw`\(14\)`
-          ]
-        },
-
-        /* Q73: Textbook B #28 adapted */
-        {
-          stem: String.raw`<p>Evaluate \(\sqrt[3]{512}\).</p>`,
-          choices: [
-            String.raw`\(4\)`,
-            String.raw`\(16\)`,
-            String.raw`\(8\)`,
-            String.raw`\(32\)`,
-            String.raw`\(6\)`,
-            String.raw`\(64\)`
-          ]
-        },
-
-        /* Q74: Textbook B #29 adapted */
-        {
-          stem: String.raw`<p>Evaluate \(\sqrt[3]{27{,}000}\).</p>`,
-          choices: [
-            String.raw`\(30\)`,
-            String.raw`\(300\)`,
-            String.raw`\(90\)`,
-            String.raw`\(27\)`,
-            String.raw`\(3{,}000\)`,
-            String.raw`\(9\)`
-          ]
-        },
-
-        /* Q75: Textbook B #30 adapted */
-        {
-          stem: String.raw`<p>Evaluate and simplify \(\sqrt[4]{16a^8b^{16}}\).</p>`,
-          choices: [
-            String.raw`\(4a^2b^4\)`,
-            String.raw`\(2a^4b^4\)`,
-            String.raw`\(2a^2b^8\)`,
-            String.raw`\(4a^4b^8\)`,
-            String.raw`\(2a^2b^4\)`,
-            String.raw`\(8a^2b^4\)`
-          ]
-        },
-
-        /* Q76: Textbook B #31 adapted */
-        {
-          stem: String.raw`<p>Simplify \(\sqrt[3]{6561x^6}\) as far as possible.</p>`,
-          choices: [
-            String.raw`\(9x^2\)`,
-            String.raw`\(27x^2\sqrt[3]{3}\)`,
-            String.raw`\(9x^3\sqrt[3]{9}\)`,
-            String.raw`\(9x^2\sqrt[3]{9}\)`,
-            String.raw`\(3x^2\sqrt[3]{9}\)`,
-            String.raw`\(81x^2\)`
-          ]
-        },
-
-        /* Q77: Textbook B #32 adapted */
-        {
-          stem: String.raw`<p>Evaluate \(\left(\dfrac{343}{8}\right)^{1/3}\).</p>`,
-          choices: [
-            String.raw`\(\dfrac37\)`,
-            String.raw`\(\dfrac72\)`,
-            String.raw`\(\dfrac{49}{4}\)`,
-            String.raw`\(\dfrac78\)`,
-            String.raw`\(\dfrac{21}{2}\)`,
-            String.raw`\(\dfrac27\)`
-          ]
-        },
-
-        /* Q78: Textbook B #33 adapted */
-        {
-          stem: String.raw`<p>Simplify \((256a^2b^{10})^{1/2}\).</p>`,
-          choices: [
-            String.raw`\(8ab^5\)`,
-            String.raw`\(16a^2b^5\)`,
-            String.raw`\(16ab^{10}\)`,
-            String.raw`\(128ab^5\)`,
-            String.raw`\(16ab^2\)`,
-            String.raw`\(16ab^5\)`
-          ]
-        },
-
-        /* Q79: Textbook B #34 adapted */
-        {
-          stem: String.raw`<p>Evaluate and simplify \(\left(\dfrac{1728x^{12}}{125}\right)^{1/3}\).</p>`,
-          choices: [
-            String.raw`\(\dfrac{12x^3}{5}\)`,
-            String.raw`\(\dfrac{6x^4}{5}\)`,
-            String.raw`\(\dfrac{12x^4}{5}\)`,
-            String.raw`\(\dfrac{12x^4}{25}\)`,
-            String.raw`\(\dfrac{24x^4}{5}\)`,
-            String.raw`\(\dfrac{576x^4}{125}\)`
           ]
         },
 
