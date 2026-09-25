@@ -23,10 +23,14 @@
          to the absolute-value issue from 7-2.
        - Q10–Q11 are model-authored recognition/diagnostic questions designed to
          prevent blind use of radical-addition rules.
-       - Q12–Q14 rework the exponential-expression questions from 7-3 and emphasize
-         the shared algebraic structure of like terms.
-       - Q15–Q16 are model-authored synthesis questions combining simplification,
-         absolute value, and structural judgment.
+       - Q12–Q17 develop exponential-expression simplification: first already-like
+         powers, then rewriting to a chosen common power and collecting coefficients.
+       - Q18 makes the shared algebraic structure of radical and exponential like terms explicit.
+       - Q19–Q20 are synthesis/diagnostic questions on radicals and absolute value.
+       - Q21 is model-authored from the user's requested nested-cube-root expression,
+         designed to convert nested radicals into one radical.
+       - Q22 is model-authored from the user's requested challenging exponent expression,
+         designed to test selective rewriting and recognizing when collection must stop.
 
        IMAGE FILES:
        - None required.
@@ -39,8 +43,8 @@
 
       graphics : String.raw``,
 
-      /* Correct answers for Q1–Q16 */
-      answerKey : ["D","B","E","F","C","A","E","D","B","C","F","D","B","E","C","A"],
+      /* Correct answers for Q1–Q22 */
+      answerKey : ["D","B","E","F","C","A","E","D","B","C","F","D","E","B","A","C","F","E","C","A","D","B"],
 
       questions : [
         {
@@ -212,6 +216,20 @@
         },
         {
           stem: String.raw`
+            <p>Rewrite each term as a multiple of \(5^{20}\), then simplify.</p>
+            <p class="math">\(5^{21}+3\cdot5^{20}\)</p>
+          `,
+          choices: [
+            String.raw`\(4\cdot5^{20}\)`,
+            String.raw`\(4\cdot5^{21}\)`,
+            String.raw`\(5^{23}\)`,
+            String.raw`\(8\cdot5^{21}\)`,
+            String.raw`\(8\cdot5^{20}\)`,
+            String.raw`\(15\cdot5^{20}\)`
+          ]
+        },
+        {
+          stem: String.raw`
             <p>Rewrite and simplify.</p>
             <p class="math">\(6^{x}+6^{x+1}\)</p>
           `,
@@ -222,6 +240,48 @@
             String.raw`\(2\cdot6^{x+1}\)`,
             String.raw`\(6^{x}(x+1)\)`,
             String.raw`\(6^{x+2}\)`
+          ]
+        },
+        {
+          stem: String.raw`
+            <p>Rewrite each term as a multiple of \(3^{m}\), then collect like terms.</p>
+            <p class="math">\(2\cdot3^{m+2}-5\cdot3^{m+1}+3^{m}\)</p>
+          `,
+          choices: [
+            String.raw`\(4\cdot3^{m}\)`,
+            String.raw`\(2\cdot3^{m}\)`,
+            String.raw`\(14\cdot3^{m}\)`,
+            String.raw`\(-4\cdot3^{m}\)`,
+            String.raw`\(3^{3m+3}\)`,
+            String.raw`\(4\cdot3^{m+1}\)`
+          ]
+        },
+        {
+          stem: String.raw`
+            <p>Write the expression as a single coefficient times \(3^{2x}\).</p>
+            <p class="math">\(9^{x}+3^{2x+1}\)</p>
+          `,
+          choices: [
+            String.raw`\(2\cdot3^{2x+1}\)`,
+            String.raw`\(10\cdot3^{2x}\)`,
+            String.raw`\(4\cdot3^{2x}\)`,
+            String.raw`\(4\cdot3^{x}\)`,
+            String.raw`\(3^{4x+1}\)`,
+            String.raw`\(3^{2x+2}\)`
+          ]
+        },
+        {
+          stem: String.raw`
+            <p>Rewrite each term as a multiple of \(2^{n-1}\), then collect like terms.</p>
+            <p class="math">\(2^{n+2}-3\cdot2^{n}+2^{n-1}\)</p>
+          `,
+          choices: [
+            String.raw`\(6\cdot2^{n-1}\)`,
+            String.raw`\(2\cdot2^{n-1}\)`,
+            String.raw`\(-3\cdot2^{n-1}\)`,
+            String.raw`\(3\cdot2^{n+1}\)`,
+            String.raw`\(2^{3n+1}\)`,
+            String.raw`\(3\cdot2^{n-1}\)`
           ]
         },
         {
@@ -264,7 +324,35 @@
             String.raw`\(\sqrt[4]{16x^{4}}=2x\)`,
             String.raw`\(\sqrt{x^{2}+1}=|x|+1\)`
           ]
-        }
+        },
+        {
+          stem: String.raw`
+            <p>Write the nested radical as a <strong>single radical</strong>. Assume \(a>0\).</p>
+            <p class="math">\(\sqrt[3]{a\sqrt[3]{a\sqrt[3]{a}}}\)</p>
+          `,
+          choices: [
+            String.raw`\(\sqrt[9]{a^{5}}\)`,
+            String.raw`\(\sqrt[27]{a^{7}}\)`,
+            String.raw`\(\sqrt[9]{a^{13}}\)`,
+            String.raw`\(\sqrt[27]{a^{13}}\)`,
+            String.raw`\(\sqrt[27]{a^{9}}\)`,
+            String.raw`\(\sqrt[81]{a^{13}}\)`
+          ]
+        },
+        {
+          stem: String.raw`
+            <p>Simplify by combining any terms that can be combined after rewriting powers. Do <strong>not</strong> factor the final expression.</p>
+            <p class="math">\(2^{2k+1}-2^{2k-1}+2^{-2k}\)</p>
+          `,
+          choices: [
+            String.raw`\(3\cdot2^{2k}+2^{-2k}\)`,
+            String.raw`\(3\cdot2^{2k-1}+2^{-2k}\)`,
+            String.raw`\(2^{2k}+2^{-2k}\)`,
+            String.raw`\(3\cdot2^{2k-2}+2^{-2k}\)`,
+            String.raw`\(3\cdot2^{2k-1}+2^{2k}\)`,
+            String.raw`\(2^{4k}+2^{-2k}\)`
+          ]
+        },
       ]
     };
   </script>
