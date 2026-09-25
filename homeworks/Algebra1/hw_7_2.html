@@ -6,328 +6,286 @@
   <title>Homework 7-2 (Algebra 1)</title>
 
   <script>
-    /* =========================================
-       Homework 7-2 — Solve Systems BY GRAPHING
-       TikZ bundle first (G1–G12); questions reference G#.
-       ========================================= */
+    /* =========================
+       Homework 7-2 — Solving Systems by Graphing (Algebra 1)
+       Adapted for: /math-homework/assets/core-rich.js
+
+       REQUIRED SOURCE REFERENCES:
+       - Existing Homework 7-2, graph set G1–G12 and source Q1–Q12.
+       - G1, G4–G9, and G12 supplied raw material for one-solution
+         graph-reading and intersection questions.
+       - G2 and G11 supplied raw material for parallel-line / no-solution cases.
+       - G3 and G10 supplied raw material for coincident-line /
+         infinitely-many-solutions cases.
+
+       MODEL-AUTHORED / MODEL-REWORKED ITEMS:
+       - Q1: reworks the one-intersection graph-reading skill, but removes
+         the pre-marked solution point.
+       - Q2: reworks the parallel-line case and uses possible/impossible
+         plus number-of-solutions language.
+       - Q3: reworks the coincident-line case from equations rather than an
+         ambiguous double-drawn line.
+       - Q4: model-authored reverse-direction task: choose the graph of a
+         given system rather than merely reading a finished graph.
+       - Q5: model-authored conversion-to-graphing task with one equation
+         initially in standard form.
+       - Q6: reworks the vertical/horizontal case from source G4.
+       - Q7: model-authored error diagnosis for rewriting a line before graphing.
+       - Q8: model-authored verification of a graphical solution as a point
+         lying on both lines.
+       - Q9: reworks source G12 as an estimation problem without a marked point.
+       - Q10: model-authored synthesis comparing one-solution, no-solution,
+         and infinitely-many-solutions systems.
+
+       IMAGE FILES:
+       - User-supplied figures: none used directly.
+       - Model-generated figures:
+         7-2-1.png, 7-2-2.png, 7-2-4.png, 7-2-6.png, 7-2-9.png
+
+       IMAGE NAMING RULE:
+       - Model-generated figures use final homework question numbering.
+       - PNG files live in the SAME folder as this HTML.
+       ========================= */
+
     window.homeworkData = {
       classId : "Algebra1",
       id      : "Homework 7-2",
-      title   : "Homework 7-2 — Graphing Systems (TikZ)",
+      title   : "Homework 7-2 — Solving Systems by Graphing",
 
-      /* ===== All 12 graphs (with clipping) ===== */
-      graphics : String.raw`
-\begin{tikzpicture}[scale=0.58]
-  \tikzset{axes/.style={->,thick}}
-  \tikzset{grid/.style={very thin,color=gray!30}}
-  \def\winmin{-3.5} \def\winmax{3.5}
-  \def\axesbox{\draw[grid] (\winmin,\winmin) grid (\winmax,\winmax);
-               \draw[axes] (\winmin,0)--(\winmax,0);
-               \draw[axes] (0,\winmin)--(0,\winmax);}
+      graphics : String.raw``,
 
-  % G1
-  \begin{scope}[xshift=-6.5cm,yshift=5.8cm]
-    \axesbox
-    \begin{scope}
-      \clip (\winmin,\winmin) rectangle (\winmax,\winmax);
-      \draw[blue,thick,domain=\winmin:\winmax] plot(\x,{-1*\x+4});
-      \draw[red, thick,domain=\winmin:\winmax]  plot(\x,{2*\x-1});
-      \fill (5/3,7/3) circle (2pt);
-    \end{scope}
-    \node[font=\small,anchor=south west] at (-3.3,3) {G1};
-  \end{scope}
+      answerKey : ["C","F","A","D","B","E","C","A","F","D"],
 
-  % G2
-  \begin{scope}[xshift=6.5cm,yshift=5.8cm]
-    \axesbox
-    \begin{scope}
-      \clip (\winmin,\winmin) rectangle (\winmax,\winmax);
-      \draw[blue,thick,domain=\winmin:\winmax] plot(\x,{2*\x+1});
-      \draw[red, thick,domain=\winmin:\winmax]  plot(\x,{2*\x-3});
-    \end{scope}
-    \node[font=\small,anchor=south west] at (-3.3,3) {G2};
-  \end{scope}
-
-  % G3
-  \begin{scope}[xshift=19.5cm,yshift=5.8cm]
-    \axesbox
-    \begin{scope}
-      \clip (\winmin,\winmin) rectangle (\winmax,\winmax);
-      \draw[blue,thick,domain=\winmin:\winmax] plot(\x,{-1.5*\x+3});
-      \draw[red, very thick,domain=\winmin:\winmax] plot(\x,{-1.5*\x+3});
-    \end{scope}
-    \node[font=\small,anchor=south west] at (-3.3,3) {G3};
-  \end{scope}
-
-  % G4
-  \begin{scope}[xshift=-6.5cm,yshift=-5.8cm]
-    \axesbox
-    \begin{scope}
-      \clip (\winmin,\winmin) rectangle (\winmax,\winmax);
-      \draw[blue,thick] (2,\winmin) -- (2,\winmax);
-      \draw[red, thick] (\winmin,-1) -- (\winmax,-1);
-      \fill (2,-1) circle (2pt);
-    \end{scope}
-    \node[font=\small,anchor=south west] at (-3.3,3) {G4};
-  \end{scope}
-
-  % G5
-  \begin{scope}[xshift=6.5cm,yshift=-5.8cm]
-    \axesbox
-    \begin{scope}
-      \clip (\winmin,\winmin) rectangle (\winmax,\winmax);
-      \draw[blue,thick,domain=\winmin:\winmax] plot(\x,{0.5*\x+1});
-      \draw[red, thick,domain=\winmin:\winmax]  plot(\x,{-0.5*\x+3});
-      \fill (2,2) circle (2pt);
-    \end{scope}
-    \node[font=\small,anchor=south west] at (-3.3,3) {G5};
-  \end{scope}
-
-  % G6
-  \begin{scope}[xshift=19.5cm,yshift=-5.8cm]
-    \axesbox
-    \begin{scope}
-      \clip (\winmin,\winmin) rectangle (\winmax,\winmax);
-      \draw[blue,thick,domain=\winmin:\winmax] plot(\x,{-2*\x+5});
-      \draw[red, thick] (\winmin,1) -- (\winmax,1);
-      \fill (2,1) circle (2pt);
-    \end{scope}
-    \node[font=\small,anchor=south west] at (-3.3,3) {G6};
-  \end{scope}
-
-  % G7
-  \begin{scope}[xshift=-6.5cm,yshift=-17.4cm]
-    \axesbox
-    \begin{scope}
-      \clip (\winmin,\winmin) rectangle (\winmax,\winmax);
-      \draw[blue,thick,domain=\winmin:\winmax] plot(\x,{\x-1});
-      \draw[red, thick] (\winmin,-3) -- (\winmax,-3);
-      \fill (-2,-3) circle (2pt);
-    \end{scope}
-    \node[font=\small,anchor=south west] at (-3.3,3) {G7};
-  \end{scope}
-
-  % G8
-  \begin{scope}[xshift=6.5cm,yshift=-17.4cm]
-    \axesbox
-    \begin{scope}
-      \clip (\winmin,\winmin) rectangle (\winmax,\winmax);
-      \draw[blue,thick] (-1,\winmin) -- (-1,\winmax);
-      \draw[red, thick,domain=\winmin:\winmax] plot(\x,{-2*\x+1});
-      \fill (-1,3) circle (2pt);
-    \end{scope}
-    \node[font=\small,anchor=south west] at (-3.3,3) {G8};
-  \end{scope}
-
-  % G9
-  \begin{scope}[xshift=19.5cm,yshift=-17.4cm]
-    \axesbox
-    \begin{scope}
-      \clip (\winmin,\winmin) rectangle (\winmax,\winmax);
-      \draw[blue,thick,domain=\winmin:\winmax] plot(\x,{1.5*\x-2});
-      \draw[red, thick,domain=\winmin:\winmax]  plot(\x,{-0.5*\x+1});
-      \fill (1.5,0.25) circle (2pt);
-    \end{scope}
-    \node[font=\small,anchor=south west] at (-3.3,3) {G9};
-  \end{scope}
-
-  % G10
-  \begin{scope}[xshift=-6.5cm,yshift=-29cm]
-    \axesbox
-    \begin{scope}
-      \clip (\winmin,\winmin) rectangle (\winmax,\winmax);
-      \draw[blue,thick] (\winmin,2)--(\winmax,2);
-      \draw[red, very thick] (\winmin,2)--(\winmax,2);
-    \end{scope}
-    \node[font=\small,anchor=south west] at (-3.3,3) {G10};
-  \end{scope}
-
-  % G11
-  \begin{scope}[xshift=6.5cm,yshift=-29cm]
-    \axesbox
-    \begin{scope}
-      \clip (\winmin,\winmin) rectangle (\winmax,\winmax);
-      \draw[blue,thick] (-3,\winmin)--(-3,\winmax);
-      \draw[red, thick]  (-1,\winmin)--(-1,\winmax);
-    \end{scope}
-    \node[font=\small,anchor=south west] at (-3.3,3) {G11};
-  \end{scope}
-
-  % G12
-  \begin{scope}[xshift=19.5cm,yshift=-29cm]
-    \axesbox
-    \begin{scope}
-      \clip (\winmin,\winmin) rectangle (\winmax,\winmax);
-      \draw[blue,thick,domain=\winmin:\winmax] plot(\x,{(2/3)*\x+0.5});
-      \draw[red, thick,domain=\winmin:\winmax]  plot(\x,{-1*\x+5});
-      \fill (2.7,2.3) circle (2pt);
-    \end{scope}
-    \node[font=\small,anchor=south west] at (-3.3,3) {G12};
-  \end{scope}
-\end{tikzpicture}
-`,
-
-      /* ===== Hidden answer key (A–F) ===== */
-      answerKey : ["A","D","C","B","A","E","B","F","B","C","A","A"],
-
-      /* ===== 12 questions, 6 choices each ===== */
       questions : [
+
+        /* Q1 */
         {
-          latex : String.raw`\text{Refer to Graph G1. What is the solution and classification?}`,
-          choices : [
-            String.raw`\left(\tfrac{5}{3},\tfrac{7}{3}\right);\ \text{consistent independent}`,
-            String.raw`(2,3);\ \text{consistent independent}`,
-            String.raw`(1,3);\ \text{consistent independent}`,
-            String.raw`\text{no solution; inconsistent}`,
-            String.raw`\text{infinitely many; dependent}`,
-            String.raw`(0,4);\ \text{consistent independent}`
+          stem: String.raw`
+            <p><b>Refer to Figure 1.</b> What does the graph show about the system?</p>
+          `,
+          media: String.raw`
+            <figure>
+              <img src="7-2-1.png" alt="Two lines intersecting once" />
+              <figcaption>Figure 1</figcaption>
+            </figure>
+          `,
+          choices: [
+            String.raw`Possible; one solution \((1,2)\)`,
+            String.raw`Impossible; no solution`,
+            String.raw`Possible; one solution \((2,1)\)`,
+            String.raw`Possible; infinitely many solutions`,
+            String.raw`Possible; one solution \((3,0)\)`,
+            String.raw`Possible; one solution \((0,3)\)`
+          ],
+          choiceWrap: false
+        },
+
+        /* Q2 */
+        {
+          stem: String.raw`
+            <p><b>Refer to Figure 2.</b> Which description is correct?</p>
+          `,
+          media: String.raw`
+            <figure>
+              <img src="7-2-2.png" alt="Two distinct parallel lines" />
+              <figcaption>Figure 2</figcaption>
+            </figure>
+          `,
+          choices: [
+            String.raw`Possible; one solution at \((0,2)\)`,
+            String.raw`Possible; one solution at \((0,-2)\)`,
+            String.raw`Possible; infinitely many solutions`,
+            String.raw`Possible; two solutions`,
+            String.raw`Impossible; infinitely many solutions`,
+            String.raw`Impossible; no solution`
+          ],
+          choiceWrap: false
+        },
+
+        /* Q3 */
+        {
+          stem: String.raw`
+            <p>Suppose the system is</p>
+            <p>\[
+              \begin{cases}
+              y=-2x+4\\
+              2y=-4x+8
+              \end{cases}
+            \]</p>
+            <p>What will happen when the two equations are graphed?</p>
+          `,
+          choices: [
+            String.raw`The graphs are the same line, so the system is possible and has infinitely many solutions.`,
+            String.raw`The lines are parallel and distinct, so the system is impossible.`,
+            String.raw`The lines intersect once at \((0,4)\).`,
+            String.raw`The lines intersect once at \((2,0)\).`,
+            String.raw`One equation is horizontal and the other is vertical.`,
+            String.raw`The second equation cannot be graphed because it contains \(2y\).`
+          ],
+          choiceWrap: false
+        },
+
+        /* Q4 */
+        {
+          stem: String.raw`
+            <p><b>Refer to Figure 3.</b> Which graph correctly represents the system?</p>
+            <p>\[
+              \begin{cases}
+              y=2x-3\\
+              y=-x+3
+              \end{cases}
+            \]</p>
+          `,
+          media: String.raw`
+            <figure>
+              <img src="7-2-4.png" alt="Six candidate graphs of a system of two lines, labeled A through F" />
+              <figcaption>Figure 3</figcaption>
+            </figure>
+          `,
+          choices: [
+            String.raw`Graph A`,
+            String.raw`Graph B`,
+            String.raw`Graph C`,
+            String.raw`Graph D`,
+            String.raw`Graph E`,
+            String.raw`Graph F`
+          ],
+          choiceWrap: false
+        },
+
+        /* Q5 */
+        {
+          stem: String.raw`
+            <p>Consider the system</p>
+            <p>\[
+              \begin{cases}
+              2x+y=5\\
+              y=x-1
+              \end{cases}
+            \]</p>
+            <p>Before graphing, rewrite the first equation in slope-intercept form. Which choice gives the two equations to graph and the solution their graphs show?</p>
+          `,
+          choices: [
+            String.raw`\(y=2x+5\) and \(y=x-1\); solution \((-6,-7)\)`,
+            String.raw`\(y=-2x+5\) and \(y=x-1\); solution \((2,1)\)`,
+            String.raw`\(y=-2x-5\) and \(y=x-1\); solution \((-4,-5)\)`,
+            String.raw`\(y=2x-5\) and \(y=x-1\); solution \((4,3)\)`,
+            String.raw`\(y=-\frac12x+\frac52\) and \(y=x-1\); solution \(\left(\frac73,\frac43\right)\)`,
+            String.raw`\(y=-2x+5\) and \(y=-x+1\); solution \((4,-3)\)`
+          ],
+          choiceWrap: false
+        },
+
+        /* Q6 */
+        {
+          stem: String.raw`
+            <p><b>Refer to Figure 4.</b> What is the solution of the system shown?</p>
+          `,
+          media: String.raw`
+            <figure>
+              <img src="7-2-6.png" alt="A vertical line x equals negative 2 and a horizontal line y equals 3" />
+              <figcaption>Figure 4</figcaption>
+            </figure>
+          `,
+          choices: [
+            String.raw`\((3,-2)\)`,
+            String.raw`\((-2,0)\)`,
+            String.raw`\((0,3)\)`,
+            String.raw`\((2,3)\)`,
+            String.raw`\((-2,3)\)`,
+            String.raw`No solution`
           ]
         },
+
+        /* Q7 */
         {
-          latex : String.raw`\text{Refer to Graph G2. Choose the correct statement.}`,
-          choices : [
-            String.raw`(2,-3);\ \text{consistent independent}`,
-            String.raw`(0,1);\ \text{consistent independent}`,
-            String.raw`\text{infinitely many; dependent}`,
-            String.raw`\text{no solution; inconsistent}`,
-            String.raw`(3,3);\ \text{consistent independent}`,
-            String.raw`(-1,3);\ \text{consistent independent}`
+          stem: String.raw`
+            <p>A student wants to graph the system</p>
+            <p>\[
+              \begin{cases}
+              3x+y=6\\
+              y=x-2
+              \end{cases}
+            \]</p>
+            <p>The student rewrites the first equation as \(y=3x+6\). What is the error?</p>
+          `,
+          choices: [
+            String.raw`The student should divide the entire equation by \(3\), giving \(y=x+2\).`,
+            String.raw`The student should change the second equation instead; the first is already correct.`,
+            String.raw`Moving \(3x\) to the other side changes its sign, so the first equation should be \(y=-3x+6\).`,
+            String.raw`The \(6\) should become \(-6\), so the first equation should be \(y=3x-6\).`,
+            String.raw`The slope of the first line is undefined because \(3x\) has no \(y\).`,
+            String.raw`There is no error; \(3x+y=6\) and \(y=3x+6\) are equivalent.`
+          ],
+          choiceWrap: false
+        },
+
+        /* Q8 */
+        {
+          stem: String.raw`
+            <p>The graphs of \(y=-2x+5\) and \(y=x-1\) appear to intersect at \((2,1)\).</p>
+            <p>Which calculation confirms that \((2,1)\) really is a solution of the system?</p>
+          `,
+          choices: [
+            String.raw`\(1=-2(2)+5\) and \(1=2-1\); both equations are true.`,
+            String.raw`\(2=-2(1)+5\) and \(2=1-1\); both equations are true.`,
+            String.raw`\(1=-2(2)-5\) and \(1=2+1\); both equations are true.`,
+            String.raw`Only the first equation needs to be checked because the lines already intersect.`,
+            String.raw`Only the second equation needs to be checked because both equations use \(y\).`,
+            String.raw`Substitute \(x=1\) and \(y=2\) because ordered pairs are read as \((y,x)\).`
+          ],
+          choiceWrap: false
+        },
+
+        /* Q9 */
+        {
+          stem: String.raw`
+            <p><b>Refer to Figure 5.</b> Estimate the intersection of the two lines.</p>
+          `,
+          media: String.raw`
+            <figure>
+              <img src="7-2-9.png" alt="Two lines whose intersection is near x equals 2.7 and y equals 2.3" />
+              <figcaption>Figure 5</figcaption>
+            </figure>
+          `,
+          choices: [
+            String.raw`\((2.3,2.7)\)`,
+            String.raw`\((3.0,2.0)\)`,
+            String.raw`\((2.0,3.0)\)`,
+            String.raw`\((3.2,1.8)\)`,
+            String.raw`\((2.5,2.5)\)`,
+            String.raw`\((2.7,2.3)\)`
           ]
         },
+
+        /* Q10 */
         {
-          latex : String.raw`\text{Refer to Graph G3. Choose the correct statement.}`,
-          choices : [
-            String.raw`(2,0);\ \text{consistent independent}`,
-            String.raw`(0,3);\ \text{consistent independent}`,
-            String.raw`\text{infinitely many; dependent}`,
-            String.raw`\text{no solution; inconsistent}`,
-            String.raw`(3,-1.5);\ \text{consistent independent}`,
-            String.raw`(1,1.5);\ \text{consistent independent}`
-          ]
-        },
-        {
-          latex : String.raw`\text{Refer to Graph G4. What ordered pair solves the system?}`,
-          choices : [
-            String.raw`(0,-1)`,
-            String.raw`(2,-1)`,
-            String.raw`(2,0)`,
-            String.raw`(-2,-1)`,
-            String.raw`(-1,2)`,
-            String.raw`(1,-2)`
-          ]
-        },
-        {
-          latex : String.raw`\text{Refer to Graph G5. Choose the solution and classification.}`,
-          choices : [
-            String.raw`(2,2);\ \text{consistent independent}`,
-            String.raw`(1,2.5);\ \text{consistent independent}`,
-            String.raw`(3,2);\ \text{consistent independent}`,
-            String.raw`(2,1);\ \text{consistent independent}`,
-            String.raw`\text{no solution; inconsistent}`,
-            String.raw`\text{infinitely many; dependent}`
-          ]
-        },
-        {
-          latex : String.raw`\text{Refer to Graph G6. Choose the correct ordered pair.}`,
-          choices : [
-            String.raw`(1,2)`,
-            String.raw`(0,1)`,
-            String.raw`(3,1)`,
-            String.raw`(1,0)`,
-            String.raw`(2,1)`,
-            String.raw`(2,0)`
-          ]
-        },
-        {
-          latex : String.raw`\text{Refer to Graph G7. Choose the solution.}`,
-          choices : [
-            String.raw`(-3,-2)`,
-            String.raw`(-2,-3)`,
-            String.raw`(-2,-3);\ \text{inconsistent}`,
-            String.raw`\text{no solution}`,
-            String.raw`(2,-3)`,
-            String.raw`(0,-3)`
-          ]
-        },
-        {
-          latex : String.raw`\text{Refer to Graph G8. Choose the solution and classification.}`,
-          choices : [
-            String.raw`(-1,1);\ \text{consistent independent}`,
-            String.raw`(1,-1);\ \text{consistent independent}`,
-            String.raw`(-3,7);\ \text{consistent independent}`,
-            String.raw`\text{no solution; inconsistent}`,
-            String.raw`\text{infinitely many; dependent}`,
-            String.raw`(-1,3);\ \text{consistent independent}`
-          ]
-        },
-        {
-          latex : String.raw`\text{Refer to Graph G9. Choose the ordered pair of intersection.}`,
-          choices : [
-            String.raw`(1,0)`,
-            String.raw`\left(\tfrac{3}{2},\tfrac{1}{4}\right)`,
-            String.raw`(2,1)`,
-            String.raw`(1.5,1.25)`,
-            String.raw`(0.25,1.5)`,
-            String.raw`(3,0.5)`
-          ]
-        },
-        {
-          latex : String.raw`\text{Refer to Graph G10. Classify the system.}`,
-          choices : [
-            String.raw`\text{inconsistent (no solution)}`,
-            String.raw`\text{independent (one solution)}`,
-            String.raw`\text{dependent (infinitely many solutions)}`,
-            String.raw`\text{neither of the above}`,
-            String.raw`\text{cannot be determined}`,
-            String.raw`\text{perpendicular lines}`
-          ]
-        },
-        {
-          latex : String.raw`\text{Refer to Graph G11. Classify the system.}`,
-          choices : [
-            String.raw`\text{inconsistent (no solution)}`,
-            String.raw`\text{dependent (infinitely many)}`,
-            String.raw`\text{independent (one solution)}`,
-            String.raw`\text{cannot determine}`,
-            String.raw`\text{coincident lines}`,
-            String.raw`\text{same slope and intercept}`
-          ]
-        },
-        {
-          latex : String.raw`\text{Refer to Graph G12. Estimate the solution.}`,
-          choices : [
-            String.raw`(2.7,2.3)`,
-            String.raw`(3,2)`,
-            String.raw`(2.3,2.7)`,
-            String.raw`(2,3)`,
-            String.raw`(3.2,1.8)`,
-            String.raw`(2.5,2.5)`
-          ]
+          stem: String.raw`
+            <p>For each system, decide whether it is possible or impossible and state the number of solutions.</p>
+            <p><b>I.</b> \(\begin{cases}y=x+1\\y=-x+5\end{cases}\)</p>
+            <p><b>II.</b> \(\begin{cases}y=2x-3\\y=2x+4\end{cases}\)</p>
+            <p><b>III.</b> \(\begin{cases}y=-3x+2\\2y=-6x+4\end{cases}\)</p>
+          `,
+          choices: [
+            String.raw`I: impossible, no solution; II: possible, one solution; III: possible, infinitely many solutions`,
+            String.raw`I: possible, infinitely many solutions; II: impossible, no solution; III: possible, one solution`,
+            String.raw`I: possible, one solution; II: possible, one solution; III: impossible, no solution`,
+            String.raw`I: possible, one solution; II: impossible, no solution; III: possible, infinitely many solutions`,
+            String.raw`I: impossible, no solution; II: possible, infinitely many solutions; III: possible, one solution`,
+            String.raw`I: possible, infinitely many solutions; II: possible, one solution; III: impossible, no solution`
+          ],
+          choiceWrap: false
         }
       ]
     };
   </script>
 
-  <link rel="stylesheet" href="/math-homework/assets/core.css" />
-  <script defer src="/math-homework/assets/core.js"></script>
-
-  <!-- TikZJax must come AFTER your scripts -->
-  <link rel="stylesheet" href="https://tikzjax.com/v1/fonts.css" />
-  <script defer src="https://tikzjax.com/v1/tikzjax.js"></script>
+  <link rel="stylesheet" href="/math-homework/assets/core-rich.css" />
+  <script defer src="/math-homework/assets/core-rich.js"></script>
   <script defer src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
 </head>
-<body>
-  <div id="hw-root">
-    <!-- Graphics mount point (TikZJax scans this) -->
-    <div id="hw-graphics"></div>
-  </div>
 
-  <script>
-    // Mount the TikZ by injecting a <script type="text/tikz"> via innerHTML.
-    (function mountTikZ() {
-      const host = document.getElementById('hw-graphics');
-      host.innerHTML = `<script type="text/tikz">${window.homeworkData.graphics}</script>`;
-    })();
-  </script>
+<body>
+  <div id="hw-root">Loading…</div>
 </body>
 </html>
