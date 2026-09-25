@@ -58,21 +58,25 @@
       `,
 
       answerKey : [
-        "D","B","D","D","B","C","B","B","A",
+        "C","B","D","D","F","C","B","B","A",
         "B","D","E","C","F","D","B","C","C"
       ],
 
       questions : [
         {
           stem: String.raw`
-            <p>In parallelogram \(ABCD\), the lengths of opposite sides \(\overline{AB}\) and \(\overline{CD}\) are</p>
-            <p>\(AB=4x-5\) and \(CD=2x+9\).</p>
-            <p>Find \(x\).</p>
+            <p>In parallelogram \(ABCD\), suppose \(m\angle A=68^\circ\), \(AB=11\), and \(AD=7\).</p>
+            <p>Which set of statements must be true?</p>
           `,
           choices: [
-            String.raw`\(4\)`, String.raw`\(5\)`, String.raw`\(6\)`,
-            String.raw`\(7\)`, String.raw`\(8\)`, String.raw`\(9\)`
-          ]
+            String.raw`\(m\angle B=68^\circ\), \(m\angle C=112^\circ\), \(CD=11\), and \(BC=7\)`,
+            String.raw`\(m\angle B=112^\circ\), \(m\angle C=68^\circ\), \(CD=7\), and \(BC=11\)`,
+            String.raw`\(m\angle B=112^\circ\), \(m\angle C=68^\circ\), \(CD=11\), and \(BC=7\)`,
+            String.raw`\(m\angle B=112^\circ\), \(m\angle C=112^\circ\), \(CD=11\), and \(BC=7\)`,
+            String.raw`\(m\angle B=68^\circ\), \(m\angle C=68^\circ\), \(CD=11\), and \(BC=7\)`,
+            String.raw`\(m\angle B=112^\circ\), \(m\angle C=68^\circ\), \(CD=11\), and \(BC=11\)`
+          ],
+          choiceWrap: false
         },
 
         {
@@ -90,12 +94,12 @@
         {
           stem: String.raw`
             <p>The diagonals \(\overline{AC}\) and \(\overline{BD}\) of parallelogram \(ABCD\) intersect at \(M\).</p>
-            <p>Suppose \(AM=3x-2\) and \(MC=x+8\).</p>
-            <p>Find \(AM\).</p>
+            <p>Suppose \(AM=11\) and \(BM=16\).</p>
+            <p>Find \(AC+BD\).</p>
           `,
           choices: [
-            String.raw`\(10\)`, String.raw`\(11\)`, String.raw`\(12\)`,
-            String.raw`\(13\)`, String.raw`\(14\)`, String.raw`\(15\)`
+            String.raw`\(27\)`, String.raw`\(38\)`, String.raw`\(43\)`,
+            String.raw`\(54\)`, String.raw`\(64\)`, String.raw`\(76\)`
           ]
         },
 
@@ -115,17 +119,15 @@
 
         {
           stem: String.raw`
-            <p>The diagonals \(\overline{AC}\) and \(\overline{BD}\) of quadrilateral \(ABCD\) intersect at \(M\).</p>
-            <p>You know that \(M\) is the midpoint of both \(\overline{AC}\) and \(\overline{BD}\).</p>
-            <p>What can you conclude from this information alone?</p>
+            <p>Which statement is <b>not guaranteed to be true for every parallelogram</b> \(ABCD\)?</p>
           `,
           choices: [
-            String.raw`\(ABCD\) must be a rectangle.`,
-            String.raw`\(ABCD\) must be a parallelogram.`,
-            String.raw`\(ABCD\) must be a rhombus.`,
-            String.raw`\(ABCD\) must be a kite.`,
-            String.raw`\(ABCD\) must be an isosceles trapezoid.`,
-            `No special conclusion can be made.`
+            String.raw`\(\overline{AB}\cong\overline{CD}\)`,
+            String.raw`\(\angle A\cong\angle C\)`,
+            String.raw`\(m\angle A+m\angle B=180^\circ\)`,
+            String.raw`The diagonals \(\overline{AC}\) and \(\overline{BD}\) bisect each other.`,
+            String.raw`\(\overline{AB}\parallel\overline{CD}\)`,
+            String.raw`\(\overline{AC}\cong\overline{BD}\)`
           ],
           choiceWrap: false
         },
