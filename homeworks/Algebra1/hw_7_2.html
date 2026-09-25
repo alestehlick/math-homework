@@ -21,8 +21,8 @@
        MODEL-AUTHORED / MODEL-REWORKED ITEMS:
        - Q1: reworks the one-intersection graph-reading skill, but removes
          the pre-marked solution point.
-       - Q2: reworks the parallel-line case and uses possible/impossible
-         plus number-of-solutions language.
+       - Q2: reworks the parallel-line case using the class terminology
+         consistent/inconsistent and dependent/independent.
        - Q3: reworks the coincident-line case from equations rather than an
          ambiguous double-drawn line.
        - Q4: model-authored reverse-direction task: choose the graph of a
@@ -70,12 +70,12 @@
             </figure>
           `,
           choices: [
-            String.raw`Possible; one solution \((1,2)\)`,
-            String.raw`Impossible; no solution`,
-            String.raw`Possible; one solution \((2,1)\)`,
-            String.raw`Possible; infinitely many solutions`,
-            String.raw`Possible; one solution \((3,0)\)`,
-            String.raw`Possible; one solution \((0,3)\)`
+            String.raw`Consistent independent; solution \((1,2)\)`,
+            String.raw`Inconsistent; no solution`,
+            String.raw`Consistent independent; solution \((2,1)\)`,
+            String.raw`Consistent dependent; infinitely many solutions`,
+            String.raw`Consistent independent; solution \((3,0)\)`,
+            String.raw`Consistent independent; solution \((0,3)\)`
           ],
           choiceWrap: false
         },
@@ -92,12 +92,12 @@
             </figure>
           `,
           choices: [
-            String.raw`Possible; one solution at \((0,2)\)`,
-            String.raw`Possible; one solution at \((0,-2)\)`,
-            String.raw`Possible; infinitely many solutions`,
-            String.raw`Possible; two solutions`,
-            String.raw`Impossible; infinitely many solutions`,
-            String.raw`Impossible; no solution`
+            String.raw`Consistent independent; one solution at \((0,2)\)`,
+            String.raw`Consistent independent; one solution at \((0,-2)\)`,
+            String.raw`Consistent dependent; infinitely many solutions`,
+            String.raw`Consistent independent; two solutions`,
+            String.raw`Inconsistent; infinitely many solutions`,
+            String.raw`Inconsistent; no solution`
           ],
           choiceWrap: false
         },
@@ -115,8 +115,8 @@
             <p>What will happen when the two equations are graphed?</p>
           `,
           choices: [
-            String.raw`The graphs are the same line, so the system is possible and has infinitely many solutions.`,
-            String.raw`The lines are parallel and distinct, so the system is impossible.`,
+            String.raw`The graphs are the same line, so the system is consistent dependent and has infinitely many solutions.`,
+            String.raw`The lines are parallel and distinct, so the system is inconsistent.`,
             String.raw`The lines intersect once at \((0,4)\).`,
             String.raw`The lines intersect once at \((2,0)\).`,
             String.raw`One equation is horizontal and the other is vertical.`,
@@ -261,18 +261,18 @@
         /* Q10 */
         {
           stem: String.raw`
-            <p>For each system, decide whether it is possible or impossible and state the number of solutions.</p>
+            <p>Classify each system as consistent independent, inconsistent, or consistent dependent.</p>
             <p><b>I.</b> \(\begin{cases}y=x+1\\y=-x+5\end{cases}\)</p>
             <p><b>II.</b> \(\begin{cases}y=2x-3\\y=2x+4\end{cases}\)</p>
             <p><b>III.</b> \(\begin{cases}y=-3x+2\\2y=-6x+4\end{cases}\)</p>
           `,
           choices: [
-            String.raw`I: impossible, no solution; II: possible, one solution; III: possible, infinitely many solutions`,
-            String.raw`I: possible, infinitely many solutions; II: impossible, no solution; III: possible, one solution`,
-            String.raw`I: possible, one solution; II: possible, one solution; III: impossible, no solution`,
-            String.raw`I: possible, one solution; II: impossible, no solution; III: possible, infinitely many solutions`,
-            String.raw`I: impossible, no solution; II: possible, infinitely many solutions; III: possible, one solution`,
-            String.raw`I: possible, infinitely many solutions; II: possible, one solution; III: impossible, no solution`
+            String.raw`I: inconsistent; II: consistent independent; III: consistent dependent`,
+            String.raw`I: consistent dependent; II: inconsistent; III: consistent independent`,
+            String.raw`I: consistent independent; II: consistent independent; III: inconsistent`,
+            String.raw`I: consistent independent; II: inconsistent; III: consistent dependent`,
+            String.raw`I: inconsistent; II: consistent dependent; III: consistent independent`,
+            String.raw`I: consistent dependent; II: consistent independent; III: inconsistent`
           ],
           choiceWrap: false
         }
