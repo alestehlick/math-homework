@@ -3,7 +3,7 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Homework 7-6 & 7-7 (Geometry)</title>
+  <title>Homework 7-6 &amp; 7-7 (Geometry)</title>
 
   <script>
     /* =========================
@@ -22,17 +22,20 @@
          construct the midpoint of a segment.
 
        MODEL-AUTHORED / MODEL-REWORKED ITEMS:
-       - Q1–Q5 were re-authored to produce a compact ascent through parallelogram properties,
-         diagonal bisection, and converse/sufficiency judgments.
-       - Q6–Q18 were substantially re-authored to align the homework with an assessment in which
-         students must physically perform compass-and-straightedge constructions.
+       - Q1–Q5: re-authored compact ascent through parallelogram properties and converse/sufficiency judgments.
+       - Q6–Q18: substantially re-authored to prepare students for quiz/test tasks that require
+         actual compass-and-straightedge constructions.
        - Q6, Q8, Q10, Q11, Q13, Q14, Q16, Q17 require an actual paper construction.
-       - Q7, Q9, Q12, Q15, Q18 diagnose orientation, construction logic, correspondence,
-         and the structural reason the procedures work.
+       - Q7, Q9, Q12, Q15, Q18 test orientation, construction logic, correspondence, and generalization.
 
        IMAGE FILES:
-       - None. Students create the source segments, rays, angles, triangles, and polygons on paper.
-       - No user-supplied or model-generated figure files are required.
+       - Model-generated: 7-6-6.png, 7-6-8.png, 7-6-10.png, 7-6-11.png,
+         7-6-13.png, 7-6-14.png, 7-6-16.png, 7-6-17.png.
+       - No user-supplied figures are used.
+
+       IMAGE NAMING RULE:
+       - Model-generated figures use final homework question numbering.
+       - PNG files live in the SAME folder as this HTML.
        ========================= */
 
     window.homeworkData = {
@@ -43,38 +46,33 @@
       graphics : String.raw`
         <section>
           <h3>Construction work</h3>
-          <p>Questions 6, 8, 10, 11, 13, 14, 16, and 17 require a compass-and-straightedge construction on separate paper. Number each construction clearly with its question number.</p>
+          <p>Questions 6, 8, 10, 11, 13, 14, 16, and 17 require work on separate construction paper. Number each construction clearly.</p>
           <ul>
-            <li>Use a compass and an unmarked straightedge only. Do not use a protractor or measure lengths to locate the required points.</li>
-            <li>Leave the essential construction arcs visible.</li>
-            <li>Label the important points.</li>
-            <li>For a horizontal ray pointing right, “upper” and “lower” half-plane mean above or below the line containing that ray.</li>
-            <li>The construction paper is part of the homework.</li>
+            <li>Use a compass and an unmarked straightedge only. Do not use a protractor, and do not use ruler markings to locate a required point.</li>
+            <li>Leave the essential construction arcs visible and label the important points.</li>
+            <li>The figures show the <b>setup and orientation only</b>. Redraw each setup approximately on your paper. Do not measure the figure on the screen or page; the exact size and shape of the source you draw do not matter.</li>
+            <li>When a half-plane is specified, your constructed point must lie on the indicated side of the line containing the target segment or ray.</li>
+            <li>Your construction paper is part of the homework.</li>
           </ul>
         </section>
       `,
 
       answerKey : [
-        "D","B","D","D","B","C","F","C","A",
-        "B","D","E","C","F","D","B","E","C"
+        "D","B","D","D","B","C","B","B","A",
+        "B","D","E","C","F","D","B","C","C"
       ],
 
       questions : [
         {
           stem: String.raw`
-            <p>In parallelogram \(ABCD\), opposite sides \(AB\) and \(CD\) have lengths</p>
+            <p>In parallelogram \(ABCD\), the lengths of opposite sides \(\overline{AB}\) and \(\overline{CD}\) are</p>
             <p>\(AB=4x-5\) and \(CD=2x+9\).</p>
             <p>Find \(x\).</p>
           `,
           choices: [
-            String.raw`\(4\)`,
-            String.raw`\(5\)`,
-            String.raw`\(6\)`,
-            String.raw`\(7\)`,
-            String.raw`\(8\)`,
-            String.raw`\(9\)`
-          ],
-          choiceWrap: false
+            String.raw`\(4\)`, String.raw`\(5\)`, String.raw`\(6\)`,
+            String.raw`\(7\)`, String.raw`\(8\)`, String.raw`\(9\)`
+          ]
         },
 
         {
@@ -84,80 +82,71 @@
             <p>Find \(m\angle C\).</p>
           `,
           choices: [
-            String.raw`\(68^\circ\)`,
-            String.raw`\(72^\circ\)`,
-            String.raw`\(88^\circ\)`,
-            String.raw`\(92^\circ\)`,
-            String.raw`\(108^\circ\)`,
-            String.raw`\(112^\circ\)`
-          ],
-          choiceWrap: false
+            String.raw`\(68^\circ\)`, String.raw`\(72^\circ\)`, String.raw`\(88^\circ\)`,
+            String.raw`\(92^\circ\)`, String.raw`\(108^\circ\)`, String.raw`\(112^\circ\)`
+          ]
         },
 
         {
           stem: String.raw`
-            <p>The diagonals of parallelogram \(ABCD\) intersect at \(M\). Suppose</p>
-            <p>\(AM=3x-2\) and \(MC=x+8\).</p>
+            <p>The diagonals \(\overline{AC}\) and \(\overline{BD}\) of parallelogram \(ABCD\) intersect at \(M\).</p>
+            <p>Suppose \(AM=3x-2\) and \(MC=x+8\).</p>
             <p>Find \(AM\).</p>
           `,
           choices: [
-            String.raw`\(10\)`,
-            String.raw`\(11\)`,
-            String.raw`\(12\)`,
-            String.raw`\(13\)`,
-            String.raw`\(14\)`,
-            String.raw`\(15\)`
-          ],
-          choiceWrap: false
+            String.raw`\(10\)`, String.raw`\(11\)`, String.raw`\(12\)`,
+            String.raw`\(13\)`, String.raw`\(14\)`, String.raw`\(15\)`
+          ]
         },
 
         {
           stem: String.raw`
-            <p>For quadrilateral \(ABCD\), consider these three possible sets of information:</p>
-            <p>I. \(AB\cong CD\) and \(AD\cong BC\)</p>
-            <p>II. \(AB\parallel CD\) and \(AB\cong CD\)</p>
-            <p>III. \(AC\cong BD\)</p>
+            <p>For quadrilateral \(ABCD\), consider these three sets of information:</p>
+            <p>I. \(\overline{AB}\cong\overline{CD}\) and \(\overline{AD}\cong\overline{BC}\)</p>
+            <p>II. \(\overline{AB}\parallel\overline{CD}\) and \(\overline{AB}\cong\overline{CD}\)</p>
+            <p>III. \(\overline{AC}\cong\overline{BD}\)</p>
             <p>Which sets are each sufficient, by themselves, to prove that \(ABCD\) is a parallelogram?</p>
           `,
           choices: [
-            String.raw`I only`,
-            String.raw`II only`,
-            String.raw`III only`,
-            String.raw`I and II only`,
-            String.raw`II and III only`,
-            String.raw`I, II, and III`
+            `I only`, `II only`, `III only`, `I and II only`, `II and III only`, `I, II, and III`
           ],
           choiceWrap: false
         },
 
         {
           stem: String.raw`
-            <p>The diagonals \(AC\) and \(BD\) of a quadrilateral intersect at \(M\).</p>
-            <p>You know that \(M\) is the midpoint of \(AC\) and also the midpoint of \(BD\).</p>
+            <p>The diagonals \(\overline{AC}\) and \(\overline{BD}\) of quadrilateral \(ABCD\) intersect at \(M\).</p>
+            <p>You know that \(M\) is the midpoint of both \(\overline{AC}\) and \(\overline{BD}\).</p>
             <p>What can you conclude from this information alone?</p>
           `,
           choices: [
-            String.raw`The quadrilateral must be a rectangle.`,
-            String.raw`The quadrilateral must be a parallelogram.`,
-            String.raw`The quadrilateral must be a rhombus.`,
-            String.raw`The quadrilateral must be a kite.`,
-            String.raw`The quadrilateral must be an isosceles trapezoid.`,
-            String.raw`No special conclusion can be made.`
+            String.raw`\(ABCD\) must be a rectangle.`,
+            String.raw`\(ABCD\) must be a parallelogram.`,
+            String.raw`\(ABCD\) must be a rhombus.`,
+            String.raw`\(ABCD\) must be a kite.`,
+            String.raw`\(ABCD\) must be an isosceles trapezoid.`,
+            `No special conclusion can be made.`
           ],
           choiceWrap: false
         },
 
         {
           stem: String.raw`
-            <p><b>CONSTRUCTION.</b> On your construction paper, draw a horizontal segment \(AB\). Using only a compass and an unmarked straightedge, construct an equilateral triangle \(ABC\) with \(C\) above the line \(AB\). Leave all essential arcs visible.</p>
-            <p>Before choosing point \(C\), which two arcs should you have drawn?</p>
+            <p><b>CONSTRUCTION.</b> Refer to Figure 1. Redraw the setup on your construction paper. Construct equilateral \(\triangle ABC\) on side \(\overline{AB}\), with \(C\) in the indicated upper half-plane. Leave the essential arcs visible.</p>
+            <p>Which pair of compass arcs should locate \(C\)?</p>
+          `,
+          media: String.raw`
+            <figure>
+              <img src="7-6-6.png" alt="Segment AB with the upper half-plane indicated" />
+              <figcaption>Figure 1 — setup for Question 6 (not to scale)</figcaption>
+            </figure>
           `,
           choices: [
-            String.raw`Equal-radius arcs centered at \(A\) and \(B\), with any radius greater than half of \(AB\).`,
-            String.raw`An arc centered at \(A\) with radius \(AB\), and an arc centered at the midpoint of \(AB\) with radius \(AB\).`,
+            String.raw`Equal-radius arcs centered at \(A\) and \(B\), using any radius greater than \(\tfrac12 AB\).`,
+            String.raw`An arc centered at \(A\) with radius \(AB\), and an arc centered at the midpoint of \(\overline{AB}\) with radius \(AB\).`,
             String.raw`An arc centered at \(A\) with radius \(AB\), and an arc centered at \(B\) with radius \(AB\).`,
-            String.raw`A perpendicular at \(A\), followed by marking \(AC=AB\).`,
-            String.raw`One arc centered at \(A\) with radius \(AB\); then choose any point on that arc above \(AB\).`,
+            String.raw`Construct a perpendicular at \(A\), then mark a point \(C\) on it so that \(AC=AB\).`,
+            String.raw`Draw one arc centered at \(A\) with radius \(AB\), then choose any point \(C\) on that arc in the upper half-plane.`,
             String.raw`An arc centered at \(A\) with radius \(AB\), and an arc centered at \(B\) with radius \(\tfrac12 AB\).`
           ],
           choiceWrap: false
@@ -165,105 +154,123 @@
 
         {
           stem: String.raw`
-            <p>Suppose the same equilateral-triangle construction is made on segment \(AB\), but no half-plane is specified and full circles are considered.</p>
-            <p>Under ordinary nondegenerate conditions, how many different equilateral triangles can have \(AB\) as that side?</p>
+            <p>In the equilateral-triangle construction on \(\overline{AB}\), why must the problem specify a half-plane for vertex \(C\)?</p>
           `,
           choices: [
-            String.raw`\(1\)`,
-            String.raw`\(3\)`,
-            String.raw`Infinitely many`,
-            String.raw`\(4\)`,
-            String.raw`\(0\)`,
-            String.raw`\(2\)`
+            `The half-plane determines the required side length.`,
+            `It selects one of the two possible intersection points of the equal-radius circles.`,
+            `It tells us which endpoint must be the center of the first circle.`,
+            String.raw`It is needed to make all three angles equal to \(60^\circ\).`,
+            `Without a half-plane, the two circles cannot intersect.`,
+            `Without a half-plane, no equilateral triangle can be constructed.`
           ],
           choiceWrap: false
         },
 
         {
           stem: String.raw`
-            <p><b>CONSTRUCTION.</b> Draw a segment \(PQ\) on your construction paper. Construct its midpoint \(M\) using a compass and an unmarked straightedge. Leave the intersecting arcs visible.</p>
-            <p>If the two arcs are drawn with the same radius \(r\), centered at \(P\) and \(Q\), which condition guarantees that they intersect at <b>two</b> points?</p>
+            <p><b>CONSTRUCTION.</b> Refer to Figure 2. Redraw \(\overline{PQ}\) on your construction paper and construct its midpoint \(M\) using a compass and an unmarked straightedge. Leave the intersecting arcs visible.</p>
+            <p>When you draw equal-radius arcs centered at \(P\) and \(Q\), why should the compass opening be greater than half the length \(PQ\)?</p>
+          `,
+          media: String.raw`
+            <figure>
+              <img src="7-6-8.png" alt="Segment PQ" />
+              <figcaption>Figure 2 — setup for Question 8 (not to scale)</figcaption>
+            </figure>
           `,
           choices: [
-            String.raw`\(r<\tfrac14 PQ\)`,
-            String.raw`\(r=\tfrac12 PQ\)`,
-            String.raw`\(r>\tfrac12 PQ\)`,
-            String.raw`\(r<\tfrac12 PQ\)`,
-            String.raw`\(r=0\)`,
-            String.raw`Any positive value of \(r\)`
+            String.raw`So the midpoint will be closer to \(P\) than to \(Q\).`,
+            String.raw`So the two equal-radius circles can meet at two points, one on each side of \(\overleftrightarrow{PQ}\).`,
+            String.raw`So the compass opening will equal the length \(PQ\).`,
+            `So the two arcs will meet exactly at the midpoint.`,
+            String.raw`So \(\overline{PQ}\) becomes the radius of both circles.`,
+            `It is not necessary; any positive compass opening will work.`
           ],
           choiceWrap: false
         },
 
         {
           stem: String.raw`
-            <p>In a midpoint construction for segment \(PQ\), equal-radius arcs centered at \(P\) and \(Q\) intersect at points \(X\) and \(Y\).</p>
-            <p>Which final step locates the midpoint of \(PQ\)?</p>
+            <p>In a midpoint construction for \(\overline{PQ}\), equal-radius arcs centered at \(P\) and \(Q\) intersect at points \(X\) and \(Y\).</p>
+            <p>Which final step locates the midpoint of \(\overline{PQ}\)?</p>
           `,
           choices: [
-            String.raw`Draw line \(XY\); its intersection with \(PQ\) is the midpoint.`,
-            String.raw`Draw segment \(PX\); its intersection with \(QY\) is the midpoint.`,
-            String.raw`Draw segment \(PY\); its midpoint is also the midpoint of \(PQ\).`,
-            String.raw`Connect \(X\) to \(P\) and \(Y\) to \(Q\); their intersection is the midpoint.`,
-            String.raw`Draw a line through \(X\) parallel to \(PQ\); where it meets \(YQ\) is the midpoint.`,
-            String.raw`Choose either \(X\) or \(Y\); each is the midpoint because both are equidistant from \(P\) and \(Q\).`
+            String.raw`Draw \(\overleftrightarrow{XY}\). Its intersection with \(\overline{PQ}\) is the midpoint.`,
+            String.raw`Draw \(\overleftrightarrow{PX}\). Its intersection with \(\overline{PQ}\) is the midpoint.`,
+            String.raw`Draw \(\overleftrightarrow{QX}\). Its intersection with \(\overline{PQ}\) is the midpoint.`,
+            String.raw`Draw \(\overleftrightarrow{PY}\). Its intersection with \(\overline{PQ}\) is the midpoint.`,
+            String.raw`Draw \(\overleftrightarrow{QY}\). Its intersection with \(\overline{PQ}\) is the midpoint.`,
+            String.raw`Draw \(\overleftrightarrow{PQ}\). Any point on this line can serve as the midpoint.`
           ],
           choiceWrap: false
         },
 
         {
           stem: String.raw`
-            <p><b>CONSTRUCTION.</b> Draw an angle \(\angle ABC\) that is neither very small nor nearly straight. Draw a separate horizontal ray \(\overrightarrow{PX}\) pointing right. Copy \(\angle ABC\) onto \(\overrightarrow{PX}\) in the upper half-plane.</p>
-            <p>For your construction, let a source arc centered at \(B\) meet \(BA\) at \(D\) and \(BC\) at \(E\). Draw a target arc of the same radius centered at \(P\), meeting the ray at \(Q\). Which length must now be transferred from the source arc to locate the second point of the copied angle?</p>
+            <p><b>CONSTRUCTION.</b> Refer to Figure 3. Redraw the source angle and target ray approximately as shown. Copy \(\angle ABC\) onto \(\overrightarrow{PX}\), in the indicated upper half-plane.</p>
+            <p>For the first step, let an arc centered at \(B\) meet \(\overrightarrow{BA}\) at \(D\) and \(\overrightarrow{BC}\) at \(E\). Draw an arc of the same radius centered at \(P\), meeting \(\overrightarrow{PX}\) at \(Q\).</p>
+            <p>Which source length must now be transferred to locate the second side of the copied angle?</p>
+          `,
+          media: String.raw`
+            <figure>
+              <img src="7-6-10.png" alt="Source angle ABC and target ray PX with the upper half-plane indicated" />
+              <figcaption>Figure 3 — setup for Question 10 (not to scale)</figcaption>
+            </figure>
           `,
           choices: [
-            String.raw`\(AB\)`,
-            String.raw`\(DE\)`,
-            String.raw`\(BD\)`,
-            String.raw`\(BE\)`,
-            String.raw`\(PQ\)`,
-            String.raw`\(BC\)`
+            String.raw`\(AB\)`, String.raw`\(DE\)`, String.raw`\(BD\)`,
+            String.raw`\(BE\)`, String.raw`\(PQ\)`, String.raw`\(BC\)`
+          ]
+        },
+
+        {
+          stem: String.raw`
+            <p><b>CONSTRUCTION.</b> Refer to Figure 4. Redraw the setup approximately as shown. Without using Question 10 as a step list, copy \(\angle XYZ\) onto \(\overrightarrow{ST}\), in the indicated lower half-plane. Leave the essential arcs visible.</p>
+            <p>The usual justification compares the small triangle formed by the two radii and the segment joining the arc-intersection points with the corresponding small triangle in the copy. Which congruence theorem most directly justifies that the two angles are congruent?</p>
+          `,
+          media: String.raw`
+            <figure>
+              <img src="7-6-11.png" alt="Source angle XYZ and target ray ST with the lower half-plane indicated" />
+              <figcaption>Figure 4 — setup for Question 11 (not to scale)</figcaption>
+            </figure>
+          `,
+          choices: [
+            `SAS`, `ASA`, `AAS`, `SSS`, `HL`, `AA`
           ],
           choiceWrap: false
         },
 
         {
           stem: String.raw`
-            <p><b>CONSTRUCTION.</b> Draw a second angle \(\angle XYZ\). Draw a separate horizontal ray \(\overrightarrow{ST}\) pointing right. Without using the previous question as a step list, copy \(\angle XYZ\) onto \(\overrightarrow{ST}\) in the lower half-plane. Leave all essential arcs visible.</p>
-            <p>The usual justification compares the small triangle formed by the source arc and its chord with the corresponding small triangle in the copy. Which congruence theorem most directly justifies the equality of the two angles?</p>
+            <p>A student is copying an angle. The first source arc has radius \(r\). At the target vertex, the student draws the first arc with a different radius \(s\), but then copies the distance between the two source arc-intersection points without changing it.</p>
+            <p>Which statement is correct?</p>
           `,
           choices: [
-            String.raw`SAS`,
-            String.raw`ASA`,
-            String.raw`AAS`,
-            String.raw`SSS`,
-            String.raw`HL`,
-            String.raw`AA`
-          ],
-          choiceWrap: false
-        },
-
-        {
-          stem: String.raw`
-            <p>A student begins to copy an angle. On the source angle, the first arc has radius \(r\). At the target vertex, the student instead draws the first arc with a different radius \(s\), but then transfers the original source chord unchanged.</p>
-            <p>Which statement best describes the situation?</p>
-          `,
-          choices: [
-            String.raw`The copied angle is guaranteed congruent because the chord was copied exactly.`,
-            String.raw`The copied angle is guaranteed congruent because any two isosceles triangles with the same base have equal vertex angles.`,
+            `The copied angle is guaranteed congruent because the distance between the two arc-intersection points was copied exactly.`,
+            `The copied angle is guaranteed congruent because any two isosceles triangles with the same base have equal vertex angles.`,
             String.raw`The copied angle is guaranteed congruent whenever \(s>r\).`,
-            String.raw`The construction fails only because the target arc should have been centered at the source vertex.`,
-            String.raw`The copied angle is not guaranteed congruent; the first arcs must have the same radius so the two small triangles can match by SSS.`,
-            String.raw`The construction fails only when the original angle is obtuse.`
+            `The only error is that the target arc should have been centered at the source vertex.`,
+            `The copied angle is not guaranteed congruent; using the same first radius is needed so the two small triangles can match by SSS.`,
+            `This procedure fails only when the source angle is obtuse.`
           ],
           choiceWrap: false
         },
 
         {
           stem: String.raw`
-            <p><b>CONSTRUCTION.</b> Draw a scalene triangle \(ABC\) with clearly different side lengths. Draw a separate horizontal ray \(\overrightarrow{PX}\) pointing right.</p>
-            <p>Construct a triangle congruent to \(ABC\) so that side \(AB\) lies on the ray, \(A\) corresponds to \(P\), and the copied vertex corresponding to \(C\) lies in the upper half-plane. Let \(Q\) be the copied point corresponding to \(B\), so \(PQ=AB\).</p>
-            <p>Which two compass radii should be used to locate the copied point \(R\) corresponding to \(C\)?</p>
+            <p><b>CONSTRUCTION.</b> Refer to Figure 5. Redraw the source triangle and target ray approximately as shown. Copy \(\triangle ABC\) so that:</p>
+            <ul>
+              <li>the side corresponding to \(\overline{AB}\) lies on \(\overrightarrow{PX}\);</li>
+              <li>\(A\leftrightarrow P\);</li>
+              <li>the copied vertex corresponding to \(C\) lies in the indicated upper half-plane.</li>
+            </ul>
+            <p>Let \(Q\) be the copied point corresponding to \(B\), so \(PQ=AB\). Which two compass radii locate the copied point \(R\) corresponding to \(C\)?</p>
+          `,
+          media: String.raw`
+            <figure>
+              <img src="7-6-13.png" alt="Scalene source triangle ABC and target ray PX with the upper half-plane indicated" />
+              <figcaption>Figure 5 — setup for Question 13 (not to scale)</figcaption>
+            </figure>
           `,
           choices: [
             String.raw`Center \(P\): radius \(AB\); center \(Q\): radius \(BC\).`,
@@ -278,9 +285,19 @@
 
         {
           stem: String.raw`
-            <p><b>CONSTRUCTION.</b> Draw a new scalene triangle \(DEF\). Draw a separate horizontal ray \(\overrightarrow{UV}\) pointing right.</p>
-            <p>Copy the triangle so that side \(EF\) lies on the ray, \(E\) corresponds to \(U\), and the copied point corresponding to \(D\) lies in the lower half-plane. Let \(W\) be the copied point corresponding to \(F\), so \(UW=EF\).</p>
-            <p>Which two arcs locate the copied point corresponding to \(D\)?</p>
+            <p><b>CONSTRUCTION.</b> Refer to Figure 6. Redraw the setup approximately as shown. Copy \(\triangle DEF\) so that:</p>
+            <ul>
+              <li>the side corresponding to \(\overline{EF}\) lies on \(\overrightarrow{UV}\);</li>
+              <li>\(E\leftrightarrow U\);</li>
+              <li>the copied vertex corresponding to \(D\) lies in the indicated lower half-plane.</li>
+            </ul>
+            <p>Let \(W\) be the copied point corresponding to \(F\), so \(UW=EF\). Which two arcs locate the copied point corresponding to \(D\)?</p>
+          `,
+          media: String.raw`
+            <figure>
+              <img src="7-6-14.png" alt="Scalene source triangle DEF and target ray UV with the lower half-plane indicated" />
+              <figcaption>Figure 6 — setup for Question 14 (not to scale)</figcaption>
+            </figure>
           `,
           choices: [
             String.raw`Center \(U\): radius \(EF\); center \(W\): radius \(DF\).`,
@@ -295,67 +312,79 @@
 
         {
           stem: String.raw`
-            <p>A student is copying a scalene triangle \(ABC\) onto segment \(PQ\), with \(A\leftrightarrow P\) and \(B\leftrightarrow Q\). The base has been copied correctly: \(PQ=AB\).</p>
+            <p>A student is copying a scalene \(\triangle ABC\) onto \(\overline{PQ}\), with \(A\leftrightarrow P\) and \(B\leftrightarrow Q\). The base has been copied correctly, so \(PQ=AB\). Assume \(AC\ne BC\).</p>
             <p>The student then draws an arc centered at \(P\) with radius \(BC\), and an arc centered at \(Q\) with radius \(AC\).</p>
-            <p>What is the precise error?</p>
+            <p>What is the error?</p>
           `,
           choices: [
-            String.raw`The three chosen lengths violate the Triangle Inequality.`,
-            String.raw`The two locating arcs must always have the same radius.`,
-            String.raw`The copied third vertex must lie on the target ray.`,
-            String.raw`The two remaining side lengths were assigned to the wrong endpoints; the required correspondence has been reversed.`,
-            String.raw`An angle must be copied before either of the remaining side lengths can be used.`,
-            String.raw`There is no error; once \(AB\) is copied, the endpoint correspondence no longer matters.`
+            `The three side lengths violate the Triangle Inequality.`,
+            `The two locating arcs must always have the same radius.`,
+            `The copied third vertex must lie on the target segment.`,
+            `The two remaining side lengths were assigned to the wrong endpoints, reversing the required correspondence.`,
+            `An angle must be copied before either remaining side length can be used.`,
+            `There is no error; after the base is copied, the endpoint correspondence no longer matters.`
           ],
           choiceWrap: false
         },
 
         {
           stem: String.raw`
-            <p><b>CONSTRUCTION.</b> Draw an irregular convex quadrilateral \(ABCD\) with side \(AB\) as a bottom side and vertices \(C\) and \(D\) above the line \(AB\). Draw diagonal \(AC\).</p>
-            <p>Draw a separate horizontal ray \(\overrightarrow{PX}\) pointing right. Copy the quadrilateral so that \(A\leftrightarrow P\), side \(AB\) lies on the ray, and the copied quadrilateral lies in the upper half-plane. Build it by copying \(\triangle ABC\) and then \(\triangle ACD\). When locating the copy of \(D\), choose the intersection on the side of the copied diagonal corresponding to the side on which \(D\) lies in the source figure.</p>
+            <p><b>CONSTRUCTION.</b> Refer to Figure 7. Redraw the source quadrilateral, including diagonal \(\overline{AC}\), and the target ray approximately as shown.</p>
+            <p>Copy quadrilateral \(ABCD\) so that the side corresponding to \(\overline{AB}\) lies on \(\overrightarrow{PX}\), \(A\leftrightarrow P\), and the copied quadrilateral lies in the indicated upper half-plane. Build the copy by first copying \(\triangle ABC\), then copying \(\triangle ACD\) on the correct side of the copied diagonal.</p>
             <p>Why is copying only the four side lengths \(AB,BC,CD,DA\) not enough to guarantee a congruent quadrilateral?</p>
           `,
+          media: String.raw`
+            <figure>
+              <img src="7-6-16.png" alt="Source quadrilateral ABCD with diagonal AC and target ray PX with the upper half-plane indicated" />
+              <figcaption>Figure 7 — setup for Question 16 (not to scale)</figcaption>
+            </figure>
+          `,
           choices: [
-            String.raw`The four side lengths already guarantee congruence, so the diagonal is unnecessary.`,
-            String.raw`The same four side lengths can form different quadrilaterals; copying a diagonal fixes a triangulation into rigid triangles.`,
-            String.raw`A diagonal is needed because every quadrilateral has perpendicular diagonals.`,
-            String.raw`A diagonal is needed only when the two pairs of opposite sides have different lengths.`,
-            String.raw`Four side lengths determine only similarity, never congruence.`,
-            String.raw`A quadrilateral can be copied only if all four of its angles are measured first.`
+            `The four side lengths already guarantee congruence, so the diagonal is unnecessary.`,
+            `The same four side lengths can form different quadrilaterals; copying a diagonal divides the figure into rigid triangles.`,
+            `A diagonal is needed because every quadrilateral has perpendicular diagonals.`,
+            `A diagonal is needed only when the two pairs of opposite sides have different lengths.`,
+            `Four side lengths determine only similarity, never congruence.`,
+            `A quadrilateral can be copied only after all four angles have been measured.`
           ],
           choiceWrap: false
         },
 
         {
           stem: String.raw`
-            <p><b>CONSTRUCTION.</b> Draw an irregular convex pentagon \(ABCDE\) with side \(AB\) as a bottom side and the other vertices above the line \(AB\). Draw diagonals \(AC\) and \(AD\).</p>
-            <p>Draw a separate horizontal ray \(\overrightarrow{PX}\) pointing right. Copy the pentagon so that \(A\leftrightarrow P\), side \(AB\) lies on the ray, and the copied pentagon lies in the upper half-plane. Copy the polygon by successively copying the triangles in your triangulation.</p>
-            <p>How many triangles are used when this pentagon is triangulated from vertex \(A\)?</p>
+            <p><b>CONSTRUCTION.</b> Refer to Figure 8. Redraw the source pentagon, including diagonals \(\overline{AC}\) and \(\overline{AD}\), and the target ray approximately as shown.</p>
+            <p>Copy pentagon \(ABCDE\) so that the side corresponding to \(\overline{AB}\) lies on \(\overrightarrow{PX}\), \(A\leftrightarrow P\), and the copied pentagon lies in the indicated upper half-plane. Use the triangulation shown in the figure.</p>
+            <p>After \(\triangle ABC\) has been copied, which order correctly completes the construction?</p>
+          `,
+          media: String.raw`
+            <figure>
+              <img src="7-6-17.png" alt="Source pentagon ABCDE triangulated from A and target ray PX with the upper half-plane indicated" />
+              <figcaption>Figure 8 — setup for Question 17 (not to scale)</figcaption>
+            </figure>
           `,
           choices: [
-            String.raw`\(2\)`,
-            String.raw`\(4\)`,
-            String.raw`\(5\)`,
-            String.raw`It depends on the exact shape of the pentagon.`,
-            String.raw`\(3\)`,
-            String.raw`\(6\)`
+            String.raw`Copy \(\triangle ADE\) using \(\overline{AD}\), then copy \(\triangle ACD\) using \(\overline{AC}\).`,
+            String.raw`Copy \(\triangle BCD\) using \(\overline{BC}\), then copy \(\triangle CDE\) using \(\overline{CD}\).`,
+            String.raw`Copy \(\triangle ACD\) using the copied \(\overline{AC}\), then copy \(\triangle ADE\) using the copied \(\overline{AD}\).`,
+            String.raw`Copy \(\triangle ABC\) a second time, then attach \(\triangle ADE\).`,
+            String.raw`Copy \(\triangle ACE\) using \(\overline{AC}\), then place \(D\) anywhere on \(\overline{CE}\).`,
+            String.raw`Copy the remaining side lengths around the perimeter; no further triangle copies are needed.`
           ],
           choiceWrap: false
         },
 
         {
           stem: String.raw`
-            <p>You want a method that is guaranteed to copy <b>any convex polygon</b> onto a chosen target ray, with a specified side placed on the ray and the polygon placed in a specified half-plane.</p>
-            <p>Which plan is mathematically sufficient?</p>
+            <p>You want a procedure that is guaranteed to copy any convex polygon onto a chosen target ray, with a specified side on the ray and the polygon in a specified half-plane.</p>
+            <p>Which plan is guaranteed to work?</p>
           `,
           choices: [
-            String.raw`Copy all side lengths in order around the polygon; the side lengths alone determine the shape.`,
-            String.raw`Copy all interior angles in order; the angles alone determine both shape and size.`,
-            String.raw`Triangulate the polygon from one vertex, copy the chosen base side, and then copy the triangles successively while preserving the required correspondences and half-plane choices.`,
-            String.raw`Copy one side and one diagonal; all remaining vertices are then forced automatically.`,
-            String.raw`Copy one triangle from the polygon, then extend the remaining sides using only their lengths.`,
-            String.raw`Copy the polygon's perimeter and one interior angle; this determines every vertex.`
+            `Copy all side lengths in order around the polygon; the side lengths alone determine the shape.`,
+            `Copy all interior angles in order; the angles alone determine both shape and size.`,
+            `Triangulate the polygon from one vertex, copy the chosen base side, then copy the triangles successively while preserving vertex correspondence and choosing each new vertex on the correct side of the shared diagonal.`,
+            `Copy one side and one diagonal; all remaining vertices are then forced automatically.`,
+            `Copy one triangle from the polygon, then extend the remaining sides using only their lengths.`,
+            `Copy the polygon's perimeter and one interior angle; this determines every vertex.`
           ],
           choiceWrap: false
         }
