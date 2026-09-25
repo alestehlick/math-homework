@@ -3,11 +3,11 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Homework 7-3 (Algebra 2)</title>
+  <title>Homework 7-2 and 7-3 (Algebra 2)</title>
 
   <script>
     /* =========================
-       Homework 7-2 and 7-3 — Radicals & Exponents (Algebra 2)
+       Homework 7-3 — Radicals & Exponents (Algebra 2)
        Combined coverage of Sections 7-2 and 7-3
        Adapted for: /math-homework/assets/core-rich.js
 
@@ -329,6 +329,7 @@
           stem: String.raw`
             <p>Write the nested radical as a <strong>single radical</strong>. Assume \(a>0\).</p>
             <p class="math">\(\sqrt[3]{a\sqrt[3]{a\sqrt[3]{a}}}\)</p>
+            <p><strong>Hint:</strong> First rewrite each cube root using fractional powers.</p>
           `,
           choices: [
             String.raw`\(\sqrt[9]{a^{5}}\)`,
@@ -341,16 +342,16 @@
         },
         {
           stem: String.raw`
-            <p>Simplify by combining any terms that can be combined after rewriting powers. Do <strong>not</strong> factor the final expression.</p>
-            <p class="math">\(2^{2k+1}-2^{2k-1}+2^{-2k}\)</p>
+            <p>Simplify.</p>
+            <p class="math">\(2^{-(2k+1)}-2^{-(2k-1)}+2^{-2k}\)</p>
           `,
           choices: [
-            String.raw`\(3\cdot2^{2k}+2^{-2k}\)`,
-            String.raw`\(3\cdot2^{2k-1}+2^{-2k}\)`,
-            String.raw`\(2^{2k}+2^{-2k}\)`,
-            String.raw`\(3\cdot2^{2k-2}+2^{-2k}\)`,
-            String.raw`\(3\cdot2^{2k-1}+2^{2k}\)`,
-            String.raw`\(2^{4k}+2^{-2k}\)`
+            String.raw`\(2^{-2k-1}\)`,
+            String.raw`\(-2^{-2k-1}\)`,
+            String.raw`\(-2^{-2k}\)`,
+            String.raw`\(2^{-2k}\)`,
+            String.raw`\(-3\cdot2^{-2k-1}\)`,
+            String.raw`\(3\cdot2^{-2k-1}\)`
           ]
         },
       ]
