@@ -1,0 +1,279 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Homework 7-3 (Algebra 2)</title>
+
+  <script>
+    /* =========================
+       Homework 7-3 — Radicals & Exponents (Algebra 2)
+       Combined coverage of Sections 7-2 and 7-3
+       Adapted for: /math-homework/assets/core-rich.js
+
+       REQUIRED SOURCE REFERENCES (user-provided homework drafts):
+       - Previous Homework 7-2: Q1–Q12
+       - Previous Homework 7-3: Q1–Q12
+
+       MODEL REWORK / AUTHORSHIP:
+       - Q1–Q4 rework the radical-simplification and absolute-value ideas from 7-2,
+         with ambiguous/equivalent distractors removed.
+       - Q5 is model-authored to make the odd-root/even-root distinction explicit.
+       - Q6–Q9 rework the radical-operation ideas from 7-3 and connect them back
+         to the absolute-value issue from 7-2.
+       - Q10–Q11 are model-authored recognition/diagnostic questions designed to
+         prevent blind use of radical-addition rules.
+       - Q12–Q14 rework the exponential-expression questions from 7-3 and emphasize
+         the shared algebraic structure of like terms.
+       - Q15–Q16 are model-authored synthesis questions combining simplification,
+         absolute value, and structural judgment.
+
+       IMAGE FILES:
+       - None required.
+       ========================= */
+
+    window.homeworkData = {
+      classId : "Algebra2",
+      id      : "Homework 7-3",
+      title   : "Homework 7-3 — Radicals & Exponents (Sections 7-2 and 7-3)",
+
+      graphics : String.raw``,
+
+      /* Correct answers for Q1–Q16 */
+      answerKey : ["D","B","E","F","C","A","E","D","B","C","F","D","B","E","C","A"],
+
+      questions : [
+        {
+          stem: String.raw`
+            <p>Simplify. Assume all variables are positive real numbers.</p>
+            <p class="math">\(\sqrt{180a^{5}b^{4}}\)</p>
+          `,
+          choices: [
+            String.raw`\(6a^{2}b\sqrt{5a}\)`,
+            String.raw`\(6ab^{2}\sqrt{5a}\)`,
+            String.raw`\(12a^{2}b^{2}\sqrt{5a}\)`,
+            String.raw`\(6a^{2}b^{2}\sqrt{5a}\)`,
+            String.raw`\(6a^{2}b^{2}\sqrt{10a}\)`,
+            String.raw`\(30a^{2}b^{2}\sqrt{a}\)`
+          ]
+        },
+        {
+          stem: String.raw`
+            <p>Simplify. Assume all variables are positive real numbers.</p>
+            <p class="math">\(\sqrt[3]{54x^{5}y^{2}}\)</p>
+          `,
+          choices: [
+            String.raw`\(3x^{2}\sqrt[3]{2xy^{2}}\)`,
+            String.raw`\(3x\sqrt[3]{2x^{2}y^{2}}\)`,
+            String.raw`\(3\sqrt[3]{2x^{2}y^{2}}\)`,
+            String.raw`\(x\sqrt[3]{18x^{2}y^{2}}\)`,
+            String.raw`\(3x\sqrt[3]{2xy^{2}}\)`,
+            String.raw`\(6x\sqrt[3]{x^{2}y^{2}}\)`
+          ]
+        },
+        {
+          stem: String.raw`
+            <p>Simplify. The variables may be any real numbers.</p>
+            <p class="math">\(\sqrt{49m^{2}n^{4}}\)</p>
+          `,
+          choices: [
+            String.raw`\(7mn^{2}\)`,
+            String.raw`\(7|m|n\)`,
+            String.raw`\(7m^{2}n^{2}\)`,
+            String.raw`\(49|m|n^{2}\)`,
+            String.raw`\(7|m|n^{2}\)`,
+            String.raw`\(7|m|n^{4}\)`
+          ]
+        },
+        {
+          stem: String.raw`
+            <p>Simplify. The variables may be any real numbers.</p>
+            <p class="math">\(\sqrt{9a^{2}-6ab+b^{2}}\)</p>
+          `,
+          choices: [
+            String.raw`\(3a-b\)`,
+            String.raw`\(|3a+b|\)`,
+            String.raw`\(3|a|-|b|\)`,
+            String.raw`\(|a-b|\)`,
+            String.raw`\((3a-b)^{2}\)`,
+            String.raw`\(|3a-b|\)`
+          ]
+        },
+        {
+          stem: String.raw`
+            <p>Which statement best explains why simplifying an even-index radical can require absolute value, while simplifying an odd-index radical does not?</p>
+          `,
+          choices: [
+            String.raw`Even-index roots do not exist for negative inputs, so every variable must always be replaced by an absolute value.`,
+            String.raw`Absolute value is required whenever the exponent under a radical is even.`,
+            String.raw`An odd-index root preserves sign, while an even-index principal root is nonnegative; therefore a factor pulled from an even root may need absolute value.`,
+            String.raw`Odd-index roots are always nonnegative, but even-index roots may be negative.`,
+            String.raw`Absolute value matters only when the entire radicand is negative.`,
+            String.raw`The difference is only a notation convention and does not affect the value of the expression.`
+          ],
+          choiceWrap: false
+        },
+        {
+          stem: String.raw`
+            <p>Do the indicated operations and simplify.</p>
+            <p class="math">\(4\sqrt{7}-9\sqrt{7}+2\sqrt{7}\)</p>
+          `,
+          choices: [
+            String.raw`\(-3\sqrt{7}\)`,
+            String.raw`\(-15\sqrt{7}\)`,
+            String.raw`\(7\sqrt{7}\)`,
+            String.raw`\(-3\sqrt{21}\)`,
+            String.raw`\(-\sqrt{7}\)`,
+            String.raw`\(3\sqrt{7}\)`
+          ]
+        },
+        {
+          stem: String.raw`
+            <p>Do the indicated operations and simplify completely.</p>
+            <p class="math">\(\sqrt{48}+\sqrt{75}-\sqrt{12}\)</p>
+          `,
+          choices: [
+            String.raw`\(3\sqrt{3}\)`,
+            String.raw`\(\sqrt{111}\)`,
+            String.raw`\(9\sqrt{3}\)`,
+            String.raw`\(5\sqrt{3}\)`,
+            String.raw`\(7\sqrt{3}\)`,
+            String.raw`\(7\sqrt{6}\)`
+          ]
+        },
+        {
+          stem: String.raw`
+            <p>Do the indicated operations and simplify. Assume \(x\) and \(y\) are positive real numbers.</p>
+            <p class="math">\(\sqrt{32x^{2}y}-x\sqrt{2y}+\sqrt{18x^{2}y}\)</p>
+          `,
+          choices: [
+            String.raw`\(4x\sqrt{2y}\)`,
+            String.raw`\(5x\sqrt{2y}\)`,
+            String.raw`\(7x\sqrt{2y}\)`,
+            String.raw`\(6x\sqrt{2y}\)`,
+            String.raw`\(6\sqrt{2xy}\)`,
+            String.raw`\(x\sqrt{2y}\)`
+          ]
+        },
+        {
+          stem: String.raw`
+            <p>Do the indicated operations and simplify. The variable may be any real number.</p>
+            <p class="math">\(\sqrt{18x^{2}}+\sqrt{8x^{2}}\)</p>
+          `,
+          choices: [
+            String.raw`\(5x\sqrt{2}\)`,
+            String.raw`\(5|x|\sqrt{2}\)`,
+            String.raw`\(5|x|\)`,
+            String.raw`\(3|x|\sqrt{2}\)`,
+            String.raw`\(5x^{2}\sqrt{2}\)`,
+            String.raw`\(|x|\sqrt{10}\)`
+          ]
+        },
+        {
+          stem: String.raw`
+            <p>Which pair becomes <em>like radicals</em> after each radical is simplified, so the two terms can then be combined?</p>
+          `,
+          choices: [
+            String.raw`\(\sqrt{8}\text{ and }\sqrt{27}\)`,
+            String.raw`\(\sqrt{20}\text{ and }\sqrt{18}\)`,
+            String.raw`\(\sqrt{12}\text{ and }\sqrt{75}\)`,
+            String.raw`\(\sqrt{45}\text{ and }\sqrt{28}\)`,
+            String.raw`\(\sqrt{50}\text{ and }\sqrt{12}\)`,
+            String.raw`\(\sqrt{63}\text{ and }\sqrt{80}\)`
+          ]
+        },
+        {
+          stem: String.raw`
+            <p>A student writes \(\sqrt{12}+\sqrt{27}=\sqrt{39}\). Which response correctly identifies the error and gives the correct simplification?</p>
+          `,
+          choices: [
+            String.raw`The radicals cannot be simplified, so the original expression is already simplest.`,
+            String.raw`The student should subtract the radicands first: \(\sqrt{27-12}=\sqrt{15}\).`,
+            String.raw`The student should multiply the radicands: \(\sqrt{12\cdot27}=18\).`,
+            String.raw`The rule is valid only when the radicands are perfect squares, so the answer is \(\sqrt{39}\).`,
+            String.raw`The student should add the coefficients hidden inside the radicals, giving \(5\sqrt{6}\).`,
+            String.raw`Square roots do not distribute over addition. Simplify first: \(\sqrt{12}=2\sqrt{3}\) and \(\sqrt{27}=3\sqrt{3}\), so the sum is \(5\sqrt{3}\).`
+          ],
+          choiceWrap: false
+        },
+        {
+          stem: String.raw`
+            <p>Do the indicated operations and simplify.</p>
+            <p class="math">\(3\cdot5^{17}-8\cdot5^{17}\)</p>
+          `,
+          choices: [
+            String.raw`\(-5^{17}\)`,
+            String.raw`\(5^{18}\)`,
+            String.raw`\(-8\cdot5^{17}\)`,
+            String.raw`\(-5^{18}\)`,
+            String.raw`\(-15^{17}\)`,
+            String.raw`\(-5^{20}\)`
+          ]
+        },
+        {
+          stem: String.raw`
+            <p>Rewrite and simplify.</p>
+            <p class="math">\(6^{x}+6^{x+1}\)</p>
+          `,
+          choices: [
+            String.raw`\(6^{2x+1}\)`,
+            String.raw`\(7\cdot6^{x}\)`,
+            String.raw`\(12^{x+1}\)`,
+            String.raw`\(2\cdot6^{x+1}\)`,
+            String.raw`\(6^{x}(x+1)\)`,
+            String.raw`\(6^{x+2}\)`
+          ]
+        },
+        {
+          stem: String.raw`
+            <p>After simplification, \(\sqrt{12}+\sqrt{27}=2\sqrt{3}+3\sqrt{3}\), which has the coefficient pattern \(2u+3u\).</p>
+            <p>Which exponential expression has exactly the same coefficient pattern before combining like terms?</p>
+          `,
+          choices: [
+            String.raw`\(2\cdot5^{x}+3\cdot7^{x}\)`,
+            String.raw`\(5^{x}+5^{x+1}\)`,
+            String.raw`\(2\cdot5^{x+1}+3\cdot5^{x}\)`,
+            String.raw`\(2\cdot5^{x}+3\cdot5^{x+1}\)`,
+            String.raw`\(2\cdot5^{x}+3\cdot5^{x}\)`,
+            String.raw`\(5^{2x}+5^{3x}\)`
+          ]
+        },
+        {
+          stem: String.raw`
+            <p>Do the indicated operations and simplify. The variable may be any real number.</p>
+            <p class="math">\(2\sqrt{50a^{2}}-\sqrt{8a^{2}}+3\sqrt{18a^{2}}\)</p>
+          `,
+          choices: [
+            String.raw`\(17a\sqrt{2}\)`,
+            String.raw`\(12|a|\sqrt{2}\)`,
+            String.raw`\(17|a|\sqrt{2}\)`,
+            String.raw`\(17|a|\)`,
+            String.raw`\(5|a|\sqrt{2}\)`,
+            String.raw`\(17a^{2}\sqrt{2}\)`
+          ]
+        },
+        {
+          stem: String.raw`
+            <p>Which identity is valid for every real value of \(x\)?</p>
+          `,
+          choices: [
+            String.raw`\(\sqrt{9x^{4}}=3x^{2}\)`,
+            String.raw`\(\sqrt{4x^{2}}=2x\)`,
+            String.raw`\(\sqrt[3]{8x^{3}}=2|x|\)`,
+            String.raw`\(\sqrt{x^{6}}=x^{3}\)`,
+            String.raw`\(\sqrt[4]{16x^{4}}=2x\)`,
+            String.raw`\(\sqrt{x^{2}+1}=|x|+1\)`
+          ]
+        }
+      ]
+    };
+  </script>
+
+  <link rel="stylesheet" href="/math-homework/assets/core-rich.css" />
+  <script defer src="/math-homework/assets/core-rich.js"></script>
+  <script defer src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+</head>
+<body>
+  <div id="hw-root">Loading…</div>
+</body>
+</html>
