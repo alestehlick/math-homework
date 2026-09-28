@@ -1,0 +1,334 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Homework 7-3 to 7-4 (Algebra 1)</title>
+
+  <script>
+    /* =========================
+       Homework 7-3 to 7-4 — Substitution and Systems (Algebra 1)
+       Adapted for: /math-homework/assets/core-rich.js
+
+       REQUIRED SOURCE REFERENCES (user-provided homework files):
+       - Homework 7-3 source: hw_7_3(4).html
+         • Q4 adapts source Q3.
+         • Q5 adapts source Q5.
+         • Q6 adapts source Q12.
+       - Homework 7-4 source: hw_7_4.html
+         • Q8 adapts source Q3 (inconsistent system).
+         • Q9 adapts source Q4 (dependent system).
+         • Q10 adapts source Q1 (consistent independent system).
+         • Q11 reworks source Q5 to test modeling before solving.
+         • Q12 reworks source Q6 with cleaner numbers.
+         • Q14 adapts source Q8.
+         • Q15 adapts source Q9.
+         • Q16 reworks source Q7: it asks for the common solution set
+           without incorrectly calling the nonlinear equations "dependent."
+       - Model-authored / substantially reworked:
+         • Q1–Q3 create a deliberate substitution ascent from an isolated
+           variable to choosing and carrying out a useful substitution.
+         • Q7 diagnoses the distributive-property error that often occurs
+           during substitution.
+         • Q13 provides a clean linear–quadratic transfer problem.
+         • Distractors throughout were re-authored to represent plausible
+           nearby errors rather than recycled answers from other questions.
+
+       IMAGE FILES:
+       - None.
+       ========================= */
+
+    window.homeworkData = {
+      classId : "Algebra1",
+      id      : "Homework 7-3 to 7-4",
+      title   : "Homework 7-3 to 7-4 — Substitution and Systems",
+
+      graphics : String.raw``,
+
+      /* Correct answers for Q1–Q16 */
+      answerKey : ["B","D","A","F","C","E","B","D","C","A","E","F","B","D","A","C"],
+
+      questions : [
+
+        /* Q1 — direct entry: one variable already isolated */
+        {
+          stem: String.raw`
+            <p>Use substitution to solve the system.</p>
+            <p>\(\begin{aligned} x&=2y+1\\ x+y&=10 \end{aligned}\)</p>
+          `,
+          choices: [
+            String.raw`\((3,7)\)`,
+            String.raw`\((7,3)\)`,
+            String.raw`\((9,1)\)`,
+            String.raw`\((5,5)\)`,
+            String.raw`No solution; the system is inconsistent.`,
+            String.raw`Infinitely many solutions; the system is dependent.`
+          ],
+          choiceWrap: false
+        },
+
+        /* Q2 — direct entry: y already isolated */
+        {
+          stem: String.raw`
+            <p>Use substitution to solve the system.</p>
+            <p>\(\begin{aligned} y&=3x-4\\ 2x+y&=16 \end{aligned}\)</p>
+          `,
+          choices: [
+            String.raw`\((8,4)\)`,
+            String.raw`\((4,-8)\)`,
+            String.raw`\((-4,8)\)`,
+            String.raw`\((4,8)\)`,
+            String.raw`No solution; the system is inconsistent.`,
+            String.raw`Infinitely many solutions; the system is dependent.`
+          ],
+          choiceWrap: false
+        },
+
+        /* Q3 — choose a useful isolation */
+        {
+          stem: String.raw`
+            <p>Solve the system. Choose a variable to isolate, then use substitution.</p>
+            <p>\(\begin{aligned} x-y&=5\\ 2x+3y&=20 \end{aligned}\)</p>
+          `,
+          choices: [
+            String.raw`\((7,2)\)`,
+            String.raw`\((2,7)\)`,
+            String.raw`\((5,0)\)`,
+            String.raw`\((8,3)\)`,
+            String.raw`Infinitely many solutions; the system is dependent.`,
+            String.raw`No solution; the system is inconsistent.`
+          ],
+          choiceWrap: false
+        },
+
+        /* Q4 — two standard-form equations */
+        {
+          stem: String.raw`
+            <p>Solve the system by substitution.</p>
+            <p>\(\begin{aligned} x+4y&=30\\ 2x+5y&=36 \end{aligned}\)</p>
+          `,
+          choices: [
+            String.raw`\((2,8)\)`,
+            String.raw`\((8,-2)\)`,
+            String.raw`\((-8,2)\)`,
+            String.raw`\((0,7.2)\)`,
+            String.raw`No solution; the system is inconsistent.`,
+            String.raw`\((-2,8)\)`
+          ],
+          choiceWrap: false
+        },
+
+        /* Q5 — sign discipline */
+        {
+          stem: String.raw`
+            <p>Solve the system.</p>
+            <p>\(\begin{aligned} x-5y&=17\\ 2x-7y&=22 \end{aligned}\)</p>
+          `,
+          choices: [
+            String.raw`\((3,4)\)`,
+            String.raw`\((3,-4)\)`,
+            String.raw`\((-3,-4)\)`,
+            String.raw`\((-3,4)\)`,
+            String.raw`\((10,-6)\)`,
+            String.raw`No solution; the system is inconsistent.`
+          ],
+          choiceWrap: false
+        },
+
+        /* Q6 — fractional solution */
+        {
+          stem: String.raw`
+            <p>Solve the system.</p>
+            <p>\(\begin{aligned} 3x+5y&=8\\ 7x-2y&=10 \end{aligned}\)</p>
+          `,
+          choices: [
+            String.raw`\((2,1)\)`,
+            String.raw`\(\left(\frac{10}{7},0\right)\)`,
+            String.raw`\(\left(\frac{8}{3},0\right)\)`,
+            String.raw`\((-1,-6)\)`,
+            String.raw`\(\left(\frac{66}{41},\frac{26}{41}\right)\)`,
+            String.raw`No solution; the system is inconsistent.`
+          ],
+          choiceWrap: false
+        },
+
+        /* Q7 — diagnose a substitution error */
+        {
+          stem: String.raw`
+            <p>A student solves the system</p>
+            <p>\(\begin{aligned} x-y&=5\\ 2x+3y&=20 \end{aligned}\)</p>
+            <p>and correctly rewrites the first equation as \(x=y+5\). The student then writes \(2y+5+3y=20\).</p>
+            <p>Which equation should the student have written immediately after substituting for \(x\)?</p>
+          `,
+          choices: [
+            String.raw`\(2y+5+3y=20\)`,
+            String.raw`\(2(y+5)+3y=20\)`,
+            String.raw`\(2(y-5)+3y=20\)`,
+            String.raw`\(2y+10+3y=25\)`,
+            String.raw`\(y+5+3y=20\)`,
+            String.raw`\(2(y+5)+3y=5\)`
+          ]
+        },
+
+        /* Q8 — inconsistent system */
+        {
+          stem: String.raw`
+            <p>Solve and classify the system.</p>
+            <p>\(\begin{aligned} y&=2x+1\\ 2y&=4x-6 \end{aligned}\)</p>
+          `,
+          choices: [
+            String.raw`\((0,1)\); consistent and independent`,
+            String.raw`\((2,5)\); consistent and independent`,
+            String.raw`Infinitely many solutions; consistent and dependent`,
+            String.raw`No solution; inconsistent`,
+            String.raw`\((-1,-1)\); consistent and independent`,
+            String.raw`\((3,7)\); consistent and independent`
+          ],
+          choiceWrap: false
+        },
+
+        /* Q9 — dependent system */
+        {
+          stem: String.raw`
+            <p>Solve and classify the system.</p>
+            <p>\(\begin{aligned} 3x-6y&=9\\ x-2y&=3 \end{aligned}\)</p>
+          `,
+          choices: [
+            String.raw`\((3,0)\); consistent and independent`,
+            String.raw`No solution; inconsistent`,
+            String.raw`Infinitely many solutions; consistent and dependent`,
+            String.raw`\(\left(0,-\frac{3}{2}\right)\); consistent and independent`,
+            String.raw`\((1,-1)\); consistent and independent`,
+            String.raw`Exactly two solutions`
+          ],
+          choiceWrap: false
+        },
+
+        /* Q10 — independent system */
+        {
+          stem: String.raw`
+            <p>Solve and classify the system.</p>
+            <p>\(\begin{aligned} x+y&=14\\ 2x-y&=1 \end{aligned}\)</p>
+          `,
+          choices: [
+            String.raw`\((5,9)\); consistent and independent`,
+            String.raw`\((9,5)\); consistent and independent`,
+            String.raw`No solution; inconsistent`,
+            String.raw`Infinitely many solutions; consistent and dependent`,
+            String.raw`\((-5,19)\); consistent and independent`,
+            String.raw`\((5,-9)\); consistent and independent`
+          ],
+          choiceWrap: false
+        },
+
+        /* Q11 — model before solving */
+        {
+          stem: String.raw`
+            <p>Let \(L\) be the larger of two numbers and \(S\) the smaller. Their sum is \(63\), and the larger number is \(13\) greater than the smaller.</p>
+            <p>Which system correctly models the situation?</p>
+          `,
+          choices: [
+            String.raw`\(\begin{cases}L+S=13\\L-S=63\end{cases}\)`,
+            String.raw`\(\begin{cases}L-S=63\\L+S=76\end{cases}\)`,
+            String.raw`\(\begin{cases}L+S=63\\S-L=13\end{cases}\)`,
+            String.raw`\(\begin{cases}L+S=76\\L-S=13\end{cases}\)`,
+            String.raw`\(\begin{cases}L+S=63\\L-S=13\end{cases}\)`,
+            String.raw`\(\begin{cases}L+S=63\\L=13S\end{cases}\)`
+          ]
+        },
+
+        /* Q12 — model and solve */
+        {
+          stem: String.raw`
+            <p>Two numbers have a sum of \(84\). The larger number minus twice the smaller number is \(12\).</p>
+            <p>Find the ordered pair <b>(larger, smaller)</b>.</p>
+          `,
+          choices: [
+            String.raw`\((48,36)\)`,
+            String.raw`\((56,28)\)`,
+            String.raw`\((52,32)\)`,
+            String.raw`\((72,12)\)`,
+            String.raw`\((24,60)\)`,
+            String.raw`\((60,24)\)`
+          ]
+        },
+
+        /* Q13 — nonlinear transfer: line and parabola */
+        {
+          stem: String.raw`
+            <p>Solve the system.</p>
+            <p>\(\begin{aligned} y&=x+2\\ x^2+y&=8 \end{aligned}\)</p>
+          `,
+          choices: [
+            String.raw`\(\{(2,4)\}\)`,
+            String.raw`\(\{(-3,-1),(2,4)\}\)`,
+            String.raw`\(\{(-2,0),(3,5)\}\)`,
+            String.raw`\(\{(-3,1),(2,-4)\}\)`,
+            String.raw`\(\{(-3,-1)\}\)`,
+            String.raw`No real solution`
+          ],
+          choiceWrap: false
+        },
+
+        /* Q14 — nonlinear: two values of x */
+        {
+          stem: String.raw`
+            <p>Solve the system.</p>
+            <p>\(\begin{aligned} x^2+y&=5\\ 8x^2-2y&=0 \end{aligned}\)</p>
+          `,
+          choices: [
+            String.raw`\(\{(-1,-4),(1,-4)\}\)`,
+            String.raw`\(\{(-2,1),(2,1)\}\)`,
+            String.raw`\(\{(1,4)\}\)`,
+            String.raw`\(\{(-1,4),(1,4)\}\)`,
+            String.raw`\(\{(-1,-4),(-1,4),(1,-4),(1,4)\}\)`,
+            String.raw`No real solution`
+          ],
+          choiceWrap: false
+        },
+
+        /* Q15 — nonlinear: four sign combinations */
+        {
+          stem: String.raw`
+            <p>Solve the system.</p>
+            <p>\(\begin{aligned} x^2+y^2&=25\\ 2x^2-3y^2&=5 \end{aligned}\)</p>
+          `,
+          choices: [
+            String.raw`\(\{(4,3),(4,-3),(-4,3),(-4,-3)\}\)`,
+            String.raw`\(\{(3,4),(3,-4),(-3,4),(-3,-4)\}\)`,
+            String.raw`\(\{(5,0),(-5,0),(0,5),(0,-5)\}\)`,
+            String.raw`\(\{(4,3),(-4,-3)\}\)`,
+            String.raw`\(\{(4,0),(-4,0),(0,3),(0,-3)\}\)`,
+            String.raw`No real solution`
+          ],
+          choiceWrap: false
+        },
+
+        /* Q16 — nonlinear anti-template: one equation contains the other branch */
+        {
+          stem: String.raw`
+            <p>Determine the complete solution set of the system.</p>
+            <p>\(\begin{aligned} (x+y)^2&=36\\ x+y&=6 \end{aligned}\)</p>
+          `,
+          choices: [
+            String.raw`Exactly two solutions: \((3,3)\) and \((-3,-3)\)`,
+            String.raw`All ordered pairs satisfying \(x+y=6\) or \(x+y=-6\)`,
+            String.raw`Infinitely many ordered pairs satisfying \(x+y=6\)`,
+            String.raw`Exactly one solution: \((6,0)\)`,
+            String.raw`Exactly four solutions: \((6,0),(0,6),(-6,0),(0,-6)\)`,
+            String.raw`No real solution`
+          ],
+          choiceWrap: false
+        }
+      ]
+    };
+  </script>
+
+  <link rel="stylesheet" href="/math-homework/assets/core-rich.css" />
+  <script defer src="/math-homework/assets/core-rich.js"></script>
+  <script defer src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+</head>
+<body>
+  <div id="hw-root">Loading…</div>
+</body>
+</html>
