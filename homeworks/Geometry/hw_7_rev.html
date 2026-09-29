@@ -1,0 +1,414 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Chapter 7 Review</title>
+
+  <script>
+    /* =========================
+       Chapter 7 Review (Geometry)
+       Adapted for: /math-homework/assets/core-rich.js
+
+       REQUIRED SOURCE REFERENCES:
+       - User-supplied source: Geo___Test7.tex (Test Ch. 7), especially:
+         Q1 triangle inequality; Q2 exterior-angle / isosceles angle work;
+         Q3 right-triangle congruence sufficiency and criteria;
+         Q4–Q5 triangle centers and altitudes/orthocenter;
+         Q6–Q7 side-angle inequalities, exterior-angle inequality, and Hinge Theorem;
+         Q8 parallelogram properties; Q9 congruence proof; Q10 inequality proof;
+         Bonus construction of an inscribed circle.
+       - This review does NOT copy the test questions verbatim. All items are model-authored
+         or substantially reworked so students practice the same structures with new data.
+
+       MODEL-AUTHORED / MODEL-REWORKED ITEMS:
+       - Q1–Q7: triangle inequalities, exterior angles, side-angle inequalities,
+         Hinge Theorem and converse.
+       - Q8–Q9: right-triangle congruence sufficiency and special criteria.
+       - Q10–Q11: circumcenter/perpendicular bisectors and orthocenter/altitudes.
+       - Q12–Q14: parallelogram properties, converse/sufficiency, and diagonal bisection.
+       - Q15–Q16: proof-oriented judgment, including HL and a theorem-justification chain.
+       - Q17–Q18: incenter / inscribed-circle construction and center recognition.
+       - Q19: synthesis application of the Hinge Theorem in a quadrilateral.
+
+       IMAGE FILES:
+       - Model-generated: 7-rev-2.png, 7-rev-6.png, 7-rev-10.png, 7-rev-11.png,
+         7-rev-14.png, 7-rev-15.png, 7-rev-17.png, 7-rev-19.png.
+       - No user-supplied figures are used directly.
+
+       IMAGE NAMING RULE:
+       - Model-generated review figures use 7-rev-<question-number>.png, matching the final homework question numbering.
+       - PNG files live in the SAME folder as this HTML.
+       ========================= */
+
+    window.homeworkData = {
+      classId : "Geometry",
+      id      : "Chapter 7 Review",
+      title   : "Chapter 7 Review",
+
+      graphics : String.raw`
+        <section>
+          <h3>Review directions</h3>
+          <ul>
+            <li>Do not measure a diagram. Unless a length or angle is marked or stated, do not assume it from appearance.</li>
+            <li>Question 11 requires you to draw all three altitudes on separate paper and label the orthocenter.</li>
+            <li>Question 17 requires a compass-and-straightedge construction on separate paper. Leave the essential construction arcs visible.</li>
+            <li>Keep your construction paper with the homework.</li>
+          </ul>
+        </section>
+      `,
+
+      answerKey : [
+        "D","D","D","A","B","C","D","E","B","C",
+        "A","C","F","E","B","A","D","B","C"
+      ],
+
+      questions : [
+        {
+          stem: String.raw`
+            <p>Consider these three sets of side lengths.</p>
+            <p>I. \(6,9,15\) &nbsp;&nbsp; II. \(7,8,12\) &nbsp;&nbsp; III. \(4,5,10\)</p>
+            <p>Which statement correctly classifies all three sets?</p>
+          `,
+          choices: [
+            `I forms a triangle; II forms a triangle; III does not.`,
+            `I does not form a triangle because 6 + 9 < 15; II forms a triangle; III does not.`,
+            `I does not form a triangle because equality occurs; II does not form a triangle; III forms a triangle.`,
+            `I does not form a triangle because equality occurs; II forms a triangle; III does not because 4 + 5 < 10.`,
+            `All three sets form triangles.`,
+            `None of the three sets forms a triangle.`
+          ],
+          choiceWrap: false
+        },
+
+        {
+          stem: String.raw`
+            <p><b>Refer to Figure 1.</b> Find \(x\).</p>
+          `,
+          media: String.raw`
+            <figure>
+              <img src="7-rev-2.png" alt="Triangle ABC with side BC extended through C to D; angles at A and B are 47 and 68 degrees, and exterior angle ACD is x" />
+              <figcaption>Figure 1 — not drawn to scale</figcaption>
+            </figure>
+          `,
+          choices: [
+            String.raw`\(65^\circ\)`, String.raw`\(68^\circ\)`, String.raw`\(103^\circ\)`,
+            String.raw`\(115^\circ\)`, String.raw`\(133^\circ\)`, String.raw`\(162^\circ\)`
+          ]
+        },
+
+        {
+          stem: String.raw`
+            <p>In isosceles \(\triangle ABC\), \(AC=BC\). Side \(\overline{BC}\) is extended through \(C\) to a point \(D\).</p>
+            <p>If \(m\angle ACD=132^\circ\), find \(m\angle A\).</p>
+          `,
+          choices: [
+            String.raw`\(48^\circ\)`, String.raw`\(54^\circ\)`, String.raw`\(60^\circ\)`,
+            String.raw`\(66^\circ\)`, String.raw`\(72^\circ\)`, String.raw`\(84^\circ\)`
+          ]
+        },
+
+        {
+          stem: String.raw`
+            <p>In \(\triangle ABC\), \(m\angle A=84^\circ\), \(m\angle B=38^\circ\), and \(m\angle C=58^\circ\).</p>
+            <p>Which comparison is correct?</p>
+          `,
+          choices: [
+            String.raw`\(AB>AC\), because \(m\angle C>m\angle B\).`,
+            String.raw`\(AB<AC\), because \(m\angle C>m\angle B\).`,
+            String.raw`\(AB=AC\), because both sides belong to the same triangle.`,
+            String.raw`\(AB>AC\), because \(m\angle A\) is the largest angle.`,
+            String.raw`\(AB<AC\), because \(m\angle A\) is the largest angle.`,
+            `There is not enough information to compare the two sides.`
+          ],
+          choiceWrap: false
+        },
+
+        {
+          stem: String.raw`
+            <p>In \(\triangle ABC\), \(AB=7\), \(BC=11\), and \(CA=9\).</p>
+            <p>Compare \(m\angle A\) and \(m\angle C\).</p>
+          `,
+          choices: [
+            String.raw`\(m\angle A<m\angle C\)`,
+            String.raw`\(m\angle A>m\angle C\)`,
+            String.raw`\(m\angle A=m\angle C\)`,
+            String.raw`\(m\angle A=90^\circ\)`,
+            String.raw`\(m\angle C=90^\circ\)`,
+            `The comparison cannot be determined from the side lengths.`
+          ],
+          choiceWrap: false
+        },
+
+        {
+          stem: String.raw`
+            <p><b>Refer to Figure 2.</b> The markings show \(AB=DE\) and \(AC=DF\).</p>
+            <p>Compare \(BC\) and \(EF\).</p>
+          `,
+          media: String.raw`
+            <figure>
+              <img src="7-rev-6.png" alt="Two triangles with two pairs of corresponding sides equal; the included angles are 54 degrees and 72 degrees" />
+              <figcaption>Figure 2 — not drawn to scale</figcaption>
+            </figure>
+          `,
+          choices: [
+            String.raw`\(BC>EF\)`,
+            String.raw`\(BC=EF\)`,
+            String.raw`\(BC<EF\)`,
+            `The triangles are congruent by SAS, so the third sides are equal.`,
+            `The comparison depends on the drawing.`,
+            `There is not enough information because the third side lengths are not given.`
+          ],
+          choiceWrap: false
+        },
+
+        {
+          stem: String.raw`
+            <p>In \(\triangle PQR\) and \(\triangle XYZ\), suppose</p>
+            <p>\(PQ=XY=6\), \(PR=XZ=9\), \(QR=8\), and \(YZ=11\).</p>
+            <p>Compare the included angles \(\angle QPR\) and \(\angle YXZ\).</p>
+          `,
+          choices: [
+            String.raw`\(m\angle QPR>m\angle YXZ\)`,
+            String.raw`\(m\angle QPR=m\angle YXZ\)`,
+            `The angles cannot be compared because their measures are not given.`,
+            String.raw`\(m\angle QPR<m\angle YXZ\)`,
+            `The triangles must be congruent by SSS.`,
+            `The larger included angle is opposite the shorter third side.`
+          ],
+          choiceWrap: false
+        },
+
+        {
+          stem: String.raw`
+            <p>\(\triangle ABC\) and \(\triangle DEF\) are right triangles, with right angles at \(C\) and \(F\).</p>
+            <p>Which additional information is <b>not sufficient by itself</b> to prove the triangles congruent?</p>
+          `,
+          choices: [
+            String.raw`\(\overline{AB}\cong\overline{DE}\) and \(\overline{AC}\cong\overline{DF}\)`,
+            String.raw`\(\overline{AC}\cong\overline{DF}\) and \(\overline{BC}\cong\overline{EF}\)`,
+            String.raw`\(\overline{AB}\cong\overline{DE}\) and \(\angle A\cong\angle D\)`,
+            String.raw`\(\overline{AC}\cong\overline{DF}\) and \(\angle A\cong\angle D\)`,
+            String.raw`\(\angle A\cong\angle D\) only`,
+            String.raw`\(\angle A\cong\angle D\) and \(\overline{BC}\cong\overline{EF}\)`
+          ],
+          choiceWrap: false
+        },
+
+        {
+          stem: String.raw`
+            <p>Two right triangles have congruent hypotenuses and one pair of congruent acute angles.</p>
+            <p>Which special right-triangle congruence criterion applies most directly?</p>
+          `,
+          choices: [`HL`, `HA`, `LA`, `LL`, `SSA`, `Not enough information`],
+          choiceWrap: false
+        },
+
+        {
+          stem: String.raw`
+            <p><b>Refer to Figure 3.</b> The three gray lines are perpendicular bisectors of the sides of \(\triangle ABC\), and they meet at \(X\). Line \(m\) is one of them.</p>
+            <p>Which pair correctly names \(X\) and classifies line \(m\)?</p>
+          `,
+          media: String.raw`
+            <figure>
+              <img src="7-rev-10.png" alt="Triangle ABC with three perpendicular bisectors meeting at X; one perpendicular bisector is labeled m" />
+              <figcaption>Figure 3 — triangle center review</figcaption>
+            </figure>
+          `,
+          choices: [
+            `orthocenter; altitude`,
+            `incenter; angle bisector`,
+            `circumcenter; perpendicular bisector`,
+            `centroid; median`,
+            `orthocenter; perpendicular bisector`,
+            `circumcenter; median`
+          ],
+          choiceWrap: false
+        },
+
+        {
+          stem: String.raw`
+            <p><b>DRAWING PRACTICE.</b> Refer to Figure 4. Redraw the triangle on separate paper. Draw all three altitudes and label their common intersection \(O\).</p>
+            <p>Which statement describes what you should have drawn?</p>
+          `,
+          media: String.raw`
+            <figure>
+              <img src="7-rev-11.png" alt="An acute triangle ABC for drawing altitudes" />
+              <figcaption>Figure 4 — redraw this triangle approximately</figcaption>
+            </figure>
+          `,
+          choices: [
+            `Each altitude passes through a vertex and is perpendicular to the line containing the opposite side; their intersection is the orthocenter.`,
+            `Each altitude joins a vertex to the midpoint of the opposite side; their intersection is the centroid.`,
+            `Each altitude bisects a vertex angle; their intersection is the incenter.`,
+            `Each altitude is perpendicular to a side at that side's midpoint; their intersection is the circumcenter.`,
+            `An altitude must lie completely inside every triangle.`,
+            `Only two altitudes exist in a triangle; the third line is a median.`
+          ],
+          choiceWrap: false
+        },
+
+        {
+          stem: String.raw`
+            <p>In parallelogram \(ABCD\), suppose \(m\angle A=64^\circ\), \(AB=13\), and \(AD=8\).</p>
+            <p>Which set of statements must be true?</p>
+          `,
+          choices: [
+            String.raw`\(m\angle B=64^\circ\), \(m\angle C=116^\circ\), \(CD=13\), and \(BC=8\)`,
+            String.raw`\(m\angle B=116^\circ\), \(m\angle C=64^\circ\), \(CD=8\), and \(BC=13\)`,
+            String.raw`\(m\angle B=116^\circ\), \(m\angle C=64^\circ\), \(CD=13\), and \(BC=8\)`,
+            String.raw`\(m\angle B=116^\circ\), \(m\angle C=116^\circ\), \(CD=13\), and \(BC=8\)`,
+            String.raw`\(m\angle B=64^\circ\), \(m\angle C=64^\circ\), \(CD=13\), and \(BC=8\)`,
+            String.raw`\(m\angle B=116^\circ\), \(m\angle C=64^\circ\), \(CD=13\), and \(BC=13\)`
+          ],
+          choiceWrap: false
+        },
+
+        {
+          stem: String.raw`
+            <p>Which condition is <b>not sufficient by itself</b> to prove that quadrilateral \(ABCD\) is a parallelogram?</p>
+          `,
+          choices: [
+            `Both pairs of opposite sides are parallel.`,
+            `Both pairs of opposite sides are congruent.`,
+            `The diagonals bisect each other.`,
+            `One pair of opposite sides is both parallel and congruent.`,
+            `Both pairs of opposite angles are congruent.`,
+            `The diagonals are congruent.`
+          ],
+          choiceWrap: false
+        },
+
+        {
+          stem: String.raw`
+            <p><b>Refer to Figure 5.</b> \(ABCD\) is a parallelogram. Its diagonals intersect at \(X\). The diagram gives \(AX=12\) and \(DX=7\).</p>
+            <p>Find \(AC+BD\).</p>
+          `,
+          media: String.raw`
+            <figure>
+              <img src="7-rev-14.png" alt="Parallelogram ABCD with diagonals AC and BD intersecting at X; AX is 12 and DX is 7" />
+              <figcaption>Figure 5 — not drawn to scale</figcaption>
+            </figure>
+          `,
+          choices: [
+            String.raw`\(19\)`, String.raw`\(24\)`, String.raw`\(28\)`,
+            String.raw`\(31\)`, String.raw`\(38\)`, String.raw`\(48\)`
+          ]
+        },
+
+        {
+          stem: String.raw`
+            <p><b>Refer to Figure 6.</b> \(\angle PQR\) and \(\angle PSR\) are right angles, and \(\overline{QR}\cong\overline{SR}\).</p>
+            <p>Which observation and congruence criterion most directly prove \(\triangle PQR\cong\triangle PSR\)?</p>
+          `,
+          media: String.raw`
+            <figure>
+              <img src="7-rev-15.png" alt="Two right triangles PQR and PSR sharing segment PR; legs QR and SR are marked congruent" />
+              <figcaption>Figure 6 — proof strategy</figcaption>
+            </figure>
+          `,
+          choices: [
+            String.raw`\(\overline{PR}\cong\overline{PR}\) by the reflexive property; then SAS.`,
+            String.raw`\(\overline{PR}\cong\overline{PR}\) by the reflexive property; then HL.`,
+            String.raw`\(\overline{QR}\cong\overline{SR}\) and both triangles are right; then LL.`,
+            String.raw`\(\angle QPR\cong\angle RPS\) by vertical angles; then HA.`,
+            String.raw`\(\overline{PR}\cong\overline{PR}\) and both triangles are right; then HA.`,
+            String.raw`\(\angle QRP\cong\angle PRS\) because both are acute; then LA.`
+          ],
+          choiceWrap: false
+        },
+
+        {
+          stem: String.raw`
+            <p>Points \(P,M,R\) are collinear, with \(M\) between \(P\) and \(R\). Point \(M\) is the midpoint of \(\overline{PR}\), and \(\angle QPM\cong\angle QMP\).</p>
+            <p>A proof of \(QP<QR\) uses these five steps:</p>
+            <ol>
+              <li>\(PM=MR\).</li>
+              <li>\(QM=QM\).</li>
+              <li>\(m\angle QMR>m\angle QPM\).</li>
+              <li>Therefore \(m\angle QMR>m\angle QMP\).</li>
+              <li>Hence \(QR>QP\).</li>
+            </ol>
+            <p>Which ordered list gives the correct justifications for steps 1–5?</p>
+          `,
+          choices: [
+            `Definition of midpoint; Reflexive property; Exterior Angle Inequality Theorem; Substitution property; Hinge Theorem`,
+            `Definition of midpoint; Reflexive property; Triangle Angle-Sum Theorem; Substitution property; Converse of the Hinge Theorem`,
+            `Hinge Theorem; Reflexive property; Exterior Angle Inequality Theorem; Definition of midpoint; Converse of the Hinge Theorem`,
+            `Definition of midpoint; Symmetric property; Exterior Angle Inequality Theorem; Transitive property; Converse of the Hinge Theorem`,
+            `Definition of midpoint; Reflexive property; Exterior Angle Inequality Theorem; Substitution property; Converse of the Hinge Theorem`,
+            `Definition of midpoint; Reflexive property; Hinge Theorem; Substitution property; Exterior Angle Inequality Theorem`
+          ],
+          choiceWrap: false
+        },
+
+        {
+          stem: String.raw`
+            <p><b>CONSTRUCTION PRACTICE.</b> Refer to Figure 7. Redraw the triangle on separate paper and construct its <b>inscribed circle</b> using a compass and an unmarked straightedge. Leave the essential construction arcs visible.</p>
+            <p>After you construct two angle bisectors and locate their intersection \(I\), what should you do to obtain the radius of the inscribed circle?</p>
+          `,
+          media: String.raw`
+            <figure>
+              <img src="7-rev-17.png" alt="Scalene triangle ABC for an inscribed-circle construction" />
+              <figcaption>Figure 7 — redraw this triangle approximately</figcaption>
+            </figure>
+          `,
+          choices: [
+            `Connect I to any vertex; that segment is the radius.`,
+            `Construct the midpoint of one side and connect it to I.`,
+            `Construct a perpendicular bisector of one side and use half that side as the radius.`,
+            `Construct a perpendicular from I to any side; the distance from I to the foot is the radius.`,
+            `Draw a circle centered at I through any point inside the triangle.`,
+            `Construct an altitude from a vertex and use the whole altitude as the radius.`
+          ],
+          choiceWrap: false
+        },
+
+        {
+          stem: String.raw`
+            <p>Which statement correctly describes the <b>incenter</b> of a triangle?</p>
+          `,
+          choices: [
+            `It is the intersection of the perpendicular bisectors and is equidistant from the vertices.`,
+            `It is the intersection of the angle bisectors and is equidistant from the sides.`,
+            `It is the intersection of the altitudes and is always inside the triangle.`,
+            `It is the intersection of the medians and is equidistant from the sides.`,
+            `It is the midpoint of the longest side.`,
+            `It is the intersection of the exterior angle bisectors only.`
+          ],
+          choiceWrap: false
+        },
+
+        {
+          stem: String.raw`
+            <p><b>Refer to Figure 8.</b> The tick marks show \(AD=DC\), and the two triangles share \(\overline{BD}\).</p>
+            <p>Which comparison and reason are correct?</p>
+          `,
+          media: String.raw`
+            <figure>
+              <img src="7-rev-19.png" alt="Quadrilateral ABCD with diagonal BD, AD equal to DC, and angles ADB and BDC marked 61 and 65 degrees" />
+              <figcaption>Figure 8 — not drawn to scale</figcaption>
+            </figure>
+          `,
+          choices: [
+            String.raw`\(AB>BC\), by the Hinge Theorem.`,
+            String.raw`\(AB=BC\), because the triangles share \(\overline{BD}\).`,
+            String.raw`\(AB<BC\), by the Hinge Theorem.`,
+            String.raw`\(AB<BC\), by the Converse of the Hinge Theorem.`,
+            String.raw`\(AB>BC\), by the Converse of the Hinge Theorem.`,
+            `There is not enough information to compare the two sides.`
+          ],
+          choiceWrap: false
+        }
+      ]
+    };
+  </script>
+
+  <link rel="stylesheet" href="/math-homework/assets/core-rich.css" />
+  <script defer src="/math-homework/assets/core-rich.js"></script>
+  <script defer src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+</head>
+<body>
+  <div id="hw-root">Loading…</div>
+</body>
+</html>
