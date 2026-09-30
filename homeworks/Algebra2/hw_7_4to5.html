@@ -1,0 +1,348 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Homework 7-4 and 7-5 (Algebra 2)</title>
+
+  <script>
+    /* =========================
+       Homework 7-4 and 7-5 — Algebra 2
+       Adapted for: /math-homework/assets/core-rich.js
+
+       SOURCE MATERIAL USED:
+       - Homework 7-4:
+         source Q1 (numeric radical product),
+         Q3 (radical product with a positive variable),
+         Q4 (product of powers after rewriting to a common base),
+         Q8 (distribution with a radical coefficient),
+         Q9 (product of conjugates),
+         Q10 (product of two radical binomials),
+         Q11 (square of a radical binomial),
+         Q12 (radical product without assuming variable positivity).
+       - Homework 7-5:
+         source Q1 (rationalizing a one-term radical denominator),
+         Q3 (simplifying a radical quotient),
+         Q6 (square root of a quotient),
+         Q7 (simplify + rationalize a radical quotient),
+         Q9 and Q11 (conjugate rationalization),
+         Q10 (quotient of powers).
+
+       MODEL-AUTHORED / MODEL-REWORKED ITEMS:
+       - All questions were reworked to eliminate mathematically equivalent
+         duplicate answer choices and to make "simplify completely" /
+         "rationalize the denominator" explicit where that distinction matters.
+       - Q4 adapts 7-5 source Q10 and is placed earlier to consolidate
+         exponent laws before the homework turns fully to radical algebra.
+       - Q10–Q13 create a deliberate ascent from one-term denominator
+         rationalization to quotient simplification.
+       - Q14 is a structural conjugate question: students identify why
+         multiplying by the conjugate removes the radical denominator.
+       - Q15 is the final two-term denominator rationalization.
+       - The original 7-5 variable quotient item was not reused because,
+         as supplied, its domain forces y>0 while its answer set and hidden
+         key conflict with one another.
+
+       IMAGE FILES:
+       - User-supplied figures: none.
+       - Model-generated figures: none.
+
+       IMAGE NAMING RULE:
+       - No image files are required for this homework.
+       ========================= */
+
+    window.homeworkData = {
+      classId : "Algebra2",
+      id      : "Homework 7-4 and 7-5",
+      title   : "Homework 7-4 and 7-5",
+
+      graphics : String.raw``,
+
+      answerKey : ["C","B","A","D","F","E","B","C","A","D","F","E","B","C","A"],
+
+      questions : [
+
+        /* Q1 */
+        {
+          stem: String.raw`
+            <p>Multiply and simplify completely:</p>
+            <p>\[
+              \sqrt{8}\cdot\sqrt{7}
+            \]</p>
+          `,
+          choices: [
+            String.raw`\(4\sqrt7\)`,
+            String.raw`\(7\sqrt2\)`,
+            String.raw`\(2\sqrt{14}\)`,
+            String.raw`\(14\sqrt2\)`,
+            String.raw`\(8\sqrt7\)`,
+            String.raw`\(4\sqrt{14}\)`
+          ]
+        },
+
+        /* Q2 */
+        {
+          stem: String.raw`
+            <p>Variables represent positive real numbers. Multiply and simplify completely:</p>
+            <p>\[
+              6\sqrt{4a^4}\cdot 2\sqrt{2a^2}
+            \]</p>
+          `,
+          choices: [
+            String.raw`\(12a^3\sqrt2\)`,
+            String.raw`\(24a^3\sqrt2\)`,
+            String.raw`\(24a^2\sqrt2\)`,
+            String.raw`\(48a^3\sqrt2\)`,
+            String.raw`\(24a^4\sqrt2\)`,
+            String.raw`\(12a^2\sqrt2\)`
+          ]
+        },
+
+        /* Q3 */
+        {
+          stem: String.raw`
+            <p>Simplify to a single power of \(3\):</p>
+            <p>\[
+              27^x\cdot 3^{x+1}
+            \]</p>
+          `,
+          choices: [
+            String.raw`\(3^{4x+1}\)`,
+            String.raw`\(3^{3x+1}\)`,
+            String.raw`\(3^{4x}\)`,
+            String.raw`\(3^{3x+2}\)`,
+            String.raw`\(3^{27x+x+1}\)`,
+            String.raw`\(3^{2x+4}\)`
+          ]
+        },
+
+        /* Q4 */
+        {
+          stem: String.raw`
+            <p>Simplify completely:</p>
+            <p>\[
+              \frac{4\cdot 7^{40}}{20\cdot 7^{29}}
+            \]</p>
+          `,
+          choices: [
+            String.raw`\(5\cdot 7^{11}\)`,
+            String.raw`\(\frac14\,7^{11}\)`,
+            String.raw`\(\frac1{20}\,7^{69}\)`,
+            String.raw`\(\frac15\,7^{11}\)`,
+            String.raw`\(\frac15\,7^{69}\)`,
+            String.raw`\(7^{11}\)`
+          ]
+        },
+
+        /* Q5 */
+        {
+          stem: String.raw`
+            <p>Distribute and simplify:</p>
+            <p>\[
+              \sqrt5\,(x+9)
+            \]</p>
+          `,
+          choices: [
+            String.raw`\(\sqrt{5x}+9\sqrt5\)`,
+            String.raw`\(5x+9\sqrt5\)`,
+            String.raw`\(x\sqrt5+9\)`,
+            String.raw`\(\sqrt{5x+45}\)`,
+            String.raw`\(5x+45\)`,
+            String.raw`\(x\sqrt5+9\sqrt5\)`
+          ]
+        },
+
+        /* Q6 */
+        {
+          stem: String.raw`
+            <p>Multiply and simplify:</p>
+            <p>\[
+              (x+\sqrt5)(x-\sqrt5)
+            \]</p>
+          `,
+          choices: [
+            String.raw`\(x^2+5\)`,
+            String.raw`\(x^2-10\)`,
+            String.raw`\(x^2-2x\sqrt5+5\)`,
+            String.raw`\(x^2+2x\sqrt5-5\)`,
+            String.raw`\(x^2-5\)`,
+            String.raw`\(x^2-2\sqrt5\)`
+          ]
+        },
+
+        /* Q7 */
+        {
+          stem: String.raw`
+            <p>Multiply and simplify completely:</p>
+            <p>\[
+              (5-\sqrt2)(3+\sqrt2)
+            \]</p>
+          `,
+          choices: [
+            String.raw`\(17+2\sqrt2\)`,
+            String.raw`\(13+2\sqrt2\)`,
+            String.raw`\(13-2\sqrt2\)`,
+            String.raw`\(17-2\sqrt2\)`,
+            String.raw`\(15+2\sqrt2\)`,
+            String.raw`\(11+8\sqrt2\)`
+          ]
+        },
+
+        /* Q8 */
+        {
+          stem: String.raw`
+            <p>Expand and simplify:</p>
+            <p>\[
+              (a+b\sqrt7)^2
+            \]</p>
+          `,
+          choices: [
+            String.raw`\(a^2+7b^2\)`,
+            String.raw`\(a^2+2ab+7b^2\)`,
+            String.raw`\(a^2+2ab\sqrt7+7b^2\)`,
+            String.raw`\(a^2+14ab+7b^2\)`,
+            String.raw`\(a^2+7ab+49b^2\)`,
+            String.raw`\(a^2+2ab\sqrt7+b^2\)`
+          ]
+        },
+
+        /* Q9 */
+        {
+          stem: String.raw`
+            <p>Do <b>not</b> assume \(c\) is positive. Simplify completely:</p>
+            <p>\[
+              \sqrt{36c^2}\cdot\sqrt{48c^2}
+            \]</p>
+          `,
+          choices: [
+            String.raw`\(24c^2\sqrt3\)`,
+            String.raw`\(24|c|\sqrt3\)`,
+            String.raw`\(12c^2\sqrt3\)`,
+            String.raw`\(24c^2\sqrt6\)`,
+            String.raw`\(48c^2\sqrt3\)`,
+            String.raw`\(24|c|\sqrt6\)`
+          ]
+        },
+
+        /* Q10 */
+        {
+          stem: String.raw`
+            <p>Rationalize the denominator and simplify completely:</p>
+            <p>\[
+              \frac{2}{\sqrt5}
+            \]</p>
+          `,
+          choices: [
+            String.raw`\(\frac{\sqrt5}{2}\)`,
+            String.raw`\(\frac{2\sqrt5}{10}\)`,
+            String.raw`\(\frac{2}{5}\)`,
+            String.raw`\(\frac{2\sqrt5}{5}\)`,
+            String.raw`\(\frac{\sqrt{10}}5\)`,
+            String.raw`\(\frac{5\sqrt2}{2}\)`
+          ]
+        },
+
+        /* Q11 */
+        {
+          stem: String.raw`
+            <p>Simplify completely:</p>
+            <p>\[
+              \frac{2\sqrt8}{\sqrt2}
+            \]</p>
+          `,
+          choices: [
+            String.raw`\(2\sqrt2\)`,
+            String.raw`\(8\)`,
+            String.raw`\(\sqrt8\)`,
+            String.raw`\(2\)`,
+            String.raw`\(4\sqrt2\)`,
+            String.raw`\(4\)`
+          ]
+        },
+
+        /* Q12 */
+        {
+          stem: String.raw`
+            <p>Rationalize the denominator and simplify completely:</p>
+            <p>\[
+              \frac{5\sqrt5}{\sqrt{15}}
+            \]</p>
+          `,
+          choices: [
+            String.raw`\(\frac{\sqrt3}{3}\)`,
+            String.raw`\(\frac{5\sqrt{15}}3\)`,
+            String.raw`\(\frac{5\sqrt5}{15}\)`,
+            String.raw`\(5\sqrt3\)`,
+            String.raw`\(\frac{5\sqrt3}{3}\)`,
+            String.raw`\(\frac{\sqrt{15}}3\)`
+          ]
+        },
+
+        /* Q13 */
+        {
+          stem: String.raw`
+            <p>Rewrite with a rational denominator and simplify completely:</p>
+            <p>\[
+              \sqrt{\frac32}
+            \]</p>
+          `,
+          choices: [
+            String.raw`\(\frac{\sqrt3}{2}\)`,
+            String.raw`\(\frac{\sqrt6}{2}\)`,
+            String.raw`\(\frac{\sqrt6}{3}\)`,
+            String.raw`\(\frac{3\sqrt2}{2}\)`,
+            String.raw`\(\sqrt6\)`,
+            String.raw`\(\frac{2\sqrt3}{3}\)`
+          ]
+        },
+
+        /* Q14 */
+        {
+          stem: String.raw`
+            <p>To rationalize the denominator of</p>
+            <p>\[
+              \frac{5}{1+\sqrt2},
+            \]</p>
+            <p>which multiplication is useful, and why?</p>
+          `,
+          choices: [
+            String.raw`Multiply by \(\frac{1+\sqrt2}{1+\sqrt2}\), because squaring the denominator removes every radical.`,
+            String.raw`Multiply by \(\frac{\sqrt2}{\sqrt2}\), because any radical denominator can be rationalized by multiplying by its radical part.`,
+            String.raw`Multiply by \(\frac{1-\sqrt2}{1-\sqrt2}\), because \((1+\sqrt2)(1-\sqrt2)=1-2=-1\), which is rational.`,
+            String.raw`Multiply by \(\frac{2-\sqrt2}{2-\sqrt2}\), because the denominator must always become \(1\).`,
+            String.raw`Multiply by \(\frac{1}{1-\sqrt2}\), because only the denominator needs to change.`,
+            String.raw`Multiply by \(\frac{1-\sqrt2}{1+\sqrt2}\), because the numerator should stay equal to \(5\).`
+          ],
+          choiceWrap: false
+        },
+
+        /* Q15 */
+        {
+          stem: String.raw`
+            <p>Rationalize the denominator and simplify completely:</p>
+            <p>\[
+              \frac{9}{\sqrt6-\sqrt3}
+            \]</p>
+          `,
+          choices: [
+            String.raw`\(3(\sqrt6+\sqrt3)\)`,
+            String.raw`\(3(\sqrt6-\sqrt3)\)`,
+            String.raw`\(\sqrt6+\sqrt3\)`,
+            String.raw`\(9(\sqrt6+\sqrt3)\)`,
+            String.raw`\(3\sqrt2+3\)`,
+            String.raw`\(\frac{3}{\sqrt6+\sqrt3}\)`
+          ]
+        }
+      ]
+    };
+  </script>
+
+  <link rel="stylesheet" href="/math-homework/assets/core-rich.css" />
+  <script defer src="/math-homework/assets/core-rich.js"></script>
+  <script defer src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+</head>
+
+<body>
+  <div id="hw-root">Loading…</div>
+</body>
+</html>
