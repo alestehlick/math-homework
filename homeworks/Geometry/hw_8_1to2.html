@@ -1,0 +1,454 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Homework 8-1 and 8-2 (Geometry)</title>
+
+  <script>
+    /* =========================
+       Homework 8-1 and 8-2 — Area of Polygonal Regions (Geometry)
+       Adapted for: /math-homework/assets/core-rich.js
+
+       REQUIRED SOURCE REFERENCES (attached textbook used only as raw material):
+       - Formula-summary material: A. Exercises #1–#6.
+       - Direct-area figures: A. Exercises #7–#11.
+       - Formula/application material: B. Exercises #12–#16, #21–#23.
+       - Composite-region material: Exercises #13–#16 on the attached composite-area page.
+       - Application/reverse-area material: B. Exercises #17–#24 on the attached page.
+       - Structural/proof ideas: C. Exercise #25 (triangle median) and
+         C. Exercise #25 (midpoint square) from the supplied pages.
+
+       MODEL-AUTHORED / MODEL-REWORKED ITEMS:
+       - Q1–Q5 are model-authored to follow the classroom development of area:
+         unit-square postulate -> integer/rational subdivision -> real side
+         lengths by finer approximation using area addition.
+       - Q6–Q7 develop parallelogram area from perpendicular height rather than
+         formula recall; Q7 reverses the area relation.
+       - Q8–Q9 develop triangle area as half of a parallelogram and include an
+         external altitude so students must distinguish height from side length.
+       - Q10–Q12 develop trapezoid area through the average of the parallel
+         sides, direct computation, and a reverse-area problem.
+       - Q13–Q14 develop the rhombus diagonal formula structurally and then use
+         it with exact radical lengths.
+       - Q15–Q17 are model-reworked composite-region problems inspired by the
+         supplied L-shaped, frame, and I-shaped textbook figures. They emphasize
+         decomposition, subtraction, and invariance under different decompositions.
+       - Q18 is model-reworked from the triangle-median idea and asks for the
+         decisive equal-area observation rather than a bureaucratic proof.
+       - Q19 is model-reworked from the midpoint-square problem as a final
+         decomposition argument.
+
+       IMAGE FILES:
+       - User-supplied figures: none used directly.
+       - Model-generated figures:
+         8-1-6.png, 8-1-9.png, 8-1-11.png, 8-1-14.png, 8-1-15.png,
+         8-1-16.png, 8-1-17.png, 8-1-18.png, 8-1-19.png.
+
+       IMAGE NAMING RULE:
+       - Model-generated figures use final homework numbering.
+       - PNG files live in the SAME folder as this HTML.
+       ========================= */
+
+    window.homeworkData = {
+      classId : "Geometry",
+      id      : "Homework 8-1 and 8-2",
+      title   : "Homework 8-1 and 8-2",
+
+      graphics : String.raw``,
+
+      answerKey : ["B","E","C","F","A","D","B","E","C","A","F","D","B","E","C","A","F","D","B"],
+
+      questions : [
+
+        /* Q1 */
+        {
+          stem: String.raw`
+            <p>Our starting square-area postulate says that a unit square has area \(1\). We also use the area-addition postulate.</p>
+            <p>A rectangle is exactly covered by \(4\) rows of \(3\) unit squares, with no gaps or overlaps. Which reasoning justifies its area?</p>
+          `,
+          choices: [
+            String.raw`Its area is \(7\), because the side lengths are added.`,
+            String.raw`Its area is \(12\), because the rectangle is the union of \(12\) unit squares and their areas add.`,
+            String.raw`Its area is \(12\), but only because \(A=bh\) is another area postulate.`,
+            String.raw`Its area is \(6\), because opposite unit squares are counted together.`,
+            String.raw`Its area is \(1\), because only the unit-square postulate may be used.`,
+            String.raw`Its area cannot be determined without measuring a diagonal.`
+          ],
+          choiceWrap: false
+        },
+
+        /* Q2 */
+        {
+          stem: String.raw`
+            <p>A square has side length \(5\). Which statement best explains why its area is \(25\), starting from the unit-square postulate?</p>
+          `,
+          choices: [
+            String.raw`A square always has area equal to four times its side length.`,
+            String.raw`The perimeter is \(20\), so half the perimeter plus \(5\) gives the area.`,
+            String.raw`The diagonal divides the square into \(25\) congruent triangles.`,
+            String.raw`The rule \(A=s^2\) must be accepted as a second area postulate.`,
+            String.raw`The square can be partitioned into \(25\) unit squares, whose areas add to \(25\).`,
+            String.raw`The number \(25\) follows from the definition of a square, not from area addition.`
+          ],
+          choiceWrap: false
+        },
+
+        /* Q3 */
+        {
+          stem: String.raw`
+            <p>A square has side length \(\frac32\). Imagine dividing each unit of length into halves.</p>
+            <p>What area is forced by the unit-square postulate together with subdivision and addition?</p>
+          `,
+          choices: [
+            String.raw`\(\frac32\)`,
+            String.raw`\(3\)`,
+            String.raw`\(\frac94\)`,
+            String.raw`\(\frac34\)`,
+            String.raw`\(\frac92\)`,
+            String.raw`\(2\)`
+          ]
+        },
+
+        /* Q4 */
+        {
+          stem: String.raw`
+            <p>A square has side length \(\sqrt2\). We approximate its side by rational numbers.</p>
+            <p>\[
+              1.41<\sqrt2<1.42
+            \]</p>
+            <p>so the areas of the corresponding rational-sided squares satisfy</p>
+            <p>\[
+              1.9881<\text{area}<2.0164.
+            \]</p>
+            <p>Using \(1.414<\sqrt2<1.415\) narrows the area to between \(1.999396\) and \(2.002225\).</p>
+            <p>What is the mathematical idea illustrated by making these approximations finer and finer?</p>
+          `,
+          choices: [
+            String.raw`A square with an irrational side does not have a definite area.`,
+            String.raw`The area must always be the larger of the two rational approximations.`,
+            String.raw`The area is defined by rounding the side length to the nearest hundredth.`,
+            String.raw`The addition postulate works only for rational side lengths.`,
+            String.raw`The area should be approximately \(1.414\), because area and side length are the same quantity.`,
+            String.raw`Finer rational subdivisions trap the area more and more closely around \(2\), extending the rule \(A=s^2\) to this real side length.`
+          ],
+          choiceWrap: false
+        },
+
+        /* Q5 */
+        {
+          stem: String.raw`
+            <p>Which statement best describes the role of the familiar rule \(A=s^2\) for squares in this development of area?</p>
+          `,
+          choices: [
+            String.raw`It is an extension derived from the unit-square area and area addition: first for simple subdivisions, then for rational sizes, and finally for real sizes by increasingly close approximation.`,
+            String.raw`It replaces the unit-square postulate, so the postulate is no longer needed.`,
+            String.raw`It is valid only when \(s\) is a whole number.`,
+            String.raw`It follows from the perimeter formula \(P=4s\) without using area addition.`,
+            String.raw`It must be assumed separately for every possible value of \(s\).`,
+            String.raw`It is a definition of a square rather than a statement about area.`
+          ],
+          choiceWrap: false
+        },
+
+        /* Q6 */
+        {
+          stem: String.raw`
+            <p><b>Refer to Figure 1.</b> Which calculation gives the area of the parallelogram, and why?</p>
+          `,
+          media: String.raw`
+            <figure>
+              <img src="8-1-6.png" alt="Parallelogram with base 9, slanted side 6, and perpendicular height 4" />
+              <figcaption>Figure 1</figcaption>
+            </figure>
+          `,
+          choices: [
+            String.raw`\(9\cdot6=54\), because any side adjacent to the base can be used as the height.`,
+            String.raw`\(\frac12(9)(4)=18\), because every slanted quadrilateral is half of a rectangle.`,
+            String.raw`\(6\cdot4=24\), because the two shorter measurements determine the area.`,
+            String.raw`\(9\cdot4=36\). Cutting off the left triangular piece and moving it to the right forms a \(9\)-by-\(4\) rectangle without changing the area.`,
+            String.raw`\(9+6+4=19\), because all labeled lengths contribute once.`,
+            String.raw`The area cannot be found because the top side is not labeled.`
+          ],
+          choiceWrap: false
+        },
+
+        /* Q7 */
+        {
+          stem: String.raw`
+            <p>A parallelogram has area \(54\) square units and base \(9\) units. One slanted side has length \(8\) units.</p>
+            <p>What is the perpendicular height to the base?</p>
+          `,
+          choices: [
+            String.raw`\(8\)`,
+            String.raw`\(6\)`,
+            String.raw`\(9\)`,
+            String.raw`\(\frac{27}{4}\)`,
+            String.raw`\(7\)`,
+            String.raw`\(12\)`
+          ]
+        },
+
+        /* Q8 */
+        {
+          stem: String.raw`
+            <p>A triangle and a parallelogram have the same base length \(10\) and the same perpendicular height \(7\).</p>
+            <p>Which statement is correct?</p>
+          `,
+          choices: [
+            String.raw`Both areas are \(70\).`,
+            String.raw`The triangle has area \(70\) and the parallelogram has area \(35\).`,
+            String.raw`The triangle has area \(17\) and the parallelogram has area \(70\).`,
+            String.raw`Their areas cannot be compared without knowing the slanted sides.`,
+            String.raw`The triangle has area \(35\) and the parallelogram has area \(70\).`,
+            String.raw`The triangle has area \(35\) and the parallelogram has area \(35\).`
+          ],
+          choiceWrap: false
+        },
+
+        /* Q9 */
+        {
+          stem: String.raw`
+            <p><b>Refer to Figure 2.</b> Find the area of the triangle.</p>
+            <p>Notice that the perpendicular from the top vertex meets the <em>extension</em> of the base.</p>
+          `,
+          media: String.raw`
+            <figure>
+              <img src="8-1-9.png" alt="Obtuse triangle with base 14, side 10, and external altitude 6" />
+              <figcaption>Figure 2</figcaption>
+            </figure>
+          `,
+          choices: [
+            String.raw`\(84\) square units`,
+            String.raw`\(70\) square units`,
+            String.raw`\(42\) square units`,
+            String.raw`\(30\) square units`,
+            String.raw`\(60\) square units`,
+            String.raw`\(140\) square units`
+          ],
+          choiceWrap: false
+        },
+
+        /* Q10 */
+        {
+          stem: String.raw`
+            <p>Two congruent copies of a trapezoid with parallel sides \(b_1\) and \(b_2\) and height \(h\) can be rearranged to form a parallelogram.</p>
+            <p>Which description captures why the trapezoid area is</p>
+            <p>\[
+              A=\frac12(b_1+b_2)h?
+            \]</p>
+          `,
+          choices: [
+            String.raw`The two copies form a parallelogram with base \(b_1+b_2\) and height \(h\); one trapezoid therefore has half that area.`,
+            String.raw`The trapezoid has two bases, so each base contributes half its length to the area.`,
+            String.raw`The area is half the perimeter times the height.`,
+            String.raw`The nonparallel sides always average to \(b_1+b_2\).`,
+            String.raw`The formula works only for isosceles trapezoids.`,
+            String.raw`The two copies form a rectangle of dimensions \(b_1\) by \(b_2\).`
+          ],
+          choiceWrap: false
+        },
+
+        /* Q11 */
+        {
+          stem: String.raw`
+            <p><b>Refer to Figure 3.</b> Find the area of the trapezoid.</p>
+          `,
+          media: String.raw`
+            <figure>
+              <img src="8-1-11.png" alt="Trapezoid with bases 13 and 7 and height 6" />
+              <figcaption>Figure 3</figcaption>
+            </figure>
+          `,
+          choices: [
+            String.raw`\(120\) square units`,
+            String.raw`\(78\) square units`,
+            String.raw`\(42\) square units`,
+            String.raw`\(39\) square units`,
+            String.raw`\(54\) square units`,
+            String.raw`\(60\) square units`
+          ],
+          choiceWrap: false
+        },
+
+        /* Q12 */
+        {
+          stem: String.raw`
+            <p>A trapezoid has area \(84\) square units, height \(7\), and one base of length \(10\).</p>
+            <p>Find the length of the other base.</p>
+          `,
+          choices: [
+            String.raw`\(12\)`,
+            String.raw`\(7\)`,
+            String.raw`\(24\)`,
+            String.raw`\(14\)`,
+            String.raw`\(18\)`,
+            String.raw`\(8\)`
+          ]
+        },
+
+        /* Q13 */
+        {
+          stem: String.raw`
+            <p>A rhombus has diagonals of lengths \(d_1\) and \(d_2\).</p>
+            <p>Which observation best explains the formula</p>
+            <p>\[
+              A=\frac12d_1d_2?
+            \]</p>
+          `,
+          choices: [
+            String.raw`The diagonals are sides of a rectangle, so the rhombus has area \(d_1d_2\).`,
+            String.raw`The diagonals bisect each other at right angles, dividing the rhombus into four right triangles whose total area is \(\frac12d_1d_2\).`,
+            String.raw`Every rhombus is half of a square with side \(d_1+d_2\).`,
+            String.raw`The area equals half the perimeter times either diagonal.`,
+            String.raw`The diagonals are always equal, so the formula is really \(\frac12d_1^2\).`,
+            String.raw`The formula follows because each side of a rhombus is the average of its diagonals.`
+          ],
+          choiceWrap: false
+        },
+
+        /* Q14 */
+        {
+          stem: String.raw`
+            <p><b>Refer to Figure 4.</b> Find the area of the rhombus.</p>
+          `,
+          media: String.raw`
+            <figure>
+              <img src="8-1-14.png" alt="Rhombus with diagonals 6 square root 2 and 4 square root 2" />
+              <figcaption>Figure 4</figcaption>
+            </figure>
+          `,
+          choices: [
+            String.raw`\(12\) square units`,
+            String.raw`\(48\) square units`,
+            String.raw`\(20\) square units`,
+            String.raw`\(12\sqrt2\) square units`,
+            String.raw`\(24\) square units`,
+            String.raw`\(24\sqrt2\) square units`
+          ],
+          choiceWrap: false
+        },
+
+        /* Q15 */
+        {
+          stem: String.raw`
+            <p><b>Refer to Figure 5.</b> The dashed rectangle shows the missing corner of the region.</p>
+            <p>Which choice gives <b>two different correct decompositions</b> of the area?</p>
+          `,
+          media: String.raw`
+            <figure>
+              <img src="8-1-15.png" alt="L-shaped polygon inside a 12 by 8 rectangle with a 5 by 4 corner removed" />
+              <figcaption>Figure 5</figcaption>
+            </figure>
+          `,
+          choices: [
+            String.raw`\(12\cdot8-5\cdot4\) and \(12\cdot4+5\cdot4\)`,
+            String.raw`\(12\cdot8-7\cdot4\) and \(7\cdot8+5\cdot4\)`,
+            String.raw`\(12\cdot8-5\cdot4\) and \(7\cdot8+5\cdot4\)`,
+            String.raw`\(12\cdot8+5\cdot4\) and \(7\cdot8+5\cdot4\)`,
+            String.raw`\(12\cdot4+7\cdot8\) and \(12\cdot8-5\cdot4\)`,
+            String.raw`\(12\cdot8-5\cdot8\) and \(7\cdot4+5\cdot4\)`
+          ]
+        },
+
+        /* Q16 */
+        {
+          stem: String.raw`
+            <p><b>Refer to Figure 6.</b> Find the area of the shaded frame.</p>
+          `,
+          media: String.raw`
+            <figure>
+              <img src="8-1-16.png" alt="Shaded 13 by 9 rectangle with an unshaded 3 by 3 square hole" />
+              <figcaption>Figure 6</figcaption>
+            </figure>
+          `,
+          choices: [
+            String.raw`\(108\) square units`,
+            String.raw`\(117\) square units`,
+            String.raw`\(90\) square units`,
+            String.raw`\(96\) square units`,
+            String.raw`\(104\) square units`,
+            String.raw`\(39\) square units`
+          ]
+        },
+
+        /* Q17 */
+        {
+          stem: String.raw`
+            <p><b>Refer to Figure 7.</b> Find the area of the I-shaped region.</p>
+            <p>The top and bottom bars are each \(4\) units thick.</p>
+          `,
+          media: String.raw`
+            <figure>
+              <img src="8-1-17.png" alt="I-shaped polygon of total width 25, total height 37, web width 3, and flange thickness 4" />
+              <figcaption>Figure 7</figcaption>
+            </figure>
+          `,
+          choices: [
+            String.raw`\(311\) square units`,
+            String.raw`\(275\) square units`,
+            String.raw`\(300\) square units`,
+            String.raw`\(262\) square units`,
+            String.raw`\(200\) square units`,
+            String.raw`\(287\) square units`
+          ]
+        },
+
+        /* Q18 */
+        {
+          stem: String.raw`
+            <p><b>Refer to Figure 8.</b> Point \(D\) is the midpoint of \(\overline{AB}\).</p>
+            <p>Which observation is enough to show that triangles \(ACD\) and \(BCD\) have equal area?</p>
+          `,
+          media: String.raw`
+            <figure>
+              <img src="8-1-18.png" alt="Triangle ABC with D the midpoint of AB and segment CD drawn" />
+              <figcaption>Figure 8</figcaption>
+            </figure>
+          `,
+          choices: [
+            String.raw`The two triangles have equal perimeters.`,
+            String.raw`Segments \(AC\) and \(BC\) must be equal because \(D\) is a midpoint.`,
+            String.raw`The two triangles are necessarily congruent.`,
+            String.raw`Their bases \(AD\) and \(DB\) are equal, and both triangles use the same perpendicular height from \(C\) to line \(AB\).`,
+            String.raw`Their vertex angles at \(C\) are equal.`,
+            String.raw`A median always cuts every side of a triangle into two equal lengths.`
+          ],
+          choiceWrap: false
+        },
+
+        /* Q19 */
+        {
+          stem: String.raw`
+            <p><b>Refer to Figure 9.</b> The vertices of the inner square are the midpoints of the sides of the outer square. Each half-side of the outer square has length \(b\).</p>
+            <p>Which conclusion and explanation are correct?</p>
+          `,
+          media: String.raw`
+            <figure>
+              <img src="8-1-19.png" alt="Outer square with an inner diamond whose vertices are the side midpoints; each half-side is b" />
+              <figcaption>Figure 9</figcaption>
+            </figure>
+          `,
+          choices: [
+            String.raw`The two squares have equal area because they have the same center.`,
+            String.raw`The outer square has twice the area of the inner square: the four corner triangles together have area \(2b^2\), while the outer square has area \(4b^2\), leaving \(2b^2\) for the inner square.`,
+            String.raw`The inner square has twice the area of the outer square because its diagonals are longer than its sides.`,
+            String.raw`The outer square has four times the area of the inner square because there are four corner triangles.`,
+            String.raw`The area ratio cannot be determined without knowing a numerical value of \(b\).`,
+            String.raw`The outer square has area \(8b^2\) because it contains eight congruent right triangles.`
+          ],
+          choiceWrap: false
+        }
+      ]
+    };
+  </script>
+
+  <link rel="stylesheet" href="/math-homework/assets/core-rich.css" />
+  <script defer src="/math-homework/assets/core-rich.js"></script>
+  <script defer src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+</head>
+
+<body>
+  <div id="hw-root">Loading…</div>
+</body>
+</html>
