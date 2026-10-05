@@ -24,8 +24,8 @@
        - Q8–Q9: make explicit why isolating a square root before squaring is
          structurally efficient, then apply that idea.
        - Q10–Q12: contrast odd-index radicals with square roots. Raising both
-         sides of a real equation to an odd power is reversible, so that power
-         step itself does not create extraneous real solutions.
+         sides of a real equation to an odd power keeps sign information, so
+         that power step itself does not create extraneous real solutions.
        - Q13–Q16: introduce equations with two independent square roots.
          After the first squaring, a mixed radical remains; it must be isolated
          and the equation squared again. Q16 deliberately produces an
@@ -246,14 +246,11 @@
         /* Q11 */
         {
           stem: String.raw`
-            <p>Why is the step</p>
-            <p>\[
-              A=B\quad\Longleftrightarrow\quad A^3=B^3
-            \]</p>
-            <p>valid for all real \(A\) and \(B\), while the analogous statement with squares is not?</p>
+            <p>Why does cubing both sides of a real equation not create an extra solution in the way squaring sometimes can?</p>
+            <p>Compare what happens to signs when two real numbers are squared or cubed.</p>
           `,
           choices: [
-            String.raw`The function \(t\mapsto t^3\) is one-to-one on the real numbers, so cubing preserves both equality and inequality of real numbers; squaring loses sign information.`,
+            String.raw`If two real numbers have the same cube, they must already be the same number. Cubing keeps the sign, while squaring can make opposite numbers equal because \(a^2=(-a)^2\).`,
             String.raw`Every real number has two real cube roots, while it has only one square root.`,
             String.raw`Cubing changes negative numbers into positive numbers, so signs no longer matter.`,
             String.raw`Odd powers are reversible only when both sides are positive.`,
@@ -270,7 +267,7 @@
             <p>\[
               \sqrt[3]{2x+23}=x+1
             \]</p>
-            <p>Since cubing both sides is reversible over the reals, no candidate is introduced merely by that cubing step.</p>
+            <p>Cubing both sides does not create an extra real candidate here: two real numbers with the same cube must be equal.</p>
           `,
           choices: [
             String.raw`\(x=-2\)`,
