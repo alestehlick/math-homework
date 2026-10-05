@@ -7,186 +7,284 @@
 
   <script>
     /* =========================
-       Homework 7-7 — Motion/Rate Problems (Systems)
-       - Q1–Q5: write correct rate expressions (no solving).
-       - Q6–Q12: set up & solve systems from word problems.
+       Homework 7-7 — Motion Problems & Systems (Algebra 1)
+       Adapted for: /math-homework/assets/core-rich.js
+
+       SOURCE MATERIAL USED:
+       - Original Homework 7-7:
+         Q1–Q5 supplied the headwind/tailwind and upstream/downstream
+         rate structure.
+         Q8 supplied the delayed-start clock-time structure.
+         Q9 supplied the still-air speed + wind-speed system structure.
+         Q10 supplied the two-travelers-toward-each-other structure.
+         Q11 supplied the unequal-travel-times train structure.
+         Q12 supplied the equal-distance / changed-rate structure.
+       - The original nautical-mile/mph inconsistency in Q9 was not retained;
+         all distances/speeds here use ordinary miles and mph.
+
+       MODEL-AUTHORED / MODEL-REWORKED ITEMS:
+       - Every substantive word problem explicitly labels two variables before
+         the equations are considered, so students reason in terms of systems.
+       - Q1: structural warmup for downstream/upstream rate expressions.
+       - Q2: system setup for a same-direction catch-up problem with a head start.
+       - Q3: reworked "Grandma and John" problem; students identify both
+         the distance equation and the speed-difference equation.
+       - Q4: reworked wind problem; students solve for still-air speed and wind.
+       - Q5: reworked delayed-start problem using TWO time variables and a
+         time-difference equation, forcing genuine system reasoning.
+       - Q6: developed river-current problem with unequal travel times.
+       - Q7: reworked train problem with different travel times.
+       - Q8: diagnostic item about the meaning of d=rt and why time multiplies
+         the entire ground-speed expression.
+       - Q9: system-setup question for another wind problem.
+       - Q10: developed two-cyclist problem with a speed difference.
+       - Q11: structural interpretation of coefficients in a motion system.
+       - Q12: developed catch-up synthesis problem with a 1.5-hour head start.
+
+       IMAGE FILES:
+       - User-supplied figures: none.
+       - Model-generated figures: none.
+
+       IMAGE NAMING RULE:
+       - No image files are required for this homework.
        ========================= */
+
     window.homeworkData = {
       classId : "Algebra1",
       id      : "Homework 7-7",
       title   : "Homework 7-7 — Motion Problems & Systems",
 
-      graphics : String.raw``,  // none needed
+      graphics : String.raw``,
 
-      /* Hidden answer key (A–F) for the 12 questions */
-      answerKey : ["A","B","C","E","A","D","B","C","A","E","D","C"],
+      answerKey : ["C","F","B","E","A","D","C","F","B","E","A","D"],
 
       questions : [
-        /* 1 */
+
+        /* Q1 */
         {
-          latex : String.raw`\text{A bicyclist's still-air speed is }12\text{ mph. He rides \emph{into} a headwind of }x\text{ mph. Write an expression for his ground speed.}`,
-          choices : [
-            String.raw`12-x`,
-            String.raw`12+x`,
-            String.raw`x-12`,
-            String.raw`12x`,
-            String.raw`\dfrac{12}{x}`,
-            String.raw`x`
+          stem: String.raw`
+            <p>A boat moves on a river.</p>
+            <p>Let \(x\) = the boat's speed in still water (mph), and \(y\) = the river current speed (mph).</p>
+            <p>Which pair correctly represents the boat's <b>downstream</b> and <b>upstream</b> speeds?</p>
+          `,
+          choices: [
+            String.raw`downstream \(x-y\), upstream \(x+y\)`,
+            String.raw`downstream \(xy\), upstream \(\frac{x}{y}\)`,
+            String.raw`downstream \(x+y\), upstream \(x-y\)`,
+            String.raw`downstream \(y-x\), upstream \(x+y\)`,
+            String.raw`downstream \(x+y\), upstream \(y-x\)`,
+            String.raw`downstream \(x\), upstream \(y\)`
+          ],
+          choiceWrap: false
+        },
+
+        /* Q2 */
+        {
+          stem: String.raw`
+            <p>A slower car leaves a town. Two hours later, a faster car leaves the same town in the same direction and catches the slower car after traveling for 3 hours.</p>
+            <p>Let \(x\) = the slower car's speed (mph), and \(y\) = the faster car's speed (mph). The faster car travels \(20\) mph faster.</p>
+            <p>Which system models the situation?</p>
+          `,
+          choices: [
+            String.raw`\(\begin{cases}y=x+20\\3x=5y\end{cases}\)`,
+            String.raw`\(\begin{cases}x=y+20\\5x=3y\end{cases}\)`,
+            String.raw`\(\begin{cases}y=x+20\\2x=3y\end{cases}\)`,
+            String.raw`\(\begin{cases}y=x-20\\5x=3y\end{cases}\)`,
+            String.raw`\(\begin{cases}x+y=20\\5x=3y\end{cases}\)`,
+            String.raw`\(\begin{cases}y=x+20\\5x=3y\end{cases}\)`
+          ],
+          choiceWrap: false
+        },
+
+        /* Q3 */
+        {
+          stem: String.raw`
+            <p>Grandma and John live \(184\) miles apart and start toward each other at the same time. They meet \(2\) hours later. John travels \(12\) mph faster than Grandma.</p>
+            <p>Let \(x\) = Grandma's speed (mph), and \(y\) = John's speed (mph).</p>
+            <p>Which system correctly represents the problem?</p>
+          `,
+          choices: [
+            String.raw`\(\begin{cases}2x+2y=184\\x=y+12\end{cases}\)`,
+            String.raw`\(\begin{cases}2x+2y=184\\y=x+12\end{cases}\)`,
+            String.raw`\(\begin{cases}x+y=184\\y=x+12\end{cases}\)`,
+            String.raw`\(\begin{cases}2x-2y=184\\y=x+12\end{cases}\)`,
+            String.raw`\(\begin{cases}2x+2y=184\\y=12x\end{cases}\)`,
+            String.raw`\(\begin{cases}x+y=92\\x=y+12\end{cases}\)`
+          ],
+          choiceWrap: false
+        },
+
+        /* Q4 */
+        {
+          stem: String.raw`
+            <p>An airplane travels \(1200\) miles with a tailwind in \(4\) hours and \(500\) miles against the wind in \(2\) hours.</p>
+            <p>Let \(x\) = the airplane's still-air speed (mph), and \(y\) = the wind speed (mph).</p>
+            <p>Find \(x\) and \(y\).</p>
+          `,
+          choices: [
+            String.raw`\(x=300,\ y=50\)`,
+            String.raw`\(x=250,\ y=25\)`,
+            String.raw`\(x=280,\ y=20\)`,
+            String.raw`\(x=260,\ y=40\)`,
+            String.raw`\(x=275,\ y=25\)`,
+            String.raw`\(x=290,\ y=15\)`
           ]
         },
 
-        /* 2 */
+        /* Q5 */
         {
-          latex : String.raw`\text{A blimp's still-air speed is }y\text{ mph. It flies with a tailwind of }10\text{ mph. Write an expression for its ground speed.}`,
-          choices : [
-            String.raw`y-10`,
-            String.raw`y+10`,
-            String.raw`10-y`,
-            String.raw`10y`,
-            String.raw`\dfrac{y}{10}`,
-            String.raw`y`
+          stem: String.raw`
+            <p>Bob leaves Centerville at 11:00 A.M. traveling west at \(45\) mph. Lane leaves the same place at 1:00 P.M. traveling east at \(50\) mph.</p>
+            <p>When they are \(375\) miles apart, let \(x\) = Bob's travel time (hours) and \(y\) = Lane's travel time (hours).</p>
+            <p>Since Bob started two hours earlier, \(x-y=2\). Which system and conclusion are correct?</p>
+          `,
+          choices: [
+            String.raw`\(\begin{cases}45x+50y=375\\x-y=2\end{cases}\), so \(x=5,\ y=3\), and the time is 4:00 P.M.`,
+            String.raw`\(\begin{cases}45x+50y=375\\y-x=2\end{cases}\), so \(x=3,\ y=5\), and the time is 4:00 P.M.`,
+            String.raw`\(\begin{cases}45x-50y=375\\x-y=2\end{cases}\), so \(x=5,\ y=3\), and the time is 4:00 P.M.`,
+            String.raw`\(\begin{cases}45x+50y=375\\x+y=2\end{cases}\), so \(x=5,\ y=3\), and the time is 4:00 P.M.`,
+            String.raw`\(\begin{cases}45x+50y=375\\x-y=2\end{cases}\), so \(x=4,\ y=2\), and the time is 3:00 P.M.`,
+            String.raw`\(\begin{cases}45x+50y=375\\x-y=2\end{cases}\), so \(x=6,\ y=4\), and the time is 5:00 P.M.`
+          ],
+          choiceWrap: false
+        },
+
+        /* Q6 */
+        {
+          stem: String.raw`
+            <p>A boat travels \(72\) miles downstream in \(3\) hours and \(48\) miles upstream in \(4\) hours.</p>
+            <p>Let \(x\) = the boat's speed in still water (mph), and \(y\) = the current speed (mph).</p>
+            <p>Find \(x\) and \(y\).</p>
+          `,
+          choices: [
+            String.raw`\(x=24,\ y=12\)`,
+            String.raw`\(x=12,\ y=6\)`,
+            String.raw`\(x=21,\ y=3\)`,
+            String.raw`\(x=18,\ y=6\)`,
+            String.raw`\(x=18,\ y=12\)`,
+            String.raw`\(x=15,\ y=9\)`
           ]
         },
 
-        /* 3 */
+        /* Q7 */
         {
-          latex : String.raw`\text{A canoe's lake (no current) speed is }4\text{ mph. The river current is }c\text{ mph. Write an expression for its \emph{downstream} speed.}`,
-          choices : [
-            String.raw`4-c`,
-            String.raw`c-4`,
-            String.raw`4+c`,
-            String.raw`4c`,
-            String.raw`\dfrac{4}{c}`,
-            String.raw`c`
+          stem: String.raw`
+            <p>Two trains start toward each other from cities \(350\) miles apart. When they meet, the southbound train has traveled for \(2\) hours and the northbound train for \(4\) hours. The northbound train is \(10\) mph slower.</p>
+            <p>Let \(x\) = southbound speed (mph), and \(y\) = northbound speed (mph).</p>
+            <p>Find \(x\) and \(y\).</p>
+          `,
+          choices: [
+            String.raw`\(x=60,\ y=50\)`,
+            String.raw`\(x=70,\ y=60\)`,
+            String.raw`\(x=65,\ y=55\)`,
+            String.raw`\(x=75,\ y=65\)`,
+            String.raw`\(x=68,\ y=58\)`,
+            String.raw`\(x=62,\ y=52\)`
           ]
         },
 
-        /* 4 */
+        /* Q8 */
         {
-          latex : String.raw`\text{A boat's still-water speed is }z\text{ mph. Pine Creek's current is }2\text{ mph. Write an expression for its \emph{upstream} speed.}`,
-          choices : [
-            String.raw`z+2`,
-            String.raw`2-z`,
-            String.raw`2z`,
-            String.raw`z\cdot 2`,
-            String.raw`z-2`,
-            String.raw`\dfrac{z}{2}`
+          stem: String.raw`
+            <p>A plane flies for \(4\) hours with a tailwind.</p>
+            <p>Let \(x\) = still-air speed (mph), and \(y\) = wind speed (mph).</p>
+            <p>A student writes the distance as \(4x+y\). What is the error?</p>
+          `,
+          choices: [
+            String.raw`The distance should be \(x+4y\), because only the wind acts for four hours.`,
+            String.raw`The distance should be \(xy\), because distance is found by multiplying two speeds.`,
+            String.raw`The distance should be \(4x-y\), because all wind speeds are subtracted.`,
+            String.raw`The expression is correct because \(4x+y=4(x+y)\).`,
+            String.raw`The distance should be \(x+y+4\), because time is added to speed.`,
+            String.raw`The ground speed is \(x+y\), and the whole ground speed acts for \(4\) hours, so the distance is \(4(x+y)\).`
+          ],
+          choiceWrap: false
+        },
+
+        /* Q9 */
+        {
+          stem: String.raw`
+            <p>An airplane travels \(900\) miles with a tailwind in \(3\) hours and \(660\) miles against the wind in \(3\) hours.</p>
+            <p>Let \(x\) = still-air speed (mph), and \(y\) = wind speed (mph).</p>
+            <p>Which system correctly models the situation?</p>
+          `,
+          choices: [
+            String.raw`\(\begin{cases}x+y=900\\x-y=660\end{cases}\)`,
+            String.raw`\(\begin{cases}3(x+y)=900\\3(x-y)=660\end{cases}\)`,
+            String.raw`\(\begin{cases}3x+y=900\\3x-y=660\end{cases}\)`,
+            String.raw`\(\begin{cases}x+3y=900\\x-3y=660\end{cases}\)`,
+            String.raw`\(\begin{cases}3(x-y)=900\\3(x+y)=660\end{cases}\)`,
+            String.raw`\(\begin{cases}x+y=300\\x-y=220\end{cases}\)`
+          ],
+          choiceWrap: false
+        },
+
+        /* Q10 */
+        {
+          stem: String.raw`
+            <p>Two cyclists start \(210\) miles apart and ride toward each other. They meet after \(3\) hours. One cyclist rides \(6\) mph faster than the other.</p>
+            <p>Let \(x\) = slower cyclist's speed (mph), and \(y\) = faster cyclist's speed (mph).</p>
+            <p>Find \(x\) and \(y\).</p>
+          `,
+          choices: [
+            String.raw`\(x=30,\ y=36\)`,
+            String.raw`\(x=34,\ y=40\)`,
+            String.raw`\(x=36,\ y=42\)`,
+            String.raw`\(x=31,\ y=37\)`,
+            String.raw`\(x=32,\ y=38\)`,
+            String.raw`\(x=35,\ y=41\)`
           ]
         },
 
-        /* 5 */
+        /* Q11 */
         {
-          latex : String.raw`\text{An airplane flies in still air at }500\text{ mph. It flies into a headwind of }w\text{ mph. Write an expression for its ground speed.}`,
-          choices : [
-            String.raw`500-w`,
-            String.raw`500+w`,
-            String.raw`w-500`,
-            String.raw`500w`,
-            String.raw`\dfrac{500}{w}`,
-            String.raw`w`
-          ]
+          stem: String.raw`
+            <p>Suppose a train problem is modeled by</p>
+            <p>\[
+              \begin{cases}
+              2x+4y=350\\
+              x-y=10
+              \end{cases}
+            \]</p>
+            <p>where \(x\) and \(y\) are train speeds in mph.</p>
+            <p>Which interpretation is correct?</p>
+          `,
+          choices: [
+            String.raw`The first train travels for \(2\) hours, the second for \(4\) hours, their distances total \(350\) miles, and the first train is \(10\) mph faster.`,
+            String.raw`The trains each travel \(350\) miles, and the first train takes \(10\) more hours.`,
+            String.raw`The first train travels \(2\) miles and the second \(4\) miles, while their speeds differ by \(350\) mph.`,
+            String.raw`The first train is \(2\) mph faster and the second is \(4\) mph faster, for a total speed of \(350\) mph.`,
+            String.raw`The two trains travel for the same amount of time because both equations contain \(x\) and \(y\).`,
+            String.raw`The first equation compares speeds, while the second equation compares distances.`
+          ],
+          choiceWrap: false
         },
 
-        /* 6 */
+        /* Q12 */
         {
-          latex : String.raw`\text{Hiking club: In the morning, a group walks }3\text{ mph for }t\text{ hours. In the afternoon, they walk }2\text{ mph for }t+1\text{ hours. Their total distance is }22\text{ miles. Find the number of \emph{morning} hours.}`,
-          choices : [
-            String.raw`2`,
-            String.raw`3`,
-            String.raw`5`,
-            String.raw`4`,
-            String.raw`6`,
-            String.raw`7`
-          ]
-        },
-
-        /* 7 */
-        {
-          latex : String.raw`\text{Two cars leave the same place at the same time, traveling in the same direction. The faster car's speed is \emph{twice} the slower car's speed. After }4\text{ hours, the faster car is }80\text{ miles ahead. Find their speeds (faster, slower).}`,
-          choices : [
-            String.raw`(30,15)\ \text{mph}`,
-            String.raw`(40,20)\ \text{mph}`,
-            String.raw`(50,25)\ \text{mph}`,
-            String.raw`(60,30)\ \text{mph}`,
-            String.raw`(32,16)\ \text{mph}`,
-            String.raw`(36,18)\ \text{mph}`
-          ]
-        },
-
-        /* 8 */
-        {
-          latex : String.raw`\text{Bob leaves Centerville at }11{:}00\ \text{A.M., traveling west at }45\text{ mph. Lane leaves Centerville at }1{:}00\ \text{P.M., traveling east at }50\text{ mph. At what clock time are they }375\text{ miles apart?}`,
-          choices : [
-            String.raw`3{:}00\ \text{P.M.}`,
-            String.raw`3{:}30\ \text{P.M.}`,
-            String.raw`4{:}00\ \text{P.M.}`,
-            String.raw`4{:}30\ \text{P.M.}`,
-            String.raw`5{:}00\ \text{P.M.}`,
-            String.raw`6{:}00\ \text{P.M.}`
-          ]
-        },
-
-        /* 9 */
-        {
-          latex : String.raw`\text{A plane travels }1200\text{ nautical miles with a tailwind in }4\text{ hours, and }500\text{ nautical miles against the wind in }2\text{ hours. Find the still-air speed and the wind speed (in mph).}`,
-          choices : [
-            String.raw`(275,25)\ \text{mph}`,
-            String.raw`(300,50)\ \text{mph}`,
-            String.raw`(280,20)\ \text{mph}`,
-            String.raw`(260,40)\ \text{mph}`,
-            String.raw`(250,30)\ \text{mph}`,
-            String.raw`(290,15)\ \text{mph}`
-          ]
-        },
-
-        /* 10 */
-        {
-          latex : String.raw`\text{Grandma and John live }184\text{ miles apart and start toward each other at the same time. They meet }2\text{ hours later. John travels }12\text{ mph faster than Grandma. Find their speeds (Grandma, John).}`,
-          choices : [
-            String.raw`(36,48)\ \text{mph}`,
-            String.raw`(38,50)\ \text{mph}`,
-            String.raw`(42,54)\ \text{mph}`,
-            String.raw`(44,56)\ \text{mph}`,
-            String.raw`(40,52)\ \text{mph}`,
-            String.raw`(35,47)\ \text{mph}`
-          ]
-        },
-
-        /* 11 */
-        {
-          latex : String.raw`\text{Two trains start toward each other from cities }350\text{ miles apart. When they meet, the southbound train has been traveling }2\text{ hours and the northbound train has been traveling }4\text{ hours. The northbound train is }10\text{ mph slower than the southbound train. Find their speeds (southbound, northbound).}`,
-          choices : [
-            String.raw`(60,50)\ \text{mph}`,
-            String.raw`(70,60)\ \text{mph}`,
-            String.raw`(75,65)\ \text{mph}`,
-            String.raw`(65,55)\ \text{mph}`,
-            String.raw`(68,58)\ \text{mph}`,
-            String.raw`(62,52)\ \text{mph}`
-          ]
-        },
-
-        /* 12 */
-        {
-          latex : String.raw`\text{Paul bikes from his town to Janesville. On a calm day the trip takes }3\text{ hours. Yesterday a tailwind of }12\text{ mph helped, and he made the trip in }2\text{ hours. What is Paul's calm-day biking speed (in mph)?}`,
-          choices : [
-            String.raw`18\ \text{mph}`,
-            String.raw`21\ \text{mph}`,
-            String.raw`24\ \text{mph}`,
-            String.raw`27\ \text{mph}`,
-            String.raw`30\ \text{mph}`,
-            String.raw`36\ \text{mph}`
+          stem: String.raw`
+            <p>A local bus leaves a station. \(1.5\) hours later, an express bus leaves the same station on the same route. The express catches the local bus after traveling for \(2.5\) hours. The express travels \(24\) mph faster.</p>
+            <p>Let \(x\) = local bus speed (mph), and \(y\) = express bus speed (mph).</p>
+            <p>Find \(x\) and \(y\).</p>
+          `,
+          choices: [
+            String.raw`\(x=36,\ y=60\)`,
+            String.raw`\(x=48,\ y=72\)`,
+            String.raw`\(x=32,\ y=56\)`,
+            String.raw`\(x=40,\ y=64\)`,
+            String.raw`\(x=44,\ y=68\)`,
+            String.raw`\(x=50,\ y=74\)`
           ]
         }
       ]
     };
   </script>
 
-  <link rel="stylesheet" href="/math-homework/assets/core.css" />
-  <link rel="stylesheet" href="https://tikzjax.com/v1/fonts.css" />
-  <script defer src="/math-homework/assets/core.js"></script>
-  <script defer src="https://tikzjax.com/v1/tikzjax.js"></script>
+  <link rel="stylesheet" href="/math-homework/assets/core-rich.css" />
+  <script defer src="/math-homework/assets/core-rich.js"></script>
   <script defer src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
 </head>
+
 <body>
   <div id="hw-root">Loading…</div>
 </body>
