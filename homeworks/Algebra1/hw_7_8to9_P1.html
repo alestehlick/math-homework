@@ -1,0 +1,431 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Homework 7-8 and 7-9 Part I (Algebra 2)</title>
+
+  <script>
+    /* =========================
+       Homework 7-8 and 7-9 Part I — Radical Equations (Algebra 2)
+       Adapted for: /math-homework/assets/core-rich.js
+
+       REQUIRED SOURCE REFERENCES:
+       - No external exercise set was supplied for this homework.
+       - All questions are model-authored from the user's stated curricular goals.
+
+       MODEL-AUTHORED ITEMS AND PURPOSE:
+       - Q1–Q3: begin with radicals containing only numbers. These radicals act
+         merely as real coefficients, so the equations are ordinary polynomial
+         equations in the variable.
+       - Q4–Q7: introduce variables inside square roots and develop the central
+         warning that squaring an equation may enlarge the real solution set.
+         Candidate solutions must therefore be checked in the original equation.
+       - Q8–Q9: make explicit why isolating a square root before squaring is
+         structurally efficient, then apply that idea.
+       - Q10–Q12: contrast odd-index radicals with square roots. Raising both
+         sides of a real equation to an odd power is reversible, so that power
+         step itself does not create extraneous real solutions.
+       - Q13–Q16: introduce equations with two independent square roots.
+         After the first squaring, a mixed radical remains; it must be isolated
+         and the equation squared again. Q16 deliberately produces an
+         extraneous candidate after the second squaring.
+       - Q17: first nested-square-root equation; the outer squaring reveals
+         a second radical equation, giving a clean entry to nested roots.
+       - Q18: a more developed nested-square-root equation; repeated squaring
+         produces candidates that must be checked against the original.
+       - Q19: synthesis comparing even-index and odd-index radical equations
+         and identifying exactly which solving processes require a final check.
+
+       IMAGE FILES:
+       - User-supplied figures: none.
+       - Model-generated figures: none.
+
+       IMAGE NAMING RULE:
+       - No image files are required for this homework.
+       ========================= */
+
+    window.homeworkData = {
+      classId : "Algebra2",
+      id      : "Homework 7-8 and 7-9 Part I",
+      title   : "Homework 7-8 and 7-9 Part I",
+
+      graphics : String.raw``,
+
+      answerKey : ["C","F","B","D","A","E","B","C","F","D","A","E","B","C","A","D","C","F","E"],
+
+      questions : [
+
+        /* Q1 */
+        {
+          stem: String.raw`
+            <p>In this equation, the radicals contain only numbers, so they are simply real-number coefficients.</p>
+            <p>Solve:</p>
+            <p>\[
+              \sqrt2\,x+\sqrt8=5\sqrt2
+            \]</p>
+          `,
+          choices: [
+            String.raw`\(x=1\)`,
+            String.raw`\(x=2\)`,
+            String.raw`\(x=3\)`,
+            String.raw`\(x=-3\)`,
+            String.raw`\(x=5\)`,
+            String.raw`\(x=7\)`
+          ]
+        },
+
+        /* Q2 */
+        {
+          stem: String.raw`
+            <p>The radicals again contain only numbers. Solve the quadratic equation:</p>
+            <p>\[
+              \sqrt3\,x^2-5\sqrt3\,x+6\sqrt3=0
+            \]</p>
+          `,
+          choices: [
+            String.raw`\(x=2\) only`,
+            String.raw`\(x=3\) only`,
+            String.raw`\(x=-2,-3\)`,
+            String.raw`\(x=-2,3\)`,
+            String.raw`\(x=1,6\)`,
+            String.raw`\(x=2,3\)`
+          ]
+        },
+
+        /* Q3 */
+        {
+          stem: String.raw`
+            <p>Why can an equation such as</p>
+            <p>\[
+              \sqrt2\,x^2-\sqrt5\,x+7=0
+            \]</p>
+            <p>be treated as an ordinary polynomial equation in \(x\)?</p>
+          `,
+          choices: [
+            String.raw`Because every radical must first be removed by squaring the entire equation.`,
+            String.raw`Because \(\sqrt2\), \(\sqrt5\), and \(7\) are fixed real numbers, so they are simply coefficients of a polynomial in \(x\).`,
+            String.raw`Because any equation containing a square root is automatically quadratic.`,
+            String.raw`Because square roots of numbers may always be replaced by integers.`,
+            String.raw`Because the variable \(x\) is outside the radicals, so the equation has no real coefficients.`,
+            String.raw`Because polynomial equations may contain radicals only when their degree is \(2\).`
+          ],
+          choiceWrap: false
+        },
+
+        /* Q4 */
+        {
+          stem: String.raw`
+            <p>Now the variable is inside the square root. Solve:</p>
+            <p>\[
+              \sqrt{x+5}=4
+            \]</p>
+            <p>Check the result in the original equation.</p>
+          `,
+          choices: [
+            String.raw`\(x=9\)`,
+            String.raw`\(x=16\)`,
+            String.raw`\(x=21\)`,
+            String.raw`\(x=11\)`,
+            String.raw`\(x=-11\)`,
+            String.raw`No real solution`
+          ]
+        },
+
+        /* Q5 */
+        {
+          stem: String.raw`
+            <p>Solve:</p>
+            <p>\[
+              \sqrt{2x+3}=x
+            \]</p>
+            <p>Pay attention to what happens after the equation is squared.</p>
+          `,
+          choices: [
+            String.raw`Squaring gives candidates \(x=-1\) and \(x=3\), but only \(x=3\) satisfies the original equation.`,
+            String.raw`Squaring gives \(x=-1\) and \(x=3\), and both satisfy the original equation.`,
+            String.raw`The only solution is \(x=-1\).`,
+            String.raw`The only solution is \(x=1\).`,
+            String.raw`The only solution is \(x=3\), because squaring can never introduce an extra candidate.`,
+            String.raw`There is no real solution because \(x\) appears both inside and outside the radical.`
+          ],
+          choiceWrap: false
+        },
+
+        /* Q6 */
+        {
+          stem: String.raw`
+            <p>Why can squaring both sides of an equation create a candidate that was not a solution of the original equation?</p>
+          `,
+          choices: [
+            String.raw`Because squaring changes every positive number into a negative number.`,
+            String.raw`Because square roots are undefined for all nonzero numbers.`,
+            String.raw`Because \(A^2=B^2\) is equivalent only to \(A=B\).`,
+            String.raw`Because squaring always doubles the number of roots of a polynomial.`,
+            String.raw`Because \(A^2=B^2\) allows \(A=B\) <em>or</em> \(A=-B\); the sign information from the original equation may be lost.`,
+            String.raw`Because squaring is not allowed when variables occur inside radicals.`
+          ],
+          choiceWrap: false
+        },
+
+        /* Q7 */
+        {
+          stem: String.raw`
+            <p>Solve and check against the original equation:</p>
+            <p>\[
+              \sqrt{x+7}=x-1
+            \]</p>
+          `,
+          choices: [
+            String.raw`\(x=\dfrac{3+\sqrt{33}}2\) and \(x=\dfrac{3-\sqrt{33}}2\)`,
+            String.raw`\(x=\dfrac{3+\sqrt{33}}2\) only`,
+            String.raw`\(x=\dfrac{3-\sqrt{33}}2\) only`,
+            String.raw`\(x=\dfrac{-3+\sqrt{33}}2\) only`,
+            String.raw`\(x=\dfrac{1+\sqrt{33}}2\) only`,
+            String.raw`No real solution`
+          ]
+        },
+
+        /* Q8 */
+        {
+          stem: String.raw`
+            <p>Consider</p>
+            <p>\[
+              \sqrt{x+4}+2=x.
+            \]</p>
+            <p>Why is it useful to isolate the square root <em>before</em> squaring?</p>
+          `,
+          choices: [
+            String.raw`Because a square root may be squared only when it is alone on the left side by definition.`,
+            String.raw`Because isolating the radical guarantees that every candidate produced later will be a true solution.`,
+            String.raw`Because \(\sqrt{x+4}=x-2\) lets one squaring remove that radical completely; squaring \(\sqrt{x+4}+2=x\) immediately creates a mixed term \(4\sqrt{x+4}\) and leaves a radical behind.`,
+            String.raw`Because isolating the radical changes a nonlinear equation into a linear equation.`,
+            String.raw`Because moving \(2\) across the equality sign changes \(\sqrt{x+4}\) into \(-\sqrt{x+4}\).`,
+            String.raw`Because equations containing radicals cannot be squared until all constants have been removed.`
+          ],
+          choiceWrap: false
+        },
+
+        /* Q9 */
+        {
+          stem: String.raw`
+            <p>Solve and check:</p>
+            <p>\[
+              \sqrt{x+4}+2=x
+            \]</p>
+          `,
+          choices: [
+            String.raw`\(x=0\) only`,
+            String.raw`\(x=4\) only`,
+            String.raw`\(x=0,5\)`,
+            String.raw`\(x=-5\) only`,
+            String.raw`No real solution`,
+            String.raw`\(x=5\) only`
+          ]
+        },
+
+        /* Q10 */
+        {
+          stem: String.raw`
+            <p>Solve:</p>
+            <p>\[
+              \sqrt[3]{x+6}=x
+            \]</p>
+            <p>Here the radical has odd index.</p>
+          `,
+          choices: [
+            String.raw`\(x=-3\)`,
+            String.raw`\(x=-2\)`,
+            String.raw`\(x=1\)`,
+            String.raw`\(x=2\)`,
+            String.raw`\(x=3\)`,
+            String.raw`No real solution`
+          ]
+        },
+
+        /* Q11 */
+        {
+          stem: String.raw`
+            <p>Why is the step</p>
+            <p>\[
+              A=B\quad\Longleftrightarrow\quad A^3=B^3
+            \]</p>
+            <p>valid for all real \(A\) and \(B\), while the analogous statement with squares is not?</p>
+          `,
+          choices: [
+            String.raw`The function \(t\mapsto t^3\) is one-to-one on the real numbers, so cubing preserves both equality and inequality of real numbers; squaring loses sign information.`,
+            String.raw`Every real number has two real cube roots, while it has only one square root.`,
+            String.raw`Cubing changes negative numbers into positive numbers, so signs no longer matter.`,
+            String.raw`Odd powers are reversible only when both sides are positive.`,
+            String.raw`Squaring and cubing are equally reversible; checking square-root equations is only a convention.`,
+            String.raw`Cubing removes variables from radicals, whereas squaring never does.`
+          ],
+          choiceWrap: false
+        },
+
+        /* Q12 */
+        {
+          stem: String.raw`
+            <p>Solve:</p>
+            <p>\[
+              \sqrt[3]{2x+23}=x+1
+            \]</p>
+            <p>Since cubing both sides is reversible over the reals, no candidate is introduced merely by that cubing step.</p>
+          `,
+          choices: [
+            String.raw`\(x=-2\)`,
+            String.raw`\(x=-1\)`,
+            String.raw`\(x=0\)`,
+            String.raw`\(x=1\)`,
+            String.raw`\(x=2\)`,
+            String.raw`\(x=3\)`
+          ]
+        },
+
+        /* Q13 */
+        {
+          stem: String.raw`
+            <p>Consider</p>
+            <p>\[
+              \sqrt{x+4}+\sqrt{x-1}=5.
+            \]</p>
+            <p>After squaring once and simplifying, which equation should be isolated before squaring a second time?</p>
+          `,
+          choices: [
+            String.raw`\(\sqrt{(x+4)(x-1)}=25-2x\)`,
+            String.raw`\(\sqrt{(x+4)(x-1)}=11-x\)`,
+            String.raw`\(\sqrt{x+4}+\sqrt{x-1}=25\)`,
+            String.raw`\((x+4)(x-1)=11-x\)`,
+            String.raw`\(\sqrt{2x+3}=11-x\)`,
+            String.raw`\(\sqrt{(x+4)(x-1)}=x-11\)`
+          ]
+        },
+
+        /* Q14 */
+        {
+          stem: String.raw`
+            <p>Solve and check:</p>
+            <p>\[
+              \sqrt{x+4}+\sqrt{x-1}=5
+            \]</p>
+          `,
+          choices: [
+            String.raw`\(x=4\)`,
+            String.raw`\(x=6\)`,
+            String.raw`\(x=5\)`,
+            String.raw`\(x=11\)`,
+            String.raw`\(x=1\)`,
+            String.raw`No real solution`
+          ]
+        },
+
+        /* Q15 */
+        {
+          stem: String.raw`
+            <p>Solve and check:</p>
+            <p>\[
+              \sqrt{x+9}-\sqrt{x}=1
+            \]</p>
+          `,
+          choices: [
+            String.raw`\(x=16\)`,
+            String.raw`\(x=9\)`,
+            String.raw`\(x=25\)`,
+            String.raw`\(x=4\)`,
+            String.raw`\(x=8\)`,
+            String.raw`No real solution`
+          ]
+        },
+
+        /* Q16 */
+        {
+          stem: String.raw`
+            <p>Solve and check:</p>
+            <p>\[
+              \sqrt{x+5}+\sqrt{2x+1}=6
+            \]</p>
+            <p>After two squarings, the algebra produces two candidates. Determine what happens to them.</p>
+          `,
+          choices: [
+            String.raw`The candidates are \(x=4\) and \(x=220\), and both satisfy the original equation.`,
+            String.raw`The only candidate is \(x=220\), and it satisfies the original equation.`,
+            String.raw`The candidates are \(x=-4\) and \(x=220\), but only \(x=220\) works.`,
+            String.raw`The candidates are \(x=4\) and \(x=220\), but only \(x=4\) satisfies the original equation.`,
+            String.raw`The candidates are \(x=4\) and \(x=22\), but only \(x=4\) works.`,
+            String.raw`There are no real solutions because two independent square roots cannot be eliminated.`
+          ],
+          choiceWrap: false
+        },
+
+
+        /* Q17 */
+        {
+          stem: String.raw`
+            <p>Solve the nested-radical equation:</p>
+            <p>\[
+              \sqrt{5+2\sqrt{x}}=3
+            \]</p>
+            <p>Notice that squaring the outer equation reveals another radical equation inside.</p>
+          `,
+          choices: [
+            String.raw`\(x=1\)`,
+            String.raw`\(x=2\)`,
+            String.raw`\(x=4\)`,
+            String.raw`\(x=9\)`,
+            String.raw`\(x=16\)`,
+            String.raw`No real solution`
+          ]
+        },
+
+        /* Q18 */
+        {
+          stem: String.raw`
+            <p>Solve the nested-radical equation and check all candidates in the original equation:</p>
+            <p>\[
+              \sqrt{x+\sqrt{x}}=\sqrt6
+            \]</p>
+          `,
+          choices: [
+            String.raw`\(x=9\) only`,
+            String.raw`\(x=4,9\)`,
+            String.raw`\(x=6\) only`,
+            String.raw`\(x=2\) only`,
+            String.raw`No real solution`,
+            String.raw`Squaring produces candidates \(x=4\) and \(x=9\), but only \(x=4\) satisfies the original equation.`
+          ],
+          choiceWrap: false
+        },
+
+        /* Q19 */
+        {
+          stem: String.raw`
+            <p>Consider the following equations and the natural power step used to remove their radicals:</p>
+            <p><b>I.</b> \(\sqrt{x+1}=x-2\)</p>
+            <p><b>II.</b> \(\sqrt[3]{x+1}=x-2\)</p>
+            <p><b>III.</b> \(\sqrt[5]{3x-4}=2x+1\)</p>
+            <p><b>IV.</b> \(\sqrt{x+\sqrt{x}}=\sqrt6\)</p>
+            <p>For which equations can the required power steps enlarge the real solution set, making a final check against the original equation necessary?</p>
+          `,
+          choices: [
+            String.raw`II and III only`,
+            String.raw`I, II, III, and IV`,
+            String.raw`I and II only`,
+            String.raw`III and IV only`,
+            String.raw`I and IV only`,
+            String.raw`II and IV only`
+          ],
+          choiceWrap: false
+        }
+      ]
+    };
+  </script>
+
+  <link rel="stylesheet" href="/math-homework/assets/core-rich.css" />
+  <script defer src="/math-homework/assets/core-rich.js"></script>
+  <script defer src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+</head>
+
+<body>
+  <div id="hw-root">Loading…</div>
+</body>
+</html>
