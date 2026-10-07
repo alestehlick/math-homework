@@ -6,6 +6,41 @@
   <title>Homework 7-8 (Algebra 1)</title>
 
   <script>
+    /* =========================
+       Homework 7-8 — Simple Interest & Investment Systems (Algebra 1)
+       Adapted for: /math-homework/assets/core-rich.js
+
+       REQUIRED SOURCE REFERENCES:
+       - Source set: uploaded Homework 7-8.
+       - Source Q1, Q7, Q8: direct simple-interest computation.
+       - Source Q2–Q6: symbolic/reverse use of I = Prt.
+       - Source Q9: total-principal + total-interest system.
+       - Source Q10: equal-interest relation with related rates.
+       - Source Q11–Q12: solving split-investment systems.
+
+       MODEL-AUTHORED / MODEL-REWORKED ITEMS:
+       - Q1–Q3 compress the repetitive source Q1–Q8 material into a short
+         progression: direct computation, reverse use of I = Prt, and a
+         conceptual interpretation of simple interest.
+       - Q4–Q6 deliberately build one investment system in stages:
+         principal equation -> interest equation -> solution.
+       - Q7 is an error-diagnosis item distinguishing total principal from
+         total interest.
+       - Q8–Q9 rework the idea of source Q10 with cleaner numbers so students
+         first model, then solve, a system involving two unknown rates.
+       - Q10–Q11 extend source Q9/Q11/Q12 by allowing the two investments to
+         remain invested for different lengths of time.
+       - Q12 is a synthesis problem combining total principal, different times,
+         different rates, and a difference between the interests earned.
+
+       IMAGE FILES:
+       - User-supplied figures: none.
+       - Model-generated figures: none.
+
+       IMAGE NAMING RULE:
+       - No image files are required for this homework.
+       ========================= */
+
     window.homeworkData = {
       classId : "Algebra1",
       id      : "Homework 7-8",
@@ -13,174 +48,244 @@
 
       graphics : String.raw``,
 
-      answerKey : ["A","B","A","C","B","B","A","A","D","E","C","F"],
+      answerKey : ["C","E","B","D","A","F","C","B","E","D","A","F"],
 
       questions : [
-        /* 1 */
+
+        /* Q1 */
         {
-          latex : String.raw`\text{Use } I=Prt.\ \text{Given }P=500,\ r=0.12,\ t=4\text{ years, find the simple interest }I\text{ (in dollars).}`,
-          choices : [
-            String.raw`240`,
-            String.raw`200`,
-            String.raw`180`,
-            String.raw`250`,
-            String.raw`60`,
-            String.raw`24`
+          stem: String.raw`
+            <p>Simple interest is given by \(I=Prt\), where \(r\) is written as a decimal and \(t\) is measured in years.</p>
+            <p>Find the simple interest earned by \(\$840\) invested at \(5\%\) per year for \(18\) months.</p>
+          `,
+          choices: [
+            String.raw`\(\$42\)`,
+            String.raw`\(\$56\)`,
+            String.raw`\(\$63\)`,
+            String.raw`\(\$75.60\)`,
+            String.raw`\(\$84\)`,
+            String.raw`\(\$126\)`
           ]
         },
 
-        /* 2 */
+        /* Q2 */
         {
-          latex : String.raw`\text{Use } I=Prt.\ \text{Given }P=x,\ r=0.045,\ t=2\text{ years, write }I\text{ in terms of }x\text{.}`,
-          choices : [
-            String.raw`0.045x`,
-            String.raw`0.09x`,
-            String.raw`0.9x`,
-            String.raw`0.0045x`,
-            String.raw`\dfrac{x}{0.09}`,
-            String.raw`2x`
+          stem: String.raw`
+            <p>An investment of \(\$1200\) earns \(\$135\) in simple interest over \(2.5\) years.</p>
+            <p>Find the annual interest rate as a decimal.</p>
+          `,
+          choices: [
+            String.raw`\(0.054\)`,
+            String.raw`\(0.45\)`,
+            String.raw`\(0.0045\)`,
+            String.raw`\(0.05\)`,
+            String.raw`\(0.045\)`,
+            String.raw`\(0.1125\)`
           ]
         },
 
-        /* 3 */
+        /* Q3 */
         {
-          latex : String.raw`\text{Use } I=Prt.\ \text{Given }P=112,\ r=x\ (\text{decimal}),\ t=0.5\text{ year, write }I\text{ in terms of }x\text{.}`,
-          choices : [
-            String.raw`56x`,
-            String.raw`112x`,
-            String.raw`0.5x`,
-            String.raw`28x`,
-            String.raw`56`,
-            String.raw`224x`
+          stem: String.raw`
+            <p>An amount \(x\) dollars is invested at \(7\%\) simple interest for \(3\) years.</p>
+            <p>Its interest is \(0.21x\). Which explanation best describes why?</p>
+          `,
+          choices: [
+            String.raw`The principal increases by \(21\%\) during the first year, and then that larger amount earns interest during the next two years.`,
+            String.raw`Each year earns \(0.07x\) of interest on the original principal, so three years earn \(0.07x+0.07x+0.07x=0.21x\).`,
+            String.raw`The rate \(0.07\) is multiplied by itself three times, giving \(0.07^3x\).`,
+            String.raw`Three years means the interest rate becomes \(7+3=10\%\).`,
+            String.raw`The interest must be \(0.21x\) because every three-year investment earns \(21\%\), regardless of its annual rate.`,
+            String.raw`Simple interest is found by adding the principal to the number of years.`
+          ],
+          choiceWrap: false
+        },
+
+        /* Q4 */
+        {
+          stem: String.raw`
+            <p>A total of \(\$10{,}000\) is split between two one-year investments.</p>
+            <p>Let \(x\) be the amount invested at \(4\%\), and let \(y\) be the amount invested at \(7\%\).</p>
+            <p>Which equation represents the <b>total principal</b>?</p>
+          `,
+          choices: [
+            String.raw`\(0.04x+0.07y=10{,}000\)`,
+            String.raw`\(x-y=10{,}000\)`,
+            String.raw`\(0.11(x+y)=10{,}000\)`,
+            String.raw`\(x+y=10{,}000\)`,
+            String.raw`\(4x+7y=10{,}000\)`,
+            String.raw`\(x+y=11{,}000\)`
           ]
         },
 
-        /* 4 */
+        /* Q5 */
         {
-          latex : String.raw`\text{Use } I=Prt.\ \text{Given }P=30,\ r=0.04,\ t=x\text{ years, write }I\text{ in terms of }x\text{.}`,
-          choices : [
-            String.raw`0.04x`,
-            String.raw`30x`,
-            String.raw`1.2x`,
-            String.raw`12x`,
-            String.raw`0.12x`,
-            String.raw`3x`
+          stem: String.raw`
+            <p>Continue with the same investments:</p>
+            <p>\(x\) dollars at \(4\%\), \(y\) dollars at \(7\%\), for one year.</p>
+            <p>Together they earn \(\$580\) in simple interest. Which equation represents the <b>total interest</b>?</p>
+          `,
+          choices: [
+            String.raw`\(0.04x+0.07y=580\)`,
+            String.raw`\(x+y=580\)`,
+            String.raw`\(0.07x+0.04y=10{,}000\)`,
+            String.raw`\(0.11(x+y)=580\)`,
+            String.raw`\(4x+7y=580\)`,
+            String.raw`\(0.04x+0.07y=10{,}000\)`
           ]
         },
 
-        /* 5 */
+        /* Q6 */
         {
-          latex : String.raw`\text{Use } I=Prt.\ \text{Given }P=500,\ t=2\text{ years, and }I=50,\ \text{find the annual rate }r\text{ (as a decimal).}`,
-          choices : [
-            String.raw`0.5`,
-            String.raw`0.05`,
-            String.raw`5`,
-            String.raw`0.005`,
-            String.raw`5\%`,
-            String.raw`50`
+          stem: String.raw`
+            <p>The situation in Q4–Q5 is modeled by</p>
+            <p>\[
+              \begin{cases}
+              x+y=10{,}000\\
+              0.04x+0.07y=580.
+              \end{cases}
+            \]</p>
+            <p>How much money is invested at each rate?</p>
+          `,
+          choices: [
+            String.raw`\(\$3000\) at \(4\%\), \(\$7000\) at \(7\%\)`,
+            String.raw`\(\$5000\) at \(4\%\), \(\$5000\) at \(7\%\)`,
+            String.raw`\(\$6000\) at \(4\%\), \(\$4000\) at \(7\%\)`,
+            String.raw`\(\$7000\) at \(4\%\), \(\$3000\) at \(7\%\)`,
+            String.raw`\(\$2000\) at \(4\%\), \(\$8000\) at \(7\%\)`,
+            String.raw`\(\$4000\) at \(4\%\), \(\$6000\) at \(7\%\)`
           ]
         },
 
-        /* 6 */
+        /* Q7 */
         {
-          latex : String.raw`\text{Use } I=Prt.\ \text{Given }P=200,\ r=x,\ I=200x,\ \text{find the time }t\text{ (in years).}`,
-          choices : [
-            String.raw`0.5`,
-            String.raw`1`,
-            String.raw`2`,
-            String.raw`x`,
-            String.raw`200`,
-            String.raw`200x`
+          stem: String.raw`
+            <p>A student is modeling this situation:</p>
+            <p>\(\$12{,}000\) is split between accounts earning \(5\%\) and \(8\%\) for one year, and the total interest is \(\$740\).</p>
+            <p>The student writes</p>
+            <p>\[
+              \begin{cases}
+              x+y=740\\
+              0.05x+0.08y=12{,}000.
+              \end{cases}
+            \]</p>
+            <p>What is the main error?</p>
+          `,
+          choices: [
+            String.raw`The rates should be written as \(5\) and \(8\), not as decimals.`,
+            String.raw`The second equation should use subtraction because the rates are different.`,
+            String.raw`The totals were attached to the wrong equations: \(x+y\) represents principal, while \(0.05x+0.08y\) represents interest.`,
+            String.raw`The variables cannot represent money amounts because money must be measured in cents.`,
+            String.raw`The first equation is correct, but the second should be \(0.13xy=12{,}000\).`,
+            String.raw`There is no error; the system correctly models the situation.`
+          ],
+          choiceWrap: false
+        },
+
+        /* Q8 */
+        {
+          stem: String.raw`
+            <p>Two investments earn the <b>same amount of simple interest</b> over \(2\) years.</p>
+            <p>\(\$400\) is invested at annual rate \(x\), and \(\$300\) is invested at annual rate \(y\). The second rate is \(0.02\) greater than the first.</p>
+            <p>Which system models the situation?</p>
+          `,
+          choices: [
+            String.raw`\(\begin{cases}400x+300y=0\\y=x+0.02\end{cases}\)`,
+            String.raw`\(\begin{cases}400x=300y\\y=x+0.02\end{cases}\)`,
+            String.raw`\(\begin{cases}400x=300y\\x=y+0.02\end{cases}\)`,
+            String.raw`\(\begin{cases}400x+300y=2\\y=x+0.02\end{cases}\)`,
+            String.raw`\(\begin{cases}800x=300y\\y=x+0.02\end{cases}\)`,
+            String.raw`\(\begin{cases}400x=600y\\y=x+0.02\end{cases}\)`
           ]
         },
 
-        /* 7 */
+        /* Q9 */
         {
-          latex : String.raw`\text{Find the simple interest: }\$400\ \text{invested for }4\ \text{years at }8\%\text{ per year.}`,
-          choices : [
-            String.raw`\$128`,
-            String.raw`\$129`,
-            String.raw`\$118`,
-            String.raw`\$96`,
-            String.raw`\$32`,
-            String.raw`\$12.80`
+          stem: String.raw`
+            <p>Solve the system from Q8:</p>
+            <p>\[
+              \begin{cases}
+              400x=300y\\
+              y=x+0.02.
+              \end{cases}
+            \]</p>
+            <p>What are the two annual rates?</p>
+          `,
+          choices: [
+            String.raw`\(x=0.04,\ y=0.06\)`,
+            String.raw`\(x=0.05,\ y=0.07\)`,
+            String.raw`\(x=0.07,\ y=0.09\)`,
+            String.raw`\(x=0.08,\ y=0.10\)`,
+            String.raw`\(x=0.06,\ y=0.08\)`,
+            String.raw`\(x=0.02,\ y=0.04\)`
           ]
         },
 
-        /* 8 */
+        /* Q10 */
         {
-          latex : String.raw`\text{Find the simple interest to the nearest cent: }\$8437\ \text{at }5\tfrac{1}{2}\%\ \text{for }6\ \text{months (use }t=0.5\text{ year).}`,
-          choices : [
-            String.raw`\$232.02`,
-            String.raw`\$231.75`,
-            String.raw`\$232.50`,
-            String.raw`\$226.00`,
-            String.raw`\$277.50`,
-            String.raw`\$23.20`
+          stem: String.raw`
+            <p>A total of \(\$15{,}000\) is split between two investments.</p>
+            <p>Let \(x\) be invested at \(5\%\) simple interest for \(2\) years, and let \(y\) be invested at \(8\%\) simple interest for \(9\) months.</p>
+            <p>The total interest is \(\$1050\). Which system models the situation?</p>
+          `,
+          choices: [
+            String.raw`\(\begin{cases}x+y=15{,}000\\0.05x+0.08y=1050\end{cases}\)`,
+            String.raw`\(\begin{cases}x+y=15{,}000\\0.10x+0.08y=1050\end{cases}\)`,
+            String.raw`\(\begin{cases}x+y=1050\\0.10x+0.06y=15{,}000\end{cases}\)`,
+            String.raw`\(\begin{cases}x+y=15{,}000\\0.10x+0.06y=1050\end{cases}\)`,
+            String.raw`\(\begin{cases}x+y=15{,}000\\0.05x+0.06y=1050\end{cases}\)`,
+            String.raw`\(\begin{cases}2x+0.75y=15{,}000\\0.05x+0.08y=1050\end{cases}\)`
           ]
         },
 
-        /* 9 */
+        /* Q11 */
         {
-          latex : String.raw`\text{Two accounts total }\$600\text{ of principal and earn }\$30\text{ of interest in one year. The first account (principal }x\text{) earns }7\%\text{ and the second (principal }y\text{) earns }5\%.\ \text{Which system models this?}`,
-          choices : [
-            String.raw`\begin{aligned} x+y&=30\\ 0.07x+0.05y&=600 \end{aligned}`,
-            String.raw`\begin{aligned} x-y&=600\\ 0.07x-0.05y&=30 \end{aligned}`,
-            String.raw`\begin{aligned} x+y&=630\\ 0.12x&=30 \end{aligned}`,
-            String.raw`\begin{aligned} x+y&=600\\ 0.07x+0.05y&=30 \end{aligned}`,
-            String.raw`\begin{aligned} 0.07x+0.05y&=600\\ x-y&=30 \end{aligned}`,
-            String.raw`\begin{aligned} x+y&=600\\ 0.05x+0.07y&=30 \end{aligned}`
+          stem: String.raw`
+            <p>Solve the investment system</p>
+            <p>\[
+              \begin{cases}
+              x+y=15{,}000\\
+              0.10x+0.06y=1050.
+              \end{cases}
+            \]</p>
+            <p>Here \(x\) is the amount invested at \(5\%\) for \(2\) years, and \(y\) is the amount invested at \(8\%\) for \(9\) months.</p>
+          `,
+          choices: [
+            String.raw`\(x=\$3750,\ y=\$11{,}250\)`,
+            String.raw`\(x=\$11{,}250,\ y=\$3750\)`,
+            String.raw`\(x=\$5000,\ y=\$10{,}000\)`,
+            String.raw`\(x=\$7500,\ y=\$7500\)`,
+            String.raw`\(x=\$3000,\ y=\$12{,}000\)`,
+            String.raw`\(x=\$4500,\ y=\$10{,}500\)`
           ]
         },
 
-        /* 10 */
+        /* Q12 */
         {
-          latex : String.raw`\text{Two investments earn the same total interest over }2\text{ years. One is }\$341\text{ at rate }x,\ \text{the other is }\$237\text{ at rate }y.\ \text{Also }y=x+0.03.\ \text{Choose the system that represents this.}`,
-          choices : [
-            String.raw`\begin{aligned} 341x=237y\\ y=x-0.03 \end{aligned}`,
-            String.raw`\begin{aligned} 341x=237y\\ y=0.03x \end{aligned}`,
-            String.raw`\begin{aligned} 682x+474y=0\\ y=x+0.03 \end{aligned}`,
-            String.raw`\begin{aligned} 341x+237y=2\\ y=x+0.03 \end{aligned}`,
-            String.raw`\begin{aligned} 682x=474y\\ y=x+0.03 \end{aligned}`,
-            String.raw`\begin{aligned} 341x-237y=2\\ y=x-0.03 \end{aligned}`
-          ]
-        },
-
-        /* 11 */
-        {
-          latex : String.raw`\text{Mrs. Hill invests }\$15{,}000\text{ split between }8\%\text{ and }10\%.\ \text{The total annual interest is }\$1330.\ \text{How much is at }8\%\text{ and how much at }10\%\text{? }(x\text{ at }8\%,\ y\text{ at }10\%)`,
-          choices : [
-            String.raw`(9000,\ 6000)`,
-            String.raw`(6000,\ 9000)`,
-            String.raw`(8500,\ 6500)`,
-            String.raw`(7500,\ 7500)`,
-            String.raw`(7000,\ 8000)`,
-            String.raw`(8200,\ 6800)`
-          ]
-        },
-
-        /* 12 */
-        {
-          latex : String.raw`\text{Mr. Hunt invests }\$10{,}000\text{ split between }10\%\text{ and }9.5\%.\ \text{The total annual interest is }\$971.\ \text{How much is at }10\%\text{ and how much at }9.5\%\text{? }(x\text{ at }10\%,\ y\text{ at }9.5\%)`,
-          choices : [
-            String.raw`(5000,\ 5000)`,
-            String.raw`(4500,\ 5500)`,
-            String.raw`(4800,\ 5200)`,
-            String.raw`(4000,\ 6000)`,
-            String.raw`(5200,\ 4800)`,
-            String.raw`(4200,\ 5800)`
+          stem: String.raw`
+            <p>A total of \(\$9000\) is split between two investments.</p>
+            <p>Let \(x\) be invested at \(6\%\) simple interest for \(2\) years, and let \(y\) be invested at \(9\%\) for \(1\) year.</p>
+            <p>The first investment earns \(\$30\) <b>more</b> interest than the second.</p>
+            <p>Find \(x\) and \(y\).</p>
+          `,
+          choices: [
+            String.raw`\(x=\$3000,\ y=\$6000\)`,
+            String.raw`\(x=\$3500,\ y=\$5500\)`,
+            String.raw`\(x=\$4500,\ y=\$4500\)`,
+            String.raw`\(x=\$5000,\ y=\$4000\)`,
+            String.raw`\(x=\$6000,\ y=\$3000\)`,
+            String.raw`\(x=\$4000,\ y=\$5000\)`
           ]
         }
       ]
     };
   </script>
 
-  <link rel="stylesheet" href="/math-homework/assets/core.css" />
-  <link rel="stylesheet" href="https://tikzjax.com/v1/fonts.css" />
-  <script defer src="/math-homework/assets/core.js"></script>
-  <script defer src="https://tikzjax.com/v1/tikzjax.js"></script>
+  <link rel="stylesheet" href="/math-homework/assets/core-rich.css" />
+  <script defer src="/math-homework/assets/core-rich.js"></script>
   <script defer src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
 </head>
+
 <body>
   <div id="hw-root">Loading…</div>
 </body>
