@@ -12,19 +12,20 @@
 
        REQUIRED SOURCE REFERENCES (user-provided textbook raw material):
        - Section 8-3: A. Exercises #1-14; B. Exercises #15-24; C. Exercise #25.
-         Model-authored Q1-Q7 use these only as curricular raw material: Pythagorean Theorem,
-         its converse, hidden heights, and area applications.
+         Model-authored Q1-Q10 use these only as curricular raw material: Pythagorean Theorem,
+         its converse, hidden heights, area applications, and extra emphasis on the height and area
+         of equilateral triangles.
        - Section 8-4: A. Exercises #1-8; B. Exercises #9-13; formula/proof exercises #14-20.
-         Model-authored Q8-Q13 target central angles, apothem/perimeter structure,
+         Model-authored Q11-Q16 target central angles, apothem/perimeter structure,
          regular-polygon area, reverse use of the area formula, and its geometric justification.
        - Section 8-5: A. Exercises #1-10; B. Exercises #11-19; C. Exercise #20.
-         Model-authored Q14-Q18 target circumference/area relations, shaded regions,
+         Model-authored Q17-Q21 target circumference/area relations, shaded regions,
          annuli, composite figures, and synthesis with earlier chapter ideas.
 
        IMAGE FILES:
        - User-supplied figures: none used directly in the homework.
-       - Model-generated figures: 8-3to5-4.png, 8-3to5-9.png,
-         8-3to5-15.png, 8-3to5-17.png, 8-3to5-18.png.
+       - Model-generated figures: 8-3to5-4.png, 8-3to5-12.png,
+         8-3to5-18.png, 8-3to5-20.png, 8-3to5-21.png.
 
        IMAGE NAMING RULE:
        - Model-generated figures use the combined section label "3to5" and final question number.
@@ -34,6 +35,8 @@
        - All questions were newly composed rather than copied from the textbook.
        - The sequence was designed as an ascent from direct skill to hidden structure,
          reverse use, conceptual justification, and cross-section synthesis.
+       - Extra questions were added to strengthen fluency with the height and exact area
+         of an equilateral triangle.
        ========================= */
 
     window.homeworkData = {
@@ -44,7 +47,7 @@
       graphics : String.raw``,
 
       answerKey : [
-        "D","C","E","D","C","C","B",
+        "D","C","E","D","C","B","C","C","C","B",
         "B","C","C","D","B","C",
         "A","B","A","B","C"
       ],
@@ -111,6 +114,39 @@
         },
         {
           stem: String.raw`
+            <p>An equilateral triangle has side length \(10\).</p>
+            <p>Find its exact height.</p>
+          `,
+          choices: [
+            String.raw`\(3\sqrt{3}\)`, String.raw`\(5\sqrt{3}\)`, String.raw`\(10\sqrt{3}\)`,
+            String.raw`\(15\sqrt{3}\)`, String.raw`\(20\sqrt{3}\)`, String.raw`\(25\sqrt{3}\)`
+          ]
+        },
+        {
+          stem: String.raw`
+            <p>An equilateral triangle has height \(9\sqrt{3}\).</p>
+            <p>Find its exact area.</p>
+          `,
+          choices: [
+            String.raw`\(27\sqrt{3}\)`, String.raw`\(54\sqrt{3}\)`, String.raw`\(81\sqrt{3}\)`,
+            String.raw`\(108\sqrt{3}\)`, String.raw`\(162\sqrt{3}\)`, String.raw`\(243\sqrt{3}\)`
+          ]
+        },
+        {
+          stem: String.raw`
+            <p>If an equilateral triangle has height \(h\), which expression gives its area?</p>
+          `,
+          choices: [
+            String.raw`\(\dfrac{h^2}{2}\)`,
+            String.raw`\(h^2\)`,
+            String.raw`\(\dfrac{\sqrt{3}}{3}h^2\)`,
+            String.raw`\(\dfrac{\sqrt{3}}{2}h^2\)`,
+            String.raw`\(\dfrac{2\sqrt{3}}{3}h^2\)`,
+            String.raw`\(\dfrac{h^2}{2\sqrt{3}}\)`
+          ]
+        },
+        {
+          stem: String.raw`
             <p>A square has diagonal length \(10\).</p>
             <p>Find the area of the square.</p>
           `,
@@ -147,7 +183,7 @@
           `,
           media: String.raw`
             <figure>
-              <img src="8-3to5-9.png" alt="Regular octagon with side length 10 and apothem 12" />
+              <img src="8-3to5-12.png" alt="Regular octagon with side length 10 and apothem 12" />
               <figcaption>Figure 2</figcaption>
             </figure>
           `,
@@ -227,7 +263,7 @@
           `,
           media: String.raw`
             <figure>
-              <img src="8-3to5-15.png" alt="Circle inscribed in a square of side length 12; corners outside the circle are shaded" />
+              <img src="8-3to5-18.png" alt="Circle inscribed in a square of side length 12; corners outside the circle are shaded" />
               <figcaption>Figure 3</figcaption>
             </figure>
           `,
@@ -253,7 +289,7 @@
           `,
           media: String.raw`
             <figure>
-              <img src="8-3to5-17.png" alt="Stadium-shaped figure with central rectangle 14 by 8 and semicircular ends of diameter 8" />
+              <img src="8-3to5-20.png" alt="Stadium-shaped figure with central rectangle 14 by 8 and semicircular ends of diameter 8" />
               <figcaption>Figure 4</figcaption>
             </figure>
           `,
@@ -269,7 +305,7 @@
           `,
           media: String.raw`
             <figure>
-              <img src="8-3to5-18.png" alt="Square inscribed in a circle with diagonal 10; region inside circle and outside square is shaded" />
+              <img src="8-3to5-21.png" alt="Square inscribed in a circle with diagonal 10; region inside circle and outside square is shaded" />
               <figcaption>Figure 5</figcaption>
             </figure>
           `,
