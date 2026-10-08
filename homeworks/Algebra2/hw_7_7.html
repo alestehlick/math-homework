@@ -3,225 +3,527 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Homework 7-7 — Graphs of Rational and Exponential Functions</title>
+  <title>Homework 7-7 to 7-9 — Part II (Algebra 2)</title>
 
   <script>
-    /* =========================================
-       Algebra 2 — Graphs of Radical & Exponential Functions
-       - 6 small graphs (G1–G6) laid out 3 per row via TikZJax
-       - Questions use set-builder notation for domain/range
-       ========================================= */
+    /* =========================
+       Homework 7-7 to 7-9 — Part II (Algebra 2)
+       Translations, Square-Root & Exponential Graphs, Exponential Equations
+       Adapted for: /math-homework/assets/core-rich.js
+
+       REQUIRED SOURCE REFERENCES:
+       - No external exercise set was supplied for this homework.
+       - All questions are model-authored from the teacher's stated classroom sequence:
+         translations via two reference frames; y = sqrt(x); y = a^x for a > 1,
+         0 < a < 1, a = 1, and the obstruction for a < 0; contextual exponential
+         growth/decay; translations of square-root and exponential graphs; and
+         exponential equations progressing from direct matching to common-base reasoning.
+       - Q1–Q5 develop translations from coordinate/reference-frame reasoning before formulas.
+       - Q6–Q9 develop the square-root parent graph and its translations.
+       - Q10–Q14 develop qualitative exponential behavior and growth/decay contexts.
+       - Q15–Q21 integrate translations with square-root and exponential graphs.
+       - Q22–Q28 form a deliberate ascent in exponential equations, ending with
+         27^x = 1 / 9^(2x-3) and including a no-solution anti-template case.
+
+       IMAGE FILES:
+       - User-supplied figure(s): none.
+       - Model-generated figure(s): 7-7-6.png, 7-7-10.png, 7-7-18.png, 7-7-20.png
+
+       IMAGE NAMING RULE:
+       - Model-generated figures use final homework question numbering.
+       - PNG files live in the SAME folder as this HTML.
+       ========================= */
+
     window.homeworkData = {
       classId : "Algebra2",
-      id      : "Homework 7-7",
-      title   : "Homework 7-7 — Graphs of Rational and Exponential Functions",
+      id      : "Homework 7-7 to 7-9 — Part II",
+      title   : "Homework 7-7 to 7-9 — Part II — Translations, Graphs & Exponential Equations",
 
-      /* --------- TikZJax graphics (G1–G6) laid out 3 per row --------- */
-      graphics : String.raw`
-\begin{tikzpicture}[scale=0.5]
-  \tikzset{grid/.style={very thin,color=gray!35}}
-  \tikzset{axes/.style={->,thick}}
-  \colorlet{exp}{blue!55!black}
-  \colorlet{rad}{teal!60!black}
+      graphics : String.raw``,
 
-  % Each panel shows the window [-4,6] × [-2,6]
-  % Top row centers at x = -12cm, 0cm, +12cm and y = +8cm
-  % Bottom row at the same x, y = -2cm
+      /* Correct answers for Q1–Q28 */
+      answerKey : [
+        "C","D","B","E","A","F","C","B","D","A","E","C","F","B",
+        "D","A","C","E","B","F","D","A","C","E","B","F","D","A"
+      ],
 
-  % ---------- G1: y = 4^x ----------
-  \begin{scope}[xshift=-12cm,yshift=8cm]
-    \clip (-4.2,-2.2) rectangle (4.2,6.2);
-    \draw[grid] (-4,-2) grid (4,6);
-    \draw[axes] (-4,0)--(4,0);
-    \draw[axes] (0,-2)--(0,6);
-    \draw[exp,thick,domain=-2:1.5,samples=200] plot(\x,{pow(4,\x)});
-    \node[anchor=north east,font=\small] at (4,5.8) {G1};
-  \end{scope}
-
-  % ---------- G2: y = (1/4)^x ----------
-  \begin{scope}[xshift=0cm,yshift=8cm]
-    \clip (-4.2,-2.2) rectangle (4.2,6.2);
-    \draw[grid] (-4,-2) grid (4,6);
-    \draw[axes] (-4,0)--(4,0);
-    \draw[axes] (0,-2)--(0,6);
-    \draw[exp,thick,domain=-2:2,samples=200] plot(\x,{pow(0.25,\x)});
-    \node[anchor=north east,font=\small] at (3.9,5.7) {G2};
-  \end{scope}
-
-  % ---------- G3: y = sqrt(x) + 3 ----------
-  \begin{scope}[xshift=12cm,yshift=8cm]
-    \clip (-4.2,-2.2) rectangle (4.2,6.2);
-    \draw[grid] (-4,-2) grid (4,6);
-    \draw[axes] (-4,0)--(4,0);
-    \draw[axes] (0,-2)--(0,6);
-    \draw[rad,thick,domain=0:9,samples=200] plot(\x,{sqrt(\x)+3});
-    \node[anchor=north east,font=\small] at (4,5.8) {G3};
-  \end{scope}
-
-  % ---------- G4: y = sqrt(x) + 1 ----------
-  \begin{scope}[xshift=-12cm,yshift=-2cm]
-    \clip (-4.2,-2.2) rectangle (4.2,6.2);
-    \draw[grid] (-4,-2) grid (4,6);
-    \draw[axes] (-4,0)--(4,0);
-    \draw[axes] (0,-2)--(0,6);
-    \draw[rad,thick,domain=0:16,samples=200] plot(\x,{sqrt(\x)+1});
-    \node[anchor=north east,font=\small] at (4,5.8) {G4};
-  \end{scope}
-
-  % ---------- G5: y = 2^{x-2} ----------
-  \begin{scope}[xshift=0cm,yshift=-2cm]
-    \clip (-4.2,-2.2) rectangle (4.2,6.2);
-    \draw[grid] (-4,-2) grid (4,6);
-    \draw[axes] (-4,0)--(4,0);
-    \draw[axes] (0,-2)--(0,6);
-    \draw[exp,thick,domain=-2:6,samples=200] plot(\x,{pow(2,\x-2)});
-    \node[anchor=north east,font=\small] at (4,5.8) {G5};
-  \end{scope}
-
-  % ---------- G6: y = -2 sqrt(x) ----------
-  \begin{scope}[xshift=12cm,yshift=0cm]
-    \clip (-4.2,-4.2) rectangle (4.2,4.2);
-    \draw[grid] (-4,-4) grid (4,4);
-    \draw[axes] (-4,0)--(4,0);
-    \draw[axes] (0,-4)--(0,4);
-    \draw[rad,thick,domain=0:9,samples=200] plot(\x,{-2*sqrt(\x)});
-    \node[anchor=north east,font=\small] at (4,3.8) {G6};
-  \end{scope}
-\end{tikzpicture}
-`,
-
-      /* ===== Hidden answer key (A–F) for the 12 questions ===== */
-      answerKey : ["A","B","A","C","C","A","B","B","B","A","C","C"],
-
-      /* ===== 12 Multiple-Choice Questions (6 choices each) ===== */
       questions : [
-        { latex: String.raw`\text{Refer to G1. Which function is graphed?}`,
-          choices: [
-            String.raw`y=4^{x}`,
-            String.raw`y=2^{x-2}`,
-            String.raw`y=\left(\tfrac14\right)^{x}`,
-            String.raw`y=10^{x}`,
-            String.raw`y=-3^{x}`,
-            String.raw`y=4^{-x}`
-          ]},
 
-        { latex: String.raw`\text{Refer to G2. Which function is graphed?}`,
-          choices: [
-            String.raw`y=4^{x}`,
-            String.raw`y=\left(\tfrac14\right)^{x}`,
-            String.raw`y=2^{x-2}`,
-            String.raw`y=-2\sqrt{x}`,
-            String.raw`y=\sqrt{x}+3`,
-            String.raw`y=10^{x}`
-          ]},
+        /* ============================================================
+           I. TRANSLATIONS: FROM REFERENCE FRAMES TO EQUATIONS
+           ============================================================ */
 
-        { latex: String.raw`\text{Refer to G3. What is the domain?}`,
+        {
+          stem: String.raw`
+            <p>A point on a graph is at \((2,-1)\). The entire graph is translated 5 units to the right and 3 units upward.</p>
+            <p>Where does this point move?</p>
+          `,
           choices: [
-            String.raw`\{x \mid x \ge 0\}`,                  // correct
-            String.raw`\mathbb{R}`,
-            String.raw`\{x \mid x > 3\}`,
-            String.raw`\{x \mid x \ge 3\}`,
-            String.raw`\{x \mid x > -3\}`,
-            String.raw`\{x \mid x \le 0\}`
-          ]},
+            String.raw`\((-3,2)\)`,
+            String.raw`\((7,-4)\)`,
+            String.raw`\((7,2)\)`,
+            String.raw`\((-3,-4)\)`,
+            String.raw`\((5,3)\)`,
+            String.raw`\((3,5)\)`
+          ]
+        },
 
-        { latex: String.raw`\text{Refer to G3. What is the range?}`,
+        {
+          stem: String.raw`
+            <p>The graph of \(y=f(x)\) is translated 4 units to the right and 3 units upward.</p>
+            <p>Which equation describes the translated graph?</p>
+          `,
           choices: [
-            String.raw`\mathbb{R}`,
-            String.raw`\{y \mid y \ge 0\}`,
-            String.raw`\{y \mid y \ge 3\}`,                 // correct
-            String.raw`\{y \mid y \le 3\}`,
-            String.raw`\{y \mid y > 0\}`,
-            String.raw`\{y \mid y \le 0\}`
-          ]},
+            String.raw`\(y=f(x+4)+3\)`,
+            String.raw`\(y=f(x-3)+4\)`,
+            String.raw`\(y=f(x+4)-3\)`,
+            String.raw`\(y=f(x-4)+3\)`,
+            String.raw`\(y=f(x-4)-3\)`,
+            String.raw`\(y=f(x+3)-4\)`
+          ]
+        },
 
-        { latex: String.raw`\text{Refer to G5. What is the }y\text{-intercept?}`,
+        {
+          stem: String.raw`
+            <p>The circle \(x^2+y^2=9\) is translated 2 units to the left and 5 units downward.</p>
+            <p>Which equation describes the translated circle?</p>
+          `,
           choices: [
-            String.raw`0`,
-            String.raw`1`,
-            String.raw`\tfrac{1}{4}`,                       // correct
-            String.raw`-\tfrac{1}{4}`,
-            String.raw`2`,
-            String.raw`4`
-          ]},
+            String.raw`\((x-2)^2+(y-5)^2=9\)`,
+            String.raw`\((x+2)^2+(y+5)^2=9\)`,
+            String.raw`\((x+5)^2+(y+2)^2=9\)`,
+            String.raw`\((x-2)^2+(y+5)^2=9\)`,
+            String.raw`\((x+2)^2+(y-5)^2=9\)`,
+            String.raw`\(x^2+y^2=9-7\)`
+          ]
+        },
 
-        { latex: String.raw`\text{Which formula matches G6?}`,
+        {
+          stem: String.raw`
+            <p>A graph originally given by \(y=f(x)\) is transformed into</p>
+            <p class="math">\(y=f(x+6)-2.\)</p>
+            <p>What translation was applied to the original graph?</p>
+          `,
           choices: [
-            String.raw`y=-2\sqrt{x}`,                      // correct
-            String.raw`y=-3^{x}`,
-            String.raw`y=\sqrt{x}+1`,
-            String.raw`y=\sqrt{x}+3`,
-            String.raw`y=2^{x-2}`,
-            String.raw`y=\left(\tfrac14\right)^{x}`
-          ]},
+            "6 units right and 2 units up",
+            "2 units left and 6 units down",
+            "6 units right and 2 units down",
+            "2 units right and 6 units down",
+            "6 units left and 2 units down",
+            "6 units left and 2 units up"
+          ],
+          choiceWrap: false
+        },
 
-        { latex: String.raw`\text{Refer to G4. Compute }f(9).`,
+        {
+          stem: String.raw`
+            <p>A graph is translated \(a\) units to the right and \(b\) units upward. A point that had old coordinates \((u,v)\) now has coordinates \((x,y)\).</p>
+            <p>Which relation explains why the old equation is rewritten by putting \(x-a\) in place of the old \(x\)-coordinate and \(y-b\) in place of the old \(y\)-coordinate?</p>
+          `,
           choices: [
-            String.raw`3`,
-            String.raw`4`,                                 // correct
-            String.raw`5`,
-            String.raw`10`,
-            String.raw`0`,
-            String.raw`1`
-          ]},
+            String.raw`\(u=x-a\) and \(v=y-b\)`,
+            String.raw`\(u=x+a\) and \(v=y+b\)`,
+            String.raw`\(u=x-b\) and \(v=y-a\)`,
+            String.raw`\(u=a-x\) and \(v=b-y\)`,
+            String.raw`\(u=x+a\) and \(v=y-b\)`,
+            String.raw`\(u=x-a\) and \(v=y+b\)`
+          ]
+        },
 
-        { latex: String.raw`\text{Which graph shows a decreasing exponential with }y>0\text{ for all }x\text{?}`,
-          choices: [
-            String.raw`\text{G1}`,
-            String.raw`\text{G2}`,                         // correct
-            String.raw`\text{G3}`,
-            String.raw`\text{G4}`,
-            String.raw`\text{G5}`,
-            String.raw`\text{G6}`
-          ]},
+        /* ============================================================
+           II. THE SQUARE-ROOT PARENT GRAPH
+           ============================================================ */
 
-        { latex: String.raw`\text{For G1, find }f(-2).`,
+        {
+          stem: String.raw`
+            <p><b>Refer to Figure 1.</b> Which statement gives a complete description of the parent graph \(y=\sqrt{x}\)?</p>
+          `,
+          media: String.raw`
+            <figure>
+              <img src="7-7-6.png" alt="Graph of y equals square root of x" />
+              <figcaption>Figure 1</figcaption>
+            </figure>
+          `,
           choices: [
-            String.raw`16`,
-            String.raw`\tfrac{1}{16}`,                     // correct
-            String.raw`\tfrac{1}{4}`,
-            String.raw`4`,
-            String.raw`0`,
-            String.raw`-\tfrac{1}{16}`
-          ]},
+            "It has domain all real numbers and range y ≥ 0.",
+            "It begins at (0,0), has domain x ≥ 0, and decreases as x increases.",
+            "It begins at (0,0), has domain x > 0, and range y > 0.",
+            "It has endpoint (0,1), domain x ≥ 0, and range y ≥ 1.",
+            "It has no endpoint because the curve continues indefinitely.",
+            "It begins at (0,0), has domain x ≥ 0, range y ≥ 0, and increases as x increases."
+          ],
+          choiceWrap: false
+        },
 
-        { latex: String.raw`\text{Which description fits G5 compared to }y=2^{x}\text{?}`,
+        {
+          stem: String.raw`
+            <p>Which set consists entirely of points on the graph \(y=\sqrt{x}\)?</p>
+          `,
           choices: [
-            String.raw`\text{Shift right }2`,              // correct
-            String.raw`\text{Shift left }2`,
-            String.raw`\text{Shift up }2`,
-            String.raw`\text{Shift down }2`,
-            String.raw`\text{Vertical stretch by }2`,
-            String.raw`\text{Reflect across the }x\text{-axis}`
-          ]},
+            String.raw`\((0,0),(2,4),(3,9)\)`,
+            String.raw`\((1,1),(2,\sqrt{2}),(4,4)\)`,
+            String.raw`\((0,0),(4,2),(25,5)\)`,
+            String.raw`\((-1,1),(4,2),(9,3)\)`,
+            String.raw`\((0,0),(4,-2),(9,3)\)`,
+            String.raw`\((1,0),(4,2),(25,5)\)`
+          ]
+        },
 
-        { latex: String.raw`\text{Choose the domain and range for G6.}`,
+        {
+          stem: String.raw`
+            <p>Consider the graph</p>
+            <p class="math">\(y=\sqrt{x-5}+2.\)</p>
+            <p>Which statement is correct?</p>
+          `,
           choices: [
-            String.raw`\mathbb{R},\ \mathbb{R}`,
-            String.raw`\{x \mid x \ge 0\},\ \{y \mid y \ge 0\}`,
-            String.raw`\{x \mid x \ge 0\},\ \{y \mid y \le 0\}`,   // correct
-            String.raw`\{x \mid x \le 0\},\ \{y \mid y \ge 0\}`,
-            String.raw`\{x \mid x \le 0\},\ \mathbb{R}`,
-            String.raw`\{x \mid x \ge 0\},\ \{y \mid 0 \le y \le 2\}`
-          ]},
+            "Its endpoint is (-5,2), its domain is x ≥ -5, and its range is y ≥ 2.",
+            "Its endpoint is (5,2), its domain is x ≥ 5, and its range is y ≥ 2.",
+            "Its endpoint is (5,-2), its domain is x ≥ 5, and its range is y ≥ -2.",
+            "Its endpoint is (-5,-2), its domain is x ≥ -5, and its range is y ≥ -2.",
+            "Its endpoint is (2,5), its domain is x ≥ 2, and its range is y ≥ 5.",
+            "It has no endpoint and has domain all real numbers."
+          ],
+          choiceWrap: false
+        },
 
-        { latex: String.raw`\text{Which graph passes through }(0,3)\text{?}`,
+        {
+          stem: String.raw`
+            <p>The graph of \(y=\sqrt{x}\) is translated 4 units to the left and 1 unit downward.</p>
+            <p>Which equation describes the new graph?</p>
+          `,
           choices: [
-            String.raw`\text{G1}`,
-            String.raw`\text{G2}`,
-            String.raw`\text{G3}`,                          // correct
-            String.raw`\text{G4}`,
-            String.raw`\text{G5}`,
-            String.raw`\text{G6}`
-          ]}
+            String.raw`\(y=\sqrt{x-4}-1\)`,
+            String.raw`\(y=\sqrt{x+1}-4\)`,
+            String.raw`\(y=\sqrt{x-4}+1\)`,
+            String.raw`\(y=\sqrt{x+4}-1\)`,
+            String.raw`\(y=\sqrt{x+4}+1\)`,
+            String.raw`\(y=\sqrt{x-1}+4\)`
+          ]
+        },
+
+        /* ============================================================
+           III. THE EXPONENTIAL PARENT GRAPH AND CONTEXTS
+           ============================================================ */
+
+        {
+          stem: String.raw`
+            <p><b>Refer to Figure 2.</b> Curve A is solid and curve B is dashed. Which interpretation is correct?</p>
+          `,
+          media: String.raw`
+            <figure>
+              <img src="7-7-10.png" alt="Increasing and decreasing exponential graphs" />
+              <figcaption>Figure 2</figcaption>
+            </figure>
+          `,
+          choices: [
+            String.raw`A can be \(y=2^x\), B can be \(y=(\tfrac12)^x\), and both pass through \((0,1)\).`,
+            String.raw`A can be \(y=(\tfrac12)^x\), B can be \(y=2^x\), and both pass through \((0,0)\).`,
+            String.raw`Both curves require bases greater than 1 because both outputs are positive.`,
+            String.raw`Curve B cannot be exponential because it decreases.`,
+            String.raw`Curve A has horizontal asymptote \(y=1\), while curve B has asymptote \(y=0\).`,
+            String.raw`Curve A can have base \(-2\), while curve B can have base \(-\tfrac12\).`
+          ]
+        },
+
+        {
+          stem: String.raw`
+            <p>For the real exponential function \(y=a^x\) with \(a>0\), which statement correctly compares the cases?</p>
+          `,
+          choices: [
+            "If a > 1 the graph decreases; if 0 < a < 1 the graph increases; if a = 1 it is constant.",
+            "If a > 1 and if 0 < a < 1, the graph always increases; only the speed changes.",
+            "If a = 1, the graph is the x-axis.",
+            "If 0 < a < 1, the function is not defined for negative x.",
+            "If a > 1 the graph increases; if 0 < a < 1 it decreases; if a = 1 it is the constant function y = 1.",
+            "The direction of the graph depends only on whether x is positive or negative."
+          ],
+          choiceWrap: false
+        },
+
+        {
+          stem: String.raw`
+            <p>Why does a negative base, such as \(y=(-2)^x\), fail to define a real-valued exponential function for <em>every</em> real value of \(x\)?</p>
+          `,
+          choices: [
+            "Because every negative base raised to a positive power is negative.",
+            "Because negative numbers cannot be multiplied by themselves.",
+            String.raw`Because some real exponents, such as \(x=\tfrac12\), would require a real square root of a negative number.`,
+            "Because the graph would cross the x-axis.",
+            "Because negative bases always give the value 0 when x = 0.",
+            "Because exponential functions are required to have integer outputs."
+          ],
+          choiceWrap: false
+        },
+
+        {
+          stem: String.raw`
+            <p>A bacteria culture begins with 200 bacteria. Under fixed laboratory conditions, the population triples every hour.</p>
+            <p>Which model and four-hour population are both correct?</p>
+          `,
+          choices: [
+            String.raw`\(P(t)=200\cdot 3^t\), and \(P(4)=5{,}400\)`,
+            String.raw`\(P(t)=200+t^3\), and \(P(4)=264\)`,
+            String.raw`\(P(t)=3\cdot 200^t\), and \(P(4)=4{,}800{,}000{,}000\)`,
+            String.raw`\(P(t)=200\cdot (\tfrac13)^t\), and \(P(4)=\tfrac{200}{81}\)`,
+            String.raw`\(P(t)=600t\), and \(P(4)=2{,}400\)`,
+            String.raw`\(P(t)=200\cdot 3^t\), and \(P(4)=16{,}200\)`
+          ]
+        },
+
+        {
+          stem: String.raw`
+            <p>A radioactive sample has mass 640 mg initially and half of the remaining material survives every 3 years.</p>
+            <p>Which model and nine-year mass are both correct?</p>
+          `,
+          choices: [
+            String.raw`\(M(t)=640(\tfrac12)^{3t}\), and \(M(9)=80\text{ mg}\)`,
+            String.raw`\(M(t)=640(\tfrac12)^{t/3}\), and \(M(9)=80\text{ mg}\)`,
+            String.raw`\(M(t)=640(\tfrac12)^t\), and \(M(9)=5\text{ mg}\)`,
+            String.raw`\(M(t)=640-\tfrac{t}{2}\), and \(M(9)=635.5\text{ mg}\)`,
+            String.raw`\(M(t)=640\cdot 2^{t/3}\), and \(M(9)=5{,}120\text{ mg}\)`,
+            String.raw`\(M(t)=320^{t/3}\), and \(M(9)=320^3\text{ mg}\)`
+          ]
+        },
+
+        /* ============================================================
+           IV. TRANSLATED SQUARE-ROOT AND EXPONENTIAL GRAPHS
+           ============================================================ */
+
+        {
+          stem: String.raw`
+            <p>The parent graph \(y=2^x\) is translated 3 units to the right and 4 units upward.</p>
+            <p>Which equation and horizontal asymptote are correct?</p>
+          `,
+          choices: [
+            String.raw`\(y=2^{x+3}+4\), asymptote \(y=4\)`,
+            String.raw`\(y=2^{x-4}+3\), asymptote \(y=3\)`,
+            String.raw`\(y=2^{x-3}-4\), asymptote \(y=-4\)`,
+            String.raw`\(y=2^{x-3}+4\), asymptote \(y=4\)`,
+            String.raw`\(y=2^x+7\), asymptote \(y=7\)`,
+            String.raw`\(y=2^{x+3}-4\), asymptote \(y=-4\)`
+          ]
+        },
+
+        {
+          stem: String.raw`
+            <p>Consider</p>
+            <p class="math">\(y=(\tfrac13)^{x+2}-5.\)</p>
+            <p>Which description is correct?</p>
+          `,
+          choices: [
+            "The parent graph is shifted 2 units left and 5 units down; it is decreasing and has horizontal asymptote y = -5.",
+            "The parent graph is shifted 2 units right and 5 units down; it is decreasing and has horizontal asymptote y = -5.",
+            "The parent graph is shifted 2 units left and 5 units up; it is increasing and has horizontal asymptote y = 5.",
+            "The parent graph is shifted 2 units right and 5 units up; it is decreasing and has horizontal asymptote y = 5.",
+            "The parent graph is shifted 5 units left and 2 units down; it is increasing.",
+            "The graph has endpoint (-2,-5) because every translated function has an endpoint."
+          ],
+          choiceWrap: false
+        },
+
+        {
+          stem: String.raw`
+            <p>A graph has exactly the same shape and orientation as \(y=\sqrt{x}\), but its endpoint is \((-3,4)\).</p>
+            <p>Which equation describes it?</p>
+          `,
+          choices: [
+            String.raw`\(y=\sqrt{x-3}+4\)`,
+            String.raw`\(y=\sqrt{x+4}-3\)`,
+            String.raw`\(y=\sqrt{x+3}+4\)`,
+            String.raw`\(y=\sqrt{x-3}-4\)`,
+            String.raw`\(y=\sqrt{x+3}-4\)`,
+            String.raw`\(y=\sqrt{x-4}+3\)`
+          ]
+        },
+
+        {
+          stem: String.raw`
+            <p><b>Refer to Figure 3.</b> The curve is a translation of the parent graph \(y=\sqrt{x}\).</p>
+            <p>Which equation matches the graph?</p>
+          `,
+          media: String.raw`
+            <figure>
+              <img src="7-7-18.png" alt="Translated square-root graph with endpoint at 2 comma negative 3" />
+              <figcaption>Figure 3</figcaption>
+            </figure>
+          `,
+          choices: [
+            String.raw`\(y=\sqrt{x+2}-3\)`,
+            String.raw`\(y=\sqrt{x-3}+2\)`,
+            String.raw`\(y=\sqrt{x+3}-2\)`,
+            String.raw`\(y=\sqrt{x-2}+3\)`,
+            String.raw`\(y=\sqrt{x-2}-3\)`,
+            String.raw`\(y=\sqrt{x+2}+3\)`
+          ]
+        },
+
+        {
+          stem: String.raw`
+            <p>Start with the graph \(y=\sqrt{x+1}-2\). Translate this graph 3 units to the right and 5 units upward.</p>
+            <p>Which equation describes the final graph?</p>
+          `,
+          choices: [
+            String.raw`\(y=\sqrt{x+4}+3\)`,
+            String.raw`\(y=\sqrt{x-2}+3\)`,
+            String.raw`\(y=\sqrt{x+2}-7\)`,
+            String.raw`\(y=\sqrt{x-4}+7\)`,
+            String.raw`\(y=\sqrt{x+2}+3\)`,
+            String.raw`\(y=\sqrt{x-2}-7\)`
+          ]
+        },
+
+        {
+          stem: String.raw`
+            <p><b>Refer to Figure 4.</b> The curve is a translation of \(y=3^x\), and the dashed line is its horizontal asymptote.</p>
+            <p>Which equation matches the graph?</p>
+          `,
+          media: String.raw`
+            <figure>
+              <img src="7-7-20.png" alt="Translated exponential graph with horizontal asymptote y equals negative 2" />
+              <figcaption>Figure 4</figcaption>
+            </figure>
+          `,
+          choices: [
+            String.raw`\(y=3^{x-1}-2\)`,
+            String.raw`\(y=3^{x+2}-1\)`,
+            String.raw`\(y=3^{x-1}+2\)`,
+            String.raw`\(y=3^{x+1}+2\)`,
+            String.raw`\(y=3^x-2\)`,
+            String.raw`\(y=3^{x+1}-2\)`
+          ]
+        },
+
+        {
+          stem: String.raw`
+            <p>A translated graph of \(y=2^x\) has horizontal asymptote \(y=-3\) and passes through the point \((2,-2)\).</p>
+            <p>Which equation describes the graph?</p>
+          `,
+          choices: [
+            String.raw`\(y=2^{x+2}-3\)`,
+            String.raw`\(y=2^{x-2}+3\)`,
+            String.raw`\(y=2^x-3\)`,
+            String.raw`\(y=2^{x-2}-3\)`,
+            String.raw`\(y=2^{x+3}-2\)`,
+            String.raw`\(y=2^{x-3}-2\)`
+          ]
+        },
+
+        /* ============================================================
+           V. EXPONENTIAL EQUATIONS
+           ============================================================ */
+
+        {
+          stem: String.raw`
+            <p>Solve for \(x\):</p>
+            <p class="math">\(2^x=32\)</p>
+          `,
+          choices: [
+            String.raw`\(x=5\)`,
+            String.raw`\(x=4\)`,
+            String.raw`\(x=6\)`,
+            String.raw`\(x=\tfrac15\)`,
+            String.raw`\(x=16\)`,
+            String.raw`\(x=3\)`
+          ]
+        },
+
+        {
+          stem: String.raw`
+            <p>Solve for \(x\):</p>
+            <p class="math">\(5^{x+1}=\dfrac{1}{125}\)</p>
+          `,
+          choices: [
+            String.raw`\(x=-2\)`,
+            String.raw`\(x=2\)`,
+            String.raw`\(x=-4\)`,
+            String.raw`\(x=4\)`,
+            String.raw`\(x=-3\)`,
+            String.raw`\(x=3\)`
+          ]
+        },
+
+        {
+          stem: String.raw`
+            <p>Solve for \(x\):</p>
+            <p class="math">\(5^{2x-1}=125\)</p>
+          `,
+          choices: [
+            String.raw`\(x=1\)`,
+            String.raw`\(x=\tfrac32\)`,
+            String.raw`\(x=3\)`,
+            String.raw`\(x=\tfrac12\)`,
+            String.raw`\(x=2\)`,
+            String.raw`\(x=4\)`
+          ]
+        },
+
+        {
+          stem: String.raw`
+            <p>Solve for \(x\). Rewrite both sides using a common base.</p>
+            <p class="math">\(4^{x+1}=8^{x-1}\)</p>
+          `,
+          choices: [
+            String.raw`\(x=-5\)`,
+            String.raw`\(x=5\)`,
+            String.raw`\(x=1\)`,
+            String.raw`\(x=-1\)`,
+            String.raw`\(x=\tfrac52\)`,
+            String.raw`\(x=\tfrac15\)`
+          ]
+        },
+
+        {
+          stem: String.raw`
+            <p>Solve for \(x\). Rewrite both sides using a common base.</p>
+            <p class="math">\((\tfrac14)^{x-2}=8^{1-x}\)</p>
+          `,
+          choices: [
+            String.raw`\(x=1\)`,
+            String.raw`\(x=-\tfrac12\)`,
+            String.raw`\(x=2\)`,
+            String.raw`\(x=-2\)`,
+            String.raw`\(x=\tfrac12\)`,
+            String.raw`\(x=-1\)`
+          ]
+        },
+
+        {
+          stem: String.raw`
+            <p>Solve for \(x\):</p>
+            <p class="math">\(2^{2x+1}=8\cdot4^{x-2}\)</p>
+            <p>Do not assume that every exponential equation must have a solution.</p>
+          `,
+          choices: [
+            String.raw`\(x=-2\)`,
+            String.raw`\(x=-1\)`,
+            String.raw`\(x=0\)`,
+            "No real solution",
+            String.raw`\(x=2\)`,
+            String.raw`\(x=1\)`
+          ],
+          choiceWrap: false
+        },
+
+        {
+          stem: String.raw`
+            <p>Solve for \(x\). A useful first move is to rewrite every quantity as a power of the same base.</p>
+            <p class="math">\(27^x=\dfrac{1}{9^{\,2x-3}}\)</p>
+          `,
+          choices: [
+            String.raw`\(x=\tfrac67\)`,
+            String.raw`\(x=\tfrac76\)`,
+            String.raw`\(x=\tfrac35\)`,
+            String.raw`\(x=\tfrac53\)`,
+            String.raw`\(x=\tfrac23\)`,
+            String.raw`\(x=\tfrac32\)`
+          ]
+        }
       ]
     };
   </script>
 
-  <link rel="stylesheet" href="/math-homework/assets/core.css" />
-  <link rel="stylesheet" href="https://tikzjax.com/v1/fonts.css" />
-  <script defer src="/math-homework/assets/core.js"></script>
-  <script defer src="https://tikzjax.com/v1/tikzjax.js"></script>
+  <link rel="stylesheet" href="/math-homework/assets/core-rich.css" />
+  <script defer src="/math-homework/assets/core-rich.js"></script>
   <script defer src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
 </head>
 <body>
