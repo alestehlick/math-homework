@@ -1,0 +1,292 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Homework 8-3 to 8-5 (Geometry)</title>
+
+  <script>
+    /* =========================
+       Homework 8-3 to 8-5 — Right Triangles, Regular Polygons, and Circles
+       Adapted for: /math-homework/assets/core-rich.js
+
+       REQUIRED SOURCE REFERENCES (user-provided textbook raw material):
+       - Section 8-3: A. Exercises #1-14; B. Exercises #15-24; C. Exercise #25.
+         Model-authored Q1-Q7 use these only as curricular raw material: Pythagorean Theorem,
+         its converse, hidden heights, and area applications.
+       - Section 8-4: A. Exercises #1-8; B. Exercises #9-13; formula/proof exercises #14-20.
+         Model-authored Q8-Q13 target central angles, apothem/perimeter structure,
+         regular-polygon area, reverse use of the area formula, and its geometric justification.
+       - Section 8-5: A. Exercises #1-10; B. Exercises #11-19; C. Exercise #20.
+         Model-authored Q14-Q18 target circumference/area relations, shaded regions,
+         annuli, composite figures, and synthesis with earlier chapter ideas.
+
+       IMAGE FILES:
+       - User-supplied figures: none used directly in the homework.
+       - Model-generated figures: 8-3to5-4.png, 8-3to5-9.png,
+         8-3to5-15.png, 8-3to5-17.png, 8-3to5-18.png.
+
+       IMAGE NAMING RULE:
+       - Model-generated figures use the combined section label "3to5" and final question number.
+       - PNG files live in the SAME folder as this HTML.
+
+       MAJOR MODEL REWORK:
+       - All questions were newly composed rather than copied from the textbook.
+       - The sequence was designed as an ascent from direct skill to hidden structure,
+         reverse use, conceptual justification, and cross-section synthesis.
+       ========================= */
+
+    window.homeworkData = {
+      classId : "Geometry",
+      id      : "Homework 8-3 to 8-5",
+      title   : "Homework 8-3 to 8-5 — Right Triangles, Regular Polygons, and Circles",
+
+      graphics : String.raw``,
+
+      answerKey : [
+        "D","C","E","D","C","C","B",
+        "B","C","C","D","B","C",
+        "A","B","A","B","C"
+      ],
+
+      questions : [
+        {
+          stem: String.raw`
+            <p>A right triangle has legs of lengths \(10\) and \(24\).</p>
+            <p>Find the length of the hypotenuse.</p>
+          `,
+          choices: [
+            String.raw`\(20\)`, String.raw`\(24\)`, String.raw`\(25\)`,
+            String.raw`\(26\)`, String.raw`\(28\)`, String.raw`\(34\)`
+          ]
+        },
+        {
+          stem: String.raw`
+            <p>A right triangle has hypotenuse \(17\) and one leg of length \(8\).</p>
+            <p>Find the length of the other leg.</p>
+          `,
+          choices: [
+            String.raw`\(9\)`, String.raw`\(12\)`, String.raw`\(15\)`,
+            String.raw`\(16\)`, String.raw`\(19\)`, String.raw`\(25\)`
+          ]
+        },
+        {
+          stem: String.raw`
+            <p>Which set of three side lengths can form a right triangle?</p>
+          `,
+          choices: [
+            String.raw`\(6,8,11\)`,
+            String.raw`\(7,12,13\)`,
+            String.raw`\(9,12,14\)`,
+            String.raw`\(10,15,20\)`,
+            String.raw`\(8,15,17\)`,
+            String.raw`\(5,6,8\)`
+          ]
+        },
+        {
+          stem: String.raw`
+            <p><b>Refer to Figure 1.</b> \(ABCD\) is an isosceles trapezoid with bases \(AB=30\) and \(DC=18\), and legs \(AD=BC=10\).</p>
+            <p>Find the area of the trapezoid. The dashed segments are perpendicular to \(\overline{AB}\).</p>
+          `,
+          media: String.raw`
+            <figure>
+              <img src="8-3to5-4.png" alt="Isosceles trapezoid with bases 30 and 18, legs 10, and perpendicular heights drawn" />
+              <figcaption>Figure 1</figcaption>
+            </figure>
+          `,
+          choices: [
+            String.raw`\(120\)`, String.raw`\(144\)`, String.raw`\(168\)`,
+            String.raw`\(192\)`, String.raw`\(240\)`, String.raw`\(384\)`
+          ]
+        },
+        {
+          stem: String.raw`
+            <p>An equilateral triangle has side length \(12\).</p>
+            <p>Find its exact area.</p>
+          `,
+          choices: [
+            String.raw`\(18\sqrt{3}\)`, String.raw`\(24\sqrt{3}\)`, String.raw`\(36\sqrt{3}\)`,
+            String.raw`\(48\sqrt{3}\)`, String.raw`\(72\sqrt{3}\)`, String.raw`\(144\sqrt{3}\)`
+          ]
+        },
+        {
+          stem: String.raw`
+            <p>A square has diagonal length \(10\).</p>
+            <p>Find the area of the square.</p>
+          `,
+          choices: [
+            String.raw`\(25\)`, String.raw`\(25\sqrt{2}\)`, String.raw`\(50\)`,
+            String.raw`\(50\sqrt{2}\)`, String.raw`\(100\)`, String.raw`\(200\)`
+          ]
+        },
+        {
+          stem: String.raw`
+            <p>A right triangle has hypotenuse \(\sqrt{97}\) and one leg of length \(4\).</p>
+            <p>Find its area.</p>
+          `,
+          choices: [
+            String.raw`\(9\)`, String.raw`\(18\)`, String.raw`\(36\)`,
+            String.raw`\(2\sqrt{97}\)`, String.raw`\(36\sqrt{97}\)`, String.raw`\(72\)`
+          ]
+        },
+
+        {
+          stem: String.raw`
+            <p>Each central angle of a regular polygon measures \(24^\circ\).</p>
+            <p>How many sides does the polygon have?</p>
+          `,
+          choices: [
+            String.raw`\(12\)`, String.raw`\(15\)`, String.raw`\(18\)`,
+            String.raw`\(24\)`, String.raw`\(30\)`, String.raw`\(36\)`
+          ]
+        },
+        {
+          stem: String.raw`
+            <p><b>Refer to Figure 2.</b> The figure is a regular octagon. Its side length is \(10\), and its apothem is \(12\).</p>
+            <p>Find its area.</p>
+          `,
+          media: String.raw`
+            <figure>
+              <img src="8-3to5-9.png" alt="Regular octagon with side length 10 and apothem 12" />
+              <figcaption>Figure 2</figcaption>
+            </figure>
+          `,
+          choices: [
+            String.raw`\(240\)`, String.raw`\(360\)`, String.raw`\(480\)`,
+            String.raw`\(600\)`, String.raw`\(960\)`, String.raw`\(1200\)`
+          ]
+        },
+        {
+          stem: String.raw`
+            <p>A regular hexagon has side length \(8\) and apothem \(4\sqrt{3}\).</p>
+            <p>Find its exact area.</p>
+          `,
+          choices: [
+            String.raw`\(48\sqrt{3}\)`, String.raw`\(64\sqrt{3}\)`, String.raw`\(96\sqrt{3}\)`,
+            String.raw`\(128\sqrt{3}\)`, String.raw`\(192\sqrt{3}\)`, String.raw`\(384\sqrt{3}\)`
+          ]
+        },
+        {
+          stem: String.raw`
+            <p>A regular polygon has perimeter \(90\) and apothem \(7\).</p>
+            <p>Find its area.</p>
+          `,
+          choices: [
+            String.raw`\(49\)`, String.raw`\(90\)`, String.raw`\(157.5\)`,
+            String.raw`\(315\)`, String.raw`\(630\)`, String.raw`\(1260\)`
+          ]
+        },
+        {
+          stem: String.raw`
+            <p>A regular decagon has area \(600\) and apothem \(12\).</p>
+            <p>Which statement gives its perimeter and side length?</p>
+          `,
+          choices: [
+            String.raw`\(p=50\), side \(=5\)`,
+            String.raw`\(p=100\), side \(=10\)`,
+            String.raw`\(p=120\), side \(=12\)`,
+            String.raw`\(p=144\), side \(=14.4\)`,
+            String.raw`\(p=600\), side \(=60\)`,
+            String.raw`There is not enough information.`
+          ],
+          choiceWrap: false
+        },
+        {
+          stem: String.raw`
+            <p>Why does the formula \(A=\tfrac12 ap\) give the area of a regular polygon, where \(a\) is the apothem and \(p\) is the perimeter?</p>
+          `,
+          choices: [
+            String.raw`The apothem is always equal to one side, so the polygon is a square in pieces.`,
+            String.raw`The central angles add to \(180^\circ\), so half the perimeter gives the area.`,
+            String.raw`The polygon can be divided into congruent triangles of height \(a\); their bases together have total length \(p\).`,
+            String.raw`The area of any polygon is its apothem multiplied by its perimeter.`,
+            String.raw`Every radius of a regular polygon is perpendicular to every side.`,
+            String.raw`The polygon can always be rearranged into one triangle with base \(p\) and height \(2a\).`
+          ],
+          choiceWrap: false
+        },
+
+        {
+          stem: String.raw`
+            <p>A circle has circumference \(18\pi\).</p>
+            <p>Which row correctly gives its radius \(r\), diameter \(d\), and area \(A\)?</p>
+          `,
+          choices: [
+            String.raw`\(r=9,\ d=18,\ A=81\pi\)`,
+            String.raw`\(r=18,\ d=36,\ A=324\pi\)`,
+            String.raw`\(r=9,\ d=18,\ A=18\pi\)`,
+            String.raw`\(r=18,\ d=9,\ A=81\pi\)`,
+            String.raw`\(r=6,\ d=18,\ A=36\pi\)`,
+            String.raw`\(r=9,\ d=9,\ A=162\pi\)`
+          ]
+        },
+        {
+          stem: String.raw`
+            <p><b>Refer to Figure 3.</b> A circle is inscribed in a square of side length \(12\). The shaded region is the part of the square outside the circle.</p>
+            <p>Find the exact area of the shaded region.</p>
+          `,
+          media: String.raw`
+            <figure>
+              <img src="8-3to5-15.png" alt="Circle inscribed in a square of side length 12; corners outside the circle are shaded" />
+              <figcaption>Figure 3</figcaption>
+            </figure>
+          `,
+          choices: [
+            String.raw`\(144-12\pi\)`, String.raw`\(144-36\pi\)`, String.raw`\(36\pi-144\)`,
+            String.raw`\(144\pi-36\)`, String.raw`\(72-18\pi\)`, String.raw`\(108\pi\)`
+          ]
+        },
+        {
+          stem: String.raw`
+            <p>An annulus is formed by two concentric circles. The outer radius is \(13\), and the inner radius is \(5\).</p>
+            <p>Find the exact area of the annulus.</p>
+          `,
+          choices: [
+            String.raw`\(144\pi\)`, String.raw`\(169\pi\)`, String.raw`\(25\pi\)`,
+            String.raw`\(194\pi\)`, String.raw`\(84\pi\)`, String.raw`\(324\pi\)`
+          ]
+        },
+        {
+          stem: String.raw`
+            <p><b>Refer to Figure 4.</b> The figure consists of a rectangle of length \(14\) and width \(8\), with a semicircle attached at each end. Each semicircle has diameter \(8\).</p>
+            <p>Find the exact area of the entire figure.</p>
+          `,
+          media: String.raw`
+            <figure>
+              <img src="8-3to5-17.png" alt="Stadium-shaped figure with central rectangle 14 by 8 and semicircular ends of diameter 8" />
+              <figcaption>Figure 4</figcaption>
+            </figure>
+          `,
+          choices: [
+            String.raw`\(112+8\pi\)`, String.raw`\(112+16\pi\)`, String.raw`\(112+32\pi\)`,
+            String.raw`\(56+16\pi\)`, String.raw`\(112+64\pi\)`, String.raw`\(224+16\pi\)`
+          ]
+        },
+        {
+          stem: String.raw`
+            <p><b>Refer to Figure 5.</b> A square is inscribed in a circle. The square's diagonal is \(10\), so this diagonal is also a diameter of the circle.</p>
+            <p>Find the exact area of the shaded region inside the circle but outside the square.</p>
+          `,
+          media: String.raw`
+            <figure>
+              <img src="8-3to5-18.png" alt="Square inscribed in a circle with diagonal 10; region inside circle and outside square is shaded" />
+              <figcaption>Figure 5</figcaption>
+            </figure>
+          `,
+          choices: [
+            String.raw`\(25\pi-25\)`, String.raw`\(25\pi-100\)`, String.raw`\(25\pi-50\)`,
+            String.raw`\(50\pi-25\)`, String.raw`\(50-25\pi\)`, String.raw`\(100\pi-50\)`
+          ]
+        }
+      ]
+    };
+  </script>
+
+  <link rel="stylesheet" href="/math-homework/assets/core-rich.css" />
+  <script defer src="/math-homework/assets/core-rich.js"></script>
+  <script defer src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+</head>
+<body>
+  <div id="hw-root">Loading…</div>
+</body>
+</html>
