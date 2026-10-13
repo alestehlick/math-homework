@@ -4,175 +4,275 @@
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Homework 7-9 (Algebra 1)</title>
-
   <script>
-    /* =========================
-       Homework 7-9 — Mixtures & Percents (Systems)
-       Use systems of equations to model and solve each situation.
-       ========================= */
-    window.homeworkData = {
-      classId : "Algebra1",
-      id      : "Homework 7-9",
-      title   : "Homework 7-9 — Mixture & Percent Word Problems",
+/* ============================================================================
+   Homework 7-9 — Liquid Solutions, Concentrations & Systems (Algebra 1)
 
-      graphics : "",  // no graphics for this section
+   SOURCE SETS:
+   - User-supplied original Homework 7-9, twelve exercises.
+   - Previous model-reworked 17-question Homework 7-9.
+   SOURCE EXERCISES RETAINED IN REWORKED FORM:
+   - Original #4 -> Q3 (dilution with pure water).
+   - Original #6 -> Q5 (blend two stock solutions).
+   - Original #9 -> Q14 (solve for two source concentrations).
+   MODEL-AUTHORED OR SUBSTANTIALLY REWORKED:
+   - Q1: model a preparation with a system of equations.
+   - Q2: solution-concentration analogue of the first two-stock exercise.
+   - Q4: infer the mixing ratio without knowing the final volume.
+   - Q6: determine how much solution to add when final volume is unknown.
+   - Q7: determine an unknown source concentration.
+   - Q8: distinguish weighted average from arithmetic average.
+   - Q9: determine concentration from given volumes.
+   - Q10: determine the amount of water needed for dilution.
+   - Q11: infeasible concentration outside the source interval.
+   - Q12: contrast infinitely many and no solutions.
+   - Q13: physical inventory constraint overrides an algebraic recipe.
+   - Q15: solve with decimal concentrations and sensible rounding.
+   - Q16: compare two closely related batches.
+   - Q17: distinguish removal of solution from removal of pure water.
+   - All contexts outside liquid solutions have been removed.
 
-      /* ===== Hidden answer key (A–F) for the 12 questions ===== */
-      answerKey : ["A","C","A","C","B","B","C","D","E","C","F","D"],
-
-      /* ===== 12 Multiple-Choice Questions (6 choices each) ===== */
-      questions : [
-        {
-          latex : String.raw`\text{Nuts cost 20¢ per ounce and raisins cost 12¢ per ounce. How many ounces of each are needed to make 48 oz of trail mix that costs 15¢ per ounce?}`,
-          choices : [
-            String.raw`\text{18 oz nuts, 30 oz raisins}`,
-            String.raw`\text{24 oz nuts, 24 oz raisins}`,
-            String.raw`\text{30 oz nuts, 18 oz raisins}`,
-            String.raw`\text{16 oz nuts, 32 oz raisins}`,
-            String.raw`\text{20 oz nuts, 28 oz raisins}`,
-            String.raw`\text{12 oz nuts, 36 oz raisins}`
-          ]
-        },
-
-        {
-          latex : String.raw`\text{Oranges cost \$0.75 per pound and bananas cost \$0.60 per pound. You want 10 pounds of fruit that cost \$6.90 in total. How many pounds of each fruit are needed?}`,
-          choices : [
-            String.raw`\text{5 lb oranges, 5 lb bananas}`,
-            String.raw`\text{4 lb oranges, 6 lb bananas}`,
-            String.raw`\text{6 lb oranges, 4 lb bananas}`,
-            String.raw`\text{7 lb oranges, 3 lb bananas}`,
-            String.raw`\text{8 lb oranges, 2 lb bananas}`,
-            String.raw`\text{3 lb oranges, 7 lb bananas}`
-          ]
-        },
-
-        {
-          latex : String.raw`\text{Caramels cost \$1.90 per pound and butterscotch costs \$1.40 per pound. You sell a 5-pound box for \$7.50. How many pounds of each candy are included?}`,
-          choices : [
-            String.raw`\text{1 lb caramels, 4 lb butterscotch}`,
-            String.raw`\text{2 lb caramels, 3 lb butterscotch}`,
-            String.raw`\text{3 lb caramels, 2 lb butterscotch}`,
-            String.raw`\text{4 lb caramels, 1 lb butterscotch}`,
-            String.raw`\text{0.5 lb caramels, 4.5 lb butterscotch}`,
-            String.raw`\text{1.5 lb caramels, 3.5 lb butterscotch}`
-          ]
-        },
-
-        {
-          latex : String.raw`\text{You need 40 gallons of a 9% salt solution. How many gallons of 30% salt solution should be mixed with pure water to make this?}`,
-          choices : [
-            String.raw`\text{10 gal 30%, 30 gal water}`,
-            String.raw`\text{14 gal 30%, 26 gal water}`,
-            String.raw`\text{12 gal 30%, 28 gal water}`,
-            String.raw`\text{16 gal 30%, 24 gal water}`,
-            String.raw`\text{18 gal 30%, 22 gal water}`,
-            String.raw`\text{20 gal 30%, 20 gal water}`
-          ]
-        },
-
-        {
-          latex : String.raw`\text{Roses cost \$2.00 each and carnations cost \$0.75 each. A bouquet with 14 flowers costs \$20.50. How many of each flower are in the bouquet?}`,
-          choices : [
-            String.raw`\text{6 roses, 8 carnations}`,
-            String.raw`\text{8 roses, 6 carnations}`,
-            String.raw`\text{7 roses, 7 carnations}`,
-            String.raw`\text{9 roses, 5 carnations}`,
-            String.raw`\text{5 roses, 9 carnations}`,
-            String.raw`\text{10 roses, 4 carnations}`
-          ]
-        },
-
-        {
-          latex : String.raw`\text{You mix a 10% iodine solution with a 5% iodine solution to make 50 mL of a 6% solution. How many milliliters of each solution are used?}`,
-          choices : [
-            String.raw`\text{5 mL of 10% and 45 mL of 5%}`,
-            String.raw`\text{10 mL of 10% and 40 mL of 5%}`,
-            String.raw`\text{12 mL of 10% and 38 mL of 5%}`,
-            String.raw`\text{15 mL of 10% and 35 mL of 5%}`,
-            String.raw`\text{20 mL of 10% and 30 mL of 5%}`,
-            String.raw`\text{25 mL of 10% and 25 mL of 5%}`
-          ]
-        },
-
-        {
-          latex : String.raw`\text{Cereal is 10% protein and grain is 40% protein. How many grams of each are needed to make 12 g of food that is 20% protein?}`,
-          choices : [
-            String.raw`\text{6 g cereal, 6 g grain}`,
-            String.raw`\text{10 g cereal, 2 g grain}`,
-            String.raw`\text{8 g cereal, 4 g grain}`,
-            String.raw`\text{9 g cereal, 3 g grain}`,
-            String.raw`\text{7 g cereal, 5 g grain}`,
-            String.raw`\text{4 g cereal, 8 g grain}`
-          ]
-        },
-
-        {
-          latex : String.raw`\text{A concrete mix is 60% aggregate. How much of this mix should be combined with pure aggregate (100%) to make 48 kg of concrete that is 75% aggregate?}`,
-          choices : [
-            String.raw`\text{24 kg of 60%, 24 kg of 100%}`,
-            String.raw`\text{20 kg of 60%, 28 kg of 100%}`,
-            String.raw`\text{34 kg of 60%, 14 kg of 100%}`,
-            String.raw`\text{30 kg of 60%, 18 kg of 100%}`,
-            String.raw`\text{28 kg of 60%, 20 kg of 100%}`,
-            String.raw`\text{18 kg of 60%, 30 kg of 100%}`
-          ]
-        },
-
-        {
-          latex : String.raw`\text{Solution I is 20 percentage points less acidic than Solution II. Mixing 40 mL of I with 60 mL of II results in a 27% solution. What are the concentrations of Solutions I and II?}`,
-          choices : [
-            String.raw`\text{10% and 30%}`,
-            String.raw`\text{12% and 32%}`,
-            String.raw`\text{14% and 34%}`,
-            String.raw`\text{16% and 36%}`,
-            String.raw`\text{15% and 35%}`,
-            String.raw`\text{17% and 37%}`
-          ]
-        },
-
-        {
-          latex : String.raw`\text{You need 128 mL of a 12.5% alcohol solution. How many milliliters of 40% alcohol should be mixed with pure water to make this solution?}`,
-          choices : [
-            String.raw`\text{32 mL 40%, 96 mL water}`,
-            String.raw`\text{36 mL 40%, 92 mL water}`,
-            String.raw`\text{40 mL 40%, 88 mL water}`,
-            String.raw`\text{44 mL 40%, 84 mL water}`,
-            String.raw`\text{48 mL 40%, 80 mL water}`,
-            String.raw`\text{52 mL 40%, 76 mL water}`
-          ]
-        },
-
-        {
-          latex : String.raw`\text{Antifreeze A is 40% glycol and Antifreeze B is 52% glycol. How many gallons of each are needed to make 20 gallons of a 45% mixture? (Round to the nearest tenth.)}`,
-          choices : [
-            String.raw`\text{12.0 gal A, 8.0 gal B}`,
-            String.raw`\text{10.0 gal A, 10.0 gal B}`,
-            String.raw`\text{9.0 gal A, 11.0 gal B}`,
-            String.raw`\text{12.5 gal A, 7.5 gal B}`,
-            String.raw`\text{14.0 gal A, 6.0 gal B}`,
-            String.raw`\text{11.7 gal A, 8.3 gal B}`
-          ]
-        },
-
-        {
-          latex : String.raw`\text{Coffee beans cost \$2.99/lb and \$7.99/lb. How many pounds of each type should be blended to make 90 lb of coffee that costs \$5.00/lb? (Round to the nearest tenth.)}`,
-          choices : [
-            String.raw`\text{60.0 lb at \$2.99, 30.0 lb at \$7.99}`,
-            String.raw`\text{48.0 lb at \$2.99, 42.0 lb at \$7.99}`,
-            String.raw`\text{40.0 lb at \$2.99, 50.0 lb at \$7.99}`,
-            String.raw`\text{53.8 lb at \$2.99, 36.2 lb at \$7.99}`,
-            String.raw`\text{36.2 lb at \$2.99, 53.8 lb at \$7.99}`,
-            String.raw`\text{45.0 lb at \$2.99, 45.0 lb at \$7.99}`
-          ]
-        }
-      ]
-    };
+   FIGURES: none, user-supplied or model-generated. Required PNG files: none.
+   IMAGE NAMING RULE, if later needed: model figures use
+      <chapter>-<section>-<final-question-number>.png beside the HTML.
+   MODEL ASSUMPTIONS: Percentages measure the amount of a dissolved substance
+   per unit volume in the same units in each question. Volumes of solutions
+   are treated as additive, and solute is conserved unless removed explicitly.
+   Students should set up their equations on paper before selecting an answer.
+   ============================================================================ */
+  window.homeworkData = {
+    classId: "Algebra1",
+    id: "Homework 7-9",
+    title: "Homework 7-9 — Liquid Solutions & Concentrations",
+    graphics: String.raw``,
+    answerKey: ["D", "B", "F", "A", "E", "E", "D", "F", "A", "B", "C", "E", "B", "A", "D", "C", "F"],
+    questions: [
+      // Q1: Select the mass-balance and solute-balance equations.
+      {
+        stem: String.raw`<p><em>For all questions, assume that solution volumes add and that no dissolved substance is lost unless some solution is explicitly removed.</em></p><p>Two tanks contain aqueous sugar solutions with concentrations of 20% and 50%. A technician wants to prepare 10 liters of a 32% solution. Let \(x\) be the liters taken from the 20% solution and \(y\) the liters taken from the 50% solution.</p><p>Which system expresses both requirements?</p>`,
+        choices: [
+          String.raw`\(\begin{cases}x+y=10\\0.50x+0.20y=3.20\end{cases}\)`,
+          String.raw`\(\begin{cases}x+y=10\\0.20x+0.50y=32\end{cases}\)`,
+          String.raw`\(\begin{cases}x+y=3.20\\0.20x+0.50y=10\end{cases}\)`,
+          String.raw`\(\begin{cases}x+y=10\\0.20x+0.50y=3.20\end{cases}\)`,
+          String.raw`\(\begin{cases}x+y=10\\0.20x+0.50y=0.32\end{cases}\)`,
+          String.raw`\(\begin{cases}x-y=10\\0.20x+0.50y=3.20\end{cases}\)`
+        ],
+        choiceWrap: false
+      },
+      // Q2: First direct mixture calculation; reworked from the original pricing-style mixture structure.
+      {
+        stem: String.raw`<p>A laboratory mixes a 20% sugar solution with a 12% sugar solution. It needs 48 liters of a solution with a concentration of 15%.</p><p>How many liters of each stock solution are required?</p>`,
+        choices: [
+          String.raw`20 L of 20% solution and 28 L of 12% solution`,
+          String.raw`18 L of 20% solution and 30 L of 12% solution`,
+          String.raw`16 L of 20% solution and 32 L of 12% solution`,
+          String.raw`24 L of 20% solution and 24 L of 12% solution`,
+          String.raw`30 L of 20% solution and 18 L of 12% solution`,
+          String.raw`12 L of 20% solution and 36 L of 12% solution`
+        ],
+        choiceWrap: false
+      },
+      // Q3: Original exercise #4; zero-concentration source.
+      {
+        stem: String.raw`<p>A laboratory needs 40 liters of a 9% sugar solution. It has a 30% sugar solution and pure water.</p><p>How many liters of each should be combined?</p>`,
+        choices: [
+          String.raw`9 L of 30% solution and 31 L of water`,
+          String.raw`14 L of 30% solution and 26 L of water`,
+          String.raw`10 L of 30% solution and 30 L of water`,
+          String.raw`16 L of 30% solution and 24 L of water`,
+          String.raw`20 L of 30% solution and 20 L of water`,
+          String.raw`12 L of 30% solution and 28 L of water`
+        ],
+        choiceWrap: false
+      },
+      // Q4: Determine a ratio from concentration alone.
+      {
+        stem: String.raw`<p>A 10% sugar solution and a 40% sugar solution are mixed to obtain a 20% solution. The total volume is not given.</p><p>What can be determined about the amounts of the two solutions?</p>`,
+        choices: [
+          String.raw`Twice as much 10% solution as 40% solution is required.`,
+          String.raw`Equal volumes of the two solutions are required.`,
+          String.raw`Half as much 10% solution as 40% solution is required.`,
+          String.raw`Three times as much 10% solution as 40% solution is required.`,
+          String.raw`Three times as much 40% solution as 10% solution is required.`,
+          String.raw`Their ratio cannot be determined without the total volume.`
+        ],
+        choiceWrap: false
+      },
+      // Q5: Original exercise #6; target near lower concentration.
+      {
+        stem: String.raw`<p>Two bottles contain the same dissolved blue dye, at concentrations of 10% and 5%. They are mixed to prepare 50 mL of a 6% dye solution.</p><p>How many milliliters of each solution should be used?</p>`,
+        choices: [
+          String.raw`5 mL of 10% and 45 mL of 5%`,
+          String.raw`15 mL of 10% and 35 mL of 5%`,
+          String.raw`20 mL of 10% and 30 mL of 5%`,
+          String.raw`25 mL of 10% and 25 mL of 5%`,
+          String.raw`10 mL of 10% and 40 mL of 5%`,
+          String.raw`40 mL of 10% and 10 mL of 5%`
+        ],
+        choiceWrap: false
+      },
+      // Q6: A mixture whose total volume is initially unknown.
+      {
+        stem: String.raw`<p>A container already holds 8 liters of a 40% sugar solution. A technician will add some 10% sugar solution until the concentration becomes 20%.</p><p>How many liters of the 10% solution must be added?</p>`,
+        choices: [
+          String.raw`8 L`,
+          String.raw`12 L`,
+          String.raw`20 L`,
+          String.raw`24 L`,
+          String.raw`16 L`,
+          String.raw`32 L`
+        ],
+        choiceWrap: false
+      },
+      // Q7: Near reversal: an unknown stock concentration rather than an unknown volume.
+      {
+        stem: String.raw`<p>A technician pours 5 liters of a 12% dye solution into 15 liters of another solution containing the same dye. The final concentration is 27%.</p><p>What was the concentration of the second solution?</p>`,
+        choices: [
+          String.raw`\(20\%\)`,
+          String.raw`\(25\%\)`,
+          String.raw`\(30\%\)`,
+          String.raw`\(32\%\)`,
+          String.raw`\(35\%\)`,
+          String.raw`\(40\%\)`
+        ],
+        choiceWrap: false
+      },
+      // Q8: Conceptual contrast: arithmetic versus weighted average.
+      {
+        stem: String.raw`<p>A student argues: “The average of 10% and 40% is 25%, so mixing a 10% sugar solution and a 40% sugar solution always gives a 25% solution.”</p><p>Which statement identifies the missing condition?</p>`,
+        choices: [
+          String.raw`The claim is correct whenever the solutions are poured into the same container.`,
+          String.raw`The claim is correct when equal amounts of dissolved sugar come from the two portions.`,
+          String.raw`The claim is correct whenever the combined volume is exactly 100 mL.`,
+          String.raw`The claim is correct whenever the amounts of water in the two portions are equal.`,
+          String.raw`The claim is correct because percentages may always be averaged in this way.`,
+          String.raw`The arithmetic average gives 25% when equal volumes of the two solutions are mixed.`
+        ],
+        choiceWrap: false
+      },
+      // Q9: Reverse the usual direction: compute concentration from known amounts.
+      {
+        stem: String.raw`<p>Twenty milliliters of a 15% dye solution are mixed with 30 mL of a 35% solution containing the same dye.</p><p>What is the concentration of the resulting 50 mL solution?</p>`,
+        choices: [
+          String.raw`\(27\%\)`,
+          String.raw`\(24\%\)`,
+          String.raw`\(28\%\)`,
+          String.raw`\(32\%\)`,
+          String.raw`\(26\%\)`,
+          String.raw`\(25\%\)`
+        ],
+        choiceWrap: false
+      },
+      // Q10: Dilution to a target when the final amount is not supplied.
+      {
+        stem: String.raw`<p>A tank contains 20 liters of a 30% sugar solution. Pure water is added until the concentration is 24%.</p><p>How many liters of water have been added?</p>`,
+        choices: [
+          String.raw`4 L`,
+          String.raw`5 L`,
+          String.raw`6 L`,
+          String.raw`8 L`,
+          String.raw`10 L`,
+          String.raw`12 L`
+        ],
+        choiceWrap: false
+      },
+      // Q11: Feasibility as a convex combination.
+      {
+        stem: String.raw`<p>A technician can mix only a 20% sugar solution and a 35% sugar solution. No sugar or water may be added separately, and none may be removed.</p><p>Is it possible to obtain a 40% sugar solution? Choose the correct explanation.</p>`,
+        choices: [
+          String.raw`Yes, by using three times as much 35% solution as 20% solution.`,
+          String.raw`Yes, if the amount of 20% solution is very small.`,
+          String.raw`No. A mixture cannot be more concentrated than both solutions used to make it.`,
+          String.raw`No. Every mixture of the two must have concentration \(27.5\%\).`,
+          String.raw`Yes, if the total volume exceeds 40 liters.`,
+          String.raw`No. The source concentrations must add to the target concentration.`
+        ],
+        choiceWrap: false
+      },
+      // Q12: Contrast dependent and inconsistent linear systems in a physical setting.
+      {
+        stem: String.raw`<p>Two different containers hold solutions with the same dye concentration: 20%. A technician must prepare 10 liters by combining nonnegative quantities from the two containers.</p><p><strong>Situation I:</strong> The required concentration is 20%. <strong>Situation II:</strong> The required concentration is 25%. How many different pairs of amounts satisfy the conditions in each situation?</p>`,
+        choices: [
+          String.raw`I: exactly one pair; II: no pair.`,
+          String.raw`I: infinitely many pairs; II: exactly one pair.`,
+          String.raw`I: exactly one pair; II: infinitely many pairs.`,
+          String.raw`I: no pair; II: no pair.`,
+          String.raw`I: infinitely many pairs; II: no pair.`,
+          String.raw`I: infinitely many pairs; II: infinitely many pairs.`
+        ],
+        choiceWrap: false
+      },
+      // Q13: The algebraic solution must also obey a stock constraint.
+      {
+        stem: String.raw`<p>A laboratory must make 30 liters of an 18% salt solution using only 10% and 25% salt solutions. It has plenty of the 10% solution but only 8 liters of the 25% solution.</p><p>Can the laboratory make the required mixture?</p>`,
+        choices: [
+          String.raw`Yes; 8 L of 25% solution and 22 L of 10% solution will work.`,
+          String.raw`No; the required mixture would need 16 L of the 25% solution.`,
+          String.raw`Yes; 16 L of 25% solution and 14 L of 10% solution will work.`,
+          String.raw`No; a correct mixture would require more than 30 L in total.`,
+          String.raw`Yes; 6 L of 25% solution and 24 L of 10% solution will work.`,
+          String.raw`No; 18% does not lie between 10% and 25%.`
+        ],
+        choiceWrap: false
+      },
+      // Q14: Original exercise #9; solve for two unknown concentrations.
+      {
+        stem: String.raw`<p>Solution I has a dissolved-sugar concentration 20 <em>percentage points</em> lower than Solution II. A mixture of 40 mL of Solution I and 60 mL of Solution II has a concentration of 27%.</p><p>What are the concentrations of Solutions I and II, respectively?</p>`,
+        choices: [
+          String.raw`\(15\%\) and \(35\%\)`,
+          String.raw`\(12\%\) and \(32\%\)`,
+          String.raw`\(17\%\) and \(37\%\)`,
+          String.raw`\(14\%\) and \(34\%\)`,
+          String.raw`\(13\%\) and \(33\%\)`,
+          String.raw`\(16\%\) and \(36\%\)`
+        ],
+        choiceWrap: false
+      },
+      // Q15: Decimal concentrations and rounding once at the end.
+      {
+        stem: String.raw`<p>A laboratory has aqueous sugar solutions with concentrations of 12% and 37%. It needs 90 liters of a solution whose concentration is exactly 22.3%.</p><p>How many liters of each source should be used? Round each answer to the nearest tenth of a liter.</p>`,
+        choices: [
+          String.raw`54.0 L of 12% and 36.0 L of 37%`,
+          String.raw`52.8 L of 12% and 37.2 L of 37%`,
+          String.raw`37.1 L of 12% and 52.9 L of 37%`,
+          String.raw`52.9 L of 12% and 37.1 L of 37%`,
+          String.raw`53.0 L of 12% and 37.0 L of 37%`,
+          String.raw`50.0 L of 12% and 40.0 L of 37%`
+        ],
+        choiceWrap: false
+      },
+      // Q16: Compare related blends by changes in concentration.
+      {
+        stem: String.raw`<p>Two 20-liter batches are made from the same 10% and 40% sugar solutions. Batch A is to contain 25% sugar; Batch B is to contain 30%.</p><p>How many <em>more</em> liters of the 40% solution are needed for B than for A? Round to the nearest tenth.</p>`,
+        choices: [
+          String.raw`\(1.7\text{ L}\)`,
+          String.raw`\(5.0\text{ L}\)`,
+          String.raw`\(3.3\text{ L}\)`,
+          String.raw`\(6.7\text{ L}\)`,
+          String.raw`\(10.0\text{ L}\)`,
+          String.raw`\(13.3\text{ L}\)`
+        ],
+        choiceWrap: false
+      },
+      // Q17: Synthesis: removing solution removes solute, unlike merely adding water.
+      {
+        stem: String.raw`<p>A tank contains 24 liters of a well-mixed 25% sugar solution. A technician removes 6 liters <em>of this solution</em> and replaces it with 6 liters of pure water. The technician mixes the contents thoroughly.</p><p>What is the new concentration of sugar in the tank?</p>`,
+        choices: [
+          String.raw`\(25\%\)`,
+          String.raw`\(20\%\)`,
+          String.raw`\(18\%\)`,
+          String.raw`\(22.5\%\)`,
+          String.raw`\(15\%\)`,
+          String.raw`\(18.75\%\)`
+        ],
+        choiceWrap: false
+      }
+    ]
+  };
   </script>
-
-  <link rel="stylesheet" href="/math-homework/assets/core.css" />
-  <link rel="stylesheet" href="https://tikzjax.com/v1/fonts.css" />
-  <script defer src="/math-homework/assets/core.js"></script>
-  <script defer src="https://tikzjax.com/v1/tikzjax.js"></script>
+  <link rel="stylesheet" href="/math-homework/assets/core-rich.css" />
+  <script defer src="/math-homework/assets/core-rich.js"></script>
   <script defer src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
 </head>
 <body>

@@ -4,164 +4,248 @@
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Homework 7-10 (Algebra 1)</title>
-
   <script>
-    window.homeworkData = {
-      classId : "Algebra1",
-      id      : "Homework 7-10",
-      title   : "Homework 7-10 — Graphing Systems of Inequalities",
-
-      graphics : String.raw`
-\begin{tikzpicture}[scale=0.65]
-  \tikzset{grid/.style={very thin,color=gray!30}}
-  \tikzset{axes/.style={->,thick}}
-  \colorlet{sol}{blue!50!red!35}
-
-  \begin{scope}[xshift=-8cm,yshift=8cm]
-    \clip (-4.2,-4.2) rectangle (4.2,4.2);
-    \draw[grid] (-4,-4) grid (4,4);
-    \draw[axes] (-4,0)--(4,0); \draw[axes] (0,-4)--(0,4);
-    \begin{scope}
-      \clip (-4, {-(-4)+2}) -- (4, {-(4)+2}) -- (4,4) -- (-4,4) -- cycle;
-      \path[fill=sol,opacity=.35] (-4, {-4-4}) -- (4, {4-4}) -- (4,4) -- (-4,4) -- cycle;
-    \end{scope}
-    \draw[blue,thick,domain=-4:4] plot(\x,{-1*\x+2});
-    \draw[red,thick,dashed,domain=-4:4] plot(\x,{\x-4});
-    \node[anchor=south east,font=\small] at (3.7,3.7) {G1};
-  \end{scope}
-
-  \begin{scope}[xshift=2cm,yshift=8cm]
-    \clip (-4.2,-4.2) rectangle (4.2,4.2);
-    \draw[grid] (-4,-4) grid (4,4);
-    \draw[axes] (-4,0)--(4,0); \draw[axes] (0,-4)--(0,4);
-    \begin{scope}
-      \clip (-1,-4) -- (4,-4) -- (4,4) -- (-1,4) -- cycle;
-      \path[fill=sol,opacity=.35] (-4,-4) -- (4,-4) -- (4,2) -- (-4,2) -- cycle;
-    \end{scope}
-    \draw[red,thick,dashed] (-1,-4)--(-1,4);
-    \draw[blue,thick] (-4,2)--(4,2);
-    \node[anchor=south east,font=\small] at (3.7,3.7) {G2};
-  \end{scope}
-
-  \begin{scope}[xshift=12cm,yshift=8cm]
-    \clip (-4.2,-4.2) rectangle (4.2,4.2);
-    \draw[grid] (-4,-4) grid (4,4);
-    \draw[axes] (-4,0)--(4,0); \draw[axes] (0,-4)--(0,4);
-    \begin{scope}
-      \clip (-4,0) -- (4,0) -- (4,4) -- (-4,4) -- cycle;
-      \path[fill=sol,opacity=.35] (-4, {-0.25*(-4)+2}) -- (4, {-0.25*(4)+2}) -- (4,-4) -- (-4,-4) -- cycle;
-    \end{scope}
-    \draw[blue,thick] (-4,0)--(4,0);
-    \draw[red,thick,domain=-4:4] plot(\x,{-0.25*\x+2});
-    \node[anchor=south east,font=\small] at (3.7,3.7) {G3};
-  \end{scope}
-
-  \begin{scope}[xshift=-8cm,yshift=-2cm]
-    \clip (-4.2,-4.2) rectangle (4.2,4.2);
-    \draw[grid] (-4,-4) grid (4,4);
-    \draw[axes] (-4,0)--(4,0); \draw[axes] (0,-4)--(0,4);
-    \begin{scope]
-      \clip (0,-4) -- (4,-4) -- (4,4) -- (0,4) -- cycle;
-      \path[fill=sol,opacity=.35] (-4, {-3*(-4)+6}) -- (4, {-3*(4)+6}) -- (4,-4) -- (-4,-4) -- cycle;
-    \end{scope}
-    \draw[blue,thick] (0,-4)--(0,4);
-    \draw[red,thick,dashed,domain=-4:4] plot(\x,{-3*\x+6});
-    \node[anchor=south east,font=\small] at (3.7,3.7) {G4};
-  \end{scope}
-
-  \begin{scope}[xshift=2cm,yshift=-2cm]
-    \clip (-4.2,-4.2) rectangle (4.2,4.2);
-    \draw[grid] (-4,-4) grid (4,4);
-    \draw[axes] (-4,0)--(4,0); \draw[axes] (0,-4)--(0,4);
-    \begin{scope}
-      \clip (-4,{-0.5*(-4)-2}) -- (4,{-0.5*(4)-2}) -- (4,4) -- (-4,4) -- cycle;
-      \path[fill=sol,opacity=.35] (-4,{-0.5*(-4)+3}) -- (4,{-0.5*(4)+3}) -- (4,-4) -- (-4,-4) -- cycle;
-    \end{scope}
-    \draw[blue,thick,domain=-4:4] plot(\x,{-0.5*\x-2});
-    \draw[red,thick,dashed,domain=-4:4] plot(\x,{-0.5*\x+3});
-    \node[anchor=south east,font=\small] at (3.7,3.7) {G5};
-  \end{scope}
-
-  \begin{scope}[xshift=12cm,yshift=-2cm]
-    \clip (-4.2,-4.2) rectangle (4.2,4.2);
-    \draw[grid] (-4,-4) grid (4,4);
-    \draw[axes] (-4,0)--(4,0); \draw[axes] (0,-4)--(0,4);
-    \begin{scope]
-      \clip (-4,2) -- (4,2) -- (4,-4) -- (-4,-4) -- cycle;
-      \path[fill=sol,opacity=.35] (-4,{-(-4)+1}) -- (4,{-4+1}) -- (4,4) -- (-4,4) -- cycle;
-    \end{scope}
-    \draw[blue,thick] (-4,2)--(4,2);
-    \draw[red,thick,dashed,domain=-4:4] plot(\x,{-1*\x+1});
-    \node[anchor=south east,font=\small] at (3.7,3.7) {G6};
-  \end{scope}
-\end{tikzpicture}
-`,
-
-      answerKey : ["A","A","A","D","C","F"],
-
-      questions : [
-        { latex: String.raw`\text{Refer to G1. Which system is graphed?}`,
-          choices: [
-            String.raw`\begin{cases}x+y\ge 2\\ x-y<4\end{cases}`,
-            String.raw`\begin{cases}x+y>2\\ x-y\le 4\end{cases}`,
-            String.raw`\begin{cases}x+y\le 2\\ x-y>4\end{cases}`,
-            String.raw`\begin{cases}y\le -x+2\\ y> x-4\end{cases}`,
-            String.raw`\begin{cases}y\ge -x+2\\ y\ge x-4\end{cases}`,
-            String.raw`\begin{cases}x+y>2\\ x-y>4\end{cases}`
-          ]},
-        { latex: String.raw`\text{Refer to G2. Which system is graphed?}`,
-          choices: [
-            String.raw`\begin{cases}x>-1\\ y\le 2\end{cases}`,
-            String.raw`\begin{cases}x\ge -1\\ y>2\end{cases}`,
-            String.raw`\begin{cases}x\ge -1\\ y\le 2\end{cases}`,
-            String.raw`\begin{cases}x>-1\\ y>2\end{cases}`,
-            String.raw`\begin{cases}x\le -1\\ y<2\end{cases}`,
-            String.raw`\begin{cases}x\ge -1\\ y\ge 2\end{cases}`
-          ]},
-        { latex: String.raw`\text{Refer to G3. Which system is graphed?}`,
-          choices: [
-            String.raw`\begin{cases}y\ge 0\\ x+4y\le 8\end{cases}`,
-            String.raw`\begin{cases}y>0\\ x+4y<8\end{cases}`,
-            String.raw`\begin{cases}y\le 0\\ x+4y\le 8\end{cases}`,
-            String.raw`\begin{cases}y\ge 0\\ x+4y\ge 8\end{cases}`,
-            String.raw`\begin{cases}x\ge 0\\ y\ge 0\end{cases}`,
-            String.raw`\begin{cases}y>0\\ x+4y\le 8\end{cases}`
-          ]},
-        { latex: String.raw`\text{Refer to G4. Which system is graphed?}`,
-          choices: [
-            String.raw`\begin{cases}x\ge 0\\ 3x+y\le 6\end{cases}`,
-            String.raw`\begin{cases}x>0\\ 3x+y<6\end{cases}`,
-            String.raw`\begin{cases}x\le 0\\ 3x+y\ge 6\end{cases}`,
-            String.raw`\begin{cases}x\ge 0\\ 3x+y<6\end{cases}`,
-            String.raw`\begin{cases}x\ge 0\\ 3x+y>6\end{cases}`,
-            String.raw`\begin{cases}x<0\\ 3x+y<6\end{cases}`
-          ]},
-        { latex: String.raw`\text{Refer to G5 (band). Which system is graphed?}`,
-          choices: [
-            String.raw`\begin{cases}x+2y<-4\\ x+2y\le 6\end{cases}`,
-            String.raw`\begin{cases}x+2y>-4\\ x+2y\ge 6\end{cases}`,
-            String.raw`\begin{cases}x+2y\ge -4\\ x+2y<6\end{cases}`,
-            String.raw`\begin{cases}y\le -0.5x-2\\ y\ge -0.5x+3\end{cases}`,
-            String.raw`\begin{cases}y> -0.5x-2\\ y< -0.5x+3\end{cases}`,
-            String.raw`\begin{cases}x+2y\le -4\\ x+2y>6\end{cases}`
-          ]},
-        { latex: String.raw`\text{Refer to G6. Which system is graphed?}`,
-          choices: [
-            String.raw`\begin{cases}y\ge -x+1\\ y<2\end{cases}`,
-            String.raw`\begin{cases}y>-x+1\\ y<2\end{cases}`,
-            String.raw`\begin{cases}y\le -x+1\\ y\le 2\end{cases}`,
-            String.raw`\begin{cases}x\ge -1\\ y\le 2\end{cases}`,
-            String.raw`\begin{cases}y>-x+1\\ y<1\end{cases}`,
-            String.raw`\begin{cases}y>-x+1\\ y\le 2\end{cases}`
-          ]}
-      ]
-    };
+/* ====================================================================
+   Homework 7-10 — Graphing Systems of Inequalities (Algebra 1)
+   SOURCE: User-provided Homework 7-10, original exercises G1–G6.
+   Original figures are *not* reused directly: the original global TikZ had
+   two malformed scope environments; diagrams here are re-authored in LaTeX.
+   SOURCE-DERIVED REWORKED EXERCISES:
+   - Q2 reworks original G2 (horizontal and vertical boundaries).
+   - Q4 reworks G3 (horizontal/oblique intersection).
+   - Q6 reworks G6 in the forward direction (system -> select a graph).
+   - Q7 reworks G1 (crossing oblique boundaries).
+   - Q8 reworks G5 (a strip between parallel lines).
+   - Q5 and Q13 are model-authored extensions of crossing-line cases: strict-boundary inclusion and feasible x-values.
+   MODEL-AUTHORED EXERCISES:
+   - Q1, Q3 (individual boundaries and simultaneous satisfaction).
+   - Q9, Q10 (empty intersection, redundancy).
+   - Q11 (three half-planes yielding a closed triangular region).
+   - Q12 (insufficiency: counterexample to two-inequality description).
+   - Q14, Q15, Q16 (single line, redundant condition, boundedness).
+   FIGURES: All model-generated from LaTeX; none user-supplied.
+   PNGs (same directory): 7-10-2.png, 7-10-4.png, 7-10-6.png,
+                          7-10-7.png, 7-10-8.png, 7-10-11.png,
+                          7-10-12.png.
+   FIGURE NAMING: <chapter>-<section>-<final-question-number>.png.
+   QUESTION-FIGURE LABELS: Figure 1 = Q2; 2 = Q4; 3 = Q6;
+      4 = Q7; 5 = Q8; 6 = Q11; 7 = Q12.
+   BOUNDARIES: Solid = inclusive; dashed = strict.
+   ==================================================================== */
+  window.homeworkData = {
+    classId: "Algebra1",
+    id: "Homework 7-10",
+    title: "Homework 7-10 — Graphing Systems of Inequalities",
+    graphics: String.raw``,
+    answerKey: ["E", "B", "D", "C", "F", "A", "E", "B", "C", "F", "D", "A", "E", "C", "B", "F"],
+    questions: [
+      // Q1: strict boundary dashed, negative slope, below
+      {
+        stem: String.raw`<p>The inequality \(y<-2x+3\) is represented on a coordinate plane. Which description of its graph is correct?</p>`,
+        choices: [
+          String.raw`A solid line through \((0,3)\) and \((1,1)\), shaded below.`,
+          String.raw`A dashed line through \((0,3)\) and \((1,1)\), shaded above.`,
+          String.raw`A dashed line through \((0,-3)\) and \((1,-5)\), shaded below.`,
+          String.raw`A dashed line through \((0,3)\) and \((1,5)\), shaded below.`,
+          String.raw`A dashed line through \((0,3)\) and \((1,1)\), shaded below.`,
+          String.raw`A solid line through \((0,3)\) and \((1,1)\), shaded above.`
+        ],
+        choiceWrap: false,
+      },
+      // Q2: right of dashed vertical, below solid horizontal
+      {
+        stem: String.raw`<p>Figure 1 shows the common solution of two inequalities. Which system describes the shaded region?</p>`,
+        media: String.raw`<figure><img src="7-10-2.png" alt="Graph or graphs for Question 2" /><figcaption>Figure 1</figcaption></figure>`,
+        choices: [
+          String.raw`\begin{cases}x\ge -1\\y\le2\end{cases}`,
+          String.raw`\begin{cases}x>-1\\y\le2\end{cases}`,
+          String.raw`\begin{cases}x>-1\\y>2\end{cases}`,
+          String.raw`\begin{cases}x<-1\\y\le2\end{cases}`,
+          String.raw`\begin{cases}x\ge-1\\y<2\end{cases}`,
+          String.raw`\begin{cases}x\le-1\\y\ge2\end{cases}`
+        ],
+      },
+      // Q3: (-1,-2) meets sloping boundary and lies below y=3
+      {
+        stem: String.raw`<p>A point belongs to the solution of a system only if it satisfies both inequalities. Which of the following points satisfies this system?</p><p class="math">\(\begin{cases}y\ge x-1\\y<3\end{cases}\)</p>`,
+        choices: [
+          String.raw`(2,3)`,
+          String.raw`(2,0)`,
+          String.raw`(4,2)`,
+          String.raw`(-1,-2)`,
+          String.raw`(3,1)`,
+          String.raw`(-1,3)`
+        ],
+      },
+      // Q4: above x-axis and below solid y=-x/4+2
+      {
+        stem: String.raw`<p>Figure 2 shows a region bounded in part by a horizontal line and a sloping line. Which system is represented?</p>`,
+        media: String.raw`<figure><img src="7-10-4.png" alt="Graph or graphs for Question 4" /><figcaption>Figure 2</figcaption></figure>`,
+        choices: [
+          String.raw`\begin{cases}y\le0\\x+4y\le8\end{cases}`,
+          String.raw`\begin{cases}y\ge0\\x+4y\ge8\end{cases}`,
+          String.raw`\begin{cases}y\ge0\\x+4y\le8\end{cases}`,
+          String.raw`\begin{cases}y>0\\x+4y\le8\end{cases}`,
+          String.raw`\begin{cases}y\ge0\\x-4y\le8\end{cases}`,
+          String.raw`\begin{cases}y\ge0\\x+4y<8\end{cases}`
+        ],
+      },
+      // Q5: intersection (3,1), excluded on strict upper boundary
+      {
+        stem: String.raw`<p>Consider the system below. Where do its boundary lines intersect, and does the intersection point belong to the solution region?</p><p class="math">\(\begin{cases}y\ge x-2\\y<-x+4\end{cases}\)</p>`,
+        choices: [
+          String.raw`They intersect at \((3,1)\), which is included.`,
+          String.raw`They intersect at \((1,3)\), which is included.`,
+          String.raw`They intersect at \((1,3)\), which is excluded.`,
+          String.raw`They intersect at \((3,-1)\), which is excluded.`,
+          String.raw`They intersect at \((2,1)\), which is included.`,
+          String.raw`They intersect at \((3,1)\), which is excluded.`
+        ],
+        choiceWrap: false,
+      },
+      // Q6: A is solid y=2, dashed y=-x+1, shaded between
+      {
+        stem: String.raw`<p>Sketch the common solution of the system, then determine which of the six small graphs in Figure 3 agrees with your sketch.</p><p class="math">\(\begin{cases}y\le2\\y>-x+1\end{cases}\)</p>`,
+        media: String.raw`<figure><img src="7-10-6.png" alt="Graph or graphs for Question 6" /><figcaption>Figure 3</figcaption></figure>`,
+        choices: [
+          String.raw`\text{Graph A}`,
+          String.raw`\text{Graph B}`,
+          String.raw`\text{Graph C}`,
+          String.raw`\text{Graph D}`,
+          String.raw`\text{Graph E}`,
+          String.raw`\text{Graph F}`
+        ],
+      },
+      // Q7: above solid y=-x+2 and above dashed y=x-4
+      {
+        stem: String.raw`<p>Figure 4 has two sloping boundaries. Which system describes the common shaded region?</p>`,
+        media: String.raw`<figure><img src="7-10-7.png" alt="Graph or graphs for Question 7" /><figcaption>Figure 4</figcaption></figure>`,
+        choices: [
+          String.raw`\begin{cases}y>-x+2\\y\ge x-4\end{cases}`,
+          String.raw`\begin{cases}y\le-x+2\\y>x-4\end{cases}`,
+          String.raw`\begin{cases}y\ge-x+2\\y<x-4\end{cases}`,
+          String.raw`\begin{cases}y\ge-x+2\\y\ge x-4\end{cases}`,
+          String.raw`\begin{cases}y\ge-x+2\\y>x-4\end{cases}`,
+          String.raw`\begin{cases}y>-x+2\\y>x-4\end{cases}`
+        ],
+      },
+      // Q8: lower parallel solid bound, upper dashed bound
+      {
+        stem: String.raw`<p>Figure 5 shows a region between two parallel lines. Which system describes exactly the shaded strip, including the indicated boundaries correctly?</p>`,
+        media: String.raw`<figure><img src="7-10-8.png" alt="Graph or graphs for Question 8" /><figcaption>Figure 5</figcaption></figure>`,
+        choices: [
+          String.raw`\begin{cases}x+2y\le-4\\x+2y<6\end{cases}`,
+          String.raw`\begin{cases}x+2y\ge-4\\x+2y<6\end{cases}`,
+          String.raw`\begin{cases}x+2y>-4\\x+2y\le6\end{cases}`,
+          String.raw`\begin{cases}x+2y\ge6\\x+2y\le-4\end{cases}`,
+          String.raw`\begin{cases}x-2y\ge-4\\x+2y<6\end{cases}`,
+          String.raw`\begin{cases}x+2y\ge-4\\x+2y>6\end{cases}`
+        ],
+      },
+      // Q9: impossible both >= and < same line
+      {
+        stem: String.raw`<p>One of the following systems has no solution. Which one?</p>`,
+        choices: [
+          String.raw`\begin{cases}y>x+1\\y<x+3\end{cases}`,
+          String.raw`\begin{cases}y\ge x+1\\y\le x+1\end{cases}`,
+          String.raw`\begin{cases}y\ge x+1\\y<x+1\end{cases}`,
+          String.raw`\begin{cases}y\le x+3\\y\ge x+1\end{cases}`,
+          String.raw`\begin{cases}y>x+3\\y>x+1\end{cases}`,
+          String.raw`\begin{cases}y\le x+1\\y<x+3\end{cases}`
+        ],
+      },
+      // Q10: more restrictive parallel bound makes the other redundant
+      {
+        stem: String.raw`<p>Consider the system below. Which single inequality describes exactly the same solution region?</p><p class="math">\(\begin{cases}y>2x+3\\y>2x-1\end{cases}\)</p>`,
+        choices: [
+          String.raw`y>2x-1`,
+          String.raw`y\ge2x+3`,
+          String.raw`y>2x+4`,
+          String.raw`2x-1<y<2x+3`,
+          String.raw`y>2x+2`,
+          String.raw`y>2x+3`
+        ],
+      },
+      // Q11: closed triangle x>=0,y>=0,x+y<=4
+      {
+        stem: String.raw`<p>Figure 6 shows a triangular region, including all three of its sides. Which system describes it?</p>`,
+        media: String.raw`<figure><img src="7-10-11.png" alt="Graph or graphs for Question 11" /><figcaption>Figure 6</figcaption></figure>`,
+        choices: [
+          String.raw`\begin{cases}x>0\\y\ge0\\x+y\le4\end{cases}`,
+          String.raw`\begin{cases}x\ge0\\y>0\\x+y\le4\end{cases}`,
+          String.raw`\begin{cases}x\ge0\\y\ge0\\x+y<4\end{cases}`,
+          String.raw`\begin{cases}x\ge0\\y\ge0\\x+y\le4\end{cases}`,
+          String.raw`\begin{cases}x\le0\\y\ge0\\x+y\le4\end{cases}`,
+          String.raw`\begin{cases}x\ge0\\y\ge0\\x+y\ge4\end{cases}`
+        ],
+      },
+      // Q12: (-1,-1) satisfies the two sloping inequalities but lies left of x>=0
+      {
+        stem: String.raw`<p>Figure 7 shows a shaded region between two parallel lines, restricted to one side of the vertical axis. A student claims that the two inequalities below, <em>by themselves</em>, describe the entire shaded region.</p><p class="math">\(\begin{cases}y\ge x-1\\y<x+2\end{cases}\)</p><p>Which point demonstrates that the student has omitted a necessary condition?</p>`,
+        media: String.raw`<figure><img src="7-10-12.png" alt="Graph or graphs for Question 12" /><figcaption>Figure 7</figcaption></figure>`,
+        choices: [
+          String.raw`(-1,-1)`,
+          String.raw`(1,1)`,
+          String.raw`(-1,2)`,
+          String.raw`(1,-1)`,
+          String.raw`(0,2)`,
+          String.raw`(2,4)`
+        ],
+      },
+      // Q13: strict vs nonstrict affects exactly x=3
+      {
+        stem: String.raw`<p>Compare the systems below. In each system, for which values of \(x\) is there at least one value of \(y\) satisfying both inequalities?</p><p class="math">\(\text{I:}\ \begin{cases}y\ge x-2\\y<-x+4\end{cases}\qquad\text{II:}\ \begin{cases}y\ge x-2\\y\le-x+4\end{cases}\)</p>`,
+        choices: [
+          String.raw`I: \(x\le3\); II: \(x<3\).`,
+          String.raw`Both systems: \(x\le3\).`,
+          String.raw`Both systems: \(x<3\).`,
+          String.raw`I: \(x>3\); II: \(x\ge3\).`,
+          String.raw`I: \(x<3\); II: \(x\le3\).`,
+          String.raw`I: \(x\ge3\); II: \(x\ge3\).`
+        ],
+        choiceWrap: false,
+      },
+      // Q14: two opposing weak inequalities force equality
+      {
+        stem: String.raw`<p>Which system has as its entire solution set the line \(y=-x+2\), with every point of that line included and no other points?</p>`,
+        choices: [
+          String.raw`\begin{cases}y\ge-x+2\\y\ge-x+2\end{cases}`,
+          String.raw`\begin{cases}y>-x+2\\y\le-x+2\end{cases}`,
+          String.raw`\begin{cases}y\ge-x+2\\y\le-x+2\end{cases}`,
+          String.raw`\begin{cases}y\ge-x+2\\y\le-x+3\end{cases}`,
+          String.raw`\begin{cases}y\le-x+2\\y\le-x+2\end{cases}`,
+          String.raw`\begin{cases}y>-x+2\\y<-x+3\end{cases}`
+        ],
+      },
+      // Q15: triangle already has y<=4; y<=5 is redundant
+      {
+        stem: String.raw`<p>Consider the triangular region described by</p><p class="math">\(\begin{cases}x\ge0\\y\ge0\\x+y\le4\end{cases}\)</p><p>Which additional inequality could be included without changing its solution region at all?</p>`,
+        choices: [
+          String.raw`x\le3`,
+          String.raw`y\le5`,
+          String.raw`y\ge1`,
+          String.raw`x+y\le3`,
+          String.raw`x\ge1`,
+          String.raw`x+y\ge1`
+        ],
+      },
+      // Q16: triangle bounded but hypotenuse omitted
+      {
+        stem: String.raw`<p>Which system describes a <em>nonempty bounded region</em> whose boundary includes a line segment that is <em>not included</em> in the solution?</p>`,
+        choices: [
+          String.raw`\begin{cases}x\ge0\\y\ge0\\x+y\le5\end{cases}`,
+          String.raw`\begin{cases}x\ge0\\y\ge0\\x+y\ge5\end{cases}`,
+          String.raw`\begin{cases}x>0\\y>0\\x+y>5\end{cases}`,
+          String.raw`\begin{cases}x\le0\\y\le0\\x+y\le5\end{cases}`,
+          String.raw`\begin{cases}x\ge0\\y\ge0\\x-y<5\end{cases}`,
+          String.raw`\begin{cases}x\ge0\\y\ge0\\x+y<5\end{cases}`
+        ],
+      }
+    ]
+  };
   </script>
-
-  <link rel="stylesheet" href="/math-homework/assets/core.css" />
-  <link rel="stylesheet" href="https://tikzjax.com/v1/fonts.css" />
-  <script defer src="/math-homework/assets/core.js"></script>
-  <script defer src="https://tikzjax.com/v1/tikzjax.js"></script>
+  <link rel="stylesheet" href="/math-homework/assets/core-rich.css" />
+  <script defer src="/math-homework/assets/core-rich.js"></script>
   <script defer src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
 </head>
 <body>
