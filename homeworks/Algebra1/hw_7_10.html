@@ -41,7 +41,7 @@
     questions: [
       // Q1: strict boundary dashed, negative slope, below
       {
-        stem: String.raw`<p>The inequality \(y<-2x+3\) is represented on a coordinate plane. Which description of its graph is correct?</p>`,
+        stem: String.raw`<p>The inequality \(y&lt;-2x+3\) is represented on a coordinate plane. Which description of its graph is correct?</p>`,
         choices: [
           String.raw`A solid line through \((0,3)\) and \((1,1)\), shaded below.`,
           String.raw`A dashed line through \((0,3)\) and \((1,1)\), shaded above.`,
@@ -57,24 +57,24 @@
         stem: String.raw`<p>Figure 1 shows the common solution of two inequalities. Which system describes the shaded region?</p>`,
         media: String.raw`<figure><img src="7-10-2.png" alt="Graph or graphs for Question 2" /><figcaption>Figure 1</figcaption></figure>`,
         choices: [
-          String.raw`\begin{cases}x\ge -1\\y\le2\end{cases}`,
-          String.raw`\begin{cases}x>-1\\y\le2\end{cases}`,
-          String.raw`\begin{cases}x>-1\\y>2\end{cases}`,
-          String.raw`\begin{cases}x<-1\\y\le2\end{cases}`,
-          String.raw`\begin{cases}x\ge-1\\y<2\end{cases}`,
-          String.raw`\begin{cases}x\le-1\\y\ge2\end{cases}`
+          String.raw`\(\begin{cases}x\ge -1\\y\le2\end{cases}\)`,
+          String.raw`\(\begin{cases}x&gt;-1\\y\le2\end{cases}\)`,
+          String.raw`\(\begin{cases}x&gt;-1\\y&gt;2\end{cases}\)`,
+          String.raw`\(\begin{cases}x&lt;-1\\y\le2\end{cases}\)`,
+          String.raw`\(\begin{cases}x\ge-1\\y&lt;2\end{cases}\)`,
+          String.raw`\(\begin{cases}x\le-1\\y\ge2\end{cases}\)`
         ],
       },
       // Q3: (-1,-2) meets sloping boundary and lies below y=3
       {
-        stem: String.raw`<p>A point belongs to the solution of a system only if it satisfies both inequalities. Which of the following points satisfies this system?</p><p class="math">\(\begin{cases}y\ge x-1\\y<3\end{cases}\)</p>`,
+        stem: String.raw`<p>A point belongs to the solution of a system only if it satisfies both inequalities. Which of the following points satisfies this system?</p><p class="math">\(\begin{cases}y\ge x-1\\y&lt;3\end{cases}\)</p>`,
         choices: [
-          String.raw`(2,3)`,
-          String.raw`(2,0)`,
-          String.raw`(4,2)`,
-          String.raw`(-1,-2)`,
-          String.raw`(3,1)`,
-          String.raw`(-1,3)`
+          String.raw`\((2,3)\)`,
+          String.raw`\((2,0)\)`,
+          String.raw`\((4,2)\)`,
+          String.raw`\((-1,-2)\)`,
+          String.raw`\((3,1)\)`,
+          String.raw`\((-1,3)\)`
         ],
       },
       // Q4: above x-axis and below solid y=-x/4+2
@@ -82,17 +82,17 @@
         stem: String.raw`<p>Figure 2 shows a region bounded in part by a horizontal line and a sloping line. Which system is represented?</p>`,
         media: String.raw`<figure><img src="7-10-4.png" alt="Graph or graphs for Question 4" /><figcaption>Figure 2</figcaption></figure>`,
         choices: [
-          String.raw`\begin{cases}y\le0\\x+4y\le8\end{cases}`,
-          String.raw`\begin{cases}y\ge0\\x+4y\ge8\end{cases}`,
-          String.raw`\begin{cases}y\ge0\\x+4y\le8\end{cases}`,
-          String.raw`\begin{cases}y>0\\x+4y\le8\end{cases}`,
-          String.raw`\begin{cases}y\ge0\\x-4y\le8\end{cases}`,
-          String.raw`\begin{cases}y\ge0\\x+4y<8\end{cases}`
+          String.raw`\(\begin{cases}y\le0\\x+4y\le8\end{cases}\)`,
+          String.raw`\(\begin{cases}y\ge0\\x+4y\ge8\end{cases}\)`,
+          String.raw`\(\begin{cases}y\ge0\\x+4y\le8\end{cases}\)`,
+          String.raw`\(\begin{cases}y&gt;0\\x+4y\le8\end{cases}\)`,
+          String.raw`\(\begin{cases}y\ge0\\x-4y\le8\end{cases}\)`,
+          String.raw`\(\begin{cases}y\ge0\\x+4y&lt;8\end{cases}\)`
         ],
       },
       // Q5: intersection (3,1), excluded on strict upper boundary
       {
-        stem: String.raw`<p>Consider the system below. Where do its boundary lines intersect, and does the intersection point belong to the solution region?</p><p class="math">\(\begin{cases}y\ge x-2\\y<-x+4\end{cases}\)</p>`,
+        stem: String.raw`<p>Consider the system below. Where do its boundary lines intersect, and does the intersection point belong to the solution region?</p><p class="math">\(\begin{cases}y\ge x-2\\y&lt;-x+4\end{cases}\)</p>`,
         choices: [
           String.raw`They intersect at \((3,1)\), which is included.`,
           String.raw`They intersect at \((1,3)\), which is included.`,
@@ -105,15 +105,15 @@
       },
       // Q6: A is solid y=2, dashed y=-x+1, shaded between
       {
-        stem: String.raw`<p>Sketch the common solution of the system, then determine which of the six small graphs in Figure 3 agrees with your sketch.</p><p class="math">\(\begin{cases}y\le2\\y>-x+1\end{cases}\)</p>`,
+        stem: String.raw`<p>Sketch the common solution of the system, then determine which of the six small graphs in Figure 3 agrees with your sketch.</p><p class="math">\(\begin{cases}y\le2\\y&gt;-x+1\end{cases}\)</p>`,
         media: String.raw`<figure><img src="7-10-6.png" alt="Graph or graphs for Question 6" /><figcaption>Figure 3</figcaption></figure>`,
         choices: [
-          String.raw`\text{Graph A}`,
-          String.raw`\text{Graph B}`,
-          String.raw`\text{Graph C}`,
-          String.raw`\text{Graph D}`,
-          String.raw`\text{Graph E}`,
-          String.raw`\text{Graph F}`
+          String.raw`Graph A`,
+          String.raw`Graph B`,
+          String.raw`Graph C`,
+          String.raw`Graph D`,
+          String.raw`Graph E`,
+          String.raw`Graph F`
         ],
       },
       // Q7: above solid y=-x+2 and above dashed y=x-4
@@ -121,12 +121,12 @@
         stem: String.raw`<p>Figure 4 has two sloping boundaries. Which system describes the common shaded region?</p>`,
         media: String.raw`<figure><img src="7-10-7.png" alt="Graph or graphs for Question 7" /><figcaption>Figure 4</figcaption></figure>`,
         choices: [
-          String.raw`\begin{cases}y>-x+2\\y\ge x-4\end{cases}`,
-          String.raw`\begin{cases}y\le-x+2\\y>x-4\end{cases}`,
-          String.raw`\begin{cases}y\ge-x+2\\y<x-4\end{cases}`,
-          String.raw`\begin{cases}y\ge-x+2\\y\ge x-4\end{cases}`,
-          String.raw`\begin{cases}y\ge-x+2\\y>x-4\end{cases}`,
-          String.raw`\begin{cases}y>-x+2\\y>x-4\end{cases}`
+          String.raw`\(\begin{cases}y&gt;-x+2\\y\ge x-4\end{cases}\)`,
+          String.raw`\(\begin{cases}y\le-x+2\\y&gt;x-4\end{cases}\)`,
+          String.raw`\(\begin{cases}y\ge-x+2\\y&lt;x-4\end{cases}\)`,
+          String.raw`\(\begin{cases}y\ge-x+2\\y\ge x-4\end{cases}\)`,
+          String.raw`\(\begin{cases}y\ge-x+2\\y&gt;x-4\end{cases}\)`,
+          String.raw`\(\begin{cases}y&gt;-x+2\\y&gt;x-4\end{cases}\)`
         ],
       },
       // Q8: lower parallel solid bound, upper dashed bound
@@ -134,36 +134,36 @@
         stem: String.raw`<p>Figure 5 shows a region between two parallel lines. Which system describes exactly the shaded strip, including the indicated boundaries correctly?</p>`,
         media: String.raw`<figure><img src="7-10-8.png" alt="Graph or graphs for Question 8" /><figcaption>Figure 5</figcaption></figure>`,
         choices: [
-          String.raw`\begin{cases}x+2y\le-4\\x+2y<6\end{cases}`,
-          String.raw`\begin{cases}x+2y\ge-4\\x+2y<6\end{cases}`,
-          String.raw`\begin{cases}x+2y>-4\\x+2y\le6\end{cases}`,
-          String.raw`\begin{cases}x+2y\ge6\\x+2y\le-4\end{cases}`,
-          String.raw`\begin{cases}x-2y\ge-4\\x+2y<6\end{cases}`,
-          String.raw`\begin{cases}x+2y\ge-4\\x+2y>6\end{cases}`
+          String.raw`\(\begin{cases}x+2y\le-4\\x+2y&lt;6\end{cases}\)`,
+          String.raw`\(\begin{cases}x+2y\ge-4\\x+2y&lt;6\end{cases}\)`,
+          String.raw`\(\begin{cases}x+2y&gt;-4\\x+2y\le6\end{cases}\)`,
+          String.raw`\(\begin{cases}x+2y\ge6\\x+2y\le-4\end{cases}\)`,
+          String.raw`\(\begin{cases}x-2y\ge-4\\x+2y&lt;6\end{cases}\)`,
+          String.raw`\(\begin{cases}x+2y\ge-4\\x+2y&gt;6\end{cases}\)`
         ],
       },
       // Q9: impossible both >= and < same line
       {
         stem: String.raw`<p>One of the following systems has no solution. Which one?</p>`,
         choices: [
-          String.raw`\begin{cases}y>x+1\\y<x+3\end{cases}`,
-          String.raw`\begin{cases}y\ge x+1\\y\le x+1\end{cases}`,
-          String.raw`\begin{cases}y\ge x+1\\y<x+1\end{cases}`,
-          String.raw`\begin{cases}y\le x+3\\y\ge x+1\end{cases}`,
-          String.raw`\begin{cases}y>x+3\\y>x+1\end{cases}`,
-          String.raw`\begin{cases}y\le x+1\\y<x+3\end{cases}`
+          String.raw`\(\begin{cases}y&gt;x+1\\y&lt;x+3\end{cases}\)`,
+          String.raw`\(\begin{cases}y\ge x+1\\y\le x+1\end{cases}\)`,
+          String.raw`\(\begin{cases}y\ge x+1\\y&lt;x+1\end{cases}\)`,
+          String.raw`\(\begin{cases}y\le x+3\\y\ge x+1\end{cases}\)`,
+          String.raw`\(\begin{cases}y&gt;x+3\\y&gt;x+1\end{cases}\)`,
+          String.raw`\(\begin{cases}y\le x+1\\y&lt;x+3\end{cases}\)`
         ],
       },
       // Q10: more restrictive parallel bound makes the other redundant
       {
-        stem: String.raw`<p>Consider the system below. Which single inequality describes exactly the same solution region?</p><p class="math">\(\begin{cases}y>2x+3\\y>2x-1\end{cases}\)</p>`,
+        stem: String.raw`<p>Consider the system below. Which single inequality describes exactly the same solution region?</p><p class="math">\(\begin{cases}y&gt;2x+3\\y&gt;2x-1\end{cases}\)</p>`,
         choices: [
-          String.raw`y>2x-1`,
-          String.raw`y\ge2x+3`,
-          String.raw`y>2x+4`,
-          String.raw`2x-1<y<2x+3`,
-          String.raw`y>2x+2`,
-          String.raw`y>2x+3`
+          String.raw`\(y&gt;2x-1\)`,
+          String.raw`\(y\ge2x+3\)`,
+          String.raw`\(y&gt;2x+4\)`,
+          String.raw`\(2x-1&lt;y&lt;2x+3\)`,
+          String.raw`\(y&gt;2x+2\)`,
+          String.raw`\(y&gt;2x+3\)`
         ],
       },
       // Q11: closed triangle x>=0,y>=0,x+y<=4
@@ -171,36 +171,36 @@
         stem: String.raw`<p>Figure 6 shows a triangular region, including all three of its sides. Which system describes it?</p>`,
         media: String.raw`<figure><img src="7-10-11.png" alt="Graph or graphs for Question 11" /><figcaption>Figure 6</figcaption></figure>`,
         choices: [
-          String.raw`\begin{cases}x>0\\y\ge0\\x+y\le4\end{cases}`,
-          String.raw`\begin{cases}x\ge0\\y>0\\x+y\le4\end{cases}`,
-          String.raw`\begin{cases}x\ge0\\y\ge0\\x+y<4\end{cases}`,
-          String.raw`\begin{cases}x\ge0\\y\ge0\\x+y\le4\end{cases}`,
-          String.raw`\begin{cases}x\le0\\y\ge0\\x+y\le4\end{cases}`,
-          String.raw`\begin{cases}x\ge0\\y\ge0\\x+y\ge4\end{cases}`
+          String.raw`\(\begin{cases}x&gt;0\\y\ge0\\x+y\le4\end{cases}\)`,
+          String.raw`\(\begin{cases}x\ge0\\y&gt;0\\x+y\le4\end{cases}\)`,
+          String.raw`\(\begin{cases}x\ge0\\y\ge0\\x+y&lt;4\end{cases}\)`,
+          String.raw`\(\begin{cases}x\ge0\\y\ge0\\x+y\le4\end{cases}\)`,
+          String.raw`\(\begin{cases}x\le0\\y\ge0\\x+y\le4\end{cases}\)`,
+          String.raw`\(\begin{cases}x\ge0\\y\ge0\\x+y\ge4\end{cases}\)`
         ],
       },
       // Q12: (-1,-1) satisfies the two sloping inequalities but lies left of x>=0
       {
-        stem: String.raw`<p>Figure 7 shows a shaded region between two parallel lines, restricted to one side of the vertical axis. A student claims that the two inequalities below, <em>by themselves</em>, describe the entire shaded region.</p><p class="math">\(\begin{cases}y\ge x-1\\y<x+2\end{cases}\)</p><p>Which point demonstrates that the student has omitted a necessary condition?</p>`,
+        stem: String.raw`<p>Figure 7 shows a shaded region between two parallel lines, restricted to one side of the vertical axis. A student claims that the two inequalities below, <em>by themselves</em>, describe the entire shaded region.</p><p class="math">\(\begin{cases}y\ge x-1\\y&lt;x+2\end{cases}\)</p><p>Which point demonstrates that the student has omitted a necessary condition?</p>`,
         media: String.raw`<figure><img src="7-10-12.png" alt="Graph or graphs for Question 12" /><figcaption>Figure 7</figcaption></figure>`,
         choices: [
-          String.raw`(-1,-1)`,
-          String.raw`(1,1)`,
-          String.raw`(-1,2)`,
-          String.raw`(1,-1)`,
-          String.raw`(0,2)`,
-          String.raw`(2,4)`
+          String.raw`\((-1,-1)\)`,
+          String.raw`\((1,1)\)`,
+          String.raw`\((-1,2)\)`,
+          String.raw`\((1,-1)\)`,
+          String.raw`\((0,2)\)`,
+          String.raw`\((2,4)\)`
         ],
       },
       // Q13: strict vs nonstrict affects exactly x=3
       {
-        stem: String.raw`<p>Compare the systems below. In each system, for which values of \(x\) is there at least one value of \(y\) satisfying both inequalities?</p><p class="math">\(\text{I:}\ \begin{cases}y\ge x-2\\y<-x+4\end{cases}\qquad\text{II:}\ \begin{cases}y\ge x-2\\y\le-x+4\end{cases}\)</p>`,
+        stem: String.raw`<p>Compare the systems below. In each system, for which values of \(x\) is there at least one value of \(y\) satisfying both inequalities?</p><p class="math">\(\text{I:}\ \begin{cases}y\ge x-2\\y&lt;-x+4\end{cases}\qquad\text{II:}\ \begin{cases}y\ge x-2\\y\le-x+4\end{cases}\)</p>`,
         choices: [
-          String.raw`I: \(x\le3\); II: \(x<3\).`,
+          String.raw`I: \(x\le3\); II: \(x&lt;3\).`,
           String.raw`Both systems: \(x\le3\).`,
-          String.raw`Both systems: \(x<3\).`,
-          String.raw`I: \(x>3\); II: \(x\ge3\).`,
-          String.raw`I: \(x<3\); II: \(x\le3\).`,
+          String.raw`Both systems: \(x&lt;3\).`,
+          String.raw`I: \(x&gt;3\); II: \(x\ge3\).`,
+          String.raw`I: \(x&lt;3\); II: \(x\le3\).`,
           String.raw`I: \(x\ge3\); II: \(x\ge3\).`
         ],
         choiceWrap: false,
@@ -209,36 +209,36 @@
       {
         stem: String.raw`<p>Which system has as its entire solution set the line \(y=-x+2\), with every point of that line included and no other points?</p>`,
         choices: [
-          String.raw`\begin{cases}y\ge-x+2\\y\ge-x+2\end{cases}`,
-          String.raw`\begin{cases}y>-x+2\\y\le-x+2\end{cases}`,
-          String.raw`\begin{cases}y\ge-x+2\\y\le-x+2\end{cases}`,
-          String.raw`\begin{cases}y\ge-x+2\\y\le-x+3\end{cases}`,
-          String.raw`\begin{cases}y\le-x+2\\y\le-x+2\end{cases}`,
-          String.raw`\begin{cases}y>-x+2\\y<-x+3\end{cases}`
+          String.raw`\(\begin{cases}y\ge-x+2\\y\ge-x+2\end{cases}\)`,
+          String.raw`\(\begin{cases}y&gt;-x+2\\y\le-x+2\end{cases}\)`,
+          String.raw`\(\begin{cases}y\ge-x+2\\y\le-x+2\end{cases}\)`,
+          String.raw`\(\begin{cases}y\ge-x+2\\y\le-x+3\end{cases}\)`,
+          String.raw`\(\begin{cases}y\le-x+2\\y\le-x+2\end{cases}\)`,
+          String.raw`\(\begin{cases}y&gt;-x+2\\y&lt;-x+3\end{cases}\)`
         ],
       },
       // Q15: triangle already has y<=4; y<=5 is redundant
       {
         stem: String.raw`<p>Consider the triangular region described by</p><p class="math">\(\begin{cases}x\ge0\\y\ge0\\x+y\le4\end{cases}\)</p><p>Which additional inequality could be included without changing its solution region at all?</p>`,
         choices: [
-          String.raw`x\le3`,
-          String.raw`y\le5`,
-          String.raw`y\ge1`,
-          String.raw`x+y\le3`,
-          String.raw`x\ge1`,
-          String.raw`x+y\ge1`
+          String.raw`\(x\le3\)`,
+          String.raw`\(y\le5\)`,
+          String.raw`\(y\ge1\)`,
+          String.raw`\(x+y\le3\)`,
+          String.raw`\(x\ge1\)`,
+          String.raw`\(x+y\ge1\)`
         ],
       },
       // Q16: triangle bounded but hypotenuse omitted
       {
         stem: String.raw`<p>Which system describes a <em>nonempty bounded region</em> whose boundary includes a line segment that is <em>not included</em> in the solution?</p>`,
         choices: [
-          String.raw`\begin{cases}x\ge0\\y\ge0\\x+y\le5\end{cases}`,
-          String.raw`\begin{cases}x\ge0\\y\ge0\\x+y\ge5\end{cases}`,
-          String.raw`\begin{cases}x>0\\y>0\\x+y>5\end{cases}`,
-          String.raw`\begin{cases}x\le0\\y\le0\\x+y\le5\end{cases}`,
-          String.raw`\begin{cases}x\ge0\\y\ge0\\x-y<5\end{cases}`,
-          String.raw`\begin{cases}x\ge0\\y\ge0\\x+y<5\end{cases}`
+          String.raw`\(\begin{cases}x\ge0\\y\ge0\\x+y\le5\end{cases}\)`,
+          String.raw`\(\begin{cases}x\ge0\\y\ge0\\x+y\ge5\end{cases}\)`,
+          String.raw`\(\begin{cases}x&gt;0\\y&gt;0\\x+y&gt;5\end{cases}\)`,
+          String.raw`\(\begin{cases}x\le0\\y\le0\\x+y\le5\end{cases}\)`,
+          String.raw`\(\begin{cases}x\ge0\\y\ge0\\x-y&lt;5\end{cases}\)`,
+          String.raw`\(\begin{cases}x\ge0\\y\ge0\\x+y&lt;5\end{cases}\)`
         ],
       }
     ]
