@@ -22,7 +22,8 @@
   MODEL-AUTHORED/REWORKED ITEMS:
   - All question stems and answer alternatives have been edited or
     re-authored; each question also has an individual source note.
-  - Q2: contrast principal square root with the solutions of an equation.
+  - Q2: gently introduce the principal square root with numerical
+    examples, then contrast it with all solutions of an equation.
   - Q3/Q5: even/odd roots and the necessary absolute-value condition.
   - Q6: square-root product rule fails across negative real radicands.
   - Q10: equality of complex numbers is componentwise.
@@ -59,7 +60,7 @@
       },
       // Q2: 8-1 #2,#7,#8, reworked distinction
       {
-        stem: String.raw`<p>Consider the principal square root \(\sqrt{-25}\) and the equation \(x^2=-25\). Which choice correctly gives both the square root and <em>all</em> solutions of the equation, in that order?</p>`,
+        stem: String.raw`<p>Both \(3\) and \(-3\) have square \(9\), but the symbol \(\sqrt{9}\) means just \(3\). This chosen value is called the <em>principal square root</em>. In the same way, both \(3i\) and \(-3i\) have square \(-9\), but we write \(\sqrt{-9}=3i\).</p><p>Which choice gives \(\sqrt{-25}\) and <em>all</em> solutions of \(x^2=-25\), in that order?</p>`,
         choices: [
           String.raw`\(5i;\quad x=5i\)`,
           String.raw`\(-5i;\quad x=\pm5i\)`,
@@ -111,7 +112,7 @@
       },
       // Q6: model authored: square-root product rule hypotheses
       {
-        stem: String.raw`<p>Let \(A=\sqrt{-4}\,\sqrt{-9}\) and \(B=\sqrt{(-4)(-9)}\), where each square root denotes its principal value. Which ordered pair \((A,B)\) is correct?</p>`,
+        stem: String.raw`<p>Let \(A=\sqrt{-4}\,\sqrt{-9}\) and \(B=\sqrt{(-4)(-9)}\). Use the meaning of the square-root symbol explained in Question 2. Which ordered pair \((A,B)\) is correct?</p>`,
         choices: [
           String.raw`\((6,6)\)`,
           String.raw`\((-6,-6)\)`,
@@ -319,7 +320,7 @@
       },
       // Q22: model authored: synthesis of 8-1 and 8-3
       {
-        stem: String.raw`<p>Evaluate \(\bigl(\sqrt{-9}+\sqrt4\bigr)^2\), taking the principal value of each square root. Express the answer in the form \(a+bi\).</p>`,
+        stem: String.raw`<p>Evaluate \(\bigl(\sqrt{-9}+\sqrt4\bigr)^2\), using the same square-root convention as in Question 2. Express the answer in the form \(a+bi\).</p>`,
         choices: [
           String.raw`\(13+12i\)`,
           String.raw`\(-5+12i\)`,
