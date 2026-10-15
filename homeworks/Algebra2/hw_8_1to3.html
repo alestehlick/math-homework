@@ -1,0 +1,343 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Homework 8-1 to 8-3 — Radicals and Complex Numbers (Algebra 2)</title>
+  <script>
+    /* ============================================================
+  Algebra 2 — Homework 8-1 through 8-3
+  Radicals, complex numbers, addition and multiplication
+
+  REQUIRED SOURCE SETS (user-supplied HTML pages):
+  - Algebra 2 hw_8_1.html, source questions: #1-#12.
+    Material retained or reworked in final Q1-Q8; the distinction
+    between principal square roots and equation solutions is explicit.
+  - Algebra 2 hw_8_2.html, source questions: #3, #4, #6-#9, #11.
+    Material retained or reworked in final Q9-Q14.
+  - Algebra 2 hw_8_3.html, source questions: #2-#7, #10-#11.
+    Material retained or reworked in final Q15-Q22.
+  - The sources inform the progression but are not copied verbatim.
+
+  MODEL-AUTHORED/REWORKED ITEMS:
+  - All question stems and answer alternatives have been edited or
+    re-authored; each question also has an individual source note.
+  - Q2: contrast principal square root with the solutions of an equation.
+  - Q3/Q5: even/odd roots and the necessary absolute-value condition.
+  - Q6: square-root product rule fails across negative real radicands.
+  - Q10: equality of complex numbers is componentwise.
+  - Q14: vanishing real part under complex addition.
+  - Q17: conjugate products and why the imaginary terms cancel.
+  - Q19: vanishing imaginary part under multiplication.
+  - Q21: reverse a complex-number multiplication.
+  - Q22: synthesis of radical arithmetic and complex multiplication.
+
+  FIGURES: none required, none supplied, none generated.
+  Naming rule, if future figures are added: model-generated images
+  8-1-<final-question-number>.png beside the HTML; user-provided
+  images would follow original source question numbering.
+  ============================================================ */
+    window.homeworkData = {
+      classId: "Algebra2",
+      id: "Homework 8-1 to 8-3",
+      title: "Homework 8-1 to 8-3 — Radicals and Complex Numbers",
+      graphics: String.raw``,
+      answerKey: ["C","F","E","A","B","C","F","D","A","B","D","E","A","C","D","C","B","E","D","A","F","B"],
+      questions: [
+      // Q1: 8-1 #1, reworked
+      {
+        stem: String.raw`<p>Simplify the radical \(\sqrt{72}\). Give the answer in simplest radical form.</p>`,
+        choices: [
+          String.raw`\(3\sqrt{2}\)`,
+          String.raw`\(6\sqrt{3}\)`,
+          String.raw`\(6\sqrt{2}\)`,
+          String.raw`\(12\sqrt{2}\)`,
+          String.raw`\(3\sqrt{6}\)`,
+          String.raw`\(2\sqrt{6}\)`
+        ],
+        choiceWrap: false
+      },
+      // Q2: 8-1 #2,#7,#8, reworked distinction
+      {
+        stem: String.raw`<p>Consider the principal square root \(\sqrt{-25}\) and the equation \(x^2=-25\). Which choice correctly gives both the square root and <em>all</em> solutions of the equation, in that order?</p>`,
+        choices: [
+          String.raw`\(5i;\quad x=5i\)`,
+          String.raw`\(-5i;\quad x=\pm5i\)`,
+          String.raw`\(5i;\quad x=\pm5\)`,
+          String.raw`\(\pm5i;\quad x=\pm5i\)`,
+          String.raw`\(5;\quad x=\pm5i\)`,
+          String.raw`\(5i;\quad x=\pm5i\)`
+        ],
+        choiceWrap: false
+      },
+      // Q3: 8-1 #9,#10,#12, conceptual merger
+      {
+        stem: String.raw`<p>Which pair of identities holds for <em>every real number</em> \(x\)? The first identity concerns an even root and the second an odd root.</p>`,
+        choices: [
+          String.raw`\(\sqrt{36x^2}=6x,\quad \sqrt[3]{-8x^3}=-2x\)`,
+          String.raw`\(\sqrt{36x^2}=6|x|,\quad \sqrt[3]{-8x^3}=-2|x|\)`,
+          String.raw`\(\sqrt{36x^2}=6|x|,\quad \sqrt[3]{-8x^3}=2x\)`,
+          String.raw`\(\sqrt{36x^2}=\pm6x,\quad \sqrt[3]{-8x^3}=-2x\)`,
+          String.raw`\(\sqrt{36x^2}=6|x|,\quad \sqrt[3]{-8x^3}=-2x\)`,
+          String.raw`\(\sqrt{36x^2}=6x,\quad \sqrt[3]{-8x^3}=-2|x|\)`
+        ],
+        choiceWrap: false
+      },
+      // Q4: 8-1 #5,#10, reworked
+      {
+        stem: String.raw`<p>Simplify \(\sqrt[3]{-250x^6y^4}\), where \(x\) and \(y\) are real numbers.</p>`,
+        choices: [
+          String.raw`\(-5x^2y\sqrt[3]{2y}\)`,
+          String.raw`\(-5x^2y^2\sqrt[3]{2}\)`,
+          String.raw`\(-5x^2\sqrt[3]{2y}\)`,
+          String.raw`\(5x^2y\sqrt[3]{2y}\)`,
+          String.raw`\(-5x^2y\sqrt[3]{2y^2}\)`,
+          String.raw`\(-25x^2y\sqrt[3]{2y}\)`
+        ],
+        choiceWrap: false
+      },
+      // Q5: 8-1 #4,#6, corrected variable assumptions
+      {
+        stem: String.raw`<p>Let \(a\) be any nonzero real number and let \(b>0\). Simplify \(\sqrt{-200a^2b}\), using \(i=\sqrt{-1}\).</p>`,
+        choices: [
+          String.raw`\(10ai\sqrt{2b}\)`,
+          String.raw`\(10|a|i\sqrt{2b}\)`,
+          String.raw`\(10|a|\sqrt{2b}\)`,
+          String.raw`\(20|a|i\sqrt{b}\)`,
+          String.raw`\(10|a|i\sqrt{b}\)`,
+          String.raw`\(-10|a|i\sqrt{2b}\)`
+        ],
+        choiceWrap: false
+      },
+      // Q6: model authored: square-root product rule hypotheses
+      {
+        stem: String.raw`<p>Let \(A=\sqrt{-4}\,\sqrt{-9}\) and \(B=\sqrt{(-4)(-9)}\), where each square root denotes its principal value. Which ordered pair \((A,B)\) is correct?</p>`,
+        choices: [
+          String.raw`\((6,6)\)`,
+          String.raw`\((-6,-6)\)`,
+          String.raw`\((-6,6)\)`,
+          String.raw`\((6,-6)\)`,
+          String.raw`\((-6i,6i)\)`,
+          String.raw`\((6i,-6i)\)`
+        ],
+        choiceWrap: false
+      },
+      // Q7: 8-1 #3, reworked
+      {
+        stem: String.raw`<p>Compute \(i^{38}+i^{15}\). Express the answer in the form \(a+bi\).</p>`,
+        choices: [
+          String.raw`\(1-i\)`,
+          String.raw`\(-1+i\)`,
+          String.raw`\(1+i\)`,
+          String.raw`\(-2i\)`,
+          String.raw`\(-2\)`,
+          String.raw`\(-1-i\)`
+        ],
+        choiceWrap: false
+      },
+      // Q8: 8-1 #7,#8,#11, unified
+      {
+        stem: String.raw`<p>Solve \(x^2+50=0\) in the complex numbers. Give <em>all</em> solutions in simplest radical form.</p>`,
+        choices: [
+          String.raw`\(x=\pm5\sqrt2\)`,
+          String.raw`\(x=\pm 25i\)`,
+          String.raw`\(x=\pm10i\)`,
+          String.raw`\(x=\pm5\sqrt2\,i\)`,
+          String.raw`\(x=\pm5i\)`,
+          String.raw`\(x=\pm10\sqrt2\,i\)`
+        ],
+        choiceWrap: false
+      },
+      // Q9: 8-2 #3,#4,#6, combined
+      {
+        stem: String.raw`<p>Let \(z=\dfrac{6-15i}{3}+2i\). Determine the real part and the imaginary part of \(z\). Recall that both parts are <em>real numbers</em>.</p>`,
+        choices: [
+          String.raw`\(\operatorname{Re}(z)=2,\ \operatorname{Im}(z)=-3\)`,
+          String.raw`\(\operatorname{Re}(z)=2,\ \operatorname{Im}(z)=-5\)`,
+          String.raw`\(\operatorname{Re}(z)=2,\ \operatorname{Im}(z)=3\)`,
+          String.raw`\(\operatorname{Re}(z)=6,\ \operatorname{Im}(z)=-13\)`,
+          String.raw`\(\operatorname{Re}(z)=-3,\ \operatorname{Im}(z)=2\)`,
+          String.raw`\(\operatorname{Re}(z)=3,\ \operatorname{Im}(z)=-2\)`
+        ],
+        choiceWrap: false
+      },
+      // Q10: model authored: equality of complex numbers
+      {
+        stem: String.raw`<p>The real numbers \(a\) and \(b\) satisfy \((2a-1)+(b+3)i=7-2i\). Determine the ordered pair \((a,b)\).</p>`,
+        choices: [
+          String.raw`\((3,-5)\)`,
+          String.raw`\((4,-5)\)`,
+          String.raw`\((4,1)\)`,
+          String.raw`\((3,-2)\)`,
+          String.raw`\((4,-2)\)`,
+          String.raw`\((-4,5)\)`
+        ],
+        choiceWrap: false
+      },
+      // Q11: 8-2 #8, reworked
+      {
+        stem: String.raw`<p>Express the sum \((5-3i)+(-8+7i)\) in the form \(a+bi\).</p>`,
+        choices: [
+          String.raw`\(3+4i\)`,
+          String.raw`\(-3-10i\)`,
+          String.raw`\(-13+4i\)`,
+          String.raw`\(-3+4i\)`,
+          String.raw`\(13-4i\)`,
+          String.raw`\(-3+10i\)`
+        ],
+        choiceWrap: false
+      },
+      // Q12: 8-2 #7,#9, reworked
+      {
+        stem: String.raw`<p>Simplify \((2-5i)-(-4+3i)\) and express the result in the form \(a+bi\).</p>`,
+        choices: [
+          String.raw`\(-2-2i\)`,
+          String.raw`\(6-2i\)`,
+          String.raw`\(6+8i\)`,
+          String.raw`\(-2-8i\)`,
+          String.raw`\(6-8i\)`,
+          String.raw`\(2-8i\)`
+        ],
+        choiceWrap: false
+      },
+      // Q13: 8-2 #11, repairs unsimplified original
+      {
+        stem: String.raw`<p>Simplify \((\sqrt3-\sqrt6\,i)+(\sqrt{27}+\sqrt{54}\,i)\). Express the result in the form \(a+bi\), with radicals simplified.</p>`,
+        choices: [
+          String.raw`\(4\sqrt3+2\sqrt6\,i\)`,
+          String.raw`\(4\sqrt3+4\sqrt6\,i\)`,
+          String.raw`\(4\sqrt3-2\sqrt6\,i\)`,
+          String.raw`\(2\sqrt3+2\sqrt6\,i\)`,
+          String.raw`\(4\sqrt3+2\sqrt6\)`,
+          String.raw`\(\sqrt{30}+2\sqrt6\,i\)`
+        ],
+        choiceWrap: false
+      },
+      // Q14: model authored: classify sums without pattern matching
+      {
+        stem: String.raw`<p>Two complex numbers are \(z=(t+2)+(3-t)i\) and \(w=(4-2t)+(t+1)i\), where \(t\) is real. For which value of \(t\) is their sum <em>purely imaginary and nonzero</em>?</p>`,
+        choices: [
+          String.raw`\(2\)`,
+          String.raw`\(-6\)`,
+          String.raw`\(6\)`,
+          String.raw`\(3\)`,
+          String.raw`\(-2\)`,
+          String.raw`\(0\)`
+        ],
+        choiceWrap: false
+      },
+      // Q15: 8-3 #7, reworked
+      {
+        stem: String.raw`<p>Compute \((4-3i)i\) and write the answer in the form \(a+bi\).</p>`,
+        choices: [
+          String.raw`\(4+3i\)`,
+          String.raw`\(-3+4i\)`,
+          String.raw`\(3-4i\)`,
+          String.raw`\(3+4i\)`,
+          String.raw`\(-4+3i\)`,
+          String.raw`\(4-3i\)`
+        ],
+        choiceWrap: false
+      },
+      // Q16: 8-3 #2-#6, distilled
+      {
+        stem: String.raw`<p>Expand and simplify the product \((3+2i)(4-i)\).</p>`,
+        choices: [
+          String.raw`\(10+5i\)`,
+          String.raw`\(14-5i\)`,
+          String.raw`\(14+5i\)`,
+          String.raw`\(10-5i\)`,
+          String.raw`\(12+5i\)`,
+          String.raw`\(14+11i\)`
+        ],
+        choiceWrap: false
+      },
+      // Q17: model authored: discover conjugate-product structure
+      {
+        stem: String.raw`<p>Let \(a\) and \(b\) be real numbers. Which identity holds for <em>every</em> such pair?</p>`,
+        choices: [
+          String.raw`\((a+bi)(a-bi)=a^2-b^2\)`,
+          String.raw`\((a+bi)(a-bi)=a^2+b^2\)`,
+          String.raw`\((a+bi)(a-bi)=(a-b)^2\)`,
+          String.raw`\((a+bi)(a-bi)=a^2+b^2i\)`,
+          String.raw`\((a+bi)(a-bi)=a^2-b^2i\)`,
+          String.raw`\((a+bi)(a-bi)=(a+b)^2\)`
+        ],
+        choiceWrap: false
+      },
+      // Q18: 8-3 #10, reworked
+      {
+        stem: String.raw`<p>Simplify \((2-\sqrt3\,i)^2\). Give the result in the form \(a+bi\).</p>`,
+        choices: [
+          String.raw`\(7-4\sqrt3\,i\)`,
+          String.raw`\(1+4\sqrt3\,i\)`,
+          String.raw`\(1-2\sqrt3\,i\)`,
+          String.raw`\(7+4\sqrt3\,i\)`,
+          String.raw`\(1-4\sqrt3\,i\)`,
+          String.raw`\(-1-4\sqrt3\,i\)`
+        ],
+        choiceWrap: false
+      },
+      // Q19: model authored: vanishing imaginary component under multiplication
+      {
+        stem: String.raw`<p>For which real number \(t\) is the product \((t+2i)(3-i)\) a real number?</p>`,
+        choices: [
+          String.raw`\(-6\)`,
+          String.raw`\(-2\)`,
+          String.raw`\(2\)`,
+          String.raw`\(6\)`,
+          String.raw`\(3\)`,
+          String.raw`\(-3\)`
+        ],
+        choiceWrap: false
+      },
+      // Q20: 8-3 #11, retained calculation, new distractors
+      {
+        stem: String.raw`<p>Compute \((1+2i)^3\). Write the result in the form \(a+bi\).</p>`,
+        choices: [
+          String.raw`\(-11-2i\)`,
+          String.raw`\(-11+2i\)`,
+          String.raw`\(-7+24i\)`,
+          String.raw`\(1+8i\)`,
+          String.raw`\(-11-6i\)`,
+          String.raw`\(11-2i\)`
+        ],
+        choiceWrap: false
+      },
+      // Q21: model authored: converse use of multiplication
+      {
+        stem: String.raw`<p>Which complex number \(z\) satisfies \((1+i)z=-2+6i\)?</p>`,
+        choices: [
+          String.raw`\(4+2i\)`,
+          String.raw`\(2-4i\)`,
+          String.raw`\(-2+4i\)`,
+          String.raw`\(4-2i\)`,
+          String.raw`\(-2-4i\)`,
+          String.raw`\(2+4i\)`
+        ],
+        choiceWrap: false
+      },
+      // Q22: model authored: synthesis of 8-1 and 8-3
+      {
+        stem: String.raw`<p>Evaluate \(\bigl(\sqrt{-9}+\sqrt4\bigr)^2\), taking the principal value of each square root. Express the answer in the form \(a+bi\).</p>`,
+        choices: [
+          String.raw`\(13+12i\)`,
+          String.raw`\(-5+12i\)`,
+          String.raw`\(-5-12i\)`,
+          String.raw`\(5+12i\)`,
+          String.raw`\(-13+12i\)`,
+          String.raw`\(-5+6i\)`
+        ],
+        choiceWrap: false
+      }
+      ]
+    };
+  </script>
+  <link rel="stylesheet" href="/math-homework/assets/core-rich.css" />
+  <script defer src="/math-homework/assets/core-rich.js"></script>
+  <script defer src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+</head>
+<body>
+  <div id="hw-root">Loading…</div>
+</body>
+</html>
