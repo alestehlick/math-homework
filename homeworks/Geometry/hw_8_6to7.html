@@ -26,14 +26,14 @@
 
        EDITORIAL CURATION AND QUESTION PROVENANCE:
        Q1 ← prior 8-6 Q1: right rectangular prism; A #1–#2.
-       Q2 ← prior 8-6 Q3: regular-polygon base, apothem; A #3, #5, #8; C #19.
+       Q2 ← prior 8-6 Q3: regular-polygon base, apothem; A #3, #5, #8; C #19. Corrected to a geometrically realizable square base (p=32, a=4); answer 416.
        Q3 ← prior 8-6 Q4: triangular base and Pythagorean theorem; A #2–#3.
        Q4 ← prior 8-6 Q5: model-authored equal base area, unequal perimeter.
        Q5 ← prior 8-6 Q6: right circular cylinder; worked Fig. 8.31.
        Q6 ← prior 8-6 Q8: painted curved surface; A #9 application.
-       Q7 ← prior 8-6 Q10: model-authored oblique prism face altitudes.
+       Q7 ← prior 8-6 Q10: model-authored oblique prism face altitudes. Dimension arrows distinguish base edge 6 from horizontal offset 5.
        Q8 ← prior 8-6 Q11: model-authored proof/sufficiency comparison.
-       Q9 ← prior 8-6 Q12: model-authored axial section of oblique cylinder.
+       Q9 ← prior 8-6 Q12: model-authored axial section of oblique cylinder. Dimension arrows distinguish full diameter 10 from center displacement 9.
        Q10 ← prior 8-6 Q13: model-authored curved area inequality.
        Q11 ← prior 8-7 Q1: regular square pyramid; pyramids table, C #19.
        Q12 ← prior 8-7 Q2: model-authored face height versus solid height.
@@ -55,7 +55,7 @@
          8-6-17.png, 8-6-18.png, 8-6-19.png.
        - PNG naming rule: <chapter>-<section>-<final-question-number>.png;
          section 8-6 is the anchor of the combined 8-6 / 8-7 homework.
-       - Place the PNGs beside hw_8_6.html; corresponding .tex files included.
+       - Place the PNGs beside hw_8_6to7.html; corresponding .tex files included.
        ========================================================== */
 
     window.homeworkData = {
@@ -80,14 +80,14 @@
         },
         // Q2 — curated from Homework 8-6, Q3; original answer B
         {
-          stem: String.raw`<p>The base of a right prism is a regular polygon with perimeter \(30\) cm and apothem \(4\) cm. The prism is \(9\) cm high. Find its <em>total</em> surface area.</p>`,
+          stem: String.raw`<p>The base of a right prism is a regular polygon with perimeter \(32\) cm and apothem \(4\) cm. The prism is \(9\) cm high. Find its <em>total</em> surface area.</p>`,
           choices: [
-            String.raw`\(390\)`,
-            String.raw`\(270\)`,
-            String.raw`\(450\)`,
-            String.raw`\(510\)`,
-            String.raw`\(360\)`,
-            String.raw`\(330\)`
+            String.raw`\(416\)`,
+            String.raw`\(288\)`,
+            String.raw`\(352\)`,
+            String.raw`\(544\)`,
+            String.raw`\(320\)`,
+            String.raw`\(480\)`
           ],
           choiceWrap: false
         },
@@ -146,7 +146,7 @@
         // Q7 — curated from Homework 8-6, Q10; original answer A
         {
           stem: String.raw`<p><b>Refer to Figure 1.</b> An oblique prism has a rectangular base with side lengths \(6\) cm and \(8\) cm. The perpendicular distance between the bases is \(12\) cm. Each top vertex is displaced horizontally by \(5\) cm in the direction of a base edge of length \(6\) cm, so each sloping lateral edge is \(13\) cm long. Find the lateral surface area.</p><p><small>The figure is schematic, not to scale.</small></p>`,
-          media: String.raw`<figure><img src="8-6-7.png" alt="Figure 1, geometric diagram for Question 10" /><figcaption>Figure 1</figcaption></figure>`,
+          media: String.raw`<figure><img src="8-6-7.png" alt="Oblique rectangular prism with base edges 6 and 8, perpendicular height 12, lateral edge 13 and horizontal displacement 5" /><figcaption>Figure 1</figcaption></figure>`,
           choices: [
             String.raw`\(352\)`,
             String.raw`\(336\)`,
@@ -173,7 +173,7 @@
         // Q9 — curated from Homework 8-6, Q12; original answer B
         {
           stem: String.raw`<p><b>Refer to Figure 2.</b> The circular bases of an oblique cylinder have radius \(5\) cm. Their perpendicular separation is \(12\) cm, and the horizontal displacement of their centers is \(9\) cm. The vertical plane containing both base centers cuts the cylinder in a parallelogram. Find the area of this <em>plane section</em>, not the curved surface.</p><p><small>The figure is schematic, not to scale.</small></p>`,
-          media: String.raw`<figure><img src="8-6-9.png" alt="Figure 2, geometric diagram for Question 12" /><figcaption>Figure 2</figcaption></figure>`,
+          media: String.raw`<figure><img src="8-6-9.png" alt="Oblique circular cylinder with an axial parallelogram section, diameter 10, perpendicular height 12, horizontal displacement 9 and generator 15" /><figcaption>Figure 2</figcaption></figure>`,
           choices: [
             String.raw`\(150\)`,
             String.raw`\(180\)`,
@@ -201,7 +201,7 @@
         {
           stem: String.raw`<p>A regular square pyramid has base side \(10\) cm and slant height \(13\) cm, measured within a triangular face from its apex perpendicular to the corresponding base edge. Find its total surface area.</p>`,
           choices: [
-            String.raw`\(390\)`,
+            String.raw`\(416\)`,
             String.raw`\(360\)`,
             String.raw`\(420\)`,
             String.raw`\(260\)`,
@@ -226,7 +226,7 @@
         // Q13 — curated from Homework 8-7, Q4; original answer A
         {
           stem: String.raw`<p><b>Refer to Figure 3.</b> A pyramid has a rectangular base measuring \(18\) cm by \(10\) cm. Its apex is directly above the center \(O\) of the base, at a perpendicular height of \(12\) cm. Find its lateral surface area.</p><p><small>The figure is schematic, not to scale.</small></p>`,
-          media: String.raw`<figure><img src="8-6-13.png" alt="Figure 3, geometric diagram for Question 4" /><figcaption>Figure 3</figcaption></figure>`,
+          media: String.raw`<figure><img src="8-6-13.png" alt="Rectangular pyramid with base 18 by 10, apex above the base center O and perpendicular height 12" /><figcaption>Figure 3</figcaption></figure>`,
           choices: [
             String.raw`\(336\)`,
             String.raw`\(364\)`,
@@ -279,7 +279,7 @@
         // Q17 — curated from Homework 8-7, Q9; original answer C
         {
           stem: String.raw`<p><b>Refer to Figure 4.</b> The lateral surface of a right circular cone is cut along a generator and laid flat as a circular sector. The sector has radius \(10\) cm, and the cone from which it came has base radius \(4\) cm. Find the central angle \(\theta\) of the sector.</p>`,
-          media: String.raw`<figure><img src="8-6-17.png" alt="Figure 4, geometric diagram for Question 9" /><figcaption>Figure 4</figcaption></figure>`,
+          media: String.raw`<figure><img src="8-6-17.png" alt="Circular sector forming a cone net with sector radius 10 and arc length 8 pi" /><figcaption>Figure 4</figcaption></figure>`,
           choices: [
             String.raw`\(180^\circ\)`,
             String.raw`\(216^\circ\)`,
@@ -293,7 +293,7 @@
         // Q18 — curated from Homework 8-7, Q10; original answer F
         {
           stem: String.raw`<p><b>Refer to Figure 5.</b> A right circular cone of radius \(8\) cm and slant height \(16\) cm is cut by a plane parallel to its base. The smaller cone removed from the top has base radius \(3\) cm. Find the <em>lateral</em> surface area of the remaining frustum.</p><p><small>The figure is schematic, not to scale.</small></p>`,
-          media: String.raw`<figure><img src="8-6-18.png" alt="Figure 5, geometric diagram for Question 10" /><figcaption>Figure 5</figcaption></figure>`,
+          media: String.raw`<figure><img src="8-6-18.png" alt="Conical frustum with lower radius 8 and upper radius 3, extended toward the original cone apex" /><figcaption>Figure 5</figcaption></figure>`,
           choices: [
             String.raw`\(80\pi\)`,
             String.raw`\(96\pi\)`,
@@ -307,7 +307,7 @@
         // Q19 — curated from Homework 8-7, Q12; original answer D
         {
           stem: String.raw`<p><b>Refer to Figure 6.</b> A square \(ABCD\), with side length \(6\) cm, is rotated through one complete revolution about its diagonal \(AC\). The resulting solid is made of two congruent right circular cones joined along a common circular base. Find the area of its <em>outside surface</em>.</p><p><small>The dotted ellipse illustrates the circle traced by the other two vertices.</small></p>`,
-          media: String.raw`<figure><img src="8-6-19.png" alt="Figure 6, geometric diagram for Question 12" /><figcaption>Figure 6</figcaption></figure>`,
+          media: String.raw`<figure><img src="8-6-19.png" alt="Square ABCD of side length 6 rotated around its diagonal AC to make a double cone" /><figcaption>Figure 6</figcaption></figure>`,
           choices: [
             String.raw`\(72\sqrt2\pi\)`,
             String.raw`\(18\pi\)`,
