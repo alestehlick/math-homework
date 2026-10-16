@@ -1,0 +1,272 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Homework 8-8 (Geometry)</title>
+  <script>
+    /* ==============================================================
+       GEOMETRY HOMEWORK 8-8 — SURFACE AREA OF SPHERES
+       Framework: /math-homework/assets/core-rich.js
+
+       USER-SUPPLIED SOURCE SETS (three textbook image excerpts):
+       - A. Exercises #1, #2, #3, #4, #5 — radius/diameter and inverse
+         surface-area questions; re-authored as Q1-Q4.
+       - Subsequent Exercises #16 (circumference connection), #17
+         (area-to-diameter reversal), #18 (painting a spherical tank),
+         #19 (sphere area in terms of diameter), #22 (comparison of
+         surfaces), #23 (two tangent spheres), and #24 (plane section
+         of a sphere); reworked or used as inspiration for Q4-Q16.
+       - The source questions #6-#15, #20-#21 about polyhedra are
+         intentionally omitted. No polyhedral surface area is tested.
+
+       MODEL-AUTHORED / SUBSTANTIALLY REWORKED EXTENSIONS:
+       - Q5-Q6: disk-versus-sphere area and quadratic scaling.
+       - Q7: hemisphere, with curved exterior explicitly distinguished
+         from the flat base.
+       - Q8: re-authored application requiring rounding whole paint cans.
+       - Q9-Q12: Pythagorean structure of plane sections and
+         comparison of sections at differing distances from the center.
+       - Q13: tangent sphere and a distance on the supporting plane.
+       - Q14: re-authored tangent-spheres problem from source #23.
+       - Q15: distinct parallel planes with congruent circular sections.
+       - Q16: synthesis comparing disk section with sphere surface.
+
+       IMAGE FILES:
+       - User-supplied images used in the final homework: NONE.
+         (The textbook scans are reference material only.)
+       - Model-generated LaTeX/TikZ illustrations: 8-8-10.png,
+         8-8-13.png, 8-8-14.png.
+       - PNG naming rule: chapter-section-final-question-number.png.
+       - PNGs and matching .tex files are supplied beside this HTML.
+       ============================================================== */
+
+        window.homeworkData = {
+          classId: "Geometry",
+          id: "Homework 8-8",
+          title: "Homework 8-8 — Surface Area of Spheres",
+          graphics: String.raw``,
+          answerKey: ["C", "E", "B", "F", "A", "D", "E", "C", "B", "A", "F", "D", "C", "E", "A", "B"],
+          questions: [
+          {
+            // Q1 — composed and audited
+            stem: String.raw`<p>A sphere has radius \(6\) cm. Find its surface area, in square centimeters.</p>`,
+            choices: [
+              String.raw`\(36\pi\)`,
+              String.raw`\(72\pi\)`,
+              String.raw`\(144\pi\)`,
+              String.raw`\(24\pi\)`,
+              String.raw`\(288\pi\)`,
+              String.raw`\(576\pi\)`
+            ],
+            choiceWrap: false
+          },
+          {
+            // Q2 — composed and audited
+            stem: String.raw`<p>A sphere has diameter \(14\) cm. Find its surface area, in square centimeters.</p>`,
+            choices: [
+              String.raw`\(49\pi\)`,
+              String.raw`\(98\pi\)`,
+              String.raw`\(392\pi\)`,
+              String.raw`\(784\pi\)`,
+              String.raw`\(196\pi\)`,
+              String.raw`\(28\pi\)`
+            ],
+            choiceWrap: false
+          },
+          {
+            // Q3 — composed and audited
+            stem: String.raw`<p>The surface area of a sphere is \(324\pi\) cm<sup>2</sup>. Find its diameter, in centimeters.</p>`,
+            choices: [
+              String.raw`\(9\)`,
+              String.raw`\(18\)`,
+              String.raw`\(27\)`,
+              String.raw`\(36\)`,
+              String.raw`\(54\)`,
+              String.raw`\(162\)`
+            ],
+            choiceWrap: false
+          },
+          {
+            // Q4 — composed and audited
+            stem: String.raw`<p>A plane through the center of a sphere makes a circular section whose circumference is \(16\pi\) cm. Find the surface area of the sphere, in square centimeters.</p>`,
+            choices: [
+              String.raw`\(64\pi\)`,
+              String.raw`\(128\pi\)`,
+              String.raw`\(512\pi\)`,
+              String.raw`\(1024\pi\)`,
+              String.raw`\(32\pi\)`,
+              String.raw`\(256\pi\)`
+            ],
+            choiceWrap: false
+          },
+          {
+            // Q5 — composed and audited
+            stem: String.raw`<p>A plane passing through the center of a sphere cuts out a circular region (a disk). What is the ratio of the sphere’s entire surface area to the area of that disk?</p>`,
+            choices: [
+              String.raw`\(4\)`,
+              String.raw`\(2\)`,
+              String.raw`\(\pi\)`,
+              String.raw`\(8\)`,
+              String.raw`\(\frac14\)`,
+              String.raw`\(\frac43\)`
+            ],
+            choiceWrap: false
+          },
+          {
+            // Q6 — composed and audited
+            stem: String.raw`<p>Two spheres have radii \(6\) cm and \(9\) cm. How many times as large is the surface area of the larger sphere as that of the smaller sphere?</p>`,
+            choices: [
+              String.raw`\(\frac32\)`,
+              String.raw`\(\frac49\)`,
+              String.raw`\(3\)`,
+              String.raw`\(\frac94\)`,
+              String.raw`\(\frac92\)`,
+              String.raw`\(\frac{27}{8}\)`
+            ],
+            choiceWrap: false
+          },
+          {
+            // Q7 — composed and audited
+            stem: String.raw`<p>A hemispherical dome has radius \(6\) m. Find the area of its <em>curved exterior</em>, excluding the flat circular base, in square meters.</p>`,
+            choices: [
+              String.raw`\(36\pi\)`,
+              String.raw`\(144\pi\)`,
+              String.raw`\(108\pi\)`,
+              String.raw`\(216\pi\)`,
+              String.raw`\(72\pi\)`,
+              String.raw`\(48\pi\)`
+            ],
+            choiceWrap: false
+          },
+          {
+            // Q8 — composed and audited
+            stem: String.raw`<p>A spherical water tank has radius \(6\) m. One can of paint covers \(40\) m<sup>2</sup>. What is the smallest number of whole cans needed to paint the entire outside once? Use \(\pi\approx3.14\).</p>`,
+            choices: [
+              String.raw`\(10\)`,
+              String.raw`\(11\)`,
+              String.raw`\(12\)`,
+              String.raw`\(13\)`,
+              String.raw`\(14\)`,
+              String.raw`\(9\)`
+            ],
+            choiceWrap: false
+          },
+          {
+            // Q9 — composed and audited
+            stem: String.raw`<p>A plane cuts a sphere in a circle of positive radius. Let \(R\) be the radius of the sphere, \(a\) the radius of the circular section, and \(d\) the perpendicular distance from the center of the sphere to the plane. Which relationship must hold?</p>`,
+            choices: [
+              String.raw`\(a+d=R\)`,
+              String.raw`\(a^2+d^2=R^2\)`,
+              String.raw`\(a^2-d^2=R^2\)`,
+              String.raw`\(a^2+R^2=d^2\)`,
+              String.raw`\(2a^2+d^2=R^2\)`,
+              String.raw`\(a^2+d^2=2R^2\)`
+            ],
+            choiceWrap: false
+          },
+          {
+            // Q10 — composed and audited
+            stem: String.raw`<p><b>Refer to Figure 1.</b> A plane cuts a sphere of radius \(13\) cm. The perpendicular distance from the center \(O\) to the plane is \(5\) cm. Find the area of the circular section, in square centimeters.</p><p><small>The drawing is schematic; the circular section is shown in perspective.</small></p>`,
+            media: String.raw`<figure><img src="8-8-10.png" alt="Figure 1: sphere with an offset circular section, showing radius 13 and center-to-plane distance 5" /><figcaption>Figure 1</figcaption></figure>`,
+            choices: [
+              String.raw`\(144\pi\)`,
+              String.raw`\(169\pi\)`,
+              String.raw`\(25\pi\)`,
+              String.raw`\(194\pi\)`,
+              String.raw`\(12\pi\)`,
+              String.raw`\(120\pi\)`
+            ],
+            choiceWrap: false
+          },
+          {
+            // Q11 — composed and audited
+            stem: String.raw`<p>A plane cuts a sphere of radius \(13\) cm in a circular section of radius \(5\) cm. Find the perpendicular distance from the sphere’s center to the plane, in centimeters.</p>`,
+            choices: [
+              String.raw`\(13\)`,
+              String.raw`\(5\)`,
+              String.raw`\(\sqrt{194}\)`,
+              String.raw`\(18\)`,
+              String.raw`\(8\)`,
+              String.raw`\(12\)`
+            ],
+            choiceWrap: false
+          },
+          {
+            // Q12 — composed and audited
+            stem: String.raw`<p>Two parallel planes cut the same sphere of radius \(10\) cm. One plane is \(3\) cm from the center, and the other is \(7\) cm from the center. By how many square centimeters does the area of the larger circular section exceed the area of the smaller one?</p>`,
+            choices: [
+              String.raw`\(91\pi\)`,
+              String.raw`\(51\pi\)`,
+              String.raw`\(58\pi\)`,
+              String.raw`\(40\pi\)`,
+              String.raw`\(16\pi\)`,
+              String.raw`\(80\pi\)`
+            ],
+            choiceWrap: false
+          },
+          {
+            // Q13 — composed and audited
+            stem: String.raw`<p><b>Refer to Figure 2.</b> A sphere of radius \(10\) cm rests on a horizontal plane, touching it at \(T\). A point \(P\) on the plane is \(24\) cm from \(T\). Find the distance from \(P\) to the sphere’s center \(O\), in centimeters.</p>`,
+            media: String.raw`<figure><img src="8-8-13.png" alt="Figure 2: sphere tangent to a horizontal plane, showing a radius of 10 and a ground distance of 24" /><figcaption>Figure 2</figcaption></figure>`,
+            choices: [
+              String.raw`\(14\)`,
+              String.raw`\(25\)`,
+              String.raw`\(26\)`,
+              String.raw`\(34\)`,
+              String.raw`\(20\)`,
+              String.raw`\(24\)`
+            ],
+            choiceWrap: false
+          },
+          {
+            // Q14 — composed and audited
+            stem: String.raw`<p><b>Refer to Figure 3.</b> Two spheres of radii \(8\) cm and \(5\) cm touch each other and rest on the same horizontal plane. Their centers are \(C\) and \(D\), and the points of contact with the plane are \(A\) and \(B\). Find the distance \(AB\), in centimeters. Give an exact answer.</p>`,
+            media: String.raw`<figure><img src="8-8-14.png" alt="Figure 3: two touching spheres of radii 8 and 5, both tangent to the same horizontal plane" /><figcaption>Figure 3</figcaption></figure>`,
+            choices: [
+              String.raw`\(13\)`,
+              String.raw`\(3\)`,
+              String.raw`\(12\)`,
+              String.raw`\(\sqrt{178}\)`,
+              String.raw`\(4\sqrt{10}\)`,
+              String.raw`\(2\sqrt{10}\)`
+            ],
+            choiceWrap: false
+          },
+          {
+            // Q15 — composed and audited
+            stem: String.raw`<p>Two <em>distinct parallel planes</em> cut a sphere of radius \(10\) cm in circular sections, each having area \(64\pi\) cm<sup>2</sup>. Find the perpendicular distance between the two planes, in centimeters.</p>`,
+            choices: [
+              String.raw`\(12\)`,
+              String.raw`\(6\)`,
+              String.raw`\(8\)`,
+              String.raw`\(10\)`,
+              String.raw`\(16\)`,
+              String.raw`\(20\)`
+            ],
+            choiceWrap: false
+          },
+          {
+            // Q16 — composed and audited
+            stem: String.raw`<p>A sphere has radius \(15\) cm. A plane cuts it at a perpendicular distance of \(9\) cm from its center. The area of the circular section is what fraction of the sphere’s entire surface area?</p>`,
+            choices: [
+              String.raw`\(\frac45\)`,
+              String.raw`\(\frac4{25}\)`,
+              String.raw`\(\frac{16}{25}\)`,
+              String.raw`\(\frac15\)`,
+              String.raw`\(\frac9{25}\)`,
+              String.raw`\(\frac14\)`
+            ],
+            choiceWrap: false
+          }
+          ]
+        };
+  </script>
+  <link rel="stylesheet" href="/math-homework/assets/core-rich.css" />
+  <script defer src="/math-homework/assets/core-rich.js"></script>
+  <script defer src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+</head>
+<body>
+  <div id="hw-root">Loading…</div>
+</body>
+</html>
