@@ -3,161 +3,266 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Homework 8-4 (Algebra 2)</title>
-
+  <title>Homework 8-4 — Complex Conjugates, Reciprocals, and Division (Algebra 2)</title>
   <script>
-    /* =========================================
-       Homework 8-4 — Complex Division, Conjugates & Reciprocals
-       ========================================= */
+    /* =====================================================================
+       Algebra 2 — Homework 8-4: Complex Conjugates, Reciprocals, and Division
+       Adapted to /math-homework/assets/core-rich.js
+
+       SOURCE SET (uploaded by user):
+       - Reworked original exercises used: #1, #2, #5, #6, #7,
+         #8, #9, #10, #11.
+       - The numerical division exercises #6, #7, #8, #10 are retained
+         with substantially improved wording and alternatives.
+       - Original #3/#4 (dividing by a real number) and #12 (another
+         numerical division) were examined but omitted as redundant
+         with earlier homework and stronger practice in this assignment.
+       - Prior combined Homework 8-1 to 8-3 (especially Q17) established
+         the algebraic identity for a product of conjugates.
+
+       MODEL-REWORKED / MODEL-AUTHORED FINAL QUESTIONS:
+       - Q1-Q2: original #1/#2 expanded to an actual conjugate product.
+       - Q3: new reversal of conjugate product; both signs matter.
+       - Q4: reworked original #5, division by i.
+       - Q5: reworked original #9, reciprocals in a+bi form.
+       - Q6: new equivalence test, why we multiply by a conjugate.
+       - Q7-Q8: reworked original #6 and #10, numerical quotients.
+       - Q9: new converse problem; verify by multiplying back.
+       - Q10-Q11: reworked original #7/#8, varied division practice.
+       - Q12: new exact condition for reciprocal = conjugate.
+       - Q13: reworked original #11, general quotient formula.
+       - Q14: new necessary-and-sufficient denominator condition.
+       - Q15: new real-quotient condition with an unknown parameter.
+       - Q16: new synthesis with conjugate pairs of quotients.
+
+       FIGURES:
+       - User-supplied: none.
+       - Model-generated: none.
+       - Figure files required: none.
+       - If figures were needed, generated figures would be named
+         8-4-<final-question-number>.png alongside this HTML;
+         user-supplied figures would use their original exercise number.
+       ===================================================================== */
     window.homeworkData = {
-      classId : "Algebra2",
-      id      : "Homework 8-4",
-      title   : "Homework 8-4 — Complex Division, Conjugates & Reciprocals",
-
-      graphics : String.raw``,  // no graphics for this section
-
-      /* ===== Hidden Answer Key (A–F) for the 12 questions ===== */
-      answerKey : ["A","A","A","B","B","C","A","A","A","B","A","A"],
-
-      /* ===== 12 Multiple-Choice Questions (6 choices each) ===== */
-      questions : [
-        /* Q1 — Conjugates */
-        { latex: String.raw`\text{Give the conjugate of }\,3-4i.`,
-          choices: [
-            String.raw`3+4i`,        // A (correct)
-            String.raw`-3+4i`,
-            String.raw`3-4i`,
-            String.raw`-3-4i`,
-            String.raw`4+3i`,
-            String.raw`3-4`
-          ]},
-
-        /* Q2 — Conjugates */
-        { latex: String.raw`\text{Give the conjugate of }\, -6i.`,
-          choices: [
-            String.raw`6i`,          // A (correct)
-            String.raw`-6i`,
-            String.raw`6`,
-            String.raw`-6`,
-            String.raw`0`,
-            String.raw`-6-i`
-          ]},
-
-        /* Q3 — Write in a+bi */
-        { latex: String.raw`\text{Write in }a+bi\text{ form: } \dfrac{5+8i}{4}.`,
-          choices: [
-            String.raw`\dfrac{5}{4}+2i`,      // A (correct)
-            String.raw`\dfrac{5}{4}-2`,
-            String.raw`\dfrac{5}{4}i+2`,
-            String.raw`5+\dfrac{2i}{4}`,
-            String.raw`2+\dfrac{5}{4}i`,
-            String.raw`\dfrac{5}{4}-2i`
-          ]},
-
-        /* Q4 — Write in a+bi */
-        { latex: String.raw`\text{Write in }a+bi\text{ form: } \dfrac{-3i+7}{5}.`,
-          choices: [
-            String.raw`\dfrac{7}{5}+\dfrac{3}{5}i`,
-            String.raw`\dfrac{7}{5}-\dfrac{3}{5}i`,   // B (correct)
-            String.raw`-\dfrac{7}{5}+\dfrac{3}{5}i`,
-            String.raw`7-\dfrac{3i}{5}`,
-            String.raw`\dfrac{7-3i}{5i}`,
-            String.raw`\dfrac{7}{5}-\dfrac{5}{3}i`
-          ]},
-
-        /* Q5 — Divide by i (rationalize) */
-        { latex: String.raw`\text{Simplify: }\dfrac{5}{2i}.`,
-          choices: [
-            String.raw`\dfrac{5}{2}i`,
-            String.raw`-\dfrac{5}{2}i`,   // B (correct)
-            String.raw`\dfrac{5i}{2i}=\dfrac{5}{2}`,
-            String.raw`-5i`,
-            String.raw`\dfrac{2}{5i}`,
-            String.raw`-\dfrac{2}{5}i`
-          ]},
-
-        /* Q6 — CHALLENGE: Complex division */
-        { latex: String.raw`\text{Simplify: }\dfrac{4+3i}{3-i}\ \text{ (write in }a+bi\text{).}`,
-          choices: [
-            String.raw`\dfrac{11}{10}-\dfrac{13}{10}i`,
-            String.raw`\dfrac{11}{10}+\dfrac{3}{10}i`,
-            String.raw`\dfrac{9}{10}+\dfrac{13}{10}i`,   // C (correct)
-            String.raw`\dfrac{13}{10}+\dfrac{11}{10}i`,
-            String.raw`\dfrac{7}{10}+\dfrac{9}{10}i`,
-            String.raw`1+\dfrac{3}{10}i`
-          ]},
-
-        /* Q7 — CHALLENGE: Complex division */
-        { latex: String.raw`\text{Simplify: }\dfrac{5-2i}{1+2i}\ \text{ (write in }a+bi\text{).}`,
-          choices: [
-            String.raw`\dfrac{1}{5}-\dfrac{12}{5}i`,     // A (correct)
-            String.raw`\dfrac{1}{5}+\dfrac{12}{5}i`,
-            String.raw`-\dfrac{1}{5}-\dfrac{12}{5}i`,
-            String.raw`\dfrac{12}{5}-\dfrac{1}{5}i`,
-            String.raw`1-\dfrac{12}{5}i`,
-            String.raw`\dfrac{7}{5}-\dfrac{2}{5}i`
-          ]},
-
-        /* Q8 — CHALLENGE: Complex division */
-        { latex: String.raw`\text{Simplify: }\dfrac{6+8i}{2-3i}\ \text{ (write in }a+bi\text{).}`,
-          choices: [
-            String.raw`-\dfrac{12}{13}+\dfrac{34}{13}i`,  // A (correct)
-            String.raw`\dfrac{12}{13}+\dfrac{34}{13}i`,
-            String.raw`-\dfrac{12}{13}-\dfrac{34}{13}i`,
-            String.raw`\dfrac{34}{13}-\dfrac{12}{13}i`,
-            String.raw`\dfrac{12}{13}-\dfrac{34}{13}i`,
-            String.raw`-\dfrac{34}{13}+\dfrac{12}{13}i`
-          ]},
-
-        /* Q9 — Reciprocals (explicit a+bi for all choices) */
-        { latex: String.raw`\text{Which equals }(2-3i)^{-1}\text{ in }a+bi\text{ form?}`,
-          choices: [
-            String.raw`\dfrac{2}{13}+\dfrac{3}{13}i`,   // A (correct)
-            String.raw`\dfrac{2}{13}-\dfrac{3}{13}i`,
-            String.raw`-\dfrac{2}{13}+\dfrac{3}{13}i`,
-            String.raw`-\dfrac{2}{13}-\dfrac{3}{13}i`,
-            String.raw`\dfrac{3}{13}+\dfrac{2}{13}i`,
-            String.raw`\dfrac{2}{13}+\dfrac{3}{13}`     /* missing i */
-          ]},
-
-        /* Q10 — Division via conjugate */
-        { latex: String.raw`\text{Simplify: }\dfrac{7+i}{\,1-2i\,}\ \text{ (write in }a+bi\text{).}`,
-          choices: [
-            String.raw`1-3i`,
-            String.raw`1+3i`,        // B (correct)
-            String.raw`-1+3i`,
-            String.raw`5+15i`,
-            String.raw`-1-3i`,
-            String.raw`1+\dfrac{3}{5}i`
-          ]},
-
-        /* Q11 — General formula */
-        { latex: String.raw`\text{Let }z=a+bi,\ w=c+di\ (c,d\in\mathbb{R},\ c+di\neq0).\ \text{Which is } \dfrac{z}{w}\ ?`,
-          choices: [
-            String.raw`\dfrac{ac+bd}{c^2+d^2}+\dfrac{bc-ad}{c^2+d^2}i`,   // A (correct)
-            String.raw`\dfrac{ac-bd}{c^2+d^2}+\dfrac{ad+bc}{c^2+d^2}i`,
-            String.raw`\dfrac{ac+bd}{c-d}+\dfrac{bc-ad}{c-d}i`,
-            String.raw`\dfrac{ac+bd}{c^2-d^2}+\dfrac{ad+bc}{c^2-d^2}i`,
-            String.raw`\dfrac{a}{c}+\dfrac{b}{d}i`,
-            String.raw`\dfrac{ac+bd}{(c^2+d^2)i}+\dfrac{bc-ad}{c^2+d^2}`
-          ]},
-
-        /* Q12 — NEW: another clean a+bi division (to match 12th key = A) */
-        { latex: String.raw`\text{Simplify: }\dfrac{3+4i}{4+3i}\ \text{ (write in }a+bi\text{).}`,
-          choices: [
-            String.raw`\dfrac{24}{25}+\dfrac{7}{25}i`,  // A (correct)
-            String.raw`\dfrac{24}{25}-\dfrac{7}{25}i`,
-            String.raw`\dfrac{7}{25}+\dfrac{24}{25}i`,
-            String.raw`-\dfrac{24}{25}+\dfrac{7}{25}i`,
-            String.raw`\dfrac{7}{25}-\dfrac{24}{25}i`,
-            String.raw`-\dfrac{24}{25}-\dfrac{7}{25}i`
-          ]}
+      classId: "Algebra2",
+      id: "Homework 8-4",
+      title: "Homework 8-4 — Complex Conjugates, Reciprocals, and Division",
+      graphics: String.raw``,
+      answerKey: ["E", "B", "C", "F", "A", "C", "E", "F", "B", "A", "D", "F", "D", "E", "A", "D"],
+      questions: [
+      // Q1: Source Q1-Q2; reworked. Aim: orientation to conjugation.
+      {
+        stem: String.raw`<p>To form the <em>conjugate</em> of a complex number, keep the real part and change the sign of the imaginary part. Find the conjugate of \(z=-4+7i\).</p>`,
+        choices: [
+          String.raw`\(4-7i\)`,
+          String.raw`\(-4+7i\)`,
+          String.raw`\(4+7i\)`,
+          String.raw`\(-7+4i\)`,
+          String.raw`\(-4-7i\)`,
+          String.raw`\(7-4i\)`
+        ],
+        choiceWrap: false
+      },
+      // Q2: Source Q1-Q2; model-reworked product. Aim: recognize real conjugate product.
+      {
+        stem: String.raw`<p>Let \(z=3+4i\). Compute \(z\overline{z}\), where \(\overline{z}\) is the conjugate of \(z\).</p>`,
+        choices: [
+          String.raw`\(-7\)`,
+          String.raw`\(25\)`,
+          String.raw`\(7\)`,
+          String.raw`\(-25\)`,
+          String.raw`\(25i\)`,
+          String.raw`\(9-16i\)`
+        ],
+        choiceWrap: false
+      },
+      // Q3: Model-authored, extends source Q1-Q2. Aim: reverse conjugate product and check both signs.
+      {
+        stem: String.raw`<p>The real number \(t\) satisfies \((t+3i)(t-3i)=25\). Determine <em>all</em> possible values of \(t\).</p>`,
+        choices: [
+          String.raw`\(t=\pm\sqrt{34}\)`,
+          String.raw`\(t=\pm5\)`,
+          String.raw`\(t=\pm4\)`,
+          String.raw`\(t=\pm\sqrt7\)`,
+          String.raw`\(t=\pm3\)`,
+          String.raw`\(t=\pm\sqrt{21}\)`
+        ],
+        choiceWrap: false
+      },
+      // Q4: Source Q5; reworked. Aim: division by i.
+      {
+        stem: String.raw`<p>Express \(\dfrac{5}{2i}\) in the form \(a+bi\), where \(a\) and \(b\) are real.</p>`,
+        choices: [
+          String.raw`\(\dfrac52i\)`,
+          String.raw`\(\dfrac25i\)`,
+          String.raw`\(-\dfrac25i\)`,
+          String.raw`\(-\dfrac52\)`,
+          String.raw`\(\dfrac52\)`,
+          String.raw`\(-\dfrac52i\)`
+        ],
+        choiceWrap: false
+      },
+      // Q5: Source Q9; reworked. Aim: first non-real reciprocal.
+      {
+        stem: String.raw`<p>Find the reciprocal of \(3+2i\). Write the result in the form \(a+bi\).</p>`,
+        choices: [
+          String.raw`\(\dfrac{3}{13}-\dfrac{2}{13}i\)`,
+          String.raw`\(\dfrac{3}{13}+\dfrac{2}{13}i\)`,
+          String.raw`\(3-2i\)`,
+          String.raw`\(\dfrac35-\dfrac25i\)`,
+          String.raw`\(\dfrac{2}{13}-\dfrac{3}{13}i\)`,
+          String.raw`\(\dfrac13-\dfrac12i\)`
+        ],
+        choiceWrap: false
+      },
+      // Q6: Model-authored, extends source Q6. Aim: reason for conjugate multiplication and equivalent quotients.
+      {
+        stem: String.raw`<p>Consider \(\dfrac{2+i}{3-2i}\). Which expression has the <em>same value</em> and a real denominator?</p>`,
+        choices: [
+          String.raw`\(\dfrac{(2+i)(3-2i)}{13}\)`,
+          String.raw`\(\dfrac{(2-i)(3+2i)}{13}\)`,
+          String.raw`\(\dfrac{(2+i)(3+2i)}{13}\)`,
+          String.raw`\(\dfrac{(2+i)(3+2i)}5\)`,
+          String.raw`\(\dfrac{(2+i)(3-2i)}5\)`,
+          String.raw`\(\dfrac{(2-i)(3-2i)}{13}\)`
+        ],
+        choiceWrap: false
+      },
+      // Q7: Source Q6, reworked. Aim: two-component division and sign.
+      {
+        stem: String.raw`<p>Simplify \(\dfrac{4+3i}{3-i}\) and express the result in the form \(a+bi\).</p>`,
+        choices: [
+          String.raw`\(\dfrac{11}{10}-\dfrac{13}{10}i\)`,
+          String.raw`\(\dfrac{11}{10}+\dfrac{13}{10}i\)`,
+          String.raw`\(\dfrac9{10}-\dfrac{13}{10}i\)`,
+          String.raw`\(\dfrac{13}{10}+\dfrac9{10}i\)`,
+          String.raw`\(\dfrac9{10}+\dfrac{13}{10}i\)`,
+          String.raw`\(\dfrac9{10}+\dfrac{11}{10}i\)`
+        ],
+        choiceWrap: false
+      },
+      // Q8: Source Q10, reworked. Aim: division with integer outcome.
+      {
+        stem: String.raw`<p>Write \(\dfrac{7+i}{1-2i}\) in the form \(a+bi\).</p>`,
+        choices: [
+          String.raw`\(1-3i\)`,
+          String.raw`\(-1+3i\)`,
+          String.raw`\(3+i\)`,
+          String.raw`\(5+15i\)`,
+          String.raw`\(1+\dfrac35i\)`,
+          String.raw`\(1+3i\)`
+        ],
+        choiceWrap: false
+      },
+      // Q9: Model-authored, converse to source Q7. Aim: reverse division by verifying a product.
+      {
+        stem: String.raw`<p>Determine the complex number \(q\) for which \((2+i)q=4-3i\). Your answer should be in the form \(a+bi\).</p>`,
+        choices: [
+          String.raw`\(1+2i\)`,
+          String.raw`\(1-2i\)`,
+          String.raw`\(-1-2i\)`,
+          String.raw`\(2+i\)`,
+          String.raw`\(2-i\)`,
+          String.raw`\(-1+2i\)`
+        ],
+        choiceWrap: false
+      },
+      // Q10: Source Q7, reworked. Aim: division with negative imaginary component.
+      {
+        stem: String.raw`<p>Simplify \(\dfrac{5-2i}{1+2i}\) and write the result in the form \(a+bi\).</p>`,
+        choices: [
+          String.raw`\(\dfrac15-\dfrac{12}{5}i\)`,
+          String.raw`\(\dfrac95-\dfrac{12}{5}i\)`,
+          String.raw`\(\dfrac15+\dfrac{12}{5}i\)`,
+          String.raw`\(\dfrac15-\dfrac85i\)`,
+          String.raw`\(-\dfrac15-\dfrac{12}{5}i\)`,
+          String.raw`\(1-\dfrac{12}{5}i\)`
+        ],
+        choiceWrap: false
+      },
+      // Q11: Source Q8, reworked. Aim: longer numerical division after transfer.
+      {
+        stem: String.raw`<p>Express \(\dfrac{6+8i}{2-3i}\) in the form \(a+bi\), with both parts simplified.</p>`,
+        choices: [
+          String.raw`\(\dfrac{12}{13}+\dfrac{34}{13}i\)`,
+          String.raw`\(-\dfrac{12}{13}-\dfrac{34}{13}i\)`,
+          String.raw`\(\dfrac{34}{13}-\dfrac{12}{13}i\)`,
+          String.raw`\(-\dfrac{12}{13}+\dfrac{34}{13}i\)`,
+          String.raw`\(\dfrac{12}{13}-\dfrac{34}{13}i\)`,
+          String.raw`\(-\dfrac{34}{13}+\dfrac{12}{13}i\)`
+        ],
+        choiceWrap: false
+      },
+      // Q12: Model-authored, extends source Q9. Aim: necessary and sufficient condition for conjugate equals reciprocal.
+      {
+        stem: String.raw`<p>Let \(z=a+bi\), where \(a,b\) are real and \(z\ne0\). Under which condition does the reciprocal of \(z\) equal its conjugate? In symbols, when is \(\dfrac1z=\overline{z}\)?</p>`,
+        choices: [
+          String.raw`\(a^2-b^2=1\)`,
+          String.raw`\(a^2+b^2>0\)`,
+          String.raw`\(a+b=1\)`,
+          String.raw`\(ab=0\)`,
+          String.raw`\(a^2+b^2=0\)`,
+          String.raw`\(a^2+b^2=1\)`
+        ],
+        choiceWrap: false
+      },
+      // Q13: Source Q11, reworked. Aim: general division formula (deductive).
+      {
+        stem: String.raw`<p>Let \(z=a+bi\) and \(w=c+di\), where \(a,b,c,d\) are real and \(w\ne0\). Which formula expresses \(\dfrac{z}{w}\) in the form \(A+Bi\)?</p>`,
+        choices: [
+          String.raw`\(\dfrac{ac-bd}{c^2+d^2}+\dfrac{bc+ad}{c^2+d^2}i\)`,
+          String.raw`\(\dfrac{ac+bd}{c^2-d^2}+\dfrac{bc-ad}{c^2-d^2}i\)`,
+          String.raw`\(\dfrac{ac+bd}{c^2+d^2}+\dfrac{bc+ad}{c^2+d^2}i\)`,
+          String.raw`\(\dfrac{ac+bd}{c^2+d^2}+\dfrac{bc-ad}{c^2+d^2}i\)`,
+          String.raw`\(\dfrac{ac-bd}{c^2+d^2}+\dfrac{bc-ad}{c^2+d^2}i\)`,
+          String.raw`\(\dfrac{ac+bd}{c^2+d^2}+\dfrac{ad-bc}{c^2+d^2}i\)`
+        ],
+        choiceWrap: false
+      },
+      // Q14: Model-authored, extends source Q11. Aim: necessary and sufficient condition for division defined.
+      {
+        stem: String.raw`<p>Let \(c\) and \(d\) be real. Which condition is <em>necessary and sufficient</em> for division by \(c+di\) to be defined? That is, which condition holds <em>exactly when</em> \(c+di\ne0\)?</p>`,
+        choices: [
+          String.raw`\(c\ne0\)`,
+          String.raw`\(d\ne0\)`,
+          String.raw`\(c+d\ne0\)`,
+          String.raw`\(c^2-d^2\ne0\)`,
+          String.raw`\(c^2+d^2\ne0\)`,
+          String.raw`\(cd\ne0\)`
+        ],
+        choiceWrap: false
+      },
+      // Q15: Model-authored, related to source Q6-Q8. Aim: reverse a division condition: real quotient.
+      {
+        stem: String.raw`<p>The number \(t\) is real. For which value of \(t\) is \(\dfrac{6+ti}{3-2i}\) a real number?</p>`,
+        choices: [
+          String.raw`\(-4\)`,
+          String.raw`\(4\)`,
+          String.raw`\(-6\)`,
+          String.raw`\(6\)`,
+          String.raw`\(-2\)`,
+          String.raw`\(2\)`
+        ],
+        choiceWrap: false
+      },
+      // Q16: Model-authored synthesis from source Q6-Q10. Aim: paired conjugate quotients and cancellation.
+      {
+        stem: String.raw`<p>Evaluate \(\dfrac{2+i}{1-i}+\dfrac{2-i}{1+i}\). Give the result in simplest form.</p>`,
+        choices: [
+          String.raw`\(2\)`,
+          String.raw`\(1+3i\)`,
+          String.raw`\(-1\)`,
+          String.raw`\(1\)`,
+          String.raw`\(1-3i\)`,
+          String.raw`\(\dfrac12\)`
+        ],
+        choiceWrap: false
+      }
       ]
     };
   </script>
-
-  <link rel="stylesheet" href="/math-homework/assets/core.css" />
-  <script defer src="/math-homework/assets/core.js"></script>
+  <link rel="stylesheet" href="/math-homework/assets/core-rich.css" />
+  <script defer src="/math-homework/assets/core-rich.js"></script>
   <script defer src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
 </head>
 <body>
