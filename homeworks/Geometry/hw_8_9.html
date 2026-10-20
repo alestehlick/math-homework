@@ -1,0 +1,333 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Homework 8-9 — Chapter 8 Review (Geometry)</title>
+  <script>
+    /* ============================================================
+       Chapter 8 Review — Geometry — Homework 8-9
+       20 multiple-choice questions; estimated 57.5 minutes.
+
+       SOURCE SETS AND EXACT QUESTION REFERENCES:
+       - Prior Geometry HW 8-1–2: Q3, Q7, Q10–14.
+       - Prior Geometry HW 8-3–5: Q2–5, Q9, Q12–16, Q18–21.
+       - Prior Geometry HW 8-6–7: Q3–6, Q11, Q15–16, Q20.
+       - Prior Geometry HW 8-8: Q1–5, Q9–11.
+       - Supplied department Test 8 (2025), consulted: Q1, Q2,
+         Q3(1–4), Q4, Q5(1–2), Q6, Q7, Q8(1–3); bonuses #1–3.
+       - No new Type A/B/C textbook exercise sets were supplied.
+
+       EDITORIAL PROVENANCE:
+       - All review questions are model-reworked with changed data,
+         shorter computations where appropriate, and serious distractors.
+       - Q11 adapts the test's shaded-rectangle-minus-semicircle
+         structure and replaces its dimensions and figure.
+       - Q20 is explicitly model-added from test Q5(2) to cover a
+         simple polyhedron surface-area calculation absent from HW 8-8.
+       - This is a targeted chapter review, not a copy of the test.
+
+       IMAGE FILES:
+       - User-supplied figures: NONE reproduced.
+       - Model-generated via LaTeX/TikZ: 8-9-11.png (Q11, Figure 1).
+       - Image naming: chapter-section-final-question-number.png.
+       - The PNG is placed alongside hw_8_9.html.
+       ============================================================ */
+    window.homeworkData = {
+      classId   : "Geometry",
+      id        : "Homework 8-9",
+      title     : "Homework 8-9 — Chapter 8 Review",
+      graphics  : String.raw``,
+      answerKey : ["C","F","A","D","B","E","C","A","F","B","E","D","B","C","A","F","D","E","A","F"],
+      questions : [
+        /* Q1 — Previous HW 8-1–2 Q3; model-reworked */
+        {
+          stem: String.raw`<p>A square has side length \(\frac{3}{2}\). Starting from the unit-square area postulate and using subdivision and area addition, which argument establishes its area?</p>`,
+          choices: [
+            String.raw`The square contains \(9\) small squares of side \(\frac12\), each of area \(\frac12\); its area is \(\frac92\).`,
+            String.raw`There are \(3\) half-unit intervals along each side, so its area is \(\frac32\).`,
+            String.raw`The square contains \(9\) small squares of side \(\frac12\), each of area \(\frac14\); its area is \(\frac94\).`,
+            String.raw`The square contains \(6\) small squares of side \(\frac12\), each of area \(\frac14\); its area is \(\frac32\).`,
+            String.raw`The square contains \(9\) small squares of side \(\frac12\), each of area \(1\); its area is \(9\).`,
+            String.raw`The unit-square postulate determines only areas of squares with integer side lengths.`
+          ],
+          choiceWrap: false
+        },
+
+        /* Q2 — Previous HW 8-1–2 Q7; model-reworked */
+        {
+          stem: String.raw`<p>A parallelogram has a base of length \(12\) cm and area \(96\) cm<sup>2</sup>. One slanted side is \(10\) cm long. Find the perpendicular height to the given base.</p>`,
+          choices: [
+            String.raw`\(6\) cm`,
+            String.raw`\(16\) cm`,
+            String.raw`\(9\) cm`,
+            String.raw`\(10\) cm`,
+            String.raw`\(12\) cm`,
+            String.raw`\(8\) cm`
+          ],
+          choiceWrap: false
+        },
+
+        /* Q3 — Previous HW 8-3–5 Q2; department test Q1; model-reworked */
+        {
+          stem: String.raw`<p>A right triangle has hypotenuse \(17\) cm and one leg of length \(8\) cm. Find the length of its other leg.</p>`,
+          choices: [
+            String.raw`\(15\) cm`,
+            String.raw`\(14\) cm`,
+            String.raw`\(13\) cm`,
+            String.raw`\(16\) cm`,
+            String.raw`\(18\) cm`,
+            String.raw`\(19\) cm`
+          ],
+          choiceWrap: false
+        },
+
+        /* Q4 — Previous HW 8-3–5 Q3; department test Q2; model-reworked */
+        {
+          stem: String.raw`<p>Which set of three lengths can be the side lengths of a right triangle? Assume that the largest number in each set is the longest side.</p>`,
+          choices: [
+            String.raw`\(7,\ 24,\ 26\)`,
+            String.raw`\(7,\ 23,\ 25\)`,
+            String.raw`\(8,\ 24,\ 25\)`,
+            String.raw`\(7,\ 24,\ 25\)`,
+            String.raw`\(7,\ 25,\ 26\)`,
+            String.raw`\(9,\ 24,\ 25\)`
+          ],
+          choiceWrap: false
+        },
+
+        /* Q5 — Previous HW 8-3–5 Q9; department test Q3(1); model-reworked */
+        {
+          stem: String.raw`<p>A square has diagonal length \(14\) cm. Find its area.</p>`,
+          choices: [
+            String.raw`\(49\) cm<sup>2</sup>`,
+            String.raw`\(98\) cm<sup>2</sup>`,
+            String.raw`\(196\) cm<sup>2</sup>`,
+            String.raw`\(49\sqrt2\) cm<sup>2</sup>`,
+            String.raw`\(98\sqrt2\) cm<sup>2</sup>`,
+            String.raw`\(392\) cm<sup>2</sup>`
+          ],
+          choiceWrap: false
+        },
+
+        /* Q6 — Previous HW 8-3–5 Q5; department test Q3(3); model-reworked */
+        {
+          stem: String.raw`<p>An equilateral triangle has side length \(8\) cm. Find its exact area.</p>`,
+          choices: [
+            String.raw`\(8\sqrt3\) cm<sup>2</sup>`,
+            String.raw`\(16\) cm<sup>2</sup>`,
+            String.raw`\(32\sqrt3\) cm<sup>2</sup>`,
+            String.raw`\(16\sqrt2\) cm<sup>2</sup>`,
+            String.raw`\(16\sqrt3\) cm<sup>2</sup>`,
+            String.raw`\(64\sqrt3\) cm<sup>2</sup>`
+          ],
+          choiceWrap: false
+        },
+
+        /* Q7 — Previous HW 8-3–5 Q4, and HW 8-1–2 Q10–11; model-reworked */
+        {
+          stem: String.raw`<p>An isosceles trapezoid has parallel bases of lengths \(24\) cm and \(14\) cm. Each nonparallel side is \(13\) cm long. Find the area of the trapezoid.</p><p>Sketch the trapezoid and locate its perpendicular height before choosing an answer.</p>`,
+          choices: [
+            String.raw`\(95\) cm<sup>2</sup>`,
+            String.raw`\(120\) cm<sup>2</sup>`,
+            String.raw`\(228\) cm<sup>2</sup>`,
+            String.raw`\(247\) cm<sup>2</sup>`,
+            String.raw`\(288\) cm<sup>2</sup>`,
+            String.raw`\(456\) cm<sup>2</sup>`
+          ],
+          choiceWrap: false
+        },
+
+        /* Q8 — Previous HW 8-1–2 Q12; department test Q8(1); model-reworked */
+        {
+          stem: String.raw`<p>A trapezoid has area \(90\) cm<sup>2</sup> and perpendicular height \(10\) cm. Its longer base is twice the length of its shorter base. Find the lengths of both bases, given as (shorter, longer).</p>`,
+          choices: [
+            String.raw`\((6,12)\) cm`,
+            String.raw`\((4,8)\) cm`,
+            String.raw`\((3,6)\) cm`,
+            String.raw`\((9,18)\) cm`,
+            String.raw`\((10,20)\) cm`,
+            String.raw`\((12,24)\) cm`
+          ],
+          choiceWrap: false
+        },
+
+        /* Q9 — Previous HW 8-1–2 Q13–14; department test Q3(4); model-reworked */
+        {
+          stem: String.raw`<p>A rhombus has diagonals of lengths \(12\) cm and \(20\) cm. Find its area.</p>`,
+          choices: [
+            String.raw`\(60\) cm<sup>2</sup>`,
+            String.raw`\(480\) cm<sup>2</sup>`,
+            String.raw`\(144\) cm<sup>2</sup>`,
+            String.raw`\(160\) cm<sup>2</sup>`,
+            String.raw`\(240\) cm<sup>2</sup>`,
+            String.raw`\(120\) cm<sup>2</sup>`
+          ],
+          choiceWrap: false
+        },
+
+        /* Q10 — Previous HW 8-3–5 Q12–16; department test Q3(2); model-reworked */
+        {
+          stem: String.raw`<p>A regular heptagon has side length \(6.0\) cm and apothem \(6.2\) cm, with both measurements rounded to the nearest tenth. Estimate its area to the nearest tenth of a square centimeter.</p>`,
+          choices: [
+            String.raw`\(117.6\) cm<sup>2</sup>`,
+            String.raw`\(130.2\) cm<sup>2</sup>`,
+            String.raw`\(148.8\) cm<sup>2</sup>`,
+            String.raw`\(151.2\) cm<sup>2</sup>`,
+            String.raw`\(217.0\) cm<sup>2</sup>`,
+            String.raw`\(260.4\) cm<sup>2</sup>`
+          ],
+          choiceWrap: false
+        },
+
+        /* Q11 — Previous HW 8-3–5 Q18–21; department test Q4; new model TikZ figure */
+        {
+          stem: String.raw`<p><b>Refer to Figure 1.</b> A rectangular region measures \(12\) cm by \(8\) cm. A semicircle whose diameter coincides with its left side is removed. Find the area of the shaded remainder, to the nearest tenth of a square centimeter. Use \(\pi\approx 3.14\).</p>`,
+          media: String.raw`<figure><img src="8-9-11.png" alt="Rectangle measuring 12 by 8, with a semicircle of diameter 8 removed from its left side; the remaining area is shaded." /><figcaption>Figure 1</figcaption></figure>`,
+          choices: [
+            String.raw`\(45.8\) cm<sup>2</sup>`,
+            String.raw`\(58.3\) cm<sup>2</sup>`,
+            String.raw`\(96.0\) cm<sup>2</sup>`,
+            String.raw`\(83.4\) cm<sup>2</sup>`,
+            String.raw`\(70.9\) cm<sup>2</sup>`,
+            String.raw`\(121.1\) cm<sup>2</sup>`
+          ],
+          choiceWrap: false
+        },
+
+        /* Q12 — Previous HW 8-6–7 Q3; department test Q6; model-reworked */
+        {
+          stem: String.raw`<p>A right triangular prism has a base that is a right triangle with legs \(5\) cm and \(12\) cm. The distance between its triangular bases is \(10\) cm. Find the <em>total</em> surface area of the prism.</p><p>Sketch and label the prism before calculating.</p>`,
+          choices: [
+            String.raw`\(240\) cm<sup>2</sup>`,
+            String.raw`\(300\) cm<sup>2</sup>`,
+            String.raw`\(330\) cm<sup>2</sup>`,
+            String.raw`\(360\) cm<sup>2</sup>`,
+            String.raw`\(420\) cm<sup>2</sup>`,
+            String.raw`\(600\) cm<sup>2</sup>`
+          ],
+          choiceWrap: false
+        },
+
+        /* Q13 — Previous HW 8-6–7 Q4; model-reworked contrast question */
+        {
+          stem: String.raw`<p>Two right prisms are both \(7\) cm high. One has a rectangular base measuring \(2\) cm by \(12\) cm; the other has a rectangular base measuring \(4\) cm by \(6\) cm. By how many square centimeters does the total surface area of the first exceed that of the second?</p>`,
+          choices: [
+            String.raw`\(0\) cm<sup>2</sup>`,
+            String.raw`\(56\) cm<sup>2</sup>`,
+            String.raw`\(42\) cm<sup>2</sup>`,
+            String.raw`\(28\) cm<sup>2</sup>`,
+            String.raw`\(70\) cm<sup>2</sup>`,
+            String.raw`\(112\) cm<sup>2</sup>`
+          ],
+          choiceWrap: false
+        },
+
+        /* Q14 — Previous HW 8-6–7 Q5–6; model-reworked */
+        {
+          stem: String.raw`<p>A closed right circular cylinder has radius \(3\) cm and height \(8\) cm. Find its <em>total</em> surface area. Leave \(\pi\) in the answer.</p>`,
+          choices: [
+            String.raw`\(48\pi\) cm<sup>2</sup>`,
+            String.raw`\(57\pi\) cm<sup>2</sup>`,
+            String.raw`\(66\pi\) cm<sup>2</sup>`,
+            String.raw`\(72\pi\) cm<sup>2</sup>`,
+            String.raw`\(96\pi\) cm<sup>2</sup>`,
+            String.raw`\(132\pi\) cm<sup>2</sup>`
+          ],
+          choiceWrap: false
+        },
+
+        /* Q15 — Previous HW 8-6–7 Q11, Q20; department test Q8(3); model-reworked */
+        {
+          stem: String.raw`<p>A regular square pyramid has base edges of length \(8\) cm and a total surface area of \(224\) cm<sup>2</sup>. Find the <em>slant height</em> of a lateral triangular face. The slant height is measured perpendicular to the corresponding base edge.</p>`,
+          choices: [
+            String.raw`\(10\) cm`,
+            String.raw`\(7\) cm`,
+            String.raw`\(8\) cm`,
+            String.raw`\(5\) cm`,
+            String.raw`\(12\) cm`,
+            String.raw`\(14\) cm`
+          ],
+          choiceWrap: false
+        },
+
+        /* Q16 — Previous HW 8-6–7 Q15–16; department test Q7; model-reworked */
+        {
+          stem: String.raw`<p>A closed right circular cone has base radius \(6\) cm and slant height \(10\) cm. Find its total surface area in terms of \(\pi\).</p>`,
+          choices: [
+            String.raw`\(36\pi\) cm<sup>2</sup>`,
+            String.raw`\(60\pi\) cm<sup>2</sup>`,
+            String.raw`\(72\pi\) cm<sup>2</sup>`,
+            String.raw`\(132\pi\) cm<sup>2</sup>`,
+            String.raw`\(120\pi\) cm<sup>2</sup>`,
+            String.raw`\(96\pi\) cm<sup>2</sup>`
+          ],
+          choiceWrap: false
+        },
+
+        /* Q17 — Previous HW 8-8 Q1–2; department test Q5(1); model-reworked */
+        {
+          stem: String.raw`<p>A sphere has radius \(7\) cm. Find its surface area in terms of \(\pi\).</p>`,
+          choices: [
+            String.raw`\(28\pi\) cm<sup>2</sup>`,
+            String.raw`\(49\pi\) cm<sup>2</sup>`,
+            String.raw`\(98\pi\) cm<sup>2</sup>`,
+            String.raw`\(196\pi\) cm<sup>2</sup>`,
+            String.raw`\(343\pi\) cm<sup>2</sup>`,
+            String.raw`\(784\pi\) cm<sup>2</sup>`
+          ],
+          choiceWrap: false
+        },
+
+        /* Q18 — Previous HW 8-8 Q3–5; department test Q8(2); model-reworked */
+        {
+          stem: String.raw`<p>A sphere has total surface area \(144\pi\) cm<sup>2</sup>. Find the <em>circumference</em> of one of its great circles, leaving \(\pi\) in the answer.</p>`,
+          choices: [
+            String.raw`\(6\pi\) cm`,
+            String.raw`\(72\pi\) cm`,
+            String.raw`\(24\pi\) cm`,
+            String.raw`\(36\pi\) cm`,
+            String.raw`\(12\pi\) cm`,
+            String.raw`\(144\pi\) cm`
+          ],
+          choiceWrap: false
+        },
+
+        /* Q19 — Previous HW 8-8 Q9–11; model-reworked */
+        {
+          stem: String.raw`<p>A plane intersects a sphere of radius \(10\) cm. The perpendicular distance from the sphere\'s center to the plane is \(6\) cm. Find the area of the circular cross-section.</p>`,
+          choices: [
+            String.raw`\(64\pi\) cm<sup>2</sup>`,
+            String.raw`\(36\pi\) cm<sup>2</sup>`,
+            String.raw`\(16\pi\) cm<sup>2</sup>`,
+            String.raw`\(80\pi\) cm<sup>2</sup>`,
+            String.raw`\(100\pi\) cm<sup>2</sup>`,
+            String.raw`\(136\pi\) cm<sup>2</sup>`
+          ],
+          choiceWrap: false
+        },
+
+        /* Q20 — Department test Q5(2); model-added limited polyhedron coverage, absent from previous HW 8-8 */
+        {
+          stem: String.raw`<p>A regular dodecahedron has \(12\) congruent pentagonal faces. If each face has area \(7.5\) cm<sup>2</sup>, find the total surface area of the solid.</p>`,
+          choices: [
+            String.raw`\(60\) cm<sup>2</sup>`,
+            String.raw`\(75\) cm<sup>2</sup>`,
+            String.raw`\(150\) cm<sup>2</sup>`,
+            String.raw`\(105\) cm<sup>2</sup>`,
+            String.raw`\(120\) cm<sup>2</sup>`,
+            String.raw`\(90\) cm<sup>2</sup>`
+          ],
+          choiceWrap: false
+        }
+      ]
+    };
+  </script>
+  <link rel="stylesheet" href="/math-homework/assets/core-rich.css" />
+  <script defer src="/math-homework/assets/core-rich.js"></script>
+  <script defer src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+</head>
+<body>
+  <div id="hw-root">Loading…</div>
+</body>
+</html>
