@@ -3,10 +3,10 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Homework 8-4 — Polynomial Operations | Algebra 1</title>
+  <title>Homework 8-1 to 8-4 — Polynomial Operations | Algebra 1</title>
   <script>
     /* ===============================================================
-       Algebra 1 — Homework 8-4: Polynomial Operations (Cumulative)
+       Algebra 1 — Homework 8-1 to 8-4: Polynomial Operations (Cumulative)
        Covers Chapter 8, Sections 8-1 through 8-4.
        Adapted for: /math-homework/assets/core-rich.js
 
@@ -18,12 +18,20 @@
                  (negation, subtraction, mixed terms).
          HW 8-4: Q3, Q6, Q7, Q8, Q9, Q11, Q12
                  (monomial products and distribution).
-       All Q1-Q30 were re-authored, rebalanced, or newly composed.
-       Model-reworked Q1-Q20: targeted review with varied signs,
-       collection, subtraction, powers, and variable multipliers.
-       Model-authored extensions Q21-Q30: repeated distributions,
-       interplay with subtraction, cancellation, identities, and
-       reverse reconstruction of a polynomial.
+       Existing cumulative questions Q1-Q30 were used as raw material.
+       Retained: cumulative Q1-Q3, Q5-Q9, Q11-Q30 (28 questions).
+       Removed: cumulative Q4 and Q10 (redundant collection and subtraction).
+       Newly authored: final Q2, Q4, Q6, Q9, Q27, Q31.
+         Q2 and Q4: substitution with negative inputs and powers.
+         Q6 and Q9: degree / number of terms only AFTER simplification,
+                     including monomial collapse and loss of leading degree.
+         Q27: evaluation after variable-bearing distribution.
+         Q31: classification after distribution and cancellation.
+       Revised: final Q3 classification wording and choices so that
+         monomial/binomial/trinomial terminology is assessed directly.
+       Final ascent: evaluation -> classification after simplification ->
+       collection -> signed subtraction -> variable-bearing distributions ->
+       combined expansions and cancellation -> synthesis.
        No question is a verbatim reproduction of a source exercise.
 
        IMAGE FILES: none required.
@@ -33,16 +41,16 @@
          model-generated <chapter>-<section>-<local-question>.png;
          user-supplied <HW-ID>-<original-exercise>.png;
          all image files in the same directory as this HTML.
-       Intended workload: about 70 minutes (30 questions).
+       Intended workload: about 70-75 minutes (34 questions).
        =============================================================== */
     window.homeworkData = {
       classId: "Algebra1",
       id: "Homework 8-1 to 8-4",
       title: "Homework 8-1 to 8-4 — Polynomial Operations",
       graphics: String.raw``,
-      answerKey: ["C", "E", "A", "F", "B", "D", "E", "A", "D", "B", "F", "C", "B", "F", "E", "C", "A", "D", "F", "C", "B", "A", "D", "E", "D", "B", "F", "E", "C", "A"],
+      answerKey: ["C", "B", "E", "D", "A", "F", "B", "D", "C", "E", "A", "D", "F", "C", "B", "F", "E", "C", "A", "D", "F", "C", "B", "A", "D", "E", "E", "D", "B", "F", "A", "E", "C", "A"],
       questions: [
-      /* Q01: Model-reworked — negative value of power. */
+      /* Q01: Original cumulative Q01 — Model-reworked — negative value of power. */
       {
         stem: String.raw`<p>Evaluate \(-2x^2+3x-4\) when \(x=-2\).</p>`,
         choiceWrap: false,
@@ -55,20 +63,46 @@
           String.raw`\(14\)`
         ]
       },
-      /* Q02: Model-reworked — classification after like terms. */
+      /* Q02: Newly authored — signed odd power on substitution. */
       {
-        stem: String.raw`<p>Simplify \(4x^2-2xy+3y^2-x^2+5xy\). How many terms does the result have, and what is its degree?</p>`,
+        stem: String.raw`<p>Evaluate \(2x^3-x^2+4\) when \(x=-2\).</p>`,
         choiceWrap: false,
         choices: [
-          String.raw`Three terms; degree 3`,
-          String.raw`Four terms; degree 2`,
-          String.raw`Five terms; degree 2`,
-          String.raw`Two terms; degree 2`,
-          String.raw`Three terms; degree 2`,
-          String.raw`Three terms; degree 1`
+          String.raw`\(-12\)`,
+          String.raw`\(-16\)`,
+          String.raw`\(16\)`,
+          String.raw`\(-24\)`,
+          String.raw`\(-8\)`,
+          String.raw`\(24\)`
         ]
       },
-      /* Q03: Model-reworked — collect signed terms. */
+      /* Q03: Original cumulative Q02 — Model-reworked — classification after like terms. */
+      {
+        stem: String.raw`<p>First simplify \(4x^2-2xy+3y^2-x^2+5xy\). Then classify the result as a monomial, binomial, or trinomial, and state its degree.</p>`,
+        choiceWrap: false,
+        choices: [
+          String.raw`Trinomial; degree 3`,
+          String.raw`Binomial; degree 2`,
+          String.raw`Trinomial; degree 1`,
+          String.raw`Monomial; degree 2`,
+          String.raw`Trinomial; degree 2`,
+          String.raw`Binomial; degree 3`
+        ]
+      },
+      /* Q04: Newly authored — signed substitution in a two-variable polynomial. */
+      {
+        stem: String.raw`<p>Evaluate \(2x^2-3xy+y^2\) when \(x=-2\) and \(y=-3\).</p>`,
+        choiceWrap: false,
+        choices: [
+          String.raw`\(35\)`,
+          String.raw`\(17\)`,
+          String.raw`\(-19\)`,
+          String.raw`\(-1\)`,
+          String.raw`\(-17\)`,
+          String.raw`\(1\)`
+        ]
+      },
+      /* Q05: Original cumulative Q03 — Model-reworked — collect signed terms. */
       {
         stem: String.raw`<p>Simplify \(7x-4y+3-2x+6y-8\).</p>`,
         choiceWrap: false,
@@ -81,20 +115,20 @@
           String.raw`\(5 x + 2 y + 5\)`
         ]
       },
-      /* Q04: Model-reworked — mixed variable like terms. */
+      /* Q06: Newly authored — cancellation yields a monomial; multivariable total degree. */
       {
-        stem: String.raw`<p>Simplify \(4a^2-3ab+2b^2-7a^2+ab-b^2\).</p>`,
+        stem: String.raw`<p>First simplify \(3a^2b-2ab^2+5a^2b+2ab^2-7a^2b\). Then classify the result by its number of terms and degree.</p>`,
         choiceWrap: false,
         choices: [
-          String.raw`\(3 a^{2} - 2 a b + b^{2}\)`,
-          String.raw`\(- 3 a^{2} - 4 a b + b^{2}\)`,
-          String.raw`\(- 3 a^{2} - 2 a b + 3 b^{2}\)`,
-          String.raw`\(- 3 a^{2} + 2 a b + b^{2}\)`,
-          String.raw`\(- 3 a^{2} - 2 a b - b^{2}\)`,
-          String.raw`\(- 3 a^{2} - 2 a b + b^{2}\)`
+          String.raw`Monomial; degree 2`,
+          String.raw`Binomial; degree 3`,
+          String.raw`Trinomial; degree 3`,
+          String.raw`Monomial; degree 1`,
+          String.raw`Binomial; degree 2`,
+          String.raw`Monomial; degree 3`
         ]
       },
-      /* Q05: Model-reworked — cancellation of linear terms. */
+      /* Q07: Original cumulative Q05 — Model-reworked — cancellation of linear terms. */
       {
         stem: String.raw`<p>Simplify \(3x^2+5x-2x^2-7x+x^2+2x-4\).</p>`,
         choiceWrap: false,
@@ -107,7 +141,7 @@
           String.raw`\(2 x^{2} + 2 x - 4\)`
         ]
       },
-      /* Q06: Model-reworked — three polynomial sum. */
+      /* Q08: Original cumulative Q06 — Model-reworked — three polynomial sum. */
       {
         stem: String.raw`<p>Find the sum of the three polynomials:</p><p>\((2x^2-3xy+4y^2)+(-5x^2+xy-2y^2)+(x^2+4xy-y^2)\).</p>`,
         choiceWrap: false,
@@ -120,7 +154,20 @@
           String.raw`\(- 2 x^{2} + x y + y^{2}\)`
         ]
       },
-      /* Q07: Model-reworked — subtract whole binomial. */
+      /* Q09: Newly authored — cubic terms cancel; classify the lower-degree remainder. */
+      {
+        stem: String.raw`<p>Simplify \((4x^3-2x^2+5x)+(-4x^3+7x^2-2x)\). Classify the result by its number of terms and degree.</p>`,
+        choiceWrap: false,
+        choices: [
+          String.raw`Trinomial; degree 3`,
+          String.raw`Binomial; degree 3`,
+          String.raw`Binomial; degree 2`,
+          String.raw`Monomial; degree 2`,
+          String.raw`Trinomial; degree 2`,
+          String.raw`Binomial; degree 1`
+        ]
+      },
+      /* Q10: Original cumulative Q07 — Model-reworked — subtract whole binomial. */
       {
         stem: String.raw`<p>Simplify \((3x-8)-(x+5)\).</p>`,
         choiceWrap: false,
@@ -133,7 +180,7 @@
           String.raw`\(2 x - 8\)`
         ]
       },
-      /* Q08: Model-reworked — negative of polynomial. */
+      /* Q11: Original cumulative Q08 — Model-reworked — negative of polynomial. */
       {
         stem: String.raw`<p>Simplify \(-(4a-7b+3)\).</p>`,
         choiceWrap: false,
@@ -146,7 +193,7 @@
           String.raw`\(- 4 a - 7 b + 3\)`
         ]
       },
-      /* Q09: Model-reworked — signed quadratic subtraction. */
+      /* Q12: Original cumulative Q09 — Model-reworked — signed quadratic subtraction. */
       {
         stem: String.raw`<p>Simplify \((2x^2-3x+4)-(-x^2+5x-6)\).</p>`,
         choiceWrap: false,
@@ -159,20 +206,7 @@
           String.raw`\(3 x^{2} - 2 x + 10\)`
         ]
       },
-      /* Q10: Model-reworked — subtract mixed-variable polynomial. */
-      {
-        stem: String.raw`<p>Simplify \((6x-3y+4)-(2x-7y-5)\).</p>`,
-        choiceWrap: false,
-        choices: [
-          String.raw`\(4 x - 10 y - 1\)`,
-          String.raw`\(4 x + 4 y + 9\)`,
-          String.raw`\(4 x + 4 y - 1\)`,
-          String.raw`\(8 x + 4 y + 9\)`,
-          String.raw`\(4 x - 4 y + 9\)`,
-          String.raw`\(4 x + 10 y + 9\)`
-        ]
-      },
-      /* Q11: Model-reworked — subtract homogeneous quadratics. */
+      /* Q13: Original cumulative Q11 — Model-reworked — subtract homogeneous quadratics. */
       {
         stem: String.raw`<p>Simplify \((x^2+2xy-y^2)-(3x^2-xy+2y^2)\).</p>`,
         choiceWrap: false,
@@ -185,7 +219,7 @@
           String.raw`\(- 2 x^{2} + 3 x y - 3 y^{2}\)`
         ]
       },
-      /* Q12: Model-reworked — nested subtraction. */
+      /* Q14: Original cumulative Q12 — Model-reworked — nested subtraction. */
       {
         stem: String.raw`<p>Simplify \((4x^2-x+3)-[(x^2+2x-1)-(2x^2-x+4)]\).</p>`,
         choiceWrap: false,
@@ -198,7 +232,7 @@
           String.raw`\(4 x^{2} - 4 x + 8\)`
         ]
       },
-      /* Q13: Model-reworked — signed monomial product. */
+      /* Q15: Original cumulative Q13 — Model-reworked — signed monomial product. */
       {
         stem: String.raw`<p>Multiply \((-3x^2y)(4xy^2)\).</p>`,
         choiceWrap: false,
@@ -211,7 +245,7 @@
           String.raw`\(- 12 x^{3} y^{4}\)`
         ]
       },
-      /* Q14: Model-reworked — first variable multiplier. */
+      /* Q16: Original cumulative Q14 — Model-reworked — first variable multiplier. */
       {
         stem: String.raw`<p>Expand \(3x(2x-5)\).</p>`,
         choiceWrap: false,
@@ -224,7 +258,7 @@
           String.raw`\(6 x^{2} - 15 x\)`
         ]
       },
-      /* Q15: Model-reworked — negative variable multiplier. */
+      /* Q17: Original cumulative Q15 — Model-reworked — negative variable multiplier. */
       {
         stem: String.raw`<p>Expand \(-4x(3x-2)\).</p>`,
         choiceWrap: false,
@@ -237,7 +271,7 @@
           String.raw`\(- 12 x^{2} + 8\)`
         ]
       },
-      /* Q16: Model-reworked — negative monomial across trinomial. */
+      /* Q18: Original cumulative Q16 — Model-reworked — negative monomial across trinomial. */
       {
         stem: String.raw`<p>Expand \(-2a(3a^2-5a+4)\).</p>`,
         choiceWrap: false,
@@ -250,7 +284,7 @@
           String.raw`\(- 6 a^{3} + 5 a^{2} - 8 a\)`
         ]
       },
-      /* Q17: Model-reworked — two-variable monomial multiplier. */
+      /* Q19: Original cumulative Q17 — Model-reworked — two-variable monomial multiplier. */
       {
         stem: String.raw`<p>Expand \(5xy(2x-3y+1)\).</p>`,
         choiceWrap: false,
@@ -263,7 +297,7 @@
           String.raw`\(10 x^{2} y - 15 x y^{2} - 5 x y\)`
         ]
       },
-      /* Q18: Model-reworked — powers and mixed signs. */
+      /* Q20: Original cumulative Q18 — Model-reworked — powers and mixed signs. */
       {
         stem: String.raw`<p>Expand \(-3x^2(2x^2-x-4)\).</p>`,
         choiceWrap: false,
@@ -276,7 +310,7 @@
           String.raw`\(6 x^{4} + 3 x^{3} + 12 x^{2}\)`
         ]
       },
-      /* Q19: Model-reworked — two negative factors across terms. */
+      /* Q21: Original cumulative Q19 — Model-reworked — two negative factors across terms. */
       {
         stem: String.raw`<p>Expand \((-2x)(-3x^2+4x-5)\).</p>`,
         choiceWrap: false,
@@ -289,7 +323,7 @@
           String.raw`\(6 x^{3} - 8 x^{2} + 10 x\)`
         ]
       },
-      /* Q20: Model-reworked — negative variable monomial with different exponents. */
+      /* Q22: Original cumulative Q20 — Model-reworked — negative variable monomial with different exponents. */
       {
         stem: String.raw`<p>Expand \(-3x^2y(2xy-4y^2+3)\).</p>`,
         choiceWrap: false,
@@ -302,7 +336,7 @@
           String.raw`\(- 6 x^{3} y^{2} + 12 x^{2} y^{2} - 9 x^{2} y\)`
         ]
       },
-      /* Q21: Model-reworked — two variable distributions. */
+      /* Q23: Original cumulative Q21 — Model-reworked — two variable distributions. */
       {
         stem: String.raw`<p>Expand and simplify \(3x(2x-1)+2x(x-4)\).</p>`,
         choiceWrap: false,
@@ -315,7 +349,7 @@
           String.raw`\(8 x^{2} - 9 x\)`
         ]
       },
-      /* Q22: Model-reworked — negative and positive multipliers; near cancellation. */
+      /* Q24: Original cumulative Q22 — Model-reworked — negative and positive multipliers; near cancellation. */
       {
         stem: String.raw`<p>Expand and simplify \(-2x(3x-4)+5x(x-1)\).</p>`,
         choiceWrap: false,
@@ -328,7 +362,7 @@
           String.raw`\(- 11 x^{2} + 3 x\)`
         ]
       },
-      /* Q23: Model-reworked — negative distribution with a second variable. */
+      /* Q25: Original cumulative Q23 — Model-reworked — negative distribution with a second variable. */
       {
         stem: String.raw`<p>Expand and simplify \(4a(a-2b)-3b(2a-b)\).</p>`,
         choiceWrap: false,
@@ -341,7 +375,7 @@
           String.raw`\(4 a^{2} - 14 a b + b^{2}\)`
         ]
       },
-      /* Q24: Model-reworked — mix multiplication and subtracting whole polynomial. */
+      /* Q26: Original cumulative Q24 — Model-reworked — mix multiplication and subtracting whole polynomial. */
       {
         stem: String.raw`<p>Expand and simplify \(-3x(2x-5)-(x^2+4x-6)\).</p>`,
         choiceWrap: false,
@@ -354,7 +388,20 @@
           String.raw`\(- 7 x^{2} - 19 x + 6\)`
         ]
       },
-      /* Q25: Model-reworked — competing cubic distributions. */
+      /* Q27: Newly authored — evaluate a polynomial involving two distributions. */
+      {
+        stem: String.raw`<p>Evaluate \(3x(2x-1)-2(x^2+x-4)\) when \(x=-2\).</p>`,
+        choiceWrap: false,
+        choices: [
+          String.raw`\(26\)`,
+          String.raw`\(14\)`,
+          String.raw`\(18\)`,
+          String.raw`\(42\)`,
+          String.raw`\(34\)`,
+          String.raw`\(-34\)`
+        ]
+      },
+      /* Q28: Original cumulative Q25 — Model-reworked — competing cubic distributions. */
       {
         stem: String.raw`<p>Expand and simplify \(2x(x^2-3x+4)-x(3x^2-x-2)\).</p>`,
         choiceWrap: false,
@@ -367,7 +414,7 @@
           String.raw`\(- x^{3} + 5 x^{2} + 10 x\)`
         ]
       },
-      /* Q26: Model-reworked — cross-term cancellation. */
+      /* Q29: Original cumulative Q26 — Model-reworked — cross-term cancellation. */
       {
         stem: String.raw`<p>Expand and simplify \(3x(2x-y)-2y(x-3y)+5xy\).</p>`,
         choiceWrap: false,
@@ -380,7 +427,7 @@
           String.raw`\(6 x^{2} - 3 x y + 6 y^{2}\)`
         ]
       },
-      /* Q27: Model-reworked — highest-power cancellation and nested signs. */
+      /* Q30: Original cumulative Q27 — Model-reworked — highest-power cancellation and nested signs. */
       {
         stem: String.raw`<p>Expand and simplify \(-2x(3x-4)+3(2x^2-5x)-(x-7)\).</p>`,
         choiceWrap: false,
@@ -393,7 +440,20 @@
           String.raw`\(- 8 x + 7\)`
         ]
       },
-      /* Q28: Model-reworked — three variable distributions with cubic cancellation. */
+      /* Q31: Newly authored — distribute before classification; quadratic terms cancel. */
+      {
+        stem: String.raw`<p>Expand and simplify \(2x(3x-1)-3x(2x-3)+4\). <strong>After simplifying</strong>, classify the result by its number of terms and degree.</p>`,
+        choiceWrap: false,
+        choices: [
+          String.raw`Binomial; degree 1`,
+          String.raw`Binomial; degree 2`,
+          String.raw`Trinomial; degree 2`,
+          String.raw`Monomial; degree 1`,
+          String.raw`Trinomial; degree 1`,
+          String.raw`Monomial; degree 2`
+        ]
+      },
+      /* Q32: Original cumulative Q28 — Model-reworked — three variable distributions with cubic cancellation. */
       {
         stem: String.raw`<p>Expand and simplify \(2x(3x^2-2x+1)-3x(2x^2+x-4)+x(5x-7)\).</p>`,
         choiceWrap: false,
@@ -406,7 +466,7 @@
           String.raw`\(12 x^{3} - 2 x^{2} + 7 x\)`
         ]
       },
-      /* Q29: Model-reworked — coefficient comparison after cancellation. */
+      /* Q33: Original cumulative Q29 — Model-reworked — coefficient comparison after cancellation. */
       {
         stem: String.raw`<p>Find the constant \(k\) for which the identity</p><p>\(2x(3x-4)-3x(2x-k)=7x\)</p><p>holds for every value of \(x\).</p>`,
         choiceWrap: false,
@@ -419,7 +479,7 @@
           String.raw`\(7\)`
         ]
       },
-      /* Q30: Model-reworked — reverse distribution and polynomial recovery. */
+      /* Q34: Original cumulative Q30 — Model-reworked — reverse distribution and polynomial recovery. */
       {
         stem: String.raw`<p>Find the polynomial \(P(x)\) that makes the following identity true for every value of \(x\):</p><p>\(-2x(3x-4)+P(x)=5x^2-7x+2\).</p>`,
         choiceWrap: false,
