@@ -1,0 +1,404 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Homework 8-5 to 8-7 — Complex Numbers and Vectors | Algebra 2</title>
+  <script>
+/* ================================================================
+ ALGEBRA 2 — CONSOLIDATED HOMEWORK 8-5 THROUGH 8-7
+ Mathematical ascent: discriminants -> complex points and modulus ->
+ equivalence classes of arrows -> canonical origin representatives ->
+ parallelogram addition -> oriented subtraction -> recovery and synthesis.
+
+ SOURCE SETS AND ORIGINAL EXERCISES EXAMINED / ADAPTED:
+ - Original Homework 8-5 (Algebra 2, Discriminant & Solving):
+   exercises #1, #2, #4, #6, #7 (concepts recast as final Q1-Q4).
+ - Original Homework 8-6 (Algebra 2, Complex Plane & Absolute Value):
+   exercises #1, #2, #3, #4, #5, #6 (condensed into final Q5-Q6);
+   #7, #8, #9, #10 (modulus foundation for Q7-Q8 and Q24).
+ - Original Homework 8-7 (Algebra 2, Complex Vectors):
+   exercises #1, #2, #3, #4, #5, #6, #7, #8, #9, #10, #11, #12
+   (redesigned as final Q9-Q12, Q14-Q18 and Q21-Q24).
+ - No Type A/B/C or Portuguese sets were supplied.
+
+ MODEL-AUTHORED OR SUBSTANTIALLY REWORKED ITEMS:
+ - Q1-Q4 reorganize discrimination vs solving, including real/nonreal.
+ - Q5-Q8 separate the plane correspondence from the meaning of magnitude.
+ - Q9-Q13 force vector/arrow distinction, equivalence, orientation,
+   opposite and dot representation of zero vector.
+ - Q14-Q15 test the unique origin-based representative and translation.
+ - Q16-Q18 contrast parallelogram sum and both subtraction orientations.
+ - Q19-Q20 establish cancellation and the defining subtraction equation.
+ - Q21-Q24 link translated representatives, recovery of an unknown
+   vector, a new representative, and magnitude of its opposite.
+
+ FIGURES:
+ - User-supplied figure files used: NONE (the old crowded TikZ picture
+   is replaced, not reused verbatim).
+ - Model-generated TikZ -> PNG figures, each in the HTML directory:
+     8-7-9.png   (first attached to final Q9; reused by Q10-Q12)
+     8-7-14.png  (first attached to final Q14; reused by Q15)
+     8-7-16.png  (first attached to final Q16; reused by Q17-Q18)
+     8-7-21.png  (first attached to final Q21; reused by Q22-Q24)
+ - Figure naming rule: generated files use <chapter>-<section>-
+   <first-final-local-question>.png and live alongside this HTML.
+ - Figure sources are saved separately as .tex and supplied to teacher.
+
+ WORKLOAD: 24 questions, six choices each, target approximately
+ 70 minutes, with students encouraged to draw constructions on paper.
+ ================================================================ */
+  window.homeworkData = {
+    classId: "Algebra2",
+    id: "Homework 8-5 to 8-7",
+    title: "Homework 8-5 to 8-7 — Complex Numbers and Vectors",
+    graphics: String.raw``,
+    answerKey: ["C", "E", "B", "F", "A", "D", "E", "B", "C", "F", "A", "D", "B", "E", "C", "A", "F", "D", "B", "C", "E", "A", "D", "F"],
+    questions: [
+    /* Q01: double-root discriminant. */
+    {
+      stem: String.raw`<p>For \(x^2-6x+9=0\), determine its discriminant \(D=b^2-4ac\) and the nature of its roots.</p>`,
+      choiceWrap: false,
+      choices: [
+        String.raw`\(D=36;\ \text{two distinct real roots}\)`,
+        String.raw`\(D=0;\ \text{two distinct real roots}\)`,
+        String.raw`\(D=0;\ \text{one distinct real root (double)}\)`,
+        String.raw`\(D=12;\ \text{two distinct real roots}\)`,
+        String.raw`\(D=-36;\ \text{two nonreal roots}\)`,
+        String.raw`\(D=36;\ \text{one distinct real root}\)`
+      ]
+    },
+    /* Q02: negative discriminant. */
+    {
+      stem: String.raw`<p>For \(2x^2+3x+4=0\), determine the discriminant and the nature of its roots.</p>`,
+      choiceWrap: false,
+      choices: [
+        String.raw`\(D=23;\ \text{two distinct real roots}\)`,
+        String.raw`\(D=-7;\ \text{two nonreal roots}\)`,
+        String.raw`\(D=0;\ \text{one distinct real root}\)`,
+        String.raw`\(D=-23;\ \text{two distinct real roots}\)`,
+        String.raw`\(D=-23;\ \text{two nonreal complex roots}\)`,
+        String.raw`\(D=7;\ \text{two distinct real roots}\)`
+      ]
+    },
+    /* Q03: positive discriminant. */
+    {
+      stem: String.raw`<p>Solve \(x^2+3x-5=0\).</p>`,
+      choiceWrap: false,
+      choices: [
+        String.raw`\(x=\frac{3\pm\sqrt{29}}{2}\)`,
+        String.raw`\(x=\frac{-3\pm\sqrt{29}}{2}\)`,
+        String.raw`\(x=\frac{-3\pm\sqrt{11}}{2}\)`,
+        String.raw`\(x=\frac{-3\pm\sqrt{29}}{4}\)`,
+        String.raw`\(x=-3\pm\sqrt{29}\)`,
+        String.raw`\(x=\frac{3\pm\sqrt{11}}{2}\)`
+      ]
+    },
+    /* Q04: quadratic complex conjugates. */
+    {
+      stem: String.raw`<p>Solve \(3x^2+4x+8=0\) over the complex numbers.</p>`,
+      choiceWrap: false,
+      choices: [
+        String.raw`\(x=\frac{-4\pm2i\sqrt5}{3}\)`,
+        String.raw`\(x=\frac{-2\pm2\sqrt5}{3}\)`,
+        String.raw`\(x=\frac{-2\pm i\sqrt5}{3}\)`,
+        String.raw`\(x=\frac{-2\pm2i\sqrt5}{6}\)`,
+        String.raw`\(x=\frac{2\pm2i\sqrt5}{3}\)`,
+        String.raw`\(x=\frac{-2\pm2i\sqrt5}{3}\)`
+      ]
+    },
+    /* Q05: complex to point. */
+    {
+      stem: String.raw`<p>Which point in the complex plane represents \(-3+2i\)? Write the point as an ordered pair of real coordinates.</p>`,
+      choiceWrap: false,
+      choices: [
+        String.raw`\((-3,2)\)`,
+        String.raw`\((3,2)\)`,
+        String.raw`\((-3,-2)\)`,
+        String.raw`\((2,-3)\)`,
+        String.raw`\((3,-2)\)`,
+        String.raw`\((-2,3)\)`
+      ]
+    },
+    /* Q06: point to complex. */
+    {
+      stem: String.raw`<p>A point in the complex plane has coordinates \((-2,-4)\). Which complex number represents this point?</p>`,
+      choiceWrap: false,
+      choices: [
+        String.raw`\(2+4i\)`,
+        String.raw`\(-4-2i\)`,
+        String.raw`\(-2+4i\)`,
+        String.raw`\(-2-4i\)`,
+        String.raw`\(4-2i\)`,
+        String.raw`\(2-4i\)`
+      ]
+    },
+    /* Q07: modulus length. */
+    {
+      stem: String.raw`<p>Find the magnitude \(\lvert-3+4i\rvert\). Interpret it as the distance from the origin to the corresponding point.</p>`,
+      choiceWrap: false,
+      choices: [
+        String.raw`\(\sqrt7\)`,
+        String.raw`\(7\)`,
+        String.raw`\(25\)`,
+        String.raw`\(\sqrt{13}\)`,
+        String.raw`\(5\)`,
+        String.raw`\(1\)`
+      ]
+    },
+    /* Q08: modulus not direction. */
+    {
+      stem: String.raw`<p>Let \(z\) and \(w\) be complex numbers with \(\lvert z\rvert=\lvert w\rvert\). Consider arrows drawn from the origin to their corresponding points. Which conclusion is necessarily true?</p>`,
+      choiceWrap: false,
+      choices: [
+        String.raw`The arrows have the same endpoint.`,
+        String.raw`The arrows have the same length.`,
+        String.raw`The arrows have the same orientation.`,
+        String.raw`The arrows lie on the same line through the origin.`,
+        String.raw`One arrow is the opposite of the other.`,
+        String.raw`The endpoints have the same real coordinate.`
+      ]
+    },
+    /* Q09: equivalence vs same length. */
+    {
+      stem: String.raw`<p>Refer to Figure 1. Each arrow represents the vector written beside it. Which pair represents <em>the same vector</em>?</p>`,
+      media: String.raw`<figure><img src="8-7-9.png" alt="Four arrows labeled p, q, r, s, in a complex coordinate grid." style="max-width:640px;width:100%;height:auto"/><figcaption>Figure 1</figcaption></figure>`,
+      choiceWrap: false,
+      choices: [
+        String.raw`\(\mathbf p\ \text{and}\ \mathbf r\)`,
+        String.raw`\(\mathbf p\ \text{and}\ \mathbf s\)`,
+        String.raw`\(\mathbf p\ \text{and}\ \mathbf q\)`,
+        String.raw`\(\mathbf q\ \text{and}\ \mathbf r\)`,
+        String.raw`\(\mathbf q\ \text{and}\ \mathbf s\)`,
+        String.raw`\(\mathbf r\ \text{and}\ \mathbf s\)`
+      ]
+    },
+    /* Q10: opposite orientation. */
+    {
+      stem: String.raw`<p>Refer to Figure 1. Which choice gives the vector opposite to \(\mathbf p\)?</p>`,
+      media: String.raw`<figure><img src="8-7-9.png" alt="Four arrows labeled p, q, r, s, in a complex coordinate grid." style="max-width:640px;width:100%;height:auto"/><figcaption>Figure 1</figcaption></figure>`,
+      choiceWrap: false,
+      choices: [
+        String.raw`\(\mathbf p\)`,
+        String.raw`\(\mathbf q\)`,
+        String.raw`\(\mathbf s\)`,
+        String.raw`\(\mathbf p+\mathbf q\)`,
+        String.raw`\(\mathbf p-\mathbf q\)`,
+        String.raw`\(\mathbf r\)`
+      ]
+    },
+    /* Q11: canonical representative. */
+    {
+      stem: String.raw`<p>Refer to Figure 1. Translate an arrow representing \(\mathbf q\) so that it starts at the origin. What complex number is determined by its endpoint?</p>`,
+      media: String.raw`<figure><img src="8-7-9.png" alt="Four arrows labeled p, q, r, s, in a complex coordinate grid." style="max-width:640px;width:100%;height:auto"/><figcaption>Figure 1</figcaption></figure>`,
+      choiceWrap: false,
+      choices: [
+        String.raw`\(3+2i\)`,
+        String.raw`\(2+3i\)`,
+        String.raw`\(3-2i\)`,
+        String.raw`\(-3-2i\)`,
+        String.raw`\(-3+2i\)`,
+        String.raw`\(-2-3i\)`
+      ]
+    },
+    /* Q12: magnitude not sufficient. */
+    {
+      stem: String.raw`<p>Refer to Figure 1. Which statement correctly compares \(\mathbf p\) and \(\mathbf s\)?</p>`,
+      media: String.raw`<figure><img src="8-7-9.png" alt="Four arrows labeled p, q, r, s, in a complex coordinate grid." style="max-width:640px;width:100%;height:auto"/><figcaption>Figure 1</figcaption></figure>`,
+      choiceWrap: false,
+      choices: [
+        String.raw`They represent the same vector.`,
+        String.raw`They represent opposite vectors.`,
+        String.raw`They are parallel and have the same orientation.`,
+        String.raw`They have equal magnitude, but their representatives are not parallel.`,
+        String.raw`Their representatives are parallel, but they have different magnitudes.`,
+        String.raw`They have the same direction, but different magnitudes.`
+      ]
+    },
+    /* Q13: zero vector as dot. */
+    {
+      stem: String.raw`<p>An arrow has the same starting point and endpoint, so that its drawing consists of a single dot. Which statement is correct?</p>`,
+      choiceWrap: false,
+      choices: [
+        String.raw`It does not represent a vector, because no arrowhead is visible.`,
+        String.raw`It represents the zero vector, whose magnitude is zero and which has no distinguished direction.`,
+        String.raw`It represents a vector of magnitude one.`,
+        String.raw`It represents a vector whose direction depends on the location of the dot.`,
+        String.raw`It represents every vector, since no particular direction is shown.`,
+        String.raw`It represents a vector of length zero with a fixed upward orientation.`
+      ]
+    },
+    /* Q14: endpoint minus start. */
+    {
+      stem: String.raw`<p>Refer to Figure 2. The arrow from \(A\) to \(B\) represents a vector \(\mathbf t\). Translate it to start at the origin. What complex number is associated with \(\mathbf t\)?</p>`,
+      media: String.raw`<figure><img src="8-7-14.png" alt="An arrow from A at minus three minus two i to B at one plus i, and a marked point T at two minus two i." style="max-width:640px;width:100%;height:auto"/><figcaption>Figure 2</figcaption></figure>`,
+      choiceWrap: false,
+      choices: [
+        String.raw`\(1+i\)`,
+        String.raw`\(-3-2i\)`,
+        String.raw`\(4-3i\)`,
+        String.raw`\(-4-3i\)`,
+        String.raw`\(4+3i\)`,
+        String.raw`\(3+4i\)`
+      ]
+    },
+    /* Q15: translate arrow preserving vector. */
+    {
+      stem: String.raw`<p>Refer to Figure 2. Another representative of \(\mathbf t\) begins at the marked point \(T=(2,-2)\). At which point must it end?</p>`,
+      media: String.raw`<figure><img src="8-7-14.png" alt="An arrow from A at minus three minus two i to B at one plus i, and a marked point T at two minus two i." style="max-width:640px;width:100%;height:auto"/><figcaption>Figure 2</figcaption></figure>`,
+      choiceWrap: false,
+      choices: [
+        String.raw`\((-2,1)\)`,
+        String.raw`\((4,3)\)`,
+        String.raw`\((6,1)\)`,
+        String.raw`\((6,-1)\)`,
+        String.raw`\((-2,-5)\)`,
+        String.raw`\((1,1)\)`
+      ]
+    },
+    /* Q16: parallelogram sum. */
+    {
+      stem: String.raw`<p>Refer to Figure 3. Vectors \(\mathbf u\) and \(\mathbf v\) are represented by arrows with a common starting point \(O\). Where does the representative of \(\mathbf u+\mathbf v\) starting at \(O\) end? Make any necessary construction on paper.</p>`,
+      media: String.raw`<figure><img src="8-7-16.png" alt="Two vectors from O to U at (3,1) and V at (1,3) in a coordinate plane." style="max-width:640px;width:100%;height:auto"/><figcaption>Figure 3</figcaption></figure>`,
+      choiceWrap: false,
+      choices: [
+        String.raw`\((4,4)\)`,
+        String.raw`\((2,-2)\)`,
+        String.raw`\((2,2)\)`,
+        String.raw`\((4,-2)\)`,
+        String.raw`\((3,3)\)`,
+        String.raw`\((1,3)\)`
+      ]
+    },
+    /* Q17: subtraction tip of v to tip of u. */
+    {
+      stem: String.raw`<p>Refer to Figure 3. Which oriented segment represents \(\mathbf u-\mathbf v\)?</p>`,
+      media: String.raw`<figure><img src="8-7-16.png" alt="Two vectors from O to U at (3,1) and V at (1,3) in a coordinate plane." style="max-width:640px;width:100%;height:auto"/><figcaption>Figure 3</figcaption></figure>`,
+      choiceWrap: false,
+      choices: [
+        String.raw`\(\overrightarrow{OU}\)`,
+        String.raw`\(\overrightarrow{UV}\)`,
+        String.raw`\(\overrightarrow{UO}\)`,
+        String.raw`\(\overrightarrow{OV}\)`,
+        String.raw`\(\overrightarrow{VO}\)`,
+        String.raw`\(\overrightarrow{VU}\)`
+      ]
+    },
+    /* Q18: reverse subtraction. */
+    {
+      stem: String.raw`<p>Refer to Figure 3. What complex number is associated with \(\mathbf v-\mathbf u\)?</p>`,
+      media: String.raw`<figure><img src="8-7-16.png" alt="Two vectors from O to U at (3,1) and V at (1,3) in a coordinate plane." style="max-width:640px;width:100%;height:auto"/><figcaption>Figure 3</figcaption></figure>`,
+      choiceWrap: false,
+      choices: [
+        String.raw`\(2-2i\)`,
+        String.raw`\(2+2i\)`,
+        String.raw`\(-2-2i\)`,
+        String.raw`\(-2+2i\)`,
+        String.raw`\(4+4i\)`,
+        String.raw`\(-4-4i\)`
+      ]
+    },
+    /* Q19: opposite cancellation. */
+    {
+      stem: String.raw`<p>Suppose \(\mathbf u\) is a nonzero vector and \(\mathbf 0\) is the zero vector. Which expression is necessarily equal to \(\mathbf 0\)?</p>`,
+      choiceWrap: false,
+      choices: [
+        String.raw`\(\mathbf u-(-\mathbf u)\)`,
+        String.raw`\(\mathbf u+(-\mathbf u)\)`,
+        String.raw`\(\mathbf u+\mathbf u\)`,
+        String.raw`\((-\mathbf u)-\mathbf u\)`,
+        String.raw`\(\mathbf u-\mathbf 0\)`,
+        String.raw`\(\mathbf 0-\mathbf u\)`
+      ]
+    },
+    /* Q20: reverse subtraction relation. */
+    {
+      stem: String.raw`<p>Suppose that \(\mathbf u=\mathbf z+\mathbf w\). Which formula determines \(\mathbf w\) from \(\mathbf u\) and \(\mathbf z\), for all vectors?</p>`,
+      choiceWrap: false,
+      choices: [
+        String.raw`\(\mathbf w=\mathbf u+\mathbf z\)`,
+        String.raw`\(\mathbf w=\mathbf z-\mathbf u\)`,
+        String.raw`\(\mathbf w=\mathbf u-\mathbf z\)`,
+        String.raw`\(\mathbf w=\mathbf z+\mathbf u\)`,
+        String.raw`\(\mathbf w=-\mathbf u-\mathbf z\)`,
+        String.raw`\(\mathbf w=\mathbf u\)`
+      ]
+    },
+    /* Q21: translate and add arrows. */
+    {
+      stem: String.raw`<p>Refer to Figure 4. The arrows \(A\!\to\!B\) and \(C\!\to\!D\) represent \(\mathbf p\) and \(\mathbf q\), respectively. Find the complex number associated with \(\mathbf p+\mathbf q\).</p>`,
+      media: String.raw`<figure><img src="8-7-21.png" alt="Two translated arrows A to B and C to D, and another marked point E in a coordinate plane." style="max-width:640px;width:100%;height:auto"/><figcaption>Figure 4</figcaption></figure>`,
+      choiceWrap: false,
+      choices: [
+        String.raw`\(2+5i\)`,
+        String.raw`\(4+i\)`,
+        String.raw`\(2-i\)`,
+        String.raw`\(5-i\)`,
+        String.raw`\(4-i\)`,
+        String.raw`\(3-i\)`
+      ]
+    },
+    /* Q22: recover unknown vector. */
+    {
+      stem: String.raw`<p>Refer to Figure 4. A vector \(\mathbf w\) satisfies \(\mathbf q+\mathbf w=\mathbf p\). Find the complex number associated with \(\mathbf w\).</p>`,
+      media: String.raw`<figure><img src="8-7-21.png" alt="Two translated arrows A to B and C to D, and another marked point E in a coordinate plane." style="max-width:640px;width:100%;height:auto"/><figcaption>Figure 4</figcaption></figure>`,
+      choiceWrap: false,
+      choices: [
+        String.raw`\(2+5i\)`,
+        String.raw`\(4-i\)`,
+        String.raw`\(2-5i\)`,
+        String.raw`\(-2-5i\)`,
+        String.raw`\(4+i\)`,
+        String.raw`\(-2+5i\)`
+      ]
+    },
+    /* Q23: translate recovered difference. */
+    {
+      stem: String.raw`<p>Refer to Figure 4 and the vector \(\mathbf w\) of Question 22. An arrow representing \(\mathbf w\) begins at the marked point \(E=(-2,-2)\). Where must its endpoint lie?</p>`,
+      media: String.raw`<figure><img src="8-7-21.png" alt="Two translated arrows A to B and C to D, and another marked point E in a coordinate plane." style="max-width:640px;width:100%;height:auto"/><figcaption>Figure 4</figcaption></figure>`,
+      choiceWrap: false,
+      choices: [
+        String.raw`\((0,-7)\)`,
+        String.raw`\((-4,3)\)`,
+        String.raw`\((0,-3)\)`,
+        String.raw`\((0,3)\)`,
+        String.raw`\((2,5)\)`,
+        String.raw`\((-2,3)\)`
+      ]
+    },
+    /* Q24: final reversed magnitude. */
+    {
+      stem: String.raw`<p>Refer to Figure 4 and the vector \(\mathbf w\) of Question 22. Find the magnitude of \(-\mathbf w\).</p>`,
+      media: String.raw`<figure><img src="8-7-21.png" alt="Two translated arrows A to B and C to D, and another marked point E in a coordinate plane." style="max-width:640px;width:100%;height:auto"/><figcaption>Figure 4</figcaption></figure>`,
+      choiceWrap: false,
+      choices: [
+        String.raw`\(\sqrt{13}\)`,
+        String.raw`\(29\)`,
+        String.raw`\(\sqrt{26}\)`,
+        String.raw`\(5\)`,
+        String.raw`\(\sqrt5\)`,
+        String.raw`\(\sqrt{29}\)`
+      ]
+    }
+    ]
+  };
+  </script>
+  <link rel="stylesheet" href="/math-homework/assets/core-rich.css" />
+  <script defer src="/math-homework/assets/core-rich.js"></script>
+  <script defer src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+  <style>
+    .hw-instructions { max-width: 980px; margin: 1.2rem auto 0; padding: 0.7rem 1rem;
+      border-left: 3px solid #64748b; color: #334155; background: #f8fafc;
+      font: 0.94rem/1.55 system-ui, -apple-system, "Segoe UI", sans-serif; }
+    .hw-instructions p { margin: .3em 0; }
+  </style>
+</head>
+<body>
+  <div class="hw-instructions">
+    <p>Work out each problem on paper before selecting an answer. For geometric questions, draw the necessary arrows or parallelograms on your paper.</p>
+    <p><strong>Convention:</strong> A drawn arrow is a representative of a vector, not the vector itself. Equal vectors may be represented by arrows at different locations. Figure labels name the represented vectors.</p>
+    <p>Estimated time: 70 minutes.</p>
+  </div>
+  <div id="hw-root">Loading…</div>
+</body>
+</html>
