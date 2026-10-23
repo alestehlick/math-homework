@@ -1,0 +1,369 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Homework 8-8 to 8-9 — Quotients and Polynomial Division (Algebra 1)</title>
+  <script>
+/* =====================================================================
+   ALGEBRA 1 — HOMEWORK 8-8 TO 8-9: QUOTIENTS AND POLYNOMIAL DIVISION
+
+   SOURCE SETS (the two user-supplied original homework files):
+   - Homework 8-8, "Dividing Monomials & Polynomials":
+       Exercises #2, #3, #4, #5, #6, #7, #8, #9, #10, #11, #12.
+       Selected as models for simplification by a monomial; questions
+       were re-authored and reordered, particularly final Q3–Q9.
+   - Homework 8-9, "Polynomial Division (Quotient & Remainder)":
+       Exercises #1, #2, #3, #4, #5, #7, #8, #9, #10, #11, #12.
+       Reworked for Q10, Q12–15, Q20–23; many numerical coefficients
+       and the order were deliberately changed to reduce busywork.
+   - No Type A, Type B, Type C, or Portuguese source sets were supplied.
+
+   MODEL-AUTHORED / SUBSTANTIALLY REWORKED ELEMENTS:
+   - Q1–Q2: numerical division and the condition 0 <= r < d;
+     bridges the user's actual classroom introduction to division.
+   - Q3–Q9: monomial quotients, distributing over a sum, partially
+     simplified quotients, distinction from binomial denominators,
+     and preserving the original domain.
+   - Q10–Q11: exact polynomial division followed by reconstruction
+     from the divisor, quotient, and remainder.
+   - Q12: a correct but unfinished polynomial decomposition; the
+     degree-based stopping condition comes before algorithm drills.
+   - Q13–Q16: graduated algorithm practice (negative remainder,
+     nonmonic linear divisor, omitted coefficient).
+   - Q17–Q18: degree condition for quadratic divisors and the
+     quotient-zero case when the dividend has lower degree.
+   - Q19: model-authored contrast of numerical and polynomial
+     stopping conditions (replaces redundant second reconstruction).
+   - Q20: D/d = q + r/d.
+   - Q21: first quadratic divisor and a linear remainder.
+   - Q22: model-authored intermediate leading-term cancellation,
+     replacing a repetitive full quartic division.
+   - Q23: final quadratic divisor synthesis with linear remainder.
+
+   FIGURES: none; all content is symbolic algebra.
+   User-supplied figures: none. Model-generated figures: none.
+   If figures are later created, model-generated figure filenames
+   follow 8-9-<local-question-number>.png in the same directory.
+
+   All items: multiple-choice, six choices A–F, single correct answer.
+   Mathematical alternatives use String.raw, explicit \( ... \),
+   and choiceWrap: false (the established core-rich convention).
+   ===================================================================== */
+    window.homeworkData = {
+      classId: "Algebra1",
+      id: "Homework 8-8 to 8-9",
+      title: "Homework 8-8 to 8-9 — Quotients and Polynomial Division",
+      graphics: String.raw``,
+      answerKey: ["B", "D", "C", "F", "A", "E", "D", "F", "B", "E", "C", "C", "B", "D", "A", "E", "E", "B", "D", "A", "C", "E", "D"],
+      questions: [
+        /* Q01 — integer quotient and remainder; q7 r3 */
+        {
+          stem: String.raw`<p>Divide \(59\) by \(8\). Find the quotient \(q\) and remainder \(r\), where \(59=8q+r\) and \(0\leq r<8\).</p>`,
+          choiceWrap: false,
+          choices: [
+            String.raw`\(q=8,\ r=-5\)`,
+            String.raw`\(q=7,\ r=3\)`,
+            String.raw`\(q=6,\ r=11\)`,
+            String.raw`\(q=7,\ r=5\)`,
+            String.raw`\(q=8,\ r=3\)`,
+            String.raw`\(q=6,\ r=3\)`
+          ]
+        },
+        /* Q02 — numerical stopping condition */
+        {
+          stem: String.raw`<p>A student writes \(50=7(6)+8\). This equality is correct, but the division of \(50\) by \(7\) is not finished. Which statement correctly completes the division?</p>`,
+          choiceWrap: false,
+          choices: [
+            String.raw`\(q=6,\ r=8\); the equality is already sufficient.`,
+            String.raw`\(q=8,\ r=-6\); a negative remainder is acceptable.`,
+            String.raw`\(q=7,\ r=8\); the divisor has not changed.`,
+            String.raw`\(q=7,\ r=1\); one more copy of \(7\) can be removed.`,
+            String.raw`\(q=6,\ r=1\); only the remainder must change.`,
+            String.raw`\(q=8,\ r=1\); the quotient must be as large as possible.`
+          ]
+        },
+        /* Q03 — monomial and exponents */
+        {
+          stem: String.raw`<p>Simplify the quotient, assuming its denominator is nonzero: \(\dfrac{18x^5y^3}{6x^2y}\).</p>`,
+          choiceWrap: false,
+          choices: [
+            String.raw`\(3x^3y^3\)`,
+            String.raw`\(3x^2y^2\)`,
+            String.raw`\(3x^3y^2\)`,
+            String.raw`\(12x^3y^2\)`,
+            String.raw`\(3x^7y^4\)`,
+            String.raw`\(\dfrac{3x^3}{y^2}\)`
+          ]
+        },
+        /* Q04 — signs and factor cancellation */
+        {
+          stem: String.raw`<p>Simplify the quotient, assuming its denominator is nonzero: \(\dfrac{-24a^3b^2}{-6ab}\).</p>`,
+          choiceWrap: false,
+          choices: [
+            String.raw`\(4a^2b^2\)`,
+            String.raw`\(-4a^2b\)`,
+            String.raw`\(4a^3b\)`,
+            String.raw`\(4ab\)`,
+            String.raw`\(-4ab\)`,
+            String.raw`\(4a^2b\)`
+          ]
+        },
+        /* Q05 — termwise monomial denominator */
+        {
+          stem: String.raw`<p>Simplify the expression for \(x\ne0\): \(\dfrac{8x^3-12x^2+4x}{4x}\).</p>`,
+          choiceWrap: false,
+          choices: [
+            String.raw`\(2x^2-3x+1\)`,
+            String.raw`\(2x^2-3x+4\)`,
+            String.raw`\(2x^2-3+1\)`,
+            String.raw`\(2x^2+3x+1\)`,
+            String.raw`\(2x^2-3x\)`,
+            String.raw`\(8x^2-12x+4\)`
+          ]
+        },
+        /* Q06 — multivariable termwise monomial denominator */
+        {
+          stem: String.raw`<p>Simplify, assuming \(ab\ne0\): \(\dfrac{12a^2b-18ab^2+6ab}{6ab}\).</p>`,
+          choiceWrap: false,
+          choices: [
+            String.raw`\(2a+3b+1\)`,
+            String.raw`\(2a-3ab+1\)`,
+            String.raw`\(2a-3b+6\)`,
+            String.raw`\(2a-3b\)`,
+            String.raw`\(2a-3b+1\)`,
+            String.raw`\(2a^2-3b^2+1\)`
+          ]
+        },
+        /* Q07 — polynomial part plus proper fractional part; no false cancellation */
+        {
+          stem: String.raw`<p>Express the quotient in simplest form for \(x\ne0\): \(\dfrac{6x^2+9}{3x}\).</p>`,
+          choiceWrap: false,
+          choices: [
+            String.raw`\(2x+3\)`,
+            String.raw`\(2x+\dfrac{9}{x}\)`,
+            String.raw`\(2x+\dfrac{3}{x^2}\)`,
+            String.raw`\(2x+\dfrac{3}{x}\)`,
+            String.raw`\(2x+3x\)`,
+            String.raw`\(2x+\dfrac{1}{x}\)`
+          ]
+        },
+        /* Q08 — monomial denominator versus factorization of binomial denominator */
+        {
+          stem: String.raw`<p>Consider the two quotients below. Assume both denominators are nonzero.</p><p>\(\displaystyle A=\frac{x^2+4x}{x},\qquad B=\frac{x^2+4x}{x+4}.\)</p><p>Which ordered pair gives the simplified expressions \((A,B)\)?</p>`,
+          choiceWrap: false,
+          choices: [
+            String.raw`\(\left(x+4,\ x+4\right)\)`,
+            String.raw`\(\left(x,\ x+4\right)\)`,
+            String.raw`\(\left(x,\ x\right)\)`,
+            String.raw`\(\left(x+4,\ \dfrac{x}{x+4}\right)\)`,
+            String.raw`\(\left(x+4,\ x+\dfrac{4}{x+4}\right)\)`,
+            String.raw`\(\left(x+4,\ x\right)\)`
+          ]
+        },
+        /* Q09 — domain restriction after cancellation */
+        {
+          stem: String.raw`<p>Simplify \(\dfrac{x^2-9x}{x}\). Which choice gives the simplified expression <em>and the same allowable values of \(x\)</em> as the original fraction?</p>`,
+          choiceWrap: false,
+          choices: [
+            String.raw`\(x-9\), with \(x\ne9\)`,
+            String.raw`\(x-9\), with \(x\ne0\)`,
+            String.raw`\(x-9\), for every real \(x\)`,
+            String.raw`\(x^2-9\), with \(x\ne0\)`,
+            String.raw`\(x-9\), with \(x>0\)`,
+            String.raw`\(x-9\), with \(x\ne0,9\)`
+          ]
+        },
+        /* Q10 — first exact division via difference of squares */
+        {
+          stem: String.raw`<p>Divide \(x^2-16\) by \(x-4\). Find the final quotient \(q(x)\) and remainder \(r(x)\).</p>`,
+          choiceWrap: false,
+          choices: [
+            String.raw`\(q=x+4,\ r=16\)`,
+            String.raw`\(q=x-4,\ r=0\)`,
+            String.raw`\(q=x+3,\ r=x-4\)`,
+            String.raw`\(q=x+4,\ r=-16\)`,
+            String.raw`\(q=x+4,\ r=0\)`,
+            String.raw`\(q=x+5,\ r=-x+4\)`
+          ]
+        },
+        /* Q11 — reconstruct D=dq+r */
+        {
+          stem: String.raw`<p>A polynomial \(D(x)\) is divided by \(x+2\), giving quotient \(x+3\) and remainder \(1\). Find \(D(x)\).</p>`,
+          choiceWrap: false,
+          choices: [
+            String.raw`\(x^2+5x+6\)`,
+            String.raw`\(x^2+6x+7\)`,
+            String.raw`\(x^2+5x+7\)`,
+            String.raw`\(x^2+5x+8\)`,
+            String.raw`\(x^2+x+7\)`,
+            String.raw`\(x^2+6x+6\)`
+          ]
+        },
+        /* Q12 — uncompleted division; distinguish deg r vs deg d */
+        {
+          stem: String.raw`<p>Suppose a student begins dividing \(x^2+3x+5\) by \(x+1\) and obtains the correct equality</p><p>\(\displaystyle x^2+3x+5=(x+1)(x+1)+(x+4).\)</p><p>Why is the division <em>not yet complete</em>?</p>`,
+          choiceWrap: false,
+          choices: [
+            String.raw`The remainder must always be positive.`,
+            String.raw`The quotient must have the same degree as the dividend.`,
+            String.raw`The remainder \(x+4\) has the same degree as the divisor \(x+1\).`,
+            String.raw`The remainder must always be zero.`,
+            String.raw`The degree of the remainder is smaller than the degree of the dividend.`,
+            String.raw`The divisor \(x+1\) is not a monomial.`
+          ]
+        },
+        /* Q13 — first nonexact quadratic over linear division */
+        {
+          stem: String.raw`<p>Divide \(x^2+5x+8\) by \(x+2\). Find the final quotient and remainder.</p>`,
+          choiceWrap: false,
+          choices: [
+            String.raw`\(q=x+3,\ r=-2\)`,
+            String.raw`\(q=x+3,\ r=2\)`,
+            String.raw`\(q=x+2,\ r=x+4\)`,
+            String.raw`\(q=x+4,\ r=-x\)`,
+            String.raw`\(q=x+1,\ r=2x+6\)`,
+            String.raw`\(q=x+2,\ r=4\)`
+          ]
+        },
+        /* Q14 — negative remainder allowed */
+        {
+          stem: String.raw`<p>Divide \(x^2-4x+1\) by \(x-3\). Find the final quotient and remainder.</p>`,
+          choiceWrap: false,
+          choices: [
+            String.raw`\(q=x+1,\ r=-2\)`,
+            String.raw`\(q=x-1,\ r=2\)`,
+            String.raw`\(q=x-2,\ r=x-5\)`,
+            String.raw`\(q=x-1,\ r=-2\)`,
+            String.raw`\(q=x-1,\ r=-1\)`,
+            String.raw`\(q=x+1,\ r=4\)`
+          ]
+        },
+        /* Q15 — nonmonic linear divisor */
+        {
+          stem: String.raw`<p>Divide \(3x^2+7x-2\) by \(3x-2\). Find the final quotient and remainder.</p>`,
+          choiceWrap: false,
+          choices: [
+            String.raw`\(q=x+3,\ r=4\)`,
+            String.raw`\(q=x+3,\ r=-4\)`,
+            String.raw`\(q=3x+3,\ r=4\)`,
+            String.raw`\(q=x+2,\ r=3x+2\)`,
+            String.raw`\(q=x+4,\ r=-3x+6\)`,
+            String.raw`\(q=x+1,\ r=6x\)`
+          ]
+        },
+        /* Q16 — cubic missing coefficient */
+        {
+          stem: String.raw`<p>Divide \(x^3+2x+5\) by \(x+1\). Remember that the dividend has no \(x^2\)-term. Find the final quotient and remainder.</p>`,
+          choiceWrap: false,
+          choices: [
+            String.raw`\(q=x^2+x+3,\ r=2\)`,
+            String.raw`\(q=x^2-x+3,\ r=-2\)`,
+            String.raw`\(q=x^2-x+2,\ r=x+3\)`,
+            String.raw`\(q=x^2-x+4,\ r=1\)`,
+            String.raw`\(q=x^2-x+3,\ r=2\)`,
+            String.raw`\(q=x^2-x+2,\ r=3\)`
+          ]
+        },
+        /* Q17 — final remainder degree < quadratic divisor */
+        {
+          stem: String.raw`<p>When a polynomial is divided by \(x^2+1\), what must be true of its <em>final</em> remainder \(r(x)\)?</p>`,
+          choiceWrap: false,
+          choices: [
+            String.raw`It must be \(0\).`,
+            String.raw`It must be a nonnegative constant.`,
+            String.raw`It must have degree exactly \(1\).`,
+            String.raw`It may have degree \(2\) if its leading coefficient is small.`,
+            String.raw`It must be \(0\), or have degree at most \(1\).`,
+            String.raw`It may have any degree, provided the quotient is large enough.`
+          ]
+        },
+        /* Q18 — dividend lower degree than divisor */
+        {
+          stem: String.raw`<p>Divide \(2x+3\) by \(x^2+1\). Find the quotient and remainder.</p>`,
+          choiceWrap: false,
+          choices: [
+            String.raw`\(q=2x+3,\ r=0\)`,
+            String.raw`\(q=0,\ r=2x+3\)`,
+            String.raw`\(q=2x,\ r=3\)`,
+            String.raw`\(q=0,\ r=3\)`,
+            String.raw`\(q=x,\ r=x+3\)`,
+            String.raw`\(q=1,\ r=2x+2\)`
+          ]
+        },
+        /* Q19 — connect the two remainder stopping conditions, without computing a long quotient */
+        {
+          stem: String.raw`<p>A student writes two correct equalities:</p><p>\(47=6(7)+5\)</p><p>\(x^2+4x+6=(x+1)(x+2)+(x+4)\).</p><p>Which statement correctly describes whether these divisions are finished?</p>`,
+          choiceWrap: false,
+          choices: [
+            String.raw`Both are finished, because both equalities are correct.`,
+            String.raw`Only the polynomial division is finished, since \(x+4\) has lower degree than the dividend.`,
+            String.raw`Neither is finished, because neither remainder is zero.`,
+            String.raw`Only the numerical division is finished: \(5<6\), but \(x+4\) has the same degree as \(x+1\).`,
+            String.raw`Both are finished, because each remainder is smaller than its dividend.`,
+            String.raw`Only the polynomial division is finished, because the numerical remainder is positive.`
+          ]
+        },
+        /* Q20 — D/d=q+r/d */
+        {
+          stem: String.raw`<p>Rewrite \(\dfrac{x^2+3x+4}{x+1}\) as a polynomial plus a fraction whose numerator has lower degree than \(x+1\).</p>`,
+          choiceWrap: false,
+          choices: [
+            String.raw`\(x+2+\dfrac{2}{x+1}\)`,
+            String.raw`\(x+2+\dfrac{3}{x+1}\)`,
+            String.raw`\(x+2+\dfrac{2}{x}\)`,
+            String.raw`\(x+3+\dfrac{1}{x+1}\)`,
+            String.raw`\(x+2-\dfrac{2}{x+1}\)`,
+            String.raw`\(x+1+\dfrac{3}{x+1}\)`
+          ]
+        },
+        /* Q21 — first quadratic divisor, linear remainder */
+        {
+          stem: String.raw`<p>Divide \(x^3+2x^2+3x+5\) by \(x^2+1\). Find the final quotient and remainder.</p>`,
+          choiceWrap: false,
+          choices: [
+            String.raw`\(q=x+2,\ r=2x-3\)`,
+            String.raw`\(q=x+3,\ r=-x^2+2x+2\)`,
+            String.raw`\(q=x+2,\ r=2x+3\)`,
+            String.raw`\(q=x+1,\ r=2x+4\)`,
+            String.raw`\(q=x+2,\ r=3x+5\)`,
+            String.raw`\(q=x+1,\ r=x^2+2x+4\)`
+          ]
+        },
+        /* Q22 — identify the next leading-term cancellation in an unfinished division */
+        {
+          stem: String.raw`<p>While dividing \(2x^4+3x^3+x^2+5x+1\) by \(x^2+x+1\), the first step subtracts \(2x^2(x^2+x+1)\), leaving</p><p>\(x^3-x^2+5x+1\).</p><p>Which monomial should be added <em>next</em> to the quotient so that its product with \(x^2+x+1\) cancels the leading term of what remains?</p>`,
+          choiceWrap: false,
+          choices: [
+            String.raw`\(2x\)`,
+            String.raw`\(x^2\)`,
+            String.raw`\(1\)`,
+            String.raw`\(-x\)`,
+            String.raw`\(x\)`,
+            String.raw`\(-x^2\)`
+          ]
+        },
+        /* Q23 — capstone with quadratic divisor and degree-one remainder */
+        {
+          stem: String.raw`<p>Divide \(x^4+2x^3+3x^2+5x+7\) by \(x^2+x+1\). Find the final quotient and remainder.</p>`,
+          choiceWrap: false,
+          choices: [
+            String.raw`\(q=x^2+x+2,\ r=-x^2+2x+5\)`,
+            String.raw`\(q=x^2+x+1,\ r=3x-6\)`,
+            String.raw`\(q=x^2-x+1,\ r=3x+6\)`,
+            String.raw`\(q=x^2+x+1,\ r=3x+6\)`,
+            String.raw`\(q=x^2+x+2,\ r=3x+5\)`,
+            String.raw`\(q=x^2+x+1,\ r=3x+7\)`
+          ]
+        }
+      ]
+    };
+  </script>
+  <link rel="stylesheet" href="/math-homework/assets/core-rich.css" />
+  <script defer src="/math-homework/assets/core-rich.js"></script>
+  <script defer src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+</head>
+<body>
+  <div id="hw-root">Loading…</div>
+</body>
+</html>
