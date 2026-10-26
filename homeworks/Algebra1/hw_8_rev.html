@@ -3,127 +3,446 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Homework 8-Review (Algebra 1)</title>
-
+  <title>Homework 8-10 — Chapter 8 Review | Algebra 1</title>
   <script>
-    /* =========================
-       Homework 8-Review — Comprehensive Polynomials
-       ========================= */
+    /* =====================================================================
+       ALGEBRA 1 — HOMEWORK 8-10: CHAPTER 8 REVIEW
+       File hw_8_10.html; 8-10 denotes the chapter review assignment
+       following Sections 8-1 through 8-9, not a textbook Section 8-10.
+
+       USER-SUPPLIED SOURCE SETS (consolidated homeworks):
+       - hw_8_1to4(2).html: original Q2, Q3, Q4, Q9, Q12,
+         Q15, Q18, Q23, Q28, Q31 (evaluation, degree, signs,
+         monomial multiplication, distribution, cancellation).
+       - hw_8_5to7(1).html: original Q1, Q3, Q4, Q5, Q8,
+         Q9, Q10, Q12, Q13, Q15, Q16, Q19, Q21, Q25
+         (binomial products, three identities, structural applications).
+       - hw_8_8to9.html: original Q3, Q5, Q7, Q8, Q10, Q11,
+         Q12, Q13, Q14, Q17, Q20, Q21, Q23
+         (monomial quotients, distinct denominator types,
+         exact/general division, remainders and stopping condition).
+       All are models and raw material, not verbatim reproductions.
+
+       MODEL-AUTHORED / SUBSTANTIALLY REWORKED QUESTIONS:
+       - Q1–Q7: concise cumulative review of evaluation, classification,
+         subtraction, and distribution with a degree-cancellation bridge.
+       - Q8–Q10: direct retrieval of the three standard products;
+         supported by written recall before starting.
+       - Q11–Q18: meaningful transfer, inverse square recognition,
+         cancellation, nested products, and inference from xy.
+       - Q19–Q22: monomial-denominator simplification, nonvanishing
+         assumptions, partial fractional remainder, contrasting a
+         binomial denominator requiring factorization.
+       - Q23–Q26: exact and nonexact polynomial division; unfinished
+         remainder versus final remainder; quadratic-divisor capstone.
+       All 26 items were edited or newly composed for this review;
+       computational choices and coefficients were chosen anew.
+
+       FIGURES: none. No user-supplied or model-generated images.
+       If images are later added, user-supplied naming uses the source
+       homework ID and source exercise number; model-generated naming
+       uses 8-10-<final-question-number>.png, beside this HTML file.
+
+       Target workload: approximately 60 minutes for Algebra 1 students.
+       This estimate is NOT shown on the student-facing page.
+       Six alternatives A–F per question, one correct choice each.
+       All mathematical alternatives use String.raw, explicit \( ... \),
+       and choiceWrap:false, per current core-rich homework convention.
+       ===================================================================== */
     window.homeworkData = {
-      classId : "Algebra1",
-      id      : "Homework 8-Review",
-      title   : "Homework 8-Review — Comprehensive Polynomials",
-
-      graphics : String.raw` `,
-
-      /* Correct choices (A–F) for Q1–Q12 */
-      answerKey : ["A","C","A","E","E","E","A","B","A","A","C","A"],
-
-      questions : [
-        { latex: String.raw`\text{Classify } x-5.`,
+      classId: "Algebra1",
+      id: "Homework 8-10",
+      title: "Homework 8-10 — Chapter 8 Review",
+      graphics: String.raw``,
+      answerKey: ["D", "A", "A", "F", "B", "E", "C", "F", "D", "A", "C", "E", "A", "D", "F", "B", "E", "C", "D", "A", "F", "B", "E", "C", "A", "D"],
+      questions: [
+        /* Q01 — signed evaluation */
+        {
+          stem: String.raw`<p>Evaluate \(2x^3-3x^2+5\) when \(x=-2\).</p>`,
+          choiceWrap: false,
           choices: [
-            String.raw`\text{Binomial, degree 1}`,
-            String.raw`\text{Monomial, degree 1}`,
-            String.raw`\text{Trinomial, degree 1}`,
-            String.raw`\text{Polynomial (4 terms), degree 1}`,
-            String.raw`\text{Binomial, degree 0}`,
-            String.raw`\text{Monomial, degree 0}`
-          ]},
-
-        { latex: String.raw`\text{Classify } 3x^2y+4y-6xy^2.`,
-          choices: [
-            String.raw`\text{Binomial, degree 3}`,
-            String.raw`\text{Monomial, degree 2}`,
-            String.raw`\text{Trinomial, degree 3}`,
-            String.raw`\text{Trinomial, degree 2}`,
-            String.raw`\text{Polynomial (4 terms), degree 3}`,
-            String.raw`\text{Binomial, degree 4}`
-          ]},
-
-        { latex: String.raw`\text{Give the degree of the constant }9.`,
-          choices: ["0","1","2","3","4","5"]
+          String.raw`\(-7\)`,
+          String.raw`\(9\)`,
+          String.raw`\(-15\)`,
+          String.raw`\(-23\)`,
+          String.raw`\(33\)`,
+          String.raw`\(-3\)`
+          ]
         },
 
-        { latex: String.raw`\text{Evaluate }4x^3+2x-5z\ \text{ if }x=2,\ z=0.`,
-          choices: ["28","30","32","34","36","38"]
+        /* Q02 — simplify then classify */
+        {
+          stem: String.raw`<p>Simplify \((4x^3-2x^2+x)+(-4x^3+7x^2-3x)\). Then classify the result by its number of terms and degree.</p>`,
+          choiceWrap: false,
+          choices: [
+          String.raw`Binomial; degree 2`,
+          String.raw`Trinomial; degree 3`,
+          String.raw`Binomial; degree 3`,
+          String.raw`Monomial; degree 2`,
+          String.raw`Binomial; degree 1`,
+          String.raw`Trinomial; degree 2`
+          ]
         },
 
-        { latex: String.raw`\text{Evaluate }8y^4+7y^2+3y+9\ \text{ if }y=-1.`,
-          choices: ["-3","5","12","18","21","24"]
+        /* Q03 — signed polynomial subtraction */
+        {
+          stem: String.raw`<p>Simplify \((2x^2-3x+4)-(-x^2+2x-5)\).</p>`,
+          choiceWrap: false,
+          choices: [
+          String.raw`\(3x^2-5x+9\)`,
+          String.raw`\(x^2-x-1\)`,
+          String.raw`\(3x^2-x+9\)`,
+          String.raw`\(3x^2-5x-1\)`,
+          String.raw`\(x^2-5x+9\)`,
+          String.raw`\(3x^2+x+9\)`
+          ]
         },
 
-        { latex: String.raw`\text{Evaluate }3x^2-5xz\ \text{ if }x=2,\ z=0.`,
-          choices: ["4","6","8","10","12","14"]
+        /* Q04 — signed monomial multiplication */
+        {
+          stem: String.raw`<p>Multiply \((-3x^2y)(2xy^3)\).</p>`,
+          choiceWrap: false,
+          choices: [
+          String.raw`\(-6x^2y^3\)`,
+          String.raw`\(6x^3y^4\)`,
+          String.raw`\(-6x^2y^4\)`,
+          String.raw`\(-6x^3y^3\)`,
+          String.raw`\(-5x^3y^4\)`,
+          String.raw`\(-6x^3y^4\)`
+          ]
         },
 
-        { latex: String.raw`\text{Simplify: }(2x^2+3x-5)+(7x^2-9).`,
+        /* Q05 — negative monomial distribution */
+        {
+          stem: String.raw`<p>Expand \(-2x(3x^2-4x+5)\).</p>`,
+          choiceWrap: false,
           choices: [
-            String.raw`9x^2+3x-14`,
-            String.raw`9x^2-3x-14`,
-            String.raw`9x^2+5x-14`,
-            String.raw`7x^2+3x-9`,
-            String.raw`5x^2+3x-14`,
-            String.raw`9x^2+3x-9`
-          ]},
+          String.raw`\(-6x^3-8x^2-10x\)`,
+          String.raw`\(-6x^3+8x^2-10x\)`,
+          String.raw`\(6x^3-8x^2+10x\)`,
+          String.raw`\(-6x^3+8x^2+10x\)`,
+          String.raw`\(-6x^3+4x^2-10x\)`,
+          String.raw`\(-6x^3+8x^2-5x\)`
+          ]
+        },
 
-        { latex: String.raw`\text{Simplify: }(5x^2+3b)(2x^2-7b).`,
+        /* Q06 — degree cancellation */
+        {
+          stem: String.raw`<p>Expand and simplify \(3x(2x-1)-2x(3x-4)+5\).</p>`,
+          choiceWrap: false,
           choices: [
-            String.raw`10x^4-35x^2b+6b^2`,
-            String.raw`10x^4-29x^2b-21b^2`,
-            String.raw`10x^4+29x^2b-21b^2`,
-            String.raw`10x^4-29xb^2-21b^2`,
-            String.raw`10x^4-35x^2b-21b^2`,
-            String.raw`10x^4-29x^2b+21b^2`
-          ]},
+          String.raw`\(12x^2+5x+5\)`,
+          String.raw`\(-11x+5\)`,
+          String.raw`\(5x-5\)`,
+          String.raw`\(5x^2+5\)`,
+          String.raw`\(5x+5\)`,
+          String.raw`\(11x+5\)`
+          ]
+        },
 
-        { latex: String.raw`\text{Divide: }\dfrac{7x^3y+21x^2y^4}{7xy}.`,
+        /* Q07 — binomial product */
+        {
+          stem: String.raw`<p>Expand \((x-4)(x+3)\).</p>`,
+          choiceWrap: false,
           choices: [
-            String.raw`x^2+3xy^3`,
-            String.raw`x^2+21xy^3`,
-            String.raw`7x^2+3xy^3`,
-            String.raw`7x^2+21xy^3`,
-            String.raw`x^2y+3y^3`,
-            String.raw`x^2+3y^3`
-          ]},
+          String.raw`\(x^2+x-12\)`,
+          String.raw`\(x^2-7x-12\)`,
+          String.raw`\(x^2-x-12\)`,
+          String.raw`\(x^2-x+12\)`,
+          String.raw`\(x^2+7x-12\)`,
+          String.raw`\(x^2-12x-1\)`
+          ]
+        },
 
-        { latex: String.raw`\text{Divide and state the quotient and remainder: }(5x^2-2x+9)\div(x+1).`,
+        /* Q08 — positive square recall */
+        {
+          stem: String.raw`<p>Expand \((a+b)^2\).</p>`,
+          choiceWrap: false,
           choices: [
-            String.raw`\text{Quotient }5x-7,\ \text{Remainder }16`,
-            String.raw`\text{Quotient }5x+7,\ \text{Remainder }-16`,
-            String.raw`\text{Quotient }5x-2,\ \text{Remainder }9`,
-            String.raw`\text{Quotient }5x-7,\ \text{Remainder }-16`,
-            String.raw`\text{Quotient }5x+3,\ \text{Remainder }6`,
-            String.raw`\text{Quotient }5x-5,\ \text{Remainder }4`
-          ]},
+          String.raw`\(a^2+ab+b^2\)`,
+          String.raw`\(a^2-2ab+b^2\)`,
+          String.raw`\(a^2+b^2\)`,
+          String.raw`\(a^2+2ab-b^2\)`,
+          String.raw`\(a^2+2b^2\)`,
+          String.raw`\(a^2+2ab+b^2\)`
+          ]
+        },
 
-        { latex: String.raw`\text{Divide and state the quotient and remainder: }(x^5-2x^2+6)\div(x^2+4).`,
+        /* Q09 — negative square recall */
+        {
+          stem: String.raw`<p>Expand \((a-b)^2\).</p>`,
+          choiceWrap: false,
           choices: [
-            String.raw`\text{Quotient }x^3-4x+2,\ \text{Remainder }14-16x`,
-            String.raw`\text{Quotient }x^3-4x-2,\ \text{Remainder }14-16x`,
-            String.raw`\text{Quotient }x^3-4x-2,\ \text{Remainder }16x+14`,
-            String.raw`\text{Quotient }x^3-2x-4,\ \text{Remainder }16x+14`,
-            String.raw`\text{Quotient }x^2-4x-2,\ \text{Remainder }16x+14`,
-            String.raw`\text{Quotient }x^3-4x-2,\ \text{Remainder }-16x-14`
-          ]},
+          String.raw`\(a^2-b^2\)`,
+          String.raw`\(a^2+2ab+b^2\)`,
+          String.raw`\(a^2-ab+b^2\)`,
+          String.raw`\(a^2-2ab+b^2\)`,
+          String.raw`\(a^2-2ab-b^2\)`,
+          String.raw`\(a^2+b^2\)`
+          ]
+        },
 
-        { latex: String.raw`\text{Write in descending order: }3x-5+x^2.`,
+        /* Q10 — conjugate product recall */
+        {
+          stem: String.raw`<p>Expand \((a+b)(a-b)\).</p>`,
+          choiceWrap: false,
           choices: [
-            String.raw`x^2+3x-5`,
-            String.raw`3x-5+x^2`,
-            String.raw`x^2-5+3x`,
-            String.raw`-5+3x+x^2`,
-            String.raw`x^2+5-3x`,
-            String.raw`3x^2+x-5`
-          ]}
+          String.raw`\(a^2-b^2\)`,
+          String.raw`\(a^2+b^2\)`,
+          String.raw`\(a^2+2ab-b^2\)`,
+          String.raw`\(a^2-2ab+b^2\)`,
+          String.raw`\(a^2-2ab-b^2\)`,
+          String.raw`\(a^2+2ab+b^2\)`
+          ]
+        },
+
+        /* Q11 — negative square transfer */
+        {
+          stem: String.raw`<p>Expand \((2x-3)^2\).</p>`,
+          choiceWrap: false,
+          choices: [
+          String.raw`\(4x^2-6x+9\)`,
+          String.raw`\(4x^2+12x+9\)`,
+          String.raw`\(4x^2-12x+9\)`,
+          String.raw`\(4x^2-12x-9\)`,
+          String.raw`\(2x^2-12x+9\)`,
+          String.raw`\(4x^2-6x+6\)`
+          ]
+        },
+
+        /* Q12 — difference of squares transfer */
+        {
+          stem: String.raw`<p>Simplify \((3a+2b)(3a-2b)\).</p>`,
+          choiceWrap: false,
+          choices: [
+          String.raw`\(9a^2+4b^2\)`,
+          String.raw`\(9a^2-12ab+4b^2\)`,
+          String.raw`\(9a^2+12ab-4b^2\)`,
+          String.raw`\(3a^2-4b^2\)`,
+          String.raw`\(9a^2-4b^2\)`,
+          String.raw`\(9a^2-2b^2\)`
+          ]
+        },
+
+        /* Q13 — trinomial times binomial */
+        {
+          stem: String.raw`<p>Expand and simplify \((x^2-2x+3)(x+2)\).</p>`,
+          choiceWrap: false,
+          choices: [
+          String.raw`\(x^3-x+6\)`,
+          String.raw`\(x^3+4x^2-x+6\)`,
+          String.raw`\(x^3+x+6\)`,
+          String.raw`\(x^3-x-6\)`,
+          String.raw`\(x^3-4x+6\)`,
+          String.raw`\(x^3+2x^2-x+6\)`
+          ]
+        },
+
+        /* Q14 — reversed square recognition */
+        {
+          stem: String.raw`<p>Which expression is equal to \(x^2-12xy+36y^2\) for all \(x\) and \(y\)?</p>`,
+          choiceWrap: false,
+          choices: [
+          String.raw`\((x+6y)^2\)`,
+          String.raw`\((x-3y)^2\)`,
+          String.raw`\((x-12y)^2\)`,
+          String.raw`\((x-6y)^2\)`,
+          String.raw`\((x-6y)(x+6y)\)`,
+          String.raw`\((x-2y)(x-18y)\)`
+          ]
+        },
+
+        /* Q15 — difference of related squares */
+        {
+          stem: String.raw`<p>Simplify \((2x+3)^2-(2x-3)^2\).</p>`,
+          choiceWrap: false,
+          choices: [
+          String.raw`\(12x\)`,
+          String.raw`\(24x+18\)`,
+          String.raw`\(8x^2\)`,
+          String.raw`\(-24x\)`,
+          String.raw`\(12x^2\)`,
+          String.raw`\(24x\)`
+          ]
+        },
+
+        /* Q16 — composite differences of squares */
+        {
+          stem: String.raw`<p>Expand and simplify \((x^2+y^2-2xy)(x^2+y^2+2xy)\).</p>`,
+          choiceWrap: false,
+          choices: [
+          String.raw`\(x^4+y^4\)`,
+          String.raw`\(x^4-2x^2y^2+y^4\)`,
+          String.raw`\(x^4+2x^2y^2+y^4\)`,
+          String.raw`\(x^4-4x^2y^2+y^4\)`,
+          String.raw`\(x^4-2x^3y+y^4\)`,
+          String.raw`\(x^4+4x^2y^2+y^4\)`
+          ]
+        },
+
+        /* Q17 — repeated differences of squares */
+        {
+          stem: String.raw`<p>Simplify \((x-2)(x+2)(x^2+4)(x^4+16)\).</p>`,
+          choiceWrap: false,
+          choices: [
+          String.raw`\(x^8-16\)`,
+          String.raw`\(x^8+256\)`,
+          String.raw`\(x^8-64\)`,
+          String.raw`\(x^8-128\)`,
+          String.raw`\(x^8-256\)`,
+          String.raw`\(x^8-16x^4-256\)`
+          ]
+        },
+
+        /* Q18 — numeric inference from identities */
+        {
+          stem: String.raw`<p>Suppose \(xy=1\) and \(x^2+y^2=3\). Find \(x^4+y^4\).</p>`,
+          choiceWrap: false,
+          choices: [
+          String.raw`\(5\)`,
+          String.raw`\(9\)`,
+          String.raw`\(7\)`,
+          String.raw`\(3\)`,
+          String.raw`\(6\)`,
+          String.raw`\(8\)`
+          ]
+        },
+
+        /* Q19 — monomial quotient */
+        {
+          stem: String.raw`<p>Simplify \(\dfrac{-18x^4y^3}{6x^2y}\), assuming the denominator is nonzero.</p>`,
+          choiceWrap: false,
+          choices: [
+          String.raw`\(-3x^2y^3\)`,
+          String.raw`\(3x^2y^2\)`,
+          String.raw`\(-12x^2y^2\)`,
+          String.raw`\(-3x^2y^2\)`,
+          String.raw`\(-3x^6y^4\)`,
+          String.raw`\(-3x^2y\)`
+          ]
+        },
+
+        /* Q20 — termwise simplification */
+        {
+          stem: String.raw`<p>Simplify \(\dfrac{12x^3-6x^2+9x}{3x}\) for \(x\ne0\).</p>`,
+          choiceWrap: false,
+          choices: [
+          String.raw`\(4x^2-2x+3\)`,
+          String.raw`\(4x^2-2x+9\)`,
+          String.raw`\(4x^2+2x+3\)`,
+          String.raw`\(4x^3-2x^2+3x\)`,
+          String.raw`\(4x^2-6x+3\)`,
+          String.raw`\(4x^2-2+3\)`
+          ]
+        },
+
+        /* Q21 — fractional remainder after monomial denominator */
+        {
+          stem: String.raw`<p>Express \(\dfrac{8x^2+12}{4x}\) in simplest form for \(x\ne0\).</p>`,
+          choiceWrap: false,
+          choices: [
+          String.raw`\(2x+3\)`,
+          String.raw`\(2x+\dfrac{12}{x}\)`,
+          String.raw`\(2x+\dfrac{3}{x^2}\)`,
+          String.raw`\(2x+3x\)`,
+          String.raw`\(2x+\dfrac{1}{x}\)`,
+          String.raw`\(2x+\dfrac{3}{x}\)`
+          ]
+        },
+
+        /* Q22 — contrast between two denominators */
+        {
+          stem: String.raw`<p>Let \(A=\dfrac{x^2-9}{x-3}\) and \(B=\dfrac{x^2-9}{x}\), with both denominators nonzero. Which ordered pair gives the simplified expressions \((A,B)\)?</p>`,
+          choiceWrap: false,
+          choices: [
+          String.raw`\(\left(x+3,\ x-9\right)\)`,
+          String.raw`\(\left(x+3,\ x-\dfrac{9}{x}\right)\)`,
+          String.raw`\(\left(x-3,\ x-\dfrac{9}{x}\right)\)`,
+          String.raw`\(\left(x+3,\ x+\dfrac{9}{x}\right)\)`,
+          String.raw`\(\left(x-\dfrac{9}{x},\ x+3\right)\)`,
+          String.raw`\(\left(x+3,\ x\right)\)`
+          ]
+        },
+
+        /* Q23 — exact polynomial division */
+        {
+          stem: String.raw`<p>Divide \(x^2-25\) by \(x-5\). Find the final quotient \(q\) and remainder \(r\).</p>`,
+          choiceWrap: false,
+          choices: [
+          String.raw`\(q=x-5,\ r=0\)`,
+          String.raw`\(q=x+5,\ r=-25\)`,
+          String.raw`\(q=x,\ r=5x-25\)`,
+          String.raw`\(q=x+4,\ r=x-5\)`,
+          String.raw`\(q=x+5,\ r=0\)`,
+          String.raw`\(q=x+5,\ r=5\)`
+          ]
+        },
+
+        /* Q24 — nonexact polynomial division */
+        {
+          stem: String.raw`<p>Divide \(x^2+4x+8\) by \(x+2\). Find the final quotient \(q\) and remainder \(r\).</p>`,
+          choiceWrap: false,
+          choices: [
+          String.raw`\(q=x+2,\ r=-4\)`,
+          String.raw`\(q=x+4,\ r=0\)`,
+          String.raw`\(q=x+2,\ r=4\)`,
+          String.raw`\(q=x+1,\ r=x+6\)`,
+          String.raw`\(q=x+3,\ r=2-x\)`,
+          String.raw`\(q=x+4,\ r=4\)`
+          ]
+        },
+
+        /* Q25 — unfinished but correct polynomial decomposition */
+        {
+          stem: String.raw`<p>A student begins dividing \(x^2+3x+5\) by \(x+1\) and obtains the correct equality \(x^2+3x+5=(x+1)(x+1)+(x+4)\). Which pair gives the <em>final</em> quotient and remainder?</p>`,
+          choiceWrap: false,
+          choices: [
+          String.raw`\(q=x+2,\ r=3\)`,
+          String.raw`\(q=x+1,\ r=x+4\)`,
+          String.raw`\(q=x+3,\ r=2-x\)`,
+          String.raw`\(q=x+4,\ r=1-2x\)`,
+          String.raw`\(q=x+2,\ r=-3\)`,
+          String.raw`\(q=x+3,\ r=2\)`
+          ]
+        },
+
+        /* Q26 — quadratic-divisor fraction form */
+        {
+          stem: String.raw`<p>Rewrite \(\dfrac{x^3+2x^2+4x+5}{x^2+1}\) as a polynomial plus a fraction whose numerator has lower degree than \(x^2+1\).</p>`,
+          choiceWrap: false,
+          choices: [
+          String.raw`\(x+2+\dfrac{3x+3}{x+1}\)`,
+          String.raw`\(x+2+\dfrac{3x-3}{x^2+1}\)`,
+          String.raw`\(x+1+\dfrac{x^2+3x+4}{x^2+1}\)`,
+          String.raw`\(x+2+\dfrac{3x+3}{x^2+1}\)`,
+          String.raw`\(x+2+\dfrac{3x+5}{x^2+1}\)`,
+          String.raw`\(x+2+\dfrac{3x^2+3}{x^2+1}\)`
+          ]
+        }
       ]
     };
   </script>
-
-  <link rel="stylesheet" href="/math-homework/assets/core.css" />
-  <script defer src="/math-homework/assets/core.js"></script>
+  <link rel="stylesheet" href="/math-homework/assets/core-rich.css" />
+  <script defer src="/math-homework/assets/core-rich.js"></script>
   <script defer src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+  <style>
+    .review-note {
+      max-width: 980px;
+      margin: 1rem auto .25rem;
+      padding: .65rem 1rem;
+      border-left: 3px solid #475569;
+      background: #f8fafc;
+      color: #334155;
+      font: .95rem/1.55 system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+    }
+    .review-note p { margin: .2rem 0; }
+  </style>
 </head>
 <body>
+  <div class="review-note">
+    <p><strong>Before beginning:</strong> On paper and without notes, write the expanded forms of \((a+b)^2\), \((a-b)^2\), and \((a+b)(a-b)\) from memory.</p>
+    <p>Work out each question on paper before selecting an answer.</p>
+  </div>
   <div id="hw-root">Loading…</div>
 </body>
 </html>
