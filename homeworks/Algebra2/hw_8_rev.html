@@ -3,161 +3,341 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Chapter 8 Review (Algebra 2)</title>
-
+  <title>Algebra 2 — Chapter 8 Review</title>
   <script>
-    /* =========================================
-       Chapter 8 — Review (12 Qs)
-       Skills: radicals, complex ops, |z|, vectors (translated & sums), quadratics
-       ========================================= */
-    window.homeworkData = {
-      classId : "Algebra2",
-      id      : "Chapter 8 Review",
-      title   : "Chapter 8 — Review",
+/* ====================================================================
+  ALGEBRA 2 — CHAPTER 8 REVIEW (Sections 8-1 through 8-7)
+  20 multiple-choice questions; approximately 50 minutes on paper.
 
-      graphics : String.raw`
-\begin{tikzpicture}[scale=0.58]
-  \tikzset{axes/.style={->,thick}}
-  \tikzset{grid/.style={very thin,color=gray!30}}
-  \tikzset{vec/.style={->,very thick}}
-  \clip (-8.3,-8.3) rectangle (8.3,8.3);
-  \draw[grid] (-8,-8) grid (8,8);
-  \draw[axes] (-8,0)--(8,0) node[right]{\(\mathbb{R}\)};
-  \draw[axes] (0,-8)--(0,8) node[above]{\(i\)};
-  \draw[vec,red]            (0,0)--(0,5)   node[midway,left]{\(\small P\)};
-  \draw[vec,blue]           (0,0)--(3,-7)  node[midway,right]{\(\small Q\)};
-  \draw[vec,teal]           (0,0)--(-6,5)  node[midway,above]{\(\small R\)};
-  \draw[vec,purple]         (0,0)--(4,2)   node[midway,above]{\(\small U\)};
-  \draw[vec,brown]          (0,0)--(-3,1)  node[midway,left]{\(\small V\)};
-  \draw[vec,green!60!black] (0,0)--(2,3)   node[midway,above left]{\(\small S_1\)};
-  \draw[vec,orange]         (0,0)--(6,5)   node[midway,above right]{\(\small S_2\)};
-\end{tikzpicture}
-`,
+  REQUIRED SOURCE SETS — STUDENT HOMEWORK (uploaded by user):
+  - hw_8_1to3(1).html: source final Q2, Q6, Q8, Q16, Q21.
+  - hw_8_4(5).html: source final Q2, Q7-Q12, Q15.
+  - hw_8_5to7(2).html: source final Q2-Q8, Q9, Q14-Q18, Q21-Q23.
+  - These are FINAL question numbers in the named source homework,
+    not unprovided original textbook exercise numbers.
+  - No Type A/B/C or Portuguese problem sets supplied.
 
-      /* Hidden Answer Key (A–F) */
-      answerKey : ["A","A","D","A","A","A","A","A","A","A","E","A"],
+  REVIEW QUESTIONS (ALL reworked for selection, focus, or numerical data):
+  - Q1-Q2: radical conventions and limitations of identities.
+  - Q3: discriminant and nonreal quadratic roots.
+  - Q4-Q8: multiplication, conjugates and length, complex division,
+    reverse multiplication, and a real-quotient constraint.
+  - Q9-Q10: points, distance, and the unit-modulus reciprocal identity.
+  - Q11-Q12: equality and subtraction of free vectors (Figure 1).
+  - Q13-Q14: reversed arrow translation and head-to-tail telescoping (Figure 2).
+  - Q15-Q17: parallelogram sum, orientation and difference length (Figure 3).
+  - Q18-Q19: addition of translated vectors, difference, and relocation (Figure 4).
+  - Q20: model-authored synthesis of complex points, displacement, and length.
 
-      questions : [
-        { latex: String.raw`\text{Simplify: } \sqrt[5]{-32}`,
-          choices: [
-            String.raw`-2`,                 // A (correct)
-            String.raw`2`,
-            String.raw`-4`,
-            String.raw`4`,
-            String.raw`\sqrt[5]{32}`,       // changed (was unsimplified correct form)
-            String.raw`-\sqrt[5]{16}`       // changed (was another correct form)
-          ]},
+  FIGURE FILES (REQUIRED in same directory as this HTML):
+  - User-provided for THIS review: 8-7-9.png (from 8-7-9(2).png);
+    8-7-14.png (from 8-7-14(1).png);
+    8-7-16.png (from 8-7-16(1).png);
+    8-7-21.png (from 8-7-21(1).png).
+  - Model-generated for THIS review: none.
+  - Figures retain their SOURCE-based names, 8-7-<source item number>.png,
+    rather than adopting this review's local question numbers.
+  - The original uploaded figures were developed for source homework;
+    these exact PNGs were supplied by the user for this task.
 
-        { latex: String.raw`\text{Solve } x^2+3x-2=0.`,
-          choices: [
-            String.raw`x=\dfrac{-3\pm\sqrt{17}}{2}`,   // A (correct)
-            String.raw`x=\dfrac{3\pm\sqrt{17}}{2}`,
-            String.raw`x=\dfrac{-3\pm\sqrt{13}}{2}`,
-            String.raw`x=\dfrac{3\pm\sqrt{5}}{2}`,
-            String.raw`x=-3\pm\sqrt{17}`,
-            String.raw`x=\dfrac{3\pm 3}{2}`
-          ]},
-
-        { latex: String.raw`\text{Solve } 2x^2-4x+1=0.`,
-          choices: [
-            String.raw`x=1\pm\sqrt{2}`,
-            String.raw`x=1\pm\dfrac{\sqrt{2}}{4}`,
-            String.raw`x=1\pm\sqrt{\tfrac{2}{3}}`,         // changed to distinct wrong
-            String.raw`x=1\pm\dfrac{\sqrt{2}}{2}`,         // D (correct)
-            String.raw`x=2\pm\sqrt{2}`,
-            String.raw`x=2\pm\dfrac{\sqrt{2}}{2}`          // changed to distinct wrong
-          ]},
-
-        { latex: String.raw`\text{Simplify (}a,b>0\text{): } \sqrt{-a^{5}b^{8}}`,
-          choices: [
-            String.raw`i\,a^{2}b^{4}\sqrt{a}`,            // A (correct)
-            String.raw`a^{2}b^{4}\sqrt{-a}`,
-            String.raw`-i\,a^{2}b^{4}\sqrt{a}`,
-            String.raw`i\,a^{3}b^{4}\sqrt{a}`,
-            String.raw`a^{2}b^{4}\sqrt{a}`,
-            String.raw`i\,a^{2}b^{3}\sqrt{a}`
-          ]},
-
-        { latex: String.raw`\text{Compute: }(1+7i)+(-5+i)`,
-          choices: [
-            String.raw`-4+8i`,                           // A (correct)
-            String.raw`-4-8i`,
-            String.raw`4+8i`,
-            String.raw`-6+8i`,
-            String.raw`-4+6i`,
-            String.raw`-8+4i`
-          ]},
-
-        { latex: String.raw`\text{Compute: }(-4+2i)-(-2-6i)`,
-          choices: [
-            String.raw`-2+8i`,                           // A (correct)
-            String.raw`-6+8i`,
-            String.raw`-2-8i`,
-            String.raw`2+8i`,
-            String.raw`-2+4i`,
-            String.raw`8-2i`
-          ]},
-
-        { latex: String.raw`\text{Compute: }(2+i)(3-4i)`,
-          choices: [
-            String.raw`10-5i`,                           // A (correct)
-            String.raw`10+5i`,
-            String.raw`-10-5i`,
-            String.raw`6-11i`,
-            String.raw`12-2i`,
-            String.raw`8-5i`
-          ]},
-
-        { latex: String.raw`\text{Compute: }(9-2i)(1-i)`,
-          choices: [
-            String.raw`7-11i`,                           // A (correct)
-            String.raw`11-7i`,
-            String.raw`7+11i`,
-            String.raw`-7-11i`,
-            String.raw`11+7i`,
-            String.raw`7-9i`
-          ]},
-
-        { latex: String.raw`\text{Simplify: }\dfrac{4+2i}{1-4i}\ \text{ (write in }a+bi\text{).}`,
-          choices: [
-            String.raw`-\dfrac{4}{17}+\dfrac{18}{17}i`,  // A (correct)
-            String.raw`\dfrac{4}{17}+\dfrac{18}{17}i`,
-            String.raw`-\dfrac{4}{17}-\dfrac{18}{17}i`,
-            String.raw`\dfrac{4+18i}{17}`,
-            String.raw`\dfrac{18}{17}-\dfrac{4}{17}i`,
-            String.raw`-\dfrac{18}{17}+\dfrac{4}{17}i`
-          ]},
-
-        { latex: String.raw`\text{Find }|{-6+5i}|.`,
-          choices: [
-            String.raw`\sqrt{61}`,                       // A (correct)
-            String.raw`11`,
-            String.raw`\sqrt{11}`,
-            String.raw`\sqrt{61}\,i`,
-            String.raw`-\sqrt{61}`,
-            String.raw`\dfrac{\sqrt{61}}{2}`
-          ]},
-
-        { latex: String.raw`\text{Refer to the diagram. Which labeled vector equals }(-1+i)+(3+2i)\text{?}`,
-          choices: [String.raw`P`, String.raw`Q`, String.raw`R`, String.raw`U`, String.raw`S_1`, String.raw`S_2`]
-          // Correct: S_1 (2,3) -> E
-        },
-
-        { latex: String.raw`\text{Refer to the diagram. Which labeled vector represents }5i\text{?}`,
-          choices: [String.raw`P`, String.raw`Q`, String.raw`R`, String.raw`U`, String.raw`S_1`, String.raw`S_2`]
-          // Correct: P -> A
-        }
-      ]
-    };
+  This is a chapter review, not a textbook section 8-8 homework, so
+  the filename uses the descriptive chapter-review convention.
+  ==================================================================== */
+  window.homeworkData = {
+    classId: "Algebra2",
+    id: "Chapter 8 Review",
+    title: "Chapter 8 Review — Complex Numbers and Vectors",
+    graphics: String.raw``,
+    answerKey: ["C", "D", "C", "F", "C", "E", "A", "E", "A", "F", "C", "B", "C", "B", "A", "E", "B", "E", "C", "A"],
+    questions: [
+      // Q1: Reworked from 8-1–3 Q2 and Q8: value of radical vs roots of equation. (~2 min)
+      {
+        stem: String.raw`<p>Distinguish the principal square root from the solutions of an equation. Which choice gives \(\sqrt{-49}\) and <em>all</em> solutions of \(x^2=-49\), in that order?</p>`,
+        choiceWrap: false,
+        choices: [
+          String.raw`\(7i;\ x=7i\)`,
+          String.raw`\(-7i;\ x=\pm7i\)`,
+          String.raw`\(7i;\ x=\pm7i\)`,
+          String.raw`\(\pm7i;\ x=\pm7i\)`,
+          String.raw`\(7;\ x=\pm7i\)`,
+          String.raw`\(7i;\ x=\pm7\)`
+        ]
+      },
+      // Q2: Reworked from 8-1–3 Q6: product rule for radicals has hypotheses. (~2 min)
+      {
+        stem: String.raw`<p>Let \(A=\sqrt{-9}\,\sqrt{-16}\) and \(B=\sqrt{(-9)(-16)}\), where the square-root symbols denote principal square roots. Determine the ordered pair \((A,B)\).</p>`,
+        choiceWrap: false,
+        choices: [
+          String.raw`\((12,12)\)`,
+          String.raw`\((-12,-12)\)`,
+          String.raw`\((12,-12)\)`,
+          String.raw`\((-12,12)\)`,
+          String.raw`\((12i,12)\)`,
+          String.raw`\((-12i,12)\)`
+        ]
+      },
+      // Q3: New coefficients based on 8-5–7 Q2–Q4: negative discriminant and two nonreal roots. (~3 min)
+      {
+        stem: String.raw`<p>Solve \(2x^2-4x+5=0\) over the complex numbers. Give both solutions in simplest form.</p>`,
+        choiceWrap: false,
+        choices: [
+          String.raw`\(x=1\pm\sqrt6\,i\)`,
+          String.raw`\(x=-1\pm\dfrac{\sqrt6}{2}i\)`,
+          String.raw`\(x=1\pm\dfrac{\sqrt6}{2}i\)`,
+          String.raw`\(x=1\pm\dfrac{\sqrt{14}}{2}i\)`,
+          String.raw`\(x=\dfrac{1\pm\sqrt6\,i}{2}\)`,
+          String.raw`\(x=1\pm\dfrac{\sqrt6}{2}\)`
+        ]
+      },
+      // Q4: New numerical instance based on 8-1–3 Q16: complex multiplication. (~2 min)
+      {
+        stem: String.raw`<p>Compute \((-2+3i)(4+i)\). Express the product in the form \(a+bi\), where \(a,b\) are real.</p>`,
+        choiceWrap: false,
+        choices: [
+          String.raw`\(-5+10i\)`,
+          String.raw`\(-11+14i\)`,
+          String.raw`\(-11-10i\)`,
+          String.raw`\(-5-10i\)`,
+          String.raw`\(-8+10i\)`,
+          String.raw`\(-11+10i\)`
+        ]
+      },
+      // Q5: Integration of 8-4 Q2 with 8-5–7 Q7: conjugate product vs length. (~2 min)
+      {
+        stem: String.raw`<p>Let \(z=-3+4i\). Find the ordered pair \((z\overline z,\lvert z\rvert)\), where \(\overline z\) is the conjugate of \(z\).</p>`,
+        choiceWrap: false,
+        choices: [
+          String.raw`\((-7,5)\)`,
+          String.raw`\((25,25)\)`,
+          String.raw`\((25,5)\)`,
+          String.raw`\((-25,5)\)`,
+          String.raw`\((7,\sqrt7)\)`,
+          String.raw`\((25,7)\)`
+        ]
+      },
+      // Q6: New instance of 8-4 Q7–Q11: division with a nonreal denominator. (~3.5 min)
+      {
+        stem: String.raw`<p>Write \(\dfrac{5+2i}{2-i}\) in the form \(a+bi\), with both parts simplified.</p>`,
+        choiceWrap: false,
+        choices: [
+          String.raw`\(\dfrac85-\dfrac95i\)`,
+          String.raw`\(\dfrac{12}5-\dfrac15i\)`,
+          String.raw`\(\dfrac83+\dfrac93i\)`,
+          String.raw`\(2+\dfrac45i\)`,
+          String.raw`\(\dfrac85+\dfrac95i\)`,
+          String.raw`\(\dfrac{12}5+\dfrac95i\)`
+        ]
+      },
+      // Q7: New reverse-multiplication question based on 8-4 Q9 and 8-1–3 Q21. (~2.5 min)
+      {
+        stem: String.raw`<p>Determine the complex number \(z\) that satisfies \((1-2i)z=5i\).</p>`,
+        choiceWrap: false,
+        choices: [
+          String.raw`\(-2+i\)`,
+          String.raw`\(2+i\)`,
+          String.raw`\(-2-i\)`,
+          String.raw`\(2-i\)`,
+          String.raw`\(-1+2i\)`,
+          String.raw`\(1-2i\)`
+        ]
+      },
+      // Q8: New coefficients based on 8-4 Q15: vanishing imaginary part of a quotient. (~3 min)
+      {
+        stem: String.raw`<p>The number \(t\) is real. Determine \(t\) so that \(\dfrac{2+ti}{1-3i}\) is a real number.</p>`,
+        choiceWrap: false,
+        choices: [
+          String.raw`\(6\)`,
+          String.raw`\(-2\)`,
+          String.raw`\(2\)`,
+          String.raw`\(-\dfrac23\)`,
+          String.raw`\(-6\)`,
+          String.raw`\(\dfrac23\)`
+        ]
+      },
+      // Q9: Combines 8-5–7 Q5–Q8: complex coordinate vs magnitude. (~2 min)
+      {
+        stem: String.raw`<p>Which choice gives both the point representing \(z=-5+12i\) in the complex plane and the distance of that point from the origin?</p>`,
+        choiceWrap: false,
+        choices: [
+          String.raw`\((-5,12);\ 13\)`,
+          String.raw`\((5,12);\ 13\)`,
+          String.raw`\((-5,-12);\ 13\)`,
+          String.raw`\((12,-5);\ 13\)`,
+          String.raw`\((-5,12);\ 17\)`,
+          String.raw`\((-5,12);\ 169\)`
+        ]
+      },
+      // Q10: Adapted from 8-4 Q12: reciprocal equal to conjugate precisely on unit circle. (~2.5 min)
+      {
+        stem: String.raw`<p>Let \(z=a+bi\ne0\), where \(a,b\) are real. Under which condition is \(\dfrac1z=\overline z\)?</p>`,
+        choiceWrap: false,
+        choices: [
+          String.raw`\(a^2-b^2=1\)`,
+          String.raw`\(a^2+b^2>0\)`,
+          String.raw`\(a+b=1\)`,
+          String.raw`\(ab=0\)`,
+          String.raw`\(\lvert a\rvert+\lvert b\rvert=1\)`,
+          String.raw`\(a^2+b^2=1\)`
+        ]
+      },
+      // Q11: Adapted from 8-5–7 Q9: free vector equality (same displacement). (~2 min)
+      {
+        stem: String.raw`<p>Refer to Figure 1. Which two arrows represent the <em>same vector</em>, even though they have different starting points?</p>`,
+        media: String.raw`<figure><img src="8-7-9.png" alt="Figure 1: complex coordinate grid with labeled points and arrows." style="max-width:640px;width:100%;height:auto"/><figcaption>Figure 1</figcaption></figure>`,
+        choiceWrap: false,
+        choices: [
+          String.raw`\(\mathbf p\ \text{and}\ \mathbf r\)`,
+          String.raw`\(\mathbf p\ \text{and}\ \mathbf s\)`,
+          String.raw`\(\mathbf p\ \text{and}\ \mathbf q\)`,
+          String.raw`\(\mathbf q\ \text{and}\ \mathbf r\)`,
+          String.raw`\(\mathbf q\ \text{and}\ \mathbf s\)`,
+          String.raw`\(\mathbf r\ \text{and}\ \mathbf s\)`
+        ]
+      },
+      // Q12: New: directed vector difference, focusing on vertical cancellation. (~2.5 min)
+      {
+        stem: String.raw`<p>Refer to Figure 1. Translate the arrows representing \(\mathbf s\) and \(\mathbf p\) to the origin. Which complex number corresponds to \(\mathbf s-\mathbf p\)?</p>`,
+        media: String.raw`<figure><img src="8-7-9.png" alt="Figure 1: complex coordinate grid with labeled points and arrows." style="max-width:640px;width:100%;height:auto"/><figcaption>Figure 1</figcaption></figure>`,
+        choiceWrap: false,
+        choices: [
+          String.raw`\(4i\)`,
+          String.raw`\(-4i\)`,
+          String.raw`\(6\)`,
+          String.raw`\(-6\)`,
+          String.raw`\(6-4i\)`,
+          String.raw`\(-6-4i\)`
+        ]
+      },
+      // Q13: New variation of 8-5–7 Q14–Q15: reversal plus translation. (~3 min)
+      {
+        stem: String.raw`<p>Refer to Figure 2. An arrow representing the vector \(\overrightarrow{BA}\) begins at the marked point \(T\). Determine its endpoint.</p>`,
+        media: String.raw`<figure><img src="8-7-14.png" alt="Figure 2: complex coordinate grid with labeled points and arrows." style="max-width:640px;width:100%;height:auto"/><figcaption>Figure 2</figcaption></figure>`,
+        choiceWrap: false,
+        choices: [
+          String.raw`\((6,1)\)`,
+          String.raw`\((-2,1)\)`,
+          String.raw`\((-2,-5)\)`,
+          String.raw`\((6,-5)\)`,
+          String.raw`\((-4,-3)\)`,
+          String.raw`\((-3,-2)\)`
+        ]
+      },
+      // Q14: Model-authored: head-to-tail addition AB+BT=AT, an anti-template connection. (~2.5 min)
+      {
+        stem: String.raw`<p>Refer to Figure 2. Consider the vectors represented by the arrows \(A\!\to\!B\) and \(B\!\to\!T\). Find the complex number associated with their sum.</p>`,
+        media: String.raw`<figure><img src="8-7-14.png" alt="Figure 2: complex coordinate grid with labeled points and arrows." style="max-width:640px;width:100%;height:auto"/><figcaption>Figure 2</figcaption></figure>`,
+        choiceWrap: false,
+        choices: [
+          String.raw`\(3\)`,
+          String.raw`\(5\)`,
+          String.raw`\(5+6i\)`,
+          String.raw`\(3+6i\)`,
+          String.raw`\(-5\)`,
+          String.raw`\(1-3i\)`
+        ]
+      },
+      // Q15: Adapted from 8-5–7 Q16: parallelogram addition. (~2 min)
+      {
+        stem: String.raw`<p>Refer to Figure 3. The arrows \(O\!\to\!U\) and \(O\!\to\!V\) represent \(\mathbf u\) and \(\mathbf v\). Determine the endpoint of the arrow representing \(\mathbf u+\mathbf v\) that starts at \(O\).</p>`,
+        media: String.raw`<figure><img src="8-7-16.png" alt="Figure 3: complex coordinate grid with labeled points and arrows." style="max-width:640px;width:100%;height:auto"/><figcaption>Figure 3</figcaption></figure>`,
+        choiceWrap: false,
+        choices: [
+          String.raw`\((4,4)\)`,
+          String.raw`\((2,-2)\)`,
+          String.raw`\((2,2)\)`,
+          String.raw`\((4,-2)\)`,
+          String.raw`\((3,3)\)`,
+          String.raw`\((1,3)\)`
+        ]
+      },
+      // Q16: Reversal of 8-5–7 Q17: direction of tip-to-tip subtraction. (~2 min)
+      {
+        stem: String.raw`<p>Refer to Figure 3. Which oriented segment represents \(\mathbf v-\mathbf u\)? Pay attention to the order of subtraction.</p>`,
+        media: String.raw`<figure><img src="8-7-16.png" alt="Figure 3: complex coordinate grid with labeled points and arrows." style="max-width:640px;width:100%;height:auto"/><figcaption>Figure 3</figcaption></figure>`,
+        choiceWrap: false,
+        choices: [
+          String.raw`\(\overrightarrow{OU}\)`,
+          String.raw`\(\overrightarrow{OV}\)`,
+          String.raw`\(\overrightarrow{UO}\)`,
+          String.raw`\(\overrightarrow{VO}\)`,
+          String.raw`\(\overrightarrow{UV}\)`,
+          String.raw`\(\overrightarrow{VU}\)`
+        ]
+      },
+      // Q17: New synthesis: recover an unknown vector, then compute its norm. (~2.5 min)
+      {
+        stem: String.raw`<p>Refer to Figure 3. A vector \(\mathbf w\) satisfies \(\mathbf u+\mathbf w=\mathbf v\). Determine the magnitude \(\lvert\mathbf w\rvert\).</p>`,
+        media: String.raw`<figure><img src="8-7-16.png" alt="Figure 3: complex coordinate grid with labeled points and arrows." style="max-width:640px;width:100%;height:auto"/><figcaption>Figure 3</figcaption></figure>`,
+        choiceWrap: false,
+        choices: [
+          String.raw`\(\sqrt2\)`,
+          String.raw`\(2\sqrt2\)`,
+          String.raw`\(4\)`,
+          String.raw`\(\sqrt{10}\)`,
+          String.raw`\(2\)`,
+          String.raw`\(4\sqrt2\)`
+        ]
+      },
+      // Q18: Adapted from 8-5–7 Q21: add displaced vectors. (~3 min)
+      {
+        stem: String.raw`<p>Refer to Figure 4. The arrows \(A\!\to\!B\) and \(C\!\to\!D\) represent \(\mathbf p\) and \(\mathbf q\). Determine the complex number associated with \(\mathbf p+\mathbf q\).</p>`,
+        media: String.raw`<figure><img src="8-7-21.png" alt="Figure 4: complex coordinate grid with labeled points and arrows." style="max-width:640px;width:100%;height:auto"/><figcaption>Figure 4</figcaption></figure>`,
+        choiceWrap: false,
+        choices: [
+          String.raw`\(2+5i\)`,
+          String.raw`\(4+i\)`,
+          String.raw`\(3+2i\)`,
+          String.raw`\(1-3i\)`,
+          String.raw`\(4-i\)`,
+          String.raw`\(2-5i\)`
+        ]
+      },
+      // Q19: New one-step synthesis of 8-5–7 Q22–Q23: difference and translation. (~3 min)
+      {
+        stem: String.raw`<p>Refer to Figure 4. An arrow representing \(\mathbf p-\mathbf q\) begins at the marked point \(E\). At which point must this arrow end?</p>`,
+        media: String.raw`<figure><img src="8-7-21.png" alt="Figure 4: complex coordinate grid with labeled points and arrows." style="max-width:640px;width:100%;height:auto"/><figcaption>Figure 4</figcaption></figure>`,
+        choiceWrap: false,
+        choices: [
+          String.raw`\((0,-7)\)`,
+          String.raw`\((-4,3)\)`,
+          String.raw`\((0,3)\)`,
+          String.raw`\((2,5)\)`,
+          String.raw`\((0,-3)\)`,
+          String.raw`\((-2,3)\)`
+        ]
+      },
+      // Q20: New final synthesis: subtraction of complex points, orientation, and length. (~3 min)
+      {
+        stem: String.raw`<p>Points \(P\) and \(Q\) correspond to \(1+2i\) and \(-2-2i\), respectively. Which choice gives the complex number associated with \(\overrightarrow{PQ}\) and its magnitude, in that order?</p>`,
+        choiceWrap: false,
+        choices: [
+          String.raw`\(-3-4i;\ 5\)`,
+          String.raw`\(3+4i;\ 5\)`,
+          String.raw`\(-3+4i;\ 5\)`,
+          String.raw`\(-3-4i;\ 25\)`,
+          String.raw`\(3-4i;\ 5\)`,
+          String.raw`\(-1;\ 1\)`
+        ]
+      }
+    ]
+  };
   </script>
-
-  <link rel="stylesheet" href="/math-homework/assets/core.css" />
-  <link rel="stylesheet" href="https://tikzjax.com/v1/fonts.css" />
-  <script defer src="/math-homework/assets/core.js"></script>
-  <script defer src="https://tikzjax.com/v1/tikzjax.js"></script>
+  <link rel="stylesheet" href="/math-homework/assets/core-rich.css" />
+  <script defer src="/math-homework/assets/core-rich.js"></script>
   <script defer src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+  <style>
+    .review-notice { max-width:980px; margin:1.2rem auto 0; padding:.7rem 1rem;
+      border-left:3px solid #64748b; background:#f8fafc; color:#334155;
+      font: .94rem/1.55 system-ui,-apple-system,"Segoe UI",sans-serif; }
+    .review-notice p {margin:.3em 0;}
+  </style>
 </head>
 <body>
+  <div class="review-notice">
+    <p><strong>Algebra 2 · Chapter 8 Review · Approximately 50 minutes</strong></p>
+    <p>Work out each question on paper before selecting one answer. You may sketch or translate arrows on your paper. No calculator is necessary.</p>
+    <p><strong>Vector convention:</strong> A drawn arrow is a representative of a vector. Arrows at different locations represent the same vector when they have the same displacement.</p>
+  </div>
   <div id="hw-root">Loading…</div>
 </body>
 </html>
