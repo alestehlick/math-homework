@@ -1,0 +1,363 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Homework 9-1 to 9-4 — Rational Expressions (Algebra 2)</title>
+<script>
+/* ===========================================================================
+   ALGEBRA 2 — HOMEWORK 9-1 TO 9-4: RATIONAL EXPRESSIONS
+   CONSOLIDATED AND SEVERELY REVISED (23 ITEMS; TARGET APPROX. 80 MINUTES)
+
+   SOURCE SETS (user-provided original assignments, not A/B/C/Portuguese):
+   - HW 9-1 #3, #4, #5, #6, #7, #8, #10, #11, #12
+   - HW 9-2 #1, #2, #3, #4, #5, #6, #11, #12
+   - HW 9-3 #2, #3, #4, #5, #7, #8, #9, #10, #11
+   - HW 9-4 #2, #3, #4, #5, #6, #7, #8, #9, #10, #11, #12
+   Original exercises are treated as raw mathematical material, not copied
+   verbatim. The original HW 9-2 #5 contained an incorrect answer key.
+
+   REVISIONS TO THE PREVIOUS CONSOLIDATED ASSIGNMENT:
+   - Q3: NEW comparison of three quotients: cancelling factors vs.
+     attempting to cancel individual terms in a sum.
+   - Q7-Q8: re-order two products, delaying the more demanding cubes.
+   - Q13: NEW paired multiplication/addition of the SAME rational fractions;
+     multiplication admits factor cancellation, addition needs an LCD.
+   - Q20: REWORKED previous Q3 as a complex quotient requiring grouping,
+     difference of cubes, and a reciprocal; placed at the advanced end.
+   - Q22: NEW multiplication-then-addition synthesis that rewards simplifying
+     a whole product before finding a common denominator.
+   - Q23: NEW subtraction-then-division capstone, with a hidden factor and
+     preserved original domain, including nonzero-divisor requirements.
+   - All 23 sets of alternatives are redistributed irregularly; no artificial
+     one-of-each-letter-per-six block. Existing correct answers were checked
+     symbolically in the originating generator; all new expressions separately
+     checked in the revision generator. Domain cases independently reviewed.
+   - Q1-Q2, Q4-Q6, Q9-Q12, Q14-Q19, Q21 retain their mathematical idea;
+     alternatives are reordered to prevent an exploitable answer-key pattern.
+
+   FIGURES: None. There are no user-supplied or model-generated figures.
+   If later added, model-produced figures are LaTeX-originated and named
+   9-4-<local-question-number>.png beside the HTML; user-origin figures
+   follow source HW-ID + original exercise number.
+
+   PRESENTATION: no prefatory paragraphs; self-contained stems; 6 options,
+   unique correct answer; core-rich JS/CSS + MathJax.
+   =========================================================================== */
+window.homeworkData = {
+  classId: "Algebra2",
+  id: "Homework 9-1 to 9-4",
+  title: "Homework 9-1 to 9-4 — Rational Expressions",
+  graphics: String.raw``,
+  answerKey: ["C", "C", "B", "E", "B", "A", "E", "A", "E", "B", "F", "F", "A", "D", "C", "D", "E", "F", "C", "B", "D", "F", "A"],
+  questions: [
+    /* Q01: 9-1 #4, #10; Common monomial and binomial factors; no termwise cancellation. */
+    {
+      stem: String.raw`<p>Simplify the following rational expression, assuming the denominator is nonzero:</p><p>\(\displaystyle \frac{12x^3-18x^2}{8x^2-12x}\).</p>`,
+      choiceWrap: false,
+      choices: [
+        String.raw`\(\dfrac{3}{2 x}\)`,
+        String.raw`\(\dfrac{3 x - 2}{2}\)`,
+        String.raw`\(\dfrac{3x}{2}\)`,
+        String.raw`\(\dfrac{x}{2}\)`,
+        String.raw`\(\dfrac{3 x}{4}\)`,
+        String.raw`\(\dfrac{3 x^{2}}{2}\)`
+      ]
+    },
+    /* Q02: 9-1 #6, #8; Factorizable quadratic numerator and denominator, cancelling a whole binomial. */
+    {
+      stem: String.raw`<p>Simplify \(\displaystyle \frac{x^2+5x+6}{x^2+4x+3}\). Give the result as one rational expression in lowest terms.</p>`,
+      choiceWrap: false,
+      choices: [
+        String.raw`\(\dfrac{x + 1}{x + 2}\)`,
+        String.raw`\(\dfrac{x + 3}{x + 1}\)`,
+        String.raw`\(\dfrac{x + 2}{x + 1}\)`,
+        String.raw`\(\dfrac{x + 2}{x + 3}\)`,
+        String.raw`\(\dfrac{x + 3}{x + 2}\)`,
+        String.raw`\(\dfrac{x + 2}{x - 1}\)`
+      ]
+    },
+    /* Q03: 9-1 #3, #4, #8 (model-authored contrast); A whole factor may be cancelled; no cancellation of separate terms in a sum. */
+    {
+      stem: String.raw`<p>Consider the rational expressions below, wherever their denominators are nonzero:</p><p>\(\displaystyle A=\frac{x^2+3x}{x},\qquad B=\frac{x^2+3x}{x+3},\qquad C=\frac{x^2+3x}{x^2+3}.\)</p><p>Which of these can be simplified to a polynomial for every allowable value of \(x\)?</p>`,
+      choiceWrap: false,
+      choices: [
+        String.raw`Only \(B\) and \(C\).`,
+        String.raw`Only \(A\) and \(B\).`,
+        String.raw`Only \(A\).`,
+        String.raw`Only \(B\).`,
+        String.raw`All three.`,
+        String.raw`Only \(A\) and \(C\).`
+      ]
+    },
+    /* Q04: 9-1 #5, #7 (model-authored transfer); Cancellation does not restore excluded input. */
+    {
+      stem: String.raw`<p>Let \(F(x)=\dfrac{x^2-9}{x-3}\). Which choice gives both the simplified formula for \(F\) and <em>exactly the same allowable values</em> of \(x\) as the original expression?</p>`,
+      choiceWrap: false,
+      choices: [
+        String.raw`\(x-3\), with \(x\ne -3\).`,
+        String.raw`\(x+3\), for every real \(x\).`,
+        String.raw`\(x-3\), with \(x\ne 3\).`,
+        String.raw`\(x+3\), with \(x\ne -3\).`,
+        String.raw`\(x+3\), with \(x\ne 3\).`,
+        String.raw`\(x+3\), with \(x\ne -3,3\).`
+      ]
+    },
+    /* Q05: 9-2 #1, #2, #3; Numerical and power cancellation across fractions. */
+    {
+      stem: String.raw`<p>Multiply the rational expressions and simplify. Assume all original denominators are nonzero.</p><p>\(\displaystyle \frac{9a^3b^2}{10c^2}\cdot\frac{5bc}{6a^2b^4}\)</p>`,
+      choiceWrap: false,
+      choices: [
+        String.raw`\(\dfrac{3 a}{4 b^{2} c}\)`,
+        String.raw`\(\dfrac{3 a}{4 b c}\)`,
+        String.raw`\(\dfrac{3 a c}{4 b}\)`,
+        String.raw`\(\dfrac{3}{4 a b c}\)`,
+        String.raw`\(\dfrac{3 a}{2 b c}\)`,
+        String.raw`\(\dfrac{3 a b}{4 c}\)`
+      ]
+    },
+    /* Q06: 9-2 #5, #6; Four quadratic factorisations and cross-cancellation. */
+    {
+      stem: String.raw`<p>Multiply and simplify:</p><p>\(\displaystyle \frac{x^2+5x+6}{x^2-4}\cdot\frac{x^2-3x+2}{x^2+4x+3}\)</p>`,
+      choiceWrap: false,
+      choices: [
+        String.raw`\(\dfrac{x - 1}{x + 1}\)`,
+        String.raw`\(\dfrac{\left(x + 2\right) \left(x - 1\right)}{x + 1}\)`,
+        String.raw`\(\dfrac{x - 1}{x - 2}\)`,
+        String.raw`\(\dfrac{x + 1}{x - 1}\)`,
+        String.raw`\(\dfrac{x - 2}{x + 1}\)`,
+        String.raw`\(\dfrac{x - 1}{x + 3}\)`
+      ]
+    },
+    /* Q07: 9-2 #4, 9-3 #8; Recognize a polynomial with no useful factorization here; preserve it. */
+    {
+      stem: String.raw`<p>Multiply and simplify:</p><p>\(\displaystyle \frac{9x^2-5x+6}{x^2-5x+6}\cdot\frac{x^2-4}{x^2+5x+6}\)</p>`,
+      choiceWrap: false,
+      choices: [
+        String.raw`\(\dfrac{9 x^{2} - 5 x + 6}{\left(x + 3\right) \left(x - 2\right)}\)`,
+        String.raw`\(\dfrac{9 x^{2} - 5 x + 6}{\left(x + 2\right) \left(x - 3\right)}\)`,
+        String.raw`\(\dfrac{9 x^{2} - 5 x + 6}{x - 3}\)`,
+        String.raw`\(\dfrac{9 x^{2} - 5 x + 6}{x + 3}\)`,
+        String.raw`\(\dfrac{9 x^{2} - 5 x + 6}{\left(x + 3\right) \left(x - 3\right)}\)`,
+        String.raw`\(\dfrac{9 x^{2} - 5 x - 6}{\left(x + 3\right) \left(x - 3\right)}\)`
+      ]
+    },
+    /* Q08: 9-2 #11, #12; Combining cube and square identities without expanding. */
+    {
+      stem: String.raw`<p>Multiply and simplify, assuming the product is defined:</p><p>\(\displaystyle \frac{x^3-y^3}{x^2+xy+y^2}\cdot\frac{x^2-y^2}{(x-y)^2}\)</p>`,
+      choiceWrap: false,
+      choices: [
+        String.raw`\(x + y\)`,
+        String.raw`\(\dfrac{x - y}{x + y}\)`,
+        String.raw`\(\left(x + y\right)^{2}\)`,
+        String.raw`\(x - y\)`,
+        String.raw`\(x^{2} - y^{2}\)`,
+        String.raw`\(\dfrac{x + y}{x - y}\)`
+      ]
+    },
+    /* Q09: 9-3 #2, #3; Invert entire divisor and cancel across fractions. */
+    {
+      stem: String.raw`<p>Divide the rational expressions and simplify:</p><p>\(\displaystyle \frac{3x^2-12}{x^2+2x}\div\frac{6x-12}{x^2+x}\)</p>`,
+      choiceWrap: false,
+      choices: [
+        String.raw`\(2 \left(x + 1\right)\)`,
+        String.raw`\(\dfrac{x - 2}{2}\)`,
+        String.raw`\(\dfrac{x + 1}{2 x}\)`,
+        String.raw`\(\dfrac{2}{x + 1}\)`,
+        String.raw`\(\dfrac{x + 1}{2}\)`,
+        String.raw`\(\dfrac{x - 2}{x + 1}\)`
+      ]
+    },
+    /* Q10: 9-3 #5, #7; Complex cross-cancellation and difference-of-squares factors. */
+    {
+      stem: String.raw`<p>Simplify the quotient:</p><p>\(\displaystyle \frac{x^2-7x+12}{x^2-1}\div\frac{x^2-9}{x^2+2x+1}\)</p>`,
+      choiceWrap: false,
+      choices: [
+        String.raw`\(\dfrac{\left(x + 3\right) \left(x - 4\right)}{\left(x + 1\right) \left(x - 1\right)}\)`,
+        String.raw`\(\dfrac{\left(x + 1\right) \left(x - 4\right)}{\left(x + 3\right) \left(x - 1\right)}\)`,
+        String.raw`\(\dfrac{\left(x + 1\right) \left(x - 3\right)}{\left(x + 3\right) \left(x - 1\right)}\)`,
+        String.raw`\(\dfrac{x - 4}{\left(x + 3\right) \left(x - 1\right)}\)`,
+        String.raw`\(\dfrac{\left(x - 1\right) \left(x - 4\right)}{\left(x + 1\right) \left(x + 3\right)}\)`,
+        String.raw`\(\dfrac{\left(x + 1\right) \left(x - 4\right)}{\left(x - 1\right) \left(x - 3\right)}\)`
+      ]
+    },
+    /* Q11: 9-3 #4, 9-1 #7; Opposite factors and a whole rational divisor. */
+    {
+      stem: String.raw`<p>Divide and simplify, assuming every expression involved is defined:</p><p>\(\displaystyle \frac{a^2-b^2}{a^2+2ab+b^2}\div\frac{b-a}{a+b}\)</p>`,
+      choiceWrap: false,
+      choices: [
+        String.raw`\(\dfrac{- a + b}{a + b}\)`,
+        String.raw`\(1\)`,
+        String.raw`\(\dfrac{a - b}{a + b}\)`,
+        String.raw`\(\dfrac{a + b}{a - b}\)`,
+        String.raw`\(- \dfrac{1}{a + b}\)`,
+        String.raw`\(-1\)`
+      ]
+    },
+    /* Q12: 9-3 #4, #9 (model-authored domain extension); Nonzero divisor creates an exclusion invisible in simplified quotient. */
+    {
+      stem: String.raw`<p>Consider the division</p><p>\(\displaystyle \frac{x^2-2x+1}{x^2-4}\div\frac{x-1}{x+2}.\)</p><p>Which choice gives its simplified result <em>and all the values excluded by the original division</em>?</p>`,
+      choiceWrap: false,
+      choices: [
+        String.raw`\(\dfrac{x-1}{x-2}\), with \(x\ne -2,1\).`,
+        String.raw`\(\dfrac{x+1}{x-2}\), with \(x\ne -2,1,2\).`,
+        String.raw`\(\dfrac{x-1}{x+2}\), with \(x\ne -2,1,2\).`,
+        String.raw`\(\dfrac{x-1}{x-2}\), with \(x\ne 2\).`,
+        String.raw`\(\dfrac{x-1}{x-2}\), with \(x\ne -2,2\).`,
+        String.raw`\(\dfrac{x-1}{x-2}\), with \(x\ne -2,1,2\).`
+      ]
+    },
+    /* Q13: 9-2 #4, 9-4 #7, #11 (model-authored contrast); Structural difference between cancellation in a product and common denominators in a sum. */
+    {
+      stem: String.raw`<p>Two operations involve the same rational expressions:</p><p>\(\displaystyle P=\frac{x}{x+1}\cdot\frac{x+1}{x-2},\qquad S=\frac{x}{x+1}+\frac{x+1}{x-2}.\)</p><p>Assuming both expressions are defined, find the ordered pair \((P,S)\) in simplest form.</p>`,
+      choiceWrap: false,
+      choices: [
+        String.raw`\(\left(\dfrac{x}{x-2},\ \dfrac{2x^2+1}{(x+1)(x-2)}\right)\)`,
+        String.raw`\(\left(\dfrac{x}{x-2},\ \dfrac{2x^2+2x+1}{(x+1)(x-2)}\right)\)`,
+        String.raw`\(\left(\dfrac{x}{x-2},\ \dfrac{2x^2+1}{x-2}\right)\)`,
+        String.raw`\(\left(\dfrac{1}{x-2},\ \dfrac{2x^2+1}{(x+1)(x-2)}\right)\)`,
+        String.raw`\(\left(\dfrac{x}{x+1},\ \dfrac{2x^2+1}{(x+1)(x-2)}\right)\)`,
+        String.raw`\(\left(\dfrac{x}{x-2},\ \dfrac{2x+1}{(x+1)(x-2)}\right)\)`
+      ]
+    },
+    /* Q14: 9-4 #2, #5, #6; Shared denominator factor; build least common denominator. */
+    {
+      stem: String.raw`<p>Simplify:</p><p>\(\displaystyle \frac{3}{x^2+x-6}+\frac{2}{x^2+5x+6}\)</p>`,
+      choiceWrap: false,
+      choices: [
+        String.raw`\(\dfrac{5 x + 2}{\left(x + 2\right) \left(x + 3\right)}\)`,
+        String.raw`\(\dfrac{5 x - 2}{\left(x + 2\right) \left(x + 3\right) \left(x - 2\right)}\)`,
+        String.raw`\(\dfrac{5 x + 10}{\left(x + 2\right) \left(x + 3\right) \left(x - 2\right)}\)`,
+        String.raw`\(\dfrac{5 x + 2}{\left(x + 2\right) \left(x + 3\right) \left(x - 2\right)}\)`,
+        String.raw`\(\dfrac{5 x + 2}{\left(x + 2\right) \left(x - 2\right) \left(x - 3\right)}\)`,
+        String.raw`\(\dfrac{5 x + 2}{\left(x + 3\right) \left(x - 2\right)}\)`
+      ]
+    },
+    /* Q15: 9-4 #3, #12; Reversed denominator, subtraction, and three-term sum. */
+    {
+      stem: String.raw`<p>Simplify:</p><p>\(\displaystyle \frac{4}{x-2}-\frac{3}{2-x}+\frac{1}{x+1}\)</p>`,
+      choiceWrap: false,
+      choices: [
+        String.raw`\(\dfrac{8 x + 5}{\left(x - 1\right) \left(x - 2\right)}\)`,
+        String.raw`\(\dfrac{6 x + 5}{\left(x + 1\right) \left(x - 2\right)}\)`,
+        String.raw`\(\dfrac{8 x + 5}{\left(x + 1\right) \left(x - 2\right)}\)`,
+        String.raw`\(\dfrac{2 x + 5}{\left(x + 1\right) \left(x - 2\right)}\)`,
+        String.raw`\(\dfrac{8 x - 5}{\left(x + 1\right) \left(x - 2\right)}\)`,
+        String.raw`\(\dfrac{8 x + 5}{\left(x + 1\right) \left(x + 2\right)}\)`
+      ]
+    },
+    /* Q16: 9-4 #2, #4 (model-authored variation); Repeated factor in least common denominator. */
+    {
+      stem: String.raw`<p>Simplify the difference:</p><p>\(\displaystyle \frac{2}{x^2-4x+4}-\frac{1}{x^2-4}\)</p>`,
+      choiceWrap: false,
+      choices: [
+        String.raw`\(\dfrac{x + 2}{\left(x + 2\right) \left(x - 2\right)^{2}}\)`,
+        String.raw`\(\dfrac{x + 6}{\left(x - 2\right)^{2}}\)`,
+        String.raw`\(\dfrac{x - 6}{\left(x + 2\right) \left(x - 2\right)^{2}}\)`,
+        String.raw`\(\dfrac{x + 6}{\left(x + 2\right) \left(x - 2\right)^{2}}\)`,
+        String.raw`\(\dfrac{x + 6}{\left(x + 2\right)^{2} \left(x - 2\right)}\)`,
+        String.raw`\(\dfrac{x + 6}{\left(x + 2\right) \left(x - 2\right)}\)`
+      ]
+    },
+    /* Q17: 9-4 #3, #11 (model-authored variation); New polynomial factor emerges after combining numerators. */
+    {
+      stem: String.raw`<p>Simplify the difference fully:</p><p>\(\displaystyle \frac{x}{x-1}-\frac{2}{x^2-1}\)</p>`,
+      choiceWrap: false,
+      choices: [
+        String.raw`\(\dfrac{x + 2}{x^{2} - 1}\)`,
+        String.raw`\(\dfrac{x - 1}{x + 1}\)`,
+        String.raw`\(\dfrac{x - 2}{x + 1}\)`,
+        String.raw`\(\dfrac{x + 2}{x - 1}\)`,
+        String.raw`\(\dfrac{x + 2}{x + 1}\)`,
+        String.raw`\(\dfrac{x^{2} + x - 2}{x + 1}\)`
+      ]
+    },
+    /* Q18: 9-4 #8, #11 (model-authored transfer); Multivariable LCD with a difference-of-squares. */
+    {
+      stem: String.raw`<p>Simplify:</p><p>\(\displaystyle \frac{2a}{a^2-b^2}+\frac{3}{a+b}\)</p>`,
+      choiceWrap: false,
+      choices: [
+        String.raw`\(\dfrac{5 a + 3 b}{a^{2} - b^{2}}\)`,
+        String.raw`\(\dfrac{2 a + 3}{a^{2} - b^{2}}\)`,
+        String.raw`\(\dfrac{5 a - 3 b}{a - b}\)`,
+        String.raw`\(\dfrac{5 a + 3 b}{a + b}\)`,
+        String.raw`\(\dfrac{5 a - 3 b}{a^{2} + b^{2}}\)`,
+        String.raw`\(\dfrac{5 a - 3 b}{a^{2} - b^{2}}\)`
+      ]
+    },
+    /* Q19: 9-4 #4, #6; Two quadratic denominators, shared binomial factor, signed resultant. */
+    {
+      stem: String.raw`<p>Simplify the difference, leaving any uncancelled factors visible:</p><p>\(\displaystyle \frac{4x}{x^2-x-6}-\frac{6x}{x^2-4x+3}\)</p>`,
+      choiceWrap: false,
+      choices: [
+        String.raw`\(- \dfrac{2 x \left(x + 8\right)}{\left(x + 2\right) \left(x - 3\right)}\)`,
+        String.raw`\(- \dfrac{2 x \left(x + 8\right)}{\left(x - 1\right) \left(x - 3\right)}\)`,
+        String.raw`\(- \dfrac{2 x \left(x + 8\right)}{\left(x + 2\right) \left(x - 1\right) \left(x - 3\right)}\)`,
+        String.raw`\(- \dfrac{2 x \left(x + 8\right)}{\left(x + 2\right) \left(x + 3\right) \left(x - 1\right)}\)`,
+        String.raw`\(\dfrac{2 x \left(x + 8\right)}{\left(x + 2\right) \left(x - 1\right) \left(x - 3\right)}\)`,
+        String.raw`\(- \dfrac{2 x \left(x - 8\right)}{\left(x + 2\right) \left(x - 1\right) \left(x - 3\right)}\)`
+      ]
+    },
+    /* Q20: 9-1 #12; 9-3 #10 (model-reworked complex fraction); Factorizing by grouping, difference of cubes, and then reciprocal division. */
+    {
+      stem: String.raw`<p>Simplify the complex rational expression below. Assume that it is defined.</p><p>\(\displaystyle \frac{\dfrac{x^3+x^2y-xy^2-y^3}{x^3-y^3}}{\dfrac{x+y}{x^2+xy+y^2}}\)</p>`,
+      choiceWrap: false,
+      choices: [
+        String.raw`\(x-y\)`,
+        String.raw`\(x+y\)`,
+        String.raw`\((x+y)^2\)`,
+        String.raw`\(\dfrac{x+y}{x-y}\)`,
+        String.raw`\(\dfrac{x+y}{x^2+xy+y^2}\)`,
+        String.raw`\(x^2+y^2\)`
+      ]
+    },
+    /* Q21: 9-3 #10, #11, 9-4 #9; Structural numerator subtraction and common factor cancellation. */
+    {
+      stem: String.raw`<p>Simplify the complex fraction. Assume that all its component fractions are defined and its denominator is nonzero.</p><p>\(\displaystyle \frac{\frac{a}{b}-\frac{b}{a}}{\frac{a-b}{ab}}\)</p>`,
+      choiceWrap: false,
+      choices: [
+        String.raw`\(\dfrac{a - b}{a + b}\)`,
+        String.raw`\(a^{2} - b^{2}\)`,
+        String.raw`\(a b\)`,
+        String.raw`\(a + b\)`,
+        String.raw`\(a - b\)`,
+        String.raw`\(\dfrac{a + b}{a - b}\)`
+      ]
+    },
+    /* Q22: 9-2 #5; 9-4 #2, #11 (model-authored synthesis); Recognize that a product simplifies before a subsequent addition. */
+    {
+      stem: String.raw`<p>Simplify the following expression, assuming all its component fractions are defined:</p><p>\(\displaystyle \frac{x^2-4}{x^2+x-2}\cdot\frac{x-1}{x-2}+\frac{3}{x+2}\)</p>`,
+      choiceWrap: false,
+      choices: [
+        String.raw`\(\dfrac{x+5}{(x+2)(x-2)}\)`,
+        String.raw`\(\dfrac{x+3}{x+2}\)`,
+        String.raw`\(\dfrac{x+5}{x-2}\)`,
+        String.raw`\(\dfrac{x+2}{x+5}\)`,
+        String.raw`\(\dfrac{x+5}{x+1}\)`,
+        String.raw`\(\dfrac{x+5}{x+2}\)`
+      ]
+    },
+    /* Q23: 9-3 #5, #9; 9-4 #3, #11 (model-authored capstone); A factor arises only after subtracting, cancellation precedes reciprocal division, and the original domain persists. */
+    {
+      stem: String.raw`<p>Consider the expression</p><p>\(\displaystyle E(x)=\left(\frac{x}{x-2}-\frac{8}{x^2-4}\right)\div\frac{x+4}{x+1}.\)</p><p>Which choice gives its simplest form <em>and exactly the values of \(x\) excluded by the original expression</em>?</p>`,
+      choiceWrap: false,
+      choices: [
+        String.raw`\(\dfrac{x+1}{x+2}\), with \(x\ne -4,-2,-1,2\).`,
+        String.raw`\(\dfrac{x+1}{x+2}\), with \(x\ne -2,-1,2\).`,
+        String.raw`\(\dfrac{x+1}{x+2}\), with \(x\ne -4,-2,2\).`,
+        String.raw`\(\dfrac{x+4}{x+2}\), with \(x\ne -4,-2,-1,2\).`,
+        String.raw`\(\dfrac{x+2}{x+1}\), with \(x\ne -4,-2,-1,2\).`,
+        String.raw`\(\dfrac{x+1}{x+2}\), with \(x\ne -2,-1\).`
+      ]
+    }
+  ]
+};
+</script>
+<link rel="stylesheet" href="/math-homework/assets/core-rich.css" />
+<script defer src="/math-homework/assets/core-rich.js"></script>
+<script defer src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+</head>
+<body>
+<div id="hw-root">Loading…</div>
+</body>
+</html>
