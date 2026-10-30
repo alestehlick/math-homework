@@ -18,8 +18,8 @@
    - No Type A/B/C or Portuguese source sets were supplied.
 
    MODEL-AUTHORED / SUBSTANTIALLY REWORKED:
-   - Q1: new conceptual bridge from numerical factors to primes
-     (irreducible positive integers) and more informative products.
+   - Q1: standalone prime-factorization question; no introductory
+     paragraph or definition outside the question is required.
    - Q2–Q6: reworked monomial-GCF, exponents, signs, constant terms,
      and collection before extraction.
    - Q7: distinguish a valid product from one extracting the GCF;
@@ -28,8 +28,8 @@
    - Q9–Q13: first grouping problems of increasing complexity.
    - Q14–Q17: rearrangement, signs, nonadjacent terms, high powers.
    - Q18–Q19: common-factor extraction combined with grouping.
-   - Q20: rewritten synthesis; tests why absence of a global monomial
-     factor does not prove that a polynomial is irreducible.
+   - Q20: self-contained synthesis; tests why absence of a global
+     common monomial does not prevent further factorization.
 
    CURRICULAR LIMITS:
    - Only the reverse distributive law, common-factor extraction,
@@ -51,19 +51,19 @@ window.homeworkData = {
   id: "Homework 9-1",
   title: "Homework 9-1 — Factorization: Revealing the Factors",
   graphics: String.raw``,
-  answerKey: ["E", "C", "E", "A", "F", "D", "B", "A", "D", "C", "F", "B", "E", "C", "A", "D", "F", "B", "C", "E"],
+  answerKey: ["B", "C", "E", "A", "F", "D", "B", "A", "D", "C", "F", "B", "E", "C", "A", "D", "F", "B", "C", "E"],
   questions: [
-    /* Q01 — Mathematical purpose of factorization: prime/irreducible factors */
+    /* Q01 — Standalone prime factorization; no preceding explanation assumed */
     {
-      stem: String.raw`<p>Consider two factorizations of the integer \(84\):</p><p>\(84=12\cdot7=2^2\cdot3\cdot7\).</p><p>Which statement best explains what the second factorization reveals that the first does not?</p>`,
+      stem: String.raw`<p>Which of the following expresses \(84\) as a product in which <em>every factor is a prime number</em>?</p>`,
       choiceWrap: false,
       choices: [
-        String.raw`The first product is incorrect, because \(12\) is not prime.`,
-        String.raw`The second product is incorrect, because a prime factor cannot occur twice.`,
-        String.raw`The second product is more informative only because it contains more multiplication symbols.`,
-        String.raw`Both products consist entirely of irreducible factors, since every displayed factor is smaller than \(84\).`,
-        String.raw`The second product consists entirely of primes, whereas \(12\) in the first product can be decomposed further.`,
-        String.raw`A factorization is complete when it has exactly two factors, so the first is more complete.`
+        String.raw`\(84=6\cdot14\)`,
+        String.raw`\(84=2\cdot2\cdot3\cdot7\)`,
+        String.raw`\(84=2\cdot3\cdot7\)`,
+        String.raw`\(84=2\cdot2\cdot21\)`,
+        String.raw`\(84=2\cdot2\cdot3\cdot3\cdot7\)`,
+        String.raw`\(84=4\cdot3\cdot7\)`
       ]
     },
     /* Q02 — Greatest common monomial, including both variables */
@@ -302,7 +302,7 @@ window.homeworkData = {
     },
     /* Q20 — Final synthesis: a lack of global monomial GCF does NOT imply irreducibility */
     {
-      stem: String.raw`<p>A student starts with</p><p>\(6x^3y+6x^2y^2+6x^2yz+10xy+10y^2+10yz\)</p><p>and extracts \(2y\), obtaining</p><p>\(2y(3x^3+3x^2y+3x^2z+5x+5y+5z)\).</p><p>The student claims that the remaining polynomial cannot be decomposed further because its six terms have no common monomial factor. Which factorization shows that this conclusion is wrong?</p>`,
+      stem: String.raw`<p>A student starts with</p><p>\(6x^3y+6x^2y^2+6x^2yz+10xy+10y^2+10yz\)</p><p>and extracts \(2y\), obtaining</p><p>\(2y(3x^3+3x^2y+3x^2z+5x+5y+5z)\).</p><p>The student claims that no further factorization is possible because the six terms inside the parentheses have no common monomial factor. Which expression gives a further factorization of the original polynomial?</p>`,
       choiceWrap: false,
       choices: [
         String.raw`\(2y(3x^2+5)(x+y-z)\)`,
@@ -319,29 +319,8 @@ window.homeworkData = {
   <link rel="stylesheet" href="/math-homework/assets/core-rich.css" />
   <script defer src="/math-homework/assets/core-rich.js"></script>
   <script defer src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
-  <style>
-    .review-note {
-      max-width: 980px;
-      margin: 1rem auto .35rem;
-      padding: .7rem 1rem;
-      border-left: 3px solid #475569;
-      background: #f8fafc;
-      color: #334155;
-      font: .95rem/1.55 system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
-    }
-    .review-note p { margin: .2rem 0; }
-  </style>
 </head>
 <body>
-  <div class="review-note">
-    <p><strong>Why do we factorize?</strong> We can understand a complicated object better by discovering the simpler parts from which it is built. For example,</p>
-    <p class="math">\(60=6\cdot10=2\cdot2\cdot3\cdot5.\)</p>
-    <p>Both products represent the same number. The last goes further: its factors are <strong>prime numbers</strong>. A prime number is <strong>irreducible</strong> among positive integers: it cannot be expressed as a product of two integers both greater than \(1\).</p>
-    <p>We have a similar aim with polynomials. For instance,</p>
-    <p class="math">\(6x^2+9x=3x(2x+3).\)</p>
-    <p>The expression has not changed, but the product on the right reveals a structure concealed in the sum. We will gradually learn to decompose polynomials into simpler factors. <strong>For this homework, use only the distributive law in reverse and regrouping.</strong> Not seeing a common monomial factor does <em>not</em> establish that a polynomial is irreducible.</p>
-    <p><strong>Before beginning:</strong> Write the distributive law \(a(b+c)=ab+ac\) and read it in reverse. Work each question on paper before selecting A–F. When a question requests the <em>greatest</em> common monomial, a correct but unfinished extraction does not meet the requirement.</p>
-  </div>
   <div id="hw-root">Loading…</div>
 </body>
 </html>
