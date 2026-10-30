@@ -3,153 +3,345 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Homework 9-1 (Algebra 1)</title>
-
+  <title>Homework 9-1 — Factorization: Revealing the Factors | Algebra 1</title>
   <script>
-    /* =========================
-       Homework 9-1 — Factoring (GCF)
-       ========================= */
-    window.homeworkData = {
-      classId : "Algebra1",
-      id      : "Homework 9-1",
-      title   : "Homework 9-1 — Factoring (GCF)",
+/* =====================================================================
+   ALGEBRA 1 — HOMEWORK 9-1: FACTORIZING BY THE DISTRIBUTIVE LAW
+   20-question homework; approximately 60–70 minutes.
 
-      graphics : String.raw`\n`,
+   SOURCE SETS:
+   - User-supplied original hw_9_1.html: exercises #1, #2, #3, #5,
+     #9, #10, #11, #12 provided the raw common-monomial material.
+   - User's classroom examples of factorization by grouping:
+     ax+ay+bx+by, x^3-2x^2+6x-12,
+     -x^8+5x^6-3x^5+15x^3, were pedagogical models.
+   - No Type A/B/C or Portuguese source sets were supplied.
 
-      /* UPDATED answer key after fixing choices */
-      answerKey : ["B","A","B","A","C","F","B","B","B","A","A","A"],
+   MODEL-AUTHORED / SUBSTANTIALLY REWORKED:
+   - Q1: new conceptual bridge from numerical factors to primes
+     (irreducible positive integers) and more informative products.
+   - Q2–Q6: reworked monomial-GCF, exponents, signs, constant terms,
+     and collection before extraction.
+   - Q7: distinguish a valid product from one extracting the GCF;
+     correct intermediate decompositions are not incorrect equalities.
+   - Q8: repeated binomial as a common factor, a bridge to grouping.
+   - Q9–Q13: first grouping problems of increasing complexity.
+   - Q14–Q17: rearrangement, signs, nonadjacent terms, high powers.
+   - Q18–Q19: common-factor extraction combined with grouping.
+   - Q20: rewritten synthesis; tests why absence of a global monomial
+     factor does not prove that a polynomial is irreducible.
 
-      questions : [
-        { latex: String.raw`\text{Factor: } 7x^2 - 49xy + 28y^2`,
-          choices: [
-            String.raw`x(7x - 49y + 28y)`,
-            String.raw`7(x^2 - 7xy + 4y^2)`,     // ✔
-            String.raw`7x(x - 7y + 28y)`,
-            String.raw`7(x^2 - xy + 28y^2)`,
-            String.raw`(7x^2)(-49xy)(28y^2)`,
-            String.raw`7x(x - 7y^2 + 4)`
-          ]},
+   CURRICULAR LIMITS:
+   - Only the reverse distributive law, common-factor extraction,
+     and regrouping. No special identities, difference of squares,
+     perfect squares, or general trinomial factorization.
+   - No question asks students to prove polynomial irreducibility.
+   - Polynomial irreducibility depends on permitted coefficients;
+     students are NOT asked to classify polynomials as irreducible.
+   - All questions contain six options A–F, with exactly one
+     mathematically valid response under the stated requirements.
 
-        { latex: String.raw`\text{Factor: } a^2 - a`,
-          choices: [
-            String.raw`a(a - 1)`,                 // ✔
-            String.raw`a^2(1-a)`,
-            String.raw`a(a+1)`,
-            String.raw`(a-1)^2`,
-            String.raw`a^2 - 1`,
-            String.raw`a(1-a^2)`
-          ]},
-
-        { latex: String.raw`\text{Factor: } 8x - 32y`,
-          choices: [
-            String.raw`4(2x - 4y)`,
-            String.raw`8(x - 4y)`,                // ✔
-            String.raw`16(x - 2y)`,
-            String.raw`2(4x - 8y)`,
-            String.raw`8(x+4y)`,
-            String.raw`(8x)(-32y)`
-          ]},
-
-        { latex: String.raw`\text{Factor: } ax + ay`,
-          choices: [
-            String.raw`a(x+y)`,                   // ✔
-            String.raw`x(a+y)`,
-            String.raw`a(x-y)`,
-            String.raw`a^2(x+y)`,
-            String.raw`y(a+x)`,
-            String.raw`ax(1+y)`
-          ]},
-
-        { latex: String.raw`\text{Factor: } 21x^3 - 6x^2 - 3`,
-          choices: [
-            String.raw`3x(7x^2 - 2x - 1)`,
-            String.raw`21(x^3 - 6x^2 - 3)`,
-            String.raw`3(7x^3 - 2x^2 - 1)`,       // ✔
-            String.raw`(21x^3)(-6x^2)(-3)`,
-            String.raw`x(21x^2 - 6x - 3)`,
-            String.raw`(7x^3)(-2x^2)(-1)`
-          ]},
-
-        { latex: String.raw`\text{Factor: } 3x + 3y`,
-          choices: [
-            String.raw`x(3+y)`,
-            String.raw`3(x-y)`,
-            String.raw`y(3+x)`,
-            String.raw`x(x+3y)`,
-            String.raw`(x+y)(3x)`,
-            String.raw`3(x+y)`                    // ✔
-          ]},
-
-        { latex: String.raw`\text{Factor: } 15x + 30`,
-          choices: [
-            String.raw`3(x+10)`,
-            String.raw`15(x+2)`,                  // ✔
-            String.raw`30(x+15)`,
-            String.raw`5(x+6)`,
-            String.raw`15(x-2)`,
-            String.raw`30(x+\tfrac12)`
-          ]},
-
-        { latex: String.raw`\text{Factor: } x^2 - 3x`,
-          choices: [
-            String.raw`(x-3)(x+1)`,
-            String.raw`x(x-3)`,                   // ✔
-            String.raw`x(x+3)`,
-            String.raw`x^2(x-3)`,
-            String.raw`x(x^2-3)`,
-            String.raw`(x-1)(x-3)`
-          ]},
-
-        { latex: String.raw`\text{Factor: } 6a^2 + 48a - 24`,
-          choices: [
-            String.raw`12(a^2+4a-2)`,
-            String.raw`6(a^2+8a-4)`,              // ✔
-            String.raw`6(a^2+8a+4)`,
-            String.raw`2(3a^2+24a-6)`,
-            String.raw`3(2a^2+16a-6)`,
-            String.raw`24(a^2+2a-1)`
-          ]},
-
-        { latex: String.raw`\text{Factor: } 10 - 50x`,
-          choices: [
-            String.raw`10(1-5x)`,                 // ✔
-            String.raw`5(2-5x)`,
-            String.raw`50(1-x)`,
-            String.raw`-10(5x+1)`,
-            String.raw`2(5-15x)`,
-            String.raw`10(x-5)`
-          ]},
-
-        { latex: String.raw`\text{Factor: } 6a^2b + 3ab^2`,
-          choices: [
-            String.raw`3ab(2a+b)`,                // ✔
-            String.raw`ab(6a+b)`,
-            String.raw`6ab(a+b)`,
-            String.raw`3ab(2a-b)`,
-            String.raw`a^2b(6+3b)`,
-            String.raw`3ab(a+2b)`
-          ]},
-
-        { latex: String.raw`\text{Factor: } 300x^2 - 100x`,
-          choices: [
-            String.raw`100x(3x-1)`,               // ✔
-            String.raw`10x(30x-1)`,
-            String.raw`50x(6x-3)`,
-            String.raw`100x(3x+1)`,
-            String.raw`x(300x-10)`,
-            String.raw`25x(12x-5)`
-          ]}
+   FIGURES: none; user-supplied none; model-generated none.
+   If later added, model figures use 9-1-<question-number>.png,
+   stored beside the HTML, with a separately provided LaTeX source.
+   Uses core-rich assets and the requested verb "factorize".
+   ===================================================================== */
+window.homeworkData = {
+  classId: "Algebra1",
+  id: "Homework 9-1",
+  title: "Homework 9-1 — Factorization: Revealing the Factors",
+  graphics: String.raw``,
+  answerKey: ["E", "C", "E", "A", "F", "D", "B", "A", "D", "C", "F", "B", "E", "C", "A", "D", "F", "B", "C", "E"],
+  questions: [
+    /* Q01 — Mathematical purpose of factorization: prime/irreducible factors */
+    {
+      stem: String.raw`<p>Consider two factorizations of the integer \(84\):</p><p>\(84=12\cdot7=2^2\cdot3\cdot7\).</p><p>Which statement best explains what the second factorization reveals that the first does not?</p>`,
+      choiceWrap: false,
+      choices: [
+        String.raw`The first product is incorrect, because \(12\) is not prime.`,
+        String.raw`The second product is incorrect, because a prime factor cannot occur twice.`,
+        String.raw`The second product is more informative only because it contains more multiplication symbols.`,
+        String.raw`Both products consist entirely of irreducible factors, since every displayed factor is smaller than \(84\).`,
+        String.raw`The second product consists entirely of primes, whereas \(12\) in the first product can be decomposed further.`,
+        String.raw`A factorization is complete when it has exactly two factors, so the first is more complete.`
       ]
-    };
+    },
+    /* Q02 — Greatest common monomial, including both variables */
+    {
+      stem: String.raw`<p>Factorize \(24x^3y-36x^2y^2+60xy\) by extracting the greatest common monomial.</p>`,
+      choiceWrap: false,
+      choices: [
+        String.raw`\(6xy(4x^2-6xy+10)\)`,
+        String.raw`\(12xy(2x^2-3xy^2+5)\)`,
+        String.raw`\(12xy(2x^2-3xy+5)\)`,
+        String.raw`\(12x^2y(2x-3y+5)\)`,
+        String.raw`\(12xy(2x^2-3xy-5)\)`,
+        String.raw`\(12xy(2x^2-3x+5)\)`
+      ]
+    },
+    /* Q03 — Find minimum exponent in every term */
+    {
+      stem: String.raw`<p>Factorize \(35a^7b^4-49a^5b^6+14a^4b^3\) by extracting the greatest common monomial.</p>`,
+      choiceWrap: false,
+      choices: [
+        String.raw`\(7a^3b^3(5a^4b-7a^2b^3+2a)\)`,
+        String.raw`\(7a^4b^3(5a^3b-7ab^2+2)\)`,
+        String.raw`\(7a^4b^3(5a^3b-7ab^3+2b)\)`,
+        String.raw`\(7a^4b^3(5a^2b-7ab^3+2)\)`,
+        String.raw`\(7a^4b^3(5a^3b-7ab^3+2)\)`,
+        String.raw`\(7a^4b^4(5a^3-7ab^2+2)\)`
+      ]
+    },
+    /* Q04 — Constant term prevents extraction of x */
+    {
+      stem: String.raw`<p>Factorize \(35x^3-21x^2+14\) by extracting the greatest common monomial.</p>`,
+      choiceWrap: false,
+      choices: [
+        String.raw`\(7(5x^3-3x^2+2)\)`,
+        String.raw`\(7x(5x^2-3x+2)\)`,
+        String.raw`\(7(5x^3-3x+2)\)`,
+        String.raw`\(7(5x^3-3x^2+14)\)`,
+        String.raw`\(14(5x^3-3x^2+1)\)`,
+        String.raw`\(7(5x^3+3x^2+2)\)`
+      ]
+    },
+    /* Q05 — Signs, positive and negative extraction, maximum common monomial */
+    {
+      stem: String.raw`<p>Factorize \(-20x^4y^3+30x^3y^5-10x^2y^2\) by extracting the greatest common monomial with a <em>negative</em> coefficient.</p>`,
+      choiceWrap: false,
+      choices: [
+        String.raw`\(-10x^2y^2(2x^2y+3xy^3+1)\)`,
+        String.raw`\(-10x^2y^2(2x^2y-3xy^2+1)\)`,
+        String.raw`\(10x^2y^2(-2x^2y+3xy^3-1)\)`,
+        String.raw`\(-10x^2y^2(2x^2y-3xy^3-1)\)`,
+        String.raw`\(-5x^2y^2(4x^2y-6xy^3+2)\)`,
+        String.raw`\(-10x^2y^2(2x^2y-3xy^3+1)\)`
+      ]
+    },
+    /* Q06 — Collect like terms before factorizing */
+    {
+      stem: String.raw`<p>First simplify \(4x^3-6x^2+2x^3+15x^2-3x\). Then factorize the result by extracting its greatest common monomial.</p>`,
+      choiceWrap: false,
+      choices: [
+        String.raw`\(3x(2x^2-3x-1)\)`,
+        String.raw`\(3x(2x^2+3x+1)\)`,
+        String.raw`\(3x(2x^2+3x-3)\)`,
+        String.raw`\(3x(2x^2+3x-1)\)`,
+        String.raw`\(x(6x^2+9x-3)\)`,
+        String.raw`\(3x(2x^3+3x-1)\)`
+      ]
+    },
+    /* Q07 — Valid identity versus greatest common factor */
+    {
+      stem: String.raw`<p>Consider the following three representations of the same polynomial:</p><p>\(18x^2-30x=2x(9x-15)=3x(6x-10)=6x(3x-5)\).</p><p>Which statement is correct?</p>`,
+      choiceWrap: false,
+      choices: [
+        String.raw`Only \(2x(9x-15)\) is equal to the original polynomial.`,
+        String.raw`All three expressions are equal to the original polynomial, but only \(6x(3x-5)\) extracts the greatest common monomial.`,
+        String.raw`All three expressions extract the greatest common monomial, because each is a product.`,
+        String.raw`Only \(6x(3x-5)\) is equal to the original polynomial.`,
+        String.raw`The first two products are equal to the original polynomial, but the third is not.`,
+        String.raw`The products with factors \(2x\) and \(6x\) are correct, but the one with \(3x\) is not.`
+      ]
+    },
+    /* Q08 — Bridge to grouping: shared binomial */
+    {
+      stem: String.raw`<p>Factorize the expression \(2x(x-4)+3(x-4)\) as a product of two binomials.</p>`,
+      choiceWrap: false,
+      choices: [
+        String.raw`\((2x+3)(x-4)\)`,
+        String.raw`\((2x-3)(x-4)\)`,
+        String.raw`\((2x+3)(x+4)\)`,
+        String.raw`\((2x+3)(x-8)\)`,
+        String.raw`\((2x+3)(2x-4)\)`,
+        String.raw`\((5x)(x-4)\)`
+      ]
+    },
+    /* Q09 — Two common binomials created through grouping */
+    {
+      stem: String.raw`<p>Factorize \(3ax+3ay+2bx+2by\) using regrouping if needed.</p>`,
+      choiceWrap: false,
+      choices: [
+        String.raw`\((3a+2b)(x-y)\)`,
+        String.raw`\((3a-2b)(x+y)\)`,
+        String.raw`\((3a+b)(x+2y)\)`,
+        String.raw`\((3a+2b)(x+y)\)`,
+        String.raw`\((3a+2b)(2x+y)\)`,
+        String.raw`\((3a+2b)(x+2y)\)`
+      ]
+    },
+    /* Q10 — Common binomial arises from cubic grouping */
+    {
+      stem: String.raw`<p>Factorize \(x^3-4x^2+7x-28\).</p>`,
+      choiceWrap: false,
+      choices: [
+        String.raw`\((x+4)(x^2+7)\)`,
+        String.raw`\((x-4)(x^2-7)\)`,
+        String.raw`\((x-4)(x^2+7)\)`,
+        String.raw`\((x-7)(x^2+4)\)`,
+        String.raw`\((x-4)(x^2+7x)\)`,
+        String.raw`\((x-7)(x^2-4)\)`
+      ]
+    },
+    /* Q11 — Nonmonic factorization requiring numeric GCF in subgroups */
+    {
+      stem: String.raw`<p>Factorize \(6x^3-9x^2+10x-15\) using the reverse distributive law.</p>`,
+      choiceWrap: false,
+      choices: [
+        String.raw`\((2x+3)(3x^2-5)\)`,
+        String.raw`\((2x-3)(3x^2-5)\)`,
+        String.raw`\((3x-5)(2x^2+3)\)`,
+        String.raw`\((2x-3)(6x^2+5)\)`,
+        String.raw`\((3x-2)(2x^2+5)\)`,
+        String.raw`\((2x-3)(3x^2+5)\)`
+      ]
+    },
+    /* Q12 — Two-variable grouping with mixed signs */
+    {
+      stem: String.raw`<p>Factorize \(4a^2-8ab+3ac-6bc\) by grouping terms.</p>`,
+      choiceWrap: false,
+      choices: [
+        String.raw`\((4a-2b)(a+3c)\)`,
+        String.raw`\((a-2b)(4a+3c)\)`,
+        String.raw`\((a+2b)(4a+3c)\)`,
+        String.raw`\((a-2b)(4a-3c)\)`,
+        String.raw`\((a-2b)(4a+3b)\)`,
+        String.raw`\((4a+3c)(a-b)\)`
+      ]
+    },
+    /* Q13 — Unusual exponent pattern and repeated binomial */
+    {
+      stem: String.raw`<p>Factorize \(x^6+2x^4+3x^2+6\).</p>`,
+      choiceWrap: false,
+      choices: [
+        String.raw`\((x^4-3)(x^2-2)\)`,
+        String.raw`\((x^4+3)(x^2-2)\)`,
+        String.raw`\((x^4+2)(x^2+3)\)`,
+        String.raw`\((x^4+6)(x^2+1)\)`,
+        String.raw`\((x^4+3)(x^2+2)\)`,
+        String.raw`\((x^4+3x^2)(x^2+2)\)`
+      ]
+    },
+    /* Q14 — Nonadjacent pairing required */
+    {
+      stem: String.raw`<p>Factorize \(2ax+3by+3ay+2bx\).</p>`,
+      choiceWrap: false,
+      choices: [
+        String.raw`\((a-b)(2x+3y)\)`,
+        String.raw`\((a+b)(2x-3y)\)`,
+        String.raw`\((a+b)(2x+3y)\)`,
+        String.raw`\((2a+3b)(x+y)\)`,
+        String.raw`\((a+2b)(2x+3y)\)`,
+        String.raw`\((a+b)(3x+2y)\)`
+      ]
+    },
+    /* Q15 — Extract negative factors to expose same binomial */
+    {
+      stem: String.raw`<p>Factorize \(-2x^4+6x^3-5x+15\).</p>`,
+      choiceWrap: false,
+      choices: [
+        String.raw`\((3-x)(2x^3+5)\)`,
+        String.raw`\((x-3)(2x^3+5)\)`,
+        String.raw`\((3-x)(2x^3-5)\)`,
+        String.raw`\((x+3)(2x^3-5)\)`,
+        String.raw`\((3-x)(2x^4+5)\)`,
+        String.raw`\((3+x)(2x^3+5)\)`
+      ]
+    },
+    /* Q16 — High powers, GCF then grouping, negative binomial */
+    {
+      stem: String.raw`<p>Factorize \(-2x^8+10x^6-3x^5+15x^3\).</p>`,
+      choiceWrap: false,
+      choices: [
+        String.raw`\(x^3(5+x^2)(2x^3-3)\)`,
+        String.raw`\(x^3(5-x^2)(2x^3-3)\)`,
+        String.raw`\(x^3(x^2-5)(2x^3+3)\)`,
+        String.raw`\(x^3(5-x^2)(2x^3+3)\)`,
+        String.raw`\(x^2(5-x^2)(2x^3+3)\)`,
+        String.raw`\(x^3(5-x^2)(2x^2+3)\)`
+      ]
+    },
+    /* Q17 — Signed factors in separated groups */
+    {
+      stem: String.raw`<p>Factorize \(2ax-6ay-5bx+15by\).</p>`,
+      choiceWrap: false,
+      choices: [
+        String.raw`\((2a-5b)(x+3y)\)`,
+        String.raw`\((2a+5b)(x-3y)\)`,
+        String.raw`\((2a-3b)(x-5y)\)`,
+        String.raw`\((2a-5b)(x-6y)\)`,
+        String.raw`\((2a-5b)(2x-3y)\)`,
+        String.raw`\((2a-5b)(x-3y)\)`
+      ]
+    },
+    /* Q18 — Multi-stage common factor + grouping */
+    {
+      stem: String.raw`<p>Factorize \(6x^5-18x^4+10x^3-30x^2\) by extracting all common monomial factors and regrouping as needed.</p>`,
+      choiceWrap: false,
+      choices: [
+        String.raw`\(x^2(x-3)(6x^2+10)\)`,
+        String.raw`\(2x^2(x-3)(3x^2+5)\)`,
+        String.raw`\(2x^2(x+3)(3x^2-5)\)`,
+        String.raw`\(2x(x-3)(3x^2+5)\)`,
+        String.raw`\(2x^2(x-3)(3x^2-5)\)`,
+        String.raw`\(2x^2(x-3)(6x^2+5)\)`
+      ]
+    },
+    /* Q19 — Multi-stage factorization in two variables */
+    {
+      stem: String.raw`<p>Factorize \(12a^4b-18a^3b^2+8a^2b-12ab^2\). Extract every common monomial factor that is available.</p>`,
+      choiceWrap: false,
+      choices: [
+        String.raw`\(2ab(2a+3b)(3a^2-2)\)`,
+        String.raw`\(2ab(2a-3b)(3a^2-2)\)`,
+        String.raw`\(2ab(2a-3b)(3a^2+2)\)`,
+        String.raw`\(2a^2b(2a-3b)(3a+2)\)`,
+        String.raw`\(ab(2a-3b)(6a^2+4)\)`,
+        String.raw`\(2ab(3a-2b)(2a^2+2)\)`
+      ]
+    },
+    /* Q20 — Final synthesis: a lack of global monomial GCF does NOT imply irreducibility */
+    {
+      stem: String.raw`<p>A student starts with</p><p>\(6x^3y+6x^2y^2+6x^2yz+10xy+10y^2+10yz\)</p><p>and extracts \(2y\), obtaining</p><p>\(2y(3x^3+3x^2y+3x^2z+5x+5y+5z)\).</p><p>The student claims that the remaining polynomial cannot be decomposed further because its six terms have no common monomial factor. Which factorization shows that this conclusion is wrong?</p>`,
+      choiceWrap: false,
+      choices: [
+        String.raw`\(2y(3x^2+5)(x+y-z)\)`,
+        String.raw`\(2y(3x^2-5)(x+y+z)\)`,
+        String.raw`\(2(3x^2+5)(x+y+z)\)`,
+        String.raw`\(2y(3x+5)(x+y+z)\)`,
+        String.raw`\(2y(3x^2+5)(x+y+z)\)`,
+        String.raw`\(2y(3x^2+5)(x+2y+z)\)`
+      ]
+    }
+  ]
+};
   </script>
-
-  <link rel="stylesheet" href="/math-homework/assets/core.css" />
-  <link rel="stylesheet" href="https://tikzjax.com/v1/fonts.css" />
-  <script defer src="/math-homework/assets/core.js"></script>
-  <script defer src="https://tikzjax.com/v1/tikzjax.js"></script>
+  <link rel="stylesheet" href="/math-homework/assets/core-rich.css" />
+  <script defer src="/math-homework/assets/core-rich.js"></script>
   <script defer src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+  <style>
+    .review-note {
+      max-width: 980px;
+      margin: 1rem auto .35rem;
+      padding: .7rem 1rem;
+      border-left: 3px solid #475569;
+      background: #f8fafc;
+      color: #334155;
+      font: .95rem/1.55 system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+    }
+    .review-note p { margin: .2rem 0; }
+  </style>
 </head>
 <body>
+  <div class="review-note">
+    <p><strong>Why do we factorize?</strong> We can understand a complicated object better by discovering the simpler parts from which it is built. For example,</p>
+    <p class="math">\(60=6\cdot10=2\cdot2\cdot3\cdot5.\)</p>
+    <p>Both products represent the same number. The last goes further: its factors are <strong>prime numbers</strong>. A prime number is <strong>irreducible</strong> among positive integers: it cannot be expressed as a product of two integers both greater than \(1\).</p>
+    <p>We have a similar aim with polynomials. For instance,</p>
+    <p class="math">\(6x^2+9x=3x(2x+3).\)</p>
+    <p>The expression has not changed, but the product on the right reveals a structure concealed in the sum. We will gradually learn to decompose polynomials into simpler factors. <strong>For this homework, use only the distributive law in reverse and regrouping.</strong> Not seeing a common monomial factor does <em>not</em> establish that a polynomial is irreducible.</p>
+    <p><strong>Before beginning:</strong> Write the distributive law \(a(b+c)=ab+ac\) and read it in reverse. Work each question on paper before selecting A–F. When a question requests the <em>greatest</em> common monomial, a correct but unfinished extraction does not meet the requirement.</p>
+  </div>
   <div id="hw-root">Loading…</div>
 </body>
 </html>
