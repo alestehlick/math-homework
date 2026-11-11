@@ -1,0 +1,390 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Homework 9-2 to 9-4 (Algebra 1)</title>
+  <script>
+/* =========================
+   Homework 9-2 to 9-4 — Algebra 1, Factoring and Completing the Square
+   Single combined assignment; current core-rich renderer.
+
+   SOURCES (three previously supplied homework files, used as raw material):
+   - Legacy Homework 9-2: original Q1, Q3, Q5, Q7, Q10, Q11, Q12.
+   - Legacy Homework 9-3: original Q1, Q2, Q3, Q4, Q5, Q10, Q11, Q12.
+   - Legacy Homework 9-4: original Q1, Q3, Q5, Q7, Q9, Q10, Q11, Q12.
+   No entire source question or answer-choice set was copied verbatim.
+
+   MODEL-AUTHORED / REWORKED QUESTIONS:
+   Q1-Q5: difference-of-squares fluency, GCF, then binomial as a square.
+   Q6-Q11: perfect-square trinomials, close counterexample, parameter.
+   Q12-Q15: direct integer-factor guesses, sign variations.
+   Q16-Q18: mixed identities, GCF, and quadratic-in-x^2 transfer.
+   Q19-Q20: transition from ordinary factorization to completing the square.
+   Q21: uses the very completed square from Q20 to get radical factors.
+   Q22-Q24: independent completion-of-square factorizations.
+   Q25-Q26: nonfactorability over the reals and the exact threshold.
+   All choices independently authored. Q5, Q18-Q22 were adjusted
+   in the final pedagogical audit to improve the ascent.
+
+   IMAGE FILES: None (no user-supplied or generated figures).
+   IMAGE NAMING RULE: If added later, user figures use the original
+   source problem number; model-generated figures use final local Q number.
+   Place PNGs beside the HTML file.
+   ========================= */
+  window.homeworkData = {
+    classId: "Algebra1",
+    id: "Homework 9-2 to 9-4",
+    title: "Homework 9-2 to 9-4 — Factorization of Quadratic Polynomials",
+    graphics: String.raw``,
+    answerKey: ["A", "B", "C", "E", "F", "C", "A", "D", "E", "F", "C", "B", "E", "C", "F", "C", "E", "F", "A", "B", "D", "B", "F", "C", "E", "B"],
+    questions: [
+      /* Q1. dos; answer: A */
+      {
+        stem: String.raw`<p>Factor completely: \(x^2-49\).</p>`,
+        choices: [
+          String.raw`\((x-7)(x+7)\)`,
+          String.raw`\((x-7)^2\)`,
+          String.raw`\((x+7)^2\)`,
+          String.raw`\((x-49)(x+1)\)`,
+          String.raw`\((x-1)(x+49)\)`,
+          String.raw`\((x-49)(x+49)\)`
+        ],
+        choiceWrap: false
+      },
+      /* Q2. dos; answer: B */
+      {
+        stem: String.raw`<p>Factor completely: \(9x^2-16\).</p>`,
+        choices: [
+          String.raw`\((9x-4)(x+4)\)`,
+          String.raw`\((3x-4)(3x+4)\)`,
+          String.raw`\((3x-4)^2\)`,
+          String.raw`\((3x+4)^2\)`,
+          String.raw`\((9x-16)(x+1)\)`,
+          String.raw`\((3x-2)(3x+2)\)`
+        ],
+        choiceWrap: false
+      },
+      /* Q3. dos; answer: C */
+      {
+        stem: String.raw`<p>Factor completely: \(25a^2-4b^2\).</p>`,
+        choices: [
+          String.raw`\((5a-4b)(5a+4b)\)`,
+          String.raw`\((25a-2b)(a+2b)\)`,
+          String.raw`\((5a-2b)(5a+2b)\)`,
+          String.raw`\((5a-2b)^2\)`,
+          String.raw`\((5a+2b)^2\)`,
+          String.raw`\((5a-b)(5a+4b)\)`
+        ],
+        choiceWrap: false
+      },
+      /* Q4. dos; answer: E */
+      {
+        stem: String.raw`<p>Factor completely: \(3x^2-75\).</p>`,
+        choices: [
+          String.raw`\(3(x-25)(x+1)\)`,
+          String.raw`\(3(x-25)(x+25)\)`,
+          String.raw`\((3x-5)(x+5)\)`,
+          String.raw`\(3(x-5)^2\)`,
+          String.raw`\(3(x-5)(x+5)\)`,
+          String.raw`\(3(x+5)^2\)`
+        ],
+        choiceWrap: false
+      },
+      /* Q5. dos-composite; answer: F */
+      {
+        stem: String.raw`<p>Factor completely: \((x+2)^2-25\).</p>`,
+        choices: [
+          String.raw`\((x-7)(x+3)\)`,
+          String.raw`\((x+2-25)(x+2+25)\)`,
+          String.raw`\((x-3)(x+3)\)`,
+          String.raw`\((x-5)(x+5)\)`,
+          String.raw`\((x+3)(x+7)\)`,
+          String.raw`\((x-3)(x+7)\)`
+        ],
+        choiceWrap: false
+      },
+      /* Q6. pst; answer: C */
+      {
+        stem: String.raw`<p>Factor completely: \(x^2+12x+36\).</p>`,
+        choices: [
+          String.raw`\((x+12)^2\)`,
+          String.raw`\((x+6)(x-6)\)`,
+          String.raw`\((x+6)^2\)`,
+          String.raw`\((x-6)^2\)`,
+          String.raw`\((x+3)(x+12)\)`,
+          String.raw`\((x+6)(x+5)\)`
+        ],
+        choiceWrap: false
+      },
+      /* Q7. pst; answer: A */
+      {
+        stem: String.raw`<p>Factor completely: \(9x^2-30x+25\).</p>`,
+        choices: [
+          String.raw`\((3x-5)^2\)`,
+          String.raw`\((3x+5)^2\)`,
+          String.raw`\((9x-5)^2\)`,
+          String.raw`\((3x-5)(3x+5)\)`,
+          String.raw`\((3x-25)(3x-1)\)`,
+          String.raw`\((3x-10)(3x-2)\)`
+        ],
+        choiceWrap: false
+      },
+      /* Q8. pst; answer: D */
+      {
+        stem: String.raw`<p>Factor completely: \(a^2b^2+14ab+49\).</p>`,
+        choices: [
+          String.raw`\((ab-7)^2\)`,
+          String.raw`\((ab+14)^2\)`,
+          String.raw`\((ab+7)(ab-7)\)`,
+          String.raw`\((ab+7)^2\)`,
+          String.raw`\((a+7b)^2\)`,
+          String.raw`\((ab+1)(ab+49)\)`
+        ],
+        choiceWrap: false
+      },
+      /* Q9. pst-contrast; answer: E */
+      {
+        stem: String.raw`<p>Exactly one of the following trinomials is <em>not</em> the square of a polynomial with real coefficients. Which one?</p>`,
+        choices: [
+          String.raw`\(x^2+10x+25\)`,
+          String.raw`\(4x^2-12x+9\)`,
+          String.raw`\(9x^2+12x+4\)`,
+          String.raw`\(x^2-8x+16\)`,
+          String.raw`\(x^2+10x+24\)`,
+          String.raw`\(25x^2-20x+4\)`
+        ],
+        choiceWrap: false
+      },
+      /* Q10. pst; answer: F */
+      {
+        stem: String.raw`<p>Factor completely: \(4x^2-12xy+9y^2\).</p>`,
+        choices: [
+          String.raw`\((2x+3y)^2\)`,
+          String.raw`\((2x-3y)(2x+3y)\)`,
+          String.raw`\((4x-3y)^2\)`,
+          String.raw`\((2x-6y)^2\)`,
+          String.raw`\((2x-3y)(2x-y)\)`,
+          String.raw`\((2x-3y)^2\)`
+        ],
+        choiceWrap: false
+      },
+      /* Q11. pst-condition; answer: C */
+      {
+        stem: String.raw`<p>For what positive value of \(k\) is \(16x^2-kx+9\) a perfect-square trinomial?</p>`,
+        choices: [
+          String.raw`\(12\)`,
+          String.raw`\(18\)`,
+          String.raw`\(24\)`,
+          String.raw`\(36\)`,
+          String.raw`\(48\)`,
+          String.raw`\(72\)`
+        ],
+        choiceWrap: false
+      },
+      /* Q12. guess; answer: B */
+      {
+        stem: String.raw`<p>Factor completely: \(x^2+7x+12\).</p>`,
+        choices: [
+          String.raw`\((x+2)(x+6)\)`,
+          String.raw`\((x+3)(x+4)\)`,
+          String.raw`\((x-3)(x-4)\)`,
+          String.raw`\((x+1)(x+12)\)`,
+          String.raw`\((x-3)(x+4)\)`,
+          String.raw`\((x+2)(x+4)\)`
+        ],
+        choiceWrap: false
+      },
+      /* Q13. guess; answer: E */
+      {
+        stem: String.raw`<p>Factor completely: \(x^2-x-20\).</p>`,
+        choices: [
+          String.raw`\((x-4)(x+5)\)`,
+          String.raw`\((x+5)(x+4)\)`,
+          String.raw`\((x-5)(x-4)\)`,
+          String.raw`\((x-5)(x+5)\)`,
+          String.raw`\((x-5)(x+4)\)`,
+          String.raw`\((x-10)(x+2)\)`
+        ],
+        choiceWrap: false
+      },
+      /* Q14. guess; answer: C */
+      {
+        stem: String.raw`<p>Factor completely: \(x^2-9x+20\).</p>`,
+        choices: [
+          String.raw`\((x-2)(x-10)\)`,
+          String.raw`\((x+4)(x+5)\)`,
+          String.raw`\((x-4)(x-5)\)`,
+          String.raw`\((x-10)(x+1)\)`,
+          String.raw`\((x-4)(x+5)\)`,
+          String.raw`\((x+2)(x-10)\)`
+        ],
+        choiceWrap: false
+      },
+      /* Q15. guess; answer: F */
+      {
+        stem: String.raw`<p>Factor completely: \(x^2+2x-35\).</p>`,
+        choices: [
+          String.raw`\((x+5)(x-7)\)`,
+          String.raw`\((x-5)(x-7)\)`,
+          String.raw`\((x+5)(x-6)\)`,
+          String.raw`\((x-7)(x+6)\)`,
+          String.raw`\((x+6)(x-4)\)`,
+          String.raw`\((x+7)(x-5)\)`
+        ],
+        choiceWrap: false
+      },
+      /* Q16. mixed-pst; answer: C */
+      {
+        stem: String.raw`<p>Factor completely: \(x^2-10x+25\).</p>`,
+        choices: [
+          String.raw`\((x-5)(x+5)\)`,
+          String.raw`\((x+5)^2\)`,
+          String.raw`\((x-5)^2\)`,
+          String.raw`\((x-10)^2\)`,
+          String.raw`\((x-25)(x+1)\)`,
+          String.raw`\((x-10)(x+5)\)`
+        ],
+        choiceWrap: false
+      },
+      /* Q17. mixed-gcf-pst; answer: E */
+      {
+        stem: String.raw`<p>Factor completely: \(2x^2+20x+50\).</p>`,
+        choices: [
+          String.raw`\(2(x-5)^2\)`,
+          String.raw`\(2(x+5)(x-5)\)`,
+          String.raw`\((2x+5)^2\)`,
+          String.raw`\(2(x+10)^2\)`,
+          String.raw`\(2(x+5)^2\)`,
+          String.raw`\(2(x+5)(x+10)\)`
+        ],
+        choiceWrap: false
+      },
+      /* Q18. mixed-substitute; answer: F */
+      {
+        stem: String.raw`<p>Factor completely over the real numbers: \(x^4-10x^2+9\).</p>`,
+        choices: [
+          String.raw`\((x^2-1)(x^2+9)\)`,
+          String.raw`\((x^2+1)(x^2+9)\)`,
+          String.raw`\((x^2-9)^2\)`,
+          String.raw`\((x^2-1)^2\)`,
+          String.raw`\((x-1)(x+1)(x-9)(x+9)\)`,
+          String.raw`\((x-1)(x+1)(x-3)(x+3)\)`
+        ],
+        choiceWrap: false
+      },
+      /* Q19. bridge; answer: A */
+      {
+        stem: String.raw`<p>Which expression is equal to \(x^2+6x+8\) and displays it as a difference of two squares?</p>`,
+        choices: [
+          String.raw`\((x+3)^2-1\)`,
+          String.raw`\((x+3)^2+1\)`,
+          String.raw`\((x+6)^2-28\)`,
+          String.raw`\((x+2)^2+4\)`,
+          String.raw`\((x-3)^2-1\)`,
+          String.raw`\((x+3)^2-9\)`
+        ],
+        choiceWrap: false
+      },
+      /* Q20. square-completion; answer: B */
+      {
+        stem: String.raw`<p>Complete the square. Which expression is identically equal to \(x^2+4x+1\)?</p>`,
+        choices: [
+          String.raw`\((x+2)^2+3\)`,
+          String.raw`\((x+2)^2-3\)`,
+          String.raw`\((x-2)^2-3\)`,
+          String.raw`\((x+4)^2-15\)`,
+          String.raw`\((x+2)^2-1\)`,
+          String.raw`\((x+1)^2-3\)`
+        ],
+        choiceWrap: false
+      },
+      /* Q21. real-factor-linked; answer: D */
+      {
+        stem: String.raw`<p>Factor completely over the real numbers: \(x^2+4x+1\).</p>`,
+        choices: [
+          String.raw`\((x+2-3)(x+2+3)\)`,
+          String.raw`\((x+2-\sqrt{5})(x+2+\sqrt{5})\)`,
+          String.raw`\((x-2-\sqrt{3})(x-2+\sqrt{3})\)`,
+          String.raw`\((x+2-\sqrt{3})(x+2+\sqrt{3})\)`,
+          String.raw`\((x+2-\sqrt{3})^2\)`,
+          String.raw`\((x+2-\sqrt{2})(x+2+\sqrt{2})\)`
+        ],
+        choiceWrap: false
+      },
+      /* Q22. real-factor; answer: B */
+      {
+        stem: String.raw`<p>Factor completely over the real numbers: \(x^2-2x-2\).</p>`,
+        choices: [
+          String.raw`\((x+1-\sqrt{3})(x+1+\sqrt{3})\)`,
+          String.raw`\((x-1-\sqrt{3})(x-1+\sqrt{3})\)`,
+          String.raw`\((x-1-\sqrt{2})(x-1+\sqrt{2})\)`,
+          String.raw`\((x-1-3)(x-1+3)\)`,
+          String.raw`\((x-2-\sqrt{3})(x-2+\sqrt{3})\)`,
+          String.raw`\((x-1-\sqrt{3})^2\)`
+        ],
+        choiceWrap: false
+      },
+      /* Q23. real-factor; answer: F */
+      {
+        stem: String.raw`<p>Factor completely over the real numbers: \(x^2+2x-1\).</p>`,
+        choices: [
+          String.raw`\((x+1-1)(x+1+1)\)`,
+          String.raw`\((x+1-\sqrt{3})(x+1+\sqrt{3})\)`,
+          String.raw`\((x-1-\sqrt{2})(x-1+\sqrt{2})\)`,
+          String.raw`\((x+2-\sqrt{2})(x+2+\sqrt{2})\)`,
+          String.raw`\((x+1-\sqrt{2})^2\)`,
+          String.raw`\((x+1-\sqrt{2})(x+1+\sqrt{2})\)`
+        ],
+        choiceWrap: false
+      },
+      /* Q24. real-factor; answer: C */
+      {
+        stem: String.raw`<p>Factor completely over the real numbers: \(x^2+6x+7\).</p>`,
+        choices: [
+          String.raw`\((x+3-\sqrt{7})(x+3+\sqrt{7})\)`,
+          String.raw`\((x-3-\sqrt{2})(x-3+\sqrt{2})\)`,
+          String.raw`\((x+3-\sqrt{2})(x+3+\sqrt{2})\)`,
+          String.raw`\((x+3-2)(x+3+2)\)`,
+          String.raw`\((x+3-\sqrt{3})(x+3+\sqrt{3})\)`,
+          String.raw`\((x+3-\sqrt{2})^2\)`
+        ],
+        choiceWrap: false
+      },
+      /* Q25. no-real; answer: E */
+      {
+        stem: String.raw`<p>Which statement about \(x^2+6x+10\) is correct?</p>`,
+        choices: [
+          String.raw`It equals \((x+3)^2-1\) and has two real linear factors.`,
+          String.raw`It equals \((x+3)^2+1\) and has two distinct real linear factors.`,
+          String.raw`It equals \((x-3)^2+1\) and has no real linear factors.`,
+          String.raw`It equals \((x+3)^2\) and has one repeated real linear factor.`,
+          String.raw`It equals \((x+3)^2+1\) and has no real linear factors.`,
+          String.raw`It equals \((x+3)^2-1\) and has no real linear factors.`
+        ],
+        choiceWrap: false
+      },
+      /* Q26. parameter; answer: B */
+      {
+        stem: String.raw`<p>Let \(t\) be real. For which values of \(t\) can \(x^2+6x+t\) be written as a product of two real linear factors, which may be equal?</p>`,
+        choices: [
+          String.raw`\(t<9\)`,
+          String.raw`\(t\leq 9\)`,
+          String.raw`\(t\geq 9\)`,
+          String.raw`\(t>9\)`,
+          String.raw`\(t=9\)`,
+          String.raw`\(\text{All real values of }t\)`
+        ],
+        choiceWrap: false
+      }
+    ]
+  };
+  </script>
+  <link rel="stylesheet" href="/math-homework/assets/core-rich.css" />
+  <script defer src="/math-homework/assets/core-rich.js"></script>
+  <script defer src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+</head>
+<body>
+  <div id="hw-root">Loading…</div>
+</body>
+</html>
