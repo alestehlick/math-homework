@@ -4,221 +4,327 @@
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Homework 9-5 (Algebra 2)</title>
-
   <script>
-    /* =========================================
-       Homework 9-5 — Graphs of Rational Functions
-       Update: adds “identify the function from the graph” items.
-       ========================================= */
-    window.homeworkData = {
-      classId : "Algebra2",
-      id      : "Homework 9-5",
-      title   : "Homework 9-5 — Graphs of Rational Functions",
+/* ============================================================
+   Homework 9-5 — Translated Hyperbolas (Algebra 2)
 
-      graphics : String.raw`
-\begin{tikzpicture}[scale=0.5]
-  \tikzset{axes/.style={->,thick}}
-  \tikzset{grid/.style={very thin,color=gray!30}}
+   SOURCE SETS / ORIGINAL EXERCISE NUMBERS:
+   - User-supplied older hw_9_5(2).html: Q1, Q4, Q7, Q9,
+     Q12 provide the original topics of reading reciprocal graphs,
+     identifying asymptotes and recognizing curves from plots.
+   - The previous version of the translated-hyperbola homework
+     supplied in this project: its Q1–Q4 (base graphs), Q5–Q11
+     (translation), Q12–Q17 (side behavior and sketch), Q18–Q23
+     (reconstruction) were critically audited; all questions are
+     rewritten rather than copied verbatim.
+   - Teacher's classroom convention: x -> x-a and y -> y-b,
+     already established in the earlier translation topic.
+   - No other textbook/source exercise numbers were supplied.
 
-  % ---------- G1 ----------
-  \begin{scope}[xshift=-18cm,yshift=12cm]
-    \clip (-6,-6) rectangle (6,6);
-    \draw[grid] (-6,-6) grid (6,6);
-    \draw[axes] (-6,0)--(6,0); \draw[axes] (0,-6)--(0,6);
-    \draw[blue,thick,domain=-6:-0.2,samples=200] plot(\x,{1/\x});
-    \draw[blue,thick,domain=0.2:6,samples=200] plot(\x,{1/\x});
-    \node[anchor=south east,font=\small] at (5.5,5.5) {G1};
-  \end{scope}
+   MODEL-AUTHORED / SUBSTANTIALLY REWORKED ITEMS:
+   - ALL Q1–Q20 are authored/reworked for the revised sequence.
+   - Q1–Q4: base reciprocal graphs; concrete values near 0;
+     both asymptotes and sign/branch contrast.
+   - Q5–Q9: translated point -> implicit equation -> formula
+     -> asymptotes -> reading a translated graph.
+   - Q10–Q11: actual sketching with six candidate graph plates,
+     and independently chosen verification points.
+   - Q12–Q15: one-sided behavior of a single translated curve,
+     horizontal approach, domain/range exclusions and sign contrast.
+   - Q16: insufficient asymptote data; Q17: diagnose a
+     deliberately wrong sketch; Q18–Q20: reconstruction from
+     increasingly partial geometric data.
 
-  % ---------- G2 ----------
-  \begin{scope}[xshift=0cm,yshift=12cm]
-    \clip (-6,-6) rectangle (6,6);
-    \draw[grid] (-6,-6) grid (6,6);
-    \draw[axes] (-6,0)--(6,0); \draw[axes] (0,-6)--(0,6);
-    \draw[red,thick,domain=-6:-0.2,samples=200] plot(\x,{1/(\x*\x-2*\x)});
-    \draw[red,thick,domain=0.2:1.8,samples=200] plot(\x,{1/(\x*\x-2*\x)});
-    \draw[red,thick,domain=2.2:6,samples=200] plot(\x,{1/(\x*\x-2*\x)});
-    \node[anchor=south east,font=\small] at (5.5,5.5) {G2};
-  \end{scope}
-
-  % ---------- G3 ----------
-  \begin{scope}[xshift=-16cm,yshift=0cm]
-    \clip (-6,-6) rectangle (6,6);
-    \draw[grid] (-6,-6) grid (6,6);
-    \draw[axes] (-6,0)--(6,0); \draw[axes] (0,-6)--(0,6);
-    \draw[green!60!black,thick,domain=-6:-0.2,samples=200] plot(\x,{-2/\x});
-    \draw[green!60!black,thick,domain=0.2:6,samples=200] plot(\x,{-2/\x});
-    \node[anchor=south east,font=\small] at (5.5,5.5) {G3};
-  \end{scope}
-
-  % ---------- G4 ----------
-  \begin{scope}[xshift=0cm,yshift=0cm]
-    \clip (-6,-6) rectangle (6,6);
-    \draw[grid] (-6,-6) grid (6,6);
-    \draw[axes] (-6,0)--(6,0); \draw[axes] (0,-6)--(0,6);
-    \draw[purple,thick,domain=-6:0.8,samples=200] plot(\x,{1/(\x-1)});
-    \draw[purple,thick,domain=1.2:6,samples=200] plot(\x,{1/(\x-1)});
-    \node[anchor=south east,font=\small] at (5.5,5.5) {G4};
-  \end{scope}
-
-  % ---------- G5 ----------
-  \begin{scope}[xshift=-16cm,yshift=-12cm]
-    \clip (-6,-6) rectangle (6,6);
-    \draw[grid] (-6,-6) grid (6,6);
-    \draw[axes] (-6,0)--(6,0); \draw[axes] (0,-6)--(0,6);
-    \draw[orange,thick,domain=-6:0.2,samples=200] plot(\x,{(\x*\x)/(\x*\x-5*\x)});
-    \draw[orange,thick,domain=0.8:4.8,samples=200] plot(\x,{(\x*\x)/(\x*\x-5*\x)});
-    \draw[orange,thick,domain=5.2:6,samples=200] plot(\x,{(\x*\x)/(\x*\x-5*\x)});
-    \node[anchor=south east,font=\small] at (5.5,5.5) {G5};
-  \end{scope}
-
-  % ---------- G6 ----------
-  \begin{scope}[xshift=0cm,yshift=-12cm]
-    \clip (-6,-6) rectangle (6,6);
-    \draw[grid] (-6,-6) grid (6,6);
-    \draw[axes] (-6,0)--(6,0); \draw[axes] (0,-6)--(0,6);
-    \draw[brown,thick,domain=-6:-1.2,samples=200] plot(\x,{3/(\x+1)});
-    \draw[brown,thick,domain=-0.8:6,samples=200] plot(\x,{3/(\x+1)});
-    \node[anchor=south east,font=\small] at (5.5,5.5) {G6};
-  \end{scope}
-\end{tikzpicture}
-`,
-
-      /* ===== Updated hidden answer key (A–F) =====
-         Q11 corrected to A (x=5 only).
-      */
-      answerKey : ["B","D","A","D","C","C","A","B","C","B","A","B"],
-
-      questions : [
-        { latex: String.raw`\text{Refer to G1. What are the vertical and horizontal asymptotes?}`,
-          choices: [
-            String.raw`x=0,\ y=1`,
-            String.raw`x=0,\ y=0`,   // ✔
-            String.raw`x=1,\ y=0`,
-            String.raw`x=0,\ y=2`,
-            String.raw`x=1,\ y=1`,
-            String.raw`x=-1,\ y=0`
-          ]},
-
-        { latex: String.raw`\text{Refer to G2. What are the vertical asymptotes?}`,
-          choices: [
-            String.raw`x=0\ \text{ only}`,
-            String.raw`x=2\ \text{ only}`,
-            String.raw`x=-2,\ x=2`,
-            String.raw`x=0,\ x=2`,  // ✔
-            String.raw`x=\pm 1`,
-            String.raw`x=3`
-          ]},
-
-        { latex: String.raw`\text{Refer to G3. Which statement is true?}`,
-          choices: [
-            String.raw`\text{The graph is symmetric about the origin}`, // ✔
-            String.raw`\text{The graph is symmetric about the y-axis}`,
-            String.raw`\text{The graph has vertical asymptote }y=0`,
-            String.raw`\text{The graph passes through }(0,0)`,
-            String.raw`\text{The graph is symmetric about the x-axis}`,
-            String.raw`\text{The graph has no symmetry}`
-          ]},
-
-        { latex: String.raw`\text{Refer to G4. What is the vertical asymptote?}`,
-          choices: [
-            String.raw`x=0`,
-            String.raw`x=2`,
-            String.raw`x=-1`,
-            String.raw`x=1`, // ✔
-            String.raw`y=1`,
-            String.raw`y=0`
-          ]},
-
-        { latex: String.raw`\text{Refer to G5. What is the domain?}`,
-          choices: [
-            String.raw`\{x\in\mathbb{R}\mid x\ne 0\}`,
-            String.raw`\{x\in\mathbb{R}\mid x\ne 5\}`,
-            String.raw`\{x\in\mathbb{R}\mid x\ne 0,\ x\ne 5\}`, // ✔
-            String.raw`\{x\in\mathbb{R}\mid x\ne -1,\ x\ne 1\}`,
-            String.raw`\{x\in\mathbb{R}\mid x\ne 2,\ x\ne 3\}`,
-            String.raw`\{x\in\mathbb{R}\mid x\ne 0,\ y\ne 5\}`
-          ]},
-
-        { latex: String.raw`\text{Refer to G6. What is the horizontal asymptote?}`,
-          choices: [
-            String.raw`y=1`,
-            String.raw`y=3`,
-            String.raw`y=0`, // ✔
-            String.raw`x=1`,
-            String.raw`x=-1`,
-            String.raw`y=-3`
-          ]},
-
-        /* ==== New “identify the function from the graph” items ==== */
-        { latex: String.raw`\text{Identify the function whose graph is G1.}`,
-          choices: [
-            String.raw`y=\tfrac{1}{x}`,                 // ✔
-            String.raw`y=\tfrac{1}{x-1}`,
-            String.raw`y=-\tfrac{2}{x}`,
-            String.raw`y=\tfrac{3}{x+1}`,
-            String.raw`y=\tfrac{x}{x-5}`,
-            String.raw`y=\tfrac{1}{x^{2}-2x}`
-          ]},
-
-        { latex: String.raw`\text{Identify the function whose graph is G3.}`,
-          choices: [
-            String.raw`y=\tfrac{1}{x}`,
-            String.raw`y=-\tfrac{2}{x}`,                // ✔
-            String.raw`y=\tfrac{2}{x}`,
-            String.raw`y=\tfrac{1}{x+1}`,
-            String.raw`y=\tfrac{1}{x-2}`,
-            String.raw`y=-\tfrac{1}{x}`
-          ]},
-
-        { latex: String.raw`\text{Identify the function whose graph is G4.}`,
-          choices: [
-            String.raw`y=\tfrac{1}{x}`,
-            String.raw`y=\tfrac{1}{x+1}`,
-            String.raw`y=\tfrac{1}{x-1}`,               // ✔
-            String.raw`y=-\tfrac{1}{x-1}`,
-            String.raw`y=\tfrac{3}{x+1}`,
-            String.raw`y=\tfrac{x^{2}}{x^{2}-5x}`
-          ]},
-
-        { latex: String.raw`\text{Identify the function whose graph is G5.}`,
-          choices: [
-            String.raw`y=\tfrac{x}{x-5}`,
-            String.raw`y=\tfrac{x^{2}}{x^{2}-5x}`,      // ✔
-            String.raw`y=\tfrac{1}{x^{2}-5x}`,
-            String.raw`y=\tfrac{x-5}{x}`,
-            String.raw`y=\tfrac{1}{x-5}`,
-            String.raw`y=\tfrac{3}{x+1}`
-          ]},
-
-        /* ==== Keep two conceptual checks ==== */
-        { latex: String.raw`\text{Refer to G5. Which vertical asymptotes are correct?}`,
-          choices: [
-            String.raw`x=5\ \text{ only}`,  // ✔
-            String.raw`x=0\ \text{ only}`,
-            String.raw`x=5\ \text{ and }x=0`,
-            String.raw`y=5`,
-            String.raw`y=1`,
-            String.raw`x=1`
-          ]},
-
-        { latex: String.raw`\text{Refer to G6. Which statement is true?}`,
-          choices: [
-            String.raw`\text{Domain is all real numbers}`,
-            String.raw`\text{Vertical asymptote at }x=-1`, // ✔
-            String.raw`\text{Horizontal asymptote }y=3`,
-            String.raw`\text{Graph passes through }(0,3)`,
-            String.raw`\text{Vertical asymptote at }y=-1`,
-            String.raw`\text{Intercept at }(-1,0)`
-          ]}
+   IMAGE FILES:
+   - User-supplied images: none.
+   - Model-generated in LaTeX/TikZ: 9-5-3.png, 9-5-9.png,
+     9-5-10.png, 9-5-17.png.
+   - Matching model-generated LaTeX files: 9-5-3.tex,
+     9-5-9.tex, 9-5-10.tex, 9-5-17.tex.
+   IMAGE NAMING RULE: <chapter>-<section>-<final Q number>.png.
+   Images belong in the same directory as this HTML file.
+   ============================================================ */
+  window.homeworkData = {
+    classId: "Algebra2",
+    id: "Homework 9-5",
+    title: "Homework 9-5 — Translated Hyperbolas",
+    graphics: String.raw``,
+    answerKey: ["D", "B", "E", "F", "C", "A", "D", "B", "E", "C", "F", "A", "D", "E", "B", "F", "C", "A", "E", "B"],
+    questions: [
+    {
+      stem: String.raw`<p>Consider the hyperbola \(y=\frac1x\). Which <em>pair</em> of points lies on the graph?</p>`,
+      choiceWrap: false,
+      choices: [
+        String.raw`\((2,2)\) and \((-2,-2)\)`,
+        String.raw`\((2,-\tfrac12)\) and \((-2,\tfrac12)\)`,
+        String.raw`\((1,1)\) and \((2,1)\)`,
+        String.raw`\((2,\tfrac12)\) and \((-2,-\tfrac12)\)`,
+        String.raw`\((0,0)\) and \((1,1)\)`,
+        String.raw`\((-1,1)\) and \((1,-1)\)`
       ]
-    };
+    },
+    {
+      stem: String.raw`<p>For \(y=\frac1x\), evaluate the function at the four values of \(x\) below. Which row gives the correct values, in the same order?</p>
+<table class="value-row"><tr><th>\(x\)</th><td>\(-0.1\)</td><td>\(-0.01\)</td><td>\(0.01\)</td><td>\(0.1\)</td></tr></table>`,
+      choiceWrap: false,
+      choices: [
+        String.raw`\(10,\ 100,\ -100,\ -10\)`,
+        String.raw`\(-10,\ -100,\ 100,\ 10\)`,
+        String.raw`\(-0.1,\ -0.01,\ 0.01,\ 0.1\)`,
+        String.raw`\(-10,\ -100,\ -100,\ -10\)`,
+        String.raw`\(-100,\ -10,\ 10,\ 100\)`,
+        String.raw`\(-10,\ 100,\ -100,\ 10\)`
+      ]
+    },
+    {
+      stem: String.raw`<p>Figure 1 shows one of the two original hyperbolas. Which description of the graph is correct?</p>`,
+      media: String.raw`<figure><img src="9-5-3.png" alt="Coordinate plot of a reciprocal hyperbola on numbered axes; no asymptote guide lines are drawn."/><figcaption>Figure 1</figcaption></figure>`,
+      choiceWrap: false,
+      choices: [
+        String.raw`Its branches lie in Quadrants I and III; its asymptotes are \(x=0\) and \(y=0\).`,
+        String.raw`Its branches lie in Quadrants II and IV; its asymptotes are \(x=1\) and \(y=0\).`,
+        String.raw`Its branches lie in Quadrants II and IV; its asymptotes are \(x=0\) and \(y=1\).`,
+        String.raw`Its branches lie in Quadrants I and III; its asymptotes are \(x=0\) and \(y=1\).`,
+        String.raw`Its branches lie in Quadrants II and IV; its asymptotes are \(x=0\) and \(y=0\).`,
+        String.raw`Its branches lie in Quadrants I and IV; its asymptotes are \(x=0\) and \(y=0\).`
+      ]
+    },
+    {
+      stem: String.raw`<p>Compare \(y=\frac1x\) and \(y=-\frac1x\) for large positive values of \(x\). Which statement is correct?</p>`,
+      choiceWrap: false,
+      choices: [
+        String.raw`Both approach \(y=0\) from above.`,
+        String.raw`\(y=\frac1x\) approaches \(0\) from below, while \(y=-\frac1x\) approaches it from above.`,
+        String.raw`Both increase without bound.`,
+        String.raw`\(y=\frac1x\) approaches \(1\), while \(y=-\frac1x\) approaches \(-1\).`,
+        String.raw`Both approach \(y=0\) from below.`,
+        String.raw`\(y=\frac1x\) approaches \(0\) from above, while \(y=-\frac1x\) approaches it from below.`
+      ]
+    },
+    {
+      stem: String.raw`<p>The point \((1,1)\) belongs to \(y=\frac1x\). The <em>whole</em> hyperbola is translated 2 units left and 3 units up. Where does this point move?</p>`,
+      choiceWrap: false,
+      choices: [
+        String.raw`\((3,4)\)`,
+        String.raw`\((1,4)\)`,
+        String.raw`\((-1,4)\)`,
+        String.raw`\((-1,-2)\)`,
+        String.raw`\((3,-2)\)`,
+        String.raw`\((-2,3)\)`
+      ]
+    },
+    {
+      stem: String.raw`<p>The hyperbola \(y=\frac1x\) can also be written \(xy=1\). Translate the entire curve 2 units left and 1 unit up. Which equation describes the new curve?</p>`,
+      choiceWrap: false,
+      choices: [
+        String.raw`\((x+2)(y-1)=1\)`,
+        String.raw`\((x-2)(y+1)=1\)`,
+        String.raw`\((x+2)(y+1)=1\)`,
+        String.raw`\((x-2)(y-1)=1\)`,
+        String.raw`\((x+2)(y-1)=-1\)`,
+        String.raw`\((x+1)(y-2)=1\)`
+      ]
+    },
+    {
+      stem: String.raw`<p>Translate the graph of \(y=-\frac1x\) 3 units right and 1 unit down. Determine the equation of the new graph.</p>`,
+      choiceWrap: false,
+      choices: [
+        String.raw`\(y=-\frac1{x+3}-1\)`,
+        String.raw`\(y=\frac1{x-3}-1\)`,
+        String.raw`\(y=-\frac1{x-3}+1\)`,
+        String.raw`\(y=-\frac1{x-3}-1\)`,
+        String.raw`\(y=\frac1{x+3}+1\)`,
+        String.raw`\(y=-\frac1{x-1}-3\)`
+      ]
+    },
+    {
+      stem: String.raw`<p>Consider \(y-3=\frac1{x+2}\). Identify the original hyperbola, its translation, and the two asymptotes of the translated graph.</p>`,
+      choiceWrap: false,
+      choices: [
+        String.raw`From \(y=\frac1x\), 2 units right and 3 up; asymptotes \(x=2\), \(y=3\).`,
+        String.raw`From \(y=\frac1x\), 2 units left and 3 up; asymptotes \(x=-2\), \(y=3\).`,
+        String.raw`From \(y=\frac1x\), 2 units left and 3 down; asymptotes \(x=-2\), \(y=-3\).`,
+        String.raw`From \(y=-\frac1x\), 2 units left and 3 up; asymptotes \(x=-2\), \(y=3\).`,
+        String.raw`From \(y=\frac1x\), 3 units left and 2 up; asymptotes \(x=-3\), \(y=2\).`,
+        String.raw`From \(y=-\frac1x\), 2 units right and 3 up; asymptotes \(x=2\), \(y=3\).`
+      ]
+    },
+    {
+      stem: String.raw`<p>Figure 2 is a translated hyperbola. Determine its equation from the asymptotes and the arrangement of its branches.</p>`,
+      media: String.raw`<figure><img src="9-5-9.png" alt="Coordinate plot of a reciprocal hyperbola on numbered axes; no asymptote guide lines are drawn."/><figcaption>Figure 2</figcaption></figure>`,
+      choiceWrap: false,
+      choices: [
+        String.raw`\(y=-\frac1{x-2}-1\)`,
+        String.raw`\(y=\frac1{x+2}-1\)`,
+        String.raw`\(y=\frac1{x-2}+1\)`,
+        String.raw`\(y=-\frac1{x+2}+1\)`,
+        String.raw`\(y=\frac1{x-2}-1\)`,
+        String.raw`\(y=-\frac1{x-2}+1\)`
+      ]
+    },
+    {
+      stem: String.raw`<p><strong>Sketch first.</strong> Starting from \(y=-\frac1x\), sketch \(y=-\frac1{x+1}+2\) on paper, marking its asymptotes. Then decide which of the six graphs in Figure 3 matches your sketch. Every panel uses the same coordinate scale.</p>
+<figure class="wide-figure"><img src="9-5-10.png" alt="Six equally scaled candidate graphs labeled A through F, each with two reciprocal-curve branches and numbered coordinate axes."/><figcaption>Figure 3 — Candidate sketches A–F</figcaption></figure>`,
+      choiceWrap: false,
+      choices: [
+        String.raw`Sketch A`,
+        String.raw`Sketch B`,
+        String.raw`Sketch C`,
+        String.raw`Sketch D`,
+        String.raw`Sketch E`,
+        String.raw`Sketch F`
+      ]
+    },
+    {
+      stem: String.raw`<p><strong>Sketch first.</strong> Draw \(y=\frac1{x+2}-1\) on paper, including both branches and the two asymptotes. Which <em>pair</em> of points must lie on your sketch?</p>`,
+      choiceWrap: false,
+      choices: [
+        String.raw`\((-3,0)\) and \((-1,-2)\)`,
+        String.raw`\((-3,-2)\) and \((-1,2)\)`,
+        String.raw`\((-3,-2)\) and \((-2,-1)\)`,
+        String.raw`\((-4,-\tfrac32)\) and \((0,\tfrac12)\)`,
+        String.raw`\((-3,-1)\) and \((-1,0)\)`,
+        String.raw`\((-3,-2)\) and \((-1,0)\)`
+      ]
+    },
+    {
+      stem: String.raw`<p>Consider \(y=-\frac1{x-2}+1\). The table gives values of the function at points approaching \(x=2\) from both sides.</p>
+<table class="value-row"><tr><th>\(x\)</th><td>1.9</td><td>1.99</td><td>2.01</td><td>2.1</td></tr><tr><th>\(y\)</th><td>11</td><td>101</td><td>−99</td><td>−9</td></tr></table>
+<p>Which statement correctly describes the pattern as \(x\) moves still closer to \(2\)?</p>`,
+      choiceWrap: false,
+      choices: [
+        String.raw`From the left, \(y\) increases without bound; from the right, it decreases without bound.`,
+        String.raw`From the left, \(y\) decreases without bound; from the right, it increases without bound.`,
+        String.raw`From both sides, \(y\) increases without bound.`,
+        String.raw`From both sides, \(y\) decreases without bound.`,
+        String.raw`From the left, \(y\) approaches \(1\) from above; from the right, it approaches \(1\) from below.`,
+        String.raw`From the left, \(y\) approaches \(1\) from below; from the right, it approaches \(1\) from above.`
+      ]
+    },
+    {
+      stem: String.raw`<p>For the <em>same</em> hyperbola \(y=-\frac1{x-2}+1\), the branches approach the horizontal asymptote far to the left and far to the right. From which side do they approach \(y=1\)?</p>`,
+      choiceWrap: false,
+      choices: [
+        String.raw`From below at both ends.`,
+        String.raw`From above at both ends.`,
+        String.raw`From below on the left and from above on the right.`,
+        String.raw`From above on the left and from below on the right.`,
+        String.raw`From above on the left and then cross \(y=1\) on the right.`,
+        String.raw`From below on the left and then cross \(y=1\) on the right.`
+      ]
+    },
+    {
+      stem: String.raw`<p>Consider the hyperbola \(y=\frac1{x-3}+2\). Which statement correctly distinguishes what happens at \(x=3\) from what happens at \(y=2\)?</p>`,
+      choiceWrap: false,
+      choices: [
+        String.raw`\(x=3\) is excluded from the domain, but \(y=2\) is reached when \(x=0\).`,
+        String.raw`\(x=-3\) is excluded from the domain, and \(y=2\) is never reached.`,
+        String.raw`\(x=3\) is allowed, but \(y=2\) is never reached.`,
+        String.raw`\(x=3\) is excluded from the domain, and \(y=-2\) is never reached.`,
+        String.raw`\(x=3\) is excluded from the domain, and \(y=2\) is never reached.`,
+        String.raw`\(x=-3\) is excluded from the domain, and \(y=-2\) is never reached.`
+      ]
+    },
+    {
+      stem: String.raw`<p>Compare \(f(x)=\frac1{x-1}+2\) and \(g(x)=-\frac1{x-1}+2\). Which statement is correct?</p>`,
+      choiceWrap: false,
+      choices: [
+        String.raw`Their vertical asymptotes are different, but their horizontal asymptotes are equal.`,
+        String.raw`They have the same asymptotes; for \(x>1\), \(f(x)>2\) while \(g(x)<2\).`,
+        String.raw`They have the same asymptotes; for \(x>1\), both functions are above \(2\).`,
+        String.raw`They have the same asymptotes; for \(x>1\), \(f(x)<2\) while \(g(x)>2\).`,
+        String.raw`They have the same vertical asymptote, but their horizontal asymptotes are \(y=2\) and \(y=-2\).`,
+        String.raw`They have the same asymptotes and their branches lie on the same sides of those lines.`
+      ]
+    },
+    {
+      stem: String.raw`<p>Two hyperbolas in our studied family have asymptotes \(x=-1\) and \(y=2\), but they are <em>different graphs</em>. Which pair of equations could describe them?</p>`,
+      choiceWrap: false,
+      choices: [
+        String.raw`\(y=\frac1{x-1}+2\) and \(y=-\frac1{x-1}+2\)`,
+        String.raw`\(y=\frac1{x+1}-2\) and \(y=-\frac1{x+1}-2\)`,
+        String.raw`\(y=\frac1{x+1}+2\) and \(y=\frac1{x-1}+2\)`,
+        String.raw`\(y=-\frac1{x+1}+2\) and \(y=-\frac1{x+1}-2\)`,
+        String.raw`\(y=\frac1{x-1}-2\) and \(y=-\frac1{x+1}+2\)`,
+        String.raw`\(y=\frac1{x+1}+2\) and \(y=-\frac1{x+1}+2\)`
+      ]
+    },
+    {
+      stem: String.raw`<p>A student tried to sketch \(y=\frac1{x+1}-2\) and drew Figure 4. Which diagnosis of the student’s error is correct?</p>`,
+      media: String.raw`<figure><img src="9-5-17.png" alt="Coordinate plot of a reciprocal hyperbola on numbered axes; no asymptote guide lines are drawn."/><figcaption>Figure 4 — A student’s sketch</figcaption></figure>`,
+      choiceWrap: false,
+      choices: [
+        String.raw`The branches have the right orientation, but both asymptotes must be shifted right.`,
+        String.raw`The vertical asymptote is correct, but the horizontal asymptote should be \(y=2\).`,
+        String.raw`Both asymptotes are correct, but the branches are reversed: the student used the sign of \(-\frac1x\).`,
+        String.raw`The branch orientation is correct, but the vertical asymptote should be \(x=1\).`,
+        String.raw`The branch orientation is correct, but the horizontal asymptote should be \(y=0\).`,
+        String.raw`The sketch is correct; no change is needed.`
+      ]
+    },
+    {
+      stem: String.raw`<p>A hyperbola is a translation of either \(y=\frac1x\) or \(y=-\frac1x\). Its asymptotes are \(x=-1\) and \(y=2\). As \(x\) approaches \(-1\) from the <em>left</em>, the function increases without bound. Determine its equation.</p>`,
+      choiceWrap: false,
+      choices: [
+        String.raw`\(y=-\frac1{x+1}+2\)`,
+        String.raw`\(y=\frac1{x+1}+2\)`,
+        String.raw`\(y=-\frac1{x-1}+2\)`,
+        String.raw`\(y=-\frac1{x+1}-2\)`,
+        String.raw`\(y=\frac1{x-1}-2\)`,
+        String.raw`\(y=\frac1{x-1}+2\)`
+      ]
+    },
+    {
+      stem: String.raw`<p>A hyperbola is obtained by translating one of the two original hyperbolas. Its asymptotes are \(x=2\) and \(y=-1\), and it passes through \((3,0)\). Determine its equation.</p>`,
+      choiceWrap: false,
+      choices: [
+        String.raw`\(y=-\frac1{x-2}-1\)`,
+        String.raw`\(y=\frac1{x+2}-1\)`,
+        String.raw`\(y=\frac1{x-2}+1\)`,
+        String.raw`\(y=-\frac1{x-2}+1\)`,
+        String.raw`\(y=\frac1{x-2}-1\)`,
+        String.raw`\(y=\frac1{x-3}-1\)`
+      ]
+    },
+    {
+      stem: String.raw`<p>A hyperbola is obtained by translating \(y=\frac1x\) or \(y=-\frac1x\). Its vertical asymptote is \(x=2\); as \(x\) approaches \(2\) from the <em>left</em>, the function increases without bound; and its graph passes through \((1,3)\). Determine the equation of the hyperbola.</p>`,
+      choiceWrap: false,
+      choices: [
+        String.raw`\(y=\frac1{x-2}+4\)`,
+        String.raw`\(y=-\frac1{x-2}+2\)`,
+        String.raw`\(y=\frac1{x-2}+2\)`,
+        String.raw`\(y=-\frac1{x-2}+3\)`,
+        String.raw`\(y=-\frac1{x+2}+\frac{10}{3}\)`,
+        String.raw`\(y=-\frac1{x-1}+2\)`
+      ]
+    }
+    ]
+  };
   </script>
-
-  <link rel="stylesheet" href="/math-homework/assets/core.css" />
-  <script defer src="/math-homework/assets/core.js"></script>
-  <link rel="stylesheet" href="https://tikzjax.com/v1/fonts.css" />
-  <script defer src="https://tikzjax.com/v1/tikzjax.js"></script>
+  <style>
+    /* Only the six-sketch gallery uses the full question width. */
+    .q-stem .wide-figure { margin: 1.1rem 0 1rem; }
+    .q-stem .wide-figure img {
+      width: 100%; height: auto; display:block; box-sizing:border-box;
+      background:#fff; border:1px solid #ced3d8; border-radius:8px;
+      padding:8px;
+    }
+    .q-stem .wide-figure figcaption {
+      margin-top:0.35rem; color:#4b5563; font-size:.9rem; text-align:center;
+    }
+    .q-stem .value-row { margin:.65rem 0 1rem; border-collapse:collapse; width:auto; max-width:100%; }
+    .q-stem .value-row th, .q-stem .value-row td {
+      border:1px solid #cfd3d7; padding:.25rem .6rem; text-align:center;
+      font-weight:normal;
+    }
+    .q-stem .value-row th { background:#e7e9ed; font-weight:600; }
+    .q-stem em {font-style:italic;}
+    @media (max-width:570px) {
+      .q-stem .value-row th, .q-stem .value-row td{padding:.18rem .3rem; font-size:.88rem;}
+    }
+  </style>
+  <link rel="stylesheet" href="/math-homework/assets/core-rich.css" />
+  <script defer src="/math-homework/assets/core-rich.js"></script>
   <script defer src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
 </head>
 <body>
