@@ -1,0 +1,320 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Homework 2-5 - Simple Curves, Polygons, and Diagonals</title>
+
+  <script>
+
+    window.homeworkData = {
+      classId : "Geometry",
+      id      : "Homework 2-5 - Simple Curves, Polygons, and Diagonals",
+      title   : "Homework 2-5 - Simple Curves, Polygons, and Diagonals",
+
+      graphics : String.raw``,
+
+      answerKey : ["B","E","C","F","A","D","B","E","C","F","D","A","E","C","B","F","D","A"],
+
+      questions : [
+
+        {
+          stem: String.raw`
+            <p><b>Refer to Figure 1.</b> Use the class definitions carefully. Which statement is correct?</p>
+          `,
+          media: String.raw`
+            <figure>
+              <img src="hw-2-5-fig-1.png" alt="Four figures labeled I, II, III, and IV" />
+              <figcaption>Figure 1</figcaption>
+            </figure>
+          `,
+          choices: [
+            String.raw`Figure I is not simple because it bends inward; Figure II is not closed because it has a corner; Figure III is not a curve because it is round; Figure IV is a simple closed polygon.`,
+            String.raw`Figure I has no boundary points and no self-intersection points, so it is a simple closed polygon; Figure II has boundary points, so it is not closed; Figure III is a simple closed curve but not a polygon; Figure IV is a simple closed polygon.`,
+            String.raw`Figure I is not a polygon because a concave figure cannot be a polygon; Figure II is closed; Figure III has boundary points; Figure IV is not simple.`,
+            String.raw`Figure I and Figure IV are polygons, but neither one is closed because each has vertices; Figure II is a polygon because it uses only line segments; Figure III is not simple.`,
+            String.raw`Figure II and Figure III are both polygons because neither one has a self-intersection point; Figure I is not closed; Figure IV is not a curve.`,
+            String.raw`Only Figure IV is a polygon; Figure I is disqualified by concavity, Figure II by having endpoints, and Figure III by being curved.`
+          ],
+          choiceWrap: false
+        },
+
+        {
+          stem: String.raw`
+            <p><b>Refer to Figure 1.</b> Which statement about boundary points is correct?</p>
+          `,
+          choices: [
+            String.raw`Every vertex of Figure I is a boundary point, because a small circle around a vertex meets the curve at only one point.`,
+            String.raw`Every point of Figure III is a boundary point, because a circle has no vertices.`,
+            String.raw`Figure IV has boundary points, but Figure II does not, because Figure IV is closed.`,
+            String.raw`Figures I and IV each have exactly one boundary point, while Figure II has none.`,
+            String.raw`Figure II has exactly two boundary points, one at each endpoint; Figures I, III, and IV have no boundary points.`,
+            String.raw`All four figures have boundary points, because each figure has visible ends or corners.`
+          ],
+          choiceWrap: false
+        },
+
+        {
+          stem: String.raw`
+            <p>A point \(P\) on a curve has the following property: for every small enough circle centered at \(P\), the circle crosses the curve in more than two points. What must be true?</p>
+          `,
+          choices: [
+            String.raw`\(P\) is a boundary point, so the curve is open.`,
+            String.raw`\(P\) is an interior point of the curve, so the curve is closed.`,
+            String.raw`\(P\) is a self-intersection point, so the curve is not simple.`,
+            String.raw`\(P\) is a vertex, so the curve is a polygon.`,
+            String.raw`\(P\) is on a circle, so the curve is not closed.`,
+            String.raw`Nothing can be concluded, because a small circle does not tell us anything about the whole curve.`
+          ],
+          choiceWrap: false
+        },
+
+        {
+          stem: String.raw`
+            <p>Which statement gives the correct definition of a polygon in this lesson?</p>
+          `,
+          choices: [
+            String.raw`A polygon is any closed curve.`,
+            String.raw`A polygon is any simple curve made of line segments, even if it has two endpoints.`,
+            String.raw`A polygon is any simple closed curve, even if part of it is curved.`,
+            String.raw`A polygon is any curve with finitely many vertices.`,
+            String.raw`A polygon is any closed figure whose interior is nonempty.`,
+            String.raw`A polygon is a simple closed curve formed by a finite chain of line segments.`
+          ],
+          choiceWrap: false
+        },
+
+        {
+          stem: String.raw`
+            <p>A simple closed polygon has seven sides. It is neither equilateral nor equiangular. Which statement is correct?</p>
+          `,
+          choices: [
+            String.raw`It is a heptagon, but it is not a regular heptagon.`,
+            String.raw`It is a hexagon, but it is not a regular hexagon.`,
+            String.raw`It is a heptagon, and every heptagon is regular.`,
+            String.raw`It is not a polygon because it is not equilateral.`,
+            String.raw`It is not a polygon because it is not equiangular.`,
+            String.raw`It is a regular heptagon because it is closed and has seven sides.`
+          ],
+          choiceWrap: false
+        },
+
+        {
+          stem: String.raw`
+            <p>Suppose the vertices of pentagon \(ABCDE\) are named in order around the polygon. Which segment is a diagonal of the pentagon?</p>
+          `,
+          choices: [
+            String.raw`\(\overline{AB}\)`,
+            String.raw`\(\overline{BC}\)`,
+            String.raw`\(\overline{EA}\)`,
+            String.raw`\(\overline{AC}\)`,
+            String.raw`\(\overline{CD}\)`,
+            String.raw`\(\overline{DE}\)`
+          ],
+          choiceWrap: false
+        },
+
+        {
+          stem: String.raw`
+            <p>In an \(n\)-gon, how many diagonals can be drawn from one fixed vertex?</p>
+          `,
+          choices: [
+            String.raw`\(n-1\)`,
+            String.raw`\(n-3\)`,
+            String.raw`\(n-2\)`,
+            String.raw`\(n\)`,
+            String.raw`\(\dfrac{n}{2}\)`,
+            String.raw`\(n-4\)`
+          ],
+          choiceWrap: false
+        },
+
+        {
+          stem: String.raw`
+            <p><b>Refer to Figure 2.</b> Which choice gives the sides of the polygon and its special name?</p>
+          `,
+          media: String.raw`
+            <figure>
+              <img src="hw-2-5-fig-2.png" alt="An octagon with vertices A, B, C, D, E, F, G, and H" />
+              <figcaption>Figure 2</figcaption>
+            </figure>
+          `,
+          choices: [
+            String.raw`Sides: \(\overline{AB}, \overline{AC}, \overline{AD}, \overline{AE}, \overline{AF}, \overline{AG}, \overline{AH}\). Name: octagon.`,
+            String.raw`Sides: \(\overline{AB}, \overline{BC}, \overline{CD}, \overline{DE}, \overline{EF}, \overline{FG}, \overline{GH}, \overline{HA}\). Name: hexagon.`,
+            String.raw`Sides: \(\overline{AB}, \overline{BC}, \overline{CD}, \overline{DE}, \overline{EF}, \overline{FG}, \overline{GH}, \overline{GA}\). Name: octagon.`,
+            String.raw`Sides: \(\overline{AB}, \overline{BC}, \overline{CD}, \overline{DE}, \overline{EF}, \overline{FG}, \overline{GH}, \overline{HA}\). Name: regular octagon.`,
+            String.raw`Sides: \(\overline{AB}, \overline{BC}, \overline{CD}, \overline{DE}, \overline{EF}, \overline{FG}, \overline{GH}, \overline{HA}\). Name: octagon.`,
+            String.raw`Sides: \(A,B,C,D,E,F,G,H\). Name: octagon.`
+          ],
+          choiceWrap: false
+        },
+
+        {
+          stem: String.raw`
+            <p><b>Refer to Figure 2.</b> Using \(C\) as one endpoint, which list names all the diagonals of the polygon?</p>
+          `,
+          choices: [
+            String.raw`\(\overline{CB}, \overline{CD}, \overline{CE}, \overline{CF}, \overline{CG}\)`,
+            String.raw`\(\overline{CA}, \overline{CB}, \overline{CD}, \overline{CE}, \overline{CF}\)`,
+            String.raw`\(\overline{CA}, \overline{CE}, \overline{CF}, \overline{CG}, \overline{CH}\)`,
+            String.raw`\(\overline{CE}, \overline{CF}, \overline{CG}\)`,
+            String.raw`\(\overline{CA}, \overline{CB}, \overline{CD}, \overline{CE}, \overline{CF}, \overline{CG}, \overline{CH}\)`,
+            String.raw`\(\overline{CD}, \overline{CE}, \overline{CF}, \overline{CG}, \overline{CH}\)`
+          ],
+          choiceWrap: false
+        },
+
+        {
+          stem: String.raw`
+            <p><b>Refer to Figure 2.</b> How many diagonals can be drawn from each vertex of this polygon, and how many diagonals does the polygon have in total?</p>
+          `,
+          choices: [
+            String.raw`From each vertex: \(5\). Total: \(40\).`,
+            String.raw`From each vertex: \(6\). Total: \(24\).`,
+            String.raw`From each vertex: \(4\). Total: \(16\).`,
+            String.raw`From each vertex: \(5\). Total: \(16\).`,
+            String.raw`From each vertex: \(8\). Total: \(20\).`,
+            String.raw`From each vertex: \(5\). Total: \(20\).`
+          ],
+          choiceWrap: false
+        },
+
+        {
+          stem: String.raw`
+            <p>Complete the row of the polygon table for a polygon with \(9\) sides. Which choice gives the name, number of vertices, number of diagonals from each vertex, and total number of diagonals?</p>
+          `,
+          choices: [
+            String.raw`Octagon; \(8\) vertices; \(5\) from each vertex; \(20\) total.`,
+            String.raw`Nonagon; \(9\) vertices; \(5\) from each vertex; \(45\) total.`,
+            String.raw`Nonagon; \(9\) vertices; \(6\) from each vertex; \(54\) total.`,
+            String.raw`Nonagon; \(9\) vertices; \(6\) from each vertex; \(27\) total.`,
+            String.raw`Decagon; \(10\) vertices; \(7\) from each vertex; \(35\) total.`,
+            String.raw`Nonagon; \(8\) vertices; \(6\) from each vertex; \(24\) total.`
+          ],
+          choiceWrap: false
+        },
+
+        {
+          stem: String.raw`
+            <p>A student says, “A hexagon has \(6\) vertices. From each vertex, \(3\) diagonals can be drawn. Therefore a hexagon has \(6\cdot 3=18\) diagonals.” What is the mistake?</p>
+          `,
+          choices: [
+            String.raw`Each diagonal has been counted twice; the correct total is \(9\).`,
+            String.raw`A hexagon has only \(5\) vertices; the correct total is \(5\).`,
+            String.raw`Only regular hexagons have diagonals; the statement gives no information about regularity.`,
+            String.raw`From each vertex of a hexagon, only \(2\) diagonals can be drawn; the correct total is \(6\).`,
+            String.raw`The student should add instead of multiply; the correct total is \(6+3=9\).`,
+            String.raw`The student counted the sides, not the diagonals; the correct total is \(18-6=12\).`
+          ],
+          choiceWrap: false
+        },
+
+        {
+          stem: String.raw`
+            <p>Which polygon has exactly \(20\) diagonals in total?</p>
+          `,
+          choices: [
+            String.raw`Pentagon`,
+            String.raw`Hexagon`,
+            String.raw`Heptagon`,
+            String.raw`Nonagon`,
+            String.raw`Octagon`,
+            String.raw`Decagon`
+          ],
+          choiceWrap: false
+        },
+
+        {
+          stem: String.raw`
+            <p>Under the definition that a polygon is a simple closed curve made from line segments, which requested drawing cannot be made?</p>
+          `,
+          choices: [
+            String.raw`A regular quadrilateral.`,
+            String.raw`An equilateral pentagon that is not convex.`,
+            String.raw`An equiangular pentagon that is not convex.`,
+            String.raw`An equiangular hexagon that is not equilateral.`,
+            String.raw`A convex heptagon that is neither equilateral nor equiangular.`,
+            String.raw`A regular triangle.`
+          ],
+          choiceWrap: false
+        },
+
+        {
+          stem: String.raw`
+            <p><b>Refer to Figure 3.</b> Which statement is true?</p>
+          `,
+          media: String.raw`
+            <figure>
+              <img src="hw-2-5-fig-3.png" alt="Triangle EFG with points H and J on side EG and point I inside the triangle" />
+              <figcaption>Figure 3</figcaption>
+            </figure>
+          `,
+          choices: [
+            String.raw`Points \(H\) and \(J\) are exterior to \(\triangle EFG\) because they are not vertices of the triangle.`,
+            String.raw`Points \(H\) and \(J\) lie on side \(\overline{EG}\), and point \(I\) lies in the interior of \(\triangle EFG\).`,
+            String.raw`Point \(I\) lies on \(\overline{EF}\), and point \(G\) lies in the interior of \(\triangle EFJ\).`,
+            String.raw`Point \(H\) is an interior point of \(\triangle EFJ\).`,
+            String.raw`Point \(E\) is in the interior of \(\angle EFG\).`,
+            String.raw`Points \(J\) and \(G\) are both interior points of \(\triangle EFJ\).`
+          ],
+          choiceWrap: false
+        },
+
+        {
+          stem: String.raw`
+            <p><b>Refer to Figure 3.</b> Which list gives exactly the labeled points in the interior of \(\angle EFG\)?</p>
+          `,
+          choices: [
+            String.raw`\(E, H, I, J, G\)`,
+            String.raw`\(H, J\) only`,
+            String.raw`\(I\) only`,
+            String.raw`\(E, G\) only`,
+            String.raw`\(F, H, I, J\)`,
+            String.raw`\(H, I, J\)`
+          ],
+          choiceWrap: false
+        },
+
+        {
+          stem: String.raw`
+            <p>Is the interior of an angle a convex set?</p>
+          `,
+          choices: [
+            String.raw`No. An angle has two rays, and a set with rays cannot be convex.`,
+            String.raw`No. Two points inside an angle can always be joined by a segment that leaves the angle.`,
+            String.raw`No, unless the angle is a right angle.`,
+            String.raw`Yes. The interior of an angle is the intersection of two half-planes, and the segment joining two interior points stays inside that intersection.`,
+            String.raw`Yes, but only because every angle is a polygon.`,
+            String.raw`There is not enough information; some angle interiors are convex and some are not.`
+          ],
+          choiceWrap: false
+        },
+
+        {
+          stem: String.raw`
+            <p>Let \(L\), \(M\), and \(N\) be noncollinear points. Point \(P\) is not on \(\triangle LMN\). Suppose \(P\) is on the same side of line \(LM\) as \(N\), and on the same side of line \(MN\) as \(L\). What can be concluded?</p>
+          `,
+          choices: [
+            String.raw`Point \(P\) must be in the interior of \(\angle LMN\), but it does not have to be in the interior of \(\triangle LMN\).`,
+            String.raw`Point \(P\) must be in the interior of \(\triangle LMN\).`,
+            String.raw`Point \(P\) must be in the exterior of \(\angle LMN\).`,
+            String.raw`Point \(P\) must lie on \(\overline{LN}\).`,
+            String.raw`Point \(P\) must lie on ray \(\overrightarrow{ML}\).`,
+            String.raw`No conclusion about \(\angle LMN\) can be made from the two half-plane conditions.`
+          ],
+          choiceWrap: false
+        }
+      ]
+    };
+  </script>
+
+  <link rel="stylesheet" href="/math-homework/assets/core-rich.css" />
+  <script defer src="/math-homework/assets/core-rich.js"></script>
+  <script defer src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+</head>
+
+<body>
+  <div id="hw-root">Loading…</div>
+</body>
+</html>

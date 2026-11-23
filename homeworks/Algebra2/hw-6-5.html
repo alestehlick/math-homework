@@ -1,0 +1,269 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Homework 6-5 - Quadratic Systems</title>
+
+  <script>
+
+    window.homeworkData = {
+      classId : "Algebra2",
+      id      : "Homework 6-5 - Quadratic Systems",
+      title   : "Homework 6-5 - Quadratic Systems",
+
+      graphics : String.raw``,
+
+      answerKey : ["D","C","B","E","C","A","A","E","D","F","A","B","A"],
+
+      questions : [
+
+        {
+          stem: String.raw`
+            <p>When solving a system that contains quadratic equations, what does a <b>solution of the system</b> mean?</p>
+          `,
+          choices: [
+            String.raw`Any ordered pair that satisfies at least one of the equations is a solution.`,
+            String.raw`A quadratic system must always have exactly two real solutions.`,
+            String.raw`Solve each equation separately; any \(x\)-value from one equation may be paired with any \(y\)-value from the other.`,
+            String.raw`A solution is an ordered pair that satisfies both equations simultaneously; depending on the system, there may be zero, one, or several real solutions.`,
+            String.raw`Only the \(x\)-coordinates common to the two equations matter; the corresponding \(y\)-coordinates need not agree.`,
+            String.raw`If one equation is quadratic, every solution must have both coordinates positive.`
+          ],
+          choiceWrap: false
+        },
+
+        {
+          stem: String.raw`
+            <p>Solve the system.</p>
+            <p>\(\begin{cases}
+              x+y=4\\
+              x^2=3y-8
+            \end{cases}\)</p>
+          `,
+          choices: [
+            String.raw`\(\{(1,3),(4,0)\}\)`,
+            String.raw`\(\{(-1,5),(-4,8)\}\)`,
+            String.raw`\(\{(1,3),(-4,8)\}\)`,
+            String.raw`\(\{(1,3)\}\)`,
+            String.raw`\(\{(-4,-8),(1,-3)\}\)`,
+            String.raw`No real solutions`
+          ]
+        },
+
+        {
+          stem: String.raw`
+            <p>Solve the system.</p>
+            <p>\(\begin{cases}
+              xy=14\\
+              x+y=9
+            \end{cases}\)</p>
+          `,
+          choices: [
+            String.raw`\(\{(2,7)\}\)`,
+            String.raw`\(\{(2,7),(7,2)\}\)`,
+            String.raw`\(\{(-2,-7),(-7,-2)\}\)`,
+            String.raw`\(\{(1,14),(14,1)\}\)`,
+            String.raw`\(\{(7,-2),(-2,7)\}\)`,
+            String.raw`No real solutions`
+          ]
+        },
+
+        {
+          stem: String.raw`
+            <p>Solve the system.</p>
+            <p>\(\begin{cases}
+              x^2+y^2=20\\
+              x+y=6
+            \end{cases}\)</p>
+          `,
+          choices: [
+            String.raw`\(\{(3,3)\}\)`,
+            String.raw`\(\{(0,6),(6,0)\}\)`,
+            String.raw`\(\{(-2,-4),(-4,-2)\}\)`,
+            String.raw`\(\{(\sqrt{10},\sqrt{10}),(-\sqrt{10},-\sqrt{10})\}\)`,
+            String.raw`\(\{(2,4),(4,2)\}\)`,
+            String.raw`No real solutions`
+          ]
+        },
+
+        {
+          stem: String.raw`
+            <p>Solve the system.</p>
+            <p>\(\begin{cases}
+              x^2+y^2=8\\
+              2x^2+y^2=12
+            \end{cases}\)</p>
+          `,
+          choices: [
+            String.raw`\(\{(2,2),(-2,-2)\}\)`,
+            String.raw`\(\{(2,-2),(-2,2)\}\)`,
+            String.raw`\(\{(2,2),(2,-2),(-2,2),(-2,-2)\}\)`,
+            String.raw`\(\{(4,4),(4,-4),(-4,4),(-4,-4)\}\)`,
+            String.raw`\(\{(2,2)\}\)`,
+            String.raw`No real solutions`
+          ]
+        },
+
+        {
+          stem: String.raw`
+            <p>Solve the system.</p>
+            <p>\(\begin{cases}
+              y=x^2\\
+              1+y=2x
+            \end{cases}\)</p>
+          `,
+          choices: [
+            String.raw`\(\{(1,1)\}\)`,
+            String.raw`\(\{(1,-1)\}\)`,
+            String.raw`\(\{(-1,1)\}\)`,
+            String.raw`\(\{(1,1),(-1,1)\}\)`,
+            String.raw`\(\{(0,0),(2,4)\}\)`,
+            String.raw`No real solutions`
+          ]
+        },
+
+        {
+          stem: String.raw`
+            <p>Solve the system.</p>
+            <p>\(\begin{cases}
+              x-y=4\\
+              y=x^2-34
+            \end{cases}\)</p>
+          `,
+          choices: [
+            String.raw`\(\{(6,2),(-5,-9)\}\)`,
+            String.raw`\(\{(6,-2),(-5,9)\}\)`,
+            String.raw`\(\{(5,1),(-6,-10)\}\)`,
+            String.raw`\(\{(6,2)\}\)`,
+            String.raw`\(\{(-6,2),(5,-9)\}\)`,
+            String.raw`No real solutions`
+          ]
+        },
+
+        {
+          stem: String.raw`
+            <p>Consider the system</p>
+            <p>\(\begin{cases}
+              x^2+y^2=16\\
+              x^2+2y^2=25
+            \end{cases}\)</p>
+            <p>Subtracting the first equation from the second gives \(y^2=9\), and then \(x^2=7\). How many distinct real ordered-pair solutions does the system have?</p>
+          `,
+          choices: [
+            String.raw`\(0\)`,
+            String.raw`\(1\)`,
+            String.raw`\(2\)`,
+            String.raw`\(3\)`,
+            String.raw`\(4\)`,
+            String.raw`\(8\)`
+          ]
+        },
+
+        {
+          stem: String.raw`
+            <p>Consider the system</p>
+            <p>\(\begin{cases}
+              x+y=-4\\
+              y=x^2-3
+            \end{cases}\)</p>
+            <p>Substitution leads to \(x^2+x+1=0\). Which conclusion is correct?</p>
+          `,
+          choices: [
+            String.raw`The system has exactly one real solution because every quadratic has at least one real root.`,
+            String.raw`The system has two real solutions because the equation has degree \(2\).`,
+            String.raw`The system has infinitely many solutions because the equations share the variable \(y\).`,
+            String.raw`The system has no real solutions because the discriminant \(1-4=-3\) is negative.`,
+            String.raw`The system has four real solutions because both \(x\) and \(y\) may take positive or negative values.`,
+            String.raw`The system has no real solutions because quadratic equations can never intersect lines.`
+          ],
+          choiceWrap: false
+        },
+
+        {
+          stem: String.raw`
+            <p>For the system</p>
+            <p>\(\begin{cases}
+              y=2x^2-3x+5\\
+              3+y=5x
+            \end{cases}\)</p>
+            <p>equating the two expressions for \(y\) gives \(2(x-2)^2=0\).</p>
+            <p>A student says, “It is a quadratic equation, so there must be two different solutions.” Which response is correct?</p>
+          `,
+          choices: [
+            String.raw`The student is correct: every quadratic produces two distinct real \(x\)-values.`,
+            String.raw`The student is correct, but the two solutions have the same \(y\)-coordinate.`,
+            String.raw`There are no solutions because a square cannot equal \(0\).`,
+            String.raw`There are four solutions because both coordinates can take either sign.`,
+            String.raw`There are infinitely many solutions because the factor \(x-2\) is repeated.`,
+            String.raw`There is only one distinct solution, \((2,7)\), because \(x=2\) is a repeated root rather than two different \(x\)-values.`
+          ],
+          choiceWrap: false
+        },
+
+        {
+          stem: String.raw`
+            <p>Solve the system.</p>
+            <p>\(\begin{cases}
+              y=x^2\\
+              x^2+y^2-4y=0
+            \end{cases}\)</p>
+          `,
+          choices: [
+            String.raw`\(\{(0,0),(\sqrt3,3),(-\sqrt3,3)\}\)`,
+            String.raw`\(\{(0,0),(3,\sqrt3),(3,-\sqrt3)\}\)`,
+            String.raw`\(\{(\sqrt3,3),(-\sqrt3,3)\}\)`,
+            String.raw`\(\{(0,0),(3,3),(-3,3)\}\)`,
+            String.raw`\(\{(0,0)\}\)`,
+            String.raw`\(\{(0,0),(\sqrt3,-3),(-\sqrt3,-3)\}\)`
+          ]
+        },
+
+        {
+          stem: String.raw`
+            <p>Solve the system.</p>
+            <p>\(\begin{cases}
+              x^2+y^2=5\\
+              x^2+2y^2+x=8
+            \end{cases}\)</p>
+          `,
+          choices: [
+            String.raw`\(\{(2,1),(-1,2)\}\)`,
+            String.raw`\(\{(2,1),(2,-1),(-1,2),(-1,-2)\}\)`,
+            String.raw`\(\{(2,1),(-2,1),(1,2),(-1,2)\}\)`,
+            String.raw`\(\{(2,2),(2,-2),(-1,1),(-1,-1)\}\)`,
+            String.raw`\(\{(2,1),(2,-1),(-1,2)\}\)`,
+            String.raw`No real solutions`
+          ]
+        },
+
+        {
+          stem: String.raw`
+            <p>Solve the system.</p>
+            <p>\(\begin{cases}
+              3x^2+y^2=15\\
+              x^2-y^2+y=5
+            \end{cases}\)</p>
+          `,
+          choices: [
+            String.raw`\(\left\{(\sqrt5,0),(-\sqrt5,0),\left(\frac{\sqrt{77}}4,\frac34\right),\left(-\frac{\sqrt{77}}4,\frac34\right)\right\}\)`,
+            String.raw`\(\left\{(\sqrt5,0),(-\sqrt5,0),\left(\frac{\sqrt{77}}4,-\frac34\right),\left(-\frac{\sqrt{77}}4,-\frac34\right)\right\}\)`,
+            String.raw`\(\left\{(\sqrt5,0),\left(\frac{\sqrt{77}}4,\frac34\right)\right\}\)`,
+            String.raw`\(\left\{(5,0),(-5,0),\left(\frac{77}4,\frac34\right),\left(-\frac{77}4,\frac34\right)\right\}\)`,
+            String.raw`\(\left\{(0,\sqrt5),(0,-\sqrt5),\left(\frac34,\frac{\sqrt{77}}4\right),\left(\frac34,-\frac{\sqrt{77}}4\right)\right\}\)`,
+            String.raw`No real solutions`
+          ]
+        }
+      ]
+    };
+  </script>
+
+  <link rel="stylesheet" href="/math-homework/assets/core-rich.css" />
+  <script defer src="/math-homework/assets/core-rich.js"></script>
+  <script defer src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+</head>
+
+<body>
+  <div id="hw-root">Loading…</div>
+</body>
+</html>

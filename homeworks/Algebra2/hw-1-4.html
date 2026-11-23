@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Homework 1-4 - Polynomial Division with Remainders</title>
+
+  <script>
+
+    window.homeworkData = {
+      classId : "Algebra2",
+      id      : "Homework 1-4 - Polynomial Division with Remainders",
+      title   : "Homework 1-4 - Polynomial Division with Remainders",
+
+      graphics : String.raw``,
+
+      answerKey : ["B","E","A","D","C","F","B"],
+
+      questions : [
+        {
+          stem: String.raw`
+            <p>Divide the polynomial below. Choose the correct quotient and remainder.</p>
+            <p class="math">\[(x^2 - 11x + 2) \div (x - 6)\]</p>
+          `,
+          choiceWrap: false,
+          choices: [
+            String.raw`<span>Quotient: \(x+5\), remainder: \(-28\)</span>`,
+            String.raw`<span>Quotient: \(x-5\), remainder: \(-28\)</span>`,
+            String.raw`<span>Quotient: \(x-5\), remainder: \(28\)</span>`,
+            String.raw`<span>Quotient: \(x-17\), remainder: \(-28\)</span>`,
+            String.raw`<span>Quotient: \(x-6\), remainder: \(-34\)</span>`,
+            String.raw`<span>Quotient: \(x+6\), remainder: \(2\)</span>`
+          ]
+        },
+
+        {
+          stem: String.raw`
+            <p>Divide the polynomial below. Choose the correct quotient and remainder.</p>
+            <p class="math">\[(3a^2 + a - 12) \div (a - 1)\]</p>
+          `,
+          choiceWrap: false,
+          choices: [
+            String.raw`<span>Quotient: \(3a+4\), remainder: \(8\)</span>`,
+            String.raw`<span>Quotient: \(3a-2\), remainder: \(-8\)</span>`,
+            String.raw`<span>Quotient: \(3a+4\), remainder: \(-12\)</span>`,
+            String.raw`<span>Quotient: \(3a+1\), remainder: \(-8\)</span>`,
+            String.raw`<span>Quotient: \(3a+4\), remainder: \(-8\)</span>`,
+            String.raw`<span>Quotient: \(3a-4\), remainder: \(8\)</span>`
+          ]
+        },
+
+        {
+          stem: String.raw`
+            <p>Divide the polynomial below. Choose the correct quotient and remainder.</p>
+            <p class="math">\[(3a^3 - 4a^2 + a - 8) \div (a + 1)\]</p>
+          `,
+          choiceWrap: false,
+          choices: [
+            String.raw`<span>Quotient: \(3a^2-7a+8\), remainder: \(-16\)</span>`,
+            String.raw`<span>Quotient: \(3a^2-7a-8\), remainder: \(-16\)</span>`,
+            String.raw`<span>Quotient: \(3a^2-4a+1\), remainder: \(-8\)</span>`,
+            String.raw`<span>Quotient: \(3a^2+7a+8\), remainder: \(-16\)</span>`,
+            String.raw`<span>Quotient: \(3a^2-7a+8\), remainder: \(16\)</span>`,
+            String.raw`<span>Quotient: \(3a^2-7a\), remainder: \(-8\)</span>`
+          ]
+        },
+
+        {
+          stem: String.raw`
+            <p>Divide the polynomial below. Choose the correct quotient and remainder.</p>
+            <p class="math">\[(5a^3 + 4a^2 - 7a + 9) \div (a + 2)\]</p>
+          `,
+          choiceWrap: false,
+          choices: [
+            String.raw`<span>Quotient: \(5a^2-6a+5\), remainder: \(1\)</span>`,
+            String.raw`<span>Quotient: \(5a^2+14a+21\), remainder: \(-33\)</span>`,
+            String.raw`<span>Quotient: \(5a^2-6a-5\), remainder: \(-1\)</span>`,
+            String.raw`<span>Quotient: \(5a^2-6a+5\), remainder: \(-1\)</span>`,
+            String.raw`<span>Quotient: \(5a^2-6a+5\), remainder: \(-9\)</span>`,
+            String.raw`<span>Quotient: \(5a^2+4a-7\), remainder: \(9\)</span>`
+          ]
+        },
+
+        {
+          stem: String.raw`
+            <p>Divide the polynomial below. Choose the correct quotient and remainder.</p>
+            <p class="math">\[(7y^4 - 3y^2 - 14) \div (y^2 - 2)\]</p>
+          `,
+          choiceWrap: false,
+          choices: [
+            String.raw`<span>Quotient: \(7y^2-11\), remainder: \(8\)</span>`,
+            String.raw`<span>Quotient: \(7y^2+11\), remainder: \(-8\)</span>`,
+            String.raw`<span>Quotient: \(7y^2+11\), remainder: \(8\)</span>`,
+            String.raw`<span>Quotient: \(7y^2+11y\), remainder: \(8\)</span>`,
+            String.raw`<span>Quotient: \(7y^2-3\), remainder: \(-14\)</span>`,
+            String.raw`<span>Quotient: \(7y^2+2\), remainder: \(-10\)</span>`
+          ]
+        },
+
+        {
+          stem: String.raw`
+            <p>Divide the polynomial below. Choose the correct quotient and remainder.</p>
+            <p class="math">\[(3x^3 - 5x^2 + 7x - 9) \div (x^2 - 2)\]</p>
+          `,
+          choiceWrap: false,
+          choices: [
+            String.raw`<span>Quotient: \(3x-5\), remainder: \(13x+19\)</span>`,
+            String.raw`<span>Quotient: \(3x+5\), remainder: \(13x-19\)</span>`,
+            String.raw`<span>Quotient: \(3x-5\), remainder: \(13x-9\)</span>`,
+            String.raw`<span>Quotient: \(3x^2-5x+7\), remainder: \(-9\)</span>`,
+            String.raw`<span>Quotient: \(3x-5\), remainder: \(-13x+19\)</span>`,
+            String.raw`<span>Quotient: \(3x-5\), remainder: \(13x-19\)</span>`
+          ]
+        },
+
+        {
+          stem: String.raw`
+            <p>Divide the polynomial below. Choose the correct quotient and remainder.</p>
+            <p class="math">\[(4x^4 - 2x + 7) \div (2x + 3)\]</p>
+          `,
+          choiceWrap: false,
+          choices: [
+            String.raw`<span>Quotient: \(2x^3-3x^2+\frac{9}{2}x-\frac{31}{4}\), remainder: \(-\frac{121}{4}\)</span>`,
+            String.raw`<span>Quotient: \(2x^3-3x^2+\frac{9}{2}x-\frac{31}{4}\), remainder: \(\frac{121}{4}\)</span>`,
+            String.raw`<span>Quotient: \(2x^3+3x^2+\frac{9}{2}x-\frac{31}{4}\), remainder: \(\frac{121}{4}\)</span>`,
+            String.raw`<span>Quotient: \(2x^3-3x^2+9x-\frac{31}{4}\), remainder: \(\frac{121}{4}\)</span>`,
+            String.raw`<span>Quotient: \(2x^3-3x^2+\frac{9}{2}x+\frac{31}{4}\), remainder: \(\frac{121}{4}\)</span>`,
+            String.raw`<span>Quotient: \(2x^3-3x^2+\frac{9}{2}x-\frac{31}{4}\), remainder: \(121\)</span>`
+          ]
+        }
+      ]
+    };
+  </script>
+
+  <link rel="stylesheet" href="/math-homework/assets/core-rich.css" />
+  <script defer src="/math-homework/assets/core-rich.js"></script>
+  <script defer src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+</head>
+
+<body>
+  <div id="hw-root">Loading…</div>
+</body>
+</html>

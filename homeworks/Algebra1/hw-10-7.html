@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Homework 10-7 - Distance and Perimeter</title>
+
+  <script>
+
+    window.homeworkData = {
+      classId : "Algebra1",
+      id      : "Homework 10-7 - Distance and Perimeter",
+      title   : "Homework 10-7 - Distance and Perimeter",
+
+      graphics : String.raw`
+\begin{tikzpicture}[scale=0.55]
+  \tikzset{grid/.style={very thin,color=gray!25}}
+  \tikzset{axes/.style={->,thick}}
+
+  \begin{scope}[xshift=-15cm,yshift=6cm]
+    \clip (-3.5,-2.5) rectangle (4.5,6.5);
+    \draw[grid] (-3,-2) grid (4,6);
+    \draw[axes] (-3,0)--(4,0);
+    \draw[axes] (0,-2)--(0,6);
+    \draw[thick, red] (-2,0)--(0,5)--(3,4)--(1,-1)--cycle;
+    \node[anchor=south west,font=\small] at (-3.2,5.1) {G1};
+  \end{scope}
+
+  \begin{scope}[xshift=0cm,yshift=6cm]
+    \clip (-0.5,-3.5) rectangle (5.5,3.5);
+    \draw[grid] (0,-3) grid (5,3);
+    \draw[axes] (0,0)--(5,0);
+    \draw[axes] (0,-3)--(0,3);
+    \draw[thick, red] (1,2)--(3,2)--(4,-2)--cycle;
+    \node[anchor=south west,font=\small] at (0.1,2.1) {G2};
+  \end{scope}
+\end{tikzpicture}
+`,
+
+      answerKey : ["C","D","C","A","B","C","B","A"],
+
+      questions : [
+
+        {
+          latex: String.raw`\text{Find the distance between the following pair of points: }(2,7)\text{ and }(-3,5).`,
+          choices: [
+            String.raw`\sqrt{21}`,
+            String.raw`7`,
+            String.raw`\sqrt{29}`,
+            String.raw`3\sqrt{3}`,
+            String.raw`5`,
+            String.raw`29`
+          ]
+        },
+
+        {
+          latex: String.raw`\text{Find the distance between the following pair of points: }(8,4)\text{ and }(-1,-4).`,
+          choices: [
+            String.raw`\sqrt{97}`,
+            String.raw`17`,
+            String.raw`\sqrt{113}`,
+            String.raw`\sqrt{145}`,
+            String.raw`16`,
+            String.raw`145`
+          ]
+        },
+
+        {
+          latex: String.raw`\text{Find the distance between the following pair of points: }(1,8)\text{ and }(-2,-5).`,
+          choices: [
+            String.raw`4\sqrt{10}`,
+            String.raw`13`,
+            String.raw`\sqrt{178}`,
+            String.raw`178`,
+            String.raw`\sqrt{130}`,
+            String.raw`16`
+          ]
+        },
+
+        {
+          latex: String.raw`\text{Find the distance between the following pair of points: }(4,7)\text{ and }(1,5).`,
+          choices: [
+            String.raw`\sqrt{13}`,
+            String.raw`\sqrt{5}`,
+            String.raw`5`,
+            String.raw`3`,
+            String.raw`13`,
+            String.raw`\sqrt{11}`
+          ]
+        },
+
+        {
+          latex: String.raw`\text{Find the distance between the following pair of points: }(0,0)\text{ and }(3,4).`,
+          choices: [
+            String.raw`7`,
+            String.raw`5`,
+            String.raw`\sqrt{41}`,
+            String.raw`\sqrt{13}`,
+            String.raw`3+4`,
+            String.raw`\sqrt{7}`
+          ]
+        },
+
+        {
+          latex: String.raw`\text{Find the distance between the following pair of points: }(2\sqrt{7},-3)\text{ and }(\sqrt{7},5).`,
+          choices: [
+            String.raw`\sqrt{57}`,
+            String.raw`3\sqrt{7}`,
+            String.raw`\sqrt{71}`,
+            String.raw`8-\sqrt{7}`,
+            String.raw`71`,
+            String.raw`8`
+          ]
+        },
+
+        {
+          latex: String.raw`\text{Refer to G1. Find the perimeter of the figure.}`,
+          choices: [
+            String.raw`2\sqrt{39}`,
+            String.raw`2\sqrt{29}+2\sqrt{10}`,
+            String.raw`2\sqrt{29}+\sqrt{10}`,
+            String.raw`\sqrt{29}+2\sqrt{10}`,
+            String.raw`4\sqrt{29}`,
+            String.raw`4\sqrt{10}`
+          ]
+        },
+
+        {
+          latex: String.raw`\text{Refer to G2. Find the perimeter of the figure.}`,
+          choices: [
+            String.raw`7+\sqrt{17}`,
+            String.raw`7\sqrt{17}`,
+            String.raw`24`,
+            String.raw`5+\sqrt{17}`,
+            String.raw`7+\sqrt{34}`,
+            String.raw`2+\sqrt{17}`
+          ]
+        }
+      ]
+    };
+  </script>
+
+  <link rel="stylesheet" href="/math-homework/assets/core.css" />
+  <link rel="stylesheet" href="https://tikzjax.com/v1/fonts.css" />
+  <script defer src="/math-homework/assets/core.js"></script>
+  <script defer src="https://tikzjax.com/v1/tikzjax.js"></script>
+  <script defer src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+</head>
+
+<body>
+  <div id="hw-root">Loading…</div>
+</body>
+</html>

@@ -1,0 +1,207 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Homework 6-9 - Direct Variation</title>
+
+  <script>
+
+    window.homeworkData = {
+      classId : "Algebra1",
+      id      : "Homework 6-9 - Direct Variation",
+      title   : "Homework 6-9 - Direct Variation",
+
+      graphics : String.raw``,
+
+      answerKey : ["B","E","C","A","F","D","B","E","C"],
+
+      questions : [
+
+        {
+          stem: String.raw`
+            <p>Which equation represents a direct variation of \(y\) with \(x\)?</p>
+          `,
+          choices: [
+            String.raw`\(y=4x+1\)`,
+            String.raw`\(y=-3x\)`,
+            String.raw`\(y=\frac{3}{x}\)`,
+            String.raw`\(y=x^2\)`,
+            String.raw`\(y=7\)`,
+            String.raw`\(x=3\)`
+          ]
+        },
+
+        {
+          stem: String.raw`
+            <p>Consider the table.</p>
+            <table style="border-collapse:collapse; margin:.5rem 0;">
+              <tr>
+                <th style="border:1px solid #aaa; padding:.3rem .7rem;">\(x\)</th>
+                <td style="border:1px solid #aaa; padding:.3rem .7rem;">\(2\)</td>
+                <td style="border:1px solid #aaa; padding:.3rem .7rem;">\(5\)</td>
+                <td style="border:1px solid #aaa; padding:.3rem .7rem;">\(8\)</td>
+              </tr>
+              <tr>
+                <th style="border:1px solid #aaa; padding:.3rem .7rem;">\(y\)</th>
+                <td style="border:1px solid #aaa; padding:.3rem .7rem;">\(7\)</td>
+                <td style="border:1px solid #aaa; padding:.3rem .7rem;">\(\frac{35}{2}\)</td>
+                <td style="border:1px solid #aaa; padding:.3rem .7rem;">\(28\)</td>
+              </tr>
+            </table>
+            <p>Which statement is correct?</p>
+          `,
+          choices: [
+            String.raw`The table is not a direct variation because the \(x\)-values are not equally spaced.`,
+            String.raw`The table is a direct variation with \(k=\frac27\).`,
+            String.raw`The table is linear, but its constant of variation cannot be determined.`,
+            String.raw`The table is a direct variation with \(k=7\).`,
+            String.raw`The table is a direct variation with \(k=\frac72\), so \(y=\frac72x\).`,
+            String.raw`The table represents \(y=\frac72x+2\).`
+          ],
+          choiceWrap: false
+        },
+
+        {
+          stem: String.raw`
+            <p>Consider the table.</p>
+            <table style="border-collapse:collapse; margin:.5rem 0;">
+              <tr>
+                <th style="border:1px solid #aaa; padding:.3rem .7rem;">\(x\)</th>
+                <td style="border:1px solid #aaa; padding:.3rem .7rem;">\(0\)</td>
+                <td style="border:1px solid #aaa; padding:.3rem .7rem;">\(2\)</td>
+                <td style="border:1px solid #aaa; padding:.3rem .7rem;">\(4\)</td>
+                <td style="border:1px solid #aaa; padding:.3rem .7rem;">\(6\)</td>
+              </tr>
+              <tr>
+                <th style="border:1px solid #aaa; padding:.3rem .7rem;">\(y\)</th>
+                <td style="border:1px solid #aaa; padding:.3rem .7rem;">\(3\)</td>
+                <td style="border:1px solid #aaa; padding:.3rem .7rem;">\(7\)</td>
+                <td style="border:1px solid #aaa; padding:.3rem .7rem;">\(11\)</td>
+                <td style="border:1px solid #aaa; padding:.3rem .7rem;">\(15\)</td>
+              </tr>
+            </table>
+            <p>Why is this <b>not</b> a direct variation?</p>
+          `,
+          choices: [
+            String.raw`Because \(y\) increases as \(x\) increases.`,
+            String.raw`Because the relationship is linear.`,
+            String.raw`Because a direct variation must satisfy \(y=0\) when \(x=0\); here the relationship has a nonzero starting value.`,
+            String.raw`Because direct variation cannot contain positive numbers.`,
+            String.raw`Because the \(x\)-values differ by \(2\).`,
+            String.raw`Because a direct variation must always have negative slope.`
+          ],
+          choiceWrap: false
+        },
+
+        {
+          stem: String.raw`
+            <p>\(y\) varies directly with \(x\), and \((x,y)=\left(5,-\frac12\right)\).</p>
+            <p>Which equation represents the variation?</p>
+          `,
+          choices: [
+            String.raw`\(y=-\frac{1}{10}x\)`,
+            String.raw`\(y=-\frac12x\)`,
+            String.raw`\(y=-10x\)`,
+            String.raw`\(y=\frac{1}{10}x\)`,
+            String.raw`\(y=-\frac{1}{10}x-\frac12\)`,
+            String.raw`\(y=\frac12x-5\)`
+          ]
+        },
+
+        {
+          stem: String.raw`
+            <p><b>Refer to Figure 1.</b> The graph shows a direct variation passing through the origin and the point \((4,6)\).</p>
+            <p>Which equation represents the graph?</p>
+          `,
+          media: String.raw`
+            <figure>
+              <img src="hw-6-9-fig-1.png" alt="Line through the origin and the point (4,6)" />
+              <figcaption>Figure 1</figcaption>
+            </figure>
+          `,
+          choices: [
+            String.raw`\(y=4x+6\)`,
+            String.raw`\(y=\frac23x\)`,
+            String.raw`\(y=\frac32x+6\)`,
+            String.raw`\(y=-\frac32x\)`,
+            String.raw`\(y=\frac43x\)`,
+            String.raw`\(y=\frac32x\)`
+          ]
+        },
+
+        {
+          stem: String.raw`
+            <p>Suppose \(y\) varies directly with \(x\). If \(x\) is multiplied by \(3\), what must happen to \(y\)?</p>
+          `,
+          choices: [
+            String.raw`\(y\) increases by \(3\).`,
+            String.raw`\(y\) is divided by \(3\).`,
+            String.raw`Nothing can be concluded without knowing \(k\).`,
+            String.raw`\(y\) is multiplied by \(3\).`,
+            String.raw`\(y\) is multiplied by \(9\).`,
+            String.raw`\(y\) becomes \(k+3\).`
+          ],
+          choiceWrap: false
+        },
+
+        {
+          stem: String.raw`
+            <p>The circumference \(C\) of a circle varies directly with its diameter \(d\):</p>
+            <p>\(C=\pi d\).</p>
+            <p>What is the constant of variation, and what does it mean?</p>
+          `,
+          choices: [
+            String.raw`\(k=2\pi\); every diameter is \(2\pi\) times its circumference.`,
+            String.raw`\(k=\pi\); the circumference is always \(\pi\) times the diameter.`,
+            String.raw`\(k=\frac1\pi\); the circumference is always \(\frac1\pi\) times the diameter.`,
+            String.raw`\(k=d\); the constant changes with the circle.`,
+            String.raw`\(k=\pi d\); the constant is the circumference itself.`,
+            String.raw`There is no constant of variation because \(\pi\) is irrational.`
+          ],
+          choiceWrap: false
+        },
+
+        {
+          stem: String.raw`
+            <p>A parking garage charges a fixed entrance fee of ¥500 plus ¥200 for each hour parked.</p>
+            <p>Let \(h\) be the number of hours and \(C\) the total cost. Which statement is correct?</p>
+          `,
+          choices: [
+            String.raw`This is a direct variation because the cost increases at a constant rate.`,
+            String.raw`This is a direct variation with \(k=500\).`,
+            String.raw`This is a direct variation with \(k=200\).`,
+            String.raw`This is not linear because there is an entrance fee.`,
+            String.raw`This is linear but not a direct variation because \(C=200h+500\) does not pass through \((0,0)\).`,
+            String.raw`This is not a direct variation because \(200\) is not a fraction.`
+          ],
+          choiceWrap: false
+        },
+
+        {
+          stem: String.raw`
+            <p>\(y\) varies directly with \(x\). When \(x=12\), \(y=18\).</p>
+            <p>What is \(y\) when \(x=5\)?</p>
+          `,
+          choices: [
+            String.raw`\(3\)`,
+            String.raw`\(6\)`,
+            String.raw`\(\frac{15}{2}\)`,
+            String.raw`\(10\)`,
+            String.raw`\(\frac{18}{5}\)`,
+            String.raw`\(\frac{24}{5}\)`
+          ]
+        }
+      ]
+    };
+  </script>
+
+  <link rel="stylesheet" href="/math-homework/assets/core-rich.css" />
+  <script defer src="/math-homework/assets/core-rich.js"></script>
+  <script defer src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+</head>
+
+<body>
+  <div id="hw-root">Loading…</div>
+</body>
+</html>

@@ -1,0 +1,418 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Homework 13 Review - Similarity and Metric Relations</title>
+
+  <script>
+
+    window.homeworkData = {
+      classId : "Geometry",
+      id      : "Homework 13 Review - Similarity and Metric Relations",
+      title   : "Homework 13 Review - Similarity and Metric Relations",
+
+      graphics : String.raw``,
+
+      answerKey : [
+        "C","C","E",
+        "A","B","D",
+        "C","A",
+        "C","B","C","B",
+        "B",
+        "A","A","B",
+        "D",
+        "F","E","C","A"
+      ],
+
+      questions : [
+
+        {
+          stem: String.raw`<p>Solve the proportion: \(\dfrac{x}{9}=\dfrac{18}{54}\).</p>`,
+          choices: [
+            String.raw`\(1\)`,
+            String.raw`\(2\)`,
+            String.raw`\(3\)`,
+            String.raw`\(6\)`,
+            String.raw`\(9\)`,
+            String.raw`\(18\)`
+          ]
+        },
+
+        {
+          stem: String.raw`<p>Solve the proportion: \(\dfrac{15}{9}=\dfrac{x}{2}\).</p>`,
+          choices: [
+            String.raw`\(\dfrac{5}{3}\)`,
+            String.raw`\(\dfrac{8}{3}\)`,
+            String.raw`\(\dfrac{10}{3}\)`,
+            String.raw`\(\dfrac{15}{2}\)`,
+            String.raw`\(\dfrac{20}{3}\)`,
+            String.raw`\(\dfrac{25}{3}\)`
+          ]
+        },
+
+        {
+          stem: String.raw`<p>Solve the proportion: \(\dfrac{1}{9}=\dfrac{12}{x}\).</p>`,
+          choices: [
+            String.raw`\(12\)`,
+            String.raw`\(24\)`,
+            String.raw`\(54\)`,
+            String.raw`\(96\)`,
+            String.raw`\(108\)`,
+            String.raw`\(120\)`
+          ]
+        },
+
+        {
+          choiceWrap: false,
+          stem: String.raw`<p><b>Refer to Figure 1.</b> Are the two triangles similar?</p>`,
+          media: String.raw`
+            <figure>
+              <img src="hw-13-review-fig-1.png" alt="Problem 9 similar triangles check" />
+              <figcaption>Figure 1</figcaption>
+            </figure>
+          `,
+          choices: [
+            String.raw`Yes; the side lengths are proportional.`,
+            String.raw`Yes; they have one equal angle.`,
+            String.raw`No; the perimeters are different.`,
+            String.raw`No; corresponding angles are not equal.`,
+            String.raw`Yes; they are congruent.`,
+            String.raw`Not enough information.`
+          ]
+        },
+
+        {
+          choiceWrap: false,
+          stem: String.raw`<p><b>Refer to Figure 2.</b> Are the two triangles similar?</p>`,
+          media: String.raw`
+            <figure>
+              <img src="hw-13-review-fig-2.png" alt="Problem 10 similar triangles check" />
+              <figcaption>Figure 2</figcaption>
+            </figure>
+          `,
+          choices: [
+            String.raw`Yes; all three side ratios match.`,
+            String.raw`No; the side ratios are not all equal.`,
+            String.raw`Yes; they share a right angle.`,
+            String.raw`Yes; they have one equal angle.`,
+            String.raw`No; the triangles are different sizes.`,
+            String.raw`Not enough information.`
+          ]
+        },
+
+        {
+          choiceWrap: false,
+          stem: String.raw`<p><b>Refer to Figure 3.</b> Are the two figures similar?</p>`,
+          media: String.raw`
+            <figure>
+              <img src="hw-13-review-fig-3.png" alt="Problem 11 similar figures check" />
+              <figcaption>Figure 3</figcaption>
+            </figure>
+          `,
+          choices: [
+            String.raw`Yes; they have the same area.`,
+            String.raw`Yes; all corresponding side ratios match.`,
+            String.raw`Yes; all corresponding angles match.`,
+            String.raw`No; they are not the same type of polygon.`,
+            String.raw`No; the perimeters are different.`,
+            String.raw`Not enough information.`
+          ]
+        },
+
+        {
+          choiceWrap: false,
+          stem: String.raw`
+            <p><b>Refer to Figure 4.</b></p>
+            <p>Given \(\triangle AED \sim \triangle CEB\).</p>
+            <p>Which conclusion shows that \(ABCD\) is a trapezoid?</p>
+          `,
+          media: String.raw`
+            <figure>
+              <img src="hw-13-review-fig-4.png" alt="Problem 12 trapezoid diagram" />
+              <figcaption>Figure 4</figcaption>
+            </figure>
+          `,
+          choices: [
+            String.raw`\(\overline{AB}\parallel \overline{CD}\)`,
+            String.raw`\(\overline{AC}\perp \overline{BD}\)`,
+            String.raw`\(\overline{AD}\parallel \overline{BC}\)`,
+            String.raw`\(\overline{AB}\cong \overline{CD}\)`,
+            String.raw`\(\angle A \cong \angle B\)`,
+            String.raw`\(\triangle ABC \sim \triangle ADC\)`
+          ]
+        },
+
+        {
+          choiceWrap: false,
+          stem: String.raw`
+            <p><b>Refer to Figure 5.</b></p>
+            <p>Given \(\triangle ABF \sim \triangle EBC\), \(GB\perp AF\), and \(BD\perp CE\).</p>
+            <p>Which proportionality correctly matches <em>corresponding sides</em> from the similarity?</p>
+          `,
+          media: String.raw`
+            <figure>
+              <img src="hw-13-review-fig-5.png" alt="Problem 13 similarity diagram" />
+              <figcaption>Figure 5</figcaption>
+            </figure>
+          `,
+          choices: [
+            String.raw`\(\dfrac{AB}{EB}=\dfrac{AF}{EC}\)`,
+            String.raw`\(\dfrac{AB}{BC}=\dfrac{AF}{EC}\)`,
+            String.raw`\(\dfrac{BF}{BC}=\dfrac{AF}{EB}\)`,
+            String.raw`\(\dfrac{AB}{AF}=\dfrac{EB}{BC}\)`,
+            String.raw`\(\dfrac{BF}{AB}=\dfrac{BC}{EC}\)`,
+            String.raw`\(\dfrac{AB}{BF}=\dfrac{EC}{EB}\)`
+          ]
+        },
+
+        {
+          stem: String.raw`<p><b>Refer to Figure 6.</b> With \(r \parallel s\), determine \(x\).</p>`,
+          media: String.raw`
+            <figure>
+              <img src="hw-13-review-fig-6.png" alt="Problem 462a" />
+              <figcaption>Figure 6</figcaption>
+            </figure>
+          `,
+          choices: [
+            String.raw`\(2\)`,
+            String.raw`\(4\)`,
+            String.raw`\(6\)`,
+            String.raw`\(8\)`,
+            String.raw`\(10\)`,
+            String.raw`\(12\)`
+          ]
+        },
+
+        {
+          stem: String.raw`<p><b>Refer to Figure 7.</b> With \(r \parallel s\), determine \(x\).</p>`,
+          media: String.raw`
+            <figure>
+              <img src="hw-13-review-fig-7.png" alt="Problem 462b" />
+              <figcaption>Figure 7</figcaption>
+            </figure>
+          `,
+          choices: [
+            String.raw`\(\dfrac{12}{5}\)`,
+            String.raw`\(\dfrac{24}{5}\)`,
+            String.raw`\(\dfrac{36}{5}\)`,
+            String.raw`\(\dfrac{48}{5}\)`,
+            String.raw`\(6\)`,
+            String.raw`\(8\)`
+          ]
+        },
+
+        {
+          stem: String.raw`<p><b>Refer to Figure 8.</b> If \(\overline{AB}\parallel \overline{ED}\), \(DE=4\) cm, \(CD=2\) cm, and \(BC=6\) cm, find \(AB\).</p>`,
+          media: String.raw`
+            <figure>
+              <img src="hw-13-review-fig-8.png" alt="Problem 463" />
+              <figcaption>Figure 8</figcaption>
+            </figure>
+          `,
+          choices: [
+            String.raw`\(8\)`,
+            String.raw`\(10\)`,
+            String.raw`\(12\)`,
+            String.raw`\(14\)`,
+            String.raw`\(16\)`,
+            String.raw`\(18\)`
+          ]
+        },
+
+        {
+          stem: String.raw`<p><b>Refer to Figure 9.</b> In the figure, the measures are \(AB = 8\,\text{cm}\), \(BC = 3\,\text{cm}\), and \(AE = 5\,\text{cm}\).
+Calculate \(x = DE\), given that \(\angle ACE = \angle ADB\).</p>`,
+          media: String.raw`
+            <figure>
+              <img src="hw-13-review-fig-9.png" alt="Problem 467" />
+              <figcaption>Figure 9</figcaption>
+            </figure>
+          `,
+          choices: [
+            String.raw`\(12\)`,
+            String.raw`\(\dfrac{63}{5}\)`,
+            String.raw`\(\dfrac{25}{2}\)`,
+            String.raw`\(13\)`,
+            String.raw`\(15\)`,
+            String.raw`\(18\)`
+          ]
+        },
+
+        {
+          stem: String.raw`
+            <p><b>Refer to Figure 10.</b> If \(\triangle ABC \sim \triangle XYZ\), determine the missing lengths \(x\) and \(y\).</p>
+          `,
+          media: String.raw`
+            <figure>
+              <img src="hw-13-review-fig-10.png" alt="Problem 14 similar triangles" />
+              <figcaption>Figure 10</figcaption>
+            </figure>
+          `,
+          choices: [
+            String.raw`\((x,y)=(3,1)\)`,
+            String.raw`\((x,y)=(1,3)\)`,
+            String.raw`\((x,y)=(2,3)\)`,
+            String.raw`\((x,y)=(1,5)\)`,
+            String.raw`\((x,y)=(3,3)\)`,
+            String.raw`\((x,y)=(5,1)\)`
+          ]
+        },
+
+        {
+          choiceWrap: false,
+          stem: String.raw`
+            <p>Can these lengths be side lengths of similar triangles?</p>
+            <p>Set 1: \(4,9,12\) &nbsp;&nbsp; Set 2: \(16,36,48\)</p>
+          `,
+          choices: [
+            String.raw`Yes`,
+            String.raw`No`,
+            String.raw`Only if the triangles are right triangles`,
+            String.raw`Only if one triangle is isosceles`,
+            String.raw`Only if the triangles are congruent`,
+            String.raw`Not enough information`
+          ]
+        },
+
+        {
+          choiceWrap: false,
+          stem: String.raw`
+            <p>Can these lengths be side lengths of similar triangles?</p>
+            <p>Set 1: \(2,5,6\) &nbsp;&nbsp; Set 2: \(1,\dfrac{5}{2},3\)</p>
+          `,
+          choices: [
+            String.raw`Yes`,
+            String.raw`No`,
+            String.raw`Only if the triangles are right triangles`,
+            String.raw`Only if one triangle is equilateral`,
+            String.raw`Only if the perimeters match`,
+            String.raw`Not enough information`
+          ]
+        },
+
+        {
+          choiceWrap: false,
+          stem: String.raw`
+            <p>Can these lengths be side lengths of similar triangles?</p>
+            <p>Set 1: \(8,9,11\) &nbsp;&nbsp; Set 2: \(4,6,\dfrac{11}{2}\)</p>
+          `,
+          choices: [
+            String.raw`Yes`,
+            String.raw`No`,
+            String.raw`Only if the triangles are right triangles`,
+            String.raw`Only if the triangles are isosceles`,
+            String.raw`Only if the triangles are congruent`,
+            String.raw`Not enough information`
+          ]
+        },
+
+        {
+          choiceWrap: false,
+          stem: String.raw`<p>Which list gives <em>three valid</em> ways to prove that two triangles are similar?</p>`,
+          choices: [
+            String.raw`AAA, ASA, AAS`,
+            String.raw`SSS, SAS, SSA`,
+            String.raw`AA, ASA, SSS`,
+            String.raw`AA, SAS, SSS`,
+            String.raw`SSS, ASA, HL`,
+            String.raw`AA, SSA, HL`
+          ]
+        },
+
+        {
+          stem: String.raw`
+            <p><b>Refer to Figure 11.</b> Two chords intersect at \(A\). Given:</p>
+            <ul>
+              <li>\(AB=3x\)</li>
+              <li>\(AC=4x-1\)</li>
+              <li>\(AD=x+1\)</li>
+              <li>\(AE=x\)</li>
+            </ul>
+            <p>Determine the lengths of chords \(\overline{BD}\) and \(\overline{CE}\).</p>
+          `,
+          media: String.raw`
+            <figure>
+              <img src="hw-13-review-fig-11.png" alt="Problem 494 intersecting chords" />
+              <figcaption>Figure 11</figcaption>
+            </figure>
+          `,
+          choices: [
+            String.raw`\((BD,CE)=(16,20)\)`,
+            String.raw`\((BD,CE)=(17,18)\)`,
+            String.raw`\((BD,CE)=(18,19)\)`,
+            String.raw`\((BD,CE)=(19,17)\)`,
+            String.raw`\((BD,CE)=(15,19)\)`,
+            String.raw`\((BD,CE)=(17,19)\)`
+          ]
+        },
+
+        {
+          stem: String.raw`
+            <p>A point \(P\) is \(18\) cm from a circle. A secant through \(P\) determines a chord \(\overline{AB}\) of length \(10\) cm, and \(\overline{AB}\) passes through the center of the circle.</p>
+            <p>Find the length of the tangent segment from \(P\) to the circle.</p>
+          `,
+          choices: [
+            String.raw`\(3\sqrt{14}\)`,
+            String.raw`\(4\sqrt{14}\)`,
+            String.raw`\(5\sqrt{14}\)`,
+            String.raw`\(6\sqrt{7}\)`,
+            String.raw`\(6\sqrt{14}\)`,
+            String.raw`\(12\sqrt{14}\)`
+          ]
+        },
+
+     {
+    stem: String.raw`
+      <p><b>Refer to Figure 13.</b> In the figure are displayed squares of sides \(x\), \(6\) and \(9\). Determine the perimeter of the square of side \(x\).</p>
+    `,
+    media: String.raw`
+      <figure>
+        <img src="hw-13-review-fig-12.png" alt="Problem 470 squares under a slanted line" />
+        <figcaption>Figure 13</figcaption>
+      </figure>
+    `,
+    choices: [
+      String.raw`\(12\)`,
+      String.raw`\(14\)`,
+      String.raw`\(16\)`,
+      String.raw`\(18\)`,
+      String.raw`\(20\)`,
+      String.raw`\(24\)`
+    ]
+  },
+
+        {
+          stem: String.raw`
+            <p><b>Refer to Figure 14.</b> A square is inscribed in a right triangle as shown.</p>
+            <p>Determine the side length of the square.</p>
+          `,
+          media: String.raw`
+            <figure>
+              <img src="hw-13-review-fig-13.png" alt="Problem 472 inscribed square in right triangle" />
+              <figcaption>Figure 14</figcaption>
+            </figure>
+          `,
+          choices: [
+            String.raw`\(\dfrac{12}{5}\)`,
+            String.raw`\(\dfrac{10}{5}\)`,
+            String.raw`\(\dfrac{8}{5}\)`,
+            String.raw`\(\dfrac{6}{5}\)`,
+            String.raw`\(\dfrac{24}{5}\)`,
+            String.raw`\(\dfrac{30}{5}\)`
+          ]
+        }
+
+      ]
+    };
+  </script>
+
+  <link rel="stylesheet" href="/math-homework/assets/core-rich.css" />
+  <script defer src="/math-homework/assets/core-rich.js"></script>
+  <script defer src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+</head>
+
+<body>
+  <div id="hw-root">Loading…</div>
+</body>
+</html>

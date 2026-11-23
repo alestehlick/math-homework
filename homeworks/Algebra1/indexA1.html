@@ -1,10 +1,9 @@
-<!-- index.html (Algebra I) — FULLY UPDATED -->
 <!DOCTYPE html>
 <html lang="en">
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Homework Assignments - Algebra I</title>
+  <title>Algebra 1 Homework</title>
 
   <style>
     :root{
@@ -12,7 +11,6 @@
       --muted: rgba(15,23,42,0.72);
       --stroke: rgba(15,23,42,0.18);
 
-      /* tuned for “no big white plate” */
       --link-bg: rgba(255,255,255,0.38);
       --link-bg-hover: rgba(255,255,255,0.52);
     }
@@ -25,12 +23,10 @@
       font-family: ui-serif, "Times New Roman", Times, Georgia, serif;
       line-height: 1.55;
 
-      /* IMPORTANT: do not use background-attachment: fixed on mobile */
       background: none;
       overflow-x: hidden;
     }
 
-    /* Fixed background layer (stable on mobile) */
     body::before{
       content: "";
       position: fixed;
@@ -41,7 +37,6 @@
       will-change: transform;
     }
 
-    /* subtle readability veil without looking like a “card” */
     body::after{
       content: "";
       position: fixed;
@@ -55,7 +50,7 @@
     }
 
     .wrap{
-      /* avoid mobile address-bar jump/stretch */
+
       min-height: 100vh;
       min-height: 100svh;
 
@@ -66,7 +61,7 @@
 
     .content{
       width: min(720px, 100%);
-      padding: 6px 2px; /* no card/panel */
+      padding: 6px 2px;
     }
 
     h1{
@@ -137,195 +132,58 @@
     <section class="content" role="region" aria-label="rk list">
       <h1>Algebra I</h1>
 
-
-<!--
       <ul>
-        <li><a href="hw_1_1.html"><span>1-1</span><span class="tag">Homework</span></a></li>
-        <li><a href="hw_1_2.html"><span>1-2</span><span class="tag">Homework</span></a></li>
-        <li><a href="hw_1_3.html"><span>1-3</span><span class="tag">Homework</span></a></li>
-        <li><a href="hw_1_4.html"><span>1-4</span><span class="tag">Homework</span></a></li>
-        <li><a href="hw_1_5.html"><span>1-5</span><span class="tag">Homework</span></a></li>
-        <li><a href="hw_1_6.html"><span>1-6</span><span class="tag">Homework</span></a></li>
-        <li><a href="hw_1_7.html"><span>1-7</span><span class="tag">Homework</span></a></li>
-        <li><a href="hw_1_8.html"><span>1-8</span><span class="tag">Homework</span></a></li>
-        <li><a href="hw_1_9.html"><span>1-9</span><span class="tag">Homework</span></a></li>
-        <li><a href="hw_1_rev.html"><span>1-rev</span><span class="tag">Homework</span></a></li>
-      </ul>
-
-      <br><br>
-
-      <ul>
-        <li><a href="hw_2_1.html"><span>2-1</span><span class="tag">Homework</span></a></li>
-        <li><a href="hw_2_2.html"><span>2-2</span><span class="tag">Homework</span></a></li>
-        <li><a href="hw_2_3.html"><span>2-3</span><span class="tag">Homework</span></a></li>
-        <li><a href="hw_2_4.html"><span>2-4</span><span class="tag">Homework</span></a></li>
-        <li><a href="hw_2_5.html"><span>2-5</span><span class="tag">Homework</span></a></li>
-        <li><a href="hw_2_6.html"><span>2-6</span><span class="tag">Homework</span></a></li>
-        <li><a href="hw_2_7.html"><span>2-7</span><span class="tag">Homework</span></a></li>
-        <li><a href="hw_2_rev.html"><span>2-rev</span><span class="tag">Homework</span></a></li>
-      </ul>
-
-      <br><br>
-
-      <ul>
-        <li><a href="hw_3_1.html"><span>3-1</span><span class="tag">Homework</span></a></li>
-        <li><a href="hw_3_2.html"><span>3-2</span><span class="tag">Homework</span></a></li>
-        <li><a href="hw_3_3.html"><span>3-3</span><span class="tag">Homework</span></a></li>
-        <li><a href="hw_3_4.html"><span>3-4</span><span class="tag">Homework</span></a></li>
-        <li><a href="hw_3_5.html"><span>3-5</span><span class="tag">Homework</span></a></li>
-        <li><a href="hw_3_6.html"><span>3-6</span><span class="tag">Homework</span></a></li>
-        <li><a href="hw_3_7.html"><span>3-7</span><span class="tag">Homework</span></a></li>
-        <li><a href="hw_3_8.html"><span>3-8</span><span class="tag">Homework</span></a></li>
-        <li><a href="hw_3_9.html"><span>3-9</span><span class="tag">Homework</span></a></li>
-        <li><a href="hw_3_rev.html"><span>3-rev</span><span class="tag">Homework</span></a></li>
-      </ul>
-
-      <br><br>
-
-      <ul>
-        <li><a href="hw_4_A.html"><span>4A</span><span class="tag">Homework</span></a></li>
-        <li><a href="hw_4_B.html"><span>4B</span><span class="tag">Homework</span></a></li>
-        <li><a href="hw_4_6.html"><span>4-6</span><span class="tag">Homework</span></a></li>
-        <li><a href="hw_4_7.html"><span>4-7</span><span class="tag">Homework</span></a></li>
-        <li><a href="hw_4_8.html"><span>4-8</span><span class="tag">Homework</span></a></li>
-        <li><a href="hw_4_9.html"><span>4-9</span><span class="tag">Homework</span></a></li>
-        <li><a href="hw_4_10.html"><span>4-10</span><span class="tag">Homework</span></a></li>
-        <li><a href="hw_4_rev.html"><span>4-rev</span><span class="tag">Homework</span></a></li>
-      </ul>
-
-      <br><br>
-
-      <ul>
-        <li><a href="hw_5_1to4.html"><span>5-1 to 5-4</span><span class="tag">Homework</span></a></li>
-	<li><a href="hw_5_5to7.html"><span>5-5 to 5-7</span><span class="tag">Homework</span></a></li>
-	<li><a href="hw_5_rev.html"><span>5-rev</span><span class="tag">Homework</span></a></li>
-    
-
- 	</ul>
-
-      <br><br>
-
-
--->
-
-
-
-
-
-
-
-
-      <ul>
-	<li><a href="hw_6_5.html"><span>6-5</span><span class="tag">Homework</span></a></li>
-	<li><a href="hw_6_6.html"><span>6-6</span><span class="tag">Homework</span></a></li>
-	<li><a href="hw_6_7.html"><span>6-7</span><span class="tag">Homework</span></a></li>
-	<li><a href="hw_6_8.html"><span>6-8</span><span class="tag">Homework</span></a></li>
-	<li><a href="hw_6_9.html"><span>6-9</span><span class="tag">Homework</span></a></li>
-	<li><a href="hw_6_10.html"><span>6-10</span><span class="tag">Homework</span></a></li>
-	<li><a href="hw_6_rev.html"><span>6-rev</span><span class="tag">Homework</span></a></li>
+	<li><a href="hw-6-5.html" title="Homework 6-5 - Slope and Intercepts"><span>6-5</span><span class="tag">Homework</span></a></li>
+	<li><a href="hw-6-6.html" title="Homework 6-6 - Slope-Intercept Form"><span>6-6</span><span class="tag">Homework</span></a></li>
+	<li><a href="hw-6-7.html" title="Homework 6-7 - Equations of Lines"><span>6-7</span><span class="tag">Homework</span></a></li>
+	<li><a href="hw-6-8.html" title="Homework 6-8 - Lines through Two Points and Parallel Lines"><span>6-8</span><span class="tag">Homework</span></a></li>
+	<li><a href="hw-6-9.html" title="Homework 6-9 - Direct Variation"><span>6-9</span><span class="tag">Homework</span></a></li>
+	<li><a href="hw-6-10.html" title="Homework 6-10 - Graphs of Linear Inequalities"><span>6-10</span><span class="tag">Homework</span></a></li>
+	<li><a href="hw-6-review.html" title="Homework 6 Review - Linear Relations and Their Graphs"><span>6 Review</span><span class="tag">Review</span></a></li>
  	</ul>
       <br><br>
 
-
       <br><br>
 
       <ul>
-	<li><a href="hw_7_1.html"><span>7-1</span><span class="tag">Homework</span></a></li>
-	<li><a href="hw_7_2.html"><span>7-2</span><span class="tag">Homework</span></a></li>
-	<li><a href="hw_7-3to4.html"><span>7-3 and 7-4</span><span class="tag">Homework</span></a></li>
-	<li><a href="hw_7_5to6.html"><span>7-5 and 7-6</span><span class="tag">Homework</span></a></li>
-	<li><a href="hw_7_7.html"><span>7-7</span><span class="tag">Homework</span></a></li>
-	<li><a href="hw_7_8.html"><span>7-8</span><span class="tag">Homework</span></a></li>
-	<li><a href="hw_7_9.html"><span>7-9</span><span class="tag">Homework</span></a></li>
-	<li><a href="hw_7_10.html"><span>7-10</span><span class="tag">Homework</span></a></li>
+	<li><a href="hw-7-1.html" title="Homework 7-1 - Solutions and Graphs of Linear Systems"><span>7-1</span><span class="tag">Homework</span></a></li>
+	<li><a href="hw-7-2.html" title="Homework 7-2 - Graphical Solution of Linear Systems"><span>7-2</span><span class="tag">Homework</span></a></li>
+	<li><a href="hw-7-3-to-7-4.html" title="Homework 7-3 to 7-4 - Solution of Systems by Substitution"><span>7-3 to 7-4</span><span class="tag">Homework</span></a></li>
+	<li><a href="hw-7-5-to-7-6.html" title="Homework 7-5 to 7-6 - Solution of Systems by Elimination"><span>7-5 to 7-6</span><span class="tag">Homework</span></a></li>
+	<li><a href="hw-7-7.html" title="Homework 7-7 - Motion Problems and Linear Systems"><span>7-7</span><span class="tag">Homework</span></a></li>
+	<li><a href="hw-7-8.html" title="Homework 7-8 - Interest and Investment Problems"><span>7-8</span><span class="tag">Homework</span></a></li>
+	<li><a href="hw-7-9.html" title="Homework 7-9 - Mixture Problems"><span>7-9</span><span class="tag">Homework</span></a></li>
+	<li><a href="hw-7-10.html" title="Homework 7-10 - Systems of Linear Inequalities"><span>7-10</span><span class="tag">Homework</span></a></li>
  	</ul>
       <br><br>
 
-
       <br><br>
 
       <ul>
-	<li><a href="hw_8_1to4.html"><span>8-1 to 8-4</span><span class="tag">Homework</span></a></li>
-	<li><a href="hw_8_5to7.html"><span>8-5 to 8-7</span><span class="tag">Homework</span></a></li>
-	<li><a href="hw_8_8to9.html"><span>8-8 to 8-9</span><span class="tag">Homework</span></a></li>
-	<li><a href="hw_8_rev.html"><span>8-rev</span><span class="tag">Homework</span></a></li>
+	<li><a href="hw-8-1-to-8-4.html" title="Homework 8-1 to 8-4 - Polynomial Operations"><span>8-1 to 8-4</span><span class="tag">Homework</span></a></li>
+	<li><a href="hw-8-5-to-8-7.html" title="Homework 8-5 to 8-7 - Polynomial Products and Special Identities"><span>8-5 to 8-7</span><span class="tag">Homework</span></a></li>
+	<li><a href="hw-8-8-to-8-9.html" title="Homework 8-8 to 8-9 - Quotients and Polynomial Division"><span>8-8 to 8-9</span><span class="tag">Homework</span></a></li>
+	<li><a href="hw-8-review.html" title="Homework 8 Review - Polynomials"><span>8 Review</span><span class="tag">Review</span></a></li>
  	</ul>
       <br><br>
 
-
       <br><br>
 
       <ul>
-	<li><a href="hw_9_1.html"><span>9-1</span><span class="tag">Homework</span></a></li>
-	<li><a href="hw_9_2to4.html"><span>9-2 to 9-4</span><span class="tag">Homework</span></a></li>
-	<li><a href="hw_9_5to7.html"><span>9-5 to 9-7</span><span class="tag">Homework</span></a></li>
+	<li><a href="hw-9-1.html" title="Homework 9-1 - Factorization by Common Factors"><span>9-1</span><span class="tag">Homework</span></a></li>
+	<li><a href="hw-9-2-to-9-4.html" title="Homework 9-2 to 9-4 - Factorization of Quadratic Polynomials"><span>9-2 to 9-4</span><span class="tag">Homework</span></a></li>
+	<li><a href="hw-9-5-to-9-7.html" title="Homework 9-5 to 9-7 - Factorization of Polynomials"><span>9-5 to 9-7</span><span class="tag">Homework</span></a></li>
  	</ul>
       <br><br>
 
-
-
-
-
-
-
-
-
-
       <ul>
 
-        <li><a href="hw_10_1.html"><span>10-1</span><span class="tag">Homework</span></a></li>
-      <!--
-        <li><a href="hw_10_2.html"><span>10-2</span><span class="tag">Homework</span></a></li>
-        <li><a href="hw_10_3.html"><span>10-3</span><span class="tag">Homework</span></a></li>
-        <li><a href="hw_10_4.html"><span>10-4</span><span class="tag">Homework</span></a></li>
-        <li><a href="hw_10_5.html"><span>10-5</span><span class="tag">Homework</span></a></li>
-        <li><a href="hw_10_6.html"><span>10-6</span><span class="tag">Homework</span></a></li>
-        <li><a href="hw_10_7.html"><span>10-7</span><span class="tag">Homework</span></a></li>
-        <li><a href="hw_10_8.html"><span>10-8</span><span class="tag">Homework</span></a></li>
-        <li><a href="hw_10_9.html"><span>10-9</span><span class="tag">Homework</span></a></li>
-        <li><a href="hw_10_10.html"><span>10-10</span><span class="tag">Homework</span></a></li>
-        <li><a href="hw_10_rev.html"><span>10-rev</span><span class="tag">Homework</span></a></li>
--->
+        <li><a href="hw-10-1.html" title="Homework 10-1 - Fractional Exponents and Radicals"><span>10-1</span><span class="tag">Homework</span></a></li>
 
-      </ul>
-      
-      <br><br>
- 
-
-
-      <!--
-      <ul>
-        <li><a href="hw_11_1.html"><span>11-1</span><span class="tag">Homework</span></a></li>
-        <li><a href="hw_11_2.html"><span>11-2</span><span class="tag">Homework</span></a></li>
-        <li><a href="hw_11_3.html"><span>11-3</span><span class="tag">Homework</span></a></li>
-        <li><a href="hw_11_4.html"><span>11-4</span><span class="tag">Homework</span></a></li>
-        <li><a href="hw_11_5.html"><span>11-5</span><span class="tag">Homework</span></a></li>
-        <li><a href="hw_11_6.html"><span>11-6</span><span class="tag">Homework</span></a></li>
-        <li><a href="hw_11_7.html"><span>11-7</span><span class="tag">Homework</span></a></li>
-        <li><a href="hw_11_8.html"><span>11-8</span><span class="tag">Homework</span></a></li>
-        <li><a href="hw_11_rev.html"><span>11-rev</span><span class="tag">Homework</span></a></li>
       </ul>
 
       <br><br>
-      
-      <ul>
-        <li><a href="hw_12_1.html"><span>12-1</span><span class="tag">Homework</span></a></li>
-        <li><a href="hw_12_2and3.html"><span>12-2 and 12-3</span><span class="tag">Homework</span></a></li>
-        <li><a href="hw_12_4and5and6.html"><span>12-4, 12-5 and 12-6</span><span class="tag">Homework</span></a></li>
-        <li><a href="hw_12_7.html"><span>12-7</span><span class="tag">Homework</span></a></li>
-        <li><a href="hw_12_rev.html"><span>12-rev</span><span class="tag">Homework</span></a></li>
-      </ul>
 
-      <br><br>
-      
-      <ul>
-        <li><a href="hw_13_1.html"><span>13-1</span><span class="tag">Homework</span></a></li>
-        <li><a href="hw_13_2.html"><span>13-2</span><span class="tag">Homework</span></a></li>
-        <li><a href="hw_13_3.html"><span>13-3</span><span class="tag">Homework</span></a></li>
-        <li><a href="hw_13_4.html"><span>13-4</span><span class="tag">Homework</span></a></li>
-        <li><a href="hw_13_5.html"><span>13-5</span><span class="tag">Homework</span></a></li>
-      </ul>
-      -->
     </section>
   </main>
 </body>

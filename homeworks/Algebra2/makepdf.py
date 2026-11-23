@@ -16,8 +16,8 @@ from pypdf import PdfWriter
 # MANUAL SETTINGS
 # ============================================================
 
-START = "hw_3_1"
-END   = "hw_3_rev"
+START = "hw-3-1"
+END = "hw-3-review"
 
 OUTPUT_PDF = "stitched_homework.pdf"
 
@@ -28,69 +28,9 @@ VIRTUAL_TIME_BUDGET_MS = 12000
 REPO_FOLDER_NAME = "math-homework"
 
 
-# ============================================================
-# NAME PARSING
-# ============================================================
-
-HTML_RE = re.compile(r"^hw_(\d+)_(\d+|rev)\.html$", re.IGNORECASE)
-NAME_RE = re.compile(r"^hw_(\d+)_(\d+|rev)$", re.IGNORECASE)
-
-
-def parse_range_name(name: str):
-    m = NAME_RE.fullmatch(name.strip())
-    if not m:
-        raise ValueError(f"Invalid range name: {name!r}")
-
-    chapter = int(m.group(1))
-    second = m.group(2).lower()
-    order = 10**9 if second == "rev" else int(second)
-    return (chapter, order)
-
-
-def parse_html_file(path: Path):
-    m = HTML_RE.fullmatch(path.name)
-    if not m:
-        return None
-
-    chapter = int(m.group(1))
-    second = m.group(2).lower()
-    order = 10**9 if second == "rev" else int(second)
-    return (chapter, order)
-
-
-def sort_key(path: Path):
-    parsed = parse_html_file(path)
-    if parsed is None:
-        raise ValueError(f"Unexpected filename format: {path.name}")
-    return parsed
-
-
-# ============================================================
-# FILE SELECTION
-# ============================================================
-
-def get_files_in_range(folder: Path, start_name: str, end_name: str):
-    start_key = parse_range_name(start_name)
-    end_key = parse_range_name(end_name)
-
-    if start_key > end_key:
-        raise ValueError(f"START ({start_name}) comes after END ({end_name}).")
-
-    html_files = []
-    for p in folder.iterdir():
-        if p.is_file() and p.suffix.lower() == ".html":
-            if parse_html_file(p) is not None:
-                html_files.append(p)
-
-    html_files.sort(key=sort_key)
-
-    selected = []
-    for p in html_files:
-        k = sort_key(p)
-        if start_key <= k <= end_key:
-            selected.append(p)
-
-    return selected
+# Filename conventions and range selection are shared by all courses.
+sys.path.insert(0, str(Path(__file__).resolve().parents[1]))
+from homework_files import get_files_in_range
 
 
 # ============================================================

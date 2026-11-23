@@ -1,0 +1,341 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Homework 7 Review - Triangles and Parallelograms</title>
+
+  <script>
+
+    window.homeworkData = {
+      classId : "Geometry",
+      id      : "Homework 7 Review - Triangles and Parallelograms",
+      title   : "Homework 7 Review - Triangles and Parallelograms",
+
+      graphics : String.raw`
+        <section>
+          <h3>Review directions</h3>
+          <ul>
+            <li>Do not measure a diagram. Use only information that is marked or stated.</li>
+            <li>For Question 12, redraw the triangle and draw all three altitudes on separate paper.</li>
+            <li>For Question 19, use a compass and an unmarked straightedge. Leave the essential construction arcs visible.</li>
+            <li>Keep your drawing/construction paper with the homework.</li>
+          </ul>
+        </section>
+      `,
+
+      answerKey : [
+        "C","E","D","B","F","A","C","D","B","E",
+        "C","F","A","D","F","B","C","E","D"
+      ],
+
+      questions : [
+        {
+          stem: String.raw`
+            <p>Two sides of a triangle have lengths 7 and 13. Let the third side have length \(x\).</p>
+            <p>Which range contains <b>all and only</b> the possible values of \(x\)?</p>
+          `,
+          choices: [
+            "0 &lt; x &lt; 20",
+            "6 ≤ x ≤ 20",
+            "6 &lt; x &lt; 20",
+            "7 &lt; x &lt; 13",
+            "7 ≤ x &lt; 20",
+            "13 &lt; x &lt; 20"
+          ],
+          choiceWrap: false
+        },
+
+        {
+          stem: String.raw`
+            <p>A triangle has side lengths 8, 11, and \(n\), where \(n\) is a positive integer.</p>
+            <p>How many different integer values of \(n\) are possible?</p>
+          `,
+          choices: ["12", "13", "14", "16", "15", "17"],
+          choiceWrap: false
+        },
+
+        {
+          stem: String.raw`
+            <p>In \(\triangle ABC\), side \(\overline{BC}\) is extended through \(C\) to point \(D\).</p>
+            <p>If \(m\angle ACD=127^\circ\) and \(m\angle A=52^\circ\), find \(m\angle B\).</p>
+          `,
+          choices: ["52°", "61°", "65°", "75°", "127°", "179°"],
+          choiceWrap: false
+        },
+
+        {
+          stem: String.raw`
+            <p>In \(\triangle PQR\), side \(\overline{QR}\) is extended through \(R\) to point \(S\).</p>
+            <p>Which statement is guaranteed by the <b>Exterior Angle Inequality Theorem</b>?</p>
+          `,
+          choices: [
+            "m∠PRS &lt; m∠QPR",
+            "m∠PRS &gt; m∠PQR",
+            "m∠PRS = m∠PQR",
+            "m∠PRS &lt; m∠PQR",
+            "m∠PRS = m∠QPR + m∠PQR only when the triangle is isosceles",
+            "No comparison is possible without numerical angle measures"
+          ],
+          choiceWrap: false
+        },
+
+        {
+          stem: String.raw`
+            <p>In \(\triangle ABC\), \(m\angle A=74^\circ\), \(m\angle B=39^\circ\), and \(m\angle C=67^\circ\).</p>
+            <p>Order the side lengths from <b>shortest to longest</b>.</p>
+          `,
+          choices: [
+            "AB &lt; AC &lt; BC",
+            "AB &lt; BC &lt; AC",
+            "BC &lt; AB &lt; AC",
+            "BC &lt; AC &lt; AB",
+            "AC &lt; BC &lt; AB",
+            "AC &lt; AB &lt; BC"
+          ],
+          choiceWrap: false
+        },
+
+        {
+          stem: String.raw`
+            <p>In \(\triangle ABC\), \(AB=9\), \(BC=14\), and \(CA=11\).</p>
+            <p>Order the angle measures from <b>smallest to largest</b>.</p>
+          `,
+          choices: [
+            "∠C &lt; ∠B &lt; ∠A",
+            "∠B &lt; ∠C &lt; ∠A",
+            "∠A &lt; ∠B &lt; ∠C",
+            "∠C &lt; ∠A &lt; ∠B",
+            "∠A &lt; ∠C &lt; ∠B",
+            "∠B &lt; ∠A &lt; ∠C"
+          ],
+          choiceWrap: false
+        },
+
+        {
+          stem: String.raw`
+            <p><b>Refer to Figure 1.</b> The one-tick sides are congruent to each other, and the two-tick sides are congruent to each other.</p>
+            <p>Compare the third sides \(BC\) and \(EF\).</p>
+          `,
+          media: String.raw`
+            <figure>
+              <img src="hw-7-review-fig-1.png" alt="Two triangles with two pairs of corresponding sides marked congruent; the included angles are 48 degrees and 63 degrees" />
+              <figcaption>Figure 1 — not drawn to scale</figcaption>
+            </figure>
+          `,
+          choices: [
+            "BC &gt; EF",
+            "BC = EF",
+            "BC &lt; EF",
+            "The triangles are congruent by SAS",
+            "The comparison depends on the drawing",
+            "The Hinge Theorem cannot be used because the third sides are unknown"
+          ],
+          choiceWrap: false
+        },
+
+        {
+          stem: String.raw`
+            <p>Two triangles have two corresponding side lengths equal: 5 and 8 in each triangle.</p>
+            <p>The third side is 10 in the first triangle and 12 in the second. Compare the included angles between the sides of lengths 5 and 8.</p>
+          `,
+          choices: [
+            "The first included angle is greater",
+            "The included angles are equal",
+            "The angles cannot be compared without measuring them",
+            "The first included angle is smaller",
+            "The triangles are congruent by SSS",
+            "The larger third side must face the smaller included angle"
+          ],
+          choiceWrap: false
+        },
+
+        {
+          stem: String.raw`
+            <p>Two right triangles have congruent hypotenuses and one pair of congruent acute angles.</p>
+            <p>Which special right-triangle congruence criterion applies most directly?</p>
+          `,
+          choices: ["HL", "HA", "LA", "LL", "SSA", "AA"],
+          choiceWrap: false
+        },
+
+        {
+          stem: String.raw`
+            <p>Two right triangles have both pairs of corresponding acute angles congruent, but no pair of corresponding side lengths is known to be congruent.</p>
+            <p>What can you conclude from the given information?</p>
+          `,
+          choices: [
+            "The triangles are congruent by HA",
+            "The triangles are congruent by LA",
+            "The triangles are congruent by HL",
+            "The triangles are congruent by LL",
+            "The triangles are similar by AA, but congruence is not guaranteed",
+            "The triangles cannot even be shown similar"
+          ],
+          choiceWrap: false
+        },
+
+        {
+          stem: String.raw`
+            <p>Point \(X\) satisfies \(XA=XB=XC\) for the vertices of \(\triangle ABC\).</p>
+            <p>Which conclusion must be true?</p>
+          `,
+          choices: [
+            "X lies on all three angle bisectors, so X is the incenter",
+            "X lies on all three altitudes, so X is the orthocenter",
+            "X lies on all three perpendicular bisectors, so X is the circumcenter",
+            "X lies on all three medians, so X is the centroid",
+            "X must be the midpoint of the longest side",
+            "X must lie inside the triangle"
+          ],
+          choiceWrap: false
+        },
+
+        {
+          stem: String.raw`
+            <p><b>DRAWING PRACTICE.</b> Refer to Figure 2. Redraw the triangle approximately on separate paper, keeping \(\angle B\) clearly obtuse. Draw all three altitudes and label their common intersection \(O\).</p>
+            <p>Where should the orthocenter \(O\) lie for this triangle?</p>
+          `,
+          media: String.raw`
+            <figure>
+              <img src="hw-7-review-fig-2.png" alt="An obtuse scalene triangle ABC for altitude and orthocenter practice" />
+              <figcaption>Figure 2 — redraw approximately; do not measure</figcaption>
+            </figure>
+          `,
+          choices: [
+            "At the midpoint of AC",
+            "On side AB",
+            "At vertex B",
+            "Inside the triangle",
+            "On side BC",
+            "Outside the triangle"
+          ],
+          choiceWrap: false
+        },
+
+        {
+          stem: String.raw`
+            <p>Which row correctly matches a family of special lines, their common intersection, and the distance property of that point?</p>
+          `,
+          choices: [
+            "Angle bisectors → incenter → equidistant from the sides",
+            "Perpendicular bisectors → orthocenter → equidistant from the vertices",
+            "Altitudes → circumcenter → equidistant from the sides",
+            "Medians → incenter → equidistant from the vertices",
+            "Angle bisectors → circumcenter → equidistant from the vertices",
+            "Altitudes → centroid → equidistant from the sides"
+          ],
+          choiceWrap: false
+        },
+
+        {
+          stem: String.raw`
+            <p>In parallelogram \(ABCD\), suppose \(m\angle A=72^\circ\), \(AB=10\), and \(AD=6\).</p>
+            <p>Which set of facts must be true?</p>
+          `,
+          choices: [
+            "∠B = 72°, ∠C = 108°, CD = 10, BC = 6",
+            "∠B = 108°, ∠C = 72°, CD = 6, BC = 10",
+            "∠B = 72°, ∠C = 72°, CD = 10, BC = 6",
+            "∠B = 108°, ∠C = 72°, CD = 10, BC = 6",
+            "∠B = 108°, ∠C = 108°, CD = 10, BC = 6",
+            "∠B = 108°, ∠C = 72°, CD = 10, BC = 10"
+          ],
+          choiceWrap: false
+        },
+
+        {
+          stem: String.raw`
+            <p>Which condition is <b>not sufficient by itself</b> to prove that quadrilateral \(ABCD\) is a parallelogram?</p>
+          `,
+          choices: [
+            "Both pairs of opposite sides are parallel",
+            "Both pairs of opposite sides are congruent",
+            "The diagonals bisect each other",
+            "One pair of opposite sides is both parallel and congruent",
+            "Both pairs of opposite angles are congruent",
+            "The diagonals are congruent"
+          ],
+          choiceWrap: false
+        },
+
+        {
+          stem: String.raw`
+            <p>The diagonals \(\overline{AC}\) and \(\overline{BD}\) of parallelogram \(ABCD\) intersect at \(X\).</p>
+            <p>If \(AX=3x+4\) and \(XC=5x-8\), find \(AC\).</p>
+          `,
+          choices: ["22", "44", "28", "36", "40", "52"],
+          choiceWrap: false
+        },
+
+        {
+          stem: String.raw`
+            <p><b>Refer to Figure 3.</b> \(\angle ABC\) and \(\angle DCB\) are right angles, and \(\overline{AB}\cong\overline{DC}\).</p>
+            <p>Which observation gives the most direct congruence proof for \(\triangle ABC\) and \(\triangle DCB\)?</p>
+          `,
+          media: String.raw`
+            <figure>
+              <img src="hw-7-review-fig-3.png" alt="Two right triangles ABC and DCB sharing BC; AB and DC are marked congruent" />
+              <figcaption>Figure 3 — proof-strategy practice</figcaption>
+            </figure>
+          `,
+          choices: [
+            "AC and DB are congruent because they cross",
+            "The acute angles at A and D are vertical angles, so HA applies",
+            "BC is congruent to itself; together with AB congruent to DC, LL applies",
+            "BC is congruent to itself; therefore HL applies without any other fact",
+            "The two right angles alone are enough for congruence",
+            "AB and DC are parallel, so SAS applies"
+          ],
+          choiceWrap: false
+        },
+
+        {
+          stem: String.raw`
+            <p>A student compares two triangles. They know two pairs of corresponding sides are equal, and the third side of the first triangle is longer than the third side of the second.</p>
+            <p>The student concludes that the included angle in the first triangle is larger and writes, “by the Hinge Theorem.” What is the best evaluation?</p>
+          `,
+          choices: [
+            "The conclusion is false because side lengths never determine angle comparisons",
+            "The conclusion is false unless the triangles are right triangles",
+            "The conclusion is valid only if all three side pairs are congruent",
+            "The conclusion is valid by the Exterior Angle Inequality Theorem",
+            "The conclusion is valid, but the correct justification is the Converse of the Hinge Theorem",
+            "The conclusion is valid by the ordinary Hinge Theorem exactly as written"
+          ],
+          choiceWrap: false
+        },
+
+        {
+          stem: String.raw`
+            <p><b>CONSTRUCTION PRACTICE.</b> Refer to Figure 4. Redraw the triangle approximately on separate paper and construct its <b>inscribed circle</b> using a compass and an unmarked straightedge. Leave the essential construction arcs visible.</p>
+            <p>After two angle bisectors meet at the incenter \(I\), what construction gives the radius of the inscribed circle?</p>
+          `,
+          media: String.raw`
+            <figure>
+              <img src="hw-7-review-fig-4.png" alt="Scalene triangle ABC for inscribed-circle construction practice" />
+              <figcaption>Figure 4 — redraw approximately; do not measure</figcaption>
+            </figure>
+          `,
+          choices: [
+            "Connect I to any vertex and use that distance as the radius",
+            "Bisect any side and use half that side as the radius",
+            "Draw a median from any vertex and use its full length as the radius",
+            "Construct a perpendicular from I to any side; use the distance to the foot as the radius",
+            "Construct a perpendicular bisector of a side and use its intersection with the opposite side as the radius",
+            "Use any compass opening smaller than the distance from I to a vertex"
+          ],
+          choiceWrap: false
+        }
+      ]
+    };
+  </script>
+
+  <link rel="stylesheet" href="/math-homework/assets/core-rich.css" />
+  <script defer src="/math-homework/assets/core-rich.js"></script>
+  <script defer src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+</head>
+<body>
+  <div id="hw-root">Loading…</div>
+</body>
+</html>

@@ -1,0 +1,411 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Homework 11 Introduction - Volume</title>
+
+  <style>
+
+    .hw-reading {
+      max-width: 920px;
+      margin: 24px auto;
+      padding: 0 14px 8px;
+      line-height: 1.45;
+    }
+    .hw-reading .panel {
+      background: #f7f9fc;
+      border: 1px solid #e3e8f2;
+      border-radius: 12px;
+      padding: 16px 16px 10px;
+      box-shadow: 0 1px 0 rgba(0,0,0,0.03);
+    }
+    .hw-reading h2 {
+      margin: 0 0 10px;
+      font-size: 1.35rem;
+    }
+    .hw-reading .accent {
+      color: #0b5cab;
+      font-weight: 700;
+    }
+    .hw-reading .term {
+      color: #7a1f6f;
+      font-weight: 700;
+    }
+    .hw-reading .ruleword {
+      color: #0a6b3b;
+      font-weight: 700;
+    }
+    .hw-reading .fine {
+      color: #4b5563;
+      font-size: 0.96rem;
+    }
+    .hw-reading .hr {
+      height: 1px;
+      background: #e6ebf5;
+      margin: 12px 0;
+    }
+    .hw-reading .postulate {
+      background: #ffffff;
+      border: 1px solid #e6ebf5;
+      border-left: 6px solid #0b5cab;
+      border-radius: 12px;
+      padding: 10px 12px;
+      margin: 10px 0;
+    }
+    .hw-reading .postulate .title {
+      font-weight: 800;
+      margin-bottom: 4px;
+    }
+    .hw-reading .postulate .line {
+      margin: 6px 0;
+    }
+    .hw-reading .callout {
+      background: #fff7ed;
+      border: 1px solid #fed7aa;
+      border-left: 6px solid #f59e0b;
+      border-radius: 12px;
+      padding: 10px 12px;
+      margin: 10px 0 6px;
+    }
+    .hw-reading .callout .title {
+      font-weight: 800;
+      margin-bottom: 4px;
+      color: #92400e;
+    }
+    .hw-reading .pill {
+      display: inline-block;
+      padding: 1px 8px;
+      border-radius: 999px;
+      background: #eef2ff;
+      border: 1px solid #dbe1ff;
+      color: #3730a3;
+      font-weight: 700;
+      font-size: 0.92rem;
+      vertical-align: baseline;
+    }
+  </style>
+
+  <script>
+
+    window.homeworkData = {
+      classId : "Geometry",
+      id      : "Homework 11 Introduction - Volume",
+      title   : "Homework 11 Introduction - Volume",
+
+      answerKey : [
+        "B","B","C","C","B","B","B","C","C","B",
+        "C","B","B","B","A","A","A","B","B","C"
+      ],
+
+      questions : [
+
+        {
+          stem: String.raw`<p>Why do we define the volume of the unit cube to be 1?</p>`,
+          choices: [
+            "To make all volumes integers",
+            "To fix the meaning of one cubic unit",
+            "To guarantee all solids can be tiled",
+            "To prevent overlap"
+          ]
+        },
+
+        {
+          stem: String.raw`
+            <p>A rectangular prism is turned so that a different face is on the floor.</p>
+            <p>What happens to its volume?</p>
+          `,
+          choices: [
+            "It changes because the height changed",
+            "It stays the same because the solid is unchanged",
+            "It stays the same only if it remains upright",
+            "It depends on which face is on the bottom"
+          ]
+        },
+
+        {
+          stem: String.raw`
+            <p>Two solids have the same volume.</p>
+            <p>What must be true?</p>
+          `,
+          choices: [
+            "They are congruent",
+            "They have the same surface area",
+            "Nothing about their shape is guaranteed (only the volume matches)",
+            "They must have the same height"
+          ]
+        },
+
+        {
+          stem: String.raw`<p>You cut a solid into two non-overlapping pieces. What is true?</p>`,
+          choices: [
+            "The total volume increases",
+            "The total volume decreases",
+            "The sum of the pieces equals the original volume",
+            "Each piece has half the volume"
+          ]
+        },
+
+        {
+          stem: String.raw`<p>Why is overlap forbidden when adding volumes?</p>`,
+          choices: [
+            "Overlap changes shape",
+            "Overlap counts some space twice",
+            "Overlap makes volume negative",
+            "Overlap breaks congruence"
+          ]
+        },
+
+        {
+          stem: String.raw`<p>Which statement matches the idea of nonnegative volume?</p>`,
+          choices: [
+            "Some solids have negative volume",
+            "All volumes are at least zero",
+            "Only cubes have volume",
+            "Volume equals surface area"
+          ]
+        },
+
+        {
+          stem: String.raw`<p>A small box fits entirely inside a larger box. What must be true?</p>`,
+          choices: [
+            "The small box has larger volume",
+            "The small box cannot have larger volume",
+            "Both boxes have equal volume",
+            "Volume depends only on height"
+          ]
+        },
+
+        {
+          stem: String.raw`<p>A \(3\times4\times2\) box is filled with unit cubes. How many cubes fit?</p>`,
+          choices: [
+            String.raw`\(3+4+2\)`,
+            String.raw`\(3\cdot4+2\)`,
+            String.raw`\(3\cdot4\cdot2\)`,
+            String.raw`\(3^2+4^2+2^2\)`
+          ]
+        },
+
+        {
+          stem: String.raw`<p>The formula \(V=lwh\) for a box mainly comes from:</p>`,
+          choices: [
+            "Surface area rules",
+            "Rotation invariance",
+            "Counting unit cubes and adding",
+            "Memorization"
+          ]
+        },
+
+        {
+          stem: String.raw`<p>A solid is cut into 5 equal pieces, each with volume 6. What is the original volume?</p>`,
+          choices: [
+            "6",
+            "30",
+            "11",
+            "Cannot be determined"
+          ]
+        },
+
+        {
+          stem: String.raw`<p>Two solids look different but have equal volume because:</p>`,
+          choices: [
+            "They have equal surface area",
+            "They have equal height",
+            "They can be cut and rearranged without overlap",
+            "They are congruent"
+          ]
+        },
+
+        {
+          stem: String.raw`<p>Which statement is <em>false</em>?</p>`,
+          choices: [
+            "Moving a solid does not change volume",
+            "Cutting a solid always changes volume",
+            "Volume cannot be negative",
+            "Non-overlapping parts add"
+          ]
+        },
+
+        {
+          stem: String.raw`
+            <p>Solid \(A\) fits entirely inside solid \(B\), and \(V(A)=V(B)\).</p>
+            <p>Which conclusion best matches the postulates?</p>
+          `,
+          choices: [
+            String.raw`\(A\) and \(B\) must be congruent`,
+            String.raw`There is no “extra space” in \(B\) outside \(A\); any leftover part has volume \(0\)`,
+            String.raw`This is impossible`,
+            String.raw`The leftover part of \(B\) must have negative volume`
+          ]
+        },
+
+        {
+          stem: String.raw`<p>Which situation is a correct use of additivity?</p>`,
+          choices: [
+            "Pieces overlap a lot, but we still add",
+            "Pieces do not overlap, and we add their volumes",
+            "Pieces are rotated, so volume changes",
+            "Pieces touch, so we cannot add"
+          ]
+        },
+
+        {
+          stem: String.raw`<p>You cut a solid and rearrange the pieces into a new solid with no gaps and no overlaps. The volumes are:</p>`,
+          choices: [
+            "Guaranteed equal",
+            "Always different",
+            "Equal only if the pieces are cubes",
+            "Equal only if the new solid is a box"
+          ]
+        },
+
+        {
+          stem: String.raw`<p>A \(1\times1\times2\) solid has volume:</p>`,
+          choices: [
+            "2",
+            "1",
+            "3",
+            "4"
+          ]
+        },
+
+        {
+          stem: String.raw`<p>A \(1\times1\times\frac12\) solid has volume \(\frac12\) because:</p>`,
+          choices: [
+            "A unit cube can be split into two equal parts (no overlap), so volumes add",
+            "Rotation halves volume",
+            "Surface area halves",
+            "Fractions are special cases"
+          ]
+        },
+
+        {
+          stem: String.raw`<p>Which postulate most directly says that position and orientation do not matter?</p>`,
+          choices: [
+            "Unit cube sets the scale",
+            "Moving the solid does not change its volume (congruence invariance)",
+            "Volumes add",
+            "Volumes are nonnegative"
+          ]
+        },
+
+        {
+          stem: String.raw`<p>Which set best supports proving volume formulas by reasoning (not memorizing)?</p>`,
+          choices: [
+            "Unit cube only",
+            "Unit cube + invariance + additivity",
+            "Surface area rules",
+            "Height formulas"
+          ]
+        },
+
+        {
+          stem: String.raw`<p>Final check: Why can’t a contained object occupy more space than its container?</p>`,
+          choices: [
+            "Because of height",
+            "Because the container is the object moved",
+            "Because leftover space cannot be negative",
+            "Because of surface area"
+          ]
+        }
+
+      ]
+    };
+  </script>
+
+  <link rel="stylesheet" href="/math-homework/assets/core-rich.css" />
+  <script defer src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+  <script defer src="/math-homework/assets/core-rich.js"></script>
+</head>
+
+<body>
+
+  <div class="hw-reading">
+    <div class="panel">
+      <h2>Reading: What Does <span class="accent">Volume</span> Mean?</h2>
+
+      <p>
+        When we say that a box has volume <span class="pill">24 cubic units</span>, we mean something very concrete:
+        if we filled the box with little cubes of size \(1\times1\times1\), exactly <strong>24</strong> of them would fit.
+      </p>
+
+      <p class="fine">
+        That idea—<span class="term">counting cubes</span>—is the starting point. But geometry wants a definition that
+        still makes sense for shapes that are not easy to fill directly with cubes (pyramids, cones, spheres).
+        So we write down rules that any reasonable “amount of space” must satisfy. These rules are called
+        <span class="term">postulates</span>.
+      </p>
+
+      <div class="hr"></div>
+
+      <div class="postulate">
+        <div class="title">Postulate 1 — The unit cube sets the scale</div>
+        <div class="line">
+          Imagine measuring length without agreeing on what “1 unit” means—numbers would be meaningless.
+          Volume works the same way.
+        </div>
+        <div class="line">
+          <span class="ruleword">Postulate:</span> We define \(V(\text{unit cube})=1\).
+        </div>
+      </div>
+
+      <div class="postulate">
+        <div class="title">Postulate 2 — Moving a solid does not change its volume</div>
+        <div class="line">
+          If you rotate a box, slide it, or flip it over, it does not suddenly contain more (or less) space.
+        </div>
+        <div class="line">
+          <span class="ruleword">Postulate:</span> Same shape and size (even if moved) ⇒ same volume.
+        </div>
+      </div>
+
+      <div class="postulate">
+        <div class="title">Postulate 3 — Volumes add when pieces do not overlap</div>
+        <div class="line">
+          If you cut a solid cleanly and keep all pieces, you did not destroy or create space.
+          So the whole should equal the sum of its parts.
+        </div>
+        <div class="line">
+          <span class="ruleword">Postulate:</span> If pieces do not overlap, then
+          \(V(\text{whole})=V(\text{part 1})+V(\text{part 2})+V(\text{part 3})+\cdots\).
+        </div>
+      </div>
+
+      <div class="callout">
+        <div class="title">Why “no overlap” matters</div>
+        <div class="line">
+          If two pieces overlap, you would count the overlapping region <strong>twice</strong>.
+          That would inflate the total and break the meaning of measurement.
+        </div>
+      </div>
+
+      <div class="postulate">
+        <div class="title">Postulate 4 — Volume cannot be negative</div>
+        <div class="line">
+          You can have some space, or no space, but not “negative space.”
+        </div>
+        <div class="line">
+          <span class="ruleword">Postulate:</span> Every solid has \(V\ge 0\).
+        </div>
+      </div>
+
+      <p class="fine">
+        A key consequence: if solid \(A\) fits inside solid \(B\), then \(A\) cannot have greater volume.
+        Intuitively, \(B\) is “\(A\) plus leftover space,” and leftover space cannot be negative.
+      </p>
+
+      <div class="hr"></div>
+
+      <p class="fine">
+        These postulates explain why volume formulas are not magic. For example, \(V=lwh\) for a box comes from
+        packing it with unit cubes and adding (no overlap). They also justify <span class="term">cut-and-rearrange</span>
+        reasoning: if you cut a solid and rebuild it with <strong>no gaps</strong> and <strong>no overlaps</strong>,
+        the volume stays the same.
+      </p>
+    </div>
+  </div>
+
+  <div id="hw-root">Loading…</div>
+
+</body>
+</html>

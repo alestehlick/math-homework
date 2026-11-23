@@ -1,0 +1,241 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Homework 7-2 - Graphical Solution of Linear Systems</title>
+
+  <script>
+
+    window.homeworkData = {
+      classId : "Algebra1",
+      id      : "Homework 7-2 - Graphical Solution of Linear Systems",
+      title   : "Homework 7-2 - Graphical Solution of Linear Systems",
+
+      graphics : String.raw``,
+
+      answerKey : ["C","F","A","D","B","E","C","A","F","D"],
+
+      questions : [
+
+        {
+          stem: String.raw`
+            <p><b>Refer to Figure 1.</b> What does the graph show about the system?</p>
+          `,
+          media: String.raw`
+            <figure>
+              <img src="hw-7-2-fig-1.png" alt="Two lines intersecting once" />
+              <figcaption>Figure 1</figcaption>
+            </figure>
+          `,
+          choices: [
+            String.raw`Consistent independent; solution \((1,2)\)`,
+            String.raw`Inconsistent; no solution`,
+            String.raw`Consistent independent; solution \((2,1)\)`,
+            String.raw`Consistent dependent; infinitely many solutions`,
+            String.raw`Consistent independent; solution \((3,0)\)`,
+            String.raw`Consistent independent; solution \((0,3)\)`
+          ],
+          choiceWrap: false
+        },
+
+        {
+          stem: String.raw`
+            <p><b>Refer to Figure 2.</b> Which description is correct?</p>
+          `,
+          media: String.raw`
+            <figure>
+              <img src="hw-7-2-fig-2.png" alt="Two distinct parallel lines" />
+              <figcaption>Figure 2</figcaption>
+            </figure>
+          `,
+          choices: [
+            String.raw`Consistent independent; one solution at \((0,2)\)`,
+            String.raw`Consistent independent; one solution at \((0,-2)\)`,
+            String.raw`Consistent dependent; infinitely many solutions`,
+            String.raw`Consistent independent; two solutions`,
+            String.raw`Inconsistent; infinitely many solutions`,
+            String.raw`Inconsistent; no solution`
+          ],
+          choiceWrap: false
+        },
+
+        {
+          stem: String.raw`
+            <p>Suppose the system is</p>
+            <p>\[
+              \begin{cases}
+              y=-2x+4\\
+              2y=-4x+8
+              \end{cases}
+            \]</p>
+            <p>What will happen when the two equations are graphed?</p>
+          `,
+          choices: [
+            String.raw`The graphs are the same line, so the system is consistent dependent and has infinitely many solutions.`,
+            String.raw`The lines are parallel and distinct, so the system is inconsistent.`,
+            String.raw`The lines intersect once at \((0,4)\).`,
+            String.raw`The lines intersect once at \((2,0)\).`,
+            String.raw`One equation is horizontal and the other is vertical.`,
+            String.raw`The second equation cannot be graphed because it contains \(2y\).`
+          ],
+          choiceWrap: false
+        },
+
+        {
+          stem: String.raw`
+            <p><b>Refer to Figure 3.</b> Which graph correctly represents the system?</p>
+            <p>\[
+              \begin{cases}
+              y=2x-3\\
+              y=-x+3
+              \end{cases}
+            \]</p>
+          `,
+          media: String.raw`
+            <figure>
+              <img src="hw-7-2-fig-3.png" alt="Six candidate graphs of a system of two lines, labeled A through F" />
+              <figcaption>Figure 3</figcaption>
+            </figure>
+          `,
+          choices: [
+            String.raw`Graph A`,
+            String.raw`Graph B`,
+            String.raw`Graph C`,
+            String.raw`Graph D`,
+            String.raw`Graph E`,
+            String.raw`Graph F`
+          ],
+          choiceWrap: false
+        },
+
+        {
+          stem: String.raw`
+            <p>Consider the system</p>
+            <p>\[
+              \begin{cases}
+              2x+y=5\\
+              y=x-1
+              \end{cases}
+            \]</p>
+            <p>Before graphing, rewrite the first equation in slope-intercept form. Which choice gives the two equations to graph and the solution their graphs show?</p>
+          `,
+          choices: [
+            String.raw`\(y=2x+5\) and \(y=x-1\); solution \((-6,-7)\)`,
+            String.raw`\(y=-2x+5\) and \(y=x-1\); solution \((2,1)\)`,
+            String.raw`\(y=-2x-5\) and \(y=x-1\); solution \((-4,-5)\)`,
+            String.raw`\(y=2x-5\) and \(y=x-1\); solution \((4,3)\)`,
+            String.raw`\(y=-\frac12x+\frac52\) and \(y=x-1\); solution \(\left(\frac73,\frac43\right)\)`,
+            String.raw`\(y=-2x+5\) and \(y=-x+1\); solution \((4,-3)\)`
+          ],
+          choiceWrap: false
+        },
+
+        {
+          stem: String.raw`
+            <p><b>Refer to Figure 4.</b> What is the solution of the system shown?</p>
+          `,
+          media: String.raw`
+            <figure>
+              <img src="hw-7-2-fig-4.png" alt="A vertical line x equals negative 2 and a horizontal line y equals 3" />
+              <figcaption>Figure 4</figcaption>
+            </figure>
+          `,
+          choices: [
+            String.raw`\((3,-2)\)`,
+            String.raw`\((-2,0)\)`,
+            String.raw`\((0,3)\)`,
+            String.raw`\((2,3)\)`,
+            String.raw`\((-2,3)\)`,
+            String.raw`No solution`
+          ]
+        },
+
+        {
+          stem: String.raw`
+            <p>A student wants to graph the system</p>
+            <p>\[
+              \begin{cases}
+              3x+y=6\\
+              y=x-2
+              \end{cases}
+            \]</p>
+            <p>The student rewrites the first equation as \(y=3x+6\). What is the error?</p>
+          `,
+          choices: [
+            String.raw`The student should divide the entire equation by \(3\), giving \(y=x+2\).`,
+            String.raw`The student should change the second equation instead; the first is already correct.`,
+            String.raw`Moving \(3x\) to the other side changes its sign, so the first equation should be \(y=-3x+6\).`,
+            String.raw`The \(6\) should become \(-6\), so the first equation should be \(y=3x-6\).`,
+            String.raw`The slope of the first line is undefined because \(3x\) has no \(y\).`,
+            String.raw`There is no error; \(3x+y=6\) and \(y=3x+6\) are equivalent.`
+          ],
+          choiceWrap: false
+        },
+
+        {
+          stem: String.raw`
+            <p>The graphs of \(y=-2x+5\) and \(y=x-1\) appear to intersect at \((2,1)\).</p>
+            <p>Which calculation confirms that \((2,1)\) really is a solution of the system?</p>
+          `,
+          choices: [
+            String.raw`\(1=-2(2)+5\) and \(1=2-1\); both equations are true.`,
+            String.raw`\(2=-2(1)+5\) and \(2=1-1\); both equations are true.`,
+            String.raw`\(1=-2(2)-5\) and \(1=2+1\); both equations are true.`,
+            String.raw`Only the first equation needs to be checked because the lines already intersect.`,
+            String.raw`Only the second equation needs to be checked because both equations use \(y\).`,
+            String.raw`Substitute \(x=1\) and \(y=2\) because ordered pairs are read as \((y,x)\).`
+          ],
+          choiceWrap: false
+        },
+
+        {
+          stem: String.raw`
+            <p><b>Refer to Figure 5.</b> Estimate the intersection of the two lines.</p>
+          `,
+          media: String.raw`
+            <figure>
+              <img src="hw-7-2-fig-5.png" alt="Two lines whose intersection is near x equals 2.7 and y equals 2.3" />
+              <figcaption>Figure 5</figcaption>
+            </figure>
+          `,
+          choices: [
+            String.raw`\((2.3,2.7)\)`,
+            String.raw`\((3.0,2.0)\)`,
+            String.raw`\((2.0,3.0)\)`,
+            String.raw`\((3.2,1.8)\)`,
+            String.raw`\((2.5,2.5)\)`,
+            String.raw`\((2.7,2.3)\)`
+          ]
+        },
+
+        {
+          stem: String.raw`
+            <p>Classify each system as consistent independent, inconsistent, or consistent dependent.</p>
+            <p><b>I.</b> \(\begin{cases}y=x+1\\y=-x+5\end{cases}\)</p>
+            <p><b>II.</b> \(\begin{cases}y=2x-3\\y=2x+4\end{cases}\)</p>
+            <p><b>III.</b> \(\begin{cases}y=-3x+2\\2y=-6x+4\end{cases}\)</p>
+          `,
+          choices: [
+            String.raw`I: inconsistent; II: consistent independent; III: consistent dependent`,
+            String.raw`I: consistent dependent; II: inconsistent; III: consistent independent`,
+            String.raw`I: consistent independent; II: consistent independent; III: inconsistent`,
+            String.raw`I: consistent independent; II: inconsistent; III: consistent dependent`,
+            String.raw`I: inconsistent; II: consistent dependent; III: consistent independent`,
+            String.raw`I: consistent dependent; II: consistent independent; III: inconsistent`
+          ],
+          choiceWrap: false
+        }
+      ]
+    };
+  </script>
+
+  <link rel="stylesheet" href="/math-homework/assets/core-rich.css" />
+  <script defer src="/math-homework/assets/core-rich.js"></script>
+  <script defer src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+</head>
+
+<body>
+  <div id="hw-root">Loading…</div>
+</body>
+</html>

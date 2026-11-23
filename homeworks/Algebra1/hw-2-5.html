@@ -1,0 +1,218 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Homework 2-5 - Order of Operations and Grouping Symbols</title>
+
+  <script>
+    window.homeworkData = {
+      classId : "Algebra1",
+      id      : "Homework 2-5 - Order of Operations and Grouping Symbols",
+      title   : "Homework 2-5 - Order of Operations and Grouping Symbols",
+
+      graphics : String.raw``,
+
+      answerKey : ["C","C","B","A","C","B","D","E","F","A","D","B"],
+
+      questions : [
+
+        {
+          stem: String.raw`
+            <p>Evaluate the expression.</p>
+            <p class="math">\(5 + 4(3 + 7)\)</p>
+          `,
+          choices: [
+            String.raw`\(\,14\)`,
+            String.raw`\(\,40\)`,
+            String.raw`\(\,45\)`,
+            String.raw`\(\,50\)`,
+            String.raw`\(\,54\)`,
+            String.raw`\(\,9\)`
+          ]
+        },
+
+        {
+          stem: String.raw`
+            <p>Evaluate the expression.</p>
+            <p class="math">\(9 - [(4\cdot 2 + 6) - 9] + (4 + 2\cdot 6)\)</p>
+          `,
+          choices: [
+            String.raw`\(\,14\)`,
+            String.raw`\(\,18\)`,
+            String.raw`\(\,20\)`,
+            String.raw`\(\,24\)`,
+            String.raw`\(\,5\)`,
+            String.raw`\(\,16\)`
+          ]
+        },
+
+        {
+          stem: String.raw`
+            <p>Evaluate the expression.</p>
+            <p class="math">\(8 \div 2 + (3 - 6)(8 + 2) - (3 + 1)4\)</p>
+          `,
+          choices: [
+            String.raw`\(-38\)`,
+            String.raw`\(-42\)`,
+            String.raw`\(-46\)`,
+            String.raw`\(-34\)`,
+            String.raw`\(\,42\)`,
+            String.raw`\(-22\)`
+          ]
+        },
+
+        {
+          stem: String.raw`
+            <p>You want the expression below to equal \(21\).</p>
+            <p class="math">\(2 + 4\cdot 7 \div 2\)</p>
+            <p>Which grouping does that?</p>
+          `,
+          choices: [
+            String.raw`\((2 + 4)\cdot 7 \div 2\)`,
+            String.raw`\(2 + 4\cdot (7 \div 2)\)`,
+            String.raw`\((2 + 4\cdot 7) \div 2\)`,
+            String.raw`No legal insertion of grouping symbols makes the value \(21\).`
+          ],
+          choiceWrap: false
+        },
+
+        {
+          stem: String.raw`
+            <p>You want the expression below to equal \(-33\).</p>
+            <p class="math">\(3 + 9\cdot 2 - 6\)</p>
+            <p>Which grouping does that?</p>
+          `,
+          choices: [
+            String.raw`\((3 + 9)\cdot 2 - 6\)`,
+            String.raw`\((3 + 9)\cdot (2 - 6)\)`,
+            String.raw`\(3 + 9\cdot (2 - 6)\)`,
+            String.raw`No legal insertion of grouping symbols makes the value \(-33\).`
+          ],
+          choiceWrap: false
+        },
+
+        {
+          stem: String.raw`
+            <p>Translate into symbols. Do not calculate.</p>
+            <p><i>The product of five and the sum of six and seven</i></p>
+          `,
+          choices: [
+            String.raw`\(\,5\cdot 6 + 7\)`,
+            String.raw`\(\,5(6 + 7)\)`,
+            String.raw`\(\,(5 + 6)\cdot 7\)`,
+            String.raw`\(\,5 + (6\cdot 7)\)`,
+            String.raw`\(\,6(5 + 7)\)`,
+            String.raw`\(\,\dfrac{5}{6 + 7}\)`
+          ]
+        },
+
+        {
+          stem: String.raw`
+            <p>Translate into symbols. Do not calculate.</p>
+            <p><i>The difference of the squares of twenty and thirteen</i></p>
+          `,
+          choices: [
+            String.raw`\((20 - 13)^2\)`,
+            String.raw`\(\,20^2 - 13\)`,
+            String.raw`\(\,20 - 13^2\)`,
+            String.raw`\(\,20^2 - 13^2\)`,
+            String.raw`\(\,(20 + 13)^2\)`,
+            String.raw`\(\,13^2 - 20^2\)`
+          ]
+        },
+
+        {
+          stem: String.raw`
+            <p>Translate into symbols. Do not calculate.</p>
+            <p><i>The sum of two, and five times six</i></p>
+          `,
+          choices: [
+            String.raw`\((2 + 5)\cdot 6\)`,
+            String.raw`\(\,2 + 5 + 6\)`,
+            String.raw`\(\,2\cdot 5 + 6\)`,
+            String.raw`\(\,2(5 + 6)\)`,
+            String.raw`\(\,2 + 5\cdot 6\)`,
+            String.raw`\(\,\dfrac{2 + 5}{6}\)`
+          ]
+        },
+
+        {
+          stem: String.raw`
+            <p>By inserting grouping symbols into the expression below, several different values can be produced.</p>
+            <p class="math">\(3 + 4\cdot 5 \div 2 - 7\)</p>
+            <p>Which value <b>cannot</b> be obtained?</p>
+          `,
+          choices: [
+            String.raw`\(-15\)`,
+            String.raw`\(-7\)`,
+            String.raw`\(-1\)`,
+            String.raw`\(\,6\)`,
+            String.raw`\(\,\dfrac{21}{2}\)`,
+            String.raw`\(\,15\)`
+          ]
+        },
+
+        {
+          stem: String.raw`
+            <p>Which insertion of grouping symbols makes the expression equal \(15\)?</p>
+            <p class="math">\(14 + 5 - 10 \div 2 \cdot 7 - 2 - 3\)</p>
+          `,
+          choices: [
+            String.raw`\(\,14 + 5 - 10 \div [2\cdot(7 - 2)] - 3\)`,
+            String.raw`\(\,(14 + 5 - 10)\div 2 \cdot 7 - 2 - 3\)`,
+            String.raw`\(\,14 + 5 - (10 \div 2)\cdot(7 - 2) - 3\)`,
+            String.raw`\(\,(14 + 5) - (10 \div 2 \cdot 7) - 2 - 3\)`,
+            String.raw`\(\,14 + [5 - 10 \div 2]\cdot 7 - 2 - 3\)`,
+            String.raw`\(\,14 + 5 - 10 \div [2\cdot 7 - 2] - 3\)`
+          ]
+        },
+
+        {
+          stem: String.raw`
+            <p>Evaluate the expression.</p>
+            <p class="math">\(3 + \{[(4\cdot 8 - 2) + 2 + 7\cdot 4] - 7\cdot 2\} - 8\)</p>
+          `,
+          choices: [
+            String.raw`\(\,33\)`,
+            String.raw`\(\,37\)`,
+            String.raw`\(\,39\)`,
+            String.raw`\(\,41\)`,
+            String.raw`\(\,43\)`,
+            String.raw`\(\,46\)`
+          ]
+        },
+
+        {
+          stem: String.raw`
+            <p>Compare the two phrases below.</p>
+            <ul>
+              <li><i>The sum of two and five, times six</i></li>
+              <li><i>The sum of two, and five times six</i></li>
+            </ul>
+            <p>Which statement is true?</p>
+          `,
+          choices: [
+            String.raw`They describe the same expression.`,
+            String.raw`The first value is 10 greater than the second.`,
+            String.raw`The second value is 10 greater than the first.`,
+            String.raw`The first value is twice the second.`,
+            String.raw`The second value is twice the first.`,
+            String.raw`Both expressions equal \(36\).`
+          ],
+          choiceWrap: false
+        }
+
+      ]
+    };
+  </script>
+
+  <link rel="stylesheet" href="/math-homework/assets/core-rich.css" />
+  <script defer src="/math-homework/assets/core-rich.js"></script>
+  <script defer src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+</head>
+
+<body>
+  <div id="hw-root">Loading…</div>
+</body>
+</html>

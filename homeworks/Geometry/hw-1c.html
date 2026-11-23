@@ -1,0 +1,415 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Homework 1C - Geometric Sets and Incidence</title>
+
+  <script>
+
+    window.homeworkData = {
+      classId : "Geometry",
+      id      : "Homework 1C - Geometric Sets and Incidence",
+      title   : "Homework 1C - Geometric Sets and Incidence",
+      graphics : String.raw``,
+
+      answerKey : [
+        "C","E","B","D","A","F","D","B","E","C","A","F","D","B","E","A","C","F","B","D","A","E","F","C"
+      ],
+
+      questions : [
+        {
+          stem: String.raw`
+            <p><b>Refer to Figure 1.</b> Which symbolic statement best describes the figure?</p>
+          `,
+          media: String.raw`
+            <figure>
+              <img src="hw-1c-fig-1.png" />
+              <figcaption>Figure 1</figcaption>
+            </figure>
+          `,
+          choices: [
+            String.raw`\(P \in r\)`,
+            String.raw`\(r \subset \{P\}\)`,
+            String.raw`\(P \notin r\)`,
+            String.raw`\(\{P\} \subset r\)`,
+            String.raw`\(r \cap P = \varnothing\)`,
+            String.raw`\(P = r\)`
+          ]
+        },
+        {
+          stem: String.raw`
+            <p><b>Refer to Figure 2.</b> Which symbolic statement best describes the figure?</p>
+          `,
+          media: String.raw`
+            <figure>
+              <img src="hw-1c-fig-2.png" />
+              <figcaption>Figure 2</figcaption>
+            </figure>
+          `,
+          choices: [
+            String.raw`\(r \cap s = \{P\}\)`,
+            String.raw`\(r \subset s\)`,
+            String.raw`\(r \cup s = r\)`,
+            String.raw`\(r = s\)`,
+            String.raw`\(r \cap s = \varnothing\)`,
+            String.raw`\(r \cap s = r\)`
+          ]
+        },
+        {
+          stem: String.raw`
+            <p><b>Refer to Figure 3.</b> Which symbolic statement best describes the figure?</p>
+          `,
+          media: String.raw`
+            <figure>
+              <img src="hw-1c-fig-3.png" />
+              <figcaption>Figure 3</figcaption>
+            </figure>
+          `,
+          choices: [
+            String.raw`\(r \subset s\)`,
+            String.raw`\(r \cap s = \{P\}\)`,
+            String.raw`\(P \notin r\)`,
+            String.raw`\(r \cap s = \varnothing\)`,
+            String.raw`\(r \subset \alpha\)`,
+            String.raw`\(r \cup s = \{P\}\)`
+          ]
+        },
+        {
+          stem: String.raw`
+            <p><b>Refer to Figure 4.</b> Which symbolic statement best describes the figure?</p>
+          `,
+          media: String.raw`
+            <figure>
+              <img src="hw-1c-fig-4.png" />
+              <figcaption>Figure 4</figcaption>
+            </figure>
+          `,
+          choices: [
+            String.raw`\(r \cap \{P,Q\} = \{P\}\)`,
+            String.raw`\(r \subset \{P,Q\}\)`,
+            String.raw`\(P \notin r\) and \(Q \notin r\)`,
+            String.raw`\(\{P,Q\} \subset r\)`,
+            String.raw`\(P = Q\)`,
+            String.raw`\(r = \{P,Q\}\)`
+          ]
+        },
+        {
+          stem: String.raw`
+            <p><b>Refer to Figure 5.</b> Which symbolic statement best describes the figure?</p>
+          `,
+          media: String.raw`
+            <figure>
+              <img src="hw-1c-fig-5.png" />
+              <figcaption>Figure 5</figcaption>
+            </figure>
+          `,
+          choices: [
+            String.raw`\(r \subset \alpha\)`,
+            String.raw`\(r \cap \alpha = \varnothing\)`,
+            String.raw`\(r \not\subset \alpha\)`,
+            String.raw`\(\alpha \subset r\)`,
+            String.raw`\(r \cap \alpha = \{P\}\)`,
+            String.raw`\(r \cup \alpha = r\)`
+          ]
+        },
+        {
+          stem: String.raw`
+            <p><b>Refer to Figure 6.</b> Which symbolic statement best describes the figure?</p>
+          `,
+          media: String.raw`
+            <figure>
+              <img src="hw-1c-fig-6.png" />
+              <figcaption>Figure 6</figcaption>
+            </figure>
+          `,
+          choices: [
+            String.raw`\(\alpha \cap \beta = \varnothing\)`,
+            String.raw`\(r \subset \beta\) but \(r \not\subset \alpha\)`,
+            String.raw`\(\alpha = \beta\)`,
+            String.raw`\(\alpha \cap \beta = \{P\}\)`,
+            String.raw`\(r \cap \alpha = \varnothing\)`,
+            String.raw`\(\alpha \cap \beta = r\)`
+          ]
+        },
+        {
+          stem: String.raw`
+            <p><b>Refer to Figure 7.</b> Which symbolic statement best describes the figure?</p>
+          `,
+          media: String.raw`
+            <figure>
+              <img src="hw-1c-fig-7.png" />
+              <figcaption>Figure 7</figcaption>
+            </figure>
+          `,
+          choices: [
+            String.raw`\(r \subset \alpha\)`,
+            String.raw`\(\alpha \cap r = \varnothing\)`,
+            String.raw`\(\{P\} \subset r\) but \(P \notin \alpha\)`,
+            String.raw`\(r \cap \alpha = \{P\}\)`,
+            String.raw`\(\alpha \subset r\)`,
+            String.raw`\(r = \alpha\)`
+          ]
+        },
+        {
+          stem: String.raw`
+            <p><b>Refer to Figure 8.</b> Which symbolic statement best describes the figure?</p>
+          `,
+          media: String.raw`
+            <figure>
+              <img src="hw-1c-fig-8.png" />
+              <figcaption>Figure 8</figcaption>
+            </figure>
+          `,
+          choices: [
+            String.raw`\(r \cap s = \varnothing\)`,
+            String.raw`\(r \cap s \cap t = \{P\}\)`,
+            String.raw`\(r \cap s = \{P,Q\}\)`,
+            String.raw`\(r \subset s\)`,
+            String.raw`\(r \cap s \cap t = \varnothing\)`,
+            String.raw`\(P \notin t\)`
+          ]
+        },
+        {
+          stem: String.raw`
+            <p><b>Refer to Figure 9.</b> Which symbolic statement best describes the figure?</p>
+          `,
+          media: String.raw`
+            <figure>
+              <img src="hw-1c-fig-9.png" />
+              <figcaption>Figure 9</figcaption>
+            </figure>
+          `,
+          choices: [
+            String.raw`\(r \cap s \cap t = \{P\}\)`,
+            String.raw`\(r \cap s = r\)`,
+            String.raw`\(r \cap s = \varnothing\)`,
+            String.raw`\(\alpha \cap \beta = r\)`,
+            String.raw`\(r \cap s = \{P\},\; r \cap t = \{Q\},\; s \cap t = \{R\}\)`,
+            String.raw`\(P,Q,R \notin r \cup s \cup t\)`
+          ]
+        },
+        {
+          stem: String.raw`
+            <p>Which sentence best matches the symbolic statement <span class="math">\(P \notin r\)</span>?</p>
+          `,
+          choices: [
+            String.raw`Point <span class="math">\(P\)</span> is the same object as line <span class="math">\(r\)</span>.`,
+            String.raw`Point <span class="math">\(P\)</span> lies on line <span class="math">\(r\)</span>.`,
+            String.raw`Point <span class="math">\(P\)</span> does not lie on line <span class="math">\(r\)</span>.`,
+            String.raw`Line <span class="math">\(r\)</span> is inside point <span class="math">\(P\)</span>.`,
+            String.raw`Point <span class="math">\(P\)</span> is the only point of <span class="math">\(r\)</span>.`,
+            String.raw`We do not have enough information.`
+          ],
+          choiceWrap: false
+        },
+        {
+          stem: String.raw`
+            <p>Which sentence best matches the symbolic statement <span class="math">\(\{P,Q\} \subset r\)</span>?</p>
+          `,
+          choices: [
+            String.raw`Both points <span class="math">\(P\)</span> and <span class="math">\(Q\)</span> lie on line <span class="math">\(r\)</span>.`,
+            String.raw`Lines <span class="math">\(P\)</span> and <span class="math">\(Q\)</span> meet at <span class="math">\(r\)</span>.`,
+            String.raw`Point <span class="math">\(P\)</span> lies on <span class="math">\(r\)</span>, but <span class="math">\(Q\)</span> does not.`,
+            String.raw`Points <span class="math">\(P\)</span> and <span class="math">\(Q\)</span> are the only two points on <span class="math">\(r\)</span>.`,
+            String.raw`Line <span class="math">\(r\)</span> lies inside the set <span class="math">\(\{P,Q\}\)</span>.`,
+            String.raw`Points <span class="math">\(P\)</span> and <span class="math">\(Q\)</span> are planes inside <span class="math">\(r\)</span>.`
+          ],
+          choiceWrap: false
+        },
+        {
+          stem: String.raw`
+            <p>Which sentence best matches the symbolic statement <span class="math">\(r \subset \alpha\)</span>?</p>
+          `,
+          choices: [
+            String.raw`Plane <span class="math">\(\alpha\)</span> lies entirely on line <span class="math">\(r\)</span>.`,
+            String.raw`Line <span class="math">\(r\)</span> meets plane <span class="math">\(\alpha\)</span> in no point.`,
+            String.raw`Point <span class="math">\(r\)</span> lies on plane <span class="math">\(\alpha\)</span>.`,
+            String.raw`Plane <span class="math">\(\alpha\)</span> and line <span class="math">\(r\)</span> are equal.`,
+            String.raw`Line <span class="math">\(r\)</span> and plane <span class="math">\(\alpha\)</span> have exactly one common point.`,
+            String.raw`Line <span class="math">\(r\)</span> lies entirely in plane <span class="math">\(\alpha\)</span>.`
+          ],
+          choiceWrap: false
+        },
+        {
+          stem: String.raw`
+            <p>Which sentence best matches the symbolic statement <span class="math">\(\alpha \cap \beta = r\)</span>?</p>
+          `,
+          choices: [
+            String.raw`Planes <span class="math">\(\alpha\)</span> and <span class="math">\(\beta\)</span> do not meet.`,
+            String.raw`Planes <span class="math">\(\alpha\)</span> and <span class="math">\(\beta\)</span> meet in exactly one point.`,
+            String.raw`Plane <span class="math">\(\alpha\)</span> is inside plane <span class="math">\(\beta\)</span>.`,
+            String.raw`Planes <span class="math">\(\alpha\)</span> and <span class="math">\(\beta\)</span> share exactly the line <span class="math">\(r\)</span>.`,
+            String.raw`Line <span class="math">\(r\)</span> is outside both planes.`,
+            String.raw`Planes <span class="math">\(\alpha\)</span> and <span class="math">\(\beta\)</span> are parallel.`
+          ],
+          choiceWrap: false
+        },
+        {
+          stem: String.raw`
+            <p>Which sentence best matches the symbolic statement</p>
+            <p class="math">\(r \cap \alpha \neq \varnothing\)</p>
+            <p>but</p>
+            <p class="math">\(r \not\subset \alpha\)</p>
+          `,
+          choices: [
+            String.raw`Line <span class="math">\(r\)</span> lies entirely in plane <span class="math">\(\alpha\)</span>.`,
+            String.raw`Line <span class="math">\(r\)</span> crosses plane <span class="math">\(\alpha\)</span>, but it is not contained in the plane.`,
+            String.raw`Line <span class="math">\(r\)</span> and plane <span class="math">\(\alpha\)</span> have no point in common.`,
+            String.raw`Plane <span class="math">\(\alpha\)</span> is a point of line <span class="math">\(r\)</span>.`,
+            String.raw`Line <span class="math">\(r\)</span> is parallel to plane <span class="math">\(\alpha\)</span>.`,
+            String.raw`Plane <span class="math">\(\alpha\)</span> is a subset of <span class="math">\(r\)</span>.`
+          ],
+          choiceWrap: false
+        },
+        {
+          stem: String.raw`
+            <p>Which sentence best matches the symbolic statement <span class="math">\(r \cap s \cap t = \{P\}\)</span>?</p>
+          `,
+          choices: [
+            String.raw`The three lines are all the same line.`,
+            String.raw`Only <span class="math">\(r\)</span> and <span class="math">\(s\)</span> pass through <span class="math">\(P\)</span>.`,
+            String.raw`The three lines form a triangle.`,
+            String.raw`The three lines have no common point.`,
+            String.raw`The three lines all pass through the same point <span class="math">\(P\)</span>.`,
+            String.raw`The set <span class="math">\(\{P\}\)</span> is a line.`
+          ],
+          choiceWrap: false
+        },
+        {
+          stem: String.raw`
+            <p>Which symbolic statement is the most precise way to say:</p>
+            <p><i>Point</i> <span class="math">\(P\)</span> <i>is the only common point of lines</i> <span class="math">\(r\)</span> <i>and</i> <span class="math">\(s\)</span>?</p>
+          `,
+          choices: [
+            String.raw`\(r \cap s = \{P\}\)`,
+            String.raw`\(P \in r\)`,
+            String.raw`\(r \subset s\)`,
+            String.raw`\(\{P\} \subset r\)`,
+            String.raw`\(P \in r \cap s\)`,
+            String.raw`\(r \cup s = \{P\}\)`
+          ]
+        },
+        {
+          stem: String.raw`
+            <p>Which symbolic statement is the most precise way to say:</p>
+            <p><i>The three lines meet pairwise, but not all at the same point.</i></p>
+          `,
+          choices: [
+            String.raw`\(r \cap s \cap t = \{P\}\)`,
+            String.raw`\(r \cap s = \varnothing\)`,
+            String.raw`\(r \cap s = \{P\},\; r \cap t = \{Q\},\; s \cap t = \{R\}\) with \(P,Q,R\) distinct`,
+            String.raw`\(r \subset \alpha\)`,
+            String.raw`\(\alpha \cap \beta = r\)`,
+            String.raw`\(r = s = t\)`
+          ],
+          choiceWrap: false
+        },
+        {
+          stem: String.raw`
+            <p>Which of the following situations is impossible in ordinary geometry?</p>
+          `,
+          choices: [
+            String.raw`Two different lines meet in one point.`,
+            String.raw`A line lies in a plane.`,
+            String.raw`Two planes share a line.`,
+            String.raw`A line meets a plane in one point.`,
+            String.raw`A point does not lie on a given line.`,
+            String.raw`Two different lines meet in two different points.`
+          ],
+          choiceWrap: false
+        },
+        {
+          stem: String.raw`
+            <p>Let <span class="math">\(A\)</span> and <span class="math">\(B\)</span> be distinct points of plane <span class="math">\(\alpha\)</span>, and let <span class="math">\(r\)</span> be the line through <span class="math">\(A\)</span> and <span class="math">\(B\)</span>.</p>
+            <p>Which statement must be true?</p>
+          `,
+          choices: [
+            String.raw`\(A \notin \alpha\)`,
+            String.raw`\(r \subset \alpha\)`,
+            String.raw`\(r \cap \alpha = \varnothing\)`,
+            String.raw`\(\alpha \subset r\)`,
+            String.raw`\(A = B\)`,
+            String.raw`\(r \not\subset \alpha\)`
+          ]
+        },
+        {
+          stem: String.raw`
+            <p>Which symbolic statement says that line <span class="math">\(r\)</span> and plane <span class="math">\(\alpha\)</span> have no point in common?</p>
+          `,
+          choices: [
+            String.raw`\(r \cup \alpha = \varnothing\)`,
+            String.raw`\(r \subset \alpha\)`,
+            String.raw`\(r \cap \alpha = \{P\}\)`,
+            String.raw`\(r \cap \alpha = \varnothing\)`,
+            String.raw`\(\alpha \subset r\)`,
+            String.raw`\(r = \alpha\)`
+          ]
+        },
+        {
+          stem: String.raw`
+            <p>Which symbolic statement says that point <span class="math">\(P\)</span> lies on both line <span class="math">\(r\)</span> and plane <span class="math">\(\alpha\)</span>?</p>
+          `,
+          choices: [
+            String.raw`\(P \in \alpha \cap r\)`,
+            String.raw`\(P \in \alpha \cup r\)`,
+            String.raw`\(\alpha \subset r\)`,
+            String.raw`\(r \cap \alpha = \varnothing\)`,
+            String.raw`\(P \notin \alpha\)`,
+            String.raw`\(r \subset \alpha\)`
+          ]
+        },
+        {
+          stem: String.raw`
+            <p>Which symbolic statement says that points <span class="math">\(P\)</span>, <span class="math">\(Q\)</span>, and <span class="math">\(R\)</span> all lie on line <span class="math">\(t\)</span>?</p>
+          `,
+          choices: [
+            String.raw`\(t \subset \{P,Q,R\}\)`,
+            String.raw`\(P \cap Q \cap R = t\)`,
+            String.raw`\(\{P,Q\} \subset t\)`,
+            String.raw`\(P \notin t\)`,
+            String.raw`\(\{P,Q,R\} \subset t\)`,
+            String.raw`\(t \cap \{P,Q,R\} = \varnothing\)`
+          ]
+        },
+        {
+          stem: String.raw`
+            <p>What does the statement <span class="math">\(P \in r \cap s\)</span> mean?</p>
+          `,
+          choices: [
+            String.raw`Point <span class="math">\(P\)</span> is the whole intersection of <span class="math">\(r\)</span> and <span class="math">\(s\)</span>.`,
+            String.raw`Point <span class="math">\(P\)</span> lies on exactly one of the two lines.`,
+            String.raw`Lines <span class="math">\(r\)</span> and <span class="math">\(s\)</span> are the same line.`,
+            String.raw`Point <span class="math">\(P\)</span> is outside both lines.`,
+            String.raw`The intersection <span class="math">\(r \cap s\)</span> is empty.`,
+            String.raw`Point <span class="math">\(P\)</span> lies on both lines <span class="math">\(r\)</span> and <span class="math">\(s\)</span>.`
+          ],
+          choiceWrap: false
+        },
+        {
+          stem: String.raw`
+            <p>If <span class="math">\(r \cap s = \varnothing\)</span>, what can you conclude?</p>
+          `,
+          choices: [
+            String.raw`The lines are the same line.`,
+            String.raw`The lines must lie in the same plane.`,
+            String.raw`The lines have no common point.`,
+            String.raw`Each line contains only one point.`,
+            String.raw`The lines must intersect at a hidden point.`,
+            String.raw`The line <span class="math">\(r\)</span> is a subset of <span class="math">\(s\)</span>.`
+          ],
+          choiceWrap: false
+        }
+      ]
+    };
+  </script>
+
+  <link rel="stylesheet" href="/math-homework/assets/core-rich.css" />
+  <script defer src="/math-homework/assets/core-rich.js"></script>
+  <script defer src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+</head>
+
+<body>
+  <div id="hw-root">Loading…</div>
+</body>
+</html>

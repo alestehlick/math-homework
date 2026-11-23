@@ -1,0 +1,265 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Homework 13-2A - Thales' Theorem</title>
+
+  <script>
+
+    window.homeworkData = {
+      classId : "Geometry",
+      id      : "Homework 13-2A - Thales' Theorem",
+      title   : "Homework 13-2A - Thales' Theorem",
+
+      graphics : String.raw``,
+
+      answerKey : ["B","D","B","A","C","B","A","D","B","E","F"],
+
+      questions : [
+
+        {
+          stem: String.raw`
+            <p><b>Refer to Figure 1.</b></p>
+            <p>Lines \(r\), \(s\), and \(t\) are parallel. Find \(x\).</p>
+          `,
+          media: String.raw`
+            <figure>
+              <img src="hw-13-2a-fig-1.png" alt="Problem 413a" />
+              <figcaption>Figure 1</figcaption>
+            </figure>
+          `,
+          choices: [
+            String.raw`\(2\)`,
+            String.raw`\(3\)`,
+            String.raw`\(4\)`,
+            String.raw`\(6\)`,
+            String.raw`\(8\)`,
+            String.raw`\(12\)`
+          ]
+        },
+
+        {
+          stem: String.raw`
+            <p><b>Refer to Figure 2.</b></p>
+            <p>Lines \(r\), \(s\), and \(t\) are parallel. Find \(x\).</p>
+          `,
+          media: String.raw`
+            <figure>
+              <img src="hw-13-2a-fig-2.png" alt="Problem 413b" />
+              <figcaption>Figure 2</figcaption>
+            </figure>
+          `,
+          choices: [
+            String.raw`\(8\)`,
+            String.raw`\(9\)`,
+            String.raw`\(10\)`,
+            String.raw`\(12\)`,
+            String.raw`\(13.5\)`,
+            String.raw`\(15\)`
+          ]
+        },
+
+        {
+          stem: String.raw`
+            <p><b>Refer to Figure 3.</b></p>
+            <p>Lines \(r\), \(s\), and \(t\) are parallel. Find \(x\).</p>
+          `,
+          media: String.raw`
+            <figure>
+              <img src="hw-13-2a-fig-3.png" alt="Problem 413c" />
+              <figcaption>Figure 3</figcaption>
+            </figure>
+          `,
+          choices: [
+            String.raw`\(12\)`,
+            String.raw`\(15\)`,
+            String.raw`\(18\)`,
+            String.raw`\(9\)`,
+            String.raw`\(7.5\)`,
+            String.raw`\(10\)`
+          ]
+        },
+
+        {
+          stem: String.raw`
+            <p><b>Refer to Figure 4.</b></p>
+            <p>Lines \(r\), \(s\), and \(t\) are parallel. Find \(x\).</p>
+          `,
+          media: String.raw`
+            <figure>
+              <img src="hw-13-2a-fig-4.png" alt="Problem 413d" />
+              <figcaption>Figure 4</figcaption>
+            </figure>
+          `,
+          choices: [
+            String.raw`\(6\)`,
+            String.raw`\(5\)`,
+            String.raw`\(4\)`,
+            String.raw`\(8\)`,
+            String.raw`\(10\)`,
+            String.raw`\(12\)`
+          ]
+        },
+
+        {
+          stem: String.raw`
+            <p><b>Refer to Figure 5.</b></p>
+            <p>Lines \(r\), \(s\), and \(t\) are parallel. Find \(x\).</p>
+          `,
+          media: String.raw`
+            <figure>
+              <img src="hw-13-2a-fig-5.png" alt="Problem 414a" />
+              <figcaption>Figure 5</figcaption>
+            </figure>
+          `,
+          choices: [
+            String.raw`\(2\)`,
+            String.raw`\(3\)`,
+            String.raw`\(\dfrac{10}{3}\)`,
+            String.raw`\(\dfrac{5}{2}\)`,
+            String.raw`\(\dfrac{8}{3}\)`,
+            String.raw`\(\dfrac{7}{2}\)`
+          ]
+        },
+
+        {
+          stem: String.raw`
+            <p><b>Refer to Figure 6.</b></p>
+            <p>Lines \(r\), \(s\), and \(t\) are parallel. Find \(x\).</p>
+          `,
+          media: String.raw`
+            <figure>
+              <img src="hw-13-2a-fig-6.png" alt="Problem 414b" />
+              <figcaption>Figure 6</figcaption>
+            </figure>
+          `,
+          choices: [
+            String.raw`\(\dfrac{11}{3}\)`,
+            String.raw`\(\dfrac{25}{6}\)`,
+            String.raw`\(\dfrac{7}{2}\)`,
+            String.raw`\(\dfrac{9}{2}\)`,
+            String.raw`\(\dfrac{13}{3}\)`,
+            String.raw`\(\dfrac{25}{7}\)`
+          ]
+        },
+
+        {
+          stem: String.raw`
+            <p><b>Refer to Figure 7.</b></p>
+            <p>Lines \(r\), \(s\), and \(t\) are parallel. Find \(x\) and \(y\).</p>
+          `,
+          media: String.raw`
+            <figure>
+              <img src="hw-13-2a-fig-7.png" alt="Problem 414c" />
+              <figcaption>Figure 7</figcaption>
+            </figure>
+          `,
+          choices: [
+            String.raw`\(x=\dfrac{10}{3},\ y=\dfrac{18}{5}\)`,
+            String.raw`\(x=\dfrac{18}{5},\ y=\dfrac{10}{3}\)`,
+            String.raw`\(x=3,\ y=\dfrac{18}{5}\)`,
+            String.raw`\(x=\dfrac{10}{3},\ y=6\)`,
+            String.raw`\(x=5,\ y=\dfrac{12}{5}\)`,
+            String.raw`\(x=\dfrac{12}{5},\ y=5\)`
+          ]
+        },
+
+        {
+          stem: String.raw`
+            <p><b>Refer to Figure 8.</b></p>
+            <p>In \(\triangle ABC\), \(\overline{MN} \parallel \overline{BC}\). Find \(x\).</p>
+          `,
+          media: String.raw`
+            <figure>
+              <img src="hw-13-2a-fig-8.png" alt="Problem 415" />
+              <figcaption>Figure 8</figcaption>
+            </figure>
+          `,
+          choices: [
+            String.raw`\(15\)`,
+            String.raw`\(20\)`,
+            String.raw`\(24\)`,
+            String.raw`\(25\)`,
+            String.raw`\(28\)`,
+            String.raw`\(30\)`
+          ]
+        },
+
+        {
+          stem: String.raw`
+            <p><b>Refer to Figure 9.</b></p>
+            <p>In \(\triangle ABC\), \(\overline{MN} \parallel \overline{BC}\). Find the value of \(\overline{AB}\).</p>
+          `,
+          media: String.raw`
+            <figure>
+              <img src="hw-13-2a-fig-9.png" alt="Problem 416" />
+              <figcaption>Figure 9</figcaption>
+            </figure>
+          `,
+          choices: [
+            String.raw`\(12\)`,
+            String.raw`\(18\)`,
+            String.raw`\(21\)`,
+            String.raw`\(24\)`,
+            String.raw`\(27\)`,
+            String.raw`\(30\)`
+          ]
+        },
+
+        {
+          stem: String.raw`
+            <p><b>Refer to Figure 10.</b></p>
+            <p>Three lots have fronts on “Street A” of 40 m, 30 m, and 20 m. The dividing lines are perpendicular to “Street A”.</p>
+            <p>If the <b>total</b> front on “Street B” is 180 m, what are the three corresponding fronts on “Street B”?</p>
+          `,
+          media: String.raw`
+            <figure>
+              <img src="hw-13-2a-fig-10.png" alt="Problem 425" />
+              <figcaption>Figure 10</figcaption>
+            </figure>
+          `,
+          choices: [
+            String.raw`\(60\text{ m},\ 45\text{ m},\ 30\text{ m}\)`,
+            String.raw`\(70\text{ m},\ 60\text{ m},\ 50\text{ m}\)`,
+            String.raw`\(72\text{ m},\ 54\text{ m},\ 36\text{ m}\)`,
+            String.raw`\(75\text{ m},\ 60\text{ m},\ 45\text{ m}\)`,
+            String.raw`\(80\text{ m},\ 60\text{ m},\ 40\text{ m}\)`,
+            String.raw`\(90\text{ m},\ 60\text{ m},\ 30\text{ m}\)`
+          ]
+        },
+
+        {
+          stem: String.raw`
+            <p><b>Refer to Figure 11.</b></p>
+            <p>Lines \(r\), \(s\), and \(t\) are parallel. Find \(x\) and \(y\).</p>
+          `,
+          media: String.raw`
+            <figure>
+              <img src="hw-13-2a-fig-11.png" alt="Problem 426" />
+              <figcaption>Figure 11</figcaption>
+            </figure>
+          `,
+          choices: [
+            String.raw`\(x=16,\ y=15\)`,
+            String.raw`\(x=12,\ y=18\)`,
+            String.raw`\(x=20,\ y=10\)`,
+            String.raw`\(x=10,\ y=20\)`,
+            String.raw`\(x=14,\ y=14\)`,
+            String.raw`\(x=15,\ y=16\)`
+          ]
+        }
+
+      ]
+    };
+  </script>
+
+  <link rel="stylesheet" href="/math-homework/assets/core-rich.css" />
+  <script defer src="/math-homework/assets/core-rich.js"></script>
+  <script defer src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+</head>
+
+<body>
+  <div id="hw-root">Loading…</div>
+</body>
+</html>

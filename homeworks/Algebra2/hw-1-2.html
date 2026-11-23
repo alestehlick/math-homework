@@ -1,0 +1,218 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Homework 1-2 - Classification of Polynomials and Like Terms</title>
+
+  <script>
+
+    window.homeworkData = {
+      classId : "Algebra2",
+      id      : "Homework 1-2 - Classification of Polynomials and Like Terms",
+      title   : "Homework 1-2 - Classification of Polynomials and Like Terms",
+
+      graphics : String.raw``,
+
+      answerKey : ["E","B","A","D","F","C","A","E","D","B","C","F"],
+
+      questions : [
+
+        {
+          stem: String.raw`
+            <p>Determine the best classification of the polynomial below by degree and by number of terms.</p>
+            <p class="math">\(3x^2y + 4xy - 5xy^3\)</p>
+          `,
+          choiceWrap: false,
+          choices: [
+            String.raw`degree 1 trinomial`,
+            String.raw`degree 3 trinomial`,
+            String.raw`degree 4 binomial`,
+            String.raw`degree 2 trinomial`,
+            String.raw`degree 4 trinomial`,
+            String.raw`degree 4 monomial`
+          ]
+        },
+
+        {
+          stem: String.raw`
+            <p>Determine the best classification of the polynomial below.</p>
+            <p class="math">\(4a^2bc + 3x^2y - 5d + 6c^2d^4\)</p>
+          `,
+          choiceWrap: false,
+          choices: [
+            String.raw`degree 4 polynomial with four terms`,
+            String.raw`degree 6 polynomial with four terms`,
+            String.raw`degree 5 polynomial with four terms`,
+            String.raw`degree 6 trinomial`,
+            String.raw`degree 7 polynomial with four terms`,
+            String.raw`constant polynomial`
+          ]
+        },
+
+        {
+          stem: String.raw`
+            <p>Determine the best classification of the polynomial below.</p>
+            <p class="math">\(9\)</p>
+          `,
+          choiceWrap: false,
+          choices: [
+            String.raw`constant monomial of degree 0`,
+            String.raw`degree 1 monomial`,
+            String.raw`degree 2 monomial`,
+            String.raw`constant binomial`,
+            String.raw`undefined, because it has no variable`,
+            String.raw`degree 3 monomial`
+          ]
+        },
+
+        {
+          stem: String.raw`
+            <p>Determine the best classification of the polynomial below.</p>
+            <p class="math">\(4x^2 + y\)</p>
+          `,
+          choiceWrap: false,
+          choices: [
+            String.raw`degree 1 binomial`,
+            String.raw`degree 2 trinomial`,
+            String.raw`degree 3 binomial`,
+            String.raw`degree 2 binomial`,
+            String.raw`degree 2 monomial`,
+            String.raw`degree 4 binomial`
+          ]
+        },
+
+        {
+          stem: String.raw`
+            <p>Let \(P = 6a^2b + 3ab^3 - 4\) and \(Q = 5x^2 + 12x - 7\).</p>
+            <p>Which statement correctly compares the two polynomials?</p>
+          `,
+          choiceWrap: false,
+          choices: [
+            String.raw`Both are degree 2 trinomials.`,
+            String.raw`Both are degree 4 trinomials.`,
+            String.raw`\(P\) has degree 2 and \(Q\) has degree 4.`,
+            String.raw`\(P\) is a degree 4 binomial and \(Q\) is a degree 2 trinomial.`,
+            String.raw`\(P\) is a degree 3 trinomial and \(Q\) is a degree 2 binomial.`,
+            String.raw`Both are trinomials, but \(P\) has degree 4 and \(Q\) has degree 2.`
+          ]
+        },
+
+        {
+          stem: String.raw`
+            <p>Simplify the sum.</p>
+            <p class="math">\((2x^2 + 3x - 8) + (5x^2 - 9x + 2)\)</p>
+          `,
+          choices: [
+            String.raw`\(7x^2 + 6x - 6\)`,
+            String.raw`\(7x^2 - 12x - 6\)`,
+            String.raw`\(7x^2 - 6x - 6\)`,
+            String.raw`\(3x^2 - 6x - 10\)`,
+            String.raw`\(7x^2 - 6x + 10\)`,
+            String.raw`\(5x^2 - 6x - 6\)`
+          ]
+        },
+
+        {
+          stem: String.raw`
+            <p>Simplify the expression.</p>
+            <p class="math">\((5x^4y + 3x^2y^2 - 2xy^5) - (3x^4y + 3xy^2 - 3x^2y^2)\)</p>
+          `,
+          choices: [
+            String.raw`\(2x^4y + 6x^2y^2 - 3xy^2 - 2xy^5\)`,
+            String.raw`\(8x^4y - 2xy^5\)`,
+            String.raw`\(2x^4y - 2xy^5\)`,
+            String.raw`\(2x^4y + 3xy^2 - 2xy^5\)`,
+            String.raw`\(2x^4y + 6x^2y^2 + 3xy^2 - 2xy^5\)`,
+            String.raw`\(2x^4y + 6x^2y^2 - 3xy^2 + 2xy^5\)`
+          ]
+        },
+
+        {
+          stem: String.raw`
+            <p>Simplify the expression.</p>
+            <p class="math">\((4a^2 + 9b^2) - (3a^2 + 2a - b^2) + (6a^2 + 4b^2)\)</p>
+          `,
+          choices: [
+            String.raw`\(7a^2 + 2a + 12b^2\)`,
+            String.raw`\(13a^2 - 2a + 14b^2\)`,
+            String.raw`\(7a^2 - 2a + 12b^2\)`,
+            String.raw`\(a^2 - 2a + 14b^2\)`,
+            String.raw`\(7a^2 - 2a + 14b^2\)`,
+            String.raw`\(7a^2 - 2a + 13b^2\)`
+          ]
+        },
+
+        {
+          stem: String.raw`
+            <p>Simplify the expression.</p>
+            <p class="math">\((6x^2y + 9xy - 12xy^2) - (4x^2y - 8xy + 7xy^2 + 3y^3)\)</p>
+          `,
+          choices: [
+            String.raw`\(10x^2y + xy - 19xy^2 - 3y^3\)`,
+            String.raw`\(2x^2y + 17xy - 5xy^2 - 3y^3\)`,
+            String.raw`\(2x^2y + xy - 19xy^2 + 3y^3\)`,
+            String.raw`\(2x^2y + 17xy - 19xy^2 - 3y^3\)`,
+            String.raw`\(2x^2y + 17xy + 19xy^2 - 3y^3\)`,
+            String.raw`\(2x^2y - 17xy - 19xy^2 - 3y^3\)`
+          ]
+        },
+
+        {
+          stem: String.raw`
+            <p>Simplify the difference.</p>
+            <p class="math">\((5c^2d + 3cd^2 - 8cd) - (2c^2d + 6cd^2)\)</p>
+          `,
+          choices: [
+            String.raw`\(7c^2d - 3cd^2 - 8cd\)`,
+            String.raw`\(3c^2d - 3cd^2 - 8cd\)`,
+            String.raw`\(3c^2d + 3cd^2 - 8cd\)`,
+            String.raw`\(3c^2d - 9cd^2 - 8cd\)`,
+            String.raw`\(5c^2d - 3cd^2 - 8cd\)`,
+            String.raw`\(3c^2d - 3cd^2 + 8cd\)`
+          ]
+        },
+
+        {
+          stem: String.raw`
+            <p>Simplify the expression.</p>
+            <p class="math">\(\left(\frac{2}{3}x^2 - \frac{5}{7}x + \frac{1}{2}\right) - \left(\frac{1}{4}x^2 + \frac{2}{5}x - \frac{4}{5}\right)\)</p>
+          `,
+          choices: [
+            String.raw`\(\frac{5}{12}x^2 - \frac{11}{35}x - \frac{3}{10}\)`,
+            String.raw`\(\frac{5}{12}x^2 - \frac{39}{35}x + \frac{3}{10}\)`,
+            String.raw`\(\frac{5}{12}x^2 - \frac{39}{35}x + \frac{13}{10}\)`,
+            String.raw`\(\frac{7}{12}x^2 - \frac{39}{35}x + \frac{13}{10}\)`,
+            String.raw`\(\frac{5}{12}x^2 + \frac{39}{35}x + \frac{13}{10}\)`,
+            String.raw`\(\frac{5}{12}x^2 - \frac{39}{7}x + \frac{13}{10}\)`
+          ]
+        },
+
+        {
+          stem: String.raw`
+            <p>Simplify the expression.</p>
+            <p class="math">\((4.75x^2 - 32.6x + 87.5) - (12.8x^2 - 1.79x + 1.74)\)</p>
+          `,
+          choices: [
+            String.raw`\(-8.05x^2 - 34.39x + 85.76\)`,
+            String.raw`\(-8.05x^2 - 30.81x + 89.24\)`,
+            String.raw`\(8.05x^2 - 30.81x + 85.76\)`,
+            String.raw`\(-17.55x^2 - 30.81x + 85.76\)`,
+            String.raw`\(-8.05x^2 + 30.81x + 85.76\)`,
+            String.raw`\(-8.05x^2 - 30.81x + 85.76\)`
+          ]
+        }
+
+      ]
+    };
+  </script>
+
+  <link rel="stylesheet" href="/math-homework/assets/core-rich.css" />
+  <script defer src="/math-homework/assets/core-rich.js"></script>
+  <script defer src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+</head>
+
+<body>
+  <div id="hw-root">Loading…</div>
+</body>
+</html>

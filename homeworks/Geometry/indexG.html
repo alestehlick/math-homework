@@ -11,7 +11,6 @@
       --muted: rgba(15,23,42,0.72);
       --stroke: rgba(15,23,42,0.18);
 
-      /* tuned for “no big white plate” */
       --link-bg: rgba(255,255,255,0.38);
       --link-bg-hover: rgba(255,255,255,0.52);
       --focus: rgba(15,23,42,0.68);
@@ -35,7 +34,6 @@
       overflow-x: hidden;
     }
 
-    /* Fixed background layer (stable on mobile) */
     body::before{
       content: "";
       position: fixed;
@@ -46,7 +44,6 @@
       will-change: transform;
     }
 
-    /* subtle readability veil */
     body::after{
       content: "";
       position: fixed;
@@ -144,140 +141,31 @@
     <nav class="content" aria-label="Geometry homework list">
       <h1>Geometry</h1>
 
-
-
-
-
-
-
-<!--
       <ul>
-        <li><a href="hw_1A.html"><span>1A</span><span class="tag">Homework</span></a></li>
-        <li><a href="hw_1B.html"><span>1B</span><span class="tag">Homework</span></a></li>
-        <li><a href="hw_1C.html"><span>1C</span><span class="tag">Homework</span></a></li>
-        <li><a href="hw_1D.html"><span>1D</span><span class="tag">Homework</span></a></li>
-        <li><a href="hw_1_rev.html"><span>1-rev</span><span class="tag">Homework</span></a></li>
-      </ul>
-
-      <br><br>
-
-      <ul>
-        <li><a href="hw_2A.html"><span>2A</span><span class="tag">Homework</span></a></li>
-	<li><a href="hw_2B.html"><span>2B</span><span class="tag">Homework</span></a></li>
-	<li><a href="hw_2C.html"><span>2C</span><span class="tag">Homework</span></a></li>
-	<li><a href="hw_2D.html"><span>2D</span><span class="tag">Homework</span></a></li>
-        <li><a href="hw_4_3and4.html"><span>4-3 and 4-4</span><span class="tag">Homework</span></a></li>
-	<li><a href="hw_4_5.html"><span>4-5</span><span class="tag">Homework</span></a></li>
-	<li><a href="hw_2_5.html"><span>2-5</span><span class="tag">Homework</span></a></li>
-	<li><a href="hw_2_rev.html"><span>2-rev</span><span class="tag">Homework</span></a></li>
-      </ul>
-      
-      <br><br>
-
-      <ul>
-        <li><a href="hw_2_4.html"><span>2-4</span><span class="tag">Homework</span></a></li>
-        <li><a href="hw_3_4and5.html"><span>3-4 and 3-5</span><span class="tag">Homework</span></a></li>
-        <li><a href="hw_2_6.html"><span>2-6</span><span class="tag">Homework</span></a></li>  
-        <li><a href="hw_2_7.html"><span>2-7</span><span class="tag">Homework</span></a></li>  
-        <li><a href="hw_5_2and3.html"><span>5-2 and 5-3</span><span class="tag">Homework</span></a></li>  
-        <li><a href="hw_5_4.html"><span>5-4</span><span class="tag">Homework</span></a></li>  
-        <li><a href="hw_5_4_2.html"><span>5-4(2)</span><span class="tag">Homework</span></a></li>  
-        <li><a href="hw_rev_3.html"><span>3-rev</span><span class="tag">Homework</span></a></li>  
-    </ul>	
-
-      <br><br>
-
-      <ul>
-        <li><a href="hw_6_6.html"><span>6-6</span><span class="tag">Homework</span></a></li>
-        <li><a href="hw_6_8+.html"><span>6-8+</span><span class="tag">Homework</span></a></li>
-        <li><a href="hw_6_2_to_6_4_A"><span>6-2 to 6-4 (and HL)</span><span class="tag">Homework</span></a></li>
-        <li><a href="hw_6_2_to_6_4_B"><span>6-2 to 6-4 (part 2)</span><span class="tag">Homework</span></a></li>
-
-
-    </ul>	  
-
--->
-
-
-
-      <ul>
-        <li><a href="hw_7_1.html"><span>7-1</span><span class="tag">Homework</span></a></li>
-        <li><a href="hw_7_2.html"><span>7-2</span><span class="tag">Homework</span></a></li>
-        <li><a href="hw_7_3.html"><span>7-3 to 7-5</span><span class="tag">Homework</span></a></li>
-        <li><a href="hw_7_6.html"><span>7-6 to 7-7</span><span class="tag">Homework</span></a></li>
-        <li><a href="hw_7_rev.html"><span>7-rev</span><span class="tag">Homework</span></a></li>
-    </ul>
-
-
-      <br><br>
-
-      <ul>
-        <li><a href="hw_8_1to2.html"><span>8-1 and 8-2</span><span class="tag">Homework</span></a></li>
-        <li><a href="hw_8_3to5.html"><span>8-3 to 8-5</span><span class="tag">Homework</span></a></li>
-        <li><a href="hw_8_6to7.html"><span>8-6 to 8-7</span><span class="tag">Homework</span></a></li>
-        <li><a href="hw_8_8.html"><span>8-8</span><span class="tag">Homework</span></a></li>
-        <li><a href="hw_8_rev.html"><span>8-rev</span><span class="tag">Homework</span></a></li>
+        <li><a href="hw-7-1.html" title="Homework 7-1 - Congruence of Right Triangles"><span>7-1</span><span class="tag">Homework</span></a></li>
+        <li><a href="hw-7-2.html" title="Homework 7-2 - Triangle Centers and Perpendicular Bisectors"><span>7-2</span><span class="tag">Homework</span></a></li>
+        <li><a href="hw-7-3-to-7-5.html" title="Homework 7-3 to 7-5 - Triangle Inequalities"><span>7-3 to 7-5</span><span class="tag">Homework</span></a></li>
+        <li><a href="hw-7-6-to-7-7.html" title="Homework 7-6 to 7-7 - Parallelograms and Constructions"><span>7-6 to 7-7</span><span class="tag">Homework</span></a></li>
+        <li><a href="hw-7-review.html" title="Homework 7 Review - Triangles and Parallelograms"><span>7 Review</span><span class="tag">Review</span></a></li>
     </ul>
 
       <br><br>
 
       <ul>
-        <li><a href="hw_9_1to5.html"><span>9-1 and 9-5</span><span class="tag">Homework</span></a></li>
-        <li><a href="hw_9_6to7.html"><span>9-6 and 9-7</span><span class="tag">Homework</span></a></li>
+        <li><a href="hw-8-1-to-8-2.html" title="Homework 8-1 to 8-2 - Area of Plane Figures"><span>8-1 to 8-2</span><span class="tag">Homework</span></a></li>
+        <li><a href="hw-8-3-to-8-5.html" title="Homework 8-3 to 8-5 - Right Triangles, Regular Polygons, and Circles"><span>8-3 to 8-5</span><span class="tag">Homework</span></a></li>
+        <li><a href="hw-8-6-to-8-7.html" title="Homework 8-6 to 8-7 - Surface Area of Solids"><span>8-6 to 8-7</span><span class="tag">Homework</span></a></li>
+        <li><a href="hw-8-8.html" title="Homework 8-8 - Surface Area of Spheres"><span>8-8</span><span class="tag">Homework</span></a></li>
+        <li><a href="hw-8-review.html" title="Homework 8 Review - Area and Surface Area"><span>8 Review</span><span class="tag">Review</span></a></li>
     </ul>
 
-
-
-
-
-
-
-
-
-
-	  
-      <!--
-      <ul>
-        <li><a href="11_Intro.html"><span>Intro-11</span><span class="tag">Intro</span></a></li>
-        <li><a href="hw_11_1.html"><span>11-1</span><span class="tag">Homework</span></a></li>
-        <li><a href="hw_11_2.html"><span>11-2</span><span class="tag">Homework</span></a></li>
-        <li><a href="hw_11_3.html"><span>11-3</span><span class="tag">Homework</span></a></li>
-        <li><a href="hw_11_4.html"><span>11-4</span><span class="tag">Homework</span></a></li>
-        <li><a href="hw_11_5.html"><span>11-5</span><span class="tag">Homework</span></a></li>
-        <li><a href="hw_11_6.html"><span>11-6</span><span class="tag">Homework</span></a></li>
-        <li><a href="hw_11_rev.html"><span>11-rev</span><span class="tag">Homework</span></a></li>
-      </ul>
-
       <br><br>
 
       <ul>
-        <li><a href="hw_12_1.html"><span>12-1</span><span class="tag">Homework</span></a></li>
-        <li><a href="hw_12_2.html"><span>12-2</span><span class="tag">Homework</span></a></li>
-        <li><a href="hw_12_3.html"><span>12-3</span><span class="tag">Homework</span></a></li>
-        <li><a href="hw_12_4.html"><span>12-4</span><span class="tag">Homework</span></a></li>
-        <li><a href="hw_12_6.html"><span>12-6</span><span class="tag">Homework</span></a></li>
-        <li><a href="hw_12_rev.html"><span>12-rev</span><span class="tag">Homework</span></a></li>
-      </ul>
+        <li><a href="hw-9-1-to-9-5.html" title="Homework 9-1 to 9-5 - Circles"><span>9-1 to 9-5</span><span class="tag">Homework</span></a></li>
+        <li><a href="hw-9-6-to-9-7.html" title="Homework 9-6 to 9-7 - Circular Sectors, Segments and Constructions"><span>9-6 to 9-7</span><span class="tag">Homework</span></a></li>
+    </ul>
 
-      <br><br>
-
-      <ul>
-        <li><a href="hw_13_1.html"><span>13-1</span><span class="tag">Homework</span></a></li>
-        <li><a href="hw_13_2A.html"><span>13-2A</span><span class="tag">Homework</span></a></li>
-        <li><a href="hw_13_2B.html"><span>13-2B</span><span class="tag">Homework</span></a></li>
-        <li><a href="hw_13_3.html"><span>13-3</span><span class="tag">Homework</span></a></li>
-        <li><a href="hw_13_6.html"><span>13-6</span><span class="tag">Homework</span></a></li>
-        <li><a href="hw_13_rev.html"><span>13-rev</span><span class="tag">Homework</span></a></li>
-      </ul>
-
-      <br><br>
-
-      <ul>
-        <li><a href="hw_14_1and2.html"><span>14-1 and 14-6</span><span class="tag">Homework</span></a></li>
-        <li><a href="hw_14_3.html"><span>14-3</span><span class="tag">Homework</span></a></li>
-        <li><a href="hw_14_4and6.html"><span>14-4 and 14-6</span><span class="tag">Homework</span></a></li>
-      </ul>
-      -->
     </nav>
   </main>
 </body>

@@ -1,0 +1,274 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Homework 11-3 - Volume of Cylinders</title>
+
+  <script>
+
+    window.homeworkData = {
+      classId : "Geometry",
+      id      : "Homework 11-3 - Volume of Cylinders",
+      title   : "Homework 11-3 - Volume of Cylinders",
+
+      graphics : String.raw``,
+
+      answerKey : ["B","D","B","B","C","A","C","C","B","C","B","D","A"],
+
+      questions : [
+
+        {
+          stem: String.raw`
+            <p><b>Refer to Figure 1.</b> Find the volume of the cylinder.</p>
+            <p><em>Give your answer in terms of \(\pi\).</em></p>
+          `,
+          media: String.raw`
+            <figure>
+              <img src="hw-11-3-fig-1.png" alt="A. Exercise #1" />
+              <figcaption>Figure 1</figcaption>
+            </figure>
+          `,
+          choices: [
+            String.raw`\(\,63\pi\,\)`,
+            String.raw`\(\,441\pi\,\)`,
+            String.raw`\(\,882\pi\,\)`,
+            String.raw`\(\,1764\pi\,\)`,
+            String.raw`\(\,49\pi\,\)`,
+            String.raw`\(\,441\,\)`
+          ]
+        },
+
+        {
+          stem: String.raw`
+            <p><b>Refer to Figure 2.</b> Find the volume of the cylinder.</p>
+            <p><em>Give your answer in terms of \(\pi\).</em></p>
+          `,
+          media: String.raw`
+            <figure>
+              <img src="hw-11-3-fig-2.png" alt="A. Exercise #4" />
+              <figcaption>Figure 2</figcaption>
+            </figure>
+          `,
+          choices: [
+            String.raw`\(\,384\,\)`,
+            String.raw`\(\,192\pi\,\)`,
+            String.raw`\(\,48\pi\,\)`,
+            String.raw`\(\,384\pi\,\)`,
+            String.raw`\(\,768\pi\,\)`,
+            String.raw`\(\,1536\pi\,\)`
+          ]
+        },
+
+        {
+          stem: String.raw`
+            <p><b>Refer to Figure 3.</b> The diameter of the circle displayed is 24. Find the volume of the cylinder.</p>
+            <p><em>Give your answer in terms of \(\pi\).</em></p>
+          `,
+          media: String.raw`
+            <figure>
+              <img src="hw-11-3-fig-3.png" alt="A. Exercise #6" />
+              <figcaption>Figure 3</figcaption>
+            </figure>
+          `,
+          choices: [
+            String.raw`\(\,36864\pi\,\)`,
+            String.raw`\(\,2304\pi\,\)`,
+            String.raw`\(\,1536\pi\,\)`,
+            String.raw`\(\,576\pi\,\)`,
+            String.raw`\(\,147456\pi\,\)`,
+            String.raw`\(\,9216\pi\,\)`
+          ]
+        },
+
+        {
+          stem: String.raw`
+            <p>The circumference of a cylinder is \(86\pi\) meters, and the height is 63 meters.</p>
+            <p>Find the <strong>surface area</strong> and the <strong>volume</strong>, in terms of \(\pi\).</p>
+            <p><em>Answer format: (surface area, volume).</em></p>
+          `,
+          choices: [
+            String.raw`\(\,(5418\pi,\ 2709\pi)\,\)`,
+            String.raw`\(\,(9116\pi,\ 116487\pi)\,\)`,
+            String.raw`\(\,(9116\pi,\ 2709\pi)\,\)`,
+            String.raw`\(\,(5418\pi,\ 116487\pi)\,\)`,
+            String.raw`\(\,(18232\pi,\ 465948\pi)\,\)`,
+            String.raw`\(\,(3698\pi,\ 116487\pi)\,\)`
+          ]
+        },
+
+        {
+          stem: String.raw`
+            <p>The circumference of a cylinder is \(24\pi\) inches, and its volume is \(4896\pi\) cubic inches.</p>
+            <p>What is the height of the cylinder?</p>
+          `,
+          choices: [
+            String.raw`12`,
+            String.raw`17`,
+            String.raw`34`,
+            String.raw`68`,
+            String.raw`144`,
+            String.raw`408`
+          ]
+        },
+
+        {
+          stem: String.raw`
+            <p>A cylindrical piece of iron has diameter 2 inches and length 16 inches.</p>
+            <p>If it is melted and poured into a rectangular mold with a \(1\)-by-\(3\) inch base, what will be the length of the rectangular piece of iron?</p>
+            <p><em>Give your answer in terms of \(\pi\).</em></p>
+          `,
+          choices: [
+            String.raw`\(\dfrac{16\pi}{3}\)`,
+            String.raw`\(\,16\pi\,\)`,
+            String.raw`\(\dfrac{8\pi}{3}\)`,
+            String.raw`\(\dfrac{32\pi}{3}\)`,
+            String.raw`\(\dfrac{16}{3}\)`,
+            String.raw`\(\,48\pi\,\)`
+          ]
+        },
+
+        {
+          stem: String.raw`
+            <p>How many gallons of water will fill a circular cylinder that has radius 27 feet and height 38 feet?</p>
+            <p>Assume 1 cubic foot of water is 7.5 gallons.</p>
+            <p><em>Round to the nearest whole gallon.</em></p>
+          `,
+          choiceWrap: false,
+          choices: [
+            String.raw`87,028`,
+            String.raw`207,765`,
+            String.raw`652,713`,
+            String.raw`870,284`,
+            String.raw`628,000`,
+            String.raw`673,000`
+          ]
+        },
+
+        {
+          stem: String.raw`
+            <p><b>Refer to Figure 4.</b></p>
+            <p>In the figure, the cylinder has height \(g\) and radius \(\dfrac{g}{2}\).</p>
+            <p>Find the volume of the oblique cylinder as a function of \(g\).</p>
+          `,
+          media: String.raw`
+            <figure>
+              <img src="hw-11-3-fig-4.png" alt="Portuguese #496 diagram" />
+              <figcaption>Figure 4</figcaption>
+            </figure>
+          `,
+          choices: [
+            String.raw`\(\pi g^3\)`,
+            String.raw`\(\dfrac{\pi g^3}{2}\)`,
+            String.raw`\(\dfrac{\pi g^3}{4}\)`,
+            String.raw`\(\dfrac{\pi g^2}{4}\)`,
+            String.raw`\(\dfrac{\pi g^3}{8}\)`,
+            String.raw`\(\dfrac{\pi g^3}{16}\)`
+          ]
+        },
+
+        {
+          stem: String.raw`
+            <p>An oblique cylinder has base radius 3 cm.</p>
+            <p>The slant height is 8 cm and forms an angle of \(45^\circ\) with the base.</p>
+            <p>Find the volume of the cylinder.</p>
+            <p><em>Give your answer in terms of \(\pi\).</em></p>
+            <p><em>Note that the height of the cylinder is the height of a right isosceles triangle.</em></p>
+          `,
+          choices: [
+            String.raw`\(\,18\sqrt2\,\pi\)`,
+            String.raw`\(\,36\sqrt2\,\pi\)`,
+            String.raw`\(\,72\sqrt2\,\pi\)`,
+            String.raw`\(\,36\pi\)`,
+            String.raw`\(\,18\pi\)`,
+            String.raw`\(\,144\sqrt2\,\pi\)`
+          ]
+        },
+
+        {
+          stem: String.raw`
+            <p>A cylinder has base radius 5 cm.</p>
+            <p>The slant height is 15 cm long and forms an angle of \(60^\circ\) with the base.</p>
+            <p>Find the volume of the cylinder.</p>
+            <p><em>Give your answer in terms of \(\pi\).</em></p>
+            <p><em>Note that the height of the cylinder is the height of an equilateral triangle.</em></p>
+          `,
+          choices: [
+            String.raw`\(\,375\sqrt3\,\pi\)`,
+            String.raw`\(\,\dfrac{375}{2}\,\pi\)`,
+            String.raw`\(\,\dfrac{375\sqrt3}{2}\,\pi\)`,
+            String.raw`\(\,\dfrac{225\sqrt3}{2}\,\pi\)`,
+            String.raw`\(\,125\sqrt3\,\pi\)`,
+            String.raw`\(\,\dfrac{225}{2}\,\pi\)`
+          ]
+        },
+
+        {
+          stem: String.raw`
+            <p>Two right circular cylinders have the same lateral area.</p>
+            <p>Their radii are 9 cm and 12 cm. The height of the first cylinder is 10 cm.</p>
+            <p>What is the ratio of their volumes \(V_1:V_2\)?</p>
+          `,
+          choices: [
+            String.raw`\(\,1:1\,\)`,
+            String.raw`\(\,3:4\,\)`,
+            String.raw`\(\,4:3\,\)`,
+            String.raw`\(\,9:12\,\)`,
+            String.raw`\(\,81:144\,\)`,
+            String.raw`\(\,2:3\,\)`
+          ]
+        },
+
+        {
+          stem: String.raw`
+            <p>A statement claims the following:</p>
+            <p>
+              The volume \(V\) of a right circular cylinder equals the product of its total area \(A_T\)
+              and one fourth of the harmonic mean of the radius \(r\) and the height \(h\).
+            </p>
+            <p>The harmonic mean of \(r\) and \(h\) is \(H=\dfrac{2rh}{r+h}\).</p>
+            <p>If you simplify the expression \(V = A_T \cdot \dfrac{1}{4}\,H\), what do you get?</p>
+          `,
+          choices: [
+            String.raw`\(\pi r h\)`,
+            String.raw`\(\pi r^2(r+h)\)`,
+            String.raw`\(\dfrac{\pi r^2 h}{2}\)`,
+            String.raw`\(\pi r^2 h\)`,
+            String.raw`\(\dfrac{2\pi r^2 h}{r+h}\)`,
+            String.raw`\(\pi r^3\)`
+          ]
+        },
+
+        {
+          stem: String.raw`
+            <p>A rectangular sheet of metal is 5 m by 4 m. You can roll it to form a cylinder in two different ways:</p>
+            <ul>
+              <li><strong>Option A:</strong> circumference = 5 m and height = 4 m</li>
+              <li><strong>Option B:</strong> circumference = 4 m and height = 5 m</li>
+            </ul>
+            <p>Which option produces the <strong>larger volume</strong>?</p>
+          `,
+          choiceWrap: false,
+          choices: [
+            String.raw`Option A produces the larger volume.`,
+            String.raw`Option B produces the larger volume.`,
+            String.raw`They produce the same volume.`,
+            String.raw`Option A is larger only if \(\pi&lt;3\).`,
+            String.raw`Option B is larger only if \(\pi&gt;3\).`,
+            String.raw`It depends on the thickness of the metal.`
+          ]
+        }
+
+      ]
+    };
+  </script>
+
+  <link rel="stylesheet" href="/math-homework/assets/core-rich.css" />
+  <script defer src="/math-homework/assets/core-rich.js"></script>
+  <script defer src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+</head>
+
+<body>
+  <div id="hw-root">Loading…</div>
+</body>
+</html>

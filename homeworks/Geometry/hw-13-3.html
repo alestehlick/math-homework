@@ -1,0 +1,316 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Homework 13-3 - Metric Relations in Right Triangles</title>
+
+  <script>
+
+    window.homeworkData = {
+      classId : "Geometry",
+      id      : "Homework 13-3 - Metric Relations in Right Triangles",
+      title   : "Homework 13-3 - Metric Relations in Right Triangles",
+
+      graphics : String.raw``,
+
+      answerKey : ["D","E","E","A","B","F","C","A","F","B","E","D","F","C"],
+
+      questions : [
+
+        {
+          stem: String.raw`
+            <p><b>Refer to Figure 1.</b> Find \(x\).</p>
+          `,
+          media: String.raw`
+            <figure>
+              <img src="hw-13-3-fig-1.png" alt="Problem 509a" />
+              <figcaption>Figure 1</figcaption>
+            </figure>
+          `,
+          choices: [
+            String.raw`\(2\sqrt{26}\)`,
+            String.raw`\(4\sqrt{5}\)`,
+            String.raw`\(10\)`,
+            String.raw`\(2\sqrt{29}\)`,
+            String.raw`\(2\sqrt{30}\)`,
+            String.raw`\(2\sqrt{21}\)`
+          ]
+        },
+
+        {
+          stem: String.raw`
+            <p><b>Refer to Figure 2.</b> Find \(x\).</p>
+          `,
+          media: String.raw`
+            <figure>
+              <img src="hw-13-3-fig-2.png" alt="Problem 509b" />
+              <figcaption>Figure 2</figcaption>
+            </figure>
+          `,
+          choices: [
+            String.raw`\(7\)`,
+            String.raw`\(8\)`,
+            String.raw`\(\sqrt{61}\)`,
+            String.raw`\(10\)`,
+            String.raw`\(9\)`,
+            String.raw`\(11\)`
+          ]
+        },
+
+        {
+          stem: String.raw`
+            <p><b>Refer to Figure 3.</b> Find \(x\).</p>
+          `,
+          media: String.raw`
+            <figure>
+              <img src="hw-13-3-fig-3.png" alt="Problem 511a" />
+              <figcaption>Figure 3</figcaption>
+            </figure>
+          `,
+          choices: [
+            String.raw`\(4\)`,
+            String.raw`\(3\)`,
+            String.raw`\(8\)`,
+            String.raw`\(9\)`,
+            String.raw`\(6\)`,
+            String.raw`\(12\)`
+          ]
+        },
+
+        {
+          stem: String.raw`
+            <p><b>Refer to Figure 4.</b> Find \(x\).</p>
+          `,
+          media: String.raw`
+            <figure>
+              <img src="hw-13-3-fig-4.png" alt="Problem 511b" />
+              <figcaption>Figure 4</figcaption>
+            </figure>
+          `,
+          choices: [
+            String.raw`\(3\)`,
+            String.raw`\(2\)`,
+            String.raw`\(4\)`,
+            String.raw`\(6\)`,
+            String.raw`\(9\)`,
+            String.raw`\(12\)`
+          ]
+        },
+
+        {
+          stem: String.raw`
+            <p><b>Refer to Figure 5.</b> Find \(x\).</p>
+          `,
+          media: String.raw`
+            <figure>
+              <img src="hw-13-3-fig-5.png" alt="Problem 511c" />
+              <figcaption>Figure 5</figcaption>
+            </figure>
+          `,
+          choices: [
+            String.raw`\(4\)`,
+            String.raw`\(8\)`,
+            String.raw`\(6\)`,
+            String.raw`\(10\)`,
+            String.raw`\(12\)`,
+            String.raw`\(16\)`
+          ]
+        },
+
+        {
+          stem: String.raw`
+            <p><b>Refer to Figure 6.</b> Find \(x\).</p>
+          `,
+          media: String.raw`
+            <figure>
+              <img src="hw-13-3-fig-6.png" alt="Problem 511d" />
+              <figcaption>Figure 6</figcaption>
+            </figure>
+          `,
+          choices: [
+            String.raw`\(6\)`,
+            String.raw`\(7\)`,
+            String.raw`\(8\)`,
+            String.raw`\(10\)`,
+            String.raw`\(12\)`,
+            String.raw`\(9\)`
+          ]
+        },
+
+        {
+          stem: String.raw`
+            <p><b>Refer to Figure 7.</b> Determine \(x\), \(y\), \(z\), and \(t\).</p>
+          `,
+          media: String.raw`
+            <figure>
+              <img src="hw-13-3-fig-7.png" alt="Problem 512" />
+              <figcaption>Figure 7</figcaption>
+            </figure>
+          `,
+          choices: [
+            String.raw`\(\left(x,y,z,t\right)=\left(\dfrac{60}{13},\dfrac{144}{13},\dfrac{25}{13},13\right)\)`,
+            String.raw`\(\left(x,y,z,t\right)=\left(\dfrac{60}{13},\dfrac{25}{13},\dfrac{144}{13},\sqrt{169}\right)\)`,
+            String.raw`\(\left(x,y,z,t\right)=\left(\dfrac{60}{13},\dfrac{25}{13},\dfrac{144}{13},13\right)\)`,
+            String.raw`\(\left(x,y,z,t\right)=\left(\dfrac{60}{13},\dfrac{5}{13},\dfrac{144}{13},13\right)\)`,
+            String.raw`\(\left(x,y,z,t\right)=\left(\dfrac{25}{13},\dfrac{60}{13},\dfrac{144}{13},13\right)\)`,
+            String.raw`\(\left(x,y,z,t\right)=\left(\dfrac{60}{13},\dfrac{25}{13},\dfrac{120}{13},13\right)\)`
+          ]
+        },
+
+        {
+          stem: String.raw`
+            <p><b>Refer to Figure 8.</b> Determine \(x\) and \(y\).</p>
+          `,
+          media: String.raw`
+            <figure>
+              <img src="hw-13-3-fig-8.png" alt="Problem 513a" />
+              <figcaption>Figure 8</figcaption>
+            </figure>
+          `,
+          choices: [
+            String.raw`\((x,y)=\left(10,\dfrac{24}{5}\right)\)`,
+            String.raw`\((x,y)=\left(12,\dfrac{24}{5}\right)\)`,
+            String.raw`\((x,y)=\left(10,\dfrac{18}{5}\right)\)`,
+            String.raw`\((x,y)=\left(10,6\right)\)`,
+            String.raw`\((x,y)=\left(8,\dfrac{24}{5}\right)\)`,
+            String.raw`\((x,y)=\left(6,\dfrac{24}{5}\right)\)`
+          ]
+        },
+
+        {
+          stem: String.raw`
+            <p><b>Refer to Figure 9.</b> Determine \(x\) and \(y\).</p>
+          `,
+          media: String.raw`
+            <figure>
+              <img src="hw-13-3-fig-9.png" alt="Problem 513b" />
+              <figcaption>Figure 9</figcaption>
+            </figure>
+          `,
+          choices: [
+            String.raw`\((x,y)=(6,4\sqrt{3})\)`,
+            String.raw`\((x,y)=(4,6)\)`,
+            String.raw`\((x,y)=(3,4\sqrt{3})\)`,
+            String.raw`\((x,y)=(5,4\sqrt{3})\)`,
+            String.raw`\((x,y)=(4,2\sqrt{3})\)`,
+            String.raw`\((x,y)=(4,4\sqrt{3})\)`
+          ]
+        },
+
+        {
+          stem: String.raw`
+            <p><b>Refer to Figure 10.</b> Find \(x\).</p>
+          `,
+          media: String.raw`
+            <figure>
+              <img src="hw-13-3-fig-10.png" alt="Problem 514a" />
+              <figcaption>Figure 10</figcaption>
+            </figure>
+          `,
+          choices: [
+            String.raw`\(\sqrt{45}\)`,
+            String.raw`\(3\sqrt{5}\)`,
+            String.raw`\(3\sqrt{3}\)`,
+            String.raw`\(6\)`,
+            String.raw`\(5\sqrt{3}\)`,
+            String.raw`\(6\sqrt{5}\)`
+          ]
+        },
+
+        {
+          stem: String.raw`
+            <p><b>Refer to Figure 11.</b> Find \(x\).</p>
+          `,
+          media: String.raw`
+            <figure>
+              <img src="hw-13-3-fig-11.png" alt="Problem 514b" />
+              <figcaption>Figure 11</figcaption>
+            </figure>
+          `,
+          choices: [
+            String.raw`\(4\)`,
+            String.raw`\(\sqrt{5}\)`,
+            String.raw`\(\dfrac{5}{2}\)`,
+            String.raw`\(8\)`,
+            String.raw`\(2\)`,
+            String.raw`\(10\)`
+          ]
+        },
+
+        {
+          stem: String.raw`
+            <p><b>Refer to Figure 12.</b> Determine the height of the trapezoid.</p>
+          `,
+          media: String.raw`
+            <figure>
+              <img src="hw-13-3-fig-12.png" alt="Problem 523" />
+              <figcaption>Figure 12</figcaption>
+            </figure>
+          `,
+          choices: [
+            String.raw`\(2\sqrt{3}\)`,
+            String.raw`\(3\sqrt{3}\)`,
+            String.raw`\(6\)`,
+            String.raw`\(4\sqrt{3}\)`,
+            String.raw`\(8\)`,
+            String.raw`\(4\)`
+          ]
+        },
+
+        {
+          stem: String.raw`
+            <p><b>Refer to Figure 13.</b></p>
+            <p>In the right trapezoid \(ABCD\), the bases measure \(4\) cm and \(9\) cm.</p>
+            <p>The side \(\overline{BC}\) measures \(\sqrt{34}\) cm.</p>
+            <p>Determine the length of the diagonal \(\overline{AC}\).</p>
+          `,
+          media: String.raw`
+            <figure>
+              <img src="hw-13-3-fig-13.png" alt="Problem 570" />
+              <figcaption>Figure 13</figcaption>
+            </figure>
+          `,
+          choices: [
+            String.raw`\(4\text{ cm}\)`,
+            String.raw`\(6\text{ cm}\)`,
+            String.raw`\(\sqrt{34}\text{ cm}\)`,
+            String.raw`\(\sqrt{41}\text{ cm}\)`,
+            String.raw`\(9\text{ cm}\)`,
+            String.raw`\(5\text{ cm}\)`
+          ]
+        },
+
+        {
+          stem: String.raw`
+            <p><b>Refer to Figure 14.</b> Find \(x\).</p>
+          `,
+          media: String.raw`
+            <figure>
+              <img src="hw-13-3-fig-14.png" alt="Problem 531a" />
+              <figcaption>Figure 14</figcaption>
+            </figure>
+          `,
+          choices: [
+            String.raw`\(\dfrac{26}{5}\)`,
+            String.raw`\(\dfrac{39}{5}\)`,
+            String.raw`\(\dfrac{52}{5}\)`,
+            String.raw`\(\dfrac{48}{5}\)`,
+            String.raw`\(\dfrac{26}{3}\)`,
+            String.raw`\(\dfrac{13}{2}\)`
+          ]
+        },
+
+      ]
+    };
+  </script>
+
+  <link rel="stylesheet" href="/math-homework/assets/core-rich.css" />
+  <script defer src="/math-homework/assets/core-rich.js"></script>
+  <script defer src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+</head>
+
+<body>
+  <div id="hw-root">Loading…</div>
+</body>
+</html>

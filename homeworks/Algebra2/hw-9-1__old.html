@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Homework 9-1 - Simplification of Rational Expressions</title>
+
+  <script>
+
+    window.homeworkData = {
+      classId : "Algebra2",
+      id      : "Homework 9-1 - Simplification of Rational Expressions",
+      title   : "Homework 9-1 - Simplification of Rational Expressions",
+
+      graphics : String.raw``,
+
+      answerKey : ["B","E","C","D","A","F","C","A","E","B","D","A"],
+
+      questions : [
+
+        { latex: String.raw`\text{Simplify. Leave answer in factored form: } \dfrac{3a^{2}b}{9ab}`,
+          choices: [
+            String.raw`3a`,
+            String.raw`\dfrac{a}{3}`,
+            String.raw`\dfrac{a^{2}}{3}`,
+            String.raw`\dfrac{1}{3b}`,
+            String.raw`\dfrac{b}{3}`,
+            String.raw`\text{Cannot be simplified}`
+          ]},
+
+        { latex: String.raw`\text{Simplify: } \dfrac{18x^{3}y}{4x^{5}}`,
+          choices: [
+            String.raw`\dfrac{9y}{2x^{3}}`,
+            String.raw`\dfrac{9y}{2x^{4}}`,
+            String.raw`\dfrac{9y}{2x}`,
+            String.raw`\dfrac{9}{2}x^{2}y`,
+            String.raw`\dfrac{9y}{2x^{2}}`,
+            String.raw`\dfrac{9}{2xy}`
+          ]},
+
+        { latex: String.raw`\text{Simplify: } \dfrac{5x^{4}+5xy}{2x+2y}`,
+          choices: [
+            String.raw`\dfrac{5(x^{4}+xy)}{2x}`,
+            String.raw`\dfrac{5x(x^{3}+y)}{2}`,
+            String.raw`\dfrac{5x(x^{3}+y)}{2(x+y)}`,
+            String.raw`\dfrac{5(x^{3}+y)}{2(x+y)}`,
+            String.raw`\dfrac{5x(x^{3}+y)}{2(x-y)}`,
+            String.raw`\dfrac{5(x^{3}+y)}{2x}`
+          ]},
+
+        { latex: String.raw`\text{Simplify: } \dfrac{147a^{3}+147a^{2}b}{14a^{2}+14ab}`,
+          choices: [
+            String.raw`21a`,
+            String.raw`\dfrac{21a^{2}}{2}`,
+            String.raw`\dfrac{147}{14}`,
+            String.raw`\dfrac{21}{2}a`,
+            String.raw`7a(a+b)`,
+            String.raw`a`
+          ]},
+
+        { latex: String.raw`\text{Simplify: } \dfrac{x^{2}-y^{2}}{x^{2}+2xy+y^{2}}`,
+          choices: [
+            String.raw`\dfrac{x-y}{x+y}`,
+            String.raw`\dfrac{x-y}{x^{2}+y^{2}}`,
+            String.raw`\dfrac{x+y}{x-y}`,
+            String.raw`\dfrac{x^{2}-y^{2}}{(x+y)^{2}}`,
+            String.raw`1`,
+            String.raw`\text{Cannot be simplified}`
+          ]},
+
+        { latex: String.raw`\text{Simplify: } \dfrac{2x^{2}+xy-y^{2}}{x^{2}-y^{2}}`,
+          choices: [
+            String.raw`\dfrac{2x+y}{x-y}`,
+            String.raw`\dfrac{2x+y}{x+y}`,
+            String.raw`\dfrac{x(2x+y)-y^{2}}{(x-y)(x+y)}`,
+            String.raw`\dfrac{(2x+y)(x+y)}{x^{2}-y^{2}}`,
+            String.raw`\dfrac{2x^{2}+xy-y^{2}}{x^{2}-2xy+y^{2}}`,
+            String.raw`\dfrac{2x-y}{x-y}`
+          ]},
+
+        { latex: String.raw`\text{Simplify: } \dfrac{y^{2}-x^{2}}{x-y}`,
+          choices: [
+            String.raw`y+x`,
+            String.raw`x+y`,
+            String.raw`-(x+y)`,
+            String.raw`\dfrac{y+x}{x-y}`,
+            String.raw`\dfrac{(x-y)(x+y)}{x-y}`,
+            String.raw`\text{Cannot simplify}`
+          ]},
+
+        { latex: String.raw`\text{Simplify: } \dfrac{x^{2}+2xy+y^{2}}{x^{2}+xy}`,
+          choices: [
+            String.raw`\dfrac{x+y}{x}`,
+            String.raw`\dfrac{x+y}{x+y}`,
+            String.raw`1`,
+            String.raw`\dfrac{x^{2}}{x^{2}+xy}`,
+            String.raw`\dfrac{x+y}{y}`,
+            String.raw`\dfrac{x}{x+y}`
+          ]},
+
+        { latex: String.raw`\text{Simplify: } \dfrac{30+42n}{9mn}`,
+          choices: [
+            String.raw`\dfrac{6(5+7n)}{mn}`,
+            String.raw`\dfrac{5+7n}{3mn}`,
+            String.raw`\dfrac{10+14n}{9mn}`,
+            String.raw`\dfrac{2(5+7n)}{9m}`,
+            String.raw`\dfrac{2(5+7n)}{3mn}`,
+            String.raw`\dfrac{6(5+7n)}{mn^{2}}`
+          ]},
+
+        { latex: String.raw`\text{Simplify: } \dfrac{5x^{2}y-10xy}{15xy}`,
+          choices: [
+            String.raw`\dfrac{x}{3}`,
+            String.raw`\dfrac{x-2}{3}`,
+            String.raw`\dfrac{x-2}{15}`,
+            String.raw`\dfrac{x-2}{9}`,
+            String.raw`\dfrac{x-2}{5}`,
+            String.raw`x-2`
+          ]},
+
+        { latex: String.raw`\text{Simplify: } \dfrac{x^{3}-y^{3}}{x^{2}+xy+y^{2}}`,
+          choices: [
+            String.raw`x+y`,
+            String.raw`\dfrac{(x-y)(x^{2}+xy+y^{2})}{x^{2}-xy+y^{2}}`,
+            String.raw`\dfrac{x^{3}+y^{3}}{x^{2}+xy+y^{2}}`,
+            String.raw`x-y`,
+            String.raw`1`,
+            String.raw`\dfrac{x^{3}-y^{3}}{x-y}`
+          ]},
+
+        { latex: String.raw`\text{Simplify: } \dfrac{x^{3}-xy^{2}+x^{2}y-y^{3}}{x^{3}-y^{3}}`,
+          choices: [
+            String.raw`\dfrac{(x+y)^{2}}{x^{2}+xy+y^{2}}`,
+            String.raw`\dfrac{x^{2}+xy+y^{2}}{(x+y)^{2}}`,
+            String.raw`\dfrac{x-y}{x^{2}+xy+y^{2}}`,
+            String.raw`\dfrac{x^{2}+xy}{x-y}`,
+            String.raw`1`,
+            String.raw`\text{Cannot be simplified}`
+          ]}
+      ]
+    };
+  </script>
+
+  <link rel="stylesheet" href="/math-homework/assets/core.css" />
+  <script defer src="/math-homework/assets/core.js"></script>
+  <script defer src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+</head>
+<body>
+  <div id="hw-root">Loading…</div>
+</body>
+</html>

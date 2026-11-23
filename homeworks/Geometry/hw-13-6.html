@@ -1,0 +1,404 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Homework 13-6 - Proportions in Circles</title>
+
+  <script>
+
+    window.homeworkData = {
+      classId : "Geometry",
+      id      : "Homework 13-6 - Proportions in Circles",
+      title   : "Homework 13-6 - Proportions in Circles",
+
+      graphics : String.raw``,
+
+      answerKey : [
+        "F","C","C","A","B","C",
+        "C","B",
+        "F","C",
+        "C","C",
+        "D","F",
+        "B","D","C",
+        "C","C"
+      ],
+
+      questions : [
+
+        {
+          stem: String.raw`<p><b>Refer to Figure 1.</b> Determine \(x\).</p>`,
+          media: String.raw`
+            <figure>
+              <img src="hw-13-6-fig-1.png" alt="Problem 491a" />
+              <figcaption>Figure 1</figcaption>
+            </figure>
+          `,
+          choices: [
+            String.raw`\(\dfrac{3}{8}\)`,
+            String.raw`\(\dfrac{4}{3}\)`,
+            String.raw`\(\dfrac{8}{3}\)`,
+            String.raw`\(\dfrac{7}{2}\)`,
+            String.raw`\(4\)`,
+            String.raw`\(6\)`
+          ]
+        },
+
+        {
+          stem: String.raw`<p><b>Refer to Figure 2.</b> Determine \(x\).</p>`,
+          media: String.raw`
+            <figure>
+              <img src="hw-13-6-fig-2.png" alt="Problem 491b" />
+              <figcaption>Figure 2</figcaption>
+            </figure>
+          `,
+          choices: [
+            String.raw`\(6\)`,
+            String.raw`\(8\)`,
+            String.raw`\(9\)`,
+            String.raw`\(10\)`,
+            String.raw`\(12\)`,
+            String.raw`\(15\)`
+          ]
+        },
+
+        {
+          stem: String.raw`<p><b>Refer to Figure 3.</b> Determine \(x\).</p>`,
+          media: String.raw`
+            <figure>
+              <img src="hw-13-6-fig-3.png" alt="Problem 491c" />
+              <figcaption>Figure 3</figcaption>
+            </figure>
+          `,
+          choices: [
+            String.raw`\(2\)`,
+            String.raw`\(3\)`,
+            String.raw`\(4\)`,
+            String.raw`\(5\)`,
+            String.raw`\(6\)`,
+            String.raw`\(8\)`
+          ]
+        },
+
+        {
+          stem: String.raw`<p><b>Refer to Figure 4.</b> Determine \(x\).</p>`,
+          media: String.raw`
+            <figure>
+              <img src="hw-13-6-fig-4.png" alt="Problem 491d" />
+              <figcaption>Figure 4</figcaption>
+            </figure>
+          `,
+          choices: [
+            String.raw`\(4\)`,
+            String.raw`\(8\)`,
+            String.raw`\(10\)`,
+            String.raw`\(12\)`,
+            String.raw`\(14\)`,
+            String.raw`\(16\)`
+          ]
+        },
+
+        {
+          stem: String.raw`<p><b>Refer to Figure 5.</b> Determine \(x\).</p>`,
+          media: String.raw`
+            <figure>
+              <img src="hw-13-6-fig-5.png" alt="Problem 491e" />
+              <figcaption>Figure 5</figcaption>
+            </figure>
+          `,
+          choices: [
+            String.raw`\(2\)`,
+            String.raw`\(3\)`,
+            String.raw`\(4\)`,
+            String.raw`\(5\)`,
+            String.raw`\(6\)`,
+            String.raw`\(8\)`
+          ]
+        },
+
+        {
+          stem: String.raw`<p><b>Refer to Figure 6.</b> Determine \(x\).</p>`,
+          media: String.raw`
+            <figure>
+              <img src="hw-13-6-fig-6.png" alt="Problem 491f" />
+              <figcaption>Figure 6</figcaption>
+            </figure>
+          `,
+          choices: [
+            String.raw`\(1\)`,
+            String.raw`\(2\)`,
+            String.raw`\(3\)`,
+            String.raw`\(4\)`,
+            String.raw`\(6\)`,
+            String.raw`\(9\)`
+          ]
+        },
+
+        {
+          stem: String.raw`<p><b>Refer to Figure 7.</b> Determine \(x\).</p>`,
+          media: String.raw`
+            <figure>
+              <img src="hw-13-6-fig-7.png" alt="Problem 492a" />
+              <figcaption>Figure 7</figcaption>
+            </figure>
+          `,
+          choices: [
+            String.raw`\(3\sqrt{5}\)`,
+            String.raw`\(6\sqrt{5}\)`,
+            String.raw`\(3\sqrt{17}\)`,
+            String.raw`\(6\sqrt{17}\)`,
+            String.raw`\(17\)`,
+            String.raw`\(34\)`
+          ]
+        },
+
+        {
+          stem: String.raw`<p><b>Refer to Figure 8.</b> Determine \(x\).</p>`,
+          media: String.raw`
+            <figure>
+              <img src="hw-13-6-fig-8.png" alt="Problem 492b" />
+              <figcaption>Figure 8</figcaption>
+            </figure>
+          `,
+          choices: [
+            String.raw`\(4\)`,
+            String.raw`\(6\)`,
+            String.raw`\(8\)`,
+            String.raw`\(9\)`,
+            String.raw`\(12\)`,
+            String.raw`\(15\)`
+          ]
+        },
+
+        {
+          stem: String.raw`<p><b>Refer to Figure 9.</b> Determine \(x\).</p>`,
+          media: String.raw`
+            <figure>
+              <img src="hw-13-6-fig-9.png" alt="Problem 493a" />
+              <figcaption>Figure 9</figcaption>
+            </figure>
+          `,
+          choices: [
+            String.raw`\(13\)`,
+            String.raw`\(25\)`,
+            String.raw`\(39\)`,
+            String.raw`\(52\)`,
+            String.raw`\(60\)`,
+            String.raw`\(65\)`
+          ]
+        },
+
+        {
+          stem: String.raw`<p><b>Refer to Figure 10.</b> Determine \(x\).</p>`,
+          media: String.raw`
+            <figure>
+              <img src="hw-13-6-fig-10.png" alt="Problem 493b" />
+              <figcaption>Figure 10</figcaption>
+            </figure>
+          `,
+          choices: [
+            String.raw`\(6\)`,
+            String.raw`\(8\)`,
+            String.raw`\(9\)`,
+            String.raw`\(10\)`,
+            String.raw`\(12\)`,
+            String.raw`\(15\)`
+          ]
+        },
+
+        {
+          stem: String.raw`<p><b>Refer to Figure 11.</b> Determine \(x\).</p>`,
+          media: String.raw`
+            <figure>
+              <img src="hw-13-6-fig-11.png" alt="Problem 495a" />
+              <figcaption>Figure 11</figcaption>
+            </figure>
+          `,
+          choices: [
+            String.raw`\(2\sqrt{6}\)`,
+            String.raw`\(2\sqrt{8}\)`,
+            String.raw`\(2\sqrt{10}\)`,
+            String.raw`\(4\sqrt{5}\)`,
+            String.raw`\(5\)`,
+            String.raw`\(10\)`
+          ]
+        },
+
+        {
+          stem: String.raw`<p><b>Refer to Figure 12.</b> Determine \(x\).</p>`,
+          media: String.raw`
+            <figure>
+              <img src="hw-13-6-fig-12.png" alt="Problem 495b" />
+              <figcaption>Figure 12</figcaption>
+            </figure>
+          `,
+          choices: [
+            String.raw`\(2+\sqrt{2}\)`,
+            String.raw`\(2+\sqrt{8}\)`,
+            String.raw`\(2+2\sqrt{2}\)`,
+            String.raw`\(4+2\sqrt{2}\)`,
+            String.raw`\(2\sqrt{2}\)`,
+            String.raw`\(4\)`
+          ]
+        },
+
+        {
+          stem: String.raw`<p><b>Refer to Figure 13.</b> Determine the radius \(r\) of the circle.</p>`,
+          media: String.raw`
+            <figure>
+              <img src="hw-13-6-fig-13.png" alt="Problem 496a" />
+              <figcaption>Figure 13</figcaption>
+            </figure>
+          `,
+          choices: [
+            String.raw`\(6\)`,
+            String.raw`\(8\)`,
+            String.raw`\(12\)`,
+            String.raw`\(16\)`,
+            String.raw`\(18\)`,
+            String.raw`\(20\)`
+          ]
+        },
+
+        {
+          stem: String.raw`<p><b>Refer to Figure 14.</b> Determine the radius \(r\) of the circle.</p>`,
+          media: String.raw`
+            <figure>
+              <img src="hw-13-6-fig-14.png" alt="Problem 496b" />
+              <figcaption>Figure 14</figcaption>
+            </figure>
+          `,
+          choices: [
+            String.raw`\(5\)`,
+            String.raw`\(7\)`,
+            String.raw`\(8\)`,
+            String.raw`\(9\)`,
+            String.raw`\(10\)`,
+            String.raw`\(13\)`
+          ]
+        },
+
+        {
+          stem: String.raw`
+            <p><b>Refer to Figure 15.</b></p>
+            <p>Given \(ED:EC=2:3\), \(AE=6\), and \(EB=16\), determine \(CD\).</p>
+          `,
+          media: String.raw`
+            <figure>
+              <img src="hw-13-6-fig-15.png" alt="Problem 497" />
+              <figcaption>Figure 15</figcaption>
+            </figure>
+          `,
+          choices: [
+            String.raw`\(12\)`,
+            String.raw`\(20\)`,
+            String.raw`\(24\)`,
+            String.raw`\(30\)`,
+            String.raw`\(36\)`,
+            String.raw`\(40\)`
+          ]
+        },
+
+        {
+          stem: String.raw`
+            <p><b>Refer to Figure 16.</b></p>
+            <p>\(\overline{AB}\) is a diameter. \(\overline{BC}\) is tangent at \(B\). \(\overline{DE}\parallel \overline{BC}\).</p>
+            <p>Determine \(DE\).</p>
+          `,
+          media: String.raw`
+            <figure>
+              <img src="hw-13-6-fig-16.png" alt="Problem 498" />
+              <figcaption>Figure 16</figcaption>
+            </figure>
+          `,
+          choices: [
+            String.raw`\(\dfrac{24}{5}\)`,
+            String.raw`\(\dfrac{36}{5}\)`,
+            String.raw`\(\dfrac{42}{5}\)`,
+            String.raw`\(\dfrac{48}{5}\)`,
+            String.raw`\(\dfrac{54}{5}\)`,
+            String.raw`\(\dfrac{60}{5}\)`
+          ]
+        },
+
+        {
+          stem: String.raw`
+            <p><b>Refer to Figure 17.</b></p>
+            <p>A circle of radius \(r\) is inscribed in a quadrant of a circle of radius \(R\).</p>
+            <p>Determine \(r\) in terms of \(R\).</p>
+          `,
+          media: String.raw`
+            <figure>
+              <img src="hw-13-6-fig-17.png" alt="Problem 502" />
+              <figcaption>Figure 17</figcaption>
+            </figure>
+          `,
+          choices: [
+            String.raw`\(r=\dfrac{R}{2}\)`,
+            String.raw`\(r=\dfrac{R}{\sqrt{2}}\)`,
+            String.raw`\(r=R(\sqrt{2}-1)\)`,
+            String.raw`\(r=R(2-\sqrt{2})\)`,
+            String.raw`\(r=R(\sqrt{2}+1)\)`,
+            String.raw`\(r=\dfrac{R}{1-\sqrt{2}}\)`
+          ]
+        },
+
+        {
+          choiceWrap: false,
+          stem: String.raw`
+            <p><b>Refer to Figure 18.</b></p>
+            <p>You want to prove \(\triangle MPN \sim \triangle BPA\).</p>
+            <p>Which pair of angle congruences is the correct AA justification?</p>
+          `,
+          media: String.raw`
+            <figure>
+              <img src="hw-13-6-fig-18.png" alt="Tangent-secant setup for triangle similarity" />
+              <figcaption>Figure 18</figcaption>
+            </figure>
+          `,
+          choices: [
+            String.raw`\(\angle MNP \cong \angle BPA\) and \(\angle MPN \cong \angle BAP\)`,
+            String.raw`\(\angle MNP \cong \angle BPA\) and \(\angle MPN \cong \angle BPA\)`,
+            String.raw`\(\angle MNP \cong \angle BAP\) (radius ⟂ tangent) and \(\angle MPN \cong \angle BPA\) (same angle at \(P\))`,
+            String.raw`\(\angle MNP \cong \angle BPA\) (vertical angles) and \(\angle MPN \cong \angle BAP\) (alternate interior angles)`,
+            String.raw`\(\angle MNP \cong \angle BAP\) and \(\angle MNP \cong \angle BPA\)`,
+            String.raw`Not enough information to prove similarity.`
+          ]
+        },
+
+        {
+          choiceWrap: false,
+          stem: String.raw`
+            <p><b>Refer to Figure 19.</b></p>
+            <p>A secant and a tangent intersect outside a circle.</p>
+            <p>Which equation states the correct conclusion (Power of a Point: tangent–secant theorem)?</p>
+          `,
+          media: String.raw`
+            <figure>
+              <img src="hw-13-6-fig-19.png" alt="Tangent and secant from an external point" />
+              <figcaption>Figure 19</figcaption>
+            </figure>
+          `,
+          choices: [
+            String.raw`\((\text{tangent}) = (\text{external secant}) + (\text{whole secant})\)`,
+            String.raw`\((\text{tangent})^2 = (\text{inside secant})\cdot(\text{whole secant})\)`,
+            String.raw`\((\text{tangent})^2 = (\text{external secant})\cdot(\text{whole secant})\)`,
+            String.raw`\((\text{tangent}) = (\text{external secant})\cdot(\text{whole secant})\)`,
+            String.raw`\((\text{tangent})^2 = (\text{whole secant})^2\)`,
+            String.raw`\((\text{tangent})^2 = (\text{external secant})^2 + (\text{inside secant})^2\)`
+          ]
+        }
+
+      ]
+    };
+  </script>
+
+  <link rel="stylesheet" href="/math-homework/assets/core-rich.css" />
+  <script defer src="/math-homework/assets/core-rich.js"></script>
+  <script defer src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+</head>
+
+<body>
+  <div id="hw-root">Loading…</div>
+</body>
+</html>

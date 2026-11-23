@@ -1,0 +1,306 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Homework 8 Review - Complex Numbers and Vectors</title>
+  <script>
+
+  window.homeworkData = {
+    classId: "Algebra2",
+    id: "Homework 8 Review - Complex Numbers and Vectors",
+    title: "Homework 8 Review - Complex Numbers and Vectors",
+    graphics: String.raw``,
+    answerKey: ["C", "D", "C", "F", "C", "E", "A", "E", "A", "F", "C", "B", "C", "B", "A", "E", "B", "E", "C", "A"],
+    questions: [
+
+      {
+        stem: String.raw`<p>Distinguish the principal square root from the solutions of an equation. Which choice gives \(\sqrt{-49}\) and <em>all</em> solutions of \(x^2=-49\), in that order?</p>`,
+        choiceWrap: false,
+        choices: [
+          String.raw`\(7i;\ x=7i\)`,
+          String.raw`\(-7i;\ x=\pm7i\)`,
+          String.raw`\(7i;\ x=\pm7i\)`,
+          String.raw`\(\pm7i;\ x=\pm7i\)`,
+          String.raw`\(7;\ x=\pm7i\)`,
+          String.raw`\(7i;\ x=\pm7\)`
+        ]
+      },
+
+      {
+        stem: String.raw`<p>Let \(A=\sqrt{-9}\,\sqrt{-16}\) and \(B=\sqrt{(-9)(-16)}\), where the square-root symbols denote principal square roots. Determine the ordered pair \((A,B)\).</p>`,
+        choiceWrap: false,
+        choices: [
+          String.raw`\((12,12)\)`,
+          String.raw`\((-12,-12)\)`,
+          String.raw`\((12,-12)\)`,
+          String.raw`\((-12,12)\)`,
+          String.raw`\((12i,12)\)`,
+          String.raw`\((-12i,12)\)`
+        ]
+      },
+
+      {
+        stem: String.raw`<p>Solve \(2x^2-4x+5=0\) over the complex numbers. Give both solutions in simplest form.</p>`,
+        choiceWrap: false,
+        choices: [
+          String.raw`\(x=1\pm\sqrt6\,i\)`,
+          String.raw`\(x=-1\pm\dfrac{\sqrt6}{2}i\)`,
+          String.raw`\(x=1\pm\dfrac{\sqrt6}{2}i\)`,
+          String.raw`\(x=1\pm\dfrac{\sqrt{14}}{2}i\)`,
+          String.raw`\(x=\dfrac{1\pm\sqrt6\,i}{2}\)`,
+          String.raw`\(x=1\pm\dfrac{\sqrt6}{2}\)`
+        ]
+      },
+
+      {
+        stem: String.raw`<p>Compute \((-2+3i)(4+i)\). Express the product in the form \(a+bi\), where \(a,b\) are real.</p>`,
+        choiceWrap: false,
+        choices: [
+          String.raw`\(-5+10i\)`,
+          String.raw`\(-11+14i\)`,
+          String.raw`\(-11-10i\)`,
+          String.raw`\(-5-10i\)`,
+          String.raw`\(-8+10i\)`,
+          String.raw`\(-11+10i\)`
+        ]
+      },
+
+      {
+        stem: String.raw`<p>Let \(z=-3+4i\). Find the ordered pair \((z\overline z,\lvert z\rvert)\), where \(\overline z\) is the conjugate of \(z\).</p>`,
+        choiceWrap: false,
+        choices: [
+          String.raw`\((-7,5)\)`,
+          String.raw`\((25,25)\)`,
+          String.raw`\((25,5)\)`,
+          String.raw`\((-25,5)\)`,
+          String.raw`\((7,\sqrt7)\)`,
+          String.raw`\((25,7)\)`
+        ]
+      },
+
+      {
+        stem: String.raw`<p>Write \(\dfrac{5+2i}{2-i}\) in the form \(a+bi\), with both parts simplified.</p>`,
+        choiceWrap: false,
+        choices: [
+          String.raw`\(\dfrac85-\dfrac95i\)`,
+          String.raw`\(\dfrac{12}5-\dfrac15i\)`,
+          String.raw`\(\dfrac83+\dfrac93i\)`,
+          String.raw`\(2+\dfrac45i\)`,
+          String.raw`\(\dfrac85+\dfrac95i\)`,
+          String.raw`\(\dfrac{12}5+\dfrac95i\)`
+        ]
+      },
+
+      {
+        stem: String.raw`<p>Determine the complex number \(z\) that satisfies \((1-2i)z=5i\).</p>`,
+        choiceWrap: false,
+        choices: [
+          String.raw`\(-2+i\)`,
+          String.raw`\(2+i\)`,
+          String.raw`\(-2-i\)`,
+          String.raw`\(2-i\)`,
+          String.raw`\(-1+2i\)`,
+          String.raw`\(1-2i\)`
+        ]
+      },
+
+      {
+        stem: String.raw`<p>The number \(t\) is real. Determine \(t\) so that \(\dfrac{2+ti}{1-3i}\) is a real number.</p>`,
+        choiceWrap: false,
+        choices: [
+          String.raw`\(6\)`,
+          String.raw`\(-2\)`,
+          String.raw`\(2\)`,
+          String.raw`\(-\dfrac23\)`,
+          String.raw`\(-6\)`,
+          String.raw`\(\dfrac23\)`
+        ]
+      },
+
+      {
+        stem: String.raw`<p>Which choice gives both the point representing \(z=-5+12i\) in the complex plane and the distance of that point from the origin?</p>`,
+        choiceWrap: false,
+        choices: [
+          String.raw`\((-5,12);\ 13\)`,
+          String.raw`\((5,12);\ 13\)`,
+          String.raw`\((-5,-12);\ 13\)`,
+          String.raw`\((12,-5);\ 13\)`,
+          String.raw`\((-5,12);\ 17\)`,
+          String.raw`\((-5,12);\ 169\)`
+        ]
+      },
+
+      {
+        stem: String.raw`<p>Let \(z=a+bi\ne0\), where \(a,b\) are real. Under which condition is \(\dfrac1z=\overline z\)?</p>`,
+        choiceWrap: false,
+        choices: [
+          String.raw`\(a^2-b^2=1\)`,
+          String.raw`\(a^2+b^2>0\)`,
+          String.raw`\(a+b=1\)`,
+          String.raw`\(ab=0\)`,
+          String.raw`\(\lvert a\rvert+\lvert b\rvert=1\)`,
+          String.raw`\(a^2+b^2=1\)`
+        ]
+      },
+
+      {
+        stem: String.raw`<p>Refer to Figure 1. Which two arrows represent the <em>same vector</em>, even though they have different starting points?</p>`,
+        media: String.raw`<figure><img src="hw-8-5-to-8-7-fig-1.png" alt="Figure 1: complex coordinate grid with labeled points and arrows." style="max-width:640px;width:100%;height:auto"/><figcaption>Figure 1</figcaption></figure>`,
+        choiceWrap: false,
+        choices: [
+          String.raw`\(\mathbf p\ \text{and}\ \mathbf r\)`,
+          String.raw`\(\mathbf p\ \text{and}\ \mathbf s\)`,
+          String.raw`\(\mathbf p\ \text{and}\ \mathbf q\)`,
+          String.raw`\(\mathbf q\ \text{and}\ \mathbf r\)`,
+          String.raw`\(\mathbf q\ \text{and}\ \mathbf s\)`,
+          String.raw`\(\mathbf r\ \text{and}\ \mathbf s\)`
+        ]
+      },
+
+      {
+        stem: String.raw`<p>Refer to Figure 1. Translate the arrows representing \(\mathbf s\) and \(\mathbf p\) to the origin. Which complex number corresponds to \(\mathbf s-\mathbf p\)?</p>`,
+        media: String.raw`<figure><img src="hw-8-5-to-8-7-fig-1.png" alt="Figure 1: complex coordinate grid with labeled points and arrows." style="max-width:640px;width:100%;height:auto"/><figcaption>Figure 1</figcaption></figure>`,
+        choiceWrap: false,
+        choices: [
+          String.raw`\(4i\)`,
+          String.raw`\(-4i\)`,
+          String.raw`\(6\)`,
+          String.raw`\(-6\)`,
+          String.raw`\(6-4i\)`,
+          String.raw`\(-6-4i\)`
+        ]
+      },
+
+      {
+        stem: String.raw`<p>Refer to Figure 2. An arrow representing the vector \(\overrightarrow{BA}\) begins at the marked point \(T\). Determine its endpoint.</p>`,
+        media: String.raw`<figure><img src="hw-8-5-to-8-7-fig-2.png" alt="Figure 2: complex coordinate grid with labeled points and arrows." style="max-width:640px;width:100%;height:auto"/><figcaption>Figure 2</figcaption></figure>`,
+        choiceWrap: false,
+        choices: [
+          String.raw`\((6,1)\)`,
+          String.raw`\((-2,1)\)`,
+          String.raw`\((-2,-5)\)`,
+          String.raw`\((6,-5)\)`,
+          String.raw`\((-4,-3)\)`,
+          String.raw`\((-3,-2)\)`
+        ]
+      },
+
+      {
+        stem: String.raw`<p>Refer to Figure 2. Consider the vectors represented by the arrows \(A\!\to\!B\) and \(B\!\to\!T\). Find the complex number associated with their sum.</p>`,
+        media: String.raw`<figure><img src="hw-8-5-to-8-7-fig-2.png" alt="Figure 2: complex coordinate grid with labeled points and arrows." style="max-width:640px;width:100%;height:auto"/><figcaption>Figure 2</figcaption></figure>`,
+        choiceWrap: false,
+        choices: [
+          String.raw`\(3\)`,
+          String.raw`\(5\)`,
+          String.raw`\(5+6i\)`,
+          String.raw`\(3+6i\)`,
+          String.raw`\(-5\)`,
+          String.raw`\(1-3i\)`
+        ]
+      },
+
+      {
+        stem: String.raw`<p>Refer to Figure 3. The arrows \(O\!\to\!U\) and \(O\!\to\!V\) represent \(\mathbf u\) and \(\mathbf v\). Determine the endpoint of the arrow representing \(\mathbf u+\mathbf v\) that starts at \(O\).</p>`,
+        media: String.raw`<figure><img src="hw-8-5-to-8-7-fig-3.png" alt="Figure 3: complex coordinate grid with labeled points and arrows." style="max-width:640px;width:100%;height:auto"/><figcaption>Figure 3</figcaption></figure>`,
+        choiceWrap: false,
+        choices: [
+          String.raw`\((4,4)\)`,
+          String.raw`\((2,-2)\)`,
+          String.raw`\((2,2)\)`,
+          String.raw`\((4,-2)\)`,
+          String.raw`\((3,3)\)`,
+          String.raw`\((1,3)\)`
+        ]
+      },
+
+      {
+        stem: String.raw`<p>Refer to Figure 3. Which oriented segment represents \(\mathbf v-\mathbf u\)? Pay attention to the order of subtraction.</p>`,
+        media: String.raw`<figure><img src="hw-8-5-to-8-7-fig-3.png" alt="Figure 3: complex coordinate grid with labeled points and arrows." style="max-width:640px;width:100%;height:auto"/><figcaption>Figure 3</figcaption></figure>`,
+        choiceWrap: false,
+        choices: [
+          String.raw`\(\overrightarrow{OU}\)`,
+          String.raw`\(\overrightarrow{OV}\)`,
+          String.raw`\(\overrightarrow{UO}\)`,
+          String.raw`\(\overrightarrow{VO}\)`,
+          String.raw`\(\overrightarrow{UV}\)`,
+          String.raw`\(\overrightarrow{VU}\)`
+        ]
+      },
+
+      {
+        stem: String.raw`<p>Refer to Figure 3. A vector \(\mathbf w\) satisfies \(\mathbf u+\mathbf w=\mathbf v\). Determine the magnitude \(\lvert\mathbf w\rvert\).</p>`,
+        media: String.raw`<figure><img src="hw-8-5-to-8-7-fig-3.png" alt="Figure 3: complex coordinate grid with labeled points and arrows." style="max-width:640px;width:100%;height:auto"/><figcaption>Figure 3</figcaption></figure>`,
+        choiceWrap: false,
+        choices: [
+          String.raw`\(\sqrt2\)`,
+          String.raw`\(2\sqrt2\)`,
+          String.raw`\(4\)`,
+          String.raw`\(\sqrt{10}\)`,
+          String.raw`\(2\)`,
+          String.raw`\(4\sqrt2\)`
+        ]
+      },
+
+      {
+        stem: String.raw`<p>Refer to Figure 4. The arrows \(A\!\to\!B\) and \(C\!\to\!D\) represent \(\mathbf p\) and \(\mathbf q\). Determine the complex number associated with \(\mathbf p+\mathbf q\).</p>`,
+        media: String.raw`<figure><img src="hw-8-5-to-8-7-fig-4.png" alt="Figure 4: complex coordinate grid with labeled points and arrows." style="max-width:640px;width:100%;height:auto"/><figcaption>Figure 4</figcaption></figure>`,
+        choiceWrap: false,
+        choices: [
+          String.raw`\(2+5i\)`,
+          String.raw`\(4+i\)`,
+          String.raw`\(3+2i\)`,
+          String.raw`\(1-3i\)`,
+          String.raw`\(4-i\)`,
+          String.raw`\(2-5i\)`
+        ]
+      },
+
+      {
+        stem: String.raw`<p>Refer to Figure 4. An arrow representing \(\mathbf p-\mathbf q\) begins at the marked point \(E\). At which point must this arrow end?</p>`,
+        media: String.raw`<figure><img src="hw-8-5-to-8-7-fig-4.png" alt="Figure 4: complex coordinate grid with labeled points and arrows." style="max-width:640px;width:100%;height:auto"/><figcaption>Figure 4</figcaption></figure>`,
+        choiceWrap: false,
+        choices: [
+          String.raw`\((0,-7)\)`,
+          String.raw`\((-4,3)\)`,
+          String.raw`\((0,3)\)`,
+          String.raw`\((2,5)\)`,
+          String.raw`\((0,-3)\)`,
+          String.raw`\((-2,3)\)`
+        ]
+      },
+
+      {
+        stem: String.raw`<p>Points \(P\) and \(Q\) correspond to \(1+2i\) and \(-2-2i\), respectively. Which choice gives the complex number associated with \(\overrightarrow{PQ}\) and its magnitude, in that order?</p>`,
+        choiceWrap: false,
+        choices: [
+          String.raw`\(-3-4i;\ 5\)`,
+          String.raw`\(3+4i;\ 5\)`,
+          String.raw`\(-3+4i;\ 5\)`,
+          String.raw`\(-3-4i;\ 25\)`,
+          String.raw`\(3-4i;\ 5\)`,
+          String.raw`\(-1;\ 1\)`
+        ]
+      }
+    ]
+  };
+  </script>
+  <link rel="stylesheet" href="/math-homework/assets/core-rich.css" />
+  <script defer src="/math-homework/assets/core-rich.js"></script>
+  <script defer src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+  <style>
+    .review-notice { max-width:980px; margin:1.2rem auto 0; padding:.7rem 1rem;
+      border-left:3px solid #64748b; background:#f8fafc; color:#334155;
+      font: .94rem/1.55 system-ui,-apple-system,"Segoe UI",sans-serif; }
+    .review-notice p {margin:.3em 0;}
+  </style>
+</head>
+<body>
+  <div class="review-notice">
+    <p><strong>Algebra 2 · Chapter 8 Review · Approximately 50 minutes</strong></p>
+    <p>Work out each question on paper before selecting one answer. You may sketch or translate arrows on your paper. No calculator is necessary.</p>
+    <p><strong>Vector convention:</strong> A drawn arrow is a representative of a vector. Arrows at different locations represent the same vector when they have the same displacement.</p>
+  </div>
+  <div id="hw-root">Loading…</div>
+</body>
+</html>

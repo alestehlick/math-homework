@@ -1,0 +1,286 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Homework 9-1 - Factorization by Common Factors</title>
+  <script>
+
+window.homeworkData = {
+  classId: "Algebra1",
+  id: "Homework 9-1 - Factorization by Common Factors",
+  title: "Homework 9-1 - Factorization by Common Factors",
+  graphics: String.raw``,
+  answerKey: ["B", "C", "E", "A", "F", "D", "B", "A", "D", "C", "F", "B", "E", "C", "A", "D", "F", "B", "C", "E"],
+  questions: [
+
+    {
+      stem: String.raw`<p>Which of the following expresses \(84\) as a product in which <em>every factor is a prime number</em>?</p>`,
+      choiceWrap: false,
+      choices: [
+        String.raw`\(84=6\cdot14\)`,
+        String.raw`\(84=2\cdot2\cdot3\cdot7\)`,
+        String.raw`\(84=2\cdot3\cdot7\)`,
+        String.raw`\(84=2\cdot2\cdot21\)`,
+        String.raw`\(84=2\cdot2\cdot3\cdot3\cdot7\)`,
+        String.raw`\(84=4\cdot3\cdot7\)`
+      ]
+    },
+
+    {
+      stem: String.raw`<p>Factorize \(24x^3y-36x^2y^2+60xy\) by extracting the greatest common monomial.</p>`,
+      choiceWrap: false,
+      choices: [
+        String.raw`\(6xy(4x^2-6xy+10)\)`,
+        String.raw`\(12xy(2x^2-3xy^2+5)\)`,
+        String.raw`\(12xy(2x^2-3xy+5)\)`,
+        String.raw`\(12x^2y(2x-3y+5)\)`,
+        String.raw`\(12xy(2x^2-3xy-5)\)`,
+        String.raw`\(12xy(2x^2-3x+5)\)`
+      ]
+    },
+
+    {
+      stem: String.raw`<p>Factorize \(35a^7b^4-49a^5b^6+14a^4b^3\) by extracting the greatest common monomial.</p>`,
+      choiceWrap: false,
+      choices: [
+        String.raw`\(7a^3b^3(5a^4b-7a^2b^3+2a)\)`,
+        String.raw`\(7a^4b^3(5a^3b-7ab^2+2)\)`,
+        String.raw`\(7a^4b^3(5a^3b-7ab^3+2b)\)`,
+        String.raw`\(7a^4b^3(5a^2b-7ab^3+2)\)`,
+        String.raw`\(7a^4b^3(5a^3b-7ab^3+2)\)`,
+        String.raw`\(7a^4b^4(5a^3-7ab^2+2)\)`
+      ]
+    },
+
+    {
+      stem: String.raw`<p>Factorize \(35x^3-21x^2+14\) by extracting the greatest common monomial.</p>`,
+      choiceWrap: false,
+      choices: [
+        String.raw`\(7(5x^3-3x^2+2)\)`,
+        String.raw`\(7x(5x^2-3x+2)\)`,
+        String.raw`\(7(5x^3-3x+2)\)`,
+        String.raw`\(7(5x^3-3x^2+14)\)`,
+        String.raw`\(14(5x^3-3x^2+1)\)`,
+        String.raw`\(7(5x^3+3x^2+2)\)`
+      ]
+    },
+
+    {
+      stem: String.raw`<p>Factorize \(-20x^4y^3+30x^3y^5-10x^2y^2\) by extracting the greatest common monomial with a <em>negative</em> coefficient.</p>`,
+      choiceWrap: false,
+      choices: [
+        String.raw`\(-10x^2y^2(2x^2y+3xy^3+1)\)`,
+        String.raw`\(-10x^2y^2(2x^2y-3xy^2+1)\)`,
+        String.raw`\(10x^2y^2(-2x^2y+3xy^3-1)\)`,
+        String.raw`\(-10x^2y^2(2x^2y-3xy^3-1)\)`,
+        String.raw`\(-5x^2y^2(4x^2y-6xy^3+2)\)`,
+        String.raw`\(-10x^2y^2(2x^2y-3xy^3+1)\)`
+      ]
+    },
+
+    {
+      stem: String.raw`<p>First simplify \(4x^3-6x^2+2x^3+15x^2-3x\). Then factorize the result by extracting its greatest common monomial.</p>`,
+      choiceWrap: false,
+      choices: [
+        String.raw`\(3x(2x^2-3x-1)\)`,
+        String.raw`\(3x(2x^2+3x+1)\)`,
+        String.raw`\(3x(2x^2+3x-3)\)`,
+        String.raw`\(3x(2x^2+3x-1)\)`,
+        String.raw`\(x(6x^2+9x-3)\)`,
+        String.raw`\(3x(2x^3+3x-1)\)`
+      ]
+    },
+
+    {
+      stem: String.raw`<p>Consider the following three representations of the same polynomial:</p><p>\(18x^2-30x=2x(9x-15)=3x(6x-10)=6x(3x-5)\).</p><p>Which statement is correct?</p>`,
+      choiceWrap: false,
+      choices: [
+        String.raw`Only \(2x(9x-15)\) is equal to the original polynomial.`,
+        String.raw`All three expressions are equal to the original polynomial, but only \(6x(3x-5)\) extracts the greatest common monomial.`,
+        String.raw`All three expressions extract the greatest common monomial, because each is a product.`,
+        String.raw`Only \(6x(3x-5)\) is equal to the original polynomial.`,
+        String.raw`The first two products are equal to the original polynomial, but the third is not.`,
+        String.raw`The products with factors \(2x\) and \(6x\) are correct, but the one with \(3x\) is not.`
+      ]
+    },
+
+    {
+      stem: String.raw`<p>Factorize the expression \(2x(x-4)+3(x-4)\) as a product of two binomials.</p>`,
+      choiceWrap: false,
+      choices: [
+        String.raw`\((2x+3)(x-4)\)`,
+        String.raw`\((2x-3)(x-4)\)`,
+        String.raw`\((2x+3)(x+4)\)`,
+        String.raw`\((2x+3)(x-8)\)`,
+        String.raw`\((2x+3)(2x-4)\)`,
+        String.raw`\((5x)(x-4)\)`
+      ]
+    },
+
+    {
+      stem: String.raw`<p>Factorize \(3ax+3ay+2bx+2by\) using regrouping if needed.</p>`,
+      choiceWrap: false,
+      choices: [
+        String.raw`\((3a+2b)(x-y)\)`,
+        String.raw`\((3a-2b)(x+y)\)`,
+        String.raw`\((3a+b)(x+2y)\)`,
+        String.raw`\((3a+2b)(x+y)\)`,
+        String.raw`\((3a+2b)(2x+y)\)`,
+        String.raw`\((3a+2b)(x+2y)\)`
+      ]
+    },
+
+    {
+      stem: String.raw`<p>Factorize \(x^3-4x^2+7x-28\).</p>`,
+      choiceWrap: false,
+      choices: [
+        String.raw`\((x+4)(x^2+7)\)`,
+        String.raw`\((x-4)(x^2-7)\)`,
+        String.raw`\((x-4)(x^2+7)\)`,
+        String.raw`\((x-7)(x^2+4)\)`,
+        String.raw`\((x-4)(x^2+7x)\)`,
+        String.raw`\((x-7)(x^2-4)\)`
+      ]
+    },
+
+    {
+      stem: String.raw`<p>Factorize \(6x^3-9x^2+10x-15\) using the reverse distributive law.</p>`,
+      choiceWrap: false,
+      choices: [
+        String.raw`\((2x+3)(3x^2-5)\)`,
+        String.raw`\((2x-3)(3x^2-5)\)`,
+        String.raw`\((3x-5)(2x^2+3)\)`,
+        String.raw`\((2x-3)(6x^2+5)\)`,
+        String.raw`\((3x-2)(2x^2+5)\)`,
+        String.raw`\((2x-3)(3x^2+5)\)`
+      ]
+    },
+
+    {
+      stem: String.raw`<p>Factorize \(4a^2-8ab+3ac-6bc\) by grouping terms.</p>`,
+      choiceWrap: false,
+      choices: [
+        String.raw`\((4a-2b)(a+3c)\)`,
+        String.raw`\((a-2b)(4a+3c)\)`,
+        String.raw`\((a+2b)(4a+3c)\)`,
+        String.raw`\((a-2b)(4a-3c)\)`,
+        String.raw`\((a-2b)(4a+3b)\)`,
+        String.raw`\((4a+3c)(a-b)\)`
+      ]
+    },
+
+    {
+      stem: String.raw`<p>Factorize \(x^6+2x^4+3x^2+6\).</p>`,
+      choiceWrap: false,
+      choices: [
+        String.raw`\((x^4-3)(x^2-2)\)`,
+        String.raw`\((x^4+3)(x^2-2)\)`,
+        String.raw`\((x^4+2)(x^2+3)\)`,
+        String.raw`\((x^4+6)(x^2+1)\)`,
+        String.raw`\((x^4+3)(x^2+2)\)`,
+        String.raw`\((x^4+3x^2)(x^2+2)\)`
+      ]
+    },
+
+    {
+      stem: String.raw`<p>Factorize \(2ax+3by+3ay+2bx\).</p>`,
+      choiceWrap: false,
+      choices: [
+        String.raw`\((a-b)(2x+3y)\)`,
+        String.raw`\((a+b)(2x-3y)\)`,
+        String.raw`\((a+b)(2x+3y)\)`,
+        String.raw`\((2a+3b)(x+y)\)`,
+        String.raw`\((a+2b)(2x+3y)\)`,
+        String.raw`\((a+b)(3x+2y)\)`
+      ]
+    },
+
+    {
+      stem: String.raw`<p>Factorize \(-2x^4+6x^3-5x+15\).</p>`,
+      choiceWrap: false,
+      choices: [
+        String.raw`\((3-x)(2x^3+5)\)`,
+        String.raw`\((x-3)(2x^3+5)\)`,
+        String.raw`\((3-x)(2x^3-5)\)`,
+        String.raw`\((x+3)(2x^3-5)\)`,
+        String.raw`\((3-x)(2x^4+5)\)`,
+        String.raw`\((3+x)(2x^3+5)\)`
+      ]
+    },
+
+    {
+      stem: String.raw`<p>Factorize \(-2x^8+10x^6-3x^5+15x^3\).</p>`,
+      choiceWrap: false,
+      choices: [
+        String.raw`\(x^3(5+x^2)(2x^3-3)\)`,
+        String.raw`\(x^3(5-x^2)(2x^3-3)\)`,
+        String.raw`\(x^3(x^2-5)(2x^3+3)\)`,
+        String.raw`\(x^3(5-x^2)(2x^3+3)\)`,
+        String.raw`\(x^2(5-x^2)(2x^3+3)\)`,
+        String.raw`\(x^3(5-x^2)(2x^2+3)\)`
+      ]
+    },
+
+    {
+      stem: String.raw`<p>Factorize \(2ax-6ay-5bx+15by\).</p>`,
+      choiceWrap: false,
+      choices: [
+        String.raw`\((2a-5b)(x+3y)\)`,
+        String.raw`\((2a+5b)(x-3y)\)`,
+        String.raw`\((2a-3b)(x-5y)\)`,
+        String.raw`\((2a-5b)(x-6y)\)`,
+        String.raw`\((2a-5b)(2x-3y)\)`,
+        String.raw`\((2a-5b)(x-3y)\)`
+      ]
+    },
+
+    {
+      stem: String.raw`<p>Factorize \(6x^5-18x^4+10x^3-30x^2\) by extracting all common monomial factors and regrouping as needed.</p>`,
+      choiceWrap: false,
+      choices: [
+        String.raw`\(x^2(x-3)(6x^2+10)\)`,
+        String.raw`\(2x^2(x-3)(3x^2+5)\)`,
+        String.raw`\(2x^2(x+3)(3x^2-5)\)`,
+        String.raw`\(2x(x-3)(3x^2+5)\)`,
+        String.raw`\(2x^2(x-3)(3x^2-5)\)`,
+        String.raw`\(2x^2(x-3)(6x^2+5)\)`
+      ]
+    },
+
+    {
+      stem: String.raw`<p>Factorize \(12a^4b-18a^3b^2+8a^2b-12ab^2\). Extract every common monomial factor that is available.</p>`,
+      choiceWrap: false,
+      choices: [
+        String.raw`\(2ab(2a+3b)(3a^2-2)\)`,
+        String.raw`\(2ab(2a-3b)(3a^2-2)\)`,
+        String.raw`\(2ab(2a-3b)(3a^2+2)\)`,
+        String.raw`\(2a^2b(2a-3b)(3a+2)\)`,
+        String.raw`\(ab(2a-3b)(6a^2+4)\)`,
+        String.raw`\(2ab(3a-2b)(2a^2+2)\)`
+      ]
+    },
+
+    {
+      stem: String.raw`<p>A student starts with</p><p>\(6x^3y+6x^2y^2+6x^2yz+10xy+10y^2+10yz\)</p><p>and extracts \(2y\), obtaining</p><p>\(2y(3x^3+3x^2y+3x^2z+5x+5y+5z)\).</p><p>The student claims that no further factorization is possible because the six terms inside the parentheses have no common monomial factor. Which expression gives a further factorization of the original polynomial?</p>`,
+      choiceWrap: false,
+      choices: [
+        String.raw`\(2y(3x^2+5)(x+y-z)\)`,
+        String.raw`\(2y(3x^2-5)(x+y+z)\)`,
+        String.raw`\(2(3x^2+5)(x+y+z)\)`,
+        String.raw`\(2y(3x+5)(x+y+z)\)`,
+        String.raw`\(2y(3x^2+5)(x+y+z)\)`,
+        String.raw`\(2y(3x^2+5)(x+2y+z)\)`
+      ]
+    }
+  ]
+};
+  </script>
+  <link rel="stylesheet" href="/math-homework/assets/core-rich.css" />
+  <script defer src="/math-homework/assets/core-rich.js"></script>
+  <script defer src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+</head>
+<body>
+  <div id="hw-root">Loading…</div>
+</body>
+</html>

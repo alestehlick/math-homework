@@ -16,122 +16,17 @@ from pypdf import PdfWriter
 # MANUAL SETTINGS
 # ============================================================
 
-START = "hw_1A"
-END   = "hw_1C"
+START = "hw-1a"
+END = "hw-1c"
 
 OUTPUT_PDF = "stitched_homework.pdf"
 VIRTUAL_TIME_BUDGET_MS = 12000
 REPO_FOLDER_NAME = "math-homework"
 
 
-# ============================================================
-# GENERIC NAME PARSING / NATURAL SORT
-# ============================================================
-
-def tokenize_natural(text: str):
-    """
-    Split into alternating numeric / alphabetic chunks for natural sort.
-
-    Examples:
-      "10A"   -> [(0, 10), (1, "a")]
-      "A10"   -> [(1, "a"), (0, 10)]
-      "1_2B"  -> [(0, 1), (0, 2), (1, "b")]
-    """
-    parts = re.findall(r'\d+|[A-Za-z]+', text)
-    tokens = []
-    for p in parts:
-        if p.isdigit():
-            tokens.append((0, int(p)))   # numbers first
-        else:
-            tokens.append((1, p.lower()))
-    return tokens
-
-
-def parse_hw_stem(stem: str):
-    """
-    Accepts stems like:
-      hw_1_1
-      hw_1_10
-      hw_1A
-      hw_1B
-      hw_1_rev
-      hw_2_10A
-      hw_3_part2
-    and returns a sortable key.
-
-    General rule:
-      - chapter number first
-      - 'rev' always last inside that chapter
-      - everything else uses natural sort on the remainder
-    """
-    m = re.fullmatch(r'hw_(\d+)(.*)', stem, re.IGNORECASE)
-    if not m:
-        raise ValueError(f"Invalid homework name: {stem!r}")
-
-    chapter = int(m.group(1))
-    tail = m.group(2).strip()
-
-    # Remove one leading underscore if present
-    if tail.startswith("_"):
-        tail = tail[1:]
-
-    tail_lower = tail.lower()
-
-    # No tail at all: place before ordinary items
-    if tail == "":
-        return (chapter, 0, [])
-
-    # Force revision to the end of the chapter
-    if tail_lower == "rev":
-        return (chapter, 2, [])
-
-    # Everything else gets natural-sort treatment
-    return (chapter, 1, tokenize_natural(tail))
-
-
-def parse_html_file(path: Path):
-    if path.suffix.lower() != ".html":
-        return None
-
-    try:
-        return parse_hw_stem(path.stem)
-    except ValueError:
-        return None
-
-
-def sort_key(path: Path):
-    parsed = parse_html_file(path)
-    if parsed is None:
-        raise ValueError(f"Unexpected filename format: {path.name}")
-    return parsed
-
-
-# ============================================================
-# FILE SELECTION
-# ============================================================
-
-def get_files_in_range(folder: Path, start_name: str, end_name: str):
-    start_key = parse_hw_stem(start_name)
-    end_key = parse_hw_stem(end_name)
-
-    if start_key > end_key:
-        raise ValueError(f"START ({start_name}) comes after END ({end_name}).")
-
-    html_files = []
-    for p in folder.iterdir():
-        if p.is_file() and p.suffix.lower() == ".html":
-            if parse_html_file(p) is not None:
-                html_files.append(p)
-
-    html_files.sort(key=sort_key)
-
-    selected = []
-    for p in html_files:
-        k = sort_key(p)
-        if start_key <= k <= end_key:
-            selected.append(p)
-
-    return selected
+# Filename conventions and range selection are shared by all courses.
+sys.path.insert(0, str(Path(__file__).resolve().parents[1]))
+from homework_files import get_files_in_range
 
 
 # ============================================================

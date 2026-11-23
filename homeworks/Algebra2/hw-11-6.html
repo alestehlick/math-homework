@@ -1,0 +1,220 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Homework 11-6 - Sum and Difference Identities</title>
+
+  <script>
+
+    window.homeworkData = {
+      classId : "Algebra2",
+      id      : "Homework 11-6 - Sum and Difference Identities",
+      title   : "Homework 11-6 - Sum and Difference Identities",
+
+      graphics : String.raw``,
+
+      answerKey : ["B","C","B","C","E","B","C","D","D","B","C","D","A","D"],
+
+      questions : [
+
+        {
+          stem: String.raw`
+            <p>Without using a table or calculator, evaluate \(\cos 75^\circ\) exactly.</p>
+          `,
+          choices: [
+            String.raw`\(\dfrac{\sqrt6+\sqrt2}{4}\)`,
+            String.raw`\(\dfrac{\sqrt6-\sqrt2}{4}\)`,
+            String.raw`\(\dfrac{\sqrt3-1}{2}\)`,
+            String.raw`\(\dfrac{\sqrt2-\sqrt6}{4}\)`,
+            String.raw`\(\dfrac{\sqrt2}{2}\)`,
+            String.raw`\(\dfrac{\sqrt3}{2}\)`
+          ]
+        },
+
+        {
+          stem: String.raw`
+            <p>Without using a table or calculator, evaluate \(\sin 105^\circ\) exactly.</p>
+          `,
+          choices: [
+            String.raw`\(\dfrac{\sqrt6-\sqrt2}{4}\)`,
+            String.raw`\(\dfrac{\sqrt3}{2}\)`,
+            String.raw`\(\dfrac{\sqrt6+\sqrt2}{4}\)`,
+            String.raw`\(\dfrac{\sqrt2}{2}\)`,
+            String.raw`\(-\dfrac{\sqrt6+\sqrt2}{4}\)`,
+            String.raw`\(\dfrac{\sqrt2-\sqrt6}{4}\)`
+          ]
+        },
+
+        {
+          stem: String.raw`
+            <p>Without using a table or calculator, evaluate \(\cos 195^\circ\) exactly.</p>
+          `,
+          choices: [
+            String.raw`\(\dfrac{\sqrt6+\sqrt2}{4}\)`,
+            String.raw`\(-\dfrac{\sqrt6+\sqrt2}{4}\)`,
+            String.raw`\(-\dfrac{\sqrt6-\sqrt2}{4}\)`,
+            String.raw`\(\dfrac{\sqrt6-\sqrt2}{4}\)`,
+            String.raw`\(-\dfrac{\sqrt2}{2}\)`,
+            String.raw`\(-\dfrac{\sqrt3}{2}\)`
+          ]
+        },
+
+        {
+          stem: String.raw`
+            <p>Without using a table or calculator, evaluate \(\sin 120^\circ\) exactly.</p>
+          `,
+          choices: [
+            String.raw`\(\dfrac{1}{2}\)`,
+            String.raw`\(\dfrac{\sqrt3}{3}\)`,
+            String.raw`\(\dfrac{\sqrt3}{2}\)`,
+            String.raw`\(\dfrac{\sqrt2}{2}\)`,
+            String.raw`\(-\dfrac{\sqrt3}{2}\)`,
+            String.raw`\(0\)`
+          ]
+        },
+
+        {
+          stem: String.raw`
+            <p>Two right triangles are given.</p>
+            <ul>
+              <li>In the first, \(\sin\alpha=\dfrac{2}{7}\) and \(\cos\alpha=\dfrac{\sqrt{45}}{7}\).</li>
+              <li>In the second, \(\sin\beta=\dfrac{4}{5}\) and \(\cos\beta=\dfrac{3}{5}\).</li>
+            </ul>
+            <p>Find \(\sin(\alpha+\beta)\) and simplify.</p>
+          `,
+          choices: [
+            String.raw`\(\dfrac{6-12\sqrt5}{35}\)`,
+            String.raw`\(\dfrac{6+4\sqrt5}{35}\)`,
+            String.raw`\(\dfrac{6+12\sqrt5}{49}\)`,
+            String.raw`\(\dfrac{12+12\sqrt5}{35}\)`,
+            String.raw`\(\dfrac{6+12\sqrt5}{35}\)`,
+            String.raw`\(\dfrac{12\sqrt5-6}{35}\)`
+          ]
+        },
+
+        {
+          stem: String.raw`<p>Simplify: \(\sin(x+360^\circ)\).</p>`,
+          choices: [
+            String.raw`\(-\sin x\)`,
+            String.raw`\(\sin x\)`,
+            String.raw`\(\cos x\)`,
+            String.raw`\(-\cos x\)`,
+            String.raw`\(\tan x\)`,
+            String.raw`\(0\)`
+          ]
+        },
+
+        {
+          stem: String.raw`<p>Simplify: \(\cos(90^\circ-x)\).</p>`,
+          choices: [
+            String.raw`\(\cos x\)`,
+            String.raw`\(-\sin x\)`,
+            String.raw`\(\sin x\)`,
+            String.raw`\(-\cos x\)`,
+            String.raw`\(\tan x\)`,
+            String.raw`\(\cot x\)`
+          ]
+        },
+
+        {
+          stem: String.raw`<p>Simplify: \(\cos(180^\circ+x)\).</p>`,
+          choices: [
+            String.raw`\(\cos x\)`,
+            String.raw`\(\sin x\)`,
+            String.raw`\(-\sin x\)`,
+            String.raw`\(-\cos x\)`,
+            String.raw`\(\tan x\)`,
+            String.raw`\(\sec x\)`
+          ]
+        },
+
+        {
+          stem: String.raw`<p>Which expression is equivalent to \(\tan(2x)\)?</p>`,
+          choices: [
+            String.raw`\(\dfrac{2\tan x}{1+\tan^2 x}\)`,
+            String.raw`\(\dfrac{1-\tan^2 x}{2\tan x}\)`,
+            String.raw`\(\dfrac{2\sin x\cos x}{\cos^2 x+\sin^2 x}\)`,
+            String.raw`\(\dfrac{2\tan x}{1-\tan^2 x}\)`,
+            String.raw`\(\dfrac{\tan^2 x-1}{2\tan x}\)`,
+            String.raw`\(\dfrac{\tan^2 x}{1-\tan^2 x}\)`
+          ]
+        },
+
+        {
+          stem: String.raw`<p>Which expression is equivalent to \(\cos(2\alpha)\), written using \(\sin\alpha\)?</p>`,
+          choices: [
+            String.raw`\(2\sin^2\alpha-1\)`,
+            String.raw`\(1-2\sin^2\alpha\)`,
+            String.raw`\(1-2\cos^2\alpha\)`,
+            String.raw`\(2\cos^2\alpha-1\)`,
+            String.raw`\(1+2\sin^2\alpha\)`,
+            String.raw`\(1+\tan^2\alpha\)`
+          ]
+        },
+
+        {
+          stem: String.raw`<p>Which expression is equivalent to \(\cos(2\alpha)\), written using \(\cos\alpha\)?</p>`,
+          choices: [
+            String.raw`\(1-2\cos^2\alpha\)`,
+            String.raw`\(2\sin^2\alpha-1\)`,
+            String.raw`\(2\cos^2\alpha-1\)`,
+            String.raw`\(1-2\sin^2\alpha\)`,
+            String.raw`\(1\)`,
+            String.raw`\(\sec^2\alpha\)`
+          ]
+        },
+
+        {
+          stem: String.raw`
+            <p>Simplify: \(\cos\!\left(\dfrac{\pi}{2}-(x-y)\right)\).</p>
+          `,
+          choices: [
+            String.raw`\(\sin(x+y)\)`,
+            String.raw`\(\cos(x-y)\)`,
+            String.raw`\(-\sin(x-y)\)`,
+            String.raw`\(\sin(x-y)\)`,
+            String.raw`\(\cos(x+y)\)`,
+            String.raw`\(-\cos(x-y)\)`
+          ]
+        },
+
+        {
+          stem: String.raw`<p>Simplify: \(\sin(a+b)\sin(a-b)\).</p>`,
+          choices: [
+            String.raw`\(\sin^2 a-\sin^2 b\)`,
+            String.raw`\(\cos^2 a-\cos^2 b\)`,
+            String.raw`\(1\)`,
+            String.raw`\(\sin^2 b-\sin^2 a\)`,
+            String.raw`\(\cos(2b)-\cos(2a)\)`,
+            String.raw`\(\dfrac{\cos(2a)-\cos(2b)}{2}\)`
+          ]
+        },
+
+        {
+          stem: String.raw`<p>Simplify: \(\tan(45^\circ+x)\cot(45^\circ-x)\).</p>`,
+          choices: [
+            String.raw`\(\dfrac{1-\sin 2x}{1+\sin 2x}\)`,
+            String.raw`\(\dfrac{1+\cos 2x}{1-\cos 2x}\)`,
+            String.raw`\(1\)`,
+            String.raw`\(\dfrac{1+\sin 2x}{1-\sin 2x}\)`,
+            String.raw`\(\dfrac{1-\cos 2x}{1+\cos 2x}\)`,
+            String.raw`\(\dfrac{1+\tan^2 x}{1-\tan^2 x}\)`
+          ]
+        }
+
+      ]
+    };
+  </script>
+
+  <link rel="stylesheet" href="/math-homework/assets/core-rich.css" />
+
+  <script defer src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+
+  <script defer src="/math-homework/assets/core-rich.js"></script>
+</head>
+
+<body>
+  <div id="hw-root">Loading…</div>
+</body>
+</html>

@@ -1,0 +1,257 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Homework 6 Review - Systems of Equations and Inequalities</title>
+
+  <script>
+
+    window.homeworkData = {
+      classId : "Algebra2",
+      id      : "Homework 6 Review - Systems of Equations and Inequalities",
+      title   : "Homework 6 Review - Systems of Equations and Inequalities",
+
+      graphics : String.raw``,
+
+      answerKey : ["B","E","C","A","D","B","D","E","C","A","F"],
+
+      questions : [
+
+        {
+          stem: String.raw`
+            <p><b>Refer to Figure 1.</b> Which system matches the two lines, and what is their solution?</p>
+          `,
+          media: String.raw`
+            <figure>
+              <img src="hw-6-review-fig-1.png" alt="Two lines intersecting at the point (2,3)" />
+              <figcaption>Figure 1</figcaption>
+            </figure>
+          `,
+          choices: [
+            String.raw`\(\begin{cases}x+y=5\\2x-y=1\end{cases}\), solution \((3,2)\)`,
+            String.raw`\(\begin{cases}x+y=5\\2x-y=1\end{cases}\), solution \((2,3)\)`,
+            String.raw`\(\begin{cases}x-y=5\\2x+y=1\end{cases}\), solution \((2,3)\)`,
+            String.raw`\(\begin{cases}x+y=-5\\2x-y=1\end{cases}\), solution \((-2,-3)\)`,
+            String.raw`\(\begin{cases}x+y=5\\x-2y=1\end{cases}\), solution \((2,3)\)`,
+            String.raw`\(\begin{cases}x+y=5\\2x-y=-1\end{cases}\), solution \((2,3)\)`
+          ]
+        },
+
+        {
+          stem: String.raw`
+            <p>Solve and classify the system.</p>
+            <p>\[
+              \begin{cases}
+              y=3x+9\\
+              2x+5y=28
+              \end{cases}
+            \]</p>
+          `,
+          choices: [
+            String.raw`Dependent; infinitely many solutions`,
+            String.raw`Inconsistent; no solution`,
+            String.raw`Consistent independent; solution \((1,-6)\)`,
+            String.raw`Dependent; solution \((-1,6)\)`,
+            String.raw`Consistent independent; solution \((-1,6)\)`,
+            String.raw`Inconsistent; the lines intersect at \((-1,6)\)`
+          ],
+          choiceWrap: false
+        },
+
+        {
+          stem: String.raw`
+            <p>For the system</p>
+            <p>\[
+              \begin{cases}
+              3x+2y=7\\
+              6x-y=4
+              \end{cases}
+            \]</p>
+            <p>Which first elimination step removes \(x\) with the least extra work?</p>
+          `,
+          choices: [
+            String.raw`Add the equations as written.`,
+            String.raw`Multiply the second equation by \(2\), then add.`,
+            String.raw`Multiply the first equation by \(-2\), then add it to the second equation.`,
+            String.raw`Multiply the first equation by \(3\), then subtract the second.`,
+            String.raw`Solve both equations for \(y\) before doing anything else.`,
+            String.raw`Multiply both equations by \(-1\), then add.`
+          ],
+          choiceWrap: false
+        },
+
+        {
+          stem: String.raw`
+            <p>A two-digit number has digit sum \(11\). Adding \(45\) gives the number with its digits reversed.</p>
+            <p>What is the original number?</p>
+          `,
+          choices: [
+            String.raw`\(38\)`,
+            String.raw`\(83\)`,
+            String.raw`\(47\)`,
+            String.raw`\(74\)`,
+            String.raw`\(29\)`,
+            String.raw`\(56\)`
+          ]
+        },
+
+        {
+          stem: String.raw`
+            <p><b>Refer to Figure 2.</b> The solid boundary is \(x-2y=-6\), and the dashed boundary is \(4x+y=-2\).</p>
+            <p>Which system describes the shaded region?</p>
+          `,
+          media: String.raw`
+            <figure>
+              <img src="hw-6-review-fig-2.png" alt="Region above a solid line and above a dashed steep line" />
+              <figcaption>Figure 2</figcaption>
+            </figure>
+          `,
+          choices: [
+            String.raw`\(\begin{cases}x-2y\ge-6\\4x+y>-2\end{cases}\)`,
+            String.raw`\(\begin{cases}x-2y\le-6\\4x+y&lt;-2\end{cases}\)`,
+            String.raw`\(\begin{cases}x-2y\ge-6\\4x+y&lt;-2\end{cases}\)`,
+            String.raw`\(\begin{cases}x-2y\le-6\\4x+y>-2\end{cases}\)`,
+            String.raw`\(\begin{cases}x-2y&lt;-6\\4x+y\ge-2\end{cases}\)`,
+            String.raw`\(\begin{cases}x-2y>-6\\4x+y\le-2\end{cases}\)`
+          ]
+        },
+
+        {
+          stem: String.raw`
+            <p>Which point satisfies <b>all</b> inequalities in the system?</p>
+            <p>\[
+              \begin{cases}
+              x\ge0\\
+              y\ge0\\
+              y\le-3x+14\\
+              y\le-\frac12x+4
+              \end{cases}
+            \]</p>
+          `,
+          choices: [
+            String.raw`\((-1,2)\)`,
+            String.raw`\((2,2)\)`,
+            String.raw`\((0,5)\)`,
+            String.raw`\((4,3)\)`,
+            String.raw`\((5,0)\)`,
+            String.raw`\((3,3)\)`
+          ]
+        },
+
+        {
+          stem: String.raw`
+            <p>Consider the system of inequalities</p>
+            <p>\[
+              \begin{cases}
+              y\le -x^2+4x+1\\
+              y\ge x+1
+              \end{cases}
+            \]</p>
+            <p>Before graphing, rewrite the parabola in the standard form
+            \(y-y_V=a(x-x_V)^2\). Which description correctly places the parabola
+            and identifies the solution region?</p>
+          `,
+          choices: [
+            String.raw`\(y-5=(x-2)^2\), so the vertex is \((2,5)\); shade above the line and below the parabola for \(0\le x\le3\).`,
+            String.raw`\(y+5=-(x+2)^2\), so the vertex is \((-2,-5)\); shade above the line and below the parabola for \(0\le x\le3\).`,
+            String.raw`\(y-5=-(x-2)^2\), so the vertex is \((2,5)\); shade below the line and above the parabola for \(0\le x\le3\).`,
+            String.raw`\(y-5=-(x-2)^2\), so the vertex is \((2,5)\); shade above the line and below the parabola between the intersections \(x=0\) and \(x=3\).`,
+            String.raw`\(y-5=-(x-2)^2\), so the vertex is \((2,5)\); shade above the line and below the parabola only for \(x\le0\) or \(x\ge3\).`,
+            String.raw`\(y+5=-(x-2)^2\), so the vertex is \((2,-5)\); shade above the line and below the parabola between the intersections \(x=0\) and \(x=3\).`
+          ],
+          choiceWrap: false
+        },
+
+        {
+          stem: String.raw`
+            <p>Solve the nonlinear system. Give the complete real solution set.</p>
+            <p>\[
+              \begin{cases}
+              xy=-12\\
+              x+y=1
+              \end{cases}
+            \]</p>
+          `,
+          choices: [
+            String.raw`\(\{(3,-4),(-4,3)\}\)`,
+            String.raw`\(\{(1,-12),(-1,12)\}\)`,
+            String.raw`\(\{(4,-3)\}\)`,
+            String.raw`No real solution`,
+            String.raw`\(\{(4,-3),(-3,4)\}\)`,
+            String.raw`\(\{(0,1),(1,0)\}\)`
+          ]
+        },
+
+        {
+          stem: String.raw`
+            <p>Solve the nonlinear system. Choose the complete set of real solutions.</p>
+            <p>\[
+              \begin{cases}
+              x^2+y=34\\
+              x^2+y^2=106
+              \end{cases}
+            \]</p>
+          `,
+          choices: [
+            String.raw`\(\{(5,9),(-5,9)\}\)`,
+            String.raw`\(\{(\sqrt{42},-8),(-\sqrt{42},-8)\}\)`,
+            String.raw`\(\{(5,9),(-5,9),(\sqrt{42},-8),(-\sqrt{42},-8)\}\)`,
+            String.raw`\(\{(5,-9),(-5,-9),(\sqrt{42},8),(-\sqrt{42},8)\}\)`,
+            String.raw`\(\{(5,9),(\sqrt{42},-8)\}\)`,
+            String.raw`No real solution`
+          ]
+        },
+
+        {
+          stem: String.raw`
+            <p>Solve the three-variable system.</p>
+            <p>\[
+              \begin{cases}
+              x+2y+z=7\\
+              2x-y+z=6\\
+              3x+2y-4z=58
+              \end{cases}
+            \]</p>
+            <p>What is \(x+y+z\)?</p>
+          `,
+          choices: [
+            String.raw`\(4\)`,
+            String.raw`\(18\)`,
+            String.raw`\(-4\)`,
+            String.raw`\(12\)`,
+            String.raw`\(8\)`,
+            String.raw`\(0\)`
+          ]
+        },
+
+        {
+          stem: String.raw`
+            <p>For each system, decide whether it is <b>possible</b> or <b>impossible</b>, and state whether it has <b>one solution</b>, <b>no solution</b>, or <b>infinitely many solutions</b>.</p>
+            <p><b>I.</b> \(\begin{cases}y=x\\y=x+2\end{cases}\)</p>
+            <p><b>II.</b> \(\begin{cases}y=\frac12x+1\\y=-x+3\end{cases}\)</p>
+            <p><b>III.</b> \(\begin{cases}2x-y=1\\4x-2y=2\end{cases}\)</p>
+          `,
+          choices: [
+            String.raw`I: possible, one solution; II: impossible, no solution; III: possible, infinitely many solutions`,
+            String.raw`I: possible, infinitely many solutions; II: possible, one solution; III: impossible, no solution`,
+            String.raw`I: possible, one solution; II: possible, infinitely many solutions; III: impossible, no solution`,
+            String.raw`I: possible, infinitely many solutions; II: impossible, no solution; III: possible, one solution`,
+            String.raw`I: impossible, no solution; II: possible, infinitely many solutions; III: possible, one solution`,
+            String.raw`I: impossible, no solution; II: possible, one solution; III: possible, infinitely many solutions`
+          ],
+          choiceWrap: false
+        }
+      ]
+    };
+  </script>
+
+  <link rel="stylesheet" href="/math-homework/assets/core-rich.css" />
+  <script defer src="/math-homework/assets/core-rich.js"></script>
+  <script defer src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+</head>
+
+<body>
+  <div id="hw-root">Loading…</div>
+</body>
+</html>

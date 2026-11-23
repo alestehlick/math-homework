@@ -1,0 +1,37 @@
+Homework filenames
+
+hw-6-2.html                 One section
+hw-6-2-to-6-4.html          Consecutive sections
+hw-14-4-and-14-6.html       Nonconsecutive sections
+hw-1a.html                 A lettered section
+hw-5-4-a.html              Part A of a section
+hw-6-review.html           Chapter review
+hw-10-intro.html           Introduction with exercises
+hw-6-2__old.html           Superseded homework
+
+Use lowercase letters and hyphens. Keep the course in its existing folder.
+The HTML document title, homeworkData.id, and homeworkData.title all use:
+
+Homework 6-2 - Relations
+
+Use a direct mathematical noun phrase for the topic. The __old marker
+belongs only to filenames; it never belongs to an internal ID or title.
+
+Figures use the homework stem and a figure number:
+hw-7-10-fig-1.png
+Unreferenced source figures retain a source label and their source number.
+Background images keep the name background.png.
+
+The November 2026 cleanup marks inferior overlapping versions __old after
+comparison with their replacements. Filesystem dates were all in 2026,
+so they did not establish which versions were superseded. Distinct parts,
+reviews, and supplementary exercises remain separate. Original files and
+the complete rename and demotion records are backed up outside this repo.
+
+The existing course-index filenames are retained. Only links that were
+already visible remain visible; unpublished blocks were removed with the
+HTML comments. The PDF scripts select current homework by default.
+
+Original ZIP bundles are preserved internally. Their outer filenames are
+standardized; older Geometry bundles carry __old. These are source archives,
+not copies of the cleaned live files.

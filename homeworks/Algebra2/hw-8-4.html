@@ -1,0 +1,234 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Homework 8-4 - Complex Conjugates, Reciprocals, and Division</title>
+  <script>
+
+    window.homeworkData = {
+      classId: "Algebra2",
+      id: "Homework 8-4 - Complex Conjugates, Reciprocals, and Division",
+      title: "Homework 8-4 - Complex Conjugates, Reciprocals, and Division",
+      graphics: String.raw``,
+      answerKey: ["E", "B", "C", "F", "A", "C", "E", "F", "B", "A", "D", "F", "D", "E", "A", "D"],
+      questions: [
+
+      {
+        stem: String.raw`<p>To form the <em>conjugate</em> of a complex number, keep the real part and change the sign of the imaginary part. Find the conjugate of \(z=-4+7i\).</p>`,
+        choices: [
+          String.raw`\(4-7i\)`,
+          String.raw`\(-4+7i\)`,
+          String.raw`\(4+7i\)`,
+          String.raw`\(-7+4i\)`,
+          String.raw`\(-4-7i\)`,
+          String.raw`\(7-4i\)`
+        ],
+        choiceWrap: false
+      },
+
+      {
+        stem: String.raw`<p>Let \(z=3+4i\). Compute \(z\overline{z}\), where \(\overline{z}\) is the conjugate of \(z\).</p>`,
+        choices: [
+          String.raw`\(-7\)`,
+          String.raw`\(25\)`,
+          String.raw`\(7\)`,
+          String.raw`\(-25\)`,
+          String.raw`\(25i\)`,
+          String.raw`\(9-16i\)`
+        ],
+        choiceWrap: false
+      },
+
+      {
+        stem: String.raw`<p>The real number \(t\) satisfies \((t+3i)(t-3i)=25\). Determine <em>all</em> possible values of \(t\).</p>`,
+        choices: [
+          String.raw`\(t=\pm\sqrt{34}\)`,
+          String.raw`\(t=\pm5\)`,
+          String.raw`\(t=\pm4\)`,
+          String.raw`\(t=\pm\sqrt7\)`,
+          String.raw`\(t=\pm3\)`,
+          String.raw`\(t=\pm\sqrt{21}\)`
+        ],
+        choiceWrap: false
+      },
+
+      {
+        stem: String.raw`<p>Express \(\dfrac{5}{2i}\) in the form \(a+bi\), where \(a\) and \(b\) are real.</p>`,
+        choices: [
+          String.raw`\(\dfrac52i\)`,
+          String.raw`\(\dfrac25i\)`,
+          String.raw`\(-\dfrac25i\)`,
+          String.raw`\(-\dfrac52\)`,
+          String.raw`\(\dfrac52\)`,
+          String.raw`\(-\dfrac52i\)`
+        ],
+        choiceWrap: false
+      },
+
+      {
+        stem: String.raw`<p>Find the reciprocal of \(3+2i\). Write the result in the form \(a+bi\).</p>`,
+        choices: [
+          String.raw`\(\dfrac{3}{13}-\dfrac{2}{13}i\)`,
+          String.raw`\(\dfrac{3}{13}+\dfrac{2}{13}i\)`,
+          String.raw`\(3-2i\)`,
+          String.raw`\(\dfrac35-\dfrac25i\)`,
+          String.raw`\(\dfrac{2}{13}-\dfrac{3}{13}i\)`,
+          String.raw`\(\dfrac13-\dfrac12i\)`
+        ],
+        choiceWrap: false
+      },
+
+      {
+        stem: String.raw`<p>Consider \(\dfrac{2+i}{3-2i}\). Which expression has the <em>same value</em> and a real denominator?</p>`,
+        choices: [
+          String.raw`\(\dfrac{(2+i)(3-2i)}{13}\)`,
+          String.raw`\(\dfrac{(2-i)(3+2i)}{13}\)`,
+          String.raw`\(\dfrac{(2+i)(3+2i)}{13}\)`,
+          String.raw`\(\dfrac{(2+i)(3+2i)}5\)`,
+          String.raw`\(\dfrac{(2+i)(3-2i)}5\)`,
+          String.raw`\(\dfrac{(2-i)(3-2i)}{13}\)`
+        ],
+        choiceWrap: false
+      },
+
+      {
+        stem: String.raw`<p>Simplify \(\dfrac{4+3i}{3-i}\) and express the result in the form \(a+bi\).</p>`,
+        choices: [
+          String.raw`\(\dfrac{11}{10}-\dfrac{13}{10}i\)`,
+          String.raw`\(\dfrac{11}{10}+\dfrac{13}{10}i\)`,
+          String.raw`\(\dfrac9{10}-\dfrac{13}{10}i\)`,
+          String.raw`\(\dfrac{13}{10}+\dfrac9{10}i\)`,
+          String.raw`\(\dfrac9{10}+\dfrac{13}{10}i\)`,
+          String.raw`\(\dfrac9{10}+\dfrac{11}{10}i\)`
+        ],
+        choiceWrap: false
+      },
+
+      {
+        stem: String.raw`<p>Write \(\dfrac{7+i}{1-2i}\) in the form \(a+bi\).</p>`,
+        choices: [
+          String.raw`\(1-3i\)`,
+          String.raw`\(-1+3i\)`,
+          String.raw`\(3+i\)`,
+          String.raw`\(5+15i\)`,
+          String.raw`\(1+\dfrac35i\)`,
+          String.raw`\(1+3i\)`
+        ],
+        choiceWrap: false
+      },
+
+      {
+        stem: String.raw`<p>Determine the complex number \(q\) for which \((2+i)q=4-3i\). Your answer should be in the form \(a+bi\).</p>`,
+        choices: [
+          String.raw`\(1+2i\)`,
+          String.raw`\(1-2i\)`,
+          String.raw`\(-1-2i\)`,
+          String.raw`\(2+i\)`,
+          String.raw`\(2-i\)`,
+          String.raw`\(-1+2i\)`
+        ],
+        choiceWrap: false
+      },
+
+      {
+        stem: String.raw`<p>Simplify \(\dfrac{5-2i}{1+2i}\) and write the result in the form \(a+bi\).</p>`,
+        choices: [
+          String.raw`\(\dfrac15-\dfrac{12}{5}i\)`,
+          String.raw`\(\dfrac95-\dfrac{12}{5}i\)`,
+          String.raw`\(\dfrac15+\dfrac{12}{5}i\)`,
+          String.raw`\(\dfrac15-\dfrac85i\)`,
+          String.raw`\(-\dfrac15-\dfrac{12}{5}i\)`,
+          String.raw`\(1-\dfrac{12}{5}i\)`
+        ],
+        choiceWrap: false
+      },
+
+      {
+        stem: String.raw`<p>Express \(\dfrac{6+8i}{2-3i}\) in the form \(a+bi\), with both parts simplified.</p>`,
+        choices: [
+          String.raw`\(\dfrac{12}{13}+\dfrac{34}{13}i\)`,
+          String.raw`\(-\dfrac{12}{13}-\dfrac{34}{13}i\)`,
+          String.raw`\(\dfrac{34}{13}-\dfrac{12}{13}i\)`,
+          String.raw`\(-\dfrac{12}{13}+\dfrac{34}{13}i\)`,
+          String.raw`\(\dfrac{12}{13}-\dfrac{34}{13}i\)`,
+          String.raw`\(-\dfrac{34}{13}+\dfrac{12}{13}i\)`
+        ],
+        choiceWrap: false
+      },
+
+      {
+        stem: String.raw`<p>Let \(z=a+bi\), where \(a,b\) are real and \(z\ne0\). Under which condition does the reciprocal of \(z\) equal its conjugate? In symbols, when is \(\dfrac1z=\overline{z}\)?</p>`,
+        choices: [
+          String.raw`\(a^2-b^2=1\)`,
+          String.raw`\(a^2+b^2>0\)`,
+          String.raw`\(a+b=1\)`,
+          String.raw`\(ab=0\)`,
+          String.raw`\(a^2+b^2=0\)`,
+          String.raw`\(a^2+b^2=1\)`
+        ],
+        choiceWrap: false
+      },
+
+      {
+        stem: String.raw`<p>Let \(z=a+bi\) and \(w=c+di\), where \(a,b,c,d\) are real and \(w\ne0\). Which formula expresses \(\dfrac{z}{w}\) in the form \(A+Bi\)?</p>`,
+        choices: [
+          String.raw`\(\dfrac{ac-bd}{c^2+d^2}+\dfrac{bc+ad}{c^2+d^2}i\)`,
+          String.raw`\(\dfrac{ac+bd}{c^2-d^2}+\dfrac{bc-ad}{c^2-d^2}i\)`,
+          String.raw`\(\dfrac{ac+bd}{c^2+d^2}+\dfrac{bc+ad}{c^2+d^2}i\)`,
+          String.raw`\(\dfrac{ac+bd}{c^2+d^2}+\dfrac{bc-ad}{c^2+d^2}i\)`,
+          String.raw`\(\dfrac{ac-bd}{c^2+d^2}+\dfrac{bc-ad}{c^2+d^2}i\)`,
+          String.raw`\(\dfrac{ac+bd}{c^2+d^2}+\dfrac{ad-bc}{c^2+d^2}i\)`
+        ],
+        choiceWrap: false
+      },
+
+      {
+        stem: String.raw`<p>Let \(c\) and \(d\) be real. Which condition is <em>necessary and sufficient</em> for division by \(c+di\) to be defined? That is, which condition holds <em>exactly when</em> \(c+di\ne0\)?</p>`,
+        choices: [
+          String.raw`\(c\ne0\)`,
+          String.raw`\(d\ne0\)`,
+          String.raw`\(c+d\ne0\)`,
+          String.raw`\(c^2-d^2\ne0\)`,
+          String.raw`\(c^2+d^2\ne0\)`,
+          String.raw`\(cd\ne0\)`
+        ],
+        choiceWrap: false
+      },
+
+      {
+        stem: String.raw`<p>The number \(t\) is real. For which value of \(t\) is \(\dfrac{6+ti}{3-2i}\) a real number?</p>`,
+        choices: [
+          String.raw`\(-4\)`,
+          String.raw`\(4\)`,
+          String.raw`\(-6\)`,
+          String.raw`\(6\)`,
+          String.raw`\(-2\)`,
+          String.raw`\(2\)`
+        ],
+        choiceWrap: false
+      },
+
+      {
+        stem: String.raw`<p>Evaluate \(\dfrac{2+i}{1-i}+\dfrac{2-i}{1+i}\). Give the result in simplest form.</p>`,
+        choices: [
+          String.raw`\(2\)`,
+          String.raw`\(1+3i\)`,
+          String.raw`\(-1\)`,
+          String.raw`\(1\)`,
+          String.raw`\(1-3i\)`,
+          String.raw`\(\dfrac12\)`
+        ],
+        choiceWrap: false
+      }
+      ]
+    };
+  </script>
+  <link rel="stylesheet" href="/math-homework/assets/core-rich.css" />
+  <script defer src="/math-homework/assets/core-rich.js"></script>
+  <script defer src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+</head>
+<body>
+  <div id="hw-root">Loading…</div>
+</body>
+</html>

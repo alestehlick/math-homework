@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Homework 9-3 - Quotients and Complex Fractions</title>
+
+  <script>
+
+    window.homeworkData = {
+      classId : "Algebra2",
+      id      : "Homework 9-3 - Quotients and Complex Fractions",
+      title   : "Homework 9-3 - Quotients and Complex Fractions",
+
+      graphics : String.raw``,
+
+      answerKey : ["C","E","A","A","A","D","A","A","A","B","A","D"],
+
+      questions : [
+
+        { latex: String.raw`\text{Divide. Leave your answer in factored form: }\;
+          \left(\dfrac{4a}{5}\right)\div\left(\dfrac{a}{5}\right)`,
+          choices: [
+            String.raw`\dfrac{4}{a}`,
+            String.raw`\dfrac{a}{4}`,
+            String.raw`4`,
+            String.raw`5`,
+            String.raw`\dfrac{5}{4}`,
+            String.raw`a`
+          ]},
+
+        { latex: String.raw`\text{Divide: }\;
+          \left(\dfrac{9x^{2}y}{2xy}\right)\div\left(\dfrac{3xy^{2}}{6x^{2}}\right)`,
+          choices: [
+            String.raw`\dfrac{9x^{2}}{y}`,
+            String.raw`\dfrac{27x^{2}}{2y^{2}}`,
+            String.raw`\dfrac{18x^{2}}{y}`,
+            String.raw`\dfrac{3x^{2}}{y}`,
+            String.raw`\dfrac{9x^{2}}{y^{2}}`,
+            String.raw`\dfrac{9x}{y^{2}}`
+          ]},
+
+        { latex: String.raw`\text{Divide: }\;
+          \left(\dfrac{2x+6}{x-2}\right)\div\left(\dfrac{4x^{2}}{5x-10}\right)`,
+          choices: [
+            String.raw`\dfrac{5(x+3)}{2x^{2}}`,
+            String.raw`\dfrac{5(x+3)}{x^{2}}`,
+            String.raw`\dfrac{(x+3)x^{2}}{5(x-2)}`,
+            String.raw`\dfrac{x+3}{2x}`,
+            String.raw`\dfrac{5(x+3)}{4x}`,
+            String.raw`\dfrac{5(x+3)}{2x}`
+          ]},
+
+        { latex: String.raw`\text{Divide: }\;
+          \left(\dfrac{5a^{2}-5b^{2}}{a+b}\right)\div\left(\dfrac{a^{2}-2ab+b^{2}}{3a+3b}\right)`,
+          choices: [
+            String.raw`\dfrac{15(a+b)}{a-b}`,
+            String.raw`\dfrac{15}{a-b}`,
+            String.raw`\dfrac{15(a+b)}{(a-b)^{2}}`,
+            String.raw`\dfrac{15}{(a-b)}`,
+            String.raw`3(a-b)`,
+            String.raw`3`
+          ]},
+
+        { latex: String.raw`\text{Divide: }\;
+          \left(\dfrac{x^{2}-5x+6}{x+4}\right)\div\left(\dfrac{x-3}{x^{2}+3x-4}\right)`,
+          choices: [
+            String.raw`(x-2)(x-1)`,
+            String.raw`x-2`,
+            String.raw`x-1`,
+            String.raw`\dfrac{x-2}{x-1}`,
+            String.raw`(x-2)(x+1)`,
+            String.raw`\dfrac{(x-2)(x-3)}{x-1}`
+          ]},
+
+        { latex: String.raw`\text{Divide: }\;
+          \left(\dfrac{4a+28}{2a^{2}+8a-42}\right)\div\left(\dfrac{2a^{2}-4a-6}{a^{2}-5a-6}\right)`,
+          choices: [
+            String.raw`\dfrac{a-6}{a-3}`,
+            String.raw`\dfrac{2(a-6)}{(a-3)^{2}}`,
+            String.raw`\dfrac{a-6}{a+3}`,
+            String.raw`\dfrac{a-6}{(a-3)^{2}}`,
+            String.raw`1`,
+            String.raw`\dfrac{a-6}{2(a-3)}`
+          ]},
+
+        { latex: String.raw`\text{Divide: }\;
+          \left(\dfrac{c^{2}+4cd+3d^{2}}{c^{2}-d^{2}}\right)\div\left(\dfrac{c^{2}+5cd+6d^{2}}{c^{2}-2cd+d^{2}}\right)`,
+          choices: [
+            String.raw`\dfrac{c-d}{c+2d}`,
+            String.raw`\dfrac{c+d}{c-d}`,
+            String.raw`\dfrac{c+2d}{c-d}`,
+            String.raw`\dfrac{c-d}{c+d}`,
+            String.raw`1`,
+            String.raw`\dfrac{c-d}{c+3d}`
+          ]},
+
+        { latex: String.raw`\text{Divide: }\;
+          \left(\dfrac{9a^{2}-5a+6}{a^{2}-5a+6}\right)\div\left(\dfrac{a^{2}+4a+4}{a^{2}+9a+14}\right)`,
+          choices: [
+            String.raw`\dfrac{(9a^{2}-5a+6)(a+7)}{(a-2)(a-3)(a+2)}`,
+            String.raw`\dfrac{9a^{2}-5a+6}{(a-2)(a-3)}\cdot\dfrac{a+7}{a+3}`,
+            String.raw`\dfrac{9a^{2}-5a+6}{a-3}`,
+            String.raw`\dfrac{9a^{2}-5a+6}{a-2}`,
+            String.raw`\dfrac{9a^{2}-5a+6}{a+7}`,
+            String.raw`1`
+          ]},
+
+        { latex: String.raw`\text{Divide: }\;
+          \left(\dfrac{x^{2}-9}{x^{2}-x-6}\right)\div\left(\dfrac{x-3}{x+2}\right)`,
+          choices: [
+            String.raw`\dfrac{x+3}{x-3}`,
+            String.raw`\dfrac{x-3}{x+3}`,
+            String.raw`\dfrac{x+2}{x-3}`,
+            String.raw`\dfrac{x-2}{x+3}`,
+            String.raw`1`,
+            String.raw`x`
+          ]},
+
+        { latex: String.raw`\text{Simplify the complex rational expression: }\;
+          \dfrac{\dfrac{x^{2}-1}{5x-1}}{\dfrac{x+1}{10x}}`,
+          choices: [
+            String.raw`\dfrac{2(x-1)}{1}`,
+            String.raw`\dfrac{10x(x-1)}{5x-1}`,
+            String.raw`\dfrac{2(x+1)}{1}`,
+            String.raw`x-1`,
+            String.raw`\dfrac{(x-1)(x+1)}{x}`,
+            String.raw`2x-2`
+          ]},
+
+        { latex: String.raw`\text{Simplify: }\;
+          \dfrac{\dfrac{1}{a+b}+\dfrac{1}{a+3b}}{a^{2}+4ab+3b^{2}}`,
+          choices: [
+            String.raw`\dfrac{2(a+2b)}{(a+b)^{2}(a+3b)^{2}}`,
+            String.raw`\dfrac{2}{(a+2b)(a+b)(a+3b)}`,
+            String.raw`\dfrac{2a+4b}{(a+2b)^{2}}`,
+            String.raw`\dfrac{2}{(a+2b)^{2}(a+b)(a+3b)}`,
+            String.raw`\dfrac{1}{(a+2b)^{2}}`,
+            String.raw`\dfrac{a+2b}{(a+2b)^{2}}`
+          ]},
+
+        { latex: String.raw`\text{Simplify: }\;
+          \dfrac{\dfrac{c^{2}+6c+8}{c^{2}+c-3}}{\dfrac{c^{2}+7c+12}{c^{2}+2c-3}}`,
+          choices: [
+            String.raw`\dfrac{c+2}{c-2}`,
+            String.raw`\dfrac{c+2}{c-1}`,
+            String.raw`\dfrac{c+1}{c+3}`,
+            String.raw`\dfrac{(c+2)(c-1)}{c^{2}+c-3}`,
+            String.raw`\dfrac{(c+2)(c-3)}{(c+3)(c-1)}`,
+            String.raw`1`
+          ]}
+      ]
+    };
+  </script>
+
+  <link rel="stylesheet" href="/math-homework/assets/core.css" />
+  <script defer src="/math-homework/assets/core.js"></script>
+  <script defer src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+</head>
+<body>
+  <div id="hw-root">Loading…</div>
+</body>
+</html>

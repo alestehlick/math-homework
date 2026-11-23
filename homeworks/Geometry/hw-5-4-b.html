@@ -1,0 +1,233 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Homework 5-4 B - Necessary and Sufficient Conditions and Proof by Contradiction</title>
+
+  <script>
+
+    window.homeworkData = {
+      classId : "Geometry",
+      id      : "Homework 5-4 B - Necessary and Sufficient Conditions and Proof by Contradiction",
+      title   : "Homework 5-4 B - Necessary and Sufficient Conditions and Proof by Contradiction",
+
+      graphics : String.raw``,
+
+      answerKey : ["C","D","B","E","A","F","B","D","E","C","A","B"],
+
+      questions : [
+
+        {
+          stem: String.raw`
+            <p>Let \(p\) mean “a number is divisible by 4,” and let \(q\) mean “the number is even.”</p>
+            <p>The conditional \(p\to q\) says: “If a number is divisible by 4, then the number is even.”</p>
+            <p>Which translation uses the words <b>sufficient</b> and <b>necessary</b> correctly?</p>
+          `,
+          choices: [
+            String.raw`Being even is sufficient for being divisible by 4, and being divisible by 4 is necessary for being even.`,
+            String.raw`Being divisible by 4 is necessary for being even, and being even is necessary for being divisible by 4.`,
+            String.raw`Being divisible by 4 is sufficient for being even, and being even is necessary for being divisible by 4.`,
+            String.raw`Being even is sufficient for being divisible by 4, and being divisible by 4 is sufficient for being even.`,
+            String.raw`Being divisible by 4 is neither sufficient nor necessary for being even.`,
+            String.raw`No such translation is possible, because the statement uses numbers rather than geometry.`
+          ],
+          choiceWrap: false
+        },
+
+        {
+          stem: String.raw`
+            <p>Which sentence is correctly translated as \(p\to q\)?</p>
+            <p>Let \(p\) mean “a student enters the theater,” and let \(q\) mean “the student has a ticket.”</p>
+          `,
+          choices: [
+            String.raw`Having a ticket is sufficient for entering the theater.`,
+            String.raw`Entering the theater is necessary for having a ticket.`,
+            String.raw`A student enters the theater exactly when the student has a ticket.`,
+            String.raw`Having a ticket is necessary for entering the theater.`,
+            String.raw`If a student has a ticket, then the student enters the theater.`,
+            String.raw`A student may enter the theater whether or not the student has a ticket.`
+          ],
+          choiceWrap: false
+        },
+
+        {
+          stem: String.raw`
+            <p>For the pair below, decide the correct relation between the first condition and the second condition.</p>
+            <p><b>First condition:</b> a shape is a square.</p>
+            <p><b>Second condition:</b> the shape is a rectangle.</p>
+          `,
+          choices: [
+            String.raw`The first condition is necessary but not sufficient for the second condition.`,
+            String.raw`The first condition is sufficient but not necessary for the second condition.`,
+            String.raw`The first condition is both necessary and sufficient for the second condition.`,
+            String.raw`The first condition is neither necessary nor sufficient for the second condition.`,
+            String.raw`The first condition is necessary only when the rectangle has four congruent sides.`,
+            String.raw`The relation cannot be judged because squares and rectangles are different words.`
+          ],
+          choiceWrap: false
+        },
+
+        {
+          stem: String.raw`
+            <p>For the pair below, decide the correct relation between the first condition and the second condition.</p>
+            <p><b>First condition:</b> a whole number is even.</p>
+            <p><b>Second condition:</b> the number is divisible by 4.</p>
+          `,
+          choices: [
+            String.raw`The first condition is sufficient but not necessary for the second condition.`,
+            String.raw`The first condition is both necessary and sufficient for the second condition.`,
+            String.raw`The first condition is neither necessary nor sufficient for the second condition.`,
+            String.raw`The first condition is sufficient because every even number is divisible by 4.`,
+            String.raw`The first condition is necessary but not sufficient for the second condition.`,
+            String.raw`The first condition cannot be compared with the second because divisibility is not a condition.`
+          ],
+          choiceWrap: false
+        },
+
+        {
+          stem: String.raw`
+            <p>Consider the sentence:</p>
+            <p><i>A student may take the final exam only if the student has submitted the project.</i></p>
+            <p>Let \(p\) mean “the student may take the final exam,” and let \(q\) mean “the student has submitted the project.” Which interpretation is correct?</p>
+          `,
+          choices: [
+            String.raw`The sentence means \(p\to q\). Submitting the project is necessary for taking the final exam, but it may not by itself guarantee permission.`,
+            String.raw`The sentence means \(q\to p\). Submitting the project is sufficient for taking the final exam.`,
+            String.raw`The sentence means \(p\leftrightarrow q\). Permission and project submission always have the same truth value.`,
+            String.raw`The sentence means \(\neg p\to q\). If the student may not take the final exam, then the project was submitted.`,
+            String.raw`The sentence means \(q\to p\). Taking the final exam is necessary for submitting the project.`,
+            String.raw`The sentence cannot be written with \(p\) and \(q\) because it contains the phrase “only if.”`
+          ],
+          choiceWrap: false
+        },
+
+        {
+          stem: String.raw`
+            <p>Consider the statement:</p>
+            <p><i>A number is divisible by 6 if and only if it is divisible by 3.</i></p>
+            <p>Which answer correctly analyzes the two directions?</p>
+          `,
+          choices: [
+            String.raw`Both directions are true, because 6 and 3 are both divisibility conditions.`,
+            String.raw`Both directions are false, because divisibility by 6 and divisibility by 3 are unrelated.`,
+            String.raw`If a number is divisible by 3, then it is divisible by 6 is true; the reverse direction is false.`,
+            String.raw`The statement cannot be split into two conditionals.`,
+            String.raw`The false direction has no counterexample.`,
+            String.raw`If a number is divisible by 6, then it is divisible by 3 is true; the reverse direction is false, for example \(9\) is divisible by 3 but not by 6.`
+          ],
+          choiceWrap: false
+        },
+
+        {
+          stem: String.raw`
+            <p>Which completion makes a true statement?</p>
+            <p><i>A whole number is even if and only if __________________.</i></p>
+          `,
+          choices: [
+            String.raw`it is divisible by 4`,
+            String.raw`it is divisible by 2`,
+            String.raw`it is greater than 2`,
+            String.raw`it is not odd or it is greater than 10`,
+            String.raw`it is a multiple of 6`,
+            String.raw`it is a whole number`
+          ],
+          choiceWrap: false
+        },
+
+        {
+          stem: String.raw`
+            <p>A conditional \(p\to q\) is false only in one case.</p>
+            <p>Which row is the false row?</p>
+          `,
+          choices: [
+            String.raw`\(p\) true, \(q\) true`,
+            String.raw`\(p\) false, \(q\) true`,
+            String.raw`\(p\) false, \(q\) false`,
+            String.raw`\(p\) true, \(q\) false`,
+            String.raw`\(p\) true, \(q\) either true or false`,
+            String.raw`There is no false row for a conditional statement.`
+          ],
+          choiceWrap: false
+        },
+
+        {
+          stem: String.raw`
+            <p>We want to prove:</p>
+            <p><i>If a person is in Tokyo, then the person is in Japan.</i></p>
+            <p>In a proof by contradiction, which “bad case” should be ruled out?</p>
+          `,
+          choices: [
+            String.raw`The person is not in Tokyo and is not in Japan.`,
+            String.raw`The person is in Japan and is in Tokyo.`,
+            String.raw`The person is in Japan but not in Tokyo.`,
+            String.raw`The person is not in Japan, so the person is not in Tokyo.`,
+            String.raw`The person is in Tokyo and is not in Japan.`,
+            String.raw`The person is neither in Tokyo nor in Japan.`
+          ],
+          choiceWrap: false
+        },
+
+        {
+          stem: String.raw`
+            <p>We want to prove by contradiction:</p>
+            <p><i>If \(n\) is an even integer, then \(n\) is not odd.</i></p>
+            <p>Which assumption begins the contradiction correctly?</p>
+          `,
+          choices: [
+            String.raw`Assume \(n\) is not even and \(n\) is not odd.`,
+            String.raw`Assume \(n\) is odd, and then prove that \(n\) is even.`,
+            String.raw`Assume \(n\) is even and \(n\) is odd.`,
+            String.raw`Assume \(n\) is neither even nor odd.`,
+            String.raw`Assume \(n\) is even and \(n\) is not odd.`,
+            String.raw`Assume \(n\) is not even, because the hypothesis must always be negated.`
+          ],
+          choiceWrap: false
+        },
+
+        {
+          stem: String.raw`
+            <p>We want to prove by contradiction:</p>
+            <p><i>If \(x>5\), then \(x>3\).</i></p>
+            <p>Which answer uses the correct contradiction structure?</p>
+          `,
+          choices: [
+            String.raw`Assume \(x>5\) and \(x\le 3\). But no number can be greater than 5 and at most 3 at the same time, so the bad case is impossible.`,
+            String.raw`Assume \(x\le 5\) and \(x>3\). This proves the original statement because the hypothesis is false.`,
+            String.raw`Assume \(x>5\) and \(x>3\). This proves the statement by contradiction.`,
+            String.raw`Assume \(x\le 3\). Then \(x>5\), so there is a contradiction.`,
+            String.raw`Assume \(x>3\). Then \(x>5\), so the statement is true.`,
+            String.raw`No contradiction proof is possible for an inequality.`
+          ],
+          choiceWrap: false
+        },
+
+        {
+          stem: String.raw`
+            <p>A student says:</p>
+            <p><i>“To prove that \(p\to q\) is false, I should use proof by contradiction.”</i></p>
+            <p>What is the best correction?</p>
+          `,
+          choices: [
+            String.raw`To show that \(p\to q\) is false, the student should prove \(q\to p\) instead.`,
+            String.raw`To show that \(p\to q\) is false, the student should exhibit the bad case: \(p\) true and \(q\) false.`,
+            String.raw`To show that \(p\to q\) is false, the student should show \(p\) and \(q\) are both false.`,
+            String.raw`To show that \(p\to q\) is false, the student should show \(p\) is false.`,
+            String.raw`To show that \(p\to q\) is false, the student should prove that \(q\) is true.`,
+            String.raw`A conditional statement can never be shown false.`
+          ],
+          choiceWrap: false
+        }
+      ]
+    };
+  </script>
+
+  <link rel="stylesheet" href="/math-homework/assets/core-rich.css" />
+  <script defer src="/math-homework/assets/core-rich.js"></script>
+  <script defer src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+</head>
+
+<body>
+  <div id="hw-root">Loading…</div>
+</body>
+</html>

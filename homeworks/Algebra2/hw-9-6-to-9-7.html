@@ -1,0 +1,518 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Homework 9-6 to 9-7 - Rational Equations and Variation</title>
+  <link rel="stylesheet" href="/math-homework/assets/core-rich.css" />
+  <style>
+#hw-root.local-homework {box-sizing:border-box;max-width:860px;margin:34px auto;padding:0 22px 36px;color:#243743;font:16px/1.52 system-ui,sans-serif}
+.local-homework h1 {font:600 clamp(1.4rem,3.2vw,2.05rem)/1.2 system-ui,sans-serif;margin:0 0 14px}
+.local-homework .question {padding:18px 0;border-top:1px solid #cad5da}
+.local-homework h2 {font:650 1rem/1.2 system-ui,sans-serif;margin:0 0 7px}
+.local-homework p {margin:0 0 8px}
+.local-homework .names {display:flex;gap:12px 22px;flex-wrap:wrap;margin:20px 0 18px}
+.local-homework .names label {display:flex;align-items:center;gap:8px}
+.local-homework .names input {border:0;border-bottom:1px solid #647984;font:inherit;width:140px;background:transparent}
+.local-homework .choices {display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:5px 16px;margin-top:12px}
+.local-homework .choices label {display:grid;grid-template-columns:auto auto 1fr;align-items:baseline;gap:6px;padding:4px 5px;border-radius:3px}
+.local-homework .choices label:focus-within {outline:1px solid #577986}
+.local-homework .choices input {accent-color:#376681;margin:0}
+.local-homework .letter {font-weight:600}
+@media(max-width:550px) {.local-homework .choices {grid-template-columns:1fr}}
+@media print {
+  #hw-root.local-homework {margin:0;max-width:none;padding:0;color:#151b1f;font-size:10.75pt}
+  .local-homework .question {break-inside:avoid;padding:12px 0}
+  .local-homework .choices {grid-template-columns:repeat(2,minmax(0,1fr))}
+}
+  </style>
+  <script>
+
+    window.homeworkData = {
+      classId: "Algebra2",
+      id: "Homework 9-6 to 9-7 - Rational Equations and Variation",
+      title: "Homework 9-6 to 9-7 - Rational Equations and Variation",
+      graphics: String.raw`<p>Work over the real numbers. Show the equation and the steps that justify your answer.</p>`,
+      answerKey: ["D","B","E","C","F","A","B","E","C","F","A","D","B","E","A","C","D","B","F"],
+      questions: [
+        {
+          stem: String.raw`<p>Solve \(\frac{12}{x-1}=3\).</p>`,
+          choiceWrap: false,
+          choices: [
+            String.raw`\(4\)`,
+            String.raw`\(\frac{5}{4}\)`,
+            String.raw`\(3\)`,
+            String.raw`\(5\)`,
+            String.raw`\(1\)`,
+            String.raw`\(-3\)`
+          ]
+        },
+        {
+          stem: String.raw`<p>Solve \(\frac{x+6}{x+16}=\frac{3}{5}\).</p>`,
+          choiceWrap: false,
+          choices: [
+            String.raw`\(-16\)`,
+            String.raw`\(9\)`,
+            String.raw`\(-9\)`,
+            String.raw`\(6\)`,
+            String.raw`\(15\)`,
+            String.raw`No real solution`
+          ]
+        },
+        {
+          stem: String.raw`<p>Solve \(\frac{x+6}{x-8}=\frac{x+3}{x+10}\).</p>`,
+          choiceWrap: false,
+          choices: [
+            String.raw`\(-10\)`,
+            String.raw`\(4\)`,
+            String.raw`No real solution`,
+            String.raw`\(8\)`,
+            String.raw`\(-4\)`,
+            String.raw`\(-2\)`
+          ]
+        },
+        {
+          stem: String.raw`<p>Find the solution set of \(\frac{3}{x-1}+\frac{5}{x+1}=2\).</p>`,
+          choiceWrap: false,
+          choices: [
+            String.raw`\(\{0\}\)`,
+            String.raw`\(\{4\}\)`,
+            String.raw`\(\{0,4\}\)`,
+            String.raw`\(\{-1,1\}\)`,
+            String.raw`\(\{-4,0\}\)`,
+            String.raw`\(\varnothing\)`
+          ]
+        },
+        {
+          stem: String.raw`<p>Find the solution set of \(\frac{(x-2)^2}{x-2}=1\).</p>`,
+          choiceWrap: false,
+          choices: [
+            String.raw`\(\{2\}\)`,
+            String.raw`\(\{2,3\}\)`,
+            String.raw`\(\{1\}\)`,
+            String.raw`\(\varnothing\)`,
+            String.raw`\(\{1,3\}\)`,
+            String.raw`\(\{3\}\)`
+          ]
+        },
+        {
+          stem: String.raw`<p>Find the solution sets of the two equations.</p><p>I. \(\frac{x^2-9}{x-3}=6\)</p><p>II. \(\frac{x^2-9}{x-3}=x+3\)</p>`,
+          choiceWrap: false,
+          choices: [
+            String.raw`I has no solution. II has every real number except \(3\) as a solution.`,
+            String.raw`I has the solution \(3\). II has every real number except \(3\) as a solution.`,
+            String.raw`I has no solution. Every real number solves II.`,
+            String.raw`I has the solution \(3\). Every real number solves II.`,
+            String.raw`I has no solution. II has every real number except \(3\) and \(-3\) as a solution.`,
+            String.raw`I has the solution \(-3\). II has every real number except \(3\) as a solution.`
+          ]
+        },
+        {
+          stem: String.raw`<p>Solve \(\frac{1}{x-2}+\frac{2}{x+3}=\frac{3}{x^2+x-6}\).</p>`,
+          choiceWrap: false,
+          choices: [
+            String.raw`\(\frac{2}{3}\)`,
+            String.raw`\(\frac{4}{3}\)`,
+            String.raw`\(-\frac{4}{3}\)`,
+            String.raw`\(2\)`,
+            String.raw`\(-3\)`,
+            String.raw`No real solution`
+          ]
+        },
+        {
+          stem: String.raw`<p>Let \(a\) and \(b\) be real constants. Consider the equation \(\frac{1}{x-a}+\frac{2}{x+b}=\frac{3}{(x-a)(x+b)}\).</p><p>For which values of \(a+b\) does the equation have no real solution?</p>`,
+          choiceWrap: false,
+          choices: [
+            String.raw`\(3\) only`,
+            String.raw`\(-\frac{3}{2}\) only`,
+            String.raw`\(0\) only`,
+            String.raw`\(-3\) and \(\frac{3}{2}\)`,
+            String.raw`\(-\frac{3}{2}\) and \(3\)`,
+            String.raw`\(-\frac{3}{2}\), \(0\), and \(3\)`
+          ]
+        },
+        {
+          stem: String.raw`<p>For \(x>0\), \(y\) varies directly as \(x\), and \(z\) varies inversely as \(x\). When \(x=4\), both \(y\) and \(z\) equal \(12\). Find \((y,z)\) when \(x=6\).</p>`,
+          choiceWrap: false,
+          choices: [
+            String.raw`\((8,18)\)`,
+            String.raw`\((18,18)\)`,
+            String.raw`\((18,8)\)`,
+            String.raw`\((8,8)\)`,
+            String.raw`\((14,10)\)`,
+            String.raw`\((12,12)\)`
+          ]
+        },
+        {
+          stem: String.raw`<p>The gravitational force \(F\) between two bodies varies jointly as their masses \(m_1\) and \(m_2\), and inversely as the square of the distance \(r\) between their centers. Write a variation equation for \(F\), using \(k\) as the constant of variation. Select the equation you obtained.</p>`,
+          choiceWrap: false,
+          choices: [
+            String.raw`\(F=\frac{km_1m_2}{r}\)`,
+            String.raw`\(F=\frac{k(m_1+m_2)}{r^2}\)`,
+            String.raw`\(F=\frac{kr^2}{m_1m_2}\)`,
+            String.raw`\(F=\frac{k(m_1m_2)^2}{r^2}\)`,
+            String.raw`\(F=km_1m_2r^2\)`,
+            String.raw`\(F=\frac{km_1m_2}{r^2}\)`
+          ]
+        },
+        {
+          stem: String.raw`<p>In an ideal gas model, for a fixed amount of gas, its volume \(V\) varies directly as its absolute temperature \(T\) and inversely as its pressure \(P\). When \(T=300\) K and \(P=150\) kPa, \(V=4\) L.</p><p>Write the variation equation for \(V\) in terms of \(T\) and \(P\), including the numerical value of the constant. Select the equation you obtained.</p>`,
+          choiceWrap: false,
+          choices: [
+            String.raw`\(V=\frac{2T}{P}\)`,
+            String.raw`\(V=\frac{8P}{T}\)`,
+            String.raw`\(V=\frac{TP}{11250}\)`,
+            String.raw`\(V=\frac{180000}{TP}\)`,
+            String.raw`\(V=\frac{T^2}{150P}\)`,
+            String.raw`\(V=\frac{300T}{P^2}\)`
+          ]
+        },
+        {
+          stem: String.raw`<p>Kinetic energy varies jointly as mass and the square of speed. A \(3\) kg object moving at \(2\) m/s has \(6\) J of kinetic energy. Find the speed of a \(6\) kg object with \(48\) J of kinetic energy.</p>`,
+          choiceWrap: false,
+          choices: [
+            String.raw`\(2\) m/s`,
+            String.raw`\(8\) m/s`,
+            String.raw`\(4\sqrt{2}\) m/s`,
+            String.raw`\(4\) m/s`,
+            String.raw`\(16\) m/s`,
+            String.raw`\(2\sqrt{2}\) m/s`
+          ]
+        },
+        {
+          stem: String.raw`<p>An object’s weight varies inversely as the square of its distance from Earth’s center. Earth’s radius is \(6370\) km. An object weighs \(550\) N at the surface. Find its weight \(630\) km above the surface, to the nearest newton.</p>`,
+          choiceWrap: false,
+          choices: [
+            String.raw`\(447\) N`,
+            String.raw`\(455\) N`,
+            String.raw`\(501\) N`,
+            String.raw`\(550\) N`,
+            String.raw`\(604\) N`,
+            String.raw`\(664\) N`
+          ]
+        },
+        {
+          stem: String.raw`<p>The electrical resistance of a wire varies directly as its length and inversely as the square of its diameter. A second wire of the same material is twice as long and has half the resistance. Find the ratio of the second wire’s diameter to the first wire’s diameter.</p>`,
+          choiceWrap: false,
+          choices: [
+            String.raw`\(\frac{1}{2}\)`,
+            String.raw`\(\sqrt{2}\)`,
+            String.raw`\(4\)`,
+            String.raw`\(\frac{1}{\sqrt{2}}\)`,
+            String.raw`\(2\)`,
+            String.raw`\(\frac{1}{4}\)`
+          ]
+        },
+        {
+          stem: String.raw`<p>A cube with edge length \(e\) has surface area \(S=6e^2\) and volume \(V=e^3\). Which equation expresses \(V\) as a function of \(S\)?</p>`,
+          choiceWrap: false,
+          choices: [
+            String.raw`\(V=\left(\frac{S}{6}\right)^{3/2}\)`,
+            String.raw`\(V=\left(\frac{S}{6}\right)^{2/3}\)`,
+            String.raw`\(V=\frac{S^{3/2}}{6}\)`,
+            String.raw`\(V=\left(\frac{S}{6}\right)^3\)`,
+            String.raw`\(V=\frac{S}{6}\)`,
+            String.raw`\(V=6S^{3/2}\)`
+          ]
+        },
+        {
+          stem: String.raw`<p>A crew of \(12\) workers builds \(3\) identical houses in \(18\) days. Assume every worker works at the same constant rate and each house requires the same amount of work.</p><p>Write an equation for the number of days \(d\) needed for \(w\) workers to build \(h\) houses. Select the equation you obtained.</p>`,
+          choiceWrap: false,
+          choices: [
+            String.raw`\(d=\frac{9w}{2h}\)`,
+            String.raw`\(d=\frac{wh}{2}\)`,
+            String.raw`\(d=\frac{72h}{w}\)`,
+            String.raw`\(d=\frac{648}{wh}\)`,
+            String.raw`\(d=\frac{24h^2}{w}\)`,
+            String.raw`\(d=\frac{864h}{w^2}\)`
+          ]
+        },
+        {
+          stem: String.raw`<p>At a construction site, \(15\) workers build \(4\) identical houses in \(24\) days. All workers build at the same constant rate. How many workers would build \(6\) such houses in \(20\) days?</p>`,
+          choiceWrap: false,
+          choices: [
+            String.raw`\(18\)`,
+            String.raw`\(19\)`,
+            String.raw`\(23\)`,
+            String.raw`\(27\)`,
+            String.raw`\(26\)`,
+            String.raw`\(15\)`
+          ]
+        },
+        {
+          stem: String.raw`<p>A crew of \(12\) workers can build \(4\) identical houses in \(20\) days. Each worker works at the same constant rate. After \(5\) days of work, \(3\) workers leave the project. How many additional days will they need to finish the four houses?</p>`,
+          choiceWrap: false,
+          choices: [
+            String.raw`\(15\) days`,
+            String.raw`\(20\) days`,
+            String.raw`\(25\) days`,
+            String.raw`\(\frac{80}{3}\) days`,
+            String.raw`\(\frac{45}{4}\) days`,
+            String.raw`\(\frac{65}{3}\) days`
+          ]
+        },
+        {
+          stem: String.raw`<p>Each of three identical houses requires the equivalent of \(60\) days of work by one worker. Every worker works at the same constant rate. If \(6\) workers were added to the crew before work began, the three houses would be finished \(5\) days sooner. How many workers are in the original crew?</p>`,
+          choiceWrap: false,
+          choices: [
+            String.raw`\(9\)`,
+            String.raw`\(10\)`,
+            String.raw`\(15\)`,
+            String.raw`\(18\)`,
+            String.raw`\(24\)`,
+            String.raw`\(12\)`
+          ]
+        }
+      ]
+    };
+
+    document.addEventListener("DOMContentLoaded", () => setTimeout(() => {
+      const root = document.getElementById("hw-root");
+      if (root.childElementCount) return;
+      root.classList.add("local-homework");
+      root.replaceChildren(document.getElementById("local-worksheet").content.cloneNode(true));
+    }, 0));
+  </script>
+  <script defer src="/math-homework/assets/core-rich.js"></script>
+  <script defer src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+</head>
+<body>
+  <main id="hw-root">Loading…</main>
+  <template id="local-worksheet">
+    <h1>Homework 9-6 and 9-7 — Rational Equations and Variation</h1>
+    <div class="names">
+      <label>First Name <input type="text" autocomplete="given-name" /></label>
+      <label>Last Name <input type="text" autocomplete="family-name" /></label>
+    </div>
+    <p>Work over the real numbers. Show the equation and the steps that justify your answer.</p>
+    <section class="question" aria-labelledby="local-q1">
+      <h2 id="local-q1">Q1.</h2>
+      <p>Solve <math xmlns="http://www.w3.org/1998/Math/MathML"><mrow><mfrac><mrow><mn>12</mn></mrow><mrow><mi>x</mi><mo>−</mo><mn>1</mn></mrow></mfrac><mo>=</mo><mn>3</mn></mrow></math>.</p>
+      <div class="choices" role="group" aria-labelledby="local-q1">
+        <label><input type="radio" name="q1" value="A" /><span class="letter">A.</span><span><math xmlns="http://www.w3.org/1998/Math/MathML"><mrow><mn>4</mn></mrow></math></span></label>
+        <label><input type="radio" name="q1" value="B" /><span class="letter">B.</span><span><math xmlns="http://www.w3.org/1998/Math/MathML"><mrow><mfrac><mrow><mn>5</mn></mrow><mrow><mn>4</mn></mrow></mfrac></mrow></math></span></label>
+        <label><input type="radio" name="q1" value="C" /><span class="letter">C.</span><span><math xmlns="http://www.w3.org/1998/Math/MathML"><mrow><mn>3</mn></mrow></math></span></label>
+        <label><input type="radio" name="q1" value="D" /><span class="letter">D.</span><span><math xmlns="http://www.w3.org/1998/Math/MathML"><mrow><mn>5</mn></mrow></math></span></label>
+        <label><input type="radio" name="q1" value="E" /><span class="letter">E.</span><span><math xmlns="http://www.w3.org/1998/Math/MathML"><mrow><mn>1</mn></mrow></math></span></label>
+        <label><input type="radio" name="q1" value="F" /><span class="letter">F.</span><span><math xmlns="http://www.w3.org/1998/Math/MathML"><mrow><mo>−</mo><mn>3</mn></mrow></math></span></label>
+      </div>
+    </section>
+    <section class="question" aria-labelledby="local-q2">
+      <h2 id="local-q2">Q2.</h2>
+      <p>Solve <math xmlns="http://www.w3.org/1998/Math/MathML"><mrow><mfrac><mrow><mi>x</mi><mo>+</mo><mn>6</mn></mrow><mrow><mi>x</mi><mo>+</mo><mn>16</mn></mrow></mfrac><mo>=</mo><mfrac><mrow><mn>3</mn></mrow><mrow><mn>5</mn></mrow></mfrac></mrow></math>.</p>
+      <div class="choices" role="group" aria-labelledby="local-q2">
+        <label><input type="radio" name="q2" value="A" /><span class="letter">A.</span><span><math xmlns="http://www.w3.org/1998/Math/MathML"><mrow><mo>−</mo><mn>16</mn></mrow></math></span></label>
+        <label><input type="radio" name="q2" value="B" /><span class="letter">B.</span><span><math xmlns="http://www.w3.org/1998/Math/MathML"><mrow><mn>9</mn></mrow></math></span></label>
+        <label><input type="radio" name="q2" value="C" /><span class="letter">C.</span><span><math xmlns="http://www.w3.org/1998/Math/MathML"><mrow><mo>−</mo><mn>9</mn></mrow></math></span></label>
+        <label><input type="radio" name="q2" value="D" /><span class="letter">D.</span><span><math xmlns="http://www.w3.org/1998/Math/MathML"><mrow><mn>6</mn></mrow></math></span></label>
+        <label><input type="radio" name="q2" value="E" /><span class="letter">E.</span><span><math xmlns="http://www.w3.org/1998/Math/MathML"><mrow><mn>15</mn></mrow></math></span></label>
+        <label><input type="radio" name="q2" value="F" /><span class="letter">F.</span><span>No real solution</span></label>
+      </div>
+    </section>
+    <section class="question" aria-labelledby="local-q3">
+      <h2 id="local-q3">Q3.</h2>
+      <p>Solve <math xmlns="http://www.w3.org/1998/Math/MathML"><mrow><mfrac><mrow><mi>x</mi><mo>+</mo><mn>6</mn></mrow><mrow><mi>x</mi><mo>−</mo><mn>8</mn></mrow></mfrac><mo>=</mo><mfrac><mrow><mi>x</mi><mo>+</mo><mn>3</mn></mrow><mrow><mi>x</mi><mo>+</mo><mn>10</mn></mrow></mfrac></mrow></math>.</p>
+      <div class="choices" role="group" aria-labelledby="local-q3">
+        <label><input type="radio" name="q3" value="A" /><span class="letter">A.</span><span><math xmlns="http://www.w3.org/1998/Math/MathML"><mrow><mo>−</mo><mn>10</mn></mrow></math></span></label>
+        <label><input type="radio" name="q3" value="B" /><span class="letter">B.</span><span><math xmlns="http://www.w3.org/1998/Math/MathML"><mrow><mn>4</mn></mrow></math></span></label>
+        <label><input type="radio" name="q3" value="C" /><span class="letter">C.</span><span>No real solution</span></label>
+        <label><input type="radio" name="q3" value="D" /><span class="letter">D.</span><span><math xmlns="http://www.w3.org/1998/Math/MathML"><mrow><mn>8</mn></mrow></math></span></label>
+        <label><input type="radio" name="q3" value="E" /><span class="letter">E.</span><span><math xmlns="http://www.w3.org/1998/Math/MathML"><mrow><mo>−</mo><mn>4</mn></mrow></math></span></label>
+        <label><input type="radio" name="q3" value="F" /><span class="letter">F.</span><span><math xmlns="http://www.w3.org/1998/Math/MathML"><mrow><mo>−</mo><mn>2</mn></mrow></math></span></label>
+      </div>
+    </section>
+    <section class="question" aria-labelledby="local-q4">
+      <h2 id="local-q4">Q4.</h2>
+      <p>Find the solution set of <math xmlns="http://www.w3.org/1998/Math/MathML"><mrow><mfrac><mrow><mn>3</mn></mrow><mrow><mi>x</mi><mo>−</mo><mn>1</mn></mrow></mfrac><mo>+</mo><mfrac><mrow><mn>5</mn></mrow><mrow><mi>x</mi><mo>+</mo><mn>1</mn></mrow></mfrac><mo>=</mo><mn>2</mn></mrow></math>.</p>
+      <div class="choices" role="group" aria-labelledby="local-q4">
+        <label><input type="radio" name="q4" value="A" /><span class="letter">A.</span><span><math xmlns="http://www.w3.org/1998/Math/MathML"><mrow><mo>{</mo><mn>0</mn><mo>}</mo></mrow></math></span></label>
+        <label><input type="radio" name="q4" value="B" /><span class="letter">B.</span><span><math xmlns="http://www.w3.org/1998/Math/MathML"><mrow><mo>{</mo><mn>4</mn><mo>}</mo></mrow></math></span></label>
+        <label><input type="radio" name="q4" value="C" /><span class="letter">C.</span><span><math xmlns="http://www.w3.org/1998/Math/MathML"><mrow><mo>{</mo><mn>0</mn><mo>,</mo><mn>4</mn><mo>}</mo></mrow></math></span></label>
+        <label><input type="radio" name="q4" value="D" /><span class="letter">D.</span><span><math xmlns="http://www.w3.org/1998/Math/MathML"><mrow><mo>{</mo><mo>−</mo><mn>1</mn><mo>,</mo><mn>1</mn><mo>}</mo></mrow></math></span></label>
+        <label><input type="radio" name="q4" value="E" /><span class="letter">E.</span><span><math xmlns="http://www.w3.org/1998/Math/MathML"><mrow><mo>{</mo><mo>−</mo><mn>4</mn><mo>,</mo><mn>0</mn><mo>}</mo></mrow></math></span></label>
+        <label><input type="radio" name="q4" value="F" /><span class="letter">F.</span><span><math xmlns="http://www.w3.org/1998/Math/MathML"><mrow><mo>∅</mo></mrow></math></span></label>
+      </div>
+    </section>
+    <section class="question" aria-labelledby="local-q5">
+      <h2 id="local-q5">Q5.</h2>
+      <p>Find the solution set of <math xmlns="http://www.w3.org/1998/Math/MathML"><mrow><mfrac><mrow><mo>(</mo><mi>x</mi><mo>−</mo><mn>2</mn><msup><mo>)</mo><mn>2</mn></msup></mrow><mrow><mi>x</mi><mo>−</mo><mn>2</mn></mrow></mfrac><mo>=</mo><mn>1</mn></mrow></math>.</p>
+      <div class="choices" role="group" aria-labelledby="local-q5">
+        <label><input type="radio" name="q5" value="A" /><span class="letter">A.</span><span><math xmlns="http://www.w3.org/1998/Math/MathML"><mrow><mo>{</mo><mn>2</mn><mo>}</mo></mrow></math></span></label>
+        <label><input type="radio" name="q5" value="B" /><span class="letter">B.</span><span><math xmlns="http://www.w3.org/1998/Math/MathML"><mrow><mo>{</mo><mn>2</mn><mo>,</mo><mn>3</mn><mo>}</mo></mrow></math></span></label>
+        <label><input type="radio" name="q5" value="C" /><span class="letter">C.</span><span><math xmlns="http://www.w3.org/1998/Math/MathML"><mrow><mo>{</mo><mn>1</mn><mo>}</mo></mrow></math></span></label>
+        <label><input type="radio" name="q5" value="D" /><span class="letter">D.</span><span><math xmlns="http://www.w3.org/1998/Math/MathML"><mrow><mo>∅</mo></mrow></math></span></label>
+        <label><input type="radio" name="q5" value="E" /><span class="letter">E.</span><span><math xmlns="http://www.w3.org/1998/Math/MathML"><mrow><mo>{</mo><mn>1</mn><mo>,</mo><mn>3</mn><mo>}</mo></mrow></math></span></label>
+        <label><input type="radio" name="q5" value="F" /><span class="letter">F.</span><span><math xmlns="http://www.w3.org/1998/Math/MathML"><mrow><mo>{</mo><mn>3</mn><mo>}</mo></mrow></math></span></label>
+      </div>
+    </section>
+    <section class="question" aria-labelledby="local-q6">
+      <h2 id="local-q6">Q6.</h2>
+      <p>Find the solution sets of the two equations.</p><p>I. <math xmlns="http://www.w3.org/1998/Math/MathML"><mrow><mfrac><mrow><msup><mi>x</mi><mn>2</mn></msup><mo>−</mo><mn>9</mn></mrow><mrow><mi>x</mi><mo>−</mo><mn>3</mn></mrow></mfrac><mo>=</mo><mn>6</mn></mrow></math></p><p>II. <math xmlns="http://www.w3.org/1998/Math/MathML"><mrow><mfrac><mrow><msup><mi>x</mi><mn>2</mn></msup><mo>−</mo><mn>9</mn></mrow><mrow><mi>x</mi><mo>−</mo><mn>3</mn></mrow></mfrac><mo>=</mo><mi>x</mi><mo>+</mo><mn>3</mn></mrow></math></p>
+      <div class="choices" role="group" aria-labelledby="local-q6">
+        <label><input type="radio" name="q6" value="A" /><span class="letter">A.</span><span>I has no solution. II has every real number except <math xmlns="http://www.w3.org/1998/Math/MathML"><mrow><mn>3</mn></mrow></math> as a solution.</span></label>
+        <label><input type="radio" name="q6" value="B" /><span class="letter">B.</span><span>I has the solution <math xmlns="http://www.w3.org/1998/Math/MathML"><mrow><mn>3</mn></mrow></math>. II has every real number except <math xmlns="http://www.w3.org/1998/Math/MathML"><mrow><mn>3</mn></mrow></math> as a solution.</span></label>
+        <label><input type="radio" name="q6" value="C" /><span class="letter">C.</span><span>I has no solution. Every real number solves II.</span></label>
+        <label><input type="radio" name="q6" value="D" /><span class="letter">D.</span><span>I has the solution <math xmlns="http://www.w3.org/1998/Math/MathML"><mrow><mn>3</mn></mrow></math>. Every real number solves II.</span></label>
+        <label><input type="radio" name="q6" value="E" /><span class="letter">E.</span><span>I has no solution. II has every real number except <math xmlns="http://www.w3.org/1998/Math/MathML"><mrow><mn>3</mn></mrow></math> and <math xmlns="http://www.w3.org/1998/Math/MathML"><mrow><mo>−</mo><mn>3</mn></mrow></math> as a solution.</span></label>
+        <label><input type="radio" name="q6" value="F" /><span class="letter">F.</span><span>I has the solution <math xmlns="http://www.w3.org/1998/Math/MathML"><mrow><mo>−</mo><mn>3</mn></mrow></math>. II has every real number except <math xmlns="http://www.w3.org/1998/Math/MathML"><mrow><mn>3</mn></mrow></math> as a solution.</span></label>
+      </div>
+    </section>
+    <section class="question" aria-labelledby="local-q7">
+      <h2 id="local-q7">Q7.</h2>
+      <p>Solve <math xmlns="http://www.w3.org/1998/Math/MathML"><mrow><mfrac><mrow><mn>1</mn></mrow><mrow><mi>x</mi><mo>−</mo><mn>2</mn></mrow></mfrac><mo>+</mo><mfrac><mrow><mn>2</mn></mrow><mrow><mi>x</mi><mo>+</mo><mn>3</mn></mrow></mfrac><mo>=</mo><mfrac><mrow><mn>3</mn></mrow><mrow><msup><mi>x</mi><mn>2</mn></msup><mo>+</mo><mi>x</mi><mo>−</mo><mn>6</mn></mrow></mfrac></mrow></math>.</p>
+      <div class="choices" role="group" aria-labelledby="local-q7">
+        <label><input type="radio" name="q7" value="A" /><span class="letter">A.</span><span><math xmlns="http://www.w3.org/1998/Math/MathML"><mrow><mfrac><mrow><mn>2</mn></mrow><mrow><mn>3</mn></mrow></mfrac></mrow></math></span></label>
+        <label><input type="radio" name="q7" value="B" /><span class="letter">B.</span><span><math xmlns="http://www.w3.org/1998/Math/MathML"><mrow><mfrac><mrow><mn>4</mn></mrow><mrow><mn>3</mn></mrow></mfrac></mrow></math></span></label>
+        <label><input type="radio" name="q7" value="C" /><span class="letter">C.</span><span><math xmlns="http://www.w3.org/1998/Math/MathML"><mrow><mo>−</mo><mfrac><mrow><mn>4</mn></mrow><mrow><mn>3</mn></mrow></mfrac></mrow></math></span></label>
+        <label><input type="radio" name="q7" value="D" /><span class="letter">D.</span><span><math xmlns="http://www.w3.org/1998/Math/MathML"><mrow><mn>2</mn></mrow></math></span></label>
+        <label><input type="radio" name="q7" value="E" /><span class="letter">E.</span><span><math xmlns="http://www.w3.org/1998/Math/MathML"><mrow><mo>−</mo><mn>3</mn></mrow></math></span></label>
+        <label><input type="radio" name="q7" value="F" /><span class="letter">F.</span><span>No real solution</span></label>
+      </div>
+    </section>
+    <section class="question" aria-labelledby="local-q8">
+      <h2 id="local-q8">Q8.</h2>
+      <p>Let <math xmlns="http://www.w3.org/1998/Math/MathML"><mrow><mi>a</mi></mrow></math> and <math xmlns="http://www.w3.org/1998/Math/MathML"><mrow><mi>b</mi></mrow></math> be real constants. Consider the equation <math xmlns="http://www.w3.org/1998/Math/MathML"><mrow><mfrac><mrow><mn>1</mn></mrow><mrow><mi>x</mi><mo>−</mo><mi>a</mi></mrow></mfrac><mo>+</mo><mfrac><mrow><mn>2</mn></mrow><mrow><mi>x</mi><mo>+</mo><mi>b</mi></mrow></mfrac><mo>=</mo><mfrac><mrow><mn>3</mn></mrow><mrow><mo>(</mo><mi>x</mi><mo>−</mo><mi>a</mi><mo>)</mo><mo>(</mo><mi>x</mi><mo>+</mo><mi>b</mi><mo>)</mo></mrow></mfrac></mrow></math>.</p><p>For which values of <math xmlns="http://www.w3.org/1998/Math/MathML"><mrow><mi>a</mi><mo>+</mo><mi>b</mi></mrow></math> does the equation have no real solution?</p>
+      <div class="choices" role="group" aria-labelledby="local-q8">
+        <label><input type="radio" name="q8" value="A" /><span class="letter">A.</span><span><math xmlns="http://www.w3.org/1998/Math/MathML"><mrow><mn>3</mn></mrow></math> only</span></label>
+        <label><input type="radio" name="q8" value="B" /><span class="letter">B.</span><span><math xmlns="http://www.w3.org/1998/Math/MathML"><mrow><mo>−</mo><mfrac><mrow><mn>3</mn></mrow><mrow><mn>2</mn></mrow></mfrac></mrow></math> only</span></label>
+        <label><input type="radio" name="q8" value="C" /><span class="letter">C.</span><span><math xmlns="http://www.w3.org/1998/Math/MathML"><mrow><mn>0</mn></mrow></math> only</span></label>
+        <label><input type="radio" name="q8" value="D" /><span class="letter">D.</span><span><math xmlns="http://www.w3.org/1998/Math/MathML"><mrow><mo>−</mo><mn>3</mn></mrow></math> and <math xmlns="http://www.w3.org/1998/Math/MathML"><mrow><mfrac><mrow><mn>3</mn></mrow><mrow><mn>2</mn></mrow></mfrac></mrow></math></span></label>
+        <label><input type="radio" name="q8" value="E" /><span class="letter">E.</span><span><math xmlns="http://www.w3.org/1998/Math/MathML"><mrow><mo>−</mo><mfrac><mrow><mn>3</mn></mrow><mrow><mn>2</mn></mrow></mfrac></mrow></math> and <math xmlns="http://www.w3.org/1998/Math/MathML"><mrow><mn>3</mn></mrow></math></span></label>
+        <label><input type="radio" name="q8" value="F" /><span class="letter">F.</span><span><math xmlns="http://www.w3.org/1998/Math/MathML"><mrow><mo>−</mo><mfrac><mrow><mn>3</mn></mrow><mrow><mn>2</mn></mrow></mfrac></mrow></math>, <math xmlns="http://www.w3.org/1998/Math/MathML"><mrow><mn>0</mn></mrow></math>, and <math xmlns="http://www.w3.org/1998/Math/MathML"><mrow><mn>3</mn></mrow></math></span></label>
+      </div>
+    </section>
+    <section class="question" aria-labelledby="local-q9">
+      <h2 id="local-q9">Q9.</h2>
+      <p>For <math xmlns="http://www.w3.org/1998/Math/MathML"><mrow><mi>x</mi><mo>&gt;</mo><mn>0</mn></mrow></math>, <math xmlns="http://www.w3.org/1998/Math/MathML"><mrow><mi>y</mi></mrow></math> varies directly as <math xmlns="http://www.w3.org/1998/Math/MathML"><mrow><mi>x</mi></mrow></math>, and <math xmlns="http://www.w3.org/1998/Math/MathML"><mrow><mi>z</mi></mrow></math> varies inversely as <math xmlns="http://www.w3.org/1998/Math/MathML"><mrow><mi>x</mi></mrow></math>. When <math xmlns="http://www.w3.org/1998/Math/MathML"><mrow><mi>x</mi><mo>=</mo><mn>4</mn></mrow></math>, both <math xmlns="http://www.w3.org/1998/Math/MathML"><mrow><mi>y</mi></mrow></math> and <math xmlns="http://www.w3.org/1998/Math/MathML"><mrow><mi>z</mi></mrow></math> equal <math xmlns="http://www.w3.org/1998/Math/MathML"><mrow><mn>12</mn></mrow></math>. Find <math xmlns="http://www.w3.org/1998/Math/MathML"><mrow><mo>(</mo><mi>y</mi><mo>,</mo><mi>z</mi><mo>)</mo></mrow></math> when <math xmlns="http://www.w3.org/1998/Math/MathML"><mrow><mi>x</mi><mo>=</mo><mn>6</mn></mrow></math>.</p>
+      <div class="choices" role="group" aria-labelledby="local-q9">
+        <label><input type="radio" name="q9" value="A" /><span class="letter">A.</span><span><math xmlns="http://www.w3.org/1998/Math/MathML"><mrow><mo>(</mo><mn>8</mn><mo>,</mo><mn>18</mn><mo>)</mo></mrow></math></span></label>
+        <label><input type="radio" name="q9" value="B" /><span class="letter">B.</span><span><math xmlns="http://www.w3.org/1998/Math/MathML"><mrow><mo>(</mo><mn>18</mn><mo>,</mo><mn>18</mn><mo>)</mo></mrow></math></span></label>
+        <label><input type="radio" name="q9" value="C" /><span class="letter">C.</span><span><math xmlns="http://www.w3.org/1998/Math/MathML"><mrow><mo>(</mo><mn>18</mn><mo>,</mo><mn>8</mn><mo>)</mo></mrow></math></span></label>
+        <label><input type="radio" name="q9" value="D" /><span class="letter">D.</span><span><math xmlns="http://www.w3.org/1998/Math/MathML"><mrow><mo>(</mo><mn>8</mn><mo>,</mo><mn>8</mn><mo>)</mo></mrow></math></span></label>
+        <label><input type="radio" name="q9" value="E" /><span class="letter">E.</span><span><math xmlns="http://www.w3.org/1998/Math/MathML"><mrow><mo>(</mo><mn>14</mn><mo>,</mo><mn>10</mn><mo>)</mo></mrow></math></span></label>
+        <label><input type="radio" name="q9" value="F" /><span class="letter">F.</span><span><math xmlns="http://www.w3.org/1998/Math/MathML"><mrow><mo>(</mo><mn>12</mn><mo>,</mo><mn>12</mn><mo>)</mo></mrow></math></span></label>
+      </div>
+    </section>
+    <section class="question" aria-labelledby="local-q10">
+      <h2 id="local-q10">Q10.</h2>
+      <p>The gravitational force <math xmlns="http://www.w3.org/1998/Math/MathML"><mrow><mi>F</mi></mrow></math> between two bodies varies jointly as their masses <math xmlns="http://www.w3.org/1998/Math/MathML"><mrow><msub><mi>m</mi><mn>1</mn></msub></mrow></math> and <math xmlns="http://www.w3.org/1998/Math/MathML"><mrow><msub><mi>m</mi><mn>2</mn></msub></mrow></math>, and inversely as the square of the distance <math xmlns="http://www.w3.org/1998/Math/MathML"><mrow><mi>r</mi></mrow></math> between their centers. Write a variation equation for <math xmlns="http://www.w3.org/1998/Math/MathML"><mrow><mi>F</mi></mrow></math>, using <math xmlns="http://www.w3.org/1998/Math/MathML"><mrow><mi>k</mi></mrow></math> as the constant of variation. Select the equation you obtained.</p>
+      <div class="choices" role="group" aria-labelledby="local-q10">
+        <label><input type="radio" name="q10" value="A" /><span class="letter">A.</span><span><math xmlns="http://www.w3.org/1998/Math/MathML"><mrow><mi>F</mi><mo>=</mo><mfrac><mrow><mi>k</mi><msub><mi>m</mi><mn>1</mn></msub><msub><mi>m</mi><mn>2</mn></msub></mrow><mrow><mi>r</mi></mrow></mfrac></mrow></math></span></label>
+        <label><input type="radio" name="q10" value="B" /><span class="letter">B.</span><span><math xmlns="http://www.w3.org/1998/Math/MathML"><mrow><mi>F</mi><mo>=</mo><mfrac><mrow><mi>k</mi><mo>(</mo><msub><mi>m</mi><mn>1</mn></msub><mo>+</mo><msub><mi>m</mi><mn>2</mn></msub><mo>)</mo></mrow><mrow><msup><mi>r</mi><mn>2</mn></msup></mrow></mfrac></mrow></math></span></label>
+        <label><input type="radio" name="q10" value="C" /><span class="letter">C.</span><span><math xmlns="http://www.w3.org/1998/Math/MathML"><mrow><mi>F</mi><mo>=</mo><mfrac><mrow><mi>k</mi><msup><mi>r</mi><mn>2</mn></msup></mrow><mrow><msub><mi>m</mi><mn>1</mn></msub><msub><mi>m</mi><mn>2</mn></msub></mrow></mfrac></mrow></math></span></label>
+        <label><input type="radio" name="q10" value="D" /><span class="letter">D.</span><span><math xmlns="http://www.w3.org/1998/Math/MathML"><mrow><mi>F</mi><mo>=</mo><mfrac><mrow><mi>k</mi><mo>(</mo><msub><mi>m</mi><mn>1</mn></msub><msub><mi>m</mi><mn>2</mn></msub><msup><mo>)</mo><mn>2</mn></msup></mrow><mrow><msup><mi>r</mi><mn>2</mn></msup></mrow></mfrac></mrow></math></span></label>
+        <label><input type="radio" name="q10" value="E" /><span class="letter">E.</span><span><math xmlns="http://www.w3.org/1998/Math/MathML"><mrow><mi>F</mi><mo>=</mo><mi>k</mi><msub><mi>m</mi><mn>1</mn></msub><msub><mi>m</mi><mn>2</mn></msub><msup><mi>r</mi><mn>2</mn></msup></mrow></math></span></label>
+        <label><input type="radio" name="q10" value="F" /><span class="letter">F.</span><span><math xmlns="http://www.w3.org/1998/Math/MathML"><mrow><mi>F</mi><mo>=</mo><mfrac><mrow><mi>k</mi><msub><mi>m</mi><mn>1</mn></msub><msub><mi>m</mi><mn>2</mn></msub></mrow><mrow><msup><mi>r</mi><mn>2</mn></msup></mrow></mfrac></mrow></math></span></label>
+      </div>
+    </section>
+    <section class="question" aria-labelledby="local-q11">
+      <h2 id="local-q11">Q11.</h2>
+      <p>In an ideal gas model, for a fixed amount of gas, its volume <math xmlns="http://www.w3.org/1998/Math/MathML"><mrow><mi>V</mi></mrow></math> varies directly as its absolute temperature <math xmlns="http://www.w3.org/1998/Math/MathML"><mrow><mi>T</mi></mrow></math> and inversely as its pressure <math xmlns="http://www.w3.org/1998/Math/MathML"><mrow><mi>P</mi></mrow></math>. When <math xmlns="http://www.w3.org/1998/Math/MathML"><mrow><mi>T</mi><mo>=</mo><mn>300</mn></mrow></math> K and <math xmlns="http://www.w3.org/1998/Math/MathML"><mrow><mi>P</mi><mo>=</mo><mn>150</mn></mrow></math> kPa, <math xmlns="http://www.w3.org/1998/Math/MathML"><mrow><mi>V</mi><mo>=</mo><mn>4</mn></mrow></math> L.</p><p>Write the variation equation for <math xmlns="http://www.w3.org/1998/Math/MathML"><mrow><mi>V</mi></mrow></math> in terms of <math xmlns="http://www.w3.org/1998/Math/MathML"><mrow><mi>T</mi></mrow></math> and <math xmlns="http://www.w3.org/1998/Math/MathML"><mrow><mi>P</mi></mrow></math>, including the numerical value of the constant. Select the equation you obtained.</p>
+      <div class="choices" role="group" aria-labelledby="local-q11">
+        <label><input type="radio" name="q11" value="A" /><span class="letter">A.</span><span><math xmlns="http://www.w3.org/1998/Math/MathML"><mrow><mi>V</mi><mo>=</mo><mfrac><mrow><mn>2</mn><mi>T</mi></mrow><mrow><mi>P</mi></mrow></mfrac></mrow></math></span></label>
+        <label><input type="radio" name="q11" value="B" /><span class="letter">B.</span><span><math xmlns="http://www.w3.org/1998/Math/MathML"><mrow><mi>V</mi><mo>=</mo><mfrac><mrow><mn>8</mn><mi>P</mi></mrow><mrow><mi>T</mi></mrow></mfrac></mrow></math></span></label>
+        <label><input type="radio" name="q11" value="C" /><span class="letter">C.</span><span><math xmlns="http://www.w3.org/1998/Math/MathML"><mrow><mi>V</mi><mo>=</mo><mfrac><mrow><mi>T</mi><mi>P</mi></mrow><mrow><mn>11250</mn></mrow></mfrac></mrow></math></span></label>
+        <label><input type="radio" name="q11" value="D" /><span class="letter">D.</span><span><math xmlns="http://www.w3.org/1998/Math/MathML"><mrow><mi>V</mi><mo>=</mo><mfrac><mrow><mn>180000</mn></mrow><mrow><mi>T</mi><mi>P</mi></mrow></mfrac></mrow></math></span></label>
+        <label><input type="radio" name="q11" value="E" /><span class="letter">E.</span><span><math xmlns="http://www.w3.org/1998/Math/MathML"><mrow><mi>V</mi><mo>=</mo><mfrac><mrow><msup><mi>T</mi><mn>2</mn></msup></mrow><mrow><mn>150</mn><mi>P</mi></mrow></mfrac></mrow></math></span></label>
+        <label><input type="radio" name="q11" value="F" /><span class="letter">F.</span><span><math xmlns="http://www.w3.org/1998/Math/MathML"><mrow><mi>V</mi><mo>=</mo><mfrac><mrow><mn>300</mn><mi>T</mi></mrow><mrow><msup><mi>P</mi><mn>2</mn></msup></mrow></mfrac></mrow></math></span></label>
+      </div>
+    </section>
+    <section class="question" aria-labelledby="local-q12">
+      <h2 id="local-q12">Q12.</h2>
+      <p>Kinetic energy varies jointly as mass and the square of speed. A <math xmlns="http://www.w3.org/1998/Math/MathML"><mrow><mn>3</mn></mrow></math> kg object moving at <math xmlns="http://www.w3.org/1998/Math/MathML"><mrow><mn>2</mn></mrow></math> m/s has <math xmlns="http://www.w3.org/1998/Math/MathML"><mrow><mn>6</mn></mrow></math> J of kinetic energy. Find the speed of a <math xmlns="http://www.w3.org/1998/Math/MathML"><mrow><mn>6</mn></mrow></math> kg object with <math xmlns="http://www.w3.org/1998/Math/MathML"><mrow><mn>48</mn></mrow></math> J of kinetic energy.</p>
+      <div class="choices" role="group" aria-labelledby="local-q12">
+        <label><input type="radio" name="q12" value="A" /><span class="letter">A.</span><span><math xmlns="http://www.w3.org/1998/Math/MathML"><mrow><mn>2</mn></mrow></math> m/s</span></label>
+        <label><input type="radio" name="q12" value="B" /><span class="letter">B.</span><span><math xmlns="http://www.w3.org/1998/Math/MathML"><mrow><mn>8</mn></mrow></math> m/s</span></label>
+        <label><input type="radio" name="q12" value="C" /><span class="letter">C.</span><span><math xmlns="http://www.w3.org/1998/Math/MathML"><mrow><mn>4</mn><msqrt><mrow><mn>2</mn></mrow></msqrt></mrow></math> m/s</span></label>
+        <label><input type="radio" name="q12" value="D" /><span class="letter">D.</span><span><math xmlns="http://www.w3.org/1998/Math/MathML"><mrow><mn>4</mn></mrow></math> m/s</span></label>
+        <label><input type="radio" name="q12" value="E" /><span class="letter">E.</span><span><math xmlns="http://www.w3.org/1998/Math/MathML"><mrow><mn>16</mn></mrow></math> m/s</span></label>
+        <label><input type="radio" name="q12" value="F" /><span class="letter">F.</span><span><math xmlns="http://www.w3.org/1998/Math/MathML"><mrow><mn>2</mn><msqrt><mrow><mn>2</mn></mrow></msqrt></mrow></math> m/s</span></label>
+      </div>
+    </section>
+    <section class="question" aria-labelledby="local-q13">
+      <h2 id="local-q13">Q13.</h2>
+      <p>An object’s weight varies inversely as the square of its distance from Earth’s center. Earth’s radius is <math xmlns="http://www.w3.org/1998/Math/MathML"><mrow><mn>6370</mn></mrow></math> km. An object weighs <math xmlns="http://www.w3.org/1998/Math/MathML"><mrow><mn>550</mn></mrow></math> N at the surface. Find its weight <math xmlns="http://www.w3.org/1998/Math/MathML"><mrow><mn>630</mn></mrow></math> km above the surface, to the nearest newton.</p>
+      <div class="choices" role="group" aria-labelledby="local-q13">
+        <label><input type="radio" name="q13" value="A" /><span class="letter">A.</span><span><math xmlns="http://www.w3.org/1998/Math/MathML"><mrow><mn>447</mn></mrow></math> N</span></label>
+        <label><input type="radio" name="q13" value="B" /><span class="letter">B.</span><span><math xmlns="http://www.w3.org/1998/Math/MathML"><mrow><mn>455</mn></mrow></math> N</span></label>
+        <label><input type="radio" name="q13" value="C" /><span class="letter">C.</span><span><math xmlns="http://www.w3.org/1998/Math/MathML"><mrow><mn>501</mn></mrow></math> N</span></label>
+        <label><input type="radio" name="q13" value="D" /><span class="letter">D.</span><span><math xmlns="http://www.w3.org/1998/Math/MathML"><mrow><mn>550</mn></mrow></math> N</span></label>
+        <label><input type="radio" name="q13" value="E" /><span class="letter">E.</span><span><math xmlns="http://www.w3.org/1998/Math/MathML"><mrow><mn>604</mn></mrow></math> N</span></label>
+        <label><input type="radio" name="q13" value="F" /><span class="letter">F.</span><span><math xmlns="http://www.w3.org/1998/Math/MathML"><mrow><mn>664</mn></mrow></math> N</span></label>
+      </div>
+    </section>
+    <section class="question" aria-labelledby="local-q14">
+      <h2 id="local-q14">Q14.</h2>
+      <p>The electrical resistance of a wire varies directly as its length and inversely as the square of its diameter. A second wire of the same material is twice as long and has half the resistance. Find the ratio of the second wire’s diameter to the first wire’s diameter.</p>
+      <div class="choices" role="group" aria-labelledby="local-q14">
+        <label><input type="radio" name="q14" value="A" /><span class="letter">A.</span><span><math xmlns="http://www.w3.org/1998/Math/MathML"><mrow><mfrac><mrow><mn>1</mn></mrow><mrow><mn>2</mn></mrow></mfrac></mrow></math></span></label>
+        <label><input type="radio" name="q14" value="B" /><span class="letter">B.</span><span><math xmlns="http://www.w3.org/1998/Math/MathML"><mrow><msqrt><mrow><mn>2</mn></mrow></msqrt></mrow></math></span></label>
+        <label><input type="radio" name="q14" value="C" /><span class="letter">C.</span><span><math xmlns="http://www.w3.org/1998/Math/MathML"><mrow><mn>4</mn></mrow></math></span></label>
+        <label><input type="radio" name="q14" value="D" /><span class="letter">D.</span><span><math xmlns="http://www.w3.org/1998/Math/MathML"><mrow><mfrac><mrow><mn>1</mn></mrow><mrow><msqrt><mrow><mn>2</mn></mrow></msqrt></mrow></mfrac></mrow></math></span></label>
+        <label><input type="radio" name="q14" value="E" /><span class="letter">E.</span><span><math xmlns="http://www.w3.org/1998/Math/MathML"><mrow><mn>2</mn></mrow></math></span></label>
+        <label><input type="radio" name="q14" value="F" /><span class="letter">F.</span><span><math xmlns="http://www.w3.org/1998/Math/MathML"><mrow><mfrac><mrow><mn>1</mn></mrow><mrow><mn>4</mn></mrow></mfrac></mrow></math></span></label>
+      </div>
+    </section>
+    <section class="question" aria-labelledby="local-q15">
+      <h2 id="local-q15">Q15.</h2>
+      <p>A cube with edge length <math xmlns="http://www.w3.org/1998/Math/MathML"><mrow><mi>e</mi></mrow></math> has surface area <math xmlns="http://www.w3.org/1998/Math/MathML"><mrow><mi>S</mi><mo>=</mo><mn>6</mn><msup><mi>e</mi><mn>2</mn></msup></mrow></math> and volume <math xmlns="http://www.w3.org/1998/Math/MathML"><mrow><mi>V</mi><mo>=</mo><msup><mi>e</mi><mn>3</mn></msup></mrow></math>. Which equation expresses <math xmlns="http://www.w3.org/1998/Math/MathML"><mrow><mi>V</mi></mrow></math> as a function of <math xmlns="http://www.w3.org/1998/Math/MathML"><mrow><mi>S</mi></mrow></math>?</p>
+      <div class="choices" role="group" aria-labelledby="local-q15">
+        <label><input type="radio" name="q15" value="A" /><span class="letter">A.</span><span><math xmlns="http://www.w3.org/1998/Math/MathML"><mrow><mi>V</mi><mo>=</mo><mo>(</mo><mfrac><mrow><mi>S</mi></mrow><mrow><mn>6</mn></mrow></mfrac><msup><mo>)</mo><mrow><mn>3</mn><mo>/</mo><mn>2</mn></mrow></msup></mrow></math></span></label>
+        <label><input type="radio" name="q15" value="B" /><span class="letter">B.</span><span><math xmlns="http://www.w3.org/1998/Math/MathML"><mrow><mi>V</mi><mo>=</mo><mo>(</mo><mfrac><mrow><mi>S</mi></mrow><mrow><mn>6</mn></mrow></mfrac><msup><mo>)</mo><mrow><mn>2</mn><mo>/</mo><mn>3</mn></mrow></msup></mrow></math></span></label>
+        <label><input type="radio" name="q15" value="C" /><span class="letter">C.</span><span><math xmlns="http://www.w3.org/1998/Math/MathML"><mrow><mi>V</mi><mo>=</mo><mfrac><mrow><msup><mi>S</mi><mrow><mn>3</mn><mo>/</mo><mn>2</mn></mrow></msup></mrow><mrow><mn>6</mn></mrow></mfrac></mrow></math></span></label>
+        <label><input type="radio" name="q15" value="D" /><span class="letter">D.</span><span><math xmlns="http://www.w3.org/1998/Math/MathML"><mrow><mi>V</mi><mo>=</mo><mo>(</mo><mfrac><mrow><mi>S</mi></mrow><mrow><mn>6</mn></mrow></mfrac><msup><mo>)</mo><mn>3</mn></msup></mrow></math></span></label>
+        <label><input type="radio" name="q15" value="E" /><span class="letter">E.</span><span><math xmlns="http://www.w3.org/1998/Math/MathML"><mrow><mi>V</mi><mo>=</mo><mfrac><mrow><mi>S</mi></mrow><mrow><mn>6</mn></mrow></mfrac></mrow></math></span></label>
+        <label><input type="radio" name="q15" value="F" /><span class="letter">F.</span><span><math xmlns="http://www.w3.org/1998/Math/MathML"><mrow><mi>V</mi><mo>=</mo><mn>6</mn><msup><mi>S</mi><mrow><mn>3</mn><mo>/</mo><mn>2</mn></mrow></msup></mrow></math></span></label>
+      </div>
+    </section>
+    <section class="question" aria-labelledby="local-q16">
+      <h2 id="local-q16">Q16.</h2>
+      <p>A crew of <math xmlns="http://www.w3.org/1998/Math/MathML"><mrow><mn>12</mn></mrow></math> workers builds <math xmlns="http://www.w3.org/1998/Math/MathML"><mrow><mn>3</mn></mrow></math> identical houses in <math xmlns="http://www.w3.org/1998/Math/MathML"><mrow><mn>18</mn></mrow></math> days. Assume every worker works at the same constant rate and each house requires the same amount of work.</p><p>Write an equation for the number of days <math xmlns="http://www.w3.org/1998/Math/MathML"><mrow><mi>d</mi></mrow></math> needed for <math xmlns="http://www.w3.org/1998/Math/MathML"><mrow><mi>w</mi></mrow></math> workers to build <math xmlns="http://www.w3.org/1998/Math/MathML"><mrow><mi>h</mi></mrow></math> houses. Select the equation you obtained.</p>
+      <div class="choices" role="group" aria-labelledby="local-q16">
+        <label><input type="radio" name="q16" value="A" /><span class="letter">A.</span><span><math xmlns="http://www.w3.org/1998/Math/MathML"><mrow><mi>d</mi><mo>=</mo><mfrac><mrow><mn>9</mn><mi>w</mi></mrow><mrow><mn>2</mn><mi>h</mi></mrow></mfrac></mrow></math></span></label>
+        <label><input type="radio" name="q16" value="B" /><span class="letter">B.</span><span><math xmlns="http://www.w3.org/1998/Math/MathML"><mrow><mi>d</mi><mo>=</mo><mfrac><mrow><mi>w</mi><mi>h</mi></mrow><mrow><mn>2</mn></mrow></mfrac></mrow></math></span></label>
+        <label><input type="radio" name="q16" value="C" /><span class="letter">C.</span><span><math xmlns="http://www.w3.org/1998/Math/MathML"><mrow><mi>d</mi><mo>=</mo><mfrac><mrow><mn>72</mn><mi>h</mi></mrow><mrow><mi>w</mi></mrow></mfrac></mrow></math></span></label>
+        <label><input type="radio" name="q16" value="D" /><span class="letter">D.</span><span><math xmlns="http://www.w3.org/1998/Math/MathML"><mrow><mi>d</mi><mo>=</mo><mfrac><mrow><mn>648</mn></mrow><mrow><mi>w</mi><mi>h</mi></mrow></mfrac></mrow></math></span></label>
+        <label><input type="radio" name="q16" value="E" /><span class="letter">E.</span><span><math xmlns="http://www.w3.org/1998/Math/MathML"><mrow><mi>d</mi><mo>=</mo><mfrac><mrow><mn>24</mn><msup><mi>h</mi><mn>2</mn></msup></mrow><mrow><mi>w</mi></mrow></mfrac></mrow></math></span></label>
+        <label><input type="radio" name="q16" value="F" /><span class="letter">F.</span><span><math xmlns="http://www.w3.org/1998/Math/MathML"><mrow><mi>d</mi><mo>=</mo><mfrac><mrow><mn>864</mn><mi>h</mi></mrow><mrow><msup><mi>w</mi><mn>2</mn></msup></mrow></mfrac></mrow></math></span></label>
+      </div>
+    </section>
+    <section class="question" aria-labelledby="local-q17">
+      <h2 id="local-q17">Q17.</h2>
+      <p>At a construction site, <math xmlns="http://www.w3.org/1998/Math/MathML"><mrow><mn>15</mn></mrow></math> workers build <math xmlns="http://www.w3.org/1998/Math/MathML"><mrow><mn>4</mn></mrow></math> identical houses in <math xmlns="http://www.w3.org/1998/Math/MathML"><mrow><mn>24</mn></mrow></math> days. All workers build at the same constant rate. How many workers would build <math xmlns="http://www.w3.org/1998/Math/MathML"><mrow><mn>6</mn></mrow></math> such houses in <math xmlns="http://www.w3.org/1998/Math/MathML"><mrow><mn>20</mn></mrow></math> days?</p>
+      <div class="choices" role="group" aria-labelledby="local-q17">
+        <label><input type="radio" name="q17" value="A" /><span class="letter">A.</span><span><math xmlns="http://www.w3.org/1998/Math/MathML"><mrow><mn>18</mn></mrow></math></span></label>
+        <label><input type="radio" name="q17" value="B" /><span class="letter">B.</span><span><math xmlns="http://www.w3.org/1998/Math/MathML"><mrow><mn>19</mn></mrow></math></span></label>
+        <label><input type="radio" name="q17" value="C" /><span class="letter">C.</span><span><math xmlns="http://www.w3.org/1998/Math/MathML"><mrow><mn>23</mn></mrow></math></span></label>
+        <label><input type="radio" name="q17" value="D" /><span class="letter">D.</span><span><math xmlns="http://www.w3.org/1998/Math/MathML"><mrow><mn>27</mn></mrow></math></span></label>
+        <label><input type="radio" name="q17" value="E" /><span class="letter">E.</span><span><math xmlns="http://www.w3.org/1998/Math/MathML"><mrow><mn>26</mn></mrow></math></span></label>
+        <label><input type="radio" name="q17" value="F" /><span class="letter">F.</span><span><math xmlns="http://www.w3.org/1998/Math/MathML"><mrow><mn>15</mn></mrow></math></span></label>
+      </div>
+    </section>
+    <section class="question" aria-labelledby="local-q18">
+      <h2 id="local-q18">Q18.</h2>
+      <p>A crew of <math xmlns="http://www.w3.org/1998/Math/MathML"><mrow><mn>12</mn></mrow></math> workers can build <math xmlns="http://www.w3.org/1998/Math/MathML"><mrow><mn>4</mn></mrow></math> identical houses in <math xmlns="http://www.w3.org/1998/Math/MathML"><mrow><mn>20</mn></mrow></math> days. Each worker works at the same constant rate. After <math xmlns="http://www.w3.org/1998/Math/MathML"><mrow><mn>5</mn></mrow></math> days of work, <math xmlns="http://www.w3.org/1998/Math/MathML"><mrow><mn>3</mn></mrow></math> workers leave the project. How many additional days will they need to finish the four houses?</p>
+      <div class="choices" role="group" aria-labelledby="local-q18">
+        <label><input type="radio" name="q18" value="A" /><span class="letter">A.</span><span><math xmlns="http://www.w3.org/1998/Math/MathML"><mrow><mn>15</mn></mrow></math> days</span></label>
+        <label><input type="radio" name="q18" value="B" /><span class="letter">B.</span><span><math xmlns="http://www.w3.org/1998/Math/MathML"><mrow><mn>20</mn></mrow></math> days</span></label>
+        <label><input type="radio" name="q18" value="C" /><span class="letter">C.</span><span><math xmlns="http://www.w3.org/1998/Math/MathML"><mrow><mn>25</mn></mrow></math> days</span></label>
+        <label><input type="radio" name="q18" value="D" /><span class="letter">D.</span><span><math xmlns="http://www.w3.org/1998/Math/MathML"><mrow><mfrac><mrow><mn>80</mn></mrow><mrow><mn>3</mn></mrow></mfrac></mrow></math> days</span></label>
+        <label><input type="radio" name="q18" value="E" /><span class="letter">E.</span><span><math xmlns="http://www.w3.org/1998/Math/MathML"><mrow><mfrac><mrow><mn>45</mn></mrow><mrow><mn>4</mn></mrow></mfrac></mrow></math> days</span></label>
+        <label><input type="radio" name="q18" value="F" /><span class="letter">F.</span><span><math xmlns="http://www.w3.org/1998/Math/MathML"><mrow><mfrac><mrow><mn>65</mn></mrow><mrow><mn>3</mn></mrow></mfrac></mrow></math> days</span></label>
+      </div>
+    </section>
+    <section class="question" aria-labelledby="local-q19">
+      <h2 id="local-q19">Q19.</h2>
+      <p>Each of three identical houses requires the equivalent of <math xmlns="http://www.w3.org/1998/Math/MathML"><mrow><mn>60</mn></mrow></math> days of work by one worker. Every worker works at the same constant rate. If <math xmlns="http://www.w3.org/1998/Math/MathML"><mrow><mn>6</mn></mrow></math> workers were added to the crew before work began, the three houses would be finished <math xmlns="http://www.w3.org/1998/Math/MathML"><mrow><mn>5</mn></mrow></math> days sooner. How many workers are in the original crew?</p>
+      <div class="choices" role="group" aria-labelledby="local-q19">
+        <label><input type="radio" name="q19" value="A" /><span class="letter">A.</span><span><math xmlns="http://www.w3.org/1998/Math/MathML"><mrow><mn>9</mn></mrow></math></span></label>
+        <label><input type="radio" name="q19" value="B" /><span class="letter">B.</span><span><math xmlns="http://www.w3.org/1998/Math/MathML"><mrow><mn>10</mn></mrow></math></span></label>
+        <label><input type="radio" name="q19" value="C" /><span class="letter">C.</span><span><math xmlns="http://www.w3.org/1998/Math/MathML"><mrow><mn>15</mn></mrow></math></span></label>
+        <label><input type="radio" name="q19" value="D" /><span class="letter">D.</span><span><math xmlns="http://www.w3.org/1998/Math/MathML"><mrow><mn>18</mn></mrow></math></span></label>
+        <label><input type="radio" name="q19" value="E" /><span class="letter">E.</span><span><math xmlns="http://www.w3.org/1998/Math/MathML"><mrow><mn>24</mn></mrow></math></span></label>
+        <label><input type="radio" name="q19" value="F" /><span class="letter">F.</span><span><math xmlns="http://www.w3.org/1998/Math/MathML"><mrow><mn>12</mn></mrow></math></span></label>
+      </div>
+    </section>
+  </template>
+</body>
+</html>
