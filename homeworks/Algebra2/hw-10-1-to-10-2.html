@@ -11,7 +11,7 @@
        - Old Homework 10-1: #1–4 (Q2, Q7, substantially reworked).
        - Old Homework 10-2: #4–6 (Q7–8, substantially reworked).
        - Portuguese set: #594(c), #597(c), #598(a), #599(e), #601,
-         #604, #610, #612, #613, #623(a,b).
+         #604, #610, #612, #613, #623(a).
        - Model-authored/reworked items and targets: see comments at each question.
        - Q1–18 regular; Q19 challenge.
        FIGURES:
@@ -25,7 +25,7 @@
       id: "Homework 10-1 & 10-2",
       title: "Homework 10-1 & 10-2 — Trigonometric Ratios and Right Triangle Problems",
       graphics: String.raw``,
-      answerKey: ["C", "A", "E", "D", "B", "F", "E", "B", "D", "A", "E", "C", "A", "F", "D", "B", "E", "A", "F"],
+      answerKey: ["C", "A", "E", "D", "B", "F", "E", "B", "D", "A", "E", "C", "A", "F", "D", "B", "E", "A", "B"],
       questions: [
         /* Q1: Model-authored: similarity and invariance; inspired by Portuguese introductory triples. */
         {
@@ -288,18 +288,18 @@
           ]
         },
 
-        /* Q19: Portuguese #623(a,b); both configurations retained, with part (b)'s x renamed z. Combined into one ordered-triple question. */
+        /* Q19: Portuguese #623(a); part (a) retained as the final challenge. */
         {
-          stem: String.raw`<p><strong>Challenge.</strong> Each configuration in Figure 19 consists of a square of side length \(6\) and an equilateral triangle sharing one side of the square. Determine the three indicated lengths \((x,y,z)\).</p>`,
-          media: String.raw`<figure><img src="hw-10-1-to-10-2-fig-19.png" alt="Two square and equilateral triangle configurations: x and y in part (a), z in part (b)" style="max-width: min(100%, 780px); height: auto;" /><figcaption>Figure 19</figcaption></figure>`,
+          stem: String.raw`<p><strong>Challenge.</strong> Figure 19 shows a square of side length \(6\) and an equilateral triangle built on the bottom side of the square. Determine the two indicated lengths \((x,y)\).</p>`,
+          media: String.raw`<figure><img src="hw-10-1-to-10-2-fig-19.png" alt="A square of side 6 with an equilateral triangle sharing the bottom side; the segments x and y are indicated" style="max-width: min(100%, 460px); height: auto;" /><figcaption>Figure 19</figcaption></figure>`,
           choiceWrap: false,
           choices: [
-            String.raw`\(\left(3(\sqrt6-\sqrt2),\;3(\sqrt6-\sqrt2),\;3\sqrt2-\sqrt6\right)\)`,
-            String.raw`\(\left(3(\sqrt6-\sqrt2),\;3(3\sqrt2-\sqrt6),\;3\sqrt2+\sqrt6\right)\)`,
-            String.raw`\(\left(3\sqrt2,\;3(\sqrt6-\sqrt2),\;3\sqrt2+\sqrt6\right)\)`,
-            String.raw`\(\left(3(\sqrt6-\sqrt2),\;3(\sqrt6-\sqrt2),\;3\sqrt2\right)\)`,
-            String.raw`\(\left(3(\sqrt6-\sqrt2),\;3(3\sqrt2-\sqrt6),\;3\sqrt2-\sqrt6\right)\)`,
-            String.raw`\(\left(3(\sqrt6-\sqrt2),\;3(\sqrt6-\sqrt2),\;3\sqrt2+\sqrt6\right)\)`
+            String.raw`\(\left(3(\sqrt6-\sqrt2),\;3(3\sqrt2-\sqrt6)\right)\)`,
+            String.raw`\(\left(3(\sqrt6-\sqrt2),\;3(\sqrt6-\sqrt2)\right)\)`,
+            String.raw`\(\left(3\sqrt2,\;3(\sqrt6-\sqrt2)\right)\)`,
+            String.raw`\(\left(3(\sqrt6-\sqrt2),\;3\sqrt2\right)\)`,
+            String.raw`\(\left(3(3\sqrt2-\sqrt6),\;3(\sqrt6-\sqrt2)\right)\)`,
+            String.raw`\(\left(3(\sqrt6+\sqrt2),\;3(\sqrt6-\sqrt2)\right)\)`
           ]
         }
       ]
