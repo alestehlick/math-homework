@@ -1,0 +1,315 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Homework 10-1 &amp; 10-2 — Trigonometric Ratios and Right Triangle Problems</title>
+  <script>
+    /* =========================
+       Homework 10-1 & 10-2 — Algebra II
+       SOURCE REFERENCES:
+       - Old Homework 10-1: #1–4 (Q2, Q7, substantially reworked).
+       - Old Homework 10-2: #4–6 (Q7–8, substantially reworked).
+       - Portuguese set: #594(c), #597(c), #598(a), #599(e), #601,
+         #604, #610, #612, #613, #619.
+       - Model-authored/reworked items and targets: see comments at each question.
+       - Q1–18 regular; Q19 challenge.
+       FIGURES:
+       - User-supplied: none (source figures are redrawn, not cropped).
+       - Model-generated (tkz-euclide): hw-10-1-to-10-2-fig-1.png, hw-10-1-to-10-2-fig-3.png, hw-10-1-to-10-2-fig-5.png, hw-10-1-to-10-2-fig-6.png, hw-10-1-to-10-2-fig-10.png, hw-10-1-to-10-2-fig-12.png, hw-10-1-to-10-2-fig-14.png, hw-10-1-to-10-2-fig-15.png, hw-10-1-to-10-2-fig-17.png, hw-10-1-to-10-2-fig-19.png.
+       - Combined-section filename: hw-10-1-to-10-2.html; image prefix hw-10-1-to-10-2-fig-,
+         followed by final local question number. PNGs live beside this HTML.
+       ========================= */
+    window.homeworkData = {
+      classId: "Algebra2",
+      id: "Homework 10-1 & 10-2",
+      title: "Homework 10-1 & 10-2 — Trigonometric Ratios and Right Triangle Problems",
+      graphics: String.raw``,
+      answerKey: ["C", "A", "E", "D", "B", "F", "E", "B", "D", "A", "E", "C", "A", "F", "D", "B", "E", "A", "F"],
+      questions: [
+        /* Q1: Model-authored: similarity and invariance; inspired by Portuguese introductory triples. */
+        {
+          stem: String.raw`<p>Consider the two right triangles in Figure 1. Which statement is correct?</p>`,
+          media: String.raw`<figure><img src="hw-10-1-to-10-2-fig-1.png" alt="Geometrical diagram for Question 1" style="max-width: min(100%, 520px); height: auto;" /><figcaption>Figure 1</figcaption></figure>`,
+          choiceWrap: false,
+          choices: [
+            String.raw`The triangles are similar, but only their tangent ratios are equal.`,
+            String.raw`The triangles are similar, but only their sine and cosine ratios are equal.`,
+            String.raw`The triangles are similar, and all three corresponding trigonometric ratios are equal.`,
+            String.raw`The triangles are similar, and \(\tan\beta=\frac32\tan\alpha\).`,
+            String.raw`The triangles are not similar, since their corresponding sides have different lengths.`,
+            String.raw`The triangles are similar, and \(\tan\beta=\frac23\tan\alpha\).`
+          ]
+        },
+
+        /* Q2: Model-reworked: old Homework 10-1 #1–3; reference-angle contrast. */
+        {
+          stem: String.raw`<p>In triangle \(ABC\), \(\angle C=90^\circ\), \(BC=5\), \(AC=12\), and \(AB=13\). Determine \((\sin A,\cos B,\tan A,\tan B)\).</p>`,
+          choiceWrap: false,
+          choices: [
+            String.raw`\(\left(\frac5{13},\frac5{13},\frac5{12},\frac{12}5\right)\)`,
+            String.raw`\(\left(\frac{12}{13},\frac{12}{13},\frac{12}5,\frac5{12}\right)\)`,
+            String.raw`\(\left(\frac5{13},\frac{12}{13},\frac5{12},\frac{12}5\right)\)`,
+            String.raw`\(\left(\frac5{13},\frac5{13},\frac{12}5,\frac5{12}\right)\)`,
+            String.raw`\(\left(\frac{12}{13},\frac5{13},\frac{12}5,\frac5{12}\right)\)`,
+            String.raw`\(\left(\frac5{13},\frac5{13},\frac5{12},\frac5{12}\right)\)`
+          ]
+        },
+
+        /* Q3: Portuguese #594(c), re-authored; solve Pythagorean equation first. */
+        {
+          stem: String.raw`<p>In the right triangle in Figure 3, determine \(\sin\alpha\).</p>`,
+          media: String.raw`<figure><img src="hw-10-1-to-10-2-fig-3.png" alt="Geometrical diagram for Question 3" style="max-width: min(100%, 520px); height: auto;" /><figcaption>Figure 3</figcaption></figure>`,
+          choiceWrap: false,
+          choices: [
+            String.raw`\(\frac34\)`,
+            String.raw`\(\frac45\)`,
+            String.raw`\(\frac12\)`,
+            String.raw`\(\frac23\)`,
+            String.raw`\(\frac35\)`,
+            String.raw`\(\frac56\)`
+          ]
+        },
+
+        /* Q4: Model-authored: reconstruct a triangle from a ratio. */
+        {
+          stem: String.raw`<p>Let \(\alpha\) be an acute angle such that \(\sin\alpha=\frac7{25}\). Determine \((\cos\alpha,\tan\alpha)\).</p>`,
+          choiceWrap: false,
+          choices: [
+            String.raw`\(\left(\frac{24}{25},\frac{24}7\right)\)`,
+            String.raw`\(\left(\frac{18}{25},\frac7{18}\right)\)`,
+            String.raw`\(\left(\frac{24}{25},\frac7{25}\right)\)`,
+            String.raw`\(\left(\frac{24}{25},\frac7{24}\right)\)`,
+            String.raw`\(\left(\frac7{25},\frac7{24}\right)\)`,
+            String.raw`\(\left(\frac{18}{25},\frac7{25}\right)\)`
+          ]
+        },
+
+        /* Q5: Model-authored: special-angle values from geometry. */
+        {
+          stem: String.raw`<p>Figure 5 shows an equilateral triangle of side length \(2\) and a square of side length \(1\). Determine \((\tan30^\circ,\tan45^\circ,\tan60^\circ)\).</p>`,
+          media: String.raw`<figure><img src="hw-10-1-to-10-2-fig-5.png" alt="Geometrical diagram for Question 5" style="max-width: min(100%, 520px); height: auto;" /><figcaption>Figure 5</figcaption></figure>`,
+          choiceWrap: false,
+          choices: [
+            String.raw`\(\left(\frac12,1,\frac{\sqrt3}2\right)\)`,
+            String.raw`\(\left(\frac{\sqrt3}3,1,\sqrt3\right)\)`,
+            String.raw`\(\left(\sqrt3,1,\frac{\sqrt3}3\right)\)`,
+            String.raw`\(\left(\frac{\sqrt3}2,1,\frac12\right)\)`,
+            String.raw`\(\left(\frac{\sqrt3}3,\frac{\sqrt2}2,\sqrt3\right)\)`,
+            String.raw`\(\left(\frac12,\frac{\sqrt2}2,\sqrt3\right)\)`
+          ]
+        },
+
+        /* Q6: Portuguese #597(c), exact lengths. */
+        {
+          stem: String.raw`<p>Determine \(x\) in Figure 6.</p>`,
+          media: String.raw`<figure><img src="hw-10-1-to-10-2-fig-6.png" alt="Geometrical diagram for Question 6" style="max-width: min(100%, 520px); height: auto;" /><figcaption>Figure 6</figcaption></figure>`,
+          choiceWrap: false,
+          choices: [
+            String.raw`\(5\sqrt3\)`,
+            String.raw`\(15\)`,
+            String.raw`\(20\)`,
+            String.raw`\(30\)`,
+            String.raw`\(\frac{20\sqrt3}{3}\)`,
+            String.raw`\(10\)`
+          ]
+        },
+
+        /* Q7: Model-reworked: old Homework 10-1 #4 and old Homework 10-2 #4; degree-minute calculator application. */
+        {
+          stem: String.raw`<p>In triangle \(ABC\), \(\angle C=90^\circ\), \(\angle A=38^\circ10\prime\), and \(AC=8\). Use a calculator to determine \((BC,AB)\), to the nearest tenth.</p>`,
+          choiceWrap: false,
+          choices: [
+            String.raw`\((4.9,10.2)\)`,
+            String.raw`\((6.3,13.0)\)`,
+            String.raw`\((10.2,13.0)\)`,
+            String.raw`\((6.2,10.1)\)`,
+            String.raw`\((6.3,10.2)\)`,
+            String.raw`\((4.9,6.3)\)`
+          ]
+        },
+
+        /* Q8: Model-reworked: old Homework 10-2 #5–6; inverse trig and exact length. */
+        {
+          stem: String.raw`<p>In triangle \(ABC\), \(\angle C=90^\circ\), \(BC=7\), and \(AC=11\). Determine \((AB,\angle A,\angle B)\). Give the length exactly and use a calculator to give the angles to the nearest minute.</p>`,
+          choiceWrap: false,
+          choices: [
+            String.raw`\((\sqrt{170},57^\circ32\prime,32^\circ28\prime)\)`,
+            String.raw`\((\sqrt{170},32^\circ28\prime,57^\circ32\prime)\)`,
+            String.raw`\((\sqrt{170},39^\circ31\prime,50^\circ29\prime)\)`,
+            String.raw`\((\sqrt{170},32^\circ47\prime,57^\circ13\prime)\)`,
+            String.raw`\((\sqrt{72},32^\circ28\prime,57^\circ32\prime)\)`,
+            String.raw`\((\sqrt{170},32^\circ,58^\circ)\)`
+          ]
+        },
+
+        /* Q9: Portuguese #610; algebraic characterization of equal legs. */
+        {
+          stem: String.raw`<p>In a right triangle, the square of the hypotenuse is twice the product of the legs. Determine its two acute angles.</p>`,
+          choiceWrap: false,
+          choices: [
+            String.raw`\((30^\circ,60^\circ)\)`,
+            String.raw`\((15^\circ,75^\circ)\)`,
+            String.raw`\((40^\circ,50^\circ)\)`,
+            String.raw`\((45^\circ,45^\circ)\)`,
+            String.raw`\((22.5^\circ,67.5^\circ)\)`,
+            String.raw`\((36^\circ,54^\circ)\)`
+          ]
+        },
+
+        /* Q10: Portuguese #598(a); common height of two triangles. */
+        {
+          stem: String.raw`<p>Determine \(x\) in Figure 10.</p>`,
+          media: String.raw`<figure><img src="hw-10-1-to-10-2-fig-10.png" alt="Geometrical diagram for Question 10" style="max-width: min(100%, 520px); height: auto;" /><figcaption>Figure 10</figcaption></figure>`,
+          choiceWrap: false,
+          choices: [
+            String.raw`\(6\sqrt2\)`,
+            String.raw`\(6\sqrt3\)`,
+            String.raw`\(3\sqrt2\)`,
+            String.raw`\(12\)`,
+            String.raw`\(2\sqrt6\)`,
+            String.raw`\(4\sqrt3\)`
+          ]
+        },
+
+        /* Q11: Portuguese #601, numbers changed; perpendicular distance. */
+        {
+          stem: String.raw`<p>A point \(P\) lies on one side of a \(60^\circ\) angle, at a distance of \(12\) cm from its vertex. Determine the perpendicular distance from \(P\) to the other side of the angle.</p>`,
+          choiceWrap: false,
+          choices: [
+            String.raw`\(6\) cm`,
+            String.raw`\(4\sqrt3\) cm`,
+            String.raw`\(12\sqrt3\) cm`,
+            String.raw`\(8\sqrt3\) cm`,
+            String.raw`\(6\sqrt3\) cm`,
+            String.raw`\(12\) cm`
+          ]
+        },
+
+        /* Q12: Portuguese #599(e); two hidden right triangles. */
+        {
+          stem: String.raw`<p>The figure is an isosceles trapezoid. Determine \((x,y)\).</p>`,
+          media: String.raw`<figure><img src="hw-10-1-to-10-2-fig-12.png" alt="Geometrical diagram for Question 12" style="max-width: min(100%, 520px); height: auto;" /><figcaption>Figure 12</figcaption></figure>`,
+          choiceWrap: false,
+          choices: [
+            String.raw`\((12,16)\)`,
+            String.raw`\((6\sqrt3,10)\)`,
+            String.raw`\((12,10)\)`,
+            String.raw`\((12,4)\)`,
+            String.raw`\((6,16)\)`,
+            String.raw`\((18,10)\)`
+          ]
+        },
+
+        /* Q13: Portuguese #604; perpendicular distance to bisector. */
+        {
+          stem: String.raw`<p>A point \(P\) lies in the interior of a right angle. Its perpendicular distances from the two sides of the angle are \(4\) cm and \(10\) cm. Determine its perpendicular distance from the angle bisector.</p>`,
+          choiceWrap: false,
+          choices: [
+            String.raw`\(3\sqrt2\) cm`,
+            String.raw`\(6\) cm`,
+            String.raw`\(6\sqrt2\) cm`,
+            String.raw`\(7\sqrt2\) cm`,
+            String.raw`\(3\) cm`,
+            String.raw`\(\sqrt{58}\) cm`
+          ]
+        },
+
+        /* Q14: Portuguese #613; decomposition of a non-right triangle. */
+        {
+          stem: String.raw`<p>In triangle \(ABC\) (Figure 14), \(AB=a\), \(AC=2a\), and \(\angle A=45^\circ\). Let \(h\) be the altitude length from \(B\) to \(\overline{AC}\). Determine \((h,BC)\) in terms of \(a\).</p>`,
+          media: String.raw`<figure><img src="hw-10-1-to-10-2-fig-14.png" alt="Geometrical diagram for Question 14" style="max-width: min(100%, 520px); height: auto;" /><figcaption>Figure 14</figcaption></figure>`,
+          choiceWrap: false,
+          choices: [
+            String.raw`\(\left(\frac{a\sqrt2}{2},a\sqrt{5+2\sqrt2}\right)\)`,
+            String.raw`\(\left(\frac{a\sqrt2}{2},a\sqrt{5-\sqrt2}\right)\)`,
+            String.raw`\(\left(\frac{a\sqrt2}{2},a\sqrt{3-\sqrt2}\right)\)`,
+            String.raw`\(\left(a\sqrt2,a\sqrt{5-2\sqrt2}\right)\)`,
+            String.raw`\(\left(\frac{a\sqrt2}{2},a\left(2-\frac{\sqrt2}{2}\right)\right)\)`,
+            String.raw`\(\left(\frac{a\sqrt2}{2},a\sqrt{5-2\sqrt2}\right)\)`
+          ]
+        },
+
+        /* Q15: Model-authored: angle of depression. */
+        {
+          stem: String.raw`<p>From the top of a vertical cliff \(24\) m high, the angle of depression of a boat at the level of the foot of the cliff is \(30^\circ\). Determine the horizontal distance from the boat to the foot of the cliff.</p>`,
+          media: String.raw`<figure><img src="hw-10-1-to-10-2-fig-15.png" alt="Geometrical diagram for Question 15" style="max-width: min(100%, 520px); height: auto;" /><figcaption>Figure 15</figcaption></figure>`,
+          choiceWrap: false,
+          choices: [
+            String.raw`\(12\sqrt3\) m`,
+            String.raw`\(48\) m`,
+            String.raw`\(16\sqrt3\) m`,
+            String.raw`\(24\sqrt3\) m`,
+            String.raw`\(8\sqrt3\) m`,
+            String.raw`\(24\) m`
+          ]
+        },
+
+        /* Q16: Model-authored: two heights at the same horizontal distance. */
+        {
+          stem: String.raw`<p>A vertical tower stands at the edge of a vertical cliff, directly above its foot. From a point on level ground \(18\) m horizontally from the foot of the cliff, the angles of elevation of the bottom and top of the tower are \(30^\circ\) and \(60^\circ\), respectively. Determine the height of the tower. Treat the observation point as being at ground level.</p>`,
+          choiceWrap: false,
+          choices: [
+            String.raw`\(18\sqrt3\) m`,
+            String.raw`\(12\sqrt3\) m`,
+            String.raw`\(24\sqrt3\) m`,
+            String.raw`\(6\sqrt3\) m`,
+            String.raw`\(18\) m`,
+            String.raw`\(36\) m`
+          ]
+        },
+
+        /* Q17: Portuguese #612; same-side observations, supplied diagram. */
+        {
+          stem: String.raw`<p>From a point on horizontal ground, the angle of elevation of the top of a vertical building is \(60^\circ\). From a point \(30\) m directly farther from the building, the angle of elevation is \(45^\circ\). Both observations are made at ground level. Determine the height of the building.</p>`,
+          media: String.raw`<figure><img src="hw-10-1-to-10-2-fig-17.png" alt="Geometrical diagram for Question 17" style="max-width: min(100%, 520px); height: auto;" /><figcaption>Figure 17</figcaption></figure>`,
+          choiceWrap: false,
+          choices: [
+            String.raw`\(15(\sqrt3+1)\) m`,
+            String.raw`\(30\sqrt3\) m`,
+            String.raw`\(15(3-\sqrt3)\) m`,
+            String.raw`\(30(\sqrt3+1)\) m`,
+            String.raw`\(15(3+\sqrt3)\) m`,
+            String.raw`\(30(\sqrt3-1)\) m`
+          ]
+        },
+
+        /* Q18: Model-authored: contrast to #612, opposite-side observations. */
+        {
+          stem: String.raw`<p>Two observers stand \(48\) m apart on horizontal ground, on opposite sides of a vertical tower. The observers and the foot of the tower are collinear. The angles of elevation of the top of the tower, measured from ground level, are \(30^\circ\) and \(60^\circ\). Determine the height of the tower.</p>`,
+          choiceWrap: false,
+          choices: [
+            String.raw`\(12\sqrt3\) m`,
+            String.raw`\(24\sqrt3\) m`,
+            String.raw`\(16\sqrt3\) m`,
+            String.raw`\(24(\sqrt3-1)\) m`,
+            String.raw`\(12(\sqrt3+1)\) m`,
+            String.raw`\(36\) m`
+          ]
+        },
+
+        /* Q19: Portuguese #619; independent synthesis of tangency and trigonometry. */
+        {
+          stem: String.raw`<p><strong>Challenge.</strong> A circle is inscribed in a circular sector of radius \(6\) dm and central angle \(60^\circ\). The circle is tangent to both straight sides and internally tangent to the circular arc. Determine the radius of the inscribed circle.</p>`,
+          media: String.raw`<figure><img src="hw-10-1-to-10-2-fig-19.png" alt="Geometrical diagram for Question 19" style="max-width: min(100%, 520px); height: auto;" /><figcaption>Figure 19</figcaption></figure>`,
+          choiceWrap: false,
+          choices: [
+            String.raw`\(\frac32\) dm`,
+            String.raw`\(3\) dm`,
+            String.raw`\(6-2\sqrt3\) dm`,
+            String.raw`\(2\sqrt3\) dm`,
+            String.raw`\(3(\sqrt3-1)\) dm`,
+            String.raw`\(2\) dm`
+          ]
+        }
+      ]
+    };
+  </script>
+  <link rel="stylesheet" href="/math-homework/assets/core-rich.css" />
+  <script defer src="/math-homework/assets/core-rich.js"></script>
+  <script defer src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+</head>
+<body>
+  <div id="hw-root">Loading…</div>
+</body>
+</html>
