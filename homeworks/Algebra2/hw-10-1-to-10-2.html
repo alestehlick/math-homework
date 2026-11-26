@@ -11,7 +11,7 @@
        - Old Homework 10-1: #1–4 (Q2, Q7, substantially reworked).
        - Old Homework 10-2: #4–6 (Q7–8, substantially reworked).
        - Portuguese set: #594(c), #597(c), #598(a), #599(e), #601,
-         #604, #610, #612, #613, #619.
+         #604, #610, #612, #613, #623(a,b).
        - Model-authored/reworked items and targets: see comments at each question.
        - Q1–18 regular; Q19 challenge.
        FIGURES:
@@ -288,18 +288,18 @@
           ]
         },
 
-        /* Q19: Portuguese #619; independent synthesis of tangency and trigonometry. */
+        /* Q19: Portuguese #623(a,b); both configurations retained, with part (b)'s x renamed z. Combined into one ordered-triple question. */
         {
-          stem: String.raw`<p><strong>Challenge.</strong> A circle is inscribed in a circular sector of radius \(6\) dm and central angle \(60^\circ\). The circle is tangent to both straight sides and internally tangent to the circular arc. Determine the radius of the inscribed circle.</p>`,
-          media: String.raw`<figure><img src="hw-10-1-to-10-2-fig-19.png" alt="Geometrical diagram for Question 19" style="max-width: min(100%, 520px); height: auto;" /><figcaption>Figure 19</figcaption></figure>`,
+          stem: String.raw`<p><strong>Challenge.</strong> Each configuration in Figure 19 consists of a square of side length \(6\) and an equilateral triangle sharing one side of the square. Determine the three indicated lengths \((x,y,z)\).</p>`,
+          media: String.raw`<figure><img src="hw-10-1-to-10-2-fig-19.png" alt="Two square and equilateral triangle configurations: x and y in part (a), z in part (b)" style="max-width: min(100%, 780px); height: auto;" /><figcaption>Figure 19</figcaption></figure>`,
           choiceWrap: false,
           choices: [
-            String.raw`\(\frac32\) dm`,
-            String.raw`\(3\) dm`,
-            String.raw`\(6-2\sqrt3\) dm`,
-            String.raw`\(2\sqrt3\) dm`,
-            String.raw`\(3(\sqrt3-1)\) dm`,
-            String.raw`\(2\) dm`
+            String.raw`\(\left(3(\sqrt6-\sqrt2),\;3(\sqrt6-\sqrt2),\;3\sqrt2-\sqrt6\right)\)`,
+            String.raw`\(\left(3(\sqrt6-\sqrt2),\;3(3\sqrt2-\sqrt6),\;3\sqrt2+\sqrt6\right)\)`,
+            String.raw`\(\left(3\sqrt2,\;3(\sqrt6-\sqrt2),\;3\sqrt2+\sqrt6\right)\)`,
+            String.raw`\(\left(3(\sqrt6-\sqrt2),\;3(\sqrt6-\sqrt2),\;3\sqrt2\right)\)`,
+            String.raw`\(\left(3(\sqrt6-\sqrt2),\;3(3\sqrt2-\sqrt6),\;3\sqrt2-\sqrt6\right)\)`,
+            String.raw`\(\left(3(\sqrt6-\sqrt2),\;3(\sqrt6-\sqrt2),\;3\sqrt2+\sqrt6\right)\)`
           ]
         }
       ]
