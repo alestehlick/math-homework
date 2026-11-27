@@ -1,0 +1,322 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Homework — Lines, Planes and Dihedral Angles</title>
+  <script>
+    /* =========================
+       Geometry — Lines, Planes and Dihedral Angles
+       SOURCE REFERENCES:
+       - Classroom sequence described by the teacher (definitions, planar locus lemma,
+         line-plane perpendicularity criterion, transfer and converse, transitivity,
+         definition and invariance of dihedral measure).
+       - Portuguese supplementary source: #77(d,e) reworked in Q9;
+         #80(c,d) informs Q11–12; #70 substantially reworked in Q19.
+       - All other questions are model-authored; see the per-question comments.
+       - No perpendicular-plane theory or theorem of three perpendiculars is assumed.
+       - Q1–18 regular; Q19 challenge. No full proof reproduction required.
+       FIGURES:
+       - User-supplied: none. All diagrams are newly drawn using tkz-euclide.
+       - Model-generated: hw-spatial-geometry-fig-1.png, hw-spatial-geometry-fig-4.png, hw-spatial-geometry-fig-6.png, hw-spatial-geometry-fig-8.png, hw-spatial-geometry-fig-10.png, hw-spatial-geometry-fig-11.png, hw-spatial-geometry-fig-14.png, hw-spatial-geometry-fig-15.png, hw-spatial-geometry-fig-16.png, hw-spatial-geometry-fig-17.png, hw-spatial-geometry-fig-19.png.
+       - Figure 1 reused in Q3 and Q18. Filenames follow the established hyphenated convention;
+         topic-based temporary identifier used because chapter/section was not specified.
+       - PNGs live next to the HTML. Spatial figures are oblique projections, not
+         to scale as planar diagrams; given relations, not apparent angles, govern.
+       ========================= */
+    window.homeworkData = {
+      classId: "Geometry",
+      id: "Homework — Lines, Planes and Dihedral Angles",
+      title: "Homework — Lines, Planes and Dihedral Angles",
+      graphics: String.raw``,
+      answerKey: ["C", "E", "A", "D", "B", "F", "D", "B", "E", "C", "A", "D", "F", "B", "E", "C", "F", "B", "E"],
+      questions: [
+        /* Q1: Model-authored: classification of line pairs in a cube. */
+        {
+          stem: String.raw`<p>In the cube of Figure 1, classify the following pairs of lines, in order: \(\overleftrightarrow{AB}\) and \(\overleftrightarrow{EF}\); \(\overleftrightarrow{AB}\) and \(\overleftrightarrow{CG}\); \(\overleftrightarrow{AB}\) and \(\overleftrightarrow{BC}\).</p>`,
+          media: String.raw`<figure><img src="hw-spatial-geometry-fig-1.png" alt="Geometrical diagram for Figure 1" style="max-width: min(100%, 360px); height: auto;" /><figcaption>Figure 1</figcaption></figure>`,
+          choiceWrap: false,
+          choices: [
+            String.raw`Parallel, intersecting, skew`,
+            String.raw`Skew, parallel, intersecting`,
+            String.raw`Parallel, skew, intersecting`,
+            String.raw`Intersecting, skew, parallel`,
+            String.raw`Skew, intersecting, parallel`,
+            String.raw`Intersecting, parallel, skew`
+          ]
+        },
+
+        /* Q2: Model-authored: distinguish nonintersection from coplanarity. */
+        {
+          stem: String.raw`<p>Two distinct lines \(a\) and \(b\) in space have no common point. Which additional condition is sufficient to conclude that they are parallel?</p>`,
+          choiceWrap: false,
+          choices: [
+            String.raw`A third line intersects both of them.`,
+            String.raw`A plane contains \(a\) and intersects \(b\) at one point.`,
+            String.raw`A third line is perpendicular to both of them.`,
+            String.raw`They are contained in two distinct parallel planes, respectively.`,
+            String.raw`A plane contains both of them.`,
+            String.raw`A plane intersects each of them at a single point.`
+          ]
+        },
+
+        /* Q3: Model-authored: positions and intersections of distinct planes; reuse Figure 1. */
+        {
+          stem: String.raw`<p>Refer to the cube. Consider the following three pairs of planes: \((ABC)\) and \((EFG)\); \((ABC)\) and \((BCG)\); \((ABF)\) and \((DCG)\). Determine their intersections, in order. Here \(\varnothing\) denotes an empty intersection.</p>`,
+          media: String.raw`<figure><img src="hw-spatial-geometry-fig-1.png" alt="Geometrical diagram for Figure 1" style="max-width: min(100%, 360px); height: auto;" /><figcaption>Figure 1</figcaption></figure>`,
+          choiceWrap: false,
+          choices: [
+            String.raw`\(\varnothing,\ \overleftrightarrow{BC},\ \varnothing\)`,
+            String.raw`\(\varnothing,\ \overleftrightarrow{CG},\ \varnothing\)`,
+            String.raw`\(\overleftrightarrow{AB},\ \overleftrightarrow{BC},\ \varnothing\)`,
+            String.raw`\(\varnothing,\ \varnothing,\ \overleftrightarrow{DC}\)`,
+            String.raw`\(\varnothing,\ \overleftrightarrow{BC},\ \overleftrightarrow{EF}\)`,
+            String.raw`\(\overleftrightarrow{EF},\ \overleftrightarrow{CG},\ \overleftrightarrow{DC}\)`
+          ]
+        },
+
+        /* Q4: Model-authored: distinguish the definition from a sufficient criterion. */
+        {
+          stem: String.raw`<p>The line \(r\) intersects plane \(\alpha\) at \(O\). Which statement expresses the definition of \(r\perp\alpha\), rather than a sufficient condition obtained from a theorem?</p>`,
+          media: String.raw`<figure><img src="hw-spatial-geometry-fig-4.png" alt="Geometrical diagram for Figure 4" style="max-width: min(100%, 420px); height: auto;" /><figcaption>Figure 4</figcaption></figure>`,
+          choiceWrap: false,
+          choices: [
+            String.raw`\(r\) is perpendicular to at least one line of \(\alpha\) through \(O\).`,
+            String.raw`\(r\) is perpendicular to exactly two lines of \(\alpha\) through \(O\).`,
+            String.raw`\(r\) is perpendicular to every line of \(\alpha\) that does not contain \(O\).`,
+            String.raw`\(r\) is perpendicular to every line of \(\alpha\) through \(O\).`,
+            String.raw`\(r\) is perpendicular to two distinct lines of \(\alpha\) through \(O\).`,
+            String.raw`\(r\) intersects \(\alpha\) in only one point.`
+          ]
+        },
+
+        /* Q5: Model-authored: both directions of the planar perpendicular-bisector locus theorem. */
+        {
+          stem: String.raw`<p>Let \(A\) and \(B\) be distinct points of plane \(\alpha\), and let \(r\) be the perpendicular bisector of \(\overline{AB}\) in that plane. For a point \(P\in\alpha\), consider the conditions: (I) \(P\in r\); (II) \(PA=PB\). Which statement is correct?</p>`,
+          choiceWrap: false,
+          choices: [
+            String.raw`I implies II, but II does not imply I.`,
+            String.raw`I and II imply each other.`,
+            String.raw`II implies I, but I does not imply II.`,
+            String.raw`I and II are equivalent only when \(P\) is the midpoint of \(\overline{AB}\).`,
+            String.raw`Neither condition implies the other.`,
+            String.raw`I and II remain equivalent even if the restriction \(P\in\alpha\) is removed.`
+          ]
+        },
+
+        /* Q6: Model-authored: appreciate decisive observation in planar locus proof, not full reproduction. */
+        {
+          stem: String.raw`<p>In Figure 6, \(M\) is the midpoint of \(\overline{AB}\), \(P\notin\overleftrightarrow{AB}\), and \(PA=PB\). To prove that \(\overleftrightarrow{PM}\perp\overleftrightarrow{AB}\), which argument is valid?</p>`,
+          media: String.raw`<figure><img src="hw-spatial-geometry-fig-6.png" alt="Geometrical diagram for Figure 6" style="max-width: min(100%, 330px); height: auto;" /><figcaption>Figure 6</figcaption></figure>`,
+          choiceWrap: false,
+          choices: [
+            String.raw`The triangles \(PMA\) and \(PMB\) are congruent by SSS; therefore \(\angle APM\) and \(\angle BPM\) must both be right angles.`,
+            String.raw`The triangles are congruent by SAS, using \(\angle AMP\) and \(\angle BMP\) as right angles.`,
+            String.raw`The angles \(\angle AMP\) and \(\angle BMP\) are supplementary, so they must both be right angles.`,
+            String.raw`The triangles have two pairs of equal sides, which alone is enough to establish congruence.`,
+            String.raw`The triangles are congruent by SSS, so \(PM\) bisects \(\angle APB\); every angle bisector in a triangle is perpendicular to the opposite side.`,
+            String.raw`The triangles \(PMA\) and \(PMB\) are congruent by SSS; hence the angles at \(M\) are equal and supplementary.`
+          ]
+        },
+
+        /* Q7: Model-authored: recognize perpendicular bisector without supplying midpoint. */
+        {
+          stem: String.raw`<p>Four distinct points \(A,B,P,Q\) lie in one plane. It is given that \(PA=PB\) and \(QA=QB\). Which relationship between \(\overleftrightarrow{PQ}\) and \(\overleftrightarrow{AB}\) necessarily holds?</p>`,
+          choiceWrap: false,
+          choices: [
+            String.raw`They are parallel.`,
+            String.raw`They intersect at the midpoint of \(\overline{PQ}\), but need not be perpendicular.`,
+            String.raw`They are perpendicular, but need not intersect at the midpoint of \(\overline{AB}\).`,
+            String.raw`\(\overleftrightarrow{PQ}\) is the perpendicular bisector of \(\overline{AB}\).`,
+            String.raw`\(\overleftrightarrow{AB}\) is the perpendicular bisector of \(\overline{PQ}\).`,
+            String.raw`They intersect at a point of \(\overline{AB}\), but need not be perpendicular.`
+          ]
+        },
+
+        /* Q8: Model-authored: direct application of two-intersecting-lines criterion. */
+        {
+          stem: String.raw`<p>The distinct lines \(a,b,c\) lie in plane \(\alpha\) and pass through \(O\). The line \(r\) passes through \(O\), with \(r\perp a\) and \(r\perp b\). Which conclusion must hold?</p>`,
+          media: String.raw`<figure><img src="hw-spatial-geometry-fig-8.png" alt="Geometrical diagram for Figure 8" style="max-width: min(100%, 420px); height: auto;" /><figcaption>Figure 8</figcaption></figure>`,
+          choiceWrap: false,
+          choices: [
+            String.raw`\(r\perp c\) only if \(c\perp a\).`,
+            String.raw`\(r\perp\alpha\) and \(r\perp c\).`,
+            String.raw`\(a\perp b\) and \(r\perp c\).`,
+            String.raw`\(r\perp c\), but \(r\) cannot be perpendicular to \(\alpha\).`,
+            String.raw`\(r\perp\alpha\) only if \(a\perp b\).`,
+            String.raw`\(r\perp c\) only if \(c\) bisects an angle formed by \(a\) and \(b\).`
+          ]
+        },
+
+        /* Q9: Portuguese source #77(d,e), reworked: counterexample to missing intersection hypothesis. */
+        {
+          stem: String.raw`<p>Two distinct parallel lines \(a\) and \(b\) lie in plane \(\alpha\). A line \(r\) intersects each of them at a right angle. Which conclusion is necessarily true?</p>`,
+          choiceWrap: false,
+          choices: [
+            String.raw`\(r\) is perpendicular to \(\alpha\).`,
+            String.raw`\(r\) intersects \(\alpha\) at exactly one point.`,
+            String.raw`\(r\) can be either contained in or perpendicular to \(\alpha\).`,
+            String.raw`\(r\) is parallel to \(\alpha\), but is not contained in it.`,
+            String.raw`\(r\) is contained in \(\alpha\), and is not perpendicular to \(\alpha\).`,
+            String.raw`\(r\) intersects \(\alpha\) at two points but is not contained in \(\alpha\).`
+          ]
+        },
+
+        /* Q10: Model-authored: proof appreciation; recover the equality enabling the planar locus argument. */
+        {
+          stem: String.raw`<p>The line \(r\) meets plane \(\alpha\) at \(O\) and is perpendicular to two distinct lines of \(\alpha\) through \(O\). Choose points \(A,B\) on opposite sides of \(O\) along \(r\), with \(OA=OB\). Let \(X\) be any other point of \(\alpha\). To prove that \(r\perp\overleftrightarrow{OX}\), we may use the perpendicular-bisector theorem in plane \((ABX)\). Which observation, if established, makes that argument work?</p>`,
+          media: String.raw`<figure><img src="hw-spatial-geometry-fig-10.png" alt="Geometrical diagram for Figure 10" style="max-width: min(100%, 360px); height: auto;" /><figcaption>Figure 10</figcaption></figure>`,
+          choiceWrap: false,
+          choices: [
+            String.raw`\(XA=XO\), so \(A\) and \(O\) are equidistant from \(X\).`,
+            String.raw`\(OA=OB\), so every point of space lies on the perpendicular bisector of \(\overline{AB}\).`,
+            String.raw`\(XA=XB\), so both \(X\) and \(O\) lie on the perpendicular bisector of \(\overline{AB}\).`,
+            String.raw`\(XA=XB\), so \(X\) must be the midpoint of \(\overline{AB}\).`,
+            String.raw`\(XO=OA\), so \(\angle XOA\) must be a right angle.`,
+            String.raw`\(OA=OB\), so \(XA=XB\) for every point \(X\) in space.`
+          ]
+        },
+
+        /* Q11: Model-authored: transfer of perpendicularity and Pythagorean application; related to Portuguese #80(c,d). */
+        {
+          stem: String.raw`<p>In Figure 11, lines \(a\) and \(b\) meet plane \(\alpha\) at \(A\) and \(B\), respectively. Suppose \(a\perp\alpha\) and \(a\parallel b\). A point \(S\) of \(b\) satisfies \(AB=8\) and \(AS=10\). Determine \(BS\).</p>`,
+          media: String.raw`<figure><img src="hw-spatial-geometry-fig-11.png" alt="Two parallel lines through A and B, with S on the second line and segment AS" style="max-width: min(100%, 420px); height: auto;" /><figcaption>Figure 11</figcaption></figure>`,
+          choiceWrap: false,
+          choices: [
+            String.raw`\(6\)`,
+            String.raw`\(2\)`,
+            String.raw`\(\sqrt{164}\)`,
+            String.raw`\(\sqrt{92}\)`,
+            String.raw`\(8\)`,
+            String.raw`Cannot be determined.`
+          ]
+        },
+
+        /* Q12: Model-authored: distinguish valid conclusion from an insufficient argument; Portuguese #80(d). */
+        {
+          stem: String.raw`<p>Two distinct lines \(a\) and \(b\) are perpendicular to the same plane \(\alpha\). A student reasons: “The lines do not intersect. Therefore they are parallel.” Suppose we grant the student the claim that they do not intersect. Which assessment of the argument is correct?</p>`,
+          choiceWrap: false,
+          choices: [
+            String.raw`The conclusion is false: two lines perpendicular to the same plane may be skew.`,
+            String.raw`The argument is valid because nonintersecting lines are parallel.`,
+            String.raw`The conclusion is true only if the two lines are first given to be coplanar.`,
+            String.raw`The conclusion is true, but the argument is insufficient: nonintersecting lines in space can be skew.`,
+            String.raw`The argument is valid because perpendicularity to a plane means intersection at a single point.`,
+            String.raw`The conclusion is true, but the argument is insufficient because the lines might be coincident.`
+          ]
+        },
+
+        /* Q13: Model-authored: identify the contradiction in the planar proof. */
+        {
+          stem: String.raw`<p>Three distinct coplanar lines satisfy \(a\parallel b\) and \(b\parallel c\). Suppose, contrary to the desired conclusion, that \(a\) and \(c\) meet at \(P\). Which principle is contradicted?</p>`,
+          choiceWrap: false,
+          choices: [
+            String.raw`Through two distinct points there passes exactly one line.`,
+            String.raw`Through a point of a line in a plane there passes exactly one perpendicular to that line in the plane.`,
+            String.raw`Two distinct intersecting lines determine a plane.`,
+            String.raw`Two distinct parallel lines determine a plane.`,
+            String.raw`Through three noncollinear points there passes exactly one plane.`,
+            String.raw`Through a point outside a line there passes exactly one line parallel to that line.`
+          ]
+        },
+
+        /* Q14: Model-authored: proof appreciation; spatial transitivity via common perpendicular plane. */
+        {
+          stem: String.raw`<p>Three distinct lines in space satisfy \(a\parallel b\) and \(b\parallel c\). Let \(\alpha\) be a plane perpendicular to \(b\). Which argument proves \(a\parallel c\) without assuming spatial transitivity of parallelism?</p>`,
+          media: String.raw`<figure><img src="hw-spatial-geometry-fig-14.png" alt="Geometrical diagram for Figure 14" style="max-width: min(100%, 460px); height: auto;" /><figcaption>Figure 14</figcaption></figure>`,
+          choiceWrap: false,
+          choices: [
+            String.raw`The lines \(a,b\) determine a plane, and \(b,c\) determine a plane; these planes must coincide because both contain \(b\).`,
+            String.raw`Since \(a\parallel b\) and \(c\parallel b\), both \(a\) and \(c\) are perpendicular to \(\alpha\). Distinct lines perpendicular to the same plane are parallel.`,
+            String.raw`Neither \(a\) nor \(c\) meets \(b\), so they cannot meet each other and cannot be skew.`,
+            String.raw`Because \(a\parallel b\) and \(b\parallel c\), the three lines are necessarily contained in a single plane.`,
+            String.raw`All three lines meet \(\alpha\), so they are parallel.`,
+            String.raw`Because \(a\parallel b\) and \(b\parallel c\), transitivity gives \(a\parallel c\).`
+          ]
+        },
+
+        /* Q15: Model-authored: definition of a dihedral angle, as taught. */
+        {
+          stem: String.raw`<p>The half-planes \(\alpha\) and \(\beta\) have the common boundary line \(r\). Which statement correctly describes the dihedral angle they determine?</p>`,
+          media: String.raw`<figure><img src="hw-spatial-geometry-fig-15.png" alt="Geometrical diagram for Figure 15" style="max-width: min(100%, 370px); height: auto;" /><figcaption>Figure 15</figcaption></figure>`,
+          choiceWrap: false,
+          choices: [
+            String.raw`It is the intersection of the two half-planes; its edge is \(r\).`,
+            String.raw`It is the union of the two entire supporting planes; its edge is \(r\).`,
+            String.raw`It is a solid region between the two half-planes; its edge is \(r\).`,
+            String.raw`It is a pair of rays drawn from an arbitrary point of \(r\); that point is its edge.`,
+            String.raw`It is the union of the two half-planes; its edge is \(r\).`,
+            String.raw`It is the union of the half-planes with their common boundary removed.`
+          ]
+        },
+
+        /* Q16: Model-authored: recognition of the normal cross-section without relying on appearance. */
+        {
+          stem: String.raw`<p>In Figure 16, \(A,C\) are in one face and \(B,D\) are in the other face of a dihedral angle. The point \(O\) lies on the edge \(r\). It is given that \(\overleftrightarrow{OA}\perp r\), \(\overleftrightarrow{OB}\perp r\), and neither \(\overleftrightarrow{OC}\) nor \(\overleftrightarrow{OD}\) is perpendicular to \(r\). Which ordinary angle is the one used to define the measure of this dihedral angle?</p>`,
+          media: String.raw`<figure><img src="hw-spatial-geometry-fig-16.png" alt="Geometrical diagram for Figure 16" style="max-width: min(100%, 410px); height: auto;" /><figcaption>Figure 16</figcaption></figure>`,
+          choiceWrap: false,
+          choices: [
+            String.raw`\(\angle AOC\)`,
+            String.raw`\(\angle COD\)`,
+            String.raw`\(\angle AOB\)`,
+            String.raw`\(\angle AOD\)`,
+            String.raw`\(\angle BOC\)`,
+            String.raw`\(\angle BOD\)`
+          ]
+        },
+
+        /* Q17: Model-authored: recognize decisive geometric reason for independence of the normal section. */
+        {
+          stem: String.raw`<p>In Figure 17, \(P,Q\) lie on the edge \(r\) of a dihedral angle. Rays \(\overrightarrow{PA},\overrightarrow{QC}\) lie in one face and rays \(\overrightarrow{PB},\overrightarrow{QD}\) in the other. All four supporting lines are perpendicular to \(r\). Why must \(m\angle APB=m\angle CQD\)?</p>`,
+          media: String.raw`<figure><img src="hw-spatial-geometry-fig-17.png" alt="Geometrical diagram for Figure 17" style="max-width: min(100%, 450px); height: auto;" /><figcaption>Figure 17</figcaption></figure>`,
+          choiceWrap: false,
+          choices: [
+            String.raw`The four supporting lines are perpendicular to the same line, so all four must be parallel.`,
+            String.raw`The angles have their vertices on the same edge, which alone guarantees equality.`,
+            String.raw`The perpendicular cross-sections must coincide because both are perpendicular to the same edge.`,
+            String.raw`The lengths \(PA,PB,QC,QD\) are necessarily equal.`,
+            String.raw`Two ordinary angles are equal whenever their sides lie in the same two supporting planes.`,
+            String.raw`Within each face the corresponding supporting lines are parallel. Their rays point into the same half-plane, so the corresponding sides of the two angles have the same directions.`
+          ]
+        },
+
+        /* Q18: Model-authored: numerical dihedral-angle bridge using the cube and a face diagonal. */
+        {
+          stem: String.raw`<p>Return to the cube in Figure 1. Consider the dihedral angle with edge \(\overleftrightarrow{AB}\), one face containing \(C\) and the other containing \(G\). Determine its measure.</p>`,
+          media: String.raw`<figure><img src="hw-spatial-geometry-fig-1.png" alt="Cube ABCDEFGH" style="max-width: min(100%, 360px); height: auto;" /><figcaption>Figure 1</figcaption></figure>`,
+          choiceWrap: false,
+          choices: [
+            String.raw`\(30^\circ\)`,
+            String.raw`\(45^\circ\)`,
+            String.raw`\(60^\circ\)`,
+            String.raw`\(90^\circ\)`,
+            String.raw`\(135^\circ\)`,
+            String.raw`\(150^\circ\)`
+          ]
+        },
+
+        /* Q19: Portuguese #70, substantially reworked: numerical dihedral-angle synthesis (no three-perpendiculars theorem or perpendicular planes). */
+        {
+          stem: String.raw`<p><strong>Challenge.</strong> The isosceles triangles \(ABC\) and \(DBC\) lie in distinct planes and have the common base \(\overline{BC}\). It is given that \(BC=6\), \(AB=AC=DB=DC=5\), and \(AD=4\sqrt3\). Determine the measure of the dihedral angle whose edge is \(\overleftrightarrow{BC}\) and whose faces contain \(A\) and \(D\), respectively.</p><p><em>Note:</em> The segments \(\overline{AD}\) and \(\overline{BC}\) do not intersect in space.</p>`,
+          media: String.raw`<figure><img src="hw-spatial-geometry-fig-19.png" alt="Two isosceles triangles sharing BC, with AD shown as a dashed connector" style="max-width: min(100%, 460px); height: auto;" /><figcaption>Figure 19</figcaption></figure>`,
+          choiceWrap: false,
+          choices: [
+            String.raw`\(30^\circ\)`,
+            String.raw`\(45^\circ\)`,
+            String.raw`\(60^\circ\)`,
+            String.raw`\(90^\circ\)`,
+            String.raw`\(120^\circ\)`,
+            String.raw`\(150^\circ\)`
+          ]
+        }
+      ]
+    };
+  </script>
+  <link rel="stylesheet" href="/math-homework/assets/core-rich.css" />
+  <script defer src="/math-homework/assets/core-rich.js"></script>
+  <script defer src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+</head>
+<body>
+  <div id="hw-root">Loading…</div>
+</body>
+</html>
